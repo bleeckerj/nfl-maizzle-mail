@@ -1,0 +1,23 @@
+<!-- Footer Membership CTA Component -->
+<table class="wrapper" role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+  <tr>
+    <td class="content-block" style="padding: 0; margin: 0 auto; max-width: 600px; text-align: left;">
+      <p class="subs" style="font-size: 18px;line-height: 1.6em;padding-top: 30px;text-align: center;color: #999;">
+        <span style="font-style: italic;font-size: .8888em;">{{ footer.prompt }}</span><br>
+        <a href="{{ footer.membershipUrl }}" style="color: #fff;text-decoration: none;-webkit-appearance: none;-moz-appearance: none;background: #DC4B4B;border: none;border-radius: .3rem;cursor: pointer;display: inline-block;font-size: .8888em;font-weight: 600;line-height: 1;margin: 5px 0 0;padding: 1.175em 1.75em;text-align: center;transition: opacity .15s linear;">{{ footer.ctaText }}</a>
+      </p>
+      
+      <table border="0" cellpadding="0" cellspacing="0" id="canspamBar" style="margin-top: 72px;">
+        <tbody>
+          <tr>
+            <td align="center" valign="top" style="color:#606060; font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:150%; padding-right:20px; padding-bottom:5px; padding-left:20px; text-align:center;">
+              {{ footer.legal }}<br>
+              <a href="{{ footer.unsubscribeUrl }}" style="color:#404040 !important;">Unsubscribe</a>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="{{ footer.preferencesUrl }}" style="color:#404040 !important;">Manage preferences</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</table>

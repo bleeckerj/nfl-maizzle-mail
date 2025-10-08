@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Sentiers-compare-heuristic Template Schema",
+  "description": "Generated from sentiers.html using heuristic strategy",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Newsletter title"
+    },
+    "header": {
+      "type": "object",
+      "description": "header section content",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "header text content"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "header link URL"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "format": "uri"
+            },
+            "alt": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "cta": {
+      "type": "object",
+      "description": "cta section content",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "cta text content"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "cta link URL"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "format": "uri"
+            },
+            "alt": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "footer": {
+      "type": "object",
+      "description": "footer section content",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "footer text content"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "footer link URL"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "format": "uri"
+            },
+            "alt": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

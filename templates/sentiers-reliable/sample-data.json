@@ -1,0 +1,61 @@
+{
+  "$schema": "./schema.json",
+  "template": "sentiers-reliable",
+  "title": "Sample Newsletter - sentiers-reliable",
+  "header": {
+    "content": "Sample header content",
+    "url": "https://example.com/header",
+    "image": {
+      "src": "https://via.placeholder.com/300x200",
+      "alt": "Sample header image"
+    }
+  },
+  "headerContent": {
+    "content": "Sample headerContent content",
+    "url": "https://example.com/headerContent",
+    "image": {
+      "src": "https://via.placeholder.com/300x200",
+      "alt": "Sample headerContent image"
+    }
+  },
+  "articles": {
+    "content": "Sample articles content",
+    "url": "https://example.com/articles",
+    "image": {
+      "src": "https://via.placeholder.com/300x200",
+      "alt": "Sample articles image"
+    }
+  },
+  "blockquotes": {
+    "content": "Sample blockquotes content",
+    "url": "https://example.com/blockquotes",
+    "image": {
+      "src": "https://via.placeholder.com/300x200",
+      "alt": "Sample blockquotes image"
+    }
+  },
+  "miscellany": {
+    "content": "Sample miscellany content",
+    "url": "https://example.com/miscellany",
+    "image": {
+      "src": "https://via.placeholder.com/300x200",
+      "alt": "Sample miscellany image"
+    }
+  },
+  "footer": {
+    "content": "Sample footer content",
+    "url": "https://example.com/footer",
+    "image": {
+      "src": "https://via.placeholder.com/300x200",
+      "alt": "Sample footer image"
+    }
+  },
+  "quotes": {
+    "content": "Sample quotes content",
+    "url": "https://example.com/quotes",
+    "image": {
+      "src": "https://via.placeholder.com/300x200",
+      "alt": "Sample quotes image"
+    }
+  }
+}

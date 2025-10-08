@@ -1,0 +1,16 @@
+<!-- IntroSection Component -->
+<!-- Purpose: Introduces the main topics of the newsletter -->
+<!-- Variables: introText -->
+
+<div class="content-block" style="padding: 20px;">
+  <!-- <p><strong class='caps'>This week →</strong> ...</p> -->
+  <div class="introsection">
+    <if condition="introText">
+      <p><strong style="text-transform: uppercase;">{{ introText }}</strong></p>
+    <elseif condition="subtitle">
+      <p><strong style="text-transform: uppercase;">{{ subtitle }}</strong></p>
+    <else>
+      <p><strong style="text-transform: uppercase;">This week's highlights</strong></p>
+    </if>
+  </div>
+</div>

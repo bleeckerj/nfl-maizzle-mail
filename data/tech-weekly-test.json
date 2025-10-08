@@ -1,0 +1,38 @@
+{
+  "title": "Tech Weekly – Issue 42",
+  "subtitle": "Your weekly dose of tech innovation",
+  "emailType": "newsletter",
+  "template": "dense-discovery-enhanced",
+  "quote": "Innovation distinguishes between a leader and a follower.",
+  "author": "Steve Jobs",
+  "artistName": "Digital Design Co",
+  "artistLink": "https://digitaldesign.co",
+  "logoImage": "https://via.placeholder.com/100x50/4285F4/ffffff?text=TECH",
+  "issueNumber": "42",
+  "introText": "This week we're diving deep into the latest developments in AI, blockchain technology, and the future of remote work. Get ready for some mind-bending innovations!",
+  "articleLink": "https://techweekly.com/issue-42",
+  "authorLink": "https://techweekly.com/about",
+  "sponsorTitle": "Code Academy Pro",
+  "sponsorLink": "https://codecademy.com/pro",
+  "sponsorImage": "https://via.placeholder.com/200x100/FF6B6B/ffffff?text=CODE",
+  "sponsorDescription": "Level up your coding skills with interactive courses, real-world projects, and personalized learning paths.",
+  "apps": [
+    {
+      "appTitle": "AI Assistant Pro",
+      "appDescription": "Revolutionary AI tool for developers and creators",
+      "appLink": "https://aiassistant.pro"
+    },
+    {
+      "appTitle": "Blockchain Explorer", 
+      "appDescription": "Visualize and explore blockchain transactions",
+      "appLink": "https://blockchainexplorer.dev"
+    }
+  ],
+  "books": [
+    {
+      "title": "The Future of Programming",
+      "description": "Essential reading for developers navigating the AI revolution",
+      "link": "https://futureofprogramming.com"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Newsletter Template Schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Newsletter title"
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

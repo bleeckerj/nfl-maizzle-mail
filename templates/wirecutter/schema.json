@@ -1,0 +1,222 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Newsletter Data Schema",
+  "description": "Schema for newsletter content data used by Maizzle templates",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Main newsletter title/subject line"
+    },
+    "logo": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "format": "uri",
+          "description": "Link destination for logo"
+        },
+        "src": {
+          "type": "string",
+          "format": "uri",
+          "description": "Logo image URL"
+        },
+        "alt": {
+          "type": "string",
+          "description": "Logo alt text"
+        }
+      },
+      "required": ["href", "src", "alt"]
+    },
+    "hero": {
+      "type": "object",
+      "description": "Main hero section with large image and CTA",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Hero headline"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Hero article URL"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "format": "uri",
+              "description": "Hero image URL"
+            },
+            "alt": {
+              "type": "string",
+              "description": "Hero image alt text"
+            }
+          },
+          "required": ["src", "alt"]
+        },
+        "deck": {
+          "type": "string",
+          "description": "Hero description/subheading"
+        },
+        "cta": {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string",
+              "format": "uri",
+              "description": "CTA button link"
+            },
+            "label": {
+              "type": "string",
+              "description": "CTA button text"
+            }
+          },
+          "required": ["href", "label"]
+        }
+      },
+      "required": ["title", "url", "image", "deck", "cta"]
+    },
+    "feature": {
+      "type": "object",
+      "description": "Featured content section",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Feature headline"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "description": "Feature article URL"
+        },
+        "image": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "format": "uri",
+              "description": "Feature image URL"
+            },
+            "alt": {
+              "type": "string",
+              "description": "Feature image alt text"
+            }
+          },
+          "required": ["src", "alt"]
+        },
+        "html": {
+          "type": "string",
+          "description": "Feature body content as HTML"
+        }
+      },
+      "required": ["title", "url", "image", "html"]
+    },
+    "moreBlocks": {
+      "type": "array",
+      "description": "Additional content blocks",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Block section title"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Block header link URL"
+          },
+          "items": {
+            "type": "array",
+            "description": "Items within this block",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "description": "Item title"
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "description": "Item link URL"
+                },
+                "image": {
+                  "type": "object",
+                  "properties": {
+                    "src": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "Item image URL"
+                    },
+                    "alt": {
+                      "type": "string",
+                      "description": "Item image alt text"
+                    }
+                  },
+                  "required": ["src", "alt"]
+                },
+                "copy": {
+                  "type": "string",
+                  "description": "Item description text"
+                }
+              },
+              "required": ["title", "url", "image", "copy"]
+            }
+          }
+        },
+        "required": ["title", "url", "items"]
+      }
+    },
+    "footer": {
+      "type": "object",
+      "description": "Newsletter footer content",
+      "properties": {
+        "lockup": {
+          "type": "object",
+          "properties": {
+            "src": {
+              "type": "string",
+              "format": "uri",
+              "description": "Footer logo/lockup image URL"
+            },
+            "alt": {
+              "type": "string",
+              "description": "Footer logo alt text"
+            }
+          },
+          "required": ["src", "alt"]
+        },
+        "legal": {
+          "type": "string",
+          "description": "Legal/unsubscribe text as HTML"
+        },
+        "links": {
+          "type": "object",
+          "properties": {
+            "privacy": {
+              "type": "string",
+              "format": "uri",
+              "description": "Privacy policy URL"
+            },
+            "tos": {
+              "type": "string",
+              "format": "uri",
+              "description": "Terms of service URL"
+            },
+            "contact": {
+              "type": "string",
+              "format": "uri",
+              "description": "Contact page URL"
+            }
+          },
+          "required": ["privacy", "tos", "contact"]
+        }
+      },
+      "required": ["lockup", "legal", "links"]
+    }
+  },
+  "required": ["title", "logo", "hero", "feature", "footer"]
+}

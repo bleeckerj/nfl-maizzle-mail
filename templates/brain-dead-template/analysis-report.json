@@ -1,0 +1,119 @@
+{
+  "template": "brain-dead-template",
+  "source": "emails/brain-dead-01.html",
+  "strategy": "llm-only",
+  "model": "gpt-4o",
+  "analysis": {
+    "emailType": "newsletter",
+    "confidence": 0.9,
+    "components": {
+      "header": {
+        "purpose": "Displays the logo and navigation links",
+        "content": "<a href=\"https://trk.klclick.com/ls/click?upn=vHPkmeR1nFbTVdI36ZAGRDXNfJmdR65SdmorqM5ailjUXnGcnnxbkQQV8cTQ-2B5CeD5cZwsCTY8VH-2F16TDrDMr9RHCTlKAvDT3yYp-2B84Q-2B6OLdmDxalF-2BYTwGcSjrKs409d-2F4rqsFfstMPUF1UOfr8ogllQOMzk8ALLSTdN1YOGddYKqr4D-2BEMqixPPDbfxWyfBOAkY6-2BzNkCsBMhkFKSCQ-3D-3Dng9-_j-2F0O98F5U4fETp-2F1Yg8av1mqjk53BdiW-2B1OXixIjTdbAACIf1y-2B-2FR3zbO0NxcM0RpFE0zdjjF2Hc8v4UN2O1apoceKw95F8lEYNnCiqNWuDQLoU8Q9xC9uFv1F-2FYsJTUbwXJ9MEOnnQbhtr7B8HlXd36AozFwbFYziT0zrsbhcaDntSGsgAIEIqVhbfixHuuFuZjQ8cqKJM9z8muYwNFYVWCNUu8qXCdSV0o079nAoQ4F8JfnNYFjjA98SPMv0HrLQlereEF9MtrcXV2Rz1XxtZXcajEztPY3fVVXvf8uhnk1mEgTgbUPQ5do2Qm3zUkep4CSFhvOHWDiue6qurWLKZGND6K2RMgdCi4a9jZ-2F9DXOlB0ij1ynx8-2FlG8kKvvMSAxhHvhhG9MGM5wwJbPTWs7bVNmPEERITrjpj2qTOq66VIGGDT4ly4A6Zk2s5Yqs0pc0w-2FCbygFkUHd-2F7xmrGA-3D-3D\"><img src=\"https://d3k81ch9hvuctc.cloudfront.net/company/TtXPcf/images/5d0eb12a-d168-467d-ba69-8514d1e9b57b.jpeg\" width=\"80\"></a>",
+        "variables": [
+          "logoUrl",
+          "logoLink"
+        ],
+        "htmlStructure": "<a href=\"{{ logoLink }}\"><img src=\"{{ logoUrl }}\" width=\"80\"></a>",
+        "styling": "display:block;outline:none;text-decoration:none;height:auto;width:100%;background-color:transparent;",
+        "images": [
+          "https://d3k81ch9hvuctc.cloudfront.net/company/TtXPcf/images/5d0eb12a-d168-467d-ba69-8514d1e9b57b.jpeg"
+        ]
+      },
+      "articleSection": {
+        "purpose": "Displays articles with images and descriptions",
+        "content": "<div class=\"article\"><h2>Article Title</h2><p>Article description goes here...</p><img src=\"article-image-url.jpg\"></div>",
+        "variables": [
+          "articles"
+        ],
+        "htmlStructure": "<each loop=\"article in articles\"><div class=\"article\"><h2>{{ article.title }}</h2><p>{{ article.description }}</p><img src=\"{{ article.imageUrl }}\"></div></each>",
+        "styling": "font-family:Courier New;font-size:32px;color:#222;",
+        "images": [
+          "article-image-url.jpg"
+        ]
+      },
+      "footer": {
+        "purpose": "Displays footer with social media links",
+        "content": "<div class=\"footer\"><a href=\"social-link\">Follow us</a></div>",
+        "variables": [
+          "socialLinks"
+        ],
+        "htmlStructure": "<each loop=\"link in socialLinks\"><a href=\"{{ link.url }}\">{{ link.text }}</a></each>",
+        "styling": "font-size:13px;color:#000000;",
+        "images": []
+      }
+    },
+    "schema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "articles": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "imageUrl": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "socialLinks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "sampleData": {
+      "title": "Newsletter Title",
+      "articles": [
+        {
+          "title": "New Collection Launch",
+          "description": "Our latest collection brings you the collaborative efforts of Brain Dead and the Taiwan-based streetwear brand, Invincible.",
+          "imageUrl": "https://example.com/image1.jpg"
+        },
+        {
+          "title": "Exclusive Interview",
+          "description": "An exclusive interview with the designers behind the new collection.",
+          "imageUrl": "https://example.com/image2.jpg"
+        }
+      ],
+      "socialLinks": [
+        {
+          "url": "https://facebook.com",
+          "text": "Facebook"
+        },
+        {
+          "url": "https://twitter.com",
+          "text": "Twitter"
+        }
+      ]
+    },
+    "recommendations": [
+      "Ensure all images have alt text for accessibility.",
+      "Use Maizzle's built-in CSS inlining for better email client compatibility.",
+      "Optimize image sizes for faster loading times.",
+      "Consider using conditional comments for Outlook-specific styles.",
+      "Test the template across different email clients to ensure consistent rendering."
+    ]
+  },
+  "timestamp": "2025-10-08T03:58:30.787Z"
+}

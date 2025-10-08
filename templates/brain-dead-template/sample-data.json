@@ -1,0 +1,27 @@
+{
+  "title": "Newsletter Title",
+  "articles": [
+    {
+      "title": "New Collection Launch",
+      "description": "Our latest collection brings you the collaborative efforts of Brain Dead and the Taiwan-based streetwear brand, Invincible.",
+      "imageUrl": "https://example.com/image1.jpg"
+    },
+    {
+      "title": "Exclusive Interview",
+      "description": "An exclusive interview with the designers behind the new collection.",
+      "imageUrl": "https://example.com/image2.jpg"
+    }
+  ],
+  "socialLinks": [
+    {
+      "url": "https://facebook.com",
+      "text": "Facebook"
+    },
+    {
+      "url": "https://twitter.com",
+      "text": "Twitter"
+    }
+  ],
+  "template": "brain-dead-template",
+  "$schema": "./schema.json"
+}

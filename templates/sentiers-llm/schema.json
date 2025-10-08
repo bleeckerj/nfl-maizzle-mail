@@ -1,0 +1,40 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "logoImageUrl": {
+      "type": "string"
+    },
+    "introText": {
+      "type": "string"
+    },
+    "articles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "articleTitle": {
+            "type": "string"
+          },
+          "articleLink": {
+            "type": "string"
+          },
+          "articleImage": {
+            "type": "string"
+          },
+          "articleDescription": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "footerText": {
+      "type": "string"
+    },
+    "membershipLink": {
+      "type": "string"
+    }
+  }
+}

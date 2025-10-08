@@ -1,0 +1,29 @@
+# Node modules
+node_modules/
+
+# Build outputs
+build_local/
+build_production/
+
+# Environment files
+.env
+.env.local
+
+# Editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Log files
+*.log
+npm-debug.log*
+
+# Generated data files (optional - remove if you want to track them)
+# data/newsletter.json

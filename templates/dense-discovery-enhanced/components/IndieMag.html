@@ -1,0 +1,35 @@
+<!-- IndieMag Component -->
+<table class="wrapper" role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+  <tr>
+    <td class="content-block" style="padding: 25px 20px; background-color: #efe2f3; border-left: 4px solid #837089;">
+      <p style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; color: #837089; margin: 0 0 15px 0; text-transform: uppercase; letter-spacing: 1px;">
+        📖 Indie Magazine
+      </p>
+      
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+        <tr>
+          <td style="vertical-align: top; padding-right: 20px; width: 140px;">
+            <img src="{{ magImage || 'https://via.placeholder.com/140x180/efe2f3/837089?text=MAGAZINE' }}" 
+                 alt="{{ magName || 'Indie Magazine' }}" 
+                 width="120" 
+                 style="width: 120px; height: auto; display: block; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+          </td>
+          <td style="vertical-align: top;">
+            <h3 style="font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; color: #000000; margin: 0 0 10px 0;">
+              <a href="{{ magLink || 'https://example.com/magazine' }}" style="color: #000000; text-decoration: none;">
+                {{ magName || 'Creative Quarterly' }}
+              </a>
+            </h3>
+            <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.4; color: #333333; margin: 0 0 15px 0;">
+              {{ magDescription || 'An independent publication showcasing the best in contemporary design, art, and creative culture.' }}
+            </p>
+            <a href="{{ magLink || 'https://example.com/magazine' }}" 
+               style="color: #837089; text-decoration: underline; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold;">
+              Read More →
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

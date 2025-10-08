@@ -1,0 +1,75 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Email-safe base styles */
+.wrapper {
+  width: 100% !important;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.content-block {
+  padding: 20px;
+}
+
+/* Typography */
+.headline {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 24px;
+  line-height: 1.3;
+  margin: 0 0 16px 0;
+  color: #333333;
+}
+
+.subhead {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0 0 20px 0;
+  color: #555555;
+}
+
+.body-text {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333333;
+}
+
+/* Buttons */
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #007cba;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.cta-button:hover {
+  background-color: #005a85;
+}
+
+/* Images */
+.responsive-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Footer styles */
+.footer-text {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #666666;
+}
+
+.footer-link {
+  color: #007cba;
+  text-decoration: underline;
+}

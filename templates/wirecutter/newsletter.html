@@ -1,0 +1,25 @@
+---
+title: "{{ title }}"
+preheader: "{{ hero.deck }}"
+---
+
+<extends src="src/layouts/main.html">
+  <block name="template">
+    
+    <!-- Header Logo -->
+    <component src="src/components/HeaderLogo.html"></component>
+    
+    <!-- Hero Section -->
+    <component src="src/components/Hero.html"></component>
+    
+    <!-- Feature Section -->
+    <component src="src/components/Feature.html"></component>
+    
+    <!-- More Blocks (Two-Up sections) -->
+    <component src="src/components/TwoUp.html"></component>
+    
+    <!-- Footer -->
+    <component src="src/components/Footer.html"></component>
+    
+  </block>
+</extends>

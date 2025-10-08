@@ -1,0 +1,14 @@
+<!-- Header Component -->
+<!-- Purpose: Displays the newsletter title and logo -->
+<!-- Variables: newsletterTitle, logoImageUrl -->
+
+<div class="content-block" style="padding: 20px;">
+  <!-- <div id='header'><img src='...' id='logo'><h1>No.123</h1></div> -->
+  <div id="header" style="margin-bottom: 72px; text-align: center;">
+    <if condition="logo.src">
+      <img src="{{ logo.src }}" alt="{{ logo.alt }}" id="logo" style="margin: 0; padding: 0; max-width: 300px; height: auto;">
+    </if>
+    <h1 style="font-family: 'Lora', serif; margin: 12px 0 0; padding: 10px 0; float: right; line-height: 100%; font-weight: normal; border-bottom: 1px solid;">{{ title }}</h1>
+    <div style="clear: both;"></div>
+  </div>
+</div>

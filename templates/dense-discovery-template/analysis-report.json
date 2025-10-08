@@ -1,0 +1,130 @@
+{
+  "template": "dense-discovery-template",
+  "source": "emails/dense-discovery.html",
+  "strategy": "llm-only",
+  "model": "gpt-4o",
+  "analysis": {
+    "emailType": "newsletter",
+    "confidence": 0.95,
+    "components": {
+      "header": {
+        "purpose": "Displays the email header with a quote and featured artist",
+        "content": "The Universe is under no obligation to make sense to you. – Neil deGrasse Tyson Featured artist: Rocio Egio Studio",
+        "variables": [
+          "quote",
+          "author",
+          "artistName",
+          "artistLink",
+          "headerImage"
+        ],
+        "htmlStructure": "<table><tr><td>{{ quote }}</td><td><img src='{{ headerImage }}'><a href='{{ artistLink }}'>{{ artistName }}</a></td></tr></table>",
+        "styling": "background-color: #addcfa; font-size: 16px; color: #000000;",
+        "images": [
+          "https://www.densediscovery.com/archive/79/head.jpg",
+          "https://www.densediscovery.com/archive/logo-top.png"
+        ]
+      },
+      "intro": {
+        "purpose": "Introduces the newsletter issue and provides a personal message",
+        "content": "Welcome to Issue 79! Our ability to filter, evaluate, and prioritise information is being put to the test...",
+        "variables": [
+          "issueNumber",
+          "introText",
+          "articleLink",
+          "authorLink"
+        ],
+        "htmlStructure": "<table><tr><td><h1>Welcome to Issue {{ issueNumber }}!</h1><p>{{ introText }}</p><a href='{{ articleLink }}'>this one article</a> – <a href='{{ authorLink }}'>Kai</a></td></tr></table>",
+        "styling": "font-size: 21px; color: #000000; line-height: 30px;",
+        "images": []
+      },
+      "sponsor": {
+        "purpose": "Highlights a sponsor with an image and description",
+        "content": "Spreadsheet Nerds Unite SPONSOR Tiller Money Personal finance spreadsheets without data entry...",
+        "variables": [
+          "sponsorTitle",
+          "sponsorLink",
+          "sponsorImage",
+          "sponsorDescription"
+        ],
+        "htmlStructure": "<table><tr><td><h1>{{ sponsorTitle }}</h1><img src='{{ sponsorImage }}'><h2><a href='{{ sponsorLink }}'>Tiller Money</a></h2><p>{{ sponsorDescription }}</p></td></tr></table>",
+        "styling": "background: #f8eccf; font-size: 16px; color: #000000;",
+        "images": [
+          "https://www.densediscovery.com/archive/79/sponsor.jpg"
+        ]
+      },
+      "appsAndSites": {
+        "purpose": "Lists recommended apps and sites",
+        "content": "Apps & Sites",
+        "variables": [
+          "appTitle",
+          "appDescription",
+          "appLink"
+        ],
+        "htmlStructure": "<table><tr><td><h1>Apps &amp; Sites</h1><each loop='app in apps'><h2>{{ app.appTitle }}</h2><p>{{ app.appDescription }}</p><a href='{{ app.appLink }}'>Learn more</a></each></td></tr></table>",
+        "styling": "font-size: 21px; color: #000000;",
+        "images": []
+      }
+    },
+    "schema": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "apps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "appTitle": {
+                "type": "string"
+              },
+              "appDescription": {
+                "type": "string"
+              },
+              "appLink": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "sampleData": {
+      "title": "Dense Discovery – Issue 79",
+      "quote": "The Universe is under no obligation to make sense to you.",
+      "author": "Neil deGrasse Tyson",
+      "artistName": "Rocio Egio Studio",
+      "artistLink": "https://click.densediscovery.com/click/5f1cb226-d9db-46b8-bdd3-b0402fd94e78/c2e02c17-868b-40b6-b415-f4eac69df378/event",
+      "headerImage": "https://www.densediscovery.com/archive/79/head.jpg",
+      "issueNumber": "79",
+      "introText": "Our ability to filter, evaluate, and prioritise information is being put to the test...",
+      "articleLink": "https://click.densediscovery.com/click/5f1cb226-d9db-46b8-bdd3-b0402fd94e78/a3c2348a-4589-4659-886e-3dbbeded581b/event",
+      "authorLink": "https://click.densediscovery.com/click/5f1cb226-d9db-46b8-bdd3-b0402fd94e78/caceee26-aab0-4b14-9f37-885858acd8be/event",
+      "sponsorTitle": "Spreadsheet Nerds Unite",
+      "sponsorLink": "https://click.densediscovery.com/click/5f1cb226-d9db-46b8-bdd3-b0402fd94e78/ac2db8df-3f77-444c-b706-a1e56d618658/event",
+      "sponsorImage": "https://www.densediscovery.com/archive/79/sponsor.jpg",
+      "sponsorDescription": "Manage your money in a spreadsheet 10× faster with Tiller Money...",
+      "apps": [
+        {
+          "appTitle": "App 1",
+          "appDescription": "Description for app 1",
+          "appLink": "https://example.com/app1"
+        },
+        {
+          "appTitle": "App 2",
+          "appDescription": "Description for app 2",
+          "appLink": "https://example.com/app2"
+        }
+      ]
+    },
+    "recommendations": [
+      "Ensure all images have alt text for accessibility.",
+      "Use Maizzle's <each> syntax for listing apps and sites.",
+      "Maintain inline styles for email client compatibility.",
+      "Consider using Maizzle's conditionals for dynamic content display.",
+      "Optimize image sizes for faster loading times."
+    ]
+  },
+  "timestamp": "2025-10-08T05:07:28.403Z"
+}

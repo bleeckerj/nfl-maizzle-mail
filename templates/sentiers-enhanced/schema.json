@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "articles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "articleTitle": {
+            "type": "string"
+          },
+          "articleContent": {
+            "type": "string"
+          },
+          "articleLink": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<!-- Footer Component -->
+<!-- Purpose: Displays footer with social media links -->
+<!-- Variables: socialLinks -->
+
+<table class="wrapper" role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+  <tr>
+    <td class="content-block" style="padding: 20px;">
+      <div class="footer" style="text-align: center; margin-top: 40px; font-family: Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;">
+        <p style="font-size: 13px; color: #000000; margin: 10px 0;">
+          Brain Dead<br>
+          943 North Hill Street<br>
+          Los Angeles, California 90012
+        </p>
+        <p style="font-size: 13px; color: #000000; margin: 20px 0;">
+          <each loop="link in socialLinks">
+            <a href="{{ link.url }}" style="color: #15c; font-weight: normal; text-decoration: none; margin: 0 10px;">{{ link.text }}</a>
+          </each>
+        </p>
+      </div>
+    </td>
+  </tr>
+</table>

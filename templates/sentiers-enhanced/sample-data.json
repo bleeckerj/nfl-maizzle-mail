@@ -1,0 +1,24 @@
+{
+  "title": "No.123 — Maintainers ⊗ Build ⊗ Tokyo as slowdown city ⊗ Mass consumption",
+  "logoUrl": "https://gallery.mailchimp.com/5125332501a1986f0f3685a57/images/798de67b-6210-4aba-a40e-2ace5783545e.png",
+  "introText": "Hail the maintainers ⊗ It’s time to build (is it?) ⊗ Tokyo as slowdown city ⊗ Mass consumption is what ails us",
+  "articles": [
+    {
+      "articleTitle": "Hail the maintainers",
+      "articleContent": "Excellent piece at Aeon on progress, innovation, and maintenance...",
+      "articleLink": "https://aeon.co/essays/innovation-is-overvalued-maintenance-often-matters-more"
+    },
+    {
+      "articleTitle": "Tokyo as Slowdown City",
+      "articleContent": "Continuing his Slowdown Papers with another batch of articles...",
+      "articleLink": "https://medium.com/slowdown-papers/18-from-lockdown-to-slowdown-tokyo-as-slowdown-city-822dc0b6f3cc"
+    }
+  ],
+  "imageUrl": "https://mcusercontent.com/5125332501a1986f0f3685a57/images/4f3264fb-deee-4d4a-a371-15394a4460e3.png",
+  "captionText": "Tokyo as Slowdown City, Dan Hill",
+  "captionLink": "https://medium.com/slowdown-papers/18-from-lockdown-to-slowdown-tokyo-as-slowdown-city-822dc0b6f3cc",
+  "footerText": "This is a free issue of the weekly Sentiers newsletter. To support its publication and receive a couple of extra dispatches a month, each focused on one topic:",
+  "membershipLink": "https://sentiers.media/membership/",
+  "template": "sentiers-enhanced",
+  "$schema": "./schema.json"
+}

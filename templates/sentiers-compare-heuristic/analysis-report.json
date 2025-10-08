@@ -1,0 +1,29 @@
+{
+  "template": "sentiers-compare-heuristic",
+  "source": "emails/sentiers.html",
+  "strategy": "heuristic",
+  "analysis": {
+    "structure": "mixed",
+    "layout": "unknown",
+    "sections": [],
+    "components": {
+      "header": {
+        "confidence": 0.6000000000000001,
+        "selector": "#header",
+        "element": "DIV"
+      },
+      "cta": {
+        "confidence": 0.6000000000000001,
+        "selector": "a[style*=\"padding\"][style*=\"color\"]",
+        "element": "A"
+      },
+      "footer": {
+        "confidence": 0.6000000000000001,
+        "selector": "table:last-child",
+        "element": "TABLE"
+      }
+    },
+    "metadata": {}
+  },
+  "timestamp": "2025-10-08T02:51:34.536Z"
+}

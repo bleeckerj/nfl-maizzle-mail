@@ -1,0 +1,47 @@
+{
+  "name": "nfl-maizzle-mail",
+  "version": "1.0.0",
+  "description": "Reusable HTML email template system built with Maizzle",
+  "main": "index.js",
+  "scripts": {
+    "build": "maizzle build production",
+    "build:data": "maizzle build production", 
+    "build:newsletter": "node scripts/build-newsletter.mjs",
+    "quick": "node scripts/quick-build.mjs",
+    "snippet": "node scripts/create-snippet.mjs",
+    "dev": "maizzle serve",
+    "convert": "node scripts/md_to_json.mjs",
+    "templates:list": "node scripts/template_manager.mjs list",
+    "templates:create": "node scripts/template_manager.mjs create",
+    "templates:copy": "node scripts/template_manager.mjs copy",
+    "templates:info": "node scripts/template_manager.mjs info",
+    "decompose:quick": "node scripts/email_workflow.mjs",
+    "decompose:smart": "node scripts/email_workflow.mjs --workflow=smart",
+    "decompose:interactive": "node scripts/email_workflow.mjs --workflow=interactive",
+    "decompose:compare": "node scripts/email_workflow.mjs --workflow=compare",
+    "decompose:workflows": "node scripts/email_workflow.mjs list-workflows",
+    "decompose:reliable": "node scripts/reliable_workflow.mjs",
+    "decompose:auto": "node scripts/reliable_workflow.mjs --force-gpt",
+    "decompose:comprehensive": "node scripts/reliable_workflow.mjs --strategy=comprehensive",
+    "decompose:llm": "node scripts/llm_decomposer.mjs"
+  },
+  "keywords": [
+    "email",
+    "maizzle",
+    "newsletter",
+    "html",
+    "templates"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@maizzle/framework": "^4.5.1",
+    "dotenv": "^17.2.3",
+    "openai": "^6.2.0"
+  },
+  "devDependencies": {
+    "commander": "^11.1.0",
+    "gray-matter": "^4.0.3",
+    "jsdom": "^23.2.0"
+  }
+}

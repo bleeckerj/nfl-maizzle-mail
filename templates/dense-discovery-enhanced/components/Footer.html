@@ -1,0 +1,114 @@
+<!-- Footer Component - Dense Discovery Style -->
+<table bgcolor="#f2f2f2" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="100%">
+  <tbody>
+    <tr>
+      <td align="center" bgcolor="#f2f2f2" style="background-color: #f2f2f2;border-collapse: collapse;" valign="top">
+        
+        <!-- 640px container -->
+        <table border="0" cellpadding="0" cellspacing="0" class="footer" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 640px;max-width: 640px;" width="640">
+          <tbody>
+            
+            <tr>
+              <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+            </tr>
+            
+            <!-- Unsubscribe Links -->
+            <tr>
+              <td align="left" style="border-collapse: collapse;">
+                <table align="left" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="100%">
+                  <tbody>
+                    <tr>
+                      <td class="padt15 padr20 padb5 padl20" style="border-collapse: collapse;padding-top: 15px;padding-right: 20px;padding-bottom: 5px;padding-left: 20px;" valign="top">
+                        <p class="small grey" style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 15px;">
+                          <a class="grey" href="{{ unsubscribeLink || '#' }}" style="text-decoration: underline;color: #707070 !important;">Unsubscribe</a> | 
+                          <a class="grey" href="{{ managePrefsLink || '#' }}" style="text-decoration: underline;color: #707070 !important;">Manage email preferences</a> | 
+                          <a class="grey" href="{{ viewOnlineLink || '#' }}" style="text-decoration: underline;color: #707070 !important;">View online</a>
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+            </tr>
+            
+            <!-- Footer Content -->
+            <tr>
+              <td align="left" style="border-collapse: collapse;">
+                
+                <!--[if mso]>
+                <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr><td width="65%" valign="top"><![endif]-->
+                
+                <!-- Left Column - Acknowledgments -->
+                <table align="left" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="416">
+                  <tbody>
+                    <tr>
+                      <td class="padt20 padr20 padb5 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 5px;padding-left: 20px;" valign="top">
+                        
+                        <!-- Climate Acknowledgment -->
+                        <p class="small" style="font-size: 14px;line-height: 19px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 15px;">
+                          {{ title }} recognises that we're in a <a href="{{ climateLink || '#' }}" style="text-decoration: underline;color: #000000 !important;">climate emergency</a>. We're proudly supporting the work of environmental advocacy and action groups and encourage you to do the same <a href="{{ actionLink || '#' }}" style="text-decoration: underline;color: #000000 !important;">in your country</a>.
+                        </p>
+                        
+                        <!-- Land Acknowledgment -->
+                        <p class="small" style="font-size: 14px;line-height: 19px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 15px;">
+                          {{ landAcknowledgment || 'Our office is located in Fitzroy, Melbourne, the traditional lands of the Wurundjeri people. We acknowledge that sovereignty was never ceded and pay our respects to elders past, present, and emerging.' }}
+                        </p>
+                        
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+                <!--[if mso]></td><td width="35%" valign="top"><![endif]-->
+                
+                <!-- Right Column - Contact & Social -->
+                <table align="right" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="224">
+                  <tbody>
+                    <tr>
+                      <td class="padt20 padr20 padl10 mobt0" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 10px;" valign="top">
+                        
+                        <!-- Social Links -->
+                        <p style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 15px;">
+                          <a href="{{ twitterLink || '#' }}" style="text-decoration: underline;color: #000000 !important;">Twitter</a> | 
+                          <a href="{{ instagramLink || '#' }}" style="text-decoration: underline;color: #000000 !important;">Instagram</a>
+                        </p>
+                        
+                        <!-- Website Link -->
+                        <p style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 15px;">
+                          <a href="{{ websiteLink || '#' }}" style="text-decoration: underline;color: #000000 !important;">{{ websiteText || 'densediscovery.com' }}</a>
+                        </p>
+                        
+                        <!-- Publisher Info -->
+                        <p class="small grey" style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 15px;">
+                          Published by:<br>
+                          <a class="grey" href="{{ publisherLink || '#' }}" style="text-decoration: underline;color: #707070 !important;">{{ publisherName || 'Publisher Name' }}</a> / {{ companyName || 'Company Name' }}<br>
+                          {{ address1 || '149a Brunswick St' }}<br>
+                          {{ address2 || 'Fitzroy VIC 3065' }}<br>
+                          {{ country || 'Australia' }}
+                        </p>
+                        
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+                <!--[if mso]></td></tr></table><![endif]-->
+                
+              </td>
+            </tr>
+            
+            <tr>
+              <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,16 @@
+---
+title: "{{ title }}"
+preheader: "{{ subtitle || 'Newsletter preview' }}"
+---
+
+<extends src="templates/dense-discovery-enhanced/layouts/main.html">
+  <block name="template">
+    <component src="templates/dense-discovery-enhanced/components/Header.html"></component>
+    <component src="templates/dense-discovery-enhanced/components/Intro.html"></component>
+    <component src="templates/dense-discovery-enhanced/components/Sponsor.html"></component>
+    <component src="templates/dense-discovery-enhanced/components/Digital.html"></component>
+    <component src="templates/dense-discovery-enhanced/components/IndieMag.html"></component>
+    <component src="templates/dense-discovery-enhanced/components/Books&Accessories.html"></component>
+    <component src="templates/dense-discovery-enhanced/components/Footer.html"></component>
+  </block>
+</extends>

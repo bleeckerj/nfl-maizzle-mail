@@ -1,0 +1,272 @@
+{
+  "visualDesign": {
+    "colorPalette": {
+      "primary": "#000000",
+      "secondary": "#707070",
+      "accent": "#addcfa",
+      "background": "#FFFFFF",
+      "text": "#000000",
+      "allColors": [
+        "#aaaaaa",
+        "#ebebeb",
+        "#FFFFFF",
+        "#addcfa",
+        "#000000",
+        "#707070",
+        "#f8eccf",
+        "#6d6b57",
+        "#efe2f3",
+        "#837089",
+        "#d1eaf4",
+        "#f2f2f2",
+        "#afafaf",
+        "#5f5f5f",
+        "#f8f8f8",
+        "#def1ef"
+      ]
+    },
+    "typography": {
+      "headingFont": "Arial, sans-serif",
+      "bodyFont": "-apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',sans-serif",
+      "headingSizes": [
+        "21px",
+        "19px",
+        "16px"
+      ],
+      "bodySize": "16px",
+      "lineHeight": "1.4"
+    },
+    "images": [
+      {
+        "src": "https://www.densediscovery.com/archive/79/head.jpg",
+        "alt": "❏",
+        "type": "hero",
+        "dimensions": "386 x auto"
+      },
+      {
+        "src": "https://www.densediscovery.com/archive/logo-top.png",
+        "alt": "Dense Discovery",
+        "type": "logo",
+        "dimensions": "163 x auto"
+      },
+      {
+        "src": "https://www.densediscovery.com/archive/79/sponsor.jpg",
+        "alt": "❏",
+        "type": "thumbnail",
+        "dimensions": "194 x auto"
+      },
+      {
+        "src": "https://www.densediscovery.com/archive/79/mag.jpg",
+        "alt": "❏",
+        "type": "thumbnail",
+        "dimensions": "290 x auto"
+      },
+      {
+        "src": "https://www.densediscovery.com/archive/79/book.jpg",
+        "alt": "❏",
+        "type": "thumbnail",
+        "dimensions": "290 x auto"
+      },
+      {
+        "src": "https://www.densediscovery.com/archive/79/print.jpg",
+        "alt": "❏",
+        "type": "thumbnail",
+        "dimensions": "290 x auto"
+      },
+      {
+        "src": "https://www.densediscovery.com/archive/79/gif.gif",
+        "alt": "❏",
+        "type": "thumbnail",
+        "dimensions": "386 x auto"
+      }
+    ],
+    "layout": {
+      "maxWidth": "640px",
+      "structure": "two-column",
+      "sections": [
+        "header",
+        "hero",
+        "content",
+        "footer"
+      ]
+    }
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "Header",
+        "purpose": "Displays the header with a quote and featured artist",
+        "contentType": "static",
+        "variables": [
+          "quote",
+          "artistName",
+          "artistLink",
+          "logoImage"
+        ],
+        "cssClasses": [
+          "header",
+          "force-row"
+        ],
+        "pattern": "Two-column layout with text and image"
+      },
+      {
+        "name": "Intro",
+        "purpose": "Welcomes readers and provides introductory content",
+        "contentType": "static",
+        "variables": [
+          "issueNumber",
+          "introText",
+          "articleLink"
+        ],
+        "cssClasses": [
+          "padt20",
+          "padl20",
+          "padr20"
+        ],
+        "pattern": "Single-column text with links"
+      },
+      {
+        "name": "Sponsor",
+        "purpose": "Highlights a sponsor with image and description",
+        "contentType": "dynamic",
+        "variables": [
+          "sponsorName",
+          "sponsorLink",
+          "sponsorImage",
+          "sponsorDescription"
+        ],
+        "cssClasses": [
+          "box-yellow",
+          "headline"
+        ],
+        "pattern": "Two-column layout with image and text"
+      },
+      {
+        "name": "Digital",
+        "purpose": "Lists apps and sites with descriptions",
+        "contentType": "repeating",
+        "variables": [
+          "appName",
+          "appLink",
+          "appDescription"
+        ],
+        "cssClasses": [
+          "headline"
+        ],
+        "pattern": "Repeating two-column layout with text"
+      },
+      {
+        "name": "Indie Mag",
+        "purpose": "Features an indie magazine with image and details",
+        "contentType": "dynamic",
+        "variables": [
+          "magName",
+          "magLink",
+          "magImage",
+          "magDescription"
+        ],
+        "cssClasses": [
+          "box-red",
+          "headline"
+        ],
+        "pattern": "Two-column layout with image and text"
+      },
+      {
+        "name": "Books & Accessories",
+        "purpose": "Showcases books and accessories with images and descriptions",
+        "contentType": "repeating",
+        "variables": [
+          "bookName",
+          "bookLink",
+          "bookImage",
+          "bookDescription"
+        ],
+        "cssClasses": [
+          "headline"
+        ],
+        "pattern": "Repeating two-column layout with image and text"
+      }
+    ],
+    "repeatingSections": [
+      {
+        "name": "Digital Items",
+        "pattern": "Each item includes a title, link, and description",
+        "exampleCount": 4,
+        "variables": [
+          "appName",
+          "appLink",
+          "appDescription"
+        ]
+      },
+      {
+        "name": "Books & Accessories Items",
+        "pattern": "Each item includes an image, title, link, and description",
+        "exampleCount": 2,
+        "variables": [
+          "bookName",
+          "bookLink",
+          "bookImage",
+          "bookDescription"
+        ]
+      }
+    ],
+    "globalElements": {
+      "header": "Contains a quote and featured artist with logo",
+      "footer": "Not explicitly detailed in provided HTML",
+      "wrapper": "Table-based layout with 640px max-width containers"
+    }
+  },
+  "content": {
+    "contentAnalysis": {
+      "emailType": "newsletter",
+      "primaryTopic": "Information Overload and Mental Health",
+      "contentSections": [
+        {
+          "section": "Header",
+          "content": "The Universe is under no obligation to make sense to you. – Neil deGrasse Tyson",
+          "links": [
+            "https://click.densediscovery.com/click/5f1cb226-d9db-46b8-bdd3-b0402fd94e78/c2e02c17-868b-40b6-b415-f4eac69df378/event",
+            "https://click.densediscovery.com/click/5f1cb226-d9db-46b8-bdd3-b0402fd94e78/e03dd6c2-cd9f-4de2-9744-dd9e001889ba/event"
+          ],
+          "images": [
+            "https://www.densediscovery.com/archive/79/head.jpg",
+            "https://www.densediscovery.com/archive/logo-top.png"
+          ]
+        },
+        {
+          "section": "Introduction",
+          "content": "Welcome to Issue 79! Our ability to filter, evaluate, and prioritise information is being put to the test and in many cases is reaching a natural limit. It’s important to acknowledge that there has probably never been more competition for our attention than right now. It’s totally OK and human to feel overwhelmed and exhausted. Spending excessive amounts of time online and following the news can be detrimental to our mental health at the best of times. Throw in a pandemic and our anxiety levels go through the roof. Please keep in mind that you’re not an irresponsible human being just because you missed the latest breaking news announcement about bars closing on the other side of the globe. You don’t need to know the latest number of infections or available ventilators in order to be a responsible, sensible citizen. In fact, you can be most helpful and win back some sense of agency by focusing more on your immediate environment: yourself, your family, your friends, and your neighbours. Leave the rest to the experts. I intentionally kept the bottom of this newsletter corona-free, but – with the risk of being called a hypocrite – I do want to share just this one article that offers some food for thought while we prepare for lock-down mode: “We should use the quiet of these suddenly uncrowded days to think a little about how much we’ve allowed social isolation to grow in our society, even without illness as an excuse. (...) If we pay attention, we may value more fully the moment we’re released from our detention, and we may even make some changes in our lives as a result. It will be a relief, above all, when we’re allowed to get back to caring for one another, which is what socially evolved primates do best.” – Kai",
+          "links": [
+            "https://click.densediscovery.com/click/5f1cb226-d9db-46b8-bdd3-b0402fd94e78/a3c2348a-4589-4659-886e-3dbbeded581b/event",
+            "https://click.densediscovery.com/click/5f1cb226-d9db-46b8-bdd3-b0402fd94e78/caceee26-aab0-4b14-9f37-885858acd8be/event",
+            "https://click.densediscovery.com/click/5f1cb226-d9db-46b8-bdd3-b0402fd94e78/9ed85ff3-16b2-41e0-aae6-53b04f2aea5a/event",
+            "https://click.densediscovery.com/click/5f1cb226-d9db-46b8-bdd3-b0402fd94e78/8b0d979a-71a3-434c-9271-d63d12692baf/event"
+          ],
+          "images": [
+            "https://www.densediscovery.com/archive/logo-bottom.png"
+          ]
+        },
+        {
+          "section": "Sponsor",
+          "content": "Spreadsheet Nerds Unite Tiller Money → Personal finance spreadsheets without data entry Manage your money in a spreadsheet 10× faster with Tiller Money, the only service that automatically updates Google Sheets with your daily spending, transactions, and balances. Start with a template or build your own. Financial simplicity and control, made for designers and developers.",
+          "links": [
+            "https://click.densediscovery.com/click/5f1cb226-d9db-46b8-bdd3-b0402fd94e78/ac2db8df-3f77-444c-b706-a1e56d618658/event"
+          ],
+          "images": [
+            "https://www.densediscovery.com/archive/79/sponsor.jpg"
+          ]
+        }
+      ]
+    },
+    "sampleData": {
+      "title": "Dense Discovery – Issue 79",
+      "subtitle": "Welcome to Issue 79!"
+    }
+  },
+  "metadata": {
+    "originalFile": "emails/dense-discovery.html",
+    "templateName": "dense-discovery-enhanced",
+    "analysisDate": "2025-10-08T05:38:51.059Z",
+    "htmlLength": 81519
+  }
+}
