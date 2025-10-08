@@ -43,6 +43,16 @@
       "appName": "Linear Insights",
       "appLink": "https://example.com/linear-insights", 
       "appDescription": "Advanced analytics for your development workflow with team performance metrics."
+    },
+    {
+      "appName": "GitHub Copilot X",
+      "appLink": "https://example.com/copilot-x",
+      "appDescription": "Next-generation AI pair programmer that understands context and writes better code."
+    },
+    {
+      "appName": "Framer Motion Pro",
+      "appLink": "https://example.com/framer-pro",
+      "appDescription": "Advanced animation library for React with smooth transitions and gesture controls."
     }
   ],
   "magName": "Creative Quarterly",

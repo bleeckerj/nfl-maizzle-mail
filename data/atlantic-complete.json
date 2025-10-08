@@ -1,0 +1,60 @@
+{
+  "title": "Atlantic Daily",
+  "subtitle": "A Poem for Memorial Day",
+  "emailType": "newsletter",
+  "template": "atlantic-complete",
+  "preheaderText": "It's nearly Memorial Day. To commemorate, we're revisiting a poem by Henry Wadsworth Longfellow.",
+  "headerLogo": "https://picsum.photos/238/60?random=1",
+  "date": "May 24, 2020",
+  "author": {
+    "name": "Annika Neklason",
+    "bio": "Staff writer at The Atlantic",
+    "image": "https://picsum.photos/50/50?random=2",
+    "link": "https://example.com/author/annika-neklason"
+  },
+  "mainContent": {
+    "title": "A Poem for Memorial Day",
+    "intro": "It's nearly Memorial Day. To commemorate, we're revisiting a poem by Henry Wadsworth Longfellow. Then: This holiday tends to be a day spent in contemplation, in the great outdoors. If you're unable to take on such adventures today, bask in the work of John Muir and read about the journeys of yesteryear, with four selections from our archives.",
+    "poem": {
+      "title": "Decoration Day",
+      "author": "Henry Wadsworth Longfellow",
+      "excerpt": "Sleep, comrades, sleep and rest\nOn this Field of Grounded Arms,\nWhere foes no more molest,\nNor sentry's shot alarms!",
+      "link": "https://example.com/poem/decoration-day",
+      "image": "https://picsum.photos/588/330?random=3"
+    }
+  },
+  "adventureReads": [],
+  "textArticles": [
+    {
+      "title": "The Psychology of Decision Making",
+      "description": "New research reveals how our brains process complex choices and why we often make decisions that seem irrational in hindsight.",
+      "link": "https://example.com/article/psychology-decision-making"
+    },
+    {
+      "title": "Climate Change and Coastal Communities",
+      "description": "Rising sea levels are forcing entire communities to rethink their relationship with the ocean and consider unprecedented adaptations.",
+      "link": "https://example.com/article/climate-coastal-communities"
+    },
+    {
+      "title": "The Future of Remote Work",
+      "description": "Five years after the pandemic changed everything, companies and employees are still figuring out what the office means in the modern era.",
+      "link": "https://example.com/article/future-remote-work"
+    },
+    {
+      "title": "Artificial Intelligence in Healthcare",
+      "description": "AI is revolutionizing medical diagnosis and treatment, but questions remain about privacy, bias, and the role of human doctors.",
+      "link": "https://example.com/article/ai-healthcare"
+    },
+    {
+      "title": "The Revival of Public Transportation",
+      "description": "Cities across America are investing in trains, buses, and bike lanes as residents seek alternatives to car-dependent lifestyles.",
+      "link": "https://example.com/article/public-transit-revival"
+    }
+  ],
+  "footer": {
+    "atlanticLogo": "https://picsum.photos/146/30?random=7",
+    "unsubscribeLink": "https://example.com/unsubscribe",
+    "managePreferencesLink": "https://example.com/preferences",
+    "address": "The Atlantic Monthly Group\n600 New Hampshire Avenue NW\nWashington, DC 20037"
+  }
+}

@@ -1,0 +1,30 @@
+<!-- Text Articles Component -->
+<table class="wrapper" role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff;">
+  <tr>
+    <td align="left" valign="top" style="padding: 0 24px 24px 24px;">
+      <div class="c-text-articles">
+        
+        <each loop="article in textArticles">
+          <div style="margin: 0 0 24px 0; padding: 0 0 24px 0; border-bottom: 1px solid #eff2f7;">
+            <h3 style="margin: 0 0 12px 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 18px; font-weight: 600; line-height: 1.2; color: #21272c;">
+              <a href="{{ article.link }}" style="color: #21272c; text-decoration: none;">
+                {{ article.title }}
+              </a>
+            </h3>
+            
+            <p style="margin: 0 0 12px 0; padding: 0; font-family: 'Lyon Text', Georgia, serif; font-size: 17px; line-height: 1.4; color: #21272c;">
+              {{ article.description }}
+            </p>
+            
+            <p style="margin: 0; padding: 0;">
+              <a href="{{ article.link }}" style="font-family: 'Graphik', Arial, sans-serif; font-size: 14px; font-weight: 600; color: #ef3b24; text-decoration: none; text-transform: uppercase; letter-spacing: 0.5px;">
+                Read More →
+              </a>
+            </p>
+          </div>
+        </each>
+        
+      </div>
+    </td>
+  </tr>
+</table>

@@ -20,7 +20,9 @@ const file = args[1];
 const templates = {
   'wirecutter': 'wirecutter',
   'brain-dead': 'brain-dead-template', 
-  'sentiers': 'sentiers-llm'
+  'sentiers': 'sentiers-llm',
+  'sentiers-reliable': 'sentiers-reliable',
+  'atlantic': 'atlantic-complete'
 };
 
 function listContentFiles() {
@@ -62,6 +64,8 @@ switch (command) {
   case 'wirecutter':
   case 'brain-dead':
   case 'sentiers':
+  case 'sentiers-reliable':
+  case 'atlantic':
     const template = templates[command];
     const inputFile = file || selectFile();
     const outputName = path.basename(inputFile, '.md');
@@ -90,14 +94,18 @@ switch (command) {
     console.log('🚀 Quick Build Tool');
     console.log('');
     console.log('Usage:');
-    console.log('  npm run quick wirecutter [file]     # Build with wirecutter template');
-    console.log('  npm run quick brain-dead [file]     # Build with brain-dead template');  
-    console.log('  npm run quick sentiers [file]       # Build with sentiers template');
-    console.log('  npm run quick list                  # List available content files');
+    console.log('  npm run quick wirecutter [file]        # Build with wirecutter template');
+    console.log('  npm run quick brain-dead [file]        # Build with brain-dead template');  
+    console.log('  npm run quick sentiers [file]          # Build with sentiers template');
+    console.log('  npm run quick sentiers-reliable [file] # Build with enhanced sentiers template');
+    console.log('  npm run quick atlantic [file]          # Build with atlantic-complete template');
+    console.log('  npm run quick list                     # List available content files');
     console.log('');
     console.log('Examples:');
     console.log('  npm run quick wirecutter                           # Auto-select file');
     console.log('  npm run quick wirecutter content/my-article.md     # Specific file');
+    console.log('  npm run quick atlantic content/atlantic-future-work.md # Build Atlantic newsletter');
+    console.log('  npm run quick sentiers-reliable                    # Test enhanced template');
     console.log('');
     process.exit(1);
 }

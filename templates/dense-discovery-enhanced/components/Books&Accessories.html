@@ -6,49 +6,29 @@
         📚 Books & Accessories
       </h2>
       
-      <!-- Book Item 1 -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 25px;">
-        <tr>
-          <td style="vertical-align: top; padding-right: 20px; width: 100px;">
-            <img src="{{ books[0].bookImage || 'https://via.placeholder.com/80x120/d1eaf4/6b9db5?text=BOOK' }}" 
-                 alt="{{ books[0].bookName || 'Featured Book' }}" 
-                 width="80" 
-                 style="width: 80px; height: auto; display: block; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-          </td>
-          <td style="vertical-align: top;">
-            <h3 style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; color: #000000; margin: 0 0 8px 0;">
-              <a href="{{ books[0].bookLink || 'https://example.com/book1' }}" style="color: #000000; text-decoration: underline;">
-                {{ books[0].bookName || 'The Design of Everyday Things' }}
-              </a>
-            </h3>
-            <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.4; color: #333333; margin: 0;">
-              {{ books[0].bookDescription || 'A timeless classic about user-centered design and how good design makes our lives better.' }}
-            </p>
-          </td>
-        </tr>
-      </table>
-      
-      <!-- Book Item 2 -->
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 25px;">
-        <tr>
-          <td style="vertical-align: top; padding-right: 20px; width: 100px;">
-            <img src="{{ books[1].bookImage || 'https://via.placeholder.com/80x120/d1eaf4/6b9db5?text=ACCESSORY' }}" 
-                 alt="{{ books[1].bookName || 'Design Accessory' }}" 
-                 width="80" 
-                 style="width: 80px; height: auto; display: block; border-radius: 3px;">
-          </td>
-          <td style="vertical-align: top;">
-            <h3 style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; color: #000000; margin: 0 0 8px 0;">
-              <a href="{{ books[1].bookLink || 'https://example.com/accessory1' }}" style="color: #000000; text-decoration: underline;">
-                {{ books[1].bookName || 'Premium Notebook Set' }}
-              </a>
-            </h3>
-            <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.4; color: #333333; margin: 0;">
-              {{ books[1].bookDescription || 'Beautifully crafted notebooks for sketching, writing, and capturing ideas on the go.' }}
-            </p>
-          </td>
-        </tr>
-      </table>
+      <!-- Books and Accessories Items -->
+      <each loop="book in books">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="margin-bottom: 25px;">
+          <tr>
+            <td style="vertical-align: top; padding-right: 20px; width: 100px;">
+              <img src="{{ book.bookImage || 'https://picsum.photos/80/120?random=5' }}" 
+                   alt="{{ book.bookName || 'Featured Book' }}" 
+                   width="80" 
+                   style="width: 80px; height: auto; display: block; border-radius: 3px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+            </td>
+            <td style="vertical-align: top;">
+              <h3 style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; color: #000000; margin: 0 0 8px 0;">
+                <a href="{{ book.bookLink || 'https://example.com/book' }}" style="color: #000000; text-decoration: underline;">
+                  {{ book.bookName || 'Featured Book Title' }}
+                </a>
+              </h3>
+              <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.4; color: #333333; margin: 0;">
+                {{ book.bookDescription || 'An engaging description of this recommended book or accessory.' }}
+              </p>
+            </td>
+          </tr>
+        </table>
+      </each>
       
       <!-- More Books Link -->
       <div style="text-align: center; margin-top: 20px;">

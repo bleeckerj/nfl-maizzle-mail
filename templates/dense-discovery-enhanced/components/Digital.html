@@ -8,41 +8,18 @@
       
       <!-- Apps and Sites List -->
       <div style="margin-bottom: 20px;">
-        <!-- App Item 1 -->
-        <div style="margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid #ebebeb;">
-          <h3 style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; color: #000000; margin: 0 0 8px 0;">
-            <a href="{{ digitalItems[0].appLink || 'https://example.com/app1' }}" style="color: #000000; text-decoration: underline;">
-              {{ digitalItems[0].appName || 'Digital Tool 1' }}
-            </a>
-          </h3>
-          <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">
-            {{ digitalItems[0].appDescription || 'A powerful digital tool for productivity and creativity.' }}
-          </p>
-        </div>
-        
-        <!-- App Item 2 -->
-        <div style="margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid #ebebeb;">
-          <h3 style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; color: #000000; margin: 0 0 8px 0;">
-            <a href="{{ digitalItems[1].appLink || 'https://example.com/app2' }}" style="color: #000000; text-decoration: underline;">
-              {{ digitalItems[1].appName || 'Digital Tool 2' }}
-            </a>
-          </h3>
-          <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">
-            {{ digitalItems[1].appDescription || 'An innovative app that transforms how you work.' }}
-          </p>
-        </div>
-        
-        <!-- App Item 3 -->
-        <div style="margin-bottom: 15px;">
-          <h3 style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; color: #000000; margin: 0 0 8px 0;">
-            <a href="{{ digitalItems[2].appLink || 'https://example.com/app3' }}" style="color: #000000; text-decoration: underline;">
-              {{ digitalItems[2].appName || 'Digital Tool 3' }}
-            </a>
-          </h3>
-          <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">
-            {{ digitalItems[2].appDescription || 'Essential software for modern workflows.' }}
-          </p>
-        </div>
+        <each loop="item in digitalItems">
+          <div style="margin-bottom: 25px; padding-bottom: 20px; border-bottom: 1px solid #ebebeb;">
+            <h3 style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; color: #000000; margin: 0 0 8px 0;">
+              <a href="{{ item.appLink || 'https://example.com/app' }}" style="color: #000000; text-decoration: underline;">
+                {{ item.appName || 'Digital Tool' }}
+              </a>
+            </h3>
+            <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.5; color: #333333; margin: 0;">
+              {{ item.appDescription || 'A powerful digital tool for productivity and creativity.' }}
+            </p>
+          </div>
+        </each>
       </div>
     </td>
   </tr>

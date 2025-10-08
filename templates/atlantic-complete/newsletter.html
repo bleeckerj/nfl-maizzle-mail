@@ -1,0 +1,19 @@
+---
+title: "{{ title }}"
+preheader: "{{ subtitle || 'Newsletter preview' }}"
+---
+
+<extends src="templates/atlantic-complete/layouts/main.html">
+  <block name="template">
+    <component src="templates/atlantic-complete/components/Preheader.html"></component>
+    <component src="templates/atlantic-complete/components/Header.html"></component>
+    <component src="templates/atlantic-complete/components/DateSection.html"></component>
+    <component src="templates/atlantic-complete/components/AuthorSection.html"></component>
+    <component src="templates/atlantic-complete/components/ContentSection.html"></component>
+    <if condition="mainContent.poem">
+      <component src="templates/atlantic-complete/components/PoemSection.html"></component>
+    </if>
+    <component src="templates/atlantic-complete/components/TextArticles.html"></component>
+    <component src="templates/atlantic-complete/components/Footer.html"></component>
+  </block>
+</extends>

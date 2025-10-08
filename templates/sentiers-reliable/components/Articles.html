@@ -3,31 +3,29 @@
   <tr>
     <td class="content-block" style="padding: 20px;">
       <div class="body-content">
-        <h2 style="font-family: &quot;Lora&quot;,serif;margin: 0;padding: 48px 0 0;font-size: 36px;line-height: 1.2em;font-weight: 400;"><a href="{{ articles.url }}" style="color: #DC4B4B;text-decoration: none;">{{ articles.content }}</a></h2>
-        <p style="font-size: 18px;line-height: 1.6em;">{{ articles.content }}<i>{{ articles.content }}</i>{{ articles.content }}</p>
-        <blockquote style="margin: 40px 0;padding: 0 0 0 20px;border-left: 1px solid #B7E2D8;">
-          <p style="font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;">{{ articles.content }}</p>
-          <p style="font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;">{{ articles.content }}</p>
-          <p style="font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;"><span class="highlight" style="background: #B7E2D8;">{{ articles.content }}</span>{{ articles.content }}</p>
-          <p style="font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;"><span class="highlight" style="background: #B7E2D8;">{{ articles.content }}</span>{{ articles.content }}</p>
-          <p style="font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;">{{ articles.content }}</p>
-        </blockquote>
-        <h2 style="font-family: &quot;Lora&quot;,serif;margin: 0;padding: 48px 0 0;font-size: 36px;line-height: 1.2em;font-weight: 400;"><a href="{{ articles.url }}" style="color: #DC4B4B;text-decoration: none;">{{ articles.content }}</a></h2>
-        <p style="font-size: 18px;line-height: 1.6em;">{{ articles.content }}<i>{{ articles.content }}</i>{{ articles.content }}</p>
-        <p style="font-size: 18px;line-height: 1.6em;">{{ articles.content }}</p>
-        <p style="font-size: 18px;line-height: 1.6em;">{{ articles.content }}</p>
-        <blockquote style="margin: 40px 0;padding: 0 0 0 20px;border-left: 1px solid #B7E2D8;">
-          <p style="font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;">{{ articles.content }}</p>
-          <p style="font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;">{{ articles.content }}</p>
-          <p style="font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;"><span class="highlight" style="background: #B7E2D8;">{{ articles.content }}</span>{{ articles.content }}</p>
-          <p style="font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;">{{ articles.content }}</p>
-          <p style="font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;">{{ articles.content }}</p>
-        </blockquote>
-        <h2 style="font-family: &quot;Lora&quot;,serif;margin: 0;padding: 48px 0 0;font-size: 36px;line-height: 1.2em;font-weight: 400;"><a href="{{ articles.url }}" style="color: #DC4B4B;text-decoration: none;">{{ articles.content }}</a></h2>
-        <p style="font-size: 18px;line-height: 1.6em;">{{ articles.content }}<a href="{{ articles.url }}" style="color: #DC4B4B;text-decoration: none;">{{ articles.content }}</a>{{ articles.content }}<i>{{ articles.content }}</i>{{ articles.content }}<i>{{ articles.content }}</i>{{ articles.content }}<a href="{{ articles.url }}" style="color: #DC4B4B;text-decoration: none;">{{ articles.content }}</a>{{ articles.content }}<a href="{{ articles.url }}" style="color: #DC4B4B;text-decoration: none;">{{ articles.content }}</a>{{ articles.content }}</p>
-        <blockquote style="margin: 40px 0;padding: 0 0 0 20px;border-left: 1px solid #B7E2D8;">
-          <p style="font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;">{{ articles.content }}</p>
-          <p style="font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;"><span class="highlight" style="background: #B7E2D8;">{{ articles.content }}</span>{{ articles.content }}</p>
+        <each loop="article in articlesList">
+          <h2 style="font-family: &quot;Lora&quot;,serif;margin: 0;padding: 48px 0 0;font-size: 36px;line-height: 1.2em;font-weight: 400;">
+            <a href="{{ article.url }}" style="color: #DC4B4B;text-decoration: none;">{{ article.title }}</a>
+          </h2>
+          <p style="font-size: 18px;line-height: 1.6em;">{{ article.intro }}</p>
+          <if condition="article.body">
+            <p style="font-size: 18px;line-height: 1.6em;">{{ article.body }}</p>
+          </if>
+          <if condition="article.quotes">
+            <blockquote style="margin: 40px 0;padding: 0 0 0 20px;border-left: 1px solid #B7E2D8;">
+              <each loop="quote in article.quotes">
+                <p style="font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;">
+                  <if condition="loop.index === 1">
+                    <span class="highlight" style="background: #B7E2D8;">{{ quote }}</span>
+                  </if>
+                  <else>
+                    {{ quote }}
+                  </else>
+                </p>
+              </each>
+            </blockquote>
+          </if>
+        </each>
           <p style="font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;">{{ articles.content }}</p>
         </blockquote>
         <h2 style="font-family: &quot;Lora&quot;,serif;margin: 0;padding: 48px 0 0;font-size: 36px;line-height: 1.2em;font-weight: 400;"><a href="{{ articles.url }}" style="color: #DC4B4B;text-decoration: none;">{{ articles.content }}</a></h2>

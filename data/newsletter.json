@@ -1,87 +1,52 @@
 {
-  "title": "Dense Discovery – Issue 79",
-  "subtitle": "Welcome to Issue 79!",
+  "template": "atlantic-complete",
+  "title": "Atlantic Daily",
+  "subtitle": "The Future of Work After AI",
   "emailType": "newsletter",
-  "template": "dense-discovery-enhanced",
-  "quote": "The Universe is under no obligation to make sense to you.",
-  "author": "Neil deGrasse Tyson",
-  "artistName": "Rocio Egio Studio",
-  "artistLink": "https://example.com/artist",
-  "logoImage": "https://picsum.photos/100/50?random=1",
-  "issueNumber": "79",
-  "introText": "Our ability to filter, evaluate, and prioritise information is being put to the test with an avalanche of content across multiple platforms.",
-  "articleLink": "https://example.com/article",
-  "authorLink": "https://example.com/author",
-  "sponsorTitle": "Spreadsheet Nerds Unite",
-  "sponsorLink": "https://example.com/sponsor",
-  "sponsorImage": "https://picsum.photos/200/100?random=2",
-  "sponsorDescription": "Manage your money in a spreadsheet 10× faster with innovative tools.",
-  "apps": [
+  "preheaderText": "As artificial intelligence reshapes entire industries, what does the future hold for human workers? A thoughtful exploration of adaptation, opportunity, and uncertainty.",
+  "headerLogo": "https://picsum.photos/238/60?random=1",
+  "date": "October 7, 2025",
+  "author": {
+    "name": "Sarah Mitchell",
+    "bio": "Technology correspondent at The Atlantic",
+    "image": "https://picsum.photos/50/50?random=2",
+    "link": "https://example.com/author/sarah-mitchell"
+  },
+  "mainContent": {
+    "title": "The Future of Work After AI",
+    "intro": "Artificial intelligence is no longer a distant possibility—it's reshaping entire industries today. From customer service to creative work, AI systems are automating tasks that once required human judgment, creativity, and empathy. But this transformation raises profound questions: What happens to the millions of workers whose jobs are changing? How do we prepare for a future where human and artificial intelligence work together? And what new opportunities might emerge from this technological revolution?"
+  },
+  "adventureReads": [
     {
-      "appTitle": "Digital Tool #1",
-      "appDescription": "An amazing digital tool for productivity",
-      "appLink": "https://example.com/app1"
+      "title": "The Last Human Translators",
+      "description": "How AI translation tools are changing the profession that bridges cultures and languages",
+      "image": "https://picsum.photos/588/330?random=4",
+      "link": "https://example.com/article/human-translators"
     },
     {
-      "appTitle": "Digital Tool #2", 
-      "appDescription": "Another great digital resource",
-      "appLink": "https://example.com/app2"
+      "title": "Teaching Machines to Care",
+      "description": "The surprising challenges of programming empathy into AI healthcare systems",
+      "image": "https://picsum.photos/588/330?random=5",
+      "link": "https://example.com/article/ai-healthcare-empathy"
+    },
+    {
+      "title": "Creative Collaboration with AI",
+      "description": "Artists and writers discover new possibilities when working alongside artificial intelligence",
+      "image": "https://picsum.photos/588/330?random=6",
+      "link": "https://example.com/article/creative-ai-collaboration"
     }
   ],
-  "digitalItems": [
+  "textArticles": [
     {
-      "appName": "Figma to React",
-      "appLink": "https://example.com/figma-react",
-      "appDescription": "Automatically convert Figma designs to production-ready React components with perfect pixel accuracy."
-    },
-    {
-      "appName": "Notion AI Assistant",
-      "appLink": "https://example.com/notion-ai",
-      "appDescription": "Smart AI that helps organize your Notion workspace and automate repetitive tasks."
-    },
-    {
-      "appName": "Linear Insights",
-      "appLink": "https://example.com/linear-insights", 
-      "appDescription": "Advanced analytics for your development workflow with team performance metrics."
+      "title": "This article is something else!",
+      "description": "What is this all about? We want to find the way to include AI in our workflow.",
+      "link": "https://nearfuturelaboratory.com"
     }
   ],
-  "magName": "Creative Quarterly",
-  "magLink": "https://example.com/creative-quarterly",
-  "magImage": "https://picsum.photos/140/180?random=6",
-  "magDescription": "An independent publication showcasing the best in contemporary design, art, and creative culture.",
-  "books": [
-    {
-      "bookName": "The Design of Everyday Things",
-      "bookLink": "https://example.com/design-book",
-      "bookImage": "https://picsum.photos/80/120?random=7",
-      "bookDescription": "A timeless classic about user-centered design and how good design makes our lives better."
-    },
-    {
-      "bookName": "Premium Notebook Set",
-      "bookLink": "https://example.com/notebook-set",
-      "bookImage": "https://picsum.photos/80/120?random=8",
-      "bookDescription": "Beautifully crafted notebooks for sketching, writing, and capturing ideas on the go."
-    }
-  ],
-  "moreItemsLink": "https://example.com/books",
-    "headerImage": "https://picsum.photos/600/200?random=3",
-  "topLogo": "https://picsum.photos/120/60?random=4",
-  "bottomLogo": "https://picsum.photos/120/60?random=5",
-  "logoLink": "https://example.com/",
-  "unsubscribeLink": "https://example.com/unsubscribe",
-  "managePrefsLink": "https://example.com/preferences",
-  "viewOnlineLink": "https://example.com/view-online",
-  "climateLink": "https://example.com/climate-emergency",
-  "actionLink": "https://example.com/climate-action",
-  "landAcknowledgment": "Our office is located in Fitzroy, Melbourne, the traditional lands of the Wurundjeri people. We acknowledge that sovereignty was never ceded and pay our respects to elders past, present, and emerging.",
-  "twitterLink": "https://twitter.com/densediscovery",
-  "instagramLink": "https://instagram.com/densediscovery",
-  "websiteLink": "https://densediscovery.com",
-  "websiteText": "densediscovery.com",
-  "publisherLink": "https://example.com/kai",
-  "publisherName": "Kai",
-  "companyName": "Offscreen Media",
-  "address1": "149a Brunswick St",
-  "address2": "Fitzroy VIC 3065",
-  "country": "Australia"
+  "footer": {
+    "atlanticLogo": "https://picsum.photos/146/30?random=7",
+    "unsubscribeLink": "https://example.com/unsubscribe",
+    "managePreferencesLink": "https://example.com/preferences",
+    "address": "The Atlantic Monthly Group\n600 New Hampshire Avenue NW\nWashington, DC 20037"
+  }
 }

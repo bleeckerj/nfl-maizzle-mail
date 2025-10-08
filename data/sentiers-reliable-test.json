@@ -1,0 +1,83 @@
+{
+  "$schema": "./schema.json",
+  "template": "sentiers-reliable",
+  "title": "Sample Newsletter - sentiers-reliable",
+  "header": {
+    "content": "No.123",
+    "url": "https://example.com/newsletter-123",
+    "image": {
+      "src": "https://picsum.photos/300/120?random=1",
+      "alt": "Sentiers Logo"
+    }
+  },
+  "headerContent": {
+    "content": "Tokyo as Slowdown City",
+    "url": "https://example.com/tokyo-slowdown",
+    "image": {
+      "src": "https://picsum.photos/600/400?random=3",
+      "alt": "Tokyo as Slowdown City"
+    }
+  },
+  "articles": {
+    "content": "The Hidden Infrastructure That Powers Everything",
+    "url": "https://example.com/hidden-infrastructure",
+    "image": {
+      "src": "https://picsum.photos/600/300?random=2",
+      "alt": "Industrial infrastructure at dawn"
+    }
+  },
+  "blockquotes": {
+    "content": "Sample blockquotes content",
+    "url": "https://example.com/blockquotes",
+    "image": {
+      "src": "https://via.placeholder.com/300x200",
+      "alt": "Sample blockquotes image"
+    }
+  },
+  "miscellany": {
+    "content": "Sample miscellany content",
+    "url": "https://example.com/miscellany",
+    "image": {
+      "src": "https://via.placeholder.com/300x200",
+      "alt": "Sample miscellany image"
+    }
+  },
+  "footer": {
+    "content": "Sample footer content",
+    "url": "https://example.com/footer",
+    "image": {
+      "src": "https://via.placeholder.com/300x200",
+      "alt": "Sample footer image"
+    }
+  },
+  "quotes": {
+    "content": "Sample quotes content",
+    "url": "https://example.com/quotes",
+    "image": {
+      "src": "https://via.placeholder.com/300x200",
+      "alt": "Sample quotes image"
+    }
+  },
+  "miscellanyItems": [
+    {
+      "title": "It's time to build (is it?)",
+      "description": "A critical look at the modern obsession with building and innovation.",
+      "url": "https://example.com/time-to-build"
+    },
+    {
+      "title": "Tokyo as slowdown city",
+      "description": "How Japan's capital embraces a different pace of urban life.",
+      "url": "https://example.com/tokyo-slowdown"
+    },
+    {
+      "title": "Mass consumption is what ails us",
+      "description": "Understanding the environmental and social costs of overconsumption.",
+      "url": "https://example.com/mass-consumption"
+    },
+    {
+      "title": "The Revolution Is Only Getting Started",
+      "description": "How technology continues to reshape society in unexpected ways.",
+      "url": "https://example.com/revolution-started"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Atlantic Newsletter Data Schema",
+  "description": "Schema for Atlantic newsletter content data",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Newsletter title"
+    },
+    "subtitle": {
+      "type": "string",
+      "description": "Newsletter subtitle or preview"
+    },
+    "emailType": {
+      "type": "string",
+      "description": "Type of email (newsletter, etc.)"
+    },
+    "preheaderText": {
+      "type": "string",
+      "description": "Email preheader text"
+    },
+    "headerLogo": {
+      "type": "string",
+      "description": "URL for header logo image"
+    },
+    "date": {
+      "type": "string",
+      "description": "Newsletter date"
+    },
+    "author": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "bio": { "type": "string" },
+        "image": { "type": "string" },
+        "link": { "type": "string" }
+      },
+      "required": ["name"]
+    },
+    "mainContent": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "intro": { "type": "string" },
+        "poem": {
+          "type": "object",
+          "description": "Optional poem section",
+          "properties": {
+            "title": { "type": "string" },
+            "author": { "type": "string" },
+            "excerpt": { "type": "string" },
+            "link": { "type": "string" },
+            "image": { "type": "string" }
+          },
+          "required": ["title", "author", "excerpt"]
+        }
+      },
+      "required": ["title", "intro"]
+    },
+    "adventureReads": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "image": { "type": "string" },
+          "link": { "type": "string" }
+        },
+        "required": ["title", "description", "link"]
+      }
+    },
+    "textArticles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "link": { "type": "string" }
+        },
+        "required": ["title", "description", "link"]
+      }
+    },
+    "footer": {
+      "type": "object",
+      "properties": {
+        "atlanticLogo": { "type": "string" },
+        "unsubscribeLink": { "type": "string" },
+        "managePreferencesLink": { "type": "string" },
+        "address": { "type": "string" }
+      },
+      "required": ["unsubscribeLink"]
+    }
+  },
+  "required": [
+    "title",
+    "mainContent",
+    "footer"
+  ]
+}

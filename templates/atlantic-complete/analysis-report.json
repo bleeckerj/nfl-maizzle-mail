@@ -1,0 +1,212 @@
+{
+  "visualDesign": {
+    "colorPalette": {
+      "primary": "#21272c",
+      "secondary": "#39434b",
+      "accent": "#ef3b24",
+      "background": "#f7fafa",
+      "text": "#21272c",
+      "allColors": [
+        "#f3f3f3",
+        "#21272c",
+        "#ffffff",
+        "#5e6a74",
+        "#8592a4",
+        "#37424e",
+        "#39434b",
+        "#ef3b24",
+        "#eff2f7",
+        "#c0ccda",
+        "#000000",
+        "#efefef",
+        "#666",
+        "#444"
+      ]
+    },
+    "typography": {
+      "headingFont": "Graphik",
+      "bodyFont": "Lyon Text",
+      "headingSizes": [
+        "24px",
+        "14px"
+      ],
+      "bodySize": "17px",
+      "lineHeight": "1.4"
+    },
+    "images": [
+      {
+        "src": "https://cdn.theatlantic.com/assets/media/files/daily-header2x.png",
+        "alt": "The Daily",
+        "type": "logo",
+        "dimensions": "238 x auto"
+      },
+      {
+        "src": "https://cdn.theatlantic.com/thumbor/5HFdgZ7fXUx5VCfk-K6-RgqopLs=/200x200/media/None/Headshot2-1/original.jpg",
+        "alt": "Annika Neklason headshot",
+        "type": "thumbnail",
+        "dimensions": "50 x 50"
+      },
+      {
+        "src": "https://cdn.theatlantic.com/thumbor/rKk1IcaEZdl9xuwGpovWGc8ACVA=/700x394/media/newsletters/2020/05/original_17-1/original.jpg",
+        "alt": "",
+        "type": "hero",
+        "dimensions": "588 x auto"
+      },
+      {
+        "src": "https://cdn.theatlantic.com/thumbor/p398wzNB1ojTH2YRO3br3O7eU3I=/700x394/media/newsletters/2020/05/original_16-1/original.jpg",
+        "alt": "",
+        "type": "hero",
+        "dimensions": "588 x auto"
+      },
+      {
+        "src": "https://cdn.theatlantic.com/thumbor/SbJFTUHQpovn7zkW-8qPXYcQ2ks=/700x394/media/newsletters/2020/05/original_18-1/original.jpg",
+        "alt": "",
+        "type": "hero",
+        "dimensions": "588 x auto"
+      },
+      {
+        "src": "https://cdn.theatlantic.com/assets/media/files/atl-wordmark.png",
+        "alt": "",
+        "type": "logo",
+        "dimensions": "146 x auto"
+      }
+    ],
+    "layout": {
+      "maxWidth": "636px",
+      "structure": "single-column",
+      "sections": [
+        "header",
+        "content",
+        "footer"
+      ]
+    }
+  },
+  "structure": {
+    "sections": [
+      {
+        "name": "Preheader",
+        "purpose": "Hidden text for email preview",
+        "contentType": "static",
+        "variables": [],
+        "cssClasses": [
+          "c-hook"
+        ],
+        "pattern": "div with style display: none"
+      },
+      {
+        "name": "Header",
+        "purpose": "Displays the email header with logo",
+        "contentType": "static",
+        "variables": [],
+        "cssClasses": [
+          "c-header",
+          "c-dailyheader__art"
+        ],
+        "pattern": "table with logo image"
+      },
+      {
+        "name": "Date Section",
+        "purpose": "Displays the date",
+        "contentType": "dynamic",
+        "variables": [
+          "date"
+        ],
+        "cssClasses": [
+          "e-h4__container"
+        ],
+        "pattern": "table with h4 element"
+      },
+      {
+        "name": "Author Section",
+        "purpose": "Displays author information",
+        "contentType": "dynamic",
+        "variables": [
+          "authorName",
+          "authorBio",
+          "authorImage"
+        ],
+        "cssClasses": [
+          "c-author",
+          "c-author__img"
+        ],
+        "pattern": "table with author image and name"
+      },
+      {
+        "name": "Content Section",
+        "purpose": "Main content of the email",
+        "contentType": "dynamic",
+        "variables": [
+          "contentTitle",
+          "contentText",
+          "contentImage"
+        ],
+        "cssClasses": [
+          "c-rich-text",
+          "c-imgblock"
+        ],
+        "pattern": "table with h1, p, and img elements"
+      },
+      {
+        "name": "Footer",
+        "purpose": "Displays the email footer",
+        "contentType": "static",
+        "variables": [],
+        "cssClasses": [
+          "c-dailyfooter"
+        ],
+        "pattern": "table with footer links"
+      }
+    ],
+    "repeatingSections": [
+      {
+        "name": "Adventure Reads",
+        "pattern": "Each adventure read with title, image, and description",
+        "exampleCount": 3,
+        "variables": [
+          "readTitle",
+          "readImage",
+          "readDescription"
+        ]
+      }
+    ],
+    "globalElements": {
+      "header": "Contains logo and date",
+      "footer": "Contains footer links and information",
+      "wrapper": "div with class o-full-wrap l-body-container"
+    }
+  },
+  "content": {
+    "contentAnalysis": {
+      "emailType": "newsletter",
+      "primaryTopic": "Memorial Day and related literature",
+      "contentSections": [
+        {
+          "section": "Introduction",
+          "content": "It’s nearly Memorial Day. To commemorate, we’re revisiting a poem by Henry Wadsworth Longfellow. Then: This holiday tends to be a day spent in contemplation, in the great outdoors. If you’re unable to take on such adventures today, bask in the work of John Muir and read about the journeys of yesteryear, with four selections from our archives.",
+          "links": [],
+          "images": []
+        },
+        {
+          "section": "A Poem for Memorial Day",
+          "content": "Sleep, comrades, sleep and rest On this Field of Grounded Arms, Where foes no more molest, Nor sentry’s shot alarms!",
+          "links": [
+            "https://www.theatlantic.com/magazine/archive/1882/06/decoration-day/539601/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0"
+          ],
+          "images": [
+            "https://cdn.theatlantic.com/thumbor/rKk1IcaEZdl9xuwGpovWGc8ACVA=/700x394/media/newsletters/2020/05/original_17-1/original.jpg"
+          ]
+        }
+      ]
+    },
+    "sampleData": {
+      "title": "Atlantic Daily",
+      "subtitle": "A Poem for Memorial Day"
+    }
+  },
+  "metadata": {
+    "originalFile": "emails/the-atlantic.html",
+    "templateName": "atlantic-complete",
+    "analysisDate": "2025-10-08T06:06:22.938Z",
+    "htmlLength": 68115
+  }
+}

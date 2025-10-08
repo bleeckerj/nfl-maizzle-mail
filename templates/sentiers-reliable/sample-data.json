@@ -3,27 +3,58 @@
   "template": "sentiers-reliable",
   "title": "Sample Newsletter - sentiers-reliable",
   "header": {
-    "content": "Sample header content",
-    "url": "https://example.com/header",
+    "content": "No.123",
+    "url": "https://example.com/newsletter-123",
     "image": {
-      "src": "https://via.placeholder.com/300x200",
-      "alt": "Sample header image"
+      "src": "https://picsum.photos/300/120?random=1",
+      "alt": "Sentiers Logo"
     }
   },
   "headerContent": {
-    "content": "Sample headerContent content",
-    "url": "https://example.com/headerContent",
+    "content": "Tokyo as Slowdown City",
+    "url": "https://example.com/tokyo-slowdown",
     "image": {
-      "src": "https://via.placeholder.com/300x200",
-      "alt": "Sample headerContent image"
+      "src": "https://picsum.photos/600/400?random=3",
+      "alt": "Tokyo as Slowdown City"
     }
   },
+  "articlesList": [
+    {
+      "title": "The Hidden Infrastructure That Powers Everything",
+      "url": "https://example.com/hidden-infrastructure",
+      "intro": "We live surrounded by invisible systems that make modern life possible. The electrical grid, water treatment plants, fiber optic cables, waste management—all the unglamorous infrastructure that rarely makes headlines but keeps civilization humming.",
+      "quotes": [
+        "Innovation gets the spotlight, but maintenance keeps the world running. We celebrate the creators while ignoring the maintainers who ensure things continue to work.",
+        "Despite recurring fantasies about automation replacing human labor, the central fact of our technological civilization is maintenance work—most of which falls far outside the realm of innovation.",
+        "Every software system needs patches. Every bridge needs inspection. Every data center needs cooling. The unglamorous work of keeping things operational is what enables the flashy innovations we celebrate."
+      ]
+    },
+    {
+      "title": "The Case for Digital Minimalism", 
+      "url": "https://example.com/digital-minimalism",
+      "intro": "As our attention becomes increasingly fragmented across dozens of apps and platforms, a growing movement advocates for intentional technology use. The goal isn't to reject digital tools entirely, but to be more deliberate about which ones serve our values.",
+      "body": "Digital minimalism means choosing technologies that support what we care about most, and ignoring the rest. It's about quality over quantity in our digital lives.",
+      "quotes": [
+        "The attention economy is designed to capture and monetize our focus. Every notification, every infinite scroll, every autoplay video is engineered to keep us engaged longer than we intended.",
+        "Reclaiming our attention requires moving from reactive consumption to intentional engagement. We must become curators of our own digital experience."
+      ]
+    },
+    {
+      "title": "Cities That Choose Slowness",
+      "url": "https://example.com/urban-slowness", 
+      "intro": "While most cities compete to be faster, more connected, more efficient, some urban centers are experimenting with deliberate slowness. They're creating car-free zones, expanding green spaces, and prioritizing walkability over speed.",
+      "quotes": [
+        "These cities recognize that optimization for speed often comes at the cost of human-scale experiences. Wide highways divide neighborhoods. Drive-through everything reduces serendipitous encounters.",
+        "The most livable cities aren't necessarily the most efficient ones. They're the places where you can walk without hurrying, where you encounter unexpected beauty, where community still has space to flourish."
+      ]
+    }
+  ],
   "articles": {
-    "content": "Sample articles content",
-    "url": "https://example.com/articles",
+    "content": "The Hidden Infrastructure That Powers Everything",
+    "url": "https://example.com/hidden-infrastructure",
     "image": {
-      "src": "https://via.placeholder.com/300x200",
-      "alt": "Sample articles image"
+      "src": "https://picsum.photos/600/300?random=2",
+      "alt": "Industrial infrastructure at dawn"
     }
   },
   "blockquotes": {
@@ -57,5 +88,42 @@
       "src": "https://via.placeholder.com/300x200",
       "alt": "Sample quotes image"
     }
-  }
+  },
+  "miscellanyItems": [
+    {
+      "title": "It's time to build (is it?)",
+      "description": "A critical look at the modern obsession with building and innovation.",
+      "url": "https://example.com/time-to-build"
+    },
+    {
+      "title": "Tokyo as slowdown city",
+      "description": "How Japan's capital embraces a different pace of urban life.",
+      "url": "https://example.com/tokyo-slowdown"
+    },
+    {
+      "title": "Mass consumption is what ails us",
+      "description": "Understanding the environmental and social costs of overconsumption.",
+      "url": "https://example.com/mass-consumption"
+    },
+    {
+      "title": "The Revolution Is Only Getting Started",
+      "description": "How technology continues to reshape society in unexpected ways.",
+      "url": "https://example.com/revolution-started"
+    },
+    {
+      "title": "Against Computational Thinking",
+      "description": "Why reducing everything to algorithms misses the messy complexity of human experience.",
+      "url": "https://example.com/computational-thinking"
+    },
+    {
+      "title": "The Unglamorous Work of Maintenance",
+      "description": "Celebrating the people who keep our infrastructure running while innovation gets the headlines.",
+      "url": "https://example.com/maintenance-work"
+    },
+    {
+      "title": "Designing for Repair, Not Replacement",
+      "description": "How circular economy principles could reshape product design and consumption patterns.",
+      "url": "https://example.com/repair-design"
+    }
+  ]
 }

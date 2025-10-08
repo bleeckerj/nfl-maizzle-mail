@@ -3,19 +3,13 @@
   <tr>
     <td class="content-block" style="padding: 20px;">
       <ul class="miscellany" style="font-size: 18px;margin: 24px 0 0;padding: 0;">
-          <li style="margin: 0;padding: 12px 0;list-style: none;border-top: 1px solid #B7E2D8;line-height: 1.4em;"><a href="{{ miscellany.url }}" style="color: #DC4B4B;text-decoration: none;">{{ miscellany.content }}</a>{{ miscellany.content }}<i>{{ miscellany.content }}</i>
+        <each loop="item in miscellanyItems">
+          <li style="margin: 0;padding: 12px 0;list-style: none;border-top: 1px solid #B7E2D8;line-height: 1.4em;">
+            <a href="{{ item.url }}" style="color: #DC4B4B;text-decoration: none;">{{ item.title }}</a>
+            {{ item.description }}
           </li>
-          <li style="margin: 0;padding: 12px 0;list-style: none;border-top: 1px solid #B7E2D8;line-height: 1.4em;">{{ miscellany.content }}<a href="{{ miscellany.url }}" style="color: #DC4B4B;text-decoration: none;">{{ miscellany.content }}</a>{{ miscellany.content }}</li>
-          <li style="margin: 0;padding: 12px 0;list-style: none;border-top: 1px solid #B7E2D8;line-height: 1.4em;">{{ miscellany.content }}<a href="{{ miscellany.url }}" style="color: #DC4B4B;text-decoration: none;">{{ miscellany.content }}</a>{{ miscellany.content }}<i>{{ miscellany.content }}<span class="highlight" style="background: #B7E2D8;">{{ miscellany.content }}</span>{{ miscellany.content }}</i>{{ miscellany.content }}<a href="{{ miscellany.url }}" style="color: #DC4B4B;text-decoration: none;">{{ miscellany.content }}</a>{{ miscellany.content }}</li>
-          <li style="margin: 0;padding: 12px 0;list-style: none;border-top: 1px solid #B7E2D8;line-height: 1.4em;">{{ miscellany.content }}<a href="{{ miscellany.url }}" style="color: #DC4B4B;text-decoration: none;">{{ miscellany.content }}</a>{{ miscellany.content }}<i>{{ miscellany.content }}</i>
-          </li>
-          <li style="margin: 0;padding: 12px 0;list-style: none;border-top: 1px solid #B7E2D8;line-height: 1.4em;">{{ miscellany.content }}<a href="{{ miscellany.url }}" style="color: #DC4B4B;text-decoration: none;">{{ miscellany.content }}</a>{{ miscellany.content }}<i>{{ miscellany.content }}</i>
-          </li>
-          <li style="margin: 0;padding: 12px 0;list-style: none;border-top: 1px solid #B7E2D8;line-height: 1.4em;">{{ miscellany.content }}<a href="{{ miscellany.url }}" style="color: #DC4B4B;text-decoration: none;">{{ miscellany.content }}</a>
-          </li>
-          <li style="margin: 0;padding: 12px 0;list-style: none;border-top: 1px solid #B7E2D8;line-height: 1.4em;">{{ miscellany.content }}<a href="{{ miscellany.url }}" style="color: #DC4B4B;text-decoration: none;">{{ miscellany.content }}</a>{{ miscellany.content }}<i>{{ miscellany.content }}</i>{{ miscellany.content }}<a href="{{ miscellany.url }}" style="color: #DC4B4B;text-decoration: none;">{{ miscellany.content }}</a>{{ miscellany.content }}</li>
-          <li style="margin: 0;padding: 12px 0;list-style: none;border-top: 1px solid #B7E2D8;line-height: 1.4em;"><a href="{{ miscellany.url }}" style="color: #DC4B4B;text-decoration: none;">{{ miscellany.content }}</a>{{ miscellany.content }}<i>{{ miscellany.content }}</i>{{ miscellany.content }}<a href="{{ miscellany.url }}" style="color: #DC4B4B;text-decoration: none;">{{ miscellany.content }}</a>{{ miscellany.content }}</li>
-        </ul>
+        </each>
+      </ul>
     </td>
   </tr>
 </table>
