@@ -1,0 +1,61 @@
+<!-- BOOKS & ACCESSORIES Start -->
+<tr>
+  <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+</tr>
+<tr>
+  <td align="left" class="headline" style="border-collapse: collapse;border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
+    <h1 style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">
+      {{ section.title }}
+      <if condition="section.byline">
+        <a class="h1byline grey browser" href="{{ section.bylineLink || '#' }}" style="text-decoration: none;text-align: right;display: inline-block;font-size: 12px;line-height: 25px;font-weight: 400;float: right;color: #707070 !important;">{{ section.byline }}</a>
+      </if>
+    </h1>
+  </td>
+</tr>
+
+<each loop="item in section.items">
+  <tr>
+    <td align="left" style="border-collapse: collapse;">
+      <!--[if mso]>
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr><td width="50%" valign="top"><![endif]-->
+      
+      <if condition="item.image">
+        <table align="right" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="320">
+          <tbody>
+            <tr>
+              <td class="padt15 padr20 padl10" style="border-collapse: collapse;padding-top: 15px;padding-right: 20px;padding-left: 10px;" valign="top">
+                <p style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 15px;">
+                  <img src="{{ item.image }}" alt="❏" width="290" height="auto" class="img" style="-ms-interpolation-mode: bicubic;display: block;max-height: 900px;max-width: 416px;width: 100%;">
+                </p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </if>
+
+      <!--[if mso]></td><td width="50%" valign="top"><![endif]-->
+      
+      <table align="left" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="320">
+        <tbody>
+          <tr>
+            <td class="padt15 padr10 padl20 mobt0" style="border-collapse: collapse;padding-top: 15px;padding-right: 10px;padding-left: 20px;" valign="top">
+              <h2 class="padb5" style="mso-line-height-rule: exactly;font-size: 16px;line-height: 23px;font-weight: 600;color: #000000;margin: 0;padding: 0 0 15px 0;padding-bottom: 5px;">
+                <a href="{{ item.link }}" style="text-decoration: underline;color: #000000 !important;">{{ item.title }}</a> →
+              </h2>
+              <if condition="item.subtitle">
+                <h3 style="mso-line-height-rule: exactly;font-size: 16px;line-height: 23px;font-weight: 400;margin: 0;padding: 0 0 5px 0;color: #707070 !important;">{{ item.subtitle }}</h3>
+              </if>
+              <if condition="item.description">
+                <p style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 15px;">{{{ item.description }}}</p>
+              </if>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--[if mso]></td></tr></table><![endif]-->
+    </td>
+  </tr>
+</each>
+<!-- BOOKS & ACCESSORIES End -->

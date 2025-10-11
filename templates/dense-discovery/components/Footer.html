@@ -1,0 +1,60 @@
+<!-- FOOTER -->
+<table bgcolor="#f2f2f2" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="100%">
+  <tbody>
+    <tr>
+      <td align="center" bgcolor="#f2f2f2" style="background-color: #f2f2f2;border-collapse: collapse;" valign="top">
+        <!-- 640px container -->
+        <table border="0" cellpadding="0" cellspacing="0" class="footer" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 640px;max-width: 640px;" width="640">
+          <tbody>
+            <tr>
+              <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+            </tr>
+            <tr>
+              <td align="left" class="padt20 padr20 padl20" style="text-align: center;border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 20px;" valign="top">
+                <h1 class="padb15" style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;padding-bottom: 15px;">
+                  Enjoyed this issue? Share it:
+                </h1>
+                <if condition="footer.shareUrl">
+                  <p class="share" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 15px 5px;margin: 0;margin-bottom: 15px;border: 1px dashed #5f5f5f;background: #f8f8f8;text-align: center;">
+                    <a href="{{ footer.shareUrl }}" style="text-decoration: underline;color: #000000 !important;">
+                      <strong style="font-weight: 600;">{{ footer.shareUrl }}</strong>
+                    </a>
+                  </p>
+                </if>
+                <if condition="footer.twitterShare">
+                  <a class="small" href="{{ footer.twitterShare }}" style="text-decoration: underline;font-size: 14px;line-height: 19px;color: #000000 !important;">Share on Twitter</a> →   
+                </if>
+                <if condition="footer.emailShare">
+                  <a class="small" href="{{ footer.emailShare }}" style="text-decoration: underline;font-size: 14px;line-height: 19px;color: #000000 !important;">Forward via email</a> →
+                </if>
+              </td>
+            </tr>
+            <tr>
+              <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+            </tr>
+            <tr>
+              <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 20px;" valign="top">
+                <p style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 15px;">
+                  <if condition="footer.unsubscribeLink">
+                    <a href="{{ footer.unsubscribeLink }}" style="text-decoration: underline;color: #000000 !important;">Unsubscribe</a><br>
+                  </if>
+                  <if condition="footer.archiveLink">
+                    <a href="{{ footer.archiveLink }}" style="text-decoration: underline;color: #000000 !important;">Browse older issues</a><br>
+                  </if>
+                </p>
+                <if condition="footer.address">
+                  <p class="small grey" style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 15px;">
+                    {{{ footer.address }}}
+                  </p>
+                </if>
+              </td>
+            </tr>
+            <tr>
+              <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>

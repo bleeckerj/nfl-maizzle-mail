@@ -58,38 +58,62 @@
       },
       "required": ["title", "intro"]
     },
-    "adventureReads": {
+    "sections": {
       "type": "array",
+      "description": "Flexible content sections with custom titles",
       "items": {
         "type": "object",
         "properties": {
-          "title": { "type": "string" },
-          "description": { "type": "string" },
-          "image": { "type": "string" },
-          "link": { "type": "string" }
+          "title": { 
+            "type": "string",
+            "description": "Section title (e.g., 'Short Reads', 'Notes from the Discord')"
+          },
+          "articles": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": { "type": "string" },
+                "description": { "type": "string" },
+                "image": { 
+                  "type": "string",
+                  "description": "Optional image URL"
+                },
+                "link": { "type": "string" }
+              },
+              "required": ["title", "description", "link"]
+            }
+          }
         },
-        "required": ["title", "description", "link"]
-      }
-    },
-    "textArticles": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "title": { "type": "string" },
-          "description": { "type": "string" },
-          "link": { "type": "string" }
-        },
-        "required": ["title", "description", "link"]
+        "required": ["title", "articles"]
       }
     },
     "footer": {
       "type": "object",
       "properties": {
-        "atlanticLogo": { "type": "string" },
+        "logo": { "type": "string" },
         "unsubscribeLink": { "type": "string" },
         "managePreferencesLink": { "type": "string" },
-        "address": { "type": "string" }
+        "address": { "type": "string" },
+        "nfl": {
+          "type": "object",
+          "description": "Optional Near Future Laboratory footer section - only dynamic content",
+          "properties": {
+            "link": { 
+              "type": "string",
+              "description": "Newsletter archive link"
+            },
+            "year": { 
+              "type": "string",
+              "description": "Copyright year"
+            },
+            "buildTime": { 
+              "type": "string",
+              "description": "Build timestamp"
+            }
+          },
+          "required": ["link", "year", "buildTime"]
+        }
       },
       "required": ["unsubscribeLink"]
     }

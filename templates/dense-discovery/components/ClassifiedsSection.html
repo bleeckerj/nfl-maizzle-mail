@@ -1,0 +1,58 @@
+<!-- CLASSIFIEDS Start -->
+<tr>
+  <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+</tr>
+<tr>
+  <td align="left" class="headline" style="border-collapse: collapse;border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
+    <h1 style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">{{ section.title }}</h1>
+  </td>
+</tr>
+<tr>
+  <td align="left" style="border-collapse: collapse;">
+    <!--[if mso]>
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr><td width="75%" valign="top"><![endif]-->
+    
+    <table align="left" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="448">
+      <tbody>
+        <tr>
+          <td class="padt15 padr10 padl20" style="border-collapse: collapse;padding-top: 15px;padding-right: 10px;padding-left: 20px;" valign="top">
+            <each loop="item in section.items">
+              <p style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 15px;">
+                {{{ item.content }}}
+                <if condition="item.link">
+                  <a href="{{ item.link }}" style="text-decoration: underline;color: #000000 !important;"><strong style="font-weight: 600;">{{ item.linkText || item.title || 'Learn more' }}</strong></a>
+                </if>
+              </p>
+              <if condition="!loop.last">
+                <div class="line" style="border-bottom: 2px solid #efefef;display: block;height: 2px;margin-bottom: 15px;"></div>
+              </if>
+            </each>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--[if mso]></td><td width="25%" valign="top"><![endif]-->
+    
+    <table align="right" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="180">
+      <tbody>
+        <tr>
+          <td class="padt15 padr20 padl10" style="border-collapse: collapse;padding-top: 15px;padding-right: 20px;padding-left: 10px;" valign="top">
+            <p class="grey" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 15px;">
+              {{ section.description || 'Classifieds are paid ads that support this newsletter.' }}
+            </p>
+            <p class="padb5" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 15px;padding-bottom: 5px;">
+              <a class="btn btn-grey" href="{{ section.bookingLink || '#' }}" style="text-decoration: none !important;display: inline-block;padding: 3px 8px;text-align: center;background: #afafaf;color: #ffffff !important;">
+                <strong style="font-weight: 600;">{{ section.bookingText || 'Book yours →' }}</strong>
+              </a>
+            </p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!--[if mso]></td></tr></table><![endif]-->
+  </td>
+</tr>
+<!-- CLASSIFIEDS End -->

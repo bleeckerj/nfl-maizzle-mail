@@ -9,6 +9,73 @@ import matter from 'gray-matter';
  * Usage: node scripts/md_to_json.mjs content/2025-10-07.md [data/newsletter.json] [--template=templatename]
  */
 
+/**
+ * Converts double newlines to proper paragraph tags in text content
+ * @param {string} text - Text with potential double newlines
+ * @param {string} template - Template name for context-specific styling
+ * @returns {string} HTML with proper paragraph tags and inline styles
+ */
+function convertToParagraphs(text, template = 'default') {
+  if (!text || typeof text !== 'string') return text;
+  
+  // Split on double newlines (or more) to separate paragraphs
+  const paragraphs = text
+    .split(/\n\s*\n/)
+    .map(p => p.trim())
+    .filter(p => p.length > 0);
+  
+  // Define paragraph styles based on template
+  let paragraphStyle = '';
+  switch (template) {
+    case 'atlantic-complete':
+      paragraphStyle = 'margin: 0 0 24px 0; padding: 0; font-family: \'Lyon Text\', Georgia, serif; font-size: 17px; line-height: 1.4; color: #21272c;';
+      break;
+    case 'wirecutter':
+      paragraphStyle = 'margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;';
+      break;
+    case 'sentiers-llm':
+    case 'sentiers-reliable':
+      paragraphStyle = 'margin: 0 0 18px 0; padding: 0; font-family: Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333;';
+      break;
+    default:
+      paragraphStyle = 'margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;';
+  }
+  
+  // Wrap each paragraph in styled <p> tags
+  return paragraphs
+    .map(p => `<p style="${paragraphStyle}">${p.replace(/\n/g, ' ')}</p>`)
+    .join('\n');
+}
+
+/**
+ * Recursively processes an object to convert text fields to paragraphs
+ * @param {any} obj - Object to process
+ * @param {string[]} textFields - Array of field names to process
+ * @param {string} template - Template name for styling context
+ * @returns {any} Processed object
+ */
+function processTextFields(obj, textFields = ['intro', 'description', 'content', 'text', 'excerpt'], template = 'default') {
+  if (!obj || typeof obj !== 'object') return obj;
+  
+  if (Array.isArray(obj)) {
+    return obj.map(item => processTextFields(item, textFields, template));
+  }
+  
+  const processed = { ...obj };
+  
+  for (const [key, value] of Object.entries(processed)) {
+    if (textFields.includes(key) && typeof value === 'string') {
+      // Apply paragraph processing to this field with template-specific styling
+      processed[key] = convertToParagraphs(value, template);
+    } else if (typeof value === 'object') {
+      // Recursively process nested objects
+      processed[key] = processTextFields(value, textFields, template);
+    }
+  }
+  
+  return processed;
+}
+
 function convertMarkdownToJson(inputPath, outputPath = 'data/newsletter.json', templateName = 'wirecutter') {
   try {
     // Read the markdown file
@@ -96,6 +163,9 @@ function convertMarkdownToJson(inputPath, outputPath = 'data/newsletter.json', t
       }
     }
     
+    // Apply paragraph processing to all text fields in the newsletter data
+    const processedData = processTextFields(newsletterData, ['intro', 'description', 'content', 'text', 'excerpt'], selectedTemplate);
+    
     // Ensure output directory exists
     const outputDir = path.dirname(outputPath);
     if (!fs.existsSync(outputDir)) {
@@ -103,13 +173,13 @@ function convertMarkdownToJson(inputPath, outputPath = 'data/newsletter.json', t
     }
     
     // Write JSON file
-    fs.writeFileSync(outputPath, JSON.stringify(newsletterData, null, 2));
+    fs.writeFileSync(outputPath, JSON.stringify(processedData, null, 2));
     
     console.log(`✅ Converted ${inputPath} → ${outputPath}`);
     console.log(`🎨 Template: "${selectedTemplate}"`);
-    console.log(`📊 Newsletter: "${newsletterData.title}"`);
-    if (newsletterData.hero) console.log(`🎯 Hero: "${newsletterData.hero.title}"`);
-    if (newsletterData.feature) console.log(`⭐ Feature: "${newsletterData.feature.title}"`);
+    console.log(`📊 Newsletter: "${processedData.title}"`);
+    if (processedData.hero) console.log(`🎯 Hero: "${processedData.hero.title}"`);
+    if (processedData.feature) console.log(`⭐ Feature: "${processedData.feature.title}"`);
     
   } catch (error) {
     console.error('❌ Error converting markdown to JSON:', error.message);

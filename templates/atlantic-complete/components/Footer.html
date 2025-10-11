@@ -3,38 +3,93 @@
   <tr>
     <td align="center" valign="top" style="padding: 32px 24px;">
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
-        
-        <!-- Atlantic Logo -->
-        <tr>
-          <td align="center" valign="top" style="padding: 0 0 24px 0;">
-            <img src="{{ footer.atlanticLogo }}" alt="The Atlantic" width="146" 
-                 style="border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; width: 146px; max-width: 100%;">
-          </td>
-        </tr>
-        
-        <!-- Footer Links -->
-        <tr>
-          <td align="center" valign="top" style="padding: 0 0 24px 0;">
-            <p style="margin: 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 14px; line-height: 1.4; color: #5e6a74;">
-              <a href="{{ footer.unsubscribeLink }}" class="c-dailyfooter__link" style="color: #5e6a74; text-decoration: underline;">
-                Unsubscribe
-              </a>
-              |
-              <a href="{{ footer.managePreferencesLink }}" class="c-dailyfooter__link" style="color: #5e6a74; text-decoration: underline;">
-                Manage email preferences
-              </a>
-            </p>
-          </td>
-        </tr>
-        
-        <!-- Address -->
-        <tr>
-          <td align="center" valign="top">
-            <p style="margin: 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 12px; line-height: 1.4; color: #8592a4; white-space: pre-line;">
-              {{ footer.address }}
-            </p>
-          </td>
-        </tr>
+      
+
+        <!-- NFL Section (Conditional) -->
+        <if condition="footer.nfl">
+          <tr>
+            <td align="center" valign="top" style="padding: 0 0 24px 0;">
+              <img alt="Near Future Laboratory" src="https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png" 
+                   width="120" style="border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; width: 120px; max-width: 100%;">
+            </td>
+          </tr>
+
+          <!-- Colophon Section -->
+          <tr>
+            <td align="center" valign="top" style="padding: 0 20px 20px 20px;">
+              <p style="margin: 0 0 20px 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 18px; font-weight: 600; line-height: 1.4; color: #21272c;">
+                Colophon
+              </p>
+              
+              <div style="margin: 0 0 20px 0; padding: 15px; background-color: #f0f0f0; border-radius: 6px; text-align: center;">
+                <a href="{{ footer.nfl.link }}" 
+                   style="font-family: 'Graphik', Arial, sans-serif; font-size: 16px; line-height: 1.4; color: #21272c; text-decoration: underline;">
+                  {{ footer.nfl.link }}
+                </a>
+              </div>
+              
+              <p style="margin: 0 0 15px 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 14px; line-height: 1.4; color: #21272c;">
+                My hypothesis is that Imagination is our evolutionary advantage.
+              </p>
+              
+              <p style="margin: 0 0 15px 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 14px; line-height: 1.4; color: #21272c;">
+                Global headquarters is located in a small backyard studio in Venice Beach, California, and our community is geographically distributed and centered online, at the moment, in the Near Future Laboratory Discord, which you can join by becoming a paying subscriber on 
+                <a href="https://patreon.com/nearfuturelaboratory" style="color: #21272c; text-decoration: underline;">Patreon</a> or 
+                <a href="https://nearfuturelaboratory.substack.com/" style="color: #21272c; text-decoration: underline;">Substack</a>.
+              </p>
+              
+              <p style="margin: 0 0 20px 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 14px; font-weight: 600; line-height: 1.4; color: #21272c;">
+                Get in touch. Take a look at 
+                <a href="https://nearfuturelaboratory.com/services" style="color: #21272c; text-decoration: underline;">our services</a> or 
+                <a href="https://nearfuturelaboratory.com/contact" style="color: #21272c; text-decoration: underline;">contact me</a> to arrange a time to have a call and discuss ways we can be of service to your organization.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Social Links -->
+          <tr>
+            <td align="center" valign="top" style="padding: 0 0 0px 0;">
+              <p style="margin: 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 14px; line-height: 1.4; color: #ef3b24;">
+                Github <a href="https://github.com/bleeckerj" style="color: #ef3b24; text-decoration: underline;">@bleeckerj</a>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="top" style="padding: 0 0 0 0;">
+              <p style="margin: 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 14px; line-height: 1.4; color: #ef3b24;">
+                Instagram <a href="https://www.instagram.com/nearfuturelaboratory" style="color: #ef3b24; text-decoration: underline;">@nearfuturelaboratory</a>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="top" style="padding: 0 0 0 0;">
+              <p style="margin: 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 14px; line-height: 1.4; color: #ef3b24;">
+                Instagram <a href="https://www.instagram.com/darthjulian" style="color: #ef3b24; text-decoration: underline;">@darthjulian</a>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" valign="top" style="padding: 0 0 9px 0;">
+              <p style="margin: 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 14px; line-height: 1.4; color: #ef3b24;">
+                Youtube <a href="https://www.youtube.com/@nearfuturelaboratory" style="color: #ef3b24; text-decoration: underline;">@nearfuturelaboratory</a>
+              </p>
+            </td>
+          </tr>
+
+          <!-- Copyright and Build Info -->
+          <tr>
+            <td align="center" valign="top" style="padding: 20px 0 0 0;">
+              <p style="margin: 0 0 5px 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 14px; line-height: 1.4; color: #ef3b24;">
+                © {{ footer.nfl.year }} Near Future Laboratory LLC
+              </p>
+              <p style="margin: 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 12px; line-height: 1.4; color: #ef3b24;">
+                Build Time: {{ footer.nfl.buildTime }}<br/>
+                Prepared for [Email]<br/>
+                <a href="[unsubscribe]" style="color: #ef3b24; text-decoration: underline;">unsubscribe</a>
+              </p>
+            </td>
+          </tr>
+        </if>
         
       </table>
     </td>

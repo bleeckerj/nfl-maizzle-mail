@@ -1,0 +1,59 @@
+---
+template: atlantic-complete
+title: "Atlantic Daily"
+subtitle: "The Future of Work After AI" 
+emailType: newsletter
+preheaderText: "As artificial intelligence reshapes entire industries, what does the future hold for human workers? A thoughtful exploration of adaptation, opportunity, and uncertainty."
+headerLogo: "https://nearfuturelaboratory.com/images/svgs/LaboratoryGuy.svg"
+date: "October 7, 2025"
+author:
+  name: "Sarah Mitchell"
+  bio: "Technology correspondent at The Atlantic"
+  image: "https://picsum.photos/50/50?random=2"
+  link: "https://example.com/author/sarah-mitchell"
+mainContent:
+  title: "The Future of Work After AI"
+  intro: "Artificial intelligence is no longer a distant possibility—it's reshaping entire industries today. From customer service to creative work, AI systems are automating tasks that once required human judgment, creativity, and empathy. But this transformation raises profound questions: What happens to the millions of workers whose jobs are changing? How do we prepare for a future where human and artificial intelligence work together? And what new opportunities might emerge from this technological revolution?"
+  featured:
+    title: "Rethinking Human Value in the Age of Automation"
+    author: "Atlantic Staff"
+    excerpt: "The challenge isn't just technical—it's fundamentally about how we value human contribution in a world where machines can replicate many of our capabilities."
+    link: "https://example.com/article/human-value-automation"
+    image: "https://picsum.photos/588/330?random=3"
+adventureReads:
+  - title: "The Last Human Translators"
+    description: "How AI translation tools are changing the profession that bridges cultures and languages"
+    image: "https://picsum.photos/588/330?random=4"
+    link: "https://example.com/article/human-translators"
+  - title: "Teaching Machines to Care"
+    description: "The surprising challenges of programming empathy into AI healthcare systems"
+    image: "https://picsum.photos/588/330?random=5"
+    link: "https://example.com/article/ai-healthcare-empathy"
+  - title: "Creative Collaboration with AI"
+    description: "Artists and writers discover new possibilities when working alongside artificial intelligence"
+    image: "https://picsum.photos/588/330?random=6"
+    link: "https://example.com/article/creative-ai-collaboration"
+textArticles:
+  - title: "This article is something else!"
+    description: "What is this all about? We want to find the way to include AI in our workflow."
+    link: "https://nearfuturelaboratory.com"
+
+footer:
+  unsubscribeLink: "[unsubscribe]"
+  address: "Venice Beach, CA"
+
+---
+
+# The Future of Work After AI
+
+The conversation about artificial intelligence and employment often centers on a simple question: Will robots take our jobs? But this framing misses the nuance of how technological change actually unfolds.
+
+History shows us that major technological shifts don't simply eliminate work—they transform it. The industrial revolution didn't end human labor; it changed what kind of work humans do. Similarly, the AI revolution is likely to reshape rather than simply replace human employment.
+
+## What makes this different
+
+Previous technological advances primarily automated physical tasks. AI is different because it can automate cognitive tasks—the kind of thinking, pattern recognition, and decision-making that has been uniquely human.
+
+But even as AI capabilities expand, distinctly human skills become more valuable: emotional intelligence, creative problem-solving, ethical reasoning, and the ability to work with ambiguity and incomplete information.
+
+The future workplace will likely feature humans and AI working in partnership, each contributing their unique strengths to solve complex problems.

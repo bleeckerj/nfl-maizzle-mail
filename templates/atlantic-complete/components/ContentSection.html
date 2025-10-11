@@ -3,35 +3,93 @@
   <tr>
     <td align="left" valign="top" style="padding: 0 24px 24px 24px;">
       <div class="c-rich-text">
-        <!-- Main intro paragraph -->
-        <p style="margin: 0 0 24px 0; padding: 0; font-family: 'Lyon Text', Georgia, serif; font-size: 17px; line-height: 1.4; color: #21272c;">
-          {{ mainContent.intro }}
-        </p>
-        
-        <!-- Adventure Reads Section -->
-        <h2 style="margin: 32px 0 24px 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 20px; font-weight: 600; line-height: 1.2; color: #21272c;">
-          Adventure Reads
-        </h2>
-        
-        <each loop="read in adventureReads">
-          <div style="margin: 0 0 32px 0;">
-            <h3 style="margin: 0 0 12px 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 18px; font-weight: 600; line-height: 1.2; color: #21272c;">
-              <a href="{{ read.link }}" style="color: #21272c; text-decoration: none;">
-                {{ read.title }}
-              </a>
-            </h3>
-            
-            <div class="c-imgblock" style="margin: 0 0 12px 0;">
-              <a href="{{ read.link }}" style="text-decoration: none;">
-                <img src="{{ read.image }}" alt="{{ read.title }}" width="588" 
+        <!-- Cover Image Section (if present) -->
+        <if condition="mainContent.image">
+          <div class="c-imgblock" style="margin: 0 0 32px 0;">
+            <if condition="mainContent.link">
+              <a href="{{ mainContent.link }}" style="text-decoration: none;">
+                <img src="{{ mainContent.image }}" alt="{{ mainContent.title }}" width="588" 
                      style="border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; width: 100%; max-width: 588px;">
               </a>
-            </div>
+            </if>
+            <if condition="!mainContent.link">
+              <img src="{{ mainContent.image }}" alt="{{ mainContent.title }}" width="588" 
+                   style="border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; width: 100%; max-width: 588px;">
+            </if>
             
-            <p style="margin: 0; padding: 0; font-family: 'Lyon Text', Georgia, serif; font-size: 17px; line-height: 1.4; color: #21272c;">
-              {{ read.description }}
-            </p>
+            <!-- Optional image caption -->
+            <if condition="mainContent.imageCaption">
+              <p style="margin: 8px 0 0 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 13px; line-height: 1.3; color: #666; font-style: italic; text-align: center;">
+                {{ mainContent.imageCaption }}
+              </p>
+            </if>
           </div>
+        </if>
+
+        <!-- Main intro content with paragraph formatting -->
+        {{{ mainContent.intro }}}
+
+        <!-- Poem Section (if present) -->
+        <if condition="mainContent.poem">
+          <div style="margin: 32px 0 40px 0; padding: 24px; background-color: #f8f9fa; border-left: 4px solid #c50000;">
+            <h3 style="margin: 0 0 8px 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 18px; font-weight: 600; line-height: 1.2; color: #21272c;">
+              {{ mainContent.poem.title }}
+            </h3>
+            <p style="margin: 0 0 16px 0; padding: 0; font-family: 'Lyon Text', Georgia, serif; font-size: 14px; line-height: 1.3; color: #666; font-style: italic;">
+              by {{ mainContent.poem.author }}
+            </p>
+            
+            <if condition="mainContent.poem.image">
+              <div class="c-imgblock" style="margin: 0 0 16px 0;">
+                <a href="{{ mainContent.poem.link }}" style="text-decoration: none;">
+                  <img src="{{ mainContent.poem.image }}" alt="{{ mainContent.poem.title }}" width="588" 
+                       style="border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; width: 100%; max-width: 588px;">
+                </a>
+              </div>
+            </if>
+            
+            <blockquote style="margin: 0 0 16px 0; padding: 0; font-family: 'Lyon Text', Georgia, serif; font-size: 17px; line-height: 1.5; color: #21272c; font-style: italic;">
+              {{ mainContent.poem.excerpt | nl2br }}
+            </blockquote>
+            
+            <if condition="mainContent.poem.link">
+              <p style="margin: 0; padding: 0;">
+                <a href="{{ mainContent.poem.link }}" style="color: #c50000; text-decoration: none; font-family: 'Graphik', Arial, sans-serif; font-size: 14px; font-weight: 500;">
+                  Read more →
+                </a>
+              </p>
+            </if>
+          </div>
+        </if>
+        
+        <!-- Dynamic Sections -->
+        <each loop="section in sections">
+          <h2 style="margin: 32px 0 24px 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 20px; font-weight: 600; line-height: 1.2; color: #21272c;">
+            {{ section.title }}
+          </h2>
+          
+          <each loop="article in section.articles">
+            <div style="margin: 0 0 32px 0;">
+              <h3 style="margin: 0 0 12px 0; padding: 0; font-family: 'Graphik', Arial, sans-serif; font-size: 18px; font-weight: 600; line-height: 1.2; color: #21272c;">
+                <a href="{{ article.link }}" style="color: #21272c; text-decoration: none;">
+                  {{ article.title }}
+                </a>
+              </h3>
+              
+              <if condition="article.image">
+                <div class="c-imgblock" style="margin: 0 0 12px 0;">
+                  <a href="{{ article.link }}" style="text-decoration: none;">
+                    <img src="{{ article.image }}" alt="{{ article.title }}" width="588" 
+                         style="border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; width: 100%; max-width: 588px;">
+                  </a>
+                </div>
+              </if>
+              
+              <div style="font-family: 'Lyon Text', Georgia, serif; font-size: 17px; line-height: 1.4; color: #21272c;">
+                {{{ article.description }}}
+              </div>
+            </div>
+          </each>
         </each>
         
       </div>

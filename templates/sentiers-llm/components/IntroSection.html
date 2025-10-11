@@ -6,7 +6,9 @@
   <!-- <p><strong class='caps'>This week →</strong> ...</p> -->
   <div class="introsection">
     <if condition="introText">
-      <p><strong style="text-transform: uppercase;">{{ introText }}</strong></p>
+      <div style="text-transform: uppercase; font-weight: bold;">
+        {{{ introText }}}
+      </div>
     <elseif condition="subtitle">
       <p><strong style="text-transform: uppercase;">{{ subtitle }}</strong></p>
     <else>

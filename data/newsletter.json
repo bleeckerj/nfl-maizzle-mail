@@ -1,52 +1,204 @@
 {
-  "template": "atlantic-complete",
-  "title": "Atlantic Daily",
-  "subtitle": "The Future of Work After AI",
-  "emailType": "newsletter",
-  "preheaderText": "As artificial intelligence reshapes entire industries, what does the future hold for human workers? A thoughtful exploration of adaptation, opportunity, and uncertainty.",
-  "headerLogo": "https://picsum.photos/238/60?random=1",
-  "date": "October 7, 2025",
-  "author": {
-    "name": "Sarah Mitchell",
-    "bio": "Technology correspondent at The Atlantic",
-    "image": "https://picsum.photos/50/50?random=2",
-    "link": "https://example.com/author/sarah-mitchell"
+  "$schema": "../newsletter.schema.json",
+  "template": "dense-discovery",
+  "title": "Dense Discovery – Issue 79",
+  "preheader": "Apps, sites, books, and other interesting things",
+  "header": {
+    "quote": "The Universe is under no obligation to make sense to you.",
+    "author": "Neil deGrasse Tyson",
+    "featuredImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=386&h=250&fit=crop",
+    "featuredArtist": {
+      "name": "Rocio Egio Studio",
+      "link": "https://example.com/artist"
+    },
+    "logoTop": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=163&h=50&fit=crop",
+    "logoBottom": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=163&h=30&fit=crop",
+    "logoLink": "https://densediscovery.com"
   },
-  "mainContent": {
-    "title": "The Future of Work After AI",
-    "intro": "Artificial intelligence is no longer a distant possibility—it's reshaping entire industries today. From customer service to creative work, AI systems are automating tasks that once required human judgment, creativity, and empathy. But this transformation raises profound questions: What happens to the millions of workers whose jobs are changing? How do we prepare for a future where human and artificial intelligence work together? And what new opportunities might emerge from this technological revolution?"
+  "intro": {
+    "title": "Welcome to Issue 79!",
+    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Our ability to filter, evaluate, and prioritise information is being put to the test and in many cases is reaching a natural limit. It's important to acknowledge that there has probably never been more competition for our attention than right now.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">It's totally OK and human to feel overwhelmed and exhausted.</p>",
+    "viewOnlineLink": "https://densediscovery.com/issues/79"
   },
-  "adventureReads": [
+  "sections": [
     {
-      "title": "The Last Human Translators",
-      "description": "How AI translation tools are changing the profession that bridges cultures and languages",
-      "image": "https://picsum.photos/588/330?random=4",
-      "link": "https://example.com/article/human-translators"
+      "type": "sponsor",
+      "title": "Design Tools That Actually Work",
+      "sponsorLabel": "SPONSOR",
+      "sponsorLink": "https://example.com/sponsor",
+      "items": [
+        {
+          "title": "Figma Professional",
+          "subtitle": "The collaborative design platform teams love",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Create stunning designs with real-time collaboration, advanced prototyping, and seamless developer handoff. Used by teams at Spotify, Airbnb, and Microsoft.</p>",
+          "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=194&h=150&fit=crop&q=80",
+          "link": "https://figma.com/professional"
+        }
+      ]
     },
     {
-      "title": "Teaching Machines to Care",
-      "description": "The surprising challenges of programming empathy into AI healthcare systems",
-      "image": "https://picsum.photos/588/330?random=5",
-      "link": "https://example.com/article/ai-healthcare-empathy"
+      "type": "apps-sites",
+      "title": "Apps & Sites",
+      "items": [
+        {
+          "title": "Linear",
+          "subtitle": "Issue tracking for modern software teams",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Beautiful, fast, and purpose-built for software development. Linear helps thousands of high-impact product teams track issues, prioritize product roadmaps, and manage releases.</p>",
+          "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=200&h=120&fit=crop&q=80",
+          "link": "https://linear.app"
+        },
+        {
+          "title": "Raycast",
+          "subtitle": "Supercharged productivity for Mac",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">A blazingly fast, totally extendable launcher. It lets you complete tasks, calculate, share common links, and much more.</p>",
+          "image": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=200&h=120&fit=crop&q=80",
+          "link": "https://raycast.com"
+        },
+        {
+          "title": "Arc Browser",
+          "subtitle": "The browser company's new take on browsing",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">A fresh approach to web browsing with spaces, profiles, and AI-powered features designed for the way you work.</p>",
+          "link": "https://arc.net"
+        }
+      ]
     },
     {
-      "title": "Creative Collaboration with AI",
-      "description": "Artists and writers discover new possibilities when working alongside artificial intelligence",
-      "image": "https://picsum.photos/588/330?random=6",
-      "link": "https://example.com/article/creative-ai-collaboration"
-    }
-  ],
-  "textArticles": [
+      "type": "twitter-quote",
+      "title": "Overheard on Twitter",
+      "items": [
+        {
+          "quote": "The best designers I know spend way more time thinking about problems than they do in Figma. The tool is just the final 10% of the process.",
+          "author": "@johndoe_design",
+          "authorLink": "https://twitter.com/johndoe_design"
+        }
+      ]
+    },
     {
-      "title": "This article is something else!",
-      "description": "What is this all about? We want to find the way to include AI in our workflow.",
-      "link": "https://nearfuturelaboratory.com"
+      "type": "indie-mag",
+      "title": "Indie Mag of the Week",
+      "items": [
+        {
+          "title": "Offscreen Magazine",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">A thoughtful publication about the human side of technology, featuring interviews with people who create and use technology in meaningful ways.</p>",
+          "details": "– Latest Issue: <a href=\"https://example.com/offscreen\">25</a><br>\n– Frequency: 2 issues/year<br>\n– Formats: print + digital<br>\n– Origin: Australia\n",
+          "note": "Founded by Kai Brach, this magazine focuses on the stories behind the screens.",
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=290&h=150&fit=crop&q=80",
+          "link": "https://offscreenmag.com"
+        }
+      ]
+    },
+    {
+      "type": "books-accessories",
+      "title": "Books & Accessories",
+      "byline": "CONSUME RESPONSIBLY",
+      "bylineLink": "https://example.com/consume-responsibly",
+      "items": [
+        {
+          "title": "The Design of Everyday Things",
+          "subtitle": "Revised and expanded edition",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Don Norman's classic on how design serves as the communication between object and user, and how to optimize that relationship.</p>",
+          "image": "https://images.unsplash.com/photo-1544716278-e513176f20a5?w=290&h=150&fit=crop&q=80",
+          "link": "https://amazon.com/design-everyday-things"
+        },
+        {
+          "title": "Keychron K8 Keyboard",
+          "subtitle": "Wireless mechanical keyboard for Mac & PC",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">A compact 87-key tenkeyless layout mechanical keyboard built for both Mac and Windows with Gateron mechanical switches.</p>",
+          "image": "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=290&h=150&fit=crop&q=80",
+          "link": "https://keychron.com/k8"
+        }
+      ]
+    },
+    {
+      "type": "food-for-thought",
+      "title": "Food For Thought",
+      "items": [
+        {
+          "title": "The Rise of Design Engineering",
+          "category": "Read",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">How the lines between design and development are blurring, creating a new breed of professionals who can bridge both worlds effectively.</p>",
+          "link": "https://example.com/design-engineering"
+        },
+        {
+          "title": "Why Remote Work Isn't Going Away",
+          "category": "Listen",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">A fascinating podcast discussion about the future of work, productivity metrics, and how companies are adapting to distributed teams.</p>",
+          "link": "https://example.com/remote-work-podcast"
+        },
+        {
+          "title": "The Psychology of Color in UI Design",
+          "category": "Watch",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">A comprehensive video exploration of how different colors affect user behavior and decision-making in digital interfaces.</p>",
+          "link": "https://example.com/color-psychology"
+        }
+      ]
+    },
+    {
+      "type": "aesthetically-pleasing",
+      "title": "Aesthetically Pleasing",
+      "items": [
+        {
+          "images": [
+            "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=386&h=200&fit=crop&q=80",
+            "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=386&h=200&fit=crop&q=80"
+          ],
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Stunning aerial photography from <strong>@earthporn</strong> showcasing the geometric patterns found in nature - salt flats meeting forest in perfect symmetry.</p>",
+          "link": "https://instagram.com/earthporn"
+        },
+        {
+          "images": [
+            "https://images.unsplash.com/photo-1493243350443-895a63221acc?w=386&h=200&fit=crop&q=80",
+            "https://images.unsplash.com/photo-1515041219749-89347f83291a?w=386&h=200&fit=crop&q=80"
+          ],
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Minimalist architecture from <strong>Copenhagen</strong> - clean lines and thoughtful use of light creating spaces that feel both modern and timeless.</p>",
+          "link": "https://example.com/copenhagen-architecture"
+        }
+      ]
+    },
+    {
+      "type": "classifieds",
+      "title": "Classifieds",
+      "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Classifieds are paid ads that support Dense Discovery and are seen by our 20,000+ subscribers each week.</p>",
+      "bookingLink": "https://example.com/book-classified",
+      "bookingText": "Book yours →",
+      "items": [
+        {
+          "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Looking for a senior product designer to join our remote team at GreenTech startup. Competitive salary, equity, and the chance to solve climate problems through design.</p>",
+          "link": "https://example.com/greentech-job",
+          "linkText": "Apply Now"
+        },
+        {
+          "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">New course: 'Design Systems from Scratch' - Learn to build scalable design systems that actually get adopted by engineering teams. Early bird pricing ends Friday.</p>",
+          "link": "https://example.com/design-systems-course",
+          "linkText": "Get Early Access"
+        },
+        {
+          "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Freelance design studio seeking project collaborators. We specialize in fintech and healthcare apps. Portfolio review and coffee chat included.</p>",
+          "link": "https://example.com/design-collective",
+          "linkText": "Let's Collaborate"
+        }
+      ]
+    },
+    {
+      "type": "gif",
+      "title": "The Week in a GIF",
+      "items": [
+        {
+          "gif": "https://media.giphy.com/media/l0HlQ7LRalQqdWfao/giphy.gif",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">When you finally figure out that CSS layout bug that's been haunting you for three days.</p>",
+          "contact": "mailto:gifs@densediscovery.com",
+          "contactText": "Send us your favorite GIFs"
+        }
+      ]
     }
   ],
   "footer": {
-    "atlanticLogo": "https://picsum.photos/146/30?random=7",
+    "shareUrl": "https://densediscovery.com/issues/79",
+    "twitterShare": "https://twitter.com/intent/tweet?text=Check%20out%20this%20newsletter",
+    "emailShare": "mailto:?subject=Dense%20Discovery%20Issue&body=Check%20out%20this%20issue",
     "unsubscribeLink": "https://example.com/unsubscribe",
-    "managePreferencesLink": "https://example.com/preferences",
-    "address": "The Atlantic Monthly Group\n600 New Hampshire Avenue NW\nWashington, DC 20037"
-  }
+    "archiveLink": "https://example.com/archive",
+    "address": "Published by: Your Name<br>\nYour Address Here<br>\nCity, State ZIP<br>\nCountry\n"
+  },
+  "markdownContent": "<p>Testing the new modular Dense Discovery template structure.</p>"
 }

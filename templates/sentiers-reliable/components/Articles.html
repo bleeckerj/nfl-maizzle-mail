@@ -7,7 +7,7 @@
           <h2 style="font-family: &quot;Lora&quot;,serif;margin: 0;padding: 48px 0 0;font-size: 36px;line-height: 1.2em;font-weight: 400;">
             <a href="{{ article.url }}" style="color: #DC4B4B;text-decoration: none;">{{ article.title }}</a>
           </h2>
-          <p style="font-size: 18px;line-height: 1.6em;">{{ article.intro }}</p>
+          <div style="font-size: 18px;line-height: 1.6em;">{{{ article.intro }}}</div>
           <if condition="article.body">
             <p style="font-size: 18px;line-height: 1.6em;">{{ article.body }}</p>
           </if>
