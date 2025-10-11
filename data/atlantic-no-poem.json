@@ -1,0 +1,57 @@
+{
+  "template": "atlantic-complete",
+  "title": "Atlantic Daily",
+  "subtitle": "The Future of Work After AI",
+  "emailType": "newsletter",
+  "preheaderText": "As artificial intelligence reshapes entire industries, what does the future hold for human workers? A thoughtful exploration of adaptation, opportunity, and uncertainty.",
+  "headerLogo": "https://picsum.photos/238/60?random=1",
+  "date": "October 7, 2025",
+  "author": {
+    "name": "Sarah Mitchell",
+    "bio": "Technology correspondent at The Atlantic",
+    "image": "https://picsum.photos/50/50?random=2",
+    "link": "https://example.com/author/sarah-mitchell"
+  },
+  "mainContent": {
+    "title": "The Future of Work After AI",
+    "intro": "Artificial intelligence is no longer a distant possibility—it's reshaping entire industries today. From customer service to creative work, AI systems are automating tasks that once required human judgment, creativity, and empathy. But this transformation raises profound questions: What happens to the millions of workers whose jobs are changing? How do we prepare for a future where human and artificial intelligence work together? And what new opportunities might emerge from this technological revolution?"
+  },
+  "shortReads": [
+    {
+      "title": "The Last Human Translators",
+      "description": "How AI translation tools are changing the profession that bridges cultures and languages",
+      "image": "https://picsum.photos/588/330?random=4",
+      "link": "https://example.com/article/human-translators"
+    },
+    {
+      "title": "Teaching Machines to Care",
+      "description": "The surprising challenges of programming empathy into AI healthcare systems",
+      "image": "https://picsum.photos/588/330?random=5",
+      "link": "https://example.com/article/ai-healthcare-empathy"
+    },
+    {
+      "title": "Creative Collaboration with AI",
+      "description": "Artists and writers discover new possibilities when working alongside artificial intelligence",
+      "image": "https://picsum.photos/588/330?random=6",
+      "link": "https://example.com/article/creative-ai-collaboration"
+    }
+  ],
+  "textArticles": [
+    {
+      "title": "This article is something else!",
+      "description": "What is this all about? We want to find the way to include AI in our workflow.",
+      "link": "https://nearfuturelaboratory.com"
+    }
+  ],
+  "footer": {
+    "logo": "https://picsum.photos/146/30?random=7",
+    "unsubscribeLink": "https://example.com/unsubscribe",
+    "managePreferencesLink": "https://example.com/preferences",
+    "address": "The Atlantic Monthly Group\n600 New Hampshire Avenue NW\nWashington, DC 20037",
+    "nfl": {
+      "link": "https://nearfuturelaboratory.com/newsletters/2025/atlantic-future-work",
+      "year": "2025",
+      "buildTime": "2025-10-08T12:00:00Z"
+    }
+  }
+}

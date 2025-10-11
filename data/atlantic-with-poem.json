@@ -1,0 +1,57 @@
+{
+  "template": "atlantic-complete",
+  "title": "Atlantic Daily",
+  "subtitle": "A Poem for Memorial Day",
+  "emailType": "newsletter",
+  "preheaderText": "It's nearly Memorial Day. To commemorate, we're revisiting a poem by Henry Wadsworth Longfellow.",
+  "headerLogo": "https://picsum.photos/238/60?random=1",
+  "date": "May 24, 2020",
+  "author": {
+    "name": "Annika Neklason",
+    "bio": "Staff writer at The Atlantic",
+    "image": "https://picsum.photos/50/50?random=2",
+    "link": "https://example.com/author/annika-neklason"
+  },
+  "mainContent": {
+    "title": "A Poem for Memorial Day",
+    "intro": "It's nearly Memorial Day. To commemorate, we're revisiting a poem by Henry Wadsworth Longfellow. Then: This holiday tends to be a day spent in contemplation, in the great outdoors. If you're unable to take on such adventures today, bask in the work of John Muir and read about the journeys of yesteryear, with four selections from our archives.",
+    "poem": {
+      "title": "Decoration Day",
+      "author": "Henry Wadsworth Longfellow",
+      "excerpt": "Sleep, comrades, sleep and rest\nOn this Field of Grounded Arms,\nWhere foes no more molest,\nNor sentry's shot alarms!",
+      "link": "https://example.com/poem/decoration-day",
+      "image": "https://picsum.photos/588/330?random=3"
+    }
+  },
+  "shortReads": [
+    {
+      "title": "The Wilderness World of John Muir",
+      "description": "Selections from the naturalist's writings on the American West",
+      "image": "https://picsum.photos/588/330?random=4",
+      "link": "https://example.com/article/john-muir-wilderness"
+    },
+    {
+      "title": "Tales from the California Gold Rush",
+      "description": "Stories of adventure and hardship from the frontier",
+      "image": "https://picsum.photos/588/330?random=5",
+      "link": "https://example.com/article/gold-rush-tales"
+    },
+    {
+      "title": "Climbing the Peaks of Wonder",
+      "description": "A journey through America's most stunning mountain ranges",
+      "image": "https://picsum.photos/588/330?random=6",
+      "link": "https://example.com/article/mountain-climbing"
+    }
+  ],
+  "footer": {
+    "logo": "https://picsum.photos/146/30?random=7",
+    "unsubscribeLink": "https://example.com/unsubscribe",
+    "managePreferencesLink": "https://example.com/preferences",
+    "address": "Venice Beach CA",
+    "nfl": {
+      "link": "https://nearfuturelaboratory.com/newsletters/2025/atlantic-memorial-day",
+      "year": "2025",
+      "buildTime": "2025-10-08T12:00:00Z"
+    }
+  }
+}
