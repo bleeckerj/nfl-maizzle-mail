@@ -132,34 +132,43 @@
   ],
   "footer": {
     "shareUrl": "https://nearfuturelaboratory.com/issues/79",
-    "twitterShare": "https://twitter.com/intent/tweet?text=Check%20out%20this%20newsletter",
-    "emailShare": "mailto:?subject=Dense%20Discovery%20Issue&body=Check%20out%20this%20issue",
+    "emailShare": "mailto:?subject=Dense%20Discovery%20Issue&body=Check%20out%20this%20issue: https://nearfuturelaboratory.com/issues/79",
     "logo": "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png",
     "logoLink": "https://nearfuturelaboratory.com",
     "socialLinks": {
       "github": [
         {
-          "url": "https://github.com/yourhandle",
+          "url": "https://github.com/bleeckerj",
           "title": "Personal GitHub"
         },
         {
-          "url": "https://github.com/yourcompany",
+          "url": "https://github.com/nearfuturelaboratory",
           "title": "Company GitHub"
         }
       ],
       "instagram": [
         {
-          "url": "https://instagram.com/yourpersonal",
-          "title": "Personal Instagram"
+          "url": "https://instagram.com/darthjulian",
+          "title": "Julian Bleecker Instagram"
         },
         {
-          "url": "https://instagram.com/yourwork",
-          "title": "Work Instagram"
+          "url": "https://instagram.com/nearfuturelaboratory",
+          "title": "Near Future Laboratory Instagram"
+        }
+      ],
+      "linkedin": [
+        {
+          "url": "https://linkedin.com/in/julianbleecker",
+          "title": "Julian Bleecker LinkedIn"
+        },
+        {
+          "url": "https://www.linkedin.com/company/near-future-laboratory/",
+          "title": "Near Future Laboratory LinkedIn"
         }
       ],
       "youtube": [
         {
-          "url": "https://youtube.com/@yourhandle",
+          "url": "https://youtube.com/@nearfuturelaboratory",
           "title": "YouTube Channel"
         }
       ],
@@ -171,24 +180,24 @@
       ],
       "patreon": [
         {
-          "url": "https://patreon.com/yourhandle",
+          "url": "https://patreon.com/nearfuturelaboratory",
           "title": "Support on Patreon"
         }
       ],
       "substack": [
         {
-          "url": "https://yourhandle.substack.com",
+          "url": "https://nearfuturelaboratory.substack.com",
           "title": "Newsletter on Substack"
         }
       ]
     },
     "unsubscribeLink": "[unsubscribe]",
-    "address": "Published by: Your Name<br>\nYour Address Here<br>\nCity, State ZIP<br>\nCountry\n",
-    "colophon": "Crafted with care using sustainable design practices and ethical technology choices."
+    "archiveLink": "https://nearfuturelaboratory.com/newsletters",
+    "address": "© 2025 Near Future Laboratory<br>\nVenice Beach, California<br/>\nUSA\n",
+    "colophon": "Imagination is evolutionary advantage. It fuels our creativity and drives innovation. It's time to Imagine Harder."
   },
-  "markdownContent": "<p>Testing the new modular Dense Discovery template structure.</p>",
   "themeColors": {
-    "header": "#f5f7fa",
+    "header": "#efefee",
     "sponsor": "#f5f7fa",
     "apps-sites": "#f5f7fa",
     "quote": "#E9EBED",
@@ -198,7 +207,6 @@
     "aesthetically-pleasing": "#ffffff",
     "classifieds": "#f0f0f0",
     "gif": "#ffffff",
-    "accent": "#4a7c59",
     "linkAccent": "#EE3BBB"
   }
 }

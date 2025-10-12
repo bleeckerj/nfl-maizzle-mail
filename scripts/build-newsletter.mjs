@@ -90,10 +90,10 @@ function displayColorTheme(newsletterData) {
     console.log(`  ${colorBlock} ${displayName.padEnd(20)} ${color}`);
   });
   
-  if (theme.accent) {
-    const bgColor = hexToAnsiBackground(theme.accent);
+  if (theme.linkAccent) {
+    const bgColor = hexToAnsiBackground(theme.linkAccent);
     const colorBlock = `${bgColor}        ${reset}`;
-    console.log(`  ${colorBlock} ${'Accent'.padEnd(20)} ${theme.accent}`);
+    console.log(`  ${colorBlock} ${'Link Accent'.padEnd(20)} ${theme.linkAccent}`);
   }
   
   console.log('');
@@ -357,8 +357,7 @@ async function buildNewsletter() {
       // Add theme colors to newsletter data for template access
       newsletterData.themeColors = {
         ...theme.colors,  // All section background colors
-        accent: theme.accent,  // General accent color
-        linkAccent: theme.linkAccent  // Link accent color
+        linkAccent: theme.linkAccent  // Link accent color for all links
       };
       
       // Write updated newsletter data back to file

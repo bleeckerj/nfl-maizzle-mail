@@ -122,7 +122,7 @@ sections:
 
 #   - type: "classifieds"
 #     title: "Classifieds"
-#     description: "Classifieds are paid ads that support Dense Discovery and are seen by our 20,000+ subscribers each week."
+#     description: "Classifieds are paid ads that support Near Future Laboratory and are seen by our 17,000+ subscribers each week."
 #     bookingLink: "https://example.com/book-classified"
 #     bookingText: "Book yours →"
 #     items:
@@ -146,8 +146,8 @@ sections:
 
 footer:
   shareUrl: "https://nearfuturelaboratory.com/issues/79"
-  twitterShare: "https://twitter.com/intent/tweet?text=Check%20out%20this%20newsletter"
-  emailShare: "mailto:?subject=Dense%20Discovery%20Issue&body=Check%20out%20this%20issue"
+#   twitterShare: "https://twitter.com/intent/tweet?text=Check%20out%20this%20newsletter"
+  emailShare: "mailto:?subject=Dense%20Discovery%20Issue&body=Check%20out%20this%20issue: https://nearfuturelaboratory.com/issues/79"
   logo: "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png"
   logoLink: "https://nearfuturelaboratory.com"
   socialLinks:
@@ -161,6 +161,11 @@ footer:
         title: "Julian Bleecker Instagram"
       - url: "https://instagram.com/nearfuturelaboratory"
         title: "Near Future Laboratory Instagram"
+    linkedin:
+      - url: "https://linkedin.com/in/julianbleecker"
+        title: "Julian Bleecker LinkedIn"
+      - url: "https://www.linkedin.com/company/near-future-laboratory/"
+        title: "Near Future Laboratory LinkedIn"
     youtube:
       - url: "https://youtube.com/@nearfuturelaboratory"
         title: "YouTube Channel"
@@ -174,13 +179,10 @@ footer:
       - url: "https://nearfuturelaboratory.substack.com"
         title: "Newsletter on Substack"
   unsubscribeLink: "[unsubscribe]"
-  #archiveLink: "https://example.com/archive"
+  archiveLink: "https://nearfuturelaboratory.com/newsletters"
   address: |
-    Published by: Your Name<br>
-    Your Address Here<br>
-    City, State ZIP<br>
-    Country
-  colophon: "Crafted with care using sustainable design practices and ethical technology choices."
+    © 2025 Near Future Laboratory<br>
+    Venice Beach, California<br/>
+    USA
+  colophon: "Imagination is evolutionary advantage. It fuels our creativity and drives innovation. It's time to Imagine Harder."
 ---
-
-Testing the new modular Dense Discovery template structure.
