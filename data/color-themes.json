@@ -55,7 +55,7 @@
       "name": "Professional Clean",
       "description": "Subtle grays and clean whites for professional communication",
       "colors": {
-        "header": "#fcfcfc",
+        "header": "#f0f0f0",
         "sponsor": "#fdea9b",
         "apps-sites": "#f9f999",
         "discord": "#fcfcfc", 

@@ -32,6 +32,89 @@
             <tr>
               <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
             </tr>
+            <!-- Footer Logo -->
+            <if condition="footer.logo">
+              <tr>
+                <td align="center" class="padt20 padr20 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 20px;text-align: center;" valign="top">
+                  <a href="{{ footer.logoLink || '#' }}" style="text-decoration: none;">
+                    <img src="{{ footer.logo }}" alt="Footer Logo" width="120" height="auto" style="-ms-interpolation-mode: bicubic;display: block;margin: 0 auto;">
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 15px;"> </td>
+              </tr>
+            </if>
+
+            <!-- Social Media Links -->
+            <if condition="footer.socialLinks">
+              <tr>
+                <td align="center" class="padt20 padr20 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 20px;text-align: center;" valign="top">
+                  <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto; border-spacing: 0;">
+                    <tr>
+                      <!-- GitHub Links -->
+                      <each loop="link in footer.socialLinks.github">
+                        <td style="padding: 0 6px;">
+                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'GitHub' }}">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="{{ link.title || 'GitHub' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
+                          </a>
+                        </td>
+                      </each>
+                      
+                      <!-- Instagram Links -->
+                      <each loop="link in footer.socialLinks.instagram">
+                        <td style="padding: 0 6px;">
+                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Instagram' }}">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="{{ link.title || 'Instagram' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
+                          </a>
+                        </td>
+                      </each>
+                      
+                      <!-- YouTube Links -->
+                      <each loop="link in footer.socialLinks.youtube">
+                        <td style="padding: 0 6px;">
+                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'YouTube' }}">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="{{ link.title || 'YouTube' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
+                          </a>
+                        </td>
+                      </each>
+                      
+                      <!-- Discord Links -->
+                      <each loop="link in footer.socialLinks.discord">
+                        <td style="padding: 0 6px;">
+                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Discord' }}">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="{{ link.title || 'Discord' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
+                          </a>
+                        </td>
+                      </each>
+                      
+                      <!-- Patreon Links -->
+                      <each loop="link in footer.socialLinks.patreon">
+                        <td style="padding: 0 6px;">
+                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Patreon' }}">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/patreon.svg" alt="{{ link.title || 'Patreon' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
+                          </a>
+                        </td>
+                      </each>
+                      
+                      <!-- Substack Links -->
+                      <each loop="link in footer.socialLinks.substack">
+                        <td style="padding: 0 6px;">
+                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Substack' }}">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/substack.svg" alt="{{ link.title || 'Substack' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
+                          </a>
+                        </td>
+                      </each>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 15px;"> </td>
+              </tr>
+            </if>
+
+            <!-- Footer Links and Address -->
             <tr>
               <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 20px;" valign="top">
                 <p style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 15px;">
@@ -49,6 +132,17 @@
                 </if>
               </td>
             </tr>
+
+            <!-- Colophon/Final Word -->
+            <if condition="footer.colophon">
+              <tr>
+                <td align="center" class="padt10 padr20 padl20" style="border-collapse: collapse;padding-top: 10px;padding-right: 20px;padding-left: 20px;text-align: center;" valign="top">
+                  <p class="small grey" style="font-size: 12px;line-height: 16px;font-weight: 400;color: #999999;padding: 0;margin: 0;font-style: italic;">
+                    {{{ footer.colophon }}}
+                  </p>
+                </td>
+              </tr>
+            </if>
             <tr>
               <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
             </tr>

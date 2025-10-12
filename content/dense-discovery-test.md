@@ -5,15 +5,15 @@ preheader: "Stuff and Things"
 colorTheme: "professional"
 
 header:
-  quote: "We're Universe is under no obligation to make sense to you."
-  author: "Neil deGrasse Tyson"
+  quote: "The function of poetry is to bring us back to the feeling of wonder."
+  author: "Richard Whyte"
   featuredImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=386&h=250&fit=crop"
   featuredArtist:
     name: "Someone Famous"
     link: "https://example.com/artist"
-  logoTop: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=163&h=50&fit=crop"
-  logoBottom: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=163&h=50&fit=crop"
-  logoLink: "https://densediscovery.com"
+  logoTop: "http://192.168.15.59:4321/images/site/logos/TOP_LaboratoryCircle_Guy_01_CircleWhite.png"
+  logoBottom: "http://192.168.15.59:4321/images/site/logos/BOTTOM_LaboratoryCircle_Guy_01_CircleWhite.png"
+  logoLink: "https://nearfuturelaboratory.com"
 
 intro:
   title: "Welcome to Issue 79!"
@@ -21,15 +21,15 @@ intro:
     Our ability to filter, evaluate, and prioritise information is being put to the test and in many cases is reaching a natural limit. It's important to acknowledge that there has probably never been more competition for our attention than right now.
     
     It's totally OK and human to feel overwhelmed and exhausted.
-  viewOnlineLink: "https://densediscovery.com/issues/79"
+  viewOnlineLink: "https://nearfuturelaboratory.com/newsletters/2025/w42y25"
 
 sections:
   - type: "sponsor"
-    title: "Design Tools That Actually Work"
-    sponsorLabel: "SPONSOR"
+    title: "Sascha Pohflepp's Blind Camera"
+    sponsorLabel: "ARCHIVES"
     sponsorLink: "https://example.com/sponsor"
     items:
-      - title: "Figma Professional"
+      - title: "Blind Camera"
         subtitle: "The collaborative design platform teams love"
         description: "Create stunning designs with real-time collaboration, advanced prototyping, and seamless developer handoff. Used by teams at Spotify, Airbnb, and Microsoft."
         image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=194&h=150&fit=crop&q=80"
@@ -141,20 +141,46 @@ sections:
     items:
       - gif: "https://media.giphy.com/media/l0HlQ7LRalQqdWfao/giphy.gif"
         description: "When you finally figure out that CSS layout bug that's been haunting you for three days."
-        contact: "mailto:gifs@densediscovery.com"
-        contactText: "Send us your favorite GIFs"
+        # contact: "mailto:julian@nearfuturelaboratory.com"
+        # contactText: "Send us your favorite GIFs"
 
 footer:
-  shareUrl: "https://densediscovery.com/issues/79"
+  shareUrl: "https://nearfuturelaboratory.com/issues/79"
   twitterShare: "https://twitter.com/intent/tweet?text=Check%20out%20this%20newsletter"
   emailShare: "mailto:?subject=Dense%20Discovery%20Issue&body=Check%20out%20this%20issue"
-  unsubscribeLink: "https://example.com/unsubscribe"
-  archiveLink: "https://example.com/archive"
+  logo: "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png"
+  logoLink: "https://nearfuturelaboratory.com"
+  socialLinks:
+    github:
+      - url: "https://github.com/yourhandle"
+        title: "Personal GitHub"
+      - url: "https://github.com/yourcompany"
+        title: "Company GitHub"
+    instagram:
+      - url: "https://instagram.com/yourpersonal"
+        title: "Personal Instagram"
+      - url: "https://instagram.com/yourwork"
+        title: "Work Instagram"
+    youtube:
+      - url: "https://youtube.com/@yourhandle"
+        title: "YouTube Channel"
+    discord:
+      - url: "https://discord.gg/yourserver"
+        title: "Discord Community"
+    patreon:
+      - url: "https://patreon.com/yourhandle"
+        title: "Support on Patreon"
+    substack:
+      - url: "https://yourhandle.substack.com"
+        title: "Newsletter on Substack"
+  unsubscribeLink: "[unsubscribe]"
+  #archiveLink: "https://example.com/archive"
   address: |
     Published by: Your Name<br>
     Your Address Here<br>
     City, State ZIP<br>
     Country
+  colophon: "Crafted with care using sustainable design practices and ethical technology choices."
 ---
 
 Testing the new modular Dense Discovery template structure.
