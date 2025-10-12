@@ -266,17 +266,36 @@ if (!isMarkdown && !isJson) {
   process.exit(1);
 }
 
-// Set up paths
+// Set up paths - handle both absolute and relative paths
 let inputPath;
 if (isMarkdown) {
-  inputPath = inputFile.startsWith('content/') ? inputFile : path.join('content', inputFile);
+  // If it's an absolute path, use it directly
+  if (path.isAbsolute(inputFile)) {
+    inputPath = inputFile;
+  } else if (inputFile.startsWith('content/')) {
+    // Already has content/ prefix
+    inputPath = inputFile;
+  } else {
+    // Relative path, assume it's in content/ directory
+    inputPath = path.join('content', inputFile);
+  }
 } else {
-  inputPath = inputFile.startsWith('data/') ? inputFile : path.join('data', inputFile);
+  // JSON files
+  if (path.isAbsolute(inputFile)) {
+    inputPath = inputFile;
+  } else if (inputFile.startsWith('data/')) {
+    inputPath = inputFile;
+  } else {
+    inputPath = path.join('data', inputFile);
+  }
 }
 
 // Check if input file exists
 if (!fs.existsSync(inputPath)) {
   console.error(`❌ Input file not found: ${inputPath}`);
+  if (!path.isAbsolute(inputFile)) {
+    console.error(`   Tried: ${path.resolve(inputPath)}`);
+  }
   process.exit(1);
 }
 

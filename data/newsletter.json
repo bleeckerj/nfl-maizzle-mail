@@ -2,33 +2,33 @@
   "$schema": "../newsletter.schema.json",
   "template": "dense-discovery",
   "title": "Near Future Laboratory – w42y25",
-  "preheader": "Stuff and Things",
+  "preheader": "Operationalizing Imagination - A LinkedIn Live Event!",
   "colorTheme": "professional",
   "header": {
-    "quote": "The function of poetry is to bring us back to the feeling of wonder.",
-    "author": "Richard Whyte",
-    "logoTop": "http://192.168.15.59:4321/images/site/logos/TOP_LaboratoryCircle_Guy_01_CircleWhite.png",
-    "logoBottom": "http://192.168.15.59:4321/images/site/logos/BOTTOM_LaboratoryCircle_Guy_01_CircleWhite.png",
+    "quote": "Inspirational quote for the header",
+    "author": "Quote Author",
+    "logoTop": "https://nearfuturelaboratory.com/images/site/logos/TOP_LaboratoryCircle_Guy_01_CircleWhite.png",
+    "logoBottom": "https://nearfuturelaboratory.com/images/site/logos/BOTTOM_LaboratoryCircle_Guy_01_CircleWhite.png",
     "logoLink": "https://nearfuturelaboratory.com"
   },
   "intro": {
-    "title": "Welcome to Issue 79!",
-    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Our ability to filter, evaluate, and prioritise information is being put to the test and in many cases is reaching a natural limit. It's important to acknowledge that there has probably never been more competition for our attention than right now.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">It's totally OK and human to feel overwhelmed and exhausted.</p>",
-    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/w42y25"
+    "title": "Welcome to Issue Title!",
+    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Introduction paragraph that sets the context for this issue. Talk about themes, current events, or what readers can expect.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Additional intro paragraph if needed.</p>",
+    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/issue-link"
   },
   "sections": [
     {
       "type": "sponsor",
-      "title": "Sascha Pohflepp's Blind Camera",
-      "sponsorLabel": "ARCHIVES",
+      "title": "Sponsor Section Title",
+      "sponsorLabel": "SPONSOR",
       "sponsorLink": "https://example.com/sponsor",
       "items": [
         {
-          "title": "Blind Camera",
-          "subtitle": "The collaborative design platform teams love",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Create stunning designs with real-time collaboration, advanced prototyping, and seamless developer handoff. Used by teams at Spotify, Airbnb, and Microsoft.</p>",
-          "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=194&h=150&fit=crop&q=80",
-          "link": "https://figma.com/professional"
+          "title": "Featured Item Title",
+          "subtitle": "Brief tagline",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Compelling description of the sponsored content.</p>",
+          "image": "https://images.unsplash.com/photo-example?w=194&h=150&fit=crop&q=80",
+          "link": "https://sponsor-link.com"
         }
       ]
     },
@@ -37,35 +37,29 @@
       "title": "Apps & Sites",
       "items": [
         {
-          "title": "Linear",
-          "subtitle": "Issue tracking for modern software teams",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Beautiful, fast, and purpose-built for software development. Linear helps thousands of high-impact product teams track issues, prioritize product roadmaps, and manage releases.</p>",
-          "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=200&h=120&fit=crop&q=80",
-          "link": "https://linear.app"
+          "title": "App/Site Name",
+          "subtitle": "Brief description",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Detailed description of the app or website.</p>",
+          "image": "https://images.unsplash.com/photo-example?w=200&h=120&fit=crop&q=80",
+          "link": "https://app-site-link.com"
         },
         {
-          "title": "Raycast",
-          "subtitle": "Supercharged productivity for Mac",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">A blazingly fast, totally extendable launcher. It lets you complete tasks, calculate, share common links, and much more.</p>",
-          "image": "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=200&h=120&fit=crop&q=80",
-          "link": "https://raycast.com"
-        },
-        {
-          "title": "Arc Browser",
-          "subtitle": "The browser company's new take on browsing",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">A fresh approach to web browsing with spaces, profiles, and AI-powered features designed for the way you work.</p>",
-          "link": "https://arc.net"
+          "title": "Second App/Site",
+          "subtitle": "Brief description",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Another app or site recommendation.</p>",
+          "image": "https://images.unsplash.com/photo-example2?w=200&h=120&fit=crop&q=80",
+          "link": "https://second-link.com"
         }
       ]
     },
     {
       "type": "quote",
-      "title": "From the Discord",
+      "title": "Quote Section Title",
       "items": [
         {
-          "quote": "The best designers I know spend way more time thinking about problems than they do in Figma. The tool is just the final 10% of the process.",
-          "author": "@johndoe_design",
-          "authorLink": "https://twitter.com/johndoe_design"
+          "quote": "Meaningful quote that resonates with your audience.",
+          "author": "@author_handle",
+          "authorLink": "https://julianbleecker.com"
         }
       ]
     },
@@ -74,12 +68,12 @@
       "title": "Featured Project",
       "items": [
         {
-          "title": "Poetry Camera",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">A thoughtful publication about the human side of technology, featuring interviews with people who create and use technology in meaningful ways.</p>",
-          "details": "– Latest Issue: <a href=\"https://example.com/offscreen\">25</a><br>\n– Frequency: 2 issues/year<br>\n– Formats: print + digital<br>\n– This place: Tuna Fish\n",
-          "note": "Founded by Kai Brach, this magazine focuses on the stories behind the screens.",
-          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=194&h=250&fit=crop&q=80",
-          "link": "https://offscreenmag.com"
+          "title": "Project/Magazine Name",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Description of the independent project or publication.</p>",
+          "details": "– Additional details<br>\n– More information<br>\n– Specifications or notes\n",
+          "note": "Optional additional note about the project.",
+          "image": "https://images.unsplash.com/photo-example?w=194&h=250&fit=crop&q=80",
+          "link": "https://project-link.com"
         }
       ]
     },
@@ -90,52 +84,51 @@
       "bylineLink": "https://nearfuturelaboratory.com/library",
       "items": [
         {
-          "title": "The Design of Everyday Things",
-          "subtitle": "Revised and expanded edition",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Don Norman's classic on how design serves as the communication between object and user, and how to optimize that relationship.</p>",
-          "image": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=290&h=150&fit=crop&q=80",
-          "link": "https://amazon.com/design-everyday-things"
-        },
-        {
-          "title": "Keychron K8 Keyboard",
-          "subtitle": "Wireless mechanical keyboard for Mac & PC",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">A compact 87-key tenkeyless layout mechanical keyboard built for both Mac and Windows with Gateron mechanical switches.</p>",
-          "image": "https://images.unsplash.com/photo-1541140532154-b024d705b90a?w=290&h=150&fit=crop&q=80",
-          "link": "https://keychron.com/k8"
+          "title": "Book/Product Title",
+          "subtitle": "Edition or brief description",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Why this book/product is worth recommending.</p>",
+          "image": "https://images.unsplash.com/photo-example?w=290&h=150&fit=crop&q=80",
+          "link": "https://purchase-link.com"
         }
       ]
     },
     {
       "type": "food-for-thought",
-      "title": "Shared in the NFL Discord",
+      "title": "From the Discord",
       "items": [
         {
-          "title": "Data-Driven Art: Transforming Budapest’s Mobility Patterns into an Immersive Musical and Visual Experience",
-          "category": "Channel: 🖼-art-technology",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">“Melody of Budapest” by Milán Janosov explores the integration of data science and artificial intelligence to represent the city's mobility patterns through a multidisciplinary audiovisual composition. Utilizing large-scale cellular mobility data and generative AI, the project visualizes Budapest's dynamic urban activity and rhythms, emphasizing the city's complex internal systems and temporal variability.</p>",
-          "link": "https://datascience.virginia.edu/pages/melody-budapest-milan-janosov"
+          "title": "Thought-Provoking Article Title",
+          "category": "Read",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Description of why this content is worth consuming.</p>",
+          "link": "https://article-link.com"
         },
         {
-          "title": "Why Remote Work Isn't Going Away",
-          "category": "Listen",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">A fascinating podcast discussion about the future of work, productivity metrics, and how companies are adapting to distributed teams.</p>",
-          "link": "https://example.com/remote-work-podcast"
-        },
-        {
-          "title": "The Psychology of Color in UI Design",
-          "category": "Watch",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">A comprehensive video exploration of how different colors affect user behavior and decision-making in digital interfaces.</p>",
-          "link": "https://example.com/color-psychology"
+          "title": "Second Recommendation",
+          "category": "Read",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Another interesting piece of content.</p>",
+          "link": "https://second-recommendation.com"
         }
       ]
     }
   ],
   "footer": {
-    "shareUrl": "https://nearfuturelaboratory.com/issues/79",
-    "emailShare": "mailto:?subject=Dense%20Discovery%20Issue&body=Check%20out%20this%20issue: https://nearfuturelaboratory.com/issues/79",
-    "logo": "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png",
+    "shareUrl": "https://nearfuturelaboratory.com/newsletters",
+    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue",
+    "logo": "https://nearfuturelaboratory.com/images/logos/footer-logo.png",
     "logoLink": "https://nearfuturelaboratory.com",
     "socialLinks": {
+      "applepodcasts": [
+        {
+          "url": "https://podcasts.apple.com/us/podcast/near-future-laboratory-podcast/id1546452193",
+          "title": "Near Future Laboratory on Apple Podcasts"
+        }
+      ],
+      "spotify": [
+        {
+          "url": "https://open.spotify.com/show/1vHzwGE5J19LvXSo8M93MM",
+          "title": "Near Future Laboratory on Spotify"
+        }
+      ],
       "github": [
         {
           "url": "https://github.com/bleeckerj",
@@ -143,23 +136,27 @@
         },
         {
           "url": "https://github.com/nearfuturelaboratory",
-          "title": "Company GitHub"
+          "title": "Near Future Laboratory GitHub"
+        },
+        {
+          "url": "https://github.com/nearfuturelaboratory",
+          "title": "Near Future Laboratory GitHub"
         }
       ],
       "instagram": [
         {
           "url": "https://instagram.com/darthjulian",
-          "title": "Julian Bleecker Instagram"
+          "title": "Personal Instagram"
         },
         {
           "url": "https://instagram.com/nearfuturelaboratory",
-          "title": "Near Future Laboratory Instagram"
+          "title": "Company Instagram"
         }
       ],
       "linkedin": [
         {
           "url": "https://linkedin.com/in/julianbleecker",
-          "title": "Julian Bleecker LinkedIn"
+          "title": "Personal LinkedIn"
         },
         {
           "url": "https://www.linkedin.com/company/near-future-laboratory/",
@@ -174,28 +171,29 @@
       ],
       "discord": [
         {
-          "url": "https://discord.gg/yourserver",
-          "title": "Discord Community"
+          "url": "https://patreon.com/nearfuturelaboratory",
+          "title": "Join Patreon to join the Discord Community"
         }
       ],
       "patreon": [
         {
           "url": "https://patreon.com/nearfuturelaboratory",
-          "title": "Support on Patreon"
+          "title": "Support me on Patreon"
         }
       ],
       "substack": [
         {
-          "url": "https://nearfuturelaboratory.substack.com",
+          "url": "https://newsletter.substack.com",
           "title": "Newsletter on Substack"
         }
       ]
     },
     "unsubscribeLink": "[unsubscribe]",
     "archiveLink": "https://nearfuturelaboratory.com/newsletters",
-    "address": "© 2025 Near Future Laboratory<br>\nVenice Beach, California<br/>\nUSA\n",
-    "colophon": "Imagination is evolutionary advantage. It fuels our creativity and drives innovation. It's time to Imagine Harder."
+    "address": "© 2025 Near Future Laboratory<br>\nYour City, State<br>\nCountry\n",
+    "colophon": "Your closing message or tagline."
   },
+  "markdownContent": "<p>Your newsletter content goes here.</p>",
   "themeColors": {
     "header": "#efefee",
     "sponsor": "#f5f7fa",

@@ -22,7 +22,7 @@
             <tr>
               <td align="left" class="padt20 padr20 padl20" style="text-align: center;border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 20px;" valign="top">
                 <h1 class="padb15" style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;padding-bottom: 15px;">
-                  Enjoyed this issue? Share it:
+                  Share this issue:
                 </h1>
                 <if condition="footer.shareUrl">
                   <p class="share" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 15px 5px;margin: 0;margin-bottom: 15px;border: 1px solid #5f5f5f;background: #f8f8f8;text-align: center;">
@@ -31,8 +31,8 @@
                     </a>
                   </p>
                 </if>
-                <if condition="footer.twitterShare">
-                  <a class="small" href="{{ footer.twitterShare }}" style="text-decoration: underline;font-size: 14px;line-height: 19px;color: #000000 !important;">Share on Twitter</a> →   
+                <if condition="footer.linkedInFollow">
+                  <a class="small" href="{{ footer.linkedInFollow }}" style="text-decoration: underline;font-size: 14px;line-height: 19px;color: #000000 !important;">Follow me on LinkedIn</a> →   
                 </if>
                 <if condition="footer.emailShare">
                   <a class="small" href="{{ footer.emailShare }}" style="text-decoration: underline;font-size: 14px;line-height: 19px;color: #000000 !important;">Forward via email</a> →
@@ -70,7 +70,23 @@
                           </a>
                         </td>
                       </each>
+                      <!-- Apple Podcasts Links -->
+                      <each loop="link in footer.socialLinks.applepodcasts">
+                        <td style="padding: 0 6px;">
+                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Apple Podcasts' }}">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/applepodcasts.svg" alt="{{ link.title || 'Apple Podcasts' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
+                          </a>
+                        </td>
+                      </each>
                       
+                      <!-- Spotify Links -->
+                      <each loop="link in footer.socialLinks.spotify">
+                        <td style="padding: 0 6px;">
+                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Spotify' }}">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/spotify.svg" alt="{{ link.title || 'Spotify' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
+                          </a>
+                        </td>
+                      </each>
                       <!-- Instagram Links -->
                       <each loop="link in footer.socialLinks.instagram">
                         <td style="padding: 0 6px;">
@@ -94,6 +110,24 @@
                         <td style="padding: 0 6px;">
                           <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'YouTube' }}">
                             <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="{{ link.title || 'YouTube' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
+                          </a>
+                        </td>
+                      </each>
+                      
+                      <!-- Apple Podcasts Links -->
+                      <each loop="link in footer.socialLinks.applepodcasts">
+                        <td style="padding: 0 6px;">
+                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Apple Podcasts' }}">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/applepodcasts.svg" alt="{{ link.title || 'Apple Podcasts' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
+                          </a>
+                        </td>
+                      </each>
+                      
+                      <!-- Spotify Links -->
+                      <each loop="link in footer.socialLinks.spotify">
+                        <td style="padding: 0 6px;">
+                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Spotify' }}">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/spotify.svg" alt="{{ link.title || 'Spotify' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
                           </a>
                         </td>
                       </each>

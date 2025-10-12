@@ -167,6 +167,42 @@ function listContentFiles() {
     .sort();
 }
 
+/**
+ * Resolve input file path - handles both absolute and relative paths
+ */
+function resolveInputPath(inputPath) {
+  if (!inputPath) {
+    return selectFile();
+  }
+  
+  // If it's an absolute path, use it directly
+  if (path.isAbsolute(inputPath)) {
+    if (fs.existsSync(inputPath)) {
+      return inputPath;
+    } else {
+      console.error(`❌ File not found: ${inputPath}`);
+      process.exit(1);
+    }
+  }
+  
+  // If it's a relative path, resolve it relative to current directory
+  const resolvedPath = path.resolve(inputPath);
+  if (fs.existsSync(resolvedPath)) {
+    return resolvedPath;
+  }
+  
+  // Also try relative to content/ directory for backwards compatibility
+  const contentPath = path.resolve(`content/${inputPath}`);
+  if (fs.existsSync(contentPath)) {
+    return contentPath;
+  }
+  
+  console.error(`❌ File not found: ${inputPath}`);
+  console.error(`   Tried: ${resolvedPath}`);
+  console.error(`   Tried: ${contentPath}`);
+  process.exit(1);
+}
+
 function selectFile() {
   const files = listContentFiles();
   
@@ -176,7 +212,7 @@ function selectFile() {
   }
   
   if (files.length === 1) {
-    return `content/${files[0]}`;
+    return path.resolve(`content/${files[0]}`);
   }
   
   console.log('📄 Available content files:');
@@ -186,7 +222,7 @@ function selectFile() {
   
   // For now, just use the first one (in a real CLI you'd prompt user)
   console.log(`\n🎯 Using: ${files[0]}`);
-  return `content/${files[0]}`;
+  return path.resolve(`content/${files[0]}`);
 }
 
 // Handle different commands
@@ -198,7 +234,7 @@ switch (command) {
   case 'atlantic':
   case 'dense-discovery':
     const template = templates[command];
-    const inputFile = file || selectFile();
+    const inputFile = resolveInputPath(file);
     const outputName = path.basename(inputFile, '.md');
     
     console.log(`🚀 Quick Build: ${command} template`);
@@ -233,11 +269,16 @@ switch (command) {
     console.log('  npm run quick dense-discovery [file]   # Build with modular dense-discovery template');
     console.log('  npm run quick list                     # List available content files');
     console.log('');
+    console.log('File Path Support:');
+    console.log('  • Absolute paths: /full/path/to/content.md');
+    console.log('  • Relative paths: ../other-project/content.md');
+    console.log('  • Local content: content/my-file.md');
+    console.log('');
     console.log('Examples:');
     console.log('  npm run quick wirecutter                           # Auto-select file');
-    console.log('  npm run quick wirecutter content/my-article.md     # Specific file');
-    console.log('  npm run quick atlantic content/atlantic-future-work.md # Build Atlantic newsletter');
-    console.log('  npm run quick dense-discovery content/dense-discovery-test.md # Build Dense Discovery newsletter');
+    console.log('  npm run quick wirecutter content/my-article.md     # Local content file');
+    console.log('  npm run quick atlantic /Users/me/other/newsletter.md # Absolute path');
+    console.log('  npm run quick dense-discovery ../cms/content/issue-79.md # Relative path');
     console.log('  npm run quick sentiers-reliable                    # Test enhanced template');
     console.log('');
     process.exit(1);

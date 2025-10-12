@@ -7,10 +7,10 @@ colorTheme: "professional"
 header:
   quote: "The function of poetry is to bring us back to the feeling of wonder."
   author: "Richard Whyte"
-  #featuredImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=386&h=250&fit=crop"
-  #featuredArtist:
-   # name: "Someone Famous"
-   # link: "https://example.com/artist"
+  featuredImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=386&h=250&fit=crop"
+  featuredArtist:
+    name: "Someone Famous"
+    link: "https://example.com/artist"
   logoTop: "http://192.168.15.59:4321/images/site/logos/TOP_LaboratoryCircle_Guy_01_CircleWhite.png"
   logoBottom: "http://192.168.15.59:4321/images/site/logos/BOTTOM_LaboratoryCircle_Guy_01_CircleWhite.png"
   logoLink: "https://nearfuturelaboratory.com"
@@ -106,48 +106,48 @@ sections:
         description: "A comprehensive video exploration of how different colors affect user behavior and decision-making in digital interfaces."
         link: "https://example.com/color-psychology"
 
-#   - type: "aesthetically-pleasing"
-#     title: "Aesthetically Pleasing"
-#     items:
-#       - images: 
-#           - "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=386&h=200&fit=crop&q=80"
-#           - "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=386&h=200&fit=crop&q=80"
-#         description: "Stunning aerial photography from <strong>@earthporn</strong> showcasing the geometric patterns found in nature - salt flats meeting forest in perfect symmetry."
-#         link: "https://instagram.com/earthporn"
-#       - images:
-#           - "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=386&h=200&fit=crop&q=80"
-#           - "https://images.unsplash.com/photo-1515041219749-89347f83291a?w=386&h=200&fit=crop&q=80"
-#         description: "Minimalist architecture from <strong>Copenhagen</strong> - clean lines and thoughtful use of light creating spaces that feel both modern and timeless."
-#         link: "https://example.com/copenhagen-architecture"
+  - type: "aesthetically-pleasing"
+    title: "Aesthetically Pleasing"
+    items:
+      - images: 
+          - "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=386&h=200&fit=crop&q=80"
+          - "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=386&h=200&fit=crop&q=80"
+        description: "Stunning aerial photography from <strong>@earthporn</strong> showcasing the geometric patterns found in nature - salt flats meeting forest in perfect symmetry."
+        link: "https://instagram.com/earthporn"
+      - images:
+          - "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=386&h=200&fit=crop&q=80"
+          - "https://images.unsplash.com/photo-1515041219749-89347f83291a?w=386&h=200&fit=crop&q=80"
+        description: "Minimalist architecture from <strong>Copenhagen</strong> - clean lines and thoughtful use of light creating spaces that feel both modern and timeless."
+        link: "https://example.com/copenhagen-architecture"
 
-#   - type: "classifieds"
-#     title: "Classifieds"
-#     description: "Classifieds are paid ads that support Near Future Laboratory and are seen by our 17,000+ subscribers each week."
-#     bookingLink: "https://example.com/book-classified"
-#     bookingText: "Book yours →"
-#     items:
-#       - content: "Looking for a senior product designer to join our remote team at GreenTech startup. Competitive salary, equity, and the chance to solve climate problems through design."
-#         link: "https://example.com/greentech-job"
-#         linkText: "Apply Now"
-#       - content: "New course: 'Design Systems from Scratch' - Learn to build scalable design systems that actually get adopted by engineering teams. Early bird pricing ends Friday."
-#         link: "https://example.com/design-systems-course"
-#         linkText: "Get Early Access"
-#       - content: "Freelance design studio seeking project collaborators. We specialize in fintech and healthcare apps. Portfolio review and coffee chat included."
-#         link: "https://example.com/design-collective"
-#         linkText: "Let's Collaborate"
+  - type: "classifieds"
+    title: "Classifieds"
+    description: "Classifieds are paid ads that support Near Future Laboratory and are seen by our 17,000+ subscribers each week."
+    bookingLink: "https://example.com/book-classified"
+    bookingText: "Book yours →"
+    items:
+      - content: "Looking for a senior product designer to join our remote team at GreenTech startup. Competitive salary, equity, and the chance to solve climate problems through design."
+        link: "https://example.com/greentech-job"
+        linkText: "Apply Now"
+      - content: "New course: 'Design Systems from Scratch' - Learn to build scalable design systems that actually get adopted by engineering teams. Early bird pricing ends Friday."
+        link: "https://example.com/design-systems-course"
+        linkText: "Get Early Access"
+      - content: "Freelance design studio seeking project collaborators. We specialize in fintech and healthcare apps. Portfolio review and coffee chat included."
+        link: "https://example.com/design-collective"
+        linkText: "Let's Collaborate"
 
-#   - type: "gif"
-#     title: "The Week in a GIF"
-#     items:
-#       - gif: "https://media.giphy.com/media/l0HlQ7LRalQqdWfao/giphy.gif"
-#         description: "When you finally figure out that CSS layout bug that's been haunting you for three days."
-#         # contact: "mailto:julian@nearfuturelaboratory.com"
-#         # contactText: "Send us your favorite GIFs"
+  - type: "gif"
+    title: "The Week in a GIF"
+    items:
+      - gif: "https://media.giphy.com/media/l0HlQ7LRalQqdWfao/giphy.gif"
+        description: "When you finally figure out that CSS layout bug that's been haunting you for three days."
+        contact: "mailto:julian@nearfuturelaboratory.com"
+        contactText: "Send us your favorite GIFs"
 
 footer:
   shareUrl: "https://nearfuturelaboratory.com/issues/79"
-#   twitterShare: "https://twitter.com/intent/tweet?text=Check%20out%20this%20newsletter"
-  emailShare: "mailto:?subject=Dense%20Discovery%20Issue&body=Check%20out%20this%20issue: https://nearfuturelaboratory.com/issues/79"
+  linkedInFollow: "https://linkedin.com/in/julianbleecker"
+  emailShare: "mailto:?subject=Near%20Future%20Laboratory%20Issue&body=Check%20out%20this%20issue: https://nearfuturelaboratory.com/issues/79"
   logo: "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png"
   logoLink: "https://nearfuturelaboratory.com"
   socialLinks:
@@ -169,9 +169,15 @@ footer:
     youtube:
       - url: "https://youtube.com/@nearfuturelaboratory"
         title: "YouTube Channel"
+    applepodcasts:
+      - url: "https://podcasts.apple.com/us/podcast/near-future-laboratory/id12345"
+        title: "Near Future Laboratory on Apple Podcasts"
+    spotify:
+      - url: "https://open.spotify.com/show/nearfuturelaboratory"
+        title: "Near Future Laboratory on Spotify"
     discord:
-      - url: "https://discord.gg/yourserver"
-        title: "Discord Community"
+      - url: "https://patreon.com/nearfuturelaboratory"
+        title: "Join Patreon to Join the Discord Community"
     patreon:
       - url: "https://patreon.com/nearfuturelaboratory"
         title: "Support on Patreon"
