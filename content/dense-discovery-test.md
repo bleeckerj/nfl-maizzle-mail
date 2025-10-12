@@ -1,14 +1,14 @@
 ---
 template: dense-discovery
-title: "Dense Discovery – Issue 79"
-preheader: "Apps, sites, books, and other interesting things"
+title: "Near Future Laboratory – w42y25"
+preheader: "Stuff and Things"
 
 header:
-  quote: "The Universe is under no obligation to make sense to you."
+  quote: "We're Universe is under no obligation to make sense to you."
   author: "Neil deGrasse Tyson"
   featuredImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=386&h=250&fit=crop"
   featuredArtist:
-    name: "Rocio Egio Studio"
+    name: "Someone Famous"
     link: "https://example.com/artist"
   logoTop: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=163&h=50&fit=crop"
   logoBottom: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=163&h=30&fit=crop"
@@ -53,7 +53,7 @@ sections:
         link: "https://arc.net"
 
   - type: "twitter-quote"
-    title: "Overheard on Twitter"
+    title: "From the Discord"
     items:
       - quote: "The best designers I know spend way more time thinking about problems than they do in Figma. The tool is just the final 10% of the process."
         author: "@johndoe_design"
@@ -68,9 +68,9 @@ sections:
           – Latest Issue: <a href="https://example.com/offscreen">25</a><br>
           – Frequency: 2 issues/year<br>
           – Formats: print + digital<br>
-          – Origin: Australia
+          – This place: Tuna Fish
         note: "Founded by Kai Brach, this magazine focuses on the stories behind the screens."
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=290&h=150&fit=crop&q=80"
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=194&h=250&fit=crop&q=80"
         link: "https://offscreenmag.com"
 
   - type: "books-accessories"
@@ -81,7 +81,7 @@ sections:
       - title: "The Design of Everyday Things"
         subtitle: "Revised and expanded edition"
         description: "Don Norman's classic on how design serves as the communication between object and user, and how to optimize that relationship."
-        image: "https://images.unsplash.com/photo-1544716278-e513176f20a5?w=290&h=150&fit=crop&q=80"
+        image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=290&h=150&fit=crop&q=80"
         link: "https://amazon.com/design-everyday-things"
       - title: "Keychron K8 Keyboard"
         subtitle: "Wireless mechanical keyboard for Mac & PC"
@@ -114,7 +114,7 @@ sections:
         description: "Stunning aerial photography from <strong>@earthporn</strong> showcasing the geometric patterns found in nature - salt flats meeting forest in perfect symmetry."
         link: "https://instagram.com/earthporn"
       - images:
-          - "https://images.unsplash.com/photo-1493243350443-895a63221acc?w=386&h=200&fit=crop&q=80"
+          - "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=386&h=200&fit=crop&q=80"
           - "https://images.unsplash.com/photo-1515041219749-89347f83291a?w=386&h=200&fit=crop&q=80"
         description: "Minimalist architecture from <strong>Copenhagen</strong> - clean lines and thoughtful use of light creating spaces that feel both modern and timeless."
         link: "https://example.com/copenhagen-architecture"

@@ -54,34 +54,59 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
 
                     <each loop="item in section.items">
                       <tr>
-                        <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: #f8eccf;padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
+                        <td align="left" style="border-collapse: collapse;background: #f8eccf;">
+                          <!--[if mso]>
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr><td width="35%" valign="top"><![endif]-->
                           
-                          <if condition="item.image">
-                            <div style="margin-bottom: 15px;">
-                              <img src="{{ item.image }}" alt="{{ item.title || 'Sponsor Image' }}" width="194" height="auto" style="-ms-interpolation-mode: bicubic;display: block;max-width: 100%;">
-                            </div>
-                          </if>
+                          <!-- Left Column: Image -->
+                          <table align="left" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="224">
+                            <tbody>
+                              <tr>
+                                <td class="padt20 padr10 padl20" style="border-collapse: collapse;background: #f8eccf;padding-top: 20px;padding-right: 10px;padding-left: 20px;" valign="top">
+                                  <if condition="item.image">
+                                    <img src="{{ item.image }}" alt="{{ item.title || 'Sponsor Image' }}" width="194" height="auto" style="-ms-interpolation-mode: bicubic;display: block;max-width: 100%;">
+                                  </if>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
 
-                          <if condition="item.title">
-                            <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
-                              <if condition="item.link">
-                                <a href="{{ item.link }}" style="text-decoration: underline;color: #000000 !important;">{{ item.title }}</a>
-                              <else>
-                                {{ item.title }}
-                              </else>
-                              </if>
-                            </h2>
-                          </if>
+                          <!--[if mso]></td><td width="65%" valign="top"><![endif]-->
                           
-                          <if condition="item.subtitle">
-                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
-                          </if>
-                          
-                          <if condition="item.description">
-                            <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
-                              {{{ item.description }}}
-                            </div>
-                          </if>
+                          <!-- Right Column: Content -->
+                          <table align="right" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="416">
+                            <tbody>
+                              <tr>
+                                <td class="padt20 padr20 padl10" style="border-collapse: collapse;background: #f8eccf;padding-top: 20px;padding-right: 20px;padding-left: 10px;padding-bottom: 20px;" valign="top">
+                                  
+                                  <if condition="item.title">
+                                    <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
+                                      <if condition="item.link">
+                                        <a href="{{ item.link }}" style="text-decoration: underline;color: #000000 !important;">{{ item.title }}</a>
+                                      <else>
+                                        {{ item.title }}
+                                      </else>
+                                      </if>
+                                    </h2>
+                                  </if>
+                                  
+                                  <if condition="item.subtitle">
+                                    <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
+                                  </if>
+                                  
+                                  <if condition="item.description">
+                                    <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
+                                      {{{ item.description }}}
+                                    </div>
+                                  </if>
+                                  
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                          <!--[if mso]></td></tr></table><![endif]-->
                         </td>
                       </tr>
                     </each>
@@ -101,34 +126,59 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
                     
                     <each loop="item in section.items">
                       <tr>
-                        <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 10px;padding-left: 20px;">
+                        <td align="left" style="border-collapse: collapse;">
+                          <!--[if mso]>
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr><td width="35%" valign="top"><![endif]-->
                           
-                          <if condition="item.image">
-                            <div style="margin-bottom: 15px;">
-                              <img src="{{ item.image }}" alt="{{ item.title || 'App/Site Image' }}" width="200" height="auto" style="-ms-interpolation-mode: bicubic;display: block;max-width: 100%;">
-                            </div>
-                          </if>
+                          <!-- Left Column: Image -->
+                          <table align="left" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="224">
+                            <tbody>
+                              <tr>
+                                <td class="padt20 padr10 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 10px;padding-left: 20px;" valign="top">
+                                  <if condition="item.image">
+                                    <img src="{{ item.image }}" alt="{{ item.title || 'App/Site Image' }}" width="194" height="auto" style="-ms-interpolation-mode: bicubic;display: block;max-width: 100%;">
+                                  </if>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
 
-                          <if condition="item.title">
-                            <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
-                              <if condition="item.link">
-                                <a href="{{ item.link }}" style="text-decoration: underline;color: #000000 !important;">{{ item.title }}</a>
-                              <else>
-                                {{ item.title }}
-                              </else>
-                              </if>
-                            </h2>
-                          </if>
+                          <!--[if mso]></td><td width="65%" valign="top"><![endif]-->
                           
-                          <if condition="item.subtitle">
-                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
-                          </if>
-                          
-                          <if condition="item.description">
-                            <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
-                              {{{ item.description }}}
-                            </div>
-                          </if>
+                          <!-- Right Column: Content -->
+                          <table align="right" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="416">
+                            <tbody>
+                              <tr>
+                                <td class="padt20 padr20 padl10" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 10px;" valign="top">
+                                  
+                                  <if condition="item.title">
+                                    <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
+                                      <if condition="item.link">
+                                        <a href="{{ item.link }}" style="text-decoration: underline;color: #000000 !important;">{{ item.title }}</a>
+                                      <else>
+                                        {{ item.title }}
+                                      </else>
+                                      </if>
+                                    </h2>
+                                  </if>
+                                  
+                                  <if condition="item.subtitle">
+                                    <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
+                                  </if>
+                                  
+                                  <if condition="item.description">
+                                    <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
+                                      {{{ item.description }}}
+                                    </div>
+                                  </if>
+                                  
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                          <!--[if mso]></td></tr></table><![endif]-->
                         </td>
                       </tr>
                     </each>
@@ -184,40 +234,65 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
 
                     <each loop="item in section.items">
                       <tr>
-                        <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: #efe2f3;padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
+                        <td align="left" style="border-collapse: collapse;background: #efe2f3;">
+                          <!--[if mso]>
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                          <tr><td width="35%" valign="top"><![endif]-->
                           
-                          <if condition="item.image">
-                            <div style="margin-bottom: 15px;">
-                              <img src="{{ item.image }}" alt="{{ item.title || 'Magazine Cover' }}" width="290" height="auto" style="-ms-interpolation-mode: bicubic;display: block;max-width: 100%;">
-                            </div>
-                          </if>
+                          <!-- Left Column: Image (Taller for Magazine Cover) -->
+                          <table align="left" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="224">
+                            <tbody>
+                              <tr>
+                                <td class="padt20 padr10 padl20" style="border-collapse: collapse;background: #efe2f3;padding-top: 20px;padding-right: 10px;padding-left: 20px;padding-bottom: 20px;" valign="top">
+                                  <if condition="item.image">
+                                    <img src="{{ item.image }}" alt="{{ item.title || 'Magazine Cover' }}" width="194" height="250" style="-ms-interpolation-mode: bicubic;display: block;max-width: 100%;object-fit: cover;">
+                                  </if>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
 
-                          <if condition="item.title">
-                            <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
-                              <if condition="item.link">
-                                <a href="{{ item.link }}" style="text-decoration: underline;color: #000000 !important;">{{ item.title }}</a>
-                              <else>
-                                {{ item.title }}
-                              </else>
-                              </if>
-                            </h2>
-                          </if>
+                          <!--[if mso]></td><td width="65%" valign="top"><![endif]-->
                           
-                          <if condition="item.description">
-                            <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 10px;">
-                              {{{ item.description }}}
-                            </div>
-                          </if>
+                          <!-- Right Column: Content -->
+                          <table align="right" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="416">
+                            <tbody>
+                              <tr>
+                                <td class="padt20 padr20 padl10" style="border-collapse: collapse;background: #efe2f3;padding-top: 20px;padding-right: 20px;padding-left: 10px;padding-bottom: 20px;" valign="top">
+                                  
+                                  <if condition="item.title">
+                                    <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
+                                      <if condition="item.link">
+                                        <a href="{{ item.link }}" style="text-decoration: underline;color: #000000 !important;">{{ item.title }}</a>
+                                      <else>
+                                        {{ item.title }}
+                                      </else>
+                                      </if>
+                                    </h2>
+                                  </if>
+                                  
+                                  <if condition="item.description">
+                                    <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 10px;">
+                                      {{{ item.description }}}
+                                    </div>
+                                  </if>
 
-                          <if condition="item.details">
-                            <div style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;margin-bottom: 10px;">
-                              {{{ item.details }}}
-                            </div>
-                          </if>
+                                  <if condition="item.details">
+                                    <div style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;margin-bottom: 10px;">
+                                      {{{ item.details }}}
+                                    </div>
+                                  </if>
 
-                          <if condition="item.note">
-                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;font-style: italic;">{{ item.note }}</p>
-                          </if>
+                                  <if condition="item.note">
+                                    <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;font-style: italic;">{{ item.note }}</p>
+                                  </if>
+                                  
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                          <!--[if mso]></td></tr></table><![endif]-->
                         </td>
                       </tr>
                     </each>
@@ -328,20 +403,28 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
                     </tr>
 
                     <each loop="item in section.items">
+                      <if condition="item.images">
+                        <each loop="imageUrl in item.images">
+                          <tr>
+                            <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 10px;padding-left: 20px;">
+                              <img src="{{ imageUrl }}" alt="Aesthetically Pleasing" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;">
+                            </td>
+                          </tr>
+                        </each>
+                      </if>
+                      
                       <tr>
-                        <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
-                          <if condition="item.images">
-                            <div style="margin-bottom: 10px;">
-                              <each loop="imageUrl in item.images">
-                                <img src="{{ imageUrl }}" alt="Aesthetically Pleasing" width="386" height="200" style="-ms-interpolation-mode: bicubic;display: inline-block;max-width: 100%;margin-right: 10px;margin-bottom: 10px;">
-                              </each>
-                            </div>
-                          </if>
-                          
+                        <td align="left" class="padt10 padr20 padl20 padb20" style="border-collapse: collapse;padding-top: 10px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
                           <if condition="item.description">
                             <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
                               {{{ item.description }}}
                             </div>
+                          </if>
+                          
+                          <if condition="item.link">
+                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;margin-top: 10px;">
+                              <a href="{{ item.link }}" style="text-decoration: underline;color: #707070 !important;">View source →</a>
+                            </p>
                           </if>
                         </td>
                       </tr>
