@@ -86,8 +86,8 @@
     {
       "type": "books-accessories",
       "title": "Books & Accessories",
-      "byline": "CONSUME RESPONSIBLY",
-      "bylineLink": "https://example.com/consume-responsibly",
+      "byline": "FROM THE STUDIO LIBRARY",
+      "bylineLink": "https://nearfuturelaboratory.com/library",
       "items": [
         {
           "title": "The Design of Everyday Things",
@@ -107,13 +107,13 @@
     },
     {
       "type": "food-for-thought",
-      "title": "Food For Thought",
+      "title": "Shared in the NFL Discord",
       "items": [
         {
-          "title": "The Rise of Design Engineering",
-          "category": "Read",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">How the lines between design and development are blurring, creating a new breed of professionals who can bridge both worlds effectively.</p>",
-          "link": "https://example.com/design-engineering"
+          "title": "Data-Driven Art: Transforming Budapest’s Mobility Patterns into an Immersive Musical and Visual Experience",
+          "category": "Channel: 🖼-art-technology",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">“Melody of Budapest” by Milán Janosov explores the integration of data science and artificial intelligence to represent the city's mobility patterns through a multidisciplinary audiovisual composition. Utilizing large-scale cellular mobility data and generative AI, the project visualizes Budapest's dynamic urban activity and rhythms, emphasizing the city's complex internal systems and temporal variability.</p>",
+          "link": "https://datascience.virginia.edu/pages/melody-budapest-milan-janosov"
         },
         {
           "title": "Why Remote Work Isn't Going Away",
@@ -126,62 +126,6 @@
           "category": "Watch",
           "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">A comprehensive video exploration of how different colors affect user behavior and decision-making in digital interfaces.</p>",
           "link": "https://example.com/color-psychology"
-        }
-      ]
-    },
-    {
-      "type": "aesthetically-pleasing",
-      "title": "Aesthetically Pleasing",
-      "items": [
-        {
-          "images": [
-            "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=386&h=200&fit=crop&q=80",
-            "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=386&h=200&fit=crop&q=80"
-          ],
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Stunning aerial photography from <strong>@earthporn</strong> showcasing the geometric patterns found in nature - salt flats meeting forest in perfect symmetry.</p>",
-          "link": "https://instagram.com/earthporn"
-        },
-        {
-          "images": [
-            "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=386&h=200&fit=crop&q=80",
-            "https://images.unsplash.com/photo-1515041219749-89347f83291a?w=386&h=200&fit=crop&q=80"
-          ],
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Minimalist architecture from <strong>Copenhagen</strong> - clean lines and thoughtful use of light creating spaces that feel both modern and timeless.</p>",
-          "link": "https://example.com/copenhagen-architecture"
-        }
-      ]
-    },
-    {
-      "type": "classifieds",
-      "title": "Classifieds",
-      "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Classifieds are paid ads that support Dense Discovery and are seen by our 20,000+ subscribers each week.</p>",
-      "bookingLink": "https://example.com/book-classified",
-      "bookingText": "Book yours →",
-      "items": [
-        {
-          "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Looking for a senior product designer to join our remote team at GreenTech startup. Competitive salary, equity, and the chance to solve climate problems through design.</p>",
-          "link": "https://example.com/greentech-job",
-          "linkText": "Apply Now"
-        },
-        {
-          "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">New course: 'Design Systems from Scratch' - Learn to build scalable design systems that actually get adopted by engineering teams. Early bird pricing ends Friday.</p>",
-          "link": "https://example.com/design-systems-course",
-          "linkText": "Get Early Access"
-        },
-        {
-          "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Freelance design studio seeking project collaborators. We specialize in fintech and healthcare apps. Portfolio review and coffee chat included.</p>",
-          "link": "https://example.com/design-collective",
-          "linkText": "Let's Collaborate"
-        }
-      ]
-    },
-    {
-      "type": "gif",
-      "title": "The Week in a GIF",
-      "items": [
-        {
-          "gif": "https://media.giphy.com/media/l0HlQ7LRalQqdWfao/giphy.gif",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">When you finally figure out that CSS layout bug that's been haunting you for three days.</p>"
         }
       ]
     }
@@ -245,10 +189,10 @@
   "markdownContent": "<p>Testing the new modular Dense Discovery template structure.</p>",
   "themeColors": {
     "header": "#f5f7fa",
-    "sponsor": "#fdea9b",
+    "sponsor": "#f5f7fa",
     "apps-sites": "#f5f7fa",
-    "quote": "#B0B8BF",
-    "indie-mag": "#9FD356",
+    "quote": "#E9EBED",
+    "indie-mag": "#E5EFF1",
     "books-accessories": "#f5f7fa",
     "food-for-thought": "#f5f7fa",
     "aesthetically-pleasing": "#ffffff",

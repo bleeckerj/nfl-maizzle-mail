@@ -59,10 +59,10 @@
       "description": "Subtle grays and clean whites for professional communication",
       "colors": {
         "header": "#f5f7fa",
-        "sponsor": "#fdea9b",
+        "sponsor": "#f5f7fa",
         "apps-sites": "#f5f7fa",
-        "quote": "#B0B8BF", 
-        "indie-mag": "#9FD356",
+        "quote": "#E9EBED", 
+        "indie-mag": "#E5EFF1",
         "books-accessories": "#f5f7fa", 
         "food-for-thought": "#f5f7fa",
         "aesthetically-pleasing": "#ffffff",

@@ -76,8 +76,8 @@ sections:
 
   - type: "books-accessories"
     title: "Books & Accessories"
-    byline: "CONSUME RESPONSIBLY"
-    bylineLink: "https://example.com/consume-responsibly"
+    byline: "FROM THE STUDIO LIBRARY"
+    bylineLink: "https://nearfuturelaboratory.com/library"
     items:
       - title: "The Design of Everyday Things"
         subtitle: "Revised and expanded edition"
@@ -93,10 +93,10 @@ sections:
   - type: "food-for-thought"
     title: "Shared in the NFL Discord"
     items:
-      - title: "The Rise of Design Engineering"
-        category: "Read"
-        description: "How the lines between design and development are blurring, creating a new breed of professionals who can bridge both worlds effectively."
-        link: "https://example.com/design-engineering"
+      - title: "Data-Driven Art: Transforming Budapest’s Mobility Patterns into an Immersive Musical and Visual Experience"
+        category: "Channel: 🖼-art-technology"
+        description: "“Melody of Budapest” by Milán Janosov explores the integration of data science and artificial intelligence to represent the city's mobility patterns through a multidisciplinary audiovisual composition. Utilizing large-scale cellular mobility data and generative AI, the project visualizes Budapest's dynamic urban activity and rhythms, emphasizing the city's complex internal systems and temporal variability."
+        link: "https://datascience.virginia.edu/pages/melody-budapest-milan-janosov"
       - title: "Why Remote Work Isn't Going Away"
         category: "Listen"
         description: "A fascinating podcast discussion about the future of work, productivity metrics, and how companies are adapting to distributed teams."
@@ -106,43 +106,43 @@ sections:
         description: "A comprehensive video exploration of how different colors affect user behavior and decision-making in digital interfaces."
         link: "https://example.com/color-psychology"
 
-  - type: "aesthetically-pleasing"
-    title: "Aesthetically Pleasing"
-    items:
-      - images: 
-          - "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=386&h=200&fit=crop&q=80"
-          - "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=386&h=200&fit=crop&q=80"
-        description: "Stunning aerial photography from <strong>@earthporn</strong> showcasing the geometric patterns found in nature - salt flats meeting forest in perfect symmetry."
-        link: "https://instagram.com/earthporn"
-      - images:
-          - "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=386&h=200&fit=crop&q=80"
-          - "https://images.unsplash.com/photo-1515041219749-89347f83291a?w=386&h=200&fit=crop&q=80"
-        description: "Minimalist architecture from <strong>Copenhagen</strong> - clean lines and thoughtful use of light creating spaces that feel both modern and timeless."
-        link: "https://example.com/copenhagen-architecture"
+#   - type: "aesthetically-pleasing"
+#     title: "Aesthetically Pleasing"
+#     items:
+#       - images: 
+#           - "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=386&h=200&fit=crop&q=80"
+#           - "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=386&h=200&fit=crop&q=80"
+#         description: "Stunning aerial photography from <strong>@earthporn</strong> showcasing the geometric patterns found in nature - salt flats meeting forest in perfect symmetry."
+#         link: "https://instagram.com/earthporn"
+#       - images:
+#           - "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=386&h=200&fit=crop&q=80"
+#           - "https://images.unsplash.com/photo-1515041219749-89347f83291a?w=386&h=200&fit=crop&q=80"
+#         description: "Minimalist architecture from <strong>Copenhagen</strong> - clean lines and thoughtful use of light creating spaces that feel both modern and timeless."
+#         link: "https://example.com/copenhagen-architecture"
 
-  - type: "classifieds"
-    title: "Classifieds"
-    description: "Classifieds are paid ads that support Dense Discovery and are seen by our 20,000+ subscribers each week."
-    bookingLink: "https://example.com/book-classified"
-    bookingText: "Book yours →"
-    items:
-      - content: "Looking for a senior product designer to join our remote team at GreenTech startup. Competitive salary, equity, and the chance to solve climate problems through design."
-        link: "https://example.com/greentech-job"
-        linkText: "Apply Now"
-      - content: "New course: 'Design Systems from Scratch' - Learn to build scalable design systems that actually get adopted by engineering teams. Early bird pricing ends Friday."
-        link: "https://example.com/design-systems-course"
-        linkText: "Get Early Access"
-      - content: "Freelance design studio seeking project collaborators. We specialize in fintech and healthcare apps. Portfolio review and coffee chat included."
-        link: "https://example.com/design-collective"
-        linkText: "Let's Collaborate"
+#   - type: "classifieds"
+#     title: "Classifieds"
+#     description: "Classifieds are paid ads that support Dense Discovery and are seen by our 20,000+ subscribers each week."
+#     bookingLink: "https://example.com/book-classified"
+#     bookingText: "Book yours →"
+#     items:
+#       - content: "Looking for a senior product designer to join our remote team at GreenTech startup. Competitive salary, equity, and the chance to solve climate problems through design."
+#         link: "https://example.com/greentech-job"
+#         linkText: "Apply Now"
+#       - content: "New course: 'Design Systems from Scratch' - Learn to build scalable design systems that actually get adopted by engineering teams. Early bird pricing ends Friday."
+#         link: "https://example.com/design-systems-course"
+#         linkText: "Get Early Access"
+#       - content: "Freelance design studio seeking project collaborators. We specialize in fintech and healthcare apps. Portfolio review and coffee chat included."
+#         link: "https://example.com/design-collective"
+#         linkText: "Let's Collaborate"
 
-  - type: "gif"
-    title: "The Week in a GIF"
-    items:
-      - gif: "https://media.giphy.com/media/l0HlQ7LRalQqdWfao/giphy.gif"
-        description: "When you finally figure out that CSS layout bug that's been haunting you for three days."
-        # contact: "mailto:julian@nearfuturelaboratory.com"
-        # contactText: "Send us your favorite GIFs"
+#   - type: "gif"
+#     title: "The Week in a GIF"
+#     items:
+#       - gif: "https://media.giphy.com/media/l0HlQ7LRalQqdWfao/giphy.gif"
+#         description: "When you finally figure out that CSS layout bug that's been haunting you for three days."
+#         # contact: "mailto:julian@nearfuturelaboratory.com"
+#         # contactText: "Send us your favorite GIFs"
 
 footer:
   shareUrl: "https://nearfuturelaboratory.com/issues/79"
@@ -152,26 +152,26 @@ footer:
   logoLink: "https://nearfuturelaboratory.com"
   socialLinks:
     github:
-      - url: "https://github.com/yourhandle"
+      - url: "https://github.com/bleeckerj"
         title: "Personal GitHub"
-      - url: "https://github.com/yourcompany"
+      - url: "https://github.com/nearfuturelaboratory"
         title: "Company GitHub"
     instagram:
-      - url: "https://instagram.com/yourpersonal"
-        title: "Personal Instagram"
-      - url: "https://instagram.com/yourwork"
-        title: "Work Instagram"
+      - url: "https://instagram.com/darthjulian"
+        title: "Julian Bleecker Instagram"
+      - url: "https://instagram.com/nearfuturelaboratory"
+        title: "Near Future Laboratory Instagram"
     youtube:
-      - url: "https://youtube.com/@yourhandle"
+      - url: "https://youtube.com/@nearfuturelaboratory"
         title: "YouTube Channel"
     discord:
       - url: "https://discord.gg/yourserver"
         title: "Discord Community"
     patreon:
-      - url: "https://patreon.com/yourhandle"
+      - url: "https://patreon.com/nearfuturelaboratory"
         title: "Support on Patreon"
     substack:
-      - url: "https://yourhandle.substack.com"
+      - url: "https://nearfuturelaboratory.substack.com"
         title: "Newsletter on Substack"
   unsubscribeLink: "[unsubscribe]"
   #archiveLink: "https://example.com/archive"
