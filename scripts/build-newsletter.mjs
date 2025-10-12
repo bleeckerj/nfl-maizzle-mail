@@ -342,6 +342,30 @@ async function buildNewsletter() {
     const newsletterData = JSON.parse(fs.readFileSync('data/newsletter.json', 'utf8'));
     displayColorTheme(newsletterData);
     
+    // Inject theme colors into newsletter data
+    const colorThemeName = newsletterData.colorTheme || 'current';
+    let colorThemes = {};
+    try {
+      const themesData = fs.readFileSync('data/color-themes.json', 'utf8');
+      colorThemes = JSON.parse(themesData);
+    } catch (error) {
+      console.log('⚠️  No color themes found, using defaults');
+    }
+    
+    const theme = colorThemes.themes && colorThemes.themes[colorThemeName];
+    if (theme) {
+      // Add theme colors to newsletter data for template access
+      newsletterData.themeColors = {
+        ...theme.colors,  // All section background colors
+        accent: theme.accent,  // General accent color
+        linkAccent: theme.linkAccent  // Link accent color
+      };
+      
+      // Write updated newsletter data back to file
+      fs.writeFileSync('data/newsletter.json', JSON.stringify(newsletterData, null, 2));
+      console.log(`✅ Theme colors injected: ${Object.keys(newsletterData.themeColors).length} colors`);
+    }
+    
     // Validate images in the newsletter data
     await validateImages(newsletterData);
 

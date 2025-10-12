@@ -7,7 +7,7 @@
         "header": "#addcfa",
         "sponsor": "#e8f5e8",
         "apps-sites": "#ffffff",
-        "discord": "#f0f8ff", 
+        "quote": "#f0f8ff", 
         "indie-mag": "#f5f0ff",
         "books-accessories": "#ffffff",
         "food-for-thought": "#f8f8f0",
@@ -15,7 +15,8 @@
         "classifieds": "#e8f8f5",
         "gif": "#ffffff"
       },
-      "accent": "#4a7c59"
+      "accent": "#4a7c59",
+      "linkAccent": "#EE3BBB"
     },
     "autumn": {
       "name": "Autumn Warmth", 
@@ -24,7 +25,7 @@
         "header": "#f4e6d3",
         "sponsor": "#fdf2e9",
         "apps-sites": "#ffffff", 
-        "discord": "#fff4e6",
+        "quote": "#fff4e6",
         "indie-mag": "#f9f5f0",
         "books-accessories": "#ffffff",
         "food-for-thought": "#f7f1e8",
@@ -32,7 +33,8 @@
         "classifieds": "#eee8dc",
         "gif": "#ffffff"
       },
-      "accent": "#b8860b"
+      "accent": "#4a7c59",
+      "linkAccent": "#EE3BBB"
     },
     "winter": {
       "name": "Winter Cool",
@@ -41,7 +43,7 @@
         "header": "#e0f0ff",
         "sponsor": "#f0f8ff",
         "apps-sites": "#ffffff",
-        "discord": "#e6f3ff",
+        "quote": "#e6f3ff",
         "indie-mag": "#f5f8ff", 
         "books-accessories": "#ffffff",
         "food-for-thought": "#f8fafc",
@@ -49,24 +51,26 @@
         "classifieds": "#e0f2fe",
         "gif": "#ffffff"
       },
-      "accent": "#1e40af"
+      "accent": "#4a7c59",
+      "linkAccent": "#EE3BBB"
     },
     "professional": {
       "name": "Professional Clean",
       "description": "Subtle grays and clean whites for professional communication",
       "colors": {
-        "header": "#f0f0f0",
+        "header": "#f5f7fa",
         "sponsor": "#fdea9b",
-        "apps-sites": "#f9f999",
-        "discord": "#fcfcfc", 
-        "indie-mag": "#98E8FA",
-        "books-accessories": "#f0f0f0", 
-        "food-for-thought": "#f2f2f2",
+        "apps-sites": "#f5f7fa",
+        "quote": "#B0B8BF", 
+        "indie-mag": "#9FD356",
+        "books-accessories": "#f5f7fa", 
+        "food-for-thought": "#f5f7fa",
         "aesthetically-pleasing": "#ffffff",
         "classifieds": "#f0f0f0",
         "gif": "#ffffff"
       },
-      "accent": "#4b5563"
+      "accent": "#4a7c59",
+      "linkAccent": "#EE3BBB"
     },
     "current": {
       "name": "Current Dense Discovery",
@@ -75,7 +79,7 @@
         "header": "#addcfa",
         "sponsor": "#f8eccf",
         "apps-sites": "#f0ffff",
-        "discord": "#d1eaf4",
+        "quote": "#d1eaf4",
         "indie-mag": "#efe2f3", 
         "books-accessories": "#ffffff",
         "food-for-thought": "#f2f2f2",
@@ -83,7 +87,8 @@
         "classifieds": "#def1ef",
         "gif": "#ffffff"
       },
-      "accent": "#5b9bc4"
+      "accent": "#4a7c59",
+      "linkAccent": "#EE3BBB"
     }
   }
 }

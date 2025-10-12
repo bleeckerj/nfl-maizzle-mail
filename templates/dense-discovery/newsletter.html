@@ -21,7 +21,7 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
                 <tr>
                   <td align="left" class="tighten" style="border-collapse: collapse;font-size: 1px;line-height: 1px;" valign="top">
                     <if condition="header.logoBottom">
-                      <a href="{{ header.logoLink || '#' }}" style="text-decoration: underline;color: #000000 !important;">
+                      <a href="{{ header.logoLink || '#' }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">
                         <img src="{{ header.logoBottom }}" height="auto" width="163" alt="{{ title }}" style="display: block;-ms-interpolation-mode: bicubic;">
                       </a>
                     </if>
@@ -47,7 +47,7 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
                       <td align="left" class="headline box-yellow" style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
                         <h1 style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">
                           {{ section.title }}
-                          <a class="h1byline" href="{{ section.sponsorLink || '#' }}" style="text-decoration: none;display: inline-block;font-size: 12px;line-height: 25px;font-weight: 400;float: right;color: #6d6b57 !important;">{{ section.sponsorLabel || 'SPONSOR' }}</a>
+                          <a class="h1byline" href="{{ section.sponsorLink || '#' }}" style="text-decoration: none;display: inline-block;font-size: 12px;line-height: 25px;font-weight: 400;float: right;color: {{ themeColors.linkAccent || '#6d6b57' }} !important;">{{ section.sponsorLabel || 'SPONSOR' }}</a>
                         </h1>
                       </td>
                     </tr>
@@ -82,7 +82,7 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
                                   
                                   <if condition="item.title && item.link">
                                     <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
-                                      <a href="{{ item.link }}" style="text-decoration: underline;color: #000000 !important;">{{ item.title }}</a>
+                                      <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">{{ item.title }}</a>
                                     </h2>
                                   </if>
                                   <if condition="item.title && !item.link">
@@ -154,7 +154,7 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
                                   
                                   <if condition="item.title && item.link">
                                     <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
-                                      <a href="{{ item.link }}" style="text-decoration: underline;color: #000000 !important;">{{ item.title }}</a>
+                                      <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">{{ item.title }}</a>
                                     </h2>
                                   </if>
                                   <if condition="item.title && !item.link">
@@ -185,40 +185,40 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
                     <!-- APPS & SITES End -->
                   </if>
 
-                  <if condition="section.type === 'twitter-quote'">
-                    <!-- TWITTER QUOTE Start -->
+                  <if condition="section.type === 'quote'">
+                    <!-- QUOTE Start -->
                     <tr>
                       <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
                     </tr>
                     <tr>
-                      <td align="left" class="headline" style="background: {{ themeColors.discord || '#d1eaf4' }};border-collapse: collapse;border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
+                      <td align="left" class="headline" style="background: {{ themeColors.quote || '#d1eaf4' }};border-collapse: collapse;border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
                         <h1 style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">{{ section.title }}</h1>
                       </td>
                     </tr>
                     
                     <each loop="item in section.items">
                       <tr>
-                        <td align="left" class="padt20 padr20 padl20" style="background: {{ themeColors.discord || '#d1eaf4' }};border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
+                        <td align="left" class="padt20 padr20 padl20" style="background: {{ themeColors.quote || '#d1eaf4' }};border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
                           <if condition="item.quote">
-                            <blockquote style="font-size: 18px;line-height: 25px;font-weight: 400;color: #000000;margin: 0;padding: 20px;border-left: 4px solid #5b9bc4;background: rgba(255,255,255,0.5);font-style: italic;">
+                            <blockquote style="font-size: 18px;line-height: 25px;font-weight: 400;color: #000000;margin: 0;padding: 20px;border-left: 4px solid {{ themeColors.linkAccent || '#5b9bc4' }};background: rgba(255,255,255,0.5);font-style: italic;">
                               "{{ item.quote }}"
                             </blockquote>
                           </if>
                           
-                          <if condition="item.author">
-                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #5b9bc4;padding: 10px 0 0 0;margin: 0;text-align: right;">
-                              <if condition="item.authorLink">
-                                <a href="{{ item.authorLink }}" style="text-decoration: underline;color: #5b9bc4 !important;">{{ item.author }}</a>
-                              
-                                {{ item.author }}
-                              
-                              </if>
+                          <if condition="item.author && item.authorLink">
+                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#5b9bc4' }};padding: 10px 0 0 0;margin: 0;text-align: right;">
+                              <a href="{{ item.authorLink }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#5b9bc4' }} !important;">{{ item.author }}</a>
+                            </p>
+                          </if>
+                          <if condition="item.author && !item.authorLink">
+                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#5b9bc4' }};padding: 10px 0 0 0;margin: 0;text-align: right;">
+                              {{ item.author }}
                             </p>
                           </if>
                         </td>
                       </tr>
                     </each>
-                    <!-- TWITTER QUOTE End -->
+                    <!-- QUOTE End -->
                   </if>
 
                   <if condition="section.type === 'indie-mag'">
@@ -262,7 +262,7 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
                                   
                                   <if condition="item.title && item.link">
                                     <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
-                                      <a href="{{ item.link }}" style="text-decoration: underline;color: #000000 !important;">{{ item.title }}</a>
+                                      <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">{{ item.title }}</a>
                                     </h2>
                                   </if>
                                   <if condition="item.title && !item.link">
@@ -309,7 +309,7 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
                         <h1 style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">
                           {{ section.title }}
                           <if condition="section.byline">
-                            <a class="h1byline" href="{{ section.bylineLink || '#' }}" style="text-decoration: none;display: inline-block;font-size: 12px;line-height: 25px;font-weight: 400;float: right;color: #707070 !important;">{{ section.byline }}</a>
+                            <a class="h1byline" href="{{ section.bylineLink || '#' }}" style="text-decoration: none;display: inline-block;font-size: 12px;line-height: 25px;font-weight: 400;float: right;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ section.byline }}</a>
                           </if>
                         </h1>
                       </td>
@@ -327,7 +327,7 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
 
                           <if condition="item.title && item.link">
                                     <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
-                                      <a href="{{ item.link }}" style="text-decoration: underline;color: #000000 !important;">{{ item.title }}</a>
+                                      <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">{{ item.title }}</a>
                                     </h2>
                                   </if>
                                   <if condition="item.title && !item.link">
@@ -371,7 +371,7 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
 
                           <if condition="item.title && item.link">
                                     <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
-                                      <a href="{{ item.link }}" style="text-decoration: underline;color: #000000 !important;">{{ item.title }}</a>
+                                      <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">{{ item.title }}</a>
                                     </h2>
                                   </if>
                                   <if condition="item.title && !item.link">
@@ -422,8 +422,8 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
                           </if>
                           
                           <if condition="item.link">
-                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;margin-top: 10px;">
-                              <a href="{{ item.link }}" style="text-decoration: underline;color: #707070 !important;">View source →</a>
+                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 0;margin-top: 10px;">
+                              <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">View source →</a>
                             </p>
                           </if>
                         </td>
@@ -449,7 +449,7 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
                           <div style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;">
                             {{{ section.description }}}
                             <if condition="section.bookingLink">
-                              <a href="{{ section.bookingLink }}" style="text-decoration: underline;color: #707070 !important;">{{ section.bookingText || 'Book yours →' }}</a>
+                              <a href="{{ section.bookingLink }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ section.bookingText || 'Book yours →' }}</a>
                             </if>
                           </div>
                         </td>
@@ -459,10 +459,10 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
                     <each loop="item in section.items">
                       <tr>
                         <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors.classifieds || '#def1ef' }};padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
-                          <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 15px;background: rgba(255,255,255,0.7);border-left: 4px solid #4a9b8e;">
+                          <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 15px;background: rgba(255,255,255,0.7);border-left: 4px solid {{ themeColors.linkAccent || '#4a9b8e' }};">
                             {{{ item.content }}}
                             <if condition="item.link">
-                              <a href="{{ item.link }}" style="text-decoration: underline;color: #4a9b8e !important;margin-left: 10px;">{{ item.linkText || 'Learn More →' }}</a>
+                              <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#4a9b8e' }} !important;margin-left: 10px;">{{ item.linkText || 'Learn More →' }}</a>
                             </if>
                           </div>
                         </td>
@@ -494,8 +494,8 @@ preheader: "{{ preheader || 'Dense Discovery Newsletter' }}"
                           </if>
 
                           <if condition="item.contact">
-                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;text-align: center;">
-                              <a href="{{ item.contact }}" style="text-decoration: underline;color: #707070 !important;">{{ item.contactText || 'Send us your GIFs' }}</a>
+                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 0;text-align: center;">
+                              <a href="{{ item.contact }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ item.contactText || 'Send us your GIFs' }}</a>
                             </p>
                           </if>
                         </td>

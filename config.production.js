@@ -17,12 +17,21 @@ if (fs.existsSync(themesPath)) {
 
 // Add theme colors to newsletter data based on selected theme
 if (newsletterData.colorTheme && colorThemes.themes && colorThemes.themes[newsletterData.colorTheme]) {
-  newsletterData.themeColors = colorThemes.themes[newsletterData.colorTheme].colors;
+  newsletterData.themeColors = {
+    ...colorThemes.themes[newsletterData.colorTheme].colors,
+    accent: colorThemes.themes[newsletterData.colorTheme].accent,
+    linkAccent: colorThemes.themes[newsletterData.colorTheme].linkAccent
+  };
   newsletterData.themeAccent = colorThemes.themes[newsletterData.colorTheme].accent;
 } else {
   // Default to 'current' theme if no theme specified or theme not found
-  newsletterData.themeColors = colorThemes.themes?.current?.colors || {};
-  newsletterData.themeAccent = colorThemes.themes?.current?.accent || '#5b9bc4';
+  const currentTheme = colorThemes.themes?.current || {};
+  newsletterData.themeColors = {
+    ...currentTheme.colors || {},
+    accent: currentTheme.accent || '#5b9bc4',
+    linkAccent: currentTheme.linkAccent || '#5b9bc4'
+  };
+  newsletterData.themeAccent = currentTheme.accent || '#5b9bc4';
 }
 
 // Determine template to use

@@ -7,11 +7,6 @@
   "header": {
     "quote": "The function of poetry is to bring us back to the feeling of wonder.",
     "author": "Richard Whyte",
-    "featuredImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=386&h=250&fit=crop",
-    "featuredArtist": {
-      "name": "Someone Famous",
-      "link": "https://example.com/artist"
-    },
     "logoTop": "http://192.168.15.59:4321/images/site/logos/TOP_LaboratoryCircle_Guy_01_CircleWhite.png",
     "logoBottom": "http://192.168.15.59:4321/images/site/logos/BOTTOM_LaboratoryCircle_Guy_01_CircleWhite.png",
     "logoLink": "https://nearfuturelaboratory.com"
@@ -64,7 +59,7 @@
       ]
     },
     {
-      "type": "twitter-quote",
+      "type": "quote",
       "title": "From the Discord",
       "items": [
         {
@@ -247,5 +242,19 @@
     "address": "Published by: Your Name<br>\nYour Address Here<br>\nCity, State ZIP<br>\nCountry\n",
     "colophon": "Crafted with care using sustainable design practices and ethical technology choices."
   },
-  "markdownContent": "<p>Testing the new modular Dense Discovery template structure.</p>"
+  "markdownContent": "<p>Testing the new modular Dense Discovery template structure.</p>",
+  "themeColors": {
+    "header": "#f5f7fa",
+    "sponsor": "#fdea9b",
+    "apps-sites": "#f5f7fa",
+    "quote": "#B0B8BF",
+    "indie-mag": "#9FD356",
+    "books-accessories": "#f5f7fa",
+    "food-for-thought": "#f5f7fa",
+    "aesthetically-pleasing": "#ffffff",
+    "classifieds": "#f0f0f0",
+    "gif": "#ffffff",
+    "accent": "#4a7c59",
+    "linkAccent": "#EE3BBB"
+  }
 }

@@ -7,10 +7,10 @@ colorTheme: "professional"
 header:
   quote: "The function of poetry is to bring us back to the feeling of wonder."
   author: "Richard Whyte"
-  featuredImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=386&h=250&fit=crop"
-  featuredArtist:
-    name: "Someone Famous"
-    link: "https://example.com/artist"
+  #featuredImage: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=386&h=250&fit=crop"
+  #featuredArtist:
+   # name: "Someone Famous"
+   # link: "https://example.com/artist"
   logoTop: "http://192.168.15.59:4321/images/site/logos/TOP_LaboratoryCircle_Guy_01_CircleWhite.png"
   logoBottom: "http://192.168.15.59:4321/images/site/logos/BOTTOM_LaboratoryCircle_Guy_01_CircleWhite.png"
   logoLink: "https://nearfuturelaboratory.com"
@@ -53,7 +53,7 @@ sections:
         description: "A fresh approach to web browsing with spaces, profiles, and AI-powered features designed for the way you work."
         link: "https://arc.net"
 
-  - type: "twitter-quote"
+  - type: "quote"
     title: "From the Discord"
     items:
       - quote: "The best designers I know spend way more time thinking about problems than they do in Figma. The tool is just the final 10% of the process."
@@ -91,7 +91,7 @@ sections:
         link: "https://keychron.com/k8"
 
   - type: "food-for-thought"
-    title: "Food For Thought"
+    title: "Shared in the NFL Discord"
     items:
       - title: "The Rise of Design Engineering"
         category: "Read"
