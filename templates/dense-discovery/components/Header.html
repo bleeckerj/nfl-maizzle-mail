@@ -2,7 +2,7 @@
 <table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="100%">
   <tbody>
     <tr>
-      <td align="center" bgcolor="#addcfa" style="border-collapse: collapse;" valign="top">
+      <td align="center" bgcolor="{{ themeColors.header || '#addcfa' }}" style="border-collapse: collapse;" valign="top">
         <!-- 640px container -->
         <table border="0" cellpadding="0" cellspacing="0" class="header mobt0" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 640px;max-width: 640px;padding-top: 20px;" width="640">
           <tbody>
@@ -44,15 +44,14 @@
                             <img src="{{ header.featuredImage }}" alt="Featured" width="386" height="auto" class="img" style="-ms-interpolation-mode: bicubic;display: block;max-height: 900px;max-width: 416px;width: 100%;">
                           </p>
                         </if>
-                        <if condition="header.featuredArtist">
+                        <if condition="header.featuredArtist && header.featuredArtist.link">
                           <p class="marb0 mobb15 align-left" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 0;">
-                            Featured artist: 
-                            <if condition="header.featuredArtist.link">
-                              <a href="{{ header.featuredArtist.link }}" style="text-decoration: underline;color: #000000 !important;">{{ header.featuredArtist.name }}</a>
-                            <else>
-                              {{ header.featuredArtist.name }}
-                            </else>
-                            </if>
+                            Featured artist: <a href="{{ header.featuredArtist.link }}" style="text-decoration: underline;color: #000000 !important;">{{ header.featuredArtist.name }}</a>
+                          </p>
+                        </if>
+                        <if condition="header.featuredArtist && !header.featuredArtist.link">
+                          <p class="marb0 mobb15 align-left" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 0;">
+                            Featured artist: {{ header.featuredArtist.name }}
                           </p>
                         </if>
                       </td>

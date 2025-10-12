@@ -1,0 +1,89 @@
+{
+  "themes": {
+    "spring": {
+      "name": "Spring Fresh",
+      "description": "Fresh greens and soft pastels for a spring feeling",
+      "colors": {
+        "header": "#addcfa",
+        "sponsor": "#e8f5e8",
+        "apps-sites": "#ffffff",
+        "discord": "#f0f8ff", 
+        "indie-mag": "#f5f0ff",
+        "books-accessories": "#ffffff",
+        "food-for-thought": "#f8f8f0",
+        "aesthetically-pleasing": "#ffffff",
+        "classifieds": "#e8f8f5",
+        "gif": "#ffffff"
+      },
+      "accent": "#4a7c59"
+    },
+    "autumn": {
+      "name": "Autumn Warmth", 
+      "description": "Warm oranges, browns and deep reds for cozy autumn vibes",
+      "colors": {
+        "header": "#f4e6d3",
+        "sponsor": "#fdf2e9",
+        "apps-sites": "#ffffff", 
+        "discord": "#fff4e6",
+        "indie-mag": "#f9f5f0",
+        "books-accessories": "#ffffff",
+        "food-for-thought": "#f7f1e8",
+        "aesthetically-pleasing": "#ffffff",
+        "classifieds": "#eee8dc",
+        "gif": "#ffffff"
+      },
+      "accent": "#b8860b"
+    },
+    "winter": {
+      "name": "Winter Cool",
+      "description": "Cool blues and crisp whites for winter clarity", 
+      "colors": {
+        "header": "#e0f0ff",
+        "sponsor": "#f0f8ff",
+        "apps-sites": "#ffffff",
+        "discord": "#e6f3ff",
+        "indie-mag": "#f5f8ff", 
+        "books-accessories": "#ffffff",
+        "food-for-thought": "#f8fafc",
+        "aesthetically-pleasing": "#ffffff",
+        "classifieds": "#e0f2fe",
+        "gif": "#ffffff"
+      },
+      "accent": "#1e40af"
+    },
+    "professional": {
+      "name": "Professional Clean",
+      "description": "Subtle grays and clean whites for professional communication",
+      "colors": {
+        "header": "#fcfcfc",
+        "sponsor": "#fdea9b",
+        "apps-sites": "#f9f999",
+        "discord": "#fcfcfc", 
+        "indie-mag": "#98E8FA",
+        "books-accessories": "#f0f0f0", 
+        "food-for-thought": "#f2f2f2",
+        "aesthetically-pleasing": "#ffffff",
+        "classifieds": "#f0f0f0",
+        "gif": "#ffffff"
+      },
+      "accent": "#4b5563"
+    },
+    "current": {
+      "name": "Current Dense Discovery",
+      "description": "The existing color scheme currently in use",
+      "colors": {
+        "header": "#addcfa",
+        "sponsor": "#f8eccf",
+        "apps-sites": "#f0ffff",
+        "discord": "#d1eaf4",
+        "indie-mag": "#efe2f3", 
+        "books-accessories": "#ffffff",
+        "food-for-thought": "#f2f2f2",
+        "aesthetically-pleasing": "#ffffff", 
+        "classifieds": "#def1ef",
+        "gif": "#ffffff"
+      },
+      "accent": "#5b9bc4"
+    }
+  }
+}

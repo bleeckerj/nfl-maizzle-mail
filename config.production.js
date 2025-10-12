@@ -8,6 +8,23 @@ if (fs.existsSync(dataPath)) {
   newsletterData = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 }
 
+// Load color themes
+let colorThemes = {};
+const themesPath = path.join(__dirname, 'data/color-themes.json');
+if (fs.existsSync(themesPath)) {
+  colorThemes = JSON.parse(fs.readFileSync(themesPath, 'utf8'));
+}
+
+// Add theme colors to newsletter data based on selected theme
+if (newsletterData.colorTheme && colorThemes.themes && colorThemes.themes[newsletterData.colorTheme]) {
+  newsletterData.themeColors = colorThemes.themes[newsletterData.colorTheme].colors;
+  newsletterData.themeAccent = colorThemes.themes[newsletterData.colorTheme].accent;
+} else {
+  // Default to 'current' theme if no theme specified or theme not found
+  newsletterData.themeColors = colorThemes.themes?.current?.colors || {};
+  newsletterData.themeAccent = colorThemes.themes?.current?.accent || '#5b9bc4';
+}
+
 // Determine template to use
 const templateName = newsletterData.template || 'wirecutter';
 const templatePath = path.join(__dirname, 'templates', templateName);

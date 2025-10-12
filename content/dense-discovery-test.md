@@ -2,6 +2,7 @@
 template: dense-discovery
 title: "Near Future Laboratory – w42y25"
 preheader: "Stuff and Things"
+colorTheme: "professional"
 
 header:
   quote: "We're Universe is under no obligation to make sense to you."
@@ -11,7 +12,7 @@ header:
     name: "Someone Famous"
     link: "https://example.com/artist"
   logoTop: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=163&h=50&fit=crop"
-  logoBottom: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=163&h=30&fit=crop"
+  logoBottom: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=163&h=50&fit=crop"
   logoLink: "https://densediscovery.com"
 
 intro:
@@ -60,9 +61,9 @@ sections:
         authorLink: "https://twitter.com/johndoe_design"
 
   - type: "indie-mag"
-    title: "Indie Mag of the Week"
+    title: "Featured Project"
     items:
-      - title: "Offscreen Magazine"
+      - title: "Poetry Camera"
         description: "A thoughtful publication about the human side of technology, featuring interviews with people who create and use technology in meaningful ways."
         details: |
           – Latest Issue: <a href="https://example.com/offscreen">25</a><br>

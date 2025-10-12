@@ -3,6 +3,7 @@
   "template": "dense-discovery",
   "title": "Near Future Laboratory – w42y25",
   "preheader": "Stuff and Things",
+  "colorTheme": "professional",
   "header": {
     "quote": "We're Universe is under no obligation to make sense to you.",
     "author": "Neil deGrasse Tyson",
@@ -12,7 +13,7 @@
       "link": "https://example.com/artist"
     },
     "logoTop": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=163&h=50&fit=crop",
-    "logoBottom": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=163&h=30&fit=crop",
+    "logoBottom": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=163&h=50&fit=crop",
     "logoLink": "https://densediscovery.com"
   },
   "intro": {
@@ -75,10 +76,10 @@
     },
     {
       "type": "indie-mag",
-      "title": "Indie Mag of the Week",
+      "title": "Featured Project",
       "items": [
         {
-          "title": "Offscreen Magazine",
+          "title": "Poetry Camera",
           "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">A thoughtful publication about the human side of technology, featuring interviews with people who create and use technology in meaningful ways.</p>",
           "details": "– Latest Issue: <a href=\"https://example.com/offscreen\">25</a><br>\n– Frequency: 2 issues/year<br>\n– Formats: print + digital<br>\n– This place: Tuna Fish\n",
           "note": "Founded by Kai Brach, this magazine focuses on the stories behind the screens.",

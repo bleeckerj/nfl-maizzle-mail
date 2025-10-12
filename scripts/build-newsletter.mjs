@@ -32,6 +32,74 @@ function checkImageUrl(url) {
 }
 
 /**
+ * Convert hex color to ANSI RGB background color
+ */
+function hexToAnsiBackground(hex) {
+  // Remove # if present
+  hex = hex.replace('#', '');
+  
+  // Convert to RGB
+  const r = parseInt(hex.substr(0, 2), 16);
+  const g = parseInt(hex.substr(2, 2), 16);
+  const b = parseInt(hex.substr(4, 2), 16);
+  
+  // Return ANSI RGB background color code
+  return `\x1b[48;2;${r};${g};${b}m`;
+}
+
+/**
+ * Display color theme in ASCII format with actual colors
+ */
+function displayColorTheme(newsletterData) {
+  const colorThemeName = newsletterData.colorTheme || 'current';
+  
+  // Load color themes
+  let colorThemes = {};
+  try {
+    const themesData = fs.readFileSync('data/color-themes.json', 'utf8');
+    colorThemes = JSON.parse(themesData);
+  } catch (error) {
+    console.log('⚠️  No color themes found, using defaults');
+    return;
+  }
+
+  const theme = colorThemes.themes[colorThemeName];
+  if (!theme) {
+    console.log(`⚠️  Theme "${colorThemeName}" not found, using defaults`);
+    return;
+  }
+
+  console.log(`🎨 Color Theme: "${theme.name}" (${colorThemeName})`);
+  console.log(`📝 ${theme.description}`);
+  console.log('');
+  console.log('🎨 Section Colors:');
+  
+  // Create ASCII color swatches with actual colors
+  const colors = theme.colors;
+  const sectionNames = Object.keys(colors);
+  const reset = '\x1b[0m'; // Reset color
+  
+  sectionNames.forEach(sectionName => {
+    const color = colors[sectionName];
+    const displayName = sectionName.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
+    
+    // Create colored ASCII block
+    const bgColor = hexToAnsiBackground(color);
+    const colorBlock = `${bgColor}        ${reset}`; // 8 spaces with background color
+    
+    console.log(`  ${colorBlock} ${displayName.padEnd(20)} ${color}`);
+  });
+  
+  if (theme.accent) {
+    const bgColor = hexToAnsiBackground(theme.accent);
+    const colorBlock = `${bgColor}        ${reset}`;
+    console.log(`  ${colorBlock} ${'Accent'.padEnd(20)} ${theme.accent}`);
+  }
+  
+  console.log('');
+}
+
+/**
  * Validate all images in newsletter data
  */
 async function validateImages(data) {
@@ -270,8 +338,11 @@ async function buildNewsletter() {
     console.log(`🎨 Template: "${templateName}"`);
     console.log(`📊 Newsletter: "${JSON.parse(fs.readFileSync('data/newsletter.json', 'utf8')).title}"`);
 
-    // Validate images in the newsletter data
+    // Load newsletter data and display color theme
     const newsletterData = JSON.parse(fs.readFileSync('data/newsletter.json', 'utf8'));
+    displayColorTheme(newsletterData);
+    
+    // Validate images in the newsletter data
     await validateImages(newsletterData);
 
     // Build the newsletter
