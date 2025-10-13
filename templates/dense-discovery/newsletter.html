@@ -53,62 +53,45 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                     </tr>
 
                     <each loop="item in section.items">
+                      <!-- Title Row -->
                       <tr>
-                        <td align="left" style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};">
-                          <!--[if mso]>
-                          <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                          <tr><td width="35%" valign="top"><![endif]-->
+                        <td style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};padding: 15px 20px 5px 20px;">
+                          <if condition="item.title && item.link">
+                            <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
+                              <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">{{ item.title }}</a>
+                            </h2>
+                          </if>
+                          <if condition="item.title && !item.link">
+                            <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
+                              {{ item.title }}
+                            </h2>
+                          </if>
                           
-                          <!-- Left Column: Image -->
-                          <table align="left" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="224">
-                            <tbody>
-                              <tr>
-                                <td class="padt20 padr10 padl20" style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};padding-top: 20px;padding-right: 10px;padding-left: 20px;" valign="top">
-                                  <if condition="item.image">
-                                    <img src="{{ item.image }}" alt="{{ item.title || 'Sponsor Image' }}" width="194" height="auto" style="-ms-interpolation-mode: bicubic;display: block;max-width: 100%;">
-                                  </if>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-
-                          <!--[if mso]></td><td width="65%" valign="top"><![endif]-->
-                          
-                          <!-- Right Column: Content -->
-                          <table align="right" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="416">
-                            <tbody>
-                              <tr>
-                                <td class="padt20 padr20 padl10" style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};padding-top: 20px;padding-right: 20px;padding-left: 10px;padding-bottom: 20px;" valign="top">
-                                  
-                                  <if condition="item.title && item.link">
-                                    <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
-                                      <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">{{ item.title }}</a>
-                                    </h2>
-                                  </if>
-                                  <if condition="item.title && !item.link">
-                                    <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
-                                      {{ item.title }}
-                                    </h2>
-                                  </if>
-                                  
-                                  <if condition="item.subtitle">
-                                    <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
-                                  </if>
-                                  
-                                  <if condition="item.description">
-                                    <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
-                                      {{{ item.description }}}
-                                    </div>
-                                  </if>
-                                  
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-
-                          <!--[if mso]></td></tr></table><![endif]-->
+                          <if condition="item.subtitle">
+                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;">{{ item.subtitle }}</p>
+                          </if>
                         </td>
                       </tr>
+                      
+                      <!-- Image Row -->
+                      <if condition="item.image">
+                        <tr>
+                          <td style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};padding: 0 20px 15px 20px;">
+                            <img src="{{ item.image }}" alt="{{ item.title || 'Sponsor Image' }}" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;height: auto;">
+                          </td>
+                        </tr>
+                      </if>
+                      
+                      <!-- Description Row -->
+                      <if condition="item.description">
+                        <tr>
+                          <td style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};padding: 0 20px 20px 20px;">
+                            <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
+                              {{{ item.description }}}
+                            </div>
+                          </td>
+                        </tr>
+                      </if>
                     </each>
                     <!-- SPONSOR End -->
                   </if>
@@ -401,6 +384,16 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                         <h1 style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">{{ section.title }}</h1>
                       </td>
                     </tr>
+
+                    <if condition="section.description">
+                      <tr>
+                        <td align="left" style="border-collapse: collapse;background: {{ themeColors['aesthetically-pleasing'] || '#ffffff' }};padding: 5px 20px 10px 20px;">
+                          <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
+                            {{{ section.description }}}
+                          </p>
+                        </td>
+                      </tr>
+                    </if>
 
                     <each loop="item in section.items">
                       <if condition="item.images">

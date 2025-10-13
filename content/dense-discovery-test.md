@@ -71,7 +71,7 @@ sections:
           – Formats: print + digital<br>
           – This place: Tuna Fish
         note: "Founded by Kai Brach, this magazine focuses on the stories behind the screens."
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=194&h=250&fit=crop&q=80"
+        image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=194&h=150&fit=crop&q=80"
         link: "https://offscreenmag.com"
 
   - type: "books-accessories"
@@ -97,14 +97,19 @@ sections:
         category: "Channel: 🖼-art-technology"
         description: "“Melody of Budapest” by Milán Janosov explores the integration of data science and artificial intelligence to represent the city's mobility patterns through a multidisciplinary audiovisual composition. Utilizing large-scale cellular mobility data and generative AI, the project visualizes Budapest's dynamic urban activity and rhythms, emphasizing the city's complex internal systems and temporal variability."
         link: "https://datascience.virginia.edu/pages/melody-budapest-milan-janosov"
-      - title: "Why Remote Work Isn't Going Away"
-        category: "Listen"
-        description: "A fascinating podcast discussion about the future of work, productivity metrics, and how companies are adapting to distributed teams."
-        link: "https://example.com/remote-work-podcast"
-      - title: "The Psychology of Color in UI Design"
-        category: "Watch"
-        description: "A comprehensive video exploration of how different colors affect user behavior and decision-making in digital interfaces."
-        link: "https://example.com/color-psychology"
+      - title: "OutHorse Your Email"
+        category: "🛠-whats-ai-good-for-anyway"
+        description: "Out source your email to trained horses. Trade screen time for unforgettable Icelandic adventures, reconnect with nature, and let the horses take care of the details!"
+        link: "https://www.visiticeland.com/outhorse-your-email/"
+      - title: "Kitchen Cosmo is a “playful” AI appliance that generates recipes based on leftovers"
+        category: "🛠-whats-ai-good-for-anyway"
+        description: "Kitchen Cosmo, developed by MIT students, is a retrofuturistic appliance designed to generate recipes based on available leftovers through a tactile interface that emphasizes physical interaction, such as dials and switches, rather than digital screens. The device employs AI to identify ingredients and create meal suggestions, aiming to foster a collaborative and intentional relationship between users and technology within the kitchen environment."
+        link: "https://www.dezeen.com/2025/08/26/kitchen-cosmo-mit-jacob-payne-ayah-mahmoud/"
+      - title: "Hollywood is fuming over a new ‘AI actress’"
+        category: "🛠-whats-ai-good-for-anyway"
+        description: |
+            A digital content firm has developed an AI-generated actress named “Tilly,” which has elicited significant criticism from Hollywood actors concerned about the potential implications for employment within the industry. Despite assurances from the creators that the technology is not intended to replace human performers, industry representatives remain apprehensive about the broader impact of such advances."
+        link: "https://www.cnn.com/2025/09/30/tech/hollywood-ai-actor-backlash"
 
   - type: "aesthetically-pleasing"
     title: "Aesthetically Pleasing"
@@ -166,6 +171,8 @@ footer:
         title: "Julian Bleecker LinkedIn"
       - url: "https://www.linkedin.com/company/near-future-laboratory/"
         title: "Near Future Laboratory LinkedIn"
+      - url: "https://www.linkedin.com/company/omata/"
+        title: "OMATA LinkedIn"
     youtube:
       - url: "https://youtube.com/@nearfuturelaboratory"
         title: "YouTube Channel"
