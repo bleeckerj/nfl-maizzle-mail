@@ -25,7 +25,8 @@ const templates = {
   'sentiers': 'sentiers-llm',
   'sentiers-reliable': 'sentiers-reliable',
   'atlantic': 'atlantic-complete',
-  'dense-discovery': 'dense-discovery'
+  'dense-discovery': 'dense-discovery',
+  'coda': 'coda'
 };
 
 /**
@@ -233,6 +234,7 @@ switch (command) {
   case 'sentiers-reliable':
   case 'atlantic':
   case 'dense-discovery':
+  case 'coda':
     const template = templates[command];
     const inputFile = resolveInputPath(file);
     const outputName = path.basename(inputFile, '.md');
@@ -267,6 +269,7 @@ switch (command) {
     console.log('  npm run quick sentiers-reliable [file] # Build with enhanced sentiers template');
     console.log('  npm run quick atlantic [file]          # Build with atlantic-complete template');
     console.log('  npm run quick dense-discovery [file]   # Build with modular dense-discovery template');
+    console.log('  npm run quick coda [file]              # Build with coda template');
     console.log('  npm run quick list                     # List available content files');
     console.log('');
     console.log('File Path Support:');

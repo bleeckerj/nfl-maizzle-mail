@@ -89,6 +89,24 @@
       },
       "accent": "#4a7c59",
       "linkAccent": "#EE3BBB"
+    },
+    "monochrome": {
+      "name": "Monochrome Grayscale",
+      "description": "Clean grayscale palette with subtle variations",
+      "colors": {
+        "header": "#eeeeed",
+        "sponsor": "#f5f5f5",
+        "apps-sites": "#ffffff",
+        "quote": "#ebebeb",
+        "indie-mag": "#f0f0f0",
+        "books-accessories": "#ffffff",
+        "food-for-thought": "#f8f8f8",
+        "aesthetically-pleasing": "#f0f0f0",
+        "classifieds": "#ececec",
+        "gif": "#ffffff"
+      },
+      "accent": "#666666",
+      "linkAccent": "#333333"
     }
   }
 }

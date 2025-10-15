@@ -57,18 +57,18 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                       <tr>
                         <td style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};padding: 15px 20px 5px 20px;">
                           <if condition="item.title && item.link">
-                            <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
+                            <p style="font-size: 18px;font-weight: 600;line-height: 20px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
                               <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">{{ item.title }}</a>
-                            </h2>
+                            </p>
                           </if>
                           <if condition="item.title && !item.link">
-                            <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
+                            <p style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
                               {{ item.title }}
-                            </h2>
+                            </p>
                           </if>
                           
                           <if condition="item.subtitle">
-                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;">{{ item.subtitle }}</p>
+                            <p style="font-size: 16px;line-height: 18px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;">{{ item.subtitle }}</p>
                           </if>
                         </td>
                       </tr>
@@ -92,6 +92,15 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           </td>
                         </tr>
                       </if>
+                        <if condition="item.readMoreText && item.link">
+                          <tr>
+                            <td style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};padding: 0 20px 20px 20px;">
+                              <p style="font-size: 16px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 0;">
+                                <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ item.readMoreText || 'Read More' }}</a>
+                              </p>
+                            </td>
+                          </tr>
+                        </if>
                     </each>
                     <!-- SPONSOR End -->
                   </if>
@@ -228,7 +237,14 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                               <tr>
                                 <td class="padt20 padr10 padl20" style="border-collapse: collapse;background: {{ themeColors['indie-mag'] || '#efe2f3' }};padding-top: 20px;padding-right: 10px;padding-left: 20px;padding-bottom: 20px;" valign="top">
                                   <if condition="item.image">
-                                    <img src="{{ item.image }}" alt="{{ item.title || 'Magazine Cover' }}" width="194" height="250" style="-ms-interpolation-mode: bicubic;display: block;max-width: 100%;object-fit: cover;">
+                                                                      <if condition="item.link">
+                                                                        <a href="{{ item.link }}" style="text-decoration: none;">
+                                                                          <img src="{{ item.image }}" alt="{{ item.title || 'Magazine Cover' }}" width="194" height="250" style="-ms-interpolation-mode: bicubic;display: block;max-width: 100%;object-fit: cover;">
+                                                                        </a>
+                                                                      </if>
+                                                                      <if condition="!item.link">
+                                                                        <img src="{{ item.image }}" alt="{{ item.title || 'Magazine Cover' }}" width="194" height="250" style="-ms-interpolation-mode: bicubic;display: block;max-width: 100%;object-fit: cover;">
+                                                                      </if>
                                   </if>
                                 </td>
                               </tr>
@@ -380,7 +396,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                       <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
                     </tr>
                     <tr>
-                      <td align="left" class="headline" style="border-collapse: collapse;background: {{ themeColors['aesthetically-pleasing'] || '#ffffff' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
+                      <td align="left" class="headline" style="border-collapse: collapse;background: {{ themeColors['aesthetically-pleasing'] || '#ffffff' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 20px;">
                         <h1 style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">{{ section.title }}</h1>
                       </td>
                     </tr>
@@ -388,7 +404,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                     <if condition="section.description">
                       <tr>
                         <td align="left" style="border-collapse: collapse;background: {{ themeColors['aesthetically-pleasing'] || '#ffffff' }};padding: 5px 20px 10px 20px;">
-                          <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
+                          <p style="font-size: 18px;line-height: 19px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
                             {{{ section.description }}}
                           </p>
                         </td>
@@ -396,16 +412,21 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                     </if>
 
                     <each loop="item in section.items">
-                      <if condition="item.images">
-                        <each loop="imageUrl in item.images">
-                          <tr>
-                            <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors['aesthetically-pleasing'] || '#ffffff' }};padding-top: 20px;padding-right: 20px;padding-bottom: 10px;padding-left: 20px;">
-                              <img src="{{ imageUrl }}" alt="Aesthetically Pleasing" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;">
-                            </td>
-                          </tr>
-                        </each>
-                      </if>
+                      <!-- Image with optional link -->
+                      <tr>
+                        <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors['aesthetically-pleasing'] || '#ffffff' }};padding-top: 10px;padding-right: 20px;padding-bottom: 10px;padding-left: 20px;">
+                          <if condition="item.image && item.link">
+                            <a href="{{ item.link }}" style="text-decoration: none;">
+                              <img src="{{ item.image }}" alt="{{ item.title || 'Aesthetically Pleasing' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;">
+                            </a>
+                          </if>
+                          <if condition="item.image && !item.link">
+                            <img src="{{ item.image }}" alt="{{ item.title || 'Aesthetically Pleasing' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;">
+                          </if>
+                        </td>
+                      </tr>
                       
+                      <!-- Description and optional link text -->
                       <tr>
                         <td align="left" class="padt10 padr20 padl20 padb20" style="border-collapse: collapse;background: {{ themeColors['aesthetically-pleasing'] || '#ffffff' }};padding-top: 10px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
                           <if condition="item.description">
@@ -415,8 +436,8 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           </if>
                           
                           <if condition="item.link">
-                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 0;margin-top: 10px;">
-                              <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">View source →</a>
+                            <p style="font-size: 16px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 0;margin-top: 10px;">
+                              <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ item.linkText || 'Read more →' }}</a>
                             </p>
                           </if>
                         </td>

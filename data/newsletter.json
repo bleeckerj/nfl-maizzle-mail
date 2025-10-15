@@ -1,20 +1,83 @@
 {
   "$schema": "../newsletter.schema.json",
   "template": "dense-discovery",
-  "title": "Near Future Laboratory – w42y25",
-  "preheader": "Operationalizing Imagination - A LinkedIn Live Event!",
-  "colorTheme": "professional",
+  "title": "Near Future Laboratory – Midweek - w42y25",
+  "preheader": "Midweek Notes",
+  "colorTheme": "monochrome",
   "header": {
     "logoTop": "https://nearfuturelaboratory.com/images/site/logos/TOP_LaboratoryCircle_Guy_01_CircleWhite.png",
     "logoBottom": "https://nearfuturelaboratory.com/images/site/logos/BOTTOM_LaboratoryCircle_Guy_01_CircleWhite.png",
     "logoLink": "https://nearfuturelaboratory.com"
   },
   "intro": {
-    "title": "It's Week 42 of Year 2025",
-    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/w42-y25",
-    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Recently I put together a draft of a <a href=\"https://nearfuturelaboratory.com/blog/the-value-of-speculation-n03\">thesis</a> on the ROI of Imagination.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">That post got lots of curious looks (by people and algorithms alike.)</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">How can something as intangible as “Imagination” be measured?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">KPIs?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">OKRs?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">What would those be for a team that was, say, the Product Imagination Studio?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Or your very own Expeditionary Strategy Assessment Group?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">How would an <strong><em>Applied Imagination Department</em></strong> be measured as to its achievements? And how could it be felt as vital as any other “application” of anything else that has become “operationalized” —   like Data Science, or Product Management, or Customer Experience?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Imagination is what leads us through the unknown, allowing us to make sense of these vast new terrains we find in front of ourselves with increasing frequency.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">In this era of relentless AI acceleration, organizations, leaders, and teams must recognize that Imagination isn’t a luxury or a personality trait — it is *Evolutionary Advantage*.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">It is the core of what Strategy is meant to be. It is at the root of Design. Without it, one will always find oneself left behind, unable to make sense of, or catch-up to the evolutionary cycles of change.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Join me on <a href='https://luma.com/1qzy9ry6'>Wednesday, October 15th</a> at 10am (UTC-7 / California) with Mark Tipping, Howard B Esbin, PhD, Damien Newman, and Brad Topliff for a <a href='https://luma.com/1qzy9ry6'>LinkedIn Live event</a> on this topic.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">I'm super excited, especially after all of the conversations on the topic at last week's AIGA 2025 Conference, where I facilitated a workshop on this very topic.</p>"
+    "title": "Operationalizing Imagination",
+    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Don't forget to join me on LinkedIn Live today at 10 AM (UTC-7) for a discussion on \"Operationalizing Imagination\" in design and innovation! <br/> I'll be in the hot seat, in conversation with Damien Newman, Brad Topliff and Howard B. Esbin, PhD. <br></p>",
+    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/w42a-y25"
   },
   "sections": [
+    {
+      "type": "sponsor",
+      "title": "LinkedIn Live Event",
+      "sponsorLabel": "EVENTS",
+      "sponsorLink": "https://luma.com/1qzy9ry6",
+      "items": [
+        {
+          "title": "Operationalizing Imagination",
+          "subtitle": "LinkedIn Live Event Today at 10 AM (UTC-7)",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Don't forget to join me on LinkedIn Live today at 10 AM (UTC-7) for a discussion on \"Operationalizing Imagination\" in design and innovation! <br/> I'll be in the hot seat, in conversation with Damien Newman, Brad Topliff and Howard B. Esbin, PhD. <br> <a href=\"https://luma.com/1qzy9ry6\" target=\"_blank\" rel=\"noopener noreferrer\">RSVP</a> or </a><a href=\"https://www.linkedin.com/events/operationalizeimagination-thehu7382185295485743104/theater/\" target=\"_blank\" rel=\"noopener noreferrer\">Join Now</a></p>",
+          "image": "https://nearfuturelaboratory.com/images/blog/2025/10/operationalizing-imagination/darthjulian_A_Rogowski_Coil_over_a_tangle_of_RJ45_cables_detail_4x5_900px.webp",
+          "link": "https://luma.com/1qzy9ry6"
+        }
+      ]
+    },
+    {
+      "type": "sponsor",
+      "title": "Community Action",
+      "sponsorLabel": "Office Hours - The Side Projects Edition",
+      "sponsorLink": "https://luma.com/4crcd2mt",
+      "items": [
+        {
+          "title": "A Side Project",
+          "subtitle": "We're building Meshtastic radios",
+          "readMoreText": "RSVP",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Dré Labre presented a hot-take on Meshtastic radios in last week's Office Hours and proposed that we do a collective build of a Meshtastic radio network as a side project. If you're interested in joining in, check out the details and sign up! This week will be a discussion/planning session.<br/> <em>What's Meshtatic?</em><br/> It's a project that uses inexpensive, low-power LoRa radios to create a mesh network for off-grid communication. It's a fun way to explore decentralized communication and build something useful together. And it's super futuristic.<br/> If you want to join us, consider supporting this work by becoming a member of the Near Future Laboratory through Patreon. Your support helps us keep doing what we do — and a big thank you to all of the current members!</p>",
+          "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/4f/296f02a6-d57e-427e-9276-a3a8e95fb5c8.webp",
+          "link": "https://luma.com/4crcd2mt"
+        }
+      ]
+    },
+    {
+      "type": "apps-sites",
+      "title": "Various and Sundry",
+      "items": [
+        {
+          "title": "Vibewriter",
+          "subtitle": "Prototypes in AI, or ‘Less Yammering. More Hammering.’",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Vibewriter is a feature of Ghostwriter, an open-source AI writing assistant I built as a study in the AI Designed Fictions Research Studio. It allows you to generate text in a specific style or tone, based on a prompt you provide. It's a fun way to explore the creative possibilities of AI-generated text. <br/> This particular post is an experiment using Ghostwriter’s Vibewriter mode to generate a cyberpunk story with the Llama 3.2-3b-instruct model running locally in LM Studio.</p>",
+          "image": "https://nearfuturelaboratory.com/images/blog/2025/05/zero-cool-and-the-oraculator/Ghostwriter_6.gif",
+          "link": "https://nearfuturelaboratory.com/blog/2025/05/zero-cool-and-the-oraculator/"
+        },
+        {
+          "title": "Scott Paterson Field Report",
+          "subtitle": "Exploring Technology and Society",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Scott Paterson is an old friend and collaborator from back in my NYC Art+Technology days. He's been running a Substack called Field Report for a while now, and it's a great read. Scott is a thoughtful writer and a keen observer of the world around him. His posts often explore the intersection of technology, culture, and society, and he has a knack for finding interesting stories and perspectives that you won't find anywhere else.<br/> FIELD REPORT (FR) explores the following conundrums to equip upcoming leaders and change-makers by fostering discovery and amplifying our curiosity.</p>",
+          "image": "https://substackcdn.com/image/fetch/$s_!jyQR!,w_1456,c_limit,f_webp,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F287b5940-6edb-48ae-ae18-32969d2f0c0e_1200x675.jpeg",
+          "link": "https://possibilityhours.substack.com"
+        }
+      ]
+    },
+    {
+      "type": "indie-mag",
+      "title": "Bruce's New Multi-tool",
+      "items": [
+        {
+          "title": "Recreating an Ancient Multi-tool",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">I got a mail the other day from His Eminence Bruce Sterling who reminded me of his affinity for a good multi-tool. He then proceeded to mention that he's gone deep on these <a href='https://www.flickr.com/photos/brucesterling/albums/72177720327375872/'>multitools from Roman antiquity</a>...and decided to recreate one.<br/>I don't have the full story, and I suggested the Bruce come to Office Hours The Side Projects Edition and share it with the gang. He put up some photos of all this on Flickr. Crazy stuff!</p>",
+          "image": "https://live.staticflickr.com/65535/54666763402_0c7494273b_z.jpg",
+          "link": "https://www.flickr.com/photos/brucesterling/albums/72177720327696639/"
+        }
+      ]
+    },
     {
       "type": "sponsor",
       "title": "Join the Near Future Laboratory Discord",
@@ -24,6 +87,7 @@
         {
           "title": "Near Future Laboratory Patreon",
           "subtitle": "Join the Discord, Support Office Hours, the Newsletter and More",
+          "readMoreText": "Join Us →",
           "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">The Near Future Laboratory is supported by its community and members. <a href='https://patreon.com/nearfuturelaboratory'>Join us on Patreon</a> to support our work, get access to exclusive content, and be part of our vibrant Discord community where we discuss design, technology, creativity, the future and do projects and support each others' work.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">I host weekly Office Hours for Patrons — now for 281 weeks and running — every Friday at 0900 (UTC-7 / California). It's a great way to connect, ask questions, and get feedback on your projects.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Each week two people from the community present a project, idea, or challenge and we discuss it together. It's a great way to get feedback, learn from others, and connect with like-minded people.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">All of this is done in a friendly, supportive, and welcoming environment. We have people from all over the world, from all walks of life, and with all kinds of interests. It's a great way to meet new people, network, show what you can do, and learn from each other.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">In this time of rapid change and uncertainty, it's more important than ever to have a community of people who can support you, challenge you, and help you grow. The Near Future Laboratory is that community.</p>",
           "image": "https://c10.patreonusercontent.com/4/patreon-media/p/post/140458653/10260e427e514a08bd56392327b12ec4/eyJ3IjoxMDgwfQ%3D%3D/1.jpg?token-hash=yZ0ak7PZncrXYzyQA9rLaIMveV73ZOmLMZFZuSoJg34%3D&token-time=1761609600",
           "link": "https://patreon.com/nearfuturelaboratory"
@@ -31,74 +95,20 @@
       ]
     },
     {
-      "type": "books-accessories",
-      "title": "Related Reading",
-      "byline": "FROM THE STUDIO LIBRARY",
-      "bylineLink": "https://nearfuturelaboratory.com/library",
-      "items": [
-        {
-          "title": "It's Time To Imagine Harder",
-          "subtitle": "The Reader's Guide to The Manual of Design Fiction",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">I wrote his book as a way to describe the motivation behind Design Fiction, and to reveal how Design Fiction allows you to approach innovation in a new and unexpected way. Rather than focusing on predicting specific technological advancements or gadgets, which is the overwhelming approach, Design Fiction encourages one to use Imagination to explore possibility more broadly. <br/><br/> The book is a follow-on to The Manual of Design Fiction, which was what introduces the concept of Design Fiction. This book takes the position that Design Fiction — aside from its practical utility — is as a way to rescue creativity from ‘Structure’ that can limit the full range of capabilities Imagination can bring to bear. Instead of trying to forecast exact inventions or timelines, Design Fiction encourages you to ask open-ended questions and wonder more into possible futures.\"</p>",
-          "image": "https://nearfuturelaboratory.com/images/book-haul/2023/04/its-time-to-imagine-harder/JCB_20241028_170752.webp",
-          "link": "https://nearfuturelaboratory.com/library/2023/04/its-time-to-imagine-harder/"
-        }
-      ]
-    },
-    {
-      "type": "food-for-thought",
-      "title": "From the Discord",
-      "items": [
-        {
-          "title": "Call for Submissions! Prompt Club NY, SF, LA, & Paris",
-          "category": "💁🏽-calls-submissions-opportunities",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Prompt Club NY, SF, LA, and Paris are collaborating on a cross-continental experimental filmmaking project centered around the theme “Where do our dreams go when we forget them?” Participants from each city will produce short films inspired by this theme, with screenings serving as a platform for international artistic exchange and audience engagement.</p>",
-          "link": "https://luma.com/8tpe2lce?tk=3TmUFZ"
-        },
-        {
-          "title": "Data-Driven Art: Transforming Budapest’s Mobility Patterns into an Immersive Musical and Visual Experience",
-          "category": "🖼-art-technology",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">“Melody of Budapest” by Milán Janosov explores the integration of data science and artificial intelligence to represent the city's mobility patterns through a multidisciplinary audiovisual composition. Utilizing large-scale cellular mobility data and generative AI, the project visualizes Budapest's dynamic urban activity and rhythms, emphasizing the city's complex internal systems and temporal variability.</p>",
-          "link": "https://datascience.virginia.edu/pages/melody-budapest-milan-janosov"
-        },
-        {
-          "title": "OutHorse Your Email",
-          "category": "🛠-whats-ai-good-for-anyway",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Out source your email to trained horses. Trade screen time for unforgettable Icelandic adventures, reconnect with nature, and let the horses take care of the details!</p>",
-          "link": "https://www.visiticeland.com/outhorse-your-email/"
-        },
-        {
-          "title": "Kitchen Cosmo is a “playful” AI appliance that generates recipes based on leftovers",
-          "category": "🛠-whats-ai-good-for-anyway",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Kitchen Cosmo, developed by MIT students, is a retrofuturistic appliance designed to generate recipes based on available leftovers through a tactile interface that emphasizes physical interaction, such as dials and switches, rather than digital screens. The device employs AI to identify ingredients and create meal suggestions, aiming to foster a collaborative and intentional relationship between users and technology within the kitchen environment.</p>",
-          "link": "https://www.dezeen.com/2025/08/26/kitchen-cosmo-mit-jacob-payne-ayah-mahmoud/"
-        },
-        {
-          "title": "Hollywood is fuming over a new ‘AI actress’ ",
-          "category": "🛠-whats-ai-good-for-anyway",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">A digital content firm has developed an AI-generated actress named “Tilly,” which has elicited significant criticism from Hollywood actors concerned about the potential implications for employment within the industry. Despite assurances from the creators that the technology is not intended to replace human performers, industry representatives remain apprehensive about the broader impact of such advances.</p>",
-          "link": "https://www.cnn.com/2025/09/30/tech/hollywood-ai-actor-backlash"
-        }
-      ]
-    },
-    {
       "type": "aesthetically-pleasing",
-      "title": "Seen in the Discord.",
-      "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">No words. Just images. An uncurated selection of curious images found out and about and shared in the Near Future Laboratory Discord, without comment.</p>",
+      "title": "The Internet Used To Come In A Box",
       "items": [
         {
-          "images": [
-            "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/1db673fa-adbf-4591-1738-70dbe0e88100/public",
-            "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/7d807c57-96e7-4497-45da-c21b35250400/public",
-            "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/9786b0ac-b87b-448a-987c-2e1b84134900/public"
-          ]
+          "image": "https://nearfuturelaboratory.com/images/blog/2023/04/ibox-whyshouldIusetheinternet_900px-SharpenAI-Focus.jpg",
+          "link": "https://nearfuturelaboratory.com/blog/2023/04/the-design-innovators-design-dilemma-time-to/",
+          "linkText": "Eh? What do you mean??"
         }
       ]
     }
   ],
   "footer": {
-    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2025/w42-y25",
-    "emailShare": "mailto:?subject=Near%20Future%20Laboratory%20Newsletter%20Issue&body=Check%20out%20this%20issue:%20https://nearfuturelaboratory.com/newsletters/2025/w42-y25",
+    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2025/w42a-y25",
+    "emailShare": "mailto:?subject=Near%20Future%20Laboratory%20Newsletter%20Issue&body=Check%20out%20this%20issue:%20https://nearfuturelaboratory.com/newsletters/2025/w42a-y25",
     "logo": "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png",
     "logoLink": "https://nearfuturelaboratory.com",
     "socialLinks": {
@@ -174,22 +184,21 @@
       ]
     },
     "unsubscribeLink": "[unsubscribe]",
-    "archiveLink": "https://nearfuturelaboratory.com/newsletters",
-    "address": "© 2025 Near Future Laboratory LLC<br>\nVenice Beach, CA<br>\nUSA\n",
+    "archiveLink": "https://nearfuturelaboratory.com/newsletters/",
+    "address": "© 2025 Near Future Laboratory<br>\nVenice Beach, California<br>\nUnited States\n",
     "colophon": "Your imagination is your strategic advantage.<br/>Connect with me to explore how I can help you harness it.<br/><a href='https://nearfuturelaboratory.com/contact'>nearfuturelaboratory.com/contact</a>."
   },
-  "markdownContent": "<p>Your newsletter content goes here.</p>",
   "themeColors": {
-    "header": "#efefee",
-    "sponsor": "#f5f7fa",
-    "apps-sites": "#f5f7fa",
-    "quote": "#E9EBED",
-    "indie-mag": "#E5EFF1",
-    "books-accessories": "#f5f7fa",
-    "food-for-thought": "#f5f7fa",
-    "aesthetically-pleasing": "#ffffff",
-    "classifieds": "#f0f0f0",
+    "header": "#eeeeed",
+    "sponsor": "#f5f5f5",
+    "apps-sites": "#ffffff",
+    "quote": "#ebebeb",
+    "indie-mag": "#f0f0f0",
+    "books-accessories": "#ffffff",
+    "food-for-thought": "#f8f8f8",
+    "aesthetically-pleasing": "#f0f0f0",
+    "classifieds": "#ececec",
     "gif": "#ffffff",
-    "linkAccent": "#EE3BBB"
+    "linkAccent": "#333333"
   }
 }

@@ -1,34 +1,142 @@
 {
-  "title": "Brain Dead x Invincible",
-  "logoUrl": "https://d3k81ch9hvuctc.cloudfront.net/company/TtXPcf/images/5d0eb12a-d168-467d-ba69-8514d1e9b57b.jpeg",
-  "logoLink": "https://wearebraindead.com",
-  "collectionTitle": "Brain Dead x Invincible",
-  "collectionDescription": "Our latest collection brings you the collaborative efforts of Brain Dead and the Taiwan-based streetwear brand, Invincible.",
-  "collectionDetails": "The lineup begins with an assortment of Brain Dead x Invincible graphics in both t-shirt and crewneck form. Next up, we've got our Miller Chore Coat and Fishing Vest created with specially sourced, Italian-made technical nylon that's customized with a heat-treated adhesive process to create a wholly unique puckering pattern.",
-  "mainImage": "https://d3k81ch9hvuctc.cloudfront.net/company/TtXPcf/images/c049e3f2-e975-4f71-af53-9780eb889064.jpeg",
-  "productImages": [
-    "https://d3k81ch9hvuctc.cloudfront.net/company/TtXPcf/images/ad8e1f1b-5360-43d9-a8c9-fa9450fae8d1.jpeg",
-    "https://d3k81ch9hvuctc.cloudfront.net/company/TtXPcf/images/6971c6a3-aa2d-45d4-992b-6d7338fd1d73.jpeg",
-    "https://d3k81ch9hvuctc.cloudfront.net/company/TtXPcf/images/f32e3908-14b7-452d-b0d6-96b25e486f51.jpeg"
-  ],
-  "shopLink": "https://wearebraindead.com",
-  "articles": [
+  "$schema": "../newsletter.schema.json",
+  "template": "coda",
+  "title": "Welcome to Coda!",
+  "preheader": "Your all-in-one collaborative workspace.",
+  "language": "en",
+  "theme": {
+    "primary": "#D6F3FF",
+    "secondary": "#FDDCB0",
+    "accent": "#EDFAFF",
+    "footer": "#101010"
+  },
+  "header": {
+    "logo": "https://via.placeholder.com/65x65/D6F3FF/000000?text=CODA",
+    "logoLink": "https://coda.io"
+  },
+  "sections": [
     {
-      "title": "Brain Dead x Invincible Collection",
-      "description": "Our latest collection brings you the collaborative efforts of Brain Dead and the Taiwan-based streetwear brand, Invincible.",
-      "imageUrl": "https://d3k81ch9hvuctc.cloudfront.net/company/TtXPcf/images/c049e3f2-e975-4f71-af53-9780eb889064.jpeg"
-    }
-  ],
-  "socialLinks": [
-    {
-      "url": "https://facebook.com",
-      "text": "Facebook"
+      "type": "hero",
+      "title": "Welcome to Coda!",
+      "subtitle": "We're so glad you're here.",
+      "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Hi there! You're in Coda! Now what? In a world where technology and tools are ever-evolving, docs have stayed the same with their generic interfaces and bland pages. Enter Coda. Here, your productivity possibilities are exponential. For now, let's start with the basics. Let's dive in!</p>"
     },
     {
-      "url": "https://twitter.com",
-      "text": "Twitter"
+      "type": "image-text",
+      "layout": "full",
+      "title": "So, what is Coda?",
+      "image": "https://via.placeholder.com/580x300/D6F3FF/000000?text=Animated+Demo+GIF",
+      "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Coda is an all-in-one workspace that brings tools and teams together in one place for better collaboration, organization, project management, and productivity.</p>",
+      "cta": {
+        "text": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Learn more about Coda</p>",
+        "link": "https://coda.io"
+      }
+    },
+    {
+      "type": "image-text",
+      "layout": "right",
+      "image": "https://via.placeholder.com/270x200/EDFAFF/000000?text=Pages+UI",
+      "title": "Coda is a doc with pages.",
+      "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Docs are where your text and data live in one place. And within each Coda doc are pages, which you can find on the lefthand panel.</p>"
+    },
+    {
+      "type": "image-text",
+      "layout": "left",
+      "image": "https://via.placeholder.com/270x200/FDDCB0/000000?text=Table+View",
+      "title": "Coda is also a table.",
+      "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Tables are used for dynamic views of key information. And speaking of dynamic, Coda tables update in real time—with no refresh needed.</p>"
+    },
+    {
+      "type": "image-text",
+      "layout": "right",
+      "image": "https://via.placeholder.com/270x200/D6F3FF/000000?text=Button+Actions",
+      "title": "Coda is buttons.",
+      "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Buttons help you take action in a doc. There are tons of pre-built buttons (like a Gmail button that sends from your inbox), or you can build your own.</p>"
+    },
+    {
+      "type": "image-text",
+      "layout": "left",
+      "image": "https://via.placeholder.com/270x200/EDFAFF/000000?text=Automation+Flow",
+      "title": "Coda is automations.",
+      "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Automations allow Coda to work FOR you. Tell Coda the conditions you need to be met, then give it a set of actions to take, like sending a Slack notification or assigning a task.</p>"
+    },
+    {
+      "type": "image-text",
+      "layout": "right",
+      "image": "https://via.placeholder.com/270x200/FDDCB0/000000?text=Pack+Icons",
+      "title": "Coda is Packs.",
+      "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Packs are integrations that connect your favorite apps to Coda. Pull in data from Google Calendar, Slack, Figma, and hundreds of other tools to create a unified workspace.</p>"
+    },
+    {
+      "type": "image-text",
+      "layout": "left",
+      "image": "https://via.placeholder.com/270x200/D6F3FF/000000?text=Workflow+Diagram",
+      "title": "Transform your workflow.",
+      "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Coda docs have endless features to centralize information and build collaboration. Docs grow and evolve—taking in new information and data from your trusted sources.</p>"
+    },
+    {
+      "type": "image-text",
+      "layout": "right",
+      "image": "https://via.placeholder.com/270x200/EDFAFF/000000?text=Training+Session",
+      "title": "\"I'm actually more of a visual learner...\"",
+      "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">We're big on collaboration here at Coda—both in and out of the doc. That's why we've curated <strong>interactive trainings</strong> to help you learn more about Coda and how to utilize its potential from the get-go. Sign up to join the next session or browse our list of webinars.</p>"
+    },
+    {
+      "type": "cta",
+      "image": {
+        "src": "https://via.placeholder.com/112x112/FDDCB0/000000?text=START",
+        "alt": "Get Started",
+        "link": "https://coda.io/welcome"
+      },
+      "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><strong>Ready to dive in?</strong> Coda has tons of templates to help you get started. Or start from scratch and build exactly what you need.</p>",
+      "cta": {
+        "text": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Start building in Coda</p>",
+        "link": "https://coda.io/welcome"
+      }
     }
   ],
-  "template": "wirecutter",
-  "$schema": "./schema.json"
+  "footer": {
+    "logo": {
+      "src": "https://via.placeholder.com/65x65/FFFFFF/000000?text=CODA",
+      "src_mobile": "https://via.placeholder.com/21x21/FFFFFF/000000?text=C",
+      "link": "https://coda.io"
+    },
+    "social": [
+      {
+        "name": "Twitter",
+        "link": "https://twitter.com/coda_hq",
+        "icon": "twitter"
+      },
+      {
+        "name": "LinkedIn",
+        "link": "https://www.linkedin.com/company/coda-hq",
+        "icon": "linkedin"
+      },
+      {
+        "name": "Instagram",
+        "link": "https://instagram.com/coda_hq",
+        "icon": "instagram"
+      },
+      {
+        "name": "YouTube",
+        "link": "https://youtube.com/c/Coda",
+        "icon": "youtube"
+      }
+    ],
+    "address": "Coda, 444 Castro St, Suite 400<br>Mountain View, CA 94041",
+    "unsubscribeLink": "https://coda.io/unsubscribe"
+  },
+  "themeColors": {
+    "header": "#addcfa",
+    "sponsor": "#f8eccf",
+    "apps-sites": "#f0ffff",
+    "quote": "#d1eaf4",
+    "indie-mag": "#efe2f3",
+    "books-accessories": "#ffffff",
+    "food-for-thought": "#f2f2f2",
+    "aesthetically-pleasing": "#ffffff",
+    "classifieds": "#def1ef",
+    "gif": "#ffffff",
+    "linkAccent": "#EE3BBB"
+  }
 }
