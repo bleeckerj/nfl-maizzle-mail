@@ -17,84 +17,6 @@ class GPTEmailAnalyzer {
   }
 
   /**
-   * Generate a structured prompt for GPT-4o analysis
-   */
-  generateAnalysisPrompt() {
-    const structure = this.extractStructuralInfo();
-    
-    return {
-      system: `You are an expert email template analyst. Analyze HTML email code and identify reusable components for a template system. Focus on:
-
-1. **Component Identification**: Identify distinct sections (header, hero, content blocks, footer, etc.)
-2. **Template Variables**: Suggest what content should be dynamic (text, images, links)
-3. **Schema Generation**: Define the data structure needed for each component
-4. **Best Practices**: Recommend email-safe HTML patterns and improvements
-
-Respond with a JSON structure containing your analysis.`,
-
-      user: `Please analyze this HTML email and help me convert it into a reusable template system.
-
-**Email Structure Info:**
-- Total elements: ${structure.totalElements}
-- Tables: ${structure.tableCount} (suggests ${structure.tableCount > 5 ? 'table-based' : 'modern'} layout)
-- Images: ${structure.imageCount}
-- Links: ${structure.linkCount}
-- Text blocks: ${structure.textBlocks}
-
-**HTML Content:**
-\`\`\`html
-${this.cleanHtmlForAnalysis()}
-\`\`\`
-
-**Required Output Format:**
-\`\`\`json
-{
-  "analysis": {
-    "emailType": "newsletter|promotional|transactional|digest",
-    "layoutType": "table-based|div-based|hybrid",
-    "complexity": "simple|moderate|complex",
-    "brandElements": ["logo", "colors", "fonts"]
-  },
-  "components": [
-    {
-      "name": "header",
-      "confidence": 0.9,
-      "selector": "table:first-child",
-      "description": "Email header with logo",
-      "templateVars": ["logo.src", "logo.alt", "logo.href"],
-      "html": "<extracted-html-with-variables>"
-    }
-  ],
-  "schema": {
-    "properties": {
-      "header": {
-        "type": "object",
-        "properties": {
-          "logo": {
-            "type": "object",
-            "properties": {
-              "src": {"type": "string", "format": "uri"},
-              "alt": {"type": "string"},
-              "href": {"type": "string", "format": "uri"}
-            }
-          }
-        }
-      }
-    }
-  },
-  "recommendations": [
-    "Consider using semantic HTML elements",
-    "Add responsive media queries",
-    "Optimize image dimensions"
-  ]
-}
-\`\`\`
-
-Please provide a comprehensive analysis that would help create a robust, reusable email template.`
-    };
-  }
-
-  /**
    * Extract structural information for analysis
    */
   extractStructuralInfo() {
@@ -140,49 +62,48 @@ Please provide a comprehensive analysis that would help create a robust, reusabl
   }
 
   /**
-   * Generate prompt for component extraction
+   * Generate a structured prompt for GPT-4o analysis
    */
-  generateComponentPrompt(componentName, htmlSection) {
+  generateAnalysisPrompt() {
+    const structure = this.extractStructuralInfo();
+    // Strong, JSON-only system prompt and a strict schema example to enforce safe output
+    const strictSystem = `You are an expert email template analyst. You MUST return ONLY valid JSON (no commentary, no markdown fences, no extra text). The JSON must exactly match the schema described in the user prompt.\n\nImportant rules:\n1) Output strictly parseable JSON.\n2) Each component's 'html' field must contain ONLY inner markup suitable for inclusion inside a template table cell (NO <html>, <body>, or outer wrapper <table> elements).\n3) Do NOT include global inline styles that set background or color. Instead, provide color tokens in the 'colors' map.\n4) Use placeholders like {{var}} for dynamic values.\n5) Keep HTML minimal and email-safe.\n6) If a value is omitted, use null.`;
+
+    const exampleJson = JSON.stringify({
+      analysis: {
+        emailType: 'promotional',
+        layoutType: 'table-based',
+        complexity: 'moderate',
+        brandElements: ['logo', 'colors', 'fonts']
+      },
+      components: [
+        {
+          name: 'header',
+          confidence: 0.95,
+          selector: 'table:first-child',
+          description: 'Top logo area',
+          templateVars: ['logo.src', 'logo.alt', 'logo.href'],
+          colors: { bg: '#D6F3FF' },
+          html: '<td align="left"><a href="{{logo.href}}"><img src="{{logo.src}}" alt="{{logo.alt}}" width="65"/></a></td>'
+        }
+      ],
+      schema: {},
+      recommendations: ['Use table wrappers for email clients']
+    }, null, 2);
+
+    const userPrompt = [];
+    userPrompt.push('Please analyze this HTML email and produce a JSON object that conforms to the exact schema described below. RETURN NOTHING ELSE.');
+    userPrompt.push('Required keys: analysis, components (array), schema (object), recommendations (array).');
+    userPrompt.push('Each component must include: name, confidence, selector, description, templateVars (array), optional colors (map), and html (INNER markup only).');
+    userPrompt.push('Example output (for reference):');
+    userPrompt.push(exampleJson);
+    userPrompt.push('\nNow analyze the HTML and output the JSON. HTML to analyze:\n---HTML START---');
+    userPrompt.push(this.cleanHtmlForAnalysis());
+    userPrompt.push('---HTML END---');
+
     return {
-      system: `You are an expert at converting HTML email components into template-ready code. Your task is to:
-
-1. Clean up the HTML to be more template-friendly
-2. Replace dynamic content with template variables
-3. Ensure email client compatibility
-4. Suggest the data structure needed`,
-
-      user: `Convert this HTML section into a reusable email template component:
-
-**Component Type:** ${componentName}
-
-**HTML Section:**
-\`\`\`html
-${htmlSection}
-\`\`\`
-
-**Output Format:**
-\`\`\`json
-{
-  "cleanedHtml": "<template-ready HTML with variables>",
-  "variables": {
-    "text": "Description of text content to replace",
-    "image": "Description of image to replace", 
-    "links": "Description of links to replace"
-  },
-  "dataStructure": {
-    "type": "object",
-    "properties": {
-      "title": {"type": "string"},
-      "content": {"type": "string"}
-    }
-  },
-  "improvements": [
-    "Suggestions for better email compatibility"
-  ]
-}
-\`\`\`
-
-Focus on making the component reusable while preserving the visual structure.`
+      system: strictSystem,
+      user: userPrompt.join('\n')
     };
   }
 

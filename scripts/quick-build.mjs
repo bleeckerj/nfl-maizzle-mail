@@ -18,6 +18,14 @@ const args = process.argv.slice(2);
 const command = args[0];
 const file = args[1];
 
+// Parse optional --outdir argument
+let outDir = null;
+for (const arg of args) {
+  if (arg.startsWith('--outdir=')) {
+    outDir = arg.split('=')[1];
+  }
+}
+
 // Available templates
 const templates = {
   'wirecutter': 'wirecutter',
@@ -238,15 +246,33 @@ switch (command) {
     const template = templates[command];
     const inputFile = resolveInputPath(file);
     const outputName = path.basename(inputFile, '.md');
-    
+
     console.log(`🚀 Quick Build: ${command} template`);
     console.log(`📄 File: ${inputFile}`);
     console.log(`🎨 Template: ${template}`);
-    
+    if (outDir) {
+      console.log(`📂 Output directory: ${outDir}`);
+    }
+
     try {
-      execSync(`node scripts/build-newsletter.mjs ${inputFile} ${outputName} --template=${template}`, { 
-        stdio: 'inherit' 
+      execSync(`node scripts/build-newsletter.mjs ${inputFile} ${outputName} --template=${template}`, {
+        stdio: 'inherit'
       });
+
+      // Move the built HTML file to the output directory if specified
+      if (outDir) {
+        const srcPath = path.join('build_production', `${outputName}.html`);
+        const destDir = path.resolve(outDir);
+        const destPath = path.join(destDir, `${outputName}.html`);
+
+        // Ensure output directory exists
+        if (!fs.existsSync(destDir)) {
+          fs.mkdirSync(destDir, { recursive: true });
+        }
+
+        fs.copyFileSync(srcPath, destPath);
+        console.log(`✅ Output file copied to: ${destPath}`);
+      }
     } catch (error) {
       console.error('❌ Build failed:', error.message);
       process.exit(1);

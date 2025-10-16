@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "maizzle build production",
-    "build:data": "maizzle build production", 
+    "build:data": "maizzle build production",
     "build:newsletter": "node scripts/build-newsletter.mjs",
     "quick": "node scripts/quick-build.mjs",
     "snippet": "node scripts/create-snippet.mjs",

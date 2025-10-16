@@ -195,13 +195,24 @@ if (process.argv.length < 3) {
 }
 
 const inputPath = process.argv[2];
-const outputPath = process.argv[3] || 'data/newsletter.json';
-
-// Parse template argument
+// Parse CLI args robustly: allow optional output path and --template= flag in any order
+let outputPath;
 let templateName = 'wirecutter';
-const templateArg = process.argv.find(arg => arg.startsWith('--template='));
-if (templateArg) {
-  templateName = templateArg.split('=')[1];
+for (let i = 3; i < process.argv.length; i++) {
+  const arg = process.argv[i];
+  if (!arg) continue;
+  if (arg.startsWith('--template=')) {
+    templateName = arg.split('=')[1];
+    continue;
+  }
+  // If arg doesn't start with -, treat as output path (only the first one)
+  if (!arg.startsWith('-') && !outputPath) {
+    outputPath = arg;
+    continue;
+  }
 }
+
+// Default output: data/<template>.json so data files match their template names
+if (!outputPath) outputPath = `data/${templateName}.json`;
 
 convertMarkdownToJson(inputPath, outputPath, templateName);

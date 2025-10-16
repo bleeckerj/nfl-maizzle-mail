@@ -60,106 +60,90 @@
             <if condition="footer.socialLinks">
               <tr>
                 <td align="center" class="padt20 padr20 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 20px;text-align: center;" valign="top">
-                  <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto; border-spacing: 0;">
+                    <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto; border-spacing: 0;">
                     <tr>
                       <!-- GitHub Links -->
                       <each loop="link in footer.socialLinks.github">
-                        <td style="padding: 0 6px;">
-                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'GitHub' }}">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="{{ link.title || 'GitHub' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
-                          </a>
-                        </td>
+                      <td style="padding: 0 6px;">
+                        <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'GitHub' }}">
+                        <img src="https://img.icons8.com/ios-glyphs/24/000000/github.png" alt="{{ link.title || 'GitHub' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;">
+                        </a>
+                      </td>
                       </each>
+
                       <!-- Apple Podcasts Links -->
                       <each loop="link in footer.socialLinks.applepodcasts">
-                        <td style="padding: 0 6px;">
-                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Apple Podcasts' }}">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/applepodcasts.svg" alt="{{ link.title || 'Apple Podcasts' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
-                          </a>
-                        </td>
+                      <td style="padding: 0 6px;">
+                        <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Apple Podcasts' }}">
+                        <img src="https://img.icons8.com/?size=24&id=ZsAN3pzKcy09&format=png" alt="{{ link.title || 'Apple Podcasts' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;">
+                        </a>
+                      </td>
                       </each>
-                      
+
                       <!-- Spotify Links -->
                       <each loop="link in footer.socialLinks.spotify">
-                        <td style="padding: 0 6px;">
-                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Spotify' }}">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/spotify.svg" alt="{{ link.title || 'Spotify' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
-                          </a>
-                        </td>
+                      <td style="padding: 0 6px;">
+                        <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Spotify' }}">
+                        <img src="https://img.icons8.com/ios-glyphs/24/000000/spotify.png" alt="{{ link.title || 'Spotify' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;">
+                        </a>
+                      </td>
                       </each>
+
                       <!-- Instagram Links -->
                       <each loop="link in footer.socialLinks.instagram">
-                        <td style="padding: 0 6px;">
-                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Instagram' }}">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="{{ link.title || 'Instagram' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
-                          </a>
-                        </td>
+                      <td style="padding: 0 6px;">
+                        <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Instagram' }}">
+                        <img src="https://img.icons8.com/ios-glyphs/24/000000/instagram-new.png" alt="{{ link.title || 'Instagram' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;">
+                        </a>
+                      </td>
                       </each>
-                      
+
                       <!-- LinkedIn Links -->
                       <each loop="link in footer.socialLinks.linkedin">
-                        <td style="padding: 0 6px;">
-                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'LinkedIn' }}">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="{{ link.title || 'LinkedIn' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
-                          </a>
-                        </td>
+                      <td style="padding: 0 6px;">
+                        <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'LinkedIn' }}">
+                        <img src="https://img.icons8.com/ios-glyphs/24/000000/linkedin.png" alt="{{ link.title || 'LinkedIn' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;">
+                        </a>
+                      </td>
                       </each>
-                      
+
                       <!-- YouTube Links -->
                       <each loop="link in footer.socialLinks.youtube">
-                        <td style="padding: 0 6px;">
-                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'YouTube' }}">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" alt="{{ link.title || 'YouTube' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
-                          </a>
-                        </td>
+                      <td style="padding: 0 6px;">
+                        <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'YouTube' }}">
+                        <img src="https://img.icons8.com/ios-glyphs/24/000000/youtube-play.png" alt="{{ link.title || 'YouTube' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;">
+                        </a>
+                      </td>
                       </each>
-                      
-                      <!-- Apple Podcasts Links -->
-                      <each loop="link in footer.socialLinks.applepodcasts">
-                        <td style="padding: 0 6px;">
-                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Apple Podcasts' }}">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/applepodcasts.svg" alt="{{ link.title || 'Apple Podcasts' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
-                          </a>
-                        </td>
-                      </each>
-                      
-                      <!-- Spotify Links -->
-                      <each loop="link in footer.socialLinks.spotify">
-                        <td style="padding: 0 6px;">
-                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Spotify' }}">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/spotify.svg" alt="{{ link.title || 'Spotify' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
-                          </a>
-                        </td>
-                      </each>
-                      
+
                       <!-- Discord Links -->
                       <each loop="link in footer.socialLinks.discord">
-                        <td style="padding: 0 6px;">
-                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Discord' }}">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/discord.svg" alt="{{ link.title || 'Discord' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
-                          </a>
-                        </td>
+                      <td style="padding: 0 6px;">
+                        <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Discord' }}">
+                        <img src="https://img.icons8.com/ios-glyphs/24/000000/discord.png" alt="{{ link.title || 'Discord' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;">
+                        </a>
+                      </td>
                       </each>
-                      
+
                       <!-- Patreon Links -->
                       <each loop="link in footer.socialLinks.patreon">
-                        <td style="padding: 0 6px;">
-                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Patreon' }}">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/patreon.svg" alt="{{ link.title || 'Patreon' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
-                          </a>
-                        </td>
+                      <td style="padding: 0 6px;">
+                        <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Patreon' }}">
+                        <img src="https://img.icons8.com/ios-glyphs/24/000000/patreon.png" alt="{{ link.title || 'Patreon' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;">
+                        </a>
+                      </td>
                       </each>
-                      
-                      <!-- Substack Links -->
+
+                      <!-- Substack / Newsletter Links (generic news icon) -->
                       <each loop="link in footer.socialLinks.substack">
-                        <td style="padding: 0 6px;">
-                          <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Substack' }}">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/substack.svg" alt="{{ link.title || 'Substack' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;filter: brightness(0);">
-                          </a>
-                        </td>
+                      <td style="padding: 0 6px;">
+                        <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Substack' }}">
+                        <img src="https://img.icons8.com/ios-glyphs/24/000000/news.png" alt="{{ link.title || 'Substack' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;">
+                        </a>
+                      </td>
                       </each>
                     </tr>
-                  </table>
+                    </table>
                 </td>
               </tr>
               <tr>
@@ -177,6 +161,7 @@
                   <if condition="footer.archiveLink">
                     <a href="{{ footer.archiveLink }}" style="text-decoration: underline;color: #888 !important;">Browse older issues</a><br>
                   </if>
+                  Icons by <a href="https://icons8.com" style="text-decoration: underline;color: #888 !important;">Icons8</a><br>
                 </p>
                 <if condition="footer.address">
                   <p class="small grey" style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 15px;">
