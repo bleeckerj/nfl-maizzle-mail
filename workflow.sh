@@ -1,37 +1,28 @@
 #!/bin/bash
 
-# Quick workflow script to convert Markdown and build email
-# Usage: ./workflow.sh content/2025-10-07.md [template-name]
+# Quick workflow script to build email from Markdown using quick-build
+# Usage: ./workflow.sh <content-file.md> [template-name]
 
 if [ $# -eq 0 ]; then
     echo "Usage: ./workflow.sh <content-file.md> [template-name]"
-    echo "Example: ./workflow.sh content/2025-10-07.md"
-    echo "Example: ./workflow.sh content/my-newsletter.md newsletter"
+    echo "Example: ./workflow.sh ./test-dd.md dense-discovery"
+    echo "Example: ./workflow.sh /Users/julian/Code/nfl-backoffice/public/outbox/data/2025/w43-y25.md dense-discovery"
     exit 1
 fi
 
 CONTENT_FILE=$1
-TEMPLATE=${2:-"wirecutter"}
+TEMPLATE=${2:-"dense-discovery"}
 
-echo "🔄 Converting Markdown to JSON (template: $TEMPLATE)..."
-node scripts/md_to_json.mjs "$CONTENT_FILE" data/newsletter.json --template="$TEMPLATE"
+echo "🔄 Building email with quick-build..."
+echo "📄 Content: $CONTENT_FILE"
+echo "🎨 Template: $TEMPLATE"
+
+node /Users/julian/Code/nfl-maizzle-mail/scripts/quick-build.mjs "$TEMPLATE" "$CONTENT_FILE"
 
 if [ $? -eq 0 ]; then
-    echo "📧 Building email HTML..."
-    npx maizzle build production
-    
-    if [ $? -eq 0 ]; then
-        echo "✅ Email built successfully!"
-        echo "🎨 Template: $TEMPLATE"
-        echo "📁 Output: build_production/newsletter.html"
-        
-        # Optional: Open the file in default browser (macOS)
-        # open build_production/newsletter.html
-    else
-        echo "❌ Email build failed"
-        exit 1
-    fi
+    echo "✅ Email built successfully!"
+    echo "📁 Check build_production/ for output"
 else
-    echo "❌ Markdown conversion failed"
+    echo "❌ Email build failed"
     exit 1
 fi

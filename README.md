@@ -178,6 +178,9 @@ npm run build:data
 
 **Option C: Use npm scripts**
 ```bash
+# This is basically what you want to do
+node ./scripts/quick-build.mjs dense-discovery ./data/2025/w43-y25.md
+
 # Test with example content
 npm run test
 
