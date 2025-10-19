@@ -100,6 +100,47 @@ function displayColorTheme(newsletterData) {
 }
 
 /**
+ * Catalog all sections in the newsletter data for debugging
+ */
+function catalogSections(newsletterData) {
+  console.log('📋 Section Catalog:');
+  console.log('═══════════════════');
+  
+  if (!newsletterData.sections) {
+    console.log('❌ No sections found in newsletter data');
+    return;
+  }
+  
+  if (!Array.isArray(newsletterData.sections)) {
+    console.log('❌ Sections is not an array:', typeof newsletterData.sections);
+    return;
+  }
+  
+  console.log(`📊 Total sections: ${newsletterData.sections.length}`);
+  console.log('');
+  
+  newsletterData.sections.forEach((section, index) => {
+    const type = section.type || 'undefined';
+    const title = section.title || 'No title';
+    const itemCount = section.items ? section.items.length : 0;
+    
+    console.log(`${index + 1}. Type: "${type}" | Title: "${title}" | Items: ${itemCount}`);
+    
+    // Show item details for gif and animated-image sections specifically
+    if ((type === 'gif' || type === 'animated-image') && section.items) {
+      section.items.forEach((item, itemIndex) => {
+        console.log(`   Item ${itemIndex + 1}:`);
+        console.log(`     - image: ${item.image || 'none'}`);
+        console.log(`     - gif: ${item.gif || 'none'}`);
+        console.log(`     - description: ${item.description ? 'present' : 'none'}`);
+      });
+    }
+  });
+  
+  console.log('');
+}
+
+/**
  * Validate all images in newsletter data
  */
 async function validateImages(data) {
@@ -177,6 +218,7 @@ async function validateImages(data) {
           // Check GIF
           if (item.gif) {
             totalImages++;
+            console.log('Checking GIF URL:', item.gif);
             const result = await checkImageUrl(item.gif);
             if (result.valid) {
               validImages++;
@@ -359,6 +401,10 @@ async function buildNewsletter() {
 
     // Load newsletter data and display color theme
     const newsletterData = JSON.parse(fs.readFileSync('data/newsletter.json', 'utf8'));
+    
+    // Catalog sections for debugging
+    catalogSections(newsletterData);
+    
     displayColorTheme(newsletterData);
     
     // Inject theme colors into newsletter data

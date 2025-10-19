@@ -147,6 +147,7 @@ async function validateImages(data) {
           // Check GIF
           if (item.gif) {
             totalImages++;
+            console.log('Checking GIF URL:', item.gif);
             const result = await checkImageUrl(item.gif);
             if (result.valid) {
               validImages++;

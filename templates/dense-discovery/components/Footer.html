@@ -129,7 +129,7 @@
                       <each loop="link in footer.socialLinks.patreon">
                       <td style="padding: 0 6px;">
                         <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Patreon' }}">
-                        <img src="https://img.icons8.com/ios-glyphs/24/000000/patreon.png" alt="{{ link.title || 'Patreon' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;">
+                        <img src="https://img.icons8.com/?size=100&id=tIshI0hyXw3f&format=png&color=000000" alt="{{ link.title || 'Patreon' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;">
                         </a>
                       </td>
                       </each>
@@ -138,12 +138,26 @@
                       <each loop="link in footer.socialLinks.substack">
                       <td style="padding: 0 6px;">
                         <a href="{{ link.url }}" style="text-decoration: none;" title="{{ link.title || 'Substack' }}">
-                        <img src="https://img.icons8.com/ios-glyphs/24/000000/news.png" alt="{{ link.title || 'Substack' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;">
+                        <img src="https://img.icons8.com/?size=100&id=kcZe5woKzcQY&format=png&color=000000" alt="{{ link.title || 'Substack' }}" width="24" height="24" style="-ms-interpolation-mode: bicubic;display: block;">
                         </a>
                       </td>
                       </each>
                     </tr>
                     </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 15px;"> </td>
+              </tr>
+            </if>
+
+            <!-- Gratitude Section -->
+            <if condition="footer.gratitude">
+              <tr>
+                <td align="center" class="padt20 padr20 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 20px;text-align: center;" valign="top">
+                  <p style="font-family: 'Ubuntu', sans-serif; font-size: 14px;line-height: 18px;font-weight: 400;color: #999999;padding: 0;margin: 0;margin-bottom: 15px;font-style: italic;">
+                    {{{ footer.gratitude }}}
+                  </p>
                 </td>
               </tr>
               <tr>
@@ -158,8 +172,8 @@
                   <if condition="footer.unsubscribeLink">
                     <a href="{{ footer.unsubscribeLink }}" style="text-decoration: underline;color: #888 !important;">Unsubscribe</a><br>
                   </if>
-                  <if condition="footer.archiveLink">
-                    <a href="{{ footer.archiveLink }}" style="text-decoration: underline;color: #888 !important;">Browse older issues</a><br>
+                  <if condition="footer.archiveUrl">
+                    <a href="{{ footer.archiveUrl }}" style="text-decoration: underline;color: #888 !important;">Browse older issues</a><br>
                   </if>
                   Icons by <a href="https://icons8.com" style="text-decoration: underline;color: #888 !important;">Icons8</a><br>
                 </p>

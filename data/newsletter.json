@@ -5,102 +5,73 @@
   "preheader": "Brief preview text for email clients",
   "colorTheme": "professional",
   "header": {
-    "quote": "Inspirational quote for the header",
-    "author": "Quote Author",
-    "featuredImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=386&h=250&fit=crop",
-    "featuredArtist": {
-      "name": "Artist Name",
-      "link": "https://example.com/artist"
-    },
-    "logoTop": "https://nearfuturelaboratory.com/images/logos/top-logo.png",
-    "logoBottom": "https://nearfuturelaboratory.com/images/logos/bottom-logo.png",
+    "logoTop": "https://nearfuturelaboratory.com/images/site/logos/TOP_LaboratoryCircle_Guy_01_CircleWhite.png",
+    "logoBottom": "https://nearfuturelaboratory.com/images/site/logos/BOTTOM_LaboratoryCircle_Guy_01_CircleWhite.png",
     "logoLink": "https://nearfuturelaboratory.com"
   },
   "intro": {
     "title": "It Was Week 43 of 2025 and I'm just wondering...",
-    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">What's up with AI and poetry, anyway?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">I once overheard a poet say, “The primary purpose of poetry is to keep the vision of childhood alive into adulthood.”</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">That line stuck with me.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Poetry, at its core, preserves the imaginative sense of wonder and possibility we had before we learned to see the world in conventional, adult ways. It keeps the world strange and alive.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">It also has this power over meaning-making that is non-rational, non-logical, and non-ordered. Poetry can evoke feelings of wonder, awe, amazement, confusion, dread, and even fear — those sensations that remind us of childhood experiences with the unknown.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">And for some reason it comes into play when we're trying to make sense of AI.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">You have Matt Webb's Poem/1 clock project. It's a clock. Except that rather than simply doing clock things like showing the time, it generates a rhyming poem so you look at it and — behold! — a poem emanated from some LLM.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">And then you've got this Poetry Camera. Click what we used to call the shutter button — which used to mechanically articulate a complicated mechanical assemablage that would open and close a curtain-like shutter contraption for a very precise and nearly instantaneous moment to let light hit a chemically-coated piece of film — and instead of all that mishegoos, you get a poem rattled out on a little embedded printer..again delivered to you based on what an LLM thinks it sees in the frame.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">And that's not the end of it.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">18 months ago, I caught that bug and for some reason decided to build a little AI poetry generating system that I called Poem/OS. It's a little Python-based system that uses various LLMs to create spoken poems every day based on what's in your calendar for the day.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Why poetry? Why AI? Why both?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><strong>Here's my thesis</strong>: Poetry helps us navigate the strange new terrain of AI. It provides a way to explore and make sense of this technology that doesn't rely on rationality or logic alone. Poetry allows us to tap into our childlike sense of wonder and curiosity, helping us to engage with AI in a more imaginative and playful way. It gives us (or folks like me, which I assume are folks like Matt and the folks behind the Poetry Camera) a way to explore the possibilities of AI without being constrained by the limitations of our adult understanding of the world. It allows for an expansive and exploratory naiveté that is essential when dealing with something as complex and unfamiliar as anything that is complex and unfamiliar.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">And this is the crux of the matter: in order to innovate in the sense of going beyond incremental improvements, we need to combine risk with imagination, which may be an apt additional definition of speculation.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">This quality is something that every organization should be cultivating right now. Sure, slough off the dead weight of legacy systems and processes that are holding you back. But also, cultivate a culture of imagination and playfulness that allows for exploration and experimentation. Create an expeditionary team that is tasked with exploring the unknown and pushing the boundaries of what is possible.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Curious abou† what such a team might look and feel like?</p>",
-    "viewOnlineLink": "https://nearfuturelaboratory.com/blog/2025/10/sascha-pohflepp-blind-camera-redux"
+    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">What's up with AI and poetry, anyway?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">I once overheard a poet say, “The primary purpose of poetry is to keep the vision of childhood alive into adulthood.”</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">That line stuck with me.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Poetry, at its core, preserves the imaginative sense of wonder and possibility we had before we learned to see the world in conventional, adult ways. It keeps the world strange and alive.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">It also has this power over meaning-making that is non-rational, non-logical, and non-ordered. Poetry can evoke feelings of wonder, awe, amazement, confusion, dread, and even fear — those sensations that remind us of childhood experiences with the unknown.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">And for some reason it comes into play when we're trying to make sense of AI.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">You have Matt Webb's Poem/1 clock project. It's a clock. Except that rather than simply doing clock things like showing the time, it generates a rhyming poem so you look at it and — behold! — a poem emanated from some LLM.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">And then you've got this Poetry Camera. Click what we used to call the shutter button — which used to mechanically articulate a complicated mechanical assemablage that would open and close a curtain-like shutter contraption for a very precise and nearly instantaneous moment to let light hit a chemically-coated piece of film — and instead of all that mishegoos, you get a poem rattled out on a little embedded printer..again delivered to you based on what an LLM thinks it sees in the frame.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">And that's not the end of it.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">18 months ago, I caught that bug and for some reason decided to build a little AI poetry generating system that I called Poem/OS. It's a little Python-based system that uses various LLMs to create spoken poems every day based on what's in your calendar for the day.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Why poetry? Why AI? Why both?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><strong>Here's my thesis</strong>: Poetry helps us navigate the strange new terrain of AI. It provides a way to explore and make sense of this technology that doesn't rely on rationality or logic alone. Poetry allows us to tap into our childlike sense of wonder and curiosity, helping us to engage with AI in a more imaginative and playful way. It gives us (or folks like me, which I assume are folks like Matt and the folks behind the Poetry Camera) a way to explore the possibilities of AI without being constrained by the limitations of our adult understanding of the world. It allows for an expansive and exploratory naiveté that is essential when dealing with something as complex and unfamiliar as anything that is complex and unfamiliar.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">And this is the crux of the matter: in order to innovate in the sense of going beyond incremental improvements, we need to combine risk with imagination, which may be an apt additional definition of speculation.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">This quality is something that every organization should be cultivating right now. Sure, slough off the dead weight of legacy systems and processes that are holding you back. But also, cultivate a culture of imagination and playfulness that allows for exploration and experimentation. Create an expeditionary team that is tasked with exploring the unknown and pushing the boundaries of what is possible.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Curious about what that looks like? Keep reading.</p>",
+    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/w43-y25"
   },
   "sections": [
     {
       "type": "sponsor",
-      "title": "Book Drops",
-      "sponsorLabel": "New from the Studio Library",
-      "sponsorLink": "https://example.com/sponsor",
+      "title": "Featured Blog Post",
+      "sponsorLabel": "INNOVATION PRACTICES",
+      "sponsorLink": "https://nearfuturelaboratory.com",
       "items": [
         {
-          "title": "Brand Something Something",
-          "subtitle": "Tom G.",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Compelling description of the sponsored content.</p>",
-          "image": "https://images.unsplash.com/photo-example?w=194&h=150&fit=crop&q=80",
-          "link": "https://sponsor-link.com"
-        },
-        {
-          "title": "Enshittification",
-          "subtitle": "Cory Doctorow",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Compelling description of the sponsored content.</p>",
-          "image": "https://images.unsplash.com/photo-example?w=194&h=150&fit=crop&q=80",
-          "link": "https://sponsor-link.com"
+          "title": "Blind Cameras, Poetry Cameras,  Poetry Clocks & Poetry Poems\n",
+          "subtitle": "Why you need an innovation team that thinks like a child\n",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">What's thinking like a child got to do with AI, and product innovation, anyway?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Could it be that it is like this enticing, weird, eery new terrain that we don't yet understand, and doing and creating and prototyping things that do not quite make sense is a way of exploring this new terrain in a way that resists the temptation to do what everyone else thinks we should be doing?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Is it that we need some of those non-rational, non-logical, non-ordred mechanisms for sense-making that revert us to a kind of childlike state of, variously, wonder, awe, amazement, confusion, dread, and fear of things that go bump in the night and creep out of your bedroom closet in the middle of the night? <br/>           <br/> <img src=\"https://nearfuturelaboratory.com/images/blog/2025/10/sascha-pohflepp-blind-camera-redux/BlindCamera_Update_3x2.jpg\" alt=\"Blind Camera by Sascha Pohflepp\" style=\"max-width:100%;height:auto;\"/> <br/> <br/> When I first saw Sascha Pohflepp's “Blind Camera” project, I felt that same sense of wonder and confusion. This was a super important project that the enshittified (cf below) internet has all but erased from history (I am on a mission to re-instantiate all of his projects to the best of my ability).</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">What did it do? Well — it's a camera that doesn't take pictures, but instead takes someone else's photo that was uploaded to Flickr around that same moment in time.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">How beautiful and poetic in its own way, yeah?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Now, in this terrain of AI we have an opportunity to create new kinds of products and experiences that tap into this same sense of wonder and imagination. By embracing the nonsensical, the playful, and the poetic, we can create products that are not only innovative but also deeply meaningful and engaging.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">So you've got the Poetry Camera, Matt Webb's Poem/1 clock, and my own Poem/OS project. Each of these projects embodies this spirit of exploration and playfulness, and each offers a unique perspective on how we can engage with AI in a more imaginative way.</p>",
+          "image": "https://nearfuturelaboratory.com/images/blog/2025/10/sascha-pohflepp-blind-camera-redux/poetry_camera_1.jpg",
+          "readMoreText": "Read the Blog Post",
+          "link": "https://shop.hintlab.org"
         }
       ]
     },
     {
       "type": "sponsor",
-      "title": "From the NFL Discord",
-      "sponsorLabel": "Swedish Refactor of the Work Kit of Design Fiction",
-      "sponsorLink": "https://example.com/sponsor",
+      "title": "Friends of the Lab",
+      "sponsorLabel": "RECIPROCITY NETWORK",
+      "sponsorLink": "",
       "items": [
         {
-          "title": "",
-          "subtitle": "Smtg",
+          "title": "Hintlab's Design Fiction Work Kit\n",
+          "subtitle": "A Fork of the Near Future Laboratory's Design Fiction Work Kit, in Swedish\n",
           "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Mateusz has done a Swedish refactor of the Near Future Laboratory's Design Fiction Work Kit, adapting it for a Scandinavian audience with localized language and some idiomatic adjustments.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Check out his kit on his site.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">I first created the the first Design Fiction Work Kit (nee Design Fiction Product Design Work Kit) as a prototype of an ideation system built upon the basic architecture of the old MadLibs word game. We used it in the TBD Catalog Workshop — the first time we tried doing ‘Design Fiction’ in a group workshop.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Since then the work kit has sold nearly 3500 copies in three editions and several printings. It's been used by design studios, innovation teams, product teams, seminars, kid's events and educational institutions around the world as a tool for sparking creativity and generating new ideas — and having fun doing it.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">As a tool for speculative unlocks and inspiration, it's a bit like jogging in that it can hurt a bit at first but then you get into the groove and it opens up new pathways of thinking. I look at these kits as more of a creative catalyst than a strict methodology. The prompts and structures are designed to get you thinking in new ways, but the real magic happens when you take those ideas and run with them in your own unique direction, and feel what it feels like to ideate in a more playful, speculative way.</p>",
-          "image": "https://images.unsplash.com/photo-example?w=194&h=150&fit=crop&q=80",
-          "link": "https://sponsor-link.com"
+          "image": "https://assets.bigcartel.com/product_images/411515853/_DSC6327.jpg?auto=format&fit=max&w=2000",
+          "readMoreText": "Visit Hintlab's Shop",
+          "link": "https://shop.hintlab.org"
         }
       ]
     },
     {
       "type": "apps-sites",
-      "title": "Apps & Sites",
+      "title": "Workshop: Meshtastic Radio Build",
       "items": [
         {
-          "title": "App/Site Name",
-          "subtitle": "Brief description",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Detailed description of the app or website.</p>",
-          "image": "https://images.unsplash.com/photo-example?w=200&h=120&fit=crop&q=80",
-          "link": "https://app-site-link.com"
-        },
-        {
-          "title": "Second App/Site",
-          "subtitle": "Brief description",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Another app or site recommendation.</p>",
-          "image": "https://images.unsplash.com/photo-example2?w=200&h=120&fit=crop&q=80",
-          "link": "https://second-link.com"
+          "title": "The heck is Meshtastic, anyway?",
+          "subtitle": "We're doing a group build of Meshtastic radios in the Discord!",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Meshtastic is an open-source project that enables off-grid communication using low-power, long-range radios. It's perfect for outdoor enthusiasts, emergency preparedness, and anyone looking to stay connected without relying on traditional cellular networks.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">In our Near Future Laboratory Discord, we're organizing a group build of Meshtastic radios. Join us to learn how to set up your own device, customize it, and explore the possibilities of mesh networking.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Dré Labre proposed the idea and is leading the prototype of a workshop to build and deploy these kinds of radios. What we're hoping for is to experiment with decentralized networks, get a template of a workshop we could run IRL, and have some fun doing it.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Like I've said before, “Less yammering. More hammering.”</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">When I think of the kinds of things that a speculative expeditionary team should be doing within companies exploring AI and other emerging technologies, these sorts of hands-on projects and experiments come to mind. What is mesh networking in a world in which AI is on every surface? How do we think about decentralized communication in a world increasingly dominated by centralized platforms?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">You know what? I have <em>absolutely no idea</em>. Which means it is fertile ground for exploring into and wondering while making.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><a href='https://nearfuturelaboratory.com/patreon'>Join the Patreon</a> to join the Discord and then join the Workshop! Joining Patreon is easy, and I've got a junior creative tier of just $10/month (my ‘coffee and cake’ tier) that gets you access to the Discord and all the fun!</p>",
+          "image": "https://i.etsystatic.com/29606870/r/il/849c14/5828793694/il_fullxfull.5828793694_2kf9.jpg",
+          "link": "https://nearfuturelaboratory.com/patreon",
+          "readMoreText": "Join the Patreon to join the Discord to join the Workshop!"
         }
       ]
     },
     {
-      "type": "quote",
-      "title": "Quote Section Title",
+      "type": "indie-mag-single-column",
+      "title": "From the Archives: The Work Kit of Design Fiction",
       "items": [
         {
-          "quote": "Meaningful quote that resonates with your audience.",
-          "author": "@author_handle",
-          "authorLink": "https://julianbleecker.com"
-        }
-      ]
-    },
-    {
-      "type": "indie-mag",
-      "title": "Featured Project",
-      "items": [
-        {
-          "title": "Project/Magazine Name",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Description of the independent project or publication.</p>",
-          "details": "– Additional details<br>\n– More information<br>\n– Specifications or notes\n",
-          "note": "Optional additional note about the project.",
-          "image": "https://images.unsplash.com/photo-example?w=194&h=250&fit=crop&q=80",
-          "link": "https://project-link.com"
+          "title": "The Work Kit of Design Fiction",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">The Work Kit consists of 100 Algorithmically Augmented and Illuminated Prompt Cards, each one an evocative representation of a parameter of a possible future product, service, or user-experience scenario, and artifacts from the most curious, righteous, meaningful, and seriously hilarious, and well-intentioned possible/probable futures.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Earlier in the year I made an online edition rather than do another print run cause, like..tariffs and shipping and all that mishegoss. Someday I'll do another print run perhaps domesticallybut for now, the online edition sorta does the trick.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">This project is an evolution of the original Design Fiction Product Design Work Kit, first released in 2012, and now in its 3rd edition. The Work Kit is designed to help teams and individuals explore into and around speculative design and futures thinking through a playful and engaging card-based system. It is intended to be used as a tool for ideation, brainstorming, and creative exploration, helping users to generate new ideas and perspectives on the future of products and services.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">No rules. Just play.</p>",
+          "details": "– 916,038 possibile combinations<br>\n– 102 cards<br>\n– 27 Archetype, 26 Object, 23 Attribute, 21 Action plus 3 70/20/10 Fool Cards<br>\n- Many possible futures in only 9 ounces of kit<br>\n",
+          "note": "Making Ideation Work Kits since 2012.",
+          "image": "https://shop.nearfuturelaboratory.com/cdn/shop/files/MJDFWK_Cards_020_Layflat_051423_1932.png?v=1684506844&width=1646",
+          "link": "https://nearfuturelaboratory.com/work-kit-of-design-fiction/play-2023-edition/"
         }
       ]
     },
@@ -113,17 +84,21 @@
         {
           "title": "Enshittification",
           "subtitle": "Why Everything Suddenly Got Worse and What To Do About It",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">I saw Cory the other night at his LA book launch over there at Diesel Books in Brentwood. Awesome event, with a typically engaging, humorously-serious discussion and Q&A and book signing. Cory's latest (of > 30 books!) book explores this concept of “enshittification”, where platforms degrade user experience for profit. A must-read for understanding the digital landscape.<br/> Sold out of the first FOUR print runs in just a few days, which is amazing but not surprising given Cory's keen insights and engaging writing style.<br/> Link below to Bookshop to get your copy via the network of independent bookstores.</p>",
-          "image": "https://mpd-biblio-covers.imgix.net/9780374619329.jpg?w=900dpr=2",
+          "authorName": "Cory Doctorow",
+          "authorLink": "https://craphound.com/",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">I saw Cory the other night at his LA book launch over there at <a href='https://dieselbookstore.com/book/9780374619329s'>Diesel, A Book Store</a> over there in Brentwood. Awesome event, with a typically engaging, humorously-serious discussion and Q&A and book signing. Cory's latest (of > 30 books!) book explores this concept of “enshittification”, where platforms degrade user experience for profit. A must-read for understanding the digital landscape.<br/> <strong>Here's what you may not know about the book:</strong> it's not just a critique or Cory's astute and often deflating analysis; more than 1/3 of the book is action and remedy. Cory outlines practical steps we can take to resist and reverse this trend, empowering readers to reclaim their digital spaces.<br/> Sold out of the first FOUR print runs in just a few days, which is amazing and also not surprising given Cory's keen insights, broad audience and skampy-fun galloping writing style.<br/> Link below to Bookshop to get your copy via the network of independent bookstores. Also its seems there are <a href='https://dieselbookstore.com/book/9780374619329s'>signed copies available at Diesel!</a></p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/4e41cc57-99f1-496e-7812-4fe06a16ad00/public",
           "link": "https://bookshop.org/p/books/enshittification-why-everything-suddenly-got-worse-and-what-to-do-about-it-cory-doctorow/d3f8483b158906ce?ean=9780374619329&next=t&next=t&affiliate=3214",
           "linkText": "Get it on Bookshop.org"
         },
         {
-          "title": "Brands Brands Brands",
-          "subtitle": "What they mean and why they mean that",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Friend of Near Future Laboratory's Tom Guerreo has a new book out on branding, exploring the meanings and implications of brands in today's world. A thoughtful read for anyone interested in marketing, design, or cultural studies.<br/></p>",
-          "image": "https://mpd-biblio-covers.imgix.net/9780374619329.jpg?w=900dpr=2",
-          "link": "https://bookshop.org/p/books/enshittification-why-everything-suddenly-got-worse-and-what-to-do-about-it-cory-doctorow/d3f8483b158906ce?ean=9780374619329&next=t&next=t&affiliate=3214",
+          "title": "The Meaning of Branded Objects",
+          "subtitle": "Why Some Things Matter More Than Others",
+          "authorName": "Tom Guarriello, PhD",
+          "authorLink": "https://tomguarriello.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Exciting news! Tom Guarriello's new book, “The Meaning of Branded Objects,” is officially published now — and it's as relevant as ever to the kinds of object-oriented world building that speculative prototyping does.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">It answers some poignant questions: <em>Why do certain objects resonate with us? How do they shape our identities and experiences?</em></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">When we think about the tools and techniques that a speculative design team might use to prototype possible futures, understanding the cultural significance of objects is crucial. Tom's book gets into this very topic, exploring how branded objects carry meaning and influence our perceptions.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Consider how you can represent futures or, perhaps more significantly, the symptoms of possible worlds you might want to (or prefer to, or dread to) inhabit through the design of objects that embody those futures.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">This is what I mean when I go on about the value of the work of speculative prototyping — not just casting forward from today's “trends”.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Nope.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Rather the more you can deliberately and consciously create objects that evoke and embody the cultural character of worlds you would prefer to inhabit — experimentally. Like..don't take the easy route of just making a smart speaker that listens to you and orders stuff..or a refrigerator that interrogates its contents to pick what to cook. That stuff is trivial low-hanging fruit that is almost always a bit embarrassing.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Instead, to stay ahead, explore and prototype objects that embody the cultural and discursive characteristics of worlds you would prefer to inhabit — or worlds that do not make sense..yet. If we repeat and deliver the obvious we are not doing the work of truly innovating — which is to say going beyond incremental improvements.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Imagine having an expeditionary team within your organization that is tasked with exploring these kinds of questions through the design of branded objects that embody possible futures! I'd have Tom's book on the laboratory bookshelf for sure.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Clay Christensen would remind us that disruption comes from “new architectures” and entirely new value propositions that might not make sense at first, and might be dismissed by the market. In the context of meaningful objects and speculative prototyping by an expeditionary team, I would remind us that making these prototypes are ways of imbuing new architectures of meaning into something that can be held and experienced directly. Value represented materially and tangibly.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">New architectures of meaning are often embodied in objects that carry cultural significance. Tom's book is a valuable resource for anyone looking to understand and leverage this dynamic in their work.</p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/a10d84ec-58a9-46d5-c1b3-8d11fa63f700/w=600",
+          "link": "https://bookshop.org/p/books/the-meaning-of-branded-objects-why-some-things-matter-more-than-others-dr-tom-guarriello/e547923fe24d9cb3?ean=9780760395196&next=t&next=t&affiliate=87815",
           "linkText": "Get it on Bookshop.org"
         }
       ]
@@ -133,18 +108,20 @@
       "title": "From the Discord",
       "items": [
         {
-          "title": "A Thought-Provoking Item in the Discord",
-          "channel": "💡-interesting-reads",
-          "category": "Read",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Description of why this content is worth checking out.</p>",
-          "link": "https://article-link.com"
+          "title": "Dark Forest OS emphasizes the idea that obscurity can be a powerful form of security in the digital age.",
+          "category": "DESHITTIFICATION",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">In a world where visibility often equates to vulnerability, Dark Forest OS champions the idea that obscurity can be your best defense. It’s a refreshing take on digital security, urging us to reconsider how we navigate our online lives.</p>",
+          "link": "https://www.dfos.com/",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/c96d9d83-4708-4f30-d354-e388173d6f00/w=600",
+          "channel": "🤪-errruhhh-what-the-heck-you-mean"
         },
         {
-          "title": "Second Recommendation",
-          "category": "Read",
-          "channel": "📻-meshtastic",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Another interesting piece of content.</p>",
-          "link": "https://second-recommendation.com"
+          "title": "Hidden AI Commands in Résumés!",
+          "category": "THE STREET FINDS ITS OWN USES",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Job seekers are getting crafty with their résumés, embedding hidden commands to trick A.I. into prioritizing their applications. As this trend spreads on social media, companies are scrambling to update their screening tools to catch these clever tactics.  <br/> So now you have to wonder if the resumé is just completely old-fashioned such that connecting candidates with employers should just take the form of two AIs chatting and negotiating. In any case, I think that weird smell coming from HR is the end of the trad job search and quite possibly the end of the trad job as we once knew it like..back in my college days when you sent in a piece of paper. Back then, the clever hack was to find out the fax machine number of the hiring manager's EA.<br/> (Possible paywall but you should pay for non-algorithmic journalism anyway.)</p>",
+          "link": "https://www.nytimes.com/2025/10/07/business/ai-chatbot-prompts-resumes.html?unlocked_article_code=1.tE8.T8ui.fWIlKylNlTkL&smid=nytcore-ios-share&referringSource=articleShare",
+          "image": "https://static01.nyt.com/images/2025/10/07/business/00ai-resumes-vert/00ai-resumes-vert-facebookJumbo.jpg",
+          "channel": "🛠-whats-ai-good-for-anyway"
         }
       ]
     },
@@ -165,49 +142,18 @@
       ]
     },
     {
-      "type": "aesthetically-pleasing",
-      "title": "Weird & Wonderful",
-      "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Beautiful visual content description.</p>",
+      "type": "animated-image",
+      "title": "2nd Edition of The Work Kit of Design Fiction",
       "items": [
         {
-          "images": [
-            "https://images.unsplash.com/photo-example1?w=386&h=200&fit=crop&q=80",
-            "https://images.unsplash.com/photo-example2?w=386&h=200&fit=crop&q=80"
-          ],
-          "link": "https://source-link.com"
-        }
-      ]
-    },
-    {
-      "type": "classifieds",
-      "title": "Classifieds",
-      "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Sharing opportunities from the studio and beyond</p>",
-      "bookingLink": "https://example.com/book-classified",
-      "bookingText": "Book yours →",
-      "items": [
-        {
-          "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><strong>Creative Director, Web</strong><br/> Bluecadet is an award winning, internationally recognized experience design agency focused on producing transformative digital products and environments. We work with story and experience driven organizations and brands. Past clients include The Metropolitan Museum of Art, Nike, MoMA, Harvard, the MIT Museum, Princeton, The Smithsonian Institution, and the Bill and Melinda Gates Foundation.<br/> The Creative Director, Web is a senior design leader responsible for shaping and elevating the creative vision across all web products at Bluecadet. This role blends strategic direction with hands-on execution guiding multidisciplinary teams through discovery, design, and delivery to produce best-in-class web experiences.</p>",
-          "link": "https://bluecadet.bamboohr.com/careers/92?source=aWQ9MjE%3D",
-          "linkText": "Apply for this job →"
-        }
-      ]
-    },
-    {
-      "type": "gif",
-      "title": "The Week in a GIF",
-      "items": [
-        {
-          "gif": "https://media.giphy.com/media/example/giphy.gif",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Funny or relevant GIF description.</p>",
-          "contact": "mailto:your-email@domain.com",
-          "contactText": "Send us your GIFs"
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/7b2fc7dd-e848-4609-6a65-b5094a533800/w=600",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">All the cards are on the table. Now what?</p>"
         }
       ]
     }
   ],
   "footer": {
-    "shareUrl": "https://nearfuturelaboratory.com/newsletters",
-    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue",
+    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/w43-y25",
     "logo": "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png",
     "logoLink": "https://nearfuturelaboratory.com",
     "socialLinks": {
@@ -283,8 +229,23 @@
       ]
     },
     "unsubscribeLink": "[unsubscribe]",
-    "archiveLink": "https://nearfuturelaboratory.com/newsletters",
+    "shareUrl": "https://nearfuturelaboratory.com/newsletters/w43-y25",
+    "archiveUrl": "https://nearfuturelaboratory.com/newsletters",
+    "gratitude": "This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle based production workflow. It's a work-in-progress building on a refactor of the <a href='https://densediscovery.com'>Dense Discovery</a> newsletter's look and vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It's a great newsletter and I would encourage you to subscribe and become a paid member.",
     "address": "© 2025 Near Future Laboratory<br>\nVenice Beach, California<br>\nUnited States\n",
-    "colophon": "Futures are built here."
+    "colophon": "The objects we consume and those that we surround ourselves with speak volumes about our hopes, fears, dreams, and dreads."
+  },
+  "themeColors": {
+    "header": "#efefee",
+    "sponsor": "#f5f7fa",
+    "apps-sites": "#f5f7fa",
+    "quote": "#E9EBED",
+    "indie-mag": "#E5EFF1",
+    "books-accessories": "#f5f7fa",
+    "food-for-thought": "#FAECDC",
+    "aesthetically-pleasing": "#f5ffff",
+    "classifieds": "#f0f0f0",
+    "animated-image": "#ffffff",
+    "linkAccent": "#EE3BBB"
   }
 }

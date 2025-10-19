@@ -38,6 +38,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
 
                 <!-- Dynamic Sections Loop -->
                 <each loop="section in sections">
+                  
                   <if condition="section.type === 'sponsor'">
                     <!-- SPONSOR Start -->
                     <tr>
@@ -62,13 +63,13 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             </p>
                           </if>
                           <if condition="item.title && !item.link">
-                            <p style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
+                            <p style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 12px;">
                               {{ item.title }}
                             </p>
                           </if>
                           
                           <if condition="item.subtitle">
-                            <p style="font-size: 16px;line-height: 18px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;">{{ item.subtitle }}</p>
+                            <p style="font-size: 16px;line-height: 18px;font-weight: 400;color: #707070 !important;padding: 0;margin-bottom: 12px;">{{ item.subtitle }}</p>
                           </if>
                         </td>
                       </tr>
@@ -163,6 +164,12 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                     <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
                                       {{{ item.description }}}
                                     </div>
+                                  </if>
+                                  
+                                  <if condition="item.link && item.readMoreText">
+                                    <p style="font-size: 16px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 10px 0 0 0;">
+                                      <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ item.readMoreText }}</a>
+                                    </p>
                                   </if>
                                   
                                 </td>
@@ -298,6 +305,67 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                     <!-- INDIE MAG End -->
                   </if>
 
+                  <if condition="section.type === 'indie-mag-single-column'">
+                    <!-- INDIE MAG SINGLE COLUMN Start -->
+                    <tr>
+                      <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+                    </tr>
+                    <tr>
+                      <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
+                        <h1 style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">{{ section.title }}</h1>
+                      </td>
+                    </tr>
+
+                    <each loop="item in section.items">
+                      <tr>
+                        <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
+                          
+                          <if condition="item.image">
+                            <div style="margin-bottom: 15px; padding: 0 1em;">
+                              <if condition="item.link">
+                                <a href="{{ item.link }}" style="text-decoration: none;">
+                                  <img src="{{ item.image }}" alt="{{ item.title || 'Magazine Cover' }}" width="100%" height="auto" style="-ms-interpolation-mode: bicubic;display: block;max-width: 100%;">
+                                </a>
+                              </if>
+                              <if condition="!item.link">
+                                <img src="{{ item.image }}" alt="{{ item.title || 'Magazine Cover' }}" width="100%" height="auto" style="-ms-interpolation-mode: bicubic;display: block;max-width: 100%;">
+                              </if>
+                            </div>
+                          </if>
+
+                          <if condition="item.title && item.link">
+                            <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
+                              <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">{{ item.title }}</a>
+                            </h2>
+                          </if>
+                          <if condition="item.title && !item.link">
+                            <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
+                              {{ item.title }}
+                            </h2>
+                          </if>
+                          
+                          <if condition="item.description">
+                            <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 10px;">
+                              {{{ item.description }}}
+                            </div>
+                          </if>
+
+                          <if condition="item.details">
+                            <div style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;margin-bottom: 10px;">
+                              {{{ item.details }}}
+                            </div>
+                          </if>
+
+                          <if condition="item.note">
+                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;font-style: italic;">{{ item.note }}</p>
+                          </if>
+                          
+                        </td>
+                      </tr>
+                    </each>
+                    <!-- INDIE MAG SINGLE COLUMN End -->
+                  </if>
+
                   <if condition="section.type === 'books-accessories'">
                     <!-- BOOKS & ACCESSORIES Start -->
                     <tr>
@@ -339,8 +407,26 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
                           </if>
                           
+                          <if condition="item.authorName">
+                            <p style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 400;color: #999999;padding: 0;margin: 0;margin-bottom: 5px;text-transform: uppercase;letter-spacing: 0.5px;">
+                              Author: 
+                              <if condition="item.authorLink">
+                                <a href="{{ item.authorLink }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#999999' }} !important;">{{ item.authorName }}</a>
+                              </if>
+                              <if condition="!item.authorLink">
+                                {{ item.authorName }}
+                              </if>
+                            </p>
+                          </if>
+                          
+                          <if condition="item.isbn">
+                            <p style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 400;color: #999999;padding: 0;margin: 0;margin-bottom: 10px;text-transform: uppercase;letter-spacing: 0.5px;">
+                              ISBN: {{ item.isbn }}
+                            </p>
+                          </if>
+                          
                           <if condition="item.description">
-                            <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
+                            <div style="font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
                               {{{ item.description }}}
                             </div>
                           </if>
@@ -369,30 +455,49 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                     <each loop="item in section.items">
                       <tr>
                         <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors['food-for-thought'] || '#f2f2f2' }};padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
+                          
+                          <if condition="item.image">
+                            <div style="margin-bottom: 15px;">
+                              <if condition="item.link">
+                                <a href="{{ item.link }}" style="text-decoration: none;">
+                                  <img src="{{ item.image }}" alt="{{ item.title || 'Food for Thought Image' }}" width="100%" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;border-radius: 3%;">
+                                </a>
+                              </if>
+                              <if condition="!item.link">
+                                <img src="{{ item.image }}" alt="{{ item.title || 'Food for Thought Image' }}" width="100%" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;border-radius: 3%;">
+                              </if>
+                            </div>
+                          </if>
+                          
                           <if condition="item.channel">
-                           <p class="share-tech-mono-regular" style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 600;color: #000000; margin: 0;margin-bottom: 5px;text-transform: uppercase;letter-spacing: 1px;"><span>From the</span> {{ item.channel }}<span> Channel</span></p>
+                           <p class="share-tech-mono-regular" style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 600;color: #000000; margin: 0;margin-bottom: 5px;text-transform: uppercase;letter-spacing: 1px;"><span style="color: #999">From the</span> {{ item.channel }}<span style="#999"> Channel</span></p>
                           </if>
                           
                           <if condition="item.category">
-                            <p style="font-size: 12px;line-height: 16px;font-weight: 600;color: #999999;padding: 0;margin: 0;margin-bottom: 5px;text-transform: uppercase;letter-spacing: 1px;">{{ item.category }}</p>
+                            <span style="font-size: 12px;line-height: 16px;font-weight: 600;color: #999999;padding: 0;margin: 0;margin-bottom: 5px;text-transform: uppercase;letter-spacing: 1px;">{{ item.category }}</span> 
+                            <if condition="item.sharedBy">
+                                        <span style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 400;color: #222222;margin: 0;padding: 0;text-transform: uppercase;letter-spacing: 0.5px;">
+                                          shared by {{ item.sharedBy }}
+                                        </span>
+                                        </if>
                           </if>
 
                           <if condition="item.title && item.link">
                                     <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
                                       <a href="{{ item.link }}" class="share-tech-mono-regular" style="font-family: 'Share Tech Mono', monospace; text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">{{ item.title }}</a>
                                     </h2>
-                                  </if>
                                   <if condition="item.title && !item.link">
                                     <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
                                       {{ item.title }}
                                     </h2>
                                   </if>
-                          
+                            </if>
                           <if condition="item.description">
                             <div style="  font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
                               {{{ item.description }}}
                             </div>
                           </if>
+
                         </td>
                       </tr>
                     </each>
@@ -413,9 +518,9 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                     <if condition="section.description">
                       <tr>
                         <td align="left" style="border-collapse: collapse;background: {{ themeColors['aesthetically-pleasing'] || '#ffffff' }};padding: 5px 20px 10px 20px;">
-                          <p style="font-size: 18px;line-height: 19px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
+                          <div style="font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
                             {{{ section.description }}}
-                          </p>
+                          </div>
                         </td>
                       </tr>
                     </if>
@@ -439,7 +544,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                       <tr>
                         <td align="left" class="padt10 padr20 padl20 padb20" style="border-collapse: collapse;background: {{ themeColors['aesthetically-pleasing'] || '#ffffff' }};padding-top: 10px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
                           <if condition="item.description">
-                            <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
+                            <div style="font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
                               {{{ item.description }}}
                             </div>
                           </if>
@@ -469,7 +574,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                     <if condition="section.description">
                       <tr>
                         <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors.classifieds || '#def1ef' }};padding-top: 20px;padding-right: 20px;padding-bottom: 10px;padding-left: 20px;">
-                          <div style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;">
+                          <div class='share-tech-mono-regular' style="font-family: 'Share Tech Mono', monospace; font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;">
                             {{{ section.description }}}
                             <if condition="section.bookingLink">
                               <a href="{{ section.bookingLink }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ section.bookingText || 'Book yours →' }}</a>
@@ -482,7 +587,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                     <each loop="item in section.items">
                       <tr>
                         <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors.classifieds || '#def1ef' }};padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
-                          <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 15px;background: rgba(255,255,255,0.7);border-left: 4px solid {{ themeColors.linkAccent || '#4a9b8e' }};">
+                          <div class="share-tech-mono-regular" style="font-family: 'Share Tech Mono', monospace; font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 15px;background: rgba(255,255,255,0.7);border-left: 4px solid {{ themeColors.linkAccent || '#4a9b8e' }};">
                             {{{ item.content }}}
                             <if condition="item.link">
                               <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#4a9b8e' }} !important;margin-left: 10px;">{{ item.linkText || 'Learn More →' }}</a>
@@ -494,32 +599,24 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                     <!-- CLASSIFIEDS End -->
                   </if>
 
-                  <if condition="section.type === 'gif'">
+                  <if condition="section.type === 'animated-image'">
                     <!-- GIF Start -->
                     <tr>
                       <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
                     </tr>
                     <tr>
-                      <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ themeColors.gif || '#ffffff' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
-                        <h1 style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">{{ section.title }}</h1>
+                      <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: #ffffff;border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
+                        <h1 style="font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">{{ section.title }}</h1>
                       </td>
                     </tr>
-
                     <each loop="item in section.items">
                       <tr>
-                        <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors.gif || '#ffffff' }};padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: center;">
-                          <if condition="item.gif">
-                            <img src="{{ item.gif }}" alt="The Week in a GIF" width="400" height="auto" style="-ms-interpolation-mode: bicubic;display: block;max-width: 100%;margin: 0 auto 15px auto;">
+                        <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: #ffffff;padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: center;">
+                          <if condition="item.image">
+                            <img src="{{ item.image }}" alt="GIF" width="400" height="auto" style="display: block;max-width: 100%;margin: 0 auto 15px auto;">
                           </if>
-                          
                           <if condition="item.description">
                             <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 10px;text-align: center;">{{{ item.description }}}</div>
-                          </if>
-
-                          <if condition="item.contact">
-                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 0;text-align: center;">
-                              <a href="{{ item.contact }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ item.contactText || 'Send us your GIFs' }}</a>
-                            </p>
                           </if>
                         </td>
                       </tr>

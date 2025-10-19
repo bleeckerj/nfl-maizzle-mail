@@ -164,7 +164,7 @@ feature:
 
 **Option A: Use the quick workflow script**
 ```bash
-./workflow.sh content/2025-10-14.md
+./workflow.sh content/2025-10-14.md dense-discovery
 ```
 
 **Option B: Run individual commands**
