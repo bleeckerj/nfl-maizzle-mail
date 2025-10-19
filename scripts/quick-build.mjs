@@ -5,6 +5,8 @@ import path from 'path';
 import { execSync } from 'child_process';
 import https from 'https';
 import http from 'http';
+import { fileURLToPath, pathToFileURL } from 'url';
+import { dirname, join } from 'path';
 
 /**
  * Quick build shortcuts for common workflows
@@ -17,6 +19,11 @@ import http from 'http';
 const args = process.argv.slice(2);
 const command = args[0];
 const file = args[1];
+
+// Debug: show parsed arguments when DEBUG_QUICK_BUILD environment variable is set
+if (process.env.DEBUG_QUICK_BUILD === '1') {
+  console.log('DEBUG quick-build args:', { args, command, file });
+}
 
 // Parse optional --outdir argument
 let outDir = null;
@@ -234,6 +241,15 @@ function selectFile() {
   return path.resolve(`content/${files[0]}`);
 }
 
+// Resolve directory of *this* script reliably
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Note: we intentionally avoid importing build-newsletter.mjs here because importing
+// it will execute its top-level code with the current process.argv. Instead we call
+// it via a separate node process below (execSync) so argument parsing runs in that
+// subprocess and doesn't interfere with quick-build's flow.
+
 // Handle different commands
 switch (command) {
   case 'wirecutter':
@@ -255,8 +271,19 @@ switch (command) {
     }
 
     try {
-      execSync(`node scripts/build-newsletter.mjs ${inputFile} ${outputName} --template=${template}`, {
-        stdio: 'inherit'
+      // Resolve build-newsletter relative to this script's directory so the quick-build
+      // command works from any current working directory.
+      const buildNewsletterPath = join(__dirname, 'build-newsletter.mjs');
+      const execCmd = `node ${buildNewsletterPath} ${inputFile} ${outputName} --template=${template}`;
+      console.log(`
+Executing: ${execCmd}
+`);
+      // Run from the repo root (parent of scripts/) so build-newsletter's own
+      // relative references to scripts/* resolve correctly.
+      const repoRoot = path.resolve(__dirname, '..');
+      execSync(execCmd, {
+        stdio: 'inherit',
+        cwd: repoRoot
       });
 
       // Move the built HTML file to the output directory if specified
