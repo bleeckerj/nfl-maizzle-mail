@@ -1,6 +1,10 @@
 # Node modules
 node_modules/
 
+gpt-prompts/
+emails-to-templatize/
+content/
+data/
 # Build outputs
 build_local/
 build_production/
