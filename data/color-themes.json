@@ -58,16 +58,18 @@
       "name": "Professional Clean",
       "description": "Subtle grays and clean whites for professional communication",
       "colors": {
-        "header": "#efefee",
+        "header": "#fefefe",
         "sponsor": "#f5f7fa",
         "apps-sites": "#f5f7fa",
+        "apps-sites-single-column": "#f5f7fa",
         "quote": "#E9EBED", 
         "indie-mag": "#E5EFF1",
-        "books-accessories": "#f5f7fa", 
+        "indie-mag-single-column": "#E5EFF1",
+        "books-accessories": "#eeecde", 
         "food-for-thought": "#FAECDC",
         "aesthetically-pleasing": "#f5ffff",
         "classifieds": "#f0f0f0",
-        "animated-image": "#ffffff"
+        "animated-image": "#aafafa"
       },
       "accent": "#4a7c59",
       "linkAccent": "#EE3BBB"
