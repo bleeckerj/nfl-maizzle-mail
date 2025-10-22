@@ -1,0 +1,81 @@
+<!-- HEADER -->
+<table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="100%">
+  <tbody>
+    <tr>
+      <td align="center" bgcolor="{{ themeColors.header || '#addcfa' }}" style="border-collapse: collapse;" valign="top">
+        <!-- 640px container -->
+        <table border="0" cellpadding="0" cellspacing="0" class="header mobt0" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 640px;max-width: 640px;padding-top: 20px;" width="640">
+          <tbody>
+            <tr>
+              <td align="left" style="border-collapse: collapse;">
+                <!--[if mso]>
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                  <tr><td width="35%" valign="top"><![endif]-->
+                
+                <!-- Quote Section (Left) -->
+                <!-- <table align="left" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="224">
+                  <tbody>
+                    <tr>
+                      <td class="padt15 padr10 padb5 padl20" style="border-collapse: collapse;padding-top: 15px;padding-right: 10px;padding-bottom: 5px;padding-left: 20px;" valign="top">
+                        <if condition="header.quote">
+                          <p class="marb5" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 5px;">
+                            {{{ header.quote }}}
+                          </p>
+                          <if condition="header.author">
+                            <p class="marb0" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 0;">
+                              <strong style="font-weight: 600;">– {{ header.author }}</strong>
+                            </p>
+                          </if>
+                        </if>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table> -->
+
+                <!--[if mso]></td><td width="65%" valign="top"><![endif]-->
+                
+                <!-- Featured Artist Section (Right) -->
+                <!-- <table align="right" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="416">
+                  <tbody>
+                    <tr>
+                      <td align="right" class="padt20 padr20 padb5 padl10" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 5px;padding-left: 10px;" valign="top">
+                        <if condition="header.featuredImage">
+                          <p class="marb5" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 5px;">
+                            <img src="{{ header.featuredImage }}" alt="Featured" width="386" height="auto" class="img" style="-ms-interpolation-mode: bicubic;display: block;max-height: 900px;max-width: 416px;width: 100%;">
+                          </p>
+                        </if>
+                        <if condition="header.featuredArtist && header.featuredArtist.link">
+                          <p class="marb0 mobb15 align-left" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 0;">
+                            Featured artist: <a href="{{ header.featuredArtist.link }}" style="text-decoration: underline;color: #000000 !important;">{{ header.featuredArtist.name }}</a>
+                          </p>
+                        </if>
+                        <if condition="header.featuredArtist && !header.featuredArtist.link">
+                          <p class="marb0 mobb15 align-left" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 0;">
+                            Featured artist: {{ header.featuredArtist.name }}
+                          </p>
+                        </if>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table> -->
+
+                <!--[if mso]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+            
+            <!-- Logo Top Section -->
+            <tr>
+    <td align="left" class="ibm-plex-sans padt20 padl20 padr20 padb10" style="font-family: 'Ubuntu', sans-serif;border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 10px;padding-left: 20px;">
+                <if condition="header.logoTop">
+                  <a href="{{ header.logoLink || '#' }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">
+                    <img src="{{ header.logoTop }}" height="auto" width="163" alt="{{ title }}" style="float: left;display: block;-ms-interpolation-mode: bicubic;">
+                  </a>
+                </if>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
