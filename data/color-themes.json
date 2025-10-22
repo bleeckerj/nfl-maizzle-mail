@@ -94,7 +94,7 @@
       "name": "Monochrome Grayscale",
       "description": "Clean grayscale palette with subtle variations",
       "colors": {
-        "header": "#eeeeed",
+        "header": "#fffffd",
         "sponsor": "#f5f5f5",
         "apps-sites": "#ffffff",
         "quote": "#ebebeb",
@@ -107,6 +107,25 @@
       },
       "accent": "#666666",
       "linkAccent": "#333333"
+    },
+    "midweek": {
+      "name": "Midweek",
+      "description": "Something fresh?",
+      "colors": {
+        "header": "#d9fd47",
+        "sponsor": "#f0f0f0",
+        "apps-sites": "#ffffff",
+        "quote": "#ebebeb",
+        "indie-mag": "#f0f0f0",
+        "books-accessories": "#ffffff",
+        "food-for-thought": "#f8f8f8",
+        "aesthetically-pleasing": "#f0f0f0",
+        "classifieds": "#ececec",
+        "gif": "#ffffff",
+        "footer": "#fafafa"
+      },
+      "accent": "#666666",
+      "linkAccent": "#3333FF"
     }
   }
 }
