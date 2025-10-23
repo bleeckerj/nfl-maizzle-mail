@@ -13,10 +13,10 @@
         "borderRadius": "0px"
       },
       "contentStyles": {
-        "fontFamily": "Share Tech Mono, monospace",
+        "fontFamily": "Domine, serif",
         "fontSize": "16px",
-        "lineHeight": "1.4",
-        "color": "#333333",
+        "lineHeight": "1.2",
+        "color": "#222222",
         "textAlign": "left"
       },
       "linkStyles": {
@@ -96,7 +96,7 @@
         "borderRadius": "0px"
       },
       "contentStyles": {
-        "fontFamily": "Georgia, serif",
+        "fontFamily": "Domine, serif",
         "fontSize": "15px",
         "lineHeight": "1.6",
         "color": "#333333",
@@ -114,8 +114,36 @@
         "color": "#000000"
       }
     },
-    
-    "books-accessories,apps-sites": {
+
+    "apps-sites,apps-sites-single-column": {
+      "name": "Apps & Sites",
+      "description": "",
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif",
+        "fontSize": "16px",
+        "lineHeight": "1.5",
+        "color": "#330066",
+        "textAlign": "left"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "500"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "17px",
+        "fontWeight": "600", 
+        "color": "#000000"
+      }
+    },    
+
+    "books-accessories": {
       "name": "Books & Accessories",
       "description": "Product recommendations with clean sans-serif styling",
       "containerStyles": {
@@ -145,7 +173,7 @@
     
     "food-for-thought": {
       "name": "Food for Thought",
-      "description": "Philosophical content with elegant typography",
+      "description": "Basically Discord Stuff",
       "containerStyles": {
         "backgroundColor": null,
         "padding": "15px 20px",
@@ -154,7 +182,7 @@
       "contentStyles": {
         "fontFamily": "IBM Plex Sans, sans-serif",
         "fontSize": "16px",
-        "lineHeight": "1.6",
+        "lineHeight": "1.2",
         "color": "#333333",
         "textAlign": "left"
       },
