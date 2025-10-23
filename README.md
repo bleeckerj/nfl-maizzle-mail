@@ -73,6 +73,65 @@ Maizzle templates (using Nunjucks-like syntax) define reusable components:
 
 Each section maps directly to keys in the JSON data.
 
+## 🎨 Section styles and injection order
+
+Templates may include a `section-styles.json` file (located at `templates/<template>/section-styles.json`) that provides sane defaults for every section type the template supports. This file allows templates to declare:
+
+- containerStyles: backgroundColor, padding, borderRadius (applied to the outer table/container)
+- contentStyles: paragraph/font/color styles used when injecting HTML fragments
+- linkStyles: inline styles applied to links inside injected HTML
+- headingStyles: heading font/size/color defaults
+
+**Implementation note:** Some keys in `section-styles.json` were added as forward-looking options and are not fully wired into every template yet. The current build pipeline and templates primarily consume `containerStyles` (backgroundColor, padding, borderRadius) and use `contentStyles`/`linkStyles` when preprocessing HTML fragments for inline styling. Other fields (for example, richer `headingStyles` variants or experimental properties) may be present in `section-styles.json` for future use; if you need a value applied now, provide it in the newsletter's frontmatter (per-section override) or update the template/build script to read that key.
+
+Actively applied keys
+
+The following keys from `section-styles.json` are actively applied by the build pipeline and templates today:
+
+- `containerStyles.backgroundColor` — used by templates to set section/table background; if null, templates fall back to `themeColors.<section>` or a hardcoded default.
+- `containerStyles.borderRadius` — used by templates to set border-radius (templates also include VML fallbacks for Outlook when non-zero).
+- `contentStyles` (properties consumed):
+  - `fontFamily`
+  - `fontSize`
+  - `lineHeight`
+  - `color`
+  - `textAlign`
+  These are applied during preprocessing to injected HTML (item descriptions) and inserted into `<p>` tags as inline styles.
+- `linkStyles` (properties consumed):
+  - `fontFamily`
+  - `fontSize`
+  - `fontWeight`
+  - `textDecoration`
+  - `color` (supports the sentinel value `'inherit'`, which maps to the newsletter theme's `linkAccent`)
+  These are applied to `<a>` tags in injected HTML; if absent the build falls back to `theme.linkAccent`.
+
+Notes:
+- `containerStyles.padding` is normalized and written into `section.containerStyles` by the build script, but templates in this project currently hard-code padding in their TDs (so `padding` is prepared but not yet consumed by dense templates).
+- `headingStyles` is defined in `section-styles.json` and the build contains a CSS generator for it, but that generator is not invoked in the current pipeline — so heading-specific keys are not applied today.
+
+How styles are applied (merge & precedence)
+
+1. Template defaults — `templates/<template>/section-styles.json` provide the base values for each section type.
+2. Color theme — the build process then applies colors from `data/color-themes.json` (the selected `colorTheme` for the newsletter) where `backgroundColor` or other color values are intentionally left `null` in the template defaults.
+3. Issue-level frontmatter / JSON — values supplied in the newsletter's frontmatter (or already-converted `data/newsletter.json`) can override template defaults. You can provide global `sectionStyles` or per-section overrides in YAML/frontmatter.
+4. Per-section / per-item overrides — explicit fields on a section or item in the frontmatter take highest precedence and will be applied on top of the merged defaults.
+
+After merging, the build script (`scripts/build-newsletter.mjs`) writes the resolved style object into each section as `section.containerStyles` (and other merged fields) inside `data/newsletter.json`. Maizzle templates then read `section.containerStyles` directly when rendering, so templates can safely output inline styles and conditional MSO VML fallbacks for Outlook.
+
+Note about Outlook (MSO) fallbacks
+
+Because some email clients (Outlook) don't support CSS border-radius consistently, the templates include conditional VML fallbacks (e.g. `v:roundrect`) when a `borderRadius` is requested. The VML wrapper is emitted only when rounding is non-zero.
+
+Quick-build template discovery
+
+The `scripts/quick-build.mjs` helper now discovers available templates automatically by enumerating directories under `templates/`. Use the directory name as the template argument:
+
+```
+node scripts/quick-build.mjs dense-discovery content/my-issue.md
+```
+
+If a template directory is missing or you want to debug discovery set `DEBUG_QUICK_BUILD=1` to print what the script found.
+
 **Build Process**
 The command:
 
