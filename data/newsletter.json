@@ -1,61 +1,258 @@
 {
-  "$schema": "../templates/atlantic-complete/schema.json",
-  "template": "atlantic-complete",
-  "title": "Atlantic Daily",
-  "subtitle": "The Future of Work After AI",
-  "emailType": "newsletter",
-  "preheaderText": "As artificial intelligence reshapes entire industries, what does the future hold for human workers? A thoughtful exploration of adaptation, opportunity, and uncertainty.",
-  "headerLogo": "https://nearfuturelaboratory.com/images/svgs/LaboratoryGuy.svg",
-  "date": "October 7, 2025",
-  "author": {
-    "name": "Sarah Mitchell",
-    "bio": "Technology correspondent at The Atlantic",
-    "image": "https://picsum.photos/50/50?random=2",
-    "link": "https://example.com/author/sarah-mitchell"
+  "$schema": "../newsletter.schema.json",
+  "template": "dense-discovery",
+  "title": "FPO: dense-discovery sample title",
+  "preheader": "FPO preheader — short summary line",
+  "sectionStylesFile": "templates/dense-discovery/section-styles.json",
+  "intro": {
+    "title": "Welcome — FPO intro title",
+    "viewOnlineLink": "#",
+    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>This is a short intro paragraph that will render in the template intro slot.</p></p>"
   },
-  "mainContent": {
-    "title": "The Future of Work After AI",
-    "intro": "<p style=\"margin: 0 0 24px 0; padding: 0; font-family: 'Lyon Text', Georgia, serif; font-size: 17px; line-height: 1.4; color: #21272c;\">Artificial intelligence is no longer a distant possibility—it's reshaping entire industries today. From customer service to creative work, AI systems are automating tasks that once required human judgment, creativity, and empathy. But this transformation raises profound questions: What happens to the millions of workers whose jobs are changing? How do we prepare for a future where human and artificial intelligence work together? And what new opportunities might emerge from this technological revolution?</p>",
-    "featured": {
-      "title": "Rethinking Human Value in the Age of Automation",
-      "author": "Atlantic Staff",
-      "excerpt": "<p style=\"margin: 0 0 24px 0; padding: 0; font-family: 'Lyon Text', Georgia, serif; font-size: 17px; line-height: 1.4; color: #21272c;\">The challenge isn't just technical—it's fundamentally about how we value human contribution in a world where machines can replicate many of our capabilities.</p>",
-      "link": "https://example.com/article/human-value-automation",
-      "image": "https://picsum.photos/588/330?random=3"
-    }
+  "header": {
+    "quote": "FPO header quote",
+    "author": "Header Author",
+    "featuredArtist": {
+      "name": "Artist Name",
+      "link": "#"
+    },
+    "featuredImage": "https://via.placeholder.com/386x200?text=Featured"
   },
-  "adventureReads": [
+  "sections": [
     {
-      "title": "The Last Human Translators",
-      "description": "<p style=\"margin: 0 0 24px 0; padding: 0; font-family: 'Lyon Text', Georgia, serif; font-size: 17px; line-height: 1.4; color: #21272c;\">How AI translation tools are changing the profession that bridges cultures and languages</p>",
-      "image": "https://picsum.photos/588/330?random=4",
-      "link": "https://example.com/article/human-translators"
+      "type": "dispatch",
+      "title": "FPO dispatch section title",
+      "dispatchLabel": "DISPATCH++",
+      "dispatchLink": "#",
+      "signalsLabel": "TAGS",
+      "tags": [
+        "DESIGN",
+        "FEATURE",
+        "SHORT",
+        "FYI"
+      ],
+      "items": [
+        {
+          "title": "Dispatch feature: a quick note",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.4 !important; color: #333333 !important; text-align: left !important\"><p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.4 !important; color: #333333 !important; text-align: left !important\">Our sponsor this week supports investigative work that extends the research we publish. This short note explains the partnership and gives readers one clear reason to look closer: the project produces useful tools and insights that directly relate to our reporting.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.4 !important; color: #333333 !important; text-align: left !important\">Beyond sponsorship, the item points to a concrete use-case: how their tool saved time or enabled a specific kind of analysis. Readers can follow the link for details, demos, or trial access.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.4 !important; color: #333333 !important; text-align: left !important\">Beyond sponsorship, the item points to a concrete use-case: how their tool saved time or enabled a specific kind of analysis. Readers can follow the link for details, demos, or trial access.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.4 !important; color: #333333 !important; text-align: left !important\">Beyond sponsorship, the item points to a concrete use-case: how their tool saved time or enabled a specific kind of analysis. Readers can follow the link for details, demos, or trial access.</p></p>",
+          "readMoreText": "Learn more",
+          "image": "https://dummyimage.com/800x1000/a4a4a6/fff&text=4x5"
+        }
+      ]
     },
     {
-      "title": "Teaching Machines to Care",
-      "description": "<p style=\"margin: 0 0 24px 0; padding: 0; font-family: 'Lyon Text', Georgia, serif; font-size: 17px; line-height: 1.4; color: #21272c;\">The surprising challenges of programming empathy into AI healthcare systems</p>",
-      "image": "https://picsum.photos/588/330?random=5",
-      "link": "https://example.com/article/ai-healthcare-empathy"
+      "type": "sponsor",
+      "title": "FPO sponsor section title",
+      "items": [
+        {
+          "title": "Sponsor feature: a quick note",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.4 !important; color: #333333 !important; text-align: left !important\"><p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.4 !important; color: #333333 !important; text-align: left !important\">Our sponsor this week supports investigative work that extends the research we publish. This short note explains the partnership and gives readers one clear reason to look closer: the project produces useful tools and insights that directly relate to our reporting.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.4 !important; color: #333333 !important; text-align: left !important\">Beyond sponsorship, the item points to a concrete use-case: how their tool saved time or enabled a specific kind of analysis. Readers can follow the link for details, demos, or trial access.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.4 !important; color: #333333 !important; text-align: left !important\">Beyond sponsorship, the item points to a concrete use-case: how their tool saved time or enabled a specific kind of analysis. Readers can follow the link for details, demos, or trial access.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.4 !important; color: #333333 !important; text-align: left !important\">Beyond sponsorship, the item points to a concrete use-case: how their tool saved time or enabled a specific kind of analysis. Readers can follow the link for details, demos, or trial access.</p></p>",
+          "readMoreText": "Learn more",
+          "image": "https://dummyimage.com/800x1000/a4a4a6/fff&text=4x5"
+        }
+      ]
     },
     {
-      "title": "Creative Collaboration with AI",
-      "description": "<p style=\"margin: 0 0 24px 0; padding: 0; font-family: 'Lyon Text', Georgia, serif; font-size: 17px; line-height: 1.4; color: #21272c;\">Artists and writers discover new possibilities when working alongside artificial intelligence</p>",
-      "image": "https://picsum.photos/588/330?random=6",
-      "link": "https://example.com/article/creative-ai-collaboration"
-    }
-  ],
-  "textArticles": [
+      "type": "apps-sites",
+      "title": "FPO apps-sites section title",
+      "items": [
+        {
+          "title": "Notable app / site",
+          "link": "https://example.com",
+          "subtitle": "Handy, delightful, or surprising",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 25px !important; line-height: 1.5 !important; color: #330066 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 25px !important; line-height: 1.5 !important; color: #330066 !important; text-align: left !important\">This app is a small, focused utility that solves a particular friction we noticed in everyday workflows. It foregrounds one interaction model that feels smart, efficient, and a touch humane compared with alternatives.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 25px !important; line-height: 1.5 !important; color: #330066 !important; text-align: left !important\">In practical terms, the app streamlines a three-step task into one. The team behind it has prioritized clarity and minimal friction, which is worth documenting for readers who care about saving a few minutes each day.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 25px !important; line-height: 1.5 !important; color: #330066 !important; text-align: left !important\">In practical terms, the app streamlines a three-step task into one. The team behind it has prioritized clarity and minimal friction, which is worth documenting for readers who care about saving a few minutes each day.</p></p>",
+          "image": "https://dummyimage.com/800x800/a4a4a6/fff&text=1x1"
+        }
+      ]
+    },
     {
-      "title": "This article is something else!",
-      "description": "<p style=\"margin: 0 0 24px 0; padding: 0; font-family: 'Lyon Text', Georgia, serif; font-size: 17px; line-height: 1.4; color: #21272c;\">What is this all about? We want to find the way to include AI in our workflow.</p>",
-      "link": "https://nearfuturelaboratory.com"
+      "type": "quote",
+      "title": "FPO quote section title",
+      "items": [
+        {
+          "quote": "“Small, precise gestures often reveal large thinking.”",
+          "author": "A. Thinker",
+          "authorLink": "https://example.com",
+          "image": "https://dummyimage.com/800x1000/a4a4a6/fff&text=4x5"
+        }
+      ]
+    },
+    {
+      "type": "indie-mag",
+      "title": "FPO indie-mag section title",
+      "items": [
+        {
+          "title": "Long read: an indie piece worth your time",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Georgia, serif !important; font-size: 15px !important; line-height: 1.6 !important; color: #333333 !important; text-align: left !important\"><p style=\"font-family: Georgia, serif !important; font-size: 15px !important; line-height: 1.6 !important; color: #333333 !important; text-align: left !important\">The piece begins with a concrete scene that gestures toward a larger question: who benefits from the design choices we now treat as inevitable? The excerpt sets tone and stakes without resolving the argument.</p> <p style=\"font-family: Georgia, serif !important; font-size: 15px !important; line-height: 1.6 !important; color: #333333 !important; text-align: left !important\">As you read more, the author traces a small historical thread and connects it to present-day practices. That combination of close attention and wider synthesis is the piece’s real value, and this excerpt shows a glimpse of it.</p> <p style=\"font-family: Georgia, serif !important; font-size: 15px !important; line-height: 1.6 !important; color: #333333 !important; text-align: left !important\">As you read more, the author traces a small historical thread and connects it to present-day practices. That combination of close attention and wider synthesis is the piece’s real value, and this excerpt shows a glimpse of it.</p> <p style=\"font-family: Georgia, serif !important; font-size: 15px !important; line-height: 1.6 !important; color: #333333 !important; text-align: left !important\">As you read more, the author traces a small historical thread and connects it to present-day practices. That combination of close attention and wider synthesis is the piece’s real value, and this excerpt shows a glimpse of it.</p></p>",
+          "details": "<p>The piece begins with a concrete scene that gestures toward a larger question: who benefits from the design choices we now treat as inevitable? The excerpt sets tone and stakes without resolving the argument.</p>",
+          "note": "Note: subscription may be required.",
+          "image": "https://dummyimage.com/800x800/a4a4a6/fff&text=1x1"
+        }
+      ]
+    },
+    {
+      "type": "indie-mag-single-column",
+      "title": "FPO indie-mag-single-column section title",
+      "items": [
+        {
+          "title": "Long read: an indie piece worth your time",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, monospace !important; font-size: 14px !important; line-height: 1.5 !important; color: #333333 !important; text-align: left !important\"><p style=\"font-family: Share Tech Mono, monospace !important; font-size: 14px !important; line-height: 1.5 !important; color: #333333 !important; text-align: left !important\">The piece begins with a concrete scene that gestures toward a larger question: who benefits from the design choices we now treat as inevitable? The excerpt sets tone and stakes without resolving the argument.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 14px !important; line-height: 1.5 !important; color: #333333 !important; text-align: left !important\">As you read more, the author traces a small historical thread and connects it to present-day practices. That combination of close attention and wider synthesis is the piece’s real value, and this excerpt shows a glimpse of it.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 14px !important; line-height: 1.5 !important; color: #333333 !important; text-align: left !important\">As you read more, the author traces a small historical thread and connects it to present-day practices. That combination of close attention and wider synthesis is the piece’s real value, and this excerpt shows a glimpse of it.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 14px !important; line-height: 1.5 !important; color: #333333 !important; text-align: left !important\">As you read more, the author traces a small historical thread and connects it to present-day practices. That combination of close attention and wider synthesis is the piece’s real value, and this excerpt shows a glimpse of it.</p></p>",
+          "details": "<p>The piece begins with a concrete scene that gestures toward a larger question: who benefits from the design choices we now treat as inevitable? The excerpt sets tone and stakes without resolving the argument.</p>",
+          "note": "Note: subscription may be required.",
+          "image": "https://dummyimage.com/800x1000/a4a4a6/fff&text=4x5"
+        }
+      ]
+    },
+    {
+      "type": "books-accessories",
+      "title": "FPO books-accessories section title",
+      "items": [
+        {
+          "title": "Worth owning: a small object",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 25px !important; line-height: 1.5 !important; color: #330066 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 25px !important; line-height: 1.5 !important; color: #330066 !important; text-align: left !important\">This short review highlights one distinctive aspect of the book or object — its approach to craft, argument, or usefulness — and connects that quality to a kind of reader who will get the most out of it.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 25px !important; line-height: 1.5 !important; color: #330066 !important; text-align: left !important\">If you are choosing between several options, consider this one for its durability of ideas and material build; a single concrete example can illustrate what sets it apart.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 25px !important; line-height: 1.5 !important; color: #330066 !important; text-align: left !important\">If you are choosing between several options, consider this one for its durability of ideas and material build; a single concrete example can illustrate what sets it apart.</p></p>",
+          "image": "https://dummyimage.com/800x800/a4a4a6/fff&text=1x1"
+        }
+      ]
+    },
+    {
+      "type": "food-for-thought",
+      "title": "FPO food-for-thought section title",
+      "items": [
+        {
+          "title": "food-for-thought sample title",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 16px !important; line-height: 1.6 !important; color: #333333 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 16px !important; line-height: 1.6 !important; color: #333333 !important; text-align: left !important\">This micro-essay connects two ideas that usually live in separate conversations, inviting the reader to hold the tension between them and consider what new questions emerge.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 16px !important; line-height: 1.6 !important; color: #333333 !important; text-align: left !important\">We suggest a quick experiment or a question to ask next: try the connection for a week and note one surprising outcome. That practice often reveals practical insight.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 16px !important; line-height: 1.6 !important; color: #333333 !important; text-align: left !important\">We suggest a quick experiment or a question to ask next: try the connection for a week and note one surprising outcome. That practice often reveals practical insight.</p></p>",
+          "image": "https://dummyimage.com/800x1000/a4a4a6/fff&text=4x5"
+        }
+      ]
+    },
+    {
+      "type": "aesthetically-pleasing",
+      "title": "FPO aesthetically-pleasing section title",
+      "items": [
+        {
+          "title": "aesthetically-pleasing sample title",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.4 !important; color: #333333 !important; text-align: left !important\"><p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.4 !important; color: #333333 !important; text-align: left !important\">A detailed description emphasizes the object’s proportions, color, and materiality, explaining why those small choices create a durable affective response in direct experience.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.4 !important; color: #333333 !important; text-align: left !important\">Beyond aesthetics, we note how the piece performs over time: how it wears, how it responds to light, and why those changes matter to the person who keeps it around.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.4 !important; color: #333333 !important; text-align: left !important\">Beyond aesthetics, we note how the piece performs over time: how it wears, how it responds to light, and why those changes matter to the person who keeps it around.</p></p>",
+          "image": "https://dummyimage.com/800x800/a4a4a6/fff&text=1x1"
+        }
+      ]
+    },
+    {
+      "type": "classifieds",
+      "title": "FPO classifieds section title",
+      "items": [
+        {
+          "title": "classifieds sample title",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, monospace !important; font-size: 13px !important; line-height: 1.4 !important; color: #f4e6d3 !important; text-align: left !important\"><p style=\"font-family: Share Tech Mono, monospace !important; font-size: 13px !important; line-height: 1.4 !important; color: #f4e6d3 !important; text-align: left !important\">Concise listing details: what the item is, one line on condition or feature, and clear instructions for how to inquire. Keep the language direct and action-oriented.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 13px !important; line-height: 1.4 !important; color: #f4e6d3 !important; text-align: left !important\">Include price, availability, or a preferred contact method; these details remove friction and increase the chance of a successful match.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 13px !important; line-height: 1.4 !important; color: #f4e6d3 !important; text-align: left !important\">Include price, availability, or a preferred contact method; these details remove friction and increase the chance of a successful match.</p></p>",
+          "image": "https://dummyimage.com/800x1000/a4a4a6/fff&text=4x5",
+          "content": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, monospace !important; font-size: 13px !important; line-height: 1.4 !important; color: #f4e6d3 !important; text-align: left !important\"><p style=\"font-family: Share Tech Mono, monospace !important; font-size: 13px !important; line-height: 1.4 !important; color: #f4e6d3 !important; text-align: left !important\">Concise listing details: what the item is, one line on condition or feature, and clear instructions for how to inquire. Keep the language direct and action-oriented.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 13px !important; line-height: 1.4 !important; color: #f4e6d3 !important; text-align: left !important\">Include price, availability, or a preferred contact method; these details remove friction and increase the chance of a successful match.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 13px !important; line-height: 1.4 !important; color: #f4e6d3 !important; text-align: left !important\">Include price, availability, or a preferred contact method; these details remove friction and increase the chance of a successful match.</p></p>"
+        }
+      ]
+    },
+    {
+      "type": "animated-image",
+      "title": "FPO animated-image section title",
+      "items": [
+        {
+          "title": "animated-image sample title",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Ubuntu, sans-serif !important; font-size: 15px !important; line-height: 1.5 !important; color: #333333 !important; text-align: left !important\"><p style=\"font-family: Ubuntu, sans-serif !important; font-size: 15px !important; line-height: 1.5 !important; color: #333333 !important; text-align: left !important\">Describe the animation’s movement and timing in concrete terms: what changes, how quickly, and what visual affordances the motion emphasizes.</p> <p style=\"font-family: Ubuntu, sans-serif !important; font-size: 15px !important; line-height: 1.5 !important; color: #333333 !important; text-align: left !important\">Offer a note on how the animation should be viewed (looping, muted, full-screen) and what aspect the viewer should attend to for the intended effect.</p> <p style=\"font-family: Ubuntu, sans-serif !important; font-size: 15px !important; line-height: 1.5 !important; color: #333333 !important; text-align: left !important\">Offer a note on how the animation should be viewed (looping, muted, full-screen) and what aspect the viewer should attend to for the intended effect.</p></p>",
+          "image": "https://dummyimage.com/800x800/a4a4a6/fff&text=1x1"
+        }
+      ]
     }
   ],
   "footer": {
+    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/mdw43y25/",
+    "newsletterSubscribeLink": "https://nearfuturelaboratory.com/newsletter/",
+    "logo": "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png",
+    "logoLink": "https://nearfuturelaboratory.com",
+    "socialLinks": {
+      "applepodcasts": [
+        {
+          "url": "https://podcasts.apple.com/us/podcast/near-future-laboratory-podcast/id1546452193",
+          "title": "Near Future Laboratory on Apple Podcasts"
+        }
+      ],
+      "spotify": [
+        {
+          "url": "https://open.spotify.com/show/1vHzwGE5J19LvXSo8M93MM",
+          "title": "Near Future Laboratory on Spotify"
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/bleeckerj",
+          "title": "Personal GitHub"
+        },
+        {
+          "url": "https://github.com/nearfuturelaboratory",
+          "title": "Near Future Laboratory GitHub"
+        },
+        {
+          "url": "https://github.com/nearfuturelaboratory",
+          "title": "Near Future Laboratory GitHub"
+        }
+      ],
+      "instagram": [
+        {
+          "url": "https://instagram.com/darthjulian",
+          "title": "Personal Instagram"
+        },
+        {
+          "url": "https://instagram.com/nearfuturelaboratory",
+          "title": "Company Instagram"
+        }
+      ],
+      "linkedin": [
+        {
+          "url": "https://linkedin.com/in/julianbleecker",
+          "title": "Personal LinkedIn"
+        },
+        {
+          "url": "https://www.linkedin.com/company/near-future-laboratory/",
+          "title": "Near Future Laboratory LinkedIn"
+        }
+      ],
+      "youtube": [
+        {
+          "url": "https://youtube.com/@nearfuturelaboratory",
+          "title": "YouTube Channel"
+        }
+      ],
+      "discord": [
+        {
+          "url": "https://patreon.com/nearfuturelaboratory",
+          "title": "Join Patreon to join the Discord Community"
+        }
+      ],
+      "patreon": [
+        {
+          "url": "https://patreon.com/nearfuturelaboratory",
+          "title": "Support me on Patreon"
+        }
+      ],
+      "substack": [
+        {
+          "url": "https://newsletter.substack.com",
+          "title": "Newsletter on Substack"
+        }
+      ]
+    },
     "unsubscribeLink": "[unsubscribe]",
-    "address": "Venice Beach, CA"
+    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2025/w43-y25",
+    "archiveUrl": "https://nearfuturelaboratory.com/newsletters",
+    "gratitude": "This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle based production workflow. It's a work-in-progress building on a refactor of the <a href='https://densediscovery.com'>Dense Discovery</a> newsletter's look and vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It's a great newsletter and I would encourage you to subscribe and become a paid member.",
+    "address": "© 2025 Near Future Laboratory<br>Venice Beach, California<br>United States",
+    "colophon": "The objects we consume and those that we surround ourselves with speak volumes about our hopes, fears, dreams, and dreads."
   },
-  "markdownContent": "<p># The Future of Work After AI</p>\n<p>The conversation about artificial intelligence and employment often centers on a simple question: Will robots take our jobs? But this framing misses the nuance of how technological change actually unfolds.</p>\n<p>History shows us that major technological shifts don't simply eliminate work—they transform it. The industrial revolution didn't end human labor; it changed what kind of work humans do. Similarly, the AI revolution is likely to reshape rather than simply replace human employment.</p>\n<p>## What makes this different</p>\n<p>Previous technological advances primarily automated physical tasks. AI is different because it can automate cognitive tasks—the kind of thinking, pattern recognition, and decision-making that has been uniquely human.</p>\n<p>But even as AI capabilities expand, distinctly human skills become more valuable: emotional intelligence, creative problem-solving, ethical reasoning, and the ability to work with ambiguity and incomplete information.</p>\n<p>The future workplace will likely feature humans and AI working in partnership, each contributing their unique strengths to solve complex problems.</p>",
   "themeColors": {
     "header": "#addcfa",
     "sponsor": "#f8eccf",
@@ -68,5 +265,310 @@
     "classifieds": "#def1ef",
     "gif": "#ffffff",
     "linkAccent": "#EE3BBB"
+  },
+  "theme": {
+    "name": "Current Dense Discovery",
+    "description": "The existing color scheme currently in use",
+    "colors": {
+      "header": "#addcfa",
+      "sponsor": "#f8eccf",
+      "apps-sites": "#f0ffff",
+      "quote": "#d1eaf4",
+      "indie-mag": "#efe2f3",
+      "books-accessories": "#ffffff",
+      "food-for-thought": "#f2f2f2",
+      "aesthetically-pleasing": "#ffffff",
+      "classifieds": "#def1ef",
+      "gif": "#ffffff"
+    },
+    "accent": "#4a7c59",
+    "linkAccent": "#EE3BBB"
+  },
+  "sectionStyles": {
+    "$schema": "../section-styles.schema.json",
+    "description": "Configuration for section-specific styling in email templates",
+    "version": "1.0.0",
+    "sectionStyles": {
+      "sponsor": {
+        "name": "Sponsor Section",
+        "description": "Sponsored content sections with distinctive monospace font",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Share Tech Mono, monospace",
+          "fontSize": "16px",
+          "lineHeight": "1.4",
+          "color": "#333333",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "18px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "dispatch": {
+        "name": "Dispatch Section",
+        "description": "Dispatch content sections with distinctive monospace font",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "20px"
+        },
+        "contentStyles": {
+          "fontFamily": "Share Tech Mono, monospace",
+          "fontSize": "16px",
+          "lineHeight": "1.4",
+          "color": "#333333",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "18px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "indie-mag-single-column": {
+        "name": "Indie Magazine Single Column",
+        "description": "Single column indie magazine content with monospace styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Share Tech Mono, monospace",
+          "fontSize": "14px",
+          "lineHeight": "1.5",
+          "color": "#333333",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "indie-mag": {
+        "name": "Indie Magazine Multi-Column",
+        "description": "Multi-column indie magazine content with clean serif font",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Georgia, serif",
+          "fontSize": "15px",
+          "lineHeight": "1.6",
+          "color": "#333333",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "books-accessories": {
+        "name": "Books & Accessories",
+        "description": "Product recommendations with clean sans-serif styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif",
+          "fontSize": "25px",
+          "lineHeight": "1.5",
+          "color": "#330066",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "apps-sites": {
+        "name": "Books & Accessories",
+        "description": "Product recommendations with clean sans-serif styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif",
+          "fontSize": "25px",
+          "lineHeight": "1.5",
+          "color": "#330066",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "food-for-thought": {
+        "name": "Food for Thought",
+        "description": "Philosophical content with elegant typography",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif",
+          "fontSize": "16px",
+          "lineHeight": "1.6",
+          "color": "#333333",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "18px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "classifieds": {
+        "name": "Classifieds",
+        "description": "Classified ads with compact monospace styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "12px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Share Tech Mono, monospace",
+          "fontSize": "13px",
+          "lineHeight": "1.4",
+          "color": "#f4e6d3",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "15px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "aesthetically-pleasing": {
+        "name": "Aesthetically Pleasing",
+        "description": "Cool stuff around the web with modern sans-serif styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "12px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Share Tech Mono, monospace",
+          "fontSize": "16px",
+          "lineHeight": "1.4",
+          "color": "#333333",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "15px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "default": {
+        "name": "Default Content",
+        "description": "Default styling for unspecified section types",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Ubuntu, sans-serif",
+          "fontSize": "15px",
+          "lineHeight": "1.5",
+          "color": "#333333",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      }
+    },
+    "globalOverrides": {
+      "description": "Global style overrides that apply to all sections",
+      "mobileBreakpoint": "600px",
+      "mobileAdjustments": {
+        "contentStyles": {
+          "fontSize": "-1px",
+          "padding": "12px 15px"
+        }
+      }
+    }
   }
 }

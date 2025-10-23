@@ -41,7 +41,7 @@ const templates = {
   'sentiers-reliable': 'sentiers-reliable',
   'atlantic': 'atlantic-complete',
   'dense-discovery': 'dense-discovery',
-  'coda': 'coda'
+  'nfl-mid-week': 'nfl-mid-week'
 };
 
 /**
@@ -259,6 +259,7 @@ switch (command) {
   case 'sentiers-reliable':
   case 'atlantic':
   case 'dense-discovery':
+  case 'nfl-mid-week':
   case 'coda':
     const template = templates[command];
     const inputFile = resolveInputPath(file);

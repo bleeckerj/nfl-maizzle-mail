@@ -37,7 +37,8 @@
   "dependencies": {
     "@maizzle/framework": "^4.5.1",
     "dotenv": "^17.2.3",
-    "openai": "^6.2.0"
+    "openai": "^6.2.0",
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
     "commander": "^11.1.0",

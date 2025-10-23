@@ -9,6 +9,11 @@ data/
 build_local/
 build_production/
 
+gpt-prompts/
+data/
+content/
+emails-to-templatize/
+
 # Environment files
 .env
 .env.local

@@ -229,6 +229,49 @@ nfl-maizzle-mail/
 | `npm run preview` | Build and open in browser |
 | `./workflow.sh <file.md>` | Complete workflow for specific file |
 
+## 🔧 Generator: create canonical Markdown samples
+
+This repository includes a small utility to generate a canonical Markdown sample for a template. It is useful when you want a quick FPO (for-position-only) newsletter that exercises a template's sections and layout.
+
+- Script path: `scripts/generate_md_from_template.mjs`
+- Purpose: inspect a template (or its `section-styles.json`) and emit a Markdown file with YAML frontmatter containing `intro`, `header`, `sections`, and `footer` populated with FPO content and placeholder images.
+
+Usage:
+
+```bash
+# Generate a sample for one template (defaults to 1 item per section)
+node scripts/generate_md_from_template.mjs dense-discovery
+
+# Generate 2 items per section
+node scripts/generate_md_from_template.mjs dense-discovery --items 2
+
+# Generate samples for every template in the `templates/` folder (batch)
+node scripts/generate_md_from_template.mjs --batch --items 2
+
+# Specify an output path
+node scripts/generate_md_from_template.mjs dense-discovery --output generated/my-sample.md
+```
+
+What it does
+- Detects section types by scanning `templates/<template>/newsletter.html` for `section.type` checks, falling back to `templates/<template>/section-styles.json` keys or sensible defaults.
+- Emits semantically consistent English FPO copy (no Latin) tailored to each section type; useful for layout testing. You can control how many items a section contains with `--items`.
+- Alternates supplied placeholder images (4x5 and 1x1) to help evaluate different image aspect ratios in the template layout.
+- Emits YAML frontmatter using `js-yaml` so HTML block scalars are formatted correctly. The generated file default location is `generated/<template>-sample.md` unless `--output` is provided.
+
+Footer and extras
+- The generator injects a `footer` block into the frontmatter (email share link, subscribe link, social links, gratitude, address, colophon). If you want the `address` field emitted as an explicit YAML block scalar with `|`, say so and the generator can be adjusted to force block-style output.
+
+Dependencies
+- The generator uses `js-yaml` for robust YAML serialization. If you haven't already installed dependencies after pulling changes, run:
+
+```bash
+npm install
+```
+
+Notes
+- This tool is intentionally heuristic and designed to provide a fast, usable sample. If a template contains a `schema.json`, the generator can be extended to prefer that authoritative schema (PR welcome).
+
+
 ### **Pro Tips**
 
 ✅ **Use VS Code** - The JSON schema provides autocomplete and validation  

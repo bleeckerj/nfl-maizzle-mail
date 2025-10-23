@@ -3,10 +3,10 @@ title: "{{ title }}"
 preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
 ---
 
-<extends src="templates/dense-discovery/layouts/main.html">
+<extends src="templates/nfl-mid-week/layouts/main.html">
   <block name="template">
     <!-- Header Component -->
-    <component src="templates/dense-discovery/components/Header.html"></component>
+    <component src="templates/nfl-mid-week/components/Header.html"></component>
     
     <!-- Body with Dynamic Sections -->
     <table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="100%">
@@ -18,7 +18,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
               <tbody>
                 
                 <!-- Logo Bottom Section -->
-                <tr>
+                <!-- <tr>
                   <td align="left" class="tighten" style="border-collapse: collapse;font-size: 1px;line-height: 1px;" valign="top">
                     <if condition="header.logoBottom">
                       <a href="{{ header.logoLink || '#' }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">
@@ -26,7 +26,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                       </a>
                     </if>
                   </td>
-                </tr>
+                </tr> -->
                 
                 <!-- Spacer -->
                 <tr>
@@ -34,7 +34,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                 </tr>
 
                 <!-- Intro Section -->
-                <component src="templates/dense-discovery/components/IntroSection.html"></component>
+                <component src="templates/nfl-mid-week/components/IntroSection.html"></component>
 
                 <!-- Dynamic Sections Loop -->
                 <each loop="section in sections">
@@ -45,7 +45,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                       <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
                     </tr>
                     <tr>
-                      <td align="left" class="headline box-yellow" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;border-radius: {{ sectionStyles.sponsor.containerStyles.borderRadius || '20px' }};">
+                      <td align="left" class="headline box-yellow" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
                         <h1 style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">
                           {{ section.title }}
                           <a class="h1byline" href="{{ section.sponsorLink || '#' }}" style="text-decoration: none;display: inline-block;font-size: 12px;line-height: 25px;font-weight: 400;float: right;color: {{ themeColors.linkAccent || '#6d6b57' }} !important;">{{ section.sponsorLabel || 'SPONSOR' }}</a>
@@ -58,18 +58,18 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                       <tr>
                         <td style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};padding: 15px 20px 5px 20px;">
                           <if condition="item.title && item.link">
-                            <p style="font-size: 18px;font-weight: 600;line-height: 20px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
-                              <a href="{{ item.link }}" class="theme-link" style="text-decoration: underline;">{{ item.title }}</a>
+                            <p style="font-size: 18px;font-weight: 600;line-height: 20px;color: {{ item.textColor || section.textColor || '#000000' }} !important;margin: 0;padding: 0;margin-bottom: 8px;">
+                              <a href="{{ item.link }}" style="text-decoration: underline;color: {{ item.textColor || section.textColor || themeColors.linkAccent || '#000000' }} !important;">{{ item.title }}</a>
                             </p>
                           </if>
                           <if condition="item.title && !item.link">
-                            <p style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 12px;">
+                            <p style="font-family: 'Domine', serif !important;font-weight: 600; font-size: 18px;font-weight: 600;line-height: 23px;color: {{ item.textColor || section.textColor || '#000000' }} !important;margin: 0;padding: 0;margin-bottom: 12px;">
                               {{ item.title }}
                             </p>
                           </if>
                           
                           <if condition="item.subtitle">
-                            <p style="font-size: 16px;line-height: 18px;font-weight: 400;color: #707070 !important;padding: 0;margin-bottom: 12px;">{{ item.subtitle }}</p>
+                            <p style="font-size: 16px;line-height: 18px;font-weight: 400;color: {{ item.textColor || section.textColor || '#707070' }} !important;padding: 0;margin-bottom: 12px;">{{ item.subtitle }}</p>
                           </if>
                         </td>
                       </tr>
@@ -86,8 +86,8 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                       <!-- Description Row -->
                       <if condition="item.description">
                         <tr>
-                          <td style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};padding: 0 20px 20px 20px;">
-                            <div style="font-size: 18px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
+                          <td style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};padding: 0 20px 20px 20px;color: {{ item.textColor || section.textColor || '#000000' }} !important;font-family: 'Domine', serif !important;font-weight: 400 !important;font-size: 18px !important;line-height: 20px !important;">
+                            <div class="description-content" style="font-family: 'Domine', serif !important;font-weight: 400 !important; font-style: normal !important; font-size: 18px !important;line-height: 20px !important; color: {{ item.textColor || section.textColor || '#000000' }} !important;padding: 0;margin: 0;">
                               {{{ item.description }}}
                             </div>
                           </td>
@@ -96,94 +96,8 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                         <if condition="item.readMoreText && item.link">
                           <tr>
                             <td style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};padding: 0 20px 20px 20px;">
-                              <p style="font-size: 16px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 0;">
-                                <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ item.readMoreText || 'Read More' }}</a>
-                              </p>
-                            </td>
-                          </tr>
-                        </if>
-                    </each>
-                    <!-- SPONSOR End -->
-                  </if>
-
-                  <if condition="section.type === 'dispatch'">
-                    <!-- DISPATCH Start -->
-                    <tr>
-                      <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
-                    </tr>
-                      <tr>
-                        <td align="left" class="headline box-yellow" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ themeColors.dispatch || '#f8eccf' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;border-radius: {{ sectionStyles.dispatch.containerStyles.borderRadius || '0px' }};">
-                        <h1 style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">
-                          {{ section.title }}
-                          <a class="h1byline" href="{{ section.dispatchLink || '#' }}" style="text-decoration: none;display: inline-block;font-size: 12px;line-height: 25px;font-weight: 400;float: right;color: {{ themeColors.linkAccent || '#6d6b57' }} !important;">{{ section.dispatchLabel || 'DISPATCH' }}</a>
-                        </h1>
-                      </td>
-                    </tr>
-                      <!-- SIGNALS Tag Bar -->
-                      <if condition="section.tags && section.tags.length">
-                        <tr>
-                          <td style="border-collapse: collapse;background: {{ themeColors.dispatch || '#f8eccf' }};padding: 4px 20px 8px 20px;">
-                            <div style="font-family: 'Share Tech Mono', monospace; font-size: 13px;line-height: 18px;font-weight: 700;color: #222;text-transform: uppercase;letter-spacing: 1px;margin-bottom: 4px;">{{ section.signalsLabel || 'SIGNALS' }}</div>
-                            <table width="100%" cellpadding="0" cellspacing="0" style="border-spacing: 0;">
-                              <tbody>
-                                <tr>
-                                  <td style="padding: 0;">
-                                    <each loop="tag in section.tags">
-                                      <span style="display: inline-block;background: #888;border-radius: 8px;padding: 3px 12px;margin: 2px 4px 2px 0;font-size: 12px;font-weight: 700;color: #fff;border: 1px solid #e5e5e5;text-transform: uppercase;letter-spacing: 1px;">{{ tag }}</span>
-                                    </each>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                      </if>
-
-                    <each loop="item in section.items">
-                      <!-- Title Row -->
-                      <tr>
-                        <td style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};padding: 15px 20px 5px 20px;">
-                          <if condition="item.title && item.link">
-                            <p style="font-size: 18px;font-weight: 600;line-height: 20px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
-                              <a href="{{ item.link }}" class="theme-link" style="text-decoration: underline;">{{ item.title }}</a>
-                            </p>
-                          </if>
-                          <if condition="item.title && !item.link">
-                            <p style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 12px;">
-                              {{ item.title }}
-                            </p>
-                          </if>
-                          
-                          <if condition="item.subtitle">
-                            <p style="font-size: 16px;line-height: 18px;font-weight: 400;color: #707070 !important;padding: 0;margin-bottom: 12px;">{{ item.subtitle }}</p>
-                          </if>
-                        </td>
-                      </tr>
-                      
-                      <!-- Image Row -->
-                      <if condition="item.image">
-                        <tr>
-                          <td style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};padding: 0 20px 15px 20px;">
-                            <img src="{{ item.image }}" alt="{{ item.title || 'Sponsor Image' }}" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;height: auto;">
-                          </td>
-                        </tr>
-                      </if>
-                      
-                      <!-- Description Row -->
-                      <if condition="item.description">
-                        <tr>
-                          <td style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};padding: 0 20px 20px 20px;">
-                            <div style="font-size: 18px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
-                              {{{ item.description }}}
-                            </div>
-                          </td>
-                        </tr>
-                      </if>
-                        <if condition="item.readMoreText && item.link">
-                          <tr>
-                            <td style="border-collapse: collapse;background: {{ themeColors.sponsor || '#f8eccf' }};padding: 0 20px 20px 20px;">
-                              <p style="font-size: 16px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 0;">
-                                <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ item.readMoreText || 'Read More' }}</a>
+                              <p style="font-size: 16px;line-height: 19px;font-weight: 400;color: {{ item.textColor || section.textColor || themeColors.linkAccent || '#707070' }} !important;padding: 0;margin: 0;">
+                                <a href="{{ item.link }}" style="text-decoration: underline;color: {{ item.textColor || section.textColor || themeColors.linkAccent || '#707070' }} !important;">{{ item.readMoreText || 'Read More' }}</a>
                               </p>
                             </td>
                           </tr>
@@ -247,14 +161,14 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   </if>
                                   
                                   <if condition="item.description">
-                                    <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
+                                    <div class="apps-sites" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
                                       {{{ item.description }}}
                                     </div>
                                   </if>
                                   
-                                  <if condition="item.readMoreLink && item.readMoreText">
+                                  <if condition="item.link && item.readMoreText">
                                     <p style="font-size: 16px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 10px 0 0 0;">
-                                      <a href="{{ item.readMoreLink }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ item.readMoreText }}</a>
+                                      <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ item.readMoreText }}</a>
                                     </p>
                                   </if>
                                   
@@ -268,60 +182,6 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                       </tr>
                     </each>
                     <!-- APPS & SITES End -->
-                  </if>
-
-                  <if condition="section.type === 'apps-sites-single-column'">
-                    <!-- APPS & SITES SINGLE COLUMN Start -->
-                    <tr>
-                      <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
-                    </tr>
-                    <tr>
-                      <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
-                        <h1 style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">{{ section.title }}</h1>
-                      </td>
-                    </tr>
-                    
-                    <each loop="item in section.items">
-                      <tr>
-                        <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
-                          
-                          <if condition="item.image">
-                            <div style="margin-bottom: 15px;">
-                              <img src="{{ item.image }}" alt="{{ item.title || 'App/Site Image' }}" width="100%" height="auto" style="-ms-interpolation-mode: bicubic;display: block;max-width: 100%;">
-                            </div>
-                          </if>
-
-                          <if condition="item.title && item.link">
-                            <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
-                              <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">{{ item.title }}</a>
-                            </h2>
-                          </if>
-                          <if condition="item.title && !item.link">
-                            <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
-                              {{ item.title }}
-                            </h2>
-                          </if>
-                          
-                          <if condition="item.subtitle">
-                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
-                          </if>
-                          
-                          <if condition="item.description">
-                            <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
-                              {{{ item.description }}}
-                            </div>
-                          </if>
-                          
-                          <if condition="item.readMoreLink && item.readMoreText">
-                            <p style="font-size: 16px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 10px 0 0 0;">
-                              <a href="{{ item.readMoreLink }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ item.readMoreText }}</a>
-                            </p>
-                          </if>
-                          
-                        </td>
-                      </tr>
-                    </each>
-                    <!-- APPS & SITES SINGLE COLUMN End -->
                   </if>
 
                   <if condition="section.type === 'quote'">
@@ -418,13 +278,13 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   </if>
                                   
                                   <if condition="item.description">
-                                    <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 10px;">
+                                    <div class="indie-mag" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 10px;">
                                       {{{ item.description }}}
                                     </div>
                                   </if>
 
                                   <if condition="item.details">
-                                    <div style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;margin-bottom: 10px;">
+                                    <div class="indie-mag" style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;margin-bottom: 10px;">
                                       {{{ item.details }}}
                                     </div>
                                   </if>
@@ -485,14 +345,22 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           </if>
                           
                           <if condition="item.description">
-                            <div style="font-family: 'Share Tech Mono', monospace;font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
-                              {{{ item.description }}}
+                            <div class="indie-mag" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 10px;">
+                              <div style="color: #000000;">
+                                <div style="color: #000000;">
+                                  {{{ item.description }}}
+                                </div>
+                              </div>
                             </div>
                           </if>
 
                           <if condition="item.details">
-                            <div style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;margin-bottom: 10px;">
-                              {{{ item.details }}}
+                            <div class="indie-mag" style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;margin-bottom: 10px;">
+                              <div style="color: #707070;">
+                                <div style="color: #707070;">
+                                  {{{ item.details }}}
+                                </div>
+                              </div>
                             </div>
                           </if>
 
@@ -566,7 +434,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           </if>
                           
                           <if condition="item.description">
-                            <div style="font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
+                            <div class="books-accessories" style="font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
                               {{{ item.description }}}
                             </div>
                           </if>
@@ -576,9 +444,6 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             </p>
                           </if>
                         </td>
-                      </tr>
-                      <tr>
-                        <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 4px;"> </td>
                       </tr>
                     </each>
                     <!-- BOOKS & ACCESSORIES End -->
@@ -613,16 +478,16 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           </if>
                           
                           <if condition="item.channel">
-                           <p class="share-tech-mono-regular" style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 600;color: #000000; margin: 0;margin-bottom: 10px;text-transform: uppercase;letter-spacing: 1px;"><span style="color: #999">From the</span> {{ item.channel }}<span style="#999"><span style="color: #999"> Channel</span></p>
+                           <p class="share-tech-mono-regular" style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 600;color: #000000; margin: 0;margin-bottom: 5px;text-transform: uppercase;letter-spacing: 1px;"><span style="color: #999">From the</span> {{ item.channel }}<span style="#999"> Channel</span></p>
                           </if>
                           
                           <if condition="item.category">
-                            <span style="display: block; font-size: 14px;line-height: 16px;font-weight: 600;color: #999999;padding: 0; margin-bottom: 20px;text-transform: uppercase;letter-spacing: 1px;">DEPARTMENT OF {{ item.category }}</span> 
+                            <span style="font-size: 12px;line-height: 16px;font-weight: 600;color: #999999;padding: 0;margin: 0;margin-bottom: 5px;text-transform: uppercase;letter-spacing: 1px;">{{ item.category }}</span> 
                             <if condition="item.sharedBy">
                                         <span style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 400;color: #222222;margin: 0;padding: 0;text-transform: uppercase;letter-spacing: 0.5px;">
                                           shared by {{ item.sharedBy }}
                                         </span>
-                            </if>
+                                        </if>
                           </if>
 
                           <if condition="item.title && item.link">
@@ -634,18 +499,15 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                       {{ item.title }}
                                     </h2>
                                   </if>
-                          </if>
+                            </if>
                           <if condition="item.description">
-                            <div style="  font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
+                            <div class="food-for-thought" style="  font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
                               {{{ item.description }}}
                             </div>
                           </if>
 
                         </td>
                       </tr>
-                     <tr>
-                      <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 2px;"> </td>
-                    </tr>
                     </each>
                     <!-- FOOD FOR THOUGHT End -->
                   </if>
@@ -751,13 +613,13 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                       <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
                     </tr>
                     <tr>
-                      <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ themeColors.animatedImage || '#fafafa' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
-                        <h1 style="text-align: center;  font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">{{ section.title }}</h1>
+                      <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: #ffffff;border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
+                        <h1 style="font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">{{ section.title }}</h1>
                       </td>
                     </tr>
                     <each loop="item in section.items">
                       <tr>
-                        <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors.animatedImage || '#fafafa' }};padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: center;">
+                        <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: #ffffff;padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: center;">
                           <if condition="item.image">
                             <img src="{{ item.image }}" alt="GIF" width="400" height="auto" style="display: block;max-width: 100%;margin: 0 auto 15px auto;">
                           </if>
@@ -787,6 +649,6 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
     </table>
 
     <!-- Footer Component -->
-    <component src="templates/dense-discovery/components/Footer.html"></component>
+    <component src="templates/nfl-mid-week/components/Footer.html"></component>
   </block>
 </extends>

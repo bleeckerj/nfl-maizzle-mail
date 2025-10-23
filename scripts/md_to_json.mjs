@@ -152,6 +152,10 @@ function convertMarkdownToJson(inputPath, outputPath = 'data/newsletter.json', t
       if (frontmatter.moreBlocks && Array.isArray(frontmatter.moreBlocks)) {
         newsletterData.moreBlocks = frontmatter.moreBlocks;
       }
+      // Preserve explicit overrides from frontmatter (e.g. custom section styles file)
+      if (frontmatter.sectionStylesFile) {
+        newsletterData.sectionStylesFile = frontmatter.sectionStylesFile;
+      }
     } else {
       // For other templates, copy frontmatter directly (excluding template and title)
       const { template, title, ...templateData } = frontmatter;

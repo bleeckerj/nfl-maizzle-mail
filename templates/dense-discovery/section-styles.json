@@ -1,0 +1,267 @@
+{
+  "$schema": "../section-styles.schema.json",
+  "description": "Configuration for section-specific styling in email templates",
+  "version": "1.0.0",
+  
+  "sectionStyles": {
+    "sponsor": {
+      "name": "Sponsor Section",
+      "description": "Sponsored content sections with distinctive monospace font",
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "Share Tech Mono, monospace",
+        "fontSize": "16px",
+        "lineHeight": "1.4",
+        "color": "#333333",
+        "textAlign": "left"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "color": "#000000"
+      }
+    },
+    "dispatch": {
+      "name": "Dispatch Section",
+      "description": "Dispatch content sections with distinctive monospace font",
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "20px"
+      },
+      "contentStyles": {
+        "fontFamily": "Share Tech Mono, monospace",
+        "fontSize": "16px",
+        "lineHeight": "1.4",
+        "color": "#333333",
+        "textAlign": "left"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "color": "#000000"
+      }
+    },
+    
+    "indie-mag-single-column": {
+      "name": "Indie Magazine Single Column",
+      "description": "Single column indie magazine content with monospace styling",
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "Share Tech Mono, monospace", 
+        "fontSize": "14px",
+        "lineHeight": "1.5",
+        "color": "#333333",
+        "textAlign": "left"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "16px",
+        "fontWeight": "600",
+        "color": "#000000"
+      }
+    },
+    
+    "indie-mag": {
+      "name": "Indie Magazine Multi-Column",
+      "description": "Multi-column indie magazine content with clean serif font",
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "Georgia, serif",
+        "fontSize": "15px",
+        "lineHeight": "1.6",
+        "color": "#333333",
+        "textAlign": "left"
+      },
+      "linkStyles": {
+        "color": "inherit", 
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "17px",
+        "fontWeight": "600",
+        "color": "#000000"
+      }
+    },
+    
+    "books-accessories,apps-sites": {
+      "name": "Books & Accessories",
+      "description": "Product recommendations with clean sans-serif styling",
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif",
+        "fontSize": "25px",
+        "lineHeight": "1.5",
+        "color": "#330066",
+        "textAlign": "left"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "500"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "17px",
+        "fontWeight": "600", 
+        "color": "#000000"
+      }
+    },
+    
+    "food-for-thought": {
+      "name": "Food for Thought",
+      "description": "Philosophical content with elegant typography",
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif",
+        "fontSize": "16px",
+        "lineHeight": "1.6",
+        "color": "#333333",
+        "textAlign": "left"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "color": "#000000"
+      }
+    },
+    
+    "classifieds": {
+      "name": "Classifieds",
+      "description": "Classified ads with compact monospace styling",
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "12px 20px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "Share Tech Mono, monospace",
+        "fontSize": "13px",
+        "lineHeight": "1.4",
+        "color": "#f4e6d3",
+        "textAlign": "left"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline", 
+        "fontWeight": "normal"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "15px",
+        "fontWeight": "600",
+        "color": "#000000"
+      }
+    },
+    "aesthetically-pleasing": {
+      "name": "Aesthetically Pleasing",
+      "description": "Cool stuff around the web with modern sans-serif styling",
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "12px 20px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "Share Tech Mono, monospace",
+        "fontSize": "16px",
+        "lineHeight": "1.4",
+        "color": "#333333",
+        "textAlign": "left"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline", 
+        "fontWeight": "normal"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "15px",
+        "fontWeight": "600",
+        "color": "#000000"
+      }
+    },    
+    "default": {
+      "name": "Default Content",
+      "description": "Default styling for unspecified section types",
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "Ubuntu, sans-serif",
+        "fontSize": "15px",
+        "lineHeight": "1.5",
+        "color": "#333333",
+        "textAlign": "left"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "17px",
+        "fontWeight": "600",
+        "color": "#000000"
+      }
+    }
+  },
+  
+  "globalOverrides": {
+    "description": "Global style overrides that apply to all sections",
+    "mobileBreakpoint": "600px",
+    "mobileAdjustments": {
+      "contentStyles": {
+        "fontSize": "-1px",
+        "padding": "12px 15px"
+      }
+    }
+  }
+}

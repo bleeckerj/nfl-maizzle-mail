@@ -48,6 +48,76 @@ function hexToAnsiBackground(hex) {
 }
 
 /**
+ * Generate dynamic CSS classes for section styles
+ */
+function generateSectionStylesCSS(sectionStyles, theme) {
+  if (!sectionStyles || !sectionStyles.sectionStyles) return '';
+  
+  let cssOutput = '\n    /* Dynamic section styles generated from configuration */\n';
+  
+  Object.entries(sectionStyles.sectionStyles).forEach(([sectionType, config]) => {
+    const className = `${sectionType}-section`;
+    
+    // Generate container styles
+    cssOutput += `    .${className} {\n`;
+    if (config.containerStyles) {
+      Object.entries(config.containerStyles).forEach(([property, value]) => {
+        if (value !== null) {
+          const cssProp = property.replace(/([A-Z])/g, '-$1').toLowerCase();
+          cssOutput += `      ${cssProp}: ${value};\n`;
+        }
+      });
+    }
+    cssOutput += `    }\n\n`;
+    
+    // Generate content styles (applies to all child elements)
+    cssOutput += `    .${className}, .${className} * {\n`;
+    if (config.contentStyles) {
+      Object.entries(config.contentStyles).forEach(([property, value]) => {
+        if (value !== null && value !== 'inherit') {
+          const cssProp = property.replace(/([A-Z])/g, '-$1').toLowerCase();
+          cssOutput += `      ${cssProp}: ${value} !important;\n`;
+        }
+      });
+    }
+    cssOutput += `    }\n\n`;
+    
+    // Generate link-specific styles
+    if (config.linkStyles) {
+      cssOutput += `    .${className} a, .${className} a * {\n`;
+      Object.entries(config.linkStyles).forEach(([property, value]) => {
+        if (value !== null) {
+          if (value === 'inherit') {
+            // For inherit values, use the theme color if available
+            if (property === 'color' && theme && theme.linkAccent) {
+              cssOutput += `      color: ${theme.linkAccent} !important;\n`;
+            }
+          } else {
+            const cssProp = property.replace(/([A-Z])/g, '-$1').toLowerCase();
+            cssOutput += `      ${cssProp}: ${value} !important;\n`;
+          }
+        }
+      });
+      cssOutput += `    }\n\n`;
+    }
+    
+    // Generate heading-specific styles
+    if (config.headingStyles) {
+      cssOutput += `    .${className} h1, .${className} h2, .${className} h3, .${className} h4, .${className} h5, .${className} h6 {\n`;
+      Object.entries(config.headingStyles).forEach(([property, value]) => {
+        if (value !== null && value !== 'inherit') {
+          const cssProp = property.replace(/([A-Z])/g, '-$1').toLowerCase();
+          cssOutput += `      ${cssProp}: ${value} !important;\n`;
+        }
+      });
+      cssOutput += `    }\n\n`;
+    }
+  });
+  
+  return cssOutput;
+}
+
+/**
  * Display color theme in ASCII format with actual colors
  */
 function displayColorTheme(newsletterData) {
@@ -405,6 +475,35 @@ async function buildNewsletter() {
     // Catalog sections for debugging
     catalogSections(newsletterData);
     
+    // Normalize item fields for templates that expect different field names
+    // Known mapping: classifieds template expects `item.content` while Markdown
+    // frontmatter commonly uses `description`. Copy over when missing.
+    if (newsletterData.sections && Array.isArray(newsletterData.sections)) {
+      newsletterData.sections.forEach(section => {
+        if (!section || !section.items) return;
+        if (section.type === 'classifieds') {
+          section.items.forEach(item => {
+            if (!item.content && item.description) {
+              item.content = item.description;
+            }
+          });
+        }
+        // Normalize dispatch tags: accept either a comma-separated string or an array
+        if (section.type === 'dispatch') {
+          let tags = section.tags || (section.dispatch && section.dispatch.tags);
+          if (tags) {
+            if (typeof tags === 'string') {
+              tags = tags.split(',').map(t => t.trim()).filter(Boolean).map(t => t.toUpperCase());
+            } else if (Array.isArray(tags)) {
+              tags = tags.map(t => String(t).trim()).filter(Boolean).map(t => t.toUpperCase());
+            }
+            section.tags = tags;
+          }
+        }
+      });
+      console.log('🔁 Normalized item fields for classifieds (description → content)');
+    }
+    
     displayColorTheme(newsletterData);
     
     // Inject theme colors into newsletter data
@@ -425,10 +524,282 @@ async function buildNewsletter() {
         linkAccent: theme.linkAccent  // Link accent color for all links
       };
       
-      // Write updated newsletter data back to file
-      fs.writeFileSync('data/newsletter.json', JSON.stringify(newsletterData, null, 2));
-      console.log(`✅ Theme colors injected: ${Object.keys(newsletterData.themeColors).length} colors`);
+      // Add the theme object itself for CSS class generation
+      newsletterData.theme = theme;
     }
+
+    // Load section styles configuration
+    let sectionStyles = {};
+    let sectionStylesPath = 'data/section-styles.json'; // Default path
+    
+    // Check if newsletter data specifies a custom section styles file
+    if (newsletterData.sectionStylesFile) {
+      sectionStylesPath = newsletterData.sectionStylesFile;
+      console.log(`📋 Using custom section styles file: ${sectionStylesPath}`);
+    } else if (templateName) {
+      // Auto-detect template-specific section styles file
+      const templateSpecificPath = `templates/${templateName}/section-styles.json`;
+      if (fs.existsSync(templateSpecificPath)) {
+        sectionStylesPath = templateSpecificPath;
+        console.log(`📋 Auto-detected template section styles: ${templateSpecificPath}`);
+      }
+    }
+    
+    try {
+      const sectionStylesData = fs.readFileSync(sectionStylesPath, 'utf8');
+      sectionStyles = JSON.parse(sectionStylesData);
+
+      // Normalize keys: allow comma-separated section type keys to map the same
+      // config to multiple section types. E.g. "books-accessories, apps-sites": {...}
+      if (sectionStyles && sectionStyles.sectionStyles) {
+        const original = sectionStyles.sectionStyles;
+        const normalized = {};
+
+        Object.entries(original).forEach(([key, cfg]) => {
+          // Split on comma and trim each entry
+          const parts = key.split(',').map(k => k.trim()).filter(Boolean);
+          // If there was only one part, keep the key as-is
+          if (parts.length === 1) {
+            normalized[parts[0]] = cfg;
+          } else {
+            // Map the same cfg object to each individual section type
+            parts.forEach(p => {
+              // If a key collision occurs, prefer the explicit key already present
+              if (!normalized[p]) normalized[p] = cfg;
+            });
+          }
+        });
+
+        sectionStyles.sectionStyles = normalized;
+      }
+
+      newsletterData.sectionStyles = sectionStyles;
+      console.log(`✅ Loaded section styles from ${sectionStylesPath}: ${Object.keys(sectionStyles.sectionStyles).length} section types (normalized)`);
+    } catch (error) {
+      console.log(`⚠️  No section styles found at ${sectionStylesPath}, skipping style processing`);
+    }
+
+    // Apply section styles through preprocessing (more reliable for email compatibility)
+    if (sectionStyles.sectionStyles && newsletterData.sections) {
+      console.log('🎨 Applying section styles through preprocessing...');
+      console.log('');
+      
+      let processedItems = 0;
+      let totalItems = 0;
+      const sectionSummary = [];
+      
+      newsletterData.sections.forEach((section, sIndex) => {
+        const sectionConfig = sectionStyles.sectionStyles[section.type];
+        const fallbackConfig = sectionStyles.sectionStyles.default;
+        const usedConfig = sectionConfig || fallbackConfig;
+        const usingFallback = !sectionConfig;
+        
+        let sectionProcessedItems = 0;
+        let sectionTotalItems = 0;
+        
+        if (section.items) {
+          sectionTotalItems = section.items.filter(item => item.description && typeof item.description === 'string').length;
+          totalItems += sectionTotalItems;
+          
+          // Show section header with styling info
+          if (sectionTotalItems > 0) {
+            const statusIcon = usingFallback ? '⚠️ ' : '✅';
+            const configInfo = usingFallback ? `using "default" styles` : `using "${section.type}" styles`;
+            const fontInfo = usedConfig?.contentStyles?.fontFamily ? ` (${usedConfig.contentStyles.fontFamily})` : '';
+            
+            console.log(`${statusIcon} Section ${sIndex + 1}: "${section.type}" - ${configInfo}${fontInfo}`);
+            
+            if (usingFallback) {
+              console.log(`   ℹ️  No specific styles found for "${section.type}", falling back to default`);
+            }
+          }
+          
+          section.items.forEach((item, iIndex) => {
+            if (item.description && typeof item.description === 'string') {
+              let originalDescription = item.description;
+              let wasModified = false;
+              
+              // Apply all contentStyles properties
+              if (usedConfig.contentStyles && Object.keys(usedConfig.contentStyles).length > 0) {
+                const contentStyles = usedConfig.contentStyles;
+                
+                // Build CSS properties from contentStyles
+                let cssProperties = [];
+                if (contentStyles.fontFamily) {
+                  cssProperties.push(`font-family: ${contentStyles.fontFamily} !important`);
+                }
+                if (contentStyles.fontSize) {
+                  cssProperties.push(`font-size: ${contentStyles.fontSize} !important`);
+                }
+                if (contentStyles.lineHeight) {
+                  cssProperties.push(`line-height: ${contentStyles.lineHeight} !important`);
+                }
+                if (contentStyles.color) {
+                  cssProperties.push(`color: ${contentStyles.color} !important`);
+                }
+                if (contentStyles.textAlign) {
+                  cssProperties.push(`text-align: ${contentStyles.textAlign} !important`);
+                }
+                
+                const newCSSString = cssProperties.join('; ');
+                
+                // Process <p> tags
+                item.description = item.description.replace(/<p(\s[^>]*)?>/gi, (match, attrs) => {
+                  attrs = attrs || '';
+                  const styleMatch = attrs.match(/style="([^"]*)"/i);
+                  if (styleMatch) {
+                    let existingStyle = styleMatch[1];
+                    // Remove existing properties that we're overriding
+                    existingStyle = existingStyle
+                      .replace(/font-family:[^;]*;?/gi, '')
+                      .replace(/font-size:[^;]*;?/gi, '')
+                      .replace(/line-height:[^;]*;?/gi, '')
+                      .replace(/color:[^;]*;?/gi, '')
+                      .replace(/text-align:[^;]*;?/gi, '');
+                    const combinedStyle = `${existingStyle}; ${newCSSString}`.replace(/^;+|;+$/g, '');
+                    return `<p${attrs.replace(/style="[^"]*"/i, `style="${combinedStyle}"`)}>`;
+                  } else {
+                    return `<p${attrs} style="${newCSSString}">`;
+                  }
+                });
+                wasModified = true;
+              }
+              
+              // Apply linkStyles properties to <a> tags
+              if (usedConfig.linkStyles && Object.keys(usedConfig.linkStyles).length > 0) {
+                const linkStyles = usedConfig.linkStyles;
+                
+                // Build CSS properties from linkStyles
+                let linkCSSProperties = [];
+                if (linkStyles.fontFamily) {
+                  linkCSSProperties.push(`font-family: ${linkStyles.fontFamily} !important`);
+                }
+                if (linkStyles.fontSize) {
+                  linkCSSProperties.push(`font-size: ${linkStyles.fontSize} !important`);
+                }
+                if (linkStyles.fontWeight) {
+                  linkCSSProperties.push(`font-weight: ${linkStyles.fontWeight} !important`);
+                }
+                if (linkStyles.textDecoration) {
+                  linkCSSProperties.push(`text-decoration: ${linkStyles.textDecoration} !important`);
+                }
+                if (linkStyles.color === 'inherit' && theme?.linkAccent) {
+                  // Use theme color when linkStyles.color is 'inherit'
+                  linkCSSProperties.push(`color: ${theme.linkAccent} !important`);
+                } else if (linkStyles.color && linkStyles.color !== 'inherit') {
+                  // Use specific color from linkStyles
+                  linkCSSProperties.push(`color: ${linkStyles.color} !important`);
+                } else if (theme?.linkAccent) {
+                  // Fallback to theme color if no linkStyles color specified
+                  linkCSSProperties.push(`color: ${theme.linkAccent} !important`);
+                }
+                
+                const linkCSSString = linkCSSProperties.join('; ');
+                
+                // Process <a> tags
+                item.description = item.description.replace(/<a(\s[^>]*)?>/gi, (match, attrs) => {
+                  attrs = attrs || '';
+                  const styleMatch = attrs.match(/style="([^"]*)"/i);
+                  if (styleMatch) {
+                    let existingStyle = styleMatch[1];
+                    // Remove existing properties that we're overriding
+                    existingStyle = existingStyle
+                      .replace(/font-family:[^;]*;?/gi, '')
+                      .replace(/font-size:[^;]*;?/gi, '')
+                      .replace(/font-weight:[^;]*;?/gi, '')
+                      .replace(/text-decoration:[^;]*;?/gi, '')
+                      .replace(/color:[^;]*;?/gi, '');
+                    const combinedLinkStyle = `${existingStyle}; ${linkCSSString}`.replace(/^;+|;+$/g, '');
+                    return `<a${attrs.replace(/style="[^"]*"/i, `style="${combinedLinkStyle}"`)}>`;
+                  } else {
+                    return `<a${attrs} style="${linkCSSString}">`;
+                  }
+                });
+                wasModified = true;
+              } else if (theme?.linkAccent) {
+                // Fallback: apply theme link color if no linkStyles defined
+                item.description = item.description.replace(/<a(\s[^>]*)?>/gi, (match, attrs) => {
+                  attrs = attrs || '';
+                  if (!attrs.includes('style=')) {
+                    return `<a${attrs} style="color: ${theme.linkAccent} !important; text-decoration: underline;">`;
+                  } else {
+                    return match.replace(/style="([^"]*)"/, (styleMatch, styles) => {
+                      const cleanStyles = styles.replace(/color:[^;]*;?/gi, '');
+                      return `style="${cleanStyles}; color: ${theme.linkAccent} !important; text-decoration: underline;"`;
+                    });
+                  }
+                });
+                wasModified = true;
+              }
+              
+              if (wasModified) {
+                processedItems++;
+                sectionProcessedItems++;
+                console.log(`   📝 Item ${iIndex + 1}: Styled content`);
+              } else {
+                console.log(`   📄 Item ${iIndex + 1}: No styles applied (no content to process)`);
+              }
+            }
+          });
+          
+          // Section summary
+          if (sectionTotalItems > 0) {
+            const sectionStatus = sectionProcessedItems === sectionTotalItems ? '✅' : '⚠️ ';
+            sectionSummary.push({
+              type: section.type,
+              processed: sectionProcessedItems,
+              total: sectionTotalItems,
+              hasConfig: !usingFallback,
+              configName: usingFallback ? 'default' : section.type
+            });
+            console.log(`   ${sectionStatus} Section summary: ${sectionProcessedItems}/${sectionTotalItems} items styled`);
+            console.log('');
+          }
+        }
+      });
+      
+      // Overall summary
+      console.log('📊 Style Processing Summary:');
+      console.log('═══════════════════════════');
+      sectionSummary.forEach((summary, index) => {
+        const statusIcon = summary.hasConfig ? '✅' : '⚠️ ';
+        const configText = summary.hasConfig ? `custom "${summary.type}" config` : 'fallback "default" config';
+        console.log(`${statusIcon} ${summary.type}: ${summary.processed}/${summary.total} items (${configText})`);
+      });
+      
+      const unconfiguredSections = sectionSummary.filter(s => !s.hasConfig);
+      if (unconfiguredSections.length > 0) {
+        console.log('');
+        console.log('💡 Tip: Create specific configurations for these section types:');
+        unconfiguredSections.forEach(s => {
+          console.log(`   • "${s.type}" section type needs configuration`);
+        });
+      }
+      
+      console.log('');
+      console.log(`✅ Total: ${processedItems}/${totalItems} items processed successfully`);
+    }
+    
+    // Write updated newsletter data back to file
+    // For templates that render `item.content` for classifieds, copy the
+    // preprocessed/styled `item.description` into `item.content` so the
+    // template receives the inlined styles. This intentionally overwrites
+    // `item.content` for classifieds because the template expects `content`.
+    if (newsletterData.sections && Array.isArray(newsletterData.sections)) {
+      newsletterData.sections.forEach(section => {
+        if (!section || !section.items) return;
+        if (section.type === 'classifieds') {
+          section.items.forEach(item => {
+            if (item.description) {
+              item.content = item.description;
+            }
+          });
+        }
+      });
+    }
+
+    fs.writeFileSync('data/newsletter.json', JSON.stringify(newsletterData, null, 2));
+    console.log(`✅ Theme and section style data injected for Maizzle processing`);
     
     // Validate images in the newsletter data
     await validateImages(newsletterData);
