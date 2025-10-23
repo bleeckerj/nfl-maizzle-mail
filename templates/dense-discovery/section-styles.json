@@ -40,7 +40,7 @@
         "borderRadius": "20px"
       },
       "contentStyles": {
-        "fontFamily": "Share Tech Mono, monospace",
+        "fontFamily": "Georgia, serif",
         "fontSize": "16px",
         "lineHeight": "1.4",
         "color": "#333333",
