@@ -97,7 +97,8 @@
       "description": "Clean grayscale palette with subtle variations",
       "colors": {
         "header": "#fffffd",
-        "sponsor": "#f5f5f5",
+        "sponsor": "#e5e5e5",
+        "dispatch": "#e0e5fb",
         "apps-sites": "#ffffff",
         "quote": "#ebebeb",
         "indie-mag": "#f0f0f0",
@@ -116,6 +117,7 @@
       "colors": {
         "header": "#d9fd47",
         "sponsor": "#f0f0f0",
+        "dispatch": "#e0e5fb",
         "apps-sites": "#ffffff",
         "quote": "#ebebeb",
         "indie-mag": "#f0f0f0",

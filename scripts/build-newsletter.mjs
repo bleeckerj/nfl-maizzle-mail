@@ -589,9 +589,19 @@ async function buildNewsletter() {
       const sectionSummary = [];
       
       newsletterData.sections.forEach((section, sIndex) => {
-        const sectionConfig = sectionStyles.sectionStyles[section.type];
-        const fallbackConfig = sectionStyles.sectionStyles.default;
-        const usedConfig = sectionConfig || fallbackConfig;
+          const sectionConfig = sectionStyles.sectionStyles[section.type];
+          const fallbackConfig = sectionStyles.sectionStyles.default;
+          const usedConfig = sectionConfig || fallbackConfig;
+
+          // Inject containerStyles into the section for template access
+          // Normalize and provide sensible defaults so templates can reference
+          // `section.containerStyles.borderRadius`, `padding`, and `backgroundColor`.
+          section.containerStyles = (usedConfig && usedConfig.containerStyles) ? { ...usedConfig.containerStyles } : { backgroundColor: null, padding: '15px 20px', borderRadius: '0px' };
+          // Ensure values are strings and have defaults
+          section.containerStyles.borderRadius = section.containerStyles.borderRadius ? String(section.containerStyles.borderRadius).trim() : '0px';
+          section.containerStyles.padding = section.containerStyles.padding ? String(section.containerStyles.padding).trim() : '15px 20px';
+          // keep explicit null for backgroundColor when not set so templates can fallback to themeColors
+          section.containerStyles.backgroundColor = section.containerStyles.backgroundColor == null ? null : String(section.containerStyles.backgroundColor).trim();
         const usingFallback = !sectionConfig;
         
         let sectionProcessedItems = 0;

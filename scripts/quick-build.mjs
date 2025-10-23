@@ -33,16 +33,24 @@ for (const arg of args) {
   }
 }
 
-// Available templates
-const templates = {
-  'wirecutter': 'wirecutter',
-  'brain-dead': 'brain-dead-template', 
-  'sentiers': 'sentiers-llm',
-  'sentiers-reliable': 'sentiers-reliable',
-  'atlantic': 'atlantic-complete',
-  'dense-discovery': 'dense-discovery',
-  'nfl-mid-week': 'nfl-mid-week'
-};
+// Available templates: infer from directories under `templates/`.
+// Quick-build will accept the directory-name as the template command.
+const templates = {};
+try {
+  // Resolve templates directory relative to this file without relying on __dirname
+  const templatesDir = path.resolve(dirname(fileURLToPath(import.meta.url)), '..', 'templates');
+  if (fs.existsSync(templatesDir)) {
+    const dirs = fs.readdirSync(templatesDir, { withFileTypes: true })
+      .filter(d => d.isDirectory())
+      .map(d => d.name);
+
+    dirs.forEach(dir => {
+      templates[dir] = dir;
+    });
+  }
+} catch (err) {
+  if (process.env.DEBUG_QUICK_BUILD === '1') console.error('Template discovery failed:', err.message);
+}
 
 /**
  * Check if an image URL exists and is accessible
@@ -252,92 +260,65 @@ const __dirname = dirname(__filename);
 // subprocess and doesn't interfere with quick-build's flow.
 
 // Handle different commands
-switch (command) {
-  case 'wirecutter':
-  case 'brain-dead':
-  case 'sentiers':
-  case 'sentiers-reliable':
-  case 'atlantic':
-  case 'dense-discovery':
-  case 'nfl-mid-week':
-  case 'coda':
-    const template = templates[command];
-    const inputFile = resolveInputPath(file);
-    const outputName = path.basename(inputFile, '.md');
+// Command dispatch: allow 'list' and discovered template names
+if (command === 'list') {
+  console.log('📄 Available content files:');
+  const files = listContentFiles();
+  files.forEach(file => console.log(`  - ${file}`));
 
-    console.log(`🚀 Quick Build: ${command} template`);
-    console.log(`📄 File: ${inputFile}`);
-    console.log(`🎨 Template: ${template}`);
+} else if (command && templates[command]) {
+  const template = templates[command];
+  const inputFile = resolveInputPath(file);
+  const outputName = path.basename(inputFile, '.md');
+
+  console.log(`🚀 Quick Build: ${command} template`);
+  console.log(`📄 File: ${inputFile}`);
+  console.log(`🎨 Template: ${template}`);
+  if (outDir) {
+    console.log(`📂 Output directory: ${outDir}`);
+  }
+
+  try {
+    const buildNewsletterPath = join(__dirname, 'build-newsletter.mjs');
+    const execCmd = `node ${buildNewsletterPath} ${inputFile} ${outputName} --template=${template}`;
+    console.log(`\nExecuting: ${execCmd}\n`);
+    const repoRoot = path.resolve(__dirname, '..');
+    execSync(execCmd, {
+      stdio: 'inherit',
+      cwd: repoRoot
+    });
+
     if (outDir) {
-      console.log(`📂 Output directory: ${outDir}`);
+      const srcPath = path.join('build_production', `${outputName}.html`);
+      const destDir = path.resolve(outDir);
+      const destPath = path.join(destDir, `${outputName}.html`);
+      if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
+      fs.copyFileSync(srcPath, destPath);
+      console.log(`✅ Output file copied to: ${destPath}`);
     }
-
-    try {
-      // Resolve build-newsletter relative to this script's directory so the quick-build
-      // command works from any current working directory.
-      const buildNewsletterPath = join(__dirname, 'build-newsletter.mjs');
-      const execCmd = `node ${buildNewsletterPath} ${inputFile} ${outputName} --template=${template}`;
-      console.log(`
-Executing: ${execCmd}
-`);
-      // Run from the repo root (parent of scripts/) so build-newsletter's own
-      // relative references to scripts/* resolve correctly.
-      const repoRoot = path.resolve(__dirname, '..');
-      execSync(execCmd, {
-        stdio: 'inherit',
-        cwd: repoRoot
-      });
-
-      // Move the built HTML file to the output directory if specified
-      if (outDir) {
-        const srcPath = path.join('build_production', `${outputName}.html`);
-        const destDir = path.resolve(outDir);
-        const destPath = path.join(destDir, `${outputName}.html`);
-
-        // Ensure output directory exists
-        if (!fs.existsSync(destDir)) {
-          fs.mkdirSync(destDir, { recursive: true });
-        }
-
-        fs.copyFileSync(srcPath, destPath);
-        console.log(`✅ Output file copied to: ${destPath}`);
-      }
-    } catch (error) {
-      console.error('❌ Build failed:', error.message);
-      process.exit(1);
-    }
-    break;
-    
-  case 'list':
-    console.log('📄 Available content files:');
-    const files = listContentFiles();
-    files.forEach(file => console.log(`  - ${file}`));
-    break;
-    
-  default:
-    console.log('🚀 Quick Build Tool');
-    console.log('');
-    console.log('Usage:');
-    console.log('  npm run quick wirecutter [file]        # Build with wirecutter template');
-    console.log('  npm run quick brain-dead [file]        # Build with brain-dead template');  
-    console.log('  npm run quick sentiers [file]          # Build with sentiers template');
-    console.log('  npm run quick sentiers-reliable [file] # Build with enhanced sentiers template');
-    console.log('  npm run quick atlantic [file]          # Build with atlantic-complete template');
-    console.log('  npm run quick dense-discovery [file]   # Build with modular dense-discovery template');
-    console.log('  npm run quick coda [file]              # Build with coda template');
-    console.log('  npm run quick list                     # List available content files');
-    console.log('');
-    console.log('File Path Support:');
-    console.log('  • Absolute paths: /full/path/to/content.md');
-    console.log('  • Relative paths: ../other-project/content.md');
-    console.log('  • Local content: content/my-file.md');
-    console.log('');
-    console.log('Examples:');
-    console.log('  npm run quick wirecutter                           # Auto-select file');
-    console.log('  npm run quick wirecutter content/my-article.md     # Local content file');
-    console.log('  npm run quick atlantic /Users/me/other/newsletter.md # Absolute path');
-    console.log('  npm run quick dense-discovery ../cms/content/issue-79.md # Relative path');
-    console.log('  npm run quick sentiers-reliable                    # Test enhanced template');
-    console.log('');
+  } catch (error) {
+    console.error('❌ Build failed:', error.message);
     process.exit(1);
+  }
+
+} else {
+  console.log('🚀 Quick Build Tool');
+  console.log('');
+  console.log('Usage:');
+  console.log('  npm run quick <template-dir> [file]   # Build using a template directory under templates/');
+  console.log('  npm run quick list                    # List available content files');
+  console.log('');
+  console.log('Available templates:');
+  Object.keys(templates).forEach(t => console.log(`  - ${t}`));
+  console.log('');
+  console.log('File Path Support:');
+  console.log('  • Absolute paths: /full/path/to/content.md');
+  console.log('  • Relative paths: ../other-project/content.md');
+  console.log('  • Local content: content/my-file.md');
+  console.log('');
+  console.log('Examples:');
+  console.log('  npm run quick dense-discovery generated/dense-discovery-sample.md');
+  console.log('  npm run quick wirecutter content/my-article.md');
+  console.log('');
+  process.exit(1);
 }

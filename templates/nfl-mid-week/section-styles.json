@@ -125,7 +125,7 @@
       },
       "contentStyles": {
         "fontFamily": "IBM Plex Sans, sans-serif",
-        "fontSize": "16px",
+        "fontSize": "25px",
         "lineHeight": "1.5",
         "color": "#330066",
         "textAlign": "left"
@@ -183,7 +183,7 @@
         "fontFamily": "Share Tech Mono, monospace",
         "fontSize": "13px",
         "lineHeight": "1.4",
-        "color": "#333333",
+        "color": "#f4e6d3",
         "textAlign": "left"
       },
       "linkStyles": {
