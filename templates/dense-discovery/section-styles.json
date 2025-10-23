@@ -1,0 +1,71 @@
+{
+  "description": "Section styles specific to the dense-discovery template",
+  "version": "1.0.0",
+  "templateName": "dense-discovery",
+  
+  "sectionStyles": {
+    "sponsor": {
+      "name": "Dense Discovery Sponsor",
+      "description": "Sponsor sections with monospace tech aesthetic",
+      "contentStyles": {
+        "fontFamily": "Share Tech Mono, monospace",
+        "fontSize": "15px",
+        "lineHeight": "1.4",
+        "color": "#2c2c2c"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      }
+    },
+    
+    "tools-apps": {
+      "name": "Tools & Apps",
+      "description": "Technology and app recommendations",
+      "contentStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif",
+        "fontSize": "15px",
+        "lineHeight": "1.5",
+        "color": "#333333"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "500"
+      }
+    },
+    
+    "reads": {
+      "name": "Reading List",
+      "description": "Articles and reading recommendations",
+      "contentStyles": {
+        "fontFamily": "Georgia, serif",
+        "fontSize": "16px",
+        "lineHeight": "1.6",
+        "color": "#2c2c2c"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      }
+    },
+    
+    "default": {
+      "name": "Dense Discovery Default",
+      "description": "Default styling for unspecified sections in dense-discovery template",
+      "contentStyles": {
+        "fontFamily": "Ubuntu, sans-serif",
+        "fontSize": "15px",
+        "lineHeight": "1.5",
+        "color": "#333333"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      }
+    }
+  }
+}

@@ -146,8 +146,18 @@
       font-style: italic;
     }
 
+    /* Dynamic theme colors */
+    .theme-link {
+      color: {{{ page.theme.linkAccent || '#0066cc' }}};
+    }
 
   </style>
+  
+  <if condition="page.dynamicCSS">
+  <style media="screen" type="text/css">
+    {{{ page.dynamicCSS }}}
+  </style>
+  </if>
 
   <!--[if mso]>
     <style type="text/css">
