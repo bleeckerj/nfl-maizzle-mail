@@ -41,9 +41,9 @@
       },
       "contentStyles": {
         "fontFamily": "Domine, serif",
-        "fontSize": "18px",
+        "fontSize": "17px",
         "lineHeight": "22px",
-        "color": "#222222",
+        "color": "#111111",
         "textAlign": "left"
       },
       "linkStyles": {
@@ -68,10 +68,10 @@
         "borderRadius": "0px"
       },
       "contentStyles": {
-        "fontFamily": "Share Tech Mono, monospace", 
-        "fontSize": "14px",
+        "fontFamily": "Domine, serif", 
+        "fontSize": "17px",
         "lineHeight": "1.5",
-        "color": "#333333",
+        "color": "#111111",
         "textAlign": "left"
       },
       "linkStyles": {
@@ -81,7 +81,7 @@
       },
       "headingStyles": {
         "fontFamily": "inherit",
-        "fontSize": "16px",
+        "fontSize": "18px",
         "fontWeight": "600",
         "color": "#000000"
       }
@@ -97,9 +97,9 @@
       },
       "contentStyles": {
         "fontFamily": "Domine, serif",
-        "fontSize": "15px",
+        "fontSize": "17px",
         "lineHeight": "1.6",
-        "color": "#333333",
+        "color": "#111111",
         "textAlign": "left"
       },
       "linkStyles": {
@@ -109,7 +109,7 @@
       },
       "headingStyles": {
         "fontFamily": "inherit",
-        "fontSize": "17px",
+        "fontSize": "18px",
         "fontWeight": "600",
         "color": "#000000"
       }
@@ -127,7 +127,7 @@
         "fontFamily": "IBM Plex Sans, sans-serif",
         "fontSize": "16px",
         "lineHeight": "1.5",
-        "color": "#330066",
+        "color": "#111111",
         "textAlign": "left"
       },
       "linkStyles": {
@@ -153,9 +153,9 @@
       },
       "contentStyles": {
         "fontFamily": "IBM Plex Sans, sans-serif",
-        "fontSize": "16px",
+        "fontSize": "17px",
         "lineHeight": "1.5",
-        "color": "#330066",
+        "color": "#111111",
         "textAlign": "left"
       },
       "linkStyles": {
@@ -181,9 +181,9 @@
       },
       "contentStyles": {
         "fontFamily": "IBM Plex Sans, sans-serif",
-        "fontSize": "16px",
+        "fontSize": "17px",
         "lineHeight": "1.2",
-        "color": "#333333",
+        "color": "#111111",
         "textAlign": "left"
       },
       "linkStyles": {
@@ -211,7 +211,7 @@
         "fontFamily": "Share Tech Mono, monospace",
         "fontSize": "13px",
         "lineHeight": "1.4",
-        "color": "#333333",
+        "color": "#222222",
         "textAlign": "left"
       },
       "linkStyles": {
@@ -238,7 +238,7 @@
         "fontFamily": "Share Tech Mono, monospace",
         "fontSize": "16px",
         "lineHeight": "1.4",
-        "color": "#333333",
+        "color": "#111111",
         "textAlign": "left"
       },
       "linkStyles": {
@@ -265,7 +265,7 @@
         "fontFamily": "Ubuntu, sans-serif",
         "fontSize": "15px",
         "lineHeight": "1.5",
-        "color": "#333333",
+        "color": "#111111",
         "textAlign": "left"
       },
       "linkStyles": {
