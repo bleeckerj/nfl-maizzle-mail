@@ -1,32 +1,34 @@
 {
   "$schema": "../newsletter.schema.json",
   "template": "dense-discovery",
-  "title": "Near Future Laboratory – w44y25",
-  "preheader": "It's Week 44 of 2025 and frameworks hurt my head",
-  "colorTheme": "professional",
-  "header": {
-    "logoTop": "https://nearfuturelaboratory.com/images/site/logos/TOP_LaboratoryCircle_Guy_01_CircleWhite.png",
-    "logoBottom": "https://nearfuturelaboratory.com/images/site/logos/BOTTOM_LaboratoryCircle_Guy_01_CircleWhite.png",
-    "logoLink": "https://nearfuturelaboratory.com"
-  },
+  "title": "FPO: dense-discovery sample title",
+  "preheader": "FPO preheader — short summary line",
+  "sectionStylesFile": "templates/dense-discovery/section-styles.json",
   "intro": {
-    "title": "It's Week 44 of 2025 and frameworks sometimes hurt my head",
-    "quote": "Frameworks make us feel safe, but imagination thrives in ambiguity. Play, not process, keeps the creative mind alive.",
-    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><img src=\"https://image.mux.com/YIuXXAizsuY01OC02OgZ6tfbZwECNIBP9Bnmo5xdNZRZo/animated.gif?width=600&start=13\" alt=\"Near Future Laboratory Work Kit of Design Fiction in Action\" style=\"margin: 20px 0;\" /></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">I now realize that I'm an anti-frameworks kinda guy.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Maybe that's too strong.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">I don't *hate frameworks. I just have trouble with them.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Like..actually cognitively. They hurt my brain meat a bit.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">When I use them, I begin to see a kind of feeling of surety build up — a field of slightly satisfied confidence that leaves out the unexpected and potential for the excess that lives outside of that structure, and that confidence in the effectiveness of a framework.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">I found this old video that some students made back in the day showing the Work Kit of Design Fiction in action and that got me thinking about the power of open-ended, unframed exploration. No frames, just terrain to explore.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">The Work Kit was meant to be simple and playful.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">What struck me watching it again is how little structure it actually needs.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">The cards give you just enough of a prompt to get going — a hint of order — and then the rest depends on imagination, improvisation, and a willingness to make meaning out of the mess.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Over the years I’ve learned that some people need structure and rules to begin. That’s fine. But the deeper skill — the one that matters most in creative and strategic work — is learning to move comfortably in open-ended space.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Too much structure, too much reliance on frameworks and analytics, dulls that muscle. It narrows one's field of view.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">You stop noticing emergence. You stop being surprised.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">When you over-index on structure, you start mistaking the map for the terrain.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">We build elaborate frameworks to protect ourselves from ambiguity — and in doing so, we lose sensitivity to the unexpected, to the weak signals, to the moments of real breakthrough.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">That’s what the Work Kit was designed to help with: to practice the art of embracing ambiguity in a playful, generative way.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Think of it as kettlebells or crossfit for the imagination — a way to strengthen your ability to contend with the unknown.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><a href=\"https://nearfuturelaboratory.com/blog/2025/10/no-rules-of-play-design-fiction-work-kit/\">No Rules of Play</a>.</p>",
-    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/w44-y25"
+    "title": "Welcome — FPO intro title",
+    "viewOnlineLink": "#",
+    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>This is a short intro paragraph that will render in the template intro slot.</p></p>"
+  },
+  "header": {
+    "quote": "FPO header quote",
+    "author": "Header Author",
+    "featuredArtist": {
+      "name": "Artist Name",
+      "link": "#"
+    },
+    "featuredImage": "https://via.placeholder.com/386x200?text=Featured"
   },
   "sections": [
     {
-      "type": "apps-sites-single-column",
-      "title": "Short Takes",
+      "type": "sponsor",
+      "title": "FPO sponsor section title",
       "items": [
         {
-          "title": "Fewer Frameworks. More Fragments.",
-          "subtitle": "Strategy is an act of imagination",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Suppose we shifted from traditional frameworks and consensus-building and moved towards curating encounters with fragments <em>of possibility</em>?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Might that allow multiple futures to emerge in strategic conversations?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Making futures tangible — through a field of fragments, artifacts, stories and prototypes — allows people to feel uncertainty rather than manage it away. It turns strategy into an act of imagination, helping stakeholders dwell within what could be instead of forcing possibility into the narrow shapes of existing frameworks.</p>",
-          "link": "https://nearfuturelaboratory.com/blog/2025/10/fewer-frameworks-more-fragments/",
-          "readMoreLink": "https://nearfuturelaboratory.com/blog/2025/10/fewer-frameworks-more-fragments/",
-          "readMoreText": "Read more →"
+          "title": "Sponsor feature: a quick note",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Our sponsor this week supports investigative work that extends the research we publish. This short note explains the partnership and gives readers one clear reason to look closer: the project produces useful tools and insights that directly relate to our reporting.</p> <p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Beyond sponsorship, the item points to a concrete use-case: how their tool saved time or enabled a specific kind of analysis. Readers can follow the link for details, demos, or trial access.</p> <p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Beyond sponsorship, the item points to a concrete use-case: how their tool saved time or enabled a specific kind of analysis. Readers can follow the link for details, demos, or trial access.</p> <p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Beyond sponsorship, the item points to a concrete use-case: how their tool saved time or enabled a specific kind of analysis. Readers can follow the link for details, demos, or trial access.</p></p>",
+          "readMoreText": "Learn more",
+          "image": "https://dummyimage.com/800x1000/a4a4a6/fff&text=4x5"
         }
       ],
       "containerStyles": {
@@ -36,40 +38,32 @@
       }
     },
     {
-      "type": "sponsor",
-      "title": "CODE BASE",
-      "textColor": "#202020",
-      "sponsorLabel": "PAPERCAMP",
-      "sponsorLink": "https://github.com/bleeckerj/Files2Book",
+      "type": "dispatch",
+      "title": "FPO dispatch section title",
       "items": [
         {
-          "title": "Out of the Cloud and into a Book\n",
-          "subtitle": "I turned my digital life into printed books",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">You've heard it before — the web is getting more and more enshittified. Platforms rise and fall, ToS change, content disappears, and all the while your digital life scrolls away into oblivion.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">This was largely motivated by my desire to preserve my 8+ years of work on <a href='https://omata.com' style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">OMATA</a>, mostly solo, and the digital traces of that work that existed in Slack channels, Instagram posts, and various other digital artifacts.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">What would it take to turn all that digital stuff into something tangible, something real, something you could hold in your hands and put on your bookshelf?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Thus I spent a bewildering, engrossing and occasionally frustrating amount of time (I suppose I could check the commit log, but I'm afraid) building a set of mostly Python tools that can basically transform most digital things into books.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Point it at a directory hierarchy of files, or a Slack or Instagram export, and out comes a print-ready PDF book. I even pointed it at my 7 years of weeknotes that I heaved out of a gigantic Markdown file and made a book out of that. Actually, that became two 600 page volumes.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><span style='background-color: #f1f3e4;  font-weight: 300;'>P.S. That's gif there is every instagram post I made for OMATA from 2015 - 2025, printed into a book. (Videos became a grid of thumbnails.)</span></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><span style='background-color: #f1f3e4; font-weight: 300;'>P.P.S. I ran it on IG Stories too, which was..interesting..Over 6000 pages to represent all of that. T'would make a mighty tome..or Gagosian gallery installation.</span></p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/c20f188f-f3e2-4e47-419e-0fb0482bb800/w=300",
-          "readMoreText": "Fork this ▶",
-          "link": "https://github.com/bleeckerj/Files2Book"
+          "title": "dispatch sample title",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19x !important; line-height: 22px !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: Domine, serif !important; font-size: 19x !important; line-height: 22px !important; color: #111111 !important; text-align: left !important\">A longer sample paragraph about dispatch, exploring a small concrete example and one reason the reader should care.</p> <p style=\"font-family: Domine, serif !important; font-size: 19x !important; line-height: 22px !important; color: #111111 !important; text-align: left !important\">Follow-up sentences expand the example, offering a next step or a suggestion for further reading.</p> <p style=\"font-family: Domine, serif !important; font-size: 19x !important; line-height: 22px !important; color: #111111 !important; text-align: left !important\">Follow-up sentences expand the example, offering a next step or a suggestion for further reading.</p></p>",
+          "image": "https://dummyimage.com/800x800/a4a4a6/fff&text=1x1"
         }
       ],
       "containerStyles": {
         "backgroundColor": null,
         "padding": "15px 20px",
-        "borderRadius": "0px"
+        "borderRadius": "8px"
       }
     },
     {
-      "type": "sponsor",
-      "title": "Friends of the Lab",
-      "sponsorLabel": "RECOMMENDED READS & RESOURCES",
-      "sponsorLink": "",
+      "type": "apps-sites",
+      "title": "FPO apps-sites section title",
       "items": [
         {
-          "title": "Partner/Product Name\n",
-          "subtitle": "Jarrett Previews “Design and Visual Communication” by Bruno Munari\n",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Friend of the, like..laboratory Jarrett Fuller reviews Bruno Munari's Design and Visual Communication, newly translated into English. Probably a good read for designers, design fiction practitioners, and anyone interested in the intersections of design, communication, and creativity.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">One stand-out pull quote from Jarrett's review:</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><span style='font-family: \"Domine\", serif; font-weight: 500; line-height: 1.5;'>“For [Munari], <span class='bg-[#f3fea4]' style='background-color:#f3fea4'>design is not a strict set of rules, a specific range of formats, or even discreet professionalized disciplines. Instead, it’s an approach, a way of seeing and making sense of the world—the output of which could take any form.</span>”</span></p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/8dd2ec85-4bfb-4dc0-1e57-0535ffb14e00/w=600",
-          "readMoreText": "Read the review →",
-          "link": "https://untappedjournal.com/stories/why-bruno-munari-taught-designers-to-embrace-flexibility"
+          "title": "Notable app / site",
+          "link": "https://example.com",
+          "subtitle": "Handy, delightful, or surprising",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">This app is a small, focused utility that solves a particular friction we noticed in everyday workflows. It foregrounds one interaction model that feels smart, efficient, and a touch humane compared with alternatives.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">In practical terms, the app streamlines a three-step task into one. The team behind it has prioritized clarity and minimal friction, which is worth documenting for readers who care about saving a few minutes each day.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">In practical terms, the app streamlines a three-step task into one. The team behind it has prioritized clarity and minimal friction, which is worth documenting for readers who care about saving a few minutes each day.</p></p>",
+          "image": "https://dummyimage.com/800x1000/a4a4a6/fff&text=4x5"
         }
       ],
       "containerStyles": {
@@ -80,15 +74,49 @@
     },
     {
       "type": "apps-sites-single-column",
-      "title": "Save Your Links",
+      "title": "FPO apps-sites-single-column section title",
       "items": [
         {
-          "title": "linkity-link",
-          "subtitle": "A cool, simple and minimalist way to publish interesting links on the web.",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Another, other friend of the Laboratory, Brad Barrish shared this repo he created (with Claude) that is makes is super simple to publish links onto a lightweight miniature web page. Like a personal link blog without the 💩 of the enshittifier vibe.</p>",
-          "link": "https://github.com/bradbarrish/linkity-link",
-          "readMoreLink": "https://github.com/bradbarrish/linkity-link",
-          "readMoreText": "Visit the Github Repo →"
+          "title": "apps-sites-single-column sample title",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">A longer sample paragraph about apps-sites-single-column, exploring a small concrete example and one reason the reader should care.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Follow-up sentences expand the example, offering a next step or a suggestion for further reading.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Follow-up sentences expand the example, offering a next step or a suggestion for further reading.</p></p>",
+          "image": "https://dummyimage.com/800x800/a4a4a6/fff&text=1x1"
+        }
+      ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      }
+    },
+    {
+      "type": "quote",
+      "title": "FPO quote section title",
+      "items": [
+        {
+          "quote": "“Small, precise gestures often reveal large thinking.”",
+          "author": "A. Thinker",
+          "authorLink": "https://example.com",
+          "image": "https://dummyimage.com/800x1000/a4a4a6/fff&text=4x5"
+        }
+      ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      }
+    },
+    {
+      "type": "indie-mag",
+      "title": "FPO indie-mag section title",
+      "items": [
+        {
+          "title": "Long read: an indie piece worth your time",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.6 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.6 !important; color: #111111 !important; text-align: left !important\">The piece begins with a concrete scene that gestures toward a larger question: who benefits from the design choices we now treat as inevitable? The excerpt sets tone and stakes without resolving the argument.</p> <p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.6 !important; color: #111111 !important; text-align: left !important\">As you read more, the author traces a small historical thread and connects it to present-day practices. That combination of close attention and wider synthesis is the piece’s real value, and this excerpt shows a glimpse of it.</p> <p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.6 !important; color: #111111 !important; text-align: left !important\">As you read more, the author traces a small historical thread and connects it to present-day practices. That combination of close attention and wider synthesis is the piece’s real value, and this excerpt shows a glimpse of it.</p> <p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.6 !important; color: #111111 !important; text-align: left !important\">As you read more, the author traces a small historical thread and connects it to present-day practices. That combination of close attention and wider synthesis is the piece’s real value, and this excerpt shows a glimpse of it.</p></p>",
+          "details": "<p>The piece begins with a concrete scene that gestures toward a larger question: who benefits from the design choices we now treat as inevitable? The excerpt sets tone and stakes without resolving the argument.</p>",
+          "note": "Note: subscription may be required.",
+          "image": "https://dummyimage.com/800x800/a4a4a6/fff&text=1x1"
         }
       ],
       "containerStyles": {
@@ -99,13 +127,32 @@
     },
     {
       "type": "indie-mag-single-column",
-      "title": "From the NFL Community",
+      "title": "FPO indie-mag-single-column section title",
       "items": [
         {
-          "title": "The Imagination Gap",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Back in Office Hours Side Projects Edition N°280, Pawel Halicki shared a thought-provoking reflection on the challenges organizations face in strategic thinking and future planning — and what to do about it.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Pawel reminded us that 96% of senior leaders lack time for straegic thinking, while the feeling is that the future arrives faster than ever — so faster than one can adopt strategy. So if you don't have a structured way to explore the future, you risk being left behind.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Is imagination the missing link? Pawel suggests that cultivating imagination within organizations is key to bridging this gap. By fostering a culture that encourages creative thinking and speculative exploration, organizations can better anticipate and adapt to future challenges.</p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/04198323-f91b-4dda-1158-6c4aa62e3500/w=600",
-          "link": "https://www.figma.com/proto/6vF1ijJvTupqR8T2d68JKx/Practical-Futures-Intro---Near-Future-Lab?page-id=0%3A1&node-id=2-305&viewport=45%2C388%2C0.04&t=plNj4iyPQ1f4338O-1&scaling=contain&content-scaling=fixed/"
+          "title": "Long read: an indie piece worth your time",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">The piece begins with a concrete scene that gestures toward a larger question: who benefits from the design choices we now treat as inevitable? The excerpt sets tone and stakes without resolving the argument.</p> <p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">As you read more, the author traces a small historical thread and connects it to present-day practices. That combination of close attention and wider synthesis is the piece’s real value, and this excerpt shows a glimpse of it.</p> <p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">As you read more, the author traces a small historical thread and connects it to present-day practices. That combination of close attention and wider synthesis is the piece’s real value, and this excerpt shows a glimpse of it.</p> <p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">As you read more, the author traces a small historical thread and connects it to present-day practices. That combination of close attention and wider synthesis is the piece’s real value, and this excerpt shows a glimpse of it.</p></p>",
+          "details": "<p>The piece begins with a concrete scene that gestures toward a larger question: who benefits from the design choices we now treat as inevitable? The excerpt sets tone and stakes without resolving the argument.</p>",
+          "note": "Note: subscription may be required.",
+          "image": "https://dummyimage.com/800x1000/a4a4a6/fff&text=4x5"
+        }
+      ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      }
+    },
+    {
+      "type": "books-accessories",
+      "title": "FPO books-accessories section title",
+      "items": [
+        {
+          "title": "Worth owning: a small object",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">This short review highlights one distinctive aspect of the book or object — its approach to craft, argument, or usefulness — and connects that quality to a kind of reader who will get the most out of it.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">If you are choosing between several options, consider this one for its durability of ideas and material build; a single concrete example can illustrate what sets it apart.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">If you are choosing between several options, consider this one for its durability of ideas and material build; a single concrete example can illustrate what sets it apart.</p></p>",
+          "image": "https://dummyimage.com/800x800/a4a4a6/fff&text=1x1"
         }
       ],
       "containerStyles": {
@@ -116,49 +163,17 @@
     },
     {
       "type": "food-for-thought",
-      "title": "From the Discord",
+      "title": "FPO food-for-thought section title",
       "items": [
         {
-          "title": "This again..",
-          "category": "YOU JUDGE",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">James Padolsey exposes the fragility of using Large Language Models in decision-making, revealing how even minor tweaks in prompts can drastically alter outcomes. His insights into the biases inherent in AI evaluations raise serious concerns about the reliability of these models in critical areas like hiring and law.</p>",
-          "channel": "the-dept-of-what?",
-          "link": "https://www.cip.org/blog/llm-judges-are-unreliable"
-        },
-        {
-          "title": "Implications of A.I. in storytelling",
-          "category": "REAL FICTION",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">A.I. is making waves in Hollywood, from 'The Morning Show' to 'Black Mirror,' yet the industry seems oblivious to the ethical quagmire it creates. As labor disputes highlight A.I.'s encroachment on creative jobs, the gap between fiction and reality widens, leaving us to ponder the true cost of this technology.</p>",
-          "link": "attachments://discord-message-attachments",
-          "channel": "the-dept-of-what?"
-        },
-        {
-          "title": "Visual music system\n",
-          "category": "NOTE",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Visual music transforms the concert experience by synchronizing visuals with melodies so that the musicians become both performers and visual artists. Sound and sight intertwine. Cool.</p>",
-          "link": "https://visualmusicsystems.com/about-us/",
-          "channel": "🖼-art-technology"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      }
-    },
-    {
-      "type": "sponsor",
-      "title": "Join the Near Future Laboratory Discord",
-      "sponsorLabel": "COMMUNITY IS CREATIVITY",
-      "sponsorLink": "https://patreon.com/nearfuturelaboratory",
-      "items": [
-        {
-          "title": "Near Future Laboratory Patreon",
-          "subtitle": "Join the Discord, Support Office Hours, the Newsletter and More",
-          "readMoreText": "Join Us →",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The Near Future Laboratory is supported by its community and members. <a href='https://patreon.com/nearfuturelaboratory' style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Join us on Patreon</a> to support our work, get access to exclusive content, and be part of our vibrant Discord community where we discuss design, technology, creativity, the future and do projects and support each others' work.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I host weekly Office Hours for Patrons — now for 281 weeks and running — every Friday at 0900 (UTC-7 / California). It's a great way to connect, ask questions, and get feedback on your projects.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Each week two people from the community present a project, idea, or challenge and we discuss it together. It's a great way to get feedback, learn from others, and connect with like-minded people.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">All of this is done in a friendly, supportive, and welcoming environment. We have people from all over the world, from all walks of life, and with all kinds of interests. It's a great way to meet new people, network, show what you can do, and learn from each other.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">In this time of rapid change and uncertainty, it's more important than ever to have a community of people who can support you, challenge you, and help you grow. The Near Future Laboratory is that community.</p>",
-          "image": "https://c10.patreonusercontent.com/4/patreon-media/p/post/140458653/10260e427e514a08bd56392327b12ec4/eyJ3IjoxMDgwfQ%3D%3D/1.jpg?token-hash=yZ0ak7PZncrXYzyQA9rLaIMveV73ZOmLMZFZuSoJg34%3D&token-time=1761609600",
-          "link": "https://patreon.com/nearfuturelaboratory"
+          "title": "food-for-thought sample title",
+          "link": "https://example.com",
+          "paywall": true,
+          "sharedBy": "Bill Bowerman",
+          "category": "Design Running",
+          "readMoreText": "Read More",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">A micro-essay connects two ideas that usually live in separate conversations, inviting the reader to hold the tension between them and consider what new questions emerge.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">We suggest a quick experiment or a question to ask next: try the connection for a week and note one surprising outcome. That practice often reveals practical insight.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">We suggest a quick experiment or a question to ask next: try the connection for a week and note one surprising outcome. That practice often reveals practical insight.</p></p>",
+          "image": "https://dummyimage.com/800x1000/a4a4a6/fff&text=4x5"
         }
       ],
       "containerStyles": {
@@ -169,12 +184,31 @@
     },
     {
       "type": "aesthetically-pleasing",
-      "title": "FOUNNDDD ONLINE",
+      "title": "FPO aesthetically-pleasing section title",
       "items": [
         {
-          "title": "Movie Posters We Never Saw",
-          "description": "",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/44bc5e0c-08ff-4c14-6ece-cbcaf7391000/w=600"
+          "title": "aesthetically-pleasing sample title",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">A detailed description emphasizes the object’s proportions, color, and materiality, explaining why those small choices create a durable affective response in direct experience.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Beyond aesthetics, we note how the piece performs over time: how it wears, how it responds to light, and why those changes matter to the person who keeps it around.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Beyond aesthetics, we note how the piece performs over time: how it wears, how it responds to light, and why those changes matter to the person who keeps it around.</p></p>",
+          "image": "https://dummyimage.com/800x800/a4a4a6/fff&text=1x1"
+        }
+      ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "12px 20px",
+        "borderRadius": "0px"
+      }
+    },
+    {
+      "type": "classifieds",
+      "title": "FPO classifieds section title",
+      "items": [
+        {
+          "title": "classifieds sample title",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\"><p style=\"font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\">Concise listing details: what the item is, one line on condition or feature, and clear instructions for how to inquire. Keep the language direct and action-oriented.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\">Include price, availability, or a preferred contact method; these details remove friction and increase the chance of a successful match.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\">Include price, availability, or a preferred contact method; these details remove friction and increase the chance of a successful match.</p></p>",
+          "image": "https://dummyimage.com/800x1000/a4a4a6/fff&text=4x5",
+          "content": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\"><p style=\"font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\">Concise listing details: what the item is, one line on condition or feature, and clear instructions for how to inquire. Keep the language direct and action-oriented.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\">Include price, availability, or a preferred contact method; these details remove friction and increase the chance of a successful match.</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\">Include price, availability, or a preferred contact method; these details remove friction and increase the chance of a successful match.</p></p>"
         }
       ],
       "containerStyles": {
@@ -185,11 +219,13 @@
     },
     {
       "type": "animated-image",
-      "title": "It's the spooky season",
+      "title": "FPO animated-image section title",
       "items": [
         {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/86fa03d6-78e1-4b72-0c6d-e58100aaa200/public",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Ubuntu, sans-serif !important; font-size: 15px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">The statute of limitations on “spoiler alert” for this one has well and truly passed on a 45 year old movie, but sorry anyway..</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Ubuntu, sans-serif !important; font-size: 15px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">One of the best most underappreciated horror movies of all time is John Carpenter's They Live (1988). It's a brilliant satire of consumerism, conformity, and the media's role in shaping our perceptions of reality. So rich. So relevant today.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Ubuntu, sans-serif !important; font-size: 15px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">I remember showing it when I taught in the Film School at USC. Sitting in the Ron Howard Theater with a room full of film students who had never heard of the film — and got to see it for the first time. The gasps were priceless.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Ubuntu, sans-serif !important; font-size: 15px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">The first time I saw it was Seattle, grad school, my apartment, on VHS. A friend curated an evening of two movies. I don't recall the first film, but it was scary and a bit intense. Might've been Hellraiser? Then he popped in They Live as a kind of palate cleanser to take the edge off and keep the nightmares at bay. It was hilarious and terrifying all at once.</p>"
+          "title": "animated-image sample title",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Ubuntu, sans-serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: Ubuntu, sans-serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Describe the animation’s movement and timing in concrete terms: what changes, how quickly, and what visual affordances the motion emphasizes.</p> <p style=\"font-family: Ubuntu, sans-serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Offer a note on how the animation should be viewed (looping, muted, full-screen) and what aspect the viewer should attend to for the intended effect.</p> <p style=\"font-family: Ubuntu, sans-serif !important; font-size: 18px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Offer a note on how the animation should be viewed (looping, muted, full-screen) and what aspect the viewer should attend to for the intended effect.</p></p>",
+          "image": "https://dummyimage.com/800x800/a4a4a6/fff&text=1x1"
         }
       ],
       "containerStyles": {
@@ -200,7 +236,8 @@
     }
   ],
   "footer": {
-    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/w44-y25",
+    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w43y25/",
+    "newsletterSubscribeLink": "https://nearfuturelaboratory.com/newsletter/",
     "logo": "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png",
     "logoLink": "https://nearfuturelaboratory.com",
     "socialLinks": {
@@ -220,6 +257,10 @@
         {
           "url": "https://github.com/bleeckerj",
           "title": "Personal GitHub"
+        },
+        {
+          "url": "https://github.com/nearfuturelaboratory",
+          "title": "Near Future Laboratory GitHub"
         },
         {
           "url": "https://github.com/nearfuturelaboratory",
@@ -272,43 +313,39 @@
       ]
     },
     "unsubscribeLink": "[unsubscribe]",
-    "shareUrl": "https://nearfuturelaboratory.com/newsletters/w44-y25",
+    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2025/w44-y25",
     "archiveUrl": "https://nearfuturelaboratory.com/newsletters",
     "gratitude": "This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle based production workflow. It's a work-in-progress building on a refactor of the <a href='https://densediscovery.com'>Dense Discovery</a> newsletter's look and vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It's a great newsletter and I would encourage you to subscribe and become a paid member.",
-    "address": "© 2025 Near Future Laboratory<br>\nVenice Beach, California<br>\nUnited States\n",
-    "colophon": "Frameworks make us feel safe, but imagination thrives in ambiguity. Play, not process, keeps the creative mind alive."
+    "address": "© 2025 Near Future Laboratory<br>Venice Beach, California<br>United States",
+    "colophon": "The objects we consume and those that we surround ourselves with speak volumes about our hopes, fears, dreams, and dreads."
   },
   "themeColors": {
-    "header": "#fefefe",
-    "sponsor": "#f5f7fa",
-    "apps-sites": "#f5f7fa",
-    "apps-sites-single-column": "#f5f7fa",
-    "quote": "#E9EBED",
-    "indie-mag": "#E5EFF1",
-    "indie-mag-single-column": "#E5EFF1",
-    "books-accessories": "#eeecde",
-    "food-for-thought": "#FAECDC",
-    "aesthetically-pleasing": "#ec611d",
-    "classifieds": "#f0f0f0",
-    "animated-image": "#aafafa",
+    "header": "#addcfa",
+    "sponsor": "#f8eccf",
+    "apps-sites": "#f0ffff",
+    "quote": "#d1eaf4",
+    "indie-mag": "#efe2f3",
+    "books-accessories": "#ffffff",
+    "food-for-thought": "#f2f2f2",
+    "aesthetically-pleasing": "#ffffff",
+    "classifieds": "#def1ef",
+    "gif": "#ffffff",
     "linkAccent": "#EE3BBB"
   },
   "theme": {
-    "name": "Professional Clean",
-    "description": "Subtle grays and clean whites for professional communication",
+    "name": "Current Dense Discovery",
+    "description": "The existing color scheme currently in use",
     "colors": {
-      "header": "#fefefe",
-      "sponsor": "#f5f7fa",
-      "apps-sites": "#f5f7fa",
-      "apps-sites-single-column": "#f5f7fa",
-      "quote": "#E9EBED",
-      "indie-mag": "#E5EFF1",
-      "indie-mag-single-column": "#E5EFF1",
-      "books-accessories": "#eeecde",
-      "food-for-thought": "#FAECDC",
-      "aesthetically-pleasing": "#ec611d",
-      "classifieds": "#f0f0f0",
-      "animated-image": "#aafafa"
+      "header": "#addcfa",
+      "sponsor": "#f8eccf",
+      "apps-sites": "#f0ffff",
+      "quote": "#d1eaf4",
+      "indie-mag": "#efe2f3",
+      "books-accessories": "#ffffff",
+      "food-for-thought": "#f2f2f2",
+      "aesthetically-pleasing": "#ffffff",
+      "classifieds": "#def1ef",
+      "gif": "#ffffff"
     },
     "accent": "#4a7c59",
     "linkAccent": "#EE3BBB"
@@ -328,8 +365,8 @@
         },
         "contentStyles": {
           "fontFamily": "Domine, serif",
-          "fontSize": "18px",
-          "lineHeight": "1.2",
+          "fontSize": "19px",
+          "lineHeight": "1.5",
           "color": "#111111",
           "textAlign": "left"
         },
@@ -355,7 +392,7 @@
         },
         "contentStyles": {
           "fontFamily": "Domine, serif",
-          "fontSize": "18px",
+          "fontSize": "19x",
           "lineHeight": "22px",
           "color": "#111111",
           "textAlign": "left"
@@ -382,7 +419,7 @@
         },
         "contentStyles": {
           "fontFamily": "Domine, serif",
-          "fontSize": "18px",
+          "fontSize": "19px",
           "lineHeight": "1.5",
           "color": "#111111",
           "textAlign": "left"
@@ -409,7 +446,7 @@
         },
         "contentStyles": {
           "fontFamily": "Domine, serif",
-          "fontSize": "18px",
+          "fontSize": "19px",
           "lineHeight": "1.6",
           "color": "#111111",
           "textAlign": "left"
@@ -448,7 +485,7 @@
         },
         "headingStyles": {
           "fontFamily": "inherit",
-          "fontSize": "18px",
+          "fontSize": "21px",
           "fontWeight": "600",
           "color": "#000000"
         }
@@ -475,7 +512,7 @@
         },
         "headingStyles": {
           "fontFamily": "inherit",
-          "fontSize": "18px",
+          "fontSize": "21px",
           "fontWeight": "600",
           "color": "#000000"
         }
@@ -490,7 +527,7 @@
         },
         "contentStyles": {
           "fontFamily": "IBM Plex Sans, sans-serif",
-          "fontSize": "18px",
+          "fontSize": "19px",
           "lineHeight": "1.5",
           "color": "#111111",
           "textAlign": "left"
@@ -502,7 +539,7 @@
         },
         "headingStyles": {
           "fontFamily": "inherit",
-          "fontSize": "19px",
+          "fontSize": "21px",
           "fontWeight": "600",
           "color": "#000000"
         }
@@ -517,7 +554,7 @@
         },
         "contentStyles": {
           "fontFamily": "IBM Plex Sans, sans-serif",
-          "fontSize": "18px",
+          "fontSize": "19px",
           "lineHeight": "1.2",
           "color": "#111111",
           "textAlign": "left"
@@ -529,7 +566,7 @@
         },
         "headingStyles": {
           "fontFamily": "inherit",
-          "fontSize": "19px",
+          "fontSize": "21px",
           "fontWeight": "600",
           "color": "#000000"
         }
@@ -544,7 +581,7 @@
         },
         "contentStyles": {
           "fontFamily": "Share Tech Mono, monospace",
-          "fontSize": "15px",
+          "fontSize": "18px",
           "lineHeight": "1.4",
           "color": "#222222",
           "textAlign": "left"
@@ -556,7 +593,7 @@
         },
         "headingStyles": {
           "fontFamily": "inherit",
-          "fontSize": "16px",
+          "fontSize": "20px",
           "fontWeight": "600",
           "color": "#000000"
         }
@@ -571,7 +608,7 @@
         },
         "contentStyles": {
           "fontFamily": "Share Tech Mono, monospace",
-          "fontSize": "16px",
+          "fontSize": "18px",
           "lineHeight": "1.4",
           "color": "#111111",
           "textAlign": "left"
@@ -583,7 +620,7 @@
         },
         "headingStyles": {
           "fontFamily": "inherit",
-          "fontSize": "15px",
+          "fontSize": "21px",
           "fontWeight": "600",
           "color": "#000000"
         }
@@ -598,7 +635,7 @@
         },
         "contentStyles": {
           "fontFamily": "Ubuntu, sans-serif",
-          "fontSize": "15px",
+          "fontSize": "18px",
           "lineHeight": "1.5",
           "color": "#111111",
           "textAlign": "left"
@@ -610,7 +647,7 @@
         },
         "headingStyles": {
           "fontFamily": "inherit",
-          "fontSize": "18px",
+          "fontSize": "21px",
           "fontWeight": "600",
           "color": "#000000"
         }

@@ -656,12 +656,13 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           </if>
                           
                           <if condition="item.category">
-                            <span style="display: block; font-size: 14px;line-height: 16px;font-weight: 600;color: #999999;padding: 0; margin-bottom: 20px;text-transform: uppercase;letter-spacing: 1px;">DEPARTMENT OF {{ item.category }}</span> 
+                            <span style="display: block; font-size: 14px;line-height: 16px;font-weight: 600;color: #999999;padding: 0; margin-bottom: 20px;text-transform: uppercase;letter-spacing: 1px;">DEPARTMENT OF {{ item.category }}
                             <if condition="item.sharedBy">
-                                        <span style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 400;color: #222222;margin: 0;padding: 0;text-transform: uppercase;letter-spacing: 0.5px;">
-                                          shared by {{ item.sharedBy }}
-                                        </span>
+                                <span style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 400;color: #222222;margin: 0;padding: 0;text-transform: lowercase;letter-spacing: 0.5px;">
+                                  &nbsp;|&nbsp;shared by {{ item.sharedBy }}
+                                </span>
                             </if>
+                            </span>
                           </if>
 
                           <if condition="item.title && item.link">
@@ -682,9 +683,9 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           </if>
 
                           <if condition="item.readMoreText && (item.readMoreLink || item.link)">
-                            <p style="font-size: 16px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 10px 0 0 0;display: flex;align-items: center;gap: 4px;">
+                            <p style="font-size: 17px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 10px 0 0 0;display: flex;align-items: center;gap: 4px;">
                               <if condition="item.paywall">
-                                <span title="Paywalled" style="font-size: 15px; color: #bfa700; margin-right: 4px; vertical-align: middle;">$</span>
+                                <span title="Paywalled" style="font-size: 17px; color: #d2b70c; margin-right: 4px; vertical-align: middle;">$</span>
                               </if>
                               <a href="{{ item.readMoreLink || item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">
                                 {{ item.readMoreText }}

@@ -106,8 +106,12 @@ sections:
     items:
       - title: food-for-thought sample title
         link: 'https://example.com'
+        paywall: true
+        sharedBy: 'Bill Bowerman'
+        category: 'Design Running'
+        readMoreText: Read More
         description: |-
-          <p>This micro-essay connects two ideas that usually live in separate conversations, inviting the reader to hold the tension between them and consider what new questions emerge.</p>
+          <p>A micro-essay connects two ideas that usually live in separate conversations, inviting the reader to hold the tension between them and consider what new questions emerge.</p>
           <p>We suggest a quick experiment or a question to ask next: try the connection for a week and note one surprising outcome. That practice often reveals practical insight.</p>
           <p>We suggest a quick experiment or a question to ask next: try the connection for a week and note one surprising outcome. That practice often reveals practical insight.</p>
         image: 'https://dummyimage.com/800x1000/a4a4a6/fff&text=4x5'
