@@ -327,11 +327,61 @@ async function generateForTemplate(template) {
     front.sectionStylesFile = `templates/${template}/section-styles.json`
   }
 
-  // Intro and header FPO
-  const intro = {
-    title: 'Welcome — FPO intro title',
-    viewOnlineLink: '#',
-    content: '<p>This is a short intro paragraph that will render in the template intro slot.</p>'
+
+  // --- Scan components for intro.* fields ---
+  const introFields = new Set(['title', 'viewOnlineLink', 'content']);
+  const componentsDir = path.join(tDir, 'components');
+  // collect item.* fields found in components (to include in sections)
+  const componentItemFields = new Set();
+  if (await fileExists(componentsDir)) {
+    // Recursively walk componentsDir to find all .html files
+    async function walkDir(dir) {
+      const out = []
+      const entries = await fs.readdir(dir, { withFileTypes: true })
+      for (const ent of entries) {
+        const p = path.join(dir, ent.name)
+        if (ent.isDirectory()) {
+          out.push(...await walkDir(p))
+        } else if (ent.isFile() && ent.name.endsWith('.html')) {
+          out.push(p)
+        }
+      }
+      return out
+    }
+
+    const files = await walkDir(componentsDir)
+    for (const filePath of files) {
+      try {
+        const content = await fs.readFile(filePath, 'utf8')
+        // Match intro.something (e.g., intro.quote, intro.title)
+        const matches = content.matchAll(/intro\.([a-zA-Z0-9_]+)/g)
+        for (const m of matches) {
+          introFields.add(m[1])
+        }
+        // Match item.something inside components as well (dot and bracket form)
+        const itemDotMatches = content.matchAll(/item\s*\.\s*([a-zA-Z0-9_]+)/g)
+        for (const m of itemDotMatches) componentItemFields.add(m[1])
+        const itemBracketMatches = content.matchAll(/item\s*\[\s*['\"]([a-zA-Z0-9_]+)['\"]\s*\]/g)
+        for (const m of itemBracketMatches) componentItemFields.add(m[1])
+      } catch (e) { /* ignore */ }
+    }
+  }
+
+  // Provide FPO values for known intro fields
+  const intro = {};
+  for (const field of introFields) {
+    switch (field) {
+      case 'title':
+        intro.title = 'Welcome — FPO intro title'; break;
+      case 'viewOnlineLink':
+        intro.viewOnlineLink = '#'; break;
+      case 'content':
+        intro.content = '<p>This is a short intro paragraph that will render in the template intro slot.</p>'; break;
+      case 'quote':
+        intro.quote = '“FPO intro quote — a short, resonant excerpt for the intro section.”'; break;
+      default:
+        intro[field] = `FPO for intro.${field}`;
+    }
   }
 
   const header = {
@@ -341,10 +391,92 @@ async function generateForTemplate(template) {
     featuredImage: 'https://via.placeholder.com/386x200?text=Featured'
   }
 
+
+  // --- Scan newsletter.html for item.* fields per section type ---
+  let newsletterHtml = ''
+  try {
+    newsletterHtml = await fs.readFile(newsletterPath, 'utf8')
+  } catch (e) {}
+
+  function extractItemFields(sectionType) {
+    // More robust approach:
+    // 1. Find all section.type occurrences (with positions).
+    // 2. For the given sectionType, take the slice from its position to the next section occurrence (or EOF).
+    // 3. Within that slice, find all <each loop="item in section.items">...</each> blocks and extract item.* fields.
+    const sectionTypeRe = /section\.type\s*===\s*['"`]([a-zA-Z0-9_\-]+)['"`]/g
+    const sectionPositions = []
+    let sm
+    while ((sm = sectionTypeRe.exec(newsletterHtml)) !== null) {
+      sectionPositions.push({ type: sm[1], index: sm.index })
+    }
+    if (sectionPositions.length === 0) return []
+
+    // Find the position for the requested sectionType
+    let found = null
+    for (let i = 0; i < sectionPositions.length; i++) {
+      if (sectionPositions[i].type === sectionType) {
+        const start = sectionPositions[i].index
+        const end = (i + 1 < sectionPositions.length) ? sectionPositions[i + 1].index : newsletterHtml.length
+        found = { start, end }
+        break
+      }
+    }
+    if (!found) return []
+
+    const slice = newsletterHtml.slice(found.start, found.end)
+    const fields = new Set()
+
+    // Find all each blocks in the slice
+    const eachRe = /<each\s+loop=["']item in section.items["']>([\s\S]*?)<\/each>/g
+    let em
+    while ((em = eachRe.exec(slice)) !== null) {
+      const block = em[1]
+      // item.field forms
+      const itemFieldRe = /item\s*\.\s*([a-zA-Z0-9_]+)/g
+      let m
+      while ((m = itemFieldRe.exec(block)) !== null) fields.add(m[1])
+      // bracketed form: item['field'] or item["field"]
+      const itemBracketRe = /item\s*\[\s*['\"]([a-zA-Z0-9_]+)['\"]\s*\]/g
+      while ((m = itemBracketRe.exec(block)) !== null) fields.add(m[1])
+    }
+
+    // Also scan the slice outside of explicit each blocks for item.* usages (cover edge cases)
+    const itemAnywhereRe = /item\s*\.\s*([a-zA-Z0-9_]+)/g
+    let am
+    while ((am = itemAnywhereRe.exec(slice)) !== null) fields.add(am[1])
+
+    return Array.from(fields)
+  }
+
   const sections = types.map((t, sIdx) => {
+    // extract fields from newsletter.html for this section, and union any fields found in components
+    const itemFields = uniquePreserveOrder([...(extractItemFields(t) || []), ...Array.from(componentItemFields)])
+    // Log discovered fields for this section in a clear, human-friendly format
+    console.log('---')
+    console.log(`Section: ${t}`)
+    if (itemFields.length === 0) {
+      console.log('  fields: (none discovered)')
+    } else {
+      console.log('  fields:')
+      for (const f of itemFields) console.log(`    - ${f}`)
+    }
     const items = []
     for (let k = 0; k < itemsPerSection; k++) {
-      items.push(makeFpoItemForType(t))
+      // Start with default FPO item
+      const base = makeFpoItemForType(t)
+      // Add any missing fields found in template
+      for (const f of itemFields) {
+        if (!(f in base)) {
+          // Provide FPO values for common field types
+          if (f === 'readMoreText') base.readMoreText = 'Read more →'
+          else if (f === 'readMoreLink') base.readMoreLink = 'https://example.com/readmore'
+          else if (f === 'payWall') base.payWall = true
+          else if (f === 'subtitle') base.subtitle = 'FPO subtitle'
+          else if (f === 'image') base.image = 'https://dummyimage.com/800x1000/a4a4a6/fff&text=4x5'
+          else base[f] = `FPO for item.${f}`
+        }
+      }
+      items.push(base)
     }
     return {
       type: t,

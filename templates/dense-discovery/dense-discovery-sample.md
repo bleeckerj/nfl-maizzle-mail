@@ -142,7 +142,7 @@ sections:
           <p>Offer a note on how the animation should be viewed (looping, muted, full-screen) and what aspect the viewer should attend to for the intended effect.</p>
         image: 'https://dummyimage.com/800x800/a4a4a6/fff&text=1x1'
 footer:
-  emailShare: 'mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/mdw43y25/'
+  emailShare: 'mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w43y25/'
   newsletterSubscribeLink: 'https://nearfuturelaboratory.com/newsletter/'
   logo: 'https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png'
   logoLink: 'https://nearfuturelaboratory.com'
@@ -183,7 +183,7 @@ footer:
       - url: 'https://newsletter.substack.com'
         title: Newsletter on Substack
   unsubscribeLink: '[unsubscribe]'
-  shareUrl: 'https://nearfuturelaboratory.com/newsletters/2025/w43-y25'
+  shareUrl: 'https://nearfuturelaboratory.com/newsletters/2025/w44-y25'
   archiveUrl: 'https://nearfuturelaboratory.com/newsletters'
   gratitude: 'This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle based production workflow. It''s a work-in-progress building on a refactor of the <a href=''https://densediscovery.com''>Dense Discovery</a> newsletter''s look and vibe, created by <a href=''https://www.brizk.com''>Kai Brach</a>. I have been a paid ‘friend of Dense Discovery’ for, well..I''m not sure how many years now. It''s a great newsletter and I would encourage you to subscribe and become a paid member.'
   address: '© 2025 Near Future Laboratory<br>Venice Beach, California<br>United States'

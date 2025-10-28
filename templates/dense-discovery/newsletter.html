@@ -291,9 +291,9 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                     </div>
                                   </if>
                                   
-                                  <if condition="item.readMoreLink && item.readMoreText">
+                                  <if condition="item.readMoreText && (item.readMoreLink || item.link)">
                                     <p style="font-size: 16px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 10px 0 0 0;">
-                                      <a href="{{ item.readMoreLink }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ item.readMoreText }}</a>
+                                      <a href="{{ item.readMoreLink || item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ item.readMoreText }}</a>
                                     </p>
                                   </if>
                                   
@@ -674,10 +674,22 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                     </h2>
                                   </if>
                           </if>
+
                           <if condition="item.description">
                             <div style="  font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
                               {{{ item.description }}}
                             </div>
+                          </if>
+
+                          <if condition="item.readMoreText && (item.readMoreLink || item.link)">
+                            <p style="font-size: 16px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 10px 0 0 0;display: flex;align-items: center;gap: 4px;">
+                              <if condition="item.paywall">
+                                <span title="Paywalled" style="font-size: 15px; color: #bfa700; margin-right: 4px; vertical-align: middle;">$</span>
+                              </if>
+                              <a href="{{ item.readMoreLink || item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">
+                                {{ item.readMoreText }}
+                              </a>
+                            </p>
                           </if>
 
                         </td>
