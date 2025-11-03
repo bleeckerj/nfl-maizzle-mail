@@ -67,12 +67,12 @@
         "indie-mag-single-column": "#E5EFF1",
         "books-accessories": "#eeecde", 
         "food-for-thought": "#FAECDC",
-        "aesthetically-pleasing": "#ec611d",
+        "aesthetically-pleasing": "#e6e7e9",
         "classifieds": "#f0f0f0",
         "animated-image": "#aafafa"
       },
       "accent": "#4a7c59",
-      "linkAccent": "#EE3BBB"
+      "linkAccent": "#1c1c1c"
     },
     "current": {
       "name": "Current Dense Discovery",

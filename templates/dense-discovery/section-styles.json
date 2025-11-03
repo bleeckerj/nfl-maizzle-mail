@@ -13,7 +13,7 @@
         "borderRadius": "0px"
       },
       "contentStyles": {
-        "fontFamily": "Domine, serif",
+        "fontFamily": "IBM Plex Sans, sans-serif",
         "fontSize": "19px",
         "lineHeight": "1.5",
         "color": "#111111",
@@ -125,7 +125,7 @@
       },
       "contentStyles": {
         "fontFamily": "IBM Plex Sans, sans-serif",
-        "fontSize": "18px",
+        "fontSize": "19px",
         "lineHeight": "1.5",
         "color": "#111111",
         "textAlign": "left"

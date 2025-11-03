@@ -110,6 +110,7 @@ sections:
         sharedBy: 'Bill Bowerman'
         category: 'Design Running'
         readMoreText: Read More
+        readMoreLink: 'https://example.com'
         description: |-
           <p>A micro-essay connects two ideas that usually live in separate conversations, inviting the reader to hold the tension between them and consider what new questions emerge.</p>
           <p>We suggest a quick experiment or a question to ask next: try the connection for a week and note one surprising outcome. That practice often reveals practical insight.</p>

@@ -54,6 +54,22 @@
   </td>
 </tr>
 
+<!-- Intro Image (optional) -->
+<if condition="intro.image">
+  <tr>
+    <td align="center" class="padt20 padl20 padr20" style="border-collapse: collapse;padding-top: 20px;padding-left: 20px;padding-right: 20px;">
+      <if condition="intro.imageLink">
+        <a href="{{ intro.imageLink }}" target="_blank">
+          <img src="{{ intro.image }}" alt="{{ intro.imageAlt || 'Intro image' }}" style="display: block;width: 100%;max-width: 600px;height: auto;border: 0;">
+        </a>
+      </if>
+      <if condition="!intro.imageLink">
+        <img src="{{ intro.image }}" alt="{{ intro.imageAlt || 'Intro image' }}" style="display: block;width: 100%;max-width: 600px;height: auto;border: 0;">
+      </if>
+    </td>
+  </tr>
+</if>
+
 <!-- Intro Content -->
 <if condition="intro.content">
   <tr>
@@ -61,9 +77,9 @@
       <div class="intro-content" style="font-family: 'Ubuntu', sans-serif; font-size: 21px;line-height: 30px;font-weight: 400;color: #000000;">
         <style>
           .intro-content p {
-            font-family: 'Ubuntu', sans-serif !important;
-            font-size: 18px !important;
-            line-height: 19px !important;
+            font-family: 'Domine', sans-serif !important;
+            font-size: 19px !important;
+            line-height: 1.5 !important;
             font-weight: 400 !important;
             color: #000000 !important;
             margin: 0 !important;

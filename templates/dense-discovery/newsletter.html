@@ -107,7 +107,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                 <if condition="item.readMoreText && item.link">
                                   <tr>
                                     <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.sponsor || '#f8eccf' }};padding: 0 20px 20px 20px;">
-                                      <p style="font-size: 16px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 0;">
+                                      <p style="font-size: 18px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 0;">
                                         <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ item.readMoreText || 'Read More' }}</a>
                                       </p>
                                     </td>
@@ -685,7 +685,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           <if condition="item.readMoreText && (item.readMoreLink || item.link)">
                             <p style="font-size: 17px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 10px 0 0 0;display: flex;align-items: center;gap: 4px;">
                               <if condition="item.paywall">
-                                <span title="Paywalled" style="font-size: 17px; color: #d2b70c; margin-right: 4px; vertical-align: middle;">$</span>
+                                <span title="Paywalled" style="font-weight: bold; font-size: 18px; background-color: white; padding: 4px; border-radius: 2px; color: #f3d305; margin-right: 4px; vertical-align: middle;">$</span>
                               </if>
                               <a href="{{ item.readMoreLink || item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">
                                 {{ item.readMoreText }}
@@ -749,7 +749,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           
                           <if condition="item.link">
                             <p style="font-size: 16px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 0;margin-top: 10px;">
-                              <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ item.linkText || 'Read more →' }}</a>
+                              <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ item.readMoreText || 'Read more →' }}</a>
                             </p>
                           </if>
                         </td>
@@ -786,9 +786,12 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                       <tr>
                         <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors.classifieds || '#def1ef' }};padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
                           <div class="share-tech-mono-regular" style="font-family: 'Share Tech Mono', monospace; font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 15px;background: rgba(255,255,255,0.7);border-left: 4px solid {{ themeColors.linkAccent || '#4a9b8e' }};">
+                            <if condition="item.title">
+                              <p style="font-size: 18px;font-weight: 700;line-height: 23px;color: #000000;margin: 0 0 10px 0;padding: 0;text-transform: uppercase;letter-spacing: 0.5px;">{{ item.title }}</p>
+                            </if>
                             {{{ item.content }}}
                             <if condition="item.link">
-                              <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#4a9b8e' }} !important;margin-left: 10px;">{{ item.linkText || 'Learn More →' }}</a>
+                              <a href="{{ item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#4a9b8e' }} !important;margin-left: 0;">{{ item.linkText || 'Learn More →' }}</a>
                             </if>
                           </div>
                         </td>

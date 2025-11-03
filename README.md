@@ -221,9 +221,13 @@ feature:
 
 #### **Step 3: Build Your Email**
 
+
 **Option A: Use the quick workflow script**
 ```bash
+# Usage: ./workflow.sh <content-file.md> [template-name] [output-file]
 ./workflow.sh content/2025-10-14.md dense-discovery
+# Optionally specify output file:
+./workflow.sh content/2025-10-14.md dense-discovery build_production/custom-output.html
 ```
 
 **Option B: Run individual commands**
@@ -286,7 +290,7 @@ nfl-maizzle-mail/
 | `npm run build:data` | Build HTML from existing JSON |
 | `npm run convert <file.md>` | Convert specific Markdown file to JSON |
 | `npm run preview` | Build and open in browser |
-| `./workflow.sh <file.md>` | Complete workflow for specific file |
+| `./workflow.sh <file.md> [template] [output-file]` | Complete workflow for specific file, template, and (optionally) output path |
 
 ## 🔧 Generator: create canonical Markdown samples
 

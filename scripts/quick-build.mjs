@@ -19,13 +19,14 @@ import { dirname, join } from 'path';
 const args = process.argv.slice(2);
 const command = args[0];
 const file = args[1];
+const outputFile = args[2]; // Third arg: optional output file path
 
 // Debug: show parsed arguments when DEBUG_QUICK_BUILD environment variable is set
 if (process.env.DEBUG_QUICK_BUILD === '1') {
-  console.log('DEBUG quick-build args:', { args, command, file });
+  console.log('DEBUG quick-build args:', { args, command, file, outputFile });
 }
 
-// Parse optional --outdir argument
+// Parse optional --outdir argument (legacy support)
 let outDir = null;
 for (const arg of args) {
   if (arg.startsWith('--outdir=')) {
@@ -274,7 +275,9 @@ if (command === 'list') {
   console.log(`🚀 Quick Build: ${command} template`);
   console.log(`📄 File: ${inputFile}`);
   console.log(`🎨 Template: ${template}`);
-  if (outDir) {
+  if (outputFile) {
+    console.log(`💾 Output file: ${outputFile}`);
+  } else if (outDir) {
     console.log(`📂 Output directory: ${outDir}`);
   }
 
@@ -288,8 +291,40 @@ if (command === 'list') {
       cwd: repoRoot
     });
 
-    if (outDir) {
-      const srcPath = path.join('build_production', `${outputName}.html`);
+    // Handle output file path (third argument takes precedence)
+    const srcPath = path.join(repoRoot, 'build_production', `${outputName}.html`);
+    
+    if (outputFile) {
+      // Third argument: treat as output file path or directory relative to CWD
+      let destPath = path.resolve(process.cwd(), outputFile);
+      
+      // If output path ends with / or is an existing directory, append the filename
+      if (outputFile.endsWith('/') || outputFile.endsWith(path.sep) || 
+          (fs.existsSync(destPath) && fs.statSync(destPath).isDirectory())) {
+        destPath = path.join(destPath, `${outputName}.html`);
+      }
+      
+      const destDir = path.dirname(destPath);
+      
+      if (process.env.DEBUG_QUICK_BUILD === '1') {
+        console.log('DEBUG output paths:', { 
+          srcPath, 
+          destPath, 
+          destDir,
+          cwd: process.cwd(),
+          outputFile 
+        });
+      }
+      
+      if (!fs.existsSync(destDir)) {
+        console.log(`Creating directory: ${destDir}`);
+        fs.mkdirSync(destDir, { recursive: true });
+      }
+      
+      fs.copyFileSync(srcPath, destPath);
+      console.log(`✅ Output file saved to: ${destPath}`);
+    } else if (outDir) {
+      // Legacy --outdir support
       const destDir = path.resolve(outDir);
       const destPath = path.join(destDir, `${outputName}.html`);
       if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
