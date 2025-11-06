@@ -89,7 +89,9 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                               <if condition="item.image">
                                 <tr>
                                   <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.sponsor || '#f8eccf' }};padding: 0 20px 15px 20px;">
-                                    <img src="{{ item.image }}" alt="{{ item.title || 'Sponsor Image' }}" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;height: auto;">
+                                    <a href="{{ item.link }}" class="theme-link" style="text-decoration: underline;">
+                                      <img src="{{ item.image }}" alt="{{ item.title || 'Sponsor Image' }}" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;height: auto;">
+                                    </a>
                                   </td>
                                 </tr>
                               </if>

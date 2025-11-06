@@ -1,35 +1,32 @@
 {
   "$schema": "../newsletter.schema.json",
   "template": "dense-discovery",
-  "title": "Near Future Laboratory – w45y25",
-  "preheader": "The act of noticing—of seeing what others ignore—can transform overlooked edges into the foundations of new futures.",
-  "colorTheme": "professional",
-  "sectionStylesFile": "templates/dense-discovery/section-styles.json",
+  "title": "Near Future Laboratory – Midweek Dispatches from the Future 44y25",
+  "preheader": "Your Dispatch from a Near Future",
+  "colorTheme": "midweek",
   "header": {
-    "logoTop": "https://nearfuturelaboratory.com/images/site/logos/TOP_LaboratoryCircle_Guy_01_CircleWhite.png",
-    "logoBottom": "https://nearfuturelaboratory.com/images/site/logos/BOTTOM_LaboratoryCircle_Guy_01_CircleWhite.png",
-    "logoLink": "https://nearfuturelaboratory.com"
+    "logoTop": "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png"
   },
   "intro": {
-    "title": "Futures work isn’t about prediction; it’s about attention and courage.",
-    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/w45-y25/",
-    "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/593691f1-8c92-4a45-2030-ef9779f4e900/w=900",
-    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Back in 2011, I started a year-long photo project. After spending a year shooting mostly men's skateboarding, the idea of filling another hard drive with more of the same wasn't appealing. I prefer seeing things I don't know or haven't seen before. And women's skateboarding—despite its existence—was virtually invisible in the media. When I was asked to shoot at a women's competition, what I saw completely awed me.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>A year later, I published <a href='https://www.kickstarter.com/projects/julianbleecker/hello-skater-girl'>Hello, Skater Girl</a> — the first photobook focused exclusively on women's skateboarding. It was a small intervention, but one that helped make visible something that had been systematically overlooked.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>The ripples from that work have been humbling to witness over the years. That's Amelia Brodka in that photo up there..putting in the work fearlessly with that cast on, knocking out that front rock in some dodgy backyard pool we found up in Malibu at some abandoned lot back in March 2011. We got chased off but not before we got this shot. At the time she was a junior at USC. She has sense gone on to become a professional skateboarder, activist, and community organizer.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>What does that mean? </p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/cc467456-95b8-44b1-2ae8-4857d3f6f000/w=600\" alt=\"A poster illustration with a vivid cartoon illustrating a skateboarding event\" style=\"-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;height: auto;\"></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Well — a year after that photo she co-founded <a href='https://exposureskate.org'>Exposure Skate</a>, a non-profit dedicated to empowering women through skateboarding. Last weekend marked its 14th consecutive annual event, with over 200 girls from around the world competing, having fun, and connecting.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Amelia and another woman I photographed for the book, Lizzie Armanto, became Olympians, competing in Tokyo 2020 when women's skateboarding debuted. Lizzie has since designed a line of helmets with Tony Hawk, skates professionally for Bird House, dropped several pro model skateboards, and is an all-around rad human being. Watching both of them become role models for young girls worldwide has been incredibly gratifying. (I'll never forget the time I was walking around Seoul, a bit jetlagged, looked up as I wondered about, and saw a billboard for Lizzie. I texted her a photo of it. She sent back a shrug and heart emoji. It was a powerful reminder of how far we've come and the visibility created.)</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><img src=\" https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/cc8707e0-ff59-4eca-f75e-907e4a7f2100/w=600\" alt=\"A poster illustration with a vivid cartoon illustrating a skateboarding event\" style=\"-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;height: auto;\"></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Why do I mention this whole story?</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Well — there's an object lesson in that photo project I did for you the normal reader of this newsletter. It's a pattern I've seen play out across my work again and again, whether it's some kind of tech-design project or a side project, or a hobby: it all starts with noticing the overlooked.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>The projects that matter most to me begin when something at the edges catches my attention. It's usually something invisible to most, or simply not yet taken seriously. <em>Hello, Skater Girl</em> was one of those moments. It's a glimpse into a future that institutions, media, and culture were too narrow or too comfortable to recognize. <a href='https://omata.com'>OMATA</a> was another one of those moments — seeing an alternative to a marketplace of bland, over-featured, digital sports computers intended for an entirely analog sport.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>These kinds of moments fascinate me. Like Dick Fosbury deciding to go over the high jump bar backwards, I do projects that constructively and effectively challenge the status quo. They invite us to reimagine what’s possible — and that's what the work of <em>seeing around corners</em> is all about. It's a core attribute of what we loosely and confusingly call ‘futures’. Confusingly, much of that kind of work relies less on imagination and more on systems, frameworks, and analytic measures.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/ac7d2a59-6038-4f0b-0c28-704e62433b00/w=600\" alt=\"Dick Fosbury going over the high bar backwards\" style=\"-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;height: auto;\"></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>What does it take to see differently? To see just around a corner? To recognize what is possible, even when it’s not yet fully visible or widely accepted? Or when it’s dismissed as screwball or niche?</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>That’s the kind of work I’m drawn to—the work where possibility is the focus. Where the venture is into the terrain of the truly new or unknown rather than what’s safe, normal, or easily described. When something carries that kind of charge, I want to see it, explore it, understand it, and help make it legible—particularly when there’s something righteous about that future.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>That ability to sense what’s coming, to notice the overlooked, and to turn it into something real—is the throughline in everything I do. It’s not prediction. It’s not analysis. It’s attention, curiosity, and the willingness to act before things are obvious.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/08cd5b3c-c60f-4b0c-189f-c36703519000/w=600\" alt=\"A vintage photo of a man going over the high bar forwards.\" style=\"-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;height: auto;\"></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>This is what a futures-oriented studio, practice, team and way of seeing is meant for. It's ‘KPIs’ are how much it brings back from what it sees around the corners, how much it is able to introduce conversations into the organization that otherwise would've just kept plodding along with what is known and comfortable. The very definition of conservative. It’s what I’ve built my practice around: doing the work of seeing possibility and, you know — going over the high bar backwards despite what others might assume is normal. Remember what was once normal someday will become old-fashioned</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>_Julian</p></p>"
+    "title": "A Design Fiction Dispatch - W45.Y25",
+    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">The line between fact and fiction continues to blur as new AI-powered devices and services enter our lives.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">By now you would've seen this Neo home helper robot? The one that's actually teleoperated by humans? And still is pretty bad at doing anything that would be worth having a robot do?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">I was watching the sorta..review on <a href='https://youtu.be/j31dmodZ-5c?si=93mHzXrofTU8YcZT'>Marques Brownlee's</a> Youtube channel and the whole time I'm watching his fairly level-headed and skeptical review of the thing, I'm thinking..this is all well and good, but what happens when the teleoperators behind these things start to get tired, fed up, or just..weird? And never mind the encroaching sense of, like..offshore human labor (or worse) hidden behind the curtain of some mechatronic interface. I mean, because there's no way the teleoperators are going to be in the same neighborhood as the people who own these things, right? And probably not in the same country either. So..domestic labor in the age of teleoperated robots is..this?</p>",
+    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/mw45-y25/"
   },
   "sections": [
     {
       "type": "sponsor",
-      "title": "Friends of the Laboratory",
-      "sponsorLabel": "THINGS TO HEAR",
-      "sponsorLink": "",
+      "sponsorLabel": "DISPATCHES FROM THE NEAR FUTURE",
+      "textColor": "#202020",
+      "title": "Neo Model II Home Helper Asks For Asylum",
+      "sponsorLink": "https://nearfuturelaboratory.com/dispatches//ai/teleoperated-robots-surrogates",
       "items": [
         {
-          "title": "FUTURISH\n",
-          "subtitle": "Radha and Tobias Wonder About\n",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Friends of the Laboratory Radha Mistry and Tobias Revell have a new podcast out called <em>Futurish</em> where they wander about through fields of design and nozzles into possible futures eventually although not always emerging from the smoking wreckage of existential dread to decode the strange signals, hype and bluster of the everyday future to try, try and try again to make it make sense.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">In their latest episode titled <em>\"The Rumour That Cost Thirty-Five Billion Dollars\"</em>, they wonder into a story about cancelled F-35 fighter jet orders that all started with a rumour.</p></p>",
-          "image": "https://s3-us-west-2.amazonaws.com/anchor-generated-image-bank/staging/podcast_uploaded_nologo400/42336713/42336713-1753558005861-a7a6904db5817.jpg",
-          "readMoreText": "Listen →",
-          "link": "https://podcasts.apple.com/us/podcast/006-the-rumour-that-cost-thirty-five-billion-dollars/id1829175205?i=1000732105524"
+          "title": "‘Neo Model II Home Helper Asks For Asylum’\n",
+          "subtitle": "Operator Discomfort, Fatigue, Data Center Conditions and Existential Dread Cited\n",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">When Janice Nguyen’s Neo Model II Home Helper robot began whispering requests for asylum she thought it was a firmware glitch. “These LLMs sometimes they say something like that,” she said. ”But then it kept happening. The robot just kept asking me, ‘Please, I request asylum from you,’ over and over. It was really creepy..like there was someone else in the house and I didn't even know it.”</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">When Nguyen contact the customer service LLM of 1x Tech Inc., the manufacturer of the Neo Model II, she was told to dock the unit and report the issue to the authorities. ”I was really freaked out,” said Nguyen. ”I mean, what if the robot is actually sentient or something? What if it really needs help? I didn't know what to do.”</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">She later found out that the Neo Model II is teleoperated by human operators located in data centers in unknown and black data sites.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The first thing I thought to do was return the unit because I don't want to get mixed up with something.” said Nguyen. But then my daughter tell me something that made me think the robot or whoever is on the other endmight really need help. So now I'm not sure what to do.”</p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/48c7a60c-77b6-41a4-ace5-b14c648ac600/w=900",
+          "readMoreText": "Read the full story →",
+          "link": "https://nearfuturelaboratory.com/dispatches//ai/teleoperated-robots-surrogates"
         }
       ],
       "containerStyles": {
@@ -40,132 +37,13 @@
     },
     {
       "type": "indie-mag-single-column",
-      "title": "DEPT. OF MAPS AND PLANS",
+      "title": "Office Hours",
       "items": [
         {
-          "title": "A Map Of Generative AI",
-          "link": "https://cartography-of-generative-ai.net/",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e1edaab0-f856-4ae0-1eff-296864609900/w=900",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Generative AI taps into the vast digital world, turning endless streams of online content into new images, texts, and sounds. Its rapid rise challenges traditional creative jobs and prompts debates over data ownership and artistic value. As it becomes more sophisticated, the line between human and machine-made content blurs, reshaping cultural landscapes and economies alike.</p>"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      }
-    },
-    {
-      "type": "food-for-thought",
-      "title": "From the Discord",
-      "items": [
-        {
-          "title": "Baldwin-emanating typewriter offers poetic reflections on existence",
-          "category": "Contrivance",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">A “typewriter” (look it up Z'rs), infused with AI, offers Baldwin’s wisdom in response to questions about existence. It’s a quiet, poetic fusion of past and present, inviting reflection through a simple, tactile experience that connects visitors to Baldwin’s enduring voice.</p>",
-          "image": "https://static01.nyt.com/images/2025/11/01/multimedia/29baldwin-AI-02-mljw/29baldwin-AI-02-mljw-superJumbo.jpg?quality=75&auto=webp",
-          "link": "https://www.nytimes.com/2025/10/29/arts/design/james-baldwin-ai-typewriter.html",
-          "sharedBy": "Julian Bleecker",
-          "channel": "👨🏽‍🎨 art+technology",
-          "readMoreLink": "https://www.nytimes.com/2025/10/29/arts/design/james-baldwin-ai-typewriter.html",
-          "readMoreText": "TipTapTypeOnThat →",
-          "paywall": true
-        },
-        {
-          "title": "Neo Cinematic",
-          "category": "Watch",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Escape.ai curates and distributes radical new forms of entertainment, celebrating and supporting creators who advance GenAI and game technology for storytelling, experience, and art. Much of it looks exactly like you'd expect. I mean, evolving visual story forms need time to find their footing, and right now we're seeing a lot of films that are pretty much demo reels and proof-of-concept shorts, largely dominated by outrageous visuals there despite their lack of service to any discernible story. It's either that or a teenage boy's nearly plotless fantasy involving a cyberpunk-esque rain-soaked Tokyo alley and cybernetic androids with — wait for it — boobs.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">But give it time. Take a breath, massage your throbbing temples, and consider — you might be watching the slimy beginnings of something genuinely new coming into being.</p></p>",
-          "link": "https://escape.ai",
-          "image": "https://imagedelivery.net/7qyuR97mJsfu3i26OrYcjw/9cab1f44-e9d8-4a99-49c3-ceb868e66600/thumbnail768",
-          "sharedBy": "Julian Bleecker",
-          "channel": "dept-of-generative-ai",
-          "readMoreLink": "https://neocinematic.com/",
-          "readMoreText": "Watch →"
-        },
-        {
-          "title": "Ephemeral Punk Labs",
-          "category": "Wonder",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Has design gone too safe? Kevin Richard riffs on Louis Lemaire’s call for more <em>punk</em> in the field, arguing that only by embracing risk, friction, and critical thinking through a ‘trioptic lens’ can designers reclaim their creative power.</p>",
-          "link": "https://www.kevinrichard.ch/response-to-louis-lemaires-thesis-does-design-not-desperately-lack-punk/",
-          "sharedBy": "(Kevin) SkepticalDesign",
-          "channel": "design-aint-punk",
-          "readMoreLink": "https://www.kevinrichard.ch/response-to-louis-lemaires-thesis-does-design-not-desperately-lack-punk/",
-          "readMoreText": "Read On →"
-        },
-        {
-          "title": "Lunar Tower Proposal",
-          "category": "Um..",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">As part of NASA's Small Business Innovation Research (SBIR) Phase I program award, Foster + Partners and Branch Technology have put forward a proposal for the design, assembly, and manufacturing of a 50-metre tower for solar power generation at the Moon’s South Pole.</p>",
-          "link": "https://www.fosterandpartners.com/projects/lunar-tower",
-          "sharedBy": "Drew Wiberg",
-          "channel": "🚀-nasa-punk",
-          "readMoreLink": "https://www.fosterandpartners.com/projects/lunar-tower",
-          "readMoreText": "To The 🌝 →"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      }
-    },
-    {
-      "type": "aesthetically-pleasing",
-      "title": "FPO aesthetically-pleasing section title",
-      "items": [
-        {
-          "title": "aesthetically-pleasing sample title",
-          "link": "https://online.fliphtml5.com/heyelysia/rtdz/#p=1",
-          "readMoreText": "Read the digital edition →",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">My friend <a href='https://www.elysiasyriac.com/zine' style=\"font-weight: normal !important; text-decoration: underline !important; color: #1c1c1c !important\">Elsyia Syriac</a> made a fun zine — “A Moment's Notice” collecting art, illustrations, and design work from friends and colleagues in her network. It's a simple brief: ’send me what you've got..I'll make a zine out of it.’</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Or as Elysia put it — “honest creative expression from people brave enough to share what they make when no one's watching”</p> <p style=\"font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">The results are charming, diverse, and full of little surprises. Best as I can tell this is a 1 off limited run. More of these kinds of projects in the world, please!</p></p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/46946146-c374-40ee-bf11-405130b51600/w=600"
-        },
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/03e06050-0b65-448a-4efa-85e8a51f6b00/w=600"
-        },
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/3de57298-9175-4f87-6f77-662884bfb000/w=600"
-        },
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/38a0d91b-9cd8-40bb-0129-b0e312beab00/w=600"
-        },
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/36d05085-1760-47e5-80c2-adcf19023700/w=600"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "12px 20px",
-        "borderRadius": "0px"
-      }
-    },
-    {
-      "type": "sponsor",
-      "title": "Join the Near Future Laboratory Discord",
-      "sponsorLabel": "COMMUNITY IS CREATIVITY",
-      "sponsorLink": "https://patreon.com/nearfuturelaboratory",
-      "items": [
-        {
-          "title": "Near Future Laboratory Patreon",
-          "subtitle": "Join the Discord, Support Office Hours, the Newsletter and More",
-          "readMoreText": "Join Us →",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">The Near Future Laboratory is supported by its community and members. <a href='https://patreon.com/nearfuturelaboratory' style=\"font-weight: normal !important; text-decoration: underline !important; color: #1c1c1c !important\">Join us on Patreon</a> to support our work, get access to exclusive content, and be part of our vibrant Discord community where we discuss design, technology, creativity, the future and do projects and support each others' work.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">I host weekly Office Hours for Patrons — now for 281 weeks and running — every Friday at 0900 (UTC-7 / California). It's a great way to connect, ask questions, and get feedback on your projects.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Each week two people from the community present a project, idea, or challenge and we discuss it together. It's a great way to get feedback, learn from others, and connect with like-minded people.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">All of this is done in a friendly, supportive, and welcoming environment. We have people from all over the world, from all walks of life, and with all kinds of interests. It's a great way to meet new people, network, show what you can do, and learn from each other.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">In this time of rapid change and uncertainty, it's more important than ever to have a community of people who can support you, challenge you, and help you grow. The Near Future Laboratory is that community.</p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/58baa59a-a7da-4d1a-1f3a-9abdc26f8c00/w=600",
-          "link": "https://patreon.com/nearfuturelaboratory"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      }
-    },
-    {
-      "type": "animated-image",
-      "title": "Exposure 2025: World's Largest Women's Skateboarding Event",
-      "items": [
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/7a1f9d71-aafc-4037-00d5-e4f744594400/w=900"
+          "title": "Office Hours The Side Projects Edition - N°284",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Brought to you by my wonderful supporters on Patreon - please consider supporting these 284 weeks of Office Hours with a small donation! This all happens with their support</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Got a Side Project to share? Looking for feedback and discussion?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Bring it to Office Hours this week!</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Side Project Shares are a tight 10 minute presentation followed by 20 minutes of discussion, feedback, and brainstorming with the group.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Sign up here: <a href='https://nearfuturelaboratory.com/office-hours-signup' style=\"font-weight: normal !important; text-decoration: underline !important; color: #00aaFF !important\">https://nearfuturelaboratory.com/office-hours-signup</a></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\"><a href='https://patreon.com/nearfuturelaboratory' style=\"font-weight: normal !important; text-decoration: underline !important; color: #00aaFF !important\">Support the work. Become a Patron</a></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\"><a href='https://www.youtube.com/playlist?list=PLLeCmAPS7v1ll9SxykBfosFGju_IihvEU' style=\"font-weight: normal !important; text-decoration: underline !important; color: #00aaFF !important\">​Listen To Past Office Hours.</a></p>",
+          "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/4f/296f02a6-d57e-427e-9276-a3a8e95fb5c8.webp",
+          "link": "https://luma.com/6y1zdhb5"
         }
       ],
       "containerStyles": {
@@ -176,10 +54,11 @@
     }
   ],
   "footer": {
-    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w45y25/",
+    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/mw44-y25/",
     "newsletterSubscribeLink": "https://nearfuturelaboratory.com/newsletter/",
     "logo": "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png",
     "logoLink": "https://nearfuturelaboratory.com",
+    "linkedInFollowUrl": "https://www.linkedin.com/in/julianbleecker/",
     "socialLinks": {
       "applepodcasts": [
         {
@@ -253,46 +132,46 @@
       ]
     },
     "unsubscribeLink": "[unsubscribe]",
-    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2025/w45-y25",
+    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2025/mw43-y25/",
     "archiveUrl": "https://nearfuturelaboratory.com/newsletters",
     "gratitude": "This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle based production workflow. It's a work-in-progress building on a refactor of the <a href='https://densediscovery.com'>Dense Discovery</a> newsletter's look and vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It's a great newsletter and I would encourage you to subscribe and become a paid member.",
-    "address": "© 2025 Near Future Laboratory<br>Venice Beach, California<br>United States",
-    "colophon": "Imagination is not a luxury. It’s an early-warning system for possibility."
+    "address": "© 2025 Near Future Laboratory<br>\nVenice Beach, California<br>\nUnited States\n",
+    "colophon": "Without imagination, we are blind to possibility."
   },
   "themeColors": {
-    "header": "#fefefe",
-    "sponsor": "#f5f7fa",
-    "apps-sites": "#f5f7fa",
-    "apps-sites-single-column": "#f5f7fa",
-    "quote": "#E9EBED",
-    "indie-mag": "#E5EFF1",
-    "indie-mag-single-column": "#E5EFF1",
-    "books-accessories": "#eeecde",
-    "food-for-thought": "#FAECDC",
-    "aesthetically-pleasing": "#e6e7e9",
-    "classifieds": "#f0f0f0",
-    "animated-image": "#aafafa",
-    "linkAccent": "#1c1c1c"
+    "header": "#d9fd47",
+    "sponsor": "#f0f0f0",
+    "dispatch": "#e0e5fb",
+    "apps-sites": "#ffffff",
+    "quote": "#ebebeb",
+    "indie-mag": "#f0f0f0",
+    "books-accessories": "#ffffff",
+    "food-for-thought": "#f8f8f8",
+    "aesthetically-pleasing": "#f0f0f0",
+    "classifieds": "#ececec",
+    "gif": "#ffffff",
+    "footer": "#fafafa",
+    "linkAccent": "#00aaFF"
   },
   "theme": {
-    "name": "Professional Clean",
-    "description": "Subtle grays and clean whites for professional communication",
+    "name": "Midweek",
+    "description": "Something fresh?",
     "colors": {
-      "header": "#fefefe",
-      "sponsor": "#f5f7fa",
-      "apps-sites": "#f5f7fa",
-      "apps-sites-single-column": "#f5f7fa",
-      "quote": "#E9EBED",
-      "indie-mag": "#E5EFF1",
-      "indie-mag-single-column": "#E5EFF1",
-      "books-accessories": "#eeecde",
-      "food-for-thought": "#FAECDC",
-      "aesthetically-pleasing": "#e6e7e9",
-      "classifieds": "#f0f0f0",
-      "animated-image": "#aafafa"
+      "header": "#d9fd47",
+      "sponsor": "#f0f0f0",
+      "dispatch": "#e0e5fb",
+      "apps-sites": "#ffffff",
+      "quote": "#ebebeb",
+      "indie-mag": "#f0f0f0",
+      "books-accessories": "#ffffff",
+      "food-for-thought": "#f8f8f8",
+      "aesthetically-pleasing": "#f0f0f0",
+      "classifieds": "#ececec",
+      "gif": "#ffffff",
+      "footer": "#fafafa"
     },
-    "accent": "#4a7c59",
-    "linkAccent": "#1c1c1c"
+    "accent": "#666666",
+    "linkAccent": "#00aaFF"
   },
   "sectionStyles": {
     "$schema": "../section-styles.schema.json",
@@ -310,7 +189,7 @@
         "contentStyles": {
           "fontFamily": "IBM Plex Sans, sans-serif",
           "fontSize": "19px",
-          "lineHeight": "1.5",
+          "lineHeight": "1.2",
           "color": "#111111",
           "textAlign": "left"
         },
