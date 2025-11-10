@@ -130,6 +130,26 @@
       },
       "accent": "#666666",
       "linkAccent": "#00aaFF"
+    },
+    "vivid": {
+      "name": "Vivid Pastel",
+      "description": "Vibrant pastel colors that pop while maintaining excellent readability with black text",
+      "colors": {
+        "header": "#ffcdd2",
+        "sponsor": "#fff9c4",
+        "dispatch": "#f8bbd9",
+        "apps-sites": "#c8e6c9",
+        "quote": "#ffccbc",
+        "indie-mag": "#e1bee7",
+        "books-accessories": "#bbdefb",
+        "food-for-thought": "#ffe0b2",
+        "aesthetically-pleasing": "#dcedc8",
+        "classifieds": "#b2ebf2",
+        "gif": "#f8bbd9",
+        "footer": "#c5cae9"
+      },
+      "accent": "#8e24aa",
+      "linkAccent": "#1976d2"
     }
   }
 }

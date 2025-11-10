@@ -1,32 +1,32 @@
 {
   "$schema": "../newsletter.schema.json",
   "template": "dense-discovery",
-  "title": "Near Future Laboratory – Midweek Dispatches from the Future 44y25",
-  "preheader": "Your Dispatch from a Near Future",
-  "colorTheme": "midweek",
+  "title": "Near Future Laboratory – w46y25",
+  "preheader": null,
+  "colorTheme": "monochrome",
+  "sectionStylesFile": "templates/dense-discovery/section-styles.json",
   "header": {
-    "logoTop": "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png"
+    "logoTop": "https://nearfuturelaboratory.com/images/site/logos/TOP_LaboratoryCircle_Guy_01_CircleWhite.png",
+    "logoBottom": "https://nearfuturelaboratory.com/images/site/logos/BOTTOM_LaboratoryCircle_Guy_01_CircleWhite.png",
+    "logoLink": "https://nearfuturelaboratory.com"
   },
   "intro": {
-    "title": "A Design Fiction Dispatch - W45.Y25",
-    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">The line between fact and fiction continues to blur as new AI-powered devices and services enter our lives.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">By now you would've seen this Neo home helper robot? The one that's actually teleoperated by humans? And still is pretty bad at doing anything that would be worth having a robot do?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">I was watching the sorta..review on <a href='https://youtu.be/j31dmodZ-5c?si=93mHzXrofTU8YcZT'>Marques Brownlee's</a> Youtube channel and the whole time I'm watching his fairly level-headed and skeptical review of the thing, I'm thinking..this is all well and good, but what happens when the teleoperators behind these things start to get tired, fed up, or just..weird? And never mind the encroaching sense of, like..offshore human labor (or worse) hidden behind the curtain of some mechatronic interface. I mean, because there's no way the teleoperators are going to be in the same neighborhood as the people who own these things, right? And probably not in the same country either. So..domestic labor in the age of teleoperated robots is..this?</p>",
-    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/mw45-y25/"
+    "title": "Gen-Z To The Rescue",
+    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/w46-y25/",
+    "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/30817f29-3257-4cf4-1e9e-cf12462f3700/w=900",
+    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Last week I was invited to sit on a panel about AI — surprise — at of all places, a local high school here in Los Angeles called Harvard-Westlake. It was part of an event they called <a href='https://nextgenhw.com'>NextGen</a> where they bring in people from various fields to talk about what the future might hold.</p> <p>Now, I won't tell you that I had any particularly special insights to offer, but I suppose if you're an earnest Gen-Alpa/Gen-z'r there's the possibility that any insight or answer offered in the moment of confusion we're in could be special.</p> <p>But, I don't want to talk about the panel or the specifics about the topic or any of that. It was the students themselves. My goodness — spend a half a day at a place like that and you will come away feeling that there is hope.</p> <p>First of all, the students put this whole Future Day on themselves. They arranged these pre-calls with the panelists, they had booths with their various start-up clubs, panels on like..video games, jobs, etc. They had walkie-talkies and music and food.</p> <p>Now, I know Harvard-Westlake is, well… unusual. And expensive. So you’ll certainly have your enthusiastic, committed, and charismatic student. But there was a level of engagement in the questions — from, like, thirteen-year-olds who referred to you as “Dr. Bleecker” — that felt as earnest as it was insightful. It assured me that, were any one of these students to find themselves in a position to make a positive change in the world, they would succeed far beyond proportion.</p> <p>_Julian</p></p>"
   },
   "sections": [
     {
-      "type": "sponsor",
-      "sponsorLabel": "DISPATCHES FROM THE NEAR FUTURE",
-      "textColor": "#202020",
-      "title": "Neo Model II Home Helper Asks For Asylum",
-      "sponsorLink": "https://nearfuturelaboratory.com/dispatches//ai/teleoperated-robots-surrogates",
+      "type": "indie-mag",
+      "title": "Events & Happenings",
       "items": [
         {
-          "title": "‘Neo Model II Home Helper Asks For Asylum’\n",
-          "subtitle": "Operator Discomfort, Fatigue, Data Center Conditions and Existential Dread Cited\n",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">When Janice Nguyen’s Neo Model II Home Helper robot began whispering requests for asylum she thought it was a firmware glitch. “These LLMs sometimes they say something like that,” she said. ”But then it kept happening. The robot just kept asking me, ‘Please, I request asylum from you,’ over and over. It was really creepy..like there was someone else in the house and I didn't even know it.”</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">When Nguyen contact the customer service LLM of 1x Tech Inc., the manufacturer of the Neo Model II, she was told to dock the unit and report the issue to the authorities. ”I was really freaked out,” said Nguyen. ”I mean, what if the robot is actually sentient or something? What if it really needs help? I didn't know what to do.”</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">She later found out that the Neo Model II is teleoperated by human operators located in data centers in unknown and black data sites.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The first thing I thought to do was return the unit because I don't want to get mixed up with something.” said Nguyen. But then my daughter tell me something that made me think the robot or whoever is on the other endmight really need help. So now I'm not sure what to do.”</p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/48c7a60c-77b6-41a4-ace5-b14c648ac600/w=900",
-          "readMoreText": "Read the full story →",
-          "link": "https://nearfuturelaboratory.com/dispatches//ai/teleoperated-robots-surrogates"
+          "title": "Dubai Future Forum 2025",
+          "image": "https://www.protocol.dubai.ae/media/sfcn34z2/18-11-2024-4.jpg",
+          "link": "https://www.dubaifuture.ae/dubai-future-forum-2025",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.6 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.6 !important; color: #111111 !important; text-align: left !important\">Will you be in Dubai at the Dubai Future Forum?</p>  <p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.6 !important; color: #111111 !important; text-align: left !important\">This year's theme, \"Innovating for a Sustainable Tomorrow,\" focuses on leveraging technology and innovation to address global challenges and create a better future for all.</p> <p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.6 !important; color: #111111 !important; text-align: left !important\">Well — I'll be there speaking on a panel title “Relearning Imagination: Are We Actively Shaping our Future?” on Wednesday, November 19th from 12:30p - 1:20p.</p></p>",
+          "details": "Dubai Future Forum, an annual gathering of global leaders, innovators, and visionaries dedicated to shaping the future.<br/> Nov 18th-19th 2025, Dubai, UAE."
         }
       ],
       "containerStyles": {
@@ -37,13 +37,93 @@
     },
     {
       "type": "indie-mag-single-column",
-      "title": "Office Hours",
+      "title": "Curiosities",
       "items": [
         {
-          "title": "Office Hours The Side Projects Edition - N°284",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Brought to you by my wonderful supporters on Patreon - please consider supporting these 284 weeks of Office Hours with a small donation! This all happens with their support</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Got a Side Project to share? Looking for feedback and discussion?</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Bring it to Office Hours this week!</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Side Project Shares are a tight 10 minute presentation followed by 20 minutes of discussion, feedback, and brainstorming with the group.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Sign up here: <a href='https://nearfuturelaboratory.com/office-hours-signup' style=\"font-weight: normal !important; text-decoration: underline !important; color: #00aaFF !important\">https://nearfuturelaboratory.com/office-hours-signup</a></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\"><a href='https://patreon.com/nearfuturelaboratory' style=\"font-weight: normal !important; text-decoration: underline !important; color: #00aaFF !important\">Support the work. Become a Patron</a></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\"><a href='https://www.youtube.com/playlist?list=PLLeCmAPS7v1ll9SxykBfosFGju_IihvEU' style=\"font-weight: normal !important; text-decoration: underline !important; color: #00aaFF !important\">​Listen To Past Office Hours.</a></p>",
-          "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/4f/296f02a6-d57e-427e-9276-a3a8e95fb5c8.webp",
-          "link": "https://luma.com/6y1zdhb5"
+          "title": "Is AI Thinking?",
+          "link": "https://www.newyorker.com/magazine/2025/11/10/the-case-that-ai-is-thinking",
+          "subtitle": "Handy, delightful, or surprising",
+          "readMoreText": "Read On →",
+          "paywall": true,
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">AI’s hype can seem overblown, but if you look past the digital assistants and oddball email prompts, you’ll find a quiet revolution: coders and creators are already using AI to do the month’s work in a single evening.</p> <p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">I've been going to these ComfyUI meetups. I had committed myself to sharing something during one of these, but each month things got away from me and I dropped the ball.</p> <p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">The day of the last one, I decided I would have <em>something</em>, even if it was a sketch of an idea to share. I sat down with VS Code and began explaining to Copilot what I was angling for. And then there it was..a perfectly serviceable pre-MVP. Certainly enough to get some feedback on the motivation if not the actual result.</p> <p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">Well, the crowd went crazy. If I worked in a normal human job, I'd either be thrilled or be spending my days trying to figure out how I could turn this into a way to be way more generative than the old keyboard-and-mouse way of programming.</p> <p style=\"font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.5 !important; color: #111111 !important; text-align: left !important\">P.S. At that Harvard Westlake thing I went to? One parent asked me if I thought it made sense for their kid to take Python II given everything that's going on with AI. I was never much beyond Python like..1.5 myself, but that whole program I just mentioned was built in Python and Rust. And I would say that one definitely needs to understand the rudiments and be able to track what the heck the LLM is doing as it moves along — and construct sensible prompts to guide the process. So yeah, Python II seems like a good idea.</p></p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5cc518a4-fa85-41e1-0d04-d26cb6bf1d00/w=900"
+        }
+      ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      }
+    },
+    {
+      "type": "food-for-thought",
+      "title": "From the Discord",
+      "items": [
+        {
+          "title": "The Age of Digital Friendship?",
+          "category": "Read",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The other day on a call I was reminded of that app that was like..Twitter only in a generative AI bottle. Like..you could Tweet and all that — but all the content there was generated by LLMs and crap. You were the only human in there.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Facebook — errr...Meta — bought it and it disappeared likely to be subsumbed into some sort of something-or-another there.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Social media promised connection but left us lonelier than ever. Now, tech giants like Meta are betting that AI chatbots can fill the friendship gap—ushering in an era where our most meaningful interactions might be with bots, not people. The age of digital friendship is here, but it’s lonelier than ever—AI chatbots are stepping in where real connections falter, promising constant company but quietly remaking what it means to be social.</p></p>",
+          "link": "https://www.theatlantic.com/magazine/2025/12/ai-companionship-anti-social-media/684596/",
+          "sharedBy": "David Miles",
+          "channel": "antisocial-social-media",
+          "readMoreLink": "https://www.theatlantic.com/magazine/2025/12/ai-companionship-anti-social-media/684596/",
+          "paywall": true,
+          "readMoreText": "Read On →"
+        },
+        {
+          "title": "Not every classroom needs GenAI.",
+          "category": "Write",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Not every classroom needs GenAI. This guide champions a thoughtful, disciplined refusal of generative AI in writing studies—grounded in the belief that writing is more than efficiency or homogenization. GenAI may be powerful, but writing studies has its own principles. Here’s a quickstart for educators who want to say ‘no’ to generative AI—not out of fear, but out of respect for the messy, diverse, and meaningful practice of writing.</p>",
+          "link": "https://refusinggenai.wordpress.com/",
+          "sharedBy": "EdgarBot",
+          "channel": "dogma95-but-for-writing",
+          "readMoreLink": "https://refusinggenai.wordpress.com/",
+          "readMoreText": "Read On →"
+        }
+      ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      }
+    },
+    {
+      "type": "sponsor",
+      "title": "Friends of the Laboratory",
+      "sponsorLabel": "",
+      "sponsorLink": "",
+      "items": [
+        {
+          "title": "DJ BeeBot",
+          "category": "Read",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/7e055a72-e9b6-426c-71b6-66bc542ca800/w=600",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">DJ BeeBot is a new app from Foursquare visionary Dennis Crowley over there at Hopscotch Labs. It turns your AirPods into a personalized city guide, delivering short, AI-powered audio updates about what's happening around you—like a friendly, hyperlocal radio DJ in your ear.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The idea of a hyperlocal DJ is kinda awesome. Makes me think of the Lord Kitchener, the DJ in that film <a href='https://www.imdb.com/title/tt4460800/?ref_=fn_t_4' style=\"font-weight: normal !important; text-decoration: underline !important; color: #333333 !important\">The Kitchen</a>.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">BeeBot slips into your headphones like a streetwise DJ, serving up the city’s best kept secrets and local buzz, all tailored to you. And check this feature out — no scrolling required.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Dennis has a whole like..zillion word “<a href='https://dens.medium.com/say-hello-to-dj-beebot-592cdc1f1704' style=\"font-weight: normal !important; text-decoration: underline !important; color: #333333 !important\">thesis</a>” as they say on why this kind of experience matters in a world drowning in screens and endless feeds. It’s about reclaiming our attention and rediscovering the joy of serendipitous exploration in our cities.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">So partially full disclosure, I've been testing the app for a few months now, providing occasional feedback and etcetera. And through that, I could really see the potential of this kind of experience. Thing of it is, I do not live in a walking city any more. I mean, aside from walking Chewy the Dog and relatively short jaunts to the local café and such, if the journey is more than a mile, I'm in some mode of transportation — bike or car mostly. And so using BeeBot reminds me that I'm not an ambulating city dweler, which is fine — but also a shame bcause I <em>do</em> want a DJ in my ear telling me stuff. In the car, it was like a DJ on bennies or reds or something. You just move too fast to really give the DJ a chance to be like..hey, check this out.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">That said, I highly recommend those of you who are ambulators, definitely try it out and see what you think — and let Dennis and the gang there at Hopscotch Labs know what you think.</p></p>",
+          "link": "https://dens.medium.com/say-hello-to-dj-beebot-592cdc1f1704",
+          "sharedBy": "Julian Bleecker",
+          "channel": "in-your-ear-anti-social-media-social-media",
+          "readMoreLink": "https://apps.apple.com/us/app/beebot-for-airpods/id6451085742",
+          "readMoreTxt": "Download the iOS Beta →"
+        }
+      ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      }
+    },
+    {
+      "type": "sponsor",
+      "title": "Join the Near Future Laboratory Discord",
+      "sponsorLabel": "COMMUNITY IS CREATIVITY",
+      "sponsorLink": "https://patreon.com/nearfuturelaboratory",
+      "items": [
+        {
+          "title": "Near Future Laboratory Patreon",
+          "subtitle": "Join the Discord, Support Office Hours, the Newsletter and More",
+          "readMoreText": "Join Us →",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The Near Future Laboratory is supported by its community and members. <a href='https://patreon.com/nearfuturelaboratory' style=\"font-weight: normal !important; text-decoration: underline !important; color: #333333 !important\">Join us on Patreon</a> to support our work, get access to exclusive content, and be part of our vibrant Discord community where we discuss design, technology, creativity, the future and do projects and support each others' work.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I host weekly Office Hours for Patrons — now for 281 weeks and running — every Friday at 0900 (UTC-7 / California). It's a great way to connect, ask questions, and get feedback on your projects.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Each week two people from the community present a project, idea, or challenge and we discuss it together. It's a great way to get feedback, learn from others, and connect with like-minded people.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">All of this is done in a friendly, supportive, and welcoming environment. We have people from all over the world, from all walks of life, and with all kinds of interests. It's a great way to meet new people, network, show what you can do, and learn from each other.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">In this time of rapid change and uncertainty, it's more important than ever to have a community of people who can support you, challenge you, and help you grow. The Near Future Laboratory is that community.</p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/58baa59a-a7da-4d1a-1f3a-9abdc26f8c00/w=600",
+          "link": "https://patreon.com/nearfuturelaboratory"
         }
       ],
       "containerStyles": {
@@ -54,11 +134,10 @@
     }
   ],
   "footer": {
-    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/mw44-y25/",
+    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w46y25/",
     "newsletterSubscribeLink": "https://nearfuturelaboratory.com/newsletter/",
     "logo": "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png",
     "logoLink": "https://nearfuturelaboratory.com",
-    "linkedInFollowUrl": "https://www.linkedin.com/in/julianbleecker/",
     "socialLinks": {
       "applepodcasts": [
         {
@@ -132,15 +211,15 @@
       ]
     },
     "unsubscribeLink": "[unsubscribe]",
-    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2025/mw43-y25/",
+    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2025/w46-y25",
     "archiveUrl": "https://nearfuturelaboratory.com/newsletters",
     "gratitude": "This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle based production workflow. It's a work-in-progress building on a refactor of the <a href='https://densediscovery.com'>Dense Discovery</a> newsletter's look and vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It's a great newsletter and I would encourage you to subscribe and become a paid member.",
-    "address": "© 2025 Near Future Laboratory<br>\nVenice Beach, California<br>\nUnited States\n",
-    "colophon": "Without imagination, we are blind to possibility."
+    "address": "© 2025 Near Future Laboratory<br>Venice Beach, California<br>United States",
+    "colophon": "Imagination is not a luxury. It’s an early-warning system for possibility."
   },
   "themeColors": {
-    "header": "#d9fd47",
-    "sponsor": "#f0f0f0",
+    "header": "#fffffd",
+    "sponsor": "#e5e5e5",
     "dispatch": "#e0e5fb",
     "apps-sites": "#ffffff",
     "quote": "#ebebeb",
@@ -150,15 +229,14 @@
     "aesthetically-pleasing": "#f0f0f0",
     "classifieds": "#ececec",
     "gif": "#ffffff",
-    "footer": "#fafafa",
-    "linkAccent": "#00aaFF"
+    "linkAccent": "#333333"
   },
   "theme": {
-    "name": "Midweek",
-    "description": "Something fresh?",
+    "name": "Monochrome Grayscale",
+    "description": "Clean grayscale palette with subtle variations",
     "colors": {
-      "header": "#d9fd47",
-      "sponsor": "#f0f0f0",
+      "header": "#fffffd",
+      "sponsor": "#e5e5e5",
       "dispatch": "#e0e5fb",
       "apps-sites": "#ffffff",
       "quote": "#ebebeb",
@@ -167,11 +245,10 @@
       "food-for-thought": "#f8f8f8",
       "aesthetically-pleasing": "#f0f0f0",
       "classifieds": "#ececec",
-      "gif": "#ffffff",
-      "footer": "#fafafa"
+      "gif": "#ffffff"
     },
     "accent": "#666666",
-    "linkAccent": "#00aaFF"
+    "linkAccent": "#333333"
   },
   "sectionStyles": {
     "$schema": "../section-styles.schema.json",
