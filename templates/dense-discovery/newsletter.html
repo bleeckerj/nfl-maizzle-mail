@@ -579,7 +579,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                 
                                 <if condition="item.image">
                                   <div style="margin-bottom: 15px;">
-                                    <img src="{{ item.image }}" alt="{{ item.title || 'Product Image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;">
+                                    <img src="{{ item.image }}" alt="{{ item.title || 'Product Image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%; border-radius: 10px;">
                                   </div>
                                 </if>
                                 
@@ -744,8 +744,13 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                     <img src="{{ item.image }}" alt="{{ item.title || 'Aesthetically Pleasing' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;">
                                   </a>
                                 </if>
-                                <if condition="item.image && !item.link">
+                                <if condition="item.image && !item.link && !item.imageLink">
                                   <img src="{{ item.image }}" alt="{{ item.title || 'Aesthetically Pleasing' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;">
+                                </if>
+                                <if condition="item.image && !item.link && item.imageLink">
+                                  <a href="{{ item.imageLink }}" style="text-decoration: none;">
+                                  <img src="{{ item.image }}" alt="{{ item.title || 'Aesthetically Pleasing' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 100%;">
+                                  </a>
                                 </if>
                               </td>
                             </tr>

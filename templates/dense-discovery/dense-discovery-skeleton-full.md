@@ -130,6 +130,7 @@ sections:
     description: <p>Example description for aesthetically-pleasing item 1. This provides
       context and details about the content.</p>
     readMoreText: Read more →
+    imageLink: https://example.com/aesthetically-pleasing-link
 - type: classifieds
   title: Classifieds Section
   description: <p>Description for classifieds section.</p>
