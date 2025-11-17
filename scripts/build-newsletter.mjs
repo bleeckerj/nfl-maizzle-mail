@@ -592,6 +592,91 @@ async function buildNewsletter() {
           const sectionConfig = sectionStyles.sectionStyles[section.type];
           const fallbackConfig = sectionStyles.sectionStyles.default;
           const usedConfig = sectionConfig || fallbackConfig;
+          // --- PATCH: Apply contentStyles/linkStyles to section.description ---
+          if (section.description && typeof section.description === 'string') {
+            let desc = section.description;
+            let wasModified = false;
+            // Apply contentStyles
+            if (usedConfig.contentStyles && Object.keys(usedConfig.contentStyles).length > 0) {
+              const contentStyles = usedConfig.contentStyles;
+              let cssProperties = [];
+              if (contentStyles.fontFamily) cssProperties.push(`font-family: ${contentStyles.fontFamily} !important`);
+              if (contentStyles.fontSize) cssProperties.push(`font-size: ${contentStyles.fontSize} !important`);
+              if (contentStyles.lineHeight) cssProperties.push(`line-height: ${contentStyles.lineHeight} !important`);
+              if (contentStyles.color) cssProperties.push(`color: ${contentStyles.color} !important`);
+              if (contentStyles.textAlign) cssProperties.push(`text-align: ${contentStyles.textAlign} !important`);
+              const newCSSString = cssProperties.join('; ');
+              desc = desc.replace(/<p(\s[^>]*)?>/gi, (match, attrs) => {
+                attrs = attrs || '';
+                const styleMatch = attrs.match(/style="([^"]*)"/i);
+                if (styleMatch) {
+                  let existingStyle = styleMatch[1];
+                  existingStyle = existingStyle
+                    .replace(/font-family:[^;]*;?/gi, '')
+                    .replace(/font-size:[^;]*;?/gi, '')
+                    .replace(/line-height:[^;]*;?/gi, '')
+                    .replace(/color:[^;]*;?/gi, '')
+                    .replace(/text-align:[^;]*;?/gi, '');
+                  const combinedStyle = `${existingStyle}; ${newCSSString}`.replace(/^;+|;+$/g, '');
+                  return `<p${attrs.replace(/style="[^"]*"/i, `style="${combinedStyle}"`)}>`;
+                } else {
+                  return `<p${attrs} style="${newCSSString}">`;
+                }
+              });
+              wasModified = true;
+            }
+            // Apply linkStyles
+            if (usedConfig.linkStyles && Object.keys(usedConfig.linkStyles).length > 0) {
+              const linkStyles = usedConfig.linkStyles;
+              let linkCSSProperties = [];
+              if (linkStyles.fontFamily) linkCSSProperties.push(`font-family: ${linkStyles.fontFamily} !important`);
+              if (linkStyles.fontSize) linkCSSProperties.push(`font-size: ${linkStyles.fontSize} !important`);
+              if (linkStyles.fontWeight) linkCSSProperties.push(`font-weight: ${linkStyles.fontWeight} !important`);
+              if (linkStyles.textDecoration) linkCSSProperties.push(`text-decoration: ${linkStyles.textDecoration} !important`);
+              if (linkStyles.color === 'inherit' && theme?.linkAccent) {
+                linkCSSProperties.push(`color: ${theme.linkAccent} !important`);
+              } else if (linkStyles.color && linkStyles.color !== 'inherit') {
+                linkCSSProperties.push(`color: ${linkStyles.color} !important`);
+              } else if (theme?.linkAccent) {
+                linkCSSProperties.push(`color: ${theme.linkAccent} !important`);
+              }
+              const linkCSSString = linkCSSProperties.join('; ');
+              desc = desc.replace(/<a(\s[^>]*)?>/gi, (match, attrs) => {
+                attrs = attrs || '';
+                const styleMatch = attrs.match(/style="([^"]*)"/i);
+                if (styleMatch) {
+                  let existingStyle = styleMatch[1];
+                  existingStyle = existingStyle
+                    .replace(/font-family:[^;]*;?/gi, '')
+                    .replace(/font-size:[^;]*;?/gi, '')
+                    .replace(/font-weight:[^;]*;?/gi, '')
+                    .replace(/text-decoration:[^;]*;?/gi, '')
+                    .replace(/color:[^;]*;?/gi, '');
+                  const combinedLinkStyle = `${existingStyle}; ${linkCSSString}`.replace(/^;+|;+$/g, '');
+                  return `<a${attrs.replace(/style="[^"]*"/i, `style="${combinedLinkStyle}"`)}>`;
+                } else {
+                  return `<a${attrs} style="${linkCSSString}">`;
+                }
+              });
+              wasModified = true;
+            } else if (theme?.linkAccent) {
+              desc = desc.replace(/<a(\s[^>]*)?>/gi, (match, attrs) => {
+                attrs = attrs || '';
+                if (!attrs.includes('style=')) {
+                  return `<a${attrs} style="color: ${theme.linkAccent} !important; text-decoration: underline;">`;
+                } else {
+                  return match.replace(/style="([^"]*)"/, (styleMatch, styles) => {
+                    const cleanStyles = styles.replace(/color:[^;]*;?/gi, '');
+                    return `style="${cleanStyles}; color: ${theme.linkAccent} !important; text-decoration: underline;"`;
+                  });
+                }
+              });
+              wasModified = true;
+            }
+            if (wasModified) {
+              section.description = desc;
+            }
+          }
 
           // Inject containerStyles into the section for template access
           // Normalize and provide sensible defaults so templates can reference
