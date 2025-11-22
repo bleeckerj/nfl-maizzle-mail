@@ -1,39 +1,31 @@
 {
   "$schema": "../newsletter.schema.json",
   "template": "dense-discovery",
-  "title": "Near Future Laboratory – w47y25",
-  "preheader": null,
-  "colorTheme": "monochrome",
+  "title": "Newsletter Title",
+  "preheader": "Short preview text that appears in email clients",
   "sectionStylesFile": "templates/dense-discovery/section-styles.json",
+  "intro": {
+    "title": "The AI Anti-Aesthetic",
+    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/w47-y25/",
+    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Hello from Dubai, where I'll be for the week split between two events: the <a href='https://www.dubaifuture.ae/dubai-future-forum-2025'>Dubai Future Forum</a> Tues - Wed, and then Thurs - Fri in Abu Dhabi at MBZUAI for the symposium <a href='https://ai-nexus.mbzuai.ac.ae/?panel=Human-Computer-Interaction-Symposium-2025'>“The Future of Being Human”: HCI Symposium 2025</a></p> <p>In the meantime..it was a 15 hour flight, and I was <a href=''>thinking about AI and stuff</a>.</p> <p>Recently, at a symposium on AI, I joined a group workshopping DOGMA 95 in the context of generative AI. The conversation led me into thinking back to Hal Foster's 1983 slender little lavendar volume “The Anti-Aesthetic”. The collection argued that postmodern art needed to resist the spectacle of smooth surfaces and slick production values. The anti-aesthetic was about making work that revealed its own construction, showed the seams, embraced imperfection and contradiction. Etc.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><div><img style='border-radius: 10px;' src='https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/26be72ab-85be-4270-7bec-021480bec900/w=600'/></div></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Generative AI has revived this problem at industrial scale. The tools promise infinite images, instant style transfer, and a frictionless feed of visual novelty. Every prompt produces something that wants you to feel its \"finished-ness.\" But that finish is a bit of a problem: it's an aesthetic of smooth competence detached from intention, history, or risk.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Foster's point feels newly relevant, if not urgent. The essays (with some exceptions) ask us to see aesthetic production as a social operation, not a decorative act. This may seem obvious today, but that sense is a legacy evolved over 40+ years since the text first appeared.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>What's being automated by AI is not just technique; it's judgment through the slow negotiation between maker, material, model and meaning. When a generative system fills that space for us, it collapses the moment where thinking actually happens.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p> Thinking upon this, I can relate to the feeling. Sometimes I'll find myself wondering — wait..what am I actually trying to say with this image? Why this subject? Why this composition? The AI makes it easy to generate something that looks good, but that ease can obscure the deeper questions about why the image matters at all.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Perhaps what we need now is not better “AI art,” but better questions about what art becomes when generation replaces composition. The AI anti-aesthetic today might mean making work that leaves visible evidence of decision: why this subject, why this frame, why this image at all? It might mean treating AI as a drafting instrument rather than a vending machine—pausing before publishing, asking what story the image tells about the world that made it possible.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>In Foster's moment of “The Anti-Aesthetic”, postmodern artists responded by quoting, sampling, re-contextualizing. Their critique was to make the mechanisms of culture visible. </p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Ours could be similar: to show the scaffolding of generation, expose datasets, treat the prompt log as part of the work. Not to moralize about machines, but to restore a sense that meaning requires participation and that the interval between intention and the digital image is where imagination actually lives.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>If the 1980s needed an Anti-Aesthetic to push back against spectacle, the 2020s may need an AI Anti-Aesthetic (not necessarily an anti-AI or anti-AI aesthetics) to push back against automation. The task isn't to reject AI outright. It's to reclaim that interval and locate the place where thinking happens.</p></p>"
+  },
   "header": {
-    "logoTop": "https://nearfuturelaboratory.com/images/site/logos/TOP_LaboratoryCircle_Guy_01_CircleWhite.png",
-    "logoBottom": "https://nearfuturelaboratory.com/images/site/logos/BOTTOM_LaboratoryCircle_Guy_01_CircleWhite.png",
-    "logoLink": "https://nearfuturelaboratory.com",
+    "quote": "Inspiring header quote",
+    "author": "Quote Author",
     "featuredArtist": {
       "name": "Artist Name",
       "link": "#"
     },
-    "featuredImage": "https://via.placeholder.com/386x200?text=Featured"
-  },
-  "intro": {
-    "title": "Welcome",
-    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/w47-y25/",
-    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Hello from Dubai, where I'll be for the week split between two events: the Dubai Future Forum Tues - Wed, and then Thurs - Fri in Abu Dhabi at MBZUAI for a symposium on the Future of Human-Centered AI. <br/> I had mentioned Harvard-Westlake and by coincidence (I guess?) that was followed by a workshop with students at Chapman University and then a few hours before heading to Dubai, 5 hours of one-on-one's with students in Liam Young's Fiction & Entertainment studio at SCI-Arc. <br/> #  blog, post or LinkedIn post on the anti-aesthetic AI thing I think there’s something good there. #  a word of the week hyperstition or heard on the street referring back to Radha and Tobias’s podcast episode with hyperstition￼￼ #  lead for the anti-aesthetic refer back to University of Washington hit Lab, Paul Berger, and my introduction to aesthetics and theory and postmodernism ￼ <br/></p>"
+    "featuredImage": "https://via.placeholder.com/386x200?text=Featured",
+    "logoBottom": "https://via.placeholder.com/163x50?text=Logo"
   },
   "sections": [
     {
       "type": "sponsor",
-      "title": "Principles of Promotion",
-      "sponsorLink": null,
-      "sponsorLabel": "PROMOTE",
+      "title": "Sponsor Section",
       "items": [
         {
-          "title": "Principles",
-          "link": "https://nearfuturelaboratory.com/blog/2025/11/promotional-principles-for-creative-people/",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Metalabel's practical guide for creative people who love making work but struggle with promotion. It offers twelve principles such things as “do it *for* yourself” and “small is beautiful” to things like release windowing, hosting events, and making the next thing. All of this reframes marketing as care, context, and community rather than chasing metrics. It's got examples, anecdotes, and contributions from other creators (me too!), it argues for defining your own version of success, protecting your creative joy, and staying devoted to the long-term practice of making. It seems to still exist as a living/evolving Google doc.</p>",
-          "subtitle": "PROMOTE OR PERISH",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/4df44302-f519-40f1-c3a1-b66d682ca700/w=600",
-          "readMoreText": "Read more →"
+          "title": "Sponsor Item 1"
         }
       ],
       "containerStyles": {
@@ -44,22 +36,11 @@
     },
     {
       "type": "dispatch",
-      "title": "Found in the Near Future",
-      "dispatchLink": "Example dispatchLink",
-      "dispatchLabel": "Example dispatchLabel",
-      "tags": [
-        "AI",
-        "TAG2"
-      ],
-      "signalsLabel": "Example signalsLabel",
+      "title": "Dispatch Section",
+      "tags": [],
       "items": [
         {
-          "title": "Dispatch Item 1",
-          "link": "https://example.com",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19x !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: Domine, serif !important; font-size: 19x !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Example description for dispatch item 1. This provides context and details about the content.</p></p>",
-          "subtitle": "Subtitle for item 1",
-          "image": "https://via.placeholder.com/800x600?text=Image",
-          "readMoreText": "Read more →"
+          "title": "Dispatch Item 1"
         }
       ],
       "containerStyles": {
@@ -70,14 +51,52 @@
     },
     {
       "type": "apps-sites",
-      "title": "To Be Read",
+      "title": "Apps Sites Section",
       "items": [
         {
-          "title": "Patchwork: Syncing on AI Standards",
-          "link": "https://luma.com/rutu7j4a?tk=l2OxLn",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Everyone's shipping. But are we syncing?<br/> ​Across AI, builders are creating new standards for agents, identity, and payments — sometimes solving problems no one else has seen yet, and other times solving the same ones differently.<br/> ​This is a community breather — a space to step back, compare notes, and align the patchwork of standards.</p>",
-          "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/g2/472df3f2-f587-456a-8f0f-50956b7038db.jpg",
-          "readMoreText": "Read more →"
+          "title": "Apps Sites Item 1"
+        }
+      ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      }
+    },
+    {
+      "type": "apps-sites-single-column",
+      "title": "Apps Sites Single Column Section",
+      "items": [
+        {
+          "title": "Apps Sites Single Column Item 1"
+        }
+      ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      }
+    },
+    {
+      "type": "quote",
+      "title": "Quote Section",
+      "items": [
+        {
+          "quote": "Example quote text for item 1"
+        }
+      ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      }
+    },
+    {
+      "type": "indie-mag",
+      "title": "Indie Mag Section",
+      "items": [
+        {
+          "title": "Indie Mag Item 1"
         }
       ],
       "containerStyles": {
@@ -88,14 +107,10 @@
     },
     {
       "type": "indie-mag-single-column",
-      "title": "Lending Library",
+      "title": "Indie Mag Single Column Section",
       "items": [
         {
-          "title": "Friday Gallery - Mother Tongue",
-          "link": "https://www.thefridaygallery.com/",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Domine, serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Mitch Jafery's Friday Gallery at The Row DTLA installs the *Mother Tongue* lending library and popup bookstore, a weaving together of perspectives on power and language: from the conversations of plants, to the secret lexicon of an extinct female-only language. It will span cultures, eras, and genres: from protest poetry to con artists, from political philosophy to comic books.</p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/d7dab2cc-e0ac-416c-ccba-c19221d2bd00/w=900",
-          "readMoreText": "Go Visit →"
+          "title": "Indie Mag Single Column Item 1"
         }
       ],
       "containerStyles": {
@@ -106,15 +121,10 @@
     },
     {
       "type": "books-accessories",
-      "title": "Social Climbers",
-      "byline": "Shawn Chiki",
-      "bylineLink": "https://shawnchiki.xyz",
+      "title": "Books Accessories Section",
       "items": [
         {
-          "title": "The Night Climbers of Cambridge",
-          "link": "https://a.co/d/3uAhuCT",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Parkour in the 1930s?<br/> This pseudonymously authored book (“Whipplesnaith”) describes this secret group, led by the mysterious ‘Butterfly Catcher’, as they scale the Cambridge University buildings in the darkest hours.<br/> (I'm still not sure if this is an elaborate fiction or historically accurate!)<br/> (p.s. Check out Shawn's portfolio to see how this is the perfect background material for his thesis work.)</p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/bfc48b1f-e32c-4b2c-9974-23b2fcb0d500/w=900"
+          "title": "Books Accessories Item 1"
         }
       ],
       "containerStyles": {
@@ -126,48 +136,9 @@
     {
       "type": "food-for-thought",
       "title": "Food For Thought Section",
-      "items": null,
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      }
-    },
-    {
-      "type": "food-for-thought",
-      "title": "From the Discord",
       "items": [
         {
-          "title": "Take This Job",
-          "category": "We Never Wanted To Make Them Anyway",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I worked at a branding agency in NYC once. Not for very long. Culture clash. I'll never forget the one guy who sat over there with a few contrivances to bind and cobble presentation and PowerPoint pitch decks for 'leave behinds'. No one else could mess with his kit. He'd totally mad dog any one who came around. He was king of his somewhat sad little castle.<br/> Presentation startup Gamma just raised $68 million at a $2.1 billion valuation, boasting 70 million users, profitability, and a lean 52-person team. The company is taking on PowerPoint and Google Slides with AI-powered, instant presentations. Gamma is shaking up the presentation world, turning text into slick slides with AI and racking up millions of users—all while staying lean, profitable, and ambitious enough to take on the industry’s biggest names.</p>",
-          "link": "https://www.nytimes.com/2025/11/10/business/dealbook/gamma-ai-fundraise.html",
-          "sharedBy": "mtait",
-          "channel": "ai-for-powerpoint?",
-          "readMoreLink": "https://www.nytimes.com/2025/11/10/business/dealbook/gamma-ai-fundraise.html",
-          "readMoreTxt": "Read On →"
-        },
-        {
-          "title": "$300 billion to save the world",
-          "category": "Stay On The Rails",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">AI is hurtling forward, but the money to keep it from going off the rails is barely a blip. Stanford’s Charles Jones says we should be spending billions more to keep humanity safe—because the stakes couldn’t be higher.</p>",
-          "link": "https://www.nytimes.com/2025/11/15/business/dealbook/charles-jones-ai-apocalypse.htm",
-          "sharedBy": "ian",
-          "channel": "ai-apocolypse",
-          "readMoreLink": "https://www.nytimes.com/2025/11/15/business/dealbook/charles-jones-ai-apocalypse.html",
-          "paywall": true,
-          "readMoreTxt": "Read On →"
-        },
-        {
-          "title": "Windstar Enterprises",
-          "category": "Read",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Windstar blends psychology and sound to help you rewrite your mental script. Their Solutions Seminar uses music, guided audio, and a unique video brochure to help you break free from old patterns and unlock your potential.Change your story, change your life—Windstar’s Solutions Seminar mixes music, memory, and a dash of 80s flair to help you take charge of your future.</p>",
-          "link": "https://www.windstarsolutions.com",
-          "image": "",
-          "sharedBy": "Solutions",
-          "channel": "eh-what",
-          "readMoreLink": "https://www.windstarsolutions.com",
-          "readMoreTxt": "Read On →"
+          "title": "Food For Thought Item 1"
         }
       ],
       "containerStyles": {
@@ -178,17 +149,11 @@
     },
     {
       "type": "aesthetically-pleasing",
-      "title": "Noted",
-      "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Olalekan B. Jeyifous is an extraordinary creative whose practice crosses across and between architecture, public art, immersive installation, and speculative visual culture—making. What I enjoy in particular with is work is the way he is able to integrate generative imaging techniques, tools, and practices that are meaning-making first, and technique second. This is most certainly not “AI Slop”.</p>",
+      "title": "Aesthetically Pleasing Section",
+      "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Description for aesthetically-pleasing section.</p></p>",
       "items": [
         {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/3f2742a7-6d3d-4f00-e4c9-8c2009643b00/w=600"
-        },
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/7ce9b033-6b8d-4254-67d9-f3aa95c25900/w=600"
-        },
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b927c525-7ea2-4b03-f3ac-9a2894a46400/w=900"
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/26be72ab-85be-4270-7bec-021480bec900/w=600"
         }
       ],
       "containerStyles": {
@@ -200,13 +165,10 @@
     {
       "type": "classifieds",
       "title": "Classifieds Section",
-      "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\"><p style=\"font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\">Jobs</p></p>",
-      "bookingLink": "Example bookingLink",
-      "bookingText": "Example bookingText",
+      "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\"><p style=\"font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\">Description for classifieds section.</p></p>",
       "items": [
         {
-          "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Wellcome Trust is hiring a Chief Strategy Officer</p>",
-          "link": "https://pcdn-global.jobboardly.com/jobs/chief-strategy-officer-9b6c13f0"
+          "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Example classified content for item 1.</p></p>"
         }
       ],
       "containerStyles": {
@@ -220,9 +182,7 @@
       "title": "Animated Image Section",
       "items": [
         {
-          "image": "https://via.placeholder.com/800x600?text=Image",
-          "link": "https://example.com",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Ubuntu, sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: Ubuntu, sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Example description for animated-image item 1. This provides context and details about the content.</p></p>"
+          "image": "https://via.placeholder.com/800x600?text=Image"
         }
       ],
       "containerStyles": {
@@ -233,122 +193,67 @@
     }
   ],
   "footer": {
-    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w47y25/",
-    "newsletterSubscribeLink": "https://nearfuturelaboratory.com/newsletter/",
-    "logo": "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png",
-    "logoLink": "https://nearfuturelaboratory.com",
+    "emailShare": "mailto:?subject=Newsletter&body=Check%20out%20this%20newsletter",
+    "newsletterSubscribeLink": "https://example.com/subscribe",
+    "logo": "https://via.placeholder.com/200x50?text=Logo",
+    "logoLink": "https://example.com",
     "socialLinks": {
-      "applepodcasts": [
-        {
-          "url": "https://podcasts.apple.com/us/podcast/near-future-laboratory-podcast/id1546452193",
-          "title": "Near Future Laboratory on Apple Podcasts"
-        }
-      ],
-      "spotify": [
-        {
-          "url": "https://open.spotify.com/show/1vHzwGE5J19LvXSo8M93MM",
-          "title": "Near Future Laboratory on Spotify"
-        }
-      ],
       "github": [
         {
-          "url": "https://github.com/bleeckerj",
-          "title": "Personal GitHub"
-        },
-        {
-          "url": "https://github.com/nearfuturelaboratory",
-          "title": "Near Future Laboratory GitHub"
-        },
-        {
-          "url": "https://github.com/nearfuturelaboratory",
-          "title": "Near Future Laboratory GitHub"
+          "url": "https://github.com/username",
+          "title": "GitHub"
         }
       ],
       "instagram": [
         {
-          "url": "https://instagram.com/darthjulian",
-          "title": "Personal Instagram"
-        },
-        {
-          "url": "https://instagram.com/nearfuturelaboratory",
-          "title": "Company Instagram"
+          "url": "https://instagram.com/username",
+          "title": "Instagram"
         }
       ],
       "linkedin": [
         {
-          "url": "https://linkedin.com/in/julianbleecker",
-          "title": "Personal LinkedIn"
-        },
-        {
-          "url": "https://www.linkedin.com/company/near-future-laboratory/",
-          "title": "Near Future Laboratory LinkedIn"
-        }
-      ],
-      "youtube": [
-        {
-          "url": "https://youtube.com/@nearfuturelaboratory",
-          "title": "YouTube Channel"
-        }
-      ],
-      "discord": [
-        {
-          "url": "https://patreon.com/nearfuturelaboratory",
-          "title": "Join Patreon to join the Discord Community"
-        }
-      ],
-      "patreon": [
-        {
-          "url": "https://patreon.com/nearfuturelaboratory",
-          "title": "Support me on Patreon"
-        }
-      ],
-      "substack": [
-        {
-          "url": "https://newsletter.substack.com",
-          "title": "Newsletter on Substack"
+          "url": "https://linkedin.com/in/username",
+          "title": "LinkedIn"
         }
       ]
     },
     "unsubscribeLink": "[unsubscribe]",
-    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2025/w47-y25",
-    "archiveUrl": "https://nearfuturelaboratory.com/newsletters",
-    "gratitude": "This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle based production workflow. It's a work-in-progress building on a refactor of the <a href='https://densediscovery.com'>Dense Discovery</a> newsletter's look and vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It's a great newsletter and I would encourage you to subscribe and become a paid member.",
-    "address": "© 2025 Near Future Laboratory<br>Venice Beach, California<br>United States",
-    "colophon": "Imagination is not a luxury. It’s an early-warning system for possibility."
+    "shareUrl": "https://example.com/newsletter/current",
+    "archiveUrl": "https://example.com/newsletter/archive",
+    "gratitude": "Thank you for reading!",
+    "address": "© 2025 Your Organization<br>City, State<br>Country",
+    "colophon": "Optional colophon text or sign-off message."
   },
-  "markdownContent": "<p>* hyperstition (point to the Futurish Episode timestamp where Tobias introduces i)\n* kessler syndrome (tie to the scene in Leave The World Behind)</p>",
   "themeColors": {
-    "header": "#fffffd",
-    "sponsor": "#e5e5e5",
-    "dispatch": "#e0e5fb",
-    "apps-sites": "#ffffff",
-    "quote": "#ebebeb",
-    "indie-mag": "#f0f0f0",
+    "header": "#addcfa",
+    "sponsor": "#f8eccf",
+    "apps-sites": "#f0ffff",
+    "quote": "#d1eaf4",
+    "indie-mag": "#efe2f3",
     "books-accessories": "#ffffff",
-    "food-for-thought": "#f8f8f8",
-    "aesthetically-pleasing": "#f0f0f0",
-    "classifieds": "#ececec",
+    "food-for-thought": "#f2f2f2",
+    "aesthetically-pleasing": "#ffffff",
+    "classifieds": "#def1ef",
     "gif": "#ffffff",
-    "linkAccent": "#333333"
+    "linkAccent": "#EE3BBB"
   },
   "theme": {
-    "name": "Monochrome Grayscale",
-    "description": "Clean grayscale palette with subtle variations",
+    "name": "Current Dense Discovery",
+    "description": "The existing color scheme currently in use",
     "colors": {
-      "header": "#fffffd",
-      "sponsor": "#e5e5e5",
-      "dispatch": "#e0e5fb",
-      "apps-sites": "#ffffff",
-      "quote": "#ebebeb",
-      "indie-mag": "#f0f0f0",
+      "header": "#addcfa",
+      "sponsor": "#f8eccf",
+      "apps-sites": "#f0ffff",
+      "quote": "#d1eaf4",
+      "indie-mag": "#efe2f3",
       "books-accessories": "#ffffff",
-      "food-for-thought": "#f8f8f8",
-      "aesthetically-pleasing": "#f0f0f0",
-      "classifieds": "#ececec",
+      "food-for-thought": "#f2f2f2",
+      "aesthetically-pleasing": "#ffffff",
+      "classifieds": "#def1ef",
       "gif": "#ffffff"
     },
-    "accent": "#666666",
-    "linkAccent": "#333333"
+    "accent": "#4a7c59",
+    "linkAccent": "#EE3BBB"
   },
   "sectionStyles": {
     "$schema": "../section-styles.schema.json",

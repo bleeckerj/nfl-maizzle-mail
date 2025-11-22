@@ -150,31 +150,52 @@ def generate_example_item(section_type, item_num=1, minimal=False):
         else:
             item[field] = f'{section_type.replace("-", " ").title()} Item {item_num}'
     
-    # Add some common optional fields (not all in minimal mode)
+    # Populate all optional fields (when not minimal) so the skeleton is complete
     if not minimal:
-        optional = definition['item_fields']['optional']
-        
-        if 'link' in optional and 'link' not in item:
-            item['link'] = 'https://example.com'
-        
-        if 'description' in optional:
-            item['description'] = f'<p>Example description for {section_type} item {item_num}. This provides context and details about the content.</p>'
-        
-        if 'subtitle' in optional:
-            item['subtitle'] = f'Subtitle for item {item_num}'
-        
-        if 'image' in optional and 'image' not in item:
-            item['image'] = 'https://via.placeholder.com/800x600?text=Image'
-        
-        if section_type == 'quote' and 'author' in optional:
-            item['author'] = 'Author Name'
-            item['authorLink'] = 'https://example.com'
-        
-        if 'readMoreText' in optional or 'readMoreTxt' in optional:
-            item['readMoreText'] = 'Read more →'
-        
-        if section_type == 'aesthetically-pleasing' and 'imageLink' in optional:
-            item['imageLink'] = 'https://example.com/aesthetically-pleasing-link'
+        optional = definition['item_fields'].get('optional', [])
+
+        for opt in optional:
+            # don't overwrite anything already set (e.g. required 'image')
+            if opt in item:
+                continue
+
+            # URL-like fields
+            if opt in ('link', 'readMoreLink', 'authorLink', 'imageLink', 'logoLink'):
+                item[opt] = 'https://example.com'
+
+            # Rich text fields
+            elif opt in ('description', 'details', 'note', 'content'):
+                item[opt] = f'<p>Example {opt} for {section_type} item {item_num}.</p>'
+
+            # Small text fields
+            elif opt in ('subtitle', 'sharedBy', 'authorName', 'linkText'):
+                item[opt] = f'Example {opt} for item {item_num}'
+
+            # Images
+            elif opt == 'image':
+                item[opt] = 'https://via.placeholder.com/800x600?text=Image'
+
+            # Read-more text
+            elif opt in ('readMoreText', 'readMoreTxt'):
+                item[opt] = 'Read more →'
+
+            # Boolean flags
+            elif opt == 'paywall':
+                item[opt] = True
+
+            # tags / categories / channels
+            elif opt in ('tags',):
+                item[opt] = ['TAG1', 'TAG2']
+            elif opt in ('channel', 'category'):
+                item[opt] = f'Example {opt}'
+
+            # ISBN or other identifiers
+            elif opt == 'isbn':
+                item[opt] = '978-1-23456-789-7'
+
+            # fallback for any other optional field
+            else:
+                item[opt] = f'Example {opt}'
     
     return item
 
