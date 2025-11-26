@@ -40,7 +40,7 @@
         "borderRadius": "8px"
       },
       "contentStyles": {
-        "fontFamily": "Domine, serif",
+        "fontFamily": "IBM Plex Sans, sans-serif",
         "fontSize": "19x",
         "lineHeight": "1.2",
         "color": "#111111",
@@ -68,7 +68,7 @@
         "borderRadius": "0px"
       },
       "contentStyles": {
-        "fontFamily": "Domine, serif", 
+        "fontFamily": "IBM Plex Sans, sans-serif",
         "fontSize": "19px",
         "lineHeight": "1.2",
         "color": "#111111",
@@ -96,7 +96,7 @@
         "borderRadius": "0px"
       },
       "contentStyles": {
-        "fontFamily": "Domine, serif",
+        "fontFamily": "IBM Plex Sans, sans-serif",
         "fontSize": "19px",
         "lineHeight": "1.2",
         "color": "#111111",

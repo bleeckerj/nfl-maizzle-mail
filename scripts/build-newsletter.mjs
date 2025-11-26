@@ -531,19 +531,27 @@ async function buildNewsletter() {
     // Load section styles configuration
     let sectionStyles = {};
     let sectionStylesPath = 'data/section-styles.json'; // Default path
+    let sectionStylesSourceReason = 'default repository styles';
     
     // Check if newsletter data specifies a custom section styles file
     if (newsletterData.sectionStylesFile) {
       sectionStylesPath = newsletterData.sectionStylesFile;
+      sectionStylesSourceReason = 'specified via sectionStylesFile';
       console.log(`📋 Using custom section styles file: ${sectionStylesPath}`);
     } else if (templateName) {
       // Auto-detect template-specific section styles file
       const templateSpecificPath = `templates/${templateName}/section-styles.json`;
       if (fs.existsSync(templateSpecificPath)) {
         sectionStylesPath = templateSpecificPath;
+        sectionStylesSourceReason = `auto-detected for template "${templateName}"`;
         console.log(`📋 Auto-detected template section styles: ${templateSpecificPath}`);
       }
     }
+
+    const resolvedSectionStylesPath = fs.existsSync(sectionStylesPath)
+      ? fs.realpathSync(sectionStylesPath)
+      : path.resolve(sectionStylesPath);
+    console.log(`🗂  Section styles source: ${resolvedSectionStylesPath} (${sectionStylesSourceReason})`);
     
     try {
       const sectionStylesData = fs.readFileSync(sectionStylesPath, 'utf8');

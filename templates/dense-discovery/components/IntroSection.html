@@ -60,11 +60,11 @@
     <td align="center" class="padt20 padl20 padr20" style="border-collapse: collapse;padding-top: 20px;padding-left: 20px;padding-right: 20px;">
       <if condition="intro.imageLink">
         <a href="{{ intro.imageLink }}" target="_blank">
-          <img src="{{ intro.image }}" alt="{{ intro.imageAlt || 'Intro image' }}" style="display: block;width: 100%;max-width: 600px;height: auto;border: 0;">
+          <img src="{{ intro.image }}" alt="{{ intro.imageAlt || 'Intro image' }}" style="border-radius: 10px; display: block;width: 100%;max-width: 600px;height: auto;border: 0;">
         </a>
       </if>
       <if condition="!intro.imageLink">
-        <img src="{{ intro.image }}" alt="{{ intro.imageAlt || 'Intro image' }}" style="display: block;width: 100%;max-width: 600px;height: auto;border: 0;">
+        <img src="{{ intro.image }}" alt="{{ intro.imageAlt || 'Intro image' }}" style="border-radius: 10px; display: block;width: 100%;max-width: 600px;height: auto;border: 0;">
       </if>
     </td>
   </tr>
@@ -73,8 +73,8 @@
 <!-- Intro Content -->
 <if condition="intro.content">
   <tr>
-    <td align="left" class="ibm-plex-sans padt20 padl20 padr20 padb10" style="font-family: 'Ubuntu', sans-serif;border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 10px;padding-left: 20px;">
-      <div class="intro-content" style="font-family: 'Ubuntu', sans-serif; font-size: 21px;line-height: 30px;font-weight: 400;color: #000000;">
+    <td align="left" class="ibm-plex-sans padt20 padl20 padr20 padb10" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 10px;padding-left: 20px;">
+      <div class="intro-content" style="font-family: 'IBM Plex Sans, sans-serif'; font-size: 19px;line-height: 1.2rem; color: #000000;">
         {{{ intro.content }}}
       </div>
     </td>

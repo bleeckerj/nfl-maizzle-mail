@@ -43,7 +43,7 @@
         "fontFamily": "Domine, serif",
         "fontSize": "18px",
         "lineHeight": "22px",
-        "color": "#222222",
+        "color": "#ff0000",
         "textAlign": "left"
       },
       "linkStyles": {

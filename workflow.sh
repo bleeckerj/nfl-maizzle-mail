@@ -24,6 +24,13 @@ OUTPUT_FILE=$3
 echo "🔄 Building email with quick-build..."
 echo "📄 Content: $CONTENT_FILE"
 echo "🎨 Template: $TEMPLATE"
+TEMPLATE_STYLES_PATH="/Users/julian/Code/nfl-maizzle-mail/templates/$TEMPLATE/section-styles.json"
+DEFAULT_STYLES_PATH="/Users/julian/Code/nfl-maizzle-mail/data/section-styles.json"
+if [ -f "$TEMPLATE_STYLES_PATH" ]; then
+    echo "🗂 Section styles will default to: $TEMPLATE_STYLES_PATH (content can override via sectionStylesFile)"
+else
+    echo "🗂 No template-specific section styles found; defaulting to: $DEFAULT_STYLES_PATH (content can override via sectionStylesFile)"
+fi
 if [ -n "$OUTPUT_FILE" ]; then
     echo "💾 Output: $OUTPUT_FILE"
     node /Users/julian/Code/nfl-maizzle-mail/scripts/quick-build.mjs "$TEMPLATE" "$CONTENT_FILE" "$OUTPUT_FILE"

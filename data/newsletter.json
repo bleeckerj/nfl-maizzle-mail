@@ -1,88 +1,33 @@
 {
   "$schema": "../newsletter.schema.json",
   "template": "dense-discovery",
-  "title": "Newsletter Title",
-  "preheader": "Short preview text that appears in email clients",
+  "title": "Near Future Laboratory – w48y25",
+  "preheader": null,
+  "colorTheme": "monochrome",
   "sectionStylesFile": "templates/dense-discovery/section-styles.json",
-  "intro": {
-    "title": "The AI Anti-Aesthetic",
-    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/w47-y25/",
-    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Hello from Dubai, where I'll be for the week split between two events: the <a href='https://www.dubaifuture.ae/dubai-future-forum-2025'>Dubai Future Forum</a> Tues - Wed, and then Thurs - Fri in Abu Dhabi at MBZUAI for the symposium <a href='https://ai-nexus.mbzuai.ac.ae/?panel=Human-Computer-Interaction-Symposium-2025'>“The Future of Being Human”: HCI Symposium 2025</a></p> <p>In the meantime..it was a 15 hour flight, and I was <a href=''>thinking about AI and stuff</a>.</p> <p>Recently, at a symposium on AI, I joined a group workshopping DOGMA 95 in the context of generative AI. The conversation led me into thinking back to Hal Foster's 1983 slender little lavendar volume “The Anti-Aesthetic”. The collection argued that postmodern art needed to resist the spectacle of smooth surfaces and slick production values. The anti-aesthetic was about making work that revealed its own construction, showed the seams, embraced imperfection and contradiction. Etc.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><div><img style='border-radius: 10px;' src='https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/26be72ab-85be-4270-7bec-021480bec900/w=600'/></div></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Generative AI has revived this problem at industrial scale. The tools promise infinite images, instant style transfer, and a frictionless feed of visual novelty. Every prompt produces something that wants you to feel its \"finished-ness.\" But that finish is a bit of a problem: it's an aesthetic of smooth competence detached from intention, history, or risk.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Foster's point feels newly relevant, if not urgent. The essays (with some exceptions) ask us to see aesthetic production as a social operation, not a decorative act. This may seem obvious today, but that sense is a legacy evolved over 40+ years since the text first appeared.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>What's being automated by AI is not just technique; it's judgment through the slow negotiation between maker, material, model and meaning. When a generative system fills that space for us, it collapses the moment where thinking actually happens.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p> Thinking upon this, I can relate to the feeling. Sometimes I'll find myself wondering — wait..what am I actually trying to say with this image? Why this subject? Why this composition? The AI makes it easy to generate something that looks good, but that ease can obscure the deeper questions about why the image matters at all.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Perhaps what we need now is not better “AI art,” but better questions about what art becomes when generation replaces composition. The AI anti-aesthetic today might mean making work that leaves visible evidence of decision: why this subject, why this frame, why this image at all? It might mean treating AI as a drafting instrument rather than a vending machine—pausing before publishing, asking what story the image tells about the world that made it possible.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>In Foster's moment of “The Anti-Aesthetic”, postmodern artists responded by quoting, sampling, re-contextualizing. Their critique was to make the mechanisms of culture visible. </p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Ours could be similar: to show the scaffolding of generation, expose datasets, treat the prompt log as part of the work. Not to moralize about machines, but to restore a sense that meaning requires participation and that the interval between intention and the digital image is where imagination actually lives.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>If the 1980s needed an Anti-Aesthetic to push back against spectacle, the 2020s may need an AI Anti-Aesthetic (not necessarily an anti-AI or anti-AI aesthetics) to push back against automation. The task isn't to reject AI outright. It's to reclaim that interval and locate the place where thinking happens.</p></p>"
-  },
   "header": {
-    "quote": "Inspiring header quote",
-    "author": "Quote Author",
-    "featuredArtist": {
-      "name": "Artist Name",
-      "link": "#"
-    },
-    "featuredImage": "https://via.placeholder.com/386x200?text=Featured",
-    "logoBottom": "https://via.placeholder.com/163x50?text=Logo"
+    "logoTop": "https://nearfuturelaboratory.com/images/site/logos/TOP_LaboratoryCircle_Guy_01_CircleWhite.png",
+    "logoBottom": "https://nearfuturelaboratory.com/images/site/logos/BOTTOM_LaboratoryCircle_Guy_01_CircleWhite.png",
+    "logoLink": "https://nearfuturelaboratory.com"
+  },
+  "intro": {
+    "title": "Hyperstition",
+    "image": "https://www.urbanomic.com/wp-content/uploads/2018/11/newccru.jpg",
+    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/w48-y25/",
+    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>The CCRU (Cybernetic Culture Research Unit) was a peculiar collective situated at the University of Warwick in the 1990s. Amongst very many other things, the CCRU popularized the term <span style=\"background: #efefef; display: inline-block; padding-left: 2px !important; padding-right: 2px !important;\">‘hyperstition’</span> to describe the phenomenon where fictional ideas or narratives can influence reality by being believed and acted upon.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Consider this a kind of precursor to Design Fiction in that the concept suggests that certain ideas, when circulated and embraced, can manifest in the real world, effectively making fiction real through its impact on culture and society. In this context, Design Fiction is like the operationalization — the deliberate deployment of ideas in a particularly grounded fashion, but doing so not through the medium of prose-based storytelling but through designed artifacts, experiences, and scenarios that exist very much <em>as if..</em> — that feeling that this thing (the artifact) is extant and real..just from a slightly near future or ‘adjacent now’</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Here's the way the CCRU put it:</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>“<em>Hyperstition: [An] Element of effective culture that makes fiction in itself real, through fictional quantities such as as time-travelling potentials. Hyperstition operates as a coincidence intensifier, effecting a call to the Old ones.</em>” - <a href='https://monoskop.org/images/f/f1/CCRU_Abstract_Culture_Digital_Hyperstition_1999.pdf'>Abstract Culture Digital Hyperstition 1999</a></p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Hyperstition is a combination of \"hyper\" and \"superstition,\" referring to ideas or narratives that, through their circulation and belief, bring about their own reality. It suggests that certain beliefs or stories can influence the future by shaping perceptions and actions in the present. Hyperstition is often discussed in the context of speculative fiction, philosophy, and cultural theory, where it explores how fictional concepts can manifest in real-world outcomes.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p style='margin-top: 1.5rem !important; margin-bottom: 1.5rem !important;'>   <span style=\"display: inline-block; background: #efefef; font-family: monospace !important; font-size: 0.8rem !important; line-height: 1rem !important; padding: 8px 10px !important;\">     This reflection was prompted by <a href='https://podcasts.apple.com/us/podcast/futur-ish/id1829175205?i=1000732105524'>Episode 006: The Rumour That Cost Thirty-Five Billion Dollars and Created A Data Center Radar</a> from Radha and Tobias' “Futurish” podcast which gets into hyperstition in the context of a real-world rumor. Give it a listen! <br/><br/>Oh, and parenthetically, if you want a weird “Wayne's World”-like podcast on Mark Fisher you might be interested in these guys who are like Brick and Brack arm chair interpreters of Fisher's work: <a href='https://podcasts.apple.com/us/podcast/lost-futures-a-mark-fisher-podcast/id1685663806'>Lost Futures: A Mark Fisher Podcast</a>. These guys are as infuriating as they are entertaining, perhaps without knowing they are either.   </span> </p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>“Popularized” might be overstating things a bit as the CCRU was always a bit of an obscure, anonymous and underground affair. More punk that trad academic, I would say. But the idea of hyperstition has since been taken up by various thinkers and writers interested in the intersections of culture, technology, and speculative fiction. It's relevant to the kinds of discussions we have here and a pathway to connecting material reality to fiction — or how to begin <span style=\"background: #efefef; display: inline-block; padding-left: 6px !important; padding-right:6px !important;\">becoming future</span>.</p> <p>For those who are Fisherarians, as in Mark Fisher-arian, the late cultural theorist and writer who explored themes of capitalism, culture, and ideology, hyperstition is a concept that resonates with his work. Fisher often discussed how certain cultural phenomena and narratives could shape societal beliefs and behaviors, aligning with the idea of hyperstition as a force that can influence reality through its circulation and acceptance.</p> <p>I was certainly influenced by Fisher's writing and lectures, introduced to him indiretly during my studies at UCSC in the early 1990s where and when I was trying to develop some kind of scaffolding that could be erected such as to contain the kinds of cultural objects I was boyishly fascinated with — computers, software, games, etc. — and their meaning beyond “whoa..cool!”. An engineer encountering the often in my mind abstract cultural theories of Deleuze and Guattari, Zizek, Haraway, Jameson and others, this seemed a fun and challenging way to ground them to popular discourse. Fisher's exploration of how culture and ideology intersected with capitalism and technology provided a framework for understanding the dynamics of contemporary society, and undergirded a batch of work I did on the video games <span style=\"background: #efefef; display: inline-block; padding-left: 4px !important; padding-right: 4px !important;\">SimCity™</span> and <span style=\"background: #efefef; display: inline-block; padding-left: 4px !important; padding-right: 4px !important;\">Daryl Gates' Police Quest IV: Open Season</span></p> <p>The structure of this combination of hype and superstition is a useful way to think about how certain ideas or narratives can gain traction and influence reality. It suggests that when a concept is widely circulated and believed, it can create a feedback loop that reinforces its own existence and impact. This can be seen in various cultural phenomena, such as conspiracy theories, urban legends, or even technological trends, where the belief in the idea itself contributes to its manifestation in the real world.</p> <p>Understanding the pheneonmon of hyperstition can provide insights into how cultural narratives shape our perceptions of reality and influence our actions. It highlights the power of belief and storytelling in shaping the world around us, and the ways in which fiction can become intertwined with reality through collective acceptance and action.</p> <p>Beyond understanding the pheneomenon, we might want to operationalize the principles, right? I mean — if this is a kind of lever or monkey wrench how might we use it to our advantage? How can you tell stories about worlds you want to inhabit, or engage in, or debate and discuss? And how can you do that if your primary gifts and medium are not prose-based story telling? Can you do this through design, through objects, through events, through experiences?</p> <p>These are questions that the Near Future Laboratory has been exploring for decades now through design fiction, speculative design, and other practices that seek to create tangible representations of possible futures.</p> <p>This goes beyond abstraction speculation because I actually prototype in material. Not just ideas but things that can be held, used, experienced, and that form the basis for product design, concept development, and strategic foresight.</p>    <p>By crafting artifacts, scenarios, and experiences that embody speculative ideas, we can help ourselves and our organizations see the unseen opportunities and test new concepts in a way that is more engaging and impactful than traditional methods of ideation or brainstorming.</p> <p>Want to discover more about how this approach to design fictional prototyping can help your team and organization gain a bit of future sight? <a href='https://nearfuturelaboratory.com/contact'>Get in touch</a> and let's have a conversation about how we can work together to explore the futures you want to create.</p></p>"
   },
   "sections": [
     {
-      "type": "sponsor",
-      "title": "Sponsor Section",
-      "items": [
-        {
-          "title": "Sponsor Item 1"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      }
-    },
-    {
-      "type": "dispatch",
-      "title": "Dispatch Section",
-      "tags": [],
-      "items": [
-        {
-          "title": "Dispatch Item 1"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "8px"
-      }
-    },
-    {
       "type": "apps-sites",
-      "title": "Apps Sites Section",
+      "title": "Upcoming Event",
       "items": [
         {
-          "title": "Apps Sites Item 1"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      }
-    },
-    {
-      "type": "apps-sites-single-column",
-      "title": "Apps Sites Single Column Section",
-      "items": [
-        {
-          "title": "Apps Sites Single Column Item 1"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      }
-    },
-    {
-      "type": "quote",
-      "title": "Quote Section",
-      "items": [
-        {
-          "quote": "Example quote text for item 1"
+          "title": "Office Hours",
+          "subtitle": "The Side Projects Edition",
+          "link": "https://luma.com/xdmbhcee",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Weekly Office Hours! Join us this Friday (like every Friday..) to discuss projects, make plans, get feedback, and connect with others working on side projects. Brought to you by my awesome supporters over on Patreon! Please RSVP and <a href='https://patreon.com/nearfuturelaboratory' style=\"font-weight: 500 !important; text-decoration: underline !important; color: #333333 !important\">become a supporter</a>!</p>",
+          "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/4f/296f02a6-d57e-427e-9276-a3a8e95fb5c8.webp",
+          "readMoreText": "Register To Attend →"
         }
       ],
       "containerStyles": {
@@ -93,10 +38,15 @@
     },
     {
       "type": "indie-mag",
-      "title": "Indie Mag Section",
+      "title": "Oh Canada..",
       "items": [
         {
-          "title": "Indie Mag Item 1"
+          "title": "Canada Makes A (Jail) Break for It",
+          "link": "https://www.gameplaylab.ca/jailbreaking-canada-playshop",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Digital Futures at OCAD University is proud to present a playshop from 26th to 28th November 2025 in conjunction with authors and futurists <a href='https://craphound.com/' style=\"font-weight: normal !important; text-decoration: underline !important; color: #333333 !important\">Cory Doctorow</a> and SFI alum <a href='https://www.madelineashby.com/' style=\"font-weight: normal !important; text-decoration: underline !important; color: #333333 !important\">Madeline Ashby</a> to playfully co-fabulate possible futures for Canada in the contemporary climate of aggressive late-stage capitalism.</p></p>",
+          "image": "https://www.gameplaylab.ca/wp-content/uploads/2025/11/IMG_0280.png",
+          "readMoreText": "🏃🏽‍♂️‍➡️🇨🇦 →",
+          "readMoreLink": "https://www.gameplaylab.ca/jailbreaking-canada-playshop"
         }
       ],
       "containerStyles": {
@@ -107,24 +57,14 @@
     },
     {
       "type": "indie-mag-single-column",
-      "title": "Indie Mag Single Column Section",
+      "title": "Film Forum",
       "items": [
         {
-          "title": "Indie Mag Single Column Item 1"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      }
-    },
-    {
-      "type": "books-accessories",
-      "title": "Books Accessories Section",
-      "items": [
-        {
-          "title": "Books Accessories Item 1"
+          "title": "Humans in the Loop",
+          "link": "https://www.youtube.com/watch?v=t0bB5X98TrQ",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I was very fortunate to see a screening of this — outside like a drive-in theater only I sat in/on a beanbag chair — while I was at that \"The Future of Being Human – HCI Symposium 2025\" in Abu Dhabi, UAE that Elizabeth Churchill organized at MBZUAI last week, and to have a Q&A with the producer of the film.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><div><img style='border-radius: 10px' src='https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/634fc037-f160-4ae2-a4f9-4435d41c3200/w=600'></div></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I wouldn't want to ruin my own experience of watching it, slightly tired from a day of high-engagement and creative workshopping, by trying to analyze the textures of the film's narrative too closely here. Suffice to say that it weaves together the stories of several people whose lives are deeply intertwined with AI technologies, exploring themes of labor, creativity, and the human condition in an increasingly automated world.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><div><img style='border-radius: 10px' src='https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/30828a84-ce26-4e31-64cb-a46ad2e18e00/w=600'></div></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Add this one to your watch list if you are looking for a more hopeful and richly nuanced take on the entanglement of humans, culture, work, and AI than the usual dystopian fare. If you're hoping to be activated/angered by corporate domination, or if you're hoping for wet streets, vertical bands of neon and cybernetic fetish dreams of computer control systems and screen UIs that for some reason chitter as the surreptitious virus upload progress bar inches forward, then this one is not for you.</p></p>",
+          "image": "https://resizing.flixster.com/nAu-tVTzr8tEINFfH-BkcvwRBXk=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31365991_p_v13_aa.jpg",
+          "readMoreText": "Trailer →"
         }
       ],
       "containerStyles": {
@@ -135,10 +75,86 @@
     },
     {
       "type": "food-for-thought",
-      "title": "Food For Thought Section",
+      "title": "From the NFL Discord",
       "items": [
         {
-          "title": "Food For Thought Item 1"
+          "title": "Slow AI?",
+          "link": "https://aixdesign.co",
+          "category": "Slow AI",
+          "sharedBy": "Lindsey DeWitt Prat, Ph.D.",
+          "channel": "🛠-whats-ai-good-for-anyway",
+          "readMoreLink": "https://aixdesign.co",
+          "readMoreText": "Slow down 🐢 →",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">AIxDESIGN, a global community and critical AI research & design lab, champions the idea of 'Slow AI'—an approach that prioritizes people and communities over profits. They held a design festival last May focussing on this theme, bringing together thinkers, designers, and researchers to explore how AI can serve society responsibly. A strong commitment to critical research and open collaboration, AIxDESIGN is pushing back against the rush for commercial AI, advocating for technology that's more intentional, ethical, and beneficial to everyone.</p></p>",
+          "image": "https://a.storyblok.com/f/266545/942x1006/d0bb50f4a5/screenshot-2025-03-22-at-00-00-00.png/m/"
+        },
+        {
+          "title": "AI killed the streaming stars\n",
+          "category": "Don't Judge an AI by its Album Cover",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">AI is giving would-be musicians a shot at stardom, churning out viral tracks and blurring the line between human and machine-made music. With just a prompt and a few clicks, a new breed of artist is emerging — and the algorithmically-driven charts are taking notice.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">A speculative take on this phenomenon — like all the other AI-dooms-creativity scenarios — is to say that evidence of the human in the creative loop will create a category of production that is preferred by some, in the same way farm-fresh food is preferred (by) and available (to) some over processed food, live performance, etc. Taste — the cultural kind — are as varied as individuality. Just as the quarter-zip matcha kids and maybe yourself. Judgement — yours and mine — can be seen as a symptom of our conservative tendencies.</p></p>",
+          "link": "https://www.newyorker.com/culture/infinite-scroll/that-new-hit-song-on-spotify-it-was-made-by-ai",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/95f8ddd3-95d7-495d-e595-88414979ef00/w=600",
+          "sharedBy": "julian bleecker, ph.d.",
+          "paywall": true,
+          "channel": "🤖-whats-ai-good-for",
+          "readMoreLink": "https://www.newyorker.com/culture/infinite-scroll/that-new-hit-song-on-spotify-it-was-made-by-ai",
+          "readMoreText": "Read On →"
+        },
+        {
+          "title": "The Gospel of AI",
+          "category": "The Good Book of AI",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Solomon Ray, a soul singer made entirely by AI, is climbing the gospel charts and stirring up both excitement and outrage. Some listeners are mesmerized by his sound, others are furious at the idea of a robot leading worship. The future of music just got a lot more complicated..and that may be the polite way of looking at it. Anger, outrage, debate, confusion — is this analogous to the early days of synthesizers in music? Or punk rock? Or Dylan going electric? Or Miles going funk? Or is this something more profound about the nature of creativity, authenticity, and the human spirit in an age of intelligent machines?</p>",
+          "link": "https://pagesix.com/2025/11/25/entertainment/music-fans-enraged-as-ai-generated-singer-tops-holiday-charts/",
+          "sharedBy": "Marcus Bleecker",
+          "channel": "🛠-whats-ai-good-for-anyway",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/64f73615-2e0b-4669-379e-b7c93b043800/w=600",
+          "readMoreLink": "https://pagesix.com/2025/11/25/entertainment/music-fans-enraged-as-ai-generated-singer-tops-holiday-charts/",
+          "readMoreText": "Preach On →"
+        },
+        {
+          "title": "Speaking of Tastes",
+          "category": "Sartorial Signals",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Gen Z men are swapping their beloved Nike Tech sweats and jobbers for quarter-zip sweaters, chasing a vibe that’s more polished, less rowdy, and all about leveling up. It’s a coming-of-age look, where style meets ambition.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Why do I care? What does this have to do with futures and/or design?</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The obvious take is that fashion trends reflect broader cultural shifts. Meaning comes in a variety of forms — as does its implications. Time to short Starbucks and Nike? Are they out of touch? (I heard coffee consumption is off amongst GenZ)</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Time to go long on matcha? Should we expect a bump for whatever hedge fund owns Old Navy or Unionbay?</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Time to rethink the aesthetics of ambition and success in a post-pandemic world?</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Another perspective would read this as a symptom of Gen Z’s desire for authenticity and individuality in a world saturated with mass-produced fashion. The quarter-zip sweater, with its retro appeal and versatility, allows young men to express their personal style while still adhering to a sense of practicality and comfort.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Another, other take would be to read this as a reaction to the dismal prospects for jobs, planet, and society. Maybe the quarter-zip is a uniform for the new precariat, a precursor to a renaissance of meaning..an ironic retro sartorial shield against the uncertainties of the future.</p></p>",
+          "link": "https://www.nytimes.com/2025/11/21/style/quarter-zip-sweater-men-tiktok.html",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/27314f6f-f0cd-4ea3-49e4-b3a194ffcd00/w=900",
+          "sharedBy": "julian bleecker, ph.d.",
+          "channel": "sartorial-signals",
+          "readMoreLink": "https://www.nytimes.com/2025/11/21/style/quarter-zip-sweater-men-tiktok.html",
+          "readMoreText": "Read On →",
+          "paywall": true
+        },
+        {
+          "title": "How do LLMs understand financial malfeasance?",
+          "category": "Robot Auditors",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">OpenAI created some models that were trained on real world financial data, including anti-crime audits and music tour balance sheets. The models evidently did okay slicing through the numbers and picking out the riskiest metrics, pinpointing where things change, and painting a clear financial picture.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">This dataset and model training approach makes me think about the kinds of things that'll work — and the things that'll just get all muddled. It also reminds me of a conversation this week with a graduate student working on “vibe analytics” — the somewhat dubious idiom for charging through analytic data with an LLM as your analyst.</p></p>",
+          "link": "https://huggingface.co/datasets/openai/gdpval",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/75dfbd18-48d4-4ec1-70af-8d0ef239d700/w=600",
+          "sharedBy": "Julian Bleecker, Ph.D.",
+          "channel": "🔨-whats-ai-good-for",
+          "readMoreLink": "https://huggingface.co/datasets/openai/gdpval",
+          "readMoreText": "Read On →"
+        },
+        {
+          "title": "Vibe Analytics?",
+          "category": "Risk Mitigation",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">On the list of favorite movies to re-watch may not make sense to you, but let me try: “<a href='https://www.imdb.com/title/tt1615147/' style=\"font-weight: normal !important; text-decoration: underline !important; color: #333333 !important\">Margin Call</a>” (2011).</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Why?</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">It's hero is the risk analyst who spots the impending financial collapse in the middle of the night while grinding on some data his recently dismissed department head handed him on his way out the door, literally. And a theme here at the Near Future Laboratory is creating the kind of frames of reference and organizational muscle to see around corners by representing the future in the present.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Zachery Quinto plays a rocket scientist turned risk analyst who perceives what others miss: he reads the story the data is trying to tell. But it takes a perceptive person willing to take risks to articulate what others can't or won't see. His boss (Paul Bettany) has to ask him what he's seeing. The film suggests a crucial point: authority doesn't grant vision. Leaders need people who can help them see the risks ahead.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The data on the screen is the artifact from some collapsing financial future — and Quinto's character is like the design fiction archeologist who helps that data tell its story.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Now, enter vibe analytics: the practice of using LLMs to explore data sets in an improvisational way, surfacing patterns and insights that siloed teams might miss. It's a way to democratize the risk analysis process, allowing anyone with access to the data and an LLM to play the role of Zachery Quinto.</p> <p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Cool, but skeptical. The data was there all along, maybe. The patterns were there all along, maybe. The question is whether the LLM is actually adding value, or just repackaging what humans could already see if they were willing to look — and wanted to see.</p></p>",
+          "link": "https://archive.ph/FM6Pn",
+          "image": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iAhMtz.OJefY/v0/-1x-1.webp",
+          "sharedBy": "julian bleecker, ph.d.",
+          "channel": "🔨-whats-ai-good-for",
+          "readMoreLink": "https://archive.ph/FM6Pn",
+          "readMoreText": "Read On →"
+        },
+        {
+          "title": "Don't Worry! Be Angry!",
+          "category": "Terraforming",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">\"Should you be angry and optimistic despite drowning in a climate challenged world? In this conversation with José Luis de Vicente, Kim Stanley Robinson reimagines terraforming as a mix of science, politics, and hope and in so doing reminds us that new worlds start with bold imagination and a willingness to rewrite the rules.\"</p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/81bdead3-8a55-46fe-7588-43918c5de000/w=600",
+          "link": "https://lab.cccb.org/en/angry-optimism-in-a-drowned-world-a-conversation-with-kim-stanley-robinson/",
+          "sharedBy": "ManualEntry",
+          "channel": "🌍-save-the-planet",
+          "readMoreLink": "https://lab.cccb.org/en/angry-optimism-in-a-drowned-world-a-conversation-with-kim-stanley-robinson/",
+          "readMoreText": "Read on →"
         }
       ],
       "containerStyles": {
@@ -148,41 +164,18 @@
       }
     },
     {
-      "type": "aesthetically-pleasing",
-      "title": "Aesthetically Pleasing Section",
-      "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Description for aesthetically-pleasing section.</p></p>",
+      "type": "sponsor",
+      "title": "Join the Near Future Laboratory Discord",
+      "sponsorLabel": "COMMUNITY IS CREATIVITY",
+      "sponsorLink": "https://patreon.com/nearfuturelaboratory",
       "items": [
         {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/26be72ab-85be-4270-7bec-021480bec900/w=600"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "12px 20px",
-        "borderRadius": "0px"
-      }
-    },
-    {
-      "type": "classifieds",
-      "title": "Classifieds Section",
-      "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\"><p style=\"font-family: Share Tech Mono, monospace !important; font-size: 18px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\">Description for classifieds section.</p></p>",
-      "items": [
-        {
-          "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Example classified content for item 1.</p></p>"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "12px 20px",
-        "borderRadius": "0px"
-      }
-    },
-    {
-      "type": "animated-image",
-      "title": "Animated Image Section",
-      "items": [
-        {
-          "image": "https://via.placeholder.com/800x600?text=Image"
+          "title": "Near Future Laboratory Patreon",
+          "subtitle": "Join the Discord, Support Office Hours, the Newsletter and More",
+          "readMoreText": "Join Us →",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The Near Future Laboratory is supported by its community and members. <a href='https://patreon.com/nearfuturelaboratory' style=\"font-weight: normal !important; text-decoration: underline !important; color: #333333 !important\">Join us on Patreon</a> to support our work, get access to exclusive content, and be part of our vibrant Discord community where we discuss design, technology, creativity, the future and do projects and support each others' work.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I host weekly Office Hours for Patrons — now for 285 weeks and running — every Friday at 0900 (UTC-7 / California). It's a great way to connect, ask questions, and get feedback on your projects.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Each week two people from the community present a project, idea, or challenge and we discuss it together. It's a great way to get feedback, learn from others, and connect with like-minded people.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">All of this is done in a friendly, supportive, and welcoming environment. We have people from all over the world, from all walks of life, and with all kinds of interests. It's a great way to meet new people, network, show what you can do, and learn from each other.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: IBM Plex Sans, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">In this time of rapid change and uncertainty, it's more important than ever to have a community of people who can support you, challenge you, and help you grow. The Near Future Laboratory is that community.</p></p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/58baa59a-a7da-4d1a-1f3a-9abdc26f8c00/w=600",
+          "link": "https://patreon.com/nearfuturelaboratory"
         }
       ],
       "containerStyles": {
@@ -193,67 +186,121 @@
     }
   ],
   "footer": {
-    "emailShare": "mailto:?subject=Newsletter&body=Check%20out%20this%20newsletter",
-    "newsletterSubscribeLink": "https://example.com/subscribe",
-    "logo": "https://via.placeholder.com/200x50?text=Logo",
-    "logoLink": "https://example.com",
+    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w48y25/",
+    "newsletterSubscribeLink": "https://nearfuturelaboratory.com/newsletter/",
+    "logo": "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png",
+    "logoLink": "https://nearfuturelaboratory.com",
     "socialLinks": {
+      "applepodcasts": [
+        {
+          "url": "https://podcasts.apple.com/us/podcast/near-future-laboratory-podcast/id1546452193",
+          "title": "Near Future Laboratory on Apple Podcasts"
+        }
+      ],
+      "spotify": [
+        {
+          "url": "https://open.spotify.com/show/1vHzwGE5J19LvXSo8M93MM",
+          "title": "Near Future Laboratory on Spotify"
+        }
+      ],
       "github": [
         {
-          "url": "https://github.com/username",
-          "title": "GitHub"
+          "url": "https://github.com/bleeckerj",
+          "title": "Personal GitHub"
+        },
+        {
+          "url": "https://github.com/nearfuturelaboratory",
+          "title": "Near Future Laboratory GitHub"
+        },
+        {
+          "url": "https://github.com/nearfuturelaboratory",
+          "title": "Near Future Laboratory GitHub"
         }
       ],
       "instagram": [
         {
-          "url": "https://instagram.com/username",
-          "title": "Instagram"
+          "url": "https://instagram.com/darthjulian",
+          "title": "Personal Instagram"
+        },
+        {
+          "url": "https://instagram.com/nearfuturelaboratory",
+          "title": "Company Instagram"
         }
       ],
       "linkedin": [
         {
-          "url": "https://linkedin.com/in/username",
-          "title": "LinkedIn"
+          "url": "https://linkedin.com/in/julianbleecker",
+          "title": "Personal LinkedIn"
+        },
+        {
+          "url": "https://www.linkedin.com/company/near-future-laboratory/",
+          "title": "Near Future Laboratory LinkedIn"
+        }
+      ],
+      "youtube": [
+        {
+          "url": "https://youtube.com/@nearfuturelaboratory",
+          "title": "YouTube Channel"
+        }
+      ],
+      "discord": [
+        {
+          "url": "https://patreon.com/nearfuturelaboratory",
+          "title": "Join Patreon to join the Discord Community"
+        }
+      ],
+      "patreon": [
+        {
+          "url": "https://patreon.com/nearfuturelaboratory",
+          "title": "Support me on Patreon"
+        }
+      ],
+      "substack": [
+        {
+          "url": "https://newsletter.substack.com",
+          "title": "Newsletter on Substack"
         }
       ]
     },
     "unsubscribeLink": "[unsubscribe]",
-    "shareUrl": "https://example.com/newsletter/current",
-    "archiveUrl": "https://example.com/newsletter/archive",
-    "gratitude": "Thank you for reading!",
-    "address": "© 2025 Your Organization<br>City, State<br>Country",
-    "colophon": "Optional colophon text or sign-off message."
+    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2025/w48-y25",
+    "archiveUrl": "https://nearfuturelaboratory.com/newsletters",
+    "gratitude": "This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle based production workflow. It's a work-in-progress building on a refactor of the <a href='https://densediscovery.com'>Dense Discovery</a> newsletter's look and vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It's a great newsletter and I would encourage you to subscribe and become a paid member.",
+    "address": "© 2025 Near Future Laboratory<br>Venice Beach, California<br>United States",
+    "colophon": "Imagination is not a luxury. It’s an early-warning system for possibility."
   },
   "themeColors": {
-    "header": "#addcfa",
-    "sponsor": "#f8eccf",
-    "apps-sites": "#f0ffff",
-    "quote": "#d1eaf4",
-    "indie-mag": "#efe2f3",
+    "header": "#fffffd",
+    "sponsor": "#e5e5e5",
+    "dispatch": "#e0e5fb",
+    "apps-sites": "#fcf0f8",
+    "quote": "#ebebeb",
+    "indie-mag": "#f0f0f0",
     "books-accessories": "#ffffff",
-    "food-for-thought": "#f2f2f2",
-    "aesthetically-pleasing": "#ffffff",
-    "classifieds": "#def1ef",
+    "food-for-thought": "#f8f8f8",
+    "aesthetically-pleasing": "#f0f0f0",
+    "classifieds": "#ececec",
     "gif": "#ffffff",
-    "linkAccent": "#EE3BBB"
+    "linkAccent": "#333333"
   },
   "theme": {
-    "name": "Current Dense Discovery",
-    "description": "The existing color scheme currently in use",
+    "name": "Monochrome Grayscale",
+    "description": "Clean grayscale palette with subtle variations",
     "colors": {
-      "header": "#addcfa",
-      "sponsor": "#f8eccf",
-      "apps-sites": "#f0ffff",
-      "quote": "#d1eaf4",
-      "indie-mag": "#efe2f3",
+      "header": "#fffffd",
+      "sponsor": "#e5e5e5",
+      "dispatch": "#e0e5fb",
+      "apps-sites": "#fcf0f8",
+      "quote": "#ebebeb",
+      "indie-mag": "#f0f0f0",
       "books-accessories": "#ffffff",
-      "food-for-thought": "#f2f2f2",
-      "aesthetically-pleasing": "#ffffff",
-      "classifieds": "#def1ef",
+      "food-for-thought": "#f8f8f8",
+      "aesthetically-pleasing": "#f0f0f0",
+      "classifieds": "#ececec",
       "gif": "#ffffff"
     },
-    "accent": "#4a7c59",
-    "linkAccent": "#EE3BBB"
+    "accent": "#666666",
+    "linkAccent": "#333333"
   },
   "sectionStyles": {
     "$schema": "../section-styles.schema.json",
@@ -296,7 +343,7 @@
           "borderRadius": "8px"
         },
         "contentStyles": {
-          "fontFamily": "Domine, serif",
+          "fontFamily": "IBM Plex Sans, sans-serif",
           "fontSize": "19x",
           "lineHeight": "1.2",
           "color": "#111111",
@@ -323,7 +370,7 @@
           "borderRadius": "0px"
         },
         "contentStyles": {
-          "fontFamily": "Domine, serif",
+          "fontFamily": "IBM Plex Sans, sans-serif",
           "fontSize": "19px",
           "lineHeight": "1.2",
           "color": "#111111",
@@ -350,7 +397,7 @@
           "borderRadius": "0px"
         },
         "contentStyles": {
-          "fontFamily": "Domine, serif",
+          "fontFamily": "IBM Plex Sans, sans-serif",
           "fontSize": "19px",
           "lineHeight": "1.2",
           "color": "#111111",

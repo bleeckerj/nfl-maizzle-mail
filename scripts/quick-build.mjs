@@ -282,10 +282,18 @@ if (command === 'list') {
   }
 
   try {
+    const repoRoot = path.resolve(__dirname, '..');
+    const templateStylesPath = path.join(repoRoot, 'templates', template, 'section-styles.json');
+    if (fs.existsSync(templateStylesPath)) {
+      console.log(`🗂  Template-specific section styles detected: ${templateStylesPath}`);
+    } else {
+      const defaultStyles = path.join(repoRoot, 'data', 'section-styles.json');
+      console.log(`🗂  Using default section styles unless overridden in content: ${defaultStyles}`);
+    }
+
     const buildNewsletterPath = join(__dirname, 'build-newsletter.mjs');
     const execCmd = `node ${buildNewsletterPath} ${inputFile} ${outputName} --template=${template}`;
     console.log(`\nExecuting: ${execCmd}\n`);
-    const repoRoot = path.resolve(__dirname, '..');
     execSync(execCmd, {
       stdio: 'inherit',
       cwd: repoRoot
