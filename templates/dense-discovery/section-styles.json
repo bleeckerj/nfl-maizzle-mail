@@ -13,7 +13,7 @@
         "borderRadius": "0px"
       },
       "contentStyles": {
-        "fontFamily": "IBM Plex Sans, sans-serif",
+        "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
         "lineHeight": "1.2",
         "color": "#111111",
@@ -40,8 +40,8 @@
         "borderRadius": "8px"
       },
       "contentStyles": {
-        "fontFamily": "IBM Plex Sans, sans-serif",
-        "fontSize": "19x",
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
         "lineHeight": "1.2",
         "color": "#111111",
         "textAlign": "left"
@@ -68,7 +68,7 @@
         "borderRadius": "0px"
       },
       "contentStyles": {
-        "fontFamily": "IBM Plex Sans, sans-serif",
+        "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
         "lineHeight": "1.2",
         "color": "#111111",
@@ -96,7 +96,7 @@
         "borderRadius": "0px"
       },
       "contentStyles": {
-        "fontFamily": "IBM Plex Sans, sans-serif",
+        "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
         "lineHeight": "1.2",
         "color": "#111111",
@@ -124,7 +124,7 @@
         "borderRadius": "0px"
       },
       "contentStyles": {
-        "fontFamily": "IBM Plex Sans, sans-serif",
+        "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
         "lineHeight": "1.2",
         "color": "#111111",
@@ -152,7 +152,7 @@
         "borderRadius": "0px"
       },
       "contentStyles": {
-        "fontFamily": "IBM Plex Sans, sans-serif",
+        "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
         "lineHeight": "1.2",
         "color": "#111111",
@@ -180,7 +180,7 @@
         "borderRadius": "0px"
       },
       "contentStyles": {
-        "fontFamily": "IBM Plex Sans, sans-serif",
+        "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
         "lineHeight": "1.2",
         "color": "#111111",
@@ -235,9 +235,9 @@
         "borderRadius": "0px"
       },
       "contentStyles": {
-        "fontFamily": "IBM Plex Sans, sans-serif",
+        "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
-        "lineHeight": "1.4",
+        "lineHeight": "1.2",
         "color": "#111111",
         "textAlign": "left"
       },

@@ -28,11 +28,40 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Share+Tech+Mono&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Workbench:SCAN@5&display=swap" rel="stylesheet">
 
-  <style media="screen" type="text/css">
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+      font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    p,
+    .body-copy,
+    .large {
+      font-size: 19px;
+      line-height: 27px;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 21px;
+      line-height: 29px;
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
     @media screen and (max-width:599px) {
       .force-row, .container, .header, .body, .footer {
         width: 100% !important;
         max-width: 100% !important;
+        font-family: "Ubuntu", sans-serif;
+        font-weight: 700;
+        font-style: normal;
       }
       .padl20 { padding-left: 12px !important }
       .padr20 { padding-right: 12px !important }
@@ -42,7 +71,7 @@
       .mobt0 { padding-top: 0 !important }
       .mobb15 { margin-bottom: 15px !important }
       .headline { padding-left: 12px !important; padding-right: 12px !important; }
-      .large, h1 { font-size: 19px !important; line-height: 27px !important; }
+      h1 { font-size: 21px !important; line-height: 29px !important; }
       .spacer { padding-top: 15px !important; }
       .browser { display: none !important; }
       .align-left { text-align: left }
@@ -160,7 +189,7 @@
     .intro-content p {
       font-family: "IBM Plex Sans", sans-serif;
       font-size: 19px;
-      line-height: 1.2rem;
+      line-height: 27px;
       color: #000000;
       margin: 0;
       padding: 0;
@@ -183,7 +212,7 @@
   </style>
   
   <if condition="page.dynamicCSS">
-  <style media="screen" type="text/css">
+  <style type="text/css">
     {{{ page.dynamicCSS }}}
   </style>
   </if>
@@ -194,25 +223,22 @@
     </style>
   <![endif]-->
 </head>
-<body bgcolor="#FFFFFF" style="margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+<body bgcolor="#FFFFFF" style="margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size: 18px;line-height: 27px;">
 
   <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt;">
     <tr>
       <td align="center" style="padding:0; margin:0;">
-        <!-- Max-width cap lives here; no fixed width attributes -->
-        <div style="max-width:640px; margin:0 auto; font-family:'Ubuntu',sans-serif; font-style:normal; font-weight:400;">
-          <!-- Inner table is 100% so it’s fluid; the div caps width on desktop -->
-          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; max-width:640px;">
-            <tr>
-              <td style="padding:0; margin:0;">
-                <!-- Your email content starts here -->
+        <!-- Fluid inner table keeps Gmail from zooming the canvas -->
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; width:100%; max-width:640px; font-family:'Ubuntu',sans-serif; font-style:normal; font-weight:400;">
+          <tr>
+            <td style="padding:0; margin:0;">
+              <!-- Your email content starts here -->
 
-                <block name="template"></block>
+              <block name="template"></block>
 
-              </td>
-            </tr>
-          </table>
-        </div>
+            </td>
+          </tr>
+        </table>
       </td>
     </tr>
   </table>
