@@ -6,12 +6,30 @@
 
 
 
+# Support optional send-test flag
+SEND_TEST_REQUESTED=false
+FILTERED_ARGS=()
+for arg in "$@"; do
+    if [ "$arg" = "send-test" ]; then
+        SEND_TEST_REQUESTED=true
+    else
+        FILTERED_ARGS+=("$arg")
+    fi
+done
+
+if [ ${#FILTERED_ARGS[@]} -gt 0 ]; then
+    set -- "${FILTERED_ARGS[@]}"
+else
+    set --
+fi
+
 # Print help if no arguments or --help is given
 if [ $# -eq 0 ] || [[ "$1" == "--help" ]] || [[ "$1" == "-h" ]]; then
-    echo "Usage: ./workflow.sh <content-file.md> [template-name] [output-file]"
+    echo "Usage: ./workflow.sh <content-file.md> [template-name] [output-file] [send-test]"
     echo "Example: ./workflow.sh ./test-dd.md dense-discovery"
     echo "Example: ./workflow.sh ./test-dd.md dense-discovery build_production/custom-output.html"
-    echo "Example: ./workflow.sh /Users/julian/Code/nfl-backoffice/public/outbox/data/2025/w43-y25.md dense-discovery"
+    echo "Example: ./workflow.sh ./test-dd.md dense-discovery send-test"
+    echo "Example: ./workflow.sh /Users/julian/Code/nfl-backoffice/public/outbox/data/2025/w43-y25.md dense-discovery send-test"
     exit 0
 fi
 
@@ -93,8 +111,14 @@ def normalize_img(tag):
     width_attr = get_attr(tag, 'width')
     style_attr = get_attr(tag, 'style')
 
-    missing_width = not has_attr(tag, 'width')
-    missing_style = not has_attr(tag, 'style')
+    # Skip tags that already carry explicit sizing info (width attribute or width/max-width in style)
+    if width_attr:
+        return tag, False
+    if style_attr and (style_width_pattern.search(style_attr) or style_max_width_pattern.search(style_attr)):
+        return tag, False
+
+    missing_width = True
+    missing_style = style_attr is None
 
     style_updated = False
 
@@ -186,6 +210,24 @@ if [ $BUILD_EXIT_CODE -eq 0 ]; then
         else
             echo "📁 Check build_production/ for output"
         fi
+
+                if [ "$SEND_TEST_REQUESTED" = true ]; then
+                    SEND_TARGET="$BUILD_OUTPUT_FILE"
+                    if [ -n "$OUTPUT_DEST_PATH" ]; then
+                        SEND_TARGET="$OUTPUT_DEST_PATH"
+                    fi
+
+                    if [ -f "$SEND_TARGET" ]; then
+                        echo "✉️  send-test requested; invoking npm run send:test -- $SEND_TARGET"
+                        if ! npm run send:test -- "$SEND_TARGET"; then
+                            echo "❌ send:test command failed"
+                            exit 1
+                        fi
+                    else
+                        echo "⚠️  send-test requested but HTML output not found: $SEND_TARGET"
+                        exit 1
+                    fi
+                fi
 else
         echo "❌ Email build failed"
         exit 1

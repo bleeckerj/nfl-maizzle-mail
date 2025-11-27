@@ -14,7 +14,7 @@
       },
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "16px",
+        "fontSize": "18px",
         "lineHeight": "1.2",
         "color": "#111111",
         "textAlign": "left"
@@ -26,7 +26,7 @@
       },
       "headingStyles": {
         "fontFamily": "inherit",
-        "fontSize": "16px",
+        "fontSize": "18px",
         "fontWeight": "600",
         "color": "#000000"
       }
@@ -41,7 +41,7 @@
       },
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "16px",
+        "fontSize": "18px",
         "lineHeight": "1.2",
         "color": "#111111",
         "textAlign": "left"
@@ -53,7 +53,7 @@
       },
       "headingStyles": {
         "fontFamily": "inherit",
-        "fontSize": "16px",
+        "fontSize": "18px",
         "fontWeight": "600",
         "color": "#000000"
       }
@@ -69,7 +69,7 @@
       },
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "16px",
+        "fontSize": "18px",
         "lineHeight": "1.2",
         "color": "#111111",
         "textAlign": "left"
@@ -81,7 +81,7 @@
       },
       "headingStyles": {
         "fontFamily": "inherit",
-        "fontSize": "16px",
+        "fontSize": "18px",
         "fontWeight": "600",
         "color": "#000000"
       }
@@ -97,7 +97,7 @@
       },
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "16px",
+        "fontSize": "18px",
         "lineHeight": "1.2",
         "color": "#111111",
         "textAlign": "left"
@@ -109,7 +109,7 @@
       },
       "headingStyles": {
         "fontFamily": "inherit",
-        "fontSize": "16px",
+        "fontSize": "18px",
         "fontWeight": "600",
         "color": "#000000"
       }
@@ -125,7 +125,7 @@
       },
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "16px",
+        "fontSize": "18px",
         "lineHeight": "1.2",
         "color": "#111111",
         "textAlign": "left"
@@ -153,7 +153,7 @@
       },
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "16px",
+        "fontSize": "18px",
         "lineHeight": "1.2",
         "color": "#111111",
         "textAlign": "left"
@@ -181,9 +181,9 @@
       },
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "16px",
-        "lineHeight": "1.2",
-        "color": "#111111",
+        "fontSize": "19px",
+        "lineHeight": "1.2rem",
+        "color": "#040404",
         "textAlign": "left"
       },
       "linkStyles": {
@@ -236,7 +236,7 @@
       },
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "16px",
+        "fontSize": "18px",
         "lineHeight": "1.2",
         "color": "#111111",
         "textAlign": "left"

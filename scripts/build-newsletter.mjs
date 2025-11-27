@@ -597,6 +597,21 @@ async function buildNewsletter() {
       const sectionSummary = [];
       
       newsletterData.sections.forEach((section, sIndex) => {
+          // Helper to convert style objects into inline CSS strings with camelCase to kebab-case conversion
+          const toCssString = (styles = {}, theme) => {
+            return Object.entries(styles)
+              .filter(([, v]) => v !== null && v !== undefined && v !== '')
+              .map(([prop, val]) => {
+                const cssProp = prop.replace(/([A-Z])/g, '-$1').toLowerCase();
+                // Special handling: if color is "inherit", prefer theme link accent when available
+                if (cssProp === 'color' && val === 'inherit' && theme?.linkAccent) {
+                  return `color: ${theme.linkAccent}`;
+                }
+                return `${cssProp}: ${val}`;
+              })
+              .join('; ');
+          };
+
           const sectionConfig = sectionStyles.sectionStyles[section.type];
           const fallbackConfig = sectionStyles.sectionStyles.default;
           const usedConfig = sectionConfig || fallbackConfig;
@@ -695,6 +710,19 @@ async function buildNewsletter() {
           section.containerStyles.padding = section.containerStyles.padding ? String(section.containerStyles.padding).trim() : '15px 20px';
           // keep explicit null for backgroundColor when not set so templates can fallback to themeColors
           section.containerStyles.backgroundColor = section.containerStyles.backgroundColor == null ? null : String(section.containerStyles.backgroundColor).trim();
+
+          // Expose contentStyles so templates can use configured typography instead of hardcoded values
+          section.contentStyles = (usedConfig && usedConfig.contentStyles)
+            ? { ...usedConfig.contentStyles }
+            : {};
+
+          // Expose headingStyles/linkStyles for template use with sane defaults
+          const defaultHeading = { fontFamily: "'Ubuntu', sans-serif", fontSize: '18px', lineHeight: '23px', fontWeight: '600', color: '#000000' };
+          const defaultLink = { textDecoration: 'underline', fontWeight: '400', color: theme?.linkAccent || '#707070' };
+          section.headingStyles = usedConfig?.headingStyles ? { ...usedConfig.headingStyles } : {};
+          section.linkStyles = usedConfig?.linkStyles ? { ...usedConfig.linkStyles } : {};
+          section.headingStylesInline = toCssString({ ...defaultHeading, ...section.headingStyles });
+          section.linkStylesInline = toCssString({ ...defaultLink, ...section.linkStyles }, theme);
         const usingFallback = !sectionConfig;
         
         let sectionProcessedItems = 0;

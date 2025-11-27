@@ -6,8 +6,8 @@
   "colorTheme": "monochrome",
   "sectionStylesFile": "templates/dense-discovery/section-styles.json",
   "header": {
-    "logoTop": "https://nearfuturelaboratory.com/images/site/logos/TOP_LaboratoryCircle_Guy_01_CircleWhite.png",
-    "logoBottom": "https://nearfuturelaboratory.com/images/site/logos/BOTTOM_LaboratoryCircle_Guy_01_CircleWhite.png",
+    "logoTop": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/public",
+    "logoBottom": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/public",
     "logoLink": "https://nearfuturelaboratory.com"
   },
   "intro": {
@@ -25,7 +25,7 @@
           "title": "Office Hours",
           "subtitle": "The Side Projects Edition",
           "link": "https://luma.com/xdmbhcee",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Weekly Office Hours! Join us this Friday (like every Friday..) to discuss projects, make plans, get feedback, and connect with others working on side projects. Brought to you by my awesome supporters over on Patreon! Please RSVP and <a href='https://patreon.com/nearfuturelaboratory' style=\"font-weight: 500 !important; text-decoration: underline !important; color: #333333 !important\">become a supporter</a>!</p>",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Weekly Office Hours! Join us this Friday (like every Friday..) to discuss projects, make plans, get feedback, and connect with others working on side projects. Brought to you by my awesome supporters over on Patreon! Please RSVP and <a href='https://patreon.com/nearfuturelaboratory' style=\"font-weight: 500 !important; text-decoration: underline !important; color: #333333 !important\">become a supporter</a>!</p>",
           "image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=280,height=280/event-covers/4f/296f02a6-d57e-427e-9276-a3a8e95fb5c8.webp",
           "readMoreText": "Register To Attend →"
         }
@@ -34,7 +34,27 @@
         "backgroundColor": null,
         "padding": "15px 20px",
         "borderRadius": "0px"
-      }
+      },
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "18px",
+        "lineHeight": "1.2",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "21px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "500"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #333333"
     },
     {
       "type": "indie-mag",
@@ -43,7 +63,7 @@
         {
           "title": "Canada Makes A (Jail) Break for It",
           "link": "https://www.gameplaylab.ca/jailbreaking-canada-playshop",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Digital Futures at OCAD University is proud to present a playshop from 26th to 28th November 2025 in conjunction with authors and futurists <a href='https://craphound.com/' style=\"font-weight: normal !important; text-decoration: underline !important; color: #333333 !important\">Cory Doctorow</a> and SFI alum <a href='https://www.madelineashby.com/' style=\"font-weight: normal !important; text-decoration: underline !important; color: #333333 !important\">Madeline Ashby</a> to playfully co-fabulate possible futures for Canada in the contemporary climate of aggressive late-stage capitalism.</p></p>",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Digital Futures at OCAD University is proud to present a playshop from 26th to 28th November 2025 in conjunction with authors and futurists <a href='https://craphound.com/' style=\"font-weight: normal !important; text-decoration: underline !important; color: #333333 !important\">Cory Doctorow</a> and SFI alum <a href='https://www.madelineashby.com/' style=\"font-weight: normal !important; text-decoration: underline !important; color: #333333 !important\">Madeline Ashby</a> to playfully co-fabulate possible futures for Canada in the contemporary climate of aggressive late-stage capitalism.</p></p>",
           "image": "https://www.gameplaylab.ca/wp-content/uploads/2025/11/IMG_0280.png",
           "readMoreText": "🏃🏽‍♂️‍➡️🇨🇦 →",
           "readMoreLink": "https://www.gameplaylab.ca/jailbreaking-canada-playshop"
@@ -53,7 +73,27 @@
         "backgroundColor": null,
         "padding": "15px 20px",
         "borderRadius": "0px"
-      }
+      },
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "18px",
+        "lineHeight": "1.2",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 18px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #333333"
     },
     {
       "type": "indie-mag-single-column",
@@ -62,7 +102,7 @@
         {
           "title": "Humans in the Loop",
           "link": "https://www.youtube.com/watch?v=t0bB5X98TrQ",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I was very fortunate to see a screening of this — outside like a drive-in theater only I sat in/on a beanbag chair — while I was at that \"The Future of Being Human – HCI Symposium 2025\" in Abu Dhabi, UAE that Elizabeth Churchill organized at MBZUAI last week, and to have a Q&A with the producer of the film.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><div><img style='border-radius: 10px' src='https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/634fc037-f160-4ae2-a4f9-4435d41c3200/w=600'></div></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I wouldn't want to ruin my own experience of watching it, slightly tired from a day of high-engagement and creative workshopping, by trying to analyze the textures of the film's narrative too closely here. Suffice to say that it weaves together the stories of several people whose lives are deeply intertwined with AI technologies, exploring themes of labor, creativity, and the human condition in an increasingly automated world.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><div><img style='border-radius: 10px' src='https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/30828a84-ce26-4e31-64cb-a46ad2e18e00/w=600'></div></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Add this one to your watch list if you are looking for a more hopeful and richly nuanced take on the entanglement of humans, culture, work, and AI than the usual dystopian fare. If you're hoping to be activated/angered by corporate domination, or if you're hoping for wet streets, vertical bands of neon and cybernetic fetish dreams of computer control systems and screen UIs that for some reason chitter as the surreptitious virus upload progress bar inches forward, then this one is not for you.</p></p>",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I was very fortunate to see a screening of this — outside like a drive-in theater only I sat in/on a beanbag chair — while I was at that \"The Future of Being Human – HCI Symposium 2025\" in Abu Dhabi, UAE that Elizabeth Churchill organized at MBZUAI last week, and to have a Q&A with the producer of the film.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><div><img style='border-radius: 10px' src='https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/634fc037-f160-4ae2-a4f9-4435d41c3200/w=600'></div></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I wouldn't want to ruin my own experience of watching it, slightly tired from a day of high-engagement and creative workshopping, by trying to analyze the textures of the film's narrative too closely here. Suffice to say that it weaves together the stories of several people whose lives are deeply intertwined with AI technologies, exploring themes of labor, creativity, and the human condition in an increasingly automated world.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><div><img style='border-radius: 10px' src='https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/30828a84-ce26-4e31-64cb-a46ad2e18e00/w=600'></div></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Add this one to your watch list if you are looking for a more hopeful and richly nuanced take on the entanglement of humans, culture, work, and AI than the usual dystopian fare. If you're hoping to be activated/angered by corporate domination, or if you're hoping for wet streets, vertical bands of neon and cybernetic fetish dreams of computer control systems and screen UIs that for some reason chitter as the surreptitious virus upload progress bar inches forward, then this one is not for you.</p></p>",
           "image": "https://resizing.flixster.com/nAu-tVTzr8tEINFfH-BkcvwRBXk=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p31365991_p_v13_aa.jpg",
           "readMoreText": "Trailer →"
         }
@@ -71,7 +111,27 @@
         "backgroundColor": null,
         "padding": "15px 20px",
         "borderRadius": "0px"
-      }
+      },
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "18px",
+        "lineHeight": "1.2",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 18px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #333333"
     },
     {
       "type": "food-for-thought",
@@ -85,13 +145,13 @@
           "channel": "🛠-whats-ai-good-for-anyway",
           "readMoreLink": "https://aixdesign.co",
           "readMoreText": "Slow down 🐢 →",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">AIxDESIGN, a global community and critical AI research & design lab, champions the idea of 'Slow AI'—an approach that prioritizes people and communities over profits. They held a design festival last May focussing on this theme, bringing together thinkers, designers, and researchers to explore how AI can serve society responsibly. A strong commitment to critical research and open collaboration, AIxDESIGN is pushing back against the rush for commercial AI, advocating for technology that's more intentional, ethical, and beneficial to everyone.</p></p>",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">AIxDESIGN, a global community and critical AI research & design lab, champions the idea of 'Slow AI'—an approach that prioritizes people and communities over profits. They held a design festival last May focussing on this theme, bringing together thinkers, designers, and researchers to explore how AI can serve society responsibly. A strong commitment to critical research and open collaboration, AIxDESIGN is pushing back against the rush for commercial AI, advocating for technology that's more intentional, ethical, and beneficial to everyone.</p></p>",
           "image": "https://a.storyblok.com/f/266545/942x1006/d0bb50f4a5/screenshot-2025-03-22-at-00-00-00.png/m/"
         },
         {
           "title": "AI killed the streaming stars\n",
           "category": "Don't Judge an AI by its Album Cover",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">AI is giving would-be musicians a shot at stardom, churning out viral tracks and blurring the line between human and machine-made music. With just a prompt and a few clicks, a new breed of artist is emerging — and the algorithmically-driven charts are taking notice.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">A speculative take on this phenomenon — like all the other AI-dooms-creativity scenarios — is to say that evidence of the human in the creative loop will create a category of production that is preferred by some, in the same way farm-fresh food is preferred (by) and available (to) some over processed food, live performance, etc. Taste — the cultural kind — are as varied as individuality. Just as the quarter-zip matcha kids and maybe yourself. Judgement — yours and mine — can be seen as a symptom of our conservative tendencies.</p></p>",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">AI is giving would-be musicians a shot at stardom, churning out viral tracks and blurring the line between human and machine-made music. With just a prompt and a few clicks, a new breed of artist is emerging — and the algorithmically-driven charts are taking notice.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">A speculative take on this phenomenon — like all the other AI-dooms-creativity scenarios — is to say that evidence of the human in the creative loop will create a category of production that is preferred by some, in the same way farm-fresh food is preferred (by) and available (to) some over processed food, live performance, etc. Taste — the cultural kind — are as varied as individuality. Just as the quarter-zip matcha kids and maybe yourself. Judgement — yours and mine — can be seen as a symptom of our conservative tendencies.</p></p>",
           "link": "https://www.newyorker.com/culture/infinite-scroll/that-new-hit-song-on-spotify-it-was-made-by-ai",
           "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/95f8ddd3-95d7-495d-e595-88414979ef00/w=600",
           "sharedBy": "julian bleecker, ph.d.",
@@ -103,7 +163,7 @@
         {
           "title": "The Gospel of AI",
           "category": "The Good Book of AI",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Solomon Ray, a soul singer made entirely by AI, is climbing the gospel charts and stirring up both excitement and outrage. Some listeners are mesmerized by his sound, others are furious at the idea of a robot leading worship. The future of music just got a lot more complicated..and that may be the polite way of looking at it. Anger, outrage, debate, confusion — is this analogous to the early days of synthesizers in music? Or punk rock? Or Dylan going electric? Or Miles going funk? Or is this something more profound about the nature of creativity, authenticity, and the human spirit in an age of intelligent machines?</p>",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">Solomon Ray, a soul singer made entirely by AI, is climbing the gospel charts and stirring up both excitement and outrage. Some listeners are mesmerized by his sound, others are furious at the idea of a robot leading worship. The future of music just got a lot more complicated..and that may be the polite way of looking at it. Anger, outrage, debate, confusion — is this analogous to the early days of synthesizers in music? Or punk rock? Or Dylan going electric? Or Miles going funk? Or is this something more profound about the nature of creativity, authenticity, and the human spirit in an age of intelligent machines?</p>",
           "link": "https://pagesix.com/2025/11/25/entertainment/music-fans-enraged-as-ai-generated-singer-tops-holiday-charts/",
           "sharedBy": "Marcus Bleecker",
           "channel": "🛠-whats-ai-good-for-anyway",
@@ -114,7 +174,7 @@
         {
           "title": "Speaking of Tastes",
           "category": "Sartorial Signals",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Gen Z men are swapping their beloved Nike Tech sweats and jobbers for quarter-zip sweaters, chasing a vibe that’s more polished, less rowdy, and all about leveling up. It’s a coming-of-age look, where style meets ambition.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Why do I care? What does this have to do with futures and/or design?</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The obvious take is that fashion trends reflect broader cultural shifts. Meaning comes in a variety of forms — as does its implications. Time to short Starbucks and Nike? Are they out of touch? (I heard coffee consumption is off amongst GenZ)</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Time to go long on matcha? Should we expect a bump for whatever hedge fund owns Old Navy or Unionbay?</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Time to rethink the aesthetics of ambition and success in a post-pandemic world?</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Another perspective would read this as a symptom of Gen Z’s desire for authenticity and individuality in a world saturated with mass-produced fashion. The quarter-zip sweater, with its retro appeal and versatility, allows young men to express their personal style while still adhering to a sense of practicality and comfort.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Another, other take would be to read this as a reaction to the dismal prospects for jobs, planet, and society. Maybe the quarter-zip is a uniform for the new precariat, a precursor to a renaissance of meaning..an ironic retro sartorial shield against the uncertainties of the future.</p></p>",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">Gen Z men are swapping their beloved Nike Tech sweats and jobbers for quarter-zip sweaters, chasing a vibe that’s more polished, less rowdy, and all about leveling up. It’s a coming-of-age look, where style meets ambition.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">Why do I care? What does this have to do with futures and/or design?</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">The obvious take is that fashion trends reflect broader cultural shifts. Meaning comes in a variety of forms — as does its implications. Time to short Starbucks and Nike? Are they out of touch? (I heard coffee consumption is off amongst GenZ)</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">Time to go long on matcha? Should we expect a bump for whatever hedge fund owns Old Navy or Unionbay?</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">Time to rethink the aesthetics of ambition and success in a post-pandemic world?</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">Another perspective would read this as a symptom of Gen Z’s desire for authenticity and individuality in a world saturated with mass-produced fashion. The quarter-zip sweater, with its retro appeal and versatility, allows young men to express their personal style while still adhering to a sense of practicality and comfort.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">Another, other take would be to read this as a reaction to the dismal prospects for jobs, planet, and society. Maybe the quarter-zip is a uniform for the new precariat, a precursor to a renaissance of meaning..an ironic retro sartorial shield against the uncertainties of the future.</p></p>",
           "link": "https://www.nytimes.com/2025/11/21/style/quarter-zip-sweater-men-tiktok.html",
           "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/27314f6f-f0cd-4ea3-49e4-b3a194ffcd00/w=900",
           "sharedBy": "julian bleecker, ph.d.",
@@ -126,7 +186,7 @@
         {
           "title": "How do LLMs understand financial malfeasance?",
           "category": "Robot Auditors",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">OpenAI created some models that were trained on real world financial data, including anti-crime audits and music tour balance sheets. The models evidently did okay slicing through the numbers and picking out the riskiest metrics, pinpointing where things change, and painting a clear financial picture.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">This dataset and model training approach makes me think about the kinds of things that'll work — and the things that'll just get all muddled. It also reminds me of a conversation this week with a graduate student working on “vibe analytics” — the somewhat dubious idiom for charging through analytic data with an LLM as your analyst.</p></p>",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">OpenAI created some models that were trained on real world financial data, including anti-crime audits and music tour balance sheets. The models evidently did okay slicing through the numbers and picking out the riskiest metrics, pinpointing where things change, and painting a clear financial picture.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">This dataset and model training approach makes me think about the kinds of things that'll work — and the things that'll just get all muddled. It also reminds me of a conversation this week with a graduate student working on “vibe analytics” — the somewhat dubious idiom for charging through analytic data with an LLM as your analyst.</p></p>",
           "link": "https://huggingface.co/datasets/openai/gdpval",
           "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/75dfbd18-48d4-4ec1-70af-8d0ef239d700/w=600",
           "sharedBy": "Julian Bleecker, Ph.D.",
@@ -137,7 +197,7 @@
         {
           "title": "Vibe Analytics?",
           "category": "Risk Mitigation",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">On the list of favorite movies to re-watch may not make sense to you, but let me try: “<a href='https://www.imdb.com/title/tt1615147/' style=\"font-weight: normal !important; text-decoration: underline !important; color: #333333 !important\">Margin Call</a>” (2011).</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Why?</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">It's hero is the risk analyst who spots the impending financial collapse in the middle of the night while grinding on some data his recently dismissed department head handed him on his way out the door, literally. And a theme here at the Near Future Laboratory is creating the kind of frames of reference and organizational muscle to see around corners by representing the future in the present.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Zachery Quinto plays a rocket scientist turned risk analyst who perceives what others miss: he reads the story the data is trying to tell. But it takes a perceptive person willing to take risks to articulate what others can't or won't see. His boss (Paul Bettany) has to ask him what he's seeing. The film suggests a crucial point: authority doesn't grant vision. Leaders need people who can help them see the risks ahead.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The data on the screen is the artifact from some collapsing financial future — and Quinto's character is like the design fiction archeologist who helps that data tell its story.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Now, enter vibe analytics: the practice of using LLMs to explore data sets in an improvisational way, surfacing patterns and insights that siloed teams might miss. It's a way to democratize the risk analysis process, allowing anyone with access to the data and an LLM to play the role of Zachery Quinto.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Cool, but skeptical. The data was there all along, maybe. The patterns were there all along, maybe. The question is whether the LLM is actually adding value, or just repackaging what humans could already see if they were willing to look — and wanted to see.</p></p>",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">On the list of favorite movies to re-watch may not make sense to you, but let me try: “<a href='https://www.imdb.com/title/tt1615147/' style=\"font-weight: normal !important; text-decoration: underline !important; color: #333333 !important\">Margin Call</a>” (2011).</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">Why?</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">It's hero is the risk analyst who spots the impending financial collapse in the middle of the night while grinding on some data his recently dismissed department head handed him on his way out the door, literally. And a theme here at the Near Future Laboratory is creating the kind of frames of reference and organizational muscle to see around corners by representing the future in the present.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">Zachery Quinto plays a rocket scientist turned risk analyst who perceives what others miss: he reads the story the data is trying to tell. But it takes a perceptive person willing to take risks to articulate what others can't or won't see. His boss (Paul Bettany) has to ask him what he's seeing. The film suggests a crucial point: authority doesn't grant vision. Leaders need people who can help them see the risks ahead.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">The data on the screen is the artifact from some collapsing financial future — and Quinto's character is like the design fiction archeologist who helps that data tell its story.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">Now, enter vibe analytics: the practice of using LLMs to explore data sets in an improvisational way, surfacing patterns and insights that siloed teams might miss. It's a way to democratize the risk analysis process, allowing anyone with access to the data and an LLM to play the role of Zachery Quinto.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">Cool, but skeptical. The data was there all along, maybe. The patterns were there all along, maybe. The question is whether the LLM is actually adding value, or just repackaging what humans could already see if they were willing to look — and wanted to see.</p></p>",
           "link": "https://archive.ph/FM6Pn",
           "image": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iAhMtz.OJefY/v0/-1x-1.webp",
           "sharedBy": "julian bleecker, ph.d.",
@@ -148,7 +208,7 @@
         {
           "title": "Don't Worry! Be Angry!",
           "category": "Terraforming",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">\"Should you be angry and optimistic despite drowning in a climate challenged world? In this conversation with José Luis de Vicente, Kim Stanley Robinson reimagines terraforming as a mix of science, politics, and hope and in so doing reminds us that new worlds start with bold imagination and a willingness to rewrite the rules.\"</p>",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2rem !important; color: #040404 !important; text-align: left !important\">\"Should you be angry and optimistic despite drowning in a climate challenged world? In this conversation with José Luis de Vicente, Kim Stanley Robinson reimagines terraforming as a mix of science, politics, and hope and in so doing reminds us that new worlds start with bold imagination and a willingness to rewrite the rules.\"</p>",
           "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/81bdead3-8a55-46fe-7588-43918c5de000/w=600",
           "link": "https://lab.cccb.org/en/angry-optimism-in-a-drowned-world-a-conversation-with-kim-stanley-robinson/",
           "sharedBy": "ManualEntry",
@@ -161,7 +221,27 @@
         "backgroundColor": null,
         "padding": "15px 20px",
         "borderRadius": "0px"
-      }
+      },
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.2rem",
+        "color": "#040404",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "21px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #333333"
     },
     {
       "type": "sponsor",
@@ -173,7 +253,7 @@
           "title": "Near Future Laboratory Patreon",
           "subtitle": "Join the Discord, Support Office Hours, the Newsletter and More",
           "readMoreText": "Join Us →",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The Near Future Laboratory is supported by its community and members. <a href='https://patreon.com/nearfuturelaboratory' style=\"font-weight: normal !important; text-decoration: underline !important; color: #333333 !important\">Join us on Patreon</a> to support our work, get access to exclusive content, and be part of our vibrant Discord community where we discuss design, technology, creativity, the future and do projects and support each others' work.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I host weekly Office Hours for Patrons — now for 285 weeks and running — every Friday at 0900 (UTC-7 / California). It's a great way to connect, ask questions, and get feedback on your projects.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Each week two people from the community present a project, idea, or challenge and we discuss it together. It's a great way to get feedback, learn from others, and connect with like-minded people.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">All of this is done in a friendly, supportive, and welcoming environment. We have people from all over the world, from all walks of life, and with all kinds of interests. It's a great way to meet new people, network, show what you can do, and learn from each other.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 16px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">In this time of rapid change and uncertainty, it's more important than ever to have a community of people who can support you, challenge you, and help you grow. The Near Future Laboratory is that community.</p></p>",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The Near Future Laboratory is supported by its community and members. <a href='https://patreon.com/nearfuturelaboratory' style=\"font-weight: normal !important; text-decoration: underline !important; color: #333333 !important\">Join us on Patreon</a> to support our work, get access to exclusive content, and be part of our vibrant Discord community where we discuss design, technology, creativity, the future and do projects and support each others' work.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I host weekly Office Hours for Patrons — now for 285 weeks and running — every Friday at 0900 (UTC-7 / California). It's a great way to connect, ask questions, and get feedback on your projects.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Each week two people from the community present a project, idea, or challenge and we discuss it together. It's a great way to get feedback, learn from others, and connect with like-minded people.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">All of this is done in a friendly, supportive, and welcoming environment. We have people from all over the world, from all walks of life, and with all kinds of interests. It's a great way to meet new people, network, show what you can do, and learn from each other.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">In this time of rapid change and uncertainty, it's more important than ever to have a community of people who can support you, challenge you, and help you grow. The Near Future Laboratory is that community.</p></p>",
           "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/58baa59a-a7da-4d1a-1f3a-9abdc26f8c00/w=600",
           "link": "https://patreon.com/nearfuturelaboratory"
         }
@@ -182,7 +262,27 @@
         "backgroundColor": null,
         "padding": "15px 20px",
         "borderRadius": "0px"
-      }
+      },
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "18px",
+        "lineHeight": "1.2",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "18px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 18px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #333333"
     }
   ],
   "footer": {
@@ -317,7 +417,7 @@
         },
         "contentStyles": {
           "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "16px",
+          "fontSize": "18px",
           "lineHeight": "1.2",
           "color": "#111111",
           "textAlign": "left"
@@ -329,7 +429,7 @@
         },
         "headingStyles": {
           "fontFamily": "inherit",
-          "fontSize": "16px",
+          "fontSize": "18px",
           "fontWeight": "600",
           "color": "#000000"
         }
@@ -344,7 +444,7 @@
         },
         "contentStyles": {
           "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "16px",
+          "fontSize": "18px",
           "lineHeight": "1.2",
           "color": "#111111",
           "textAlign": "left"
@@ -356,7 +456,7 @@
         },
         "headingStyles": {
           "fontFamily": "inherit",
-          "fontSize": "16px",
+          "fontSize": "18px",
           "fontWeight": "600",
           "color": "#000000"
         }
@@ -371,7 +471,7 @@
         },
         "contentStyles": {
           "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "16px",
+          "fontSize": "18px",
           "lineHeight": "1.2",
           "color": "#111111",
           "textAlign": "left"
@@ -383,7 +483,7 @@
         },
         "headingStyles": {
           "fontFamily": "inherit",
-          "fontSize": "16px",
+          "fontSize": "18px",
           "fontWeight": "600",
           "color": "#000000"
         }
@@ -398,7 +498,7 @@
         },
         "contentStyles": {
           "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "16px",
+          "fontSize": "18px",
           "lineHeight": "1.2",
           "color": "#111111",
           "textAlign": "left"
@@ -410,7 +510,7 @@
         },
         "headingStyles": {
           "fontFamily": "inherit",
-          "fontSize": "16px",
+          "fontSize": "18px",
           "fontWeight": "600",
           "color": "#000000"
         }
@@ -425,7 +525,7 @@
         },
         "contentStyles": {
           "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "16px",
+          "fontSize": "18px",
           "lineHeight": "1.2",
           "color": "#111111",
           "textAlign": "left"
@@ -452,7 +552,7 @@
         },
         "contentStyles": {
           "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "16px",
+          "fontSize": "18px",
           "lineHeight": "1.2",
           "color": "#111111",
           "textAlign": "left"
@@ -479,7 +579,7 @@
         },
         "contentStyles": {
           "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "16px",
+          "fontSize": "18px",
           "lineHeight": "1.2",
           "color": "#111111",
           "textAlign": "left"
@@ -506,9 +606,9 @@
         },
         "contentStyles": {
           "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "16px",
-          "lineHeight": "1.2",
-          "color": "#111111",
+          "fontSize": "19px",
+          "lineHeight": "1.2rem",
+          "color": "#040404",
           "textAlign": "left"
         },
         "linkStyles": {
@@ -560,7 +660,7 @@
         },
         "contentStyles": {
           "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "16px",
+          "fontSize": "18px",
           "lineHeight": "1.2",
           "color": "#111111",
           "textAlign": "left"

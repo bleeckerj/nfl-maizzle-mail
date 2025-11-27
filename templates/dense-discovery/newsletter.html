@@ -617,7 +617,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                 </if>
                                 
                                 <if condition="item.description">
-                                  <div style="font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
+                                  <div style="font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '23px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#000000' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 0;margin: 0;">
                                     {{{ item.description }}}
                                   </div>
                                 </if>
@@ -641,14 +641,14 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
                           </tr>
                           <tr>
-                            <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; background: {{ themeColors['food-for-thought'] || '#f2f2f2' }}; border-collapse: collapse;border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
-                              <h1 style="font-family: 'Workbench', sans-serif; mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">{{ section.title }}</h1>
+                            <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; background: {{ section.containerStyles.backgroundColor || themeColors['food-for-thought'] || '#f2f2f2' }}; border-collapse: collapse;border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
+                              <h1 style="{{ section.headingStylesInline || '' }}; margin: 0;padding: 0;">{{ section.title }}</h1>
                             </td>
                           </tr>
                           
                           <each loop="item in section.items">
                             <tr>
-                              <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors['food-for-thought'] || '#f2f2f2' }};padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
+                              <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['food-for-thought'] || '#f2f2f2' }};padding: {{ section.containerStyles.padding || '20px' }};">
                                 
                                 <if condition="item.image">
                                   <div style="margin-bottom: 15px;">
@@ -678,18 +678,18 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                 </if>
                                 
                                 <if condition="item.title && item.link">
-                                  <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
-                                    <a href="{{ item.link }}" class="share-tech-mono-regular" style="font-family: 'Share Tech Mono', monospace; text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">{{ item.title }}</a>
+                                  <h2 style="{{ section.headingStylesInline || '' }}; margin: 0;padding: 0;margin-bottom: 8px;">
+                                    <a href="{{ item.link }}" class="share-tech-mono-regular" style="{{ section.linkStylesInline || '' }}; font-family: 'Share Tech Mono', monospace;">{{ item.title }}</a>
                                   </h2>
                                   <if condition="item.title && !item.link">
-                                    <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
+                                    <h2 style="{{ section.headingStylesInline || '' }}; margin: 0;padding: 0;margin-bottom: 8px;">
                                       {{ item.title }}
                                     </h2>
                                   </if>
                                 </if>
                                 
                                 <if condition="item.description">
-                                  <div style="font-family: 'IBM Plex Sans', sans-serif; font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;">
+                                  <div style="font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '23px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#000000' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 0;margin: 0;">
                                     {{{ item.description }}}
                                   </div>
                                 </if>
@@ -699,7 +699,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                     <if condition="item.paywall">
                                       <span title="Paywalled" style="font-weight: bold; font-size: 18px; background-color: white; padding: 4px; border-radius: 2px; color: #f3d305; margin-right: 4px; vertical-align: middle;">$</span>
                                     </if>
-                                    <a href="{{ item.readMoreLink || item.link }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">
+                                    <a href="{{ item.readMoreLink || item.link }}" style="{{ section.linkStylesInline || '' }};">
                                       {{ item.readMoreText || item.readMoreTxt }}
                                     </a>
                                   </p>
