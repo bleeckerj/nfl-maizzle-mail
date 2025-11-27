@@ -23,7 +23,8 @@
     "decompose:reliable": "node scripts/reliable_workflow.mjs",
     "decompose:auto": "node scripts/reliable_workflow.mjs --force-gpt",
     "decompose:comprehensive": "node scripts/reliable_workflow.mjs --strategy=comprehensive",
-    "decompose:llm": "node scripts/llm_decomposer.mjs"
+    "decompose:llm": "node scripts/llm_decomposer.mjs",
+    "send:test": "node scripts/send-ses-test.mjs"
   },
   "keywords": [
     "email",
@@ -35,6 +36,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@aws-sdk/client-ses": "^3.688.0",
     "@maizzle/framework": "^4.5.1",
     "dotenv": "^17.2.3",
     "openai": "^6.2.0",

@@ -55,10 +55,22 @@ from pathlib import Path
 target = Path(sys.argv[1])
 html = target.read_text(encoding='utf-8')
 pattern = re.compile(r'<img\b[^>]*?>', re.IGNORECASE | re.DOTALL)
+style_width_pattern = re.compile(r'(?<!max-)width\s*:', re.IGNORECASE)
+style_max_width_pattern = re.compile(r'max-width\s*:', re.IGNORECASE)
+
+def has_attr(tag, attr):
+    return re.search(rf'\b{attr}\s*=', tag, re.IGNORECASE) is not None
 
 def get_attr(tag, attr):
-    match = re.search(rf'\b{attr}\s*=\s*([\'\"])(.*?)\1', tag, re.IGNORECASE)
+    match = re.search(rf'\b{attr}\s*=\s*([\'\"])(.*?)\1', tag, re.IGNORECASE | re.DOTALL)
     return match.group(2) if match else None
+
+def replace_attr_value(tag, attr, new_value):
+    pattern = re.compile(rf'({attr}\s*=\s*)([\'\"])(.*?)\2', re.IGNORECASE | re.DOTALL)
+    def repl(match):
+        return f"{match.group(1)}{match.group(2)}{new_value}{match.group(2)}"
+    updated_tag, count = pattern.subn(repl, tag, count=1)
+    return updated_tag if count else tag
 
 def infer_numeric(value):
     if not value:
@@ -79,15 +91,12 @@ def infer_width_from_style(style_value):
 
 def normalize_img(tag):
     width_attr = get_attr(tag, 'width')
-    height_attr = get_attr(tag, 'height')
     style_attr = get_attr(tag, 'style')
 
-    missing_width = width_attr is None
-    missing_height = height_attr is None
-    missing_style = style_attr is None
+    missing_width = not has_attr(tag, 'width')
+    missing_style = not has_attr(tag, 'style')
 
-    if not (missing_width or missing_height or missing_style):
-        return tag, False
+    style_updated = False
 
     width_hint = infer_width_from_style(style_attr)
     if width_hint is None:
@@ -98,13 +107,25 @@ def normalize_img(tag):
     insertion = ''
     if missing_width:
         insertion += f' width="{width_hint}"'
-    if missing_height:
-        insertion += ' height="auto"'
+    if not missing_style and style_attr:
+        style_value = style_attr.strip()
+        if style_value and not style_value.endswith(';'):
+            style_value += ';'
+        additions = []
+        if not style_width_pattern.search(style_attr):
+            additions.append('width:100%')
+        if not style_max_width_pattern.search(style_attr):
+            additions.append(f'max-width:{width_hint}px')
+        if additions:
+            style_value += ''.join(f'{item};' for item in additions)
+            tag = replace_attr_value(tag, 'style', style_value)
+            style_updated = True
     if missing_style:
-        style_value = f"-ms-interpolation-mode:bicubic;display:block;width:100%;max-width:{width_hint}px;height:auto;border-radius:3%;"
+        style_value = f"-ms-interpolation-mode:bicubic;display:block;width:100%;max-width:{width_hint}px;height:auto;"
         insertion += f' style="{style_value}"'
 
-    return tag.replace('<img', '<img' + insertion, 1), True
+    updated_tag = tag.replace('<img', '<img' + insertion, 1) if insertion else tag
+    return updated_tag, bool(insertion) or style_updated
 
 count = 0
 

@@ -263,6 +263,39 @@ build_production/newsletter.html
 - Campaign Monitor
 - Any other email service provider
 
+### Send a Test Email via AWS SES
+
+If you already use **AWS SES** (for example with Sendy), you can fire off a device-ready test directly from this repo and skip the copy/paste step until you are ready for the final blast.
+
+1. **Verify and authorize**
+  - In the SES console, verify your sender identity (domain or explicit email). While still in the sandbox, also verify the one or two inboxes you use for tests.
+  - Create an IAM user with programmatic access. Grant it `ses:SendEmail` and `ses:SendRawEmail` (the managed `AmazonSESFullAccess` policy is fine for testing) and capture the access key + secret.
+2. **Configure environment variables** (inside `.env` or your shell):
+  ```bash
+  AWS_REGION=us-west-2
+  AWS_ACCESS_KEY_ID=AKIA...
+  AWS_SECRET_ACCESS_KEY=supersecret
+  SES_FROM=you@yourdomain.com
+  SES_TO=test1@example.com,test2@example.com
+  SES_SUBJECT=Newsletter rendering test
+  ```
+  The script also respects the default AWS credential chain (`~/.aws/credentials`, `AWS_PROFILE`, etc.), so the `AWS_*` lines are optional if you already have a profile configured.
+3. **Send the compiled HTML** (defaults to `workflow-test.html` when no path is supplied):
+  ```bash
+  npm run send:test -- build_production/w48-y25.html
+  ```
+  or run the script directly:
+  ```bash
+  node scripts/send-ses-test.mjs build_production/w48-y25.html
+  ```
+
+Chain it to the workflow for one-touch previews:
+
+```bash
+./workflow.sh content/2025-10-14.md dense-discovery workflow-test.html \
+  && npm run send:test -- workflow-test.html
+```
+
 ### **File Structure Guide**
 
 ```

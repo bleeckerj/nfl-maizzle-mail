@@ -257,7 +257,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             <tr>
                               <td class="padt20 padr10 padl20" style="border-collapse: collapse;background: {{ themeColors['apps-sites'] || '#ffffff' }};padding-top: 20px;padding-right: 10px;padding-left: 20px;" valign="top">
                                 <if condition="item.image">
-                                  <img src="{{ item.image }}" alt="{{ item.title || 'App/Site Image' }}" width="194" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 194px;border-radius:3%;">
+                                  <img src="{{ item.image }}" alt="{{ item.title || 'App/Site Image' }}" width="194" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 194px;object-fit: cover;">
                                 </if>
                               </td>
                             </tr>
@@ -430,11 +430,11 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                       <if condition="item.image">
                                         <if condition="item.link">
                                           <a href="{{ item.link }}" style="text-decoration: none;">
-                                            <img src="{{ item.image }}" alt="{{ item.title || 'Magazine Cover' }}" width="194" height="250" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 194px;object-fit: cover;border-radius:3%;">
+                                            <img src="{{ item.image }}" alt="{{ item.title || 'Magazine Cover' }}" width="194" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 194px;">
                                           </a>
                                         </if>
                                         <if condition="!item.link">
-                                          <img src="{{ item.image }}" alt="{{ item.title || 'Magazine Cover' }}" width="194" height="250" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 194px;object-fit: cover;">
+                                          <img src="{{ item.image }}" alt="{{ item.title || 'Magazine Cover' }}" width="194" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 194px;">
                                         </if>
                                       </if>
                                     </td>
@@ -508,11 +508,11 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   <div style="margin-bottom: 15px; padding: 0 1em;">
                                     <if condition="item.link">
                                       <a href="{{ item.link }}" style="text-decoration: none;">
-                                        <img src="{{ item.image }}" alt="{{ item.title || 'Magazine Cover' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius:3%;">
+                                        <img src="{{ item.image }}" alt="{{ item.title || 'Magazine Cover' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;">
                                       </a>
                                     </if>
                                     <if condition="!item.link">
-                                      <img src="{{ item.image }}" alt="{{ item.title || 'Magazine Cover' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius:3%;">
+                                      <img src="{{ item.image }}" alt="{{ item.title || 'Magazine Cover' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;">
                                     </if>
                                   </div>
                                 </if>
