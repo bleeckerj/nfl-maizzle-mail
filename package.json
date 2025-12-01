@@ -11,6 +11,7 @@
     "snippet": "node scripts/create-snippet.mjs",
     "dev": "maizzle serve",
     "convert": "node scripts/md_to_json.mjs",
+    "lint:content": "node scripts/lint-template.mjs",
     "templates:list": "node scripts/template_manager.mjs list",
     "templates:create": "node scripts/template_manager.mjs create",
     "templates:copy": "node scripts/template_manager.mjs copy",
@@ -39,10 +40,12 @@
     "@aws-sdk/client-ses": "^3.688.0",
     "@maizzle/framework": "^4.5.1",
     "dotenv": "^17.2.3",
-    "openai": "^6.2.0",
-    "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0",
+    "openai": "^6.2.0"
   },
   "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
     "commander": "^11.1.0",
     "gray-matter": "^4.0.3",
     "jsdom": "^23.2.0"

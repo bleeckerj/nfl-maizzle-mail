@@ -40,7 +40,7 @@
       "name": "Winter Cool",
       "description": "Cool blues and crisp whites for winter clarity", 
       "colors": {
-        "header": "#e0f0ff",
+        "header": "#ffffff",
         "sponsor": "#f0f8ff",
         "apps-sites": "#ffffff",
         "quote": "#e6f3ff",

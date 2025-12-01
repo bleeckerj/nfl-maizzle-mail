@@ -169,6 +169,42 @@ function displayColorTheme(newsletterData) {
   console.log('');
 }
 
+function logSectionBackgroundOverrides(sections = [], theme) {
+  if (!Array.isArray(sections)) return;
+
+  const overrides = sections.map(section => {
+    const color = section?.containerStyles?.backgroundColor;
+    if (!color) return null;
+    return {
+      type: section.type || 'unknown',
+      title: section.title,
+      color,
+      fallbackColor: theme?.colors?.[section.type]
+    };
+  }).filter(Boolean);
+
+  if (overrides.length === 0) return;
+
+  console.log('');
+  console.log('🟣 Section background overrides detected:');
+  const reset = '\x1b[0m';
+
+  overrides.forEach(({ type, title, color, fallbackColor }) => {
+    const normalizedType = type.replace(/-/g, ' ');
+    const labelParts = [normalizedType];
+    if (title) {
+      labelParts.push(`"${title}"`);
+    }
+    const fallbackNote =
+      fallbackColor && fallbackColor.toLowerCase() !== color.toLowerCase()
+        ? ` (theme default ${fallbackColor})`
+        : '';
+    const bgColor = hexToAnsiBackground(color);
+    const colorBlock = `${bgColor}        ${reset}`;
+    console.log(`  ${colorBlock} ${labelParts.join(' / ')}: ${color}${fallbackNote}`);
+  });
+}
+
 /**
  * Catalog all sections in the newsletter data for debugging
  */
@@ -615,6 +651,9 @@ async function buildNewsletter() {
           const sectionConfig = sectionStyles.sectionStyles[section.type];
           const fallbackConfig = sectionStyles.sectionStyles.default;
           const usedConfig = sectionConfig || fallbackConfig;
+          const incomingContainerStyles = section.containerStyles && typeof section.containerStyles === 'object'
+            ? { ...section.containerStyles }
+            : {};
           // --- PATCH: Apply contentStyles/linkStyles to section.description ---
           if (section.description && typeof section.description === 'string') {
             let desc = section.description;
@@ -704,7 +743,10 @@ async function buildNewsletter() {
           // Inject containerStyles into the section for template access
           // Normalize and provide sensible defaults so templates can reference
           // `section.containerStyles.borderRadius`, `padding`, and `backgroundColor`.
-          section.containerStyles = (usedConfig && usedConfig.containerStyles) ? { ...usedConfig.containerStyles } : { backgroundColor: null, padding: '15px 20px', borderRadius: '0px' };
+          const baseContainerStyles = (usedConfig && usedConfig.containerStyles)
+            ? { ...usedConfig.containerStyles }
+            : { backgroundColor: null, padding: '15px 20px', borderRadius: '0px' };
+          section.containerStyles = { ...baseContainerStyles, ...incomingContainerStyles };
           // Ensure values are strings and have defaults
           section.containerStyles.borderRadius = section.containerStyles.borderRadius ? String(section.containerStyles.borderRadius).trim() : '0px';
           section.containerStyles.padding = section.containerStyles.padding ? String(section.containerStyles.padding).trim() : '15px 20px';
@@ -909,6 +951,7 @@ async function buildNewsletter() {
       
       console.log('');
       console.log(`✅ Total: ${processedItems}/${totalItems} items processed successfully`);
+      logSectionBackgroundOverrides(newsletterData.sections, theme);
     }
     
     // Write updated newsletter data back to file

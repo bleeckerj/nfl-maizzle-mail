@@ -219,15 +219,27 @@ feature:
 ---
 ```
 
+#### **Step 2.5: Lint Your Content (Optional but recommended)**
+
+Run the new linter before building a template to catch missing sections, malformed items, or schema violations up front:
+
+```bash
+npm run lint:content content/2025-10-14.md
+npm run lint:content data/newsletter.json
+```
+
+The script parses your Markdown/JSON frontmatter, validates section/item structure, checks any referenced `section-styles` file, and runs the template-specific schema (when available). It prints the problematic path for each issue and exits with a non-zero status when the file cannot be safely rendered.
+
 #### **Step 3: Build Your Email**
 
 
 **Option A: Use the quick workflow script**
 ```bash
-# Usage: ./workflow.sh <content-file.md> [template-name] [output-file]
+# Usage: ./workflow.sh [--content <path>] [--template <name>] [--output <path>] [--send-test|send-test]
 ./workflow.sh content/2025-10-14.md dense-discovery
-# Optionally specify output file:
-./workflow.sh content/2025-10-14.md dense-discovery build_production/custom-output.html
+# Short-form flags are also available:
+./workflow.sh --content content/2025-10-14.md --template dense-discovery --output build_production/custom-output.html
+./workflow.sh content/2025-10-14.md dense-discovery --send-test
 ```
 
 **Option B: Run individual commands**
@@ -322,6 +334,7 @@ nfl-maizzle-mail/
 | `npm run test` | Convert example content → build HTML |
 | `npm run build:data` | Build HTML from existing JSON |
 | `npm run convert <file.md>` | Convert specific Markdown file to JSON |
+| `npm run lint:content <file>` | Validate Markdown/JSON frontmatter before building (sections, section-styles, schema) |
 | `npm run preview` | Build and open in browser |
 | `./workflow.sh <file.md> [template] [output-file]` | Complete workflow for specific file, template, and (optionally) output path |
 

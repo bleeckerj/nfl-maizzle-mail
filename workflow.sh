@@ -1,59 +1,134 @@
 #!/bin/bash
 
-
 # Quick workflow script to build email from Markdown using quick-build
 # Usage: ./workflow.sh <content-file.md> [template-name] [output-file]
 
+# Always run from the repo root so npm scripts resolve even when invoked from elsewhere
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$SCRIPT_DIR"
 
 
-# Support optional send-test flag
-SEND_TEST_REQUESTED=false
-FILTERED_ARGS=()
-for arg in "$@"; do
-    if [ "$arg" = "send-test" ]; then
-        SEND_TEST_REQUESTED=true
-    else
-        FILTERED_ARGS+=("$arg")
+print_usage() {
+    cat <<'EOF'
+Usage: ./workflow.sh [--content <path>] [--template <name>] [--output <path>] [--send-test|send-test]
+  or:   ./workflow.sh <content-file.md> [template] [output-file] [send-test]
+
+Examples:
+  ./workflow.sh content/2025-10-14.md dense-discovery
+  ./workflow.sh content/2025-10-14.md dense-discovery build_production/custom-output.html
+  ./workflow.sh content/2025-10-14.md dense-discovery --output public/outbox/issues/2025/w49-y25.html
+  ./workflow.sh /Users/julian/Code/nfl-backoffice/public/outbox/data/2025/w49-y25.md dense-discovery --output /Users/julian/Code/nfl-backoffice/public/outbox/issues/2025/w49-y25.html send-test
+EOF
+}
+
+# Resolve the absolute output path that quick-build will copy into,
+# mirroring the logic inside scripts/quick-build.mjs for directories vs files.
+resolve_output_dest_path() {
+    local requested="$1"
+    local base_name="$2"
+    if [ -z "$requested" ]; then
+        return
     fi
+    local candidate
+    if [[ "$requested" = /* ]]; then
+        candidate="$requested"
+    else
+        candidate="$PWD/$requested"
+    fi
+
+    if [[ "$requested" == */ ]]; then
+        candidate="${candidate%/}/${base_name}.html"
+    elif [ -d "$candidate" ]; then
+        candidate="${candidate%/}/${base_name}.html"
+    fi
+
+    printf '%s' "$candidate"
+}
+
+SEND_TEST_REQUESTED=false
+POSITIONAL=()
+
+while [ $# -gt 0 ]; do
+    case "$1" in
+        --help|-h)
+            print_usage
+            exit 0
+            ;;
+        --content|-c)
+            if [ $# -lt 2 ]; then
+                echo "❌ --content requires a file path"
+                print_usage
+                exit 1
+            fi
+            CONTENT_FILE="$2"
+            shift 2
+            ;;
+        --template|-t)
+            if [ $# -lt 2 ]; then
+                echo "❌ --template requires a template name"
+                print_usage
+                exit 1
+            fi
+            TEMPLATE="$2"
+            shift 2
+            ;;
+        --output|-o)
+            if [ $# -lt 2 ]; then
+                echo "❌ --output requires a destination path"
+                print_usage
+                exit 1
+            fi
+            OUTPUT_FILE="$2"
+            shift 2
+            ;;
+        --send-test|send-test)
+            SEND_TEST_REQUESTED=true
+            shift
+            ;;
+        --*)
+            echo "❌ Unknown option: $1"
+            print_usage
+            exit 1
+            ;;
+        *)
+            POSITIONAL+=("$1")
+            shift
+            ;;
+    esac
 done
 
-if [ ${#FILTERED_ARGS[@]} -gt 0 ]; then
-    set -- "${FILTERED_ARGS[@]}"
-else
-    set --
+if [ ${#POSITIONAL[@]} -gt 0 ] && [ -z "${CONTENT_FILE:-}" ]; then
+    CONTENT_FILE="${POSITIONAL[0]}"
+fi
+if [ ${#POSITIONAL[@]} -gt 1 ] && [ -z "${TEMPLATE:-}" ]; then
+    TEMPLATE="${POSITIONAL[1]}"
+fi
+if [ ${#POSITIONAL[@]} -gt 2 ] && [ -z "${OUTPUT_FILE:-}" ]; then
+    OUTPUT_FILE="${POSITIONAL[2]}"
+fi
+if [ ${#POSITIONAL[@]} -gt 3 ]; then
+    echo "❌ Unexpected extra arguments: ${POSITIONAL[@]:3}"
+    print_usage
+    exit 1
 fi
 
-# Print help if no arguments or --help is given
-if [ $# -eq 0 ] || [[ "$1" == "--help" ]] || [[ "$1" == "-h" ]]; then
-    echo "Usage: ./workflow.sh <content-file.md> [template-name] [output-file] [send-test]"
-    echo "Example: ./workflow.sh ./test-dd.md dense-discovery"
-    echo "Example: ./workflow.sh ./test-dd.md dense-discovery build_production/custom-output.html"
-    echo "Example: ./workflow.sh ./test-dd.md dense-discovery send-test"
-    echo "Example: ./workflow.sh /Users/julian/Code/nfl-backoffice/public/outbox/data/2025/w43-y25.md dense-discovery send-test"
-    exit 0
+if [ -z "${CONTENT_FILE:-}" ]; then
+    echo "❌ Content file is required."
+    print_usage
+    exit 1
 fi
 
+TEMPLATE="${TEMPLATE:-dense-discovery}"
 
-CONTENT_FILE=$1
-TEMPLATE=${2:-"dense-discovery"}
-OUTPUT_FILE=$3
 CONTENT_BASENAME=$(basename "$CONTENT_FILE")
 OUTPUT_BASENAME="${CONTENT_BASENAME%.*}"
-BUILD_OUTPUT_FILE="/Users/julian/Code/nfl-maizzle-mail/build_production/${OUTPUT_BASENAME}.html"
+BUILD_OUTPUT_FILE="$SCRIPT_DIR/build_production/${OUTPUT_BASENAME}.html"
 OUTPUT_DEST_PATH=""
+QUICK_BUILD_OUTPUT_ARG=""
 
-if [ -n "$OUTPUT_FILE" ]; then
-    if [[ "$OUTPUT_FILE" = /* ]]; then
-        OUTPUT_DEST_PATH="$OUTPUT_FILE"
-    else
-        OUTPUT_DEST_PATH="$PWD/$OUTPUT_FILE"
-    fi
-
-    if [[ "$OUTPUT_FILE" == */ ]] || [[ "$OUTPUT_FILE" == *"/" ]]; then
-        OUTPUT_DEST_PATH="${OUTPUT_DEST_PATH%/}/${OUTPUT_BASENAME}.html"
-    elif [ -d "$OUTPUT_DEST_PATH" ]; then
-        OUTPUT_DEST_PATH="${OUTPUT_DEST_PATH%/}/${OUTPUT_BASENAME}.html"
-    fi
+if [ -n "${OUTPUT_FILE:-}" ]; then
+    OUTPUT_DEST_PATH=$(resolve_output_dest_path "$OUTPUT_FILE" "$OUTPUT_BASENAME")
+    QUICK_BUILD_OUTPUT_ARG="$OUTPUT_DEST_PATH"
 fi
 
 
@@ -174,18 +249,18 @@ PY
 echo "🔄 Building email with quick-build..."
 echo "📄 Content: $CONTENT_FILE"
 echo "🎨 Template: $TEMPLATE"
-TEMPLATE_STYLES_PATH="/Users/julian/Code/nfl-maizzle-mail/templates/$TEMPLATE/section-styles.json"
-DEFAULT_STYLES_PATH="/Users/julian/Code/nfl-maizzle-mail/data/section-styles.json"
+TEMPLATE_STYLES_PATH="$SCRIPT_DIR/templates/$TEMPLATE/section-styles.json"
+DEFAULT_STYLES_PATH="$SCRIPT_DIR/data/section-styles.json"
 if [ -f "$TEMPLATE_STYLES_PATH" ]; then
     echo "🗂 Section styles will default to: $TEMPLATE_STYLES_PATH (content can override via sectionStylesFile)"
 else
     echo "🗂 No template-specific section styles found; defaulting to: $DEFAULT_STYLES_PATH (content can override via sectionStylesFile)"
 fi
-if [ -n "$OUTPUT_FILE" ]; then
-    echo "💾 Output: $OUTPUT_FILE"
-    node /Users/julian/Code/nfl-maizzle-mail/scripts/quick-build.mjs "$TEMPLATE" "$CONTENT_FILE" "$OUTPUT_FILE"
+if [ -n "$QUICK_BUILD_OUTPUT_ARG" ]; then
+    echo "💾 Output: $QUICK_BUILD_OUTPUT_ARG"
+    node "$SCRIPT_DIR/scripts/quick-build.mjs" "$TEMPLATE" "$CONTENT_FILE" "$QUICK_BUILD_OUTPUT_ARG"
 else
-    node /Users/julian/Code/nfl-maizzle-mail/scripts/quick-build.mjs "$TEMPLATE" "$CONTENT_FILE"
+    node "$SCRIPT_DIR/scripts/quick-build.mjs" "$TEMPLATE" "$CONTENT_FILE"
 fi
 
 BUILD_EXIT_CODE=$?
@@ -205,8 +280,8 @@ if [ $BUILD_EXIT_CODE -eq 0 ]; then
             fi
         done
         echo "✅ Email built successfully!"
-        if [ -n "$OUTPUT_FILE" ]; then
-            echo "📁 Output saved to $OUTPUT_FILE"
+        if [ -n "$OUTPUT_DEST_PATH" ]; then
+            echo "📁 Output saved to $OUTPUT_DEST_PATH"
         else
             echo "📁 Check build_production/ for output"
         fi

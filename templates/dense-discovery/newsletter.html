@@ -89,9 +89,14 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                               <if condition="item.image">
                                 <tr>
                                   <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.sponsor || '#f8eccf' }};padding: 0 20px 15px 20px;">
-                                    <a href="{{ item.link }}" class="theme-link" style="text-decoration: underline;">
+                                    <if condition="item.link">
+                                      <a href="{{ item.link }}" class="theme-link" style="text-decoration: underline;">
+                                        <img src="{{ item.image }}" alt="{{ item.title || 'Sponsor Image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;height: auto;border-radius:3%">
+                                      </a>
+                                    </if>
+                                    <if condition="!item.link">
                                       <img src="{{ item.image }}" alt="{{ item.title || 'Sponsor Image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;height: auto;border-radius:3%">
-                                    </a>
+                                    </if>
                                   </td>
                                 </tr>
                               </if>
@@ -106,11 +111,11 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   </td>
                                 </tr>
                               </if>
-                              <if condition="(item.readMoreText || item.readMoreTxt) && item.link">
+                              <if condition="(item.readMoreText || item.readMoreTxt) && (item.readMoreLink || item.link)">
                                 <tr>
                                   <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.sponsor || '#f8eccf' }};padding: 0 20px 20px 20px;">
                                     <p style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}padding: 0;margin: 0;">
-                                      <a href="{{ item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ item.readMoreText || item.readMoreTxt || 'Read More' }}</a>
+                                      <a href="{{ item.readMoreLink || item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ item.readMoreText || item.readMoreTxt || 'Read More' }}</a>
                                     </p>
                                   </td>
                                 </tr>
@@ -211,11 +216,11 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   </td>
                                 </tr>
                               </if>
-                              <if condition="(item.readMoreText || item.readMoreTxt) && item.link">
+                              <if condition="(item.readMoreText || item.readMoreTxt) && (item.readMoreLink || item.link)">
                                 <tr>
                                   <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.dispatch || '#f8eccf' }};padding: 0 20px 20px 20px;">
                                     <p style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}padding: 0;margin: 0;">
-                                      <a href="{{ item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ item.readMoreText || item.readMoreTxt || 'Read More' }}</a>
+                                      <a href="{{ item.readMoreLink || item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ item.readMoreText || item.readMoreTxt || 'Read More' }}</a>
                                     </p>
                                   </td>
                                 </tr>
@@ -356,9 +361,9 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             </div>
                           </if>
                           
-                          <if condition="(item.readMoreText || item.readMoreTxt) && item.readMoreLink">
+                          <if condition="(item.readMoreText || item.readMoreTxt) && (item.readMoreLink || item.link)">
                             <p style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}padding: 0;margin: 10px 0 0 0;">
-                              <a href="{{ item.readMoreLink }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ item.readMoreText || item.readMoreTxt }}</a>
+                              <a href="{{ item.readMoreLink || item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ item.readMoreText || item.readMoreTxt }}</a>
                             </p>
                           </if>
                           
