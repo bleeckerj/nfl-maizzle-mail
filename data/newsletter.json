@@ -1,68 +1,31 @@
 {
   "$schema": "../newsletter.schema.json",
   "template": "dense-discovery",
-  "title": "Near Future Laboratory – w48y25",
-  "preheader": "The Joy of Being a Capitalist (Sort Of..)",
-  "colorTheme": "winter",
+  "title": "Newsletter Title",
+  "preheader": "Short preview text that appears in email clients",
   "sectionStylesFile": "templates/dense-discovery/section-styles.json",
-  "header": {
-    "logoTop": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/public",
-    "logoBottom": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/public",
-    "logoLink": "https://nearfuturelaboratory.com"
-  },
   "intro": {
-    "title": "The Joy of Being a Capitalist (Sort Of..)",
-    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/w48-y25/",
-    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>I’ve been wondering lately if we’ve let the word capitalist calcify into something too blunt to be useful. Somewhere along the way it became shorthand for extraction, exploitation, and the hollowing out of meaning. Fair enough — those systems exist, and they do real harm. But when I look at my own life, the word attaches itself in ways that feel quieter, more human, and frankly more honest.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>By any technical definition, I’m a capitalist. I run a small studio that makes things people value like ideas, artifacts, community experiences, seminars, books, talks, the podcast, essays, card decks and such — and, when things go well, I receive value back in the form of folding money. Ideally the time and effort and costs of creating those things-of-value is returned with <em>more</em> than I put in with good vibes <em>and</em> folding money. BUt the point is this: it's nothing predatory. (Although some will assume it is when they ask for my time for nothing in return, for example.) Overall — nothing extractive is going on here. Just the oldest economic relationship in the world: make something meaningful, offer it to the world, and hope the exchange sustains the next thing you hope to make.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>I started, built, grew and sold a hardware company a couple of years back. The effort, time, and risk I put into that venture was significant. The return was meaningful, too. But at no point did I feel like I was participating in some kind of exploitative system. I was simply trying to create value for people who wanted what I was making. If they felt the exchange was fair, we made a deal. If not, we walked away. It's hard to feel you're an extractive and exploitive capitalist when you're sitting alone in a backyard studio, developing a brand and a product, writing your own App — and marketing copy — and shipping and supporting it all by yourself.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>I'm working on software now that I wouldn't consider giving away for free or as open source, although I'm grateful for the open source sensibility (considering the Internet runs on it). But no one can eat for free, so someone somewhere is circulating value to directly or indirectly support that work and to do so they need excess “value” (folding money or time or other resources).</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>(Once, when I determined the value exchange wasn't fair, I simply and unilaterally set the terms straight. That was tough, but it felt right on the other side of the decision, for 100% sure. And that's a measure of independence, too.)</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Just to be clear, this is not some ideological confession. It’s an acknowledgment that independence — the ability to survive by making things — is part of the life I’ve built. And it’s not new. My mother ran several small businesses: a hair salon, a clothing boutique, an small town art gallery. Each one was a tiny ecosystem of hustle, taste, community, and service. These were capitalist enterprises in the literal sense: they were built on taking risks, creating value, and helping to support a family of five at a time when it was still unexpected to see a Black woman run their own businesses. None of these were meant to be engines of domination. They were vehicles for dignity, creativity, and perhaps lessons about how to navigate a world that often seemed designed to block the path forward.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>And my grandfather — a Black tobacco farmer in rural Virginia — lived a version of this that gets written out of most economic narratives. He was poor in the way that census tables love to measure, but rich in the things that don’t get counted: stability, responsibility, the pride of feeding a large family from work that was his. He was participating in a system of exchange long before we attached the word “capitalist” to tech CEOs or hedge funds. He created value with labor, land, and knowledge. He traded that value to sustain a way of living.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>When we say “anti-capitalist,” I get what we’re reacting against: the violence of scale, the machinery of extraction, the algorithmic thinning of life into measurable units. But I also think we’re sometimes imprecise. We collapse the monstrous and the mundane, the hedge fund and the corner store, the predatory and the purposeful.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>There is another version — a smaller, older, more personal one — that is about independence, creativity, and sustaining a life by circulating value within a community. A version where “capital” isn’t a weapon but a tool. A version where making things is the point.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Maybe the task isn’t to abandon the idea of being a capitalist. Maybe it’s to reclaim the word from the forces that distorted it — to remember that there’s joy in building something with care, offering it to people, and making enough to keep going.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Not extraction.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Not domination.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Just the simple, stubborn desire to create value, circulate meaning, and live a satisfying and purposeful life.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p><strong>Make meaning. Make money.</strong> That isn't too much to expect, is it?</p></p>"
+    "title": "Welcome",
+    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/w50-y25/",
+    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Introduction paragraph for the newsletter.</p></p>"
+  },
+  "header": {
+    "quote": "Inspiring header quote",
+    "author": "Quote Author",
+    "featuredArtist": {
+      "name": "Artist Name",
+      "link": "#"
+    },
+    "featuredImage": "https://fpoimg.com/600x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Featured",
+    "logoBottom": "https://fpoimg.com/163x50?text=Preview&bg_color=e6e6e6&text_color=4FAAAA",
+    "logoTop": "https://fpoimg.com/163x50?text=Preview&bg_color=e6e6e6&text_color=4FAAAA"
   },
   "sections": [
     {
       "type": "sponsor",
-      "title": "A New Course",
-      "sponsorLabel": "Professional Development",
-      "sponsorLink": "https://luma.com/nearfuturelaboratory",
-      "items": [
-        {
-          "title": "What's After Design?",
-          "subtitle": "A limited enrollment 3 unit course designed by Professor Carl DiSalvo and myself to help you build a post-design creative practice",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/75a3c902-c9a1-4777-4076-e2cc23682a00/w=600",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">“After design” — it means different things to different people. For some, it's an evolution of traditional design. For others, it's a departure from design altogether, exploring new mediums, disciplines, or ways of seeing, thinking, and making that transcend conventional design boundaries.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">“After design” doesn’t mean design is over.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">It means the world has shifted faster than the profession’s inherited assumptions.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Design gave organizations a powerful set of tools: research, framing, synthesis, observation, prototyping, storytelling. But those were built for a world where problems were relatively stable. A world where the brief was legible, where markets moved slower, and where creativity, such as it was, operated at the edges where it was constrained to decoration, refinement, or was there to optimize what was already decided.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">We don’t live in that world anymore, this much is clear.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">But I have a deeper question for you underneath all of this:</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">In a world that seems to be in need of creativity and expansive imagining, what comes <strong>after design</strong> <strong>for you?</strong></p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">What is a creative practice in this new world <strong>for you?</strong></p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Over the couple of years I’ve been asked a version of the same question over and over:</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">“How do I build a life like the one you’ve built?”</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">“How do you build a practice that isn’t confined to a job title?”</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">“How do you make a path out of imagination, experimentation, and curiosity?”</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">”How do you construct a trajectory that feels like yours?”</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I’m finally building something that answers that question.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">This upcoming course is about creative practice in a <em>post-design world</em>, yes — but it’s also about you.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Your path. Your practice. Your story. Your elevator pitch. Your statement of purpose. The arc that connects where you are to where you want to go; from who you are to who you will become.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">It’s for people who want to design a creative life with intention.<br/> A life that makes room for the unknown.<br/> A life that doesn’t wait for permission.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">If this resonates — if you’ve been looking for a way to navigate whatever comes after design in your own life — stay tuned.</p>",
-          "link": "https://luma.com/nearfuturelaboratory",
-          "readMoreText": "Get On The List →",
-          "readMoreLink": "https://luma.com/nearfuturelaboratory"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
-      "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.2",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "19px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
-    },
-    {
-      "type": "sponsor",
-      "title": "Futures & Speculative Design",
-      "sponsorLabel": "From the Archives",
-      "sponsorLink": "https://speculativeedu.eu/interview-james-auger/",
+      "title": "Sponsor Section",
+      "sponsorLink": "Example sponsorLink",
+      "sponsorLabel": "Example sponsorLabel",
       "containerStyles": {
         "backgroundColor": "#d8d8b1",
         "padding": "15px 20px",
@@ -70,13 +33,13 @@
       },
       "items": [
         {
-          "title": "That Tooth..",
-          "link": "https://speculativeedu.eu/interview-james-auger/",
-          "subtitle": "James Auger on Speculative Design's Role in Shaping the Future",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Will Carey reminded us in the NFL Discord about this great interview with James Auger on Speculative Design's role in shaping the future. It's an important conversation from the archives — and it's always a good idea to maintain a connection to the lineage of the kind of work we do. James gets into the ways speculative design can challenge prevailing narratives and inspire new ways of thinking about technology and society. Definitely amongst the canonical must-read for anyone interested in the intersection of design, technology, speculation, imagination and future studies.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I met James (at least?) once at I think it was the Swiss Design Network conference which was in Basel, Switzerland. I remember that he had to find an emergency dentist because he had knocked out a (cosmetic?) tooth and talked with a bit of a whistle. Nicolas Nova found him a dentist that could like..do a patch job or something?</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I remember seeing this tooth in Wired. I want to say I was teaching at USC at the time and this really seared itself in my consciousness, starting with the way it sparked these peculiar conversations that could only have come about if one thought this idea of a Bluetooth tooth implant was real. It was a speculation — but made to look real insofar as there was an intimation of some microchip tech in there. So it was speculative in that sense.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">What I wanted to do was extend that speculation into a functional prototype — not necessarily (or at all..) the Bluetooth, like..tooth idea itself: but the extension of speculation into a functional speculation that could be used itself, something that could be experienced as well as pondered and reflected upon. A functional conversation starter. Limited runs of peculiar contrivances that feel like they could be real, and in fact are — but whose primary function when in the world is to provoke thought and discussion. And whose primary function in the making is to do the work of speculating-in-material-making.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><div><img style='display:block;border-radius: 10px;width: 100%;height: auto;margin: 1rem auto' src=\"https://live.staticflickr.com/5170/5201384433_536bdaac79_z.jpg\" alt=\"Saturday October 30 00:23\" width=\"100%\"/></div></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><em>p.s. Yeah, there it is: <a href=\"https://blog.nearfuturelaboratory.com/2010/03/30/design-fiction-at-the-6th-annual-swiss-design-network-conference/\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Design Fiction at the 6th Annual Swiss Design Network Conference</a></em></p></p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5757709e-e54a-4c76-2b41-290c5efa2800/w=600",
-          "readMoreText": "Speculative Tooth →",
-          "readMoreLink": "https://speculativeedu.eu/interview-james-auger/"
+          "title": "Sponsor Item 1",
+          "link": "https://example.com",
+          "subtitle": "Example subtitle for item 1",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Example description for sponsor item 1.</p></p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://example.com"
         }
       ],
       "contentStyles": {
@@ -101,121 +64,115 @@
       "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
     },
     {
-      "type": "sponsor",
-      "title": "AI & Design",
-      "sponsorLabel": "Events & Happenings",
+      "type": "dispatch",
+      "title": "Dispatch Section",
+      "dispatchLink": "Example dispatchLink",
+      "dispatchLabel": "Example dispatchLabel",
+      "tags": [
+        "TAG1",
+        "TAG2"
+      ],
+      "signalsLabel": "Example signalsLabel",
+      "items": [
+        {
+          "title": "Dispatch Item 1",
+          "link": "https://example.com",
+          "subtitle": "Example subtitle for item 1",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for dispatch item 1.</p></p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://example.com"
+        }
+      ],
       "containerStyles": {
-        "backgroundColor": "#9bd4f7",
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "8px"
+      },
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "19px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
+    },
+    {
+      "type": "apps-sites",
+      "title": "Apps Sites Section",
+      "containerStyles": {
+        "backgroundColor": "#d8d8d8",
         "padding": "15px 20px",
         "borderRadius": "0px"
       },
       "items": [
         {
-          "title": "The Future of Being Human",
-          "subtitle": "A two day symposium at MBZUAI in Abu Dhabi",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/808ad872-4b89-4c70-2c5e-76d134b7c200/w=600",
-          "readMoreText": "The Future of Being Human →",
-          "readMoreLink": "https://ai-nexus.mbzuai.ac.ae/?panel=Human-Computer-Interaction-Symposium-2025",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I spent a few days in Abu Dhabi at The Future of Being Human: AI and Design — a symposium hosted by the Human-Computer Interaction Department at MBZUAI, the first AI-only university in the world </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">It gathered a remarkable constellation of researchers, designers, and thinkers sorting through what it means to live — and design — in a world thick with AI.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">   MBZUAI is the first AI university in the world and the Human Computer Interaction Department — led by the effervescent <a href='https://mbzuai.ac.ae/study/faculty/elizabeth-churchill/' style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Dr. Elizabeth Churchill</a> is the first HCI Department in the MENA region. The topic around “being human” is top of mind for most people as the stories about AI’s power and influence (especially dystopian futures) continue to be amplified. A motivating factor for Elizabeth and her remarkable team getting us together was to explore how design and HCI can help shape a future where AI amplifies human potential rather than diminishes it. I'm grateful to have been part of this gathering. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Aside from the wonderful and thought-provoking keynotes and panels, there was the workshop component that nudged our little assembly out of the trad academic frame. Our task was to collectively write a book, which to some might be taken literally, but I took it more as a prompt — a way to reflect on the questions surrounding the symposium rather than literally write a book.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><img src='https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/779a9d70-0054-4763-e603-351666471100/w=600' alt='Sketch of activities' style='display:block;border-radius:10px;width:100%;height:auto;margin:1rem auto;'></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Instead of writing about the future, my group  wrote from inside a future. We conceptually sketched the beginnings of a slim, practical training guide titled “How to Train Your Agent” — a future field manual for a world where everyone has a small constellation of personal AI agents that must learn our habits, moods, quirks, skills, desires and aspirations. Part pet-keeping, part etiquette, part speculative anthropology. It felt wonderfully design-fiction-y: using an artifact to materialize the adjacent possible long enough for us to ask better questions.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">And then there are the moments that don’t fit neatly into an agenda. Over lunch I met the wonderful Simon Pulman-Jones, who turned out — entirely by coincidence — to be a huge fan of OMATA, my very analog-digital cycling computer company from a past chapter of my life. We slipped immediately into a conversation about cycling, hardware, stubbornness, and the foolhardy joy of building physical things in a world where everyone warns you: don’t do hardware, it’s too hard.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">That collision of worlds reminded me why gatherings like this matter. When you put diverse experiences — HCI researchers, musicians, designers, engineers, scientists, cyclists, hardware founders — in the same room, you surface possibilities you wouldn’t find by staying in your lane. The “future of being human” is less a single domain than a conversation across many of them.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I left feeling energized by how expansive the field is becoming, and how essential it is that we approach AI not only as a technical project, but as a deeply human one</p></p>"
+          "title": "Apps Sites Item 1",
+          "link": "https://example.com",
+          "subtitle": "Example subtitle for item 1",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for apps-sites item 1.</p></p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://example.com",
+          "paywall": true
+        },
+        {
+          "title": "Apps Sites Item 2",
+          "link": "https://example.com",
+          "subtitle": "Example subtitle for item 2",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for apps-sites item 2.</p></p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://example.com",
+          "paywall": true
         }
       ],
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
-        "lineHeight": "1.2",
+        "lineHeight": "1.4",
         "color": "#111111",
         "textAlign": "left"
       },
       "headingStyles": {
         "fontFamily": "inherit",
-        "fontSize": "19px",
+        "fontSize": "21px",
         "fontWeight": "600",
         "color": "#000000"
       },
       "linkStyles": {
         "color": "inherit",
         "textDecoration": "underline",
-        "fontWeight": "normal"
+        "fontWeight": "500"
       },
-      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
+      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB"
     },
     {
-      "type": "food-for-thought",
-      "title": "From the Discord",
+      "type": "apps-sites-single-column",
+      "title": "Apps Sites Single Column Section",
       "items": [
         {
-          "title": "Starring in “Gremlins meets Terminator”..",
-          "category": "ai plushies",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/6448e146-84c7-4748-96f7-8acf672fe800/w=600",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">Meet Moflin — an AI-powered robot companion Tribble-y thing that offers the comfort of a pet — without the fur or allergies but with all the capabilities of a surveillance device or little contrivance that'll root around your home learning your habits and routines. It’s designed to provide emotional support and companionship through its responsive behaviors and interactions.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">With emotional intelligence, Moflin responds to your mood, learns from your interactions, and brings a sense of warmth and calm to everyday life, while bringing all kinds of other data points to somewhere else.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">A gentle robot with a heart, Moflin brings the warmth of a pet only you don't have to feed it or walk it so, well — actually it's not a pet at all, by most common definitions. With AI-powered emotions and a personality that grows as you do, Moflin offers companionship that’s always by your side, ready to listen, learn, and lift your spirits.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">Cute and creepy at the same time.</p></p>",
-          "link": "https://www.casio.com/us/moflin/",
-          "sharedBy": "Julian Bleecker, Ph.D.",
-          "channel": "🤖-whats-ai-good-for",
-          "readMoreLink": "https://www.casio.com/us/moflin/",
-          "readMoreText": "Squeak On →"
-        },
-        {
-          "title": "The Vatican discussess ethical AI",
-          "category": "AI Ethics",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">In a world racing toward AI dominance, the Vatican urges us to remember what makes us human. Leaders warn that without careful oversight, technology could erode dignity and spiritual essence. The goal: harness AI’s power to uplift, not to diminish, our shared humanity.</p></p>",
-          "link": "https://coexistence.global",
-          "sharedBy": "Julian Bleecker",
-          "channel": "ontological-contrivances",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/bf3c45a9-c33d-4264-74f2-ff0f258fb500/w=600",
-          "readMoreLink": "https://coexistence.global",
-          "readMoreText": "Pray On →"
-        },
-        {
-          "title": "Qwen-Edit-2509: AI Camera Control for Image Editing",
-          "category": "Camera Control",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2799ff4a-f2ee-4766-74ed-7eb52b99c300/w=600",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">I just found a powerful image-editing LoRA, Qwen-Edit-2509. It's nuts. This thing lets you control your camera angles and perspectives with crazy detail. You can move it up, down, left, right, even rotate or switch to wide or close-up views, all basically prompted. The latest update fixes consistency issues Worth a look, particularly if you're exploring the Generative Cinema space.</p>",
-          "link": "https://huggingface.co/dx8152/Qwen-Edit-2509-Multiple-angles/blob/main/README.md",
-          "sharedBy": "Julian Bleecker, Ph.D.",
-          "channel": "🎥-generative-cinema",
-          "readMoreLink": "https://huggingface.co/dx8152/Qwen-Edit-2509-Multiple-angles/blob/main/README.md",
-          "readMoreText": "Dolly In →"
-        },
-        {
-          "title": "Poetry Jailbreaks LLM Safety Measures",
-          "category": "AI Safety",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">The paper demonstrates that adversarially generated poetry prompts can reliably induce large language models to produce outputs that circumvent a range of safety mechanisms. The authors present a framework for creating such prompts and show their effectiveness across multiple model architectures and alignment techniques.</p></p>",
-          "link": "https://arxiv.org/abs/2511.15304",
-          "sharedBy": "camillemakes",
-          "channel": "🧰-artificial-intelligence",
-          "readMoreLink": "https://arxiv.org/abs/2511.15304",
-          "readMoreText": "Pick Locks →"
-        },
-        {
-          "title": "From Factory Towns to Data Hubs",
-          "category": "Read",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">America’s faded factories are getting a high-tech reboot as AI takes over the industrial heartland, with Lordstown’s old GM plant poised for a comeback powered by the biggest names in tech. The rush to build AI infrastructure is reshaping the economy, overshadowing old-school manufacturing and fueling growth where little else is.</p>",
-          "link": "https://www.bloomberg.com/news/features/2025-10-24/ai-data-center-boom-threatens-trump-s-manufacturing-revival",
-          "sharedBy": "Clipper0727",
-          "channel": "transportation-and-infrastructure",
-          "readMoreLink": "https://www.bloomberg.com/news/features/2025-10-24/ai-data-center-boom-threatens-trump-s-manufacturing-revival",
-          "readMoreText": "Read On →",
-          "paywall": true
-        },
-        {
-          "title": "Saudi Arabia’s New Power Play Is Exporting A.I. to the World",
-          "category": "Read",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">Well..that peculiar and inexplicable “The Line” linear city in the desert didn't quite pan out, but Saudi Arabia is still at it now positioning itself as a global hub for artificial intelligence, leveraging “resources” and strategic partnerships to export A.I. capacity (“compute” to use the idiom du jour) worldwide. The kingdom aims to diversify its economy and reduce its dependence on oil by investing heavily in A.I. research, development, and infrastructure, attracting tech companies and talent from around the globe.</p></p>",
-          "link": "https://www.nytimes.com/2025/10/27/technology/saudi-arabia-ai-exporter.html",
-          "sharedBy": "Julian Bleecker, Ph.D.",
-          "channel": "transportation-and-infrastructure",
-          "readMoreLink": "https://www.nytimes.com/2025/10/27/technology/saudi-arabia-ai-exporter.html",
-          "readMoreText": "Read On →",
-          "paywall": true
-        },
-        {
-          "title": "Strudel is Live-Coding Music in the Browser",
-          "link": "https://strudel.cc",
-          "readMoreText": "Strum your browsers →",
-          "sharedBy": "@ilesinge",
-          "channel": "🖼-art-technology",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">Strudel is a browser-based live-coding playground for making music with a few keystrokes. It’s a JavaScript take on TidalCycles—free, open-source, and tuned for both beginners and experts. Hit play, tweak a pattern, update, and you’re composing. It’s an invitation to improvise, explore, and make sound with code.</p></p>"
+          "title": "Apps Sites Single Column Item 1",
+          "link": "https://example.com",
+          "subtitle": "Example subtitle for item 1",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for apps-sites-single-column item 1.</p></p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://example.com"
         }
       ],
       "containerStyles": {
@@ -223,6 +180,248 @@
         "padding": "15px 20px",
         "borderRadius": "0px"
       },
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "21px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "500"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB"
+    },
+    {
+      "type": "quote",
+      "title": "Quote Section",
+      "items": [
+        {
+          "quote": "Example quote text for item 1",
+          "author": "Example author",
+          "authorLink": "https://example.com"
+        }
+      ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "Ubuntu, sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.2",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "21px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
+    },
+    {
+      "type": "indie-mag",
+      "title": "Indie Mag Section",
+      "containerStyles": {
+        "backgroundColor": "#d8d8d8",
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "items": [
+        {
+          "title": "Indie Mag Item 1",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for indie-mag item 1.</p></p>",
+          "details": "<p>Example details for indie-mag item 1.</p>",
+          "note": "<p>Example note for indie-mag item 1.</p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://example.com",
+          "paywall": true
+        }
+      ],
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "19px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
+    },
+    {
+      "type": "indie-mag-single-column",
+      "title": "Indie Mag Single Column Section",
+      "containerStyles": {
+        "backgroundColor": "#d8ffd8",
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "items": [
+        {
+          "title": "Indie Mag Single Column Item 1",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for indie-mag-single-column item 1.</p></p>",
+          "details": "<p>Example details for indie-mag-single-column item 1.</p>",
+          "note": "<p>Example note for indie-mag-single-column item 1.</p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://example.com",
+          "paywall": true
+        }
+      ],
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "19px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
+    },
+    {
+      "type": "books-accessories",
+      "title": "Books Accessories Section",
+      "byline": "Example byline",
+      "bylineLink": "Example bylineLink",
+      "items": [
+        {
+          "title": "Books Accessories Item 1",
+          "link": "https://example.com",
+          "subtitle": "Example subtitle for item 1",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for books-accessories item 1.</p></p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "authorName": "Example authorName for item 1",
+          "authorLink": "https://example.com",
+          "isbn": "978-1-23456-789-7",
+          "linkText": "Example linkText for item 1"
+        }
+      ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "21px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "500"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB"
+    },
+    {
+      "type": "food-for-thought",
+      "title": "From the Discord",
+      "containerStyles": {
+        "backgroundColor": "#fbfcfa",
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "items": [
+        {
+          "title": "What happens when it crashes?",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/1664ec31-eb81-4472-4ad0-75f3002a4200/w=600",
+          "category": "Let them eat MREs",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">A new bull market is sweeping through the U.S. military, where troops are using their unique camaraderie and competitive spirit to dive into the world of investing. From flight engineers checking their portfolios after landing to group chats lighting up with news of tech stock spikes, service members are making significant gains in both traditional stocks and cryptocurrencies. Bases like Luke Air Force Base and Vandenberg Space Force Base have become hotspots for crypto activity, with tax data showing a far higher rate of crypto-related transactions than the national average. The scene now includes everything from Humvees and Porsches in base parking lots to influencers in uniform sharing wealth-building strategies, as young troops ride a wave of newfound financial opportunity—while still wondering how long the good times will last.,</p></p>",
+          "link": "https://archive.ph/tYO3T",
+          "sharedBy": "uncle-julian",
+          "channel": "milspec-techspec",
+          "readMoreLink": "https://archive.ph/tYO3T",
+          "readMoreText": "Lock & Load →",
+          "paywall": true
+        },
+        {
+          "title": "Red Teaming Smart Contracts Heists",
+          "category": "backalley blockchain heists",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/35e6f4f1-0d8d-44f8-4d68-d37eccf55000/w=600",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">Point a frontier AI that had bad parenting at the financial plumbing of the blockchain and it'll try its best at the cybernetic equivalent of a liquor store holdup.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">Anthropic’s latest research shows AI agents hitting a string of smart contracts, walking through $4.6M worth of real-world smart contract exploits — after their knowledge cutoffs — and even discovering fresh zero-days in thousands of newly deployed contracts. All in simulation, but very much not science fiction. The takeaway is as uncomfortable as it is obvious: <span style='background-color: #efffff; padding: 3px 10px; border-radius:8px'>autonomous exploitation is no longer a hypothetical risk but a technically feasible capability that now costs about the same as a GPU-hungry weekend project.</span></p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">The paper frames this not as another “AI is getting scary” headline, but as a sober benchmark: if AI can simulate profitable theft, it can also defend against it. But check this out: exploit revenue on these tasks doubled every 1.3 months. WTF. Talk about up and to the right, eh?</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">If the blockchain was once an experiment in trustless systems, AI just demonstrated what trustlessness looks like when the attackers never sleep, never get bored, and can read Solidity faster than you can say “audit.”</p></p>",
+          "link": "https://red.anthropic.com/2025/smart-contracts/",
+          "sharedBy": "Manual Entry",
+          "channel": "ai-heists-heist",
+          "readMoreLink": "https://red.anthropic.com/2025/smart-contracts/",
+          "readMoreText": "Read On →"
+        },
+        {
+          "title": "Food For Thought Item 2",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">Example description for food-for-thought item 2.</p></p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "channel": "Example channel",
+          "category": "Example category",
+          "sharedBy": "Example sharedBy for item 2",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://example.com",
+          "paywall": true
+        },
+        {
+          "title": "Food For Thought Item 2",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">Example description for food-for-thought item 2.</p></p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "channel": "Example channel",
+          "category": "Example category",
+          "sharedBy": "Example sharedBy for item 2",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://example.com",
+          "paywall": true
+        }
+      ],
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
@@ -246,62 +445,17 @@
       "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB; font-size: 19px"
     },
     {
-      "type": "sponsor",
-      "title": "Join the Near Future Laboratory Discord",
-      "sponsorLabel": "COMMUNITY IS CREATIVITY",
-      "sponsorLink": "https://patreon.com/nearfuturelaboratory",
-      "items": [
-        {
-          "title": "Near Future Laboratory Patreon",
-          "subtitle": "Join the Discord, Support Office Hours, the Newsletter and More",
-          "readMoreText": "Join Us →",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The Near Future Laboratory is supported by its community and members. <a href='https://patreon.com/nearfuturelaboratory' style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Join us on Patreon</a> to support our work, get access to exclusive content, and be part of our vibrant Discord community where we discuss design, technology, creativity, the future and do projects and support each others' work.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I host weekly Office Hours for Patrons — now for 285 weeks and running — every Friday at 0900 (UTC-7 / California). It's a great way to connect, ask questions, and get feedback on your projects.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Each week two people from the community present a project, idea, or challenge and we discuss it together. It's a great way to get feedback, learn from others, and connect with like-minded people.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">All of this is done in a friendly, supportive, and welcoming environment. We have people from all over the world, from all walks of life, and with all kinds of interests. It's a great way to meet new people, network, show what you can do, and learn from each other.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">In this time of rapid change and uncertainty, it's more important than ever to have a community of people who can support you, challenge you, and help you grow. The Near Future Laboratory is that community.</p></p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/58baa59a-a7da-4d1a-1f3a-9abdc26f8c00/w=600",
-          "link": "https://patreon.com/nearfuturelaboratory"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
-      "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.2",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "19px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
-    },
-    {
       "type": "aesthetically-pleasing",
-      "title": "Patagonia Does Design Fiction",
-      "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\">This was literally sitting in my, you know..“in” box when my old chum Will Carter dropped it on my desk just in time for the newsletter&#58; Patagonia takes a turn at doing some Design Fiction in their latest “Cyber Monday” email where their product designers “teleported” (I use a janky time machine ‘cause my teleporter is missing the passenger-side collimating valve, but it's all the same  in the end, you wind up roughly in the same entanglement) into a climate ravaged near future of 2045.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\">Say — does anyone here have any juice at Patagonia? I'd love to chat with their design team and/or marketing folks about this approach. It's not often you see a major brand take a stab at design fiction in their marketing. Kudos to them for trying something different.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\">Also, p.s. — a series of articles in their catalog/blog would be awesome to work on!</p></p>",
+      "title": "Aesthetically Pleasing Section",
+      "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\">Description for aesthetically-pleasing section.</p></p>",
       "items": [
         {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/1cb2640b-703e-483c-0aa1-502d88b9ff00/w=600",
-          "imageLink": "https://www.patagonia.com/black-friday.html"
-        },
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b7b1609c-9ace-4033-697c-93b2036ca500/w=600",
-          "imageLink": "https://www.patagonia.com/black-friday.html"
-        },
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/da620214-4078-4319-62fd-47d59bb3a300/w=600",
-          "imageLink": "https://www.patagonia.com/black-friday.html"
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "title": "Example title",
+          "imageLink": "https://example.com",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\">Example description for aesthetically-pleasing item 1.</p></p>",
+          "readMoreText": "Read more →"
         }
       ],
       "containerStyles": {
@@ -329,10 +483,87 @@
       },
       "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
       "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
+    },
+    {
+      "type": "classifieds",
+      "title": "Classifieds Section",
+      "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, monospace !important; font-size: 19px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\"><p style=\"font-family: Share Tech Mono, monospace !important; font-size: 19px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\">Description for classifieds section.</p></p>",
+      "bookingLink": "Example bookingLink",
+      "bookingText": "Example bookingText",
+      "items": [
+        {
+          "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Example classified content for item 1.</p></p>",
+          "title": "Example title",
+          "link": "https://example.com",
+          "linkText": "Example linkText for item 1"
+        }
+      ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "12px 20px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "Share Tech Mono, monospace",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#222222",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "20px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "500"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 20px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB"
+    },
+    {
+      "type": "animated-image",
+      "title": "Animated Image Section",
+      "items": [
+        {
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "title": "Example title",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Ubuntu, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: Ubuntu, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Example description for animated-image item 1.</p></p>",
+          "link": "https://example.com"
+        }
+      ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "Ubuntu, sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.2",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "21px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
     }
   ],
   "footer": {
-    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w49-y25/",
+    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w50-y25/",
     "newsletterSubscribeLink": "https://nearfuturelaboratory.com/newsletter/",
     "logo": "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png",
     "logoLink": "https://nearfuturelaboratory.com",
@@ -409,39 +640,38 @@
       ]
     },
     "unsubscribeLink": "[unsubscribe]",
-    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2025/w49-y25",
+    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2025/w50-y25",
     "archiveUrl": "https://nearfuturelaboratory.com/newsletters",
     "gratitude": "This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle based production workflow. It's a work-in-progress building on a refactor of the <a href='https://densediscovery.com'>Dense Discovery</a> newsletter's look and vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It's a great newsletter and I would encourage you to subscribe and become a paid member.",
     "address": "© 2025 Near Future Laboratory<br>Venice Beach, California<br>United States",
     "colophon": "Imagination is not a luxury. It’s an early-warning system for possibility."
   },
-  "markdownContent": "<p>Kessler Syndrome is a theoretical scenario in which the density of objects in low Earth orbit becomes so high that collisions between objects create a cascade effect, leading to an exponential increase in space debris. This debris can then collide with other objects, creating even more debris and making certain orbits unusable for satellites and spacecraft. The concept was proposed by NASA scientist Donald J. Kessler in 1978 and highlights the potential dangers of space debris for future space missions and satellite operations.</p>",
   "themeColors": {
-    "header": "#ffffff",
-    "sponsor": "#f0f8ff",
-    "apps-sites": "#ffffff",
-    "quote": "#e6f3ff",
-    "indie-mag": "#f5f8ff",
+    "header": "#addcfa",
+    "sponsor": "#f8eccf",
+    "apps-sites": "#f0ffff",
+    "quote": "#d1eaf4",
+    "indie-mag": "#efe2f3",
     "books-accessories": "#ffffff",
-    "food-for-thought": "#f8fafc",
+    "food-for-thought": "#f2f2f2",
     "aesthetically-pleasing": "#ffffff",
-    "classifieds": "#e0f2fe",
+    "classifieds": "#def1ef",
     "gif": "#ffffff",
     "linkAccent": "#EE3BBB"
   },
   "theme": {
-    "name": "Winter Cool",
-    "description": "Cool blues and crisp whites for winter clarity",
+    "name": "Current Dense Discovery",
+    "description": "The existing color scheme currently in use",
     "colors": {
-      "header": "#ffffff",
-      "sponsor": "#f0f8ff",
-      "apps-sites": "#ffffff",
-      "quote": "#e6f3ff",
-      "indie-mag": "#f5f8ff",
+      "header": "#addcfa",
+      "sponsor": "#f8eccf",
+      "apps-sites": "#f0ffff",
+      "quote": "#d1eaf4",
+      "indie-mag": "#efe2f3",
       "books-accessories": "#ffffff",
-      "food-for-thought": "#f8fafc",
+      "food-for-thought": "#f2f2f2",
       "aesthetically-pleasing": "#ffffff",
-      "classifieds": "#e0f2fe",
+      "classifieds": "#def1ef",
       "gif": "#ffffff"
     },
     "accent": "#4a7c59",

@@ -6,29 +6,49 @@ import { execSync } from 'child_process';
 import https from 'https';
 import http from 'http';
 
-/**
- * Check if an image URL exists and is accessible
- */
-function checkImageUrl(url) {
+function checkHttpUrl(url) {
   return new Promise((resolve) => {
-    const client = url.startsWith('https:') ? https : http;
-    
-    const req = client.request(url, { method: 'HEAD', timeout: 5000 }, (res) => {
+    if (!url || typeof url !== 'string') {
+      resolve({ valid: false, error: 'URL missing' });
+      return;
+    }
+
+    const trimmed = url.trim();
+    if (!trimmed) {
+      resolve({ valid: false, error: 'URL empty' });
+      return;
+    }
+
+    const lowercase = trimmed.toLowerCase();
+    if (!lowercase.startsWith('https:') && !lowercase.startsWith('http:')) {
+      resolve({ valid: false, error: 'Unsupported protocol' });
+      return;
+    }
+
+    const client = lowercase.startsWith('https:') ? https : http;
+    const req = client.request(trimmed, { method: 'HEAD', timeout: 5000 }, (res) => {
       const isValid = res.statusCode >= 200 && res.statusCode < 400;
       resolve({ valid: isValid, status: res.statusCode });
     });
-    
+
     req.on('error', (error) => {
       resolve({ valid: false, error: error.message });
     });
-    
+
     req.on('timeout', () => {
       req.destroy();
       resolve({ valid: false, error: 'Request timeout' });
     });
-    
+
     req.end();
   });
+}
+
+/**
+ * Check if an image URL exists and is accessible
+ */
+function checkImageUrl(url) {
+  return checkHttpUrl(url);
 }
 
 /**
@@ -244,6 +264,119 @@ function catalogSections(newsletterData) {
   });
   
   console.log('');
+}
+
+const LINK_FIELD_CANDIDATES = new Set([
+  'link',
+  'readmorelink',
+  'imagelink',
+  'logolink',
+  'sponsorlink',
+  'bylinelink',
+  'authorlink',
+  'viewonlinelink',
+  'newslettersubscribelink',
+  'unsubscribelink',
+  'url'
+]);
+
+function isHttpLink(value) {
+  return /^https?:/i.test(value);
+}
+
+function isPlaceholderLink(value) {
+  if (!value) return true;
+  const normalized = value.trim().toLowerCase();
+  return (
+    normalized === '' ||
+    normalized === '#' ||
+    normalized === 'undefined' ||
+    normalized === 'null' ||
+    normalized === 'javascript:void(0)' ||
+    normalized === 'javascript:;'
+  );
+}
+
+function formatLinkPath(path = []) {
+  if (!path.length) return 'root';
+  return path.reduce((acc, segment, index) => {
+    if (typeof segment === 'number' || /^\d+$/.test(segment)) {
+      return `${acc}[${segment}]`;
+    }
+    return index === 0 ? segment : `${acc}.${segment}`;
+  }, '');
+}
+
+function collectLinkCandidates(value, path = []) {
+  const entries = [];
+  if (Array.isArray(value)) {
+    value.forEach((item, index) => {
+      entries.push(...collectLinkCandidates(item, [...path, index]));
+    });
+    return entries;
+  }
+
+  if (value && typeof value === 'object') {
+    Object.entries(value).forEach(([key, child]) => {
+      const nextPath = [...path, key];
+      if (typeof child === 'string' && LINK_FIELD_CANDIDATES.has(key.toLowerCase())) {
+        entries.push({ path: nextPath, url: child });
+      }
+      if (Array.isArray(child) || (child && typeof child === 'object')) {
+        entries.push(...collectLinkCandidates(child, nextPath));
+      }
+    });
+  }
+
+  return entries;
+}
+
+async function validateLinks(data) {
+  const entries = collectLinkCandidates(data);
+  if (entries.length === 0) {
+    console.log('🔍 No hyperlink candidates found for validation');
+    return;
+  }
+
+  console.log('🔍 Validating hyperlinks...');
+  const errors = [];
+  let validLinks = 0;
+
+  for (const entry of entries) {
+    const rawUrl = entry.url;
+    const trimmed = typeof rawUrl === 'string' ? rawUrl.trim() : '';
+    const pathLabel = formatLinkPath(entry.path);
+
+    if (!trimmed) {
+      errors.push(`❌ ${pathLabel}: link is empty`);
+      continue;
+    }
+
+    if (isPlaceholderLink(trimmed)) {
+      errors.push(`❌ ${pathLabel}: placeholder link value "${trimmed}"`);
+      continue;
+    }
+
+    if (isHttpLink(trimmed)) {
+      const result = await checkHttpUrl(trimmed);
+      if (result.valid) {
+        validLinks++;
+      } else {
+        const reason = result.error ? result.error : `HTTP ${result.status}`;
+        errors.push(`❌ ${pathLabel}: ${trimmed} (${reason})`);
+      }
+    } else {
+      validLinks++; // Non-HTTP links (mailto, tel, relative) are assumed acceptable
+    }
+  }
+
+  if (errors.length > 0) {
+    console.log(`\n⚠️  Link Validation Results: ${validLinks}/${entries.length} links passed`);
+    errors.forEach(error => console.log(`   ${error}`));
+    console.log('');
+  } else {
+    console.log(`✅ All ${entries.length} links validated successfully`);
+  }
 }
 
 /**
@@ -977,6 +1110,7 @@ async function buildNewsletter() {
     
     // Validate images in the newsletter data
     await validateImages(newsletterData);
+    await validateLinks(newsletterData);
 
     // Build the newsletter
     console.log('🔨 Building newsletter...');

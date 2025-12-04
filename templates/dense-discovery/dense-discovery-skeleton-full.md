@@ -13,8 +13,9 @@ header:
   featuredArtist:
     name: Artist Name
     link: '#'
-  featuredImage: https://via.placeholder.com/386x200?text=Featured
-  logoBottom: https://via.placeholder.com/163x50?text=Logo
+  featuredImage: https://fpoimg.com/600x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Featured
+  logoBottom: https://fpoimg.com/163x50?text=Preview&bg_color=e6e6e6&text_color=4FAAAA
+  logoTop: https://fpoimg.com/163x50?text=Preview&bg_color=e6e6e6&text_color=4FAAAA
 sections:
 - type: sponsor
   title: Sponsor Section
@@ -25,7 +26,7 @@ sections:
     link: https://example.com
     subtitle: Example subtitle for item 1
     description: <p>Example description for sponsor item 1.</p>
-    image: https://via.placeholder.com/800x600?text=Image
+    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     readMoreText: Read more →
     readMoreLink: https://example.com
 - type: dispatch
@@ -41,7 +42,7 @@ sections:
     link: https://example.com
     subtitle: Example subtitle for item 1
     description: <p>Example description for dispatch item 1.</p>
-    image: https://via.placeholder.com/800x600?text=Image
+    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     readMoreText: Read more →
     readMoreLink: https://example.com
 - type: apps-sites
@@ -51,7 +52,7 @@ sections:
     link: https://example.com
     subtitle: Example subtitle for item 1
     description: <p>Example description for apps-sites item 1.</p>
-    image: https://via.placeholder.com/800x600?text=Image
+    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     readMoreText: Read more →
     readMoreLink: https://example.com
     paywall: true
@@ -59,7 +60,7 @@ sections:
     link: https://example.com
     subtitle: Example subtitle for item 2
     description: <p>Example description for apps-sites item 2.</p>
-    image: https://via.placeholder.com/800x600?text=Image
+    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     readMoreText: Read more →
     readMoreLink: https://example.com
     paywall: true
@@ -70,7 +71,7 @@ sections:
     link: https://example.com
     subtitle: Example subtitle for item 1
     description: <p>Example description for apps-sites-single-column item 1.</p>
-    image: https://via.placeholder.com/800x600?text=Image
+    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     readMoreText: Read more →
     readMoreLink: https://example.com
 - type: quote
@@ -87,7 +88,7 @@ sections:
     description: <p>Example description for indie-mag item 1.</p>
     details: <p>Example details for indie-mag item 1.</p>
     note: <p>Example note for indie-mag item 1.</p>
-    image: https://via.placeholder.com/800x600?text=Image
+    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     readMoreText: Read more →
     readMoreLink: https://example.com
     paywall: true
@@ -99,7 +100,7 @@ sections:
     description: <p>Example description for indie-mag-single-column item 1.</p>
     details: <p>Example details for indie-mag-single-column item 1.</p>
     note: <p>Example note for indie-mag-single-column item 1.</p>
-    image: https://via.placeholder.com/800x600?text=Image
+    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     readMoreText: Read more →
     readMoreLink: https://example.com
     paywall: true
@@ -112,7 +113,7 @@ sections:
     link: https://example.com
     subtitle: Example subtitle for item 1
     description: <p>Example description for books-accessories item 1.</p>
-    image: https://via.placeholder.com/800x600?text=Image
+    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     authorName: Example authorName for item 1
     authorLink: https://example.com
     isbn: 978-1-23456-789-7
@@ -123,7 +124,7 @@ sections:
   - title: Food For Thought Item 1
     link: https://example.com
     description: <p>Example description for food-for-thought item 1.</p>
-    image: https://via.placeholder.com/800x600?text=Image
+    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     channel: Example channel
     category: Example category
     sharedBy: Example sharedBy for item 1
@@ -133,7 +134,7 @@ sections:
   - title: Food For Thought Item 2
     link: https://example.com
     description: <p>Example description for food-for-thought item 2.</p>
-    image: https://via.placeholder.com/800x600?text=Image
+    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     channel: Example channel
     category: Example category
     sharedBy: Example sharedBy for item 2
@@ -144,7 +145,7 @@ sections:
   title: Aesthetically Pleasing Section
   description: <p>Description for aesthetically-pleasing section.</p>
   items:
-  - image: https://via.placeholder.com/800x600?text=Image
+  - image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     title: Example title
     imageLink: https://example.com
     link: https://example.com
@@ -163,29 +164,60 @@ sections:
 - type: animated-image
   title: Animated Image Section
   items:
-  - image: https://via.placeholder.com/800x600?text=Image
+  - image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     title: Example title
     description: <p>Example description for animated-image item 1.</p>
     link: https://example.com
 footer:
-  emailShare: mailto:?subject=Newsletter&body=Check%20out%20this%20newsletter
-  newsletterSubscribeLink: https://example.com/subscribe
-  logo: https://via.placeholder.com/200x50?text=Logo
-  logoLink: https://example.com
+  emailShare: mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/wXYZ/
+  newsletterSubscribeLink: https://nearfuturelaboratory.com/newsletter/
+  logo: https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png
+  logoLink: https://nearfuturelaboratory.com
   socialLinks:
+    applepodcasts:
+    - url: https://podcasts.apple.com/us/podcast/near-future-laboratory-podcast/id1546452193
+      title: Near Future Laboratory on Apple Podcasts
+    spotify:
+    - url: https://open.spotify.com/show/1vHzwGE5J19LvXSo8M93MM
+      title: Near Future Laboratory on Spotify
     github:
-    - url: https://github.com/username
-      title: GitHub
+    - url: https://github.com/bleeckerj
+      title: Personal GitHub
+    - url: https://github.com/nearfuturelaboratory
+      title: Near Future Laboratory GitHub
+    - url: https://github.com/nearfuturelaboratory
+      title: Near Future Laboratory GitHub
     instagram:
-    - url: https://instagram.com/username
-      title: Instagram
+    - url: https://instagram.com/darthjulian
+      title: Personal Instagram
+    - url: https://instagram.com/nearfuturelaboratory
+      title: Company Instagram
     linkedin:
-    - url: https://linkedin.com/in/username
-      title: LinkedIn
+    - url: https://linkedin.com/in/julianbleecker
+      title: Personal LinkedIn
+    - url: https://www.linkedin.com/company/near-future-laboratory/
+      title: Near Future Laboratory LinkedIn
+    youtube:
+    - url: https://youtube.com/@nearfuturelaboratory
+      title: YouTube Channel
+    discord:
+    - url: https://patreon.com/nearfuturelaboratory
+      title: Join Patreon to join the Discord Community
+    patreon:
+    - url: https://patreon.com/nearfuturelaboratory
+      title: Support me on Patreon
+    substack:
+    - url: https://newsletter.substack.com
+      title: Newsletter on Substack
   unsubscribeLink: '[unsubscribe]'
-  shareUrl: https://example.com/newsletter/current
-  archiveUrl: https://example.com/newsletter/archive
-  gratitude: Thank you for reading!
-  address: © 2025 Your Organization<br>City, State<br>Country
-  colophon: Optional colophon text or sign-off message.
+  shareUrl: https://nearfuturelaboratory.com/newsletters/2025/w50-y25
+  archiveUrl: https://nearfuturelaboratory.com/newsletters
+  gratitude: This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle
+    based production workflow. It's a work-in-progress building on a refactor of the
+    <a href='https://densediscovery.com'>Dense Discovery</a> newsletter's look and
+    vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a
+    paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It's
+    a great newsletter and I would encourage you to subscribe and become a paid member.
+  address: © 2025 Near Future Laboratory<br>Venice Beach, California<br>United States
+  colophon: Imagination is not a luxury. It’s an early-warning system for possibility.
 ---
