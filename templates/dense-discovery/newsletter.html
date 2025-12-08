@@ -86,7 +86,23 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                               </tr>
                               
                               <!-- Image Row -->
-                              <if condition="item.image">
+                              <if condition="item.images && item.images.length">
+                                <each loop="image in item.images">
+                                  <tr>
+                                    <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.sponsor || '#f8eccf' }};padding: 0 20px 15px 20px;">
+                                      <if condition="image.link || item.link">
+                                        <a href="{{ image.link || item.link }}" class="theme-link" style="text-decoration: underline;">
+                                          <img src="{{ image.src || image }}" alt="{{ image.alt || item.title || 'Sponsor Image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;height: auto;border-radius:3%">
+                                        </a>
+                                      </if>
+                                      <if condition="!(image.link || item.link)">
+                                        <img src="{{ image.src || image }}" alt="{{ image.alt || item.title || 'Sponsor Image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;height: auto;border-radius:3%">
+                                      </if>
+                                    </td>
+                                  </tr>
+                                </each>
+                              </if>
+                              <if condition="(!item.images || !item.images.length) && item.image">
                                 <tr>
                                   <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.sponsor || '#f8eccf' }};padding: 0 20px 15px 20px;">
                                     <if condition="item.link">

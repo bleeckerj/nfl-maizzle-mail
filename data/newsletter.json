@@ -2,302 +2,38 @@
   "$schema": "../newsletter.schema.json",
   "template": "dense-discovery",
   "title": "Newsletter Title",
-  "preheader": "Short preview text that appears in email clients",
+  "preheader": "Futuring requires generalists to collaborate with specialists",
   "sectionStylesFile": "templates/dense-discovery/section-styles.json",
-  "intro": {
-    "title": "Welcome",
-    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/w50-y25/",
-    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Introduction paragraph for the newsletter.</p></p>"
-  },
+  "colorTheme": "winter",
   "header": {
-    "quote": "Inspiring header quote",
-    "author": "Quote Author",
-    "featuredArtist": {
-      "name": "Artist Name",
-      "link": "#"
-    },
-    "featuredImage": "https://fpoimg.com/600x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Featured",
-    "logoBottom": "https://fpoimg.com/163x50?text=Preview&bg_color=e6e6e6&text_color=4FAAAA",
-    "logoTop": "https://fpoimg.com/163x50?text=Preview&bg_color=e6e6e6&text_color=4FAAAA"
+    "logoTop": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/public",
+    "logoBottom": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/public",
+    "logoLink": "https://nearfuturelaboratory.com"
+  },
+  "intro": {
+    "title": "Futuring requires generalists to collaborate with specialists",
+    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/w50-y25/",
+    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>1/ Came across an article the other day in the New York Times. Scanned the title and thought..huh..what's all this?</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>2/ There was an opinion essay in the NYT, “<a href='https://www.nytimes.com/2009/04/27/opinion/27taylor.html'>End the University as We Know It</a>”</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>3/ That one was back in 2009.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>4/ In it the essayist argued that the university had become structurally misaligned.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>5/ Over-specialized, bureaucratic, producing credentials for jobs that no longer existed.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>6/ Fair enough. That resonated with me. In fact, it was almost like an affirmation that I was in fact <em>aligned</em> with the world.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>7/ I've plainly become a generalist (to the point of almost being anti-specialist).</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>8/ Definitely not very good with structure and bureaucracy and, despite being overly degree'd, I have no truck with credentialing.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>9/ (Except maybe for pilots and aircraft mechanics. Joking. No, really. Actually, I am joking..a little..but, like..you get my point.)</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>10/ Sixteen years later, this other basically identical headline drops:</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>11/ “<a href='https://www.nytimes.com/2025/03/16/opinion/university-defunding-trump-rufo.html'>The End of the University as We Know It</a>”</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>12/ (No, this isn't a political polemic. There are plenty of other places you can go for that.)</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>13/ Here I share with you the ways I can help you and your organization prototype and explore possible futures, and the tools and techniques to do so.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>14/ So what I'm going to say is that both of these opinions imply a misalignment between the present and the preparation for creating and maintaining a preferred future.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>15/ In the former piece (2009), the misalignment was structural and operational: the university was inefficient, bureaucratic, and overly specialized.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>16/ In the piece with the (basically) same title from several months ago, (March 2025) the misalignment is with (someone's) preferred future.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>17/ The same basic diagnosis of a kind of futures misalignment appears in both essays</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>18/ One misalignment had to do with a kind of institutional failing: bloated departments, tenure sclerosis, escalating costs, students trained for jobs that no longer existed. A misalignment as regards the kind of thinking needed for the future the university was preparing its students for.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>19/ The other misalignment (however aggrevating it may seem to those with high stakes in keeping higher ed as it is today, or has been, or should be) is a more forceful reminder that the future is very much a terrain with existential importance.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>20/ The future doesn't arrive with a label on it explaining what it is and how to use it.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>21/ The future isn't organized by departments, disciplines, or areas of expertise.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>22/ The future doesn't tell you what kind of expertise it needs.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>23/ Futures are not navigated with answers that have come from the past. They're navigated with the consciousness to see possibilities, patterns, and connections that others may not.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>24/ And I say that to say this: the future is an expansive terrain and we are constantly in need of people who can see across domains, disciplines, and areas of expertise to help us navigate into and within it.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>25/ If you bring your specialized knowledge to the table, you are an expert at execution. Pairing that with the orienting capacity of the generalist who can see the larger terrain, however, is what will help you and your organization find your way.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>26/ No wonder organizations — and companies, and teams — die off. They become too specialized, too rigid, too locked into a particular way of seeing the world. Reified and concretized pasts become shackles to preferred futures.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>27/ The kinds of consciousness best equipped to build with a sense of expansive possibility (from learning platforms to the kinds of daily human operating systems that be of real utility in our challenging environments) are not those most invested in preserving disciplinary boundaries or the status quo, or who are trying to keep their jobs, anymore than the best people to invent the future are those most invested in preserving the past — or have spent too long preserving the present.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>28/ Whether at a university, a company, or some new-fangled way of collectivizing and organizing human potential, to be futuristic is to see an expanse rather than a narrow path; to value exploration over rote answers; and to embrace curiosity over compliance.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>29/ This kind of seeing has always looked irresponsible.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>30/ That is, until it becomes necessary.</p></p>"
   },
   "sections": [
     {
-      "type": "sponsor",
-      "title": "Sponsor Section",
-      "sponsorLink": "Example sponsorLink",
-      "sponsorLabel": "Example sponsorLabel",
-      "containerStyles": {
-        "backgroundColor": "#d8d8b1",
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
-      "items": [
-        {
-          "title": "Sponsor Item 1",
-          "link": "https://example.com",
-          "subtitle": "Example subtitle for item 1",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Example description for sponsor item 1.</p></p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com"
-        }
-      ],
-      "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.2",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "19px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
-    },
-    {
-      "type": "dispatch",
-      "title": "Dispatch Section",
-      "dispatchLink": "Example dispatchLink",
-      "dispatchLabel": "Example dispatchLabel",
-      "tags": [
-        "TAG1",
-        "TAG2"
-      ],
-      "signalsLabel": "Example signalsLabel",
-      "items": [
-        {
-          "title": "Dispatch Item 1",
-          "link": "https://example.com",
-          "subtitle": "Example subtitle for item 1",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for dispatch item 1.</p></p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "8px"
-      },
-      "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.4",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "19px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
-    },
-    {
-      "type": "apps-sites",
-      "title": "Apps Sites Section",
-      "containerStyles": {
-        "backgroundColor": "#d8d8d8",
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
-      "items": [
-        {
-          "title": "Apps Sites Item 1",
-          "link": "https://example.com",
-          "subtitle": "Example subtitle for item 1",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for apps-sites item 1.</p></p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com",
-          "paywall": true
-        },
-        {
-          "title": "Apps Sites Item 2",
-          "link": "https://example.com",
-          "subtitle": "Example subtitle for item 2",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for apps-sites item 2.</p></p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com",
-          "paywall": true
-        }
-      ],
-      "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.4",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "21px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "500"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB"
-    },
-    {
-      "type": "apps-sites-single-column",
-      "title": "Apps Sites Single Column Section",
-      "items": [
-        {
-          "title": "Apps Sites Single Column Item 1",
-          "link": "https://example.com",
-          "subtitle": "Example subtitle for item 1",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for apps-sites-single-column item 1.</p></p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
-      "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.4",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "21px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "500"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB"
-    },
-    {
-      "type": "quote",
-      "title": "Quote Section",
-      "items": [
-        {
-          "quote": "Example quote text for item 1",
-          "author": "Example author",
-          "authorLink": "https://example.com"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
-      "contentStyles": {
-        "fontFamily": "Ubuntu, sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.2",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "21px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
-    },
-    {
-      "type": "indie-mag",
-      "title": "Indie Mag Section",
-      "containerStyles": {
-        "backgroundColor": "#d8d8d8",
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
-      "items": [
-        {
-          "title": "Indie Mag Item 1",
-          "link": "https://example.com",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for indie-mag item 1.</p></p>",
-          "details": "<p>Example details for indie-mag item 1.</p>",
-          "note": "<p>Example note for indie-mag item 1.</p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com",
-          "paywall": true
-        }
-      ],
-      "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.4",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "19px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
-    },
-    {
       "type": "indie-mag-single-column",
-      "title": "Indie Mag Single Column Section",
+      "title": "Exhibitions",
       "containerStyles": {
-        "backgroundColor": "#d8ffd8",
+        "backgroundColor": "#faf9f6",
         "padding": "15px 20px",
         "borderRadius": "0px"
       },
       "items": [
         {
-          "title": "Indie Mag Single Column Item 1",
-          "link": "https://example.com",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for indie-mag-single-column item 1.</p></p>",
-          "details": "<p>Example details for indie-mag-single-column item 1.</p>",
-          "note": "<p>Example note for indie-mag-single-column item 1.</p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "title": "Hope 2047",
+          "link": "https://ars.electronica.art/aeblog/en/2025/12/02/cutting-edge-hope-in-the-year-2047/",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">The project “Turnton Docklands” presents an immersive future that, despite crises, makes hope, community, and new forms of coexistence tangible.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">In \"Turnton Docklands,\" visitors enter a harbor district in the year 2047—a moment when ecological tipping points have been exceeded, coastal cities struggle with toxic waters and collapsing ecosystems, and extreme weather has become ordinary. Yet Time's Up resists pure dystopia. In this fictional harbor, a community has organized itself differently: solidary, transparent, and sustained by an alternative economy. They're modeling ways of living together within crisis rather than merely documenting its arrival. The space itself becomes the narrative medium. Rather than a traditional installation, Time's Up has constructed a walk-in narrative—an intricate landscape of objects, documents, media, sounds, and spatial situations that together compose a story.</p></p>",
+          "details": "<p>Mario Schmidhumer Turnton Docklands / Time’s Up (AT)</p>",
+          "note": "Exhibition photograph by Florian Voggeneder",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/984c0402-2c58-481a-00f5-67024d355100/w=600",
           "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com",
-          "paywall": true
+          "readMoreLink": "https://ars.electronica.art/aeblog/en/2025/12/02/cutting-edge-hope-in-the-year-2047/"
         }
       ],
       "contentStyles": {
@@ -323,27 +59,36 @@
     },
     {
       "type": "books-accessories",
-      "title": "Books Accessories Section",
-      "byline": "Example byline",
-      "bylineLink": "Example bylineLink",
-      "items": [
-        {
-          "title": "Books Accessories Item 1",
-          "link": "https://example.com",
-          "subtitle": "Example subtitle for item 1",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for books-accessories item 1.</p></p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "authorName": "Example authorName for item 1",
-          "authorLink": "https://example.com",
-          "isbn": "978-1-23456-789-7",
-          "linkText": "Example linkText for item 1"
-        }
-      ],
+      "title": "The Library",
       "containerStyles": {
-        "backgroundColor": null,
+        "backgroundColor": "#e3e2ef",
         "padding": "15px 20px",
         "borderRadius": "0px"
       },
+      "items": [
+        {
+          "title": "Evesdropping on Animals",
+          "link": "https://bookshop.org/p/books/eavesdropping-on-animals-what-we-can-learn-from-wildlife-conversations-george-bumann/cd385caa1882a43a?ean=9781778400209&next=t&",
+          "subtitle": "What We Can Learn From Wild Conversations",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">This one came up in passing — I think it was just a link in the Office Hours chat — that circled around a conversation we were having about Donna Haraway's remarkable little pamphlet, “<a href='https://monoskop.org/images/8/8a/Haraway_Donna_The_Companion_Species_Manifesto_2003.pdf' style=\"font-weight: 500 !important; text-decoration: underline !important; color: #EE3BBB !important\">The Companion Species Manifesto</a>”</p>  <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">I suppose George Bumann’s 'Eavesdropping on Animals' is a kind of traveler's guide to these companion species, revealing how ordinary moments can become extraordinary just by listening a little closer to the creatures around us. Bumann’s book reveals how paying attention to the everyday sounds of wildlife can transform our sense of connection to nature, no biology degree required..and maybe explain what the heck those crows outside the studio were crowing about the other day.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">I'm reminded of those <a href='https://www.youtube.com/watch?v=_Zd6Iy4JuGk' style=\"font-weight: 500 !important; text-decoration: underline !important; color: #EE3BBB !important\">urban song birds</a> that mimic car alarms and ringtones and stuff. It's like they're trying to communicate in our language, or at least get our attention.</p></p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/04fae32d-d033-4d00-6fc6-ac8ef9872800/w=600",
+          "authorName": "George Bumann",
+          "authorLink": "https://www.georgebumann.com/gb/eavesdropping-on-animals/",
+          "isbn": "978-1778400209",
+          "linkText": "Bookshop →"
+        },
+        {
+          "title": "Capitalism",
+          "link": "https://a.co/d/7DsNa67",
+          "subtitle": "A Global History",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">I had my little note on capitalism last week and then just catching up on the pile of THe New Yorker magazines and I go to “Books” and the first paragraph is a bit of a grabber (to me at least):</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">“In September, 1639, John Winthrop, the governor of the Massachusetts Bay Colony, recorded in his journal a dreadful tale of Puritan true crime. One  Robert Keayne had prospered as a London merchant before his immigration to Boston, where he did brisk custom as a shopkeeper...Now he stood trial for the “very evil“ sale of “foreign commodities” at prices that exceeded the sum he had paid for them. For the sin of a standard retail markup, he faced excommunication.”</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Why is this kind of thing interesting to me?</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">A central conceit for futures practice is that what is once was not; and what will be, is inconceivable today.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">It's over 1,300 pages though. So..dunno.</p></p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/ed8033fc-a55b-40bc-bdab-6eb09ef24200/w=600",
+          "authorName": "Sven Beckert",
+          "authorLink": "https://www.georgebumann.com/gb/eavesdropping-on-animals/",
+          "isbn": "978-0735220836",
+          "linkText": "Amazon →"
+        }
+      ],
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
@@ -366,14 +111,92 @@
       "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB"
     },
     {
-      "type": "food-for-thought",
-      "title": "From the Discord",
+      "type": "sponsor",
+      "title": "Curiousity as a Practice",
+      "sponsorLabel": "From the Archives",
       "containerStyles": {
-        "backgroundColor": "#fbfcfa",
+        "backgroundColor": "#a0f4ff",
         "padding": "15px 20px",
         "borderRadius": "0px"
       },
       "items": [
+        {
+          "title": "Blue Tile Obsession",
+          "link": "https://bluetileobsession.wordpress.com/2025/12/06/legacy-fishbowl-pink-motel-gallery/",
+          "subtitle": "Pink Motel Pool Party",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I sometimes wonder if my distractions into unexpectedly orthogonal areas of inquiry and study make it super confusing to comprehend the value of that in more traditional terms.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I once stumbled into becoming a skateboard photographer. It was largely because I wondered what it would be to become something else, and what it felt like to enter into a community and culture significantly far removed from trad engineering.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">In that time, I got invited a couple of times to shoot at the annual “Pink Motel Pool Party”. Recently Lizzie asked me for a couple of shots from then. Ozzie, over there at Blue Tile Obsession, was doing a retrospective of some of those parties. </p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">See this as a reminder that sometimes wandering off into the weeds can yield an unexpected perspective and insights.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">p.s. I wish I had snagged one of those awesome motel key tags!</p></p>",
+          "images": [
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/9b7bd37e-6d37-4813-8ad8-b8a92eb21600/w=600",
+              "alt": "Lizzie Armanto at Pink Motel Pool Party 2012",
+              "link": "https://bluetileobsession.wordpress.com/2025/12/06/legacy-fishbowl-pink-motel-gallery/"
+            },
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/7ef8a98f-7700-4971-dbd3-be1e79c84a00/w=600",
+              "alt": "Riley Stevens at Pink Motel Pool Party 2012",
+              "link": "https://bluetileobsession.wordpress.com/2025/12/06/legacy-fishbowl-pink-motel-gallery/"
+            },
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b14647ea-9c15-4f9f-3a69-f5df8352dc00/w=600?format=webp",
+              "alt": "Chris Russell at Pink Motel Pool Party 2011",
+              "link": "https://bluetileobsession.wordpress.com/2025/12/06/legacy-fishbowl-pink-motel-gallery/"
+            },
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/38e0228d-1e46-4d25-6e34-bb13b7e1ca00/w=600?format=webp",
+              "alt": "Skater at Pink Motel Pool Party 2011",
+              "link": "https://bluetileobsession.wordpress.com/2025/12/06/legacy-fishbowl-pink-motel-gallery/"
+            },
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b87b6dbd-05e2-4ccd-c022-65556fb98000/w=600?format=webp",
+              "alt": "An exterior photo of the Pink Motel neon sign at night 2011",
+              "link": "https://bluetileobsession.wordpress.com/2025/12/06/legacy-fishbowl-pink-motel-gallery/"
+            }
+          ],
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://bluetileobsession.wordpress.com/2025/12/06/legacy-fishbowl-pink-motel-gallery/"
+        }
+      ],
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.2",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "19px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
+    },
+    {
+      "type": "food-for-thought",
+      "title": "From the Discord",
+      "containerStyles": {
+        "backgroundColor": "#f1ede5",
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "items": [
+        {
+          "title": "Futurity Systems",
+          "image": "https://i.kickstarter.com/assets/051/513/801/a0b344d260ba45c875654f3b7170724c_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1762167516&width=1024&sig=x7JhR5ZUKms1wl4Xt5I%2BfXZtb0hlV4%2BZuNQkyL2qKHM%3D",
+          "category": "Better Futures Faster",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">The Kickstarter campaign How to Synthesize the Future: Build Better Futures, Faster” by Futurity Systems offers a book and toolkit designed to introduce practical frameworks, methods, and templates for strategic foresight and futures thinking. Equip you and your org with some accessible tools to systematically explore potential future scenarios and inform long-term decision-making.</p></p>",
+          "link": "https://www.kickstarter.com/projects/futurity-systems/how-to-synthesize-the-future-build-better-futures-faster",
+          "sharedBy": "Julian Bleecker, PhD",
+          "channel": "🥋-shill-and-share",
+          "readMoreLink": "https://www.kickstarter.com/projects/futurity-systems/how-to-synthesize-the-future-build-better-futures-faster",
+          "readMoreText": "Back it →"
+        },
         {
           "title": "What happens when it crashes?",
           "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/1664ec31-eb81-4472-4ad0-75f3002a4200/w=600",
@@ -398,28 +221,26 @@
           "readMoreText": "Read On →"
         },
         {
-          "title": "Food For Thought Item 2",
-          "link": "https://example.com",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">Example description for food-for-thought item 2.</p></p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "channel": "Example channel",
-          "category": "Example category",
-          "sharedBy": "Example sharedBy for item 2",
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com",
-          "paywall": true
+          "title": "No† so bad..?",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/fddb3cfb-8090-4d39-68a2-2e7d74add900/w=600",
+          "category": "Dispatches From The Edge",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">Anthropic debuts a new AI-powered interview tool and shares insights from 1,250 professionals about how AI is shaping their work—spanning optimism, practical challenges, and hopes for the future.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">1,250 professionals opened up about AI at work putting their senses of optimism, anxiety, and hope for the future all on the table. The interview tool reveals how creatives, scientists, and the broader workforce are navigating the promise and pitfalls of AI—balancing productivity gains with questions about trust, creative identity, and what comes next.</p></p>",
+          "link": "https://www.anthropic.com/news/anthropic-interviewer",
+          "sharedBy": "Gen'l Veers",
+          "channel": "🛠-whats-ai-good-for-anyway",
+          "readMoreLink": "https://www.anthropic.com/news/anthropic-interviewer",
+          "readMoreText": "Read On →"
         },
         {
-          "title": "Food For Thought Item 2",
-          "link": "https://example.com",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">Example description for food-for-thought item 2.</p></p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "channel": "Example channel",
-          "category": "Example category",
-          "sharedBy": "Example sharedBy for item 2",
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com",
-          "paywall": true
+          "title": "On the other hand...",
+          "image": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/09/SR_25.10.01_ai-search_1.png",
+          "category": "anywayz",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">A recent Pew Research Center study finds that Americans express ambivalence regarding the inclusion of AI-generated summaries in search engine results, with concerns centering on the accuracy and transparency of such summaries alongside recognition of their potential convenience. The research highlights a lack of consensus, suggesting ongoing public uncertainty about the broader implications of integrating artificial intelligence into online information platforms.</p></p>",
+          "link": "https://www.pewresearch.org/short-reads/2025/10/01/americans-have-mixed-feelings-about-ai-summaries-in-search-results/",
+          "sharedBy": "Julian Bleecker, PhD",
+          "channel": "🛠-whats-ai-good-for-anyway",
+          "readMoreLink": "https://www.pewresearch.org/short-reads/2025/10/01/americans-have-mixed-feelings-about-ai-summaries-in-search-results/",
+          "readMoreText": "Read the report →"
         }
       ],
       "contentStyles": {
@@ -445,94 +266,18 @@
       "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB; font-size: 19px"
     },
     {
-      "type": "aesthetically-pleasing",
-      "title": "Aesthetically Pleasing Section",
-      "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\">Description for aesthetically-pleasing section.</p></p>",
+      "type": "sponsor",
+      "title": "Join the Near Future Laboratory Discord",
+      "sponsorLabel": "Your support helps",
+      "sponsorLink": "https://patreon.com/nearfuturelaboratory",
       "items": [
         {
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "title": "Example title",
-          "imageLink": "https://example.com",
-          "link": "https://example.com",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\">Example description for aesthetically-pleasing item 1.</p></p>",
-          "readMoreText": "Read more →"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "12px 20px",
-        "borderRadius": "0px"
-      },
-      "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.3",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "21px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
-    },
-    {
-      "type": "classifieds",
-      "title": "Classifieds Section",
-      "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, monospace !important; font-size: 19px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\"><p style=\"font-family: Share Tech Mono, monospace !important; font-size: 19px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\">Description for classifieds section.</p></p>",
-      "bookingLink": "Example bookingLink",
-      "bookingText": "Example bookingText",
-      "items": [
-        {
-          "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Example classified content for item 1.</p></p>",
-          "title": "Example title",
-          "link": "https://example.com",
-          "linkText": "Example linkText for item 1"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "12px 20px",
-        "borderRadius": "0px"
-      },
-      "contentStyles": {
-        "fontFamily": "Share Tech Mono, monospace",
-        "fontSize": "19px",
-        "lineHeight": "1.4",
-        "color": "#222222",
-        "textAlign": "left"
-      },
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "20px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "500"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 20px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB"
-    },
-    {
-      "type": "animated-image",
-      "title": "Animated Image Section",
-      "items": [
-        {
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "title": "Example title",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Ubuntu, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: Ubuntu, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Example description for animated-image item 1.</p></p>",
-          "link": "https://example.com"
+          "title": "Near Future Laboratory Patreon",
+          "subtitle": "Join the Discord, Support Office Hours, the Newsletter and More",
+          "readMoreText": "Join →",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The Near Future Laboratory is supported by its community and members. <a href='https://patreon.com/nearfuturelaboratory' style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Join us on Patreon</a> to support our work, get access to exclusive content, and be part of our vibrant Discord community where we discuss design, technology, creativity, the future and do projects and support each others' work.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I host weekly Office Hours for Patrons — now for 289 weeks and running — every Friday at 0900 (UTC-7 / California). It's a great way to connect, ask questions, and get feedback on your projects.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Each week two people from the community present a project, idea, or challenge and we discuss it together. It's a great way to get feedback, learn from others, and connect with like-minded people.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">All of this is done in a friendly, supportive, and welcoming environment. We have people from all over the world, from all walks of life, and with all kinds of interests. It's a great way to meet new people, network, show what you can do, and learn from each other.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">In this time of rapid change and uncertainty, it's more important than ever to have a community of people who can support you, challenge you, and help you grow. The Near Future Laboratory is that community.</p></p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/58baa59a-a7da-4d1a-1f3a-9abdc26f8c00/w=600",
+          "link": "https://patreon.com/nearfuturelaboratory"
         }
       ],
       "containerStyles": {
@@ -541,7 +286,7 @@
         "borderRadius": "0px"
       },
       "contentStyles": {
-        "fontFamily": "Ubuntu, sans-serif",
+        "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
         "lineHeight": "1.2",
         "color": "#111111",
@@ -549,7 +294,7 @@
       },
       "headingStyles": {
         "fontFamily": "inherit",
-        "fontSize": "21px",
+        "fontSize": "19px",
         "fontWeight": "600",
         "color": "#000000"
       },
@@ -558,14 +303,14 @@
         "textDecoration": "underline",
         "fontWeight": "normal"
       },
-      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
+      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
       "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
     }
   ],
   "footer": {
     "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w50-y25/",
     "newsletterSubscribeLink": "https://nearfuturelaboratory.com/newsletter/",
-    "logo": "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png",
+    "logo": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/public",
     "logoLink": "https://nearfuturelaboratory.com",
     "socialLinks": {
       "applepodcasts": [
@@ -647,31 +392,31 @@
     "colophon": "Imagination is not a luxury. It’s an early-warning system for possibility."
   },
   "themeColors": {
-    "header": "#addcfa",
-    "sponsor": "#f8eccf",
-    "apps-sites": "#f0ffff",
-    "quote": "#d1eaf4",
-    "indie-mag": "#efe2f3",
+    "header": "#ffffff",
+    "sponsor": "#f0f8ff",
+    "apps-sites": "#ffffff",
+    "quote": "#e6f3ff",
+    "indie-mag": "#f5f8ff",
     "books-accessories": "#ffffff",
-    "food-for-thought": "#f2f2f2",
+    "food-for-thought": "#f8fafc",
     "aesthetically-pleasing": "#ffffff",
-    "classifieds": "#def1ef",
+    "classifieds": "#e0f2fe",
     "gif": "#ffffff",
     "linkAccent": "#EE3BBB"
   },
   "theme": {
-    "name": "Current Dense Discovery",
-    "description": "The existing color scheme currently in use",
+    "name": "Winter Cool",
+    "description": "Cool blues and crisp whites for winter clarity",
     "colors": {
-      "header": "#addcfa",
-      "sponsor": "#f8eccf",
-      "apps-sites": "#f0ffff",
-      "quote": "#d1eaf4",
-      "indie-mag": "#efe2f3",
+      "header": "#ffffff",
+      "sponsor": "#f0f8ff",
+      "apps-sites": "#ffffff",
+      "quote": "#e6f3ff",
+      "indie-mag": "#f5f8ff",
       "books-accessories": "#ffffff",
-      "food-for-thought": "#f2f2f2",
+      "food-for-thought": "#f8fafc",
       "aesthetically-pleasing": "#ffffff",
-      "classifieds": "#def1ef",
+      "classifieds": "#e0f2fe",
       "gif": "#ffffff"
     },
     "accent": "#4a7c59",

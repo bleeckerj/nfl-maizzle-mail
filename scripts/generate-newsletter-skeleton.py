@@ -28,7 +28,7 @@ SECTION_DEFINITIONS = {
         'section_fields': ['type', 'title', 'sponsorLink', 'sponsorLabel'],
         'item_fields': {
             'required': ['title'],
-            'optional': ['link', 'subtitle', 'description', 'image', 'readMoreText', 'readMoreLink']
+            'optional': ['link', 'subtitle', 'description', 'image', 'images', 'readMoreText', 'readMoreLink']
         },
         'example_items': 1
     },
@@ -174,6 +174,18 @@ def generate_example_item(section_type, item_num=1, minimal=False):
             # Images
             elif opt == 'image':
                 item[opt] = 'https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image'
+            elif opt == 'images':
+                item[opt] = [
+                    {
+                        'src': 'https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image',
+                        'alt': f'Alternate text for item {item_num} image 1',
+                        'link': 'https://example.com/image-destination'
+                    },
+                    {
+                        'src': 'https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second',
+                        'alt': f'Alternate text for item {item_num} image 2'
+                    }
+                ]
 
             # Read-more text
             elif opt in ('readMoreText', 'readMoreTxt'):

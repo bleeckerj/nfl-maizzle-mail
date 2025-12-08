@@ -20,6 +20,11 @@ sections:
   title: Sponsor Section
   items:
   - title: Sponsor Item 1
+    images:
+    - src: https://via.placeholder.com/800x600?text=Image+1
+      alt: Alternate text for image 1
+    - src: https://via.placeholder.com/800x600?text=Image+2
+      alt: Alternate text for image 2
 - type: dispatch
   title: Dispatch Section
   tags: []

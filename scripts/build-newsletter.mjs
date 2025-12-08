@@ -40,8 +40,25 @@ function checkHttpUrl(url) {
       resolve({ valid: false, error: 'Request timeout' });
     });
 
-    req.end();
-  });
+  req.end();
+});
+}
+
+function resolveImageEntryUrl(entry) {
+  if (!entry) return null;
+  if (typeof entry === 'string') {
+    const trimmed = entry.trim();
+    return trimmed.length ? trimmed : null;
+  }
+  if (typeof entry === 'object') {
+    if (typeof entry.src === 'string' && entry.src.trim().length) {
+      return entry.src.trim();
+    }
+    if (typeof entry.image === 'string' && entry.image.trim().length) {
+      return entry.image.trim();
+    }
+  }
+  return null;
 }
 
 /**
@@ -430,26 +447,36 @@ async function validateImages(data) {
           const item = section.items[itemIndex];
           
           // Check single image
-          if (item.image) {
+          const singleImageUrl = resolveImageEntryUrl(item.image);
+          if (singleImageUrl) {
             totalImages++;
-            const result = await checkImageUrl(item.image);
+            const result = await checkImageUrl(singleImageUrl);
             if (result.valid) {
               validImages++;
             } else {
-              errors.push(`❌ Section "${section.title}" (${section.type}), item ${itemIndex + 1} "${item.title}": ${item.image} (${result.error || result.status})`);
+              errors.push(`❌ Section "${section.title}" (${section.type}), item ${itemIndex + 1} "${item.title}": ${singleImageUrl} (${result.error || result.status})`);
             }
+          } else if (item.image) {
+            totalImages++;
+            errors.push(`❌ Section "${section.title}" (${section.type}), item ${itemIndex + 1} "${item.title}": ${JSON.stringify(item.image)} (URL missing)`);
           }
           
           // Check multiple images (for aesthetically-pleasing section)
           if (item.images && Array.isArray(item.images)) {
             for (let imgIndex = 0; imgIndex < item.images.length; imgIndex++) {
-              const imageUrl = item.images[imgIndex];
-              totalImages++;
-              const result = await checkImageUrl(imageUrl);
-              if (result.valid) {
-                validImages++;
+              const imageEntry = item.images[imgIndex];
+              const imageUrl = resolveImageEntryUrl(imageEntry);
+              if (imageUrl) {
+                totalImages++;
+                const result = await checkImageUrl(imageUrl);
+                if (result.valid) {
+                  validImages++;
+                } else {
+                  errors.push(`❌ Section "${section.title}" (${section.type}), item ${itemIndex + 1}, image ${imgIndex + 1}: ${imageUrl} (${result.error || result.status})`);
+                }
               } else {
-                errors.push(`❌ Section "${section.title}" (${section.type}), item ${itemIndex + 1}, image ${imgIndex + 1}: ${imageUrl} (${result.error || result.status})`);
+                totalImages++;
+                errors.push(`❌ Section "${section.title}" (${section.type}), item ${itemIndex + 1}, image ${imgIndex + 1}: ${JSON.stringify(imageEntry)} (URL missing)`);
               }
             }
           }

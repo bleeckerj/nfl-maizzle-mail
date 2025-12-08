@@ -26,7 +26,12 @@ sections:
     link: https://example.com
     subtitle: Example subtitle for item 1
     description: <p>Example description for sponsor item 1.</p>
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+    images:
+    - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+      alt: Alternate text for image 1
+      link: https://example.com/image-destination
+    - src: https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second
+      alt: Alternate text for image 2
     readMoreText: Read more →
     readMoreLink: https://example.com
 - type: dispatch
