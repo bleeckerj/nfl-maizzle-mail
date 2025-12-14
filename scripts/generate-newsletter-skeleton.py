@@ -33,11 +33,11 @@ SECTION_DEFINITIONS = {
         'example_items': 1
     },
     'dispatch': {
-        'description': 'Dispatch/announcement section',
-        'section_fields': ['type', 'title', 'dispatchLink', 'dispatchLabel', 'tags', 'signalsLabel'],
+        'description': 'Dispatch/announcement section (item-level SIGNALS tags)',
+        'section_fields': ['type', 'title', 'dispatchLink', 'dispatchLabel'],
         'item_fields': {
             'required': ['title'],
-            'optional': ['link', 'subtitle', 'description', 'image', 'readMoreText', 'readMoreLink']
+            'optional': ['signalsLabel', 'tags', 'link', 'subtitle', 'description', 'image', 'readMoreText', 'readMoreLink']
         },
         'example_items': 1
     },
@@ -118,7 +118,7 @@ SECTION_DEFINITIONS = {
         'section_fields': ['type', 'title', 'description', 'bookingLink', 'bookingText'],
         'item_fields': {
             'required': ['content'],
-            'optional': ['title', 'link', 'linkText']
+            'optional': ['title', 'link', 'linkText', 'images']
         },
         'example_items': 1
     },
@@ -175,17 +175,33 @@ def generate_example_item(section_type, item_num=1, minimal=False):
             elif opt == 'image':
                 item[opt] = 'https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image'
             elif opt == 'images':
-                item[opt] = [
-                    {
-                        'src': 'https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image',
-                        'alt': f'Alternate text for item {item_num} image 1',
-                        'link': 'https://example.com/image-destination'
-                    },
-                    {
-                        'src': 'https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second',
-                        'alt': f'Alternate text for item {item_num} image 2'
-                    }
-                ]
+                if section_type == 'classifieds':
+                    item[opt] = [
+                        {
+                            'src': 'https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image+1',
+                            'alt': f'Alternate text for classified {item_num} image 1'
+                        },
+                        {
+                            'src': 'https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image+2',
+                            'alt': f'Alternate text for classified {item_num} image 2'
+                        },
+                        {
+                            'src': 'https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image+3',
+                            'alt': f'Alternate text for classified {item_num} image 3'
+                        }
+                    ]
+                else:
+                    item[opt] = [
+                        {
+                            'src': 'https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image',
+                            'alt': f'Alternate text for item {item_num} image 1',
+                            'link': 'https://example.com/image-destination'
+                        },
+                        {
+                            'src': 'https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second',
+                            'alt': f'Alternate text for item {item_num} image 2'
+                        }
+                    ]
 
             # Read-more text
             elif opt in ('readMoreText', 'readMoreTxt'):
@@ -198,6 +214,8 @@ def generate_example_item(section_type, item_num=1, minimal=False):
             # tags / categories / channels
             elif opt in ('tags',):
                 item[opt] = ['TAG1', 'TAG2']
+            elif opt == 'signalsLabel':
+                item[opt] = 'SIGNALS'
             elif opt in ('channel', 'category'):
                 item[opt] = f'Example {opt}'
 
@@ -264,8 +282,8 @@ def generate_skeleton(sections=None, minimal=False):
                 'link': '#'
             },
             'featuredImage': 'https://fpoimg.com/600x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Featured',
-            'logoBottom': 'https://fpoimg.com/163x50?text=Preview&bg_color=e6e6e6&text_color=4FAAAA',
-            'logoTop': 'https://fpoimg.com/163x50?text=Preview&bg_color=e6e6e6&text_color=4FAAAA'
+            'logoBottom': 'https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp',
+            'logoTop': 'https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp'
         },
         'sections': [generate_section(s, minimal) for s in sections],
         'footer': {

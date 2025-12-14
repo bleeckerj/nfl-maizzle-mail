@@ -1,41 +1,83 @@
 {
   "$schema": "../newsletter.schema.json",
   "template": "dense-discovery",
-  "title": "Newsletter Title",
-  "preheader": "Futuring requires generalists to collaborate with specialists",
+  "title": "Week 51 / Year 2025",
+  "preheader": "Short preview text that appears in email clients",
   "sectionStylesFile": "templates/dense-discovery/section-styles.json",
   "colorTheme": "winter",
-  "header": {
-    "logoTop": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/public",
-    "logoBottom": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/public",
-    "logoLink": "https://nearfuturelaboratory.com"
-  },
   "intro": {
-    "title": "Futuring requires generalists to collaborate with specialists",
-    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/w50-y25/",
-    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>1/ Came across an article the other day in the New York Times. Scanned the title and thought..huh..what's all this?</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>2/ There was an opinion essay in the NYT, “<a href='https://www.nytimes.com/2009/04/27/opinion/27taylor.html'>End the University as We Know It</a>”</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>3/ That one was back in 2009.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>4/ In it the essayist argued that the university had become structurally misaligned.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>5/ Over-specialized, bureaucratic, producing credentials for jobs that no longer existed.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>6/ Fair enough. That resonated with me. In fact, it was almost like an affirmation that I was in fact <em>aligned</em> with the world.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>7/ I've plainly become a generalist (to the point of almost being anti-specialist).</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>8/ Definitely not very good with structure and bureaucracy and, despite being overly degree'd, I have no truck with credentialing.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>9/ (Except maybe for pilots and aircraft mechanics. Joking. No, really. Actually, I am joking..a little..but, like..you get my point.)</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>10/ Sixteen years later, this other basically identical headline drops:</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>11/ “<a href='https://www.nytimes.com/2025/03/16/opinion/university-defunding-trump-rufo.html'>The End of the University as We Know It</a>”</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>12/ (No, this isn't a political polemic. There are plenty of other places you can go for that.)</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>13/ Here I share with you the ways I can help you and your organization prototype and explore possible futures, and the tools and techniques to do so.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>14/ So what I'm going to say is that both of these opinions imply a misalignment between the present and the preparation for creating and maintaining a preferred future.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>15/ In the former piece (2009), the misalignment was structural and operational: the university was inefficient, bureaucratic, and overly specialized.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>16/ In the piece with the (basically) same title from several months ago, (March 2025) the misalignment is with (someone's) preferred future.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>17/ The same basic diagnosis of a kind of futures misalignment appears in both essays</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>18/ One misalignment had to do with a kind of institutional failing: bloated departments, tenure sclerosis, escalating costs, students trained for jobs that no longer existed. A misalignment as regards the kind of thinking needed for the future the university was preparing its students for.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>19/ The other misalignment (however aggrevating it may seem to those with high stakes in keeping higher ed as it is today, or has been, or should be) is a more forceful reminder that the future is very much a terrain with existential importance.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>20/ The future doesn't arrive with a label on it explaining what it is and how to use it.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>21/ The future isn't organized by departments, disciplines, or areas of expertise.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>22/ The future doesn't tell you what kind of expertise it needs.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>23/ Futures are not navigated with answers that have come from the past. They're navigated with the consciousness to see possibilities, patterns, and connections that others may not.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>24/ And I say that to say this: the future is an expansive terrain and we are constantly in need of people who can see across domains, disciplines, and areas of expertise to help us navigate into and within it.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>25/ If you bring your specialized knowledge to the table, you are an expert at execution. Pairing that with the orienting capacity of the generalist who can see the larger terrain, however, is what will help you and your organization find your way.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>26/ No wonder organizations — and companies, and teams — die off. They become too specialized, too rigid, too locked into a particular way of seeing the world. Reified and concretized pasts become shackles to preferred futures.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>27/ The kinds of consciousness best equipped to build with a sense of expansive possibility (from learning platforms to the kinds of daily human operating systems that be of real utility in our challenging environments) are not those most invested in preserving disciplinary boundaries or the status quo, or who are trying to keep their jobs, anymore than the best people to invent the future are those most invested in preserving the past — or have spent too long preserving the present.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>28/ Whether at a university, a company, or some new-fangled way of collectivizing and organizing human potential, to be futuristic is to see an expanse rather than a narrow path; to value exploration over rote answers; and to embrace curiosity over compliance.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>29/ This kind of seeing has always looked irresponsible.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>30/ That is, until it becomes necessary.</p></p>"
+    "title": "Welcome",
+    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/w51-y25/",
+    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Introduction paragraph for the newsletter.</p> <p>Hi. I‘m Juulian. I‘m an entrepreneur, designer, technologist, and futurist. I founded Near Future Laboratory 20 years ago as a platform to explore the adjacent possible.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>This is my weekly newsletter where I share dispatches from the near future, speculative design projects, and insights on technology and society. Thanks for being here!</p> <p>(p.s. Oh yeah — so, that quote up there? It was shared by Alex Bernatzky who brought it up during his Office Hours The Side Projects Edtion presentation last Friday.<br/> If you want to participate in our weekly Office Hours, just join the Patreon, which also gets you into the Discord where people like Alex and others are working on a huge range of projects in and around AI, futures of creative practice, generative image-making, 3D design, futures design and way more. It's also a great way to get involved in projects, network, and connect with other like-minded folks. Oh, also — Alex helped me with last year's Newspaper from an AI Future (sold out!))</p></p>"
+  },
+  "header": {
+    "quote": "[T]he wellsprings of creativity lie not inside people‘s heads, but in their attending upon a world in formation. In this kind of creativity, undergone rather than done, imagination is not so much the capcity to come up with new ideas as the aspirational impulse of a life that is not just lived but led. But where it leads is not yet given..opening to the unknown.\n",
+    "author": "Tim Ingold “The Creativity of Undergoing”",
+    "logoBottom": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp",
+    "logoTop": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp"
   },
   "sections": [
     {
-      "type": "indie-mag-single-column",
-      "title": "Exhibitions",
+      "type": "books-accessories",
+      "title": "Reader Mail",
+      "items": [
+        {
+          "title": "Inbound & Reply To All:",
+          "subtitle": "Some responses to last week‘s short newsletter essay",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Surprisingly rich collection of replies and messages to my short email essay in <a href='https:/nearfuturelaboratory.com/newsletters/w50-y25' style=\"font-weight: 500 !important; text-decoration: underline !important; color: #EE3BBB !important\">last week‘s newsletter</a>.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">For those of you who missed it, I have a <a href='https://www.linkedin.com/posts/julianbleecker_1have-you-noticed-how-many-people-are-fleeing-activity-7404981709055750144-Bf5N' style=\"font-weight: 500 !important; text-decoration: underline !important; color: #EE3BBB !important\">slightly compressed version on LinkedIn</a> and a <a href='https:/nearfuturelaboratory.com/newsletters/w50-y25' style=\"font-weight: 500 !important; text-decoration: underline !important; color: #EE3BBB !important\">slightly expanded version on the blog</a>. Here‘s the two-step version of what I said&#65306;</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><span style=\"background-color: #f0f0f0; padding: 2px 4px; border-radius: 4px; color: #0a0a0a; font-family: 'Share Tech Mono', monospace;\">Specialists keep the present running. Generalists keep the future visible.</span></p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Basically, making the case for the importance of collaboration amongst specialists and generalists, arguing that the resilient organization is one that respects the value of collaboration between those who execute within known systems (operationally oriented, disciplined program management, standard alignment around KPIs focused on near term business objectives, etc.) and those who can navigate uncertainty, sense emerging possibilities, and help the adjacent possible come into view <span style='background-color: #e0e0e0; padding: 2px 4px; border-radius: 4px; color: #0a0a0a'>before it becomes obvious or urgent.</span></p> <div style=\"margin: 1.5rem\"> <table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\">   <tr>     <td style=\"border-top:1px solid #dddddd;font-size:1px;line-height:1px;\">&nbsp;</td>   </tr> </table> </div> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Here are just a couple of the general categories of responses I received (I'm summarizing the specific response, and bucketing a bit for space):</p> <p style=\"margin: 1rem 0rem;  border-left: 4px solid {{ themeColors.linkAccent || '#4a9b8e' }}; padding-left: 0.8rem;   font-weight: 400;   font-style: italic;; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">“Sounds like you're describing design thinking..help me understand the difference, if any?”</p> <p style=\"margin-bottom: 2rem;  font-weight: 600;  ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Hella good question! Got a few similar to that point, it seems. Let's get after this!</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"> Design thinking solves defined problems. To hail the canonical 60 Minutes Ideo design thinking moment, it asks questions like: “How might we improve the shopping cart?” </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"> Speculative prototyping productively and meaningfully <em>reframes undefined ones</em>. The ones that cause CEOs to issue “Code Red” memorandums. Speculative prototyping asks: “What kind of world produces ‘online shopping’ as a ritual at all — and what replaces it when it no longer makes sense?” </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"> Talking about shopping carts in a speculative context is like testing parallel parking in a world of self-driving cars. The skill still exists — but it’s no longer where the future is being decided. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">These are “wheels on luggage” moments. The ones where a design thinking approach optimizes an existing system, while speculative prototyping reveals that the entire system is up for reimagination.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Think of it this way:</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>Design thinking</strong> solves defined problems. <br/> <strong>Speculative prototyping</strong> reframes undefined problems, nebulous entanglements, sets of conditions, curious rituals, and unexplainable circumstances. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Your <strong>specialists</strong> will continue to hammer away at shopping cart efficiencies. Good stuff!</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Your <strong>generalists</strong> will be busy imagining worlds, one or several of which might be those in which these “shopping cart” contrivances are an anachronism. Things grandpa used. Your generalists will be the ones who always wondered what took so long to put wheels on luggage. They're just the kind with that sort of way of seeing the world. Can't help it.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Now imagine your generalists in productive collaboration with your specialists. Together they will create multitudes of variations and prototypes of the future of travel (for example), not just optimization and restyling, and reengineering of the old samsonite hardshell luggage. They'll wonder about putting wheels on it, as disruptive as that might seem to the existing value chain or ecosystem. </p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"> Speculative prototyping asks (with fascination, curiosity, wonderment — and maybe a bit of mischievous delight): “Oooh! What if better shopping carts is totally the wrong brief!?” </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"> <strong>Design thinking optimizes.<br/> Speculative design reveals.</strong> </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"> Different tools.<br/> Different purpose.<br/> Different outcomes.<br/> </p> <p style=\" font-weight: 600;  ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Good question. That was fun, for real. Thanks!<br/> Next? </p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"margin: 2rem 0rem;  border-left: 4px solid {{ themeColors.linkAccent || '#4a9b8e' }}; padding-left: 0.8rem;   font-weight: 400;   font-style: italic;; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">“So, like..if you were to bring this mindset into my org/team, what does it actually look like? Are we talking workshops, research, building prototypes?”</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"margin-bottom: 2rem;  font-weight: 600;  ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Bunch of people wondered this in one form or another (also in the LinkedIn comments) and I'm more than happy for the chance to explain the shape of this kind of function because it‘s what I would like to build..so I‘ve been pondering it quite a bit.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"> Because speculative prototyping isn’t a set of activities you can copy-paste into an organization. It’s not “run a workshop, make a prototype, call it done.” Those things are just the surface.<br/> And it‘s definitely not that you do this once and call it done.<br/> So, sure  workshops and prototypes. (Actually these are just two of the KPIs you might use to measure the value of this kind of team. This then becomes not just isolated research/exploration — but doubles as a learning and development operation through which peole and teams flow through.) These are just the visible parts. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Speculative prototyping doesn’t succeed because of the format.<br/> It succeeds because of who is holding the work. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"> This kind of work lives in the in-between spaces — between disciplines, between strategy and execution, between what an organization knows how to do and what it hasn’t yet learned to notice. That makes it tempting to treat it like a toolkit or a side assignment. In practice, it only works when it’s led by someone who has spent years moving across domains, building real things, and learning how institutions behave under uncertainty. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"> <span style='background-color: #e0e0e0; padding: 2px 4px; border-radius: 4px; color: #0a0a0a; font-weight: 600; font-style: italic;'>Range changes what you notice.<br/> Experience changes what you trust.</span> </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"> The heck am I talking about?<br/>Let me try that more clearly:<br/> <span style='background-color: #e0e0e0; padding: 2px 4px; border-radius: 4px; color: #0a0a0a; font-weight: 600; font-style: italic;'>“Range changes what you notice.”</span><br/> If you’ve worked across different domains, say, engineering, design, business, art, research, community building, facilitation, book making, industrial design, computational and consumer hardware design, commercial software development, anthropology, academia, logistics, sales, brand building — you literally see more. (I certainly feel like I do!) You're bound to pick up weak signals, odd patterns, half-formed behaviors, see threads of opportunit, and find overlaps/connections/synergies that someone trained narrowly is likely to filter out as irrelevant before they even think on it. Range expands your perceptual field. It determines what even registers as interesting or possible.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"> <span style='background-color: #e0e0e0; padding: 2px 4px; border-radius: 4px; color: #0a0a0a; font-weight: 600; font-style: italic;'>“Experience changes what you trust.”</span><br/> So, having lived through real projects, failures, launches, markets, difficult teams/team-mates/structures/clients/participants/institutions, and constraints — well, this will sure as the sun rises develop your internal compass. You learn which instincts are worth following, which signals are noise, when to push, when to wait, and when not to overreact. Experience shapes judgment. It determines what you’re willing to act on.<br/> These two things together? Well..they let the work stay expansive without becoming untethered — imaginative without becoming naïve.<br/>  The workshops and prototypes and such all become less about outputs and more about creating shared orientation through circulation of activities/results/outcomes, engagement, read-outs, hands-on activity&#65306; the result is helping an org and team see possibilities that were previously invisible, and/or notice emerging possibilities early, while there’s still room to think. and talk about them before the pressure to decide collapses the conversation to one of those, like..“Code Red” memo type situations like Sam dispatched the other day. Like..wtf?<br/> To my reckoning, a “Code Red” memo might feel decisive, sure — but doesn‘t it smell a bit like a lagging indicator? A signal that an organization is reacting rather than orienting — that the work of noticing, interpreting, and adjusting didn’t happen early enough to avoid emergency mode?<br/> Speculative prototyping exists to prevent exactly this moment: to keep futures discussable before they become crises.<br/> <span style='background-color: #e0e0e0; padding: 2px 4px; border-radius: 4px; font-weight: 600; color: #0a0a0a'>Emergency memos aren’t failures of execution. They’re failures of anticipation.</span><br/> When the team that does this is working well and achieving its objectives, people stop asking what kind of activity it is. They start realizing that the organization is thinking differently — earlier, with more confidence, and with a wider sense of what’s actually possible. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Anyway. Thanks for the notes/emails/replies. Really appreciating the feedback and having the chance to clarify and expand on these ideas.</p></p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image"
+        }
+      ],
       "containerStyles": {
-        "backgroundColor": "#faf9f6",
+        "backgroundColor": null,
         "padding": "15px 20px",
         "borderRadius": "0px"
       },
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "21px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "500"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB"
+    },
+    {
+      "type": "dispatch",
+      "title": "Dispatches from the Near Future",
       "items": [
         {
-          "title": "Hope 2047",
-          "link": "https://ars.electronica.art/aeblog/en/2025/12/02/cutting-edge-hope-in-the-year-2047/",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">The project “Turnton Docklands” presents an immersive future that, despite crises, makes hope, community, and new forms of coexistence tangible.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">In \"Turnton Docklands,\" visitors enter a harbor district in the year 2047—a moment when ecological tipping points have been exceeded, coastal cities struggle with toxic waters and collapsing ecosystems, and extreme weather has become ordinary. Yet Time's Up resists pure dystopia. In this fictional harbor, a community has organized itself differently: solidary, transparent, and sustained by an alternative economy. They're modeling ways of living together within crisis rather than merely documenting its arrival. The space itself becomes the narrative medium. Rather than a traditional installation, Time's Up has constructed a walk-in narrative—an intricate landscape of objects, documents, media, sounds, and spatial situations that together compose a story.</p></p>",
-          "details": "<p>Mario Schmidhumer Turnton Docklands / Time’s Up (AT)</p>",
-          "note": "Exhibition photograph by Florian Voggeneder",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/984c0402-2c58-481a-00f5-67024d355100/w=600",
+          "title": "Dispatch Item 1",
+          "signalsLabel": "SIGNALS",
+          "tags": [
+            "TAG1",
+            "TAG2"
+          ],
+          "link": "https://example.com",
+          "subtitle": "Example subtitle for item 1",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Heirloom language models to go along with the essay response to Morozov?</p></p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
           "readMoreText": "Read more →",
-          "readMoreLink": "https://ars.electronica.art/aeblog/en/2025/12/02/cutting-edge-hope-in-the-year-2047/"
+          "readMoreLink": "https://example.com"
         }
       ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "8px"
+      },
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
@@ -58,35 +100,58 @@
       "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
     },
     {
-      "type": "books-accessories",
-      "title": "The Library",
+      "type": "apps-sites-single-column",
+      "title": "What Have I Been Up To?",
       "containerStyles": {
-        "backgroundColor": "#e3e2ef",
+        "backgroundColor": null,
         "padding": "15px 20px",
         "borderRadius": "0px"
       },
+      "backgroundColor": "#f1ede5",
       "items": [
         {
-          "title": "Evesdropping on Animals",
-          "link": "https://bookshop.org/p/books/eavesdropping-on-animals-what-we-can-learn-from-wildlife-conversations-george-bumann/cd385caa1882a43a?ean=9781778400209&next=t&",
-          "subtitle": "What We Can Learn From Wild Conversations",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">This one came up in passing — I think it was just a link in the Office Hours chat — that circled around a conversation we were having about Donna Haraway's remarkable little pamphlet, “<a href='https://monoskop.org/images/8/8a/Haraway_Donna_The_Companion_Species_Manifesto_2003.pdf' style=\"font-weight: 500 !important; text-decoration: underline !important; color: #EE3BBB !important\">The Companion Species Manifesto</a>”</p>  <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">I suppose George Bumann’s 'Eavesdropping on Animals' is a kind of traveler's guide to these companion species, revealing how ordinary moments can become extraordinary just by listening a little closer to the creatures around us. Bumann’s book reveals how paying attention to the everyday sounds of wildlife can transform our sense of connection to nature, no biology degree required..and maybe explain what the heck those crows outside the studio were crowing about the other day.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">I'm reminded of those <a href='https://www.youtube.com/watch?v=_Zd6Iy4JuGk' style=\"font-weight: 500 !important; text-decoration: underline !important; color: #EE3BBB !important\">urban song birds</a> that mimic car alarms and ringtones and stuff. It's like they're trying to communicate in our language, or at least get our attention.</p></p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/04fae32d-d033-4d00-6fc6-ac8ef9872800/w=600",
-          "authorName": "George Bumann",
-          "authorLink": "https://www.georgebumann.com/gb/eavesdropping-on-animals/",
-          "isbn": "978-1778400209",
-          "linkText": "Bookshop →"
+          "title": "Fintech Futures",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Just coming near to wrapping a three month project with a pretty emazing team in a humongous fintech company: <span style='background-color: #e0e0e0; padding: 2px 4px; border-radius: 4px;  color: #0a0a0a'>Project Value Futures</span>.</p></p>"
         },
         {
-          "title": "Capitalism",
-          "link": "https://a.co/d/7DsNa67",
-          "subtitle": "A Global History",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">I had my little note on capitalism last week and then just catching up on the pile of THe New Yorker magazines and I go to “Books” and the first paragraph is a bit of a grabber (to me at least):</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">“In September, 1639, John Winthrop, the governor of the Massachusetts Bay Colony, recorded in his journal a dreadful tale of Puritan true crime. One  Robert Keayne had prospered as a London merchant before his immigration to Boston, where he did brisk custom as a shopkeeper...Now he stood trial for the “very evil“ sale of “foreign commodities” at prices that exceeded the sum he had paid for them. For the sin of a standard retail markup, he faced excommunication.”</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Why is this kind of thing interesting to me?</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">A central conceit for futures practice is that what is once was not; and what will be, is inconceivable today.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">It's over 1,300 pages though. So..dunno.</p></p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/ed8033fc-a55b-40bc-bdab-6eb09ef24200/w=600",
-          "authorName": "Sven Beckert",
-          "authorLink": "https://www.georgebumann.com/gb/eavesdropping-on-animals/",
-          "isbn": "978-0735220836",
-          "linkText": "Amazon →"
+          "title": "The Work Kit of Design Fiction - Instrumented Edition",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">I started working on what an instrumented edition of The Work Kit of Design Fiction might be.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Although this seems like low-hanging fruit in a world of LLMs and generative AI, there‘s a different approach or sensibility that I wanted to explore that was to make not just something that you pushed a button and got a result, bvut something that you used more like a collaborative MadLibs partner, pushing and pulling in various ways. More like a medicine ball for an imagination work out, than a pill you take to suddenly bulk up your creative muscles sans effort.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Fun prototype built with a trad stack of Rust, Vanilla JS, Node</p> image: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5cd1b425-8131-46d8-0f2e-dba3d1dad300/w=900?format=webp</p>"
+        },
+        {
+          "title": "Tooling Upgrades",
+          "link": "https://example.com",
+          "subtitle": "Studio Utilities and Affordances",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Building custom tools to help make the work here in the studio more to my liking and workflow has been a focus this last half of the year.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Two simple reasons: (a) I want to own as much of the infrastructure I use as possible, a bit like the machinist or carpenter who make their own tools and affordances rather than pay rent to use someone else‘s, and (b) It gives me a wealth of experience and insight into back into the evolution of my primary skillset, which is technical design and prototyping — programming, hardware design, physical computing, and interaction design.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Visual Thinking Aids that I find myself using are the evolving crop of generative image generators, which allow me to quickly create visual representations of speculative designs and environments. These tools enable me to iterate rapidly and explore a wide range of possibilities without being constrained by traditional design methods.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">A bit like mood boards but for little corners of imagined futures.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">I find that, like storyboarding for film and visual storytelling, I become more generative of ideas when I start seeing little glimpses of the worlds I am trying to imagine.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">When doing this for commissioned works or clients, one of the problems is that these tools are (a) way too prolific resulting in a ridiculously overwhelming tranche of images to sort through, and (b) they are not tailored to the specific needs of speculative design work.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">So, as my contribution to my local chapter of the ComfyUI User‘s Group, I created this management tool, mostly pulling on my experience as a photographer.</p></p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://example.com"
+        },
+        {
+          "title": "Paper",
+          "link": "https://github.com/bleeckerj/Files2Book",
+          "subtitle": "Files2Book",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Another tool: a drag-and-drop utility that takes a folder of files (images, PDFs, text files) and turns them into a print-ready book PDF.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">This started out because I wanted to archive the Slack for OMATA, the hardware product company I founded back at the end of 2014.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">There were so many stories embedded in the channels — not literal stories in the trad sense — but things that were evocative of the 10 years of action and activity, frustrations, worries, triumphs, and the general roller-coaster ride of a hardware startup.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Keeping that all in the cloud seemed like I'd never get back to it — or something/one else would evaporate it — so in a fit of archival mania, I wrote this little utility to turn the exported Slack files into a print-ready book PDF.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">And in that I sensed the value of a more general tool that could take a folder of files and turn them into a book — or the data dump of Instagram posts — or whatever else you might want to archive as a book.</p></p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://example.com"
+        },
+        {
+          "title": "Proof of Membership",
+          "link": "https://example.com",
+          "subtitle": "Hardware Mod of the Motorola Pager Boy",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">A somewhat involved hardware mod to be installed in the old classic Motorola Pager Boy inspired by the contrivance found in the movie ‘One Battle After Another‘. In the story, these devices are used because of the ancient network layer they use and therefore, presumably — are not susceptible to surveillance.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">So..that‘s curious but much more intriguing to me is that there are paired sets (or 'n') that know about each other and play a little ‘drop everything; bug-out‘ tune when in proxmity.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Fun little cinematic conceit, but I want one (or a set).</p></p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://example.com"
+        },
+        {
+          "title": "Newsletter Engine Upgrades",
+          "link": "https://example.com",
+          "subtitle": "Newsletter Engine Upgrades",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Finally, I've been working on upgrading the newsletter engine that powers this very newsletter.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">It‘s a custom system built on a combination of Markdown, JSON, Python, and Maizzle for email templating.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">This upgrade focuses on improving the workflow for content creation, enhancing the visual design of the newsletters, and adding new features to make it easier to manage and distribute the content.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">By refining this system, I aim to streamline the process of producing high-quality newsletters that effectively communicate my work and ideas to my audience.</p></p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://example.com"
         }
       ],
       "contentStyles": {
@@ -111,55 +176,77 @@
       "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB"
     },
     {
-      "type": "sponsor",
-      "title": "Curiousity as a Practice",
-      "sponsorLabel": "From the Archives",
+      "type": "quote",
+      "title": "Quote Section",
+      "items": [
+        {
+          "quote": "Example quote text for item 1",
+          "author": "Example author",
+          "authorLink": "https://example.com"
+        }
+      ],
       "containerStyles": {
-        "backgroundColor": "#a0f4ff",
+        "backgroundColor": null,
         "padding": "15px 20px",
         "borderRadius": "0px"
       },
+      "contentStyles": {
+        "fontFamily": "Ubuntu, sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.2",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "21px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
+    },
+    {
+      "type": "indie-mag-single-column",
+      "title": "Indie Mag Single Column Section",
       "items": [
         {
-          "title": "Blue Tile Obsession",
-          "link": "https://bluetileobsession.wordpress.com/2025/12/06/legacy-fishbowl-pink-motel-gallery/",
-          "subtitle": "Pink Motel Pool Party",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I sometimes wonder if my distractions into unexpectedly orthogonal areas of inquiry and study make it super confusing to comprehend the value of that in more traditional terms.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I once stumbled into becoming a skateboard photographer. It was largely because I wondered what it would be to become something else, and what it felt like to enter into a community and culture significantly far removed from trad engineering.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">In that time, I got invited a couple of times to shoot at the annual “Pink Motel Pool Party”. Recently Lizzie asked me for a couple of shots from then. Ozzie, over there at Blue Tile Obsession, was doing a retrospective of some of those parties. </p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">See this as a reminder that sometimes wandering off into the weeds can yield an unexpected perspective and insights.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">p.s. I wish I had snagged one of those awesome motel key tags!</p></p>",
-          "images": [
-            {
-              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/9b7bd37e-6d37-4813-8ad8-b8a92eb21600/w=600",
-              "alt": "Lizzie Armanto at Pink Motel Pool Party 2012",
-              "link": "https://bluetileobsession.wordpress.com/2025/12/06/legacy-fishbowl-pink-motel-gallery/"
-            },
-            {
-              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/7ef8a98f-7700-4971-dbd3-be1e79c84a00/w=600",
-              "alt": "Riley Stevens at Pink Motel Pool Party 2012",
-              "link": "https://bluetileobsession.wordpress.com/2025/12/06/legacy-fishbowl-pink-motel-gallery/"
-            },
-            {
-              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b14647ea-9c15-4f9f-3a69-f5df8352dc00/w=600?format=webp",
-              "alt": "Chris Russell at Pink Motel Pool Party 2011",
-              "link": "https://bluetileobsession.wordpress.com/2025/12/06/legacy-fishbowl-pink-motel-gallery/"
-            },
-            {
-              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/38e0228d-1e46-4d25-6e34-bb13b7e1ca00/w=600?format=webp",
-              "alt": "Skater at Pink Motel Pool Party 2011",
-              "link": "https://bluetileobsession.wordpress.com/2025/12/06/legacy-fishbowl-pink-motel-gallery/"
-            },
-            {
-              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b87b6dbd-05e2-4ccd-c022-65556fb98000/w=600?format=webp",
-              "alt": "An exterior photo of the Pink Motel neon sign at night 2011",
-              "link": "https://bluetileobsession.wordpress.com/2025/12/06/legacy-fishbowl-pink-motel-gallery/"
-            }
-          ],
+          "title": "Bruce‘s Velocinatratinaroe Thing",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for indie-mag-single-column item 1.</p></p>",
+          "details": "<p>Example details for indie-mag-single-column item 1.</p>",
+          "note": "Example note for indie-mag-single-column item 1.\n",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
           "readMoreText": "Read more →",
-          "readMoreLink": "https://bluetileobsession.wordpress.com/2025/12/06/legacy-fishbowl-pink-motel-gallery/"
+          "readMoreLink": "https://example.com",
+          "paywall": true
+        },
+        {
+          "title": "Bruces SxSW Talk",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">At SxSW earlier this year, Bruce Sterling revisits the essential concept of 'design fiction,' reflecting on how speculative prototypes can influence our current technological landscape. He draws connections between iconic sci-fi elements like the Communicator from “Star Trek” and real-world advancements, highlighting the dialectic between imagination and reality. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Sterling emphasizes the need to revive and iterate upon imaginary narratives from visionary thinkers like Primo Levi. Rebuilding these visions is not just an exercise in nostalgia. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">It is really a way to inspire innovative solutions for contemporary challenges. Sterling‘s argument is that connecting past speculative visions to present-day issues can help shape a better future. Here a particular kind of creativity that is able to imagine broadly alternative futures, suggesting that such exercises can materially drive evolutions in the worlds we inhabit. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Engaging with speculative fiction can empower designers and technologists to envision possibilities beyond the limits of current paradigms. This all calls attention to the necessity of interdisciplinary thinking in tackling complex problems. Ultimately, he advocates for a proactive approach to the future, where resurrecting old visions can lead to concrete advancements.</p></p>",
+          "details": "<p>Example details for indie-mag-single-column item 1.</p>",
+          "note": "<p>Example note for indie-mag-single-column item 1.</p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://example.com",
+          "paywall": false
         }
       ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
-        "lineHeight": "1.2",
+        "lineHeight": "1.4",
         "color": "#111111",
         "textAlign": "left"
       },
@@ -180,69 +267,37 @@
     {
       "type": "food-for-thought",
       "title": "From the Discord",
-      "containerStyles": {
-        "backgroundColor": "#f1ede5",
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
       "items": [
         {
-          "title": "Futurity Systems",
-          "image": "https://i.kickstarter.com/assets/051/513/801/a0b344d260ba45c875654f3b7170724c_original.jpg?anim=false&fit=cover&gravity=auto&height=576&origin=ugc&q=92&v=1762167516&width=1024&sig=x7JhR5ZUKms1wl4Xt5I%2BfXZtb0hlV4%2BZuNQkyL2qKHM%3D",
-          "category": "Better Futures Faster",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">The Kickstarter campaign How to Synthesize the Future: Build Better Futures, Faster” by Futurity Systems offers a book and toolkit designed to introduce practical frameworks, methods, and templates for strategic foresight and futures thinking. Equip you and your org with some accessible tools to systematically explore potential future scenarios and inform long-term decision-making.</p></p>",
-          "link": "https://www.kickstarter.com/projects/futurity-systems/how-to-synthesize-the-future-build-better-futures-faster",
-          "sharedBy": "Julian Bleecker, PhD",
-          "channel": "🥋-shill-and-share",
-          "readMoreLink": "https://www.kickstarter.com/projects/futurity-systems/how-to-synthesize-the-future-build-better-futures-faster",
-          "readMoreText": "Back it →"
-        },
-        {
-          "title": "What happens when it crashes?",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/1664ec31-eb81-4472-4ad0-75f3002a4200/w=600",
-          "category": "Let them eat MREs",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">A new bull market is sweeping through the U.S. military, where troops are using their unique camaraderie and competitive spirit to dive into the world of investing. From flight engineers checking their portfolios after landing to group chats lighting up with news of tech stock spikes, service members are making significant gains in both traditional stocks and cryptocurrencies. Bases like Luke Air Force Base and Vandenberg Space Force Base have become hotspots for crypto activity, with tax data showing a far higher rate of crypto-related transactions than the national average. The scene now includes everything from Humvees and Porsches in base parking lots to influencers in uniform sharing wealth-building strategies, as young troops ride a wave of newfound financial opportunity—while still wondering how long the good times will last.,</p></p>",
-          "link": "https://archive.ph/tYO3T",
-          "sharedBy": "uncle-julian",
-          "channel": "milspec-techspec",
-          "readMoreLink": "https://archive.ph/tYO3T",
-          "readMoreText": "Lock & Load →",
+          "title": "Food For Thought Item 1",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">Example description for food-for-thought item 1.</p></p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "channel": "Example channel",
+          "category": "Example category",
+          "sharedBy": "Example sharedBy for item 1",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://example.com",
           "paywall": true
         },
         {
-          "title": "Red Teaming Smart Contracts Heists",
-          "category": "backalley blockchain heists",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/35e6f4f1-0d8d-44f8-4d68-d37eccf55000/w=600",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">Point a frontier AI that had bad parenting at the financial plumbing of the blockchain and it'll try its best at the cybernetic equivalent of a liquor store holdup.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">Anthropic’s latest research shows AI agents hitting a string of smart contracts, walking through $4.6M worth of real-world smart contract exploits — after their knowledge cutoffs — and even discovering fresh zero-days in thousands of newly deployed contracts. All in simulation, but very much not science fiction. The takeaway is as uncomfortable as it is obvious: <span style='background-color: #efffff; padding: 3px 10px; border-radius:8px'>autonomous exploitation is no longer a hypothetical risk but a technically feasible capability that now costs about the same as a GPU-hungry weekend project.</span></p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">The paper frames this not as another “AI is getting scary” headline, but as a sober benchmark: if AI can simulate profitable theft, it can also defend against it. But check this out: exploit revenue on these tasks doubled every 1.3 months. WTF. Talk about up and to the right, eh?</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">If the blockchain was once an experiment in trustless systems, AI just demonstrated what trustlessness looks like when the attackers never sleep, never get bored, and can read Solidity faster than you can say “audit.”</p></p>",
-          "link": "https://red.anthropic.com/2025/smart-contracts/",
-          "sharedBy": "Manual Entry",
-          "channel": "ai-heists-heist",
-          "readMoreLink": "https://red.anthropic.com/2025/smart-contracts/",
-          "readMoreText": "Read On →"
-        },
-        {
-          "title": "No† so bad..?",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/fddb3cfb-8090-4d39-68a2-2e7d74add900/w=600",
-          "category": "Dispatches From The Edge",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">Anthropic debuts a new AI-powered interview tool and shares insights from 1,250 professionals about how AI is shaping their work—spanning optimism, practical challenges, and hopes for the future.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">1,250 professionals opened up about AI at work putting their senses of optimism, anxiety, and hope for the future all on the table. The interview tool reveals how creatives, scientists, and the broader workforce are navigating the promise and pitfalls of AI—balancing productivity gains with questions about trust, creative identity, and what comes next.</p></p>",
-          "link": "https://www.anthropic.com/news/anthropic-interviewer",
-          "sharedBy": "Gen'l Veers",
-          "channel": "🛠-whats-ai-good-for-anyway",
-          "readMoreLink": "https://www.anthropic.com/news/anthropic-interviewer",
-          "readMoreText": "Read On →"
-        },
-        {
-          "title": "On the other hand...",
-          "image": "https://www.pewresearch.org/wp-content/uploads/sites/20/2025/09/SR_25.10.01_ai-search_1.png",
-          "category": "anywayz",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">A recent Pew Research Center study finds that Americans express ambivalence regarding the inclusion of AI-generated summaries in search engine results, with concerns centering on the accuracy and transparency of such summaries alongside recognition of their potential convenience. The research highlights a lack of consensus, suggesting ongoing public uncertainty about the broader implications of integrating artificial intelligence into online information platforms.</p></p>",
-          "link": "https://www.pewresearch.org/short-reads/2025/10/01/americans-have-mixed-feelings-about-ai-summaries-in-search-results/",
-          "sharedBy": "Julian Bleecker, PhD",
-          "channel": "🛠-whats-ai-good-for-anyway",
-          "readMoreLink": "https://www.pewresearch.org/short-reads/2025/10/01/americans-have-mixed-feelings-about-ai-summaries-in-search-results/",
-          "readMoreText": "Read the report →"
+          "title": "Food For Thought Item 2",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 27px !important; color: #000000 !important; text-align: left !important\">Example description for food-for-thought item 2.</p></p>",
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "channel": "Example channel",
+          "category": "Example category",
+          "sharedBy": "Example sharedBy for item 2",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://example.com",
+          "paywall": true
         }
       ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
@@ -266,35 +321,34 @@
       "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB; font-size: 19px"
     },
     {
-      "type": "sponsor",
-      "title": "Join the Near Future Laboratory Discord",
-      "sponsorLabel": "Your support helps",
-      "sponsorLink": "https://patreon.com/nearfuturelaboratory",
+      "type": "aesthetically-pleasing",
+      "title": "Aesthetically Pleasing Section",
+      "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\">Description for aesthetically-pleasing section.</p></p>",
       "items": [
         {
-          "title": "Near Future Laboratory Patreon",
-          "subtitle": "Join the Discord, Support Office Hours, the Newsletter and More",
-          "readMoreText": "Join →",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The Near Future Laboratory is supported by its community and members. <a href='https://patreon.com/nearfuturelaboratory' style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Join us on Patreon</a> to support our work, get access to exclusive content, and be part of our vibrant Discord community where we discuss design, technology, creativity, the future and do projects and support each others' work.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I host weekly Office Hours for Patrons — now for 289 weeks and running — every Friday at 0900 (UTC-7 / California). It's a great way to connect, ask questions, and get feedback on your projects.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Each week two people from the community present a project, idea, or challenge and we discuss it together. It's a great way to get feedback, learn from others, and connect with like-minded people.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">All of this is done in a friendly, supportive, and welcoming environment. We have people from all over the world, from all walks of life, and with all kinds of interests. It's a great way to meet new people, network, show what you can do, and learn from each other.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">In this time of rapid change and uncertainty, it's more important than ever to have a community of people who can support you, challenge you, and help you grow. The Near Future Laboratory is that community.</p></p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/58baa59a-a7da-4d1a-1f3a-9abdc26f8c00/w=600",
-          "link": "https://patreon.com/nearfuturelaboratory"
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "title": "Example title",
+          "imageLink": "https://example.com",
+          "link": "https://example.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\">Example description for aesthetically-pleasing item 1.</p></p>",
+          "readMoreText": "Read more →"
         }
       ],
       "containerStyles": {
         "backgroundColor": null,
-        "padding": "15px 20px",
+        "padding": "12px 20px",
         "borderRadius": "0px"
       },
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
-        "lineHeight": "1.2",
+        "lineHeight": "1.3",
         "color": "#111111",
         "textAlign": "left"
       },
       "headingStyles": {
         "fontFamily": "inherit",
-        "fontSize": "19px",
+        "fontSize": "21px",
         "fontWeight": "600",
         "color": "#000000"
       },
@@ -303,14 +357,113 @@
         "textDecoration": "underline",
         "fontWeight": "normal"
       },
-      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
+      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
+    },
+    {
+      "type": "classifieds",
+      "title": "Classifieds Section",
+      "containerStyles": {
+        "backgroundColor": "#f8f8f8",
+        "padding": "12px 20px",
+        "borderRadius": "0px"
+      },
+      "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, monospace !important; font-size: 19px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\"><p style=\"font-family: Share Tech Mono, monospace !important; font-size: 19px !important; line-height: 1.4 !important; color: #222222 !important; text-align: left !important\">Description for classifieds section.</p></p>",
+      "bookingLink": "Example bookingLink",
+      "bookingText": "Got something to share? Book a classified ad! Free for Patreon supporters!",
+      "items": [
+        {
+          "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Something from the Newspaper or TBD</p></p>",
+          "title": "Some weird product from the newspaper or TBD Catalog",
+          "link": "https://example.com",
+          "linkText": "Example linkText for item 1",
+          "images": [
+            {
+              "src": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image+1",
+              "alt": "Alternate text for classified 1 image 1"
+            },
+            {
+              "src": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image+2",
+              "alt": "Alternate text for classified 1 image 2"
+            }
+          ]
+        },
+        {
+          "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Elysia‘s Zine</p></p>",
+          "title": "Elysia‘s Zine",
+          "link": "https://example.com",
+          "linkText": "Example linkText for item 1",
+          "images": [
+            {
+              "src": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image+1",
+              "alt": "Alternate text for classified 1 image 1"
+            }
+          ]
+        }
+      ],
+      "contentStyles": {
+        "fontFamily": "Share Tech Mono, monospace",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#222222",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "20px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "500"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 20px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB"
+    },
+    {
+      "type": "animated-image",
+      "title": "Animated Image Section",
+      "items": [
+        {
+          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "title": "Example title",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Ubuntu, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\"><p style=\"font-family: Ubuntu, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Example description for animated-image item 1.</p></p>",
+          "link": "https://example.com"
+        }
+      ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "Ubuntu, sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.2",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "21px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
       "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
     }
   ],
   "footer": {
-    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w50-y25/",
+    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w51-y25",
     "newsletterSubscribeLink": "https://nearfuturelaboratory.com/newsletter/",
-    "logo": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/public",
+    "logo": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/bf9eb44e-b39f-4eb4-e4c4-ab2d56234600/w=200?format=webp",
     "logoLink": "https://nearfuturelaboratory.com",
     "socialLinks": {
       "applepodcasts": [
@@ -385,9 +538,9 @@
       ]
     },
     "unsubscribeLink": "[unsubscribe]",
-    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2025/w50-y25",
+    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2025/w51-y25",
     "archiveUrl": "https://nearfuturelaboratory.com/newsletters",
-    "gratitude": "This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle based production workflow. It's a work-in-progress building on a refactor of the <a href='https://densediscovery.com'>Dense Discovery</a> newsletter's look and vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It's a great newsletter and I would encourage you to subscribe and become a paid member.",
+    "gratitude": "This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle based production workflow. It‘s a work-in-progress building on a refactor of the <a href='https://densediscovery.com'>Dense Discovery</a> newsletter‘s look and vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It‘s a great newsletter and I would encourage you to subscribe and become a paid member.",
     "address": "© 2025 Near Future Laboratory<br>Venice Beach, California<br>United States",
     "colophon": "Imagination is not a luxury. It’s an early-warning system for possibility."
   },
@@ -648,7 +801,7 @@
         "name": "Classifieds",
         "description": "Classified ads with compact monospace styling",
         "containerStyles": {
-          "backgroundColor": null,
+          "backgroundColor": "f8f8f8",
           "padding": "12px 20px",
           "borderRadius": "0px"
         },

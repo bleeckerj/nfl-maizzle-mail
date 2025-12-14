@@ -46,6 +46,7 @@
   "devDependencies": {
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
+    "baseline-browser-mapping": "^2.9.7",
     "commander": "^11.1.0",
     "gray-matter": "^4.0.3",
     "jsdom": "^23.2.0"

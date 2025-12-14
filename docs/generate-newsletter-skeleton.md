@@ -26,6 +26,7 @@ python scripts/generate-newsletter-skeleton.py [--minimal] [--output FILE] [--se
 - A markdown file containing only YAML front matter (`--- ... ---`).
 - Top-level fields include `template`, `title`, `preheader`, `sectionStylesFile`, `intro`, `header`, `sections`, and `footer`.
 - Each section includes the correct `type`, section-level fields, and sample items with required and optional fields populated (unless `--minimal` is used).
+- For `dispatch` sections, `signalsLabel` and `tags` are item-level fields (`sections[].items[]`) used to render the SIGNALS tag bar.
 - Sample image URLs use placeholders; replace them with real assets before building.
 
 ## Examples

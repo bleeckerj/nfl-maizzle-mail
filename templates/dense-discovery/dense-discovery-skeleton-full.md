@@ -5,7 +5,7 @@ preheader: Short preview text that appears in email clients
 sectionStylesFile: templates/dense-discovery/section-styles.json
 intro:
   title: Welcome
-  viewOnlineLink: '#'
+  viewOnlineLink: https://nearfuturelaboratory.com/newsletters/2025/wxx-yxx
   content: <p>Introduction paragraph for the newsletter.</p>
 header:
   quote: Inspiring header quote
@@ -26,24 +26,25 @@ sections:
     link: https://example.com
     subtitle: Example subtitle for item 1
     description: <p>Example description for sponsor item 1.</p>
+    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     images:
     - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-      alt: Alternate text for image 1
+      alt: Alternate text for item 1 image 1
       link: https://example.com/image-destination
     - src: https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second
-      alt: Alternate text for image 2
+      alt: Alternate text for item 1 image 2
     readMoreText: Read more →
     readMoreLink: https://example.com
 - type: dispatch
   title: Dispatch Section
   dispatchLink: Example dispatchLink
   dispatchLabel: Example dispatchLabel
-  tags:
-  - TAG1
-  - TAG2
-  signalsLabel: Example signalsLabel
   items:
   - title: Dispatch Item 1
+    signalsLabel: SIGNALS
+    tags:
+    - TAG1
+    - TAG2
     link: https://example.com
     subtitle: Example subtitle for item 1
     description: <p>Example description for dispatch item 1.</p>
@@ -166,6 +167,13 @@ sections:
     title: Example title
     link: https://example.com
     linkText: Example linkText for item 1
+    images:
+    - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image+1
+      alt: Alternate text for classified 1 image 1
+    - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image+2
+      alt: Alternate text for classified 1 image 2
+    - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image+3
+      alt: Alternate text for classified 1 image 3
 - type: animated-image
   title: Animated Image Section
   items:
@@ -174,7 +182,7 @@ sections:
     description: <p>Example description for animated-image item 1.</p>
     link: https://example.com
 footer:
-  emailShare: mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/wXYZ/
+  emailShare: mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w50-y25/
   newsletterSubscribeLink: https://nearfuturelaboratory.com/newsletter/
   logo: https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png
   logoLink: https://nearfuturelaboratory.com
