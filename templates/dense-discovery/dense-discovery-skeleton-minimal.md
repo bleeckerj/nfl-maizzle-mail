@@ -47,8 +47,14 @@ sections:
   - title: Indie Mag Single Column Item 1
 - type: books-accessories
   title: Books Accessories Section
+  authorLabel: Author # Optional; e.g. Director, Developer
   items:
   - title: Books Accessories Item 1
+    # images: # Optional; multiple images supported
+    # - src: https://example.com/image-1.jpg
+    #   alt: Example image alt text 1
+    # - src: https://example.com/image-2.jpg
+    #   alt: Example image alt text 2
 - type: food-for-thought
   title: Food For Thought Section
   items:

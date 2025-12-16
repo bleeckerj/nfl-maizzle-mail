@@ -671,17 +671,19 @@ async function buildNewsletter() {
     // Catalog sections for debugging
     catalogSections(newsletterData);
     
-    // Normalize item fields for templates that expect different field names
-    // Known mapping: classifieds template expects `item.content` while Markdown
-    // frontmatter commonly uses `description`. Copy over when missing.
+    // Normalize item fields for templates that expect different field names.
+    // Known mapping: classifieds templates expect `item.content`, while content sources
+    // may provide either `description` (common in Markdown frontmatter) or `content`.
+    // We normalize BOTH ways so downstream styling and templates behave consistently:
+    // - Ensure `item.content` exists for templates that render `content`
+    // - Ensure `item.description` exists for the style-preprocessor (it targets `description`)
     if (newsletterData.sections && Array.isArray(newsletterData.sections)) {
       newsletterData.sections.forEach(section => {
         if (!section || !section.items) return;
         if (section.type === 'classifieds') {
           section.items.forEach(item => {
-            if (!item.content && item.description) {
-              item.content = item.description;
-            }
+            if (!item.content && typeof item.description === 'string') item.content = item.description;
+            if (!item.description && typeof item.content === 'string') item.description = item.content;
           });
         }
         // Normalize dispatch tags: accept either a comma-separated string or an array
@@ -697,7 +699,7 @@ async function buildNewsletter() {
           }
         }
       });
-      console.log('🔁 Normalized item fields for classifieds (description → content)');
+      console.log('🔁 Normalized item fields for classifieds (description ↔ content)');
     }
     
     displayColorTheme(newsletterData);
@@ -780,19 +782,50 @@ async function buildNewsletter() {
       newsletterData.sectionStyles = sectionStyles;
       console.log(`✅ Loaded section styles from ${sectionStylesPath}: ${Object.keys(sectionStyles.sectionStyles).length} section types (normalized)`);
     } catch (error) {
-      console.log(`⚠️  No section styles found at ${sectionStylesPath}, skipping style processing`);
+      const baseMessage = `Failed to load section styles from ${sectionStylesPath}`;
+      if (sectionStylesSourceReason === 'specified via sectionStylesFile') {
+        throw new Error(`${baseMessage} (your newsletter data explicitly set sectionStylesFile): ${error.message}`);
+      }
+      console.log(`⚠️  ${baseMessage}, skipping style processing (${error.message})`);
     }
 
     // Apply section styles through preprocessing (more reliable for email compatibility)
     if (sectionStyles.sectionStyles && newsletterData.sections) {
       console.log('🎨 Applying section styles through preprocessing...');
       console.log('');
+
+      const sanitizeHtmlFragment = (html) => {
+        if (!html || typeof html !== 'string') return html;
+        let out = html;
+
+        // Remove empty paragraphs that can get default/global styling inlined later.
+        out = out.replace(/<p\b[^>]*>\s*<\/p>/gi, '');
+
+        // Unwrap nested paragraphs like <p ...><p ...>...</p></p>.
+        // We apply this a few times to handle repeated nesting from upstream converters.
+        for (let i = 0; i < 3; i++) {
+          const next = out
+            .replace(/<p\b[^>]*>\s*(<p\b[^>]*>)/gi, '$1')
+            .replace(/<\/p>\s*<\/p>/gi, '</p>');
+          if (next === out) break;
+          out = next;
+        }
+
+        return out;
+      };
       
       let processedItems = 0;
       let totalItems = 0;
       const sectionSummary = [];
+      let sectionsWithMatchedConfig = 0;
+      let sectionsUsingDefaultConfig = 0;
+      let sectionsWithInjectedContentStyles = 0;
       
       newsletterData.sections.forEach((section, sIndex) => {
+          if (section && section.type !== undefined && section.type !== null) {
+            section.type = String(section.type).trim();
+          }
+
           // Helper to convert style objects into inline CSS strings with camelCase to kebab-case conversion
           const toCssString = (styles = {}, theme) => {
             return Object.entries(styles)
@@ -809,18 +842,25 @@ async function buildNewsletter() {
           };
 
           const sectionConfig = sectionStyles.sectionStyles[section.type];
-          const fallbackConfig = sectionStyles.sectionStyles.default;
+          const fallbackConfig = sectionStyles.sectionStyles.default || {};
           const usedConfig = sectionConfig || fallbackConfig;
+          const safeUsedConfig = usedConfig && typeof usedConfig === 'object' ? usedConfig : {};
+          if (sectionConfig) {
+            sectionsWithMatchedConfig++;
+          } else {
+            sectionsUsingDefaultConfig++;
+          }
           const incomingContainerStyles = section.containerStyles && typeof section.containerStyles === 'object'
             ? { ...section.containerStyles }
             : {};
           // --- PATCH: Apply contentStyles/linkStyles to section.description ---
           if (section.description && typeof section.description === 'string') {
+            section.description = sanitizeHtmlFragment(section.description);
             let desc = section.description;
             let wasModified = false;
             // Apply contentStyles
-            if (usedConfig.contentStyles && Object.keys(usedConfig.contentStyles).length > 0) {
-              const contentStyles = usedConfig.contentStyles;
+            if (safeUsedConfig.contentStyles && Object.keys(safeUsedConfig.contentStyles).length > 0) {
+              const contentStyles = safeUsedConfig.contentStyles;
               let cssProperties = [];
               if (contentStyles.fontFamily) cssProperties.push(`font-family: ${contentStyles.fontFamily} !important`);
               if (contentStyles.fontSize) cssProperties.push(`font-size: ${contentStyles.fontSize} !important`);
@@ -848,8 +888,8 @@ async function buildNewsletter() {
               wasModified = true;
             }
             // Apply linkStyles
-            if (usedConfig.linkStyles && Object.keys(usedConfig.linkStyles).length > 0) {
-              const linkStyles = usedConfig.linkStyles;
+            if (safeUsedConfig.linkStyles && Object.keys(safeUsedConfig.linkStyles).length > 0) {
+              const linkStyles = safeUsedConfig.linkStyles;
               let linkCSSProperties = [];
               if (linkStyles.fontFamily) linkCSSProperties.push(`font-family: ${linkStyles.fontFamily} !important`);
               if (linkStyles.fontSize) linkCSSProperties.push(`font-size: ${linkStyles.fontSize} !important`);
@@ -903,8 +943,8 @@ async function buildNewsletter() {
           // Inject containerStyles into the section for template access
           // Normalize and provide sensible defaults so templates can reference
           // `section.containerStyles.borderRadius`, `padding`, and `backgroundColor`.
-          const baseContainerStyles = (usedConfig && usedConfig.containerStyles)
-            ? { ...usedConfig.containerStyles }
+          const baseContainerStyles = (safeUsedConfig.containerStyles && typeof safeUsedConfig.containerStyles === 'object')
+            ? { ...safeUsedConfig.containerStyles }
             : { backgroundColor: null, padding: '15px 20px', borderRadius: '0px' };
           section.containerStyles = { ...baseContainerStyles, ...incomingContainerStyles };
           // Ensure values are strings and have defaults
@@ -914,15 +954,18 @@ async function buildNewsletter() {
           section.containerStyles.backgroundColor = section.containerStyles.backgroundColor == null ? null : String(section.containerStyles.backgroundColor).trim();
 
           // Expose contentStyles so templates can use configured typography instead of hardcoded values
-          section.contentStyles = (usedConfig && usedConfig.contentStyles)
-            ? { ...usedConfig.contentStyles }
+          section.contentStyles = (safeUsedConfig.contentStyles && typeof safeUsedConfig.contentStyles === 'object')
+            ? { ...safeUsedConfig.contentStyles }
             : {};
+          if (section.contentStyles && Object.keys(section.contentStyles).length > 0) {
+            sectionsWithInjectedContentStyles++;
+          }
 
           // Expose headingStyles/linkStyles for template use with sane defaults
           const defaultHeading = { fontFamily: "'Ubuntu', sans-serif", fontSize: '18px', lineHeight: '23px', fontWeight: '600', color: '#000000' };
           const defaultLink = { textDecoration: 'underline', fontWeight: '400', color: theme?.linkAccent || '#707070' };
-          section.headingStyles = usedConfig?.headingStyles ? { ...usedConfig.headingStyles } : {};
-          section.linkStyles = usedConfig?.linkStyles ? { ...usedConfig.linkStyles } : {};
+          section.headingStyles = safeUsedConfig.headingStyles && typeof safeUsedConfig.headingStyles === 'object' ? { ...safeUsedConfig.headingStyles } : {};
+          section.linkStyles = safeUsedConfig.linkStyles && typeof safeUsedConfig.linkStyles === 'object' ? { ...safeUsedConfig.linkStyles } : {};
           section.headingStylesInline = toCssString({ ...defaultHeading, ...section.headingStyles });
           section.linkStylesInline = toCssString({ ...defaultLink, ...section.linkStyles }, theme);
         const usingFallback = !sectionConfig;
@@ -938,7 +981,7 @@ async function buildNewsletter() {
           if (sectionTotalItems > 0) {
             const statusIcon = usingFallback ? '⚠️ ' : '✅';
             const configInfo = usingFallback ? `using "default" styles` : `using "${section.type}" styles`;
-            const fontInfo = usedConfig?.contentStyles?.fontFamily ? ` (${usedConfig.contentStyles.fontFamily})` : '';
+            const fontInfo = safeUsedConfig?.contentStyles?.fontFamily ? ` (${safeUsedConfig.contentStyles.fontFamily})` : '';
             
             console.log(`${statusIcon} Section ${sIndex + 1}: "${section.type}" - ${configInfo}${fontInfo}`);
             
@@ -949,12 +992,13 @@ async function buildNewsletter() {
           
           section.items.forEach((item, iIndex) => {
             if (item.description && typeof item.description === 'string') {
+              item.description = sanitizeHtmlFragment(item.description);
               let originalDescription = item.description;
               let wasModified = false;
               
               // Apply all contentStyles properties
-              if (usedConfig.contentStyles && Object.keys(usedConfig.contentStyles).length > 0) {
-                const contentStyles = usedConfig.contentStyles;
+              if (safeUsedConfig.contentStyles && Object.keys(safeUsedConfig.contentStyles).length > 0) {
+                const contentStyles = safeUsedConfig.contentStyles;
                 
                 // Build CSS properties from contentStyles
                 let cssProperties = [];
@@ -1090,6 +1134,12 @@ async function buildNewsletter() {
           }
         }
       });
+
+      console.log('🧩 Section styles injection summary:');
+      console.log(`   - Sections: ${newsletterData.sections.length}`);
+      console.log(`   - Matched config: ${sectionsWithMatchedConfig}`);
+      console.log(`   - Default config: ${sectionsUsingDefaultConfig}`);
+      console.log(`   - Injected contentStyles: ${sectionsWithInjectedContentStyles}`);
       
       // Overall summary
       console.log('📊 Style Processing Summary:');

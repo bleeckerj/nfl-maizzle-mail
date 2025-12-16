@@ -88,10 +88,10 @@ SECTION_DEFINITIONS = {
     },
     'books-accessories': {
         'description': 'Books, products, and accessories',
-        'section_fields': ['type', 'title', 'byline', 'bylineLink'],
+        'section_fields': ['type', 'title', 'byline', 'bylineLink', 'authorLabel'],
         'item_fields': {
             'required': ['title'],
-            'optional': ['link', 'subtitle', 'description', 'image', 'authorName', 'authorLink', 'isbn', 'linkText']
+            'optional': ['link', 'subtitle', 'description', 'image', 'images', 'authorName', 'authorLabel', 'authorLink', 'isbn', 'linkText']
         },
         'example_items': 1
     },
@@ -168,8 +168,11 @@ def generate_example_item(section_type, item_num=1, minimal=False):
                 item[opt] = f'<p>Example {opt} for {section_type} item {item_num}.</p>'
 
             # Small text fields
-            elif opt in ('subtitle', 'sharedBy', 'authorName', 'linkText'):
-                item[opt] = f'Example {opt} for item {item_num}'
+            elif opt in ('subtitle', 'sharedBy', 'authorName', 'authorLabel', 'linkText'):
+                if opt == 'authorLabel':
+                    item[opt] = 'Author'
+                else:
+                    item[opt] = f'Example {opt} for item {item_num}'
 
             # Images
             elif opt == 'image':
@@ -226,6 +229,12 @@ def generate_example_item(section_type, item_num=1, minimal=False):
             # fallback for any other optional field
             else:
                 item[opt] = f'Example {opt}'
+
+        # If both single-image and multi-image variants exist, prefer `images`.
+        # This keeps the skeleton examples clear while maintaining backward compatibility
+        # for content that still uses `image`.
+        if 'images' in item and 'image' in item:
+            del item['image']
     
     return item
 
@@ -245,6 +254,9 @@ def generate_section(section_type, minimal=False):
             section[field] = ['TAG1', 'TAG2'] if not minimal else []
         elif field == 'description':
             section[field] = f'<p>Description for {section_type} section.</p>'
+        elif field == 'authorLabel':
+            if not minimal:
+                section[field] = 'Author'
         else:
             # Optional fields - skip in minimal mode
             if not minimal:

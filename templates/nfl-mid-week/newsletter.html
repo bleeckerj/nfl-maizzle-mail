@@ -410,9 +410,9 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                       </td>
                     </tr>
 
-                    <each loop="item in section.items">
-                      <tr>
-                        <td align="left" style="border-collapse: collapse;background: {{ themeColors['indie-mag'] || '#efe2f3' }};">
+	                    <each loop="item in section.items">
+	                      <tr>
+	                        <td align="left" style="border-collapse: collapse;background: {{ themeColors['indie-mag'] || '#efe2f3' }};">
                           <!--[if mso]>
                           <table border="0" cellpadding="0" cellspacing="0" width="100%">
                           <tr><td width="35%" valign="top"><![endif]-->
@@ -478,11 +478,16 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           </table>
 
                           <!--[if mso]></td></tr></table><![endif]-->
-                        </td>
-                      </tr>
-                    </each>
-                    <!-- INDIE MAG End -->
-                  </if>
+	                        </td>
+	                      </tr>
+	                      <if condition="loop.index < section.items.length">
+	                        <tr>
+	                          <td class="spacer" bgcolor="#FFFFFF" height="24" style="border-collapse: collapse;background-color: #FFFFFF;font-size: 24px;line-height: 24px;mso-line-height-rule: exactly;">&nbsp;</td>
+	                        </tr>
+	                      </if>
+	                    </each>
+	                    <!-- INDIE MAG End -->
+	                  </if>
 
                   <if condition="section.type === 'indie-mag-single-column'">
                     <!-- INDIE MAG SINGLE COLUMN Start -->
@@ -495,9 +500,9 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                       </td>
                     </tr>
 
-                    <each loop="item in section.items">
-                      <tr>
-                        <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
+	                    <each loop="item in section.items">
+	                      <tr>
+	                        <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
                           
                           <if condition="item.image">
                             <div style="margin-bottom: 15px; padding: 0 1em;">
@@ -539,11 +544,16 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;font-style: italic;">{{ item.note }}</p>
                           </if>
                           
-                        </td>
-                      </tr>
-                    </each>
-                    <!-- INDIE MAG SINGLE COLUMN End -->
-                  </if>
+	                        </td>
+	                      </tr>
+	                      <if condition="loop.index < section.items.length">
+	                        <tr>
+	                          <td class="spacer" bgcolor="#FFFFFF" height="24" style="border-collapse: collapse;background-color: #FFFFFF;font-size: 24px;line-height: 24px;mso-line-height-rule: exactly;">&nbsp;</td>
+	                        </tr>
+	                      </if>
+	                    </each>
+	                    <!-- INDIE MAG SINGLE COLUMN End -->
+	                  </if>
 
                   <if condition="section.type === 'books-accessories'">
                     <!-- BOOKS & ACCESSORIES Start -->
@@ -586,14 +596,14 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
                           </if>
                           
-                          <if condition="item.authorName">
-                            <p style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 400;color: #999999;padding: 0;margin: 0;margin-bottom: 5px;text-transform: uppercase;letter-spacing: 0.5px;">
-                              Author: 
-                              <if condition="item.authorLink">
-                                <a href="{{ item.authorLink }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#999999' }} !important;">{{ item.authorName }}</a>
-                              </if>
-                              <if condition="!item.authorLink">
-                                {{ item.authorName }}
+	                          <if condition="item.authorName">
+	                            <p style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 400;color: #999999;padding: 0;margin: 0;margin-bottom: 5px;text-transform: uppercase;letter-spacing: 0.5px;">
+	                              {{ item.authorLabel || section.authorLabel || 'Author' }}:
+	                              <if condition="item.authorLink">
+	                                <a href="{{ item.authorLink }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#999999' }} !important;">{{ item.authorName }}</a>
+	                              </if>
+	                              <if condition="!item.authorLink">
+	                                {{ item.authorName }}
                               </if>
                             </p>
                           </if>

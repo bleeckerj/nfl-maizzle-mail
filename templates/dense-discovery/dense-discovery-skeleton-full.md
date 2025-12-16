@@ -14,8 +14,8 @@ header:
     name: Artist Name
     link: '#'
   featuredImage: https://fpoimg.com/600x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Featured
-  logoBottom: https://fpoimg.com/163x50?text=Preview&bg_color=e6e6e6&text_color=4FAAAA
-  logoTop: https://fpoimg.com/163x50?text=Preview&bg_color=e6e6e6&text_color=4FAAAA
+  logoBottom: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp
+  logoTop: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp
 sections:
 - type: sponsor
   title: Sponsor Section
@@ -26,7 +26,6 @@ sections:
     link: https://example.com
     subtitle: Example subtitle for item 1
     description: <p>Example description for sponsor item 1.</p>
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     images:
     - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
       alt: Alternate text for item 1 image 1
@@ -114,13 +113,20 @@ sections:
   title: Books Accessories Section
   byline: Example byline
   bylineLink: Example bylineLink
+  authorLabel: Author
   items:
   - title: Books Accessories Item 1
     link: https://example.com
     subtitle: Example subtitle for item 1
     description: <p>Example description for books-accessories item 1.</p>
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+    images:
+    - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+      alt: Alternate text for item 1 image 1
+      link: https://example.com/image-destination
+    - src: https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second
+      alt: Alternate text for item 1 image 2
     authorName: Example authorName for item 1
+    authorLabel: Author
     authorLink: https://example.com
     isbn: 978-1-23456-789-7
     linkText: Example linkText for item 1

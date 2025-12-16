@@ -96,16 +96,16 @@
               </td>
             </tr>
             
-            <!-- Logo Top Section -->
-            <tr>
-              <td align="left" class="tighten" style="border-collapse: collapse;font-size: 1px;line-height: 1px;" valign="bottom">
-                <if condition="header.logoTop">
-                  <a href="{{ header.logoLink || '#' }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">
-                    <img src="{{ header.logoTop }}" height="auto" width="163" alt="{{ title }}" style="float: left;display: block;-ms-interpolation-mode: bicubic;">
-                  </a>
-                </if>
-              </td>
-            </tr>
+	            <!-- Logo Top Section -->
+	            <tr>
+	              <td align="left" class="tighten" style="border-collapse: collapse;font-size: 1px;line-height: 1px;padding-top:24px;" valign="bottom">
+	                <if condition="header.logoTop">
+	                  <a href="{{ header.logoLink || '#' }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#000000' }} !important;">
+	                    <img src="{{ header.logoTop }}" height="auto" width="163" alt="{{ title }}" style="float: left;display: block;-ms-interpolation-mode: bicubic;">
+	                  </a>
+	                </if>
+	              </td>
+	            </tr>
           </tbody>
         </table>
       </td>

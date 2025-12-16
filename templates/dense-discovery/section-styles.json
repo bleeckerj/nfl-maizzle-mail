@@ -182,7 +182,7 @@
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
-        "lineHeight": "27px",
+        "lineHeight": "23px",
         "color": "#000000",
         "textAlign": "left"
       },
@@ -211,8 +211,8 @@
       },
       "contentStyles": {
         "fontFamily": "Share Tech Mono, monospace",
-        "fontSize": "19px",
-        "lineHeight": "1.4",
+        "fontSize": "16px",
+        "lineHeight": "1.2",
         "color": "#222222",
         "textAlign": "left"
       },
