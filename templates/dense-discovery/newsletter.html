@@ -345,8 +345,23 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                         <h1 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} mso-line-height-rule: exactly; margin: 0;padding: 0;">{{ section.title }}</h1>
                       </td>
                     </tr>
+
+                    <if condition="section.description">
+                      <tr>
+                        <td align="left" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};padding: {{ section.containerStyles.padding || '20px' }};">
+                          <div style="font-family: {{ section.descriptionStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: {{ section.descriptionStyles.fontSize || '16px' }};line-height: {{ section.descriptionStyles.lineHeight || '23px' }};font-weight: {{ section.descriptionStyles.fontWeight || '400' }};color: {{ section.descriptionStyles.color || '#000000' }};text-align: {{ section.descriptionStyles.textAlign || 'left' }};padding: 0;margin: 0;">
+                            {{{ section.description }}}
+                          </div>
+                        </td>
+                      </tr>
+                    </if>
                     
                     <each loop="item in section.items">
+                      <if condition="loop.index > 0">
+                        <tr>
+                          <td bgcolor="{{ section.spacerBackgroundColor || section.containerStyles.backgroundColor || themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }}" style="border-collapse: collapse;font-size: 1px;background: {{ section.spacerBackgroundColor || section.containerStyles.backgroundColor || themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};line-height: 1;padding-top: 30px;"> </td>
+                        </tr>
+                      </if>
                       <tr>
                         <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};padding: {{ section.containerStyles.padding || '20px' }};">
                           
@@ -638,7 +653,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
 	                                </if>
 	                                <if condition="(!item.images || !item.images.length) && item.image">
 	                                  <div style="margin-bottom: 15px;">
-	                                    <img src="{{ item.image }}" alt="{{ item.title || 'Product Image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
+	                                    <a href="{{ item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}"><img src="{{ item.image }}" alt="{{ item.title || 'Product Image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;"></a>
 	                                  </div>
 	                                </if>
                                 
@@ -737,14 +752,14 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                 </if>
                                 
                                 <if condition="item.title && item.link">
-                                  <h2 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">
-                                    <a href="{{ item.link }}" class="share-tech-mono-regular" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}} font-family: 'Share Tech Mono', monospace;">{{ item.title }}</a>
+                                 <h2 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">
+                                    <a href="{{ item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}};">{{ item.title }}</a>
                                   </h2>
-                                  <if condition="item.title && !item.link">
-                                    <h2 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">
-                                      {{ item.title }}
-                                    </h2>
-                                  </if>
+                                <if condition="item.title && !item.link">
+                                  <h2 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">{{ item.title }">
+                                    {{ item.title }}
+                                  </h2>
+                                </if>
                                 </if>
                                 
                                 <if condition="item.description">

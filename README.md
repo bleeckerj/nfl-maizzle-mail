@@ -97,6 +97,13 @@ The following keys from `section-styles.json` are actively applied by the build 
   - `color`
   - `textAlign`
   These are applied during preprocessing to injected HTML (item descriptions) and inserted into `<p>` tags as inline styles.
+- `descriptionStyles` (properties consumed):
+  - `fontFamily`
+  - `fontSize`
+  - `lineHeight`
+  - `color`
+  - `textAlign`
+  These are applied during preprocessing to `section.description` and exposed to templates as `section.descriptionStyles`.
 - `linkStyles` (properties consumed):
   - `fontFamily`
   - `fontSize`
@@ -104,6 +111,7 @@ The following keys from `section-styles.json` are actively applied by the build 
   - `textDecoration`
   - `color` (supports the sentinel value `'inherit'`, which maps to the newsletter theme's `linkAccent`)
   These are applied to `<a>` tags in injected HTML; if absent the build falls back to `theme.linkAccent`.
+- `spacerBackgroundAdjust` — optional per-section HSL deltas (`lightness`, `saturation`, in percent) used to derive `section.spacerBackgroundColor` from the section background.
 
 Notes:
 - `containerStyles.padding` is normalized and written into `section.containerStyles` by the build script, but templates in this project currently hard-code padding in their TDs (so `padding` is prepared but not yet consumed by dense templates).

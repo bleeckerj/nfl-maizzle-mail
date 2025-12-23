@@ -7,6 +7,8 @@
     "build": "maizzle build production",
     "build:data": "maizzle build production",
     "build:newsletter": "node scripts/build-newsletter.mjs",
+    "schema:generate": "node scripts/generate-template-schema.mjs",
+    "schema:generate:dense-discovery": "node scripts/generate-template-schema.mjs --entry templates/dense-discovery/newsletter.html --output templates/dense-discovery/newsletter.schema.json",
     "quick": "node scripts/quick-build.mjs",
     "snippet": "node scripts/create-snippet.mjs",
     "dev": "maizzle serve",

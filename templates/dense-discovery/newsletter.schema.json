@@ -1,0 +1,1108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Derived Newsletter Schema",
+  "type": "object",
+  "properties": {
+    "footer": {
+      "type": "object",
+      "properties": {
+        "colophon": {},
+        "shareUrl": {},
+        "linkedInFollow": {},
+        "emailShare": {},
+        "newsletterSubscribeLink": {},
+        "logo": {},
+        "logoLink": {},
+        "socialLinks": {
+          "type": "object",
+          "properties": {
+            "github": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "url": {},
+                  "title": {}
+                },
+                "additionalProperties": false
+              }
+            },
+            "applepodcasts": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "url": {},
+                  "title": {}
+                },
+                "additionalProperties": false
+              }
+            },
+            "spotify": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "url": {},
+                  "title": {}
+                },
+                "additionalProperties": false
+              }
+            },
+            "instagram": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "url": {},
+                  "title": {}
+                },
+                "additionalProperties": false
+              }
+            },
+            "linkedin": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "url": {},
+                  "title": {}
+                },
+                "additionalProperties": false
+              }
+            },
+            "youtube": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "url": {},
+                  "title": {}
+                },
+                "additionalProperties": false
+              }
+            },
+            "discord": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "url": {},
+                  "title": {}
+                },
+                "additionalProperties": false
+              }
+            },
+            "patreon": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "url": {},
+                  "title": {}
+                },
+                "additionalProperties": false
+              }
+            },
+            "substack": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "url": {},
+                  "title": {}
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        },
+        "gratitude": {},
+        "unsubscribeLink": {},
+        "archiveUrl": {},
+        "address": {}
+      },
+      "additionalProperties": false
+    },
+    "title": {},
+    "themeColors": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "header": {
+      "type": "object",
+      "properties": {
+        "quote": {},
+        "featuredImage": {},
+        "author": {},
+        "featuredArtist": {
+          "type": "object",
+          "properties": {
+            "link": {},
+            "name": {}
+          },
+          "additionalProperties": false
+        },
+        "logoTop": {},
+        "logoLink": {},
+        "logoBottom": {}
+      },
+      "additionalProperties": false
+    },
+    "intro": {
+      "type": "object",
+      "properties": {
+        "quote": {},
+        "title": {},
+        "viewOnlineLink": {},
+        "image": {},
+        "imageLink": {},
+        "imageAlt": {},
+        "content": {}
+      },
+      "additionalProperties": false
+    },
+    "page": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "theme": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "preheader": {},
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "enum": [
+              "aesthetically-pleasing",
+              "animated-image",
+              "apps-sites",
+              "apps-sites-single-column",
+              "books-accessories",
+              "classifieds",
+              "dispatch",
+              "food-for-thought",
+              "indie-mag",
+              "indie-mag-single-column",
+              "quote",
+              "sponsor"
+            ]
+          }
+        },
+        "additionalProperties": true,
+        "allOf": [
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "aesthetically-pleasing"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "aesthetically-pleasing"
+                },
+                "containerStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStylesInline": {},
+                "title": {},
+                "description": {},
+                "contentStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "image": {},
+                      "link": {},
+                      "title": {},
+                      "imageLink": {},
+                      "description": {},
+                      "readMoreText": {},
+                      "readMoreTxt": {}
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "linkStylesInline": {},
+                "headingStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "linkStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "animated-image"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "animated-image"
+                },
+                "title": {},
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "image": {},
+                      "description": {}
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "headingStylesInline": {},
+                "linkStylesInline": {},
+                "containerStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "contentStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "linkStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "apps-sites"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "apps-sites"
+                },
+                "containerStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStylesInline": {},
+                "title": {},
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "image": {},
+                      "title": {},
+                      "link": {},
+                      "subtitle": {},
+                      "description": {},
+                      "readMoreText": {},
+                      "readMoreTxt": {},
+                      "readMoreLink": {},
+                      "paywall": {}
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "linkStylesInline": {},
+                "contentStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "linkStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "apps-sites-single-column"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "apps-sites-single-column"
+                },
+                "containerStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStylesInline": {},
+                "title": {},
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "image": {},
+                      "title": {},
+                      "link": {},
+                      "subtitle": {},
+                      "description": {},
+                      "readMoreText": {},
+                      "readMoreTxt": {},
+                      "readMoreLink": {}
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "linkStylesInline": {},
+                "contentStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "linkStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "books-accessories"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "books-accessories"
+                },
+                "containerStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStylesInline": {},
+                "title": {},
+                "byline": {},
+                "bylineLink": {},
+                "linkStylesInline": {},
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "images": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "link": {},
+                            "src": {},
+                            "alt": {}
+                          },
+                          "additionalProperties": false
+                        }
+                      },
+                      "link": {},
+                      "title": {},
+                      "image": {},
+                      "subtitle": {},
+                      "authorName": {},
+                      "authorLabel": {},
+                      "authorLink": {},
+                      "isbn": {},
+                      "description": {},
+                      "linkText": {}
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "authorLabel": {},
+                "contentStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "linkStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "classifieds"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "classifieds"
+                },
+                "containerStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStylesInline": {},
+                "title": {},
+                "description": {},
+                "contentStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "bookingLink": {},
+                "bookingText": {},
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "title": {},
+                      "images": {
+                        "type": "object",
+                        "properties": {
+                          "src": {},
+                          "alt": {}
+                        },
+                        "additionalProperties": false
+                      },
+                      "image": {},
+                      "link": {},
+                      "content": {},
+                      "linkText": {}
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "linkStylesInline": {},
+                "headingStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "linkStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "dispatch"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "dispatch"
+                },
+                "containerStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStylesInline": {},
+                "title": {},
+                "dispatchLink": {},
+                "dispatchLabel": {},
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "tags": {},
+                      "signalsLabel": {},
+                      "title": {},
+                      "link": {},
+                      "subtitle": {},
+                      "image": {},
+                      "description": {},
+                      "readMoreText": {},
+                      "readMoreTxt": {},
+                      "readMoreLink": {}
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "signalsLabel": {},
+                "linkStylesInline": {},
+                "contentStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "linkStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "food-for-thought"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "food-for-thought"
+                },
+                "containerStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStylesInline": {},
+                "title": {},
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "image": {},
+                      "link": {},
+                      "title": {},
+                      "channel": {},
+                      "category": {},
+                      "sharedBy": {},
+                      "description": {},
+                      "readMoreText": {},
+                      "readMoreTxt": {},
+                      "readMoreLink": {},
+                      "paywall": {}
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "linkStylesInline": {},
+                "contentStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "linkStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "indie-mag"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "indie-mag"
+                },
+                "containerStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStylesInline": {},
+                "title": {},
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "image": {},
+                      "link": {},
+                      "title": {},
+                      "description": {},
+                      "details": {},
+                      "note": {}
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "linkStylesInline": {},
+                "contentStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "linkStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "indie-mag-single-column"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "indie-mag-single-column"
+                },
+                "containerStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStylesInline": {},
+                "title": {},
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "images": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "link": {},
+                            "src": {},
+                            "alt": {}
+                          },
+                          "additionalProperties": false
+                        }
+                      },
+                      "link": {},
+                      "title": {},
+                      "image": {},
+                      "description": {},
+                      "details": {},
+                      "note": {},
+                      "readMoreText": {},
+                      "readMoreTxt": {},
+                      "readMoreLink": {},
+                      "paywall": {}
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "linkStylesInline": {},
+                "contentStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "linkStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "quote"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "quote"
+                },
+                "title": {},
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "quote": {},
+                      "author": {},
+                      "authorLink": {}
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "headingStylesInline": {},
+                "linkStylesInline": {},
+                "containerStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "contentStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "linkStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "sponsor"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "sponsor"
+                },
+                "containerStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStylesInline": {},
+                "title": {},
+                "sponsorLink": {},
+                "sponsorLabel": {},
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "title": {},
+                      "link": {},
+                      "subtitle": {},
+                      "images": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "link": {},
+                            "src": {},
+                            "alt": {}
+                          },
+                          "additionalProperties": false
+                        }
+                      },
+                      "image": {},
+                      "description": {},
+                      "readMoreText": {},
+                      "readMoreTxt": {},
+                      "readMoreLink": {}
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "linkStylesInline": {},
+                "contentStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "linkStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        ]
+      }
+    },
+    "$schema": {},
+    "template": {},
+    "colorTheme": {},
+    "sectionStylesFile": {},
+    "sectionStyles": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

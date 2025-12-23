@@ -10,7 +10,7 @@ cd "$SCRIPT_DIR"
 
 print_usage() {
     cat <<'EOF'
-Usage: ./workflow.sh [--content <path>] [--template <name>] [--output <path>] [--send-test|send-test]
+Usage: ./workflow.sh [--content <path>] [--template <name>] [--output <path>] [--strict-schema] [--regen-schema] [--send-test|send-test]
   or:   ./workflow.sh <content-file.md> [template] [output-file] [send-test]
 
 Examples:
@@ -18,6 +18,7 @@ Examples:
   ./workflow.sh content/2025-10-14.md dense-discovery build_production/custom-output.html
   ./workflow.sh content/2025-10-14.md dense-discovery --output public/outbox/issues/2025/w49-y25.html
   ./workflow.sh /Users/julian/Code/nfl-backoffice/public/outbox/data/2025/w49-y25.md dense-discovery --output /Users/julian/Code/nfl-backoffice/public/outbox/issues/2025/w49-y25.html send-test
+  ./workflow.sh --regen-schema --strict-schema content/2025-10-14.md dense-discovery
 EOF
 }
 
@@ -46,6 +47,8 @@ resolve_output_dest_path() {
 }
 
 SEND_TEST_REQUESTED=false
+STRICT_SCHEMA_REQUESTED=false
+REGEN_SCHEMA_REQUESTED=false
 POSITIONAL=()
 
 while [ $# -gt 0 ]; do
@@ -83,6 +86,14 @@ while [ $# -gt 0 ]; do
             ;;
         --send-test|send-test)
             SEND_TEST_REQUESTED=true
+            shift
+            ;;
+        --strict-schema)
+            STRICT_SCHEMA_REQUESTED=true
+            shift
+            ;;
+        --regen-schema)
+            REGEN_SCHEMA_REQUESTED=true
             shift
             ;;
         --*)
@@ -125,6 +136,11 @@ OUTPUT_BASENAME="${CONTENT_BASENAME%.*}"
 BUILD_OUTPUT_FILE="$SCRIPT_DIR/build_production/${OUTPUT_BASENAME}.html"
 OUTPUT_DEST_PATH=""
 QUICK_BUILD_OUTPUT_ARG=""
+NODE_ENV_PREFIX=()
+
+if [ "$STRICT_SCHEMA_REQUESTED" = true ]; then
+    NODE_ENV_PREFIX+=(SCHEMA_STRICT=1)
+fi
 
 if [ -n "${OUTPUT_FILE:-}" ]; then
     OUTPUT_DEST_PATH=$(resolve_output_dest_path "$OUTPUT_FILE" "$OUTPUT_BASENAME")
@@ -249,6 +265,26 @@ PY
 echo "🔄 Building email with quick-build..."
 echo "📄 Content: $CONTENT_FILE"
 echo "🎨 Template: $TEMPLATE"
+if [ "$STRICT_SCHEMA_REQUESTED" = true ]; then
+    echo "🧾 Schema validation: strict (SCHEMA_STRICT=1)"
+else
+    echo "🧾 Schema validation: warn (default)"
+fi
+
+if [ "$REGEN_SCHEMA_REQUESTED" = true ]; then
+    SCHEMA_ENTRY="$SCRIPT_DIR/templates/$TEMPLATE/newsletter.html"
+    SCHEMA_OUT="$SCRIPT_DIR/templates/$TEMPLATE/newsletter.schema.json"
+    if [ -f "$SCHEMA_ENTRY" ]; then
+        echo "🧬 Regenerating schema: $SCHEMA_OUT"
+        if ! npm run -s schema:generate -- --entry "$SCHEMA_ENTRY" --output "$SCHEMA_OUT"; then
+            echo "❌ Schema generation failed"
+            exit 1
+        fi
+    else
+        echo "⚠️  --regen-schema requested but entry template not found: $SCHEMA_ENTRY"
+    fi
+fi
+
 TEMPLATE_STYLES_PATH="$SCRIPT_DIR/templates/$TEMPLATE/section-styles.json"
 DEFAULT_STYLES_PATH="$SCRIPT_DIR/data/section-styles.json"
 if [ -f "$TEMPLATE_STYLES_PATH" ]; then
@@ -258,9 +294,9 @@ else
 fi
 if [ -n "$QUICK_BUILD_OUTPUT_ARG" ]; then
     echo "💾 Output: $QUICK_BUILD_OUTPUT_ARG"
-    node "$SCRIPT_DIR/scripts/quick-build.mjs" "$TEMPLATE" "$CONTENT_FILE" "$QUICK_BUILD_OUTPUT_ARG"
+    "${NODE_ENV_PREFIX[@]}" node "$SCRIPT_DIR/scripts/quick-build.mjs" "$TEMPLATE" "$CONTENT_FILE" "$QUICK_BUILD_OUTPUT_ARG"
 else
-    node "$SCRIPT_DIR/scripts/quick-build.mjs" "$TEMPLATE" "$CONTENT_FILE"
+    "${NODE_ENV_PREFIX[@]}" node "$SCRIPT_DIR/scripts/quick-build.mjs" "$TEMPLATE" "$CONTENT_FILE"
 fi
 
 BUILD_EXIT_CODE=$?

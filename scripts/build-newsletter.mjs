@@ -5,6 +5,133 @@ import path from 'path';
 import { execSync } from 'child_process';
 import https from 'https';
 import http from 'http';
+import Ajv from 'ajv';
+import addFormats from 'ajv-formats';
+
+function jsonPointerToDotPath(pointer) {
+  if (!pointer || pointer === '/') return '$';
+  const parts = pointer
+    .split('/')
+    .slice(1)
+    .map(p => p.replace(/~1/g, '/').replace(/~0/g, '~'))
+    .map(p => (/^\d+$/.test(p) ? `[${p}]` : `.${p}`));
+  return '$' + parts.join('');
+}
+
+function describeSchemaLocation(instancePath, newsletterData) {
+  const match = /^\/sections\/(\d+)(?:\/items\/(\d+))?/.exec(instancePath || '');
+  if (!match) return null;
+
+  const sectionIndex = Number(match[1]);
+  const itemIndex = match[2] !== undefined ? Number(match[2]) : null;
+
+  const section = Array.isArray(newsletterData?.sections) ? newsletterData.sections[sectionIndex] : null;
+  const sectionType = section?.type ? String(section.type) : 'unknown-type';
+  const sectionTitle = section?.title ? String(section.title) : null;
+
+  const sectionLabel = sectionTitle
+    ? `sections[${sectionIndex}] (${sectionType} / "${sectionTitle}")`
+    : `sections[${sectionIndex}] (${sectionType})`;
+
+  if (itemIndex === null) return sectionLabel;
+
+  const item = Array.isArray(section?.items) ? section.items[itemIndex] : null;
+  const itemTitle = item?.title ? String(item.title) : null;
+  const itemLabel = itemTitle
+    ? `${sectionLabel} → items[${itemIndex}] ("${itemTitle}")`
+    : `${sectionLabel} → items[${itemIndex}]`;
+
+  return itemLabel;
+}
+
+function validateNewsletterDataAgainstSchema(newsletterData, templateName, args) {
+  const strict = args.includes('--strict-schema') || process.env.SCHEMA_STRICT === '1';
+  const schemaCandidates = [
+    templateName ? path.resolve(`templates/${templateName}/newsletter.schema.json`) : null,
+    path.resolve('newsletter.schema.json'),
+  ].filter(Boolean);
+
+  const schemaPath = schemaCandidates.find(p => fs.existsSync(p));
+  if (!schemaPath) return;
+
+  let schema;
+  try {
+    schema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'));
+  } catch (err) {
+    throw new Error(`Failed to read schema at ${schemaPath}: ${err.message}`);
+  }
+
+  const ajv = new Ajv({ allErrors: true, strict: false, allowUnionTypes: true });
+  addFormats(ajv);
+
+  const validate = ajv.compile(schema);
+  const valid = validate(newsletterData);
+  if (valid) {
+    console.log(`✅ Schema validation passed (${path.relative(process.cwd(), schemaPath)})`);
+    return;
+  }
+
+  const errors = validate.errors || [];
+  console.log(`\n⚠️  Schema validation found ${errors.length} issue(s) (${path.relative(process.cwd(), schemaPath)})`);
+
+  errors
+    .filter(err => err.keyword !== 'if') // if/then wrappers are noisy; show the underlying errors instead
+    .slice(0, 50)
+    .forEach(err => {
+    const context = describeSchemaLocation(err.instancePath, newsletterData);
+    const contextPrefix = context ? `${context}: ` : '';
+    if (err.keyword === 'additionalProperties') {
+      const base = jsonPointerToDotPath(err.instancePath);
+      const extra = err.params?.additionalProperty ? `.${err.params.additionalProperty}` : '';
+      console.log(`   • ${contextPrefix}Unknown key: ${base}${extra}`);
+      return;
+    }
+    console.log(`   • ${contextPrefix}${jsonPointerToDotPath(err.instancePath)}: ${err.message}`);
+    });
+
+  if (errors.length > 50) {
+    console.log(`   • …and ${errors.length - 50} more`);
+  }
+
+  if (strict) {
+    throw new Error('Schema validation failed (strict mode)');
+  }
+}
+
+function normalizeNewsletterForSchemaValidation(newsletterData) {
+  if (!newsletterData || typeof newsletterData !== 'object') return;
+  if (!Array.isArray(newsletterData.sections)) return;
+
+  newsletterData.sections.forEach(section => {
+    if (!section || typeof section !== 'object') return;
+
+    // Some content sources use a convenience `backgroundColor` at the section level.
+    // The templates read `section.containerStyles.backgroundColor`, so normalize and
+    // remove the convenience key to keep schema validation (and rendering) aligned.
+    if (typeof section.backgroundColor === 'string' && section.backgroundColor.trim().length) {
+      section.containerStyles = (section.containerStyles && typeof section.containerStyles === 'object' && !Array.isArray(section.containerStyles))
+        ? section.containerStyles
+        : {};
+      if (section.containerStyles.backgroundColor == null) {
+        section.containerStyles.backgroundColor = section.backgroundColor.trim();
+      }
+      delete section.backgroundColor;
+    }
+
+    // Normalize classifieds content fields for validation:
+    // - Schema for classifieds is keyed off what the template reads (`item.content`).
+    // - Content sources may provide `description` instead; accept it by copying.
+    // - Drop the extra field during validation to avoid per-type "unknown key" noise;
+    //   the later build normalization will re-hydrate both directions as needed.
+    if (section.type === 'classifieds' && Array.isArray(section.items)) {
+      section.items.forEach(item => {
+        if (!item || typeof item !== 'object') return;
+        if (!item.content && typeof item.description === 'string') item.content = item.description;
+        if (item.content && typeof item.description === 'string') delete item.description;
+      });
+    }
+  });
+}
 
 function checkHttpUrl(url) {
   return new Promise((resolve) => {
@@ -153,6 +280,91 @@ function generateSectionStylesCSS(sectionStyles, theme) {
   
   return cssOutput;
 }
+
+// Convert hex to RGB and RGB to HSL for lightweight color adjustments.
+const hexToRgb = (hex) => {
+  if (typeof hex !== 'string') return null;
+  const cleaned = hex.replace('#', '').trim();
+  if (![3, 6].includes(cleaned.length)) return null;
+  const normalized = cleaned.length === 3
+    ? cleaned.split('').map((c) => c + c).join('')
+    : cleaned;
+  const int = parseInt(normalized, 16);
+  if (Number.isNaN(int)) return null;
+  return {
+    r: (int >> 16) & 255,
+    g: (int >> 8) & 255,
+    b: int & 255,
+  };
+};
+
+const rgbToHex = ({ r, g, b }) => {
+  const toHex = (v) => Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, '0');
+  return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+};
+
+const rgbToHsl = ({ r, g, b }) => {
+  const rn = r / 255;
+  const gn = g / 255;
+  const bn = b / 255;
+  const max = Math.max(rn, gn, bn);
+  const min = Math.min(rn, gn, bn);
+  const delta = max - min;
+  let h = 0;
+  let s = 0;
+  const l = (max + min) / 2;
+  if (delta !== 0) {
+    s = l > 0.5 ? delta / (2 - max - min) : delta / (max + min);
+    switch (max) {
+      case rn:
+        h = (gn - bn) / delta + (gn < bn ? 6 : 0);
+        break;
+      case gn:
+        h = (bn - rn) / delta + 2;
+        break;
+      default:
+        h = (rn - gn) / delta + 4;
+    }
+    h /= 6;
+  }
+  return { h, s, l };
+};
+
+const hslToRgb = ({ h, s, l }) => {
+  if (s === 0) {
+    const gray = l * 255;
+    return { r: gray, g: gray, b: gray };
+  }
+  const hue2rgb = (p, q, t) => {
+    let tt = t;
+    if (tt < 0) tt += 1;
+    if (tt > 1) tt -= 1;
+    if (tt < 1 / 6) return p + (q - p) * 6 * tt;
+    if (tt < 1 / 2) return q;
+    if (tt < 2 / 3) return p + (q - p) * (2 / 3 - tt) * 6;
+    return p;
+  };
+  const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+  const p = 2 * l - q;
+  return {
+    r: hue2rgb(p, q, h + 1 / 3) * 255,
+    g: hue2rgb(p, q, h) * 255,
+    b: hue2rgb(p, q, h - 1 / 3) * 255,
+  };
+};
+
+const adjustHexColor = (hex, { lightness = 0, saturation = 0 } = {}) => {
+  const rgb = hexToRgb(hex);
+  if (!rgb) return hex;
+  const hsl = rgbToHsl(rgb);
+  const clamp = (v) => Math.max(0, Math.min(1, v));
+  const adjusted = {
+    h: hsl.h,
+    s: clamp(hsl.s + saturation / 100),
+    l: clamp(hsl.l + lightness / 100),
+  };
+  return rgbToHex(hslToRgb(adjusted));
+};
 
 /**
  * Display color theme in ASCII format with actual colors
@@ -357,6 +569,7 @@ async function validateLinks(data) {
 
   console.log('🔍 Validating hyperlinks...');
   const errors = [];
+  const warnings = [];
   let validLinks = 0;
 
   for (const entry of entries) {
@@ -380,16 +593,22 @@ async function validateLinks(data) {
         validLinks++;
       } else {
         const reason = result.error ? result.error : `HTTP ${result.status}`;
-        errors.push(`❌ ${pathLabel}: ${trimmed} (${reason})`);
+        if (result.status === 403 || result.status === 999) {
+          warnings.push(`⚠️  ${pathLabel}: ${trimmed} (${reason})`);
+          validLinks++;
+        } else {
+          errors.push(`❌ ${pathLabel}: ${trimmed} (${reason})`);
+        }
       }
     } else {
       validLinks++; // Non-HTTP links (mailto, tel, relative) are assumed acceptable
     }
   }
 
-  if (errors.length > 0) {
+  if (errors.length > 0 || warnings.length > 0) {
     console.log(`\n⚠️  Link Validation Results: ${validLinks}/${entries.length} links passed`);
     errors.forEach(error => console.log(`   ${error}`));
+    warnings.forEach(warning => console.log(`   ${warning}`));
     console.log('');
   } else {
     console.log(`✅ All ${entries.length} links validated successfully`);
@@ -667,6 +886,12 @@ async function buildNewsletter() {
 
     // Load newsletter data and display color theme
     const newsletterData = JSON.parse(fs.readFileSync('data/newsletter.json', 'utf8'));
+
+    // Validate source JSON against a template-specific schema if one exists.
+    // Default behavior is warn-and-continue; pass `--strict-schema` (or set `SCHEMA_STRICT=1`)
+    // to fail the build on schema errors.
+    normalizeNewsletterForSchemaValidation(newsletterData);
+    validateNewsletterDataAgainstSchema(newsletterData, templateName, args);
     
     // Catalog sections for debugging
     catalogSections(newsletterData);
@@ -853,14 +1078,17 @@ async function buildNewsletter() {
           const incomingContainerStyles = section.containerStyles && typeof section.containerStyles === 'object'
             ? { ...section.containerStyles }
             : {};
-          // --- PATCH: Apply contentStyles/linkStyles to section.description ---
+          // --- PATCH: Apply descriptionStyles/contentStyles/linkStyles to section.description ---
           if (section.description && typeof section.description === 'string') {
             section.description = sanitizeHtmlFragment(section.description);
             let desc = section.description;
             let wasModified = false;
-            // Apply contentStyles
-            if (safeUsedConfig.contentStyles && Object.keys(safeUsedConfig.contentStyles).length > 0) {
-              const contentStyles = safeUsedConfig.contentStyles;
+            // Apply descriptionStyles if provided, otherwise fall back to contentStyles
+            const descStyles = (safeUsedConfig.descriptionStyles && Object.keys(safeUsedConfig.descriptionStyles).length > 0)
+              ? safeUsedConfig.descriptionStyles
+              : safeUsedConfig.contentStyles;
+            if (descStyles && Object.keys(descStyles).length > 0) {
+              const contentStyles = descStyles;
               let cssProperties = [];
               if (contentStyles.fontFamily) cssProperties.push(`font-family: ${contentStyles.fontFamily} !important`);
               if (contentStyles.fontSize) cssProperties.push(`font-size: ${contentStyles.fontSize} !important`);
@@ -960,6 +1188,21 @@ async function buildNewsletter() {
           if (section.contentStyles && Object.keys(section.contentStyles).length > 0) {
             sectionsWithInjectedContentStyles++;
           }
+          // Expose descriptionStyles with fallback to contentStyles for section.description rendering
+          section.descriptionStyles = (safeUsedConfig.descriptionStyles && typeof safeUsedConfig.descriptionStyles === 'object')
+            ? { ...safeUsedConfig.descriptionStyles }
+            : { ...section.contentStyles };
+          // Compute a spacer background derived from the section background color.
+          const baseBackground =
+            section.containerStyles.backgroundColor ||
+            theme?.colors?.[section.type] ||
+            null;
+          const spacerAdjust = safeUsedConfig.spacerBackgroundAdjust && typeof safeUsedConfig.spacerBackgroundAdjust === 'object'
+            ? safeUsedConfig.spacerBackgroundAdjust
+            : { lightness: -6, saturation: 4 };
+          section.spacerBackgroundColor = baseBackground
+            ? adjustHexColor(baseBackground, spacerAdjust)
+            : null;
 
           // Expose headingStyles/linkStyles for template use with sane defaults
           const defaultHeading = { fontFamily: "'Ubuntu', sans-serif", fontSize: '18px', lineHeight: '23px', fontWeight: '600', color: '#000000' };
@@ -972,9 +1215,10 @@ async function buildNewsletter() {
         
         let sectionProcessedItems = 0;
         let sectionTotalItems = 0;
+        const sectionItems = Array.isArray(section.items) ? section.items : [];
         
-        if (section.items) {
-          sectionTotalItems = section.items.filter(item => item.description && typeof item.description === 'string').length;
+        if (sectionItems.length > 0) {
+          sectionTotalItems = sectionItems.filter(item => item.description && typeof item.description === 'string').length;
           totalItems += sectionTotalItems;
           
           // Show section header with styling info
@@ -990,7 +1234,7 @@ async function buildNewsletter() {
             }
           }
           
-          section.items.forEach((item, iIndex) => {
+          sectionItems.forEach((item, iIndex) => {
             if (item.description && typeof item.description === 'string') {
               item.description = sanitizeHtmlFragment(item.description);
               let originalDescription = item.description;
@@ -1109,12 +1353,59 @@ async function buildNewsletter() {
                 wasModified = true;
               }
               
+              const inlineStyleMatches = item.description.match(/style="[^"]*"/gi) || [];
+              const inlineFontFamilies = [];
+              const normalizeFontFamily = (value) =>
+                value
+                  .replace(/!important/gi, '')
+                  .replace(/['"]/g, '')
+                  .split(',')
+                  .map((font) => font.trim())
+                  .filter(Boolean)[0] || '';
+              inlineStyleMatches.forEach((styleMatch) => {
+                const fontMatch = styleMatch.match(/font-family\s*:\s*([^;"]+)/i);
+                if (fontMatch) {
+                  const normalized = normalizeFontFamily(fontMatch[1]);
+                  if (normalized) {
+                    inlineFontFamilies.push(normalized);
+                  }
+                }
+              });
+              const uniqueInlineFonts = Array.from(new Set(inlineFontFamilies));
+              const inlineStyleSummary = [];
+              if (inlineStyleMatches.length) {
+                inlineStyleSummary.push(`${inlineStyleMatches.length} inline style${inlineStyleMatches.length > 1 ? 's' : ''}`);
+              }
+              if (uniqueInlineFonts.length) {
+                inlineStyleSummary.push(`inline font-family: ${uniqueInlineFonts.join(', ')}`);
+              }
+              const configFontFamily = usedConfig?.contentStyles?.fontFamily
+                ? normalizeFontFamily(usedConfig.contentStyles.fontFamily)
+                : '';
+              const descriptionFontFamily = usedConfig?.descriptionStyles?.fontFamily
+                ? normalizeFontFamily(usedConfig.descriptionStyles.fontFamily)
+                : '';
+              const descriptionColor = usedConfig?.descriptionStyles?.color || '';
+              if (configFontFamily && uniqueInlineFonts.some((font) => font !== configFontFamily)) {
+                inlineStyleSummary.push(`overrides section font (${usedConfig.contentStyles.fontFamily})`);
+              }
+              if (descriptionFontFamily && uniqueInlineFonts.some((font) => font !== descriptionFontFamily)) {
+                inlineStyleSummary.push(`overrides description font (${usedConfig.descriptionStyles.fontFamily})`);
+              }
+              if (descriptionColor) {
+                inlineStyleSummary.push(`description color override (${descriptionColor})`);
+              }
+
               if (wasModified) {
                 processedItems++;
                 sectionProcessedItems++;
                 console.log(`   📝 Item ${iIndex + 1}: Styled content`);
               } else {
                 console.log(`   📄 Item ${iIndex + 1}: No styles applied (no content to process)`);
+              }
+
+              if (inlineStyleSummary.length > 0) {
+                console.log(`   🧷 Item ${iIndex + 1}: ${inlineStyleSummary.join('; ')}`);
               }
             }
           });

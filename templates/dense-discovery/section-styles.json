@@ -116,8 +116,18 @@
     },
 
     "apps-sites,apps-sites-single-column": {
+      "spacerBackgroundAdjust": {
+        "lightness": -8,
+        "saturation": 40
+      },
       "name": "Apps & Sites",
-      "description": "",
+      "descriptionStyles": {
+        "fontFamily": "'Ubuntu', sans-serif",
+        "fontSize": "17px",
+        "lineHeight": "1.2",
+        "color": "#000000",
+        "textAlign": "left"
+      },
       "containerStyles": {
         "backgroundColor": null,
         "padding": "15px 20px",

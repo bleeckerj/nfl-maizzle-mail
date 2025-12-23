@@ -18,6 +18,7 @@ emails-to-templatize/
 .env
 .env.local
 
+*__pycache__*/
 # Editor files
 .vscode/
 .idea/

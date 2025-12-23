@@ -52,7 +52,7 @@ SECTION_DEFINITIONS = {
     },
     'apps-sites-single-column': {
         'description': 'Apps and websites (single-column layout)',
-        'section_fields': ['type', 'title'],
+        'section_fields': ['type', 'title', 'description'],
         'item_fields': {
             'required': ['title'],
             'optional': ['link', 'subtitle', 'description', 'image', 'readMoreText', 'readMoreLink']
