@@ -411,7 +411,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                     </tr>
                     <tr>
                       <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; background: {{ section.containerStyles.backgroundColor || themeColors.callout || '#d1eaf4' }};border-collapse: collapse;border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
-                        <p style="mso-line-height-rule: exactly; margin: 0;padding: 0; {{{ section.headingStylesInline || '' }}}">{{ section.title }}</p>
+                        <p style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} mso-line-height-rule: exactly; margin: 0;padding: 0;">{{ section.title }}</p>
                       </td>
                     </tr>
                     
@@ -419,20 +419,14 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                       <tr>
                         <td align="left" class="padt20 padr20 padl20" style="background: {{ section.containerStyles.backgroundColor || themeColors.callout || '#d1eaf4' }};border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
                           <if condition="item.calloutText">
-                            <p style="font-family: {{ section.contentStyles.fontFamily || "'IBM Plex Sans', sans-serif" }}; font-size: {{ section.contentStyles.fontSize || '18px' }};line-height: {{ section.contentStyles.lineHeight || '25px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#444444' }};text-align: {{ section.contentStyles.textAlign || 'left' }};margin: 0;padding: 20px;border-left: 4px solid {{ themeColors.linkAccent || '#5b9bc4' }};background: rgba(255,255,255,0.5);font-style: normal;">
-                              {{ item.calloutText }}
-                            </p>
+                            <div style="font-family: {{ section.contentStyles.fontFamily || '\'Share Tech Mono\', sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '18px' }};line-height: {{ section.contentStyles.lineHeight || '25px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#444444' }};text-align: {{ section.contentStyles.textAlign || 'left' }};margin: 0;padding: 20px;border-left: 2px solid {{ section.linkStyles.color || themeColors.linkAccent || '#5b9bc4' }};background: {{section.containerStyles.backgroundColor || themeColors.callout || '#d1eaf4' }};font-style: normal;">
+                              {{{ item.calloutText }}}
+                            </div>
                           </if>
                           
                           <if condition="item.readMoreText && item.readMoreLink">
-                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#5b9bc4' }};padding: 10px 0 0 0;margin: 0;text-align: right; {{{ section.linkStylesInline || '' }}}">
-                              <a href="{{ item.readMoreLink }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#5b9bc4' }} !important; {{{ section.linkStylesInline || '' }}}">{{ item.readMoreText }}</a>
-                            </p>
-                          </if>
-                          <if condition="item.readMoreText && !item.readMoreLink">
-                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#5b9bc4' }};padding: 10px 0 0 0;margin: 0;text-align: right; {{{ section.linkStylesInline || '' }}}">
-                              {{ item.author }}
-                            </p>
+                            <div style="font-family: {{ section.contentStyles.fontFamily || '\'Share Tech Mono\', sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '18px' }}; margin-top: 15px; padding-left: 20px; line-height: {{ section.contentStyles.lineHeight || '25px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#444444' }};text-align: {{ section.contentStyles.textAlign || 'left' }};font-style: normal;"><a href="{{ item.readMoreLink }}" style="text-decoration: underline; color: {{ section.linkStyles.color || themeColors.linkAccent || '#5b9bc4' }} !important; {{{ section.linkStylesInline || '' }}}">{{ item.readMoreText }}</a>
+                            </div>
                           </if>
                         </td>
                       </tr>

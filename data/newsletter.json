@@ -137,25 +137,26 @@
       "containerStyles": {
         "backgroundColor": "#f9f9f9",
         "padding": "15px 20px",
-        "borderRadius": "0px",
-        "fontFamily": "serif"
+        "borderRadius": "0px"
       },
       "items": [
         {
-          "calloutText": "Hi! Welcome. Thanks for reading. I’m Julian Bleecker. I help leaders and strategy teams navigate uncertainty through strategic prototyping: working backward from plausible near futures to make today’s choices clearer. I use an approach I pioneered called Design Fiction; I create tangible artifacts and narrative experiences that turn abstract foresight into concrete strategic options, alignment, and action. My practice spans engineering (BSEE, MSEng/HCI) and the social sciences/humanities (PhD), so the work holds up technically and lands with cultural relevance and grounding. Near Future Laboratory is available for commissions, embedded engagements, and leadership roles."
+          "calloutText": "<p>Hi! Welcome. Thanks for reading. I’m Julian Bleecker. I help leaders and strategy teams navigate uncertainty through strategic prototyping — working backward from plausible near futures to make today’s choices clearer.</p> <p>I use an approach I pioneered called Design Fiction; I create tangible artifacts and narrative experiences that turn abstract foresight into concrete strategic options, alignment, and action. My practice spans engineering (BSEE, MSEng/HCI) and the social sciences/humanities (PhD), so the work holds up technically and lands with cultural relevance and it‘s grounded and tangible.</p> <p>Near Future Laboratory is available for commissions, embedded engagements, and leadership roles.</p>",
+          "readMoreText": "Let's Connect →",
+          "readMoreLink": "https://nearfuturelaboratory.com/contact"
         }
       ],
       "contentStyles": {
-        "fontFamily": "'Ubuntu', sans-serif",
-        "fontSize": "18px",
-        "lineHeight": "1.2",
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "25px",
         "color": "#444444",
         "textAlign": "left"
       },
       "descriptionStyles": {
-        "fontFamily": "'Ubuntu', sans-serif",
-        "fontSize": "18px",
-        "lineHeight": "1.2",
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "25px",
         "color": "#444444",
         "textAlign": "left"
       },
@@ -167,12 +168,12 @@
         "color": "#000000"
       },
       "linkStyles": {
-        "color": "inherit",
+        "color": "#006afa",
         "textDecoration": "underline",
         "fontWeight": "normal"
       },
       "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
+      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #006afa"
     },
     {
       "type": "books-accessories",
@@ -283,7 +284,7 @@
       "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
     },
     {
-      "type": "apps-sites",
+      "type": "apps-sites-single-column",
       "title": "Jmail",
       "items": [
         {
@@ -315,7 +316,7 @@
         "color": "#000000",
         "textAlign": "left"
       },
-      "spacerBackgroundColor": "#f3e2e2",
+      "spacerBackgroundColor": null,
       "headingStyles": {
         "fontFamily": "inherit",
         "fontSize": "21px",
@@ -898,14 +899,14 @@
           "borderRadius": "0px"
         },
         "contentStyles": {
-          "fontFamily": "'Ubuntu', sans-serif",
-          "fontSize": "18px",
-          "lineHeight": "1.2",
+          "fontFamily": "'IBM Plex Sans', sans-serif",
+          "fontSize": "19px",
+          "lineHeight": "25px",
           "color": "#444444",
           "textAlign": "left"
         },
         "linkStyles": {
-          "color": "inherit",
+          "color": "#006afa",
           "textDecoration": "underline",
           "fontWeight": "normal"
         },
