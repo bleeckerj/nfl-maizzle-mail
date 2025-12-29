@@ -8,7 +8,7 @@
   "intro": {
     "title": "It is Week One of 2026 (ish) and most everything that was to be done in 2025 has more-or-less been done.",
     "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2026/w01-y26",
-    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>They say this is Week One of 2026, but today is December 29th of 2025. Go figure.</p> <p>In no small way I have been productively obsessed with indexes.</p> <p>Catalogs, archives, collections, repositories, libraries, anthologies, catalog resonné, taxonomies, inventories, (photo, product, diaristic) catalogs, retrospectives, anthologies, compendia, digests, relentless backups and storage schemes, directories, registries, listings, and so on.</p> <p>I mention this because I have been working on a number of these kinds of things over the last few months, and I have more in the works.</p> <p>Why this obsession?</p> <p>Well, I can only suppose but part of it is existential: how do I know myself if there are no maps at hand to chart the work?</p> <p>But for our purposes at the moment, it is because indexes are useful tools for making sense of complexity, for finding patterns, for discovering relationships, for seeing connections that might otherwise be invisible.</p> <p>And I’ve noticed that the index that the Near Future Laboratory has accumulated is “available” but also buried — a fact that the current state of the network does not help with.</p> <p>Earlier in 2025 (I think..) I had come across a site that was, like..an index to experiments in index (pages). Anyone who has spent time with the Apache web server (as well as possibly others) and browsers knows that the \"index.html\" page and the capability to somewhat automatically produce an index of files in a directory is a long-standing feature of the web, and I can only imagine one of the reasons that the heuristic of “index.html” became a convention in the first place.</p> <p>Now those pages are essentially just broad SEO surfaces for sites, but I remember when they were actual indexes of content, and there was something simple and magical about this static index pages that just listed the site's contents like a card catalog.</p> <p>So, anyway. I mention all of that because I had been doing these light studies in indexing the material, posts, projets, etc. in a way that is definitely not as discoverable nor SEO-y — but rather than is more like a library catalog or a card catalog.</p> <p>There are other index page studies that I'll turn on at some point soon. This is the one I finished most recently so it’s the one that is front of mind.</p> <p><a href='https://nearfuturelaboratory.com/blog/2026/01/an-index-as-cards/'>An Index as Cards</a></p> <p>Enjoy and feedback is welcome. (But remember, this is not optimized for like any kind of world in which SEO is the primary concern.)</p></p>"
+    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>These are some things I’ve always thought are cool:</p> <p>Catalogs, archives, collections, repositories, libraries, anthologies, catalog resonné, taxonomies, inventories, (photo, product, diaristic) catalogs, retrospectives, murder boards, anthologies, McMaster-Carr catalogs, compendia, digests, recommended backups and data storage schemes, clipboards held with confidence (and the contents thus clipped to the board), RAID levels and their methods, building directories, registries, listings, the classification structure of (printed) classified ads, guitar chord systems and their means of instruction and illustration, star ship control & navigation panels, floor plans, street maps (printed), HUD symbology, land property maps, Dewey‘s decimal system, cockpit scanning patterns recommended for configuring a jet airplane for startup, personal computer file filing systems, Klingon vocabulary and grammar instruction guides, urban navigation nomenclatures, Thomas Guides, the “Information Please” Almanac..and the like</p>  <p>I mention this because I have been working on a number of these kinds of things over the last few months, and I have more in the works.</p> <p>Why this obsession?</p> <p>Well, I can only suppose, but I guess part of it is existential: how do I know my world if there are no maps at hand to chart the work? If there are no means and mechanisms for classifying and ordering? What is a representation of my tiny sliver of it all if I cannot adequately represent it in some fashion — an indexed list (by year? by activity type? by data type?) Is that one of the 40lbs of journals and diaries in storage? Or is it a 6 page typed curriculum vitae? Would that do? Or is it a box of representative “stuff”? Perhaps a dossier box consisting of samples? Or maybe it’s something from a speculative future self?</p> <p>Of course, all of this is very much situated, because these kinds of systems of classification and organization are enframed by the context in which they are created and used, as Starr and Bowker so thoroughly and incisively taught me 25 years ago, opening my eyes to the question. (Bowker, Geoffrey, and Susan Leigh Star. (2000). <em>Sorting things out: Classification and its consequences</em>. Cambridge, MA: MIT Press.)</p> <p>But for our purposes and at this very moment, it is because indexes are useful tools for making sense of complexity, for finding patterns, for discovering relationships, for seeing connections that might otherwise be invisible.</p> <p>And I’ve noticed that the index that the Near Future Laboratory has accumulated is “available” but also buried — a fact that the current state of the network does not help with.</p> <p>Earlier in 2025 (I think..) I had come across a site that was, like..an index to experiments in index (pages). (If you know what I'm talking about, please reply! I lost the link or maybe I just thought that’d be cool and made the whole thing up.) Anyone who has spent time configuring modules for the Apache web server knows that the \"index.html\" page and the capability to somewhat automatically produce an index of files in a directory is a long-standing feature of the web, and I can only imagine one of the reasons that the heuristic of “index.html” became a convention in the first place.</p> <p>Nowadays those pages are essentially just broad SEO surfaces for bots, scrapers, and the like, but I remember when they were actual indexes of content, and there was something simple and magical about this static index pages that just listed the site's contents like a card catalog.</p> <p>So, anyway. I mention all of that because I had been doing these light studies in indexing the material, posts, projets, etc. in a way that is definitely not as discoverable nor SEO-y — but rather than is more like a library catalog or a card catalog.</p></p>"
   },
   "header": {
     "containerStyles": {
@@ -20,18 +20,16 @@
   "sections": [
     {
       "type": "indie-mag-single-column",
-      "title": "Indie Mag Single Column Section",
+      "title": "Index Study 04",
       "items": [
         {
-          "title": "Indie Mag Single Column Item 1",
-          "link": "https://example.com",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for indie-mag-single-column item 1.</p>",
-          "details": "<p>Example details for indie-mag-single-column item 1.</p>",
-          "note": "<p>Example note for indie-mag-single-column item 1.</p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com",
-          "paywall": true
+          "title": "An Index",
+          "link": "https://index-as-cards.nearfuturelaboratory.com",
+          "details": "Tech stack: React, Vitejs, tldraw SDK, Tailwind CSS\n",
+          "note": "Bit of an informal HCI experiment; this is definitely a work in progress / prototype.",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/300ffefe-0d67-415b-41ba-bc693f4bbd00/public?format=webp",
+          "readMoreText": "Try it out! →",
+          "readMoreLink": "https://index-as-cards.nearfuturelaboratory.com"
         }
       ],
       "containerStyles": {
@@ -94,7 +92,7 @@
               "link": "hhttps://nearfuturelaboratory.com/blog/2009/08/10/an-apparatus-for-capturing-other-points-of-view/"
             },
             {
-              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/bd4a547e-2c7c-43d8-db3c-e07817c92700/w=600?format=webp",
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/a5cbbb1d-1b77-4c40-8020-23f32b811f00/w=600?format=webp",
               "alt": "Gallery with a tall pole with a camera on top in the center of the room.",
               "link": "https://nearfuturelaboratory.com/blog/2009/08/10/an-apparatus-for-capturing-other-points-of-view/"
             }
@@ -102,26 +100,6 @@
           "authorName": "Julian Bleecker",
           "authorLink": "https://julianbleecker.com",
           "linkText": "Explore the project →"
-        },
-        {
-          "title": "Zone 6: Incorporations\n",
-          "link": "https://nearfuturelaboratory.com/essays/1993/04/of-mice-and-men-incorporations-review-afterimage",
-          "subtitle": "A rare and seminal collection that highlighted and shaped critical thinking about technology and culture in the 1990s",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Digging through the archives, I found a review I wrote of Zone 6: Incorporations (Zone Books, 1992), a multidisciplinary anthology exploring the intersections of technology, culture, and humanity at the close of the twentieth century. The book examines how advancements in biotechnology, surveillance, and machine intelligence have reshaped the body and societal consciousness. Critiques on the commodification of life and the evolving relationship between humans and technology, the volume was a great and insight-rich challenge to its readers calling on them to reflect on modernity’s impact and the cultural frameworks shaping what was the future from the early 1990s.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">This was a time when I would have been a grad student (masters in engineering) at the University of Washington in Seattle, and was really at the early edges of thinking about what we then called technoscience and technoculture — and trying to find a bedrock of theory and ways of knowing to find my sort of..hybrid engineer-artist-critic voice and footing. Forcing myself to write a book review like this was part of that process.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">I remembe reaching out cold to Lynn Love who was maybe a managing editor and a grad student at the University of Rochester (I think..) with a proposal to write the review, knowing that if I got the green light, I would have to buckle down and read the whole book and write the review. She said yes, and so I figure dout how I might review this 662 page block of pages and text. If memory serves, we also met in person at the CAA conference in Seattle probably around that time. (Managed all of that without cellphones.)</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Edited by Jonathan Crary and Sanford Kwinter with contributions include: Paul Rabinow, Eve Sedgwick, Francois Dagognet, Peter Eisenman, J. G. Ballard, Donna Haraway, Gilles Deleuze, Klaus Theweleit, Elaine Scarry, Francisco Varela, Liz Diller, Ric Scofidio, John O'Neill, Manuel DeLanda, and Ana Barado.</p>",
-          "images": [
-            {
-              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/c13d60a6-8c7c-40dd-d66f-5c61ea720f00/w=600?format=webp",
-              "alt": "Cover image of Zone 6 Incorporations",
-              "link": "https://nearfuturelaboratory.com/essays/1993/04/of-mice-and-men-incorporations-review-afterimage"
-            },
-            {
-              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/09e640cd-a00e-4cfb-3b11-85713f086000/public?format=webp",
-              "alt": "Cover image of Afterimage issue"
-            }
-          ],
-          "authorName": "Julian Bleecker",
-          "authorLink": "https://julianbleecker.com",
-          "linkText": "Read my review essay →"
         }
       ],
       "contentStyles": {
@@ -139,6 +117,109 @@
         "textAlign": "left"
       },
       "spacerBackgroundColor": "#cce8ff",
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "21px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "500"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB"
+    },
+    {
+      "type": "callout",
+      "title": "About Me",
+      "containerStyles": {
+        "backgroundColor": "#f9f9f9",
+        "padding": "15px 20px",
+        "borderRadius": "0px",
+        "fontFamily": "serif"
+      },
+      "items": [
+        {
+          "calloutText": "Hi! Welcome. Thanks for reading. I’m Julian Bleecker. I help leaders and strategy teams navigate uncertainty through strategic prototyping: working backward from plausible near futures to make today’s choices clearer. I use an approach I pioneered called Design Fiction; I create tangible artifacts and narrative experiences that turn abstract foresight into concrete strategic options, alignment, and action. My practice spans engineering (BSEE, MSEng/HCI) and the social sciences/humanities (PhD), so the work holds up technically and lands with cultural relevance and grounding. Near Future Laboratory is available for commissions, embedded engagements, and leadership roles."
+        }
+      ],
+      "contentStyles": {
+        "fontFamily": "'Ubuntu', sans-serif",
+        "fontSize": "18px",
+        "lineHeight": "1.2",
+        "color": "#444444",
+        "textAlign": "left"
+      },
+      "descriptionStyles": {
+        "fontFamily": "'Ubuntu', sans-serif",
+        "fontSize": "18px",
+        "lineHeight": "1.2",
+        "color": "#444444",
+        "textAlign": "left"
+      },
+      "spacerBackgroundColor": "#ebe9e9",
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "21px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
+    },
+    {
+      "type": "books-accessories",
+      "title": "From The Laboratory’s Essay Archives",
+      "containerStyles": {
+        "backgroundColor": "#fff3f5",
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "items": [
+        {
+          "title": "Zone 6: Incorporations\n",
+          "subtitle": "A Review Essay from 1993",
+          "link": "https://nearfuturelaboratory.com/essays/1993/04/of-mice-and-men-incorporations-review-afterimage",
+          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Digging through the archives, I found a review I wrote of Zone 6: Incorporations (Zone Books, 1992), a multidisciplinary anthology exploring the intersections of technology, culture, and humanity at the close of the twentieth century. The book examines how advancements in biotechnology, surveillance, and machine intelligence have reshaped the body and societal consciousness. Critiques on the commodification of life and the evolving relationship between humans and technology, the volume was a great and insight-rich challenge to its readers calling on them to reflect on modernity’s impact and the cultural frameworks shaping what was the future from the early 1990s.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">This was a time when I would have been a grad student (masters in engineering) at the University of Washington in Seattle, and was really at the early edges of thinking about what we then called technoscience and technoculture — and trying to find a bedrock of theory and ways of knowing to find my sort of..hybrid engineer-artist-critic voice and footing. Forcing myself to write a book review like this was part of that process.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">I remembe reaching out cold to Lynn Love who was maybe a managing editor and a grad student at the University of Rochester (I think..) with a proposal to write the review, knowing that if I got the green light, I would have to buckle down and read the whole book and write the review. She said yes, and so I figure dout how I might review this 662 page block of pages and text. If memory serves, we also met in person at the CAA conference in Seattle probably around that time. (Managed all of that without cellphones.)</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Edited by Jonathan Crary and Sanford Kwinter with contributions include: Paul Rabinow, Eve Sedgwick, Francois Dagognet, Peter Eisenman, J. G. Ballard, Donna Haraway, Gilles Deleuze, Klaus Theweleit, Elaine Scarry, Francisco Varela, Liz Diller, Ric Scofidio, John O'Neill, Manuel DeLanda, and Ana Barado.</p>",
+          "images": [
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/c13d60a6-8c7c-40dd-d66f-5c61ea720f00/w=600?format=webp",
+              "alt": "Book cover image of Zone 6 Incorporations",
+              "link": "https://nearfuturelaboratory.com/essays/1993/04/of-mice-and-men-incorporations-review-afterimage"
+            },
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/09e640cd-a00e-4cfb-3b11-85713f086000/public?format=webp",
+              "alt": "A page from the review text in the magazine"
+            }
+          ],
+          "authorName": "Julian Bleecker",
+          "authorLink": "https://julianbleecker.com",
+          "isbn": "978-0942299298",
+          "linkText": "Read my review essay →"
+        }
+      ],
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "descriptionStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "spacerBackgroundColor": "#ffd4dc",
       "headingStyles": {
         "fontFamily": "inherit",
         "fontSize": "21px",
@@ -257,7 +338,7 @@
           "title": "Canon’s Kei Word Processors: Slate to Pro",
           "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/09710883-364c-4b36-c533-a56b280f7a00/w=600?format=webp",
           "category": "Read",
-          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">Canon’s 1980s PW word processors were little Japanese marvels, if you stop to think about it. Portable, printer-ready..and each with its own keyboard personality. I had a Toshiba that I got for like..$500 to write my master's thesisFrom clicky to squishy, every model told a story of innovation and oddity, far from anything you’d find in the West.</p>",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">Canon’s 1980s PW word processors were little Japanese marvels, if you stop to think about it. Portable, printer-ready..and each with its own keyboard personality. I had a Toshiba that I got for like..$500 to write my master's thesis on and it was great in that, you know..it did exacctly what it said it did. This was a fascinating moment from an (industrial) design and definitely HCI perspective for sure, even as HCI was barely a thing at all then, at least as a formal professional category.<br/>The Shfit Happens guy has been keeping that moment alive. From clicky to squishy, every model told a story of innovation and oddity, far from anything you’d find in the West.</p>",
           "link": "https://newsletter.shifthappens.site/archive/new-in-the-collection-pt-3-canon-pw-101530/",
           "sharedBy": "Manual Entry",
           "channel": "punching-keys",
@@ -355,12 +436,63 @@
       "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB; font-size: 19px"
     },
     {
+      "type": "books-accessories",
+      "title": "Near Future Laboratory Press",
+      "containerStyles": {
+        "backgroundColor": "#fafafa",
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "items": [
+        {
+          "title": "Androids Dream of Electric Sheep (2024)",
+          "link": "https://shop.nearfuturelaboratory.com/products/androids-dream-of-electric-sheep",
+          "subtitle": "Suppose P.K. Dick Was A Therapist?",
+          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">A counter-factual science-fictional premise: suppose P.K. Dick wasn't a science-fiction writer, but a scientist / engineer / android therapist, who wrote a hit bestselling pop-psychology book for an android world in which he lays forth the thesis that, you know, actually..android dream. That is, that they have a conscience that does work while they rest, and those dreams shape their experiences.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Couple that with my friend Jed’s artistic muse: fuzzy hooved beasts, and the result is this book and trading cards: “Androids Dream of Electric Sheep” (get it?), available over on the Near Future Laboratory shop!</p>",
+          "images": [
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5a038cc6-3917-4ebc-883a-a8015314d200/w=600?format=webp",
+              "link": "https://shop.nearfuturelaboratory.com/products/androids-dream-of-electric-sheep"
+            }
+          ],
+          "linkText": "On Sale!"
+        }
+      ],
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "descriptionStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "spacerBackgroundColor": "#eceaea",
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "21px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "500"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB"
+    },
+    {
       "type": "animated-image",
       "title": "Androids Dream of Electric Sheep.",
       "items": [
         {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/c4ba1ab9-ea5d-4782-4c6f-46318fae9100/w=600?format=webp",
-          "description": "<p style=\"font-family: Ubuntu, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The Manual of Design Fiction</p>"
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/c4ba1ab9-ea5d-4782-4c6f-46318fae9100/w=600?format=webp"
         }
       ],
       "containerStyles": {
@@ -399,9 +531,9 @@
     }
   ],
   "footer": {
-    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2026/wXX-y26/",
+    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2026/w01-y26/",
     "newsletterSubscribeLink": "https://nearfuturelaboratory.com/newsletter/",
-    "logo": "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png",
+    "logo": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=300?format=webp",
     "logoLink": "https://nearfuturelaboratory.com",
     "socialLinks": {
       "applepodcasts": [
@@ -476,7 +608,7 @@
       ]
     },
     "unsubscribeLink": "[unsubscribe]",
-    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2026/wXX-y26",
+    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2026/w01-y26",
     "archiveUrl": "https://nearfuturelaboratory.com/newsletters",
     "gratitude": "This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle based production workflow. It's a work-in-progress building on a refactor of the <a href='https://densediscovery.com'>Dense Discovery</a> newsletter's look and vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It's a great newsletter and I would encourage you to subscribe and become a paid member.",
     "address": "© 2026 Near Future Laboratory<br>Venice Beach, California<br>United States",
@@ -487,6 +619,7 @@
     "sponsor": "#f0f8ff",
     "apps-sites": "#ffffff",
     "quote": "#e6f3ff",
+    "callout": "#e0f0ff",
     "indie-mag": "#f5f8ff",
     "books-accessories": "#ffffff",
     "food-for-thought": "#f8fafc",
@@ -503,6 +636,7 @@
       "sponsor": "#f0f8ff",
       "apps-sites": "#ffffff",
       "quote": "#e6f3ff",
+      "callout": "#e0f0ff",
       "indie-mag": "#f5f8ff",
       "books-accessories": "#ffffff",
       "food-for-thought": "#f8fafc",
@@ -750,6 +884,33 @@
         },
         "headingStyles": {
           "fontFamily": "Workbench, 'IBM Plex Sans', sans-serif",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "callout": {
+        "name": "Callout",
+        "description": "Callout highlight block",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "'Ubuntu', sans-serif",
+          "fontSize": "18px",
+          "lineHeight": "1.2",
+          "color": "#444444",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
           "fontSize": "21px",
           "fontWeight": "600",
           "color": "#000000"

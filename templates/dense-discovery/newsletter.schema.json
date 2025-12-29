@@ -201,6 +201,7 @@
               "apps-sites",
               "apps-sites-single-column",
               "books-accessories",
+              "callout",
               "classifieds",
               "dispatch",
               "food-for-thought",
@@ -928,6 +929,72 @@
                   }
                 },
                 "linkStylesInline": {},
+                "contentStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "linkStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "callout"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "callout"
+                },
+                "title": {},
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "calloutText": {},
+                      "readMoreText": {},
+                      "readMoreLink": {},
+                      "author": {}
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "headingStylesInline": {},
+                "linkStylesInline": {},
+                "containerStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
                 "contentStyles": {
                   "type": [
                     "object",

@@ -859,7 +859,14 @@ async function buildNewsletter() {
         
         // After conversion, ensure the template is set correctly in the JSON
         const newsletterData = JSON.parse(fs.readFileSync('data/newsletter.json', 'utf8'));
-        newsletterData.template = templateName;
+        
+        // If template was provided via CLI, enforce it. Otherwise respect what's in the JSON (from frontmatter)
+        if (templateArg) {
+          newsletterData.template = templateName;
+        } else if (newsletterData.template) {
+          templateName = newsletterData.template;
+        }
+        
         fs.writeFileSync('data/newsletter.json', JSON.stringify(newsletterData, null, 2));
         
         console.log('✅ Markdown converted successfully');

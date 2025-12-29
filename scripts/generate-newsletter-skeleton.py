@@ -59,6 +59,15 @@ SECTION_DEFINITIONS = {
         },
         'example_items': 1
     },
+    'callout': {
+        'description': 'Callout highlight section',
+        'section_fields': ['type', 'title'],
+        'item_fields': {
+            'required': ['calloutText'],
+            'optional': ['readMoreText', 'readMoreLink', 'author']
+        },
+        'example_items': 1
+    },
     'quote': {
         'description': 'Quote section',
         'section_fields': ['type', 'title'],

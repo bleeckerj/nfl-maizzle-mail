@@ -210,6 +210,34 @@
         "color": "#000000"
       }
     },
+
+    "callout": {
+      "name": "Callout",
+      "description": "Callout highlight block",
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "'Ubuntu', sans-serif",
+        "fontSize": "18px",
+        "lineHeight": "1.2",
+        "color": "#444444",
+        "textAlign": "left"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "21px",
+        "fontWeight": "600",
+        "color": "#000000"
+      }
+    },
     
     "classifieds": {
       "name": "Classifieds",

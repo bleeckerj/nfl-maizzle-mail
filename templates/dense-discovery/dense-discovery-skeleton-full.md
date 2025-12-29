@@ -71,6 +71,7 @@ sections:
     paywall: true
 - type: apps-sites-single-column
   title: Apps Sites Single Column Section
+  description: <p>Description for apps-sites-single-column section.</p>
   items:
   - title: Apps Sites Single Column Item 1
     link: https://example.com
@@ -79,6 +80,13 @@ sections:
     image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     readMoreText: Read more →
     readMoreLink: https://example.com
+- type: callout
+  title: Callout Section
+  items:
+  - calloutText: Callout Item 1
+    readMoreText: Read more →
+    readMoreLink: https://example.com
+    author: Example author
 - type: quote
   title: Quote Section
   items:

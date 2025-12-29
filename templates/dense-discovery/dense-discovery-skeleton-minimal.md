@@ -14,8 +14,8 @@ header:
     name: Artist Name
     link: '#'
   featuredImage: https://fpoimg.com/600x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Featured
-  logoBottom: https://fpoimg.com/163x50?text=Preview&bg_color=e6e6e6&text_color=4FAAAA
-  logoTop: https://fpoimg.com/163x50?text=Preview&bg_color=e6e6e6&text_color=4FAAAA
+  logoBottom: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp
+  logoTop: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp
 sections:
 - type: sponsor
   title: Sponsor Section
@@ -31,8 +31,13 @@ sections:
   - title: Apps Sites Item 1
 - type: apps-sites-single-column
   title: Apps Sites Single Column Section
+  description: <p>Description for apps-sites-single-column section.</p>
   items:
   - title: Apps Sites Single Column Item 1
+- type: callout
+  title: Callout Section
+  items:
+  - calloutText: Callout Item 1
 - type: quote
   title: Quote Section
   items:
@@ -47,14 +52,8 @@ sections:
   - title: Indie Mag Single Column Item 1
 - type: books-accessories
   title: Books Accessories Section
-  authorLabel: Author # Optional; e.g. Director, Developer
   items:
   - title: Books Accessories Item 1
-    # images: # Optional; multiple images supported
-    # - src: https://example.com/image-1.jpg
-    #   alt: Example image alt text 1
-    # - src: https://example.com/image-2.jpg
-    #   alt: Example image alt text 2
 - type: food-for-thought
   title: Food For Thought Section
   items:
