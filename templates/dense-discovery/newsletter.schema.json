@@ -13,6 +13,13 @@
         "newsletterSubscribeLink": {},
         "logo": {},
         "logoLink": {},
+        "containerStyles": {
+          "type": "object",
+          "properties": {
+            "backgroundColor": {}
+          },
+          "additionalProperties": false
+        },
         "socialLinks": {
           "type": "object",
           "properties": {
@@ -141,6 +148,13 @@
           "properties": {
             "link": {},
             "name": {}
+          },
+          "additionalProperties": false
+        },
+        "containerStyles": {
+          "type": "object",
+          "properties": {
+            "backgroundColor": {}
           },
           "additionalProperties": false
         },
