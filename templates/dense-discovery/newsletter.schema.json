@@ -979,6 +979,9 @@
                     "type": "object",
                     "properties": {
                       "calloutText": {},
+                      "image": {},
+                      "imageAlt": {},
+                      "imageLink": {},
                       "readMoreText": {},
                       "readMoreLink": {},
                       "author": {}

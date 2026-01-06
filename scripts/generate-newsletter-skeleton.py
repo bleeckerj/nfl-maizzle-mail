@@ -64,7 +64,7 @@ SECTION_DEFINITIONS = {
         'section_fields': ['type', 'title'],
         'item_fields': {
             'required': ['calloutText'],
-            'optional': ['readMoreText', 'readMoreLink', 'author']
+            'optional': ['image', 'imageAlt', 'imageLink', 'readMoreText', 'readMoreLink', 'author']
         },
         'example_items': 1
     },
@@ -177,9 +177,11 @@ def generate_example_item(section_type, item_num=1, minimal=False):
                 item[opt] = f'<p>Example {opt} for {section_type} item {item_num}.</p>'
 
             # Small text fields
-            elif opt in ('subtitle', 'sharedBy', 'authorName', 'authorLabel', 'linkText'):
+            elif opt in ('subtitle', 'sharedBy', 'authorName', 'authorLabel', 'linkText', 'imageAlt'):
                 if opt == 'authorLabel':
                     item[opt] = 'Author'
+                elif opt == 'imageAlt':
+                    item[opt] = f'Alternate text for {section_type} item {item_num} image'
                 else:
                     item[opt] = f'Example {opt} for item {item_num}'
 
