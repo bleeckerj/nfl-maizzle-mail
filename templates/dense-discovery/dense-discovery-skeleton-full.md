@@ -85,6 +85,8 @@ sections:
   items:
   - calloutText: Callout Item 1
     image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+    imageAlt: Example alt text for callout image
+    imageLink: https://example.com
     readMoreText: Read more →
     readMoreLink: https://example.com
     author: Example author
