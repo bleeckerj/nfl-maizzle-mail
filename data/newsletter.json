@@ -5,101 +5,36 @@
   "preheader": "Short preview text that appears in email clients",
   "sectionStylesFile": "templates/dense-discovery/section-styles.json",
   "intro": {
-    "title": "Welcome",
-    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2025/wxx-yxx",
-    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Introduction paragraph for the newsletter.</p></p>"
+    "title": "It’s Week 03 of 2026 and I’m wondeirng about a future of locally sourced language models",
+    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2026/w03-y26/",
+    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>There’s a vibrant community of techy DIY/AI enthusiasts who are highly motivated to create local AI inference machines. Using open source models, they are working towards achieving decent if not parity performance (by these arcane metrics) with the curiously named “foundation” models.</p> <p>There’s something compelling about the DIY vibe there — a desire that feels quite “punk” in the context of things, which is to say an independence of spirit and assertion of self-reliance.</p> <p>This is one of those tiny aperatures through which this weak signal becomes a resonance of a possibility that sounds different than the more dominant narratives about AI today — independently sourced, locally trained, and community supported models that are more aligned with local values and needs.</p> <p>And now I’ll get to my point for all of this..aside from sometimes being an easily distracted raconteur, I said all of this to motivate you to sign up for the <a href='https://luma.com/0c0hfxfr'>Season 7 opener of General Seminar</a>.</p> <p>But, so — why should you attend?</p> <p>Because I want to show you how to translate these kinds of weak signals — like this community of practice going hard with their adamantine vibes about local farm-to-table style AI — into something more vivid, felt, immersive and experiential than a short scenario or table of data.</p> <p>In General Seminar I’ll be showing you how I prototype these kinds of things (like the item below) using Design Fiction to make the abstract feel more concrete, and the speculative more tangible. Doing this results in more effective dialogues, communication and engagement with the futures work, which can get bogged down in the less-imaginative and less-felt analytic aspects of futures work.</p> <p>And practically speaking, I’ve found that these artifacts provide a kind of vivid and tangible anchor for strategic backcasting, for example.</p> <p>So if you’re interested in learning how to do this kind of work, and want to see some examples of how I do it, please join me for the season 7 kickoff of General Seminar where we'll take a present-day tranche of research — the updated AI 2027 Futures Model — and create a set of design fiction artifacts its speculations.</p></p>"
   },
   "header": {
-    "quote": "Inspiring header quote",
-    "author": "Quote Author",
-    "featuredArtist": {
-      "name": "Artist Name",
-      "link": "#"
-    },
-    "featuredImage": "https://fpoimg.com/600x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Featured",
     "logoBottom": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp",
     "logoTop": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp"
   },
   "sections": [
     {
-      "type": "sponsor",
-      "title": "Sponsor Section",
-      "sponsorLink": "Example sponsorLink",
-      "sponsorLabel": "Example sponsorLabel",
-      "items": [
-        {
-          "title": "Sponsor Item 1",
-          "link": "https://example.com",
-          "subtitle": "Example subtitle for item 1",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Example description for sponsor item 1.</p>",
-          "images": [
-            {
-              "src": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-              "alt": "Alternate text for item 1 image 1",
-              "link": "https://example.com/image-destination"
-            },
-            {
-              "src": "https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second",
-              "alt": "Alternate text for item 1 image 2"
-            }
-          ],
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
-      "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.2",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "descriptionStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.2",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "spacerBackgroundColor": "#f6e2b3",
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "19px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
-    },
-    {
       "type": "dispatch",
-      "title": "Dispatch Section",
-      "dispatchLink": "Example dispatchLink",
-      "dispatchLabel": "Example dispatchLabel",
+      "title": "Dispatch From A Possible Near Future",
+      "dispatchLink": "https://nearfuturelaboratory.com/editorial/how-a-little-known-training-studio/",
+      "dispatchLabel": "Applied Sensemaking",
       "items": [
         {
-          "title": "Dispatch Item 1",
-          "signalsLabel": "SIGNALS",
+          "title": "How a little known training studio produces top AI sports models",
+          "signalsLabel": "WEAK SIGNALS",
           "tags": [
-            "TAG1",
-            "TAG2"
+            "Local Language Models",
+            "Artificial Intelligence",
+            "Sports",
+            "Simulated Sports"
           ],
-          "link": "https://example.com",
-          "subtitle": "Example subtitle for item 1",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for dispatch item 1.</p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com"
+          "link": "https://nearfuturelaboratory.com/editorial/how-a-little-known-training-studio",
+          "subtitle": "A near future of E-Sports meets AI model training camps",
+          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Take those weak signals up there and then transport yourself in your imagination into a plausible/possible future in which those signals amplified to become the normal-ordinary-everyday..you know..about as weird as butter on toast.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Well, you may end up right in the middle of a sports training camp with Playing Characters (as opposed to NPCs) are being “trained” in bespoke custom model-maker studios like the one in that newspaper.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Imagine those signals have culimated in a world where there are these studios in which they imbue blindingly complicated vectorized models with a kind of digital athleticism that will ensure they produce the most performant sports agentics for next season’s blockchain-backed sports tournaments.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Welcome to my Design Fiction in which models are trained not to win at Go or produce flawless images but to excel in simulated sports environments.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">This article-from-that-future (found for those of you who bought the first issue of Applied Intelligence) is the <span style='background-color: #c6c2e2; padding: 2px 4px; border-radius: 5px !important'>found evidence as tangible artifact</span> from some near future in which today’s weak signals find their place in the world.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">This isn’t a prediction, any more than the Star Trek Communicator was a prediction of the Motorola StarTac.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Rather, it is is a way to augment and sense-make around those weak signals so as to open up the imagination to near future possibilities..this is particularly important when this idea of the “near future” is no longer 5-10 years out, but next quarter — or closer.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">If you want updates on today’s weaks signals in the form of tangible artifacts and narrative experiences that turn abstract foresight into concrete strategic options, alignment, and action, join me for <a href='https://luma.com/0c0hfxfr' style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Season 7 of General Seminar</a> where I’ll be showing you how I do this kind of work — and how you can subscribe to the Near Future Laboratory’s program of form-fitting HyperDrops.</p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/097cf3a4-bfdd-4123-60c5-7ef2919ad300/w=600?format=webp",
+          "readMoreText": "Head to this future and read the story →",
+          "readMoreLink": "https://nearfuturelaboratory.com/editorial/how-a-little-known-training-studio"
         }
       ],
       "containerStyles": {
@@ -138,34 +73,23 @@
     },
     {
       "type": "apps-sites",
-      "title": "Apps Sites Section",
-      "items": [
-        {
-          "title": "Apps Sites Item 1",
-          "link": "https://example.com",
-          "subtitle": "Example subtitle for item 1",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for apps-sites item 1.</p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com",
-          "paywall": true
-        },
-        {
-          "title": "Apps Sites Item 2",
-          "link": "https://example.com",
-          "subtitle": "Example subtitle for item 2",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for apps-sites item 2.</p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com",
-          "paywall": true
-        }
-      ],
       "containerStyles": {
-        "backgroundColor": null,
+        "backgroundColor": "#ece0d7",
         "padding": "15px 20px",
         "borderRadius": "0px"
       },
+      "title": "Friends of the Lab Make Things",
+      "items": [
+        {
+          "title": "Sharpie Love: Scott’s SGP Simple Lite and Bold",
+          "link": "https://possibilityhours.substack.com/p/sgp-simple-lite-and-bold",
+          "subtitle": "Analog nostalgia meets digital necessity in a hand-crafted typeface as an experiment in type design",
+          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">When your favorite font disappears, why not make your own? SGP Simple is Scott Paterson’s answer—a hand-crafted typeface forged from nostalgia, necessity, and a love of letters, bridging the analog past and the digital now.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Office Hours regular <a href='https://possibilityhours.substack.com' style=\"font-weight: 500 !important; text-decoration: underline !important; color: #EE3BBB !important\">Scott Paterson</a> shares his journey creating SGP Simple, a hand-crafted typeface born from both nostalgia and necessity after losing access to a beloved font. From sketchbooks to digital tools, it's a story of creativity, adaptation, and a nod to hand-made marks in an AI-driven world.</p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/7db314e2-0c18-4f4e-b43a-18fcd4c6d900/w=600?format=webp",
+          "readMoreText": "Sharpie love →",
+          "readMoreLink": "https://possibilityhours.substack.com/p/sgp-simple-lite-and-bold"
+        }
+      ],
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
@@ -180,7 +104,7 @@
         "color": "#000000",
         "textAlign": "left"
       },
-      "spacerBackgroundColor": "#c7ffff",
+      "spacerBackgroundColor": "#f3c8a7",
       "headingStyles": {
         "fontFamily": "inherit",
         "fontSize": "21px",
@@ -197,17 +121,20 @@
     },
     {
       "type": "apps-sites-single-column",
-      "title": "Apps Sites Single Column Section",
-      "description": "<p style=\"font-family: 'Ubuntu', sans-serif !important; font-size: 17px !important; line-height: 1.2 !important; color: #000000 !important; text-align: left !important\">Description for apps-sites-single-column section.</p>",
+      "title": "Near Future Laboratory Tool & Flows Dept.",
+      "description": "<p style=\"font-family: 'Ubuntu', sans-serif !important; font-size: 17px !important; line-height: 1.2 !important; color: #000000 !important; text-align: left !important\">Tools and Workflows that make the small studio work.</p> <p style=\"font-family: 'Ubuntu', sans-serif !important; font-size: 17px !important; line-height: 1.2 !important; color: #000000 !important; text-align: left !important\">Another of the tools and workflows I’ve built to help a small creative and commercial studio of practice work smoothly.</p>",
       "items": [
         {
-          "title": "Apps Sites Single Column Item 1",
-          "link": "https://example.com",
-          "subtitle": "Example subtitle for item 1",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for apps-sites-single-column item 1.</p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+          "title": "Photarium: Studio Image Asset Manager",
+          "contentStyles": {
+            "backgroundColor": "#f0f0f0"
+          },
+          "link": "https://bleeckerj.github.io/nfl-photarium/",
+          "subtitle": "My homespun tool for studio image care & maintenance",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><span style='font-family: mono !important'>Photarium</span> (ermah...) is one of last quarter’s tool-builds — something I cobbled in order to manage studio-sized inventories of visual assets, also known in less pedantic idiom as “images.”</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">I used to shove images directly into the blog’s CMS, but as the volume of images grew, that became untenable. So I built Photarium to manage them better, by making findability super easy and keeping externalizable materials, like..“externalized”.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">This came from finding myself needing to wrangle hundreds of images for various projects, print productions, websites, presentations, and client work. There may in fact be a better tool for such, but I know this one and I built it to accomodate my, particular ways of working and sense-making and my visual thinking brain. Plus, I don’t want to subscribe to somethign someone else made that’s got a mark-up that I can eliminate by doing the work of building and maintaining myself. (Storage is a present consideration and the costs thereof, but relative to most this is miniscule as a cost..the breakfast burrito I just had cost nearly 2x more than my monthly image storage fees, including bandwidth and resizing, just to say..and if I had gone to Erewhon then, like..forget it..)</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Some people can build their own furniture. I build my own tools. (And then get to share them.)</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">(Self-hosted for the everyday homesteader — or just run it locally on your own machine.)</p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/3e6c9eae-a4bb-45f2-da37-f99ac9be3900/w=1200?format=webp",
           "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com"
+          "readMoreLink": "https://bleeckerj.github.io/nfl-photarium/"
         }
       ],
       "containerStyles": {
@@ -246,54 +173,6 @@
     },
     {
       "type": "callout",
-      "title": "Callout Section",
-      "items": [
-        {
-          "calloutText": "Callout Item 1",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "imageAlt": "Example alt text for callout image",
-          "imageLink": "https://example.com",
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com",
-          "author": "Example author"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
-      "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "25px",
-        "color": "#444444",
-        "textAlign": "left"
-      },
-      "descriptionStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "25px",
-        "color": "#444444",
-        "textAlign": "left"
-      },
-      "spacerBackgroundColor": "#b7dff0",
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "21px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "#006afa",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #006afa"
-    },
-    {
-      "type": "callout",
       "title": "Welcome and Hello!",
       "containerStyles": {
         "backgroundColor": "#fff9f9",
@@ -302,7 +181,7 @@
       },
       "items": [
         {
-          "calloutText": "<p>Hi! Welcome. Thanks for reading. In case you're new here and wondering -- I'm Julian Bleecker. I help leaders and strategy teams navigate uncertainty through strategic prototyping -- working backward from plausible near futures to make today's choices clearer.</p>\n<p>I use an approach I pioneered called Design Fiction. You see some of it here in the newsletter and definitely over on my site over at <a href=\"https://nearfuturelaboratory.com\">Near Future Laboratory</a>.</p>\n<p>I create tangible artifacts and narrative experiences that turn abstract foresight into concrete strategic options, alignment, and action. My practice spans engineering (BSEE, MSEng/HCI) and the social sciences/humanities (PhD), so the work holds up technically and lands with cultural relevance and it's grounded and tangible.</p>\n<p>Near Future Laboratory can bring decades of experience, expertise, and an extensive network of similarly talented professionals -- and I'm available for commissions, facilitated workshops, seminars, talks, embedded engagements, and leadership roles.</p>\n",
+          "calloutText": "<p>This is the Near Future Laboratory newsletter — thanks for reading. In case you're new here and wondering -- I'm Julian Bleecker. I help leaders and strategy teams navigate uncertainty through strategic prototyping -- working backward from plausible near futures to make today's choices clearer.</p>\n<p>I use an approach I pioneered called Design Fiction. You see some of it here in the newsletter and definitely over on my site over at <a href=\"https://nearfuturelaboratory.com\">Near Future Laboratory</a>.</p>\n<p>I create tangible artifacts and narrative experiences that turn abstract foresight into concrete strategic options, alignment, and action. My practice spans engineering (BSEE, MSEng/HCI) and the social sciences/humanities (PhD), so the work holds up technically and lands with cultural relevance and it's grounded and tangible.</p>\n<p>Near Future Laboratory can bring decades of experience, expertise, and an extensive network of similarly talented professionals -- and I'm available for commissions, facilitated workshops, seminars, talks, embedded engagements, and leadership roles.</p>\n",
           "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/9ac810f2-6b5d-48c3-e052-14eced188600/w=600?format=webp",
           "readMoreText": "Let's Connect →",
           "readMoreLink": "https://nearfuturelaboratory.com/contact"
@@ -338,120 +217,30 @@
       "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #006afa"
     },
     {
-      "type": "quote",
-      "title": "Quote Section",
-      "items": [
-        {
-          "quote": "Example quote text for item 1",
-          "author": "Example author",
-          "authorLink": "https://example.com"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
-      "contentStyles": {
-        "fontFamily": "Ubuntu, sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.2",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "descriptionStyles": {
-        "fontFamily": "Ubuntu, sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.2",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "spacerBackgroundColor": "#b7dff0",
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "21px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
-    },
-    {
-      "type": "indie-mag",
-      "title": "Indie Mag Section",
-      "items": [
-        {
-          "title": "Indie Mag Item 1",
-          "link": "https://example.com",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for indie-mag item 1.</p>",
-          "details": "<p>Example details for indie-mag item 1.</p>",
-          "note": "<p>Example note for indie-mag item 1.</p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com",
-          "paywall": true
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
-      "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.4",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "descriptionStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.4",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "spacerBackgroundColor": "#e4cbeb",
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "19px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
-    },
-    {
       "type": "indie-mag-single-column",
-      "title": "Everyday Carry",
-      "items": [
-        {
-          "title": "A brief history of the idiom 'Everyday Carry'",
-          "link": "https://example.com",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for indie-mag-single-column item 1.</p>",
-          "details": "<p>Example details for indie-mag-single-column item 1.</p>",
-          "note": "<p>Example note for indie-mag-single-column item 1.</p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "readMoreText": "Read Bruce’ exegisis →",
-          "readMoreLink": "https://example.com",
-          "paywall": true
-        }
-      ],
+      "title": "The Poesis of Everyday Objects",
       "containerStyles": {
-        "backgroundColor": null,
+        "backgroundColor": "#f9f9f9",
         "padding": "15px 20px",
         "borderRadius": "0px"
       },
+      "items": [
+        {
+          "title": "A brief history of the idiom “Everyday Carry”",
+          "link": "https://bruces.medium.com/ancient-everyday-weirdness-591955f40a2d",
+          "containerStyles": {
+            "backgroundColor": "#dce2d8"
+          },
+          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><img src='https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/487d2201-0dc3-4dfa-e2f7-dd539e9fd500/w=600?format=webp' alt='Star Trek tricorder reproductions'></p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Reproductions? Film props? Museum artifacts? Cosplayer’s everyday carry?</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">The modern 'Every Day Carry' craze has roots stretching back to prehistory, when humans lugged special rocks or artifacts just because they wanted to. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">From stone-age treasures to your typical corner-store-knock-off Swiss Army knives, the things we carry around with us have always been full of weirdness.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><img style='border-radius: 3%' src='https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/47b4f4ec-ca6e-4e37-9cfe-c7dfc5aee600/w=600?format=webp' alt='Spurcycle Titanium Key Clip'></p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Me? I had to get a second one of these (fav) Spurcycle Titanium Key Clips to accomodate the various pocket-proximate load outs on any given outing. The things we haul around daily — whether for utility or just because they feel right in our hands — well, it turns out that they connect us to ancient human habits.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Bruce’s essay on the strange oxymoronic weirdness of this ‘Everyday Carry’ business is curious on its own, but what I was particularly drawn to was his wondering about the schema of objects. The 2 by 2 up there sort of captures the discussion of the situatedness of things in that context. When is a thing a thing unto itself rather than a reproduction? Or a film prop? Or worthy of sitting on a guarded plinth under glass?</p>",
+          "images": [
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/ae8c7a0a-05cf-4a3a-1d44-1a6d56e5e300/w=600?format=webp"
+            }
+          ],
+          "readMoreText": "Read Bruce’ exegisis →",
+          "readMoreLink": "https://bruces.medium.com/ancient-everyday-weirdness-591955f40a2d"
+        }
+      ],
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
@@ -466,7 +255,7 @@
         "color": "#111111",
         "textAlign": "left"
       },
-      "spacerBackgroundColor": null,
+      "spacerBackgroundColor": "#ebe9e9",
       "headingStyles": {
         "fontFamily": "inherit",
         "fontSize": "19px",
@@ -483,32 +272,31 @@
     },
     {
       "type": "books-accessories",
-      "title": "Books Accessories Section",
-      "byline": "Example byline",
-      "bylineLink": "Example bylineLink",
-      "authorLabel": "Author",
+      "title": "Books",
+      "byline": "Beatriz da Costa (artist); Daniela Lieja Quintanar ed.",
+      "bylineLink": "https://nearfuturelaboratory.com/library/2024/12/beatriz-da-costa-undisciplinary-tactics/",
+      "authorLabel": "Beatriz da Costa (artist); Daniela Lieja Quintanar (ed.)",
       "items": [
         {
-          "title": "Books Accessories Item 1",
-          "link": "https://example.com",
-          "subtitle": "Example subtitle for item 1",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Example description for books-accessories item 1.</p>",
+          "title": "Beatriz da Costa: (un)disciplinary tactics",
+          "link": "https://a.co/d/gVW3wzl",
+          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Beatriz da Costa was a friend and colleague whose creative-technologist engineering mind was superb and way ahead of its time. Her phenomenal “Pigeon Blog” project was a basis for <a href='https://nearfuturelaboratory.com/essays/2006/a-manifesto-for-networked-objects/' style=\"font-weight: 500 !important; text-decoration: underline !important; color: #EE3BBB !important\">the short essay I wrote</a> in 2006 and lead to the <a href='https://nearfuturelaboratory.com/workshops/2006/02/blogjects-and-the-new-ecology-of-things_lift06_workshop/' style=\"font-weight: 500 !important; text-decoration: underline !important; color: #EE3BBB !important\">Lift 06 Conference ‘Blogjects’ workshop</a> I hosted with Nicolas Nova and others.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">This book came out last year around the time of the LACE exhibition of Beatriz’ ouevre, including a (updated) pigeon backpack and an epic release of a small flock of pigeons that did this beautiful biological compass orienting and them began their journey to their home in San Diego.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">It was beautiful to watch, having met the confident seeming winged leader of the elite data gathering flock I could imagine him up there signalling to his gang — “Follow me, yo! One more for Beatriz! We <em>got</em> this!”</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Beatriz was taken from us far too early by cancer, but her work and spirit live on. This book is a wonderful compendium of her work, life, and thinking.</p>",
           "images": [
             {
-              "src": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2c6708ca-e80e-4fed-4899-298d97423300/w=600?format=webp",
               "alt": "Alternate text for item 1 image 1",
-              "link": "https://example.com/image-destination"
+              "link": "https://nearfuturelaboratory.com/library/2024/12/beatriz-da-costa-undisciplinary-tactics/"
             },
             {
-              "src": "https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second",
-              "alt": "Alternate text for item 1 image 2"
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/13f88678-6fc1-488e-aaff-fb0090cc0b00/w=600?format=webp",
+              "alt": "Multiple pigeons with tech backpacks being held my several people whose hands we can see holding the pigeons."
             }
           ],
-          "authorName": "Example authorName for item 1",
-          "authorLabel": "Author",
-          "authorLink": "https://example.com",
-          "isbn": "978-1-23456-789-7",
-          "linkText": "Example linkText for item 1"
+          "authorName": "Beatriz da Costa",
+          "authorLabel": "Artist",
+          "authorLink": "https://en.wikipedia.org/wiki/Beatriz_da_Costa",
+          "isbn": "978-0-2625-4948-6",
+          "linkText": "Get the book →"
         }
       ],
       "containerStyles": {
@@ -546,32 +334,86 @@
       "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB"
     },
     {
+      "type": "indie-mag-single-column",
+      "title": "Call Log!",
+      "containerStyles": {
+        "backgroundColor": "#f0f7fa",
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "items": [
+        {
+          "title": "Office Hours N°293 Recap",
+          "subtitle": "Highlights from the 293rd Weekly Session",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/3f3d9c7f-d7ac-4a72-18cc-57bda7bf7a00/w=600?format=webp",
+          "link": "https://patreon.com/nearfuturelaboratory",
+          "readMoreText": "Join the Patreon →",
+          "readMoreLink": "https://patreon.com/nearfuturelaboratory",
+          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>1/</strong> The core move was Brandon Harwood’s building of an “AI Interaction Atlas”: a shared taxonomy of capabilities (seeded from <a href=\"https://huggingface.co/tasks\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Hugging Face Tasks</a>—a browsable list of model task types) that then gets refined into patterns tied to real product touchpoints.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>2/</strong> Diagram choice is strategy: <a href=\"https://statecharts.dev/\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Statecharts.dev</a> (plain-English guide to statecharts/state machines) is for behavior over time, while <a href=\"https://en.wikipedia.org/wiki/Unified_Modeling_Language\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">UML</a> (the standard “blueprint” notation for system structure/interaction) is for the parts and their relationships.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>3/</strong> When your system is basically a hierarchy, show it as a hierarchy: <a href=\"https://observablehq.com/@d3/tree/2\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">D3 “Tidy tree” on Observable</a> (a canonical interactive example) pairs nicely with the original “tidy tree” layout paper <a href=\"https://reingold.co/tidier-drawings.pdf\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Tidier Drawings of Trees (PDF)</a>.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>4/</strong> “Taxonomy” is too top-down for early-stage meaning-making; better to let a <a href=\"https://en.wikipedia.org/wiki/Pattern_language\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">pattern language</a> (networked patterns that call on each other) emerge socially, then harden it into something people can reuse.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>5/</strong> For inventing and remixing patterns, <a href=\"https://en.wikipedia.org/wiki/TRIZ\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">TRIZ</a> (a systematic method built from recurring “patterns of invention”) is a surprisingly practical way to generate non-obvious moves when everyone’s stuck in the same default solution-space.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>6/</strong> Card decks came up as “portable curriculum”: <a href=\"https://pixelspiritdeck.com/\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">PixelSpirit Deck</a> (a physical deck for GL Shader Language concepts) is the proof-of-concept that a tight, tactile constraint system can teach a language faster than a wiki ever will.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>7/</strong> Reality check framing: <a href=\"https://menlovc.com/wp-content/uploads/2025/12/menlo_ventures_enterprise_ai_report-2025-123125.pdf\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Menlo Ventures’ “State of Generative AI in the Enterprise 2025”</a> (enterprise adoption snapshot) is a reminder that “patterns” only matter if they map to budgets, workflows, and ops—not demos.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>8/</strong> The “hyper-drop festival” metaphor landed: build temporary, high-intensity studio conditions (stages, backstage, vendors, surprises) so collaboration happens as a byproduct, not an agenda item—think retreat infrastructure like <a href=\"https://www.eltilo.casa/\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Casa Tilo</a> (retreat center near Barcelona) or <a href=\"https://designinquiry.net/from-mainland-to-island/\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Design Inquiry: From Mainland to Island</a> (an intensive program built around place + making).</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>9/</strong> On-ramping into the digital can be physical and weird: <a href=\"https://en.wikipedia.org/wiki/Grafedia\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Grafedia</a> (handwritten “hyperlinks” in the world) plus <a href=\"https://mysteriouspackage.com/\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Mysterious Package Company</a> (immersive mystery-in-a-box experiences) sketches a playbook for invitations that feel like artifacts, not URLs.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>10/</strong> Jesper described a paper he’s working on in which futures work gets reframed as an ethics practice: you can’t know the future, so the only leverage is what you choose to build (or refuse to build) right now and sometimes <span class=\"background: #c6c2e2\"; padding: 3px 4px; corner-radius: 15%\">“making it consistent”</span> means <span class=\"background: #c6c2e2\"; padding: 3px 4px; corner-radius: 15%\">changing the world, not the model.</span></p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>11/</strong> Treat prototypes like <a href=\"https://en.wikipedia.org/wiki/Real_options_valuation\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">real options</a> (the “right but not obligation” to invest later): buy cheap optionality early, hold it while uncertainty clears, then exercise without pretending you had certainty all along.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>12/</strong> Unconference energy is the template: <a href=\"https://barcampphilly.org/\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">BarCamp Philly</a> (attendee-built schedule) shows how “set the agenda in the room” beats pre-scripted panels—and the raw chat log here is already a dataset you can mine.</p>"
+        }
+      ],
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "descriptionStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "spacerBackgroundColor": "#d8ebf3",
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "19px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
+      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
+    },
+    {
       "type": "food-for-thought",
       "title": "Food For Thought Section",
       "items": [
         {
-          "title": "Food For Thought Item 1",
-          "link": "https://example.com",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">Example description for food-for-thought item 1.</p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "channel": "Example channel",
-          "category": "Example category",
-          "sharedBy": "Example sharedBy for item 1",
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com",
-          "paywall": true
+          "title": "And the answer is..",
+          "link": "https://www.pewresearch.org/short-reads/2025/10/01/relatively-few-americans-are-getting-news-from-ai-chatbots-like-chatgpt/",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/7591c22c-ca52-42bb-e515-3c01ff65e800/w=600?format=webp",
+          "category": "Research, Re-search, And Ask Around",
+          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">AI chatbots are everywhere, but not in Americans' news routines. Only a tiny sliver of adults use them for news, and even fewer trust what they find. Younger folks are leading the charge, but it seems that at the moment (at least..) skepticism runs high, as contrasted with the zelous optimism within the industry itself.</p>  <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">Is this one of those things that’s generational? Will Gen Z and Millennials grow up to be the AI news consumers of the future, or will skepticism persist as these technologies mature?</p><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">Just askin'...</p>",
+          "sharedBy": "Marty the Ingest-o-Tron",
+          "channel": "digest-this-🥓",
+          "readMoreLink": "https://www.pewresearch.org/short-reads/2025/10/01/relatively-few-americans-are-getting-news-from-ai-chatbots-like-chatgpt/",
+          "readMoreText": "Read On →"
         },
         {
-          "title": "Food For Thought Item 2",
-          "link": "https://example.com",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">Example description for food-for-thought item 2.</p>",
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "channel": "Example channel",
-          "category": "Example category",
-          "sharedBy": "Example sharedBy for item 2",
-          "readMoreText": "Read more →",
-          "readMoreLink": "https://example.com",
-          "paywall": true
+          "title": "(And the kids think..)",
+          "category": "The kids are alright?",
+          "channel": "digest-this-🥓",
+          "sharedBy": "Marty the Ingest-o-Tron",
+          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">Seems like the kids are more discerning then one may assume? Is that what this means?</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">So, maybe the kids are okay and they’re just having fun? And they realize that it’s all made up — and always has been?</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">But, seriously — the Pew Research is a good resource for a somewhat steady-hand look at how people are engaging with AI technologies in the wild. Worth keeping an eye on. They publish all their data, methodologies, and questions which at least gives a guy a fighting chance at making sense of trends.</p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/d2dc7731-b4cf-4540-ea60-f51d3facde00/w=600?format=webp"
+        },
+        {
+          "title": "How AI Microsites Are Shaping the Future",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e93afb6a-116c-4ccc-e191-74e711fd8000/w=600?format=webp",
+          "category": "Read",
+          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">This one came around via <a href='https://blog.tobiasrevell.com' style=\"font-size: 19px !important; font-weight: 500 !important; text-decoration: underline !important; color: #EE3BBB !important\">Tobias Revell’s</a> latest Box of news newsletter that indexed to a take on those sleek, scroll-driven AI microsites that are quietly rewriting how we debate intelligence.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">These seductive little persuasion portals blend a stark design (<em>won’t save the world</em>) with breathlessly urgent arguments that are not there to (only) inform but they also want to persuade.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">Where once policy lived in dry reports, rows of 3-ring binders, and hastily stapled briefs, it now pulses through minimalist web pages that make you feel the stakes, and maybe even pick a side.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">And parenthetically — that is why I find doing tangible artifacts as representations of, say, policy, governance, and strategic futures much more effective than just writing reports. The experience of engaging with something that feels real, tangible, and immersive makes a difference in how people relate to the ideas presented.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">So, you know — come to General Seminar to see how I do this kind of work.</p>",
+          "link": "https://scrollthefuture.ai",
+          "sharedBy": "Marty the Ingest-o-Tron",
+          "channel": "digest-this-🥓",
+          "readMoreLink": "https://scrollthefuture.ai",
+          "readMoreText": "Read On →"
         }
       ],
       "containerStyles": {
@@ -611,39 +453,39 @@
     },
     {
       "type": "aesthetically-pleasing",
-      "title": "Aesthetically Pleasing Section",
-      "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\">Quite seductive pencil illustrations from Bruce’s essay on the strange oxymoronic weirdness of ‘Everyday Carry’.</p>",
-      "items": [
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/ce49aa13-ea28-46ce-253d-575c16dfd300/public?format=webp"
-        },
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5af44573-394f-4e99-f074-fbbd9d365500/public?format=webp"
-        },
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/49a21d4a-e951-4d11-be19-83650afd2000/public?format=webp"
-        },
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/402ba450-6710-4f5c-b947-a969bc344500/public?format=webp"
-        },
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/9de9eba0-c607-4dfb-b7a7-74cf5c5d4400/public?format=webp"
-        },
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/a5bf2762-414f-49ed-40ad-a0a794e2ea00/public?format=webp"
-        },
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/a6c84b43-2ce8-48a4-ee42-e2c34e9a4200/public?format=webp"
-        },
-        {
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/890c7830-1602-4462-1097-107d89cbe000/public?format=webp"
-        }
-      ],
       "containerStyles": {
-        "backgroundColor": null,
+        "backgroundColor": "#dbdddb",
         "padding": "12px 20px",
         "borderRadius": "0px"
       },
+      "title": "The Strange and Weird of Everyday Carry",
+      "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.3 !important; color: #111111 !important; text-align: left !important\">Quite seductive pencil illustrations from Bruce’s essay on the strange oxymoronic weirdness of ‘Everyday Carry’.</p>",
+      "items": [
+        {
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/ce49aa13-ea28-46ce-253d-575c16dfd300/w=600?format=webp"
+        },
+        {
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5af44573-394f-4e99-f074-fbbd9d365500/w=600?format=webp"
+        },
+        {
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/49a21d4a-e951-4d11-be19-83650afd2000/w=600?format=webp"
+        },
+        {
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/402ba450-6710-4f5c-b947-a969bc344500/w=600?format=webp"
+        },
+        {
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/9de9eba0-c607-4dfb-b7a7-74cf5c5d4400/w=600?format=webp"
+        },
+        {
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/a5bf2762-414f-49ed-40ad-a0a794e2ea00/w=600?format=webp"
+        },
+        {
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/a6c84b43-2ce8-48a4-ee42-e2c34e9a4200/w=600?format=webp"
+        },
+        {
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/890c7830-1602-4462-1097-107d89cbe000/w=600?format=webp"
+        }
+      ],
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",
         "fontSize": "19px",
@@ -658,7 +500,7 @@
         "color": "#111111",
         "textAlign": "left"
       },
-      "spacerBackgroundColor": "#f0efef",
+      "spacerBackgroundColor": "#c9d0c9",
       "headingStyles": {
         "fontFamily": "inherit",
         "fontSize": "21px",
@@ -674,77 +516,11 @@
       "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
     },
     {
-      "type": "classifieds",
-      "title": "Classifieds Section",
-      "description": "<p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.2 !important; color: #222222 !important; text-align: left !important\">Description for classifieds section.</p>",
-      "bookingLink": "Example bookingLink",
-      "bookingText": "Example bookingText",
-      "items": [
-        {
-          "content": "<p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.2 !important; color: #222222 !important; text-align: left !important\">Example classified content for item 1.</p>",
-          "title": "Example title",
-          "link": "https://example.com",
-          "linkText": "Example linkText for item 1",
-          "images": [
-            {
-              "src": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image+1",
-              "alt": "Alternate text for classified 1 image 1"
-            },
-            {
-              "src": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image+2",
-              "alt": "Alternate text for classified 1 image 2"
-            },
-            {
-              "src": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image+3",
-              "alt": "Alternate text for classified 1 image 3"
-            }
-          ],
-          "description": "<p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.2 !important; color: #222222 !important; text-align: left !important\">Example classified content for item 1.</p>"
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": "f8f8f8",
-        "padding": "12px 20px",
-        "borderRadius": "0px"
-      },
-      "contentStyles": {
-        "fontFamily": "Share Tech Mono, monospace",
-        "fontSize": "16px",
-        "lineHeight": "1.2",
-        "color": "#222222",
-        "textAlign": "left"
-      },
-      "descriptionStyles": {
-        "fontFamily": "Share Tech Mono, monospace",
-        "fontSize": "16px",
-        "lineHeight": "1.2",
-        "color": "#222222",
-        "textAlign": "left"
-      },
-      "spacerBackgroundColor": "#eae8e8",
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "20px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "500"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 20px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB"
-    },
-    {
       "type": "animated-image",
-      "title": "Animated Image Section",
+      "title": "Space Oddity",
       "items": [
         {
-          "image": "https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image",
-          "title": "Example title",
-          "description": "<p style=\"font-family: Ubuntu, sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Example description for animated-image item 1.</p>",
-          "link": "https://example.com"
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/1ed4f934-f59c-4a4d-2878-72992a9b6e00/w=600?format=webp"
         }
       ],
       "containerStyles": {
@@ -779,54 +555,6 @@
         "fontWeight": "normal"
       },
       "headingStylesInline": "font-family: inherit; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
-    },
-    {
-      "type": "indie-mag-single-column",
-      "title": "Call Log!",
-      "containerStyles": {
-        "backgroundColor": "#f0f7fa",
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
-      "items": [
-        {
-          "title": "Office Hours No. XYZ Recap",
-          "subtitle": "Highlights from the XYZ PDQ Weekly Session",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/3f3d9c7f-d7ac-4a72-18cc-57bda7bf7a00/w=600?format=webp",
-          "link": "https://patreon.com/nearfuturelaboratory",
-          "readMoreText": "Join the Patreon →",
-          "readMoreLink": "https://patreon.com/nearfuturelaboratory",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Previously, in Office Hours..</p>"
-        }
-      ],
-      "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.4",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "descriptionStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.4",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "spacerBackgroundColor": "#d8ebf3",
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "19px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
       "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
     },
     {
@@ -880,9 +608,9 @@
     }
   ],
   "footer": {
-    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w50-y25/",
+    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2026/w03-y26/",
     "newsletterSubscribeLink": "https://nearfuturelaboratory.com/newsletter/",
-    "logo": "https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png",
+    "logo": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=200?format=webp",
     "logoLink": "https://nearfuturelaboratory.com",
     "socialLinks": {
       "applepodcasts": [
