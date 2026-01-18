@@ -1,0 +1,41 @@
+{
+  "template": "palm-report-v2",
+  "templateDir": "./templates/palm-report-v2",
+  "timestamp": "2026-01-17T07:32:44.957Z",
+  "passed": false,
+  "summary": {
+    "errors": 5,
+    "warnings": 2
+  },
+  "errors": [
+    "Build failed with exit code 1",
+    "Build: sections[1].items[0].url: https://example.com/art-news (HTTP 404)",
+    "Build: sections[1].items[1].url: https://example.com/destinations (HTTP 404)",
+    "Build: sections[2].categories[1].vehicles[0].url: https://example.com/vehicle1 (HTTP 404)",
+    "Build: CssSyntaxError: <css input>:2:5: Unknown word undefined"
+  ],
+  "warnings": [
+    "components/BrandDirectory.html: Variable \"brand.description\" may need triple braces {{{ }}} for raw HTML",
+    "Some variables may not be in sample-data.json: category.title, category.featuredImageLink, category.featuredImage, category.description, globalStyles.embedded"
+  ],
+  "recommendations": [
+    {
+      "type": "template_syntax",
+      "severity": "medium",
+      "message": "Change {{ brand.description }} to {{{ brand.description }}} for raw HTML output",
+      "file": "components/BrandDirectory.html"
+    },
+    {
+      "type": "data_binding",
+      "severity": "low",
+      "message": "Some template variables reference paths not in sample-data.json. Check if these come from loop contexts or need to be added to sample data.",
+      "variables": "category.title, category.featuredImageLink, category.featuredImage, category.description, globalStyles.embedded"
+    },
+    {
+      "type": "missing_data",
+      "severity": "high",
+      "message": "Template variable resolved to undefined. Check if the variable path matches sample-data.json structure.",
+      "action": "Verify nested object paths in templates match data structure"
+    }
+  ]
+}

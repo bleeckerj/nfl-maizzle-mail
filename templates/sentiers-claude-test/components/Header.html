@@ -1,0 +1,14 @@
+<!-- Header Component -->
+<!-- Newsletter branding with logo and issue number -->
+<!-- Variables: logo_image, logo_alt, issue_number -->
+
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+  <tr>
+    <td style="padding: 20px;">
+      <div id="header" style="margin-bottom:72px;">
+  <img src="{{ logo_image }}" id="logo" style="max-width: 300px;padding: 0;height: auto;margin: 0;" alt="{{ logo_alt || 'Newsletter Logo' }}">
+  <h1 style="font-family: &quot;Lora&quot;,serif;margin: 12px 0 0;padding: 10px 0;float: right;line-height: 100%;font-weight: normal;border-bottom: 1px solid;">{{ issue_number }}</h1>
+</div>
+    </td>
+  </tr>
+</table>

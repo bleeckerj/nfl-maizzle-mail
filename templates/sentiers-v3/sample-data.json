@@ -1,0 +1,83 @@
+{
+  "title": "No.123 — Maintainers ⊗ Build ⊗ Tokyo as slowdown city ⊗ Mass consumption",
+  "preheader": "Hail the maintainers ⊗ It's time to build (is it?) ⊗ Tokyo as slowdown city ⊗ Mass consumption is what ails us",
+  "issueNumber": "No.123",
+  "thisWeekSummary": "Hail the maintainers ⊗ It's time to build (is it?) ⊗ Tokyo as slowdown city ⊗ Mass consumption is what ails us",
+  "yearAgoLink": {
+    "title": "Agnotology and Epistemological Fragmentation",
+    "url": "https://points.datasociety.net/agnotology-and-epistemological-fragmentation-56aa3c509c6b"
+  },
+  "featuredImage": {
+    "url": "https://mcusercontent.com/5125332501a1986f0f3685a57/images/4f3264fb-deee-4d4a-a371-15394a4460e3.png",
+    "linkUrl": "https://medium.com/slowdown-papers/18-from-lockdown-to-slowdown-tokyo-as-slowdown-city-822dc0b6f3cc",
+    "caption": "Tokyo as Slowdown City, Dan Hill"
+  },
+  "articles": [
+    {
+      "title": "Hail the maintainers",
+      "url": "https://aeon.co/essays/innovation-is-overvalued-maintenance-often-matters-more",
+      "commentary": "Excellent piece at Aeon on progress, innovation, and maintenance...",
+      "quotes": "Maintenance and repair, the building of infrastructures..."
+    }
+  ],
+  "miscellanyLinks": [
+    {
+      "title": "I Am a Mad Scientist",
+      "url": "https://www.drillednews.com/post/i-am-a-mad-scientist",
+      "description": "Confronting that system will take work...",
+      "emoji": ""
+    }
+  ],
+  "header": {
+    "logoUrl": "https://gallery.mailchimp.com/5125332501a1986f0f3685a57/images/798de67b-6210-4aba-a40e-2ace5783545e.png",
+    "logoAlt": "Sentiers Newsletter Logo",
+    "issueNumber": "No.123"
+  },
+  "footer": {
+    "membershipPrompt": "Members help <i>Sentiers</i> thrive, please consider supporting.",
+    "membershipUrl": "https://sentiers.media/membership/",
+    "membershipCta": "Join now",
+    "about": "<p style=\"font-size: 18px;line-height: 1.6em;\"><strong class=\"caps\" style=\"text-transform: uppercase;font-weight: bold;letter-spacing: .05em;font-size: 85%;\">About →</strong> <em>Sentiers</em> is a weekly newsletter curated by me, <a href=\"https://twitter.com/inevernu\" style=\"color: #DC4B4B;text-decoration: none;\">Patrick Tanguay</a>. Hit reply to see how we could work together on projects involving knowledge curation, publishing, forecasting, or sense making.</p>"
+  },
+  "link": {
+    "url": "#"
+  },
+  "intro": {
+    "content": "<p style=\"font-size: 18px;line-height: 1.6em;\"><strong class=\"caps\" style=\"text-transform: uppercase;font-weight: bold;letter-spacing: .05em;font-size: 85%;\">This week →</strong> Hail the maintainers ⊗ It's time to build (is it?) ⊗ Tokyo as slowdown city ⊗ Mass consumption is what ails us</p><p style=\"font-size: 18px;line-height: 1.6em;\"><strong class=\"caps\" style=\"text-transform: uppercase;font-weight: bold;letter-spacing: .05em;font-size: 85%;\">A year ago →</strong> <a href=\"https://points.datasociety.net/agnotology-and-epistemological-fragmentation-56aa3c509c6b\" style=\"color: #DC4B4B;text-decoration: none;\">Agnotology and Epistemological Fragmentation</a>.</p>",
+    "prompt": "<br><p style=\"font-size: 14px;line-height: 1.6em;\"><span style=\"display:block;text-align: center;\">—</span>This is a free issue of the weekly <i>Sentiers</i> newsletter. To support its publication and receive a couple of extra dispatches a month, each focused on one topic: <a href=\"https://sentiers.media/membership/\" style=\"color: #DC4B4B;text-decoration: none;\"><strong>Become a member</strong></a>.</p>",
+    "featuredImage": "https://mcusercontent.com/5125332501a1986f0f3685a57/images/4f3264fb-deee-4d4a-a371-15394a4460e3.png",
+    "featuredImageLink": "https://medium.com/slowdown-papers/18-from-lockdown-to-slowdown-tokyo-as-slowdown-city-822dc0b6f3cc",
+    "featuredImageAlt": "Tokyo as Slowdown City",
+    "featuredImageCaption": "Tokyo as Slowdown City, Dan Hill"
+  },
+  "sections": [
+    {
+      "type": "article",
+      "items": [
+        {
+          "title": "Hail the maintainers",
+          "url": "https://aeon.co/essays/innovation-is-overvalued-maintenance-often-matters-more",
+          "commentary": "<p style=\"font-size: 18px;line-height: 1.6em;\">Excellent piece at <i>Aeon</i> on progress, innovation, and maintenance. Recaps the recent history of innovation, how we largely stopped talking about progress—which was about society, not just technology—and switched instead to talking about innovation—which is almost exclusively about a certain vision of technology.</p>",
+          "quotes": "<p style=\"font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;\">Maintenance and repair, the building of infrastructures, the mundane labour that goes into sustaining functioning and efficient infrastructures, simply has more impact on people's daily lives than the vast majority of technological innovations. […]</p><p style=\"font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;\"><span class=\"highlight\" style=\"background: #B7E2D8;\">Despite recurring fantasies about the end of work, the central fact of our industrial civilisation is labour, most of which falls far outside the realm of innovation.</span> […]</p>"
+        }
+      ]
+    },
+    {
+      "type": "link-list",
+      "title": "Miscellany",
+      "items": [
+        {
+          "title": "I Am a Mad Scientist",
+          "url": "https://www.drillednews.com/post/i-am-a-mad-scientist",
+          "description": "<i>\"Confronting that system will take work. We need to build things: wind turbines, solar panels, public transportation, denser cities, fairer societies. We don't need purification. We don't need absolution. We need to get to work.\"</i>"
+        },
+        {
+          "emoji": "🇯🇵 🚶🏼‍♂️",
+          "title": "Ise-ji: Walk With Me",
+          "url": "https://walkkumano.com/iseji/",
+          "description": "One of those crazy long and insightful pieces Craig Mod has the secret of. 15K words about his walk on the coastal pilgrimage route in Mie Prefecture, Japan."
+        }
+      ]
+    }
+  ]
+}

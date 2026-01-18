@@ -1,0 +1,41 @@
+{
+  "header": {
+    "containerStyles": {
+      "backgroundColor": "#B7E2D8",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: \"Lora\", serif; color: #465546;",
+    "contentStyles": {
+      "fontFamily": "\"Helvetica\", sans-serif",
+      "fontSize": "18px",
+      "color": "#465546"
+    },
+    "linkStylesInline": "color: #DC4B4B; text-decoration: underline;"
+  },
+  "article": {
+    "containerStyles": {
+      "backgroundColor": "#B7E2D8",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: \"Lora\", serif; color: #465546;",
+    "contentStyles": {
+      "fontFamily": "\"Helvetica\", sans-serif",
+      "fontSize": "18px",
+      "color": "#465546"
+    },
+    "linkStylesInline": "color: #DC4B4B; text-decoration: underline;"
+  },
+  "link-list": {
+    "containerStyles": {
+      "backgroundColor": "#B7E2D8",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: \"Lora\", serif; color: #465546;",
+    "contentStyles": {
+      "fontFamily": "\"Helvetica\", sans-serif",
+      "fontSize": "18px",
+      "color": "#465546"
+    },
+    "linkStylesInline": "color: #DC4B4B; text-decoration: underline;"
+  }
+}

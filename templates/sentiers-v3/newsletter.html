@@ -1,0 +1,16 @@
+---
+title: "{{ title }}"
+preheader: "{{ preheader || 'Email preview text' }}"
+---
+
+<extends src="templates/sentiers-v3/layouts/main.html">
+  <block name="template">
+    
+    <component src="templates/sentiers-v3/components/Header.html"></component>
+
+    <component src="templates/sentiers-v3/components/Article.html"></component>
+
+    <component src="templates/sentiers-v3/components/LinkList.html"></component>
+    
+  </block>
+</extends>

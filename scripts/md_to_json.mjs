@@ -54,7 +54,7 @@ function convertToParagraphs(text, template = 'default') {
  * @param {string} template - Template name for styling context
  * @returns {any} Processed object
  */
-function processTextFields(obj, textFields = ['intro', 'description', 'content', 'text', 'excerpt'], template = 'default') {
+function processTextFields(obj, textFields = ['intro', 'description', 'content', 'excerpt'], template = 'default') {
   if (!obj || typeof obj !== 'object') return obj;
   
   if (Array.isArray(obj)) {
@@ -168,7 +168,8 @@ function convertMarkdownToJson(inputPath, outputPath = 'data/newsletter.json', t
     }
     
     // Apply paragraph processing to all text fields in the newsletter data
-    const processedData = processTextFields(newsletterData, ['intro', 'description', 'content', 'text', 'excerpt'], selectedTemplate);
+    // Note: 'text' is intentionally excluded as it's too generic (e.g., link text shouldn't be wrapped)
+    const processedData = processTextFields(newsletterData, ['intro', 'description', 'content', 'excerpt'], selectedTemplate);
     
     // Ensure output directory exists
     const outputDir = path.dirname(outputPath);

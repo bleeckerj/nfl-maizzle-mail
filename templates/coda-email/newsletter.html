@@ -1,0 +1,20 @@
+---
+title: "{{ title }}"
+preheader: "{{ preheader || 'Email preview text' }}"
+---
+
+<extends src="templates/coda-email/layouts/main.html">
+  <block name="template">
+    
+    <component src="templates/coda-email/components/Header.html"></component>
+
+    <component src="templates/coda-email/components/WelcomeIntro.html"></component>
+
+    <component src="templates/coda-email/components/FeatureExplanation.html"></component>
+
+    <component src="templates/coda-email/components/CtaSection.html"></component>
+
+    <component src="templates/coda-email/components/Footer.html"></component>
+    
+  </block>
+</extends>

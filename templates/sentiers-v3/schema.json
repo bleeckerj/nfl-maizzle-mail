@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Newsletter Data Schema",
+  "description": "Generated schema for newsletter template data",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Newsletter title"
+    },
+    "preheader": {
+      "type": "string",
+      "description": "Email preview text"
+    },
+    "articleItems": {
+      "type": "array",
+      "description": "Main article content with title, commentary, and quotes",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Article title as linked H2"
+          },
+          "url": {
+            "type": "string",
+            "description": "Link to original article",
+            "format": "uri"
+          },
+          "commentary": {
+            "type": "html",
+            "description": "Author's commentary paragraphs"
+          },
+          "quotes": {
+            "type": "html",
+            "description": "Blockquoted excerpts from article"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

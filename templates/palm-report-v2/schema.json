@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Newsletter Data Schema",
+  "description": "Generated schema for newsletter template data",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Newsletter title"
+    },
+    "preheader": {
+      "type": "string",
+      "description": "Email preview text"
+    },
+    "lifestyle-categoryItems": {
+      "type": "array",
+      "description": "Themed content sections with title, images, and descriptive text",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category_title": {
+            "type": "string",
+            "description": "Category name (e.g., 'SUMMER-ENHANCING PEOPLE')"
+          },
+          "featured_image": {
+            "type": "string",
+            "description": "Main category image"
+          },
+          "description_text": {
+            "type": "html",
+            "description": "Rich text description with links"
+          },
+          "additional_images": {
+            "type": "array",
+            "description": "Additional supporting images"
+          }
+        }
+      }
+    },
+    "social-ctaItems": {
+      "type": "array",
+      "description": "Social media handle promotion and call-to-action",
+      "items": {
+        "type": "object",
+        "properties": {
+          "social_handle": {
+            "type": "string",
+            "description": "Social media handle repeated for emphasis"
+          },
+          "link_url": {
+            "type": "string",
+            "description": "Link to social media profile",
+            "format": "uri"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

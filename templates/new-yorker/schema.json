@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Newsletter Data Schema",
+  "description": "Generated schema for newsletter template data",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Newsletter title"
+    },
+    "preheader": {
+      "type": "string",
+      "description": "Email preview text"
+    },
+    "article-pairItems": {
+      "type": "array",
+      "description": "Two-column layout featuring a pair of articles side by side",
+      "items": {
+        "type": "object",
+        "properties": {
+          "left_article": {
+            "type": "object",
+            "description": "Complete article object for left column"
+          },
+          "right_article": {
+            "type": "object",
+            "description": "Complete article object for right column"
+          }
+        }
+      }
+    },
+    "articleItems": {
+      "type": "array",
+      "description": "Individual article card with image, metadata, and call-to-action",
+      "items": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "description": "Article category (e.g., 'A CRITIC AT LARGE', 'PROFILES')"
+          },
+          "image": {
+            "type": "string",
+            "description": "Article featured image"
+          },
+          "image_alt": {
+            "type": "string",
+            "description": "Alt text for article image"
+          },
+          "issue_date": {
+            "type": "string",
+            "description": "Publication date"
+          },
+          "title": {
+            "type": "string",
+            "description": "Article headline"
+          },
+          "description": {
+            "type": "string",
+            "description": "Article summary"
+          },
+          "author": {
+            "type": "string",
+            "description": "Article author name"
+          },
+          "article_url": {
+            "type": "string",
+            "description": "Link to full article",
+            "format": "uri"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "header": {
+    "containerStyles": {
+      "backgroundColor": "#fffcf2",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Helvetica, sans-serif; color: #2664F6;",
+    "contentStyles": {
+      "fontFamily": "Helvetica, sans-serif",
+      "fontSize": "14px",
+      "color": "#000000"
+    },
+    "linkStylesInline": "color: #2664F6; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": true,
+      "variantOf": "sponsor",
+      "description": "Brand logo and navigation area"
+    }
+  },
+  "animated-hero": {
+    "containerStyles": {
+      "backgroundColor": "#fffcf2",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Helvetica, sans-serif; color: #2664F6;",
+    "contentStyles": {
+      "fontFamily": "Helvetica, sans-serif",
+      "fontSize": "14px",
+      "color": "#000000"
+    },
+    "linkStylesInline": "color: #2664F6; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": true,
+      "variantOf": "animated-image",
+      "description": "Animated GIF hero section for visual engagement"
+    }
+  },
+  "issue-header": {
+    "containerStyles": {
+      "backgroundColor": "#fffcf2",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Helvetica, sans-serif; color: #2664F6;",
+    "contentStyles": {
+      "fontFamily": "Helvetica, sans-serif",
+      "fontSize": "14px",
+      "color": "#000000"
+    },
+    "linkStylesInline": "color: #2664F6; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": true,
+      "variantOf": "sponsor",
+      "description": "Newsletter issue number and identification"
+    }
+  },
+  "lifestyle-category": {
+    "containerStyles": {
+      "backgroundColor": "#fffcf2",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Helvetica, sans-serif; color: #2664F6;",
+    "contentStyles": {
+      "fontFamily": "Helvetica, sans-serif",
+      "fontSize": "14px",
+      "color": "#000000"
+    },
+    "linkStylesInline": "color: #2664F6; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": false,
+      "variantOf": null,
+      "description": "Themed content sections with title, images, and descriptive text"
+    }
+  },
+  "brand-directory": {
+    "containerStyles": {
+      "backgroundColor": "#fffcf2",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Helvetica, sans-serif; color: #2664F6;",
+    "contentStyles": {
+      "fontFamily": "Helvetica, sans-serif",
+      "fontSize": "14px",
+      "color": "#000000"
+    },
+    "linkStylesInline": "color: #2664F6; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": false,
+      "variantOf": null,
+      "description": "Curated list of lifestyle brands with descriptions"
+    }
+  },
+  "editorial": {
+    "containerStyles": {
+      "backgroundColor": "#fffcf2",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Helvetica, sans-serif; color: #2664F6;",
+    "contentStyles": {
+      "fontFamily": "Helvetica, sans-serif",
+      "fontSize": "14px",
+      "color": "#000000"
+    },
+    "linkStylesInline": "color: #2664F6; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": false,
+      "variantOf": null,
+      "description": "Editor's introduction and issue overview"
+    }
+  },
+  "link-list": {
+    "containerStyles": {
+      "backgroundColor": "#fffcf2",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Helvetica, sans-serif; color: #2664F6;",
+    "contentStyles": {
+      "fontFamily": "Helvetica, sans-serif",
+      "fontSize": "14px",
+      "color": "#000000"
+    },
+    "linkStylesInline": "color: #2664F6; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": false,
+      "variantOf": null,
+      "description": "Curated collection of news links with bullet points"
+    }
+  },
+  "social-cta": {
+    "containerStyles": {
+      "backgroundColor": "#fffcf2",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Helvetica, sans-serif; color: #2664F6;",
+    "contentStyles": {
+      "fontFamily": "Helvetica, sans-serif",
+      "fontSize": "14px",
+      "color": "#000000"
+    },
+    "linkStylesInline": "color: #2664F6; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": false,
+      "variantOf": null,
+      "description": "Social media handle promotion and call-to-action"
+    }
+  },
+  "footer": {
+    "containerStyles": {
+      "backgroundColor": "#fffcf2",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Helvetica, sans-serif; color: #2664F6;",
+    "contentStyles": {
+      "fontFamily": "Helvetica, sans-serif",
+      "fontSize": "14px",
+      "color": "#000000"
+    },
+    "linkStylesInline": "color: #2664F6; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": false,
+      "variantOf": null,
+      "description": "Standard newsletter footer with social links and unsubscribe"
+    }
+  }
+}

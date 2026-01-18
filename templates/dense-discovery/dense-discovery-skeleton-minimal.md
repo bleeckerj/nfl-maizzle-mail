@@ -2,10 +2,38 @@
 template: dense-discovery
 title: Newsletter Title
 preheader: Short preview text that appears in email clients
+ogImage: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=900?format=webp
 sectionStylesFile: templates/dense-discovery/section-styles.json
 intro:
   title: Welcome
   viewOnlineLink: https://nearfuturelaboratory.com/newsletters/2025/wxx-yxx
+  aside:
+    content: <p>Teaser/lede text that sets up the intro content.</p>
+    containerStyles:
+      backgroundColor: '#f4f1ea'
+      borderLeftWidth: 3px
+      borderLeftStyle: solid
+      borderLeftColor: '#d7d1c6'
+      padding: 12px 14px
+      borderRadius: 6px
+    contentStyles:
+      fontFamily: '''Ubuntu'', sans-serif'
+      fontSize: 18px
+      lineHeight: 23px
+      fontStyle: italic
+      color: '#3f3f3f'
+      textAlign: left
+  containerStyles:
+    backgroundColor: null
+    padding: '0'
+    borderRadius: 0px
+  contentStyles:
+    fontFamily: '''IBM Plex Sans'', sans-serif'
+    fontSize: 16px
+    lineHeight: 1.2rem
+    fontWeight: '400'
+    color: '#000000'
+    textAlign: left
   content: <p>Introduction paragraph for the newsletter.</p>
 header:
   quote: Inspiring header quote

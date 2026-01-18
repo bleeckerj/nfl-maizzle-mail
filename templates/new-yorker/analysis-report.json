@@ -1,0 +1,1811 @@
+{
+  "visualDesign": {
+    "reasoning": "Analyzed The New Yorker email by examining inline styles, color usage patterns, typography hierarchy, spacing consistency, and image roles. The email uses a classic editorial design with serif typography for content and sans-serif for UI elements.",
+    "colorPalette": {
+      "primary": "#DF3331",
+      "secondary": "#121212",
+      "accent": "#0773b5",
+      "background": "#f5f6f6",
+      "backgroundAlt": "#ffffff",
+      "text": "#121212",
+      "textMuted": "#333333",
+      "border": "#e8e7e7",
+      "allColors": [
+        "#231f20",
+        "#f5f6f6",
+        "#e8e7e7",
+        "#DF3331",
+        "#121212",
+        "#0773b5",
+        "#E71B22",
+        "#000000",
+        "#333",
+        "#ffffff",
+        "#333333"
+      ]
+    },
+    "typography": {
+      "headingFont": "Georgia, times, serif",
+      "bodyFont": "Georgia, Times, 'Times New Roman', serif",
+      "monoFont": "none",
+      "headingSizes": {
+        "h1": "40px",
+        "h2": "28px",
+        "h3": "22px"
+      },
+      "bodySize": "16px",
+      "smallSize": "13px",
+      "lineHeights": {
+        "heading": "32px",
+        "body": "22px"
+      },
+      "fontWeights": {
+        "normal": "normal",
+        "medium": "none",
+        "bold": "bold"
+      }
+    },
+    "spacing": {
+      "containerPadding": "40px 80px",
+      "sectionGap": "10px",
+      "elementGap": "20px",
+      "patterns": [
+        "25px",
+        "20px",
+        "15px",
+        "10px",
+        "40px",
+        "30px"
+      ]
+    },
+    "images": [
+      {
+        "src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Layer_1@2x.png",
+        "alt": "The New Yorker",
+        "role": "logo",
+        "width": "150",
+        "context": "header logo"
+      },
+      {
+        "src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202b@2x.png",
+        "alt": "This Lonesome Place",
+        "role": "content",
+        "width": "100%",
+        "context": "article illustration"
+      },
+      {
+        "src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%207b@2x.png",
+        "alt": "Ernest Hemingway",
+        "role": "content",
+        "width": "100%",
+        "context": "article illustration"
+      },
+      {
+        "src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive1a2.png",
+        "alt": "Zora Neale Hurston",
+        "role": "content",
+        "width": "100%",
+        "context": "article illustration"
+      },
+      {
+        "src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive4.png",
+        "alt": "Edith Wharton",
+        "role": "content",
+        "width": "100%",
+        "context": "article illustration"
+      },
+      {
+        "src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202a@2x.png",
+        "alt": "Henry James",
+        "role": "content",
+        "width": "100%",
+        "context": "article illustration"
+      },
+      {
+        "src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive6.png",
+        "alt": "F. Scott Fitzgerald",
+        "role": "content",
+        "width": "100%",
+        "context": "article illustration"
+      },
+      {
+        "src": "http://links.newyorker.mkt4334.com/open/log/15404918/NDQzMzg5NTk0NzI3S0/0/MTcyMDM2MjQyMwS2/2/MTcyMDM2MjQyMQS2/0",
+        "alt": "",
+        "role": "tracking",
+        "width": "",
+        "context": "tracking pixel"
+      }
+    ],
+    "layout": {
+      "maxWidth": "650px",
+      "structure": "mixed",
+      "containerType": "table-based",
+      "responsiveHints": [
+        "media queries for mobile",
+        "full-width class",
+        "responsive padding adjustments",
+        "image width scaling"
+      ]
+    }
+  },
+  "structure": {
+    "reasoning": "This email follows a classic newsletter structure with a header, intro section, and repeating article cards in a two-column layout. The main content consists of 6 literary articles arranged in 3 rows of 2 columns each. Each article follows an identical pattern with category, image, date, title, description, author, and CTA button. This is a standard 'article' type pattern, not novel. The email also includes a final CTA section and footer.",
+    "sections": [
+      {
+        "id": "header",
+        "name": "Header with Logo",
+        "type": "header",
+        "purpose": "Brand identification and navigation",
+        "order": 1,
+        "contentType": "static",
+        "estimatedStartLine": "15",
+        "keyIdentifiers": [
+          "logo link",
+          "New Yorker branding"
+        ]
+      },
+      {
+        "id": "hero",
+        "name": "Collection Title and Description",
+        "type": "hero",
+        "purpose": "Introduces the 'From the Archive' collection theme",
+        "order": 2,
+        "contentType": "static",
+        "estimatedStartLine": "25",
+        "keyIdentifiers": [
+          "main-text-welcome",
+          "From the Archive",
+          "Literary Lives"
+        ]
+      },
+      {
+        "id": "intro",
+        "name": "Editorial Introduction",
+        "type": "intro",
+        "purpose": "Explains the Literary Lives collection and archive access",
+        "order": 3,
+        "contentType": "static",
+        "estimatedStartLine": "35",
+        "keyIdentifiers": [
+          "main-text-welcome",
+          "archive presents thematic selections"
+        ]
+      },
+      {
+        "id": "article_row_1",
+        "name": "First Article Pair",
+        "type": "article-pair",
+        "purpose": "Features two literary articles side by side",
+        "order": 4,
+        "contentType": "repeating",
+        "estimatedStartLine": "45",
+        "keyIdentifiers": [
+          "two-column layout",
+          "325px width tables",
+          "full-width and right-block classes"
+        ]
+      },
+      {
+        "id": "article_row_2",
+        "name": "Second Article Pair",
+        "type": "article-pair",
+        "purpose": "Features two more literary articles side by side",
+        "order": 5,
+        "contentType": "repeating",
+        "estimatedStartLine": "85",
+        "keyIdentifiers": [
+          "two-column layout",
+          "325px width tables",
+          "full-width and right-block classes"
+        ]
+      },
+      {
+        "id": "article_row_3",
+        "name": "Third Article Pair",
+        "type": "article-pair",
+        "purpose": "Features final two literary articles side by side",
+        "order": 6,
+        "contentType": "repeating",
+        "estimatedStartLine": "125",
+        "keyIdentifiers": [
+          "two-column layout",
+          "325px width tables",
+          "full-width and right-block classes"
+        ]
+      },
+      {
+        "id": "archive_cta",
+        "name": "Archive Call-to-Action",
+        "type": "cta",
+        "purpose": "Promotes full archive access",
+        "order": 7,
+        "contentType": "static",
+        "estimatedStartLine": "165",
+        "keyIdentifiers": [
+          "Our full archive awaits",
+          "Explore now button",
+          "#DF3331 background"
+        ]
+      },
+      {
+        "id": "footer",
+        "name": "Email Footer",
+        "type": "footer",
+        "purpose": "Legal information, unsubscribe, and contact details",
+        "order": 8,
+        "contentType": "static",
+        "estimatedStartLine": "175",
+        "keyIdentifiers": [
+          "View this email in your browser",
+          "Unsubscribe",
+          "Copyright"
+        ]
+      }
+    ],
+    "sectionTypes": [
+      {
+        "name": "header",
+        "description": "Brand header with logo and navigation elements",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_url",
+            "type": "url",
+            "required": true,
+            "description": "Link destination for logo"
+          },
+          {
+            "name": "logo_image",
+            "type": "image",
+            "required": true,
+            "description": "Logo image source"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered logo link and image",
+        "stylingNotes": "Centered alignment, specific font styling for tagline",
+        "htmlSignature": "logo link name attribute, New Yorker branding"
+      },
+      {
+        "name": "hero",
+        "description": "Large title section introducing the email theme",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "collection_title",
+            "type": "string",
+            "required": true,
+            "description": "Main collection title"
+          },
+          {
+            "name": "collection_subtitle",
+            "type": "string",
+            "required": true,
+            "description": "Descriptive subtitle"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered text and styling",
+        "stylingNotes": "Large Georgia serif font, red accent color #DF3331",
+        "htmlSignature": "main-text-welcome class, centered text alignment"
+      },
+      {
+        "name": "intro",
+        "description": "Editorial introduction explaining the content theme",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "intro_text",
+            "type": "html",
+            "required": true,
+            "description": "Editorial introduction content"
+          },
+          {
+            "name": "archive_link",
+            "type": "url",
+            "required": true,
+            "description": "Link to full archive"
+          }
+        ],
+        "containerStructure": "table > tr > td with left-aligned text content",
+        "stylingNotes": "Georgia serif font, blue links #0773b5",
+        "htmlSignature": "main-text-welcome class, left text alignment"
+      },
+      {
+        "name": "article-pair",
+        "description": "Two-column layout featuring a pair of articles side by side",
+        "isRepeating": true,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 3,
+        "variables": [
+          {
+            "name": "left_article",
+            "type": "object",
+            "required": true,
+            "description": "Complete article object for left column"
+          },
+          {
+            "name": "right_article",
+            "type": "object",
+            "required": true,
+            "description": "Complete article object for right column"
+          }
+        ],
+        "containerStructure": "table > tr > td containing two 325px width tables side by side",
+        "stylingNotes": "Two-column responsive layout, white background",
+        "htmlSignature": "full-width and right-block classes, 325px width tables"
+      },
+      {
+        "name": "article",
+        "description": "Individual article card with image, metadata, and call-to-action",
+        "isRepeating": true,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 6,
+        "variables": [
+          {
+            "name": "category",
+            "type": "string",
+            "required": true,
+            "description": "Article category (e.g., 'A CRITIC AT LARGE', 'PROFILES')"
+          },
+          {
+            "name": "image",
+            "type": "image",
+            "required": true,
+            "description": "Article featured image"
+          },
+          {
+            "name": "image_alt",
+            "type": "string",
+            "required": true,
+            "description": "Alt text for article image"
+          },
+          {
+            "name": "issue_date",
+            "type": "string",
+            "required": true,
+            "description": "Publication date"
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "description": "Article headline"
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "required": true,
+            "description": "Article summary"
+          },
+          {
+            "name": "author",
+            "type": "string",
+            "required": true,
+            "description": "Article author name"
+          },
+          {
+            "name": "article_url",
+            "type": "url",
+            "required": true,
+            "description": "Link to full article"
+          }
+        ],
+        "containerStructure": "nested tables with category, image, date, title, description, author, and CTA button",
+        "stylingNotes": "Georgia serif fonts, red category labels #E71B22, blue CTA buttons #0773b5",
+        "htmlSignature": "325px width containers, specific padding patterns, Read now buttons"
+      },
+      {
+        "name": "cta",
+        "description": "Call-to-action section promoting additional content",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "cta_text",
+            "type": "string",
+            "required": true,
+            "description": "Call-to-action message"
+          },
+          {
+            "name": "button_text",
+            "type": "string",
+            "required": true,
+            "description": "Button label"
+          },
+          {
+            "name": "cta_url",
+            "type": "url",
+            "required": true,
+            "description": "Destination URL"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered text and button",
+        "stylingNotes": "Centered layout, red button background #DF3331",
+        "htmlSignature": "main-text-welcome class, centered button table"
+      },
+      {
+        "name": "footer",
+        "description": "Standard email footer with legal and unsubscribe information",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "unsubscribe_url",
+            "type": "url",
+            "required": true,
+            "description": "Unsubscribe link"
+          },
+          {
+            "name": "privacy_url",
+            "type": "url",
+            "required": true,
+            "description": "Privacy policy link"
+          },
+          {
+            "name": "customer_care_url",
+            "type": "url",
+            "required": true,
+            "description": "Customer service link"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered text and links",
+        "stylingNotes": "Small Georgia serif font, gray background #f5f6f6",
+        "htmlSignature": "View this email in your browser, Unsubscribe links"
+      }
+    ],
+    "repeatingSections": [
+      {
+        "type": "article-pair",
+        "pattern": "Pairs of articles in two-column layout",
+        "instanceCount": 3,
+        "variablesPerInstance": [
+          "left_article",
+          "right_article"
+        ]
+      },
+      {
+        "type": "article",
+        "pattern": "Individual article cards with consistent structure",
+        "instanceCount": 6,
+        "variablesPerInstance": [
+          "category",
+          "image",
+          "image_alt",
+          "issue_date",
+          "title",
+          "description",
+          "author",
+          "article_url"
+        ]
+      }
+    ],
+    "globalElements": {
+      "header": {
+        "present": true,
+        "components": [
+          "logo",
+          "tagline"
+        ]
+      },
+      "footer": {
+        "present": true,
+        "components": [
+          "unsubscribe",
+          "privacy-policy",
+          "customer-care",
+          "address",
+          "copyright"
+        ]
+      },
+      "wrapper": {
+        "type": "Fixed-width table-based layout with responsive classes",
+        "width": "650px"
+      }
+    },
+    "hierarchy": {
+      "depth": 3,
+      "description": "header → hero/intro → three rows of article pairs → archive CTA → footer"
+    },
+    "novelTypeSummary": {
+      "hasNovelTypes": false,
+      "novelTypeNames": [],
+      "explanation": "This email uses standard newsletter patterns: header, hero, intro, repeating articles in two-column layout, CTA, and footer. No novel section types were discovered."
+    }
+  },
+  "content": {
+    "reasoning": "I extracted content from a New Yorker newsletter featuring their 'Literary Lives' archive collection. The email has a clear structure with header, hero section, editorial intro, three rows of article pairs, archive CTA, and footer. I preserved HTML formatting in descriptions and extracted complete URLs. The content is primarily static template text with dynamic article data.",
+    "emailType": "newsletter",
+    "emailSubtype": "curated-archive-collection",
+    "title": "From the Archive",
+    "preheader": "Read our \"Literary Lives\" collection.",
+    "contentBySectionType": {
+      "header": {
+        "instances": [
+          {
+            "extractedData": {
+              "logoUrl": "http://links.newyorker.mkt4334.com/ctt?kn=10&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+              "logoImage": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Layer_1@2x.png",
+              "logoAlt": "The New Yorker"
+            }
+          }
+        ]
+      },
+      "hero": {
+        "instances": [
+          {
+            "extractedData": {
+              "collectionTitle": "From the Archive",
+              "collectionSubtitle": "Highs and lows in pursuit of the literary life.",
+              "titleUrl": "http://links.newyorker.mkt4334.com/ctt?kn=16&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+            }
+          }
+        ]
+      },
+      "intro": {
+        "instances": [
+          {
+            "extractedData": {
+              "introText": "<em>The New Yorker</em> archive presents thematic selections of articles from the magazine's past, highlighting stories that feel as fresh as ever.<br /><br />In our \"Literary Lives\" collection, we bring you pieces about the dynamic authors behind literary masterworks. From F. Scott and Zelda Fitzgerald's legendary zeal for dancing and drinking to Zora Neale Hurston's role as a leader of the Harlem Renaissance, these pieces reveal the depths of literary life, in all its ardency and struggle.<br /><br />To enjoy more collections, or to browse through nine decades of <em>The New Yorker</em>, from complete issues to carefully selected favorites, <a href=\"http://links.newyorker.mkt4334.com/ctt?kn=7&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0\" style=\"text-decoration:none; color: #0773b5;\">click here</a>.",
+              "archiveLink": "http://links.newyorker.mkt4334.com/ctt?kn=7&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+            }
+          }
+        ]
+      },
+      "article": {
+        "instances": [
+          {
+            "extractedData": {
+              "category": "A CRITIC AT LARGE",
+              "image": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202b@2x.png",
+              "imageAlt": "This Lonesome Place",
+              "issueDate": "January 29, 2001 Issue",
+              "title": "This Lonesome Place",
+              "description": "Flannery O'Connor on race and religion in the unreconstructed South.",
+              "author": "Hilton Als",
+              "articleUrl": "http://links.newyorker.mkt4334.com/ctt?kn=1&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+            }
+          },
+          {
+            "extractedData": {
+              "category": "LIFE AND LETTERS",
+              "image": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%207b@2x.png",
+              "imageAlt": "Ernest Hemingway",
+              "issueDate": "November 9, 1998 Issue",
+              "title": "Last Words",
+              "description": "Those Hemingway wrote, and those he didn't.",
+              "author": "Joan Didion",
+              "articleUrl": "http://links.newyorker.mkt4334.com/ctt?kn=2&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+            }
+          },
+          {
+            "extractedData": {
+              "category": "A CRITIC AT LARGE",
+              "image": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive1a2.png",
+              "imageAlt": "Zora Neale Hurston",
+              "issueDate": "February 17, 1997 Issue",
+              "title": "A Society of One",
+              "description": "Zora Neale Hurston, American contrarian.",
+              "author": "Claudia Roth Pierpont",
+              "articleUrl": "http://links.newyorker.mkt4334.com/ctt?kn=5&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+            }
+          },
+          {
+            "extractedData": {
+              "category": "PROFILES",
+              "image": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive4.png",
+              "imageAlt": "Edith Wharton",
+              "issueDate": "March 2, 1929 Issue",
+              "title": "Dearest Edith",
+              "description": "Edith Wharton was a society insider—until she started writing about her friends.",
+              "author": "Janet Flanner",
+              "articleUrl": "http://links.newyorker.mkt4334.com/ctt?kn=21&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+            }
+          },
+          {
+            "extractedData": {
+              "category": "THE ARTS",
+              "image": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202a@2x.png",
+              "imageAlt": "Henry James",
+              "issueDate": "November 7, 1959 Issue",
+              "title": "The Wings of Henry James",
+              "description": "How \"The Wings of the Dove\" shaped a whole generation of writers, critics, playwrights, producers, and publishers.",
+              "author": "James Thurber",
+              "articleUrl": "http://links.newyorker.mkt4334.com/ctt?kn=18&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+            }
+          },
+          {
+            "extractedData": {
+              "category": "PROFILES",
+              "image": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive6.png",
+              "imageAlt": "F. Scott Fitzgerald",
+              "issueDate": "April 17, 1926 Issue",
+              "title": "That Sad Young Man",
+              "description": "All was quiet on the Riviera, and then the Fitzgeralds arrived.",
+              "author": "James C. Mosher",
+              "articleUrl": "http://links.newyorker.mkt4334.com/ctt?kn=22&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+            }
+          }
+        ]
+      },
+      "cta": {
+        "instances": [
+          {
+            "extractedData": {
+              "ctaText": "Our full archive awaits.",
+              "buttonText": "Explore now",
+              "ctaUrl": "http://links.newyorker.mkt4334.com/ctt?kn=4&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+            }
+          }
+        ]
+      },
+      "footer": {
+        "instances": [
+          {
+            "extractedData": {
+              "unsubscribeUrl": "#",
+              "privacyUrl": "http://links.newyorker.mkt4334.com/ctt?kn=14&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+              "customerCareUrl": "http://links.newyorker.mkt4334.com/ctt?kn=19&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+            }
+          }
+        ]
+      }
+    },
+    "sampleData": {
+      "title": "From the Archive",
+      "preheader": "Read our \"Literary Lives\" collection.",
+      "collectionTitle": "From the Archive",
+      "collectionSubtitle": "Highs and lows in pursuit of the literary life.",
+      "collectionTheme": "Literary Lives",
+      "sections": [
+        {
+          "type": "article-pair",
+          "items": [
+            {
+              "leftArticle": {
+                "category": "A CRITIC AT LARGE",
+                "image": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202b@2x.png",
+                "imageAlt": "This Lonesome Place",
+                "issueDate": "January 29, 2001 Issue",
+                "title": "This Lonesome Place",
+                "description": "Flannery O'Connor on race and religion in the unreconstructed South.",
+                "author": "Hilton Als",
+                "articleUrl": "http://links.newyorker.mkt4334.com/ctt?kn=1&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+              },
+              "rightArticle": {
+                "category": "LIFE AND LETTERS",
+                "image": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%207b@2x.png",
+                "imageAlt": "Ernest Hemingway",
+                "issueDate": "November 9, 1998 Issue",
+                "title": "Last Words",
+                "description": "Those Hemingway wrote, and those he didn't.",
+                "author": "Joan Didion",
+                "articleUrl": "http://links.newyorker.mkt4334.com/ctt?kn=2&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+              }
+            }
+          ]
+        }
+      ],
+      "header": {
+        "logoUrl": "http://links.newyorker.mkt4334.com/ctt?kn=10&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+        "logoImage": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Layer_1@2x.png"
+      },
+      "footer": {
+        "unsubscribeLink": "#",
+        "privacyLink": "http://links.newyorker.mkt4334.com/ctt?kn=14&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+        "customerCareLink": "http://links.newyorker.mkt4334.com/ctt?kn=19&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+      },
+      "archiveCta": {
+        "text": "Our full archive awaits.",
+        "buttonText": "Explore now",
+        "url": "http://links.newyorker.mkt4334.com/ctt?kn=4&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+      }
+    },
+    "staticContent": {
+      "elements": [
+        "The New Yorker logo and branding",
+        "From the Archive collection title",
+        "Editorial introduction about Literary Lives theme",
+        "Archive CTA section with 'Our full archive awaits' text",
+        "Footer legal text and copyright",
+        "Email styling and layout structure",
+        "Read now button text",
+        "Explore now button text"
+      ]
+    }
+  },
+  "components": {
+    "reasoning": "I extracted the HTML structure and identified 6 distinct section types. Each component preserves the exact table-based layout and inline styles from the original email. I converted static content to template variables using nested object paths following the project conventions. The header uses header.logoUrl and header.logoImage, hero uses hero.title and hero.subtitle, intro uses intro.content and intro.archiveLink, article-pair contains two article objects, individual articles have all metadata fields, cta has promotional content, and footer has legal links. All components are self-contained and use proper Maizzle syntax.",
+    "components": [
+      {
+        "name": "Header",
+        "type": "header",
+        "description": "Brand header with logo and tagline",
+        "html": "<table bgcolor=\"#f5f6f6\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" style=\"table-layout:fixed;\" width=\"100%\"><tr><td bgcolor=\"#f5f6f6\" class=\"general-padding\" valign=\"top\"><table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" style=\"width:650px;min-width:650px;\" width=\"650\"><tr><td bgcolor=\"#f5f6f6\" style=\"font-family: arial,helv,sans-serif; font-size: 10px; color: rgb(35, 31, 32); padding: 0px 0px 26px; text-align: center;\" valign=\"top\" width=\"650\"><div style=\"text-align: right;font-family: helvetica, arial,sans-serif;line-height:16px;font-size: 10px; color: #f5f6f6;padding:5px 38px 10px 0px;\"><em>Read our &ldquo;Literary Lives&rdquo; collection.</em></div><div style=\"font-size:30px;line-height:30px;\"><a href=\"{{ header.logoUrl }}\" name=\"logo\" target=\"_blank\"><img alt=\"The New Yorker\" border=\"0\" height=\"35\" src=\"{{ header.logoImage }}\" title=\"The New Yorker\" width=\"150\" /></a></div></td></tr></table></td></tr></table>",
+        "dataPath": "header",
+        "variables": [
+          {
+            "path": "header.logoUrl",
+            "type": "url",
+            "required": true,
+            "description": "Link destination for logo"
+          },
+          {
+            "path": "header.logoImage",
+            "type": "image",
+            "required": true,
+            "description": "Logo image source"
+          }
+        ]
+      },
+      {
+        "name": "Hero",
+        "type": "hero",
+        "description": "Large title section introducing the email theme",
+        "html": "<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" style=\"width:650px;min-width:650px;\" width=\"650\"><tr><td bgcolor=\"#ffffff\" class=\"main-text-welcome\" style=\"text-align:center; padding: 40px 80px 40px 80px; font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-bottom: 1px solid #e8e7e7;\" valign=\"top\" width=\"650\"><div style=\"margin-top:20px;\"><a href=\"{{ hero.titleUrl }}\" name=\"hedtext\" style=\"color: #DF3331; text-decoration: none; font-size:40px; line-height:46px; font-family: Georgia, times, serif;\">{{ hero.title }}</a></div><div style=\"margin-top:20px;\"><a href=\"{{ hero.titleUrl }}\" name=\"hedtext\" style=\"color: #121212; text-decoration: none; font-size:22px; line-height:34px; font-family: Georgia, times, serif;\">{{ hero.subtitle }}</a></div></td></tr></table>",
+        "dataPath": "hero",
+        "variables": [
+          {
+            "path": "hero.title",
+            "type": "string",
+            "required": true,
+            "description": "Main collection title"
+          },
+          {
+            "path": "hero.subtitle",
+            "type": "string",
+            "required": true,
+            "description": "Descriptive subtitle"
+          },
+          {
+            "path": "hero.titleUrl",
+            "type": "url",
+            "required": true,
+            "description": "Link for title and subtitle"
+          }
+        ]
+      },
+      {
+        "name": "Intro",
+        "type": "intro",
+        "description": "Editorial introduction explaining the content theme",
+        "html": "<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0 auto;\"><tr><td height=\"1\" style=\"font-size: 1px; color: #f5f6f6; mso-line-height-rule: exactly; line-height: 1px; border-top: 10px solid #f5f6f6;\" width=\"650\">-</td></tr></table><table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" style=\"width:650px;min-width:650px;\" width=\"650\"><tr><td bgcolor=\"#ffffff\" class=\"main-text-welcome\" style=\"text-align:left;padding: 40px 50px 40px 50px;font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-bottom: 1px solid #e8e7e7;border-top: 1px solid #e8e7e7;\" valign=\"top\" width=\"650\"><div style=\"color: #121212; text-decoration: none; font-size:18px; line-height:26px; font-family: Georgia, times, serif;\">{{{ intro.content }}}</div></td></tr></table>",
+        "dataPath": "intro",
+        "variables": [
+          {
+            "path": "intro.content",
+            "type": "html",
+            "required": true,
+            "description": "Editorial introduction content with HTML formatting"
+          }
+        ]
+      },
+      {
+        "name": "ArticlePair",
+        "type": "article-pair",
+        "description": "Two-column layout featuring a pair of articles side by side",
+        "html": "<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0 auto;\"><tr><td height=\"1\" style=\"font-size: 1px; color: #f5f6f6; mso-line-height-rule: exactly; line-height: 1px; border-top: 10px solid #f5f6f6;\" width=\"650\">-</td></tr></table><each loop=\"pair in section.items\"><table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" style=\"width:650px;min-width:650px;\" width=\"650\"><tr><td bgcolor=\"#ffffff\" style=\"padding: 25px 0px 0px 0px;font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-top: 1px solid #e8e7e7;font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-bottom: 1px solid #e8e7e7;\" valign=\"top\" width=\"650\"><table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" width=\"325\"><tr><td valign=\"top\" width=\"325\"><table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" width=\"325\"><tr><td style=\"padding:0px 0px 0px 0px;\" valign=\"top\" width=\"325\"><div style=\"padding:0px 25px 10px 25px;text-decoration: none; font-size:14px; line-height:22px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #E71B22;letter-spacing:1px;\">{{ pair.leftArticle.category }}</div><div style=\"padding:0px 25px 10px 25px;text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;\"><a href=\"{{ pair.leftArticle.articleUrl }}\" style=\"text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif;color: #121212;\" target=\"_blank\"><img alt=\"{{ pair.leftArticle.imageAlt }}\" border=\"0\" class=\"full-width\" src=\"{{ pair.leftArticle.image }}\" width=\"100%\" /></a></div><div style=\"padding:0px 20px 0px 25px;text-decoration: none; font-size:13px; line-height:19px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #000000;letter-spacing:0px;\">{{ pair.leftArticle.issueDate }}</div><div style=\"text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;padding:0px 20px 5px 25px;\"><a href=\"{{ pair.leftArticle.articleUrl }}\" style=\"text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;\" target=\"_blank\">{{ pair.leftArticle.title }}</a></div><div style=\"margin:10 0 20px 0px; padding:0px 20px 0px 25px;font-family: Georgia, Times, 'Times New Roman', serif; font-size: 16px; line-height: 22px; color: #121212;\">{{ pair.leftArticle.description }}</div><div style=\"padding:0px 20px 10px 25px;margin:15px 0 15px 0;font-family:Helvetica, Arial, sans-serif; font-size:14px;line-height:22px;color:#333;font-weight:bold;\">By {{ pair.leftArticle.author }}</div><div><div style=\"padding:0px 20px 25px 25px;font-family: Georgia, Times, 'Times New Roman', serif; font-size: 16px; line-height: 22px; align:left;color: #121212;\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100\"><tr><td bgcolor=\" #0773b5\" height=\"32\" style=\"font-family:helvetica, arial, sans-serif;font-size:15px;line-height:30px;text-align:center;border-radius:2px;color:#ffffff;font-weight:normal;\" valign=\"middle\" width=\"100\"><a href=\"{{ pair.leftArticle.articleUrl }}\" style=\"text-decoration:none;color:#ffffff;display:block;\" target=\"_blank\">Read now</a></td></tr></table></div></div></td></tr></table></td></tr></table><table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"right-block\" width=\"325\"><tr><td valign=\"top\" width=\"325\"><table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" width=\"325\"><tr><td style=\"padding:0px 0px 0px 0px;\" valign=\"top\" width=\"325\"><div style=\"padding:0px 25px 10px 25px;text-decoration: none; font-size:14px; line-height:22px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #E71B22;letter-spacing:1px;\">{{ pair.rightArticle.category }}</div><div style=\"padding:0px 25px 10px 25px;text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;\"><a href=\"{{ pair.rightArticle.articleUrl }}\" style=\"text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif;color: #121212;\" target=\"_blank\"><img alt=\"{{ pair.rightArticle.imageAlt }}\" border=\"0\" class=\"full-width\" src=\"{{ pair.rightArticle.image }}\" width=\"100%\" /></a></div><div style=\"padding:0px 20px 0px 25px;text-decoration: none; font-size:13px; line-height:19px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #000000;letter-spacing:0px;\">{{ pair.rightArticle.issueDate }}</div><div style=\"text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;padding:0px 20px 5px 25px;\"><a href=\"{{ pair.rightArticle.articleUrl }}\" style=\"text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;\" target=\"_blank\">{{ pair.rightArticle.title }}</a></div><div style=\"margin:10 0 20px 0px; padding:0px 20px 0px 25px;font-family: Georgia, Times, 'Times New Roman', serif; font-size: 16px; line-height: 22px; color: #121212;\">{{ pair.rightArticle.description }}</div><div style=\"padding:0px 20px 10px 25px;margin:15px 0 15px 0;font-family:Helvetica, Arial, sans-serif; font-size:14px;line-height:22px;color:#333;font-weight:bold;\">By {{ pair.rightArticle.author }}</div><div><div style=\"padding:0px 20px 25px 25px;font-family: Georgia, Times, 'Times New Roman', serif; font-size: 16px; line-height: 22px; align:left;color: #121212;\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100\"><tr><td bgcolor=\" #0773b5\" height=\"32\" style=\"font-family:helvetica, arial, sans-serif;font-size:15px;line-height:30px;text-align:center;border-radius:2px;color:#ffffff;font-weight:normal;\" valign=\"middle\" width=\"100\"><a href=\"{{ pair.rightArticle.articleUrl }}\" style=\"text-decoration:none;color:#ffffff;display:block;\" target=\"_blank\">Read now</a></td></tr></table></div></div></td></tr></table></td></tr></table></td></tr></table></each>",
+        "dataPath": "section.items",
+        "isRepeating": true,
+        "variables": [
+          {
+            "path": "pair.leftArticle.category",
+            "type": "string",
+            "required": true,
+            "description": "Left article category"
+          },
+          {
+            "path": "pair.leftArticle.image",
+            "type": "image",
+            "required": true,
+            "description": "Left article featured image"
+          },
+          {
+            "path": "pair.leftArticle.imageAlt",
+            "type": "string",
+            "required": true,
+            "description": "Left article image alt text"
+          },
+          {
+            "path": "pair.leftArticle.issueDate",
+            "type": "string",
+            "required": true,
+            "description": "Left article publication date"
+          },
+          {
+            "path": "pair.leftArticle.title",
+            "type": "string",
+            "required": true,
+            "description": "Left article headline"
+          },
+          {
+            "path": "pair.leftArticle.description",
+            "type": "string",
+            "required": true,
+            "description": "Left article summary"
+          },
+          {
+            "path": "pair.leftArticle.author",
+            "type": "string",
+            "required": true,
+            "description": "Left article author name"
+          },
+          {
+            "path": "pair.leftArticle.articleUrl",
+            "type": "url",
+            "required": true,
+            "description": "Left article link"
+          },
+          {
+            "path": "pair.rightArticle.category",
+            "type": "string",
+            "required": true,
+            "description": "Right article category"
+          },
+          {
+            "path": "pair.rightArticle.image",
+            "type": "image",
+            "required": true,
+            "description": "Right article featured image"
+          },
+          {
+            "path": "pair.rightArticle.imageAlt",
+            "type": "string",
+            "required": true,
+            "description": "Right article image alt text"
+          },
+          {
+            "path": "pair.rightArticle.issueDate",
+            "type": "string",
+            "required": true,
+            "description": "Right article publication date"
+          },
+          {
+            "path": "pair.rightArticle.title",
+            "type": "string",
+            "required": true,
+            "description": "Right article headline"
+          },
+          {
+            "path": "pair.rightArticle.description",
+            "type": "string",
+            "required": true,
+            "description": "Right article summary"
+          },
+          {
+            "path": "pair.rightArticle.author",
+            "type": "string",
+            "required": true,
+            "description": "Right article author name"
+          },
+          {
+            "path": "pair.rightArticle.articleUrl",
+            "type": "url",
+            "required": true,
+            "description": "Right article link"
+          }
+        ]
+      },
+      {
+        "name": "Cta",
+        "type": "cta",
+        "description": "Call-to-action section promoting additional content",
+        "html": "<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0 auto;\"><tr><td height=\"1\" style=\"font-size: 1px; color: #f5f6f6; mso-line-height-rule: exactly; line-height: 1px; border-top: 10px solid #f5f6f6;\" width=\"650\">-</td></tr></table><table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" style=\"width:650px;min-width:650px;\" width=\"650\"><tr><td bgcolor=\"#ffffff\" class=\"main-text-welcome\" style=\"text-align:left;padding: 0px 45px 0px 45px;font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-bottom: 1px solid #e8e7e7;font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-top: 1px solid #e8e7e7;\" valign=\"top\" width=\"650\"><div style=\"color: #000000; text-decoration: none; text-align: center;font-size:22px; line-height:26px; font-family: Georgia, times, serif;padding:40px 0px 40px 0px;\">{{ cta.text }}</div><table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"image-width-290\" style=\"padding: 0px 0px 40px 0px;\" width=\"290\"><tr><td bgcolor=\"#DF3331\" height=\"48\" style=\"font-family:helvetica, arial, sans-serif;font-size:14px;line-height:30px;padding:0px 17px 00px 17px;text-align:center;border-radius:2px;color:#ffffff;font-weight:bold;\" valign=\"middle\" width=\"100%\"><a href=\"{{ cta.url }}\" style=\"text-decoration:none;color:#ffffff;display:block;\" target=\"_blank\">{{ cta.buttonText }}</a></td></tr></table></td></tr></table>",
+        "dataPath": "cta",
+        "variables": [
+          {
+            "path": "cta.text",
+            "type": "string",
+            "required": true,
+            "description": "Call-to-action message"
+          },
+          {
+            "path": "cta.buttonText",
+            "type": "string",
+            "required": true,
+            "description": "Button label"
+          },
+          {
+            "path": "cta.url",
+            "type": "url",
+            "required": true,
+            "description": "Destination URL"
+          }
+        ]
+      },
+      {
+        "name": "Footer",
+        "type": "footer",
+        "description": "Standard email footer with legal and unsubscribe information",
+        "html": "<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:0 auto;\"><tr><td height=\"1\" style=\"font-size: 1px; color: #f5f6f6; mso-line-height-rule: exactly; line-height: 1px; border-top: 10px solid #f5f6f6;\" width=\"650\">-</td></tr></table><table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" style=\"width:650px;min-width:650px;\" width=\"650\"><tr><td bgcolor=\"#f5f6f6\" style=\"color: #333333; text-decoration: none; font-size:13px; line-height:20px; font-family: Georgia, times, serif; text-align:center; padding: 30px 20px 20px 20px;\" valign=\"top\" width=\"650\"><a href=\"#\" style=\"color: #333333; text-decoration: underline;\" target=\"_blank\" xt=\"SPCLICKTOVIEW\">View this email in your browser.</a><br /><br />You received this email because you are a subscriber to <em>The New Yorker</em>. Question about your subscription? Contact <a href=\"{{ footer.customerCareUrl }}\" style=\"color: #333333; text-decoration: underline;\">Customer Care</a>.<br /><br />View our <a href=\"{{ footer.privacyUrl }}\" style=\"color: #333333; text-decoration: underline;\" target=\"_blank\">Privacy Policy</a><br /><a href=\"{{ footer.unsubscribeUrl }}\" style=\"color: #333333; text-decoration: underline;\" target=\"_blank\">Unsubscribe</a><br /><br />Sent from Condé Nast, 1 World Trade Center, New York, NY 10007, attn: Email Coordinator<br /><br />Copyright &copy; 2018 Condé Nast. All rights reserved.</td></tr></table>",
+        "dataPath": "footer",
+        "variables": [
+          {
+            "path": "footer.unsubscribeUrl",
+            "type": "url",
+            "required": true,
+            "description": "Unsubscribe link"
+          },
+          {
+            "path": "footer.privacyUrl",
+            "type": "url",
+            "required": true,
+            "description": "Privacy policy link"
+          },
+          {
+            "path": "footer.customerCareUrl",
+            "type": "url",
+            "required": true,
+            "description": "Customer service link"
+          }
+        ]
+      }
+    ],
+    "layout": {
+      "name": "main.html",
+      "html": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\"><html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\"><meta name=\"viewport\" content=\"initial-scale=1\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><title><block name=\"title\">{{ title }}</block></title><style type=\"text/css\">div, p, a, li, td { -webkit-text-size-adjust: none; }.ReadMsgBody { width: 100%; }.ExternalClass { width: 100%; }.ExternalClass * { line-height: 125% }a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }@media screen and (max-width: 480px) { body { margin: 0px !important; padding: 0 !important; bgcolor: #ffffff !important; }.full-width { width: 100% !important; min-width: 100% !important; height: auto !important; bgcolor: #ffffff !important; }.hide { display: none !important; bgcolor: #ffffff !important; }.block { display: block !important; }.general-padding { padding: 10px 0px 10px 0px !important; }.hr-image { width: 100% !important; height: 1px !important; }.self-logo-image { width: 250px !important; height: auto !important; }.image-width-290 { width: 290px !important; height: auto !important; }.welcome-header-cell { height: auto !important; }.welcome-header { width: 80% !important; max-width: 389px !important; height: auto !important; }.main-text-welcome { padding: 30px 35px 30px 35px !important; }.right-block { padding: 30px 0px 0px 0px !important; width: 100% !important; min-width: 100% !important; height: auto !important; }.span-width-300 { width: 290px !important; }.signup-image-cell { text-align: center !important; padding: 0px 20px 0px 20px !important; }.gift-image-cell { text-align: center !important; padding: 20px 0px 0px 0px; }.height-auto { height: auto !important; padding: 10px 0px 0px 0px !important; } }</style></head><body bgcolor=\"#eceef1\" leftmargin=\"0\" marginheight=\"0\" marginwidth=\"0\" topmargin=\"0\"><block name=\"template\"></block><IMG src=\"http://links.newyorker.mkt4334.com/open/log/15404918/NDQzMzg5NTk0NzI3S0/0/MTcyMDM2MjQyMwS2/2/MTcyMDM2MjQyMQS2/0\" style=\"display: none\"></body></html>",
+      "description": "Main layout wrapper with responsive styles and email client compatibility"
+    },
+    "globalStyles": {
+      "embedded": "div, p, a, li, td { -webkit-text-size-adjust: none; }.ReadMsgBody { width: 100%; }.ExternalClass { width: 100%; }.ExternalClass * { line-height: 125% }a[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }@media screen and (max-width: 480px) { body { margin: 0px !important; padding: 0 !important; bgcolor: #ffffff !important; }.full-width { width: 100% !important; min-width: 100% !important; height: auto !important; bgcolor: #ffffff !important; }.hide { display: none !important; bgcolor: #ffffff !important; }.block { display: block !important; }.general-padding { padding: 10px 0px 10px 0px !important; }.hr-image { width: 100% !important; height: 1px !important; }.self-logo-image { width: 250px !important; height: auto !important; }.image-width-290 { width: 290px !important; height: auto !important; }.welcome-header-cell { height: auto !important; }.welcome-header { width: 80% !important; max-width: 389px !important; height: auto !important; }.main-text-welcome { padding: 30px 35px 30px 35px !important; }.right-block { padding: 30px 0px 0px 0px !important; width: 100% !important; min-width: 100% !important; height: auto !important; }.span-width-300 { width: 290px !important; }.signup-image-cell { text-align: center !important; padding: 0px 20px 0px 20px !important; }.gift-image-cell { text-align: center !important; padding: 20px 0px 0px 0px; }.height-auto { height: auto !important; padding: 10px 0px 0px 0px !important; } }",
+      "critical": "All inline styles must be preserved exactly as they appear in the original HTML for email client compatibility"
+    },
+    "templateStructure": {
+      "mainTemplate": "---\ntitle: From the Archive\nheader:\n  logoUrl: 'http://links.newyorker.mkt4334.com/...'\n  logoImage: 'http://contentz.mkt4334.com/...'\nhero:\n  title: 'From the Archive'\n  subtitle: 'Highs and lows in pursuit of the literary life.'\n  titleUrl: 'http://links.newyorker.mkt4334.com/...'\nintro:\n  content: '<em>The New Yorker</em> archive presents...'\nsections:\n- type: article-pair\n  items:\n  - leftArticle:\n      category: 'A CRITIC AT LARGE'\n      image: 'http://contentz.mkt4334.com/...'\n      # ... other fields\n    rightArticle:\n      category: 'LIFE AND LETTERS'\n      image: 'http://contentz.mkt4334.com/...'\n      # ... other fields\ncta:\n  text: 'Our full archive awaits.'\n  buttonText: 'Explore now'\n  url: 'http://links.newyorker.mkt4334.com/...'\nfooter:\n  unsubscribeUrl: '#'\n  privacyUrl: 'http://links.newyorker.mkt4334.com/...'\n  customerCareUrl: 'http://links.newyorker.mkt4334.com/...'\n---\n\n<extends src=\"src/layouts/main.html\">\n  <block name=\"template\">\n    <component src=\"src/components/header.html\"></component>\n    <component src=\"src/components/hero.html\"></component>\n    <component src=\"src/components/intro.html\"></component>\n    <each loop=\"section in sections\">\n      <if condition=\"section.type === 'article-pair'\">\n        <component src=\"src/components/article-pair.html\"></component>\n      </if>\n    </each>\n    <component src=\"src/components/cta.html\"></component>\n    <component src=\"src/components/footer.html\"></component>\n  </block>\n</extends>",
+      "componentOrder": [
+        "Header",
+        "Hero",
+        "Intro",
+        "ArticlePair",
+        "Cta",
+        "Footer"
+      ]
+    },
+    "sampleData": {
+      "title": "From the Archive",
+      "header": {
+        "logoUrl": "http://links.newyorker.mkt4334.com/ctt?kn=10&ms=MTU0MDQ5MTgS1",
+        "logoImage": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Layer_1@2x.png"
+      },
+      "hero": {
+        "title": "From the Archive",
+        "subtitle": "Highs and lows in pursuit of the literary life.",
+        "titleUrl": "http://links.newyorker.mkt4334.com/ctt?kn=16&ms=MTU0MDQ5MTgS1"
+      },
+      "intro": {
+        "content": "<em>The New Yorker</em> archive presents thematic selections of articles from the magazine's past, highlighting stories that feel as fresh as ever.<br /><br />In our \"Literary Lives\" collection, we bring you pieces about the dynamic authors behind literary masterworks. From F. Scott and Zelda Fitzgerald's legendary zeal for dancing and drinking to Zora Neale Hurston's role as a leader of the Harlem Renaissance, these pieces reveal the depths of literary life, in all its ardency and struggle.<br /><br />To enjoy more collections, or to browse through nine decades of <em>The New Yorker</em>, from complete issues to carefully selected favorites, <a href=\"http://links.newyorker.mkt4334.com/ctt?kn=7&ms=MTU0MDQ5MTgS1\" style=\"text-decoration:none; color: #0773b5;\" target=\"_blank\">click here</a>."
+      },
+      "sections": [
+        {
+          "type": "article-pair",
+          "items": [
+            {
+              "leftArticle": {
+                "category": "A CRITIC AT LARGE",
+                "image": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202b@2x.png",
+                "imageAlt": "This Lonesome Place",
+                "issueDate": "January 29, 2001 Issue",
+                "title": "This Lonesome Place",
+                "description": "Flannery O'Connor on race and religion in the unreconstructed South.",
+                "author": "Hilton Als",
+                "articleUrl": "http://links.newyorker.mkt4334.com/ctt?kn=15&ms=MTU0MDQ5MTgS1"
+              },
+              "rightArticle": {
+                "category": "LIFE AND LETTERS",
+                "image": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%207b@2x.png",
+                "imageAlt": "Ernest Hemingway",
+                "issueDate": "November 9, 1998 Issue",
+                "title": "Last Words",
+                "description": "Those Hemingway wrote, and those he didn't.",
+                "author": "Joan Didion",
+                "articleUrl": "http://links.newyorker.mkt4334.com/ctt?kn=23&ms=MTU0MDQ5MTgS1"
+              }
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "text": "Our full archive awaits.",
+        "buttonText": "Explore now",
+        "url": "http://links.newyorker.mkt4334.com/ctt?kn=4&ms=MTU0MDQ5MTgS1"
+      },
+      "footer": {
+        "unsubscribeUrl": "#",
+        "privacyUrl": "http://links.newyorker.mkt4334.com/ctt?kn=14&ms=MTU0MDQ5MTgS1",
+        "customerCareUrl": "http://links.newyorker.mkt4334.com/ctt?kn=19&ms=MTU0MDQ5MTgS1"
+      }
+    }
+  },
+  "reconciliation": {
+    "summary": {
+      "totalDiscovered": 7,
+      "matchedToKnown": 0,
+      "variants": 3,
+      "completelyNovel": 4,
+      "requiresNewComponents": 7,
+      "message": "3 are variants of known types, 4 are completely new types"
+    },
+    "discoveredTypes": [
+      {
+        "name": "header",
+        "description": "Brand header with logo and navigation elements",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_url",
+            "type": "url",
+            "required": true,
+            "description": "Link destination for logo"
+          },
+          {
+            "name": "logo_image",
+            "type": "image",
+            "required": true,
+            "description": "Logo image source"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered logo link and image",
+        "stylingNotes": "Centered alignment, specific font styling for tagline",
+        "htmlSignature": "logo link name attribute, New Yorker branding"
+      },
+      {
+        "name": "hero",
+        "description": "Large title section introducing the email theme",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "collection_title",
+            "type": "string",
+            "required": true,
+            "description": "Main collection title"
+          },
+          {
+            "name": "collection_subtitle",
+            "type": "string",
+            "required": true,
+            "description": "Descriptive subtitle"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered text and styling",
+        "stylingNotes": "Large Georgia serif font, red accent color #DF3331",
+        "htmlSignature": "main-text-welcome class, centered text alignment"
+      },
+      {
+        "name": "intro",
+        "description": "Editorial introduction explaining the content theme",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "intro_text",
+            "type": "html",
+            "required": true,
+            "description": "Editorial introduction content"
+          },
+          {
+            "name": "archive_link",
+            "type": "url",
+            "required": true,
+            "description": "Link to full archive"
+          }
+        ],
+        "containerStructure": "table > tr > td with left-aligned text content",
+        "stylingNotes": "Georgia serif font, blue links #0773b5",
+        "htmlSignature": "main-text-welcome class, left text alignment"
+      },
+      {
+        "name": "article-pair",
+        "description": "Two-column layout featuring a pair of articles side by side",
+        "isRepeating": true,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 3,
+        "variables": [
+          {
+            "name": "left_article",
+            "type": "object",
+            "required": true,
+            "description": "Complete article object for left column"
+          },
+          {
+            "name": "right_article",
+            "type": "object",
+            "required": true,
+            "description": "Complete article object for right column"
+          }
+        ],
+        "containerStructure": "table > tr > td containing two 325px width tables side by side",
+        "stylingNotes": "Two-column responsive layout, white background",
+        "htmlSignature": "full-width and right-block classes, 325px width tables"
+      },
+      {
+        "name": "article",
+        "description": "Individual article card with image, metadata, and call-to-action",
+        "isRepeating": true,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 6,
+        "variables": [
+          {
+            "name": "category",
+            "type": "string",
+            "required": true,
+            "description": "Article category (e.g., 'A CRITIC AT LARGE', 'PROFILES')"
+          },
+          {
+            "name": "image",
+            "type": "image",
+            "required": true,
+            "description": "Article featured image"
+          },
+          {
+            "name": "image_alt",
+            "type": "string",
+            "required": true,
+            "description": "Alt text for article image"
+          },
+          {
+            "name": "issue_date",
+            "type": "string",
+            "required": true,
+            "description": "Publication date"
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "description": "Article headline"
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "required": true,
+            "description": "Article summary"
+          },
+          {
+            "name": "author",
+            "type": "string",
+            "required": true,
+            "description": "Article author name"
+          },
+          {
+            "name": "article_url",
+            "type": "url",
+            "required": true,
+            "description": "Link to full article"
+          }
+        ],
+        "containerStructure": "nested tables with category, image, date, title, description, author, and CTA button",
+        "stylingNotes": "Georgia serif fonts, red category labels #E71B22, blue CTA buttons #0773b5",
+        "htmlSignature": "325px width containers, specific padding patterns, Read now buttons"
+      },
+      {
+        "name": "cta",
+        "description": "Call-to-action section promoting additional content",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "cta_text",
+            "type": "string",
+            "required": true,
+            "description": "Call-to-action message"
+          },
+          {
+            "name": "button_text",
+            "type": "string",
+            "required": true,
+            "description": "Button label"
+          },
+          {
+            "name": "cta_url",
+            "type": "url",
+            "required": true,
+            "description": "Destination URL"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered text and button",
+        "stylingNotes": "Centered layout, red button background #DF3331",
+        "htmlSignature": "main-text-welcome class, centered button table"
+      },
+      {
+        "name": "footer",
+        "description": "Standard email footer with legal and unsubscribe information",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "unsubscribe_url",
+            "type": "url",
+            "required": true,
+            "description": "Unsubscribe link"
+          },
+          {
+            "name": "privacy_url",
+            "type": "url",
+            "required": true,
+            "description": "Privacy policy link"
+          },
+          {
+            "name": "customer_care_url",
+            "type": "url",
+            "required": true,
+            "description": "Customer service link"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered text and links",
+        "stylingNotes": "Small Georgia serif font, gray background #f5f6f6",
+        "htmlSignature": "View this email in your browser, Unsubscribe links"
+      }
+    ],
+    "novelTypes": [
+      {
+        "name": "header",
+        "description": "Brand header with logo and navigation elements",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_url",
+            "type": "url",
+            "required": true,
+            "description": "Link destination for logo"
+          },
+          {
+            "name": "logo_image",
+            "type": "image",
+            "required": true,
+            "description": "Logo image source"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered logo link and image",
+        "stylingNotes": "Centered alignment, specific font styling for tagline",
+        "htmlSignature": "logo link name attribute, New Yorker branding",
+        "isVariant": true,
+        "variantOf": "sponsor"
+      },
+      {
+        "name": "hero",
+        "description": "Large title section introducing the email theme",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "collection_title",
+            "type": "string",
+            "required": true,
+            "description": "Main collection title"
+          },
+          {
+            "name": "collection_subtitle",
+            "type": "string",
+            "required": true,
+            "description": "Descriptive subtitle"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered text and styling",
+        "stylingNotes": "Large Georgia serif font, red accent color #DF3331",
+        "htmlSignature": "main-text-welcome class, centered text alignment",
+        "isVariant": true,
+        "variantOf": "animated-image"
+      },
+      {
+        "name": "intro",
+        "description": "Editorial introduction explaining the content theme",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "intro_text",
+            "type": "html",
+            "required": true,
+            "description": "Editorial introduction content"
+          },
+          {
+            "name": "archive_link",
+            "type": "url",
+            "required": true,
+            "description": "Link to full archive"
+          }
+        ],
+        "containerStructure": "table > tr > td with left-aligned text content",
+        "stylingNotes": "Georgia serif font, blue links #0773b5",
+        "htmlSignature": "main-text-welcome class, left text alignment"
+      },
+      {
+        "name": "article-pair",
+        "description": "Two-column layout featuring a pair of articles side by side",
+        "isRepeating": true,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 3,
+        "variables": [
+          {
+            "name": "left_article",
+            "type": "object",
+            "required": true,
+            "description": "Complete article object for left column"
+          },
+          {
+            "name": "right_article",
+            "type": "object",
+            "required": true,
+            "description": "Complete article object for right column"
+          }
+        ],
+        "containerStructure": "table > tr > td containing two 325px width tables side by side",
+        "stylingNotes": "Two-column responsive layout, white background",
+        "htmlSignature": "full-width and right-block classes, 325px width tables"
+      },
+      {
+        "name": "article",
+        "description": "Individual article card with image, metadata, and call-to-action",
+        "isRepeating": true,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 6,
+        "variables": [
+          {
+            "name": "category",
+            "type": "string",
+            "required": true,
+            "description": "Article category (e.g., 'A CRITIC AT LARGE', 'PROFILES')"
+          },
+          {
+            "name": "image",
+            "type": "image",
+            "required": true,
+            "description": "Article featured image"
+          },
+          {
+            "name": "image_alt",
+            "type": "string",
+            "required": true,
+            "description": "Alt text for article image"
+          },
+          {
+            "name": "issue_date",
+            "type": "string",
+            "required": true,
+            "description": "Publication date"
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "description": "Article headline"
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "required": true,
+            "description": "Article summary"
+          },
+          {
+            "name": "author",
+            "type": "string",
+            "required": true,
+            "description": "Article author name"
+          },
+          {
+            "name": "article_url",
+            "type": "url",
+            "required": true,
+            "description": "Link to full article"
+          }
+        ],
+        "containerStructure": "nested tables with category, image, date, title, description, author, and CTA button",
+        "stylingNotes": "Georgia serif fonts, red category labels #E71B22, blue CTA buttons #0773b5",
+        "htmlSignature": "325px width containers, specific padding patterns, Read now buttons",
+        "isVariant": true,
+        "variantOf": "quote"
+      },
+      {
+        "name": "cta",
+        "description": "Call-to-action section promoting additional content",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "cta_text",
+            "type": "string",
+            "required": true,
+            "description": "Call-to-action message"
+          },
+          {
+            "name": "button_text",
+            "type": "string",
+            "required": true,
+            "description": "Button label"
+          },
+          {
+            "name": "cta_url",
+            "type": "url",
+            "required": true,
+            "description": "Destination URL"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered text and button",
+        "stylingNotes": "Centered layout, red button background #DF3331",
+        "htmlSignature": "main-text-welcome class, centered button table"
+      },
+      {
+        "name": "footer",
+        "description": "Standard email footer with legal and unsubscribe information",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "unsubscribe_url",
+            "type": "url",
+            "required": true,
+            "description": "Unsubscribe link"
+          },
+          {
+            "name": "privacy_url",
+            "type": "url",
+            "required": true,
+            "description": "Privacy policy link"
+          },
+          {
+            "name": "customer_care_url",
+            "type": "url",
+            "required": true,
+            "description": "Customer service link"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered text and links",
+        "stylingNotes": "Small Georgia serif font, gray background #f5f6f6",
+        "htmlSignature": "View this email in your browser, Unsubscribe links"
+      }
+    ],
+    "mappedTypes": [
+      {
+        "discovered": "header",
+        "knownType": "sponsor",
+        "confidence": 0.5,
+        "isNovel": true,
+        "isVariant": true,
+        "variantOf": "sponsor",
+        "mappingReason": "Semantic group: sponsor"
+      },
+      {
+        "discovered": "hero",
+        "knownType": "animated-image",
+        "confidence": 0.5,
+        "isNovel": true,
+        "isVariant": true,
+        "variantOf": "animated-image",
+        "mappingReason": "Semantic group: image"
+      },
+      {
+        "discovered": "intro",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      },
+      {
+        "discovered": "article-pair",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      },
+      {
+        "discovered": "article",
+        "knownType": "quote",
+        "confidence": 0.4,
+        "isNovel": true,
+        "isVariant": true,
+        "variantOf": "quote",
+        "mappingReason": "Variable pattern: quote-like"
+      },
+      {
+        "discovered": "cta",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      },
+      {
+        "discovered": "footer",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      }
+    ],
+    "allTypes": [
+      {
+        "name": "header",
+        "description": "Brand header with logo and navigation elements",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_url",
+            "type": "url",
+            "required": true,
+            "description": "Link destination for logo"
+          },
+          {
+            "name": "logo_image",
+            "type": "image",
+            "required": true,
+            "description": "Logo image source"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered logo link and image",
+        "stylingNotes": "Centered alignment, specific font styling for tagline",
+        "htmlSignature": "logo link name attribute, New Yorker branding",
+        "isVariant": true,
+        "variantOf": "sponsor",
+        "source": "variant"
+      },
+      {
+        "name": "hero",
+        "description": "Large title section introducing the email theme",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "collection_title",
+            "type": "string",
+            "required": true,
+            "description": "Main collection title"
+          },
+          {
+            "name": "collection_subtitle",
+            "type": "string",
+            "required": true,
+            "description": "Descriptive subtitle"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered text and styling",
+        "stylingNotes": "Large Georgia serif font, red accent color #DF3331",
+        "htmlSignature": "main-text-welcome class, centered text alignment",
+        "isVariant": true,
+        "variantOf": "animated-image",
+        "source": "variant"
+      },
+      {
+        "name": "intro",
+        "description": "Editorial introduction explaining the content theme",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "intro_text",
+            "type": "html",
+            "required": true,
+            "description": "Editorial introduction content"
+          },
+          {
+            "name": "archive_link",
+            "type": "url",
+            "required": true,
+            "description": "Link to full archive"
+          }
+        ],
+        "containerStructure": "table > tr > td with left-aligned text content",
+        "stylingNotes": "Georgia serif font, blue links #0773b5",
+        "htmlSignature": "main-text-welcome class, left text alignment",
+        "source": "novel"
+      },
+      {
+        "name": "article-pair",
+        "description": "Two-column layout featuring a pair of articles side by side",
+        "isRepeating": true,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 3,
+        "variables": [
+          {
+            "name": "left_article",
+            "type": "object",
+            "required": true,
+            "description": "Complete article object for left column"
+          },
+          {
+            "name": "right_article",
+            "type": "object",
+            "required": true,
+            "description": "Complete article object for right column"
+          }
+        ],
+        "containerStructure": "table > tr > td containing two 325px width tables side by side",
+        "stylingNotes": "Two-column responsive layout, white background",
+        "htmlSignature": "full-width and right-block classes, 325px width tables",
+        "source": "novel"
+      },
+      {
+        "name": "article",
+        "description": "Individual article card with image, metadata, and call-to-action",
+        "isRepeating": true,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 6,
+        "variables": [
+          {
+            "name": "category",
+            "type": "string",
+            "required": true,
+            "description": "Article category (e.g., 'A CRITIC AT LARGE', 'PROFILES')"
+          },
+          {
+            "name": "image",
+            "type": "image",
+            "required": true,
+            "description": "Article featured image"
+          },
+          {
+            "name": "image_alt",
+            "type": "string",
+            "required": true,
+            "description": "Alt text for article image"
+          },
+          {
+            "name": "issue_date",
+            "type": "string",
+            "required": true,
+            "description": "Publication date"
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "description": "Article headline"
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "required": true,
+            "description": "Article summary"
+          },
+          {
+            "name": "author",
+            "type": "string",
+            "required": true,
+            "description": "Article author name"
+          },
+          {
+            "name": "article_url",
+            "type": "url",
+            "required": true,
+            "description": "Link to full article"
+          }
+        ],
+        "containerStructure": "nested tables with category, image, date, title, description, author, and CTA button",
+        "stylingNotes": "Georgia serif fonts, red category labels #E71B22, blue CTA buttons #0773b5",
+        "htmlSignature": "325px width containers, specific padding patterns, Read now buttons",
+        "isVariant": true,
+        "variantOf": "quote",
+        "source": "variant"
+      },
+      {
+        "name": "cta",
+        "description": "Call-to-action section promoting additional content",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "cta_text",
+            "type": "string",
+            "required": true,
+            "description": "Call-to-action message"
+          },
+          {
+            "name": "button_text",
+            "type": "string",
+            "required": true,
+            "description": "Button label"
+          },
+          {
+            "name": "cta_url",
+            "type": "url",
+            "required": true,
+            "description": "Destination URL"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered text and button",
+        "stylingNotes": "Centered layout, red button background #DF3331",
+        "htmlSignature": "main-text-welcome class, centered button table",
+        "source": "novel"
+      },
+      {
+        "name": "footer",
+        "description": "Standard email footer with legal and unsubscribe information",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "unsubscribe_url",
+            "type": "url",
+            "required": true,
+            "description": "Unsubscribe link"
+          },
+          {
+            "name": "privacy_url",
+            "type": "url",
+            "required": true,
+            "description": "Privacy policy link"
+          },
+          {
+            "name": "customer_care_url",
+            "type": "url",
+            "required": true,
+            "description": "Customer service link"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered text and links",
+        "stylingNotes": "Small Georgia serif font, gray background #f5f6f6",
+        "htmlSignature": "View this email in your browser, Unsubscribe links",
+        "source": "novel"
+      }
+    ]
+  },
+  "metadata": {
+    "analysisDate": "2026-01-17T06:54:07.996Z",
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514"
+  },
+  "sourceStats": {
+    "elements": 250,
+    "tables": 34,
+    "images": 8,
+    "links": 27,
+    "headings": 0,
+    "paragraphs": 0,
+    "divs": 54,
+    "spans": 0,
+    "textLength": 10004,
+    "htmlLength": 43641
+  },
+  "generatedAt": "2026-01-17T06:54:11.677Z"
+}

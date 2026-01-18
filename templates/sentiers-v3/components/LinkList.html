@@ -1,0 +1,22 @@
+<!-- LinkList Component -->
+<!-- Curated list of links with descriptions -->
+
+<each loop="section in sections">
+<if condition="section.type === 'link-list'">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+  <tr>
+    <td style="padding: 20px;">
+      <h2 style="font-family: 'Lora', serif; margin: 0; padding: 48px 0 0; font-size: 36px; line-height: 1.2em; font-weight: 400;">{{ section.title }}</h2>
+      <ul style="font-size: 18px; margin: 24px 0 0; padding: 0;">
+        <each loop="item in section.items">
+          <li style="margin: 0; padding: 12px 0; list-style: none; border-top: 1px solid #B7E2D8; line-height: 1.4em;">
+            <a href="{{ item.url }}" style="color: #DC4B4B; text-decoration: none;">{{ item.title }}</a>.
+            <if condition="item.description">{{{ item.description }}}</if>
+          </li>
+        </each>
+      </ul>
+    </td>
+  </tr>
+</table>
+</if>
+</each>

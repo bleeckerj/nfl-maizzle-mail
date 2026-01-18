@@ -1,0 +1,18 @@
+---
+title: "{{ title }}"
+preheader: "{{ preheader || 'Email preview text' }}"
+---
+
+<extends src="layouts/main.html">
+  <block name="template">
+    
+    <component src="components/Header.html"></component>
+
+    <component src="components/Articles.html"></component>
+
+    <component src="components/LinkList.html"></component>
+
+    <component src="components/Footer.html"></component>
+    
+  </block>
+</extends>

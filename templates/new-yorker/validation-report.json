@@ -1,0 +1,36 @@
+{
+  "template": "new-yorker",
+  "templateDir": "/Users/julian/Code/nfl-maizzle-mail/templates/new-yorker",
+  "timestamp": "2026-01-17T06:55:22.269Z",
+  "passed": true,
+  "summary": {
+    "errors": 0,
+    "warnings": 3
+  },
+  "errors": [],
+  "warnings": [
+    "components/ArticlePair.html: Variable \"pair.leftArticle.description\" may need triple braces {{{ }}} for raw HTML",
+    "components/ArticlePair.html: Variable \"pair.rightArticle.description\" may need triple braces {{{ }}} for raw HTML",
+    "components/Cta.html: Variable \"cta.text\" may need triple braces {{{ }}} for raw HTML"
+  ],
+  "recommendations": [
+    {
+      "type": "template_syntax",
+      "severity": "medium",
+      "message": "Change {{ pair.leftArticle.description }} to {{{ pair.leftArticle.description }}} for raw HTML output",
+      "file": "components/ArticlePair.html"
+    },
+    {
+      "type": "template_syntax",
+      "severity": "medium",
+      "message": "Change {{ pair.rightArticle.description }} to {{{ pair.rightArticle.description }}} for raw HTML output",
+      "file": "components/ArticlePair.html"
+    },
+    {
+      "type": "template_syntax",
+      "severity": "medium",
+      "message": "Change {{ cta.text }} to {{{ cta.text }}} for raw HTML output",
+      "file": "components/Cta.html"
+    }
+  ]
+}

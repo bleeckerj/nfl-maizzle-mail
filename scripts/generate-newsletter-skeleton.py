@@ -91,7 +91,7 @@ SECTION_DEFINITIONS = {
         'section_fields': ['type', 'title'],
         'item_fields': {
             'required': ['title'],
-            'optional': ['link', 'description', 'details', 'note', 'image', 'readMoreText', 'readMoreLink', 'paywall']
+            'optional': ['link', 'description', 'details', 'note', 'image', 'images', 'readMoreText', 'readMoreLink', 'paywall']
         },
         'example_items': 1
     },
@@ -283,6 +283,8 @@ def generate_section(section_type, minimal=False):
 def generate_skeleton(sections=None, minimal=False):
     """Generate the complete newsletter skeleton."""
     
+    current_year = datetime.now().year
+
     if sections is None:
         sections = list(SECTION_DEFINITIONS.keys())
     
@@ -291,10 +293,43 @@ def generate_skeleton(sections=None, minimal=False):
         'template': 'dense-discovery',
         'title': 'Newsletter Title',
         'preheader': 'Short preview text that appears in email clients',
+        'ogImage': 'https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=900?format=webp',
         'sectionStylesFile': 'templates/dense-discovery/section-styles.json',
         'intro': {
             'title': 'Welcome',
-            'viewOnlineLink': 'https://nearfuturelaboratory.com/newsletters/2025/wxx-yxx',
+            'viewOnlineLink': f'https://nearfuturelaboratory.com/newsletters/{current_year}/wxx-yxx',
+            'aside': {
+                'content': '<p>Teaser/lede text that sets up the intro content.</p>',
+                'containerStyles': {
+                    'backgroundColor': '#f4f1ea',
+                    'borderLeftWidth': '3px',
+                    'borderLeftStyle': 'solid',
+                    'borderLeftColor': '#d7d1c6',
+                    'padding': '12px 14px',
+                    'borderRadius': '6px'
+                },
+                'contentStyles': {
+                    'fontFamily': "'Ubuntu', sans-serif",
+                    'fontSize': '18px',
+                    'lineHeight': '23px',
+                    'fontStyle': 'italic',
+                    'color': '#3f3f3f',
+                    'textAlign': 'left'
+                }
+            },
+            'containerStyles': {
+                'backgroundColor': None,
+                'padding': '0',
+                'borderRadius': '0px'
+            },
+            'contentStyles': {
+                'fontFamily': "'IBM Plex Sans', sans-serif",
+                'fontSize': '16px',
+                'lineHeight': '1.2rem',
+                'fontWeight': '400',
+                'color': '#000000',
+                'textAlign': 'left'
+            },
             'content': '<p>Introduction paragraph for the newsletter.</p>'
         },
         'header': {
@@ -310,7 +345,7 @@ def generate_skeleton(sections=None, minimal=False):
         },
         'sections': [generate_section(s, minimal) for s in sections],
         'footer': {
-            'emailShare': 'mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w50-y25/',
+            'emailShare': f'mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/{current_year}/w50-y25/',
             'newsletterSubscribeLink': 'https://nearfuturelaboratory.com/newsletter/',
             'logo': 'https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png',
             'logoLink': 'https://nearfuturelaboratory.com',
@@ -354,7 +389,7 @@ def generate_skeleton(sections=None, minimal=False):
                 }]
             },
             'unsubscribeLink': '[unsubscribe]',
-            'shareUrl': 'https://nearfuturelaboratory.com/newsletters/2025/w50-y25',
+            'shareUrl': f'https://nearfuturelaboratory.com/newsletters/{current_year}/w50-y25',
             'archiveUrl': 'https://nearfuturelaboratory.com/newsletters',
             'gratitude': (
                 "This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle based production workflow. "
@@ -363,7 +398,7 @@ def generate_skeleton(sections=None, minimal=False):
                 "I have been a paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. "
                 "It's a great newsletter and I would encourage you to subscribe and become a paid member."
             ),
-            'address': '© 2025 Near Future Laboratory<br>Venice Beach, California<br>United States',
+            'address': f'© {current_year} Near Future Laboratory<br>Venice Beach, California<br>United States',
             'colophon': 'Imagination is not a luxury. It’s an early-warning system for possibility.'
         }
     }

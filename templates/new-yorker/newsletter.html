@@ -1,0 +1,22 @@
+---
+title: "{{ title }}"
+preheader: "{{ preheader || 'Email preview text' }}"
+---
+
+<extends src="templates/new-yorker/layouts/main.html">
+  <block name="template">
+    
+    <component src="templates/new-yorker/components/Header.html"></component>
+
+    <component src="templates/new-yorker/components/Hero.html"></component>
+
+    <component src="templates/new-yorker/components/Intro.html"></component>
+
+    <component src="templates/new-yorker/components/ArticlePair.html"></component>
+
+    <component src="templates/new-yorker/components/Cta.html"></component>
+
+    <component src="templates/new-yorker/components/Footer.html"></component>
+    
+  </block>
+</extends>

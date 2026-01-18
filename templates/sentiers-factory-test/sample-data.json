@@ -1,0 +1,38 @@
+{
+  "title": "Sentiers No.123",
+  "preheader": "Hail the maintainers ⊗ It’s time to build (is it?) ⊗ Tokyo as slowdown city ⊗ Mass consumption is what ails us",
+  "date": "Not specified",
+  "sections": [
+    {
+      "type": "article",
+      "items": [
+        {
+          "title": "Hail the maintainers",
+          "description": "Excellent piece at <i>Aeon</i> on progress, innovation, and maintenance...",
+          "link": "https://aeon.co/essays/innovation-is-overvalued-maintenance-often-matters-more"
+        }
+      ]
+    }
+  ],
+  "header": {
+    "logoUrl": "https://gallery.mailchimp.com/5125332501a1986f0f3685a57/images/798de67b-6210-4aba-a40e-2ace5783545e.png",
+    "issueNumber": "No.123"
+  },
+  "footer": {
+    "unsubscribeLink": "#",
+    "socialLinks": {}
+  },
+  "articleItems": [
+    {
+      "title": "Sample title",
+      "description": "<p>Sample HTML content for description</p>",
+      "link": "https://example.com"
+    }
+  ],
+  "link-listItems": [
+    {
+      "link": "https://example.com",
+      "description": "Sample description"
+    }
+  ]
+}

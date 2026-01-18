@@ -1,0 +1,22 @@
+---
+title: "{{ title }}"
+preheader: "{{ preheader || 'Email preview text' }}"
+---
+
+<extends src="templates/sentiers-claude-test/layouts/main.html">
+  <block name="template">
+    
+    <component src="templates/sentiers-claude-test/components/Header.html"></component>
+
+    <component src="templates/sentiers-claude-test/components/Intro.html"></component>
+
+    <component src="templates/sentiers-claude-test/components/Article.html"></component>
+
+    <component src="templates/sentiers-claude-test/components/CTA.html"></component>
+
+    <component src="templates/sentiers-claude-test/components/LinkList.html"></component>
+
+    <component src="templates/sentiers-claude-test/components/Footer.html"></component>
+    
+  </block>
+</extends>

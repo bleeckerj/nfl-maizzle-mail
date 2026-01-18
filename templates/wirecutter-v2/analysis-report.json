@@ -1,0 +1,1569 @@
+{
+  "visualDesign": {
+    "reasoning": "Analyzed the email HTML to extract visual design system by examining inline styles, embedded CSS, and structural patterns. Identified color usage patterns, typography hierarchy, spacing systems, and image roles throughout the email content.",
+    "colorPalette": {
+      "primary": "#000000",
+      "secondary": "#262626",
+      "accent": "#3358d5",
+      "background": "#ffffff",
+      "backgroundAlt": "#eae7e2",
+      "text": "#000000",
+      "textMuted": "#808080",
+      "border": "#000000",
+      "allColors": [
+        "#000000",
+        "#808080",
+        "#3358d5",
+        "#262626",
+        "#ffffff",
+        "#eae7e2",
+        "#e2dfda"
+      ]
+    },
+    "typography": {
+      "headingFont": "Helvetica, Arial, sans-serif",
+      "bodyFont": "Helvetica, Arial, sans-serif",
+      "monoFont": "none",
+      "headingSizes": {
+        "h1": "46px",
+        "h2": "32px",
+        "h3": "22px"
+      },
+      "bodySize": "16px",
+      "smallSize": "11px",
+      "lineHeights": {
+        "heading": "48px for h1, 34px for h2, 26px for h3",
+        "body": "24px"
+      },
+      "fontWeights": {
+        "normal": "normal",
+        "medium": "not used",
+        "bold": "700"
+      }
+    },
+    "spacing": {
+      "containerPadding": "20px",
+      "sectionGap": "40px",
+      "elementGap": "20px",
+      "patterns": [
+        "20px",
+        "40px",
+        "30px",
+        "25px",
+        "15px",
+        "10px",
+        "5px"
+      ]
+    },
+    "images": [
+      {
+        "src": "https://nl.nytimes.com/q/rwjf1Ruuk_B0zITaSv5vgw~~/AAAAAQA~/RgRmIuLFPVcDbnl0QgpkPsVdQGT_P28VUhpoZWxsb0ByZWFsbHlnb29kZW1haWxzLmNvbVgEAAAAAA~~",
+        "alt": "",
+        "role": "tracking",
+        "width": "1",
+        "context": "tracking pixel in header"
+      },
+      {
+        "src": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/619eae47e0f2e-1637789255.9214.png",
+        "alt": "",
+        "role": "logo",
+        "width": "560",
+        "context": "header logo/branding"
+      },
+      {
+        "src": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/643ff99ed9265-1681914270.8894.jpg",
+        "alt": "The Better Homes and Gardens Clayton Court 5-Piece Patio Dining Set, one of our picks for the best outdoor patio furniture.",
+        "role": "hero",
+        "width": "560",
+        "context": "main article hero image"
+      },
+      {
+        "src": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/643ff9cea1a7a-1681914318.6621.jpg",
+        "alt": "The Thermacell E90 Rechargeable Mosquito Repeller, our pick for the best mosquito repelling gear.",
+        "role": "content",
+        "width": "560",
+        "context": "secondary article image"
+      },
+      {
+        "src": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/643f075c7086e-1681852252.4609.png",
+        "alt": "Five patio umbrellas tested shown setup outdoors side by side.",
+        "role": "thumbnail",
+        "width": "265",
+        "context": "related content thumbnail"
+      },
+      {
+        "src": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/60ff3c3959268-1627339833.3652.png",
+        "alt": "",
+        "role": "icon",
+        "width": "36",
+        "context": "footer brand icon"
+      }
+    ],
+    "layout": {
+      "maxWidth": "600px",
+      "structure": "single-column with two-column sections",
+      "containerType": "table-based",
+      "responsiveHints": [
+        "mobile-first responsive classes",
+        "image width constraints",
+        "column stacking on mobile"
+      ]
+    }
+  },
+  "structure": {
+    "reasoning": "This is a Wirecutter newsletter with a clear structure: header with logo, featured article (patio furniture), secondary article (mosquito control), and a multi-column section showcasing related outdoor products. The multi-column section is novel - it's not just a simple article list but a curated collection of related product recommendations in a grid format. This creates a 'product-showcase' type that's distinct from standard articles.",
+    "sections": [
+      {
+        "id": "header_logo",
+        "name": "Header with Logo",
+        "type": "header",
+        "purpose": "Brand identification and navigation",
+        "order": 1,
+        "contentType": "static",
+        "estimatedStartLine": "Line 50-80",
+        "keyIdentifiers": [
+          "st-wrapper-table",
+          "st-dynamic-2420-4",
+          "logo image"
+        ]
+      },
+      {
+        "id": "featured_article",
+        "name": "Featured Article - Patio Furniture",
+        "type": "featured-article",
+        "purpose": "Main content piece with large image and detailed description",
+        "order": 2,
+        "contentType": "dynamic",
+        "estimatedStartLine": "Line 80-150",
+        "keyIdentifiers": [
+          "fz-28-lh-10",
+          "large title",
+          "hero image",
+          "disclaimer box"
+        ]
+      },
+      {
+        "id": "secondary_article",
+        "name": "Secondary Article - Mosquito Control",
+        "type": "article",
+        "purpose": "Supporting content with standard article format",
+        "order": 3,
+        "contentType": "dynamic",
+        "estimatedStartLine": "Line 150-200",
+        "keyIdentifiers": [
+          "fz-24-lh-24",
+          "standard article layout"
+        ]
+      },
+      {
+        "id": "outdoor_showcase",
+        "name": "More Outdoor Recommendations",
+        "type": "product-showcase",
+        "purpose": "Grid of related product recommendations",
+        "order": 4,
+        "contentType": "repeating",
+        "estimatedStartLine": "Line 200-300",
+        "keyIdentifiers": [
+          "bgcolor=#EAE7E2",
+          "280px width tables",
+          "two-column layout"
+        ]
+      },
+      {
+        "id": "footer",
+        "name": "Footer",
+        "type": "footer",
+        "purpose": "Unsubscribe, legal links, and company information",
+        "order": 5,
+        "contentType": "static",
+        "estimatedStartLine": "Line 300-350",
+        "keyIdentifiers": [
+          "st-dynamic-2617-102",
+          "unsubscribe links",
+          "company address"
+        ]
+      }
+    ],
+    "sectionTypes": [
+      {
+        "name": "header",
+        "description": "Brand logo and navigation area",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_image",
+            "type": "image",
+            "required": true,
+            "description": "Brand logo with mobile/desktop variants"
+          },
+          {
+            "name": "homepage_link",
+            "type": "url",
+            "required": true,
+            "description": "Link to main website"
+          }
+        ],
+        "containerStructure": "table > tr > td with linked image",
+        "stylingNotes": "Responsive images with mobile variants",
+        "htmlSignature": "class='st-dynamic-2420-4' with logo images"
+      },
+      {
+        "name": "featured-article",
+        "description": "Main article with large headline, hero image, and detailed content",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "headline",
+            "type": "string",
+            "required": true,
+            "description": "Large article title"
+          },
+          {
+            "name": "hero_image",
+            "type": "image",
+            "required": true,
+            "description": "Main article image"
+          },
+          {
+            "name": "description",
+            "type": "html",
+            "required": true,
+            "description": "Article content with multiple paragraphs"
+          },
+          {
+            "name": "cta_link",
+            "type": "url",
+            "required": true,
+            "description": "Call-to-action link"
+          },
+          {
+            "name": "disclaimer",
+            "type": "html",
+            "required": false,
+            "description": "Editorial disclaimer box"
+          }
+        ],
+        "containerStructure": "Large title (46px) + hero image + multi-paragraph content + disclaimer box",
+        "stylingNotes": "fz-28-lh-10 for title, gray disclaimer background",
+        "htmlSignature": "class='fz-28-lh-10' for headlines, bgcolor='#E2DFDA' for disclaimer"
+      },
+      {
+        "name": "article",
+        "description": "Standard article format with title, image, and content",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "description": "Article headline"
+          },
+          {
+            "name": "image",
+            "type": "image",
+            "required": true,
+            "description": "Article image"
+          },
+          {
+            "name": "content",
+            "type": "html",
+            "required": true,
+            "description": "Article body text"
+          },
+          {
+            "name": "link",
+            "type": "url",
+            "required": true,
+            "description": "Link to full article"
+          }
+        ],
+        "containerStructure": "h2 title + image + content paragraphs",
+        "stylingNotes": "fz-24-lh-24 for titles, standard paragraph styling",
+        "htmlSignature": "class='fz-24-lh-24' for article titles"
+      },
+      {
+        "name": "product-showcase",
+        "description": "Grid layout showcasing multiple related products with images and descriptions",
+        "isRepeating": true,
+        "isNovel": true,
+        "noveltyReason": "This is a curated product grid specifically for related recommendations, distinct from standard article lists. Uses two-column layout with equal-height containers and specific background styling.",
+        "instanceCount": 3,
+        "variables": [
+          {
+            "name": "section_title",
+            "type": "string",
+            "required": true,
+            "description": "Section heading (e.g., 'More outdoor recs')"
+          },
+          {
+            "name": "product_items",
+            "type": "array",
+            "required": true,
+            "description": "Array of product recommendation items"
+          },
+          {
+            "name": "item_image",
+            "type": "image",
+            "required": true,
+            "description": "Product or category image"
+          },
+          {
+            "name": "item_title",
+            "type": "string",
+            "required": true,
+            "description": "Product/category title"
+          },
+          {
+            "name": "item_description",
+            "type": "string",
+            "required": true,
+            "description": "Brief product description"
+          },
+          {
+            "name": "item_link",
+            "type": "url",
+            "required": true,
+            "description": "Link to product page"
+          }
+        ],
+        "containerStructure": "Section title + two-column grid with 280px width tables, equal-height containers",
+        "stylingNotes": "bgcolor='#EAE7E2', st-equal-height class, fz-18-lh-20 for item titles",
+        "htmlSignature": "bgcolor='#EAE7E2', width='280' tables, class='st-equal-height'"
+      },
+      {
+        "name": "footer",
+        "description": "Newsletter footer with unsubscribe, legal links, and company info",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "company_logo",
+            "type": "image",
+            "required": true,
+            "description": "Small company logo"
+          },
+          {
+            "name": "unsubscribe_text",
+            "type": "html",
+            "required": true,
+            "description": "Unsubscribe instructions"
+          },
+          {
+            "name": "company_address",
+            "type": "string",
+            "required": true,
+            "description": "Company physical address"
+          },
+          {
+            "name": "legal_links",
+            "type": "array",
+            "required": true,
+            "description": "Privacy policy, terms, contact links"
+          }
+        ],
+        "containerStructure": "Logo + unsubscribe text + address + legal links",
+        "stylingNotes": "fz-12-lh-20 for small text, responsive link layout",
+        "htmlSignature": "class='st-dynamic-2617-102' for logo, class='fz-12-lh-20' for text"
+      }
+    ],
+    "repeatingSections": [
+      {
+        "type": "product-showcase",
+        "pattern": "Product recommendation items in two-column grid",
+        "instanceCount": 3,
+        "variablesPerInstance": [
+          "item_image",
+          "item_title",
+          "item_description",
+          "item_link"
+        ]
+      }
+    ],
+    "globalElements": {
+      "header": {
+        "present": true,
+        "components": [
+          "logo",
+          "homepage_link"
+        ]
+      },
+      "footer": {
+        "present": true,
+        "components": [
+          "unsubscribe",
+          "legal_links",
+          "company_address",
+          "company_logo"
+        ]
+      },
+      "wrapper": {
+        "type": "Nested table structure with 600px max width and responsive design",
+        "width": "600px"
+      }
+    },
+    "hierarchy": {
+      "depth": 3,
+      "description": "header → featured article → secondary article → product showcase grid → footer"
+    },
+    "novelTypeSummary": {
+      "hasNovelTypes": true,
+      "novelTypeNames": [
+        "product-showcase"
+      ],
+      "explanation": "Found a unique product showcase section that displays related recommendations in a two-column grid format with equal-height containers and specific styling, distinct from standard article lists."
+    }
+  },
+  "content": {
+    "reasoning": "I extracted content by identifying the main sections: header with logo, featured article about patio furniture, secondary article about mosquito control, product showcase grid with outdoor recommendations, and footer with unsubscribe info. I preserved HTML formatting in descriptions and extracted complete URLs. The email follows a newsletter format with curated product recommendations.",
+    "emailType": "newsletter",
+    "emailSubtype": "curated-product-recommendations",
+    "title": "The Recommendation - Wirecutter Newsletter",
+    "preheader": "No mosquitoes allowed",
+    "contentBySectionType": {
+      "header": {
+        "instances": [
+          {
+            "extractedData": {
+              "logoUrl": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/619eae47e0f2e-1637789255.9214.png",
+              "logoUrlMobile": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/619eae5a3678d-1637789274.2231.png",
+              "homepageLink": "https://nl.nytimes.com/f/a/p9F4Rrz9KmFqs8pplmp0Zw~~/AAAAAQA~/RgRmIuLFP0T6aHR0cHM6Ly93d3cubnl0aW1lcy5jb20vd2lyZWN1dHRlci8_Y2FtcGFpZ25faWQ9MjkwJmVtYz1lZGl0X3djZF8yMDIzMDQxOSZpbnN0YW5jZV9pZD05MDU4NCZubD10aGUtcmVjb21tZW5kYXRpb24mcmVnaV9pZD03MzAyNDY0MiZzZWdtZW50X2lkPTEzMDg0OCZ1c2VyX2lkPThiMDEyNWRhOTMwMzE3MmFkMTZmYzRiNDkwYWQ5MGRkJnV0bV9jYW1wYWlnbj0mdXRtX2NvbnRlbnQ9JnV0bV9tZWRpdW09JnV0bV9zb3VyY2U9JnV0bV90ZXJtPVcDbnl0QgpkPsVdQGT_P28VUhpoZWxsb0ByZWFsbHlnb29kZW1haWxzLmNvbVgEAAAAAA~~"
+            }
+          }
+        ]
+      },
+      "featured-article": {
+        "instances": [
+          {
+            "extractedData": {
+              "headline": "The best patio furniture",
+              "heroImage": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/643ff99ed9265-1681914270.8894.jpg",
+              "imageCaption": "Jeremy Pavia",
+              "description": "Turn your patio into a comfortable, good-looking space, and you'll find yourself gravitating toward it for everything from your morning coffee to your midday break to your al fresco dinner.<br><br>After 50 hours of research and assembling and using several outdoor dining sets, we have recommendations for the best pieces of patio furniture—whether you want to splurge on a high-end teak dining set or invest in lounge chairs and sofas. And if you'd rather go rogue, our experts have great advice on how to choose the best patio furniture on your own.<br><br><strong><a href=\"https://nl.nytimes.com/f/a/UIIZuNCuIXhhFO5ZChYZ3A~~/AAAAAQA~/RgRmIuLFP4QWAWh0dHBzOi8vd3d3Lm55dGltZXMuY29tL3dpcmVjdXR0ZXIvcmV2aWV3cy9iZXN0LXBhdGlvLWZ1cm5pdHVyZT9jYW1wYWlnbl9pZD0yOTAmZW1jPWVkaXRfd2NkXzIwMjMwNDE5Jmluc3RhbmNlX2lkPTkwNTg0Jm5sPXRoZS1yZWNvbW1lbmRhdGlvbiZyZWdpX2lkPTczMDI0NjQyJnNlZ21lbnRfaWQ9MTMwODQ4JnVzZXJfaWQ9OGIwMTI1ZGE5MzAzMTcyYWQxNmZjNGI0OTBhZDkwZGQmdXRtX2NhbXBhaWduPSZ1dG1fY29udGVudD0mdXRtX21lZGl1bT0mdXRtX3NvdXJjZT0mdXRtX3Rlcm09VwNueXRCCmQ-xV1AZP8_bxVSGmhlbGxvQHJlYWxseWdvb2RlbWFpbHMuY29tWAQAAAAA\"><span style=\"color: #3358d5;\"><u>Deck out your patio→</u></span></a></strong>",
+              "ctaLink": "https://nl.nytimes.com/f/a/UIIZuNCuIXhhFO5ZChYZ3A~~/AAAAAQA~/RgRmIuLFP4QWAWh0dHBzOi8vd3d3Lm55dGltZXMuY29tL3dpcmVjdXR0ZXIvcmV2aWV3cy9iZXN0LXBhdGlvLWZ1cm5pdHVyZT9jYW1wYWlnbl9pZD0yOTAmZW1jPWVkaXRfd2NkXzIwMjMwNDE5Jmluc3RhbmNlX2lkPTkwNTg0Jm5sPXRoZS1yZWNvbW1lbmRhdGlvbiZyZWdpX2lkPTczMDI0NjQyJnNlZ21lbnRfaWQ9MTMwODQ4JnVzZXJfaWQ9OGIwMTI1ZGE5MzAzMTcyYWQxNmZjNGI0OTBhZDkwZGQmdXRtX2NhbXBhaWduPSZ1dG1fY29udGVudD0mdXRtX21lZGl1bT0mdXRtX3NvdXJjZT0mdXRtX3Rlcm09VwNueXRCCmQ-xV1AZP8_bxVSGmhlbGxvQHJlYWxseWdvb2RlbWFpbHMuY29tWAQAAAAA",
+              "disclaimer": "We independently review everything we recommend. When you buy through our links, we may earn a commission. <strong><a style=\"color: #000000; text-decoration: underline;\" href=\"https://nl.nytimes.com/f/a/FtBw5AvJVe1XWiRCQ7MSiw~~/AAAAAQA~/RgRmIuLFP4QAAWh0dHBzOi8vd3d3Lm55dGltZXMuY29tL3dpcmVjdXR0ZXIvYWJvdXQvP2NhbXBhaWduX2lkPTI5MCZlbWM9ZWRpdF93Y2RfMjAyMzA0MTkmaW5zdGFuY2VfaWQ9OTA1ODQmbmw9dGhlLXJlY29tbWVuZGF0aW9uJnJlZ2lfaWQ9NzMwMjQ2NDImc2VnbWVudF9pZD0xMzA4NDgmdXNlcl9pZD04YjAxMjVkYTkzMDMxNzJhZDE2ZmM0YjQ5MGFkOTBkZCZ1dG1fY2FtcGFpZ249JnV0bV9jb250ZW50PSZ1dG1fbWVkaXVtPSZ1dG1fc291cmNlPSZ1dG1fdGVybT1XA255dEIKZD7FXUBk_z9vFVIaaGVsbG9AcmVhbGx5Z29vZGVtYWlscy5jb21YBAAAAAA~\">Learn more ›</a></strong>"
+            }
+          }
+        ]
+      },
+      "article": {
+        "instances": [
+          {
+            "extractedData": {
+              "title": "Keep mosquitoes away without slathering your skin in repellent",
+              "image": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/643ff9cea1a7a-1681914318.6621.jpg",
+              "imageCaption": "Michael Hession",
+              "content": "Spatial repellents work like diffusers to effectively and odorlessly reduce mosquito bites when you're hosting a backyard barbecue, lounging on the patio, having a picnic in a park, or playing cornhole in the yard—as long as there's no breeze. Here are <a href=\"https://nl.nytimes.com/f/a/uFiU5yY1uS5FpoQeyr1u-Q~~/AAAAAQA~/RgRmIuLFP4QYAWh0dHBzOi8vd3d3Lm55dGltZXMuY29tL3dpcmVjdXR0ZXIvcmV2aWV3cy9tb3NxdWl0by1jb250cm9sLWdlYXIvP2NhbXBhaWduX2lkPTI5MCZlbWM9ZWRpdF93Y2RfMjAyMzA0MTkmaW5zdGFuY2VfaWQ9OTA1ODQmbmw9dGhlLXJlY29tbWVuZGF0aW9uJnJlZ2lfaWQ9NzMwMjQ2NDImc2VnbWVudF9pZD0xMzA4NDgmdXNlcl9pZD04YjAxMjVkYTkzMDMxNzJhZDE2ZmM0YjQ5MGFkOTBkZCZ1dG1fY2FtcGFpZ249JnV0bV9jb250ZW50PSZ1dG1fbWVkaXVtPSZ1dG1fc291cmNlPSZ1dG1fdGVybT1XA255dEIKZD7FXUBk_z9vFVIaaGVsbG9AcmVhbGx5Z29vZGVtYWlscy5jb21YBAAAAAA~\"><span style=\"color: #3358d5;\"><u>the six models</u></span></a> that performed the best in our years of tests.<br><br><strong><a href=\"https://nl.nytimes.com/f/a/lS5CQ3lcXXIJtVcGjkOiMA~~/AAAAAQA~/RgRmIuLFP4QgAWh0dHBzOi8vYW1hem9uLmNvbS9kcC9CMDlMWENTU1ZSP2NhbXBhaWduX2lkPTI5MCZlbWM9ZWRpdF93Y2RfMjAyMzA0MTkmaW5zdGFuY2VfaWQ9OTA1ODQmbmw9dGhlLXJlY29tbWVuZGF0aW9uJnJlZ2lfaWQ9NzMwMjQ2NDImc2VnbWVudF9pZD0xMzA4NDgmc21pZD1BVFZQREtJS1gwREVSJnRhZz1kYWlseWRlYWxzMjAyMC0yMCZ1c2VyX2lkPThiMDEyNWRhOTMwMzE3MmFkMTZmYzRiNDkwYWQ5MGRkJnV0bV9jYW1wYWlnbj0mdXRtX2NvbnRlbnQ9JnV0bV9tZWRpdW09JnV0bV9zb3VyY2U9JnV0bV90ZXJtPVcDbnl0QgpkPsVdQGT_P28VUhpoZWxsb0ByZWFsbHlnb29kZW1haWxzLmNvbVgEAAAAAA~~\"><span style=\"color: #3358d5;\"><u>By the way, our top pick is on sale→</u></span></a></strong><br><br><em>(Just make sure to use promo code 20WIRECUTTER.)</em>",
+              "link": "https://nl.nytimes.com/f/a/uFiU5yY1uS5FpoQeyr1u-Q~~/AAAAAQA~/RgRmIuLFP4QYAWh0dHBzOi8vd3d3Lm55dGltZXMuY29tL3dpcmVjdXR0ZXIvcmV2aWV3cy9tb3NxdWl0by1jb250cm9sLWdlYXIvP2NhbXBhaWduX2lkPTI5MCZlbWM9ZWRpdF93Y2RfMjAyMzA0MTkmaW5zdGFuY2VfaWQ9OTA1ODQmbmw9dGhlLXJlY29tbWVuZGF0aW9uJnJlZ2lfaWQ9NzMwMjQ2NDImc2VnbWVudF9pZD0xMzA4NDgmdXNlcl9pZD04YjAxMjVkYTkzMDMxNzJhZDE2ZmM0YjQ5MGFkOTBkZCZ1dG1fY2FtcGFpZ249JnV0bV9jb250ZW50PSZ1dG1fbWVkaXVtPSZ1dG1fc291cmNlPSZ1dG1fdGVybT1XA255dEIKZD7FXUBk_z9vFVIaaGVsbG9AcmVhbGx5Z29vZGVtYWlscy5jb21YBAAAAAA~"
+            }
+          }
+        ]
+      },
+      "product-showcase": {
+        "instances": [
+          {
+            "extractedData": {
+              "sectionTitle": "More outdoor recs",
+              "productItems": [
+                {
+                  "itemImage": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/643f075c7086e-1681852252.4609.png",
+                  "itemTitle": "The best patio umbrella",
+                  "itemDescription": "A patio umbrella is an invitation to laze and linger. <a href=\"https://nl.nytimes.com/f/a/8Cb4zACSlL-Dk-bQskcgVQ~~/AAAAAQA~/RgRmIuLFP4QgAWh0dHBzOi8vd3d3Lm55dGltZXMuY29tL3dpcmVjdXR0ZXIvcmV2aWV3cy9iZXN0LXBhdGlvLXVtYnJlbGxhLWFuZC1zdGFuZC8_Y2FtcGFpZ25faWQ9MjkwJmVtYz1lZGl0X3djZF8yMDIzMDQxOSZpbnN0YW5jZV9pZD05MDU4NCZubD10aGUtcmVjb21tZW5kYXRpb24mcmVnaV9pZD03MzAyNDY0MiZzZWdtZW50X2lkPTEzMDg0OCZ1c2VyX2lkPThiMDEyNWRhOTMwMzE3MmFkMTZmYzRiNDkwYWQ5MGRkJnV0bV9jYW1wYWlnbj0mdXRtX2NvbnRlbnQ9JnV0bV9tZWRpdW09JnV0bV9zb3VyY2U9JnV0bV90ZXJtPVcDbnl0QgpkPsVdQGT_P28VUhpoZWxsb0ByZWFsbHlnb29kZW1haWxzLmNvbVgEAAAAAA~~\"><span style=\"color: #3358d5;\"><u>Our favorites</u></span></a> are sturdy, adjustable, and should hold up summer after summer.",
+                  "itemLink": "https://nl.nytimes.com/f/a/8Cb4zACSlL-Dk-bQskcgVQ~~/AAAAAQA~/RgRmIuLFP4QgAWh0dHBzOi8vd3d3Lm55dGltZXMuY29tL3dpcmVjdXR0ZXIvcmV2aWV3cy9iZXN0LXBhdGlvLXVtYnJlbGxhLWFuZC1zdGFuZC8_Y2FtcGFpZ25faWQ9MjkwJmVtYz1lZGl0X3djZF8yMDIzMDQxOSZpbnN0YW5jZV9pZD05MDU4NCZubD10aGUtcmVjb21tZW5kYXRpb24mcmVnaV9pZD03MzAyNDY0MiZzZWdtZW50X2lkPTEzMDg0OCZ1c2VyX2lkPThiMDEyNWRhOTMwMzE3MmFkMTZmYzRiNDkwYWQ5MGRkJnV0bV9jYW1wYWlnbj0mdXRtX2NvbnRlbnQ9JnV0bV9tZWRpdW09JnV0bV9zb3VyY2U9JnV0bV90ZXJtPVcDbnl0QgpkPsVdQGT_P28VUhpoZWxsb0ByZWFsbHlnb29kZW1haWxzLmNvbVgEAAAAAA~~"
+                },
+                {
+                  "itemImage": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/643f082506d56-1681852453.028.jpg",
+                  "itemTitle": "5 cheap(ish) things to take stargazing",
+                  "itemDescription": "The Lyrid meteor shower will peak this weekend. Here's <a href=\"https://nl.nytimes.com/f/a/CsQMjo3mVPf7dqbITXWzJQ~~/AAAAAQA~/RgRmIuLFP4QkAWh0dHBzOi8vd3d3Lm55dGltZXMuY29tL3dpcmVjdXR0ZXIvYmxvZy81LWNoZWFwaXNoLXRoaW5ncy10by10YWtlLXN0YXJnYXppbmcvP2NhbXBhaWduX2lkPTI5MCZlbWM9ZWRpdF93Y2RfMjAyMzA0MTkmaW5zdGFuY2VfaWQ9OTA1ODQmbmw9dGhlLXJlY29tbWVuZGF0aW9uJnJlZ2lfaWQ9NzMwMjQ2NDImc2VnbWVudF9pZD0xMzA4NDgmdXNlcl9pZD04YjAxMjVkYTkzMDMxNzJhZDE2ZmM0YjQ5MGFkOTBkZCZ1dG1fY2FtcGFpZ249JnV0bV9jb250ZW50PSZ1dG1fbWVkaXVtPSZ1dG1fc291cmNlPSZ1dG1fdGVybT1XA255dEIKZD7FXUBk_z9vFVIaaGVsbG9AcmVhbGx5Z29vZGVtYWlscy5jb21YBAAAAAA~\"><span style=\"color: #3358d5;\"><u>everything you'll need</u></span></a> for scanning the night skies.",
+                  "itemLink": "https://nl.nytimes.com/f/a/CsQMjo3mVPf7dqbITXWzJQ~~/AAAAAQA~/RgRmIuLFP4QkAWh0dHBzOi8vd3d3Lm55dGltZXMuY29tL3dpcmVjdXR0ZXIvYmxvZy81LWNoZWFwaXNoLXRoaW5ncy10by10YWtlLXN0YXJnYXppbmcvP2NhbXBhaWduX2lkPTI5MCZlbWM9ZWRpdF93Y2RfMjAyMzA0MTkmaW5zdGFuY2VfaWQ9OTA1ODQmbmw9dGhlLXJlY29tbWVuZGF0aW9uJnJlZ2lfaWQ9NzMwMjQ2NDImc2VnbWVudF9pZD0xMzA4NDgmdXNlcl9pZD04YjAxMjVkYTkzMDMxNzJhZDE2ZmM0YjQ5MGFkOTBkZCZ1dG1fY2FtcGFpZ249JnV0bV9jb250ZW50PSZ1dG1fbWVkaXVtPSZ1dG1fc291cmNlPSZ1dG1fdGVybT1XA255dEIKZD7FXUBk_z9vFVIaaGVsbG9AcmVhbGx5Z29vZGVtYWlscy5jb21YBAAAAAA~"
+                },
+                {
+                  "itemImage": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/643f0854be922-1681852500.7806.png",
+                  "itemTitle": "For chilly spring nights",
+                  "itemDescription": "A smokeless fire pit is for anyone who has a little outdoor space and wants a simple fire sans the smog. <a href=\"https://nl.nytimes.com/f/a/vc3ThwhboeZHW-X31-J9UQ~~/AAAAAQA~/RgRmIuLFP4QbAWh0dHBzOi8vd3d3Lm55dGltZXMuY29tL3dpcmVjdXR0ZXIvcmV2aWV3cy9iZXN0LXNtb2tlbGVzcy1maXJlLXBpdHMvP2NhbXBhaWduX2lkPTI5MCZlbWM9ZWRpdF93Y2RfMjAyMzA0MTkmaW5zdGFuY2VfaWQ9OTA1ODQmbmw9dGhlLXJlY29tbWVuZGF0aW9uJnJlZ2lfaWQ9NzMwMjQ2NDImc2VnbWVudF9pZD0xMzA4NDgmdXNlcl9pZD04YjAxMjVkYTkzMDMxNzJhZDE2ZmM0YjQ5MGFkOTBkZCZ1dG1fY2FtcGFpZ249JnV0bV9jb250ZW50PSZ1dG1fbWVkaXVtPSZ1dG1fc291cmNlPSZ1dG1fdGVybT1XA255dEIKZD7FXUBk_z9vFVIaaGVsbG9AcmVhbGx5Z29vZGVtYWlscy5jb21YBAAAAAA~\"><span style=\"color: #3358d5;\"><u>We have two top picks</u></span></a>.",
+                  "itemLink": "https://nl.nytimes.com/f/a/vc3ThwhboeZHW-X31-J9UQ~~/AAAAAQA~/RgRmIuLFP4QbAWh0dHBzOi8vd3d3Lm55dGltZXMuY29tL3dpcmVjdXR0ZXIvcmV2aWV3cy9iZXN0LXNtb2tlbGVzcy1maXJlLXBpdHMvP2NhbXBhaWduX2lkPTI5MCZlbWM9ZWRpdF93Y2RfMjAyMzA0MTkmaW5zdGFuY2VfaWQ9OTA1ODQmbmw9dGhlLXJlY29tbWVuZGF0aW9uJnJlZ2lfaWQ9NzMwMjQ2NDImc2VnbWVudF9pZD0xMzA4NDgmdXNlcl9pZD04YjAxMjVkYTkzMDMxNzJhZDE2ZmM0YjQ5MGFkOTBkZCZ1dG1fY2FtcGFpZ249JnV0bV9jb250ZW50PSZ1dG1fbWVkaXVtPSZ1dG1fc291cmNlPSZ1dG1fdGVybT1XA255dEIKZD7FXUBk_z9vFVIaaGVsbG9AcmVhbGx5Z29vZGVtYWlscy5jb21YBAAAAAA~"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "footer": {
+        "instances": [
+          {
+            "extractedData": {
+              "companyLogo": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/60ff3c3959268-1627339833.3652.png",
+              "unsubscribeText": "You are receiving this email because you signed up for Wirecutter's Newsletter.<br><br>Getting too many emails from us?<br>To stop receiving The Recommendation, <a href=\"#\"><span style=\"color: #000000;\"><strong>unsubscribe</strong></span></a><strong><span style=\"color: #000000;\">. </span></strong><span style=\"color: #000000;\">To opt out of other promotional emails from The Times, </span><a href=\"#\"><span style=\"color: #000000;\"><strong>manage your email preferences</strong></span></a><span style=\"color: #000000;\">.</span>",
+              "companyAddress": "Wirecutter, Inc.<br>620 Eighth Avenue. New York, NY 10018",
+              "legalLinks": [
+                {
+                  "text": "Privacy Policy",
+                  "url": "https://nl.nytimes.com/f/a/9ZEW0MZ7EeAeeKtFLAjUoA~~/AAAAAQA~/RgRmIuLFP4QFAWh0dHBzOi8vd3d3Lm55dGltZXMuY29tL3ByaXZhY3kvcHJpdmFjeS1wb2xpY3k_Y2FtcGFpZ25faWQ9MjkwJmVtYz1lZGl0X3djZF8yMDIzMDQxOSZpbnN0YW5jZV9pZD05MDU4NCZubD10aGUtcmVjb21tZW5kYXRpb24mcmVnaV9pZD03MzAyNDY0MiZzZWdtZW50X2lkPTEzMDg0OCZ1c2VyX2lkPThiMDEyNWRhOTMwMzE3MmFkMTZmYzRiNDkwYWQ5MGRkJnV0bV9jYW1wYWlnbj0mdXRtX2NvbnRlbnQ9JnV0bV9tZWRpdW09JnV0bV9zb3VyY2U9JnV0bV90ZXJtPVcDbnl0QgpkPsVdQGT_P28VUhpoZWxsb0ByZWFsbHlnb29kZW1haWxzLmNvbVgEAAAAAA~~"
+                },
+                {
+                  "text": "California Notices",
+                  "url": "https://nl.nytimes.com/f/a/jV6hNJ4RhY_N11Jx_ePCxg~~/AAAAAQA~/RgRmIuLFP4QIAWh0dHBzOi8vd3d3Lm55dGltZXMuY29tL3ByaXZhY3kvY2FsaWZvcm5pYS1ub3RpY2U_Y2FtcGFpZ25faWQ9MjkwJmVtYz1lZGl0X3djZF8yMDIzMDQxOSZpbnN0YW5jZV9pZD05MDU4NCZubD10aGUtcmVjb21tZW5kYXRpb24mcmVnaV9pZD03MzAyNDY0MiZzZWdtZW50X2lkPTEzMDg0OCZ1c2VyX2lkPThiMDEyNWRhOTMwMzE3MmFkMTZmYzRiNDkwYWQ5MGRkJnV0bV9jYW1wYWlnbj0mdXRtX2NvbnRlbnQ9JnV0bV9tZWRpdW09JnV0bV9zb3VyY2U9JnV0bV90ZXJtPVcDbnl0QgpkPsVdQGT_P28VUhpoZWxsb0ByZWFsbHlnb29kZW1haWxzLmNvbVgEAAAAAA~~"
+                },
+                {
+                  "text": "Terms of Service",
+                  "url": "https://nl.nytimes.com/f/a/rYI-T7a0bsIJXGFGjVzotA~~/AAAAAQA~/RgRmIuLFP4QfAWh0dHBzOi8vaGVscC5ueXRpbWVzLmNvbS9oYy9lbi11cy9hcnRpY2xlcy8xMTUwMTQ4OTM0MjgtVGVybXMtb2Ytc2VydmljZT9jYW1wYWlnbl9pZD0yOTAmZW1jPWVkaXRfd2NkXzIwMjMwNDE5Jmluc3RhbmNlX2lkPTkwNTg0Jm5sPXRoZS1yZWNvbW1lbmRhdGlvbiZyZWdpX2lkPTczMDI0NjQyJnNlZ21lbnRfaWQ9MTMwODQ4JnVzZXJfaWQ9OGIwMTI1ZGE5MzAzMTcyYWQxNmZjNGI0OTBhZDkwZGQmdXRtX2NhbXBhaWduPSZ1dG1fY29udGVudD0mdXRtX21lZGl1bT0mdXRtX3NvdXJjZT0mdXRtX3Rlcm09VwNueXRCCmQ-xV1AZP8_bxVSGmhlbGxvQHJlYWxseWdvb2RlbWFpbHMuY29tWAQAAAAA"
+                },
+                {
+                  "text": "Contact Us",
+                  "url": "https://nl.nytimes.com/f/a/NhBXCoHGg4EkvwYSiyNzHg~~/AAAAAQA~/RgRmIuLFP4QFAWh0dHBzOi8vd3d3Lm55dGltZXMuY29tL3dpcmVjdXR0ZXIvY29udGFjdC11cy8_Y2FtcGFpZ25faWQ9MjkwJmVtYz1lZGl0X3djZF8yMDIzMDQxOSZpbnN0YW5jZV9pZD05MDU4NCZubD10aGUtcmVjb21tZW5kYXRpb24mcmVnaV9pZD03MzAyNDY0MiZzZWdtZW50X2lkPTEzMDg0OCZ1c2VyX2lkPThiMDEyNWRhOTMwMzE3MmFkMTZmYzRiNDkwYWQ5MGRkJnV0bV9jYW1wYWlnbj0mdXRtX2NvbnRlbnQ9JnV0bV9tZWRpdW09JnV0bV9zb3VyY2U9JnV0bV90ZXJtPVcDbnl0QgpkPsVdQGT_P28VUhpoZWxsb0ByZWFsbHlnb29kZW1haWxzLmNvbVgEAAAAAA~~"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "sampleData": {
+      "title": "The Recommendation - Wirecutter Newsletter",
+      "preheader": "No mosquitoes allowed",
+      "date": "April 19, 2023",
+      "sections": [
+        {
+          "type": "featured-article",
+          "items": [
+            {
+              "headline": "The best patio furniture",
+              "heroImage": "https://example.com/hero-image.jpg",
+              "description": "Turn your patio into a comfortable space...",
+              "ctaText": "Deck out your patio→",
+              "ctaLink": "https://example.com/article",
+              "disclaimer": "We independently review everything..."
+            }
+          ]
+        },
+        {
+          "type": "article",
+          "items": [
+            {
+              "title": "Keep mosquitoes away without slathering your skin in repellent",
+              "image": "https://example.com/article-image.jpg",
+              "content": "Spatial repellents work like diffusers...",
+              "link": "https://example.com/mosquito-article"
+            }
+          ]
+        },
+        {
+          "type": "product-showcase",
+          "items": [
+            {
+              "sectionTitle": "More outdoor recs",
+              "products": [
+                {
+                  "title": "The best patio umbrella",
+                  "image": "https://example.com/umbrella.jpg",
+                  "description": "A patio umbrella is an invitation...",
+                  "link": "https://example.com/umbrella-review"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "header": {
+        "logoUrl": "https://example.com/logo.png",
+        "logoUrlMobile": "https://example.com/logo-mobile.png",
+        "homepageLink": "https://example.com"
+      },
+      "footer": {
+        "companyLogo": "https://example.com/footer-logo.png",
+        "unsubscribeLink": "https://example.com/unsubscribe",
+        "companyName": "Wirecutter, Inc.",
+        "companyAddress": "620 Eighth Avenue. New York, NY 10018",
+        "legalLinks": [
+          {
+            "text": "Privacy Policy",
+            "url": "https://example.com/privacy"
+          },
+          {
+            "text": "Terms of Service",
+            "url": "https://example.com/terms"
+          }
+        ]
+      }
+    },
+    "staticContent": {
+      "elements": [
+        "Header logo and navigation",
+        "Footer company information",
+        "Legal links (Privacy Policy, Terms of Service, Contact Us)",
+        "Unsubscribe text and links",
+        "Company address",
+        "Editorial disclaimer template",
+        "Email styling and responsive design classes"
+      ]
+    }
+  },
+  "components": {
+    "reasoning": "I extracted components from the Wirecutter newsletter template, preserving all inline styles and table structures critical for email clients. Each component uses nested object paths following the project conventions. The header component handles responsive logo images, featured-article creates the main story layout with large headlines and disclaimer boxes, article provides standard article formatting, product-showcase creates two-column grids for recommendations, and footer handles unsubscribe and legal information.",
+    "components": [
+      {
+        "name": "Header",
+        "type": "header",
+        "description": "Brand logo and navigation area with responsive images",
+        "html": "<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width: 100%;\"><tr><td width=\"100%\" valign=\"top\" align=\"left\" class=\"st-dynamic-2420-4\" style=\"width: 100%;\"><a href=\"{{ header.homepageLink }}\" target=\"_blank\" style=\"display: block;\"><img border=\"0\" valign=\"top\" width=\"560\" src=\"{{ header.logoImage }}\" alt=\"\" class=\"st-hide-mobile st-mobile-width-constraint\" style=\"border: 0px; display: block; width: 560px; max-width: 100%;\"><div class=\"show-img-mobile st-dynamic-2420-4\" style=\"display: none; width: 0px; overflow: hidden;\"><img src=\"{{ header.logoImageMobile }}\" border=\"0\" width=\"560\" valign=\"top\" alt=\"\" class=\"st-mobile-width-constraint\" style=\"display: block; border: none; max-width: 100%; height: auto; width: 560px;\"></div></a></td></tr></table>",
+        "dataPath": "header",
+        "variables": [
+          {
+            "path": "header.logoImage",
+            "type": "image",
+            "required": true,
+            "description": "Desktop logo image URL"
+          },
+          {
+            "path": "header.logoImageMobile",
+            "type": "image",
+            "required": true,
+            "description": "Mobile logo image URL"
+          },
+          {
+            "path": "header.homepageLink",
+            "type": "url",
+            "required": true,
+            "description": "Link to main website"
+          }
+        ]
+      },
+      {
+        "name": "FeaturedArticle",
+        "type": "featured-article",
+        "description": "Main article with large headline, hero image, and detailed content",
+        "html": "<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width: 100%;\"><tr><td width=\"100%\" valign=\"top\" align=\"center\" style=\"padding: 30px 0px 0px; width: 100%;\"><p height=\"5\" width=\"100%\" style=\"mso-line-height-rule:exactly; mso-table-lspace:0pt; mso-table-rspace:0pt; text-size-adjust:100%; width: 100%; height: 5px; max-height: 5px; background-color: #000000; margin: 0px; font-size: 5px; line-height: 5px\">&nbsp;</p></td></tr><tr><td width=\"100%\" valign=\"top\" align=\"left\" class=\"fz-28-lh-10\" style=\"text-align: left; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 46px; font-weight: 700; letter-spacing: -0.03em; line-height: 48px; padding-bottom: 20px; width: 100%;\"><p style=\"margin: 0px;\"><span style=\"font-size: 46px; line-height: 48px; color: #000000;\"><a style=\"color: #000000;\" href=\"{{ featuredArticle.ctaLink }}\">{{ featuredArticle.headline }}</a></span></p></td></tr><tr><td width=\"100%\" valign=\"top\" align=\"left\" class=\"st-dynamic-2420-4\" style=\"padding-bottom: 5px; width: 100%;\"><a href=\"{{ featuredArticle.ctaLink }}\" target=\"_blank\" style=\"display: block;\"><img border=\"0\" valign=\"top\" width=\"560\" src=\"{{ featuredArticle.heroImage }}\" alt=\"{{ featuredArticle.heroImageAlt }}\" class=\"st-mobile-width-constraint\" style=\"border: 0px; display: block; width: 560px; max-width: 100%;\"></a></td></tr><tr><td width=\"100%\" valign=\"top\" align=\"left\" style=\"text-align: left; font-family: Helvetica, Arial, sans-serif; color: #808080; font-size: 11px; font-weight: normal; letter-spacing: normal; line-height: 11px; padding-bottom: 20px; width: 100%;\"><p style=\"margin: 0px; text-align: right;\"><span style=\"font-size: 11px; line-height: 11px;\">{{ featuredArticle.photoCredit }}</span></p></td></tr><tr><td width=\"100%\" valign=\"top\" align=\"left\" class=\"ul-pt-20\" style=\"text-align: left; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 16px; font-weight: normal; letter-spacing: normal; line-height: 24px; width: 100%;\">{{{ featuredArticle.description }}}</td></tr><if condition=\"featuredArticle.disclaimer\"><tr><td width=\"100%\" valign=\"top\" align=\"center\" style=\"padding: 0px; width: 100%;\"><p height=\"40\" width=\"100%\" style=\"mso-line-height-rule:exactly; mso-table-lspace:0pt; mso-table-rspace:0pt; text-size-adjust:100%; width: 100%; height: 40px; max-height: 40px; margin: 0px; font-size: 40px; line-height: 40px\">&nbsp;</p></td></tr><tr><td width=\"100%\" valign=\"top\" align=\"left\" bgcolor=\"#E2DFDA\" class=\"fz-12-lh-16\" style=\"text-align: left; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 14px; font-weight: normal; letter-spacing: normal; line-height: 17px; padding: 25px 20px; width: 100%;\">{{{ featuredArticle.disclaimer }}}</td></tr></if></table>",
+        "dataPath": "featuredArticle",
+        "variables": [
+          {
+            "path": "featuredArticle.headline",
+            "type": "string",
+            "required": true,
+            "description": "Large article title"
+          },
+          {
+            "path": "featuredArticle.heroImage",
+            "type": "image",
+            "required": true,
+            "description": "Main article image URL"
+          },
+          {
+            "path": "featuredArticle.heroImageAlt",
+            "type": "string",
+            "required": true,
+            "description": "Alt text for hero image"
+          },
+          {
+            "path": "featuredArticle.photoCredit",
+            "type": "string",
+            "required": false,
+            "description": "Photo credit text"
+          },
+          {
+            "path": "featuredArticle.description",
+            "type": "html",
+            "required": true,
+            "description": "Article content with multiple paragraphs"
+          },
+          {
+            "path": "featuredArticle.ctaLink",
+            "type": "url",
+            "required": true,
+            "description": "Call-to-action link"
+          },
+          {
+            "path": "featuredArticle.disclaimer",
+            "type": "html",
+            "required": false,
+            "description": "Editorial disclaimer box content"
+          }
+        ]
+      },
+      {
+        "name": "Article",
+        "type": "article",
+        "description": "Standard article format with title, image, and content",
+        "html": "<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width: 100%;\"><tr><td width=\"100%\" valign=\"top\" align=\"center\" style=\"padding: 0px 0px 1px; width: 100%;\"><p height=\"2\" width=\"100%\" style=\"mso-line-height-rule:exactly; mso-table-lspace:0pt; mso-table-rspace:0pt; text-size-adjust:100%; width: 100%; height: 2px; max-height: 2px; background-color: #000000; margin: 0px; font-size: 2px; line-height: 2px\">&nbsp;</p></td></tr><tr><td width=\"100%\" valign=\"top\" align=\"left\" class=\"fz-24-lh-24\" style=\"text-align: left; font-family: Arial, Helvetica, sans-serif; color: #000000; font-size: 32px; font-weight: 700; letter-spacing: -0.05em; line-height: 34px; padding-bottom: 20px; width: 100%;\"><p style=\"margin: 0px;\"><span style=\"font-size: 32px; line-height: 34px; color: #000000;\"><a style=\"color: #000000;\" href=\"{{ article.link }}\"><strong>{{ article.title }}</strong></a></span></p></td></tr><tr><td width=\"100%\" valign=\"top\" align=\"left\" class=\"st-dynamic-2420-4\" style=\"padding-bottom: 5px; width: 100%;\"><a href=\"{{ article.link }}\" target=\"_blank\" style=\"display: block;\"><img border=\"0\" valign=\"top\" width=\"560\" src=\"{{ article.image }}\" alt=\"{{ article.imageAlt }}\" class=\"st-mobile-width-constraint\" style=\"border: 0px; display: block; width: 560px; max-width: 100%;\"></a></td></tr><tr><td width=\"100%\" valign=\"top\" align=\"left\" style=\"text-align: left; font-family: Helvetica, Arial, sans-serif; color: #808080; font-size: 11px; font-weight: normal; letter-spacing: normal; line-height: 11px; padding-bottom: 20px; width: 100%;\"><p style=\"margin: 0px; text-align: right;\"><span style=\"font-size: 11px; line-height: 11px;\">{{ article.photoCredit }}</span></p></td></tr><tr><td width=\"100%\" valign=\"top\" align=\"left\" class=\"ul-pt-20\" style=\"text-align: left; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 16px; font-weight: normal; letter-spacing: normal; line-height: 24px; width: 100%;\">{{{ article.content }}}</td></tr></table>",
+        "dataPath": "article",
+        "variables": [
+          {
+            "path": "article.title",
+            "type": "string",
+            "required": true,
+            "description": "Article headline"
+          },
+          {
+            "path": "article.image",
+            "type": "image",
+            "required": true,
+            "description": "Article image URL"
+          },
+          {
+            "path": "article.imageAlt",
+            "type": "string",
+            "required": true,
+            "description": "Alt text for article image"
+          },
+          {
+            "path": "article.photoCredit",
+            "type": "string",
+            "required": false,
+            "description": "Photo credit text"
+          },
+          {
+            "path": "article.content",
+            "type": "html",
+            "required": true,
+            "description": "Article body text with HTML formatting"
+          },
+          {
+            "path": "article.link",
+            "type": "url",
+            "required": true,
+            "description": "Link to full article"
+          }
+        ]
+      },
+      {
+        "name": "ProductShowcase",
+        "type": "product-showcase",
+        "description": "Grid layout showcasing multiple related products with images and descriptions",
+        "html": "<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width: 100%;\"><tr><td width=\"100%\" valign=\"top\" align=\"center\" class=\"mob-pt-22\" style=\"padding: 0px; width: 100%;\"><p height=\"2\" width=\"100%\" style=\"mso-line-height-rule:exactly; mso-table-lspace:0pt; mso-table-rspace:0pt; text-size-adjust:100%; width: 100%; height: 2px; max-height: 2px; background-color: #000000; margin: 0px; font-size: 2px; line-height: 2px\">&nbsp;</p></td></tr><tr><td width=\"100%\" valign=\"top\" align=\"left\" class=\"fz-24-lh-24\" style=\"text-align: left; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 32px; font-weight: 700; letter-spacing: -0.05em; line-height: 34px; padding-bottom: 20px; width: 100%;\"><p style=\"margin: 0px;\"><span style=\"font-size: 32px; line-height: 34px; color: #000000;\"><a style=\"color: #000000;\" href=\"{{ productShowcase.sectionLink }}\"><strong>{{ productShowcase.sectionTitle }}</strong></a></span></p></td></tr></table><each loop=\"item in productShowcase.items\"><table role=\"presentation\" align=\"left\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"280\" class=\"st-mso-full-width st-mobile-full-width\" style=\"width: 280px; float: left;\"><tr><td width=\"100%\" align=\"center\" height=\"196\" valign=\"top\" class=\"st-equal-height\" style=\"width: 100%; height: 196px;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width: 100%;\"><tr><td width=\"100%\" valign=\"top\" align=\"left\" class=\"mob-ps-0\" style=\"padding-right: 15px; padding-bottom: 20px; width: 100%;\"><a href=\"{{ item.link }}\" target=\"_blank\" style=\"display: block;\"><img border=\"0\" valign=\"top\" width=\"265\" src=\"{{ item.image }}\" alt=\"{{ item.imageAlt }}\" title=\"\" class=\"st-resize\" style=\"border: 0px; display: block; width: 265px; max-width: 100%;\"></a></td></tr></table></td></tr></table><table role=\"presentation\" align=\"left\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"280\" class=\"st-mso-full-width st-mobile-full-width\" style=\"width: 280px; float: left;\"><tr><td width=\"100%\" align=\"center\" height=\"196\" valign=\"top\" class=\"st-equal-height mob-ps-0\" style=\"width: 100%; height: 196px;\"><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width: 100%;\"><tr><td width=\"100%\" valign=\"top\" align=\"left\" class=\"fz-18-lh-20\" style=\"text-align: left; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 22px; font-weight: 700; letter-spacing: -0.03em; line-height: 26px; padding-bottom: 10px; width: 100%;\"><p style=\"margin: 0px;\"><span style=\"font-size: 22px; line-height: 26px;\"><a href=\"{{ item.link }}\"><span style=\"color: #000000;\">{{ item.title }}</span></a></span></p></td></tr><tr><td width=\"100%\" valign=\"top\" align=\"left\" style=\"text-align: left; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 16px; font-weight: normal; letter-spacing: normal; line-height: 24px; padding-bottom: 40px; width: 100%;\"><p style=\"margin: 0px;\"><span style=\"font-size: 16px; line-height: 24px;\">{{ item.description }}</span></p></td></tr></table></td></tr></table></each>",
+        "dataPath": "productShowcase",
+        "isRepeating": true,
+        "variables": [
+          {
+            "path": "productShowcase.sectionTitle",
+            "type": "string",
+            "required": true,
+            "description": "Section heading (e.g., 'More outdoor recs')"
+          },
+          {
+            "path": "productShowcase.sectionLink",
+            "type": "url",
+            "required": false,
+            "description": "Link for section title"
+          },
+          {
+            "path": "productShowcase.items",
+            "type": "array",
+            "required": true,
+            "description": "Array of product recommendation items"
+          },
+          {
+            "path": "item.image",
+            "type": "image",
+            "required": true,
+            "description": "Product or category image URL"
+          },
+          {
+            "path": "item.imageAlt",
+            "type": "string",
+            "required": true,
+            "description": "Alt text for product image"
+          },
+          {
+            "path": "item.title",
+            "type": "string",
+            "required": true,
+            "description": "Product/category title"
+          },
+          {
+            "path": "item.description",
+            "type": "string",
+            "required": true,
+            "description": "Brief product description"
+          },
+          {
+            "path": "item.link",
+            "type": "url",
+            "required": true,
+            "description": "Link to product page"
+          }
+        ]
+      },
+      {
+        "name": "Footer",
+        "type": "footer",
+        "description": "Newsletter footer with unsubscribe, legal links, and company info",
+        "html": "<table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" style=\"width: 100%;\"><tr><td width=\"100%\" valign=\"top\" align=\"center\" class=\"mih-15\" style=\"padding: 0px; width: 100%;\"><p height=\"2\" width=\"100%\" style=\"mso-line-height-rule:exactly; mso-table-lspace:0pt; mso-table-rspace:0pt; text-size-adjust:100%; width: 100%; height: 2px; max-height: 2px; background-color: #000000; margin: 0px; font-size: 2px; line-height: 2px\">&nbsp;</p></td></tr><tr><td width=\"100%\" valign=\"top\" align=\"left\" class=\"st-dynamic-2617-102\" style=\"padding-top: 5px; padding-bottom: 20px; width: 100%;\"><img border=\"0\" valign=\"top\" width=\"36\" src=\"{{ footer.companyLogo }}\" height=\"36\" alt=\"\" title=\"\" class=\"st-mobile-width-constraint\" style=\"border: 0px; display: block; width: 36px; max-width: 100%;\"></td></tr><tr><td width=\"100%\" valign=\"top\" align=\"left\" class=\"fz-12-lh-20\" style=\"text-align: left; font-family: Arial, Helvetica, sans-serif; color: #262626; font-size: 12px; font-weight: normal; letter-spacing: normal; line-height: 18px; width: 100%;\">{{{ footer.unsubscribeText }}}<p style=\"margin: 0px;\"><span style=\"font-size: 12px; line-height: 18px;\">{{ footer.companyAddress }}</span></p></td></tr><tr class=\"st-hide-mobile\"><td width=\"100%\" valign=\"top\" align=\"left\" style=\"text-align: left; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 12px; font-weight: normal; letter-spacing: normal; line-height: 15px; width: 100%;\"><p style=\"margin: 0px;\"><span style=\"font-size: 12px; line-height: 15px;\"><each loop=\"link in footer.legalLinks\"><span style=\"color: #000000;\"><strong><a style=\"color: #000000;\" href=\"{{ link.url }}\">{{ link.text }}</a></strong></span><if condition=\"!@last\"> | </if></each></span></p></td></tr><tr class=\"st-hide-desktop\" style=\"display: none;\"><td width=\"100%\" valign=\"top\" align=\"left\" style=\"text-align: left; font-family: Helvetica, Arial, sans-serif; color: #000000; font-size: 12px; font-weight: normal; letter-spacing: normal; line-height: 20px; width: 100%;\"><each loop=\"link in footer.legalLinks\"><p style=\"margin: 0px;\"><strong><span style=\"font-size: 12px; line-height: 20px;\"><a style=\"color: #000000;\" href=\"{{ link.url }}\">{{ link.text }}</a></span></strong></p></each></td></tr></table>",
+        "dataPath": "footer",
+        "variables": [
+          {
+            "path": "footer.companyLogo",
+            "type": "image",
+            "required": true,
+            "description": "Small company logo URL"
+          },
+          {
+            "path": "footer.unsubscribeText",
+            "type": "html",
+            "required": true,
+            "description": "Unsubscribe instructions with HTML formatting"
+          },
+          {
+            "path": "footer.companyAddress",
+            "type": "string",
+            "required": true,
+            "description": "Company physical address"
+          },
+          {
+            "path": "footer.legalLinks",
+            "type": "array",
+            "required": true,
+            "description": "Array of legal links (Privacy Policy, Terms, Contact)"
+          }
+        ]
+      }
+    ],
+    "layout": {
+      "name": "main.html",
+      "html": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\"><html xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\"><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><meta name=\"HandheldFriendly\" content=\"true\" /><meta name=\"MobileOptimized\" content=\"320\" /><meta name=\"viewport\" content=\"width=device-width\" /><title>{{ title }}</title><style type=\"text/css\">/* Email client styles */</style></head><body class=\"st-email-body st-center-gmail\"><div style=\"font-size:0px; display:none; visibility:hidden; opacity:0; color:transparent; max-height:0px; height:0; width:0; mso-hide:all;\">{{ preheader }}</div><table role=\"presentation\" width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" bgcolor=\"#FFFFFF\" class=\"st-wrapper-table\" style=\"width: 100%;\"><tr><td width=\"100%\" valign=\"top\" align=\"center\" class=\"st-dynamic-2420-18\"><table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" align=\"center\" width=\"600\" class=\"st-wrapper st-wrapper-background st-module-wrapper-table\" style=\"width: 600px;\"><tr><td width=\"100%\" valign=\"top\" style=\"width: 100%; padding-top: 20px; padding-right: 20px; padding-left: 20px;\"><table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"560\" class=\"st-mso-full-width st-mobile-full-width\" style=\"width: 560px;\"><tr><td width=\"100%\" align=\"center\" valign=\"top\" style=\"width: 100%;\"><block name=\"template\"></block></td></tr></table></td></tr></table></td></tr></table></body></html>",
+      "description": "Main layout wrapper with email client compatibility"
+    },
+    "globalStyles": {
+      "embedded": "span, td, table, div { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; } .st-email-body { width: 100% !important; -webkit-text-size-adjust: 100%; margin: 0 auto !important; padding: 0px; background-color: #ffffff; } .fz-28-lh-10 span { font-size: 28px !important; letter-spacing: -0.8px !important; line-height: 30px !important; } .fz-24-lh-24 span { font-size: 24px !important; letter-spacing: -0.9px !important; line-height: 26px !important; } .fz-18-lh-20 span { font-size: 22px !important; line-height: 22px !important; } .fz-12-lh-20 span { font-size: 12px !important; line-height: 20px !important; }",
+      "critical": "All inline styles must be preserved exactly as they appear in the original HTML for email client compatibility"
+    },
+    "templateStructure": {
+      "mainTemplate": "<include src=\"src/components/header.html\" /><include src=\"src/components/featured-article.html\" /><include src=\"src/components/article.html\" /><each loop=\"section in sections\"><if condition=\"section.type === 'product-showcase'\"><include src=\"src/components/product-showcase.html\" /></if></each><include src=\"src/components/footer.html\" />",
+      "componentOrder": [
+        "Header",
+        "FeaturedArticle",
+        "Article",
+        "ProductShowcase",
+        "Footer"
+      ]
+    },
+    "sampleData": {
+      "title": "The best patio furniture",
+      "preheader": "No mosquitoes allowed",
+      "header": {
+        "logoImage": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/619eae47e0f2e-1637789255.9214.png",
+        "logoImageMobile": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/619eae5a3678d-1637789274.2231.png",
+        "homepageLink": "https://www.nytimes.com/wirecutter/"
+      },
+      "featuredArticle": {
+        "headline": "The best patio furniture",
+        "heroImage": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/643ff99ed9265-1681914270.8894.jpg",
+        "heroImageAlt": "The Better Homes and Gardens Clayton Court 5-Piece Patio Dining Set",
+        "photoCredit": "Jeremy Pavia",
+        "description": "<p>Turn your patio into a comfortable, good-looking space...</p>",
+        "ctaLink": "https://www.nytimes.com/wirecutter/reviews/best-patio-furniture/",
+        "disclaimer": "<p>We independently review everything we recommend...</p>"
+      },
+      "article": {
+        "title": "Keep mosquitoes away without slathering your skin in repellent",
+        "image": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/643ff9cea1a7a-1681914318.6621.jpg",
+        "imageAlt": "The Thermacell E90 Rechargeable Mosquito Repeller",
+        "photoCredit": "Michael Hession",
+        "content": "<p>Spatial repellents work like diffusers...</p>",
+        "link": "https://www.nytimes.com/wirecutter/reviews/mosquito-control-gear/"
+      },
+      "sections": [
+        {
+          "type": "product-showcase",
+          "sectionTitle": "More outdoor recs",
+          "sectionLink": "https://www.nytimes.com/wirecutter/home-garden/gardening/",
+          "items": [
+            {
+              "title": "The best patio umbrella",
+              "image": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/643f075c7086e-1681852252.4609.png",
+              "imageAlt": "Five patio umbrellas tested shown setup outdoors side by side",
+              "description": "A patio umbrella is an invitation to laze and linger.",
+              "link": "https://www.nytimes.com/wirecutter/reviews/best-patio-umbrella-and-stand/"
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "companyLogo": "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/60ff3c3959268-1627339833.3652.png",
+        "unsubscribeText": "<p>You are receiving this email because you signed up for Wirecutter's Newsletter.</p><p>Getting too many emails from us?</p><p>To stop receiving The Recommendation, <a href=\"#\"><strong>unsubscribe</strong></a>.</p>",
+        "companyAddress": "Wirecutter, Inc. 620 Eighth Avenue. New York, NY 10018",
+        "legalLinks": [
+          {
+            "text": "Privacy Policy",
+            "url": "https://www.nytimes.com/privacy/privacy-policy"
+          },
+          {
+            "text": "California Notices",
+            "url": "https://www.nytimes.com/privacy/california-notice"
+          },
+          {
+            "text": "Terms of Service",
+            "url": "https://help.nytimes.com/hc/en-us/articles/115014893428-Terms-of-service"
+          },
+          {
+            "text": "Contact Us",
+            "url": "https://www.nytimes.com/wirecutter/contact-us/"
+          }
+        ]
+      }
+    }
+  },
+  "reconciliation": {
+    "summary": {
+      "totalDiscovered": 5,
+      "matchedToKnown": 0,
+      "variants": 1,
+      "completelyNovel": 4,
+      "requiresNewComponents": 5,
+      "message": "1 are variants of known types, 4 are completely new types"
+    },
+    "discoveredTypes": [
+      {
+        "name": "header",
+        "description": "Brand logo and navigation area",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_image",
+            "type": "image",
+            "required": true,
+            "description": "Brand logo with mobile/desktop variants"
+          },
+          {
+            "name": "homepage_link",
+            "type": "url",
+            "required": true,
+            "description": "Link to main website"
+          }
+        ],
+        "containerStructure": "table > tr > td with linked image",
+        "stylingNotes": "Responsive images with mobile variants",
+        "htmlSignature": "class='st-dynamic-2420-4' with logo images"
+      },
+      {
+        "name": "featured-article",
+        "description": "Main article with large headline, hero image, and detailed content",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "headline",
+            "type": "string",
+            "required": true,
+            "description": "Large article title"
+          },
+          {
+            "name": "hero_image",
+            "type": "image",
+            "required": true,
+            "description": "Main article image"
+          },
+          {
+            "name": "description",
+            "type": "html",
+            "required": true,
+            "description": "Article content with multiple paragraphs"
+          },
+          {
+            "name": "cta_link",
+            "type": "url",
+            "required": true,
+            "description": "Call-to-action link"
+          },
+          {
+            "name": "disclaimer",
+            "type": "html",
+            "required": false,
+            "description": "Editorial disclaimer box"
+          }
+        ],
+        "containerStructure": "Large title (46px) + hero image + multi-paragraph content + disclaimer box",
+        "stylingNotes": "fz-28-lh-10 for title, gray disclaimer background",
+        "htmlSignature": "class='fz-28-lh-10' for headlines, bgcolor='#E2DFDA' for disclaimer"
+      },
+      {
+        "name": "article",
+        "description": "Standard article format with title, image, and content",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "description": "Article headline"
+          },
+          {
+            "name": "image",
+            "type": "image",
+            "required": true,
+            "description": "Article image"
+          },
+          {
+            "name": "content",
+            "type": "html",
+            "required": true,
+            "description": "Article body text"
+          },
+          {
+            "name": "link",
+            "type": "url",
+            "required": true,
+            "description": "Link to full article"
+          }
+        ],
+        "containerStructure": "h2 title + image + content paragraphs",
+        "stylingNotes": "fz-24-lh-24 for titles, standard paragraph styling",
+        "htmlSignature": "class='fz-24-lh-24' for article titles"
+      },
+      {
+        "name": "product-showcase",
+        "description": "Grid layout showcasing multiple related products with images and descriptions",
+        "isRepeating": true,
+        "isNovel": true,
+        "noveltyReason": "This is a curated product grid specifically for related recommendations, distinct from standard article lists. Uses two-column layout with equal-height containers and specific background styling.",
+        "instanceCount": 3,
+        "variables": [
+          {
+            "name": "section_title",
+            "type": "string",
+            "required": true,
+            "description": "Section heading (e.g., 'More outdoor recs')"
+          },
+          {
+            "name": "product_items",
+            "type": "array",
+            "required": true,
+            "description": "Array of product recommendation items"
+          },
+          {
+            "name": "item_image",
+            "type": "image",
+            "required": true,
+            "description": "Product or category image"
+          },
+          {
+            "name": "item_title",
+            "type": "string",
+            "required": true,
+            "description": "Product/category title"
+          },
+          {
+            "name": "item_description",
+            "type": "string",
+            "required": true,
+            "description": "Brief product description"
+          },
+          {
+            "name": "item_link",
+            "type": "url",
+            "required": true,
+            "description": "Link to product page"
+          }
+        ],
+        "containerStructure": "Section title + two-column grid with 280px width tables, equal-height containers",
+        "stylingNotes": "bgcolor='#EAE7E2', st-equal-height class, fz-18-lh-20 for item titles",
+        "htmlSignature": "bgcolor='#EAE7E2', width='280' tables, class='st-equal-height'"
+      },
+      {
+        "name": "footer",
+        "description": "Newsletter footer with unsubscribe, legal links, and company info",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "company_logo",
+            "type": "image",
+            "required": true,
+            "description": "Small company logo"
+          },
+          {
+            "name": "unsubscribe_text",
+            "type": "html",
+            "required": true,
+            "description": "Unsubscribe instructions"
+          },
+          {
+            "name": "company_address",
+            "type": "string",
+            "required": true,
+            "description": "Company physical address"
+          },
+          {
+            "name": "legal_links",
+            "type": "array",
+            "required": true,
+            "description": "Privacy policy, terms, contact links"
+          }
+        ],
+        "containerStructure": "Logo + unsubscribe text + address + legal links",
+        "stylingNotes": "fz-12-lh-20 for small text, responsive link layout",
+        "htmlSignature": "class='st-dynamic-2617-102' for logo, class='fz-12-lh-20' for text"
+      }
+    ],
+    "novelTypes": [
+      {
+        "name": "header",
+        "description": "Brand logo and navigation area",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_image",
+            "type": "image",
+            "required": true,
+            "description": "Brand logo with mobile/desktop variants"
+          },
+          {
+            "name": "homepage_link",
+            "type": "url",
+            "required": true,
+            "description": "Link to main website"
+          }
+        ],
+        "containerStructure": "table > tr > td with linked image",
+        "stylingNotes": "Responsive images with mobile variants",
+        "htmlSignature": "class='st-dynamic-2420-4' with logo images",
+        "isVariant": true,
+        "variantOf": "sponsor"
+      },
+      {
+        "name": "featured-article",
+        "description": "Main article with large headline, hero image, and detailed content",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "headline",
+            "type": "string",
+            "required": true,
+            "description": "Large article title"
+          },
+          {
+            "name": "hero_image",
+            "type": "image",
+            "required": true,
+            "description": "Main article image"
+          },
+          {
+            "name": "description",
+            "type": "html",
+            "required": true,
+            "description": "Article content with multiple paragraphs"
+          },
+          {
+            "name": "cta_link",
+            "type": "url",
+            "required": true,
+            "description": "Call-to-action link"
+          },
+          {
+            "name": "disclaimer",
+            "type": "html",
+            "required": false,
+            "description": "Editorial disclaimer box"
+          }
+        ],
+        "containerStructure": "Large title (46px) + hero image + multi-paragraph content + disclaimer box",
+        "stylingNotes": "fz-28-lh-10 for title, gray disclaimer background",
+        "htmlSignature": "class='fz-28-lh-10' for headlines, bgcolor='#E2DFDA' for disclaimer"
+      },
+      {
+        "name": "article",
+        "description": "Standard article format with title, image, and content",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "description": "Article headline"
+          },
+          {
+            "name": "image",
+            "type": "image",
+            "required": true,
+            "description": "Article image"
+          },
+          {
+            "name": "content",
+            "type": "html",
+            "required": true,
+            "description": "Article body text"
+          },
+          {
+            "name": "link",
+            "type": "url",
+            "required": true,
+            "description": "Link to full article"
+          }
+        ],
+        "containerStructure": "h2 title + image + content paragraphs",
+        "stylingNotes": "fz-24-lh-24 for titles, standard paragraph styling",
+        "htmlSignature": "class='fz-24-lh-24' for article titles"
+      },
+      {
+        "name": "product-showcase",
+        "description": "Grid layout showcasing multiple related products with images and descriptions",
+        "isRepeating": true,
+        "isNovel": true,
+        "noveltyReason": "This is a curated product grid specifically for related recommendations, distinct from standard article lists. Uses two-column layout with equal-height containers and specific background styling.",
+        "instanceCount": 3,
+        "variables": [
+          {
+            "name": "section_title",
+            "type": "string",
+            "required": true,
+            "description": "Section heading (e.g., 'More outdoor recs')"
+          },
+          {
+            "name": "product_items",
+            "type": "array",
+            "required": true,
+            "description": "Array of product recommendation items"
+          },
+          {
+            "name": "item_image",
+            "type": "image",
+            "required": true,
+            "description": "Product or category image"
+          },
+          {
+            "name": "item_title",
+            "type": "string",
+            "required": true,
+            "description": "Product/category title"
+          },
+          {
+            "name": "item_description",
+            "type": "string",
+            "required": true,
+            "description": "Brief product description"
+          },
+          {
+            "name": "item_link",
+            "type": "url",
+            "required": true,
+            "description": "Link to product page"
+          }
+        ],
+        "containerStructure": "Section title + two-column grid with 280px width tables, equal-height containers",
+        "stylingNotes": "bgcolor='#EAE7E2', st-equal-height class, fz-18-lh-20 for item titles",
+        "htmlSignature": "bgcolor='#EAE7E2', width='280' tables, class='st-equal-height'"
+      },
+      {
+        "name": "footer",
+        "description": "Newsletter footer with unsubscribe, legal links, and company info",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "company_logo",
+            "type": "image",
+            "required": true,
+            "description": "Small company logo"
+          },
+          {
+            "name": "unsubscribe_text",
+            "type": "html",
+            "required": true,
+            "description": "Unsubscribe instructions"
+          },
+          {
+            "name": "company_address",
+            "type": "string",
+            "required": true,
+            "description": "Company physical address"
+          },
+          {
+            "name": "legal_links",
+            "type": "array",
+            "required": true,
+            "description": "Privacy policy, terms, contact links"
+          }
+        ],
+        "containerStructure": "Logo + unsubscribe text + address + legal links",
+        "stylingNotes": "fz-12-lh-20 for small text, responsive link layout",
+        "htmlSignature": "class='st-dynamic-2617-102' for logo, class='fz-12-lh-20' for text"
+      }
+    ],
+    "mappedTypes": [
+      {
+        "discovered": "header",
+        "knownType": "sponsor",
+        "confidence": 0.5,
+        "isNovel": true,
+        "isVariant": true,
+        "variantOf": "sponsor",
+        "mappingReason": "Semantic group: sponsor"
+      },
+      {
+        "discovered": "featured-article",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      },
+      {
+        "discovered": "article",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      },
+      {
+        "discovered": "product-showcase",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      },
+      {
+        "discovered": "footer",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      }
+    ],
+    "allTypes": [
+      {
+        "name": "header",
+        "description": "Brand logo and navigation area",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_image",
+            "type": "image",
+            "required": true,
+            "description": "Brand logo with mobile/desktop variants"
+          },
+          {
+            "name": "homepage_link",
+            "type": "url",
+            "required": true,
+            "description": "Link to main website"
+          }
+        ],
+        "containerStructure": "table > tr > td with linked image",
+        "stylingNotes": "Responsive images with mobile variants",
+        "htmlSignature": "class='st-dynamic-2420-4' with logo images",
+        "isVariant": true,
+        "variantOf": "sponsor",
+        "source": "variant"
+      },
+      {
+        "name": "featured-article",
+        "description": "Main article with large headline, hero image, and detailed content",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "headline",
+            "type": "string",
+            "required": true,
+            "description": "Large article title"
+          },
+          {
+            "name": "hero_image",
+            "type": "image",
+            "required": true,
+            "description": "Main article image"
+          },
+          {
+            "name": "description",
+            "type": "html",
+            "required": true,
+            "description": "Article content with multiple paragraphs"
+          },
+          {
+            "name": "cta_link",
+            "type": "url",
+            "required": true,
+            "description": "Call-to-action link"
+          },
+          {
+            "name": "disclaimer",
+            "type": "html",
+            "required": false,
+            "description": "Editorial disclaimer box"
+          }
+        ],
+        "containerStructure": "Large title (46px) + hero image + multi-paragraph content + disclaimer box",
+        "stylingNotes": "fz-28-lh-10 for title, gray disclaimer background",
+        "htmlSignature": "class='fz-28-lh-10' for headlines, bgcolor='#E2DFDA' for disclaimer",
+        "source": "novel"
+      },
+      {
+        "name": "article",
+        "description": "Standard article format with title, image, and content",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "description": "Article headline"
+          },
+          {
+            "name": "image",
+            "type": "image",
+            "required": true,
+            "description": "Article image"
+          },
+          {
+            "name": "content",
+            "type": "html",
+            "required": true,
+            "description": "Article body text"
+          },
+          {
+            "name": "link",
+            "type": "url",
+            "required": true,
+            "description": "Link to full article"
+          }
+        ],
+        "containerStructure": "h2 title + image + content paragraphs",
+        "stylingNotes": "fz-24-lh-24 for titles, standard paragraph styling",
+        "htmlSignature": "class='fz-24-lh-24' for article titles",
+        "source": "novel"
+      },
+      {
+        "name": "product-showcase",
+        "description": "Grid layout showcasing multiple related products with images and descriptions",
+        "isRepeating": true,
+        "isNovel": true,
+        "noveltyReason": "This is a curated product grid specifically for related recommendations, distinct from standard article lists. Uses two-column layout with equal-height containers and specific background styling.",
+        "instanceCount": 3,
+        "variables": [
+          {
+            "name": "section_title",
+            "type": "string",
+            "required": true,
+            "description": "Section heading (e.g., 'More outdoor recs')"
+          },
+          {
+            "name": "product_items",
+            "type": "array",
+            "required": true,
+            "description": "Array of product recommendation items"
+          },
+          {
+            "name": "item_image",
+            "type": "image",
+            "required": true,
+            "description": "Product or category image"
+          },
+          {
+            "name": "item_title",
+            "type": "string",
+            "required": true,
+            "description": "Product/category title"
+          },
+          {
+            "name": "item_description",
+            "type": "string",
+            "required": true,
+            "description": "Brief product description"
+          },
+          {
+            "name": "item_link",
+            "type": "url",
+            "required": true,
+            "description": "Link to product page"
+          }
+        ],
+        "containerStructure": "Section title + two-column grid with 280px width tables, equal-height containers",
+        "stylingNotes": "bgcolor='#EAE7E2', st-equal-height class, fz-18-lh-20 for item titles",
+        "htmlSignature": "bgcolor='#EAE7E2', width='280' tables, class='st-equal-height'",
+        "source": "novel"
+      },
+      {
+        "name": "footer",
+        "description": "Newsletter footer with unsubscribe, legal links, and company info",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "company_logo",
+            "type": "image",
+            "required": true,
+            "description": "Small company logo"
+          },
+          {
+            "name": "unsubscribe_text",
+            "type": "html",
+            "required": true,
+            "description": "Unsubscribe instructions"
+          },
+          {
+            "name": "company_address",
+            "type": "string",
+            "required": true,
+            "description": "Company physical address"
+          },
+          {
+            "name": "legal_links",
+            "type": "array",
+            "required": true,
+            "description": "Privacy policy, terms, contact links"
+          }
+        ],
+        "containerStructure": "Logo + unsubscribe text + address + legal links",
+        "stylingNotes": "fz-12-lh-20 for small text, responsive link layout",
+        "htmlSignature": "class='st-dynamic-2617-102' for logo, class='fz-12-lh-20' for text",
+        "source": "novel"
+      }
+    ]
+  },
+  "metadata": {
+    "analysisDate": "2026-01-17T05:53:54.905Z",
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514"
+  },
+  "sourceStats": {
+    "elements": 375,
+    "tables": 36,
+    "images": 9,
+    "links": 29,
+    "headings": 0,
+    "paragraphs": 42,
+    "divs": 3,
+    "spans": 53,
+    "textLength": 11752,
+    "htmlLength": 62792
+  },
+  "generatedAt": "2026-01-17T05:53:54.914Z"
+}

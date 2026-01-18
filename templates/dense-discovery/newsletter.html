@@ -167,7 +167,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                               <td align="left" class="headline box-yellow" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.dispatch || '#f8eccf' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
                                 <h1 style="mso-line-height-rule: exactly; margin: 0;padding: 0; {{{ section.headingStylesInline || '' }}}">
                                   {{ section.title }}
-                                  <a class="h1byline" href="{{ section.dispatchLink || '#' }}" style="text-decoration: none;display: inline-block;font-size: 12px;line-height: 25px;font-weight: 400;float: right;color: {{ themeColors.linkAccent || '#6d6b57' }} !important;">{{ section.dispatchLabel || 'DISPATCH' }}</a>
+                                  <a class="h1byline" href="{{ section.dispatchLink || '#' }}" style="text-decoration: none;display: inline-block;font-size: 15px;line-height: 25px;font-weight: 400;float: right;color: {{ themeColors.linkAccent || '#6d6b57' }} !important;">{{ section.dispatchLabel || 'DISPATCH' }}</a>
                                 </h1>
                               </td>
                             </tr>
@@ -766,7 +766,24 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             <tr>
                               <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['food-for-thought'] || '#f2f2f2' }};padding: {{ section.containerStyles.padding || '20px' }};">
                                 
-                                <if condition="item.image">
+                                <!-- Support for multiple images (images array) -->
+                                <if condition="item.images && item.images.length">
+                                  <each loop="img in item.images">
+                                    <div style="margin-bottom: 15px;">
+                                      <if condition="img.link || item.link">
+                                        <a href="{{ img.link || item.link }}" style="text-decoration: none;">
+                                          <img src="{{ img.src }}" alt="{{ img.alt || item.title || 'Food for Thought Image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
+                                        </a>
+                                      </if>
+                                      <if condition="!(img.link || item.link)">
+                                        <img src="{{ img.src }}" alt="{{ img.alt || item.title || 'Food for Thought Image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
+                                      </if>
+                                    </div>
+                                  </each>
+                                </if>
+                                
+                                <!-- Support for single image (backward compatibility) -->
+                                <if condition="item.image && !(item.images && item.images.length)">
                                   <div style="margin-bottom: 15px;">
                                     <if condition="item.link">
                                       <a href="{{ item.link }}" style="text-decoration: none;">

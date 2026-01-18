@@ -1461,6 +1461,137 @@ async function buildNewsletter() {
       console.log(`✅ Total: ${processedItems}/${totalItems} items processed successfully`);
       logSectionBackgroundOverrides(newsletterData.sections, theme);
     }
+
+    if (newsletterData.intro) {
+      const intro = newsletterData.intro;
+      const applyContentStylesToHtml = (html, styles = {}) => {
+        if (!html || typeof html !== 'string') return html;
+        const cssProperties = [];
+        if (styles.fontFamily) cssProperties.push(`font-family: ${styles.fontFamily} !important`);
+        if (styles.fontSize) cssProperties.push(`font-size: ${styles.fontSize} !important`);
+        if (styles.lineHeight) cssProperties.push(`line-height: ${styles.lineHeight} !important`);
+        if (styles.fontStyle) cssProperties.push(`font-style: ${styles.fontStyle} !important`);
+        if (styles.color) cssProperties.push(`color: ${styles.color} !important`);
+        if (styles.textAlign) cssProperties.push(`text-align: ${styles.textAlign} !important`);
+        if (!cssProperties.length) return html;
+        const newCSSString = cssProperties.join('; ');
+        return html.replace(/<p(\s[^>]*)?>/gi, (match, attrs) => {
+          attrs = attrs || '';
+          const styleMatch = attrs.match(/style="([^"]*)"/i);
+          if (styleMatch) {
+            let existingStyle = styleMatch[1];
+            existingStyle = existingStyle
+              .replace(/font-family:[^;]*;?/gi, '')
+              .replace(/font-size:[^;]*;?/gi, '')
+              .replace(/line-height:[^;]*;?/gi, '')
+              .replace(/font-style:[^;]*;?/gi, '')
+              .replace(/color:[^;]*;?/gi, '')
+              .replace(/text-align:[^;]*;?/gi, '');
+            const combinedStyle = `${existingStyle}; ${newCSSString}`.replace(/^;+|;+$/g, '');
+            return `<p${attrs.replace(/style="[^"]*"/i, `style="${combinedStyle}"`)}>`;
+          }
+          return `<p${attrs} style="${newCSSString}">`;
+        });
+      };
+
+      const introContentConfig = sectionStyles.sectionStyles
+        ? sectionStyles.sectionStyles['intro-content'] ||
+          sectionStyles.sectionStyles.introContent ||
+          sectionStyles.sectionStyles.intro ||
+          {}
+        : {};
+      const defaultIntroContainerStyles = {
+        backgroundColor: null,
+        padding: '0',
+        borderRadius: '0px'
+      };
+      const defaultIntroContentStyles = {
+        fontFamily: "'IBM Plex Sans', sans-serif",
+        fontSize: '16px',
+        lineHeight: '1.2rem',
+        fontWeight: '400',
+        color: '#000000',
+        textAlign: 'left'
+      };
+      const incomingIntroContainerStyles =
+        intro.containerStyles && typeof intro.containerStyles === 'object'
+          ? { ...intro.containerStyles }
+          : {};
+      const incomingIntroContentStyles =
+        intro.contentStyles && typeof intro.contentStyles === 'object'
+          ? { ...intro.contentStyles }
+          : {};
+      const baseIntroContainerStyles =
+        introContentConfig.containerStyles && typeof introContentConfig.containerStyles === 'object'
+          ? { ...defaultIntroContainerStyles, ...introContentConfig.containerStyles }
+          : { ...defaultIntroContainerStyles };
+      const baseIntroContentStyles =
+        introContentConfig.contentStyles && typeof introContentConfig.contentStyles === 'object'
+          ? { ...defaultIntroContentStyles, ...introContentConfig.contentStyles }
+          : { ...defaultIntroContentStyles };
+
+      intro.containerStyles = { ...baseIntroContainerStyles, ...incomingIntroContainerStyles };
+      intro.contentStyles = { ...baseIntroContentStyles, ...incomingIntroContentStyles };
+      if (intro.content && intro.contentStyles) {
+        intro.content = applyContentStylesToHtml(intro.content, intro.contentStyles);
+      }
+
+      const introAsideConfig = sectionStyles.sectionStyles
+        ? sectionStyles.sectionStyles['intro-aside'] ||
+          sectionStyles.sectionStyles.introAside ||
+          sectionStyles.sectionStyles.intro ||
+          {}
+        : {};
+      const defaultIntroAsideContainerStyles = {
+        backgroundColor: null,
+        padding: '12px 14px',
+        borderRadius: '6px',
+        borderLeftColor: '#d7d1c6',
+        borderLeftWidth: '3px',
+        borderLeftStyle: 'solid'
+      };
+      const defaultIntroAsideContentStyles = {
+        fontFamily: "'Merriweather', serif",
+        fontSize: '18px',
+        lineHeight: '23px',
+        fontStyle: 'italic',
+        color: '#3f3f3f',
+        textAlign: 'left'
+      };
+      const isAsideObject = intro.aside && typeof intro.aside === 'object' && !Array.isArray(intro.aside);
+      const aside = isAsideObject ? { ...intro.aside } : { content: intro.aside };
+      const incomingAsideContainerStyles =
+        (aside.containerStyles && typeof aside.containerStyles === 'object')
+          ? { ...aside.containerStyles }
+          : (intro.asideContainerStyles && typeof intro.asideContainerStyles === 'object')
+            ? { ...intro.asideContainerStyles }
+            : {};
+      const incomingAsideContentStyles =
+        (aside.contentStyles && typeof aside.contentStyles === 'object')
+          ? { ...aside.contentStyles }
+          : (intro.asideContentStyles && typeof intro.asideContentStyles === 'object')
+            ? { ...intro.asideContentStyles }
+            : {};
+      const baseAsideContainerStyles =
+        introAsideConfig.containerStyles && typeof introAsideConfig.containerStyles === 'object'
+          ? { ...defaultIntroAsideContainerStyles, ...introAsideConfig.containerStyles }
+          : { ...defaultIntroAsideContainerStyles };
+      const baseAsideContentStyles =
+        introAsideConfig.contentStyles && typeof introAsideConfig.contentStyles === 'object'
+          ? { ...defaultIntroAsideContentStyles, ...introAsideConfig.contentStyles }
+          : { ...defaultIntroAsideContentStyles };
+
+      aside.containerStyles = { ...baseAsideContainerStyles, ...incomingAsideContainerStyles };
+      aside.contentStyles = { ...baseAsideContentStyles, ...incomingAsideContentStyles };
+      if (!aside.content && !isAsideObject) {
+        aside.content = intro.aside;
+      }
+      if (aside.content && aside.contentStyles) {
+        aside.content = applyContentStylesToHtml(aside.content, aside.contentStyles);
+      }
+
+      intro.aside = aside;
+    }
     
     // Write updated newsletter data back to file
     // For templates that render `item.content` for classifieds, copy the

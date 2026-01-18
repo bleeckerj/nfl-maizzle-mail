@@ -1,0 +1,135 @@
+{
+  "header": {
+    "containerStyles": {
+      "backgroundColor": "#ffffff",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Georgia, times, serif; color: #DF3331;",
+    "contentStyles": {
+      "fontFamily": "Georgia, Times, 'Times New Roman', serif",
+      "fontSize": "16px",
+      "color": "#121212"
+    },
+    "linkStylesInline": "color: #0773b5; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": true,
+      "variantOf": "sponsor",
+      "description": "Brand header with logo and navigation elements"
+    }
+  },
+  "hero": {
+    "containerStyles": {
+      "backgroundColor": "#ffffff",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Georgia, times, serif; color: #DF3331;",
+    "contentStyles": {
+      "fontFamily": "Georgia, Times, 'Times New Roman', serif",
+      "fontSize": "16px",
+      "color": "#121212"
+    },
+    "linkStylesInline": "color: #0773b5; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": true,
+      "variantOf": "animated-image",
+      "description": "Large title section introducing the email theme"
+    }
+  },
+  "intro": {
+    "containerStyles": {
+      "backgroundColor": "#ffffff",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Georgia, times, serif; color: #DF3331;",
+    "contentStyles": {
+      "fontFamily": "Georgia, Times, 'Times New Roman', serif",
+      "fontSize": "16px",
+      "color": "#121212"
+    },
+    "linkStylesInline": "color: #0773b5; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": false,
+      "variantOf": null,
+      "description": "Editorial introduction explaining the content theme"
+    }
+  },
+  "article-pair": {
+    "containerStyles": {
+      "backgroundColor": "#ffffff",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Georgia, times, serif; color: #DF3331;",
+    "contentStyles": {
+      "fontFamily": "Georgia, Times, 'Times New Roman', serif",
+      "fontSize": "16px",
+      "color": "#121212"
+    },
+    "linkStylesInline": "color: #0773b5; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": false,
+      "variantOf": null,
+      "description": "Two-column layout featuring a pair of articles side by side"
+    }
+  },
+  "article": {
+    "containerStyles": {
+      "backgroundColor": "#ffffff",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Georgia, times, serif; color: #DF3331;",
+    "contentStyles": {
+      "fontFamily": "Georgia, Times, 'Times New Roman', serif",
+      "fontSize": "16px",
+      "color": "#121212"
+    },
+    "linkStylesInline": "color: #0773b5; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": true,
+      "variantOf": "quote",
+      "description": "Individual article card with image, metadata, and call-to-action"
+    }
+  },
+  "cta": {
+    "containerStyles": {
+      "backgroundColor": "#ffffff",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Georgia, times, serif; color: #DF3331;",
+    "contentStyles": {
+      "fontFamily": "Georgia, Times, 'Times New Roman', serif",
+      "fontSize": "16px",
+      "color": "#121212"
+    },
+    "linkStylesInline": "color: #0773b5; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": false,
+      "variantOf": null,
+      "description": "Call-to-action section promoting additional content"
+    }
+  },
+  "footer": {
+    "containerStyles": {
+      "backgroundColor": "#ffffff",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Georgia, times, serif; color: #DF3331;",
+    "contentStyles": {
+      "fontFamily": "Georgia, Times, 'Times New Roman', serif",
+      "fontSize": "16px",
+      "color": "#121212"
+    },
+    "linkStylesInline": "color: #0773b5; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": false,
+      "variantOf": null,
+      "description": "Standard email footer with legal and unsubscribe information"
+    }
+  }
+}

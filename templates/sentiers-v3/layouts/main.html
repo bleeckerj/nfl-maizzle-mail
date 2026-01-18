@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>{{ title }}</title>
+  
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
+  
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      font-family: 'Helvetica', sans-serif;
+      font-weight: 400;
+      line-height: 1.6em;
+      color: #465546;
+    }
+    
+    a {
+      color: #DC4B4B;
+      text-decoration: none;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Lora', serif;
+      margin: 0;
+    }
+    
+    h2 {
+      padding: 48px 0 0;
+      font-size: 36px;
+      line-height: 1.2em;
+      font-weight: 400;
+    }
+    
+    p {
+      font-size: 18px;
+      line-height: 1.6em;
+    }
+    
+    blockquote {
+      margin: 40px 0;
+      padding: 0 0 0 20px;
+      border-left: 1px solid #B7E2D8;
+    }
+    
+    blockquote p {
+      font-family: 'Lora', serif;
+      font-size: 17px;
+      line-height: 1.6em;
+    }
+    
+    .highlight {
+      background: #B7E2D8;
+    }
+    
+    .caps {
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: .05em;
+      font-size: 85%;
+    }
+    
+    ul {
+      margin: 24px 0 0;
+      padding: 0;
+    }
+    
+    li {
+      margin: 0;
+      padding: 12px 0;
+      list-style: none;
+      border-top: 1px solid #B7E2D8;
+      line-height: 1.4em;
+    }
+    
+    @media only screen and (max-width: 480px) {
+      body {
+        width: 95% !important;
+      }
+      
+      .wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0 0 40px; background-color: #ffffff;">
+  <!-- Preheader -->
+  <span style="display: none; font-size: 0; line-height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; visibility: hidden;">{{ preheader }}</span>
+  
+  <!-- Main wrapper -->
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background-color: #ffffff;">
+    <tr>
+      <td align="center">
+        <!-- Content container -->
+        <table role="presentation" class="wrapper" cellpadding="0" cellspacing="0" border="0" width="600" style="max-width: 600px; width: 100%;">
+          <tr>
+            <td style="padding: 20px; text-align: left;">
+              <block name="template">
+                <!-- Template content goes here -->
+              </block>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

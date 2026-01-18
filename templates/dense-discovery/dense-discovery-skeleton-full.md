@@ -2,10 +2,38 @@
 template: dense-discovery
 title: Newsletter Title
 preheader: Short preview text that appears in email clients
+ogImage: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=900?format=webp
 sectionStylesFile: templates/dense-discovery/section-styles.json
 intro:
   title: Welcome
-  viewOnlineLink: https://nearfuturelaboratory.com/newsletters/2025/wxx-yxx
+  viewOnlineLink: https://nearfuturelaboratory.com/newsletters/2026/wxx-yxx
+  aside:
+    content: <p>Teaser/lede text that sets up the intro content.</p>
+    containerStyles:
+      backgroundColor: '#f4f1ea'
+      borderLeftWidth: 3px
+      borderLeftStyle: solid
+      borderLeftColor: '#d7d1c6'
+      padding: 12px 14px
+      borderRadius: 6px
+    contentStyles:
+      fontFamily: '''Ubuntu'', sans-serif'
+      fontSize: 18px
+      lineHeight: 23px
+      fontStyle: italic
+      color: '#3f3f3f'
+      textAlign: left
+  containerStyles:
+    backgroundColor: null
+    padding: '0'
+    borderRadius: 0px
+  contentStyles:
+    fontFamily: '''IBM Plex Sans'', sans-serif'
+    fontSize: 16px
+    lineHeight: 1.2rem
+    fontWeight: '400'
+    color: '#000000'
+    textAlign: left
   content: <p>Introduction paragraph for the newsletter.</p>
 header:
   quote: Inspiring header quote
@@ -85,7 +113,7 @@ sections:
   items:
   - calloutText: Callout Item 1
     image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-    imageAlt: Example alt text for callout image
+    imageAlt: Alternate text for callout item 1 image
     imageLink: https://example.com
     readMoreText: Read more →
     readMoreLink: https://example.com
@@ -116,7 +144,12 @@ sections:
     description: <p>Example description for indie-mag-single-column item 1.</p>
     details: <p>Example details for indie-mag-single-column item 1.</p>
     note: <p>Example note for indie-mag-single-column item 1.</p>
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+    images:
+    - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+      alt: Alternate text for item 1 image 1
+      link: https://example.com/image-destination
+    - src: https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second
+      alt: Alternate text for item 1 image 2
     readMoreText: Read more →
     readMoreLink: https://example.com
     paywall: true
@@ -144,20 +177,25 @@ sections:
 - type: food-for-thought
   title: Food For Thought Section
   items:
-  - title: Food For Thought Item 1
+  - title: Food For Thought Item 1 (single image)
     link: https://example.com
     description: <p>Example description for food-for-thought item 1.</p>
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+    image: https://fpoimg.com/800x600?text=Single+Image&bg_color=e6e6e6&text_color=4FAAAA
     channel: Example channel
     category: Example category
     sharedBy: Example sharedBy for item 1
     readMoreText: Read more →
     readMoreLink: https://example.com
     paywall: true
-  - title: Food For Thought Item 2
+  - title: Food For Thought Item 2 (multiple images)
     link: https://example.com
-    description: <p>Example description for food-for-thought item 2.</p>
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+    description: <p>Example with multiple images array.</p>
+    images:
+      - src: https://fpoimg.com/800x600?text=Image+1&bg_color=e6e6e6&text_color=4FAAAA
+        alt: First image description
+      - src: https://fpoimg.com/800x600?text=Image+2&bg_color=d6d6d6&text_color=4FAAAA
+        alt: Second image description
+        link: https://example.com/specific-link
     channel: Example channel
     category: Example category
     sharedBy: Example sharedBy for item 2
@@ -199,7 +237,7 @@ sections:
     description: <p>Example description for animated-image item 1.</p>
     link: https://example.com
 footer:
-  emailShare: mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w50-y25/
+  emailShare: mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2026/w50-y25/
   newsletterSubscribeLink: https://nearfuturelaboratory.com/newsletter/
   logo: https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png
   logoLink: https://nearfuturelaboratory.com
@@ -240,7 +278,7 @@ footer:
     - url: https://newsletter.substack.com
       title: Newsletter on Substack
   unsubscribeLink: '[unsubscribe]'
-  shareUrl: https://nearfuturelaboratory.com/newsletters/2025/w50-y25
+  shareUrl: https://nearfuturelaboratory.com/newsletters/2026/w50-y25
   archiveUrl: https://nearfuturelaboratory.com/newsletters
   gratitude: This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle
     based production workflow. It's a work-in-progress building on a refactor of the
@@ -248,6 +286,6 @@ footer:
     vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a
     paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It's
     a great newsletter and I would encourage you to subscribe and become a paid member.
-  address: © 2025 Near Future Laboratory<br>Venice Beach, California<br>United States
+  address: © 2026 Near Future Laboratory<br>Venice Beach, California<br>United States
   colophon: Imagination is not a luxury. It’s an early-warning system for possibility.
 ---

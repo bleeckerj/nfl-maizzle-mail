@@ -1,0 +1,20 @@
+<!-- Intro Component -->
+<!-- Weekly summary and contextual information with membership prompt -->
+<!-- Variables: this_week_summary, year_ago_link, year_ago_text, membership_prompt -->
+
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+  <tr>
+    <td style="padding: 20px;">
+      <div class="header-content">
+  <p style="font-size: 18px;line-height: 1.6em;"><strong class="caps" style="text-transform: uppercase;font-weight: bold;letter-spacing: .05em;font-size: 85%;">This week &rarr;</strong> {{ this_week_summary }}</p>
+  <if condition="year_ago_link">
+    <p style="font-size: 18px;line-height: 1.6em;"><strong class="caps" style="text-transform: uppercase;font-weight: bold;letter-spacing: .05em;font-size: 85%;">A year ago &rarr;</strong> <a href="{{ year_ago_link }}" style="color: #DC4B4B;text-decoration: none;">{{ year_ago_text }}</a>.</p>
+  </if>
+</div>
+<div class="header-prompt">
+  <br>
+  <p style="font-size: 14px;line-height: 1.6em;">{{{ membership_prompt }}}</p>
+</div>
+    </td>
+  </tr>
+</table>

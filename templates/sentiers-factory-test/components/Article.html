@@ -1,0 +1,11 @@
+<!-- Article Component -->
+<!-- Renders an article with a title, description, and link -->
+<!-- Variables: title, description, link, quote -->
+
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+  <tr>
+    <td style="padding: 20px;">
+      <div style="padding: 48px 0 0;"> <h2 style="font-family: 'Lora', serif; font-size: 36px; line-height: 1.2em; font-weight: 400; margin: 0;"> <a href="{{ article.link }}" style="color: #DC4B4B; text-decoration: none;">{{ article.title }}</a> </h2> <p style="font-size: 18px; line-height: 1.6em;">{{{ article.description }}}</p> <blockquote style="margin: 40px 0; padding: 0 0 0 20px; border-left: 1px solid #B7E2D8;"> <p style="font-size: 17px; line-height: 1.6em; font-family: 'Lora', serif;">{{{ article.quote }}}</p> </blockquote> </div>
+    </td>
+  </tr>
+</table>

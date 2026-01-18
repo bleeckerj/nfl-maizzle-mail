@@ -173,6 +173,62 @@
         "image": {},
         "imageLink": {},
         "imageAlt": {},
+        "aside": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "content": {},
+                "containerStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "contentStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": true
+            }
+          ]
+        },
+        "contentStyles": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true
+        },
+        "containerStyles": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true
+        },
+        "asideContentStyles": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true
+        },
+        "asideContainerStyles": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "additionalProperties": true
+        },
         "content": {}
       },
       "additionalProperties": false
@@ -186,6 +242,7 @@
       "additionalProperties": true
     },
     "preheader": {},
+    "ogImage": {},
     "sections": {
       "type": "array",
       "items": {
@@ -761,7 +818,32 @@
                   "items": {
                     "type": "object",
                     "properties": {
-                      "image": {},
+                      "image": {
+                        "type": "string",
+                        "description": "Single image URL (for backward compatibility)"
+                      },
+                      "images": {
+                        "type": "array",
+                        "description": "Array of images for the item",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "src": {
+                              "type": "string",
+                              "description": "Image URL"
+                            },
+                            "alt": {
+                              "type": "string",
+                              "description": "Alt text for the image"
+                            },
+                            "link": {
+                              "type": "string",
+                              "description": "Optional link for this specific image"
+                            }
+                          },
+                          "required": ["src"]
+                        }
+                      },
                       "link": {},
                       "title": {},
                       "channel": {},

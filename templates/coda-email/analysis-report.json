@@ -1,0 +1,1476 @@
+{
+  "visualDesign": {
+    "reasoning": "Analyzed the Coda welcome email by examining inline styles, color usage patterns, typography hierarchy, spacing patterns, and image roles. The email uses a table-based layout with distinct color-coded sections and consistent typography from the Helvetica family.",
+    "colorPalette": {
+      "primary": "#000000",
+      "secondary": "#101010",
+      "accent": "#101010",
+      "background": "#FFFFFF",
+      "backgroundAlt": "#D6F3FF",
+      "text": "#101010",
+      "textMuted": "#878787",
+      "border": "#101010",
+      "allColors": [
+        "#FFFFFF",
+        "#D6F3FF",
+        "#101010",
+        "#FDDCB0",
+        "#EDFAFF",
+        "#000000",
+        "#333333",
+        "#ffffff",
+        "#fff",
+        "#878787"
+      ]
+    },
+    "typography": {
+      "headingFont": "Helvetica, Arial, sans-serif",
+      "bodyFont": "Helvetica, Arial, sans-serif",
+      "monoFont": "none",
+      "headingSizes": {
+        "h1": "45px",
+        "h2": "23px",
+        "h3": "24px"
+      },
+      "bodySize": "18px",
+      "smallSize": "12px",
+      "lineHeights": {
+        "heading": "125%",
+        "body": "27px"
+      },
+      "fontWeights": {
+        "normal": "300",
+        "medium": "400",
+        "bold": "700"
+      }
+    },
+    "spacing": {
+      "containerPadding": "30px",
+      "sectionGap": "20px",
+      "elementGap": "10px",
+      "patterns": [
+        "30px",
+        "20px",
+        "10px",
+        "26px",
+        "19px",
+        "32px"
+      ]
+    },
+    "images": [
+      {
+        "src": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/0VgcNGsCTHeiqasFHQtI_Coda_Logotype-Black%402x.png",
+        "alt": "",
+        "role": "logo",
+        "width": "65px",
+        "context": "header section"
+      },
+      {
+        "src": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/ANpV8zyUTIuDesjwTp0i_S1-580px2x.gif",
+        "alt": "",
+        "role": "hero",
+        "width": "580px",
+        "context": "main content explaining Coda"
+      },
+      {
+        "src": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/xcT37i1QRXy2l6PcKDgs_S2-270px%402x.png",
+        "alt": "",
+        "role": "content",
+        "width": "270px",
+        "context": "feature explanation section"
+      },
+      {
+        "src": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/i1f5kFSNTBW5a9n3Hj5n_S3-270px%402x.gif",
+        "alt": "",
+        "role": "content",
+        "width": "270px",
+        "context": "workflow transformation section"
+      },
+      {
+        "src": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/3CcQVdUqTSyWgUmZyJGc_S4-270px%402x%20(1).png",
+        "alt": "",
+        "role": "content",
+        "width": "270px",
+        "context": "visual learning section"
+      },
+      {
+        "src": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/cCrJEkVuSv2Iv2jpOZxn_S5-96px%402x.png",
+        "alt": "",
+        "role": "content",
+        "width": "112px",
+        "context": "call-to-action section"
+      },
+      {
+        "src": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/vHejWWTnOeOR1KwqI44A_0VgcNGsCTHeiqasFHQtI_Coda_Logotype-Black%402x.png",
+        "alt": "Coda",
+        "role": "logo",
+        "width": "65px",
+        "context": "footer section"
+      },
+      {
+        "src": "https://cdn-web-assets.dyspatch.io/org_01dvxt7mavmn4qe3rwy8cm2brf%2F336xmmT0QIiGIMA639Aw_codalogo.png",
+        "alt": "Coda",
+        "role": "logo",
+        "width": "21px",
+        "context": "mobile footer"
+      },
+      {
+        "src": "https://cdn-web-assets.dyspatch.io/org_01dvxt7mavmn4qe3rwy8cm2brf%2F0y6QZYrTx2OJCOjzBqQi_twitter.png",
+        "alt": "",
+        "role": "icon",
+        "width": "10px",
+        "context": "social media footer"
+      },
+      {
+        "src": "https://cdn-web-assets.dyspatch.io/org_01dvxt7mavmn4qe3rwy8cm2brf%2FlleOeayLQXmQtufOXcrn_linkedin.png",
+        "alt": "",
+        "role": "icon",
+        "width": "10px",
+        "context": "social media footer"
+      }
+    ],
+    "layout": {
+      "maxWidth": "640px",
+      "structure": "single-column",
+      "containerType": "table-based",
+      "responsiveHints": [
+        "mobile-specific classes",
+        "responsive column widths",
+        "mobile image padding adjustments",
+        "desktop/mobile conditional display"
+      ]
+    }
+  },
+  "structure": {
+    "reasoning": "This is a Coda welcome email with a clear onboarding structure. I identified sections by visual breaks (color changes from #EDFAFF to #D6F3FF to #FDDCB0), content boundaries, and functional purposes. The email has a unique structure with feature-explanation sections that combine images and text to explain Coda's functionality. These aren't standard articles but rather product-feature explanations, which I'm treating as a novel 'feature-explanation' type.",
+    "sections": [
+      {
+        "id": "header",
+        "name": "Header with Logo",
+        "type": "header",
+        "purpose": "Brand identification and email header",
+        "order": 1,
+        "contentType": "static",
+        "estimatedStartLine": "line 50",
+        "keyIdentifiers": [
+          "bradius",
+          "background-color:#D6F3FF",
+          "Coda logo"
+        ]
+      },
+      {
+        "id": "welcome_intro",
+        "name": "Welcome Introduction",
+        "type": "welcome-intro",
+        "purpose": "Personal greeting and context setting",
+        "order": 2,
+        "contentType": "dynamic",
+        "estimatedStartLine": "line 100",
+        "keyIdentifiers": [
+          "background-color:#EDFAFF",
+          "Welcome to Coda!",
+          "Hi Smiles Davis"
+        ]
+      },
+      {
+        "id": "what_is_coda",
+        "name": "What is Coda Explanation",
+        "type": "feature-explanation",
+        "purpose": "Explains core product concept with visual",
+        "order": 3,
+        "contentType": "static",
+        "estimatedStartLine": "line 200",
+        "keyIdentifiers": [
+          "background-color:#D6F3FF",
+          "So, what is Coda?",
+          "S1-580px2x.gif"
+        ]
+      },
+      {
+        "id": "doc_pages_feature",
+        "name": "Doc with Pages Feature",
+        "type": "feature-explanation",
+        "purpose": "Explains specific product feature with image-text layout",
+        "order": 4,
+        "contentType": "static",
+        "estimatedStartLine": "line 300",
+        "keyIdentifiers": [
+          "background-color:#EDFAFF",
+          "Coda is a doc with pages",
+          "direction:rtl",
+          "dys-column-per-50"
+        ]
+      },
+      {
+        "id": "workflow_feature",
+        "name": "Transform Workflow Feature",
+        "type": "feature-explanation",
+        "purpose": "Explains workflow transformation with animated visual",
+        "order": 5,
+        "contentType": "static",
+        "estimatedStartLine": "line 400",
+        "keyIdentifiers": [
+          "background-color:#D6F3FF",
+          "Transform your workflow",
+          "S3-270px%402x.gif"
+        ]
+      },
+      {
+        "id": "learning_resources",
+        "name": "Learning Resources Section",
+        "type": "feature-explanation",
+        "purpose": "Promotes training and learning resources",
+        "order": 6,
+        "contentType": "static",
+        "estimatedStartLine": "line 500",
+        "keyIdentifiers": [
+          "background-color:#EDFAFF",
+          "I'm actually more of a visual learner",
+          "interactive trainings"
+        ]
+      },
+      {
+        "id": "get_started_cta",
+        "name": "Get Started Call-to-Action",
+        "type": "cta-section",
+        "purpose": "Encourages user to start using Coda with gallery link",
+        "order": 7,
+        "contentType": "static",
+        "estimatedStartLine": "line 600",
+        "keyIdentifiers": [
+          "background-color:#D6F3FF",
+          "Get back into Coda",
+          "dys-column-per-27",
+          "dys-column-per-73"
+        ]
+      },
+      {
+        "id": "footer",
+        "name": "Footer with Social Links",
+        "type": "footer",
+        "purpose": "Social links, address, and unsubscribe",
+        "order": 8,
+        "contentType": "static",
+        "estimatedStartLine": "line 700",
+        "keyIdentifiers": [
+          "linear",
+          "background-color:#101010",
+          "Follow us on",
+          "Unsubscribe"
+        ]
+      }
+    ],
+    "sectionTypes": [
+      {
+        "name": "header",
+        "description": "Brand header with logo",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_url",
+            "type": "image",
+            "required": true,
+            "description": "Company logo image"
+          },
+          {
+            "name": "logo_link",
+            "type": "url",
+            "required": true,
+            "description": "Link destination for logo"
+          }
+        ],
+        "containerStructure": "table > tr > td with rounded top corners",
+        "stylingNotes": "Light blue background (#D6F3FF) with rounded top corners",
+        "htmlSignature": "class='bradius', background-color:#D6F3FF"
+      },
+      {
+        "name": "welcome-intro",
+        "description": "Personalized welcome message with user context",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "Combines large welcome headline, personalized greeting, and contextual onboarding message in a specific welcome email pattern",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "user_name",
+            "type": "string",
+            "required": true,
+            "description": "Personalized user name"
+          },
+          {
+            "name": "welcome_message",
+            "type": "html",
+            "required": true,
+            "description": "Contextual welcome and onboarding text"
+          }
+        ],
+        "containerStructure": "Multiple table rows with h1, h2, and paragraph content",
+        "stylingNotes": "Light blue background (#EDFAFF), large typography hierarchy",
+        "htmlSignature": "background-color:#EDFAFF, Welcome to Coda! heading"
+      },
+      {
+        "name": "feature-explanation",
+        "description": "Product feature explanation with image and descriptive text in side-by-side or stacked layout",
+        "isRepeating": true,
+        "isNovel": true,
+        "noveltyReason": "Specific pattern for explaining software features with alternating layouts, animated GIFs, and educational content structure",
+        "instanceCount": 4,
+        "variables": [
+          {
+            "name": "feature_title",
+            "type": "string",
+            "required": true,
+            "description": "Feature or section headline"
+          },
+          {
+            "name": "feature_image",
+            "type": "image",
+            "required": false,
+            "description": "Visual demonstration of the feature (static or animated)"
+          },
+          {
+            "name": "feature_description",
+            "type": "html",
+            "required": true,
+            "description": "Explanatory text about the feature"
+          },
+          {
+            "name": "layout_direction",
+            "type": "string",
+            "required": true,
+            "description": "Image-left, image-right, or stacked layout"
+          }
+        ],
+        "containerStructure": "Two-column layout with dys-column-per-50 or single column with centered content",
+        "stylingNotes": "Alternating backgrounds (#D6F3FF, #EDFAFF), responsive columns",
+        "htmlSignature": "dys-column-per-50, direction:rtl for alternating layouts"
+      },
+      {
+        "name": "cta-section",
+        "description": "Call-to-action section with icon, text, and button",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "icon_image",
+            "type": "image",
+            "required": false,
+            "description": "Small icon or illustration"
+          },
+          {
+            "name": "cta_text",
+            "type": "html",
+            "required": true,
+            "description": "Call-to-action message"
+          },
+          {
+            "name": "button_text",
+            "type": "string",
+            "required": true,
+            "description": "Button label"
+          },
+          {
+            "name": "button_url",
+            "type": "url",
+            "required": true,
+            "description": "Button destination"
+          }
+        ],
+        "containerStructure": "Two-column layout with 27%/73% split",
+        "stylingNotes": "Blue background, black button with white text",
+        "htmlSignature": "dys-column-per-27, dys-column-per-73, black button styling"
+      },
+      {
+        "name": "footer",
+        "description": "Footer with social links, address, and legal links",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "social_links",
+            "type": "array",
+            "required": true,
+            "description": "Social media links and icons"
+          },
+          {
+            "name": "company_address",
+            "type": "string",
+            "required": true,
+            "description": "Physical company address"
+          },
+          {
+            "name": "unsubscribe_link",
+            "type": "url",
+            "required": true,
+            "description": "Unsubscribe URL"
+          }
+        ],
+        "containerStructure": "Three-column layout with responsive mobile stacking",
+        "stylingNotes": "Black background (#101010), white text, responsive column behavior",
+        "htmlSignature": "class='linear', background-color:#101010, mobile responsive columns"
+      }
+    ],
+    "repeatingSections": [
+      {
+        "type": "feature-explanation",
+        "pattern": "Product feature explanations with alternating image-text layouts",
+        "instanceCount": 4,
+        "variablesPerInstance": [
+          "feature_title",
+          "feature_image",
+          "feature_description",
+          "layout_direction"
+        ]
+      }
+    ],
+    "globalElements": {
+      "header": {
+        "present": true,
+        "components": [
+          "logo",
+          "brand-link"
+        ]
+      },
+      "footer": {
+        "present": true,
+        "components": [
+          "social-links",
+          "address",
+          "unsubscribe"
+        ]
+      },
+      "wrapper": {
+        "type": "Centered table-based layout with colored section backgrounds",
+        "width": "640px"
+      }
+    },
+    "hierarchy": {
+      "depth": 2,
+      "description": "header → welcome-intro → multiple feature-explanations → cta-section → footer"
+    },
+    "novelTypeSummary": {
+      "hasNovelTypes": true,
+      "novelTypeNames": [
+        "welcome-intro",
+        "feature-explanation"
+      ],
+      "explanation": "Found unique onboarding email patterns: personalized welcome section and product feature explanation sections with alternating image-text layouts specifically designed for software product education"
+    }
+  },
+  "content": {
+    "reasoning": "I extracted content from a Coda welcome email by identifying the structural sections and their content. The email follows a clear onboarding pattern with personalized greeting, product explanations with visual demonstrations, learning resources, and call-to-action sections. I preserved HTML formatting in descriptions and extracted all URLs, images, and dynamic content that would vary between users.",
+    "emailType": "transactional",
+    "emailSubtype": "welcome-onboarding",
+    "title": "Welcome to Coda!",
+    "preheader": "Your all-in-one collaborative workspace.",
+    "contentBySectionType": {
+      "header": {
+        "instances": [
+          {
+            "extractedData": {
+              "logoUrl": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/0VgcNGsCTHeiqasFHQtI_Coda_Logotype-Black%402x.png",
+              "logoLink": "https://build-links.coda.io/f/a/v0maKmttHAyAowvqAWc7PA~~/AAQRxRA~/B5nOvdpRBaSZtYCxjQpoj-Kcy5oK3K2lh_8T-Jr3YJl6QP61h1u4MNWsGDm1BCZF8KHHaR8f0xk7Je2JSzss2C32FMzGqjJTtq219xS6PGVdPstszaXE5kjleIpALqdHxW25TNK8e2y4DT6kZA2yA3ogIYs8SJCUzcyat7XnOYLo23EG3bI-TlNktLB2CmOGfqYcnmIB_M2yh5cXYdiAB0ajlQPlbjbDBbiTe0dGxzYnREv_EIpY-oHOHV8KpODbCX2Eu0kQUXamfUbnDYe2yA~~"
+            }
+          }
+        ]
+      },
+      "welcome-intro": {
+        "instances": [
+          {
+            "extractedData": {
+              "welcomeTitle": "Welcome to Coda!",
+              "subtitle": "We're so glad you're here.",
+              "userName": "Smiles Davis",
+              "welcomeMessage": "Hi Smiles Davis,<br><br>You're in Coda! Now what? In a world where technology and tools are ever-evolving, docs have stayed the same with their generic interfaces and bland pages. Enter Coda. Here, your productivity possibilities are exponential. For now, let's start with the basics. Let's dive in!"
+            }
+          }
+        ]
+      },
+      "feature-explanation": {
+        "instances": [
+          {
+            "extractedData": {
+              "title": "So, what is Coda?",
+              "image": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/ANpV8zyUTIuDesjwTp0i_S1-580px2x.gif",
+              "description": "Coda is an all-in-one workspace that brings tools and teams together in one place for better collaboration, organization, project management, and productivity.",
+              "buttonText": "Learn more about Coda",
+              "buttonUrl": "https://build-links.coda.io/f/a/_Wr4qbfbOF3ZjDlmKbtq8Q~~/AAQRxRA~/ZMdkx0y5fg27C_nvNmJ6Xd6MRr5ic2aTRpHOknbd5aQT9rYfv6V5yi01Ep1jNkc3kt8ivCZgbIc7kCcXT4e7BaR5mke2xuLxotBEgqiSg4UIWakAGzCqfzp0p70jaAqCjLwDNppwxmQdAZ-03PqrPW5lm5XtyF6N09IBGfyOdCEQ6uY37aHUkyGUMcvzyyJZrHRqf-viTyqTE9Ly3HhGX66KnwyjtfcTAEBrR9XRKcNchFf0Hyx3yKO4lRiQXXxn7pmYzdcfEgri0ypBUcJejskV5UFpHKTrs9VEA1g48_dhvIJVX3TelQC933ULzJIx",
+              "layoutDirection": "stacked"
+            }
+          },
+          {
+            "extractedData": {
+              "title": "Coda is a doc with pages.",
+              "image": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/xcT37i1QRXy2l6PcKDgs_S2-270px%402x.png",
+              "description": "Docs are where your text and data live in one place. And within each Coda doc are pages, which you can find on the lefthand panel.",
+              "layoutDirection": "image-right"
+            }
+          },
+          {
+            "extractedData": {
+              "title": "Transform your workflow with Coda.",
+              "image": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/i1f5kFSNTBW5a9n3Hj5n_S3-270px%402x.gif",
+              "description": "Coda docs have endless features to centralize information and build collaboration.<br><br>Docs grow and evolve—taking in new information and data from your trusted sources.",
+              "layoutDirection": "image-left"
+            }
+          },
+          {
+            "extractedData": {
+              "title": "I'm actually more of a visual learner...",
+              "image": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/3CcQVdUqTSyWgUmZyJGc_S4-270px%402x%20(1).png",
+              "description": "We're big on collaboration here at Coda—both in and out of the doc. That's why we've curated <a href='https://build-links.coda.io/f/a/wZoMy_GZ1aB0CgphpDc1aA~~/AAQRxRA~/uXHEqjwH4nXnCOJr2Du8RCSAtlPZilQ4mWKIhJVA84qf5ebGkHfrvWjLhgkMHAad0exOeyMRe4XqUivqYV5IVR6dSl8u9caRz6Wz27cyd910cZx4b_QVujfZzPB3vHqLDbIQTFphDVSWHNMkVmJaSJT9W1MVRSLOPTn-yXnwxDKZ9i1XAigFLvr_5P9VBquyq41Ho1U3PjUGt6fAYm-062zqpG3LoIuA3K_EQCW-r1DImoJ1k-LAA-ov4Er3gJhv8MivjgMoTpJdY1qc2bl8gIxvU2fW5sOir3i2cO84iwadhqCjLScsMTcZAQouFzYeHUq0N5F83tcceo7ZUO8wYA~~'>interactive trainings</a> to help you learn more about Coda and how to utilize its potential from the get-go.<br><br>Sign up to join the next session <a href='https://build-links.coda.io/f/a/4CZx9_Id2TRXRYbDjoqZmw~~/AAQRxRA~/XRUJ_Vm7D66nwiD0EFfI9kaNkUXkYRJ0cThXFRYbB-Xp1F3vWPE9XEAKwBxSw9qDlVaGmUIqysd4yTwXZ_Sqd-gQKObPT4oCCTk-Ona-tWjEBeVmgjbXEKxE_6iJZ7tg6JV9kOtBFBbZO0pTUcjKKfWp8EEt284_4-xKIeYHBZO7XJaAubJ0rbnP9YAHT__7ZxY0VJmnSXh2F-Df4mC5Mafds0yqwKodc_8ZzdwhGoA6kXlaixe0IsHKw62GLr7u8ZFXjxg9p5lvo9viWWGxfMjwDmmZ6fzwPFL7cU8aro4hZqwF4NkAeY_OePxJW-K-FWJJJHBndH6dJ1tCyAeJaiPqV6i8jsXNJXf2Pv5HX8YnfQMwbyvfNXcneuYACP5JVWUtOe6mMWR7NiMNE-zBwk1h5NMxmTVDftOaDcbQ5Og~'><strong>here</strong></a>, or browse our list of <a href='https://build-links.coda.io/f/a/YsQg2RQE56KG4JeEW97mgQ~~/AAQRxRA~/nSwO0vzIDfLXDNJo7INXOAf8ntV_eV-pSShpqRC9bcbQiwo4FK3kKGx9TjmRH9GnAHYlHebzMHFc-MYKg6ofMGnVWxDl_1ycr1LgDAkNWhGTQme7Vor7kQbxHdC3_I89cCJsGmjiPWfAH-QFkMce14DE90Qog4N-23r1mM5wjzeFzHeq9HCtHoZFaXLftgG2Q_JvVQ3m9A4s4d3FP8wyc4cOwhPFwCmE2BM_H3oPIWHYYdot6WhQ8T_JCEJWx71bogQcfJoxeSg3vNGIzOdaOcxdYsY-y93qvlipaN4LSRY~'><strong>webinars</strong></a> to discover more great learning content.",
+              "layoutDirection": "image-right"
+            }
+          }
+        ]
+      },
+      "cta-section": {
+        "instances": [
+          {
+            "extractedData": {
+              "iconImage": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/cCrJEkVuSv2Iv2jpOZxn_S5-96px%402x.png",
+              "ctaText": "<strong>Get back into Coda.</strong> The best way to get to know Coda is simply...get into Coda! If you were invited to a Coda doc...find your place again by visiting <a href='https://build-links.coda.io/f/a/afZOslV5DDbepv1QivV4rA~~/AAQRxRA~/V6Sg-Tja7TswzKHX1BXjhadZ3yYZahDC4PI7E1JQo4WE9BW5vqRs5ByW1hObulJnTfiZPtOrv_WWAkqKYvZkrhAm8IOV-opKc-7rUPvINFhQ98l763p2qlqXeKxvnUrGGwmPc7RAPP04QRCp16DNDX9XmdSfJ1-PiIGjLXkaAcRHDpEukJsVFcBk2EDCU6bmKKDdT5C1MiY0QtuwhzwP170qVFSNBQPEhMfv_L8baYqSutUzLhJkwGGUsU6VCOooTYeb8OJHTm3c2x3ikJFUKg~~'>your workspace</a>.<br><br>For more ideas, inspiration, and blueprints to help you get started, check out our Gallery. Until then, see you in Coda!",
+              "buttonText": "View the gallery",
+              "buttonUrl": "https://build-links.coda.io/f/a/nmquvga6QbcUKsPECCfEUQ~~/AAQRxRA~/xEaa0mOKP01rTb_pUgFkw7bE09K89ja0ueWJZ2xoThp-Fb_7MQTUTPBa9O0OakkBuU67yrC8liyPKJkouewYTlH1f22b7vGBzYuMKeKYZvy7QtvDZ2ZI2byM0bJMgNYoDV0GaF0DiuxXXStgypTNsctEYFt4Ziac9SPQIRNTpj4E-dr4c7wXCXflyDcttOC8liUgkXLWRN7Km3s3V9rAG2ZSeSN5lu1a0mMrlsGB0ZpqvqrQ1q99hDqWiflNcpQ5mDJgeoF_epAivj51U3YQYA~~"
+            }
+          }
+        ]
+      },
+      "footer": {
+        "instances": [
+          {
+            "extractedData": {
+              "logoUrl": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/vHejWWTnOeOR1KwqI44A_0VgcNGsCTHeiqasFHQtI_Coda_Logotype-Black%402x.png",
+              "socialLinks": [
+                {
+                  "platform": "Twitter",
+                  "url": "https://build-links.coda.io/f/a/qck9jYgj8X60x9Q1anrIig~~/AAQRxRA~/3EQuH3V4ZtnIRjIadQbgnu2oCWA4hUV_upnioroGGdV6eHl7SivlGtlpCQCrKbnlPHZYkeRk1Ud8QudSSgc9uQ9uVPVC8xJlgsqSdMni_pNEiyVO_8fmmDwvgAgzB_GGdD7oln-c6tbXF9n9xg3wGkEg0kzgs7wguMDFUzNctcaq32QnRsnAffzQS_dt7Wtylo-_xbD7IewyFx6jAyFk5FYOy8n1dhYfz1ojv5h9yw_2aLSd2-Jld3e9PMu9CuYfAbhkkApwjhUpv5w6zvecLm05ZtPPvfLfY2WOGUuBNkY~",
+                  "icon": "https://cdn-web-assets.dyspatch.io/org_01dvxt7mavmn4qe3rwy8cm2brf%2F0y6QZYrTx2OJCOjzBqQi_twitter.png"
+                },
+                {
+                  "platform": "LinkedIn",
+                  "url": "https://build-links.coda.io/f/a/7NXFwoLh09XWrQzjnfAk9Q~~/AAQRxRA~/Ur2fL2VrSf_yPAXRZAtTsH0wNhMyXX7omzFqg5UKRyskq4OR5fjztyDykyOMlMv9LUlZqiTQb7gpct0WE1zqRU-TOiuZq3rgqrMXUsPF1mzJV7iGcl0zMJJsSeU3-DPm6hC1LtrIE6dtZTD4jk3X0RtUFrG2ZjP9jwXvoPST6PtvmlQvHh9AlJUMPA2qrh43vlENSJohwzElKZVVCne09ibWtRZBkRopvkjv4yaNIua4saV8FI1lr65YefHTPUNemZ6r5xbT0REJ4VF55CVBMCJ_ouqd-rVsYUFyw_5nk_0~",
+                  "icon": "https://cdn-web-assets.dyspatch.io/org_01dvxt7mavmn4qe3rwy8cm2brf%2FlleOeayLQXmQtufOXcrn_linkedin.png"
+                }
+              ],
+              "companyAddress": "250 Montgomery St, Suite 1000, San Francisco, CA 94104",
+              "unsubscribeLink": "https://build-links.coda.io/f/a/LqtuQuUcgonuooH1WsWpsg~~/AAQRxRA~/9CfKNFrAEjAbbWGAbMYNk0rxunr0Pb0Nn0TgMQm99LI-h4WYAcYdLLuUBNVY_1DUWdVwcLi_j08AVFYZP_XyKPp-1yWdOBhYjvfY6RZwlkK2iAXGR8aA7ahprjRt8AusJMI3yrHS7w60UVxAlpzADjjP6v9D-HRDIdAKBbMn4ZhbCofsVQgitNStvpe__DdZVOfmO8tMOuCS50UXzWfI40rkICv9SkKnbv5EuQ8ep2eRy1hxKIF0zB0SQ61AjmX5C-bz5LPiCniE7U3dnl1Z0DdFHdkEIAleeUXJeWa5kK-L76aSTGNzTTT8nThVlSBt"
+            }
+          }
+        ]
+      }
+    },
+    "sampleData": {
+      "title": "Welcome to Coda!",
+      "preheader": "Your all-in-one collaborative workspace.",
+      "userName": "Smiles Davis",
+      "sections": [
+        {
+          "type": "welcome-intro",
+          "items": [
+            {
+              "welcomeTitle": "Welcome to Coda!",
+              "subtitle": "We're so glad you're here.",
+              "userName": "{{user.firstName}} {{user.lastName}}",
+              "welcomeMessage": "Hi {{user.firstName}},<br><br>You're in Coda! Now what? In a world where technology and tools are ever-evolving, docs have stayed the same with their generic interfaces and bland pages. Enter Coda. Here, your productivity possibilities are exponential. For now, let's start with the basics. Let's dive in!"
+            }
+          ]
+        },
+        {
+          "type": "feature-explanation",
+          "items": [
+            {
+              "title": "So, what is Coda?",
+              "image": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/ANpV8zyUTIuDesjwTp0i_S1-580px2x.gif",
+              "description": "Coda is an all-in-one workspace that brings tools and teams together in one place for better collaboration, organization, project management, and productivity.",
+              "buttonText": "Learn more about Coda",
+              "buttonUrl": "{{links.learnMore}}",
+              "layoutDirection": "stacked"
+            }
+          ]
+        },
+        {
+          "type": "cta-section",
+          "items": [
+            {
+              "iconImage": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/cCrJEkVuSv2Iv2jpOZxn_S5-96px%402x.png",
+              "ctaText": "<strong>Get back into Coda.</strong> The best way to get to know Coda is simply...get into Coda! If you were invited to a Coda doc...find your place again by visiting <a href='{{links.workspace}}'>your workspace</a>.<br><br>For more ideas, inspiration, and blueprints to help you get started, check out our Gallery. Until then, see you in Coda!",
+              "buttonText": "View the gallery",
+              "buttonUrl": "{{links.gallery}}"
+            }
+          ]
+        }
+      ],
+      "header": {
+        "logoUrl": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/0VgcNGsCTHeiqasFHQtI_Coda_Logotype-Black%402x.png",
+        "logoLink": "{{links.homepage}}"
+      },
+      "footer": {
+        "logoUrl": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/vHejWWTnOeOR1KwqI44A_0VgcNGsCTHeiqasFHQtI_Coda_Logotype-Black%402x.png",
+        "socialLinks": {
+          "twitter": "{{links.social.twitter}}",
+          "linkedin": "{{links.social.linkedin}}"
+        },
+        "companyAddress": "250 Montgomery St, Suite 1000, San Francisco, CA 94104",
+        "unsubscribeLink": "{{links.unsubscribe}}"
+      }
+    },
+    "staticContent": {
+      "elements": [
+        "Welcome to Coda! headline",
+        "We're so glad you're here subtitle",
+        "So, what is Coda? section title",
+        "Coda is a doc with pages feature explanation",
+        "Transform your workflow with Coda feature explanation",
+        "I'm actually more of a visual learner section",
+        "Get back into Coda call-to-action",
+        "Footer social links and company address",
+        "All feature explanation images and GIFs",
+        "Button styling and layout structure",
+        "Color scheme and branding elements"
+      ]
+    }
+  },
+  "components": {
+    "reasoning": "I extracted the HTML structure and identified 5 distinct section types: header (brand logo), welcome-intro (personalized greeting), feature-explanation (product features with alternating layouts), cta-section (call-to-action with icon and button), and footer (social links and company info). Each component preserves all inline styles and uses nested object paths following the project conventions. The feature-explanation component handles its own loop over multiple features with alternating layouts.",
+    "components": [
+      {
+        "name": "Header",
+        "type": "header",
+        "description": "Brand header with logo and rounded top corners",
+        "html": "<div class='bradius' style='background-color:#D6F3FF;border-radius:9px 9px 0px 0px;margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:#D6F3FF;border-radius:9px 9px 0px 0px;width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:0;text-align:center;vertical-align:top;'><div class='dys-column-per-100 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td align='left' style='font-size:0px;padding:26px 19px 32px 19px;word-break:break-word;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='border-collapse:collapse;border-spacing:0px;'><tbody><tr><td style='width:65px;'><a href=\"{{ header.logoLink }}\" style='color:#101010;text-decoration:underline;' target='_blank'><span style='color:#101010;text-decoration:underline;'><img height='auto' src='{{ header.logoUrl }}' style='border:none;display:block;font-size:13px;height:auto;outline:none;text-decoration:none;width:100%;' width='65' /></span></a></td></tr></tbody></table></td></tr></table></div></td></tr></tbody></table></div>",
+        "dataPath": "header",
+        "variables": [
+          {
+            "path": "header.logoUrl",
+            "type": "image",
+            "required": true,
+            "description": "Company logo image URL"
+          },
+          {
+            "path": "header.logoLink",
+            "type": "url",
+            "required": true,
+            "description": "Link destination for logo"
+          }
+        ]
+      },
+      {
+        "name": "WelcomeIntro",
+        "type": "welcome-intro",
+        "description": "Personalized welcome message with large typography hierarchy",
+        "html": "<div class='row-border' style='background-color:#EDFAFF;margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:#EDFAFF;width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:0;padding-bottom:0px;padding-left:0px;padding-right:0px;padding-top:10px;text-align:center;vertical-align:top;'><div class='dys-column-per-100 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td style='font-size:0px;word-break:break-word;'><div style='height:10px;line-height:10px;'>&#8202;</div></td></tr></table></div></td></tr></tbody></table></div><div class='row-border' style='background-color:#EDFAFF;margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:#EDFAFF;width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0;padding-top:0;text-align:center;vertical-align:top;'><div class='dys-column-per-100 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td align='left' style='font-size:0px;padding:10px 30px;padding-bottom:0;padding-top:0;word-break:break-word;'><h1 style='color:#000000;font-family:Helvetica, Arial, sans-serif;font-size:45px;font-weight:700;letter-spacing:-.02em;line-height:125%;margin:0;padding:0;text-align:left;'><strong>{{ intro.welcomeTitle }}</strong></h1></td></tr></table></div></td></tr></tbody></table></div><div class='row-border' style='background-color:#EDFAFF;margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:#EDFAFF;width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0;padding-top:0;text-align:center;vertical-align:top;'><div class='dys-column-per-100 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td align='left' style='font-size:0px;padding:10px 30px;padding-bottom:0;padding-top:0;word-break:break-word;'><h2 style='color:#000000;font-family:Helvetica, Arial, sans-serif;font-size:23px;font-weight:700;letter-spacing:-.02em;line-height:125%;margin:0;padding:0;text-align:left;'><strong>{{ intro.subtitle }}</strong></h2></td></tr></table></div></td></tr></tbody></table></div><div class='row-border' style='background-color:#EDFAFF;margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:#EDFAFF;width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;'><div class='dys-column-per-100 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td align='left' style='font-size:0px;padding:0 34px 0 30px;word-break:break-word;'><div style='color:#101010;font-family:Helvetica, Arial, sans-serif;font-size:18px;font-weight:300;letter-spacing:-0.01em;line-height:27px;text-align:left;'>{{{ intro.welcomeMessage }}}</div></td></tr></table></div></td></tr></tbody></table></div>",
+        "dataPath": "intro",
+        "variables": [
+          {
+            "path": "intro.welcomeTitle",
+            "type": "string",
+            "required": true,
+            "description": "Large welcome headline"
+          },
+          {
+            "path": "intro.subtitle",
+            "type": "string",
+            "required": true,
+            "description": "Secondary welcome message"
+          },
+          {
+            "path": "intro.welcomeMessage",
+            "type": "html",
+            "required": true,
+            "description": "Personalized welcome and onboarding HTML content"
+          }
+        ]
+      },
+      {
+        "name": "FeatureExplanation",
+        "type": "feature-explanation",
+        "description": "Product feature explanations with alternating layouts and images",
+        "html": "<each loop=\"feature in features.items\"><if condition=\"feature.layoutDirection === 'stacked'\"><div class='row-border' style='background-color:{{ feature.backgroundColor || \"#D6F3FF\" }};margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:{{ feature.backgroundColor || \"#D6F3FF\" }};width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:20px 0;padding-bottom:0px;padding-left:0px;padding-right:0px;padding-top:20px;text-align:center;vertical-align:top;'><div class='dys-column-per-100 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td align='left' style='font-size:0px;padding:10px 30px;padding-bottom:0;padding-top:0;word-break:break-word;'><h2 style='color:#101010;font-family:Helvetica, Arial, sans-serif;font-size:24px;font-weight:700;letter-spacing:-.02em;line-height:31px;margin:0;padding:0;text-align:left;'>{{ feature.title }}</h2></td></tr></table></div></td></tr></tbody></table></div><if condition=\"feature.image\"><div class='row-border' style='background-color:{{ feature.backgroundColor || \"#D6F3FF\" }};margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:{{ feature.backgroundColor || \"#D6F3FF\" }};width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;'><div class='dys-column-per-100 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td align='center' style='font-size:0px;padding:10px 30px;word-break:break-word;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='border-collapse:collapse;border-spacing:0px;'><tbody><tr><td style='width:580px;'><img height='auto' src='{{ feature.image }}' style='border:none;display:block;font-size:13px;height:auto;outline:none;text-decoration:none;width:100%;' width='580' /></td></tr></tbody></table></td></tr></table></div></td></tr></tbody></table></div></if><div class='row-border' style='background-color:{{ feature.backgroundColor || \"#D6F3FF\" }};margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:{{ feature.backgroundColor || \"#D6F3FF\" }};width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:0px 0px 0px 0px;text-align:center;vertical-align:top;'><div class='dys-column-per-100 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td align='left' style='font-size:0px;padding:10px 30px;word-break:break-word;'><div style='color:#101010;font-family:Helvetica, Arial, sans-serif;font-size:18px;font-weight:300;letter-spacing:-0.01em;line-height:27px;text-align:left;'>{{{ feature.description }}}</div></td></tr></table></div></td></tr></tbody></table></div><if condition=\"feature.buttonText\"><div class='row-border' style='background-color:{{ feature.backgroundColor || \"#D6F3FF\" }};margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:{{ feature.backgroundColor || \"#D6F3FF\" }};width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:20px 0;padding-bottom:20px;padding-left:0px;padding-right:0px;padding-top:14px;text-align:center;vertical-align:top;'><div class='dys-column-per-100 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td align='left' style='font-size:0px;padding:10px 30px;padding-bottom:0;padding-top:0;word-break:break-word;' vertical-align='middle'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='border-collapse:separate;line-height:100%;'><tr><td align='center' bgcolor='#101010' role='presentation' style='background:#101010;border:1px solid #333333;border-color:#333333;border-radius:8px;cursor:auto;mso-padding-alt:8px 26px;' valign='middle'><a class='dys-button-a' href=\"{{ feature.buttonUrl }}\" style='background:#101010;border-radius:8px;color:#ffffff;display:inline-block;font-family:Helvetica, Arial, sans-serif;font-size:12px;font-weight:700;line-height:18px;margin:0;mso-padding-alt:0px;padding:8px 26px;text-decoration:none;text-transform:none;' target='_blank'>{{ feature.buttonText }}</a></td></tr></table></td></tr></table></div></td></tr></tbody></table></div></if></if><if condition=\"feature.layoutDirection === 'image-right'\"><div class='row-border' style='background-color:{{ feature.backgroundColor || \"#EDFAFF\" }};margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:{{ feature.backgroundColor || \"#EDFAFF\" }};width:100%;'><tbody><tr><td style='direction:rtl;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;'><div class='dys-column-per-50 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:middle;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' width='100%'><tbody><tr><td style='padding-left:0;padding-right:0;vertical-align:middle;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='' width='100%'><tr><td align='center' class='mobile-img-4-3' style='font-size:0px;padding:10px 30px;padding-left:0;padding-right:30px;word-break:break-word;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='border-collapse:collapse;border-spacing:0px;'><tbody><tr><td style='width:270px;'><img height='auto' src='{{ feature.image }}' style='border:none;display:block;font-size:13px;height:auto;outline:none;text-decoration:none;width:100%;' width='270' /></td></tr></tbody></table></td></tr></table></td></tr></tbody></table></div><div class='dys-column-per-50 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:middle;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' width='100%'><tbody><tr><td style='padding-right:0;vertical-align:middle;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='' width='100%'><tr><td align='left' style='font-size:0px;padding:10px 30px;word-break:break-word;'><h4 style='color:#101010;font-family:Helvetica, Arial, sans-serif;font-size:24px;font-weight:700;letter-spacing:-.02em;line-height:31px;margin:0;padding:0;text-align:left;'>{{ feature.title }}</h4></td></tr><tr><td align='left' style='font-size:0px;padding:10px 30px;padding-top:0;word-break:break-word;'><div style='color:#101010;font-family:Helvetica, Arial, sans-serif;font-size:18px;font-weight:300;letter-spacing:-0.01em;line-height:27px;text-align:left;'>{{{ feature.description }}}</div></td></tr></table></td></tr></tbody></table></div></td></tr></tbody></table></div></if><if condition=\"feature.layoutDirection === 'image-left'\"><div class='row-border' style='background-color:{{ feature.backgroundColor || \"#D6F3FF\" }};margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:{{ feature.backgroundColor || \"#D6F3FF\" }};width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:20px 0;text-align:center;vertical-align:top;'><div class='dys-column-per-50 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:middle;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:middle;' width='100%'><tr><td align='center' class='mobile-img-4-3' style='font-size:0px;padding:30px 5px 30px 30px;word-break:break-word;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='border-collapse:collapse;border-spacing:0px;'><tbody><tr><td style='width:270px;'><img height='auto' src='{{ feature.image }}' style='border:none;display:block;font-size:13px;height:auto;outline:none;text-decoration:none;width:100%;' width='270' /></td></tr></tbody></table></td></tr></table></div><div class='dys-column-per-50 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:middle;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:middle;' width='100%'><tr><td align='left' style='font-size:0px;padding:10px 30px;word-break:break-word;'><h4 style='color:#101010;font-family:Helvetica, Arial, sans-serif;font-size:24px;font-weight:700;letter-spacing:-.02em;line-height:31px;margin:0;padding:0;text-align:left;'>{{ feature.title }}</h4></td></tr><tr><td align='left' style='font-size:0px;padding:10px 30px;padding-top:0;word-break:break-word;'><div style='color:#101010;font-family:Helvetica, Arial, sans-serif;font-size:18px;font-weight:300;letter-spacing:-0.01em;line-height:27px;text-align:left;'>{{{ feature.description }}}</div></td></tr></table></div></td></tr></tbody></table></div></if><div class='row-border' style='background-color:#FDDCB0;margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:#FDDCB0;width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:0;text-align:center;vertical-align:top;'><div class='dys-column-per-100 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td align='center' style='font-size:0px;padding:0;padding-top:0px;word-break:break-word;'><p style='border-top-color:#101010;border-top-style:solid;border-top-width:1px;font-size:1px;margin:0px auto;width:100%;'></p></td></tr></table></div></td></tr></tbody></table></div></each>",
+        "dataPath": "features",
+        "isRepeating": true,
+        "variables": [
+          {
+            "path": "feature.title",
+            "type": "string",
+            "required": true,
+            "description": "Feature headline"
+          },
+          {
+            "path": "feature.image",
+            "type": "image",
+            "required": false,
+            "description": "Feature demonstration image or GIF"
+          },
+          {
+            "path": "feature.description",
+            "type": "html",
+            "required": true,
+            "description": "Feature explanation HTML content"
+          },
+          {
+            "path": "feature.layoutDirection",
+            "type": "string",
+            "required": true,
+            "description": "Layout type: 'stacked', 'image-left', or 'image-right'"
+          },
+          {
+            "path": "feature.backgroundColor",
+            "type": "string",
+            "required": false,
+            "description": "Background color for the section"
+          },
+          {
+            "path": "feature.buttonText",
+            "type": "string",
+            "required": false,
+            "description": "Optional button text"
+          },
+          {
+            "path": "feature.buttonUrl",
+            "type": "url",
+            "required": false,
+            "description": "Optional button URL"
+          }
+        ]
+      },
+      {
+        "name": "CtaSection",
+        "type": "cta-section",
+        "description": "Call-to-action section with icon, text, and button in two-column layout",
+        "html": "<div class='row-border' style='background-color:#D6F3FF;margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:#D6F3FF;width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:20px 0px 20px 0px;text-align:center;vertical-align:top;'><div class='dys-column-per-27 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td align='center' style='font-size:0px;padding:10px 30px;word-break:break-word;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='border-collapse:collapse;border-spacing:0px;'><tbody><tr><td style='width:112px;'><a href='' style='color:#101010;text-decoration:underline;' target='_blank'><span style='color:#101010;text-decoration:underline;'><img alt='' height='auto' src='{{ cta.iconImage }}' style='border:none;display:block;font-size:13px;height:auto;outline:none;text-decoration:none;width:100%;' title='' width='112' /></span></a></td></tr></tbody></table></td></tr></table></div><div class='dys-column-per-73 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td align='left' style='font-size:0px;padding:10px 30px;word-break:break-word;'><div style='color:#101010;font-family:Helvetica, Arial, sans-serif;font-size:18px;font-weight:300;letter-spacing:-0.01em;line-height:27px;text-align:left;'>{{{ cta.ctaText }}}</div></td></tr><tr><td align='left' style='font-size:0px;padding:10px 30px;word-break:break-word;' vertical-align='middle'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='border-collapse:separate;line-height:100%;'><tr><td align='center' bgcolor='#101010' role='presentation' style='background:#101010;border:1px solid #333333;border-color:#333333;border-radius:8px;cursor:auto;mso-padding-alt:8px 26px;' valign='middle'><a class='dys-button-a' href=\"{{ cta.buttonUrl }}\" style='background:#101010;border-radius:8px;color:#ffffff;display:inline-block;font-family:Helvetica, Arial, sans-serif;font-size:12px;font-weight:700;line-height:150%;margin:0;mso-padding-alt:0px;padding:8px 26px;text-decoration:none;text-transform:none;' target='_blank'>{{ cta.buttonText }}</a></td></tr></table></td></tr></table></div></td></tr></tbody></table></div>",
+        "dataPath": "cta",
+        "variables": [
+          {
+            "path": "cta.iconImage",
+            "type": "image",
+            "required": false,
+            "description": "Small icon or illustration"
+          },
+          {
+            "path": "cta.ctaText",
+            "type": "html",
+            "required": true,
+            "description": "Call-to-action message HTML"
+          },
+          {
+            "path": "cta.buttonText",
+            "type": "string",
+            "required": true,
+            "description": "Button label text"
+          },
+          {
+            "path": "cta.buttonUrl",
+            "type": "url",
+            "required": true,
+            "description": "Button destination URL"
+          }
+        ]
+      },
+      {
+        "name": "Footer",
+        "type": "footer",
+        "description": "Footer with social links, address, and legal links in responsive three-column layout",
+        "html": "<div class='linear' style='background-color:#101010;margin:0px auto;max-width:640px;background:#101010;background-image:linear-gradient(#101010,#101010);color:#fff;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:#101010;width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:0px;text-align:center;vertical-align:top;'><div class='dys-column-per-100 outlook-group-fix linear' style='direction:ltr;display:inline-block;font-size:0;line-height:0;text-align:left;width:100%;background:#101010;background-image:linear-gradient(#101010,#101010);color:#fff;'><div class='dys-column-per-33 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:33.333333%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr class='dys-desktop'><td align='left' style='font-size:0px;padding:20px 0px 0px 30px;word-break:break-word;'><div class='dys-desktop'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='border-collapse:collapse;border-spacing:0px;'><tbody><tr><td style='width:65px;'><a href=\"{{ footer.logoLink }}\" style='color:#101010;text-decoration:underline;' target='_blank'><span style='color:#101010;text-decoration:underline;'><img alt='{{ footer.logoAlt }}' height='auto' src='{{ footer.logoUrl }}' style='border:none;display:block;font-size:13px;height:auto;outline:none;text-decoration:none;width:100%;' width='65' /></span></a></td></tr></tbody></table></div></td></tr><tr class='dys-mobile' style='display:none;'><td align='left' style='font-size:0px;padding:20px 0px 0px 30px;word-break:break-word;'><div><div class='dys-mobile' style='display:none;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='border-collapse:collapse;border-spacing:0px;'><tbody><tr><td style='width:21px;'><a href=\"{{ footer.logoLink }}\" style='color:#101010;text-decoration:underline;' target='_blank'><span style='color:#101010;text-decoration:underline;'><img alt='{{ footer.logoAlt }}' height='auto' src='{{ footer.mobileLogoUrl }}' style='border:none;display:block;font-size:13px;height:auto;outline:none;text-decoration:none;width:100%;' width='21' /></span></a></td></tr></tbody></table></div></div></td></tr></table></div><div class='dys-column-per-33 outlook-group-fix mobile-wider' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:33.333333%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td align='left' style='font-size:0px;padding:20px 0px 20px 30px;word-break:break-word;'><div style='color:#FFFFFF;font-family:Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;letter-spacing:-0.01em;line-height:19px;text-align:left;'><div style='background:#101010; background-image:linear-gradient(#101010,#101010); color:#fff;display:inline;'><div class='gmail-blend-screen' style='display:inline'><div class='gmail-blend-difference' style='display:inline'><span class='keep-white' style='color:#ffffff;'>Follow us on</span></div></div></div><br /><each loop=\"social in footer.socialLinks\"><span><a href=\"{{ social.url }}\" style='text-decoration:none;color:#101010;'><span style='text-decoration:none;color:#101010;'><img height='10' src='{{ social.icon }}' style='padding-right:4px;' width='10' /></span></a><div style='background:#101010; background-image:linear-gradient(#101010,#101010); color:#fff;display:inline;'><div class='gmail-blend-screen' style='display:inline'><div class='gmail-blend-difference' style='display:inline'><span class='keep-white' style='color:#ffffff;'><a href=\"{{ social.url }}\" style='color:#ffffff; text-decoration:none;'><span style='color:#ffffff;text-decoration:none;'>{{ social.name }}</span></a></span></div></div></div></span><br /></each></div></td></tr><tr class='dys-mobile' style='display:none;'><td align='left' style='font-size:0px;padding:0px 30px 40px 30px;word-break:break-word;'><div><div class='dys-mobile' style='display:none;'><div style='color:#FFFFFF;font-family:Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;letter-spacing:-0.01em;line-height:18px;text-align:left;'><div style='background:#101010; background-image:linear-gradient(#101010,#101010); color:#fff;display:inline;'><div class='gmail-blend-screen' style='display:inline'><div class='gmail-blend-difference' style='display:inline'><span class='keep-white address' style='color:#ffffff;'><a href=\"{{ footer.addressLink }}\" style='color:#ffffff; text-decoration:none;'><span style='color:#ffffff;text-decoration:none;'>{{ footer.companyAddress }}</span></a></span></div></div></div></div></div></div></td></tr><tr class='dys-mobile' style='display:none;'><td align='left' style='font-size:0px;padding:30px;padding-bottom:40px;padding-right:30px;padding-top:0px;word-break:break-word;'><div><div class='dys-mobile' style='display:none;'><div style='color:#FFFFFF;font-family:Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;letter-spacing:-1%;line-height:18px;text-align:left;'><a href=\"{{ footer.unsubscribeLink }}\" style='color:#878787;text-decoration:none;'><span style='color:#878787;text-decoration:none;'>Unsubscribe</span></a></div></div></div></td></tr></table></div><div class='dys-column-per-32 outlook-group-fix mobile-hide' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:32.333333%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr class='dys-desktop'><td align='left' style='font-size:0px;padding:20px 30px 20px 0px;word-break:break-word;'><div class='dys-desktop'><div style='color:#FFFFFF;font-family:Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;letter-spacing:-1%;line-height:18px;text-align:left;'><div style='background:#101010; background-image:linear-gradient(#101010,#101010); color:#fff;display:inline;'><div class='gmail-blend-screen' style='display:inline'><div class='gmail-blend-difference' style='display:inline'><span class='keep-white' style='color:#ffffff;'><a href=\"{{ footer.addressLink }}\" style='color:#ffffff; text-decoration:none;cursor: default;'><span style='color:#ffffff;text-decoration:none;'>{{ footer.companyAddress }}</span></a></span></div></div></div></div></div></td></tr><tr class='dys-desktop'><td align='left' style='font-size:0px;padding:0px;padding-bottom:30px;padding-right:30px;padding-top:30px;word-break:break-word;'><div class='dys-desktop'><div style='color:#FFFFFF;font-family:Helvetica, Arial, sans-serif;font-size:12px;font-weight:400;letter-spacing:-1%;line-height:18px;text-align:left;'><a href=\"{{ footer.unsubscribeLink }}\" style='color:#878787;text-decoration:none;'><span style='color:#878787;text-decoration:none;'>Unsubscribe</span></a></div></div></td></tr></table></div></div></td></tr></tbody></table></div>",
+        "dataPath": "footer",
+        "variables": [
+          {
+            "path": "footer.logoUrl",
+            "type": "image",
+            "required": true,
+            "description": "Desktop footer logo URL"
+          },
+          {
+            "path": "footer.mobileLogoUrl",
+            "type": "image",
+            "required": true,
+            "description": "Mobile footer logo URL"
+          },
+          {
+            "path": "footer.logoLink",
+            "type": "url",
+            "required": true,
+            "description": "Logo link destination"
+          },
+          {
+            "path": "footer.logoAlt",
+            "type": "string",
+            "required": true,
+            "description": "Logo alt text"
+          },
+          {
+            "path": "footer.socialLinks",
+            "type": "array",
+            "required": true,
+            "description": "Array of social media links with name, url, and icon"
+          },
+          {
+            "path": "footer.companyAddress",
+            "type": "string",
+            "required": true,
+            "description": "Physical company address"
+          },
+          {
+            "path": "footer.addressLink",
+            "type": "url",
+            "required": false,
+            "description": "Optional address link"
+          },
+          {
+            "path": "footer.unsubscribeLink",
+            "type": "url",
+            "required": true,
+            "description": "Unsubscribe URL"
+          }
+        ]
+      }
+    ],
+    "layout": {
+      "name": "main.html",
+      "html": "<!doctype html><html lang='en' xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" dir='ltr'><head><title>{{ title }}</title><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" /><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" /><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" /><style type=\"text/css\">#outlook a { padding: 0; }.ReadMsgBody { width: 100%; }.ExternalClass { width: 100%; }.ExternalClass * { line-height: 100%; }body { margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }table, td { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }p { display: block; margin: 13px 0; }</style><style type=\"text/css\">@media only screen and (max-width: 480px) { .dys-desktop { display: none !important; } div.dys-mobile { display: block !important; } tr.dys-mobile { display: table-row !important; } }</style><style type=\"text/css\">@media only screen and (min-width:480px) { .dys-column-per-100 { width: 100.000000% !important; max-width: 100.000000%; } .dys-column-per-27 { width: 27% !important; max-width: 27%; } .dys-column-per-32 { width: 32% !important; max-width: 32%; } .dys-column-per-33 { width: 33.333333% !important; max-width: 33.333333%; } .dys-column-per-50 { width: 50.000000% !important; max-width: 50.000000%; } .dys-column-per-73 { width: 73% !important; max-width: 73%; } }</style><style type=\"text/css\">@media only screen and (max-width:480px) { table.full-width-mobile { width: 100% !important; } td.full-width-mobile { width: auto !important; } } u+#body a { color: #101010; text-decoration: underline; font-size: inherit; font-family: inherit; font-weight: inherit; line-height: inherit; } a { color: #101010; text-decoration: underline; } .event-list-padding>div { padding-bottom: 10px; } @media only screen and (max-width: 440px) { td.mobile-img-4-3 { padding: 30px !important; } td.mobile-column-4-3 { padding: 10px 30px 10px 30px !important; } td.mobile-txt-padding { padding-right: 30px !important; } td.mobile-padding-30 { padding-left: 50px !important; } .mobile-padding-30 { padding-left: 50px !important; } td.mobile-banner-btn>table>tbody>tr>td>p { float: center; } } td.button-shadow>table>tbody>tr>td { filter: drop-shadow(2px 2px 0px #101010); } @media only screen and (min-width: 440px) { td.lead-in-padding { padding-right: 135px !important; } td.mobile-banner-btn { float: right !important; } } .row-border>table>tbody>tr>td { border-left: 1px solid #101010; border-right: 1px solid #101010; } .row-border>table { border-collapse: separate; } .bradius>table { border-collapse: separate; } .bradius>table>tbody>tr>td { border-radius: 8px 8px 0px 0px; border: 1px solid #101010; border-bottom: 0px; } u+#body .gmail-blend-screen { background: #101010; mix-blend-mode: screen; } u+#body .gmail-blend-difference { background: #101010; mix-blend-mode: difference; } .address>a { color: #fffeef !important } .linear { background: #101010; background-image: linear-gradient(#101010, #101010); color: #fff; } @media only screen and (max-width: 440px) { .mobile-hide { display: none; } .mobile-wider { width: 66% !important; } }</style></head><body id=\"body\" style=\"background-color: #FFFFFF;\"><span id=\"dys-ph\" style=\"width:0;opacity:0;max-height:0;mso-hide:all;overflow:hidden;float:left;display:none !important;\">{{ preheader }}</span><span style=\"display: none; max-height: 0px; overflow: hidden;\">&#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &#8199;&#847; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &shy; &nbsp;</span><div style=\"background-color: #FFFFFF;\"><block name=\"template\"></block></div></body></html>",
+      "description": "Main layout wrapper with embedded styles and preheader"
+    },
+    "globalStyles": {
+      "embedded": "#outlook a { padding: 0; }.ReadMsgBody { width: 100%; }.ExternalClass { width: 100%; }.ExternalClass * { line-height: 100%; }body { margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }table, td { border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; }img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }p { display: block; margin: 13px 0; }@media only screen and (max-width: 480px) { .dys-desktop { display: none !important; } div.dys-mobile { display: block !important; } tr.dys-mobile { display: table-row !important; } }@media only screen and (min-width:480px) { .dys-column-per-100 { width: 100.000000% !important; max-width: 100.000000%; } .dys-column-per-27 { width: 27% !important; max-width: 27%; } .dys-column-per-32 { width: 32% !important; max-width: 32%; } .dys-column-per-33 { width: 33.333333% !important; max-width: 33.333333%; } .dys-column-per-50 { width: 50.000000% !important; max-width: 50.000000%; } .dys-column-per-73 { width: 73% !important; max-width: 73%; } }@media only screen and (max-width:480px) { table.full-width-mobile { width: 100% !important; } td.full-width-mobile { width: auto !important; } } u+#body a { color: #101010; text-decoration: underline; font-size: inherit; font-family: inherit; font-weight: inherit; line-height: inherit; } a { color: #101010; text-decoration: underline; } .event-list-padding>div { padding-bottom: 10px; } @media only screen and (max-width: 440px) { td.mobile-img-4-3 { padding: 30px !important; } td.mobile-column-4-3 { padding: 10px 30px 10px 30px !important; } td.mobile-txt-padding { padding-right: 30px !important; } td.mobile-padding-30 { padding-left: 50px !important; } .mobile-padding-30 { padding-left: 50px !important; } td.mobile-banner-btn>table>tbody>tr>td>p { float: center; } } td.button-shadow>table>tbody>tr>td { filter: drop-shadow(2px 2px 0px #101010); } @media only screen and (min-width: 440px) { td.lead-in-padding { padding-right: 135px !important; } td.mobile-banner-btn { float: right !important; } } .row-border>table>tbody>tr>td { border-left: 1px solid #101010; border-right: 1px solid #101010; } .row-border>table { border-collapse: separate; } .bradius>table { border-collapse: separate; } .bradius>table>tbody>tr>td { border-radius: 8px 8px 0px 0px; border: 1px solid #101010; border-bottom: 0px; } u+#body .gmail-blend-screen { background: #101010; mix-blend-mode: screen; } u+#body .gmail-blend-difference { background: #101010; mix-blend-mode: difference; } .address>a { color: #fffeef !important } .linear { background: #101010; background-image: linear-gradient(#101010, #101010); color: #fff; } @media only screen and (max-width: 440px) { .mobile-hide { display: none; } .mobile-wider { width: 66% !important; } }",
+      "critical": "All inline styles must be preserved exactly as they appear in the original HTML for email client compatibility"
+    },
+    "templateStructure": {
+      "mainTemplate": "<x-header /><div class='row-border' style='background-color:#FDDCB0;margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:#FDDCB0;width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:0;text-align:center;vertical-align:top;'><div class='dys-column-per-100 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td align='center' style='font-size:0px;padding:0;word-break:break-word;'><p style='border-top-color:#101010;border-top-style:solid;border-top-width:1px;font-size:1px;margin:0px auto;width:100%;'></p></td></tr></table></div></td></tr></tbody></table></div><x-welcome-intro /><div class='row-border' style='background-color:#FDDCB0;margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:#FDDCB0;width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:0;text-align:center;vertical-align:top;'><div class='dys-column-per-100 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td align='center' style='font-size:0px;padding:0;padding-top:0px;word-break:break-word;'><p style='border-top-color:#101010;border-top-style:solid;border-top-width:1px;font-size:1px;margin:0px auto;width:100%;'></p></td></tr></table></div></td></tr></tbody></table></div><x-feature-explanation /><x-cta-section /><div class='row-border' style='background-color:#FDDCB0;margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:#FDDCB0;width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:0;text-align:center;vertical-align:top;'><div class='dys-column-per-100 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td align='center' style='font-size:0px;padding:0;padding-top:0px;word-break:break-word;'><p style='border-top-color:#101010;border-top-style:solid;border-top-width:1px;font-size:1px;margin:0px auto;width:100%;'></p></td></tr></table></div></td></tr></tbody></table></div><x-footer /><div class='row-border' style='background-color:#FDDCB0;margin:0px auto;max-width:640px;'><table align='center' border='0' cellpadding='0' cellspacing='0' role='presentation' style='background-color:#FDDCB0;width:100%;'><tbody><tr><td style='direction:ltr;font-size:0px;padding:0;text-align:center;vertical-align:top;'><div class='dys-column-per-100 outlook-group-fix' style='direction:ltr;display:inline-block;font-size:13px;text-align:left;vertical-align:top;width:100%;'><table border='0' cellpadding='0' cellspacing='0' role='presentation' style='vertical-align:top;' width='100%'><tr><td align='center' style='font-size:0px;padding:0;padding-top:0px;word-break:break-word;'><p style='border-top-color:#101010;border-top-style:solid;border-top-width:1px;font-size:1px;margin:0px auto;width:100%;'></p></td></tr></table></div></td></tr></tbody></table></div>",
+      "componentOrder": [
+        "Header",
+        "WelcomeIntro",
+        "FeatureExplanation",
+        "CtaSection",
+        "Footer"
+      ]
+    },
+    "sampleData": {
+      "title": "Welcome to Coda!",
+      "preheader": "Your all-in-one collaborative workspace.",
+      "header": {
+        "logoUrl": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/0VgcNGsCTHeiqasFHQtI_Coda_Logotype-Black%402x.png",
+        "logoLink": "https://coda.io"
+      },
+      "intro": {
+        "welcomeTitle": "Welcome to Coda!",
+        "subtitle": "We're so glad you're here.",
+        "welcomeMessage": "<p style='margin-top:0;margin-bottom:0'>Hi Smiles Davis,</p><p style='margin-top:0;margin-bottom:0'>​</p><p style='margin-top:0;margin-bottom:0'>You're in Coda! Now what? In a world where technology and tools are ever-evolving, docs have stayed the same with their generic interfaces and bland pages. Enter Coda. Here, your productivity possibilities are exponential. For now, let's start with the basics. Let's dive in!</p>"
+      },
+      "features": {
+        "items": [
+          {
+            "title": "So, what is Coda?",
+            "image": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/ANpV8zyUTIuDesjwTp0i_S1-580px2x.gif",
+            "description": "<p style='margin-top:0;margin-bottom:0'>Coda is an all-in-one workspace that brings tools and teams together in one place for better collaboration, organization, project management, and productivity.</p>",
+            "layoutDirection": "stacked",
+            "backgroundColor": "#D6F3FF",
+            "buttonText": "Learn more about Coda",
+            "buttonUrl": "https://coda.io"
+          },
+          {
+            "title": "Coda is a doc with pages.",
+            "image": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/xcT37i1QRXy2l6PcKDgs_S2-270px%402x.png",
+            "description": "<p style='margin-top:0;margin-bottom:0'>Docs are where your text and data live in one place. And within each Coda doc are pages, which you can find on the lefthand panel.</p><p style='margin-top:0;margin-bottom:0'>​</p>",
+            "layoutDirection": "image-right",
+            "backgroundColor": "#EDFAFF"
+          },
+          {
+            "title": "Transform your workflow with Coda.",
+            "image": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/i1f5kFSNTBW5a9n3Hj5n_S3-270px%402x.gif",
+            "description": "<p style='margin-top:0;margin-bottom:0'>Coda docs have endless features to centralize information and build collaboration. </p><p style='margin-top:0;margin-bottom:0'>​</p><p style='margin-top:0;margin-bottom:0'>Docs grow and evolve—taking in new information and data from your trusted sources.</p>",
+            "layoutDirection": "image-left",
+            "backgroundColor": "#D6F3FF"
+          },
+          {
+            "title": "\"I'm actually more of a visual learner...\"",
+            "image": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/3CcQVdUqTSyWgUmZyJGc_S4-270px%402x%20(1).png",
+            "description": "<p style='margin-top:0;margin-bottom:0'>We're big on collaboration here at Coda—both in and out of the doc. That's why we've curated <a href=\"#\" style='color:#101010;text-decoration:underline;'><span style='color:#101010;text-decoration:underline;'>interactive trainings</span></a> to help you learn more about Coda and how to utilize its potential from the get-go. </p><p style='margin-top:0;margin-bottom:0'>​</p><p style='margin-top:0;margin-bottom:0'>Sign up to join the next session <a href=\"#\" style='color:#101010;text-decoration:underline;'><span style='color:#101010;text-decoration:underline;'><strong>here</strong></span></a>, or browse our list of <a href=\"#\" style='color:#101010;text-decoration:underline;'><span style='color:#101010;text-decoration:underline;'><strong>webinars</strong></span></a> to discover more great learning content.</p>",
+            "layoutDirection": "image-right",
+            "backgroundColor": "#EDFAFF"
+          }
+        ]
+      },
+      "cta": {
+        "iconImage": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/cCrJEkVuSv2Iv2jpOZxn_S5-96px%402x.png",
+        "ctaText": "<p style='margin-top:0;margin-bottom:0'><strong>Get back into Coda. </strong>The best way to get to know Coda is simply...get into Coda! If you were invited to a Coda doc...find your place again by visiting <a href=\"#\" style='color:#101010;text-decoration:underline;'><span style='color:#101010;text-decoration:underline;'>your workspace</span></a>.</p><p style='margin-top:0;margin-bottom:0'>​</p><p style='margin-top:0;margin-bottom:0'>For more ideas, inspiration, and blueprints to help you get started, check out our Gallery. Until then, see you in Coda!</p>",
+        "buttonText": "View the gallery",
+        "buttonUrl": "https://coda.io/gallery"
+      },
+      "footer": {
+        "logoUrl": "https://cdn-web-assets.dyspatch.io/org_01gceye3h3mdhpetdrq2ygrd69/vHejWWTnOeOR1KwqI44A_0VgcNGsCTHeiqasFHQtI_Coda_Logotype-Black%402x.png",
+        "mobileLogoUrl": "https://cdn-web-assets.dyspatch.io/org_01dvxt7mavmn4qe3rwy8cm2brf%2F336xmmT0QIiGIMA639Aw_codalogo.png",
+        "logoLink": "https://coda.io",
+        "logoAlt": "Coda",
+        "socialLinks": [
+          {
+            "name": "Twitter",
+            "url": "https://twitter.com/coda_hq",
+            "icon": "https://cdn-web-assets.dyspatch.io/org_01dvxt7mavmn4qe3rwy8cm2brf%2F0y6QZYrTx2OJCOjzBqQi_twitter.png"
+          },
+          {
+            "name": "LinkedIn",
+            "url": "https://linkedin.com/company/coda-hq",
+            "icon": "https://cdn-web-assets.dyspatch.io/org_01dvxt7mavmn4qe3rwy8cm2brf%2FlleOeayLQXmQtufOXcrn_linkedin.png"
+          }
+        ],
+        "companyAddress": "250 Montgomery St, Suite 1000, <br /> San Francisco, CA 94104",
+        "addressLink": "https://coda.io/contact",
+        "unsubscribeLink": "https://coda.io/unsubscribe"
+      }
+    }
+  },
+  "reconciliation": {
+    "summary": {
+      "totalDiscovered": 5,
+      "matchedToKnown": 0,
+      "variants": 1,
+      "completelyNovel": 4,
+      "requiresNewComponents": 5,
+      "message": "1 are variants of known types, 4 are completely new types"
+    },
+    "discoveredTypes": [
+      {
+        "name": "header",
+        "description": "Brand header with logo",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_url",
+            "type": "image",
+            "required": true,
+            "description": "Company logo image"
+          },
+          {
+            "name": "logo_link",
+            "type": "url",
+            "required": true,
+            "description": "Link destination for logo"
+          }
+        ],
+        "containerStructure": "table > tr > td with rounded top corners",
+        "stylingNotes": "Light blue background (#D6F3FF) with rounded top corners",
+        "htmlSignature": "class='bradius', background-color:#D6F3FF"
+      },
+      {
+        "name": "welcome-intro",
+        "description": "Personalized welcome message with user context",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "Combines large welcome headline, personalized greeting, and contextual onboarding message in a specific welcome email pattern",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "user_name",
+            "type": "string",
+            "required": true,
+            "description": "Personalized user name"
+          },
+          {
+            "name": "welcome_message",
+            "type": "html",
+            "required": true,
+            "description": "Contextual welcome and onboarding text"
+          }
+        ],
+        "containerStructure": "Multiple table rows with h1, h2, and paragraph content",
+        "stylingNotes": "Light blue background (#EDFAFF), large typography hierarchy",
+        "htmlSignature": "background-color:#EDFAFF, Welcome to Coda! heading"
+      },
+      {
+        "name": "feature-explanation",
+        "description": "Product feature explanation with image and descriptive text in side-by-side or stacked layout",
+        "isRepeating": true,
+        "isNovel": true,
+        "noveltyReason": "Specific pattern for explaining software features with alternating layouts, animated GIFs, and educational content structure",
+        "instanceCount": 4,
+        "variables": [
+          {
+            "name": "feature_title",
+            "type": "string",
+            "required": true,
+            "description": "Feature or section headline"
+          },
+          {
+            "name": "feature_image",
+            "type": "image",
+            "required": false,
+            "description": "Visual demonstration of the feature (static or animated)"
+          },
+          {
+            "name": "feature_description",
+            "type": "html",
+            "required": true,
+            "description": "Explanatory text about the feature"
+          },
+          {
+            "name": "layout_direction",
+            "type": "string",
+            "required": true,
+            "description": "Image-left, image-right, or stacked layout"
+          }
+        ],
+        "containerStructure": "Two-column layout with dys-column-per-50 or single column with centered content",
+        "stylingNotes": "Alternating backgrounds (#D6F3FF, #EDFAFF), responsive columns",
+        "htmlSignature": "dys-column-per-50, direction:rtl for alternating layouts"
+      },
+      {
+        "name": "cta-section",
+        "description": "Call-to-action section with icon, text, and button",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "icon_image",
+            "type": "image",
+            "required": false,
+            "description": "Small icon or illustration"
+          },
+          {
+            "name": "cta_text",
+            "type": "html",
+            "required": true,
+            "description": "Call-to-action message"
+          },
+          {
+            "name": "button_text",
+            "type": "string",
+            "required": true,
+            "description": "Button label"
+          },
+          {
+            "name": "button_url",
+            "type": "url",
+            "required": true,
+            "description": "Button destination"
+          }
+        ],
+        "containerStructure": "Two-column layout with 27%/73% split",
+        "stylingNotes": "Blue background, black button with white text",
+        "htmlSignature": "dys-column-per-27, dys-column-per-73, black button styling"
+      },
+      {
+        "name": "footer",
+        "description": "Footer with social links, address, and legal links",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "social_links",
+            "type": "array",
+            "required": true,
+            "description": "Social media links and icons"
+          },
+          {
+            "name": "company_address",
+            "type": "string",
+            "required": true,
+            "description": "Physical company address"
+          },
+          {
+            "name": "unsubscribe_link",
+            "type": "url",
+            "required": true,
+            "description": "Unsubscribe URL"
+          }
+        ],
+        "containerStructure": "Three-column layout with responsive mobile stacking",
+        "stylingNotes": "Black background (#101010), white text, responsive column behavior",
+        "htmlSignature": "class='linear', background-color:#101010, mobile responsive columns"
+      }
+    ],
+    "novelTypes": [
+      {
+        "name": "header",
+        "description": "Brand header with logo",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_url",
+            "type": "image",
+            "required": true,
+            "description": "Company logo image"
+          },
+          {
+            "name": "logo_link",
+            "type": "url",
+            "required": true,
+            "description": "Link destination for logo"
+          }
+        ],
+        "containerStructure": "table > tr > td with rounded top corners",
+        "stylingNotes": "Light blue background (#D6F3FF) with rounded top corners",
+        "htmlSignature": "class='bradius', background-color:#D6F3FF",
+        "isVariant": true,
+        "variantOf": "sponsor"
+      },
+      {
+        "name": "welcome-intro",
+        "description": "Personalized welcome message with user context",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "Combines large welcome headline, personalized greeting, and contextual onboarding message in a specific welcome email pattern",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "user_name",
+            "type": "string",
+            "required": true,
+            "description": "Personalized user name"
+          },
+          {
+            "name": "welcome_message",
+            "type": "html",
+            "required": true,
+            "description": "Contextual welcome and onboarding text"
+          }
+        ],
+        "containerStructure": "Multiple table rows with h1, h2, and paragraph content",
+        "stylingNotes": "Light blue background (#EDFAFF), large typography hierarchy",
+        "htmlSignature": "background-color:#EDFAFF, Welcome to Coda! heading"
+      },
+      {
+        "name": "feature-explanation",
+        "description": "Product feature explanation with image and descriptive text in side-by-side or stacked layout",
+        "isRepeating": true,
+        "isNovel": true,
+        "noveltyReason": "Specific pattern for explaining software features with alternating layouts, animated GIFs, and educational content structure",
+        "instanceCount": 4,
+        "variables": [
+          {
+            "name": "feature_title",
+            "type": "string",
+            "required": true,
+            "description": "Feature or section headline"
+          },
+          {
+            "name": "feature_image",
+            "type": "image",
+            "required": false,
+            "description": "Visual demonstration of the feature (static or animated)"
+          },
+          {
+            "name": "feature_description",
+            "type": "html",
+            "required": true,
+            "description": "Explanatory text about the feature"
+          },
+          {
+            "name": "layout_direction",
+            "type": "string",
+            "required": true,
+            "description": "Image-left, image-right, or stacked layout"
+          }
+        ],
+        "containerStructure": "Two-column layout with dys-column-per-50 or single column with centered content",
+        "stylingNotes": "Alternating backgrounds (#D6F3FF, #EDFAFF), responsive columns",
+        "htmlSignature": "dys-column-per-50, direction:rtl for alternating layouts"
+      },
+      {
+        "name": "cta-section",
+        "description": "Call-to-action section with icon, text, and button",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "icon_image",
+            "type": "image",
+            "required": false,
+            "description": "Small icon or illustration"
+          },
+          {
+            "name": "cta_text",
+            "type": "html",
+            "required": true,
+            "description": "Call-to-action message"
+          },
+          {
+            "name": "button_text",
+            "type": "string",
+            "required": true,
+            "description": "Button label"
+          },
+          {
+            "name": "button_url",
+            "type": "url",
+            "required": true,
+            "description": "Button destination"
+          }
+        ],
+        "containerStructure": "Two-column layout with 27%/73% split",
+        "stylingNotes": "Blue background, black button with white text",
+        "htmlSignature": "dys-column-per-27, dys-column-per-73, black button styling"
+      },
+      {
+        "name": "footer",
+        "description": "Footer with social links, address, and legal links",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "social_links",
+            "type": "array",
+            "required": true,
+            "description": "Social media links and icons"
+          },
+          {
+            "name": "company_address",
+            "type": "string",
+            "required": true,
+            "description": "Physical company address"
+          },
+          {
+            "name": "unsubscribe_link",
+            "type": "url",
+            "required": true,
+            "description": "Unsubscribe URL"
+          }
+        ],
+        "containerStructure": "Three-column layout with responsive mobile stacking",
+        "stylingNotes": "Black background (#101010), white text, responsive column behavior",
+        "htmlSignature": "class='linear', background-color:#101010, mobile responsive columns"
+      }
+    ],
+    "mappedTypes": [
+      {
+        "discovered": "header",
+        "knownType": "sponsor",
+        "confidence": 0.5,
+        "isNovel": true,
+        "isVariant": true,
+        "variantOf": "sponsor",
+        "mappingReason": "Semantic group: sponsor"
+      },
+      {
+        "discovered": "welcome-intro",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      },
+      {
+        "discovered": "feature-explanation",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      },
+      {
+        "discovered": "cta-section",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      },
+      {
+        "discovered": "footer",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      }
+    ],
+    "allTypes": [
+      {
+        "name": "header",
+        "description": "Brand header with logo",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_url",
+            "type": "image",
+            "required": true,
+            "description": "Company logo image"
+          },
+          {
+            "name": "logo_link",
+            "type": "url",
+            "required": true,
+            "description": "Link destination for logo"
+          }
+        ],
+        "containerStructure": "table > tr > td with rounded top corners",
+        "stylingNotes": "Light blue background (#D6F3FF) with rounded top corners",
+        "htmlSignature": "class='bradius', background-color:#D6F3FF",
+        "isVariant": true,
+        "variantOf": "sponsor",
+        "source": "variant"
+      },
+      {
+        "name": "welcome-intro",
+        "description": "Personalized welcome message with user context",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "Combines large welcome headline, personalized greeting, and contextual onboarding message in a specific welcome email pattern",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "user_name",
+            "type": "string",
+            "required": true,
+            "description": "Personalized user name"
+          },
+          {
+            "name": "welcome_message",
+            "type": "html",
+            "required": true,
+            "description": "Contextual welcome and onboarding text"
+          }
+        ],
+        "containerStructure": "Multiple table rows with h1, h2, and paragraph content",
+        "stylingNotes": "Light blue background (#EDFAFF), large typography hierarchy",
+        "htmlSignature": "background-color:#EDFAFF, Welcome to Coda! heading",
+        "source": "novel"
+      },
+      {
+        "name": "feature-explanation",
+        "description": "Product feature explanation with image and descriptive text in side-by-side or stacked layout",
+        "isRepeating": true,
+        "isNovel": true,
+        "noveltyReason": "Specific pattern for explaining software features with alternating layouts, animated GIFs, and educational content structure",
+        "instanceCount": 4,
+        "variables": [
+          {
+            "name": "feature_title",
+            "type": "string",
+            "required": true,
+            "description": "Feature or section headline"
+          },
+          {
+            "name": "feature_image",
+            "type": "image",
+            "required": false,
+            "description": "Visual demonstration of the feature (static or animated)"
+          },
+          {
+            "name": "feature_description",
+            "type": "html",
+            "required": true,
+            "description": "Explanatory text about the feature"
+          },
+          {
+            "name": "layout_direction",
+            "type": "string",
+            "required": true,
+            "description": "Image-left, image-right, or stacked layout"
+          }
+        ],
+        "containerStructure": "Two-column layout with dys-column-per-50 or single column with centered content",
+        "stylingNotes": "Alternating backgrounds (#D6F3FF, #EDFAFF), responsive columns",
+        "htmlSignature": "dys-column-per-50, direction:rtl for alternating layouts",
+        "source": "novel"
+      },
+      {
+        "name": "cta-section",
+        "description": "Call-to-action section with icon, text, and button",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "icon_image",
+            "type": "image",
+            "required": false,
+            "description": "Small icon or illustration"
+          },
+          {
+            "name": "cta_text",
+            "type": "html",
+            "required": true,
+            "description": "Call-to-action message"
+          },
+          {
+            "name": "button_text",
+            "type": "string",
+            "required": true,
+            "description": "Button label"
+          },
+          {
+            "name": "button_url",
+            "type": "url",
+            "required": true,
+            "description": "Button destination"
+          }
+        ],
+        "containerStructure": "Two-column layout with 27%/73% split",
+        "stylingNotes": "Blue background, black button with white text",
+        "htmlSignature": "dys-column-per-27, dys-column-per-73, black button styling",
+        "source": "novel"
+      },
+      {
+        "name": "footer",
+        "description": "Footer with social links, address, and legal links",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "social_links",
+            "type": "array",
+            "required": true,
+            "description": "Social media links and icons"
+          },
+          {
+            "name": "company_address",
+            "type": "string",
+            "required": true,
+            "description": "Physical company address"
+          },
+          {
+            "name": "unsubscribe_link",
+            "type": "url",
+            "required": true,
+            "description": "Unsubscribe URL"
+          }
+        ],
+        "containerStructure": "Three-column layout with responsive mobile stacking",
+        "stylingNotes": "Black background (#101010), white text, responsive column behavior",
+        "htmlSignature": "class='linear', background-color:#101010, mobile responsive columns",
+        "source": "novel"
+      }
+    ]
+  },
+  "metadata": {
+    "analysisDate": "2026-01-18T04:55:26.635Z",
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514"
+  },
+  "sourceStats": {
+    "elements": 463,
+    "tables": 64,
+    "images": 10,
+    "links": 18,
+    "headings": 6,
+    "paragraphs": 23,
+    "divs": 88,
+    "spans": 25,
+    "textLength": 18759,
+    "htmlLength": 79846
+  },
+  "generatedAt": "2026-01-18T04:55:26.726Z"
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Newsletter Data Schema",
+  "description": "Generated schema for newsletter template data",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Newsletter title"
+    },
+    "preheader": {
+      "type": "string",
+      "description": "Email preview text"
+    },
+    "product-showcaseItems": {
+      "type": "array",
+      "description": "Grid layout showcasing multiple related products with images and descriptions",
+      "items": {
+        "type": "object",
+        "properties": {
+          "section_title": {
+            "type": "string",
+            "description": "Section heading (e.g., 'More outdoor recs')"
+          },
+          "product_items": {
+            "type": "array",
+            "description": "Array of product recommendation items"
+          },
+          "item_image": {
+            "type": "string",
+            "description": "Product or category image"
+          },
+          "item_title": {
+            "type": "string",
+            "description": "Product/category title"
+          },
+          "item_description": {
+            "type": "string",
+            "description": "Brief product description"
+          },
+          "item_link": {
+            "type": "string",
+            "description": "Link to product page",
+            "format": "uri"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

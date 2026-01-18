@@ -1,0 +1,984 @@
+{
+  "visualDesign": {
+    "reasoning": "Analyzed the email's inline styles and embedded CSS to extract the complete design system. Identified a newsletter layout with serif headings, sans-serif body text, and a cohesive color scheme centered around a red accent color.",
+    "colorPalette": {
+      "primary": "#465546",
+      "secondary": "#999999",
+      "accent": "#DC4B4B",
+      "background": "#FFFFFF",
+      "backgroundAlt": "#B7E2D8",
+      "text": "#465546",
+      "textMuted": "#999999",
+      "border": "#B7E2D8",
+      "allColors": [
+        "#FFFFFF",
+        "#465546",
+        "#999999",
+        "#DC4B4B",
+        "#B7E2D8",
+        "#E5E5E5",
+        "#606060",
+        "#404040"
+      ]
+    },
+    "typography": {
+      "headingFont": "\"Lora\", serif",
+      "bodyFont": "\"Helvetica\", sans-serif",
+      "monoFont": "none",
+      "headingSizes": {
+        "h1": "default with 100% line-height",
+        "h2": "36px",
+        "h3": "not specified"
+      },
+      "bodySize": "18px",
+      "smallSize": "12px",
+      "lineHeights": {
+        "heading": "1.2em for h2, 100% for h1",
+        "body": "1.6em"
+      },
+      "fontWeights": {
+        "normal": "400",
+        "medium": "600",
+        "bold": "bold"
+      }
+    },
+    "spacing": {
+      "containerPadding": "0 (content has max-width constraint)",
+      "sectionGap": "48px (h2 top padding)",
+      "elementGap": "24px (ul top margin), 12px (li padding)",
+      "patterns": [
+        "72px",
+        "48px",
+        "40px",
+        "30px",
+        "24px",
+        "20px",
+        "12px",
+        "10px",
+        "5px"
+      ]
+    },
+    "images": [
+      {
+        "src": "https://gallery.mailchimp.com/5125332501a1986f0f3685a57/images/798de67b-6210-4aba-a40e-2ace5783545e.png",
+        "alt": "798de67b-6210-4aba-a40e-2ace5783545e.png",
+        "role": "logo",
+        "width": "max-width: 300px",
+        "context": "header section"
+      },
+      {
+        "src": "https://mcusercontent.com/5125332501a1986f0f3685a57/images/4f3264fb-deee-4d4a-a371-15394a4460e3.png",
+        "alt": "Tokyo as Slowdown City",
+        "role": "hero",
+        "width": "max-width: 100%",
+        "context": "main content area as featured article image"
+      }
+    ],
+    "layout": {
+      "maxWidth": "600px",
+      "structure": "single-column",
+      "containerType": "div-based",
+      "responsiveHints": [
+        "Mobile breakpoint at 480px",
+        "Font sizes increase on mobile (18px to 20px)",
+        "Logo width reduces to 200px on mobile",
+        "Container margins adjust for mobile"
+      ]
+    }
+  },
+  "structure": {
+    "reasoning": "This email follows a classic newsletter structure with distinct content regions. I identified sections by analyzing the HTML structure, heading hierarchy, and content patterns. The email has a clear header with logo and issue number, followed by an intro section, then multiple article sections with consistent H2 headings and content blocks, a miscellany section with link lists, and a footer. The article sections repeat with similar structure but different content.",
+    "sections": [
+      {
+        "id": "header",
+        "name": "Newsletter Header",
+        "type": "header",
+        "purpose": "Brand identity and issue identification",
+        "order": 1,
+        "contentType": "static",
+        "estimatedStartLine": "div id=\"header\"",
+        "keyIdentifiers": [
+          "#header",
+          "#logo",
+          "h1"
+        ]
+      },
+      {
+        "id": "intro",
+        "name": "Issue Introduction",
+        "type": "intro",
+        "purpose": "Weekly summary and context",
+        "order": 2,
+        "contentType": "dynamic",
+        "estimatedStartLine": "div class=\"header-content\"",
+        "keyIdentifiers": [
+          ".header-content",
+          ".header-prompt",
+          "strong.caps"
+        ]
+      },
+      {
+        "id": "featured-image",
+        "name": "Featured Article Image",
+        "type": "featured-image",
+        "purpose": "Visual highlight for main article",
+        "order": 3,
+        "contentType": "dynamic",
+        "estimatedStartLine": "a href=\"https://medium.com/slowdown-papers\"",
+        "keyIdentifiers": [
+          "img",
+          "p.legend"
+        ]
+      },
+      {
+        "id": "article-1",
+        "name": "Hail the maintainers",
+        "type": "article",
+        "purpose": "Main article content with commentary",
+        "order": 4,
+        "contentType": "repeating",
+        "estimatedStartLine": "h2>Hail the maintainers",
+        "keyIdentifiers": [
+          "h2",
+          "blockquote",
+          ".highlight"
+        ]
+      },
+      {
+        "id": "article-2",
+        "name": "Tokyo as Slowdown City",
+        "type": "article",
+        "purpose": "Main article content with commentary",
+        "order": 5,
+        "contentType": "repeating",
+        "estimatedStartLine": "h2>Tokyo as Slowdown City",
+        "keyIdentifiers": [
+          "h2",
+          "blockquote",
+          ".highlight"
+        ]
+      },
+      {
+        "id": "article-3",
+        "name": "I read the essay",
+        "type": "article",
+        "purpose": "Main article content with commentary",
+        "order": 6,
+        "contentType": "repeating",
+        "estimatedStartLine": "h2>I read the essay",
+        "keyIdentifiers": [
+          "h2",
+          "blockquote",
+          ".highlight"
+        ]
+      },
+      {
+        "id": "article-4",
+        "name": "Mass Consumption Is What Ails Us",
+        "type": "article",
+        "purpose": "Main article content with commentary",
+        "order": 7,
+        "contentType": "repeating",
+        "estimatedStartLine": "h2>Mass Consumption Is What Ails Us",
+        "keyIdentifiers": [
+          "h2",
+          "blockquote"
+        ]
+      },
+      {
+        "id": "article-5",
+        "name": "The Revolution Is Only Getting Started",
+        "type": "article",
+        "purpose": "Main article content with commentary",
+        "order": 8,
+        "contentType": "repeating",
+        "estimatedStartLine": "h2>The Revolution Is Only Getting Started",
+        "keyIdentifiers": [
+          "h2",
+          "blockquote"
+        ]
+      },
+      {
+        "id": "membership-cta",
+        "name": "Membership Call-to-Action",
+        "type": "cta",
+        "purpose": "Subscription conversion",
+        "order": 9,
+        "contentType": "static",
+        "estimatedStartLine": "p class=\"subs\"",
+        "keyIdentifiers": [
+          ".subs",
+          "a href=\"https://sentiers.media/membership/\""
+        ]
+      },
+      {
+        "id": "miscellany",
+        "name": "Miscellany Links",
+        "type": "link-list",
+        "purpose": "Collection of additional resources",
+        "order": 10,
+        "contentType": "dynamic",
+        "estimatedStartLine": "h2>Miscellany",
+        "keyIdentifiers": [
+          "ul.miscellany",
+          "li"
+        ]
+      },
+      {
+        "id": "about-footer",
+        "name": "About Section",
+        "type": "footer",
+        "purpose": "Author information and contact",
+        "order": 11,
+        "contentType": "static",
+        "estimatedStartLine": "div id=\"footer\"",
+        "keyIdentifiers": [
+          "#footer",
+          "strong.caps"
+        ]
+      }
+    ],
+    "sectionTypes": [
+      {
+        "name": "header",
+        "description": "Newsletter branding with logo and issue number",
+        "isRepeating": false,
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_image",
+            "type": "image",
+            "required": true,
+            "description": "Newsletter logo/brand image"
+          },
+          {
+            "name": "issue_number",
+            "type": "string",
+            "required": true,
+            "description": "Issue number (e.g., No.123)"
+          }
+        ],
+        "containerStructure": "div with img + h1",
+        "stylingNotes": "Logo floated left, issue number floated right with border-bottom"
+      },
+      {
+        "name": "intro",
+        "description": "Weekly summary and contextual information",
+        "isRepeating": false,
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "this_week_summary",
+            "type": "string",
+            "required": true,
+            "description": "Brief summary of current issue topics"
+          },
+          {
+            "name": "year_ago_link",
+            "type": "url",
+            "required": false,
+            "description": "Link to content from same week previous year"
+          },
+          {
+            "name": "membership_prompt",
+            "type": "html",
+            "required": true,
+            "description": "Call to action for membership"
+          }
+        ],
+        "containerStructure": "div with multiple p elements using strong.caps styling",
+        "stylingNotes": "Uses uppercase styling for section labels"
+      },
+      {
+        "name": "article",
+        "description": "Main article content with title, commentary, and quotes",
+        "isRepeating": true,
+        "instanceCount": 5,
+        "variables": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "description": "Article title"
+          },
+          {
+            "name": "url",
+            "type": "url",
+            "required": true,
+            "description": "Link to original article"
+          },
+          {
+            "name": "commentary",
+            "type": "html",
+            "required": true,
+            "description": "Author's commentary on the article"
+          },
+          {
+            "name": "quotes",
+            "type": "array",
+            "required": false,
+            "description": "Pull quotes from the article"
+          }
+        ],
+        "containerStructure": "h2 linked title + p commentary + blockquote with highlighted spans",
+        "stylingNotes": "36px Lora font for titles, blockquotes with left border, highlighted text with background color"
+      },
+      {
+        "name": "link-list",
+        "description": "Collection of links with brief descriptions",
+        "isRepeating": false,
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "section_title",
+            "type": "string",
+            "required": true,
+            "description": "Section heading (e.g., Miscellany)"
+          },
+          {
+            "name": "links",
+            "type": "array",
+            "required": true,
+            "description": "Array of link objects with title, url, and description"
+          }
+        ],
+        "containerStructure": "h2 + ul with li elements containing links and descriptions",
+        "stylingNotes": "List items with top borders, no bullets, emoji prefixes for some items"
+      },
+      {
+        "name": "cta",
+        "description": "Call-to-action for membership conversion",
+        "isRepeating": false,
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "message",
+            "type": "string",
+            "required": true,
+            "description": "Membership encouragement text"
+          },
+          {
+            "name": "button_text",
+            "type": "string",
+            "required": true,
+            "description": "CTA button text"
+          },
+          {
+            "name": "button_url",
+            "type": "url",
+            "required": true,
+            "description": "Membership signup URL"
+          }
+        ],
+        "containerStructure": "p.subs with span + a button",
+        "stylingNotes": "Centered text with styled button using brand colors"
+      }
+    ],
+    "repeatingSections": [
+      {
+        "type": "article",
+        "pattern": "Article analysis with commentary and quotes",
+        "instanceCount": 5,
+        "variablesPerInstance": [
+          "title",
+          "url",
+          "commentary",
+          "quotes"
+        ]
+      }
+    ],
+    "globalElements": {
+      "header": {
+        "present": true,
+        "components": [
+          "logo",
+          "issue_number"
+        ]
+      },
+      "footer": {
+        "present": true,
+        "components": [
+          "about_author",
+          "unsubscribe",
+          "address"
+        ]
+      },
+      "wrapper": {
+        "type": "Single column layout with max-width container",
+        "width": "600px"
+      }
+    },
+    "hierarchy": {
+      "depth": 2,
+      "description": "header → intro → featured-image → multiple articles → membership-cta → miscellany → footer"
+    }
+  },
+  "content": {
+    "reasoning": "I extracted content from this Sentiers newsletter by identifying the structural sections and their dynamic vs static content. The email follows a consistent weekly format with a header, intro, featured image, multiple article sections, membership CTA, miscellany links, and footer. I preserved HTML formatting in extracted content and identified which elements would be template variables vs static content.",
+    "emailType": "newsletter",
+    "emailSubtype": "curated-links-weekly-digest",
+    "title": "No.123 — Maintainers ⊗ Build ⊗ Tokyo as slowdown city ⊗ Mass consumption",
+    "preheader": "Hail the maintainers ⊗ It's time to build (is it?) ⊗ Tokyo as slowdown city ⊗ Mass consumption is what ails us",
+    "contentBySectionType": {
+      "header": {
+        "instances": [
+          {
+            "extractedData": {
+              "logoUrl": "https://gallery.mailchimp.com/5125332501a1986f0f3685a57/images/798de67b-6210-4aba-a40e-2ace5783545e.png",
+              "issueNumber": "No.123"
+            }
+          }
+        ]
+      },
+      "intro": {
+        "instances": [
+          {
+            "extractedData": {
+              "thisWeekSummary": "Hail the maintainers ⊗ It's time to build (is it?) ⊗ Tokyo as slowdown city ⊗ Mass consumption is what ails us",
+              "yearAgoLink": "https://points.datasociety.net/agnotology-and-epistemological-fragmentation-56aa3c509c6b",
+              "yearAgoTitle": "Agnotology and Epistemological Fragmentation",
+              "membershipPrompt": "This is a free issue of the weekly <i>Sentiers</i> newsletter. To support its publication and receive a couple of extra dispatches a month, each focused on one topic: <a href=\"https://sentiers.media/membership/\" style=\"color: #DC4B4B;text-decoration: none;\"><strong>Become a member</strong></a>."
+            }
+          }
+        ]
+      },
+      "featured-image": {
+        "instances": [
+          {
+            "extractedData": {
+              "imageUrl": "https://mcusercontent.com/5125332501a1986f0f3685a57/images/4f3264fb-deee-4d4a-a371-15394a4460e3.png",
+              "imageAlt": "Tokyo as Slowdown City",
+              "linkUrl": "https://medium.com/slowdown-papers/18-from-lockdown-to-slowdown-tokyo-as-slowdown-city-822dc0b6f3cc",
+              "caption": "Tokyo as Slowdown City, Dan Hill"
+            }
+          }
+        ]
+      },
+      "article": {
+        "instances": [
+          {
+            "extractedData": {
+              "title": "Hail the maintainers",
+              "url": "https://aeon.co/essays/innovation-is-overvalued-maintenance-often-matters-more",
+              "commentary": "Excellent piece at <i>Aeon</i> on progress, innovation, and maintenance. Recaps the recent history of innovation, how we largely stopped talking about progress—which was about society, not just technology—and switched instead to talking about innovation—which is almost exclusively about a certain vision of technology. On the influence of Schumpeter, Florida, and Christensen, how \"in the world of business and technology, innovation had transformed into an erotic fetish. Armies of young tech wizards aspired to become disrupters.\" Explains how \"innovation\" is only a very small part of the invention and use of technology, and how it's come to obfuscate whole regions of the world, and the maintenance, care, and repair of objects and infrastructure. Reminds us that \"we\" need to recenter maintenance and care, address inequalities and the undervaluation of that work. It's a piece from 2016 so the authors don't address our current situation but obviously the whole thing can be read thinking of the blinders coming off on the value of essential workers. I'd also make a parallel between innovation and GDP, where for both the focus is on its growth and existence, usually without regard for the value it brings (or not) to society. Selling crap products that self-destruct in a few days is \"good\" for the GDP, just as crack cocaine was a great innovation (example from the article).",
+              "quotes": [
+                "Maintenance and repair, the building of infrastructures, the mundane labour that goes into sustaining functioning and efficient infrastructures, simply has more impact on people's daily lives than the vast majority of technological innovations.",
+                "After the Second World War, Americans treated new consumer technologies as proxies for societal progress.",
+                "<span class=\"highlight\" style=\"background: #B7E2D8;\">Despite recurring fantasies about the end of work, the central fact of our industrial civilisation is labour, most of which falls far outside the realm of innovation.</span>",
+                "<span class=\"highlight\" style=\"background: #B7E2D8;\">Ultimately, emphasising maintenance involves moving from buzzwords to values, and from means to ends.</span> In formal economic terms, 'innovation' involves the diffusion of new things and practices. The term is completely agnostic about whether these things and practices are good.",
+                "A focus on maintenance provides opportunities to ask questions about what we really want out of technologies. What do we really care about? What kind of society do we want to live in? Will this help get us there? We must shift from means, including the technologies that underpin our everyday actions, to ends, including the many kinds of social beneficence and improvement that technology can offer."
+              ]
+            }
+          },
+          {
+            "extractedData": {
+              "title": "Tokyo as Slowdown City",
+              "url": "https://medium.com/slowdown-papers/18-from-lockdown-to-slowdown-tokyo-as-slowdown-city-822dc0b6f3cc",
+              "commentary": "Continuing his Slowdown Papers with another batch of articles, in this one Dan Hill looks at the urban fabric of Tokyo, its \"polka dot\" quality of having multiple centers, each at a liveable scale. Considers the book <i>Slowdown</i> by Danny Dorling (2020), the Saarinen Principle, Stewart Brand's pace layers, and the city rebuilding itself instead of expanding outward. (Think of this alongside the Andreessen \"building\" article just below as well as the value of maintenance and care above.) Heavily linked to more of Hill's pieces as well as various books and projects. Definitely click through for the many many great pictures of Tokyo, illustrating his comments. This is my favourite piece in the issue and will need some time to \"ferment,\" I think there are many important insights for the future of cities starting to emerge in the series.",
+              "quotes": [
+                "Tokyo. Arguably the world's biggest megacity, and to many visitors utterly bewildering in its scale and dynamism, Tokyo is a constantly churning urban experiment, with its own particular metabolism enabling it to constantly change and thrive. Yet the city precisely exemplifies the Slowdown, and revels in the small and the quiet.",
+                "The streets this leaves Tokyo with are small, tidy, but full of life. In local neighbourhoods, they are no more than four metres wide or so, but due to their openness, they are packed with life, but at the scale of plant pots, signs, window displays, seats, small trees, vending machines, bikes.",
+                "<span class=\"highlight\" style=\"background: #B7E2D8;\">Tokyo in particular, and Japan more widely, can be seen in many ways to be at the forefront of slowdown. Japan has changed and will continue to change rapidly, but it is an example of the end to change in things that no longer need to grow — in the number of people, the number of buildings, and in overall consumption.</span>",
+                "If we built on these themes idea of open, distributed, decentralised, networked, diversity over density, with purposeful redundancy, all pivoting around the social and natural life of small urban spaces, we would likely find a far more resilient pattern for city life and urban growth.",
+                "The virus shows us the error of our ways, with a most terrible ferocity, but also points to other possibilities, almost like an intervention with an alcoholic, showing us the value of slowing down."
+              ]
+            }
+          },
+          {
+            "extractedData": {
+              "title": "I read the essay",
+              "url": "https://99d.substack.com/p/i-read-the-essay",
+              "commentary": "I wasn't sure if I was going to talk about that <a href=\"https://a16z.com/2020/04/18/its-time-to-build/\" style=\"color: #DC4B4B;text-decoration: none;\">Mark Andreessen piece</a>, but its obliviousness to broader systemic issues and social and political challenges was well addressed in the other three pieces, so I decided to include all of them. Plus, the four pair well with the maintenance piece above (yes, Andreessen did have <i>some</i> good ideas nonetheless). <i>I read the essay</i> looks at the difference between \"basic\" (usually publicly funded) and \"applied\" scientific research (measurable ROI, focus on commercial applications). In other words, Mariana Mazzucato territory. <a href=\"https://scottberkun.com/2020/its-time-to-learn/\" style=\"color: #DC4B4B;text-decoration: none;\">It's Time To Learn</a> focuses on the parts missing from Andreessen's piece, and on learning before acting. Finally <a href=\"https://www.vox.com/2020/4/22/21228469/marc-andreessen-build-government-coronavirus\" style=\"color: #DC4B4B;text-decoration: none;\">Why we can't build</a> lays out the partisan political issues in the US preventing the kind of building advocated in the original piece.",
+              "quotes": [
+                "Like so much by tech luminaries, the essay reads like something written by someone who's never taken a social studies class or paid attention to politics or history except insofar as it relates to Great Men of Business.",
+                "<span class=\"highlight\" style=\"background: #B7E2D8;\">Without basic research, scientific progress runs into natural limits and technological progress faces diminishing returns eeking out percentage points of efficiency rather than making great leaps or paradigm shifts. To unlock the next phase of technological and social progress, we need the desire and ambition but we also need the funding.</span>",
+                "We have refined and enhanced but we have not replaced. Until or unless we fund research at a huge new scale, we will be stuck on our present loops and limited by the boundaries of our basic knowledge. We will feel like we are making progress but we will be living in basically the same world with basically the same rules."
+              ]
+            }
+          },
+          {
+            "extractedData": {
+              "title": "Mass Consumption Is What Ails Us",
+              "url": "https://www.foreignaffairs.com/articles/world/2020-04-17/mass-consumption-what-ails-us",
+              "commentary": "Contextualizing the virus within our ever expanding footprint, degradation of the planet, and the fact that it is driven not by population growth but by the gangrene of mass consumption.",
+              "quotes": [
+                "Human consumption, not population growth, has driven these changes in land use. Over the past 50 years, human populations have doubled, but consumption of the planet's natural resources has tripled. Traditionally, people living in high-income, industrialized countries consume most of the world's natural resources.",
+                "Mass consumption would be impossible without the global bonfire of fossil fuels, which powers the machines that cut down the forests, provides the petrofertilizers for industrial farms, and fuels the airplanes that spread pathogens around the world, just as it thickens the blanket of carbon in the atmosphere. Preventing the next pandemic, then, will be impossible without greener policies."
+              ]
+            }
+          },
+          {
+            "extractedData": {
+              "title": "The Revolution Is Only Getting Started",
+              "url": "https://www.theatlantic.com/ideas/archive/2020/04/revolution-only-getting-started/609463/",
+              "commentary": "Not sure how pertinent the parallel with the French Revolution is but there are a couple of good reminders of how revolutions happen, and those are useful.",
+              "quotes": [
+                "The most timeless and emancipatory lesson of the French Revolution is that people make history. Likewise, the actions we take and the choices we make today will shape both what future we get and what we remember of the past.",
+                "In hindsight a revolution may look like a single event, but they are never experienced that way. Instead they are extended periods in which the routines of normal life are dislocated and existing rituals lose their meaning. They are deeply unsettling, but they are also periods of great creativity."
+              ]
+            }
+          }
+        ]
+      },
+      "cta": {
+        "instances": [
+          {
+            "extractedData": {
+              "message": "Members help Sentiers thrive, please consider supporting.",
+              "buttonText": "Join now",
+              "buttonUrl": "https://sentiers.media/membership/"
+            }
+          }
+        ]
+      },
+      "link-list": {
+        "instances": [
+          {
+            "extractedData": {
+              "sectionTitle": "Miscellany",
+              "links": [
+                {
+                  "title": "I Am a Mad Scientist",
+                  "url": "https://www.drillednews.com/post/i-am-a-mad-scientist",
+                  "description": "\"Confronting that system will take work. We need to build things: wind turbines, solar panels, public transportation, denser cities, fairer societies. We don't need purification. We don't need absolution. We need to get to work.\""
+                },
+                {
+                  "title": "Ise-ji: Walk With Me",
+                  "url": "https://walkkumano.com/iseji/",
+                  "description": "🇯🇵 🚶🏼‍♂️ One of those crazy long and insightful pieces Craig Mod has the secret of. 15K words about his walk on the coastal pilgrimage route in Mie Prefecture, Japan. I've only breezed through it, have a read or a look for the walk, Japan, the slick layout, the gear, the map, or all of the above."
+                },
+                {
+                  "title": "A one-take journey through Russia's iconic Hermitage museum",
+                  "url": "https://www.youtube.com/watch?v=49YeFsx1rIw",
+                  "description": "🇷🇺 🤯 \"Experience a 5 hr 19 min 28 sec cinematic journey through one of the world's biggest museums in St. Petersburg, Russia. Take in 45 galleries, 588 masterpieces, and live performances, <span class=\"highlight\" style=\"background: #B7E2D8;\">shot in 4K on iPhone 11 Pro in one continuous take.</span>\" (Via <a href=\"http://www.thingsmagazine.net\" style=\"color: #DC4B4B;text-decoration: none;\">things magazine</a>)"
+                },
+                {
+                  "title": "The Cities Rethinking Urban Mobility Post-Pandemic",
+                  "url": "https://www.citylab.com/transportation/2020/04/coronavirus-reopen-cities-public-transit-car-free-bike-milan/610360/",
+                  "description": "🇮🇹 🚲 (and 🇫🇷) \"Milan is going big on cycling and walking. Over the summer, the city core will be partly remodeled to give over 22 miles (35 kilometers) of road space previously used by cars to bikes and pedestrians. Those cars that are allowed into the center must adhere to a new reduced 30 kilometers per hour speed limit. The aim is to make traffic more fluid and give pedestrians more space to spread out safely.\""
+                },
+                {
+                  "title": "South Korea to implement Green New Deal after ruling party election win",
+                  "url": "https://www.climatechangenews.com/2020/04/16/south-korea-implement-green-new-deal-ruling-party-election-win/",
+                  "description": "🇰🇷 💚 \"The plan includes large-scale investments in renewable energy, the introduction of a carbon tax, the phase out of domestic and overseas coal financing by public institutions, and the creation of a Regional Energy Transition Centre to support workers transition to green jobs.\""
+                },
+                {
+                  "title": "This is remarkable: 170 Dutch academics put together a 5-point manifesto for economic change after the C19 crisis, building on #degrowth principles. It has gone viral in Dutch media. In this thread I'll summarize the points in English.",
+                  "url": "https://twitter.com/jasonhickel/status/1251146508709195780",
+                  "description": "🧵 by Jason Hickel 🇳🇱"
+                },
+                {
+                  "title": "Melting Ice Reveals a \"Lost\" Viking-Era Pass in Norway's Mountains",
+                  "url": "https://www.scientificamerican.com/article/melting-ice-reveals-a-lost-viking-era-pass-in-norways-mountains/",
+                  "description": "🇳🇴 \"Archaeologists working along the ancient, high-altitude route have discovered hundreds of artifacts that indicate people used it to cross a mountain ridge from the late Roman Iron Age and through the medieval period.\" (Via <a href=\"https://thoughtshrapnel.com\" style=\"color: #DC4B4B;text-decoration: none;\">Thought Shrapnel</a>.)"
+                },
+                {
+                  "title": "A lockdown reading list",
+                  "url": "https://www.uniteditions.com/blogs/news/lockdown-reading-list",
+                  "description": "\"Last week we asked our newsletter subscribers to nominate a favourite design-related book that they've turned to for inspiration in these strange and stressful times and would recommend to others.\" (Lots of old books you probably can't find but gorgeous covers! Via <a href=\"http://danielgray.com/meanwhile\" style=\"color: #DC4B4B;text-decoration: none;\">Meanwhile</a>.)"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "footer": {
+        "instances": [
+          {
+            "extractedData": {
+              "aboutText": "<strong class=\"caps\" style=\"text-transform: uppercase;font-weight: bold;letter-spacing: .05em;font-size: 85%;\">About →</strong> <em>Sentiers</em> is a weekly newsletter curated by me, <a href=\"https://twitter.com/inevernu\" style=\"color: #DC4B4B;text-decoration: none;\">Patrick Tanguay</a>. Hit reply to see how we could work together on projects involving knowledge curation, publishing, forecasting, or sense making."
+            }
+          }
+        ]
+      }
+    },
+    "sampleData": {
+      "title": "Sentiers No.123",
+      "preheader": "Hail the maintainers ⊗ It's time to build (is it?) ⊗ Tokyo as slowdown city ⊗ Mass consumption is what ails us",
+      "issueNumber": "No.123",
+      "sections": [
+        {
+          "type": "header",
+          "items": [
+            {
+              "logoUrl": "https://gallery.mailchimp.com/5125332501a1986f0f3685a57/images/798de67b-6210-4aba-a40e-2ace5783545e.png",
+              "issueNumber": "No.123"
+            }
+          ]
+        },
+        {
+          "type": "intro",
+          "items": [
+            {
+              "thisWeekSummary": "Hail the maintainers ⊗ It's time to build (is it?) ⊗ Tokyo as slowdown city ⊗ Mass consumption is what ails us",
+              "yearAgoLink": "https://points.datasociety.net/agnotology-and-epistemological-fragmentation-56aa3c509c6b",
+              "yearAgoTitle": "Agnotology and Epistemological Fragmentation"
+            }
+          ]
+        },
+        {
+          "type": "featured-image",
+          "items": [
+            {
+              "imageUrl": "https://mcusercontent.com/5125332501a1986f0f3685a57/images/4f3264fb-deee-4d4a-a371-15394a4460e3.png",
+              "linkUrl": "https://medium.com/slowdown-papers/18-from-lockdown-to-slowdown-tokyo-as-slowdown-city-822dc0b6f3cc",
+              "caption": "Tokyo as Slowdown City, Dan Hill"
+            }
+          ]
+        },
+        {
+          "type": "articles",
+          "items": [
+            {
+              "title": "Hail the maintainers",
+              "url": "https://aeon.co/essays/innovation-is-overvalued-maintenance-often-matters-more",
+              "commentary": "Excellent piece at Aeon on progress, innovation, and maintenance..."
+            }
+          ]
+        },
+        {
+          "type": "miscellany",
+          "items": [
+            {
+              "title": "I Am a Mad Scientist",
+              "url": "https://www.drillednews.com/post/i-am-a-mad-scientist",
+              "description": "Confronting that system will take work..."
+            }
+          ]
+        }
+      ],
+      "header": {
+        "logoUrl": "https://gallery.mailchimp.com/5125332501a1986f0f3685a57/images/798de67b-6210-4aba-a40e-2ace5783545e.png"
+      },
+      "footer": {
+        "unsubscribeLink": "#",
+        "authorTwitter": "https://twitter.com/inevernu",
+        "membershipUrl": "https://sentiers.media/membership/"
+      }
+    },
+    "staticContent": {
+      "elements": [
+        "Newsletter logo and branding",
+        "Membership call-to-action section",
+        "About section with author information",
+        "Email footer with unsubscribe links",
+        "CSS styling and layout structure",
+        "View in browser link",
+        "Newsletter description and contact information"
+      ]
+    }
+  },
+  "components": {
+    "reasoning": "I extracted the HTML structure from the newsletter and identified 6 main components based on the section types provided. I preserved all inline styles exactly as they appear in the original HTML, maintained table structures where present, and converted static content to template variables using proper Maizzle syntax. Each component is self-contained and includes the necessary styling for email client compatibility.",
+    "components": [
+      {
+        "name": "Header",
+        "type": "header",
+        "description": "Newsletter branding with logo and issue number",
+        "html": "<div id=\"header\" style=\"margin-bottom:72px;\">\n  <img src=\"{{ logo_image }}\" id=\"logo\" style=\"max-width: 300px;padding: 0;height: auto;margin: 0;\" alt=\"{{ logo_alt || 'Newsletter Logo' }}\">\n  <h1 style=\"font-family: &quot;Lora&quot;,serif;margin: 12px 0 0;padding: 10px 0;float: right;line-height: 100%;font-weight: normal;border-bottom: 1px solid;\">{{ issue_number }}</h1>\n</div>",
+        "variables": [
+          {
+            "name": "logo_image",
+            "type": "url",
+            "required": true,
+            "description": "URL to the newsletter logo image"
+          },
+          {
+            "name": "logo_alt",
+            "type": "string",
+            "required": false,
+            "default": "Newsletter Logo",
+            "description": "Alt text for the logo image"
+          },
+          {
+            "name": "issue_number",
+            "type": "string",
+            "required": true,
+            "description": "Issue number (e.g., No.123)"
+          }
+        ],
+        "loops": [],
+        "conditionals": []
+      },
+      {
+        "name": "Intro",
+        "type": "intro",
+        "description": "Weekly summary and contextual information with membership prompt",
+        "html": "<div class=\"header-content\">\n  <p style=\"font-size: 18px;line-height: 1.6em;\"><strong class=\"caps\" style=\"text-transform: uppercase;font-weight: bold;letter-spacing: .05em;font-size: 85%;\">This week &rarr;</strong> {{ this_week_summary }}</p>\n  <if condition=\"year_ago_link\">\n    <p style=\"font-size: 18px;line-height: 1.6em;\"><strong class=\"caps\" style=\"text-transform: uppercase;font-weight: bold;letter-spacing: .05em;font-size: 85%;\">A year ago &rarr;</strong> <a href=\"{{ year_ago_link }}\" style=\"color: #DC4B4B;text-decoration: none;\">{{ year_ago_text }}</a>.</p>\n  </if>\n</div>\n<div class=\"header-prompt\">\n  <br>\n  <p style=\"font-size: 14px;line-height: 1.6em;\">{{{ membership_prompt }}}</p>\n</div>",
+        "variables": [
+          {
+            "name": "this_week_summary",
+            "type": "string",
+            "required": true,
+            "description": "Brief summary of current issue topics"
+          },
+          {
+            "name": "year_ago_link",
+            "type": "url",
+            "required": false,
+            "description": "Link to content from same week previous year"
+          },
+          {
+            "name": "year_ago_text",
+            "type": "string",
+            "required": false,
+            "description": "Text for the year ago link"
+          },
+          {
+            "name": "membership_prompt",
+            "type": "html",
+            "required": true,
+            "description": "HTML content for membership call to action"
+          }
+        ],
+        "loops": [],
+        "conditionals": [
+          {
+            "variable": "year_ago_link",
+            "description": "Shows year ago section if link is provided"
+          }
+        ]
+      },
+      {
+        "name": "Article",
+        "type": "article",
+        "description": "Main article content with title, commentary, and optional quotes",
+        "html": "<h2 style=\"font-family: &quot;Lora&quot;,serif;margin: 0;padding: 48px 0 0;font-size: 36px;line-height: 1.2em;font-weight: 400;\"><a href=\"{{ url }}\" style=\"color: #DC4B4B;text-decoration: none;\">{{ title }}</a></h2>\n<p style=\"font-size: 18px;line-height: 1.6em;\">{{{ commentary }}}</p>\n<if condition=\"quotes && quotes.length\">\n  <blockquote style=\"margin: 40px 0;padding: 0 0 0 20px;border-left: 1px solid #B7E2D8;\">\n    <each loop=\"quote in quotes\">\n      <p style=\"font-size: 17px;line-height: 1.6em;font-family: &quot;Lora&quot;,serif;\">\n        <if condition=\"quote.highlight\">\n          <span class=\"highlight\" style=\"background: #B7E2D8;\">{{ quote.text }}</span>\n        </if>\n        <if condition=\"!quote.highlight\">\n          {{ quote.text }}\n        </if>\n      </p>\n    </each>\n  </blockquote>\n</if>",
+        "variables": [
+          {
+            "name": "title",
+            "type": "string",
+            "required": true,
+            "description": "Article title"
+          },
+          {
+            "name": "url",
+            "type": "url",
+            "required": true,
+            "description": "Link to original article"
+          },
+          {
+            "name": "commentary",
+            "type": "html",
+            "required": true,
+            "description": "Author's commentary on the article"
+          },
+          {
+            "name": "quotes",
+            "type": "array",
+            "required": false,
+            "description": "Array of quote objects with text and optional highlight boolean"
+          }
+        ],
+        "loops": [
+          {
+            "variable": "quotes",
+            "itemVariable": "quote",
+            "description": "Iterates over article quotes"
+          }
+        ],
+        "conditionals": [
+          {
+            "variable": "quotes && quotes.length",
+            "description": "Shows blockquote section if quotes exist"
+          },
+          {
+            "variable": "quote.highlight",
+            "description": "Applies highlight styling to specific quote text"
+          }
+        ]
+      },
+      {
+        "name": "LinkList",
+        "type": "link-list",
+        "description": "Collection of links with brief descriptions",
+        "html": "<h2 style=\"font-family: &quot;Lora&quot;,serif;margin: 0;padding: 48px 0 0;font-size: 36px;line-height: 1.2em;font-weight: 400;\">{{ section_title }}</h2>\n<ul class=\"miscellany\" style=\"font-size: 18px;margin: 24px 0 0;padding: 0;\">\n  <each loop=\"link in links\">\n    <li style=\"margin: 0;padding: 12px 0;list-style: none;border-top: 1px solid #B7E2D8;line-height: 1.4em;\">\n      <if condition=\"link.emoji\">{{ link.emoji }} </if>\n      <a href=\"{{ link.url }}\" style=\"color: #DC4B4B;text-decoration: none;\">{{ link.title }}</a>. \n      <if condition=\"link.description\">\n        <i>{{{ link.description }}}</i>\n      </if>\n    </li>\n  </each>\n</ul>",
+        "variables": [
+          {
+            "name": "section_title",
+            "type": "string",
+            "required": true,
+            "description": "Section heading (e.g., Miscellany)"
+          },
+          {
+            "name": "links",
+            "type": "array",
+            "required": true,
+            "description": "Array of link objects with title, url, description, and optional emoji"
+          }
+        ],
+        "loops": [
+          {
+            "variable": "links",
+            "itemVariable": "link",
+            "description": "Iterates over the collection of links"
+          }
+        ],
+        "conditionals": [
+          {
+            "variable": "link.emoji",
+            "description": "Shows emoji prefix if provided"
+          },
+          {
+            "variable": "link.description",
+            "description": "Shows description if provided"
+          }
+        ]
+      },
+      {
+        "name": "CTA",
+        "type": "cta",
+        "description": "Call-to-action for membership conversion",
+        "html": "<p class=\"subs\" style=\"font-size: 18px;line-height: 1.6em;padding-top: 30px;text-align: center;color: #999;\">\n  <span style=\"font-style: italic;font-size: .8888em;\">{{ message }}</span><br>\n  <a href=\"{{ button_url }}\" style=\"color: #fff;text-decoration: none;-webkit-appearance: none;-moz-appearance: none;background: #DC4B4B;border: none;border-radius: .3rem;cursor: pointer;display: inline-block;font-size: .8888em;font-weight: 600;line-height: 1;margin: 5px 0 0;padding: 1.175em 1.75em;text-align: center;transition: opacity .15s linear;\">{{ button_text }}</a>\n</p>",
+        "variables": [
+          {
+            "name": "message",
+            "type": "string",
+            "required": true,
+            "description": "Membership encouragement text"
+          },
+          {
+            "name": "button_text",
+            "type": "string",
+            "required": true,
+            "description": "CTA button text"
+          },
+          {
+            "name": "button_url",
+            "type": "url",
+            "required": true,
+            "description": "Membership signup URL"
+          }
+        ],
+        "loops": [],
+        "conditionals": []
+      },
+      {
+        "name": "Footer",
+        "type": "footer",
+        "description": "Newsletter footer with about information and unsubscribe",
+        "html": "<div id=\"footer\" style=\"margin-top: 72px;\">\n  <p style=\"font-size: 18px;line-height: 1.6em;\"><strong class=\"caps\" style=\"text-transform: uppercase;font-weight: bold;letter-spacing: .05em;font-size: 85%;\">About →</strong> <em>{{ newsletter_name }}</em> is a weekly newsletter curated by me, <a href=\"{{ curator_url }}\" style=\"color: #DC4B4B;text-decoration: none;\">{{ curator_name }}</a>. {{ about_text }}</p>\n</div>\n<center>\n  <br><br><br><br><br><br>\n  <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\" id=\"canspamBarWrapper\" style=\"background-color:#FFFFFF; border-top:1px solid #E5E5E5;\">\n    <tr>\n      <td align=\"center\" valign=\"top\" style=\"padding-top:20px; padding-bottom:20px;\">\n        <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" id=\"canspamBar\">\n          <tr>\n            <td align=\"center\" valign=\"top\" style=\"color:#606060; font-family:Helvetica, Arial, sans-serif; font-size:11px; line-height:150%; padding-right:20px; padding-bottom:5px; padding-left:20px; text-align:center;\">\n              This email was sent to <a href=\"mailto:{{ subscriber_email }}\" target=\"_blank\" style=\"color:#404040 !important;\">{{ subscriber_email }}</a><br>\n              <a href=\"{{ why_received_url }}\" target=\"_blank\" style=\"color:#404040 !important;\"><em>why did I get this?</em></a>&nbsp;&nbsp;&nbsp;&nbsp;\n              <a href=\"{{ unsubscribe_url }}\" style=\"color:#404040 !important;\">unsubscribe from this list</a>&nbsp;&nbsp;&nbsp;&nbsp;\n              <a href=\"{{ preferences_url }}\" style=\"color:#404040 !important;\">update subscription preferences</a><br>\n              {{ company_name }} &middot; {{ address_line1 }} &middot; {{ address_line2 }} &middot; {{ city_state_zip }} &middot; {{ country }}<br><br>\n            </td>\n          </tr>\n        </table>\n      </td>\n    </tr>\n  </table>\n</center>",
+        "variables": [
+          {
+            "name": "newsletter_name",
+            "type": "string",
+            "required": true,
+            "description": "Name of the newsletter"
+          },
+          {
+            "name": "curator_name",
+            "type": "string",
+            "required": true,
+            "description": "Name of the newsletter curator"
+          },
+          {
+            "name": "curator_url",
+            "type": "url",
+            "required": true,
+            "description": "URL to curator's profile or website"
+          },
+          {
+            "name": "about_text",
+            "type": "string",
+            "required": true,
+            "description": "Additional about text"
+          },
+          {
+            "name": "subscriber_email",
+            "type": "string",
+            "required": true,
+            "description": "Subscriber's email address"
+          },
+          {
+            "name": "why_received_url",
+            "type": "url",
+            "required": true,
+            "description": "URL explaining why subscriber received email"
+          },
+          {
+            "name": "unsubscribe_url",
+            "type": "url",
+            "required": true,
+            "description": "Unsubscribe URL"
+          },
+          {
+            "name": "preferences_url",
+            "type": "url",
+            "required": true,
+            "description": "Subscription preferences URL"
+          },
+          {
+            "name": "company_name",
+            "type": "string",
+            "required": true,
+            "description": "Company name"
+          },
+          {
+            "name": "address_line1",
+            "type": "string",
+            "required": true,
+            "description": "First line of address"
+          },
+          {
+            "name": "address_line2",
+            "type": "string",
+            "required": false,
+            "description": "Second line of address"
+          },
+          {
+            "name": "city_state_zip",
+            "type": "string",
+            "required": true,
+            "description": "City, state, and zip code"
+          },
+          {
+            "name": "country",
+            "type": "string",
+            "required": true,
+            "description": "Country"
+          }
+        ],
+        "loops": [],
+        "conditionals": []
+      }
+    ],
+    "layout": {
+      "name": "main.html",
+      "html": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta http-equiv=\"x-ua-compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link href=\"https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap\" rel=\"stylesheet\">\n  <title>{{ page.title || 'Newsletter' }}</title>\n  <style type=\"text/css\">\n    {{{ page.css }}}\n  </style>\n</head>\n<body style=\"background-color: #fff;padding: 0 0 40px;font-family: 'Helvetica',sans-serif;font-weight: 400;line-height: 1.6em;text-align: center;color: #465546;\">\n  <div itemscope itemtype=\"http://schema.org/EmailMessage\">\n    <div itemprop=\"publisher\" itemscope itemtype=\"http://schema.org/Organization\">\n      <meta itemprop=\"name\" content=\"{{ page.publisher_name || 'Newsletter' }}\">\n      <link itemprop=\"url\" content=\"{{ page.publisher_url }}\">\n    </div>\n  </div>\n  <span class=\"mcnPreviewText\" style=\"display:none; font-size:0px; line-height:0px; max-height:0px; max-width:0px; opacity:0; overflow:hidden; visibility:hidden; mso-hide:all;\">{{ page.preview_text }}</span>\n  <div id=\"content\" style=\"padding: 0;margin: 0 auto;max-width: 600px;text-align: left;\">\n    <p style=\"margin-bottom: 60px;text-align: right;font-size: 12px;line-height: 1.6em;\" class=\"viewin\">\n      <a href=\"{{ page.view_online_url }}\" style=\"text-decoration: underline;color: #999;\">View in browser or share</a>\n    </p>\n    <block name=\"template\"></block>\n  </div>\n</body>\n</html>",
+      "description": "Main layout wrapper with email-specific DOCTYPE, meta tags, and content container"
+    },
+    "globalStyles": {
+      "embedded": "body { background-color: #fff; padding: 0 0 40px; font-family: \"Helvetica\", sans-serif; font-weight: 400; line-height: 1.6em; text-align: center; color: #465546; }\n#header { margin-bottom: 72px; }\n#content { margin: 0 auto; max-width: 600px; text-align: left; }\n#content p.viewin a { color: #999; }\n#content p.viewin a:hover { color: #465546; }\nimg { padding: 0; max-width: 100%; height: auto; }\nimg#logo { margin: 0; padding: 0; max-width: 300px; height: auto; }\na { color: #DC4B4B; text-decoration: none; }\na:hover { text-decoration: underline !important; }\nh1, h2, h3, h4 { font-family: \"Lora\", serif; }\nh1 { margin: 12px 0 0; padding: 10px 0; float: right; line-height: 100%; font-weight: normal; border-bottom: 1px solid; }\nh2 { margin: 0; padding: 48px 0 0; font-size: 36px; line-height: 1.2em; font-weight: 400; }\np, ul { font-size: 18px; }\np { line-height: 1.6em; }\nblockquote { margin: 40px 0; padding: 0 0 0 20px; border-left: 1px solid #B7E2D8; }\nblockquote p { font-family: \"Lora\", serif; font-size: 17px; line-height: 1.6em; }\np.legend { margin: 5px 0 0; padding: 0; font-size: 12px; text-align: center; }\n.highlight { background: #B7E2D8; }\n.divider { text-align: center; }\nstrong.caps { text-transform: uppercase; font-weight: bold; letter-spacing: .05em; font-size: 85%; }\nul { margin: 24px 0 0; padding: 0; }\nli { margin: 0; padding: 12px 0; list-style: none; border-top: 1px solid #B7E2D8; line-height: 1.4em; }\nli em { font-style: normal; }\n#footer { margin-top: 72px; }\np.subs { padding-top: 30px; text-align: center; color: #999; }\np.subs span { font-style: italic; font-size: .8888em; }\n.subs a { -webkit-appearance: none; -moz-appearance: none; background: #DC4B4B; border: none; border-radius: .3rem; color: #fff; cursor: pointer; display: inline-block; font-size: .8888em; font-weight: 600; line-height: 1; margin: 5px 0 0; padding: 1.175em 1.75em; text-align: center; text-decoration: none; transition: opacity .15s linear; }\n@media only screen and (max-width:480px) {\n  body { width: 95% !important; min-width: 95% !important; }\n  h1 { float: none; display: block; width: 100%; margin-top: 10px !important; margin-right: 10px; margin-bottom: 20px; }\n  #content { margin-right: 10px !important; margin-left: 10px !important; }\n  p, ul { font-size: 20px; line-height: 1.6em; }\n  blockquote p { font-size: 18px; line-height: 1.6em; }\n  img { max-width: 100%; }\n  img#logo { margin: 0; padding: 0; width: 200px; }\n  table#canspamBar td { font-size: 14px !important; }\n  table#canspamBar td a { display: block !important; margin-top: 10px !important; }\n}",
+      "critical": "All inline styles must be preserved exactly as they appear in the original HTML for email client compatibility"
+    },
+    "templateStructure": {
+      "mainTemplate": "<extends src=\"src/layouts/main.html\">\n  <block name=\"template\">\n    <component src=\"src/components/header.html\" :logo_image=\"page.logo_image\" :issue_number=\"page.issue_number\"></component>\n    \n    <component src=\"src/components/intro.html\" \n      :this_week_summary=\"page.this_week_summary\" \n      :year_ago_link=\"page.year_ago_link\" \n      :year_ago_text=\"page.year_ago_text\"\n      :membership_prompt=\"page.membership_prompt\">\n    </component>\n    \n    <if condition=\"page.featured_image\">\n      <a href=\"{{ page.featured_image.url }}\" target=\"_blank\" style=\"color: #DC4B4B;text-decoration: none;\">\n        <img src=\"{{ page.featured_image.src }}\" alt=\"{{ page.featured_image.alt }}\" border=\"0\" style=\"margin: 0;padding: 0;max-width: 100%;height: auto;\">\n      </a>\n      <p class=\"legend\" style=\"font-size: 12px;line-height: 1.6em;margin: 5px 0 0;padding: 0;text-align: center;\">\n        <a href=\"{{ page.featured_image.url }}\" style=\"color: #DC4B4B;text-decoration: none;\">{{ page.featured_image.caption }}</a>\n      </p>\n    </if>\n    \n    <div class=\"body-content\">\n      <each loop=\"article in page.articles\">\n        <component src=\"src/components/article.html\" :title=\"article.title\" :url=\"article.url\" :commentary=\"article.commentary\" :quotes=\"article.quotes\"></component>\n      </each>\n      \n      <component src=\"src/components/cta.html\" :message=\"page.cta.message\" :button_text=\"page.cta.button_text\" :button_url=\"page.cta.button_url\"></component>\n      \n      <component src=\"src/components/link-list.html\" :section_title=\"page.miscellany.title\" :links=\"page.miscellany.links\"></component>\n    </div>\n    \n    <component src=\"src/components/footer.html\" \n      :newsletter_name=\"page.newsletter_name\"\n      :curator_name=\"page.curator_name\"\n      :curator_url=\"page.curator_url\"\n      :about_text=\"page.about_text\"\n      :subscriber_email=\"page.subscriber_email\"\n      :why_received_url=\"page.why_received_url\"\n      :unsubscribe_url=\"page.unsubscribe_url\"\n      :preferences_url=\"page.preferences_url\"\n      :company_name=\"page.company_name\"\n      :address_line1=\"page.address_line1\"\n      :address_line2=\"page.address_line2\"\n      :city_state_zip=\"page.city_state_zip\"\n      :country=\"page.country\">\n    </component>\n  </block>\n</extends>",
+      "componentOrder": [
+        "Header",
+        "Intro",
+        "Articles",
+        "CTA",
+        "LinkList",
+        "Footer"
+      ]
+    }
+  },
+  "metadata": {
+    "analysisDate": "2026-01-17T05:05:17.132Z",
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514"
+  },
+  "sourceStats": {
+    "elements": 163,
+    "tables": 2,
+    "images": 2,
+    "links": 30,
+    "headings": 7,
+    "paragraphs": 31,
+    "divs": 9,
+    "spans": 8,
+    "textLength": 13364,
+    "htmlLength": 30906
+  },
+  "generatedAt": "2026-01-17T05:05:17.148Z"
+}

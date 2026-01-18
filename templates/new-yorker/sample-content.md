@@ -1,0 +1,63 @@
+---
+template: new-yorker
+title: "From the Archive"
+preheader: "Read our \"Literary Lives\" collection."
+collectionTitle: "From the Archive"
+collectionSubtitle: "Highs and lows in pursuit of the literary life."
+collectionTheme: "Literary Lives"
+
+header:
+  logoUrl: "http://links.newyorker.mkt4334.com/ctt?kn=10&ms=MTU0MDQ5MTgS1"
+  logoImage: "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Layer_1@2x.png"
+
+hero:
+  title: "From the Archive"
+  subtitle: "Highs and lows in pursuit of the literary life."
+  titleUrl: "http://links.newyorker.mkt4334.com/ctt?kn=16&ms=MTU0MDQ5MTgS1"
+
+intro:
+  content: "<em>The New Yorker</em> archive presents thematic selections of articles from the magazine's past, highlighting stories that feel as fresh as ever.<br /><br />In our \"Literary Lives\" collection, we bring you pieces about the dynamic authors behind literary masterworks. From F. Scott and Zelda Fitzgerald's legendary zeal for dancing and drinking to Zora Neale Hurston's role as a leader of the Harlem Renaissance, these pieces reveal the depths of literary life, in all its ardency and struggle.<br /><br />To enjoy more collections, or to browse through nine decades of <em>The New Yorker</em>, from complete issues to carefully selected favorites, <a href=\"http://links.newyorker.mkt4334.com/ctt?kn=7&ms=MTU0MDQ5MTgS1\" style=\"text-decoration:none; color: #0773b5;\" target=\"_blank\">click here</a>."
+
+articlePairs:
+  - leftArticle:
+      category: "A CRITIC AT LARGE"
+      image: "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202b@2x.png"
+      imageAlt: "This Lonesome Place"
+      issueDate: "January 29, 2001 Issue"
+      title: "This Lonesome Place"
+      description: "Flannery O'Connor on race and religion in the unreconstructed South."
+      author: "Hilton Als"
+      articleUrl: "http://links.newyorker.mkt4334.com/ctt?kn=15&ms=MTU0MDQ5MTgS1"
+    rightArticle:
+      category: "LIFE AND LETTERS"
+      image: "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%207b@2x.png"
+      imageAlt: "Ernest Hemingway"
+      issueDate: "November 9, 1998 Issue"
+      title: "Last Words"
+      description: "Those Hemingway wrote, and those he didn't."
+      author: "Joan Didion"
+      articleUrl: "http://links.newyorker.mkt4334.com/ctt?kn=23&ms=MTU0MDQ5MTgS1"
+
+cta:
+  text: "Our full archive awaits."
+  buttonText: "Explore now"
+  url: "http://links.newyorker.mkt4334.com/ctt?kn=4&ms=MTU0MDQ5MTgS1"
+
+footer:
+  unsubscribeUrl: "#"
+  privacyUrl: "http://links.newyorker.mkt4334.com/ctt?kn=14&ms=MTU0MDQ5MTgS1"
+  customerCareUrl: "http://links.newyorker.mkt4334.com/ctt?kn=19&ms=MTU0MDQ5MTgS1"
+---
+
+# From the Archive: Literary Lives
+
+This is sample content for the New Yorker archive email template. The template features paired article cards with category labels, images, issue dates, titles, descriptions, and author bylines.
+
+## Template Structure
+
+- **Header**: New Yorker logo
+- **Hero**: Collection title and subtitle
+- **Intro**: Editorial introduction with HTML formatting
+- **Article Pairs**: Two-column layout with matched articles
+- **CTA**: Archive exploration button
+- **Footer**: Legal links and unsubscribe

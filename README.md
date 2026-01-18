@@ -1,9 +1,227 @@
-# 🧭 Reusable Email Template Project (Maizzle-based)
+# 🧭 NFL Maizzle Mail — Email Template System
 
-This project is a modular, reusable HTML email system built with [**Maizzle**](https://maizzle.com/).  
-It's designed to make creating and maintaining professional, responsive newsletters easy — especially those like *Wirecutter* or *The New York Times Recommendation* series — by separating **content**, **layout**, and **style**.
+A modular, reusable HTML email system built with [**Maizzle**](https://maizzle.com/). Create professional, responsive newsletters by separating **content**, **layout**, and **style**.
 
-The goal is to author newsletters in **Markdown** (with YAML frontmatter), convert them into **JSON data**, and compile everything into bulletproof, table-based HTML emails ready for delivery via Sendy, Mailchimp, or any ESP.
+---
+
+## ✨ Key Features
+
+- **🏭 Email Template Factory** — LLM-powered tool that transforms HTML emails into complete Maizzle templates
+- **📝 Markdown Authoring** — Write newsletters in Markdown with YAML frontmatter
+- **🎨 Template System** — Reusable components with section-based styling
+- **✅ Validation Pipeline** — Automatic checking for common template issues
+- **📧 Multi-ESP Support** — Output compatible with Sendy, Mailchimp, and any ESP
+- **🤖 Multi-Model Support** — Works with Claude (Anthropic) and GPT-4 (OpenAI)
+
+---
+
+## 🚀 Quick Start
+
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Set Up Environment
+
+Create a `.env` file with your API keys:
+
+```bash
+# Required for template factory (choose one or both)
+ANTHROPIC_API_KEY=sk-ant-...
+OPENAI_API_KEY=sk-...
+
+# Optional: Set preferred model
+ANTHROPIC_MODEL=claude-sonnet-4-20250514
+# Available: claude-opus-4-20250514, claude-sonnet-4-20250514, claude-3-5-sonnet-20241022
+
+# Optional: For sending test emails via AWS SES
+AWS_REGION=us-west-2
+AWS_ACCESS_KEY_ID=AKIA...
+AWS_SECRET_ACCESS_KEY=...
+SES_FROM=you@domain.com
+SES_TO=test@example.com
+```
+
+### 3. Generate a Template from an HTML Email
+
+```bash
+# Using the template factory with Claude
+npm run factory:anthropic emails-to-templatize/your-email.html my-template
+
+# Or with GPT-4
+npm run factory:openai emails-to-templatize/your-email.html my-template
+```
+
+### 4. Build a Newsletter
+
+```bash
+# Quick build with template auto-detection
+npm run quick my-template content/my-newsletter.md
+
+# Or use the build script directly
+node scripts/build-newsletter.mjs content/my-newsletter.md
+```
+
+### 5. View Output
+
+```bash
+open build_production/my-newsletter.html
+```
+
+---
+
+## 📚 Documentation
+
+### Project Structure
+
+```
+nfl-maizzle-mail/
+├── content/                    # Newsletter content (Markdown + YAML)
+├── templates/                  # Template systems
+│   └── <template-name>/
+│       ├── components/         # Reusable HTML components
+│       ├── layouts/            # Base layout (main.html)
+│       ├── newsletter.html     # Main template entry
+│       ├── sample-content.md   # Full example content
+│       ├── sample-data.json    # Sample data structure
+│       ├── sample-output.html  # Pre-built HTML reference
+│       ├── skeleton.md         # Minimal starter template
+│       ├── section-styles.json # Default styles per section
+│       └── SECTION-STYLES.md   # Section documentation
+├── emails-to-templatize/       # Source HTML emails for factory
+├── build_production/           # Built HTML output
+├── scripts/
+│   ├── build-newsletter.mjs    # Main build script
+│   ├── quick-build.mjs         # Quick build helper
+│   └── email-template-factory/ # LLM-powered template generator
+└── data/                       # Generated JSON data
+```
+
+### npm Scripts Reference
+
+| Script | Description |
+|--------|-------------|
+| `npm run factory <html> <name>` | Generate template from HTML email |
+| `npm run factory:anthropic` | Use Claude for generation |
+| `npm run factory:openai` | Use GPT-4 for generation |
+| `npm run quick <template> <content>` | Quick build with auto-detection |
+| `npm run build:newsletter` | Build newsletter from markdown |
+| `npm run build` | Build all templates for production |
+| `npm run dev` | Start Maizzle dev server |
+| `npm run templates:list` | List available templates |
+| `npm run templates:info <name>` | Show template details |
+| `npm run lint:content <file>` | Validate content file |
+| `npm run send:test` | Send test email via AWS SES |
+
+---
+
+## 🏭 Email Template Factory
+
+The factory is an LLM-powered pipeline that transforms HTML emails into complete Maizzle templates.
+
+### Usage
+
+```bash
+# Basic usage
+npm run factory emails-to-templatize/newsletter.html my-newsletter
+
+# With specific provider
+npm run factory:anthropic emails-to-templatize/newsletter.html my-newsletter
+npm run factory:openai emails-to-templatize/newsletter.html my-newsletter
+
+# With specific model (overrides .env setting)
+npm run factory -- emails-to-templatize/newsletter.html my-newsletter --model=claude-opus-4-20250514
+
+# Validate an existing template
+npm run factory -- --validate-only my-newsletter
+```
+
+### What It Generates
+
+```
+templates/my-newsletter/
+├── components/           # Section components (Header.html, Article.html, etc.)
+├── layouts/main.html     # Base layout with styles
+├── newsletter.html       # Main template
+├── sample-data.json      # Complete data structure
+├── sample-content.md     # Full example with all sections
+├── sample-output.html    # Pre-built HTML for reference
+├── skeleton.md           # Minimal starter for new issues
+├── section-styles.json   # Default styles per section type
+├── schema.json           # JSON schema for validation
+└── SECTION-STYLES.md     # Section type documentation
+```
+
+### Pipeline Stages
+
+1. **Visual Design Analysis** — Extracts colors, typography, spacing
+2. **Structural Analysis** — Identifies sections, hierarchy, patterns
+3. **Content Extraction** — Extracts sample data and field types
+4. **Component Generation** — Creates Maizzle components with proper syntax
+5. **Validation** — Builds template and checks for issues
+
+### Available Models
+
+| Provider | Model | Description |
+|----------|-------|-------------|
+| Anthropic | `claude-opus-4-20250514` | Most capable |
+| Anthropic | `claude-sonnet-4-20250514` | Fast + capable (default) |
+| Anthropic | `claude-3-5-sonnet-20241022` | Claude 3.5 Sonnet |
+| OpenAI | `gpt-4o` | GPT-4o (default) |
+| OpenAI | `gpt-4-turbo` | GPT-4 Turbo |
+| OpenAI | `gpt-4o-mini` | Faster, cheaper |
+
+---
+
+## 📝 Writing Newsletter Content
+
+### Content File Format
+
+```yaml
+---
+template: dense-discovery      # Template to use
+title: "Weekly Newsletter #42"
+preheader: "This week's highlights"
+
+header:
+  logoUrl: "https://..."
+  quote: "Inspiring quote"
+  author: "Quote Author"
+
+intro:
+  title: "Welcome"
+  content: "<p>Introduction paragraph.</p>"
+
+sections:
+  - type: article
+    title: "Featured Articles"
+    items:
+      - title: "Article Title"
+        link: "https://..."
+        description: "<p>Article description with <strong>HTML</strong>.</p>"
+        image: "https://..."
+
+footer:
+  unsubscribeLink: "#"
+  address: "Company Address"
+---
+```
+
+### Building Your Newsletter
+
+```bash
+# Method 1: Quick build (auto-detects template from frontmatter)
+npm run quick dense-discovery content/my-newsletter.md
+
+# Method 2: Direct build script
+node scripts/build-newsletter.mjs content/my-newsletter.md
+
+# Method 3: Lint first, then build
+npm run lint:content content/my-newsletter.md
+npm run build:newsletter content/my-newsletter.md
+```
 
 ---
 
@@ -478,177 +696,143 @@ title: "My Newsletter"
 
 ### **Creating New Templates**
 
-#### **Option A: From Scratch**
-```bash
-# Create new template structure
-node scripts/create_template.mjs mynewtemplate
+#### **Option A: Email Template Factory (Recommended)**
 
-# This creates:
-# templates/mynewtemplate/
-# ├── components/
-# ├── layouts/
-# ├── newsletter.html
-# └── schema.json
-```
-
-#### **Option B: From Existing Email HTML**
-```bash
-# Decompose existing email into template
-node scripts/decompose_email.mjs existing-email.html mynewtemplate
-
-# This analyzes the HTML and creates:
-# 1. Component files for reusable sections
-# 2. Schema definition based on content structure  
-# 3. Sample content file showing expected data
-```
-
-### **Reliable Email Decomposition System**
-
-A consistently reliable workflow for decomposing HTML emails into reusable components using multi-strategy analysis:
-
-#### **🚀 Recommended Commands**
+The Email Template Factory is an LLM-powered pipeline that transforms HTML emails into complete Maizzle templates with components, sample data, and documentation.
 
 ```bash
-# Reliable workflow (enhanced heuristics + validation)
-npm run decompose:reliable input.html template-name
+# Basic usage (uses default provider from .env)
+npm run factory emails-to-templatize/source.html my-template-name
 
-# Automatic AI analysis (requires OPENAI_API_KEY)  
-npm run decompose:auto input.html template-name
+# Explicitly use Claude (Anthropic)
+npm run factory:anthropic emails-to-templatize/source.html my-template-name
 
-# Comprehensive analysis (all methods)
-npm run decompose:comprehensive input.html template-name
+# Explicitly use GPT-4 (OpenAI)
+npm run factory:openai emails-to-templatize/source.html my-template-name
 ```
 
-#### **🔧 Legacy Workflows**
+**What it generates:**
+```
+templates/my-template-name/
+├── components/           # Reusable section components
+│   ├── Header.html
+│   ├── Article.html
+│   └── Footer.html
+├── layouts/
+│   └── main.html         # Base layout with styles
+├── newsletter.html       # Main template
+├── sample-data.json      # Complete sample data structure
+├── sample-content.md     # Full example content file
+├── sample-output.html    # Pre-built HTML for quick reference
+├── skeleton.md           # Minimal template for new issues
+├── section-styles.json   # Default styles per section type
+├── schema.json           # JSON schema for validation
+└── SECTION-STYLES.md     # Documentation for section types
+```
 
+**Factory Pipeline Stages:**
+1. **Visual Design Analysis** - Extracts colors, typography, layout patterns
+2. **Structural Analysis** - Identifies sections, components, hierarchy
+3. **Content Extraction** - Extracts sample data and field types
+4. **Component Generation** - Creates Maizzle components with proper syntax
+5. **Validation** - Builds template and checks for issues
+
+**Environment Setup:**
 ```bash
-# List available workflows
-npm run decompose:workflows
-
-# Quick heuristic analysis (basic)
-npm run decompose:quick input.html template-name
-
-# Smart AI-powered analysis (manual GPT)  
-npm run decompose:smart input.html template-name
-
-# Interactive step-by-step analysis
-npm run decompose:interactive input.html template-name
-
-# Compare multiple analysis methods
-npm run decompose:compare input.html template-name
+# Add to .env file
+ANTHROPIC_API_KEY=sk-ant-...   # For Claude (recommended)
+OPENAI_API_KEY=sk-...          # For GPT-4 (alternative)
 ```
 
-#### **🎯 Reliable Workflow Features**
-
-- **Multi-Strategy Analysis**: Combines enhanced heuristics + semantic analysis + newsletter-specific patterns
-- **Email Type Detection**: Automatically detects newsletter, marketing, transactional, or ecommerce emails  
-- **Confidence Scoring**: Provides reliability scores and validation metrics
-- **Automatic API Integration**: Uses GPT-4o when `OPENAI_API_KEY` is set
-- **Validation System**: Quality checks and recommendations for each decomposition
-- **Fallback Support**: Works without API keys, gracefully handles failures
-
-#### **📊 Workflow Comparison**
-
-| Workflow | Speed | Accuracy | Reliability | AI Required |
-|----------|-------|----------|-------------|-------------|
-| **Reliable** | ⚡⚡ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Optional |
-| **Auto** | ⚡ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | Yes (GPT-4o) |
-| **Quick** | ⚡⚡⚡ | ⭐⭐⭐ | ⭐⭐ | No |
-| **Smart** | ⚡⚡ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | Manual GPT |
-
-#### **🤖 Automatic AI Integration**
-
-Set up OpenAI API for automatic GPT-4o analysis:
-
+#### **Option B: Manual Template Creation**
 ```bash
-# Set your API key (get from https://platform.openai.com/api-keys)
-export OPENAI_API_KEY="your-api-key-here"
+# Create minimal template structure manually
+mkdir -p templates/mynewtemplate/{components,layouts}
 
-# Run automatic analysis 
-npm run decompose:auto emails/newsletter.html my-template
-
-# Or comprehensive analysis (all methods)
-npm run decompose:comprehensive emails/newsletter.html my-template
+# Copy from existing template as starting point
+cp -r templates/dense-discovery/* templates/mynewtemplate/
 ```
 
-The system automatically:
-- Detects email complexity and chooses appropriate analysis
-- Falls back to heuristics if API fails
-- Combines multiple analysis methods for maximum accuracy
-- Provides confidence and reliability scores
+---
 
-#### **Example Decomposition**
+### **Available npm Scripts**
 
-```bash
-# Real-world examples:
-npm run decompose:quick emails/morning-brew.html morningbrew
-npm run decompose:smart emails/hacker-news.html hackernews  
-npm run decompose:compare emails/product-hunt.html producthunt
-```
+| Script | Description |
+|--------|-------------|
+| `npm run build` | Build all templates for production |
+| `npm run dev` | Start Maizzle dev server with hot reload |
+| `npm run build:newsletter` | Build specific newsletter from markdown |
+| `npm run quick <template> <content>` | Quick build with auto-detection |
+| `npm run factory <html> <name>` | Generate template from HTML email |
+| `npm run factory:anthropic` | Use Claude for template generation |
+| `npm run factory:openai` | Use GPT-4 for template generation |
+| `npm run templates:list` | List available templates |
+| `npm run templates:info <name>` | Show template details |
+| `npm run schema:generate` | Generate JSON schema for template |
+| `npm run lint:content <file>` | Validate content file |
+| `npm run send:test` | Send test email via AWS SES |
 
-All workflows produce:
-- **Component files** (Header, Hero, Content, Footer)
-- **Template structure** (main template + layout)
-- **JSON schema** (data validation)
-- **Sample data** (example content)
-- **Analysis report** (confidence scores)
+---
 
-### **Template Management Commands**
+### **Template Factory Best Practices**
 
-| Command | Purpose |
-|---------|---------|
-| `npm run templates:list` | Show all available templates |
-| `npm run templates:create <name>` | Create new blank template |
-| `npm run templates:copy <from> <to>` | Duplicate existing template |
-| `npm run templates:set-default <name>` | Set default template |
-| `node scripts/decompose_email.mjs <html> <name>` | Create template from existing email |
+1. **Source HTML Quality**: Use complete, well-formatted HTML emails. The factory analyzes structure and styles, so cleaner input produces better output.
+
+2. **Validation First**: The factory runs automatic validation after generation. Review any warnings about:
+   - Escaped HTML (use `{{{ }}}` for HTML content fields)
+   - Undefined variables (check sample-data.json completeness)
+   - Loop placement (loops must be inside components, not newsletter.html)
+
+3. **Test the Output**: After generation, build and review the sample:
+   ```bash
+   node scripts/build-newsletter.mjs templates/my-template/sample-content.md
+   open build_production/sample-content.html
+   ```
+
+4. **Iterate on Components**: Generated components may need refinement. Common fixes:
+   - Change `{{ field }}` to `{{{ field }}}` for HTML content
+   - Adjust spacing and padding in inline styles
+   - Add missing conditional wrappers for optional fields
+
+5. **Placeholder Images**: Use [fpoimg.com](https://fpoimg.com) for placeholder images:
+   ```
+   https://fpoimg.com/600x400?text=Hero+Image&bg_color=4361ee
+   ```
+
+---
 
 ### **Template Switching in Content**
 
-Your Markdown files can specify which template to use:
+Your Markdown files specify which template to use via the `template` field:
 
 ```yaml
 ---
-template: "newsletter"           # Use newsletter template
+template: "dense-discovery"      # Must match templates/<name>/ directory
 title: "Weekly Update"
-layout: "sidebar"               # Optional: layout variant
-theme: "dark"                   # Optional: theme variant
+preheader: "This week's top picks"
 
-# Newsletter-specific structure
+header:
+  logoUrl: "https://..."
+  quote: "..."
+
 sections:
-  - type: "header"
-    logo: "..."
-  - type: "article-list"
-    articles: [...]
-  - type: "footer"
+  - type: "article"
+    title: "Featured"
+    items:
+      - title: "Item title"
+        link: "https://..."
+        description: "<p>HTML content</p>"
 ---
 ```
 
-### **Advanced Features**
+### **Template Management**
 
-#### **Template Inheritance**
-```yaml
-# In template config
-extends: "wirecutter"           # Inherit from wirecutter template
-overrides:
-  hero: "custom-hero.html"      # Override specific components
-  colors:
-    primary: "#ff6b35"          # Override theme colors
-```
-
-#### **Component Mixins**
 ```bash
-# Mix components from different templates
-npm run build -- --template=newsletter --hero=wirecutter --footer=digest
-```
+# List all available templates
+npm run templates:list
 
-#### **Template Variants**
-```
-templates/wirecutter/
-├── variants/
-│   ├── dark-mode/
-│   ├── holiday/
-│   └── minimal/
+# Get info about a specific template
+npm run templates:info dense-discovery
 ```
 
 ---

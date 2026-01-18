@@ -1,0 +1,18 @@
+{
+  "template": "dense-discovery",
+  "templateDir": "/Users/julian/Code/nfl-maizzle-mail/templates/dense-discovery",
+  "timestamp": "2026-01-17T06:45:38.880Z",
+  "passed": false,
+  "summary": {
+    "errors": 1,
+    "warnings": 2
+  },
+  "errors": [
+    "Missing file: sample-data.json"
+  ],
+  "warnings": [
+    "Cannot validate variable bindings: sample-data.json not found",
+    "No sample-data.json found, cannot generate test content"
+  ],
+  "recommendations": []
+}

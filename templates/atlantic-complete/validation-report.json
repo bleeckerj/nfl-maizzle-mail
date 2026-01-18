@@ -1,0 +1,37 @@
+{
+  "template": "atlantic-complete",
+  "templateDir": "/Users/julian/Code/nfl-maizzle-mail/templates/atlantic-complete",
+  "timestamp": "2026-01-17T06:45:56.217Z",
+  "passed": false,
+  "summary": {
+    "errors": 1,
+    "warnings": 2
+  },
+  "errors": [
+    "\"undefined\" text found in output"
+  ],
+  "warnings": [
+    "components/PoemSection.html: Variable \"mainContent.poem.excerpt\" may need triple braces {{{ }}} for raw HTML",
+    "Some variables may not be in sample-data.json: mainContent.link, mainContent.image, mainContent.imageCaption, footer.nfl.link, footer.nfl.year..."
+  ],
+  "recommendations": [
+    {
+      "type": "template_syntax",
+      "severity": "medium",
+      "message": "Change {{ mainContent.poem.excerpt }} to {{{ mainContent.poem.excerpt }}} for raw HTML output",
+      "file": "components/PoemSection.html"
+    },
+    {
+      "type": "data_binding",
+      "severity": "low",
+      "message": "Some template variables reference paths not in sample-data.json. Check if these come from loop contexts or need to be added to sample data.",
+      "variables": "mainContent.link, mainContent.image, mainContent.imageCaption, footer.nfl.link, footer.nfl.year..."
+    },
+    {
+      "type": "missing_data",
+      "severity": "high",
+      "message": "Template variable resolved to undefined. Check if the variable path matches sample-data.json structure.",
+      "action": "Verify nested object paths in templates match data structure"
+    }
+  ]
+}

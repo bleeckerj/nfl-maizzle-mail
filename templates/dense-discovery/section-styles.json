@@ -4,6 +4,43 @@
   "version": "1.0.0",
   
   "sectionStyles": {
+    "intro-content": {
+      "name": "Intro Content",
+      "description": "Intro paragraph block content styles",
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "0",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "'Roboto', sans-serif",
+        "fontSize": "18px",
+        "lineHeight": "1.2rem",
+        "fontWeight": "500",
+        "color": "#000000",
+        "textAlign": "left"
+      }
+    },
+    "intro-aside": {
+      "name": "Intro Aside",
+      "description": "Teaser/lede block before the intro content",
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "12px 14px",
+        "borderRadius": "6px",
+        "borderLeftColor": "#d7d1c6",
+        "borderLeftWidth": "3px",
+        "borderLeftStyle": "solid"
+      },
+      "contentStyles": {
+        "fontFamily": "'Ubuntu', sans-serif",
+        "fontSize": "19px",
+        "lineHeight": "1.2",
+        "fontStyle": "normal",
+        "color": "#3f3f3f",
+        "textAlign": "left"
+      }
+    },
     "sponsor": {
       "name": "Sponsor Section",
       "description": "Sponsored content sections with distinctive monospace font",
@@ -134,7 +171,7 @@
         "borderRadius": "0px"
       },
       "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontFamily": "'Ubuntu', sans-serif",
         "fontSize": "19px",
         "lineHeight": "1.4",
         "color": "#111111",

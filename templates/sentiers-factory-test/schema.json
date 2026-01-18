@@ -1,0 +1,59 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Newsletter Data Schema",
+  "description": "Generated schema for newsletter template data",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Newsletter title"
+    },
+    "preheader": {
+      "type": "string",
+      "description": "Email preview text"
+    },
+    "articleItems": {
+      "type": "array",
+      "description": "Presents an article with a title, description, and link",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "The title of the article"
+          },
+          "description": {
+            "type": "html",
+            "description": "The description or summary of the article"
+          },
+          "link": {
+            "type": "string",
+            "description": "The URL to the full article",
+            "format": "uri"
+          }
+        }
+      }
+    },
+    "link-listItems": {
+      "type": "array",
+      "description": "Provides a list of miscellaneous links",
+      "items": {
+        "type": "object",
+        "properties": {
+          "link": {
+            "type": "string",
+            "description": "The URL of the link",
+            "format": "uri"
+          },
+          "description": {
+            "type": "string",
+            "description": "A brief description of the link"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

@@ -1,0 +1,28 @@
+---
+title: "{{ title }}"
+preheader: "{{ preheader || 'Email preview text' }}"
+---
+
+<extends src="templates/palm-report-v2/layouts/main.html">
+  <block name="template">
+    
+    <component src="templates/palm-report-v2/components/Header.html"></component>
+
+    <component src="templates/palm-report-v2/components/AnimatedHero.html"></component>
+
+    <component src="templates/palm-report-v2/components/IssueHeader.html"></component>
+
+    <component src="templates/palm-report-v2/components/Editorial.html"></component>
+
+    <component src="templates/palm-report-v2/components/LinkList.html"></component>
+
+    <component src="templates/palm-report-v2/components/LifestyleCategory.html"></component>
+
+    <component src="templates/palm-report-v2/components/BrandDirectory.html"></component>
+
+    <component src="templates/palm-report-v2/components/SocialCta.html"></component>
+
+    <component src="templates/palm-report-v2/components/Footer.html"></component>
+    
+  </block>
+</extends>

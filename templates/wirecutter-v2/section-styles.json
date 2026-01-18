@@ -1,0 +1,97 @@
+{
+  "header": {
+    "containerStyles": {
+      "backgroundColor": "#eae7e2",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Helvetica, Arial, sans-serif; color: #000000;",
+    "contentStyles": {
+      "fontFamily": "Helvetica, Arial, sans-serif",
+      "fontSize": "16px",
+      "color": "#000000"
+    },
+    "linkStylesInline": "color: #3358d5; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": true,
+      "variantOf": "sponsor",
+      "description": "Brand logo and navigation area"
+    }
+  },
+  "featured-article": {
+    "containerStyles": {
+      "backgroundColor": "#eae7e2",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Helvetica, Arial, sans-serif; color: #000000;",
+    "contentStyles": {
+      "fontFamily": "Helvetica, Arial, sans-serif",
+      "fontSize": "16px",
+      "color": "#000000"
+    },
+    "linkStylesInline": "color: #3358d5; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": false,
+      "variantOf": null,
+      "description": "Main article with large headline, hero image, and detailed content"
+    }
+  },
+  "article": {
+    "containerStyles": {
+      "backgroundColor": "#eae7e2",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Helvetica, Arial, sans-serif; color: #000000;",
+    "contentStyles": {
+      "fontFamily": "Helvetica, Arial, sans-serif",
+      "fontSize": "16px",
+      "color": "#000000"
+    },
+    "linkStylesInline": "color: #3358d5; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": false,
+      "variantOf": null,
+      "description": "Standard article format with title, image, and content"
+    }
+  },
+  "product-showcase": {
+    "containerStyles": {
+      "backgroundColor": "#eae7e2",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Helvetica, Arial, sans-serif; color: #000000;",
+    "contentStyles": {
+      "fontFamily": "Helvetica, Arial, sans-serif",
+      "fontSize": "16px",
+      "color": "#000000"
+    },
+    "linkStylesInline": "color: #3358d5; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": false,
+      "variantOf": null,
+      "description": "Grid layout showcasing multiple related products with images and descriptions"
+    }
+  },
+  "footer": {
+    "containerStyles": {
+      "backgroundColor": "#eae7e2",
+      "padding": "20px"
+    },
+    "headingStylesInline": "font-family: Helvetica, Arial, sans-serif; color: #000000;",
+    "contentStyles": {
+      "fontFamily": "Helvetica, Arial, sans-serif",
+      "fontSize": "16px",
+      "color": "#000000"
+    },
+    "linkStylesInline": "color: #3358d5; text-decoration: underline;",
+    "_meta": {
+      "isNovel": true,
+      "isVariant": false,
+      "variantOf": null,
+      "description": "Newsletter footer with unsubscribe, legal links, and company info"
+    }
+  }
+}

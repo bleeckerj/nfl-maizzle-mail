@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Newsletter Data Schema",
+  "description": "Generated schema for newsletter template data",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Newsletter title"
+    },
+    "preheader": {
+      "type": "string",
+      "description": "Email preview text"
+    },
+    "feature-explanationItems": {
+      "type": "array",
+      "description": "Product feature explanation with image and descriptive text in side-by-side or stacked layout",
+      "items": {
+        "type": "object",
+        "properties": {
+          "feature_title": {
+            "type": "string",
+            "description": "Feature or section headline"
+          },
+          "feature_image": {
+            "type": "string",
+            "description": "Visual demonstration of the feature (static or animated)"
+          },
+          "feature_description": {
+            "type": "html",
+            "description": "Explanatory text about the feature"
+          },
+          "layout_direction": {
+            "type": "string",
+            "description": "Image-left, image-right, or stacked layout"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

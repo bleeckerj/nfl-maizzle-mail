@@ -1,0 +1,1916 @@
+{
+  "visualDesign": {
+    "reasoning": "Analyzed the email's inline styles and structure to extract the visual design system. The email uses a cream background with blue accents, Helvetica typography, and a table-based layout with consistent spacing patterns.",
+    "colorPalette": {
+      "primary": "#2664F6",
+      "secondary": "#111111",
+      "accent": "#2664F6",
+      "background": "#FFFCF2",
+      "backgroundAlt": "#fffcf2",
+      "text": "#000000",
+      "textMuted": "#111111",
+      "border": "none specified",
+      "allColors": [
+        "#FFFCF2",
+        "#111111",
+        "#2664F6",
+        "#000000",
+        "#fffcf2"
+      ]
+    },
+    "typography": {
+      "headingFont": "Helvetica, sans-serif",
+      "bodyFont": "Helvetica, sans-serif",
+      "monoFont": "none specified",
+      "headingSizes": {
+        "h1": "20px",
+        "h2": "20px",
+        "h3": "14px"
+      },
+      "bodySize": "14px",
+      "smallSize": "12px",
+      "lineHeights": {
+        "heading": "150%",
+        "body": "150%"
+      },
+      "fontWeights": {
+        "normal": "400",
+        "medium": "not specified",
+        "bold": "700"
+      }
+    },
+    "spacing": {
+      "containerPadding": "40px horizontal, 0px vertical",
+      "sectionGap": "40px to 100px between major sections",
+      "elementGap": "10px to 30px between elements",
+      "patterns": [
+        "10px",
+        "20px",
+        "30px",
+        "40px",
+        "50px",
+        "60px",
+        "90px",
+        "100px"
+      ]
+    },
+    "images": [
+      {
+        "src": "https://click.mlsend.com/link/o/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3.76-wwe_ezUOsqFH1jYD459otXp3HoP8rKW_JgtdEqsA",
+        "alt": "",
+        "role": "tracking",
+        "width": "1",
+        "context": "tracking pixel at top of email"
+      },
+      {
+        "src": "https://bucket.mlcdn.com/a/1351/1351220/images/4ead8170ca4cf65952c5a34dc7d98c0af28e93be.png",
+        "alt": "",
+        "role": "logo",
+        "width": "560",
+        "context": "main logo/header image"
+      },
+      {
+        "src": "https://bucket.mlcdn.com/a/1351/1351220/images/cbdac60d8d8a49a351da722f0e974c5bfe9fe392.gif",
+        "alt": "",
+        "role": "hero",
+        "width": "640",
+        "context": "animated hero image after logo"
+      },
+      {
+        "src": "https://cdn.mailerlite.com/images/icons/default/round/black/website.png",
+        "alt": "website",
+        "role": "icon",
+        "width": "24",
+        "context": "social media icon in footer"
+      },
+      {
+        "src": "https://cdn.mailerlite.com/images/icons/default/round/black/twitter.png",
+        "alt": "twitter",
+        "role": "icon",
+        "width": "24",
+        "context": "social media icon in footer"
+      },
+      {
+        "src": "https://cdn.mailerlite.com/images/icons/default/round/black/instagram.png",
+        "alt": "instagram",
+        "role": "icon",
+        "width": "24",
+        "context": "social media icon in footer"
+      }
+    ],
+    "layout": {
+      "maxWidth": "640px",
+      "structure": "single-column",
+      "containerType": "table-based",
+      "responsiveHints": [
+        "Media queries for mobile breakpoint at 640px",
+        "Responsive image scaling",
+        "Padding adjustments for mobile",
+        "Font size adjustments implied"
+      ]
+    }
+  },
+  "structure": {
+    "reasoning": "This email follows a lifestyle newsletter format with distinct visual sections. I identified sections by analyzing the table structure, image blocks, and content patterns. The email has a header with logo, an animated intro section, issue number, editorial content, and three main content categories: 'Summer-Enhancing People', 'Summer-Enhancing Vehicles', and 'Summer-Enhancing Places'. Each category follows a similar pattern with a title, featured image, and descriptive text. There's also a brand showcase section and social media promotion sections. The structure is primarily static content with some repeating patterns in the brand listings.",
+    "sections": [
+      {
+        "id": "header_logo",
+        "name": "Header Logo",
+        "type": "header",
+        "purpose": "Brand identification and navigation",
+        "order": 1,
+        "contentType": "static",
+        "estimatedStartLine": "Line with logoBlock-4",
+        "keyIdentifiers": [
+          "logoBlock-4",
+          "mlContentOuter"
+        ]
+      },
+      {
+        "id": "animated_intro",
+        "name": "Animated Introduction",
+        "type": "animated-hero",
+        "purpose": "Visual engagement and brand personality",
+        "order": 2,
+        "contentType": "static",
+        "estimatedStartLine": "Line with imageBlock-6",
+        "keyIdentifiers": [
+          "imageBlock-6",
+          ".gif file"
+        ]
+      },
+      {
+        "id": "issue_number",
+        "name": "Issue Number",
+        "type": "issue-header",
+        "purpose": "Newsletter identification and branding",
+        "order": 3,
+        "contentType": "dynamic",
+        "estimatedStartLine": "ISSUE 001 text",
+        "keyIdentifiers": [
+          "bodyTitle",
+          "color: #2664F6"
+        ]
+      },
+      {
+        "id": "editorial_intro",
+        "name": "Editorial Introduction",
+        "type": "editorial",
+        "purpose": "Editor's introduction and issue overview",
+        "order": 4,
+        "contentType": "dynamic",
+        "estimatedStartLine": "With tasting notes paragraph",
+        "keyIdentifiers": [
+          "bodyText-12",
+          "mlContentOuter"
+        ]
+      },
+      {
+        "id": "news_links",
+        "name": "News Links Collection",
+        "type": "link-list",
+        "purpose": "Curated news and content links",
+        "order": 5,
+        "contentType": "dynamic",
+        "estimatedStartLine": "☼ The latest in that antiquities",
+        "keyIdentifiers": [
+          "bodyText-18",
+          "☼ bullet points"
+        ]
+      },
+      {
+        "id": "people_section",
+        "name": "Summer-Enhancing People",
+        "type": "lifestyle-category",
+        "purpose": "Featured person/brand spotlight",
+        "order": 6,
+        "contentType": "dynamic",
+        "estimatedStartLine": "SUMMER-ENHANCING PEOPLE",
+        "keyIdentifiers": [
+          "SUMMER-ENHANCING PEOPLE",
+          "imageBlock-22",
+          "imageBlock-24"
+        ]
+      },
+      {
+        "id": "vehicles_section",
+        "name": "Summer-Enhancing Vehicles",
+        "type": "lifestyle-category",
+        "purpose": "Featured vehicles showcase",
+        "order": 7,
+        "contentType": "dynamic",
+        "estimatedStartLine": "SUMMER-ENHANCING VEHICLES",
+        "keyIdentifiers": [
+          "SUMMER-ENHANCING VEHICLES",
+          "EXHIBIT A",
+          "EXHIBIT B",
+          "EXHIBIT C"
+        ]
+      },
+      {
+        "id": "places_section",
+        "name": "Summer-Enhancing Places",
+        "type": "lifestyle-category",
+        "purpose": "Featured locations and destinations",
+        "order": 8,
+        "contentType": "dynamic",
+        "estimatedStartLine": "SUMMER-ENHANCING PLACES",
+        "keyIdentifiers": [
+          "SUMMER-ENHANCING PLACES",
+          "imageBlock-40",
+          "imageBlock-42"
+        ]
+      },
+      {
+        "id": "brand_showcase",
+        "name": "Brand Showcase",
+        "type": "brand-directory",
+        "purpose": "Featured lifestyle brands and partnerships",
+        "order": 9,
+        "contentType": "dynamic",
+        "estimatedStartLine": "Fill out this form to feature here",
+        "keyIdentifiers": [
+          "bodyText-54",
+          "Vacation®",
+          "Hôtel Weekend"
+        ]
+      },
+      {
+        "id": "social_promotion",
+        "name": "Social Media Promotion",
+        "type": "social-cta",
+        "purpose": "Drive social media engagement",
+        "order": 10,
+        "contentType": "static",
+        "estimatedStartLine": "@PALMREPORT @PALMREPORT",
+        "keyIdentifiers": [
+          "@PALMREPORT",
+          "@POOLSUITE"
+        ]
+      },
+      {
+        "id": "footer",
+        "name": "Footer",
+        "type": "footer",
+        "purpose": "Contact info, social links, unsubscribe",
+        "order": 11,
+        "contentType": "static",
+        "estimatedStartLine": "Social media icons section",
+        "keyIdentifiers": [
+          "mlContentTableFooterDefault",
+          "footerText-66",
+          "Unsubscribe"
+        ]
+      }
+    ],
+    "sectionTypes": [
+      {
+        "name": "header",
+        "description": "Brand logo and navigation area",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_image",
+            "type": "image",
+            "required": true,
+            "description": "Brand logo image"
+          },
+          {
+            "name": "logo_link",
+            "type": "url",
+            "required": false,
+            "description": "Link destination for logo"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered image/link",
+        "stylingNotes": "Centered alignment, padding for spacing",
+        "htmlSignature": "logoBlock-* id, mlContentOuter class"
+      },
+      {
+        "name": "animated-hero",
+        "description": "Animated GIF hero section for visual engagement",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "Specific use of animated GIF as a hero section in newsletter format",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "hero_gif",
+            "type": "image",
+            "required": true,
+            "description": "Animated GIF for visual impact"
+          }
+        ],
+        "containerStructure": "table > tr > td with full-width image",
+        "stylingNotes": "Full width, display block",
+        "htmlSignature": "imageBlock-* with .gif file extension"
+      },
+      {
+        "name": "issue-header",
+        "description": "Newsletter issue number and identification",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "Specific styling and placement for newsletter issue identification",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "issue_number",
+            "type": "string",
+            "required": true,
+            "description": "Issue number or identifier"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered text",
+        "stylingNotes": "Blue color (#2664F6), bold, centered",
+        "htmlSignature": "bodyTitle class with specific color styling"
+      },
+      {
+        "name": "lifestyle-category",
+        "description": "Themed content sections with title, images, and descriptive text",
+        "isRepeating": true,
+        "isNovel": true,
+        "noveltyReason": "Specific 'Summer-Enhancing' categorization pattern unique to lifestyle newsletters",
+        "instanceCount": 3,
+        "variables": [
+          {
+            "name": "category_title",
+            "type": "string",
+            "required": true,
+            "description": "Category name (e.g., 'SUMMER-ENHANCING PEOPLE')"
+          },
+          {
+            "name": "featured_image",
+            "type": "image",
+            "required": true,
+            "description": "Main category image"
+          },
+          {
+            "name": "description_text",
+            "type": "html",
+            "required": true,
+            "description": "Rich text description with links"
+          },
+          {
+            "name": "additional_images",
+            "type": "array",
+            "required": false,
+            "description": "Additional supporting images"
+          }
+        ],
+        "containerStructure": "table sections with title, image blocks, and text content",
+        "stylingNotes": "Blue headers, full-width images, padded text content",
+        "htmlSignature": "SUMMER-ENHANCING in title, imageBlock-* patterns"
+      },
+      {
+        "name": "brand-directory",
+        "description": "Curated list of lifestyle brands with descriptions",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "Specific format for showcasing lifestyle brands in newsletter context",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "intro_text",
+            "type": "html",
+            "required": true,
+            "description": "Introduction and call-to-action for featuring brands"
+          },
+          {
+            "name": "brand_list",
+            "type": "array",
+            "required": true,
+            "description": "List of brands with names, links, and descriptions"
+          }
+        ],
+        "containerStructure": "table > tr > td with paragraph list of linked brands",
+        "stylingNotes": "Blue links, paragraph format with line breaks",
+        "htmlSignature": "bodyText-54, brand names with links"
+      },
+      {
+        "name": "editorial",
+        "description": "Editor's introduction and issue overview",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "intro_text",
+            "type": "html",
+            "required": true,
+            "description": "Editorial introduction content"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered paragraph text",
+        "stylingNotes": "Blue color, centered alignment, line spacing",
+        "htmlSignature": "bodyText-* with center alignment"
+      },
+      {
+        "name": "link-list",
+        "description": "Curated collection of news links with bullet points",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "link_items",
+            "type": "array",
+            "required": true,
+            "description": "Array of links with descriptions and URLs"
+          }
+        ],
+        "containerStructure": "table > tr > td with paragraph list using ☼ bullets",
+        "stylingNotes": "Blue links, ☼ bullet points, line spacing",
+        "htmlSignature": "☼ bullet character, blue link styling"
+      },
+      {
+        "name": "social-cta",
+        "description": "Social media handle promotion and call-to-action",
+        "isRepeating": true,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 2,
+        "variables": [
+          {
+            "name": "social_handle",
+            "type": "string",
+            "required": true,
+            "description": "Social media handle repeated for emphasis"
+          },
+          {
+            "name": "link_url",
+            "type": "url",
+            "required": true,
+            "description": "Link to social media profile"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered linked text",
+        "stylingNotes": "Blue color, bold, centered, repeated text pattern",
+        "htmlSignature": "Repeated @ handles in blue links"
+      },
+      {
+        "name": "footer",
+        "description": "Standard newsletter footer with social links and unsubscribe",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "social_links",
+            "type": "array",
+            "required": true,
+            "description": "Array of social media platform links"
+          },
+          {
+            "name": "company_info",
+            "type": "html",
+            "required": true,
+            "description": "Company name and description"
+          },
+          {
+            "name": "unsubscribe_text",
+            "type": "html",
+            "required": true,
+            "description": "Unsubscribe information and link"
+          }
+        ],
+        "containerStructure": "table with social icons, company info, and legal text",
+        "stylingNotes": "Centered alignment, small text, icon spacing",
+        "htmlSignature": "mlContentTableFooterDefault, footerText-*, social icons"
+      }
+    ],
+    "repeatingSections": [
+      {
+        "type": "lifestyle-category",
+        "pattern": "Themed content categories with consistent structure",
+        "instanceCount": 3,
+        "variablesPerInstance": [
+          "category_title",
+          "featured_image",
+          "description_text",
+          "additional_images"
+        ]
+      },
+      {
+        "type": "social-cta",
+        "pattern": "Social media handle promotion",
+        "instanceCount": 2,
+        "variablesPerInstance": [
+          "social_handle",
+          "link_url"
+        ]
+      }
+    ],
+    "globalElements": {
+      "header": {
+        "present": true,
+        "components": [
+          "logo",
+          "view-in-browser-link"
+        ]
+      },
+      "footer": {
+        "present": true,
+        "components": [
+          "social-links",
+          "company-info",
+          "unsubscribe"
+        ]
+      },
+      "wrapper": {
+        "type": "Table-based layout with 640px max width",
+        "width": "640px"
+      }
+    },
+    "hierarchy": {
+      "depth": 3,
+      "description": "header → animated intro → issue header → editorial → news links → lifestyle categories (people/vehicles/places) → brand showcase → social promotion → footer"
+    },
+    "novelTypeSummary": {
+      "hasNovelTypes": true,
+      "novelTypeNames": [
+        "animated-hero",
+        "issue-header",
+        "lifestyle-category",
+        "brand-directory"
+      ],
+      "explanation": "Found several unique patterns specific to lifestyle newsletters: animated GIF hero sections, themed 'Summer-Enhancing' categories, brand directory showcases, and specific issue header styling that goes beyond standard newsletter patterns."
+    }
+  },
+  "content": {
+    "reasoning": "I extracted content by identifying the structural sections and their purposes. The email is a lifestyle newsletter with curated content, featuring an issue number, editorial intro, news links, lifestyle categories (people, vehicles, places), brand showcase, and social promotion. I preserved HTML formatting in links and emphasized text while organizing content by the identified section types.",
+    "emailType": "newsletter",
+    "emailSubtype": "lifestyle-curation",
+    "title": "PALM REPORT #001 ☼ Jacquemus • Topless Vehicles • Antiques Trafficking",
+    "preheader": "With tasting notes of topless vehicles, Marseille-inspired life philosophy, high crime in the luxury art world...",
+    "contentBySectionType": {
+      "header": {
+        "instances": [
+          {
+            "extractedData": {
+              "logoUrl": "https://bucket.mlcdn.com/a/1351/1351220/images/4ead8170ca4cf65952c5a34dc7d98c0af28e93be.png",
+              "logoLink": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5MzM0JmQ9cTRiNHk1cg==.r3nC8r0BKmx_Kh_HUGIMQJoVCHuqEZfOJxeb1tGwpH8"
+            }
+          }
+        ]
+      },
+      "animated-hero": {
+        "instances": [
+          {
+            "extractedData": {
+              "heroGif": "https://bucket.mlcdn.com/a/1351/1351220/images/cbdac60d8d8a49a351da722f0e974c5bfe9fe392.gif"
+            }
+          }
+        ]
+      },
+      "issue-header": {
+        "instances": [
+          {
+            "extractedData": {
+              "issueNumber": "ISSUE 001"
+            }
+          }
+        ]
+      },
+      "editorial": {
+        "instances": [
+          {
+            "extractedData": {
+              "introText": "<p>With tasting notes of topless vehicles, Marseille-inspired life philosophy, high crime in the luxury art world, the internet's hottest brands and of course, Paradiso. Garnished with a Poolsuite (née Poolside FM) olive blanket.</p><p>The good life beckons once more!</p>"
+            }
+          }
+        ]
+      },
+      "link-list": {
+        "instances": [
+          {
+            "extractedData": {
+              "linkItems": [
+                {
+                  "text": "The latest in that antiquities trafficking case",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5MzM2JmQ9ajRsNnIxZQ==.BFUlyfra9pNhjPnnWvBT8cFCCSA7DDCvXMXVQGUV3iU"
+                },
+                {
+                  "text": "Kendrick is having fun in Ghana",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5MzM4JmQ9ajB5NmgzeA==.wkXxuwg0X5XqPf_AogiVFde-I_L83KHUJMFtA9QKn9o"
+                },
+                {
+                  "text": "The untold story of the fearless Connie Fleming, whom you may recognise from the door at our latest party at Le Bain in NYC",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5MzQwJmQ9ZjVrOHgycg==.yPugREwBNNTSZ3sfEqhkMXDkYp3zWL8nQGnRg6sQ8mQ"
+                },
+                {
+                  "text": "An electric blue villa previously owned by Yves Saint Laurent has hit the market",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5MzQ0JmQ9dTZlMnYxcA==.1TXIhzxuLqz9hNHhLvHrlmyZ8mcDZtW-H5Fe5Mm24IY"
+                },
+                {
+                  "text": "Why don't all air conditioners come with their own vinyl soundtrack, like this one from '87?",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5MzQ2JmQ9cDRzM2U5eQ==._PtTCKwBmz2tF5Azb3ByNYzuYSzJgm9b531yHSJbF-c"
+                },
+                {
+                  "text": "Poolsuite FM's got you covered, recently heralded as App of the Day on the App Store",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5MzQ4JmQ9ZzhsMGQwcQ==.GvsV5UCd21Jz1oFNcjWjw11I10BQHmOvUoRMrGbI6pA"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "lifestyle-category": {
+        "instances": [
+          {
+            "extractedData": {
+              "categoryTitle": "SUMMER-ENHANCING PEOPLE",
+              "featuredImage": "https://bucket.mlcdn.com/a/1351/1351220/images/a3c9ac5036ff55cc5d4ebfdb3c6c034f7f448c09.png",
+              "linkedImage": "https://bucket.mlcdn.com/a/1351/1351220/images/cac0057b4398437817ad13887c281acb3737a171.png",
+              "linkedImageUrl": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5MzU0JmQ9ZzliMm04YQ==.2Vl10IIIPFcfAeubFL0rdb5bkIWYi9jzcoIs44nW8QM",
+              "description": "<p>\"Le Coup de Soileil\" collection (translation: <em>sunburn</em>) from 2020 in the lavender fields of Valensole.</p><p>\"My name is Simon, I like blue and white, stripes, the sun, fruits, circles, life, poetry, Marseille and the 80s\" reads the bio of fashion phenomenonn Simon Porte Jacquemus, who grew up in the French countryside with one of his biggest inspirations: his grandmother <a href=\"https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5MzU3JmQ9ZTdzNnA2bw==.8q0ciz_d64Kp9WsJ_JJmEPLVhBaw99KjQT1JHoLHXCI\">Liline</a>.</p>"
+            }
+          },
+          {
+            "extractedData": {
+              "categoryTitle": "SUMMER-ENHANCING VEHICLES",
+              "description": "<p><a href=\"https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5Mzc1JmQ9bTNqMXczbQ==.jJyuPlcNDuZem4t6CCXYh3RRwfD53CtVF_pxJGZsu9A\">EXHIBIT A: BMW E30 Cabrio</a> • <a href=\"https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5Mzc2JmQ9bTFnOXc2aw==.DXYy9EHRrAZms7Fh-AL7eGDe0d_BDP3REoVlvmhT9Uo\">EXHIBIT B: 1985 TOYOTA FJ73 MWB LandCruiser</a> • <a href=\"https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5Mzc3JmQ9bDBlM2QwaQ==.MXdJuKqtcNh1AQBHVt0X1cmZWGRxGa3828GMUA_0L7o\">EXHIBIT C: THE PANDA TOPLESS</a></p>",
+              "featuredImage": "https://bucket.mlcdn.com/a/1351/1351220/images/922ea943f8ce725f4204ff4767fab484eff6f4cc.png"
+            }
+          },
+          {
+            "extractedData": {
+              "categoryTitle": "SUMMER-ENHANCING PLACES",
+              "featuredImage": "https://bucket.mlcdn.com/a/1351/1351220/images/5136db3641afa4a19f7d7b9ec15c73de4e13d9dc.png",
+              "linkedImage": "https://bucket.mlcdn.com/a/1351/1351220/images/ba21778098bbc1b2a45df10ce952845816108b21.gif",
+              "linkedImageUrl": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5Mzc4JmQ9cTRhMnI4dw==.aKSgmZk6NBQ2BVCDOtrQ2m2AG-wyE8-lUZB8UsKsbNE"
+            }
+          }
+        ]
+      },
+      "brand-directory": {
+        "instances": [
+          {
+            "extractedData": {
+              "introText": "<p>Fill out <a href=\"https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5MzgzJmQ9dTJkMWsxdw==.mfSztM_8ZfVOsIz3S97Dyzt3OgSQC_V5UKLAA_l4C0U\"><strong>this form</strong></a> to feature here in front of over 94,000 of the internet's most illustrious readers.</p>",
+              "brandList": [
+                {
+                  "name": "Vacation®",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5Mzg1JmQ9djliNm05YQ==.Ta5UgKckVC7e2ApzeLUG4TP9qk_Q9a4F2b3mb5NR9eo",
+                  "description": "is the world's best smelling sunscreen. By us!"
+                },
+                {
+                  "name": "Hôtel Weekend",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5Mzg2JmQ9dTlhOW40ZQ==.n-M2GORlg_rN_i3FRYLXoKIw0n8Cqg2a2PBDO4Xv3qI",
+                  "description": "is an online magazine & traveling concept store made for the modern & conscious traveller."
+                },
+                {
+                  "name": "Crown Affair",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5Mzg3JmQ9dTBhNWYxZA==.sRkeYsd9Y52vMBzQVMHkDh5b1ErFBtHvGtQnJYx6QeU",
+                  "description": "is a love letter to your hair, transforming the way you care for your strands."
+                },
+                {
+                  "name": "Haus",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5Mzg4JmQ9djhzNmUwaA==.Q5c61R3r4kSZekf-4koAv-2kIZUf--T8jl9lE5xiJqU",
+                  "description": "make low ABV apéritifs with real fruits and botanicals, no fake stuff or excess sugar."
+                },
+                {
+                  "name": "COPSON",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5Mzg5JmQ9dDhkNHUxbg==.Q2xQIGyNEb_VgUEYLZxfBHGz4-_GVYfLFZhUQu_SpWw",
+                  "description": "is a lifestyle brand based between London and rural Italy, rooted in skateboard culture and the preservation of the Italian good life."
+                },
+                {
+                  "name": "The Mighty Company",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5MzkwJmQ9bTRpOW85dg==.TaSMkqrm35wfWvEdkso3Kvqr-GZeaWy4vzgAd4sm0-4",
+                  "description": "is a luxury outerwear brand inspired by the vibrancy of the '90s West Coast."
+                },
+                {
+                  "name": "Coconut Cartel",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5MzkxJmQ9aDd0MGc2Yg==._6HinBSC2zC9VDL3Znodt4dkfFYl_weY2ffCNAIhFp0",
+                  "description": "is premium rum cut with coconut water."
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "social-cta": {
+        "instances": [
+          {
+            "extractedData": {
+              "socialHandle": "@PALMREPORT @PALMREPORT @PALMREPORT",
+              "linkUrl": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5MzgyJmQ9dDBkNGs0eg==.ckaFPnYuHPXfksHULrI_JHcYLHnHQXL8sFGyBF8o6cI"
+            }
+          },
+          {
+            "extractedData": {
+              "socialHandle": "@POOLSUITE @POOLSUITE @POOLSUITE",
+              "linkUrl": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5Mzk0JmQ9ZTV5NG4ydQ==.8kE2Wg6ykQw8RN_rIxISEHlXU8yK-8cjqg4C7rTkPWA"
+            }
+          }
+        ]
+      },
+      "footer": {
+        "instances": [
+          {
+            "extractedData": {
+              "socialLinks": [
+                {
+                  "platform": "website",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5Mzk2JmQ9azZiMmkybw==.qclG8FDZ_7j_liy02Z55-2R0ewwizeeg-eHMbemlkKY"
+                },
+                {
+                  "platform": "twitter",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5Mzk3JmQ9ejJxNnM2Zg==.Ma0pfmLL1BCVaMuVPpQHa5h8bsOK9Ydz_netp78Ylds"
+                },
+                {
+                  "platform": "instagram",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5Mzk4JmQ9djdwOG8zbg==.AVz1J-iTvGtXkahHoX4q56LrOo8V5GzePvbe96Qzpz4"
+                },
+                {
+                  "platform": "soundcloud",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5Mzk5JmQ9ajlpNmM3YQ==.kIzNF1ejvvJ5hBtOYJ75celF5kLTQMUveeaCvkmlSwQ"
+                },
+                {
+                  "platform": "opensea",
+                  "url": "https://click.mlsend.com/link/c/YT0xOTY2ODgwNzQ2MTAyNTkzMzk0JmM9cThjNCZlPTMwMzYxODg3JmI9OTc4Nzg5NDAwJmQ9cjJ6M2oybg==.IO36THGpMxkv0izDHP87Wiba-TMxNo5SeRVi7Slz-cI"
+                }
+              ],
+              "companyInfo": "<p>PALM REPORT</p><p>A curated media outlet & lifestyle research facility</p><p>By Poolsuite (née Poolside FM)</p>",
+              "unsubscribeText": "<p>You received this email because you signed up on our website, app or opted-in to our newsletter during a purchase.</p>"
+            }
+          }
+        ]
+      }
+    },
+    "sampleData": {
+      "title": "PALM REPORT #002 ☼ Summer Collections • Beach Vehicles • Art World News",
+      "preheader": "With tasting notes of coastal adventures, Mediterranean inspiration, and the latest in luxury lifestyle...",
+      "issueNumber": "002",
+      "date": "June 2024",
+      "sections": [
+        {
+          "type": "editorial",
+          "content": "Welcome to another edition of curated lifestyle content..."
+        },
+        {
+          "type": "news-links",
+          "items": [
+            {
+              "title": "Latest art market developments",
+              "url": "https://example.com/art-news"
+            },
+            {
+              "title": "Celebrity summer destinations",
+              "url": "https://example.com/destinations"
+            }
+          ]
+        },
+        {
+          "type": "lifestyle-categories",
+          "categories": [
+            {
+              "title": "SUMMER-ENHANCING PEOPLE",
+              "featured_person": "Designer Name",
+              "description": "Profile of influential lifestyle figure...",
+              "images": [
+                "https://example.com/person1.jpg"
+              ]
+            },
+            {
+              "title": "SUMMER-ENHANCING VEHICLES",
+              "vehicles": [
+                {
+                  "name": "Classic Convertible",
+                  "url": "https://example.com/vehicle1"
+                }
+              ]
+            },
+            {
+              "title": "SUMMER-ENHANCING PLACES",
+              "locations": [
+                {
+                  "name": "Mediterranean Villa",
+                  "image": "https://example.com/place1.jpg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "brand-showcase",
+          "brands": [
+            {
+              "name": "Sample Brand",
+              "url": "https://example.com/brand",
+              "description": "Premium lifestyle products..."
+            }
+          ]
+        }
+      ],
+      "header": {
+        "logoUrl": "https://bucket.mlcdn.com/a/1351/1351220/images/4ead8170ca4cf65952c5a34dc7d98c0af28e93be.png",
+        "logoLink": "https://palmreport.com"
+      },
+      "footer": {
+        "companyName": "PALM REPORT",
+        "tagline": "A curated media outlet & lifestyle research facility",
+        "byline": "By Poolsuite (née Poolside FM)",
+        "socialLinks": {
+          "website": "https://palmreport.com",
+          "twitter": "https://twitter.com/palmreport",
+          "instagram": "https://instagram.com/palmreport",
+          "soundcloud": "https://soundcloud.com/poolsuite"
+        },
+        "unsubscribeLink": "https://unsubscribe.link"
+      }
+    },
+    "staticContent": {
+      "elements": [
+        "Header logo and branding",
+        "Animated GIF hero section",
+        "Social media promotion sections (@PALMREPORT, @POOLSUITE)",
+        "Footer social icons and company information",
+        "Unsubscribe text and legal information",
+        "Section headers styling and formatting",
+        "Brand showcase introduction text",
+        "Newsletter signup call-to-action"
+      ]
+    }
+  },
+  "components": {
+    "reasoning": "I extracted components by analyzing the HTML structure and identifying distinct sections. Each component follows the project's nested object path convention (e.g., header.logoUrl, intro.content). I preserved all inline styles and table structures critical for email clients. The components are designed to be self-contained and reusable, with proper Maizzle syntax for loops and conditionals.",
+    "components": [
+      {
+        "name": "Header",
+        "type": "header",
+        "description": "Brand logo section with centered alignment",
+        "html": "<table align=\"center\" border=\"0\" bgcolor=\"#FFFCF2\" class=\"mlContentTable mlContentTableDefault\" cellpadding=\"0\" cellspacing=\"0\" width=\"640\">\n  <tr>\n    <td class=\"mlContentTableCardTd\">\n      <table align=\"center\" bgcolor=\"#FFFCF2\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mlContentTable ml-default\" style=\"width: 640px; min-width: 640px;\" width=\"640\">\n        <tr>\n          <td>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"30\" class=\"spacingHeight-30\" style=\"line-height: 30px; min-height: 30px;\"></td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td align=\"center\" style=\"padding: 0px 40px;\" class=\"mlContentOuter\">\n                  <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"100%\">\n                    <tr>\n                      <td align=\"center\">\n                        <if condition=\"header.logoLink\">\n                          <a href=\"{{ header.logoLink }}\" target=\"_blank\">\n                            <img src=\"{{ header.logoImage }}\" id=\"logoBlock-4\" border=\"0\" alt=\"\" width=\"560\" style=\"display: block;\">\n                          </a>\n                        </if>\n                        <if condition=\"!header.logoLink\">\n                          <img src=\"{{ header.logoImage }}\" id=\"logoBlock-4\" border=\"0\" alt=\"\" width=\"560\" style=\"display: block;\">\n                        </if>\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"20\" class=\"spacingHeight-20\" style=\"line-height: 20px; min-height: 20px;\"></td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>",
+        "dataPath": "header",
+        "variables": [
+          {
+            "path": "header.logoImage",
+            "type": "image",
+            "required": true,
+            "description": "Brand logo image URL"
+          },
+          {
+            "path": "header.logoLink",
+            "type": "url",
+            "required": false,
+            "description": "Optional link destination for logo"
+          }
+        ]
+      },
+      {
+        "name": "AnimatedHero",
+        "type": "animated-hero",
+        "description": "Animated GIF hero section for visual engagement",
+        "html": "<table align=\"center\" border=\"0\" bgcolor=\"#fffcf2\" class=\"mlContentTable mlContentTableDefault\" cellpadding=\"0\" cellspacing=\"0\" width=\"640\">\n  <tr>\n    <td class=\"mlContentTableCardTd\">\n      <table align=\"center\" bgcolor=\"#fffcf2\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mlContentTable ml-default\" style=\"width: 640px; min-width: 640px;\" width=\"640\">\n        <tr>\n          <td>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"20\" class=\"spacingHeight-20\" style=\"line-height: 20px; min-height: 20px;\"></td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td align=\"center\" style=\"padding: 0px 0px;\" class=\"\">\n                  <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"100%\">\n                    <tr>\n                      <td align=\"center\" id=\"imageBlock-6\">\n                        <img src=\"{{ hero.gifUrl }}\" border=\"0\" alt=\"\" width=\"640\" style=\"display: block;\">\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"40\" class=\"spacingHeight-40\" style=\"line-height: 40px; min-height: 40px;\"></td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>",
+        "dataPath": "hero",
+        "variables": [
+          {
+            "path": "hero.gifUrl",
+            "type": "image",
+            "required": true,
+            "description": "Animated GIF URL for hero section"
+          }
+        ]
+      },
+      {
+        "name": "IssueHeader",
+        "type": "issue-header",
+        "description": "Newsletter issue number identification with blue styling",
+        "html": "<table align=\"center\" border=\"0\" bgcolor=\"#fffcf2\" class=\"mlContentTable mlContentTableDefault\" cellpadding=\"0\" cellspacing=\"0\" width=\"640\">\n  <tr>\n    <td class=\"mlContentTableCardTd\">\n      <table align=\"center\" bgcolor=\"#fffcf2\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mlContentTable ml-default\" style=\"width: 640px; min-width: 640px;\" width=\"640\">\n        <tr>\n          <td>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"20\" class=\"spacingHeight-20\" style=\"line-height: 20px; min-height: 20px;\"></td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td align=\"center\" style=\"padding: 0px 40px;\" class=\"mlContentOuter\">\n                  <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"100%\">\n                    <tr>\n                      <td align=\"center\" class=\"bodyTitle\" style=\"font-family: Helvetica, sans-serif; font-size: 20px; font-weight: 700; line-height: 150%; color: #2664F6; text-transform: none; font-style: normal; text-decoration: none; text-align: center;\">{{ issue.number }}</td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>",
+        "dataPath": "issue",
+        "variables": [
+          {
+            "path": "issue.number",
+            "type": "string",
+            "required": true,
+            "description": "Issue number or identifier (e.g., 'ISSUE 001')"
+          }
+        ]
+      },
+      {
+        "name": "Editorial",
+        "type": "editorial",
+        "description": "Editor's introduction and issue overview with centered blue text",
+        "html": "<table align=\"center\" border=\"0\" bgcolor=\"#fffcf2\" class=\"mlContentTable mlContentTableDefault\" cellpadding=\"0\" cellspacing=\"0\" width=\"640\">\n  <tr>\n    <td class=\"mlContentTableCardTd\">\n      <table align=\"center\" bgcolor=\"#fffcf2\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mlContentTable ml-default\" style=\"width: 640px; min-width: 640px;\" width=\"640\">\n        <tr>\n          <td>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"10\" class=\"spacingHeight-10\" style=\"line-height: 10px; min-height: 10px;\"></td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td align=\"center\" style=\"padding: 0px 40px;\" class=\"mlContentOuter\">\n                  <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"100%\">\n                    <tr>\n                      <td class=\"bodyTitle\" style=\"font-family: Helvetica, sans-serif; font-size: 14px; line-height: 125%; color: #2664F6;\">\n                        {{{ editorial.content }}}\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"20\" class=\"spacingHeight-20\" style=\"line-height: 20px; min-height: 20px;\"></td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>",
+        "dataPath": "editorial",
+        "variables": [
+          {
+            "path": "editorial.content",
+            "type": "html",
+            "required": true,
+            "description": "Editorial introduction HTML content"
+          }
+        ]
+      },
+      {
+        "name": "LinkList",
+        "type": "link-list",
+        "description": "Curated collection of news links with sun bullet points",
+        "html": "<table align=\"center\" border=\"0\" bgcolor=\"#fffcf2\" class=\"mlContentTable mlContentTableDefault\" cellpadding=\"0\" cellspacing=\"0\" width=\"640\">\n  <tr>\n    <td class=\"mlContentTableCardTd\">\n      <table align=\"center\" bgcolor=\"#fffcf2\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mlContentTable ml-default\" style=\"width: 640px; min-width: 640px;\" width=\"640\">\n        <tr>\n          <td>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"20\" class=\"spacingHeight-20\" style=\"line-height: 20px; min-height: 20px;\"></td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td align=\"center\" style=\"padding: 0px 40px;\" class=\"mlContentOuter\">\n                  <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"100%\">\n                    <tr>\n                      <td class=\"bodyTitle\" style=\"font-family: Helvetica, sans-serif; font-size: 14px; line-height: 150%; color: #000000;\">\n                        <each loop=\"item in links.items\">\n                          <p style=\"margin-top: 0px; margin-bottom: 10px; line-height: 150%;\">☼ <a href=\"{{ item.url }}\" target=\"_blank\" style=\"word-break: break-word; font-family: Helvetica, sans-serif; color: #2664F6; text-decoration: underline;\">{{ item.title }}</a></p>\n                        </each>\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"30\" class=\"spacingHeight-30\" style=\"line-height: 30px; min-height: 30px;\"></td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>",
+        "dataPath": "links",
+        "variables": [
+          {
+            "path": "links.items",
+            "type": "array",
+            "required": true,
+            "description": "Array of link objects with title and url properties"
+          }
+        ]
+      },
+      {
+        "name": "LifestyleCategory",
+        "type": "lifestyle-category",
+        "description": "Themed content sections with title, images, and descriptive text",
+        "html": "<table align=\"center\" border=\"0\" bgcolor=\"#fffcf2\" class=\"mlContentTable mlContentTableDefault\" cellpadding=\"0\" cellspacing=\"0\" width=\"640\">\n  <tr>\n    <td class=\"mlContentTableCardTd\">\n      <table align=\"center\" bgcolor=\"#fffcf2\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mlContentTable ml-default\" style=\"width: 640px; min-width: 640px;\" width=\"640\">\n        <tr>\n          <td>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"20\" class=\"spacingHeight-20\" style=\"line-height: 20px; min-height: 20px;\"></td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td align=\"center\" style=\"padding: 0px 40px;\" class=\"mlContentOuter\">\n                  <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"100%\">\n                    <tr>\n                      <td align=\"center\" class=\"bodyTitle\" style=\"font-family: Helvetica, sans-serif; font-size: 20px; font-weight: 700; line-height: 150%; color: #2664F6; text-transform: none; font-style: normal; text-decoration: none; text-align: center;\">{{ category.title }}</td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"20\" class=\"spacingHeight-20\" style=\"line-height: 20px; min-height: 20px;\"></td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>\n<if condition=\"category.featuredImage\">\n  <table align=\"center\" border=\"0\" bgcolor=\"#fffcf2\" class=\"mlContentTable mlContentTableDefault\" cellpadding=\"0\" cellspacing=\"0\" width=\"640\">\n    <tr>\n      <td class=\"mlContentTableCardTd\">\n        <table align=\"center\" bgcolor=\"#fffcf2\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mlContentTable ml-default\" style=\"width: 640px; min-width: 640px;\" width=\"640\">\n          <tr>\n            <td>\n              <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n                <tr>\n                  <td align=\"center\" style=\"padding: 0px 0px;\" class=\"\">\n                    <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"100%\">\n                      <tr>\n                        <td align=\"center\">\n                          <if condition=\"category.featuredImageLink\">\n                            <a href=\"{{ category.featuredImageLink }}\" target=\"_blank\">\n                              <img src=\"{{ category.featuredImage }}\" border=\"0\" alt=\"\" width=\"640\" style=\"display: block;\">\n                            </a>\n                          </if>\n                          <if condition=\"!category.featuredImageLink\">\n                            <img src=\"{{ category.featuredImage }}\" border=\"0\" alt=\"\" width=\"640\" style=\"display: block;\">\n                          </if>\n                        </td>\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              </table>\n              <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n                <tr>\n                  <td height=\"30\" class=\"spacingHeight-30\" style=\"line-height: 30px; min-height: 30px;\"></td>\n                </tr>\n              </table>\n            </td>\n          </tr>\n        </table>\n      </td>\n    </tr>\n  </table>\n</if>\n<if condition=\"category.description\">\n  <table align=\"center\" border=\"0\" bgcolor=\"#fffcf2\" class=\"mlContentTable mlContentTableDefault\" cellpadding=\"0\" cellspacing=\"0\" width=\"640\">\n    <tr>\n      <td class=\"mlContentTableCardTd\">\n        <table align=\"center\" bgcolor=\"#fffcf2\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mlContentTable ml-default\" style=\"width: 640px; min-width: 640px;\" width=\"640\">\n          <tr>\n            <td>\n              <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n                <tr>\n                  <td height=\"30\" class=\"spacingHeight-30\" style=\"line-height: 30px; min-height: 30px;\"></td>\n                </tr>\n              </table>\n              <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n                <tr>\n                  <td align=\"center\" style=\"padding: 0px 40px;\" class=\"mlContentOuter\">\n                    <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"100%\">\n                      <tr>\n                        <td class=\"bodyTitle\" style=\"font-family: Helvetica, sans-serif; font-size: 14px; line-height: 150%; color: #000000;\">\n                          {{{ category.description }}}\n                        </td>\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              </table>\n              <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n                <tr>\n                  <td height=\"20\" class=\"spacingHeight-20\" style=\"line-height: 20px; min-height: 20px;\"></td>\n                </tr>\n              </table>\n            </td>\n          </tr>\n        </table>\n      </td>\n    </tr>\n  </table>\n</if>\n<each loop=\"image in category.additionalImages\">\n  <table align=\"center\" border=\"0\" bgcolor=\"#fffcf2\" class=\"mlContentTable mlContentTableDefault\" cellpadding=\"0\" cellspacing=\"0\" width=\"640\">\n    <tr>\n      <td class=\"mlContentTableCardTd\">\n        <table align=\"center\" bgcolor=\"#fffcf2\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mlContentTable ml-default\" style=\"width: 640px; min-width: 640px;\" width=\"640\">\n          <tr>\n            <td>\n              <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n                <tr>\n                  <td align=\"center\" style=\"padding: 0px 0px;\" class=\"\">\n                    <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"100%\">\n                      <tr>\n                        <td align=\"center\">\n                          <if condition=\"image.link\">\n                            <a href=\"{{ image.link }}\" target=\"_blank\">\n                              <img src=\"{{ image.url }}\" border=\"0\" alt=\"\" width=\"640\" style=\"display: block;\">\n                            </a>\n                          </if>\n                          <if condition=\"!image.link\">\n                            <img src=\"{{ image.url }}\" border=\"0\" alt=\"\" width=\"640\" style=\"display: block;\">\n                          </if>\n                        </td>\n                      </tr>\n                    </table>\n                  </td>\n                </tr>\n              </table>\n            </td>\n          </tr>\n        </table>\n      </td>\n    </tr>\n  </table>\n</each>",
+        "dataPath": "category",
+        "variables": [
+          {
+            "path": "category.title",
+            "type": "string",
+            "required": true,
+            "description": "Category title (e.g., 'SUMMER-ENHANCING PEOPLE')"
+          },
+          {
+            "path": "category.featuredImage",
+            "type": "image",
+            "required": false,
+            "description": "Main category image URL"
+          },
+          {
+            "path": "category.featuredImageLink",
+            "type": "url",
+            "required": false,
+            "description": "Optional link for featured image"
+          },
+          {
+            "path": "category.description",
+            "type": "html",
+            "required": false,
+            "description": "Rich text description with links"
+          },
+          {
+            "path": "category.additionalImages",
+            "type": "array",
+            "required": false,
+            "description": "Array of additional image objects with url and optional link properties"
+          }
+        ]
+      },
+      {
+        "name": "BrandDirectory",
+        "type": "brand-directory",
+        "description": "Curated list of lifestyle brands with descriptions",
+        "html": "<table align=\"center\" border=\"0\" bgcolor=\"#fffcf2\" class=\"mlContentTable mlContentTableDefault\" cellpadding=\"0\" cellspacing=\"0\" width=\"640\">\n  <tr>\n    <td class=\"mlContentTableCardTd\">\n      <table align=\"center\" bgcolor=\"#fffcf2\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mlContentTable ml-default\" style=\"width: 640px; min-width: 640px;\" width=\"640\">\n        <tr>\n          <td>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"60\" class=\"spacingHeight-60\" style=\"line-height: 60px; min-height: 60px;\"></td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td align=\"center\" style=\"padding: 0px 0px;\" class=\"\">\n                  <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"100%\">\n                    <tr>\n                      <td align=\"center\">\n                        <img src=\"{{ brands.headerImage }}\" border=\"0\" alt=\"\" width=\"640\" style=\"display: block;\">\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>\n<table align=\"center\" border=\"0\" bgcolor=\"#fffcf2\" class=\"mlContentTable mlContentTableDefault\" cellpadding=\"0\" cellspacing=\"0\" width=\"640\">\n  <tr>\n    <td class=\"mlContentTableCardTd\">\n      <table align=\"center\" bgcolor=\"#fffcf2\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mlContentTable ml-default\" style=\"width: 640px; min-width: 640px;\" width=\"640\">\n        <tr>\n          <td>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"20\" class=\"spacingHeight-20\" style=\"line-height: 20px; min-height: 20px;\"></td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td align=\"center\" style=\"padding: 0px 40px;\" class=\"mlContentOuter\">\n                  <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"100%\">\n                    <tr>\n                      <td class=\"bodyTitle\" style=\"font-family: Helvetica, sans-serif; font-size: 14px; line-height: 150%; color: #000000;\">\n                        {{{ brands.introText }}}\n                        <each loop=\"brand in brands.brandList\">\n                          <p style=\"margin-top: 0px; margin-bottom: 10px; line-height: 150%;\"><a href=\"{{ brand.url }}\" target=\"_blank\" style=\"word-break: break-word; font-family: Helvetica, sans-serif; color: #2664F6; text-decoration: underline;\">{{ brand.name }}</a> {{ brand.description }}</p>\n                        </each>\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"30\" class=\"spacingHeight-30\" style=\"line-height: 30px; min-height: 30px;\"></td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>",
+        "dataPath": "brands",
+        "variables": [
+          {
+            "path": "brands.headerImage",
+            "type": "image",
+            "required": true,
+            "description": "Header image for brand directory section"
+          },
+          {
+            "path": "brands.introText",
+            "type": "html",
+            "required": true,
+            "description": "Introduction text and call-to-action for featuring brands"
+          },
+          {
+            "path": "brands.brandList",
+            "type": "array",
+            "required": true,
+            "description": "Array of brand objects with name, url, and description properties"
+          }
+        ]
+      },
+      {
+        "name": "SocialCta",
+        "type": "social-cta",
+        "description": "Social media handle promotion with repeated text pattern",
+        "html": "<table align=\"center\" border=\"0\" bgcolor=\"#fffcf2\" class=\"mlContentTable mlContentTableDefault\" cellpadding=\"0\" cellspacing=\"0\" width=\"640\">\n  <tr>\n    <td class=\"mlContentTableCardTd\">\n      <table align=\"center\" bgcolor=\"#fffcf2\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mlContentTable ml-default\" style=\"width: 640px; min-width: 640px;\" width=\"640\">\n        <tr>\n          <td>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"20\" class=\"spacingHeight-20\" style=\"line-height: 20px; min-height: 20px;\"></td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td align=\"center\" style=\"padding: 0px 40px;\" class=\"mlContentOuter\">\n                  <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"100%\">\n                    <tr>\n                      <td align=\"center\" class=\"bodyTitle\" style=\"font-family: Helvetica, sans-serif; font-size: 20px; font-weight: 700; line-height: 150%; color: #2664F6; text-transform: none; font-style: normal; text-decoration: none; text-align: center;\">\n                        <a href=\"{{ social.linkUrl }}\" style=\"text-decoration: none; color: #2664F6; text-transform: none; font-style: normal; text-decoration: none;\" target=\"_blank\">{{ social.handle }} {{ social.handle }} {{ social.handle }}</a>\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"20\" class=\"spacingHeight-20\" style=\"line-height: 20px; min-height: 20px;\"></td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>",
+        "dataPath": "social",
+        "variables": [
+          {
+            "path": "social.handle",
+            "type": "string",
+            "required": true,
+            "description": "Social media handle (e.g., '@PALMREPORT')"
+          },
+          {
+            "path": "social.linkUrl",
+            "type": "url",
+            "required": true,
+            "description": "Link to social media profile"
+          }
+        ]
+      },
+      {
+        "name": "Footer",
+        "type": "footer",
+        "description": "Newsletter footer with social links, company info, and unsubscribe",
+        "html": "<table align=\"center\" border=\"0\" bgcolor=\"#FFFCF2\" class=\"mlContentTable mlContentTableFooterDefault\" cellpadding=\"0\" cellspacing=\"0\" width=\"640\">\n  <tr>\n    <td class=\"mlContentTableFooterCardTd\">\n      <table align=\"center\" bgcolor=\"#FFFCF2\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mlContentTable ml-default\" style=\"width: 640px; min-width: 640px;\" width=\"640\">\n        <tr>\n          <td>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"80\" class=\"spacingHeight-80\" style=\"line-height: 80px; min-height: 80px;\"></td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td align=\"center\" style=\"padding: 0px 150px;\" class=\"mlContentOuter\">\n                  <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"100%\">\n                    <tr>\n                      <td align=\"center\">\n                        <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\">\n                          <tr>\n                            <each loop=\"link in footer.socialLinks\">\n                              <td align=\"center\" width=\"24\" style=\"padding: 0px 5px;\">\n                                <a href=\"{{ link.url }}\" target=\"_blank\">\n                                  <img width=\"24\" alt=\"{{ link.platform }}\" src=\"{{ link.icon }}\" style=\"display: block;\" border=\"0\">\n                                </a>\n                              </td>\n                            </each>\n                          </tr>\n                        </table>\n                      </td>\n                    </tr>\n                    <tr>\n                      <td height=\"20\" class=\"spacingHeight-20\"></td>\n                    </tr>\n                    <tr>\n                      <td align=\"center\" class=\"bodyTitle\" style=\"font-family: Helvetica, sans-serif; font-size: 12px; line-height: 100%; color: #111111;\">\n                        {{{ footer.companyInfo }}}\n                      </td>\n                    </tr>\n                    <tr>\n                      <td height=\"25\" class=\"spacingHeight-20\"></td>\n                    </tr>\n                    <tr>\n                      <td align=\"center\" class=\"bodyTitle\" style=\"font-family: Helvetica, sans-serif; font-size: 12px; line-height: 150%; color: #111111;\">\n                        {{{ footer.subscriptionInfo }}}\n                      </td>\n                    </tr>\n                    <tr>\n                      <td height=\"10\"></td>\n                    </tr>\n                    <tr>\n                      <td align=\"center\" class=\"bodyTitle\" style=\"font-family: Helvetica, sans-serif; font-size: 12px; line-height: 150%; color: #111111;\">\n                        <a href=\"{{ footer.unsubscribeLink }}\" style=\"color: #111111; text-decoration: underline;\">\n                          <span style=\"color: #111111;\">Unsubscribe</span>\n                        </a>\n                      </td>\n                    </tr>\n                  </table>\n                </td>\n              </tr>\n            </table>\n            <table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n              <tr>\n                <td height=\"40\" class=\"spacingHeight-40\" style=\"line-height: 40px; min-height: 40px;\"></td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>",
+        "dataPath": "footer",
+        "variables": [
+          {
+            "path": "footer.socialLinks",
+            "type": "array",
+            "required": true,
+            "description": "Array of social media links with url, platform, and icon properties"
+          },
+          {
+            "path": "footer.companyInfo",
+            "type": "html",
+            "required": true,
+            "description": "Company name and description HTML"
+          },
+          {
+            "path": "footer.subscriptionInfo",
+            "type": "html",
+            "required": true,
+            "description": "Subscription information text"
+          },
+          {
+            "path": "footer.unsubscribeLink",
+            "type": "url",
+            "required": true,
+            "description": "Unsubscribe link URL"
+          }
+        ]
+      }
+    ],
+    "layout": {
+      "name": "main.html",
+      "html": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 3.2//EN\">\n<html lang=\"en\">\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"format-detection\" content=\"address=no\">\n  <meta name=\"format-detection\" content=\"telephone=no\">\n  <meta name=\"format-detection\" content=\"email=no\">\n  <meta name=\"x-apple-disable-message-reformatting\">\n  <style type=\"text/css\">\n    @import url(\"https://static.mailerlite.com/assets/plugins/groot/modules/includes/groot_fonts/import.css?version=1654523\");\n  </style>\n  <style type=\"text/css\">\n    {{{ globalStyles.embedded }}}\n  </style>\n  <title>{{ title }}</title>\n  <meta name=\"robots\" content=\"noindex, nofollow\">\n</head>\n<body class=\"mlBodyBackground\" style=\"padding: 0; margin: 0; -webkit-font-smoothing:antialiased; background-color:#FFFCF2; -webkit-text-size-adjust:none;\">\n  <div role=\"article\" aria-roledescription=\"email\" aria-label=\"{{ title }}\">\n    <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" bgcolor=\"#FFFCF2\" class=\"mainTable mlBodyBackground\" dir=\"ltr\" background=\"\">\n      <tr>\n        <td class=\"mlTemplateContainer\" align=\"center\">\n          <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mobileHide\">\n            <tr>\n              <td align=\"center\">\n                <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n                  <tr>\n                    <td colspan=\"2\" height=\"20\"></td>\n                  </tr>\n                  <tr>\n                    <td align=\"left\" style=\"font-family: Helvetica, sans-serif; color: #111111; font-size: 12px; line-height: 18px;\"></td>\n                    <td align=\"right\" style=\"font-family: Helvetica, sans-serif; color: #111111; font-size: 12px; line-height: 18px;\">\n                      <a style=\"color: #111111;\" href=\"#\" target=\"_blank\">View in browser</a>\n                    </td>\n                  </tr>\n                  <tr>\n                    <td colspan=\"2\" height=\"20\"></td>\n                  </tr>\n                </table>\n              </td>\n            </tr>\n          </table>\n          <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"mlContentTable\" width=\"640\">\n            <tr>\n              <td>\n                <block name=\"template\"></block>\n              </td>\n            </tr>\n          </table>\n          <table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" align=\"center\" width=\"640\" style=\"width: 640px; min-width: 640px;\" class=\"mlContentTable\">\n            <tr>\n              <td height=\"40\" class=\"spacingHeight-20\"></td>\n            </tr>\n          </table>\n        </td>\n      </tr>\n    </table>\n  </div>\n</body>\n</html>",
+      "description": "Main layout wrapper with email structure and view in browser link"
+    },
+    "globalStyles": {
+      "embedded": ".ReadMsgBody { width: 100%; }\n.ExternalClass { width: 100%; }\n.ExternalClass * { line-height: 100%; }\n.ExternalClass, .ExternalClass p, .ExternalClass td, .ExternalClass div, .ExternalClass span, .ExternalClass font { line-height: 100%; }\nbody { margin: 0; padding: 0; }\nbody, table, td, p, a, li { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }\ntable td { border-collapse: collapse; }\ntable { border-spacing: 0; border-collapse: collapse; }\np, a, li, td, blockquote { mso-line-height-rule: exactly; }\np, a, li, td, body, table, blockquote { -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; }\nimg, a img { border: 0; outline: none; text-decoration: none; }\nimg { -ms-interpolation-mode: bicubic; }\n* img[tabindex=\"0\"]+div { display: none !important; }\na[href^=tel], a[href^=sms], a[href^=mailto], a[href^=date] { color: inherit; cursor: pointer; text-decoration: none; }\na[x-apple-data-detectors] { color: inherit !important; text-decoration: none !important; font-size: inherit !important; font-family: inherit !important; font-weight: inherit !important; line-height: inherit !important; }\n#MessageViewBody a { color: inherit; text-decoration: none; font-size: inherit; font-family: inherit; font-weight: inherit; line-height: inherit; }\n#MessageViewBody { width: 100% !important; }\n#MessageWebViewDiv { width: 100% !important; }\n@-moz-document url-prefix() { .bodyText p a, .bodyTitle p a { word-break: break-word; } }\n@media screen { body { font-family: Helvetica, sans-serif; } * { direction: ltr; } }\n@media only screen and (min-width:768px) { .mlEmailContainer { width: 640px !important; } }\n@media only screen and (max-width: 640px) { .mlTemplateContainer { padding: 10px 10px 0 10px; } }\n@media only screen and (max-width: 640px) { .mlContentCenter { min-width: 10% !important; margin: 0 !important; float: none !important; } }\n@media only screen and (max-width: 640px) { .mlContentTable { width: 100% !important; min-width: 10% !important; margin: 0 !important; float: none !important; } }\n@media only screen and (max-width: 640px) { .mlContentBlock { display: block !important; width: 100% !important; min-width: 10% !important; margin: 0 !important; float: none !important; } }\n@media only screen and (max-width: 640px) { .mlContentOuter { padding-bottom: 0px !important; padding-left: 15px !important; padding-right: 15px !important; padding-top: 0px !important; } }\n@media only screen and (max-width: 640px) { .mlContentOuterSmall { padding-bottom: 0px !important; padding-left: 10px !important; padding-right: 10px !important; padding-top: 0px !important; } }\n@media only screen and (max-width: 640px) { .mlMenuOuter { padding-bottom: 0px !important; padding-left: 5px !important; padding-right: 5px !important; padding-top: 0px !important; } }\n@media only screen and (max-width: 640px) { .mlContentOuterFullBig { padding: 30px !important; } }\n@media only screen and (max-width: 640px) { .mlContentImage img { height: auto !important; width: 100% !important; } }\n@media only screen and (max-width: 640px) { .mlContentImage160 img { height: auto !important; max-width: 160px; width: 100% !important; } }\n@media only screen and (max-width: 640px) { .mlContentImage260 img { height: auto !important; max-width: 260px; width: 100% !important; } }\n@media only screen and (max-width: 640px) { .mlContentImage { height: 100% !important; width: auto !important; } }\n@media only screen and (max-width: 640px) { .mlProductImage { height: auto !important; width: 100% !important; } }\n@media only screen and (max-width: 640px) { .mlContentButton a { display: block !important; width: auto !important; } }\n@media only screen and (max-width: 640px) { .mobileHide { display: none !important; } }\n@media only screen and (max-width: 640px) { .mobileShow { display: block !important; } }\n@media only screen and (max-width: 640px) { .alignCenter { height: auto !important; text-align: center !important; } }\n@media only screen and (max-width: 640px) { .alignCenter img { display: inline !important; text-align: center !important; } }\n@media only screen and (max-width: 640px) { .marginBottom { margin-bottom: 15px !important; } }\n@media only screen and (max-width: 640px) { .marginTop { margin-top: 10px !important; } }\n@media only screen and (max-width: 640px) { .mlContentHeight { height: auto !important; } }\n@media only screen and (max-width: 640px) { .mlDisplayInline { display: inline-block !important; float: none !important; } }\n@media only screen and (max-width: 640px) { .mlNoFloat { float: none !important; margin-left: auto !important; margin-right: auto !important; } }\n@media only screen and (max-width: 640px) { .mlContentSurvey { float: none !important; margin-bottom: 10px !important; width: 100% !important; } }\n@media only screen and (max-width: 640px) { .mlContentSurvey td a { width: auto !important; } }\n@media only screen and (max-width: 640px) { .multiple-choice-item-table { width: 100% !important; margin-bottom: 20px !important; min-width: 10% !important; float: none !important; } }\n@media only screen and (max-width: 640px) { body { margin: 0px !important; padding: 0px !important; } }\n@media only screen and (max-width: 640px) { body, table, td, p, a, li, blockquote { -webkit-text-size-adjust: none !important; } }\n@media only screen and (max-width: 480px) { .social-LinksTable { width: 100% !important; } }\n@media only screen and (max-width: 640px) { .social-LinksTable td:first-child { padding-left: 0px !important; } }\n@media only screen and (max-width: 640px) { .social-LinksTable td:last-child { padding-right: 0px !important; } }\n@media only screen and (max-width: 640px) { .social-LinksTable td { padding: 0 10px !important; } }\n@media only screen and (max-width: 640px) { .social-LinksTable td img { height: auto !important; max-width: 48px; width: 100% !important; } }\n@media screen and (-webkit-min-device-pixel-ratio: 0) { .webkit { display: block !important; } }\n@media screen and (-webkit-min-device-pixel-ratio: 0) { .non-webkit { display: none !important; } }\n@media screen and (-webkit-min-device-pixel-ratio: 0) { [class=\"x_non-webkit\"] { display: block !important; } }\n@media screen and (-webkit-min-device-pixel-ratio: 0) { [class=\"x_webkit\"] { display: none !important; } }",
+      "critical": "All inline styles must be preserved exactly as they appear in the original HTML for email client compatibility"
+    },
+    "templateStructure": {
+      "mainTemplate": "---\ntitle: {{ title }}\npreheader: {{ preheader }}\n\nheader:\n  logoImage: {{ header.logoImage }}\n  logoLink: {{ header.logoLink }}\n\nhero:\n  gifUrl: {{ hero.gifUrl }}\n\nissue:\n  number: {{ issue.number }}\n\neditorial:\n  content: {{ editorial.content }}\n\nlinks:\n  items: {{ links.items }}\n\ncategories:\n- title: {{ category.title }}\n  featuredImage: {{ category.featuredImage }}\n  description: {{ category.description }}\n\nbrands:\n  headerImage: {{ brands.headerImage }}\n  introText: {{ brands.introText }}\n  brandList: {{ brands.brandList }}\n\nsocial:\n  handle: {{ social.handle }}\n  linkUrl: {{ social.linkUrl }}\n\nfooter:\n  socialLinks: {{ footer.socialLinks }}\n  companyInfo: {{ footer.companyInfo }}\n  subscriptionInfo: {{ footer.subscriptionInfo }}\n  unsubscribeLink: {{ footer.unsubscribeLink }}\n---\n\n<extends src=\"src/layouts/main.html\">\n  <block name=\"template\">\n    <component src=\"src/components/header.html\"></component>\n    <component src=\"src/components/animated-hero.html\"></component>\n    <component src=\"src/components/issue-header.html\"></component>\n    <component src=\"src/components/editorial.html\"></component>\n    <component src=\"src/components/link-list.html\"></component>\n    <each loop=\"category in categories\">\n      <component src=\"src/components/lifestyle-category.html\"></component>\n    </each>\n    <component src=\"src/components/brand-directory.html\"></component>\n    <component src=\"src/components/social-cta.html\"></component>\n    <component src=\"src/components/footer.html\"></component>\n  </block>\n</extends>",
+      "componentOrder": [
+        "Header",
+        "AnimatedHero",
+        "IssueHeader",
+        "Editorial",
+        "LinkList",
+        "LifestyleCategory",
+        "BrandDirectory",
+        "SocialCta",
+        "Footer"
+      ]
+    },
+    "sampleData": {
+      "title": "PALM REPORT #001 ☼ Jacquemus • Topless Vehicles • Antiques Trafficking",
+      "preheader": "With tasting notes of topless vehicles, Marseille-inspired life philosophy...",
+      "header": {
+        "logoImage": "https://bucket.mlcdn.com/a/1351/1351220/images/4ead8170ca4cf65952c5a34dc7d98c0af28e93be.png",
+        "logoLink": "https://example.com"
+      },
+      "hero": {
+        "gifUrl": "https://bucket.mlcdn.com/a/1351/1351220/images/cbdac60d8d8a49a351da722f0e974c5bfe9fe392.gif"
+      },
+      "issue": {
+        "number": "ISSUE 001"
+      },
+      "editorial": {
+        "content": "<p style=\"margin-top: 0px; margin-bottom: 10px; line-height: 125%; text-align: center;\">With tasting notes of topless vehicles, Marseille-inspired life philosophy, high crime in the luxury art world, the internet's hottest brands and of course, Paradiso. Garnished with a Poolsuite (née Poolside FM) olive blanket.</p><p style=\"margin-top: 0px; margin-bottom: 0px; line-height: 125%; text-align: center;\">The good life beckons once more!</p>"
+      },
+      "links": {
+        "items": [
+          {
+            "title": "The latest in that antiquities trafficking case",
+            "url": "https://example.com/antiquities"
+          },
+          {
+            "title": "Kendrick is having fun in Ghana",
+            "url": "https://example.com/kendrick"
+          }
+        ]
+      },
+      "categories": [
+        {
+          "title": "SUMMER-ENHANCING PEOPLE",
+          "featuredImage": "https://bucket.mlcdn.com/a/1351/1351220/images/a3c9ac5036ff55cc5d4ebfdb3c6c034f7f448c09.png",
+          "description": "<p>\"Le Coup de Soileil\" collection (translation: <em>sunburn</em>) from 2020 in the lavender fields of Valensole.</p>"
+        }
+      ],
+      "brands": {
+        "headerImage": "https://bucket.mlcdn.com/a/1351/1351220/images/c9813d1706be3a66c6884ce0be9c5f7597fd067d.png",
+        "introText": "<p>Fill out <strong>this form</strong> to feature here in front of over 94,000 of the internet's most illustrious readers.</p>",
+        "brandList": [
+          {
+            "name": "Vacation®",
+            "url": "https://example.com/vacation",
+            "description": "is the world's best smelling sunscreen. By us!"
+          }
+        ]
+      },
+      "social": {
+        "handle": "@PALMREPORT",
+        "linkUrl": "https://instagram.com/palmreport"
+      },
+      "footer": {
+        "socialLinks": [
+          {
+            "platform": "website",
+            "url": "https://example.com",
+            "icon": "https://cdn.mailerlite.com/images/icons/default/round/black/website.png"
+          }
+        ],
+        "companyInfo": "<p>PALM REPORT</p><p>A curated media outlet & lifestyle research facility</p><p>By Poolsuite (née Poolside FM)</p>",
+        "subscriptionInfo": "<p>You received this email because you signed up on our website, app or opted-in to our newsletter during a purchase.</p>",
+        "unsubscribeLink": "#"
+      }
+    }
+  },
+  "reconciliation": {
+    "summary": {
+      "totalDiscovered": 9,
+      "matchedToKnown": 0,
+      "variants": 3,
+      "completelyNovel": 6,
+      "requiresNewComponents": 9,
+      "message": "3 are variants of known types, 6 are completely new types"
+    },
+    "discoveredTypes": [
+      {
+        "name": "header",
+        "description": "Brand logo and navigation area",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_image",
+            "type": "image",
+            "required": true,
+            "description": "Brand logo image"
+          },
+          {
+            "name": "logo_link",
+            "type": "url",
+            "required": false,
+            "description": "Link destination for logo"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered image/link",
+        "stylingNotes": "Centered alignment, padding for spacing",
+        "htmlSignature": "logoBlock-* id, mlContentOuter class"
+      },
+      {
+        "name": "animated-hero",
+        "description": "Animated GIF hero section for visual engagement",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "Specific use of animated GIF as a hero section in newsletter format",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "hero_gif",
+            "type": "image",
+            "required": true,
+            "description": "Animated GIF for visual impact"
+          }
+        ],
+        "containerStructure": "table > tr > td with full-width image",
+        "stylingNotes": "Full width, display block",
+        "htmlSignature": "imageBlock-* with .gif file extension"
+      },
+      {
+        "name": "issue-header",
+        "description": "Newsletter issue number and identification",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "Specific styling and placement for newsletter issue identification",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "issue_number",
+            "type": "string",
+            "required": true,
+            "description": "Issue number or identifier"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered text",
+        "stylingNotes": "Blue color (#2664F6), bold, centered",
+        "htmlSignature": "bodyTitle class with specific color styling"
+      },
+      {
+        "name": "lifestyle-category",
+        "description": "Themed content sections with title, images, and descriptive text",
+        "isRepeating": true,
+        "isNovel": true,
+        "noveltyReason": "Specific 'Summer-Enhancing' categorization pattern unique to lifestyle newsletters",
+        "instanceCount": 3,
+        "variables": [
+          {
+            "name": "category_title",
+            "type": "string",
+            "required": true,
+            "description": "Category name (e.g., 'SUMMER-ENHANCING PEOPLE')"
+          },
+          {
+            "name": "featured_image",
+            "type": "image",
+            "required": true,
+            "description": "Main category image"
+          },
+          {
+            "name": "description_text",
+            "type": "html",
+            "required": true,
+            "description": "Rich text description with links"
+          },
+          {
+            "name": "additional_images",
+            "type": "array",
+            "required": false,
+            "description": "Additional supporting images"
+          }
+        ],
+        "containerStructure": "table sections with title, image blocks, and text content",
+        "stylingNotes": "Blue headers, full-width images, padded text content",
+        "htmlSignature": "SUMMER-ENHANCING in title, imageBlock-* patterns"
+      },
+      {
+        "name": "brand-directory",
+        "description": "Curated list of lifestyle brands with descriptions",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "Specific format for showcasing lifestyle brands in newsletter context",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "intro_text",
+            "type": "html",
+            "required": true,
+            "description": "Introduction and call-to-action for featuring brands"
+          },
+          {
+            "name": "brand_list",
+            "type": "array",
+            "required": true,
+            "description": "List of brands with names, links, and descriptions"
+          }
+        ],
+        "containerStructure": "table > tr > td with paragraph list of linked brands",
+        "stylingNotes": "Blue links, paragraph format with line breaks",
+        "htmlSignature": "bodyText-54, brand names with links"
+      },
+      {
+        "name": "editorial",
+        "description": "Editor's introduction and issue overview",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "intro_text",
+            "type": "html",
+            "required": true,
+            "description": "Editorial introduction content"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered paragraph text",
+        "stylingNotes": "Blue color, centered alignment, line spacing",
+        "htmlSignature": "bodyText-* with center alignment"
+      },
+      {
+        "name": "link-list",
+        "description": "Curated collection of news links with bullet points",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "link_items",
+            "type": "array",
+            "required": true,
+            "description": "Array of links with descriptions and URLs"
+          }
+        ],
+        "containerStructure": "table > tr > td with paragraph list using ☼ bullets",
+        "stylingNotes": "Blue links, ☼ bullet points, line spacing",
+        "htmlSignature": "☼ bullet character, blue link styling"
+      },
+      {
+        "name": "social-cta",
+        "description": "Social media handle promotion and call-to-action",
+        "isRepeating": true,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 2,
+        "variables": [
+          {
+            "name": "social_handle",
+            "type": "string",
+            "required": true,
+            "description": "Social media handle repeated for emphasis"
+          },
+          {
+            "name": "link_url",
+            "type": "url",
+            "required": true,
+            "description": "Link to social media profile"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered linked text",
+        "stylingNotes": "Blue color, bold, centered, repeated text pattern",
+        "htmlSignature": "Repeated @ handles in blue links"
+      },
+      {
+        "name": "footer",
+        "description": "Standard newsletter footer with social links and unsubscribe",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "social_links",
+            "type": "array",
+            "required": true,
+            "description": "Array of social media platform links"
+          },
+          {
+            "name": "company_info",
+            "type": "html",
+            "required": true,
+            "description": "Company name and description"
+          },
+          {
+            "name": "unsubscribe_text",
+            "type": "html",
+            "required": true,
+            "description": "Unsubscribe information and link"
+          }
+        ],
+        "containerStructure": "table with social icons, company info, and legal text",
+        "stylingNotes": "Centered alignment, small text, icon spacing",
+        "htmlSignature": "mlContentTableFooterDefault, footerText-*, social icons"
+      }
+    ],
+    "novelTypes": [
+      {
+        "name": "header",
+        "description": "Brand logo and navigation area",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_image",
+            "type": "image",
+            "required": true,
+            "description": "Brand logo image"
+          },
+          {
+            "name": "logo_link",
+            "type": "url",
+            "required": false,
+            "description": "Link destination for logo"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered image/link",
+        "stylingNotes": "Centered alignment, padding for spacing",
+        "htmlSignature": "logoBlock-* id, mlContentOuter class",
+        "isVariant": true,
+        "variantOf": "sponsor"
+      },
+      {
+        "name": "animated-hero",
+        "description": "Animated GIF hero section for visual engagement",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "Specific use of animated GIF as a hero section in newsletter format",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "hero_gif",
+            "type": "image",
+            "required": true,
+            "description": "Animated GIF for visual impact"
+          }
+        ],
+        "containerStructure": "table > tr > td with full-width image",
+        "stylingNotes": "Full width, display block",
+        "htmlSignature": "imageBlock-* with .gif file extension",
+        "isVariant": true,
+        "variantOf": "animated-image"
+      },
+      {
+        "name": "issue-header",
+        "description": "Newsletter issue number and identification",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "Specific styling and placement for newsletter issue identification",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "issue_number",
+            "type": "string",
+            "required": true,
+            "description": "Issue number or identifier"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered text",
+        "stylingNotes": "Blue color (#2664F6), bold, centered",
+        "htmlSignature": "bodyTitle class with specific color styling",
+        "isVariant": true,
+        "variantOf": "sponsor"
+      },
+      {
+        "name": "lifestyle-category",
+        "description": "Themed content sections with title, images, and descriptive text",
+        "isRepeating": true,
+        "isNovel": true,
+        "noveltyReason": "Specific 'Summer-Enhancing' categorization pattern unique to lifestyle newsletters",
+        "instanceCount": 3,
+        "variables": [
+          {
+            "name": "category_title",
+            "type": "string",
+            "required": true,
+            "description": "Category name (e.g., 'SUMMER-ENHANCING PEOPLE')"
+          },
+          {
+            "name": "featured_image",
+            "type": "image",
+            "required": true,
+            "description": "Main category image"
+          },
+          {
+            "name": "description_text",
+            "type": "html",
+            "required": true,
+            "description": "Rich text description with links"
+          },
+          {
+            "name": "additional_images",
+            "type": "array",
+            "required": false,
+            "description": "Additional supporting images"
+          }
+        ],
+        "containerStructure": "table sections with title, image blocks, and text content",
+        "stylingNotes": "Blue headers, full-width images, padded text content",
+        "htmlSignature": "SUMMER-ENHANCING in title, imageBlock-* patterns"
+      },
+      {
+        "name": "brand-directory",
+        "description": "Curated list of lifestyle brands with descriptions",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "Specific format for showcasing lifestyle brands in newsletter context",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "intro_text",
+            "type": "html",
+            "required": true,
+            "description": "Introduction and call-to-action for featuring brands"
+          },
+          {
+            "name": "brand_list",
+            "type": "array",
+            "required": true,
+            "description": "List of brands with names, links, and descriptions"
+          }
+        ],
+        "containerStructure": "table > tr > td with paragraph list of linked brands",
+        "stylingNotes": "Blue links, paragraph format with line breaks",
+        "htmlSignature": "bodyText-54, brand names with links"
+      },
+      {
+        "name": "editorial",
+        "description": "Editor's introduction and issue overview",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "intro_text",
+            "type": "html",
+            "required": true,
+            "description": "Editorial introduction content"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered paragraph text",
+        "stylingNotes": "Blue color, centered alignment, line spacing",
+        "htmlSignature": "bodyText-* with center alignment"
+      },
+      {
+        "name": "link-list",
+        "description": "Curated collection of news links with bullet points",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "link_items",
+            "type": "array",
+            "required": true,
+            "description": "Array of links with descriptions and URLs"
+          }
+        ],
+        "containerStructure": "table > tr > td with paragraph list using ☼ bullets",
+        "stylingNotes": "Blue links, ☼ bullet points, line spacing",
+        "htmlSignature": "☼ bullet character, blue link styling"
+      },
+      {
+        "name": "social-cta",
+        "description": "Social media handle promotion and call-to-action",
+        "isRepeating": true,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 2,
+        "variables": [
+          {
+            "name": "social_handle",
+            "type": "string",
+            "required": true,
+            "description": "Social media handle repeated for emphasis"
+          },
+          {
+            "name": "link_url",
+            "type": "url",
+            "required": true,
+            "description": "Link to social media profile"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered linked text",
+        "stylingNotes": "Blue color, bold, centered, repeated text pattern",
+        "htmlSignature": "Repeated @ handles in blue links"
+      },
+      {
+        "name": "footer",
+        "description": "Standard newsletter footer with social links and unsubscribe",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "social_links",
+            "type": "array",
+            "required": true,
+            "description": "Array of social media platform links"
+          },
+          {
+            "name": "company_info",
+            "type": "html",
+            "required": true,
+            "description": "Company name and description"
+          },
+          {
+            "name": "unsubscribe_text",
+            "type": "html",
+            "required": true,
+            "description": "Unsubscribe information and link"
+          }
+        ],
+        "containerStructure": "table with social icons, company info, and legal text",
+        "stylingNotes": "Centered alignment, small text, icon spacing",
+        "htmlSignature": "mlContentTableFooterDefault, footerText-*, social icons"
+      }
+    ],
+    "mappedTypes": [
+      {
+        "discovered": "header",
+        "knownType": "sponsor",
+        "confidence": 0.5,
+        "isNovel": true,
+        "isVariant": true,
+        "variantOf": "sponsor",
+        "mappingReason": "Semantic group: sponsor"
+      },
+      {
+        "discovered": "animated-hero",
+        "knownType": "animated-image",
+        "confidence": 0.5,
+        "isNovel": true,
+        "isVariant": true,
+        "variantOf": "animated-image",
+        "mappingReason": "Semantic group: image"
+      },
+      {
+        "discovered": "issue-header",
+        "knownType": "sponsor",
+        "confidence": 0.5,
+        "isNovel": true,
+        "isVariant": true,
+        "variantOf": "sponsor",
+        "mappingReason": "Semantic group: sponsor"
+      },
+      {
+        "discovered": "lifestyle-category",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      },
+      {
+        "discovered": "brand-directory",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      },
+      {
+        "discovered": "editorial",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      },
+      {
+        "discovered": "link-list",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      },
+      {
+        "discovered": "social-cta",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      },
+      {
+        "discovered": "footer",
+        "knownType": null,
+        "confidence": 0,
+        "isNovel": true,
+        "mappingReason": "No matching type found in reference templates"
+      }
+    ],
+    "allTypes": [
+      {
+        "name": "header",
+        "description": "Brand logo and navigation area",
+        "isRepeating": false,
+        "isNovel": false,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "logo_image",
+            "type": "image",
+            "required": true,
+            "description": "Brand logo image"
+          },
+          {
+            "name": "logo_link",
+            "type": "url",
+            "required": false,
+            "description": "Link destination for logo"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered image/link",
+        "stylingNotes": "Centered alignment, padding for spacing",
+        "htmlSignature": "logoBlock-* id, mlContentOuter class",
+        "isVariant": true,
+        "variantOf": "sponsor",
+        "source": "variant"
+      },
+      {
+        "name": "animated-hero",
+        "description": "Animated GIF hero section for visual engagement",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "Specific use of animated GIF as a hero section in newsletter format",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "hero_gif",
+            "type": "image",
+            "required": true,
+            "description": "Animated GIF for visual impact"
+          }
+        ],
+        "containerStructure": "table > tr > td with full-width image",
+        "stylingNotes": "Full width, display block",
+        "htmlSignature": "imageBlock-* with .gif file extension",
+        "isVariant": true,
+        "variantOf": "animated-image",
+        "source": "variant"
+      },
+      {
+        "name": "issue-header",
+        "description": "Newsletter issue number and identification",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "Specific styling and placement for newsletter issue identification",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "issue_number",
+            "type": "string",
+            "required": true,
+            "description": "Issue number or identifier"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered text",
+        "stylingNotes": "Blue color (#2664F6), bold, centered",
+        "htmlSignature": "bodyTitle class with specific color styling",
+        "isVariant": true,
+        "variantOf": "sponsor",
+        "source": "variant"
+      },
+      {
+        "name": "lifestyle-category",
+        "description": "Themed content sections with title, images, and descriptive text",
+        "isRepeating": true,
+        "isNovel": true,
+        "noveltyReason": "Specific 'Summer-Enhancing' categorization pattern unique to lifestyle newsletters",
+        "instanceCount": 3,
+        "variables": [
+          {
+            "name": "category_title",
+            "type": "string",
+            "required": true,
+            "description": "Category name (e.g., 'SUMMER-ENHANCING PEOPLE')"
+          },
+          {
+            "name": "featured_image",
+            "type": "image",
+            "required": true,
+            "description": "Main category image"
+          },
+          {
+            "name": "description_text",
+            "type": "html",
+            "required": true,
+            "description": "Rich text description with links"
+          },
+          {
+            "name": "additional_images",
+            "type": "array",
+            "required": false,
+            "description": "Additional supporting images"
+          }
+        ],
+        "containerStructure": "table sections with title, image blocks, and text content",
+        "stylingNotes": "Blue headers, full-width images, padded text content",
+        "htmlSignature": "SUMMER-ENHANCING in title, imageBlock-* patterns",
+        "source": "novel"
+      },
+      {
+        "name": "brand-directory",
+        "description": "Curated list of lifestyle brands with descriptions",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "Specific format for showcasing lifestyle brands in newsletter context",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "intro_text",
+            "type": "html",
+            "required": true,
+            "description": "Introduction and call-to-action for featuring brands"
+          },
+          {
+            "name": "brand_list",
+            "type": "array",
+            "required": true,
+            "description": "List of brands with names, links, and descriptions"
+          }
+        ],
+        "containerStructure": "table > tr > td with paragraph list of linked brands",
+        "stylingNotes": "Blue links, paragraph format with line breaks",
+        "htmlSignature": "bodyText-54, brand names with links",
+        "source": "novel"
+      },
+      {
+        "name": "editorial",
+        "description": "Editor's introduction and issue overview",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "intro_text",
+            "type": "html",
+            "required": true,
+            "description": "Editorial introduction content"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered paragraph text",
+        "stylingNotes": "Blue color, centered alignment, line spacing",
+        "htmlSignature": "bodyText-* with center alignment",
+        "source": "novel"
+      },
+      {
+        "name": "link-list",
+        "description": "Curated collection of news links with bullet points",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "link_items",
+            "type": "array",
+            "required": true,
+            "description": "Array of links with descriptions and URLs"
+          }
+        ],
+        "containerStructure": "table > tr > td with paragraph list using ☼ bullets",
+        "stylingNotes": "Blue links, ☼ bullet points, line spacing",
+        "htmlSignature": "☼ bullet character, blue link styling",
+        "source": "novel"
+      },
+      {
+        "name": "social-cta",
+        "description": "Social media handle promotion and call-to-action",
+        "isRepeating": true,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 2,
+        "variables": [
+          {
+            "name": "social_handle",
+            "type": "string",
+            "required": true,
+            "description": "Social media handle repeated for emphasis"
+          },
+          {
+            "name": "link_url",
+            "type": "url",
+            "required": true,
+            "description": "Link to social media profile"
+          }
+        ],
+        "containerStructure": "table > tr > td with centered linked text",
+        "stylingNotes": "Blue color, bold, centered, repeated text pattern",
+        "htmlSignature": "Repeated @ handles in blue links",
+        "source": "novel"
+      },
+      {
+        "name": "footer",
+        "description": "Standard newsletter footer with social links and unsubscribe",
+        "isRepeating": false,
+        "isNovel": true,
+        "noveltyReason": "",
+        "instanceCount": 1,
+        "variables": [
+          {
+            "name": "social_links",
+            "type": "array",
+            "required": true,
+            "description": "Array of social media platform links"
+          },
+          {
+            "name": "company_info",
+            "type": "html",
+            "required": true,
+            "description": "Company name and description"
+          },
+          {
+            "name": "unsubscribe_text",
+            "type": "html",
+            "required": true,
+            "description": "Unsubscribe information and link"
+          }
+        ],
+        "containerStructure": "table with social icons, company info, and legal text",
+        "stylingNotes": "Centered alignment, small text, icon spacing",
+        "htmlSignature": "mlContentTableFooterDefault, footerText-*, social icons",
+        "source": "novel"
+      }
+    ]
+  },
+  "metadata": {
+    "analysisDate": "2026-01-17T07:32:43.167Z",
+    "provider": "anthropic",
+    "model": "claude-sonnet-4-20250514"
+  },
+  "sourceStats": {
+    "elements": 912,
+    "tables": 180,
+    "images": 22,
+    "links": 47,
+    "headings": 0,
+    "paragraphs": 35,
+    "divs": 1,
+    "spans": 21,
+    "textLength": 41788,
+    "htmlLength": 124304
+  },
+  "generatedAt": "2026-01-17T07:32:44.958Z"
+}

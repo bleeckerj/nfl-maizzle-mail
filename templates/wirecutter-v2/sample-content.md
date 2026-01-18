@@ -1,0 +1,80 @@
+---
+template: wirecutter-v2
+title: "The best patio furniture"
+preheader: "No mosquitoes allowed"
+date: "April 19, 2023"
+
+header:
+  logoImage: "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/619eae47e0f2e-1637789255.9214.png"
+  logoImageMobile: "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/619eae5a3678d-1637789274.2231.png"
+  homepageLink: "https://www.nytimes.com/wirecutter/"
+
+intro:
+  title: "Welcome"
+  content: "<p>Introduction paragraph for the newsletter.</p>"
+
+featuredArticle:
+  headline: "The best patio furniture"
+  heroImage: "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/643ff99ed9265-1681914270.8894.jpg"
+  heroImageAlt: "The Better Homes and Gardens Clayton Court 5-Piece Patio Dining Set"
+  photoCredit: "Jeremy Pavia"
+  description: "<p>Turn your patio into a comfortable, good-looking space with durable seating and tables that won't break the bank. We've spent years testing furniture sets, and these are the pieces that hold up best through seasons of sun, rain, and everyday use.</p>"
+  ctaLink: "https://www.nytimes.com/wirecutter/reviews/best-patio-furniture/"
+  disclaimer: "<p>We independently review everything we recommend. When you buy through our links, we may earn a commission.</p>"
+
+article:
+  title: "Keep mosquitoes away without slathering your skin in repellent"
+  image: "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/643ff9cea1a7a-1681914318.6621.jpg"
+  imageAlt: "The Thermacell E90 Rechargeable Mosquito Repeller"
+  photoCredit: "Michael Hession"
+  content: "<p>Spatial repellents work like diffusers, releasing a bug-repelling mist that creates a protective zone around you. The Thermacell E90 is our top pick—it's rechargeable, quiet, and actually works.</p>"
+  link: "https://www.nytimes.com/wirecutter/reviews/mosquito-control-gear/"
+
+sections:
+  - type: product-showcase
+    sectionTitle: "More outdoor recs"
+    sectionLink: "https://www.nytimes.com/wirecutter/home-garden/gardening/"
+    items:
+      - title: "The best patio umbrella"
+        image: "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/643f075c7086e-1681852252.4609.png"
+        imageAlt: "Five patio umbrellas tested shown setup outdoors side by side"
+        description: "A patio umbrella is an invitation to laze and linger."
+        link: "https://www.nytimes.com/wirecutter/reviews/best-patio-umbrella-and-stand/"
+      - title: "The best grill"
+        image: "https://fpoimg.com/400x300?text=Grill"
+        imageAlt: "Weber Spirit II E-310 gas grill"
+        description: "Our favorite gas grill for most people balances performance and price."
+        link: "https://www.nytimes.com/wirecutter/reviews/best-gas-grills/"
+      - title: "The best outdoor string lights"
+        image: "https://fpoimg.com/400x300?text=String+Lights"
+        imageAlt: "Brightech Ambience Pro string lights"
+        description: "Add atmosphere to your backyard with weatherproof string lights."
+        link: "https://www.nytimes.com/wirecutter/reviews/best-outdoor-string-lights/"
+
+footer:
+  companyLogo: "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/60ff3c3959268-1627339833.3652.png"
+  unsubscribeText: "<p>You are receiving this email because you signed up for Wirecutter's Newsletter.</p><p>Getting too many emails from us?</p><p>To stop receiving The Recommendation, <a href=\"#\"><strong>unsubscribe</strong></a>.</p>"
+  companyAddress: "Wirecutter, Inc. 620 Eighth Avenue. New York, NY 10018"
+  legalLinks:
+    - text: "Privacy Policy"
+      url: "https://www.nytimes.com/privacy/privacy-policy"
+    - text: "California Notices"
+      url: "https://www.nytimes.com/privacy/california-notice"
+    - text: "Terms of Service"
+      url: "https://help.nytimes.com/hc/en-us/articles/115014893428-Terms-of-service"
+    - text: "Contact Us"
+      url: "https://www.nytimes.com/wirecutter/contact-us/"
+---
+
+# The Best Patio Furniture
+
+This is sample content for the Wirecutter email template. The template features product reviews with hero images, photo credits, and product showcase grids.
+
+## Template Structure
+
+- **Header**: Wirecutter logo with mobile variant
+- **Intro**: Welcome section
+- **Featured Article**: Hero product review with large image
+- **Article**: Secondary product story
+- **Product Showcase**: Grid of related recommendations
+- **Footer**: Legal links, unsubscribe, company info
