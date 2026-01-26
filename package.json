@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "maizzle build production",
+    "build:data": "maizzle build production",
     "dev": "maizzle serve",
     "build:newsletter": "node scripts/build-newsletter.mjs",
     "quick": "node scripts/quick-build.mjs",

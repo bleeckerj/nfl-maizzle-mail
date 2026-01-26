@@ -104,7 +104,7 @@ sections:
 footer:
   emailShare: mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w50-y25/
   newsletterSubscribeLink: https://nearfuturelaboratory.com/newsletter/
-  logo: https://nearfuturelaboratory.com/images/site/NFL_LOGO__NFL_BLUEISH_200px.png
+  logo: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=200?format=webp
   logoLink: https://nearfuturelaboratory.com
   socialLinks:
     applepodcasts:

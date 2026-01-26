@@ -4,6 +4,25 @@
   "version": "1.0.0",
   
   "sectionStyles": {
+    "header": {
+      "name": "Header Section",
+      "description": "Header quote, author, and featured artist text styles",
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "20px"
+      },
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "18px",
+        "lineHeight": "23px",
+        "fontWeight": "400",
+        "color": "#000000",
+        "authorFontSize": "16px",
+        "authorFontWeight": "600",
+        "artistFontSize": "16px",
+        "anchorColor": "#000000"
+      }
+    },
     "intro-content": {
       "name": "Intro Content",
       "description": "Intro paragraph block content styles",

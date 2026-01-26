@@ -59,7 +59,12 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                               <td align="left" class="headline box-yellow" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.sponsor || '#f8eccf' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;border-radius: {{ section.containerStyles.borderRadius || '20px' }};">
                                 <h1 style="mso-line-height-rule: exactly; margin: 0;padding: 0; {{{ section.headingStylesInline || '' }}}">
                                   {{ section.title }}
-                                  <a class="h1byline" href="{{ section.sponsorLink || '#' }}" style="text-decoration: none;display: inline-block;font-size: 12px;line-height: 25px;font-weight: 400;float: right;color: {{ themeColors.linkAccent || '#6d6b57' }} !important;">{{ section.sponsorLabel || 'FUN STUFF' }}</a>
+                                  <if condition="section.sponsorLink">
+                                    <a class="h1byline" href="{{ section.sponsorLink }}" style="text-decoration: none;display: inline-block;font-size: 12px;line-height: 25px;font-weight: 400;float: right;color: {{ themeColors.linkAccent || '#6d6b57' }} !important;">{{ section.sponsorLabel || 'FUN STUFF' }}</a>
+                                  </if>
+                                  <if condition="!section.sponsorLink && section.sponsorLabel">
+                                    <span class="h1byline" style="display: inline-block;font-size: 12px;line-height: 25px;font-weight: 400;float: right;color: {{ themeColors.linkAccent || '#6d6b57' }} !important;">{{ section.sponsorLabel }}</span>
+                                  </if>
                                 </h1>
                               </td>
                             </tr>
@@ -90,13 +95,13 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
 	                                <each loop="image in item.images">
 	                                  <tr>
 	                                    <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.sponsor || '#f8eccf' }};padding: 0 20px 15px 20px;">
-	                                      <if condition="(image && typeof image === 'object' && image.link) || item.link">
-	                                        <a href="{{ (image && typeof image === 'object' && image.link) ? image.link : item.link }}" class="theme-link" style="text-decoration: underline;">
-	                                          <img src="{{ (image && typeof image === 'object' && image.src) ? image.src : image }}" alt="{{ (image && typeof image === 'object' && image.alt) ? image.alt : (item.title || 'Sponsor Image') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;height: auto;border-radius:3%">
+	                                      <if condition="(typeof image === 'object' && image !== null && image.hasOwnProperty('link')) || item.link">
+	                                        <a href="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('link')) ? image.link : item.link }}" class="theme-link" style="text-decoration: underline;">
+	                                          <img src="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('src')) ? image.src : image }}" alt="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('alt')) ? image.alt : (item.title || 'Sponsor Image') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;height: auto;border-radius:3%">
 	                                        </a>
 	                                      </if>
-	                                      <if condition="!((image && typeof image === 'object' && image.link) || item.link)">
-	                                        <img src="{{ (image && typeof image === 'object' && image.src) ? image.src : image }}" alt="{{ (image && typeof image === 'object' && image.alt) ? image.alt : (item.title || 'Sponsor Image') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;height: auto;border-radius:3%">
+	                                      <if condition="!((typeof image === 'object' && image !== null && image.hasOwnProperty('link')) || item.link)">
+	                                        <img src="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('src')) ? image.src : image }}" alt="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('alt')) ? image.alt : (item.title || 'Sponsor Image') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;height: auto;border-radius:3%">
 	                                      </if>
 	                                    </td>
 	                                  </tr>
@@ -208,7 +213,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   </if>
                                   
                                   <if condition="item.subtitle">
-                                    <p style="font-size: 16px;line-height: 18px;font-weight: 400;color: #707070 !important;padding: 0;margin-bottom: 12px;">{{ item.subtitle }}</p>
+                                    <p style="font-size: 17px;line-height: 18px;font-weight: 500;color: #363636 !important;padding: 0;margin-bottom: 12px;">{{ item.subtitle }}</p>
                                   </if>
                                 </td>
                               </tr>
@@ -590,13 +595,13 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
 	                                <if condition="item.images && item.images.length">
 	                                  <each loop="image in item.images">
 	                                    <div style="margin-bottom: 15px; padding: 0 1em;">
-	                                      <if condition="(image && typeof image === 'object' && image.link) || item.link">
-	                                        <a href="{{ (image && typeof image === 'object' && image.link) ? image.link : item.link }}" style="text-decoration: none;">
-	                                          <img src="{{ (image && typeof image === 'object' && image.src) ? image.src : image }}" alt="{{ (image && typeof image === 'object' && image.alt) ? image.alt : (item.title || 'Magazine Cover') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px; border-radius: 3%;">
+	                                      <if condition="(typeof image === 'object' && image !== null && image.hasOwnProperty('link')) || item.link">
+	                                        <a href="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('link')) ? image.link : item.link }}" style="text-decoration: none;">
+	                                          <img src="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('src')) ? image.src : image }}" alt="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('alt')) ? image.alt : (item.title || 'Magazine Cover') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px; border-radius: 3%;">
 	                                        </a>
 	                                      </if>
-	                                      <if condition="!((image && typeof image === 'object' && image.link) || item.link)">
-	                                        <img src="{{ (image && typeof image === 'object' && image.src) ? image.src : image }}" alt="{{ (image && typeof image === 'object' && image.alt) ? image.alt : (item.title || 'Magazine Cover') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px; border-radius: 3%;">
+	                                      <if condition="!((typeof image === 'object' && image !== null && image.hasOwnProperty('link')) || item.link)">
+	                                        <img src="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('src')) ? image.src : image }}" alt="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('alt')) ? image.alt : (item.title || 'Magazine Cover') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px; border-radius: 3%;">
 	                                      </if>
 	                                    </div>
 	                                  </each>
@@ -682,13 +687,13 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
 	                                <if condition="item.images && item.images.length">
 	                                  <each loop="image in item.images">
 	                                    <div style="margin-bottom: 15px;">
-	                                      <if condition="(image && typeof image === 'object' && image.link) || item.link">
-	                                        <a href="{{ (image && typeof image === 'object' && image.link) ? image.link : item.link }}" style="text-decoration: none;">
-	                                          <img src="{{ (image && typeof image === 'object' && image.src) ? image.src : image }}" alt="{{ (image && typeof image === 'object' && image.alt) ? image.alt : (item.title || 'Product Image') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
+	                                      <if condition="(typeof image === 'object' && image !== null && image.hasOwnProperty('link')) || item.link">
+	                                        <a href="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('link')) ? image.link : item.link }}" style="text-decoration: none;">
+	                                          <img src="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('src')) ? image.src : image }}" alt="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('alt')) ? image.alt : (item.title || 'Product Image') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
 	                                        </a>
 	                                      </if>
-	                                      <if condition="!((image && typeof image === 'object' && image.link) || item.link)">
-	                                        <img src="{{ (image && typeof image === 'object' && image.src) ? image.src : image }}" alt="{{ (image && typeof image === 'object' && image.alt) ? image.alt : (item.title || 'Product Image') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
+	                                      <if condition="!((typeof image === 'object' && image !== null && image.hasOwnProperty('link')) || item.link)">
+	                                        <img src="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('src')) ? image.src : image }}" alt="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('alt')) ? image.alt : (item.title || 'Product Image') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
 	                                      </if>
 	                                    </div>
 	                                  </each>
@@ -770,13 +775,13 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                 <if condition="item.images && item.images.length">
                                   <each loop="img in item.images">
                                     <div style="margin-bottom: 15px;">
-                                      <if condition="img.link || item.link">
-                                        <a href="{{ img.link || item.link }}" style="text-decoration: none;">
-                                          <img src="{{ img.src }}" alt="{{ img.alt || item.title || 'Food for Thought Image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
+                                      <if condition="(typeof img === 'object' && img !== null && img.hasOwnProperty('link')) || item.link">
+                                        <a href="{{ (typeof img === 'object' && img !== null && img.hasOwnProperty('link')) ? img.link : item.link }}" style="text-decoration: none;">
+                                          <img src="{{ (typeof img === 'object' && img !== null && img.hasOwnProperty('src')) ? img.src : img }}" alt="{{ (typeof img === 'object' && img !== null && img.hasOwnProperty('alt')) ? img.alt : (item.title || 'Food for Thought Image') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
                                         </a>
                                       </if>
-                                      <if condition="!(img.link || item.link)">
-                                        <img src="{{ img.src }}" alt="{{ img.alt || item.title || 'Food for Thought Image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
+                                      <if condition="!((typeof img === 'object' && img !== null && img.hasOwnProperty('link')) || item.link)">
+                                        <img src="{{ (typeof img === 'object' && img !== null && img.hasOwnProperty('src')) ? img.src : img }}" alt="{{ (typeof img === 'object' && img !== null && img.hasOwnProperty('alt')) ? img.alt : (item.title || 'Food for Thought Image') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
                                       </if>
                                     </div>
                                   </each>
@@ -853,14 +858,14 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
                           </tr>
                           <tr>
-                            <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['aesthetically-pleasing'] || '#ffffff' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 20px;">
+                            <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse; background: {{ section.containerStyles.backgroundColor || themeColors['aesthetically-pleasing'] || '#ffffff' }};   border-top-left-radius : {{ section.containerStyles.borderRadius || '0px' }}; border-top-right-radius : {{ section.containerStyles.borderRadius || '0px' }}; border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 20px;">
                               <h1 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} mso-line-height-rule: exactly;margin: 0;padding: 0;">{{ section.title }}</h1>
                             </td>
                           </tr>
                           
                           <if condition="section.description">
                             <tr>
-                              <td align="left" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['aesthetically-pleasing'] || '#ffffff' }};padding: 5px 20px 10px 20px;">
+                              <td align="left" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['aesthetically-pleasing'] || '#ffffff' }};  padding: 5px 20px 10px 20px;">
                                 <div style="font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '23px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#000000' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 0;margin: 0;">
                                   {{{ section.description }}}
                                 </div>
@@ -874,15 +879,15 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                               <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['aesthetically-pleasing'] || '#ffffff' }};padding-top: 10px;padding-right: 20px;padding-bottom: 10px;padding-left: 20px;">
                                 <if condition="item.image && item.link">
                                   <a href="{{ item.link }}" style="text-decoration: none;">
-                                    <img src="{{ item.image }}" alt="{{ item.title || 'Aesthetically Pleasing' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px; border-radius: 3%;">
+                                    <img src="{{ item.image }}" alt="{{ item.title || 'Aesthetically Pleasing' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px; border-radius: {{ section.containerStyles.imageBorderRadius || '3%' }};">
                                   </a>
                                 </if>
                                 <if condition="item.image && !item.link && !item.imageLink">
-                                  <img src="{{ item.image }}" alt="{{ item.title || 'Aesthetically Pleasing' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px; border-radius: 3%;">
+                                  <img src="{{ item.image }}" alt="{{ item.title || 'Aesthetically Pleasing' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px; border-radius: {{ section.containerStyles.imageBorderRadius || '3%' }};">
                                 </if>
                                 <if condition="item.image && !item.link && item.imageLink">
                                   <a href="{{ item.imageLink }}" style="text-decoration: none;">
-                                  <img src="{{ item.image }}" alt="{{ item.title || 'Aesthetically Pleasing' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px; border-radius: 3%;">
+                                  <img src="{{ item.image }}" alt="{{ item.title || 'Aesthetically Pleasing' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px; border-radius: {{ section.containerStyles.imageBorderRadius || '3%' }};">
                                   </a>
                                 </if>
                               </td>
@@ -890,7 +895,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             
                             <!-- Description and optional link text -->
                             <tr>
-                              <td align="left" class="padt10 padr20 padl20 padb20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['aesthetically-pleasing'] || '#ffffff' }};padding-top: 10px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
+                              <td align="left" class="padt10 padr20 padl20 padb20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['aesthetically-pleasing'] || '#ffffff' }};border-bottom-left-radius: {{ section.containerStyles.borderRadius || '0' }}; border-bottom-right-radius: {{ section.containerStyles.borderRadius || '0' }}; padding-top: 10px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
                                 <if condition="item.description">
                                   <div style="font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '23px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#000000' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 0;margin: 0;">
                                     {{{ item.description }}}

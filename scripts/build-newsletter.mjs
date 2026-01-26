@@ -7,6 +7,42 @@ import https from 'https';
 import http from 'http';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
+import { fileURLToPath } from 'url';
+
+// Get script's directory for repo root detection
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+/**
+ * Determine the repository root directory.
+ * Priority: 1) --repo-root arg, 2) NFL_MAIZZLE_MAIL_ROOT env, 3) script location
+ */
+function getRepoRoot(args) {
+  // Check for --repo-root argument
+  const repoRootArg = args.find(arg => arg.startsWith('--repo-root='));
+  if (repoRootArg) {
+    const argPath = repoRootArg.split('=')[1];
+    if (argPath && fs.existsSync(argPath)) {
+      return path.resolve(argPath);
+    }
+  }
+  
+  // Check for NFL_MAIZZLE_MAIL_ROOT environment variable
+  const envRoot = process.env.NFL_MAIZZLE_MAIL_ROOT;
+  if (envRoot && fs.existsSync(envRoot)) {
+    return path.resolve(envRoot);
+  }
+  
+  // Default: derive from script location (scripts/ is one level below repo root)
+  return path.resolve(__dirname, '..');
+}
+
+/**
+ * Helper to construct absolute paths within the repo
+ */
+function repoPath(repoRoot, ...segments) {
+  return path.join(repoRoot, ...segments);
+}
 
 function jsonPointerToDotPath(pointer) {
   if (!pointer || pointer === '/') return '$';
@@ -375,7 +411,7 @@ function displayColorTheme(newsletterData) {
   // Load color themes
   let colorThemes = {};
   try {
-    const themesData = fs.readFileSync('data/color-themes.json', 'utf8');
+    const themesData = fs.readFileSync(repoPath(REPO_ROOT, 'data/color-themes.json'), 'utf8');
     colorThemes = JSON.parse(themesData);
   } catch (error) {
     console.log('⚠️  No color themes found, using defaults');
@@ -731,6 +767,15 @@ async function validateImages(data) {
 // Get command line arguments
 const args = process.argv.slice(2);
 
+// Initialize REPO_ROOT for cross-repository usage
+const REPO_ROOT = getRepoRoot(args);
+
+// Parse --output-dir option (for external usage)
+const outputDirArg = args.find(arg => arg.startsWith('--output-dir='));
+const outputDir = outputDirArg 
+  ? path.resolve(outputDirArg.split('=')[1])
+  : repoPath(REPO_ROOT, 'build_production');
+
 if (args.length < 1) {
   console.log('📧 Newsletter Builder');
   console.log('Usage: node scripts/build-newsletter.mjs <file> [output-name] [options]');
@@ -746,12 +791,19 @@ if (args.length < 1) {
   console.log('');
   console.log('Options:');
   console.log('  --template=<name>    Specify template (wirecutter, brain-dead-template, sentiers-llm)');
-  console.log('  --no-open           Don\'t auto-open the built newsletter');
+  console.log('  --no-open            Don\'t auto-open the built newsletter');
+  console.log('  --repo-root=<path>   Specify nfl-maizzle-mail repo root (for cross-repo usage)');
+  console.log('  --output-dir=<path>  Output directory (default: build_production in repo)');
+  console.log('');
+  console.log('Environment Variables:');
+  console.log('  NFL_MAIZZLE_MAIL_ROOT  Alternative to --repo-root');
+  console.log('');
+  console.log(`Current Repo Root: ${REPO_ROOT}`);
   console.log('');
   console.log('Available files:');
   
   // List available data files
-  const dataDir = 'data/';
+  const dataDir = repoPath(REPO_ROOT, 'data/');
   const dataFiles = fs.readdirSync(dataDir)
     .filter(file => file.endsWith('.json') && !file.startsWith('newsletter.json'))
     .sort();
@@ -762,7 +814,7 @@ if (args.length < 1) {
   });
   
   // List available markdown files
-  const contentDir = 'content/';
+  const contentDir = repoPath(REPO_ROOT, 'content/');
   if (fs.existsSync(contentDir)) {
     const mdFiles = fs.readdirSync(contentDir)
       .filter(file => file.endsWith('.md'))
@@ -831,6 +883,7 @@ async function buildNewsletter() {
   console.log('════════════════════');
   console.log(`📄 Input: ${inputPath}`);
   console.log(`🏗️  Output: ${outputName}.html`);
+  console.log(`📍 Repo: ${REPO_ROOT}`);
 
   try {
     let templateName = 'wirecutter'; // default
@@ -846,19 +899,21 @@ async function buildNewsletter() {
       }
       
       // Run markdown to JSON conversion with error handling
+      const dataNewsletterJson = repoPath(REPO_ROOT, 'data/newsletter.json');
+      const mdToJsonScript = repoPath(REPO_ROOT, 'scripts/md_to_json.mjs');
       try {
-        execSync(`node scripts/md_to_json.mjs ${inputPath} data/newsletter.json --template=${templateName}`, { 
+        execSync(`node ${mdToJsonScript} ${inputPath} ${dataNewsletterJson} --template=${templateName}`, { 
           stdio: 'inherit',
-          cwd: process.cwd()
+          cwd: REPO_ROOT
         });
         
         // Verify the conversion worked
-        if (!fs.existsSync('data/newsletter.json')) {
+        if (!fs.existsSync(dataNewsletterJson)) {
           throw new Error('Markdown conversion failed - newsletter.json not created');
         }
         
         // After conversion, ensure the template is set correctly in the JSON
-        const newsletterData = JSON.parse(fs.readFileSync('data/newsletter.json', 'utf8'));
+        const newsletterData = JSON.parse(fs.readFileSync(dataNewsletterJson, 'utf8'));
         
         // If template was provided via CLI, enforce it. Otherwise respect what's in the JSON (from frontmatter)
         if (templateArg) {
@@ -867,7 +922,7 @@ async function buildNewsletter() {
           templateName = newsletterData.template;
         }
         
-        fs.writeFileSync('data/newsletter.json', JSON.stringify(newsletterData, null, 2));
+        fs.writeFileSync(dataNewsletterJson, JSON.stringify(newsletterData, null, 2));
         
         console.log('✅ Markdown converted successfully');
         
@@ -885,14 +940,16 @@ async function buildNewsletter() {
       templateName = data.template || 'wirecutter';
       
       // Copy data file to newsletter.json
-      fs.copyFileSync(inputPath, 'data/newsletter.json');
+      const dataNewsletterJson = repoPath(REPO_ROOT, 'data/newsletter.json');
+      fs.copyFileSync(inputPath, dataNewsletterJson);
     }
     
+    const dataNewsletterJson = repoPath(REPO_ROOT, 'data/newsletter.json');
     console.log(`🎨 Template: "${templateName}"`);
-    console.log(`📊 Newsletter: "${JSON.parse(fs.readFileSync('data/newsletter.json', 'utf8')).title}"`);
+    console.log(`📊 Newsletter: "${JSON.parse(fs.readFileSync(dataNewsletterJson, 'utf8')).title}"`);
 
     // Load newsletter data and display color theme
-    const newsletterData = JSON.parse(fs.readFileSync('data/newsletter.json', 'utf8'));
+    const newsletterData = JSON.parse(fs.readFileSync(dataNewsletterJson, 'utf8'));
 
     // Validate source JSON against a template-specific schema if one exists.
     // Default behavior is warn-and-continue; pass `--strict-schema` (or set `SCHEMA_STRICT=1`)
@@ -940,7 +997,7 @@ async function buildNewsletter() {
     const colorThemeName = newsletterData.colorTheme || 'current';
     let colorThemes = {};
     try {
-      const themesData = fs.readFileSync('data/color-themes.json', 'utf8');
+      const themesData = fs.readFileSync(repoPath(REPO_ROOT, 'data/color-themes.json'), 'utf8');
       colorThemes = JSON.parse(themesData);
     } catch (error) {
       console.log('⚠️  No color themes found, using defaults');
@@ -960,17 +1017,17 @@ async function buildNewsletter() {
 
     // Load section styles configuration
     let sectionStyles = {};
-    let sectionStylesPath = 'data/section-styles.json'; // Default path
+    let sectionStylesPath = repoPath(REPO_ROOT, 'data/section-styles.json'); // Default path
     let sectionStylesSourceReason = 'default repository styles';
     
     // Check if newsletter data specifies a custom section styles file
     if (newsletterData.sectionStylesFile) {
-      sectionStylesPath = newsletterData.sectionStylesFile;
+      sectionStylesPath = repoPath(REPO_ROOT, newsletterData.sectionStylesFile);
       sectionStylesSourceReason = 'specified via sectionStylesFile';
       console.log(`📋 Using custom section styles file: ${sectionStylesPath}`);
     } else if (templateName) {
       // Auto-detect template-specific section styles file
-      const templateSpecificPath = `templates/${templateName}/section-styles.json`;
+      const templateSpecificPath = repoPath(REPO_ROOT, `templates/${templateName}/section-styles.json`);
       if (fs.existsSync(templateSpecificPath)) {
         sectionStylesPath = templateSpecificPath;
         sectionStylesSourceReason = `auto-detected for template "${templateName}"`;
@@ -1091,9 +1148,14 @@ async function buildNewsletter() {
             let desc = section.description;
             let wasModified = false;
             // Apply descriptionStyles if provided, otherwise fall back to contentStyles
-            const descStyles = (safeUsedConfig.descriptionStyles && Object.keys(safeUsedConfig.descriptionStyles).length > 0)
+            // Merge: template section-styles.json provides defaults, section-level frontmatter overrides
+            const templateDescStyles = (safeUsedConfig.descriptionStyles && Object.keys(safeUsedConfig.descriptionStyles).length > 0)
               ? safeUsedConfig.descriptionStyles
               : safeUsedConfig.contentStyles;
+            const sectionDescStyles = (section.descriptionStyles && Object.keys(section.descriptionStyles).length > 0)
+              ? section.descriptionStyles
+              : section.contentStyles;
+            const descStyles = { ...templateDescStyles, ...sectionDescStyles };
             if (descStyles && Object.keys(descStyles).length > 0) {
               const contentStyles = descStyles;
               let cssProperties = [];
@@ -1189,9 +1251,16 @@ async function buildNewsletter() {
           section.containerStyles.backgroundColor = section.containerStyles.backgroundColor == null ? null : String(section.containerStyles.backgroundColor).trim();
 
           // Expose contentStyles so templates can use configured typography instead of hardcoded values
-          section.contentStyles = (safeUsedConfig.contentStyles && typeof safeUsedConfig.contentStyles === 'object')
+          // Merge: template section-styles.json provides defaults, section-level frontmatter overrides
+          const incomingContentStyles = section.contentStyles && typeof section.contentStyles === 'object'
+            ? { ...section.contentStyles }
+            : {};
+          const templateContentStyles = (safeUsedConfig.contentStyles && typeof safeUsedConfig.contentStyles === 'object')
             ? { ...safeUsedConfig.contentStyles }
             : {};
+          section.contentStyles = { ...templateContentStyles, ...incomingContentStyles };
+          // Track which properties were overridden by frontmatter for logging
+          section._contentStyleOverrides = Object.keys(incomingContentStyles).length > 0 ? incomingContentStyles : null;
           if (section.contentStyles && Object.keys(section.contentStyles).length > 0) {
             sectionsWithInjectedContentStyles++;
           }
@@ -1230,14 +1299,22 @@ async function buildNewsletter() {
           
           // Show section header with styling info
           if (sectionTotalItems > 0) {
-            const statusIcon = usingFallback ? '⚠️ ' : '✅';
+            const hasOverrides = section._contentStyleOverrides && Object.keys(section._contentStyleOverrides).length > 0;
+            const statusIcon = usingFallback ? '⚠️ ' : (hasOverrides ? '🎨' : '✅');
             const configInfo = usingFallback ? `using "default" styles` : `using "${section.type}" styles`;
-            const fontInfo = safeUsedConfig?.contentStyles?.fontFamily ? ` (${safeUsedConfig.contentStyles.fontFamily})` : '';
+            const templateFontInfo = safeUsedConfig?.contentStyles?.fontFamily ? ` (${safeUsedConfig.contentStyles.fontFamily})` : '';
             
-            console.log(`${statusIcon} Section ${sIndex + 1}: "${section.type}" - ${configInfo}${fontInfo}`);
+            console.log(`${statusIcon} Section ${sIndex + 1}: "${section.type}" - ${configInfo}${templateFontInfo}`);
             
             if (usingFallback) {
               console.log(`   ℹ️  No specific styles found for "${section.type}", falling back to default`);
+            }
+            
+            // Announce frontmatter overrides prominently
+            if (hasOverrides) {
+              const overrideEntries = Object.entries(section._contentStyleOverrides);
+              const overrideList = overrideEntries.map(([prop, val]) => `${prop}: ${val}`).join(', ');
+              console.log(`   🔶 FRONTMATTER OVERRIDES → ${overrideList}`);
             }
           }
           
@@ -1247,9 +1324,12 @@ async function buildNewsletter() {
               let originalDescription = item.description;
               let wasModified = false;
               
-              // Apply all contentStyles properties
-              if (safeUsedConfig.contentStyles && Object.keys(safeUsedConfig.contentStyles).length > 0) {
-                const contentStyles = safeUsedConfig.contentStyles;
+              // Apply all contentStyles properties (using merged section.contentStyles which includes frontmatter overrides)
+              const mergedContentStyles = section.contentStyles && Object.keys(section.contentStyles).length > 0
+                ? section.contentStyles
+                : safeUsedConfig.contentStyles;
+              if (mergedContentStyles && Object.keys(mergedContentStyles).length > 0) {
+                const contentStyles = mergedContentStyles;
                 
                 // Build CSS properties from contentStyles
                 let cssProperties = [];
@@ -1384,23 +1464,20 @@ async function buildNewsletter() {
                 inlineStyleSummary.push(`${inlineStyleMatches.length} inline style${inlineStyleMatches.length > 1 ? 's' : ''}`);
               }
               if (uniqueInlineFonts.length) {
-                inlineStyleSummary.push(`inline font-family: ${uniqueInlineFonts.join(', ')}`);
+                inlineStyleSummary.push(`font: ${uniqueInlineFonts.join(', ')}`);
               }
-              const configFontFamily = usedConfig?.contentStyles?.fontFamily
-                ? normalizeFontFamily(usedConfig.contentStyles.fontFamily)
-                : '';
-              const descriptionFontFamily = usedConfig?.descriptionStyles?.fontFamily
-                ? normalizeFontFamily(usedConfig.descriptionStyles.fontFamily)
-                : '';
-              const descriptionColor = usedConfig?.descriptionStyles?.color || '';
-              if (configFontFamily && uniqueInlineFonts.some((font) => font !== configFontFamily)) {
-                inlineStyleSummary.push(`overrides section font (${usedConfig.contentStyles.fontFamily})`);
-              }
-              if (descriptionFontFamily && uniqueInlineFonts.some((font) => font !== descriptionFontFamily)) {
-                inlineStyleSummary.push(`overrides description font (${usedConfig.descriptionStyles.fontFamily})`);
-              }
-              if (descriptionColor) {
-                inlineStyleSummary.push(`description color override (${descriptionColor})`);
+              
+              // Show effective styles being applied (merged result)
+              const effectiveStyles = section.contentStyles || {};
+              const appliedStylesList = [];
+              if (effectiveStyles.fontSize) appliedStylesList.push(`size: ${effectiveStyles.fontSize}`);
+              if (effectiveStyles.lineHeight) appliedStylesList.push(`line-height: ${effectiveStyles.lineHeight}`);
+              if (effectiveStyles.fontWeight) appliedStylesList.push(`weight: ${effectiveStyles.fontWeight}`);
+              if (effectiveStyles.color) appliedStylesList.push(`color: ${effectiveStyles.color}`);
+              if (effectiveStyles.textAlign) appliedStylesList.push(`align: ${effectiveStyles.textAlign}`);
+              
+              if (appliedStylesList.length > 0) {
+                inlineStyleSummary.push(appliedStylesList.join(', '));
               }
 
               if (wasModified) {
@@ -1460,6 +1537,56 @@ async function buildNewsletter() {
       console.log('');
       console.log(`✅ Total: ${processedItems}/${totalItems} items processed successfully`);
       logSectionBackgroundOverrides(newsletterData.sections, theme);
+    }
+
+    // Process header contentStyles and containerStyles (similar to intro processing)
+    if (newsletterData.header) {
+      const header = newsletterData.header;
+      
+      // Get header config from section-styles.json
+      const headerConfig = sectionStyles.sectionStyles
+        ? sectionStyles.sectionStyles.header || {}
+        : {};
+      
+      // Default header styles
+      const defaultHeaderContainerStyles = {
+        backgroundColor: null,
+        padding: '20px'
+      };
+      const defaultHeaderContentStyles = {
+        fontFamily: "'IBM Plex Sans', sans-serif",
+        fontSize: '18px',
+        lineHeight: '23px',
+        fontWeight: '400',
+        color: '#000000',
+        authorFontSize: '16px',
+        authorFontWeight: '600',
+        artistFontSize: '16px',
+        anchorColor: '#000000'
+      };
+      
+      // Get incoming styles from markdown frontmatter
+      const incomingHeaderContainerStyles =
+        header.containerStyles && typeof header.containerStyles === 'object'
+          ? { ...header.containerStyles }
+          : {};
+      const incomingHeaderContentStyles =
+        header.contentStyles && typeof header.contentStyles === 'object'
+          ? { ...header.contentStyles }
+          : {};
+      
+      // Merge: defaults < section-styles.json config < markdown frontmatter
+      const baseHeaderContainerStyles =
+        headerConfig.containerStyles && typeof headerConfig.containerStyles === 'object'
+          ? { ...defaultHeaderContainerStyles, ...headerConfig.containerStyles }
+          : { ...defaultHeaderContainerStyles };
+      const baseHeaderContentStyles =
+        headerConfig.contentStyles && typeof headerConfig.contentStyles === 'object'
+          ? { ...defaultHeaderContentStyles, ...headerConfig.contentStyles }
+          : { ...defaultHeaderContentStyles };
+      
+      header.containerStyles = { ...baseHeaderContainerStyles, ...incomingHeaderContainerStyles };
+      header.contentStyles = { ...baseHeaderContentStyles, ...incomingHeaderContentStyles };
     }
 
     if (newsletterData.intro) {
@@ -1611,7 +1738,7 @@ async function buildNewsletter() {
       });
     }
 
-    fs.writeFileSync('data/newsletter.json', JSON.stringify(newsletterData, null, 2));
+    fs.writeFileSync(dataNewsletterJson, JSON.stringify(newsletterData, null, 2));
     console.log(`✅ Theme and section style data injected for Maizzle processing`);
     
     // Validate images in the newsletter data
@@ -1621,22 +1748,42 @@ async function buildNewsletter() {
     // Build the newsletter
     console.log('🔨 Building newsletter...');
     console.log('');
-    const buildResult = execSync('npm run build:data', { stdio: 'inherit' });
+    
+    // Run Maizzle build from the repo root
+    // We use process.chdir() to ensure Maizzle finds its config files,
+    // since Maizzle uses process.cwd() internally for config resolution.
+    // We also run npx maizzle directly (instead of npm run) to avoid
+    // npm's own path resolution issues when running from external directories.
+    const originalCwd = process.cwd();
+    try {
+      process.chdir(REPO_ROOT);
+      console.log(`📍 Build directory: ${process.cwd()}`);
+      execSync('npx maizzle build production', { stdio: 'inherit' });
+    } finally {
+      process.chdir(originalCwd);
+    }
 
     // Verify the build worked
-    if (!fs.existsSync('build_production/newsletter.html')) {
+    if (!fs.existsSync(repoPath(REPO_ROOT, 'build_production/newsletter.html'))) {
       throw new Error('Maizzle build failed - newsletter.html not created');
     }
 
-    // Rename output file
-    const outputPath = `build_production/${outputName}.html`;
-    console.log(`📦 Saving as ${outputPath}...`);
-    fs.copyFileSync('build_production/newsletter.html', outputPath);
+    // Determine final output path
+    // If --output-dir was specified, use that; otherwise use repo's build_production
+    const finalOutputPath = path.join(outputDir, `${outputName}.html`);
+    
+    // Ensure output directory exists
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
+    
+    console.log(`📦 Saving as ${finalOutputPath}...`);
+    fs.copyFileSync(repoPath(REPO_ROOT, 'build_production/newsletter.html'), finalOutputPath);
 
     console.log('');
     console.log('✅ Newsletter Built Successfully!');
     console.log('═══════════════════════════════');
-    console.log(`📧 File: ${outputPath}`);
+    console.log(`📧 File: ${finalOutputPath}`);
     console.log(`🎨 Template: ${templateName}`);
     console.log(`📄 Source: ${inputPath}`);
     
@@ -1646,7 +1793,7 @@ async function buildNewsletter() {
       console.log('');
       console.log('🌐 Opening newsletter...');
       try {
-        execSync(`open ${outputPath}`, { stdio: 'ignore' });
+        execSync(`open ${finalOutputPath}`, { stdio: 'ignore' });
       } catch (openError) {
         console.log('⚠️  Could not auto-open file (you can open it manually)');
       }

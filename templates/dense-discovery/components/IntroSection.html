@@ -77,7 +77,7 @@
   </tr>
   <tr>
     <td align="left" class="padl20 padr20 padb10" style="border-collapse: collapse;padding-right: 20px;padding-bottom: 10px;padding-left: 20px; margin-top: 30px;">
-      <div class="intro-aside" style="font-family: {{ intro.aside.contentStyles.fontFamily || '\'Ubuntu\', sans-serif' }}; font-size: {{ intro.aside.contentStyles.fontSize || '18px' }};line-height: {{ intro.aside.contentStyles.lineHeight || '23px' }};font-style: {{ intro.aside.contentStyles.fontStyle || 'italic' }};color: {{ intro.aside.contentStyles.color || '#3f3f3f' }};text-align: {{ intro.aside.contentStyles.textAlign || 'left' }};background-color: {{ intro.aside.containerStyles.backgroundColor || themeColors.introAside || '#f4f1ea' }};border-left: {{ intro.aside.containerStyles.borderLeftWidth || '3px' }} {{ intro.aside.containerStyles.borderLeftStyle || 'solid' }} {{ intro.aside.containerStyles.borderLeftColor || '#d7d1c6' }};padding: {{ intro.aside.containerStyles.padding || '12px 14px' }};border-radius: {{ intro.aside.containerStyles.borderRadius || '6px' }};">
+      <div class="intro-aside" style="font-family: {{ intro.aside.contentStyles.fontFamily || '\'Ubuntu\', sans-serif' }}; font-size: {{ intro.aside.contentStyles.fontSize || '18px' }};line-height: {{ intro.aside.contentStyles.lineHeight || '23px' }};font-weight: {{ intro.aside.contentStyles.fontWeight || '400' }};font-style: {{ intro.aside.contentStyles.fontStyle || 'italic' }}; color: {{ intro.aside.contentStyles.color || '#3f3f3f' }};text-align: {{ intro.aside.contentStyles.textAlign || 'left' }}; background-color: {{ intro.aside.containerStyles.backgroundColor || themeColors.introAside || '#f8fff4' }};border-left: {{ intro.aside.containerStyles.borderLeftWidth || '5px' }} {{ intro.aside.containerStyles.borderLeftStyle || 'solid' }} {{ intro.aside.containerStyles.borderLeftColor || '#d7d1c6' }};padding: {{ intro.aside.containerStyles.padding || '12px 14px' }};border-radius: {{ intro.aside.containerStyles.borderRadius || '6px' }};">
         {{{ intro.aside.content || intro.aside }}}
       </div>
     </td>
@@ -87,7 +87,7 @@
 <!-- Intro Content -->
 <if condition="intro.content">
   <tr>
-    <td align="left" class="padt20 padl20 padr20 padb10" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 10px;padding-left: 20px;">
+    <td align="left" class="padl20 padr20" style="border-collapse: collapse;padding-right: 20px;padding-left: 20px;">
       <div class="intro-content" style="font-family: {{ intro.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: {{ intro.contentStyles.fontSize || '16px' }};line-height: {{ intro.contentStyles.lineHeight || '1.2rem' }};font-weight: {{ intro.contentStyles.fontWeight || '400' }};color: {{ intro.contentStyles.color || '#000000' }};text-align: {{ intro.contentStyles.textAlign || 'left' }};background-color: {{ intro.containerStyles.backgroundColor || 'transparent' }};padding: {{ intro.containerStyles.padding || '0' }};border-radius: {{ intro.containerStyles.borderRadius || '0px' }};">
         {{{ intro.content }}}
       </div>
