@@ -23,6 +23,15 @@ from pathlib import Path
 
 # Define all available section types and their field structures
 SECTION_DEFINITIONS = {
+    'ad-block': {
+        'description': 'Single email-safe ad card resolved from ads inventory',
+        'section_fields': ['type'],
+        'item_fields': {
+            'required': ['adId'],
+            'optional': []
+        },
+        'example_items': 1
+    },
     'sponsor': {
         'description': 'Sponsored content section',
         'section_fields': ['type', 'title', 'sponsorLink', 'sponsorLabel'],
@@ -84,7 +93,7 @@ SECTION_DEFINITIONS = {
             'required': ['title'],
             'optional': ['link', 'description', 'details', 'note', 'image', 'readMoreText', 'readMoreLink', 'paywall']
         },
-        'example_items': 1
+        'example_items': 2
     },
     'indie-mag-single-column': {
         'description': 'Independent magazine/publication (single-column)',
@@ -93,7 +102,7 @@ SECTION_DEFINITIONS = {
             'required': ['title'],
             'optional': ['link', 'description', 'details', 'note', 'image', 'images', 'readMoreText', 'readMoreLink', 'paywall']
         },
-        'example_items': 1
+        'example_items': 2
     },
     'books-accessories': {
         'description': 'Books, products, and accessories',
@@ -109,7 +118,7 @@ SECTION_DEFINITIONS = {
         'section_fields': ['type', 'title'],
         'item_fields': {
             'required': ['title'],
-            'optional': ['link', 'description', 'image', 'channel', 'category', 'sharedBy', 'readMoreText', 'readMoreLink', 'paywall']
+            'optional': ['link', 'description', 'image', 'channel', 'category', 'sharedBy', 'readMoreText', 'readMoreLink', 'readMoreLinks', 'paywall']
         },
         'example_items': 2
     },
@@ -150,7 +159,9 @@ def generate_example_item(section_type, item_num=1, minimal=False):
     
     # Add required fields
     for field in definition['item_fields']['required']:
-        if field == 'quote':
+        if field == 'adId':
+            item[field] = 'fashion-8bit-pants-interstitial'
+        elif field == 'quote':
             item[field] = f'Example quote text for item {item_num}'
         elif field == 'content':
             item[field] = f'<p>Example classified content for item {item_num}.</p>'
@@ -220,6 +231,19 @@ def generate_example_item(section_type, item_num=1, minimal=False):
             # Read-more text
             elif opt in ('readMoreText', 'readMoreTxt'):
                 item[opt] = 'Read more →'
+
+            elif opt == 'readMoreLinks':
+                item[opt] = [
+                    {
+                        'text': 'Listen to podcast →',
+                        'link': 'https://example.com/podcast'
+                    },
+                    {
+                        'text': 'View references →',
+                        'link': 'https://example.com/references',
+                        'paywall': True
+                    }
+                ]
 
             # Boolean flags
             elif opt == 'paywall':

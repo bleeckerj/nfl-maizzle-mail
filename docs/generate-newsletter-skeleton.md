@@ -27,6 +27,7 @@ python scripts/generate-newsletter-skeleton.py [--minimal] [--output FILE] [--se
 - Top-level fields include `template`, `title`, `preheader`, `sectionStylesFile`, `intro`, `header`, `sections`, and `footer`.
 - Each section includes the correct `type`, section-level fields, and sample items with required and optional fields populated (unless `--minimal` is used).
 - For `dispatch` sections, `signalsLabel` and `tags` are item-level fields (`sections[].items[]`) used to render the SIGNALS tag bar.
+- For `food-for-thought` sections, the legacy `readMoreText` + `readMoreLink` pair remains the primary CTA row, and optional `readMoreLinks` entries add extra CTA rows as `{ text, link }`.
 - Sample image URLs use placeholders; replace them with real assets before building.
 
 ## Examples

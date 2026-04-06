@@ -39,6 +39,79 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                 <!-- Dynamic Sections Loop -->
                 <each loop="section in sections">
                   
+                  <if condition="section.type === 'ad-block'">
+                    <!-- AD-BLOCK Start -->
+                    <tr>
+                      <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+                    </tr>
+                    <tr>
+                      <td style="border-collapse: collapse;padding: 0;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};border: {{ section.containerStyles.borderWidth || '1px' }} {{ section.containerStyles.borderStyle || 'solid' }} {{ section.containerStyles.borderColor || '#c9cfdb' }};border-radius: {{ section.containerStyles.borderRadius || '0px' }};overflow: hidden;">
+                          <tbody>
+                            <each loop="item in section.items">
+                              <tr>
+                                <td style="border-collapse: collapse;padding: {{ section.containerStyles.labelPadding || '12px 16px 8px 16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
+                                  <div style="{{{ section.labelStylesInline || '' }}}">{{ item.label || item.sponsor || 'Sponsored' }}</div>
+                                </td>
+                              </tr>
+
+                              <if condition="item.image">
+                                <tr>
+                                  <td style="border-collapse: collapse;padding: {{ section.containerStyles.imagePadding || '0 12px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
+                                    <if condition="item.link">
+                                      <a href="{{ item.link }}" style="text-decoration: none;">
+                                        <img src="{{ item.image }}" alt="{{ item.imageAlt || item.title || 'Advertisement' }}" width="608" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 608px;height: auto;border: 0;">
+                                      </a>
+                                    </if>
+                                    <if condition="!item.link">
+                                      <img src="{{ item.image }}" alt="{{ item.imageAlt || item.title || 'Advertisement' }}" width="608" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 608px;height: auto;border: 0;">
+                                    </if>
+                                  </td>
+                                </tr>
+                              </if>
+
+                              <if condition="item.title">
+                                <tr>
+                                  <td style="border-collapse: collapse;padding: {{ section.containerStyles.titlePadding || '12px 16px 0 16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
+                                    <if condition="item.link">
+                                      <p class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}}margin: 0;padding: 0;">
+                                        <a href="{{ item.link }}" class="theme-link" style="text-decoration: none;color: inherit;">{{ item.title }}</a>
+                                      </p>
+                                    </if>
+                                    <if condition="!item.link">
+                                      <p class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}}margin: 0;padding: 0;">{{ item.title }}</p>
+                                    </if>
+                                  </td>
+                                </tr>
+                              </if>
+
+                              <if condition="item.description">
+                                <tr>
+                                  <td style="border-collapse: collapse;padding: {{ section.containerStyles.copyPadding || '6px 16px 14px 16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
+                                    <div style="font-family: {{ section.contentStyles.fontFamily || 'Geist, ui-sans-serif, sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '1.45' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#44506a' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 0;margin: 0;">
+                                      {{{ item.description }}}
+                                    </div>
+                                  </td>
+                                </tr>
+                              </if>
+
+                              <if condition="item.readMoreLink && item.readMoreText">
+                                <tr>
+                                  <td style="border-collapse: collapse;padding: {{ section.containerStyles.ctaPadding || '0 16px 14px 16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
+                                    <p class="mob-readmore" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}margin: 0;padding: 0;">
+                                      <a href="{{ item.readMoreLink }}" style="{{{ section.linkStylesInline || '' }}}">{{ item.readMoreText }}</a>
+                                    </p>
+                                  </td>
+                                </tr>
+                              </if>
+                            </each>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <!-- AD-BLOCK End -->
+                  </if>
+                  
                   <if condition="section.type === 'sponsor'">
                     <!-- SPONSOR Start -->
                     <tr>
@@ -74,18 +147,18 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                               <tr>
                                 <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.sponsor || '#f8eccf' }};padding: {{ section.containerStyles.padding || '15px 20px' }};">
                                   <if condition="item.title && item.link">
-                                    <p style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">
+                                    <p class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">
                                       <a href="{{ item.link }}" class="theme-link" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ item.title }}</a>
                                     </p>
                                   </if>
                                   <if condition="item.title && !item.link">
-                                    <p style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 12px;">
+                                    <p class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 12px;">
                                       {{ item.title }}
                                     </p>
                                   </if>
                                   
                                   <if condition="item.subtitle">
-                                    <p style="font-size: 16px;line-height: 18px;font-weight: 400;color: #707070 !important;padding: 0;margin-bottom: 12px;">{{ item.subtitle }}</p>
+                                    <p class="mob-text mob-subtitle" style="font-size: 16px;line-height: 18px;font-weight: 400;color: #707070 !important;padding: 0;margin-bottom: 12px;">{{ item.subtitle }}</p>
                                   </if>
                                 </td>
                               </tr>
@@ -135,10 +208,15 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                               <if condition="(item.readMoreText || item.readMoreTxt) && (item.readMoreLink || item.link)">
                                 <tr>
                                   <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.sponsor || '#f8eccf' }};padding: 0 20px 20px 20px;">
-                                    <p style="padding: 0;margin: 0; {{{ section.linkStylesInline || '' }}}">
+                                    <p class="mob-readmore" style="padding: 0;margin: 0; {{{ section.linkStylesInline || '' }}}">
                                       <a href="{{ item.readMoreLink || item.link }}" style="{{{ section.linkStylesInline || '' }}}">{{ item.readMoreText || item.readMoreTxt || 'Read More' }}</a>
                                     </p>
                                   </td>
+                                </tr>
+                              </if>
+                              <if condition="loop.index < section.items.length">
+                                <tr>
+                                  <td class="spacer" bgcolor="#FFFFFF" height="{{ section.itemSpacing || '24px' }}" style="border-collapse: collapse;background-color: #FFFFFF;font-size: {{ section.itemSpacing || '24px' }};line-height: {{ section.itemSpacing || '24px' }};mso-line-height-rule: exactly;">&nbsp;</td>
                                 </tr>
                               </if>
                             </each>
@@ -166,7 +244,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                         <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" arcsize="0%" stroked="false" style="height:1px; v-text-anchor:middle;" >
                         <v:textbox inset="0,0,0,0">
                         <![endif]-->
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0; background: {{ section.containerStyles.backgroundColor || themeColors.dispatch || '#f8eccf' }}; border-top-left-radius : {{ section.containerStyles.borderRadius || '0px' }}; border-top-right-radius : {{ section.containerStyles.borderRadius || '0px' }}; border-bottom-left-radius : {{ section.containerStyles.borderRadius || '0px' }}; border-bottom-right-radius : {{ section.containerStyles.borderRadius || '0px' }};   overflow: hidden; padding: 0;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0; background: {{ section.containerStyles.backgroundColor || themeColors.dispatch || '#f8eccf' }}; border-radius: {{ section.containerStyles.borderRadius || '0px' }}; overflow: hidden; padding: 0;">
                           <tbody>
                             <tr>
                               <td align="left" class="headline box-yellow" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.dispatch || '#f8eccf' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
@@ -202,18 +280,18 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                               <tr>
                                 <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.dispatch || '#f8eccf' }};padding: {{ section.containerStyles.padding || '15px 20px' }};">
                                   <if condition="item.title && item.link">
-                                    <p style="margin: 0;padding: 0;margin-bottom: 8px; {{{ section.headingStylesInline || '' }}}">
+                                    <p class="mob-text mob-title" style="margin: 0;padding: 0;margin-bottom: 8px; {{{ section.headingStylesInline || '' }}}">
                                       <a href="{{ item.link }}" class="theme-link" style="{{{ section.linkStylesInline || '' }}}">{{ item.title }}</a>
                                     </p>
                                   </if>
                                   <if condition="item.title && !item.link">
-                                    <p style="margin: 0;padding: 0;margin-bottom: 12px; {{{ section.headingStylesInline || '' }}}">
+                                    <p class="mob-text mob-title" style="margin: 0;padding: 0;margin-bottom: 12px; {{{ section.headingStylesInline || '' }}}">
                                       {{ item.title }}
                                     </p>
                                   </if>
                                   
                                   <if condition="item.subtitle">
-                                    <p style="font-size: 17px;line-height: 18px;font-weight: 500;color: #363636 !important;padding: 0;margin-bottom: 12px;">{{ item.subtitle }}</p>
+                                    <p class="mob-text mob-subtitle" style="font-size: 17px;line-height: 18px;font-weight: 500;color: #363636 !important;padding: 0;margin-bottom: 12px;">{{ item.subtitle }}</p>
                                   </if>
                                 </td>
                               </tr>
@@ -240,7 +318,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                               <if condition="(item.readMoreText || item.readMoreTxt) && (item.readMoreLink || item.link)">
                                 <tr>
                                   <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.dispatch || '#f8eccf' }};padding: 0 20px 20px 20px;">
-                                    <p style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}padding: 0;margin: 0;">
+                                    <p class="mob-readmore" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}padding: 0;margin: 0;">
                                       <a href="{{ item.readMoreLink || item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ item.readMoreText || item.readMoreTxt || 'Read More' }}</a>
                                     </p>
                                   </td>
@@ -258,6 +336,421 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
               </tr>
               <!-- DISPATCH End -->
             </if>
+
+            <if condition="section.type === 'signals-adjacent-now'">
+              <!-- SIGNALS FROM AN ADJACENT NOW Start -->
+              <tr>
+                <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+              </tr>
+
+              <tr>
+                <td style="border-collapse: collapse;padding: 0;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0; background: {{ section.containerStyles.backgroundColor || themeColors['signals-adjacent-now'] || themeColors.dispatch || '#f8eccf' }}; border-radius: {{ section.containerStyles.borderRadius || '0px' }}; overflow: hidden; padding: 0;">
+                    <tbody>
+                      <tr>
+                        <td align="left" class="headline box-yellow" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['signals-adjacent-now'] || themeColors.dispatch || '#f8eccf' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
+                          <h1 style="mso-line-height-rule: exactly; margin: 0;padding: 0; {{{ section.headingStylesInline || '' }}}">
+                            {{ section.title }}
+                            <if condition="section.dispatchLabel || section.signalsLabel">
+                              <span style="display: inline-block;font-size: 15px;line-height: 25px;font-weight: 500;float: right;color: {{ themeColors.linkAccent || '#6d6b57' }} !important;">
+                                {{ section.dispatchLabel || section.signalsLabel }}
+                              </span>
+                            </if>
+                          </h1>
+                        </td>
+                      </tr>
+
+                      <if condition="section.description">
+                        <tr>
+                          <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['signals-adjacent-now'] || themeColors.dispatch || '#f8eccf' }};padding: 10px 20px 8px 20px;">
+                            <div style="font-family: {{ section.descriptionStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: {{ section.descriptionStyles.fontSize || '16px' }};line-height: {{ section.descriptionStyles.lineHeight || '23px' }};font-weight: {{ section.descriptionStyles.fontWeight || '400' }};color: {{ section.descriptionStyles.color || '#000000' }};text-align: {{ section.descriptionStyles.textAlign || 'left' }};padding: 0;margin: 0;">
+                              {{{ section.description }}}
+                            </div>
+                          </td>
+                        </tr>
+                      </if>
+
+                      <each loop="item in section.items">
+                        <if condition="item.tags && item.tags.length">
+                          <tr>
+                            <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['signals-adjacent-now'] || themeColors.dispatch || '#f8eccf' }};padding: 4px 20px 8px 20px;">
+                              <div style="font-family: 'Share Tech Mono', monospace; font-size: 13px;line-height: 18px;font-weight: 700;color: #222;text-transform: uppercase;letter-spacing: 1px;margin-bottom: 4px;">{{ item.signalsLabel || section.signalsLabel || 'THEMES' }}</div>
+                              <table width="100%" cellpadding="0" cellspacing="0" style="border-spacing: 0;">
+                                <tbody>
+                                  <tr>
+                                    <td style="padding: 0;">
+                                      <each loop="tag in item.tags">
+                                        <span style="display: inline-block;background: #888;border-radius: 8px;padding: 3px 12px;margin: 2px 4px 2px 0;font-size: 12px;font-weight: 700;color: #fff;border: 1px solid #e5e5e5;text-transform: uppercase;letter-spacing: 1px;">{{ tag }}</span>
+                                      </each>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </if>
+
+                        <tr>
+                          <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['signals-adjacent-now'] || themeColors.dispatch || '#f8eccf' }};padding: {{ section.containerStyles.padding || '15px 20px' }};">
+                            <if condition="item.title && item.link">
+                              <p class="mob-text mob-title" style="margin: 0;padding: 0;margin-bottom: 8px; {{{ section.headingStylesInline || '' }}}">
+                                <a href="{{ item.link }}" class="theme-link" style="{{{ section.linkStylesInline || '' }}}">{{ item.title }}</a>
+                              </p>
+                            </if>
+                            <if condition="item.title && !item.link">
+                              <p class="mob-text mob-title" style="margin: 0;padding: 0;margin-bottom: 12px; {{{ section.headingStylesInline || '' }}}">
+                                {{ item.title }}
+                              </p>
+                            </if>
+
+                            <if condition="item.subtitle">
+                              <p class="mob-text mob-subtitle" style="font-size: 17px;line-height: 18px;font-weight: 500;color: #363636 !important;padding: 0;margin-bottom: 12px;">{{ item.subtitle }}</p>
+                            </if>
+                          </td>
+                        </tr>
+
+                        <if condition="item.image">
+                          <tr>
+                            <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['signals-adjacent-now'] || themeColors.dispatch || '#f8eccf' }};padding: 0 20px 15px 20px;">
+                              <img src="{{ item.image }}" alt="{{ item.title || 'Signal image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;height: auto;border-radius:3%;">
+                            </td>
+                          </tr>
+                        </if>
+
+                        <if condition="item.description">
+                          <tr>
+                            <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['signals-adjacent-now'] || themeColors.dispatch || '#f8eccf' }};padding: 0 20px 16px 20px;">
+                              <div style="font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '18px' }};line-height: {{ section.contentStyles.lineHeight || '23px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#000000' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 0;margin: 0;">
+                                {{{ item.description }}}
+                              </div>
+                            </td>
+                          </tr>
+                        </if>
+
+                        <if condition="item.sourceDigestSummary">
+                          <tr>
+                            <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['signals-adjacent-now'] || themeColors.dispatch || '#f8eccf' }};padding: 0 20px 16px 20px;">
+                              <div style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 700;color: #404040;text-transform: uppercase;letter-spacing: 0.08em;margin: 0 0 8px 0;">Source Digest Summary</div>
+                              <div style="font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: 15px;line-height: 20px;font-weight: 400;color: #333;padding: 0;margin: 0;">
+                                {{{ item.sourceDigestSummary }}}
+                              </div>
+                            </td>
+                          </tr>
+                        </if>
+
+                        <if condition="item.storySeeds && item.storySeeds.length">
+                          <tr>
+                            <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['signals-adjacent-now'] || themeColors.dispatch || '#f8eccf' }};padding: 0 20px 14px 20px;">
+                              <div style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 700;color: #000000;text-transform: uppercase;letter-spacing: 0.08em;margin: 0 0 8px 0;">Story Seeds</div>
+                              <each loop="seed in item.storySeeds">
+                                <p style="margin: 0 0 6px 0;padding: 0;font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }};font-size: {{ section.contentStyles.fontSize || '18px' }};line-height: {{ section.contentStyles.lineHeight || '23px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: #000000;">• {{{ seed }}}</p>
+                              </each>
+                            </td>
+                          </tr>
+                        </if>
+
+                        <if condition="item.strategyQuestions && item.strategyQuestions.length">
+                          <tr>
+                            <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['signals-adjacent-now'] || themeColors.dispatch || '#f8eccf' }};padding: 0 20px 16px 20px;">
+                              <div style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 700;color: #000000;text-transform: uppercase;letter-spacing: 0.08em;margin: 0 0 8px 0;">Strategy Questions</div>
+                              <each loop="question in item.strategyQuestions">
+                                <p style="margin: 0 0 6px 0;padding: 0;font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }};font-size: {{ section.contentStyles.fontSize || '18px' }};line-height: {{ section.contentStyles.lineHeight || '23px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: #000000;">• {{{ question }}}</p>
+                              </each>
+                            </td>
+                          </tr>
+                        </if>
+
+                        <if condition="(item.readMoreText || item.readMoreTxt) && (item.readMoreLink || item.link)">
+                          <tr>
+                            <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['signals-adjacent-now'] || themeColors.dispatch || '#f8eccf' }};padding: 0 20px 20px 20px;">
+                              <p class="mob-readmore" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}padding: 0;margin: 0;">
+                                <a href="{{ item.readMoreLink || item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ item.readMoreText || item.readMoreTxt || 'Read More' }}</a>
+                              </p>
+                            </td>
+                          </tr>
+                        </if>
+                      </each>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <!-- SIGNALS FROM AN ADJACENT NOW End -->
+            </if>
+
+            <if condition="section.type === 'adjacency-job-posting'">
+              <!-- ADJACENCY JOB POSTING Start -->
+              <tr>
+                <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+              </tr>
+              <tr>
+                <td style="border-collapse: collapse;padding: 0;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0; {{{ section.jobStyles.shell || '' }}}">
+                    <tbody>
+                      <tr>
+                        <td style="border-collapse: collapse; {{{ section.jobStyles.header || '' }}}">
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;">
+                            <tbody>
+                              <tr>
+                                <td style="border-collapse: collapse; {{{ section.jobStyles.headerInner || '' }}}">
+                                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;">
+                                    <tbody>
+                                      <tr>
+                                        <if condition="section.companyIcon && section.companyIcon.src">
+                                          <td valign="top" style="border-collapse: collapse;padding: 0 14px 0 0;width: 64px;">
+                                            <img src="{{ section.companyIcon.src }}" alt="{{ section.companyIcon.alt || section.company }}" width="56" height="auto" style="-ms-interpolation-mode: bicubic; {{{ section.jobStyles.companyIcon || '' }}}">
+                                          </td>
+                                        </if>
+                                        <td valign="top" style="border-collapse: collapse;">
+                                          <p style="margin: 0;padding: 0; {{{ section.jobStyles.company || '' }}}">{{ section.company }}</p>
+                                          <if condition="section.companyTagline">
+                                            <p style="margin: 8px 0 0 0;padding: 0; {{{ section.jobStyles.companyTagline || '' }}}">{{ section.companyTagline }}</p>
+                                          </if>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  <h1 style="margin: 16px 0 0 0;padding: 0; {{{ section.jobStyles.title || '' }}}">{{ section.title }}</h1>
+                                  <if condition="section.tags && section.tags.length">
+                                    <div style="margin-top: 12px;">
+                                      <each loop="tag in section.tags">
+                                        <span style="{{{ section.jobStyles.tag || '' }}}">{{ tag }}</span>
+                                      </each>
+                                    </div>
+                                  </if>
+
+                                  <if condition="section.jobPresentation && section.jobPresentation.metaPresentation === 'rows'">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;margin-top: 16px;">
+                                      <tbody>
+                                        <if condition="section.location">
+                                          <tr><td style="border-collapse: collapse;padding: 0 0 6px 0; {{{ section.jobStyles.metaChip || '' }}}">Location: {{ section.location }}</td></tr>
+                                        </if>
+                                        <if condition="section.team">
+                                          <tr><td style="border-collapse: collapse;padding: 0 0 6px 0; {{{ section.jobStyles.metaChip || '' }}}">Team: {{ section.team }}</td></tr>
+                                        </if>
+                                        <if condition="section.department">
+                                          <tr><td style="border-collapse: collapse;padding: 0 0 6px 0; {{{ section.jobStyles.metaChip || '' }}}">Department: {{ section.department }}</td></tr>
+                                        </if>
+                                        <if condition="section.employmentType">
+                                          <tr><td style="border-collapse: collapse;padding: 0 0 6px 0; {{{ section.jobStyles.metaChip || '' }}}">Type: {{ section.employmentType }}</td></tr>
+                                        </if>
+                                        <if condition="section.posted">
+                                          <tr><td style="border-collapse: collapse;padding: 0 0 6px 0; {{{ section.jobStyles.metaChip || '' }}}">Posted: {{ section.posted }}</td></tr>
+                                        </if>
+                                        <if condition="section.roleNumber">
+                                          <tr><td style="border-collapse: collapse;padding: 0 0 6px 0; {{{ section.jobStyles.metaChip || '' }}}">Role: {{ section.roleNumber }}</td></tr>
+                                        </if>
+                                        <if condition="section.weeklyHours">
+                                          <tr><td style="border-collapse: collapse;padding: 0; {{{ section.jobStyles.metaChip || '' }}}">Weekly Hours: {{ section.weeklyHours }}</td></tr>
+                                        </if>
+                                      </tbody>
+                                    </table>
+                                  </if>
+
+                                  <if condition="!section.jobPresentation || section.jobPresentation.metaPresentation !== 'rows'">
+                                    <div style="{{{ section.jobStyles.metaRow || '' }}}">
+                                      <if condition="section.location"><span style="{{{ section.jobStyles.metaChip || '' }}}">{{ section.location }}</span></if>
+                                      <if condition="section.team"><span style="{{{ section.jobStyles.metaChip || '' }}}">{{ section.team }}</span></if>
+                                      <if condition="section.department"><span style="{{{ section.jobStyles.metaChip || '' }}}">{{ section.department }}</span></if>
+                                      <if condition="section.employmentType"><span style="{{{ section.jobStyles.metaChip || '' }}}">{{ section.employmentType }}</span></if>
+                                      <if condition="section.posted"><span style="{{{ section.jobStyles.metaChip || '' }}}">Posted {{ section.posted }}</span></if>
+                                      <if condition="section.roleNumber"><span style="{{{ section.jobStyles.metaChip || '' }}}">Req {{ section.roleNumber }}</span></if>
+                                      <if condition="section.weeklyHours"><span style="{{{ section.jobStyles.metaChip || '' }}}">{{ section.weeklyHours }} hrs/week</span></if>
+                                    </div>
+                                  </if>
+
+                                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;margin-top: 16px;">
+                                    <tbody>
+                                      <tr>
+                                        <td style="border-collapse: collapse;padding: 0 10px 0 0;" valign="top">
+                                          <if condition="section.applyUrl">
+                                            <a href="{{ section.applyUrl }}" style="{{{ section.jobStyles.ctaPrimary || '' }}}">{{ section.applyLabel || 'Apply now' }}</a>
+                                          </if>
+                                        </td>
+                                        <td style="border-collapse: collapse;padding: 0;" valign="top">
+                                          <if condition="section.locationPickerUrl">
+                                            <a href="{{ section.locationPickerUrl }}" style="{{{ section.jobStyles.ctaSecondary || '' }}}">{{ section.locationPickerLabel || "Where we're hiring" }}</a>
+                                          </if>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <if condition="section.summaryHtml">
+                        <tr>
+                          <td style="border-collapse: collapse; {{{ section.jobStyles.contentSection || '' }}}">
+                            <p style="margin: 0 0 10px 0;padding: 0; {{{ section.jobStyles.sectionHeading || '' }}}">Summary</p>
+                            {{{ section.summaryHtml }}}
+                          </td>
+                        </tr>
+                      </if>
+
+                      <if condition="section.descriptionHtml">
+                        <tr>
+                          <td style="border-collapse: collapse; {{{ section.jobStyles.contentSection || '' }}}">
+                            <div style="{{{ section.jobStyles.divider || '' }}}{{{ section.jobStyles.divider ? '; ' : '' }}}font-size: 1px; line-height: 1; margin-bottom: 18px;"></div>
+                            <p style="margin: 0 0 10px 0;padding: 0; {{{ section.jobStyles.sectionHeading || '' }}}">Description</p>
+                            {{{ section.descriptionHtml }}}
+                          </td>
+                        </tr>
+                      </if>
+
+                      <each loop="jobList in section.lists">
+                        <tr>
+                          <td style="border-collapse: collapse; {{{ section.jobStyles.contentSection || '' }}}">
+                            <div style="{{{ section.jobStyles.divider || '' }}}{{{ section.jobStyles.divider ? '; ' : '' }}}font-size: 1px; line-height: 1; margin-bottom: 18px;"></div>
+                            <p style="margin: 0 0 10px 0;padding: 0; {{{ section.jobStyles.sectionHeading || '' }}}">{{ jobList.title }}</p>
+                            <ul style="{{{ section.jobStyles.list || '' }}}">
+                              <each loop="itemHtml in jobList.itemsHtml">
+                                <li style="{{{ section.jobStyles.listItem || '' }}}">{{{ itemHtml }}}</li>
+                              </each>
+                            </ul>
+                          </td>
+                        </tr>
+                      </each>
+
+                      <if condition="section.payRangeHtml">
+                        <tr>
+                          <td style="border-collapse: collapse; {{{ section.jobStyles.contentSection || '' }}}">
+                            <div style="{{{ section.jobStyles.divider || '' }}}{{{ section.jobStyles.divider ? '; ' : '' }}}font-size: 1px; line-height: 1; margin-bottom: 18px;"></div>
+                            <div style="{{{ section.jobStyles.compensationBox || '' }}}">
+                              <p style="margin: 0 0 10px 0;padding: 0; {{{ section.jobStyles.sectionHeading || '' }}}">Compensation</p>
+                              {{{ section.payRangeHtml }}}
+                            </div>
+                          </td>
+                        </tr>
+                      </if>
+
+                      <if condition="section.bodyHtml">
+                        <tr>
+                          <td style="border-collapse: collapse; {{{ section.jobStyles.contentSection || '' }}}">
+                            <div style="{{{ section.jobStyles.divider || '' }}}{{{ section.jobStyles.divider ? '; ' : '' }}}font-size: 1px; line-height: 1; margin-bottom: 18px;"></div>
+                            <p style="margin: 0 0 10px 0;padding: 0; {{{ section.jobStyles.sectionHeading || '' }}}">Additional Information</p>
+                            {{{ section.bodyHtml }}}
+                          </td>
+                        </tr>
+                      </if>
+
+                      <if condition="section.originalSourceUrl">
+                        <tr>
+                          <td style="border-collapse: collapse; {{{ section.jobStyles.contentSection || '' }}}">
+                            <div style="{{{ section.jobStyles.divider || '' }}}{{{ section.jobStyles.divider ? '; ' : '' }}}font-size: 1px; line-height: 1; margin-bottom: 18px;"></div>
+                            <p style="margin: 0;padding: 0;">
+                              <a href="{{ section.originalSourceUrl }}" style="{{{ section.jobStyles.sourceLink || '' }}}">View original source</a>
+                            </p>
+                          </td>
+                        </tr>
+                      </if>
+
+                      <if condition="section.footerNotesHtml && section.footerNotesHtml.length">
+                        <tr>
+                          <td style="border-collapse: collapse; {{{ section.jobStyles.contentSection || '' }}}{{{ section.jobStyles.contentSection ? '; ' : '' }}}padding-bottom: 20px;">
+                            <div style="{{{ section.jobStyles.divider || '' }}}{{{ section.jobStyles.divider ? '; ' : '' }}}font-size: 1px; line-height: 1; margin-bottom: 18px;"></div>
+                            <div style="{{{ section.jobStyles.footerNotesBox || '' }}}">
+                              <p style="margin: 0 0 10px 0;padding: 0; {{{ section.jobStyles.sectionHeading || '' }}}">Notices</p>
+                              <each loop="footerNote in section.footerNotesHtml">
+                                {{{ footerNote }}}
+                              </each>
+                            </div>
+                          </td>
+                        </tr>
+                      </if>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <!-- ADJACENCY JOB POSTING End -->
+            </if>
+
+            <if condition="section.type === 'adjacency-feature'">
+              <!-- ADJACENCY FEATURE Start -->
+              <tr>
+                <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+              </tr>
+              <tr>
+                <td style="border-collapse: collapse;padding: 0;">
+                  <table data-section="adjacency-feature" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;background: {{ section.containerStyles.backgroundColor || themeColors['adjacency-feature'] || '#ffffff' }};border: {{ section.containerStyles.borderWidth || '1px' }} {{ section.containerStyles.borderStyle || 'solid' }} {{ section.containerStyles.borderColor || '#d7d1c6' }};border-radius: {{ section.containerStyles.borderRadius || '0px' }};overflow: hidden;">
+                    <tbody>
+                      <tr>
+                        <td data-block="feature-header" style="border-collapse: collapse;padding: {{ section.containerStyles.headerPadding || '18px 18px 10px 18px' }};background: {{ section.containerStyles.backgroundColor || themeColors['adjacency-feature'] || '#ffffff' }};">
+                          <if condition="section.rubric">
+                            <p style="{{{ section.labelStylesInline || '' }}}{{{ section.labelStylesInline ? '; ' : '' }}}margin: 0 0 12px 0;padding: 0;">{{ section.rubric }}</p>
+                          </if>
+                          <h1 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}}margin: 0;padding: 0;">{{ section.title }}</h1>
+                          <if condition="section.dek">
+                            <p style="margin: 14px 0 0 0;padding: 0;font-family: Georgia, 'Times New Roman', serif;font-size: 21px;line-height: 1.45;font-style: italic;color: #374151;">{{ section.dek }}</p>
+                          </if>
+                          <if condition="section.author || section.dateLabel">
+                            <p style="margin: 16px 0 0 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', monospace;font-size: 12px;line-height: 1.45;color: #6b7280;text-transform: uppercase;letter-spacing: 0.08em;">
+                              <if condition="section.author">By {{ section.author }}</if>
+                              <if condition="section.author && section.dateLabel"> · </if>
+                              <if condition="section.dateLabel">{{ section.dateLabel }}</if>
+                            </p>
+                          </if>
+                          <if condition="section.tags && section.tags.length">
+                            <div style="margin-top: 14px;">
+                              <each loop="tag in section.tags">
+                                <span style="display: inline-block;margin: 0 6px 6px 0;padding: 4px 10px;border: 1px solid #d7d1c6;border-radius: 999px;font-family: 'IBM Plex Sans', sans-serif;font-size: 11px;line-height: 1.4;font-weight: 600;color: #566074;text-transform: uppercase;letter-spacing: 0.08em;">{{ tag }}</span>
+                              </each>
+                            </div>
+                          </if>
+                        </td>
+                      </tr>
+                      <if condition="section.explainerHtml">
+                        <tr>
+                          <td data-block="feature-explainer" style="border-collapse: collapse;padding: {{ section.containerStyles.bodyPadding || '12px 18px 0 18px' }};background: {{ section.containerStyles.backgroundColor || themeColors['adjacency-feature'] || '#ffffff' }};">
+                            {{{ section.explainerHtml }}}
+                          </td>
+                        </tr>
+                      </if>
+                      <if condition="section.heroImage && section.heroImage.src">
+                        <tr>
+                          <td data-block="feature-hero" style="border-collapse: collapse;padding: {{ section.containerStyles.heroPadding || '0 18px 0 18px' }};background: {{ section.containerStyles.backgroundColor || themeColors['adjacency-feature'] || '#ffffff' }};">
+                            <img src="{{ section.heroImage.src }}" alt="{{ section.heroImage.alt || section.title }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;height: auto;border: 0;border-radius: 6px;">
+                          </td>
+                        </tr>
+                        <if condition="section.heroImage.caption || section.heroImage.credit">
+                          <tr>
+                            <td data-block="feature-hero-meta" style="border-collapse: collapse;padding: {{ section.containerStyles.heroMetaPadding || '8px 18px 0 18px' }};background: {{ section.containerStyles.backgroundColor || themeColors['adjacency-feature'] || '#ffffff' }};">
+                              <if condition="section.heroImage.caption">
+                                <p style="margin: 0 0 6px 0;padding: 0;font-family: 'IBM Plex Sans', sans-serif;font-size: 13px;line-height: 1.55;color: #566074;">{{ section.heroImage.caption }}</p>
+                              </if>
+                              <if condition="section.heroImage.credit">
+                                <p style="margin: 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', monospace;font-size: 11px;line-height: 1.45;color: #7a859a;text-transform: uppercase;letter-spacing: 0.06em;">{{ section.heroImage.credit }}</p>
+                              </if>
+                            </td>
+                          </tr>
+                        </if>
+                      </if>
+                      <if condition="section.bodyHtml">
+                        <tr>
+                          <td data-block="feature-body" style="border-collapse: collapse;padding: {{ section.containerStyles.bodyPadding || '12px 18px 0 18px' }};background: {{ section.containerStyles.backgroundColor || themeColors['adjacency-feature'] || '#ffffff' }};">
+                            <div style="font-family: {{ section.contentStyles.fontFamily || 'Georgia, serif' }};font-size: {{ section.contentStyles.fontSize || '18px' }};line-height: {{ section.contentStyles.lineHeight || '1.72' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#1d1d1d' }};text-align: {{ section.contentStyles.textAlign || 'left' }};">
+                              {{{ section.bodyHtml }}}
+                            </div>
+                          </td>
+                        </tr>
+                      </if>
+                      <if condition="section.ctaLink">
+                        <tr>
+                          <td data-block="feature-cta" style="border-collapse: collapse;padding: {{ section.containerStyles.ctaPadding || '4px 18px 18px 18px' }};background: {{ section.containerStyles.backgroundColor || themeColors['adjacency-feature'] || '#ffffff' }};">
+                            <p style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}margin: 0;padding: 0;">
+                              <a href="{{ section.ctaLink }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ section.ctaText || 'Read on The Adjacency' }}</a>
+                            </p>
+                          </td>
+                        </tr>
+                      </if>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <!-- ADJACENCY FEATURE End -->
+            </if>
             
             <if condition="section.type === 'apps-sites'">
               <!-- APPS & SITES Start -->
@@ -265,14 +758,18 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                 <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
               </tr>
               <tr>
-                <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites'] || '#ffffff' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
-                  <h1 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} mso-line-height-rule: exactly; margin: 0;padding: 0;">{{ section.title }}</h1>
-                </td>
-              </tr>
-              
-              <each loop="item in section.items">
-                <tr>
-                  <td align="left" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites'] || '#ffffff' }};">
+                <td style="border-collapse: collapse;padding: 0;">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0; background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites'] || '#ffffff' }}; border-radius: {{ section.containerStyles.borderRadius || '0px' }}; overflow: hidden; padding: 0;">
+                    <tbody>
+                      <tr>
+                        <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites'] || '#ffffff' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;border-top-left-radius: {{ section.containerStyles.borderRadius || '0px' }};border-top-right-radius: {{ section.containerStyles.borderRadius || '0px' }};">
+                          <h1 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} mso-line-height-rule: exactly; margin: 0;padding: 0;">{{ section.title }}</h1>
+                        </td>
+                      </tr>
+
+                      <each loop="item in section.items">
+                        <tr>
+                          <td align="left" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites'] || '#ffffff' }};overflow: hidden;border-bottom-left-radius: {{ loop.index === section.items.length ? (section.containerStyles.borderRadius || '0px') : '0px' }};border-bottom-right-radius: {{ loop.index === section.items.length ? (section.containerStyles.borderRadius || '0px') : '0px' }};">
                     <!--[if mso]>
                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                       <tr><td width="35%" valign="top"><![endif]-->
@@ -299,18 +796,18 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                               <td class="padt20 padr20 padl10" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites'] || '#ffffff' }};padding: {{ section.containerStyles.padding || '20px 20px 20px 10px' }};" valign="top">
                                   
                                   <if condition="item.title && item.link">
-                                    <h2 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">
+                                    <h2 class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">
                                       <a href="{{ item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ item.title }}</a>
                                     </h2>
                                   </if>
                                   <if condition="item.title && !item.link">
-                                    <h2 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">
+                                    <h2 class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">
                                       {{ item.title }}
                                     </h2>
                                   </if>
                                   
                                   <if condition="item.subtitle">
-                                    <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
+                                    <p class="mob-text mob-subtitle" style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
                                   </if>
                                   
                                   <if condition="item.description">
@@ -320,7 +817,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   </if>
                                   
                                   <if condition="(item.readMoreText || item.readMoreTxt) && (item.readMoreLink || item.link)">
-                                    <p style="padding: 0;margin: 10px 0 0 0; {{{ section.linkStylesInline || '' }}}">
+                                    <p class="mob-readmore" style="padding: 0;margin: 10px 0 0 0; {{{ section.linkStylesInline || '' }}}">
                                       <if condition="item.paywall">
                                         <span title="Paywalled" style="font-weight: bold; font-size: 18px; background-color: white; padding: 4px; border-radius: 2px; color: #f3d305; margin-right: 4px; vertical-align: middle;">$</span>
                                       </if>
@@ -334,11 +831,20 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           </table>
                           
                           <!--[if mso]></td></tr></table><![endif]-->
-                        </td>
-                      </tr>
-                    </each>
-                    <!-- APPS & SITES End -->
-                  </if>
+                          </td>
+                        </tr>
+                        <if condition="loop.index < section.items.length">
+                          <tr>
+                            <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites'] || '#ffffff' }};font-size: 1px;line-height: 1;padding-top: {{ section.itemSpacing || '20px' }};"> </td>
+                          </tr>
+                        </if>
+                      </each>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <!-- APPS & SITES End -->
+            </if>
                   
                   <if condition="section.type === 'apps-sites-single-column'">
                     <!-- APPS & SITES SINGLE COLUMN Start -->
@@ -346,14 +852,14 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                       <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
                     </tr>
                     <tr>
-                      <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
+                      <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;border-radius: {{ section.containerStyles.borderRadius || '0px' }} {{ section.containerStyles.borderRadius || '0px' }} 0 0;">
                         <h1 style="mso-line-height-rule: exactly; margin: 0;padding: 0; {{{ section.headingStylesInline || '' }}}">{{ section.title }}</h1>
                       </td>
                     </tr>
 
                     <if condition="section.description">
                       <tr>
-                        <td align="left" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};padding: {{ section.containerStyles.padding || '20px' }};">
+                        <td align="left" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};padding: {{ section.containerStyles.padding || '20px' }};border-radius: 0 0 {{ section.containerStyles.borderRadius || '0px' }} {{ section.containerStyles.borderRadius || '0px' }};">
                           <div style="font-family: {{ section.descriptionStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: {{ section.descriptionStyles.fontSize || '16px' }};line-height: {{ section.descriptionStyles.lineHeight || '23px' }};font-weight: {{ section.descriptionStyles.fontWeight || '400' }};color: {{ section.descriptionStyles.color || '#000000' }};text-align: {{ section.descriptionStyles.textAlign || 'left' }};padding: 0;margin: 0;">
                             {{{ section.description }}}
                           </div>
@@ -368,7 +874,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                         </tr>
                       </if>
                       <tr>
-                        <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};padding: {{ section.containerStyles.padding || '20px' }};">
+                        <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};padding: {{ section.containerStyles.padding || '20px' }};border-radius: 0 0 {{ section.containerStyles.borderRadius || '0px' }} {{ section.containerStyles.borderRadius || '0px' }};">
                           
                           <if condition="item.image">
                             <div style="margin-bottom: 15px;">
@@ -377,18 +883,18 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           </if>
                           
                           <if condition="item.title && item.link">
-                            <h2 style="margin: 0;padding: 0;margin-bottom: 8px; {{{ section.headingStylesInline || '' }}}">
+                            <h2 class="mob-text mob-title" style="margin: 0;padding: 0;margin-bottom: 8px; {{{ section.headingStylesInline || '' }}}">
                               <a href="{{ item.link }}" style="{{{ section.linkStylesInline || '' }}}">{{ item.title }}</a>
                             </h2>
                           </if>
                           <if condition="item.title && !item.link">
-                            <h2 style="margin: 0;padding: 0;margin-bottom: 8px; {{{ section.headingStylesInline || '' }}}">
+                            <h2 class="mob-text mob-title" style="margin: 0;padding: 0;margin-bottom: 8px; {{{ section.headingStylesInline || '' }}}">
                               {{ item.title }}
                             </h2>
                           </if>
                           
                           <if condition="item.subtitle">
-                            <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
+                            <p class="mob-text mob-subtitle" style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
                           </if>
                           
                           <if condition="item.description">
@@ -398,7 +904,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           </if>
                           
                           <if condition="(item.readMoreText || item.readMoreTxt) && (item.readMoreLink || item.link)">
-                            <p style="padding: 0;margin: 10px 0 0 0; {{{ section.linkStylesInline || '' }}}">
+                            <p class="mob-readmore" style="padding: 0;margin: 10px 0 0 0; {{{ section.linkStylesInline || '' }}}">
                               <a href="{{ item.readMoreLink || item.link }}" style="{{{ section.linkStylesInline || '' }}}">{{ item.readMoreText || item.readMoreTxt }}</a>
                             </p>
                           </if>
@@ -442,7 +948,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           </if>
                           
                           <if condition="item.readMoreText && item.readMoreLink">
-                            <div style="font-family: {{ section.contentStyles.fontFamily || '\'Share Tech Mono\', sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '18px' }}; margin-top: 15px; padding-left: 20px; line-height: {{ section.contentStyles.lineHeight || '25px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#444444' }};text-align: {{ section.contentStyles.textAlign || 'left' }};font-style: normal;"><a href="{{ item.readMoreLink }}" style="text-decoration: underline; color: {{ section.linkStyles.color || themeColors.linkAccent || '#5b9bc4' }} !important; {{{ section.linkStylesInline || '' }}}">{{ item.readMoreText }}</a>
+                            <div class="mob-readmore" style="font-family: {{ section.contentStyles.fontFamily || '\'Share Tech Mono\', sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '18px' }}; margin-top: 15px; padding-left: 20px; line-height: {{ section.contentStyles.lineHeight || '25px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#444444' }};text-align: {{ section.contentStyles.textAlign || 'left' }};font-style: normal;"><a href="{{ item.readMoreLink }}" style="text-decoration: underline; color: {{ section.linkStyles.color || themeColors.linkAccent || '#5b9bc4' }} !important; {{{ section.linkStylesInline || '' }}}">{{ item.readMoreText }}</a>
                             </div>
                           </if>
                         </td>
@@ -583,14 +1089,14 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
 		                            <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
 		                          </tr>
                           <tr>
-		                            <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
-		                              <h1 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} mso-line-height-rule: exactly; margin: 0;padding: 0;">{{ section.title }}</h1>
-		                            </td>
+                              <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;border-radius: {{ section.containerStyles.borderRadius || '0px' }} {{ section.containerStyles.borderRadius || '0px' }} 0 0;">
+                                <h1 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} color: {{ section.contentStyles.color || '#000000' }} !important; mso-line-height-rule: exactly; margin: 0;padding: 0;">{{ section.title }}</h1>
+                              </td>
                           </tr>
                           
                           <each loop="item in section.items">
                           <tr>
-                            <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};padding: {{ section.containerStyles.padding || '20px' }};">
+                            <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};padding: {{ section.containerStyles.padding || '20px' }};border-radius: 0 0 {{ section.containerStyles.borderRadius || '0px' }} {{ section.containerStyles.borderRadius || '0px' }};">
                                 
 	                                <if condition="item.images && item.images.length">
 	                                  <each loop="image in item.images">
@@ -620,14 +1126,18 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                 </if>
                                 
                                 <if condition="item.title && item.link">
-                                  <h2 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">
+                                  <h2 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} color: {{ section.contentStyles.color || '#000000' }} !important; margin: 0;padding: 0;margin-bottom: 8px;">
                                     <a href="{{ item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ item.title }}</a>
                                   </h2>
                                 </if>
                                 <if condition="item.title && !item.link">
-                                  <h2 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">
+                                  <h2 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} color: {{ section.contentStyles.color || '#000000' }} !important; margin: 0;padding: 0;margin-bottom: 8px;">
                                     {{ item.title }}
                                   </h2>
+                                </if>
+
+                                <if condition="item.subtitle">
+                                  <p class="mob-text mob-subtitle" style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
                                 </if>
                                 
                                 <if condition="item.description">
@@ -646,7 +1156,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;font-style: italic;">{{ item.note }}</p>
                                 </if>
                                 <if condition="(item.readMoreText || item.readMoreTxt) && (item.readMoreLink || item.link)">
-                                    <p style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}padding: 0;margin: 10px 0 0 0;">
+                                    <p class="mob-readmore" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}padding: 0;margin: 10px 0 0 0;">
                                       <if condition="item.paywall">
                                         <span title="Paywalled" style="font-weight: bold; font-size: 18px; background-color: white; padding: 4px; border-radius: 2px; color: #f3d305; margin-right: 4px; vertical-align: middle;">$</span>
                                       </if>
@@ -705,18 +1215,18 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
 	                                </if>
                                 
                                 <if condition="item.title && item.link">
-                                  <h2 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">
+                                  <h2 class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">
                                     <a href="{{ item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ item.title }}</a>
                                   </h2>
                                 </if>
                                 <if condition="item.title && !item.link">
-                                  <h2 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">
+                                  <h2 class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">
                                     {{ item.title }}
                                   </h2>
                                 </if>
                                 
                                 <if condition="item.subtitle">
-                                  <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
+                                  <p class="mob-text mob-subtitle" style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
                                 </if>
                                 
                                 <if condition="item.authorName">
@@ -771,36 +1281,6 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             <tr>
                               <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['food-for-thought'] || '#f2f2f2' }};padding: {{ section.containerStyles.padding || '20px' }};">
                                 
-                                <!-- Support for multiple images (images array) -->
-                                <if condition="item.images && item.images.length">
-                                  <each loop="img in item.images">
-                                    <div style="margin-bottom: 15px;">
-                                      <if condition="(typeof img === 'object' && img !== null && img.hasOwnProperty('link')) || item.link">
-                                        <a href="{{ (typeof img === 'object' && img !== null && img.hasOwnProperty('link')) ? img.link : item.link }}" style="text-decoration: none;">
-                                          <img src="{{ (typeof img === 'object' && img !== null && img.hasOwnProperty('src')) ? img.src : img }}" alt="{{ (typeof img === 'object' && img !== null && img.hasOwnProperty('alt')) ? img.alt : (item.title || 'Food for Thought Image') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
-                                        </a>
-                                      </if>
-                                      <if condition="!((typeof img === 'object' && img !== null && img.hasOwnProperty('link')) || item.link)">
-                                        <img src="{{ (typeof img === 'object' && img !== null && img.hasOwnProperty('src')) ? img.src : img }}" alt="{{ (typeof img === 'object' && img !== null && img.hasOwnProperty('alt')) ? img.alt : (item.title || 'Food for Thought Image') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
-                                      </if>
-                                    </div>
-                                  </each>
-                                </if>
-                                
-                                <!-- Support for single image (backward compatibility) -->
-                                <if condition="item.image && !(item.images && item.images.length)">
-                                  <div style="margin-bottom: 15px;">
-                                    <if condition="item.link">
-                                      <a href="{{ item.link }}" style="text-decoration: none;">
-                                        <img src="{{ item.image }}" alt="{{ item.title || 'Food for Thought Image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
-                                      </a>
-                                    </if>
-                                    <if condition="!item.link">
-                                      <img src="{{ item.image }}" alt="{{ item.title || 'Food for Thought Image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
-                                    </if>
-                                  </div>
-                                </if>
-                                
                                 <if condition="item.channel">
                                   <p class="share-tech-mono-regular" style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 600;color: #000000; margin: 0;margin-bottom: 10px;text-transform: uppercase;letter-spacing: 1px;"><span style="color: #999">From the</span> {{ item.channel }} <span style="color: #999">Channel</span></p>
                                 </if>
@@ -815,6 +1295,36 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   </span>
                                 </if>
                                 
+                                <!-- Support for multiple images (images array) -->
+                                <if condition="item.images && item.images.length">
+                                  <each loop="img in item.images">
+                                    <div style="margin-top: 15px;margin-bottom: 15px;">
+                                      <if condition="(typeof img === 'object' && img !== null && img.hasOwnProperty('link')) || item.link">
+                                        <a href="{{ (typeof img === 'object' && img !== null && img.hasOwnProperty('link')) ? img.link : item.link }}" style="text-decoration: none;">
+                                          <img src="{{ (typeof img === 'object' && img !== null && img.hasOwnProperty('src')) ? img.src : img }}" alt="{{ (typeof img === 'object' && img !== null && img.hasOwnProperty('alt')) ? img.alt : (item.title || 'Food for Thought Image') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
+                                        </a>
+                                      </if>
+                                      <if condition="!((typeof img === 'object' && img !== null && img.hasOwnProperty('link')) || item.link)">
+                                        <img src="{{ (typeof img === 'object' && img !== null && img.hasOwnProperty('src')) ? img.src : img }}" alt="{{ (typeof img === 'object' && img !== null && img.hasOwnProperty('alt')) ? img.alt : (item.title || 'Food for Thought Image') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
+                                      </if>
+                                    </div>
+                                  </each>
+                                </if>
+
+                                <!-- Support for single image (backward compatibility) -->
+                                <if condition="item.image && !(item.images && item.images.length)">
+                                  <div style="margin-top: 15px;margin-bottom: 15px;">
+                                    <if condition="item.link">
+                                      <a href="{{ item.link }}" style="text-decoration: none;">
+                                        <img src="{{ item.image }}" alt="{{ item.title || 'Food for Thought Image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
+                                      </a>
+                                    </if>
+                                    <if condition="!item.link">
+                                      <img src="{{ item.image }}" alt="{{ item.title || 'Food for Thought Image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;border-radius: 3%;">
+                                    </if>
+                                  </div>
+                                </if>
+
                                 <if condition="item.title && item.link">
                                  <h2 style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;margin-bottom: 8px;">
                                     <a href="{{ item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ item.title }}</a>
@@ -833,7 +1343,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                 </if>
                                 
                                 <if condition="(item.readMoreText || item.readMoreTxt) && (item.readMoreLink || item.link)">
-                                  <p style="font-size: 17px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 10px 0 0 0;display: flex;align-items: center;gap: 4px;">
+                                  <p class="mob-readmore" style="font-size: 17px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 10px 0 0 0;display: flex;align-items: center;gap: 4px;">
                                     <if condition="item.paywall">
                                       <span title="Paywalled" style="font-weight: bold; font-size: 18px; background-color: white; padding: 4px; border-radius: 2px; color: #f3d305; margin-right: 4px; vertical-align: middle;">$</span>
                                     </if>
@@ -842,12 +1352,29 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                     </a>
                                   </p>
                                 </if>
+
+                                <if condition="item.readMoreLinks && item.readMoreLinks.length">
+                                  <each loop="cta in item.readMoreLinks">
+                                    <if condition="cta && cta.text && cta.link">
+                                      <p class="mob-readmore" style="font-size: 17px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 10px 0 0 0;display: flex;align-items: center;gap: 4px;">
+                                        <if condition="cta.paywall">
+                                          <span title="Paywalled" style="font-weight: bold; font-size: 18px; background-color: white; padding: 4px; border-radius: 2px; color: #f3d305; margin-right: 4px; vertical-align: middle;">$</span>
+                                        </if>
+                                        <a href="{{ cta.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">
+                                          {{ cta.text }}
+                                        </a>
+                                      </p>
+                                    </if>
+                                  </each>
+                                </if>
                                 
                               </td>
                             </tr>
-                            <tr>
-                              <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 2px;"> </td>
-                            </tr>
+                            <if condition="loop.index < section.items.length">
+                              <tr>
+                                <td class="spacer" height="{{ section.itemSpacing || '16px' }}" style="border-collapse: collapse;font-size: {{ section.itemSpacing || '16px' }};line-height: {{ section.itemSpacing || '16px' }};mso-line-height-rule: exactly;">&nbsp;</td>
+                              </tr>
+                            </if>
                           </each>
                           <!-- FOOD FOR THOUGHT End -->
                         </if>
@@ -866,7 +1393,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           <if condition="section.description">
                             <tr>
                               <td align="left" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['aesthetically-pleasing'] || '#ffffff' }};  padding: 5px 20px 10px 20px;">
-                                <div style="font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '23px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#000000' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 0;margin: 0;">
+                                <div class="mob-text" style="font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '23px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#000000' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 0;margin: 0;">
                                   {{{ section.description }}}
                                 </div>
                               </td>
@@ -897,13 +1424,13 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             <tr>
                               <td align="left" class="padt10 padr20 padl20 padb20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['aesthetically-pleasing'] || '#ffffff' }};border-bottom-left-radius: {{ section.containerStyles.borderRadius || '0' }}; border-bottom-right-radius: {{ section.containerStyles.borderRadius || '0' }}; padding-top: 10px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
                                 <if condition="item.description">
-                                  <div style="font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '23px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#000000' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 0;margin: 0;">
+                                  <div class="mob-text" style="font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '23px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#000000' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 0;margin: 0;">
                                     {{{ item.description }}}
                                   </div>
                                 </if>
                                 
                                 <if condition="item.link">
-                                  <p style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}padding: 0;margin: 0;margin-top: 10px;">
+                                  <p class="mob-readmore" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}padding: 0;margin: 0;margin-top: 10px;">
                                     <a href="{{ item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ item.readMoreText || item.readMoreTxt || 'Read more →' }}</a>
                                   </p>
                                 </if>
@@ -940,9 +1467,9 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           <each loop="item in section.items">
                             <tr>
                               <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.classifieds || '#def1ef' }};padding: {{ section.containerStyles.padding || '20px' }};">
-                                <div class="share-tech-mono-regular" style="font-family: {{ section.contentStyles.fontFamily || '\'Share Tech Mono\', monospace' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '23px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#000000' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 15px;background: rgba(255,255,255,0.7);border-left: 4px solid {{ themeColors.linkAccent || '#4a9b8e' }};">
+                                <div class="share-tech-mono-regular" style="font-family: {{ section.contentStyles.fontFamily || '\'Share Tech Mono\', monospace' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '23px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#000000' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 15px;background: rgba(255,255,255,0.7);">
                                   <if condition="item.title">
-                                    <p style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0 0 10px 0;padding: 0;text-transform: uppercase;letter-spacing: 0.5px;">{{ item.title }}</p>
+                                    <p class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0 0 10px 0;padding: 0;text-transform: uppercase;letter-spacing: 0.5px;">{{ item.title }}</p>
                                   </if>
 
                                   <!-- Optional image row (1–3 columns) -->
@@ -1061,7 +1588,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             <tr>
                               <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors.animatedImage || '#fafafa' }};padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: center;">
                                 <if condition="item.image">
-                                  <img src="{{ item.image }}" alt="GIF" width="400" height="auto" style="display: block;width: 100%;max-width: 400px;margin: 0 auto 15px auto; border-radius: 3%;">
+                                  <img src="{{ item.image }}" alt="{{ section.title || item.title || 'Animated image' }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;height: auto;margin: 0 auto 15px auto;border-radius: 3%;">
                                 </if>
                                 <if condition="item.description">
                                   <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 10px;text-align: center;">{{{ item.description }}}</div>

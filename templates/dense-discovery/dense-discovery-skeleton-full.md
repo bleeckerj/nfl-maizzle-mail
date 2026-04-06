@@ -3,7 +3,9 @@ template: dense-discovery
 title: Newsletter Title
 preheader: Short preview text that appears in email clients
 ogImage: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=900?format=webp
+ogImageAltText: Open graph preview image for this newsletter
 sectionStylesFile: templates/dense-discovery/section-styles.json
+colorTheme: 'winter'
 intro:
   title: Welcome
   viewOnlineLink: https://nearfuturelaboratory.com/newsletters/2026/wxx-yxx
@@ -78,6 +80,31 @@ sections:
     image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     readMoreText: Read more →
     readMoreLink: https://example.com
+- type: signals-adjacent-now
+  title: Signals from an Adjacent Now
+  signalsLabel: SIGNALS FROM AN ADJACENT NOW
+  description: <p>Section introduction for signals-adjacent-now.</p>
+  items:
+  - title: Signal Item 1
+    tags:
+    - TAG1
+    - TAG2
+    link: https://example.com
+    subtitle: Signal from the observation post
+    image: https://fpoimg.com/800x600?text=Adjacent+Now&bg_color=e6e6e6&text_color=4FAAAA
+    description: <p>Example description for signals-adjacent-now item 1.</p>
+    sourceDigestSummary: <p>Example source digest summary for item 1.</p>
+    storySeeds:
+    - Story seed 1
+    - Story seed 2
+    strategyQuestions:
+    - What changes if this signal spreads?
+    - What quiet assumptions does this expose?
+    readMoreText: Read source →
+    readMoreLink: https://example.com
+- type: ad-block
+  items:
+  - adId: fashion-8bit-pants-interstitial
 - type: apps-sites
   title: Apps Sites Section
   items:
@@ -136,11 +163,21 @@ sections:
     readMoreText: Read more →
     readMoreLink: https://example.com
     paywall: true
+  - title: Indie Mag Item 2
+    link: https://example.com
+    description: <p>Example description for indie-mag item 2.</p>
+    details: <p>Example details for indie-mag item 2.</p>
+    note: <p>Example note for indie-mag item 2.</p>
+    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+    readMoreText: Read more →
+    readMoreLink: https://example.com
+    paywall: true
 - type: indie-mag-single-column
   title: Indie Mag Single Column Section
   items:
   - title: Indie Mag Single Column Item 1
     link: https://example.com
+    subtitle: Example subtitle for indie-mag-single-column item 1
     description: <p>Example description for indie-mag-single-column item 1.</p>
     details: <p>Example details for indie-mag-single-column item 1.</p>
     note: <p>Example note for indie-mag-single-column item 1.</p>
@@ -150,6 +187,21 @@ sections:
       link: https://example.com/image-destination
     - src: https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second
       alt: Alternate text for item 1 image 2
+    readMoreText: Read more →
+    readMoreLink: https://example.com
+    paywall: true
+  - title: Indie Mag Single Column Item 2
+    link: https://example.com
+    subtitle: Example subtitle for indie-mag-single-column item 2
+    description: <p>Example description for indie-mag-single-column item 2.</p>
+    details: <p>Example details for indie-mag-single-column item 2.</p>
+    note: <p>Example note for indie-mag-single-column item 2.</p>
+    images:
+    - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+      alt: Alternate text for item 2 image 1
+      link: https://example.com/image-destination
+    - src: https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second
+      alt: Alternate text for item 2 image 2
     readMoreText: Read more →
     readMoreLink: https://example.com
     paywall: true
@@ -177,30 +229,37 @@ sections:
 - type: food-for-thought
   title: Food For Thought Section
   items:
-  - title: Food For Thought Item 1 (single image)
+  - title: Food For Thought Item 1
     link: https://example.com
     description: <p>Example description for food-for-thought item 1.</p>
-    image: https://fpoimg.com/800x600?text=Single+Image&bg_color=e6e6e6&text_color=4FAAAA
+    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     channel: Example channel
     category: Example category
     sharedBy: Example sharedBy for item 1
     readMoreText: Read more →
     readMoreLink: https://example.com
+    readMoreLinks:
+    - text: Listen to podcast →
+      link: https://example.com/podcast
+    - text: View references →
+      link: https://example.com/references
+      paywall: true
     paywall: true
-  - title: Food For Thought Item 2 (multiple images)
+  - title: Food For Thought Item 2
     link: https://example.com
-    description: <p>Example with multiple images array.</p>
-    images:
-      - src: https://fpoimg.com/800x600?text=Image+1&bg_color=e6e6e6&text_color=4FAAAA
-        alt: First image description
-      - src: https://fpoimg.com/800x600?text=Image+2&bg_color=d6d6d6&text_color=4FAAAA
-        alt: Second image description
-        link: https://example.com/specific-link
+    description: <p>Example description for food-for-thought item 2.</p>
+    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     channel: Example channel
     category: Example category
     sharedBy: Example sharedBy for item 2
     readMoreText: Read more →
     readMoreLink: https://example.com
+    readMoreLinks:
+    - text: Listen to podcast →
+      link: https://example.com/podcast
+    - text: View references →
+      link: https://example.com/references
+      paywall: true
     paywall: true
 - type: aesthetically-pleasing
   title: Aesthetically Pleasing Section

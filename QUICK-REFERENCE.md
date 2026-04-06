@@ -54,14 +54,15 @@ python scripts/generate-newsletter-skeleton.py --list-sections
 - `link` - URL
 - `description` - HTML content
 - `image` - Image URL
-- `readMoreText` - "Read more" link text
-- `readMoreLink` - "Read more" URL
+- `readMoreText` - Primary "read more" row text
+- `readMoreLink` - Primary "read more" row URL
+- `readMoreLinks` - Additional CTA rows as `{ text, link }` objects
 
 ### Section-Specific:
 - **sponsor**: `sponsorLink`, `sponsorLabel`
 - **dispatch**: `tags`, `signalsLabel`
 - **quote**: `quote`, `author`, `authorLink`
-- **food-for-thought**: `category`, `sharedBy`, `channel`, `paywall`
+- **food-for-thought**: `category`, `sharedBy`, `channel`, `paywall`, `readMoreLinks`
 - **books-accessories**: `authorName`, `isbn`
 
 ## 📚 Documentation
@@ -76,6 +77,7 @@ python scripts/generate-newsletter-skeleton.py --list-sections
 ✅ Remove unused sections after generation  
 ✅ Replace placeholder images with real URLs  
 ✅ Both `readMoreText` and `readMoreTxt` work  
+✅ Use `readMoreLinks` for extra Food for Thought CTA rows  
 ✅ Point to custom color themes via `sectionStylesFile`  
 
 ---
