@@ -942,7 +942,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             </div>
                           </if>
                           <if condition="item.calloutText">
-                            <div style="font-family: {{ section.contentStyles.fontFamily || '\'Share Tech Mono\', sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '18px' }};line-height: {{ section.contentStyles.lineHeight || '25px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#444444' }};text-align: {{ section.contentStyles.textAlign || 'left' }};margin: 0;padding: 20px;border-left: 2px solid {{ section.linkStyles.color || themeColors.linkAccent || '#5b9bc4' }};background: {{section.containerStyles.backgroundColor || themeColors.callout || '#d1eaf4' }};font-style: normal;">
+                            <div style="font-family: {{ section.contentStyles.fontFamily || '\'Share Tech Mono\', sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '18px' }};line-height: {{ section.contentStyles.lineHeight || '25px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#444444' }};text-align: {{ section.contentStyles.textAlign || 'left' }};margin: 0;padding: 20px;background: {{section.containerStyles.backgroundColor || themeColors.callout || '#d1eaf4' }};font-style: normal;">
                               {{{ item.calloutText }}}
                             </div>
                           </if>

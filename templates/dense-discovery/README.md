@@ -75,3 +75,12 @@ sections:
 - `readMoreText` + `readMoreLink` renders first.
 - `readMoreLinks` renders one additional row per entry.
 - Existing content without `readMoreLinks` remains valid.
+
+## `indie-mag-single-column` image precedence
+
+`indie-mag-single-column` supports either:
+
+- `images` for one or more images
+- `image` for a single fallback image
+
+When `images` is present, the template renders that array and ignores `image`. Under strict schema validation, do not supply both fields on the same item.

@@ -63,6 +63,7 @@ python scripts/generate-newsletter-skeleton.py --list-sections
 - **dispatch**: `tags`, `signalsLabel`
 - **quote**: `quote`, `author`, `authorLink`
 - **food-for-thought**: `category`, `sharedBy`, `channel`, `paywall`, `readMoreLinks`
+- **indie-mag-single-column**: use `images` for multi-image items; do not pair `images` with `image`
 - **books-accessories**: `authorName`, `isbn`
 
 ## 📚 Documentation

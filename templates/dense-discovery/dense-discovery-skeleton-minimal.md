@@ -6,7 +6,7 @@ ogImage: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95a
 sectionStylesFile: templates/dense-discovery/section-styles.json
 intro:
   title: Welcome
-  viewOnlineLink: https://nearfuturelaboratory.com/newsletters/2025/wxx-yxx
+  viewOnlineLink: https://nearfuturelaboratory.com/newsletters/2026/wxx-yxx
   aside:
     content: <p>Teaser/lede text that sets up the intro content.</p>
     containerStyles:
@@ -53,6 +53,14 @@ sections:
   title: Dispatch Section
   items:
   - title: Dispatch Item 1
+- type: signals-adjacent-now
+  title: Signals from an Adjacent Now
+  description: <p>Section introduction for signals-adjacent-now.</p>
+  items:
+  - title: Signal Item 1
+- type: ad-block
+  items:
+  - adId: fashion-8bit-pants-interstitial
 - type: apps-sites
   title: Apps Sites Section
   items:
@@ -66,7 +74,6 @@ sections:
   title: Callout Section
   items:
   - calloutText: Callout Item 1
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
 - type: quote
   title: Quote Section
   items:
@@ -79,6 +86,7 @@ sections:
   title: Indie Mag Single Column Section
   items:
   - title: Indie Mag Single Column Item 1
+    subtitle: Example subtitle for indie-mag-single-column item 1
 - type: books-accessories
   title: Books Accessories Section
   items:
@@ -102,7 +110,7 @@ sections:
   items:
   - image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
 footer:
-  emailShare: mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2025/w50-y25/
+  emailShare: mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2026/w50-y25/
   newsletterSubscribeLink: https://nearfuturelaboratory.com/newsletter/
   logo: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=200?format=webp
   logoLink: https://nearfuturelaboratory.com
@@ -143,7 +151,7 @@ footer:
     - url: https://newsletter.substack.com
       title: Newsletter on Substack
   unsubscribeLink: '[unsubscribe]'
-  shareUrl: https://nearfuturelaboratory.com/newsletters/2025/w50-y25
+  shareUrl: https://nearfuturelaboratory.com/newsletters/2026/w50-y25
   archiveUrl: https://nearfuturelaboratory.com/newsletters
   gratitude: This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle
     based production workflow. It's a work-in-progress building on a refactor of the
@@ -151,6 +159,6 @@ footer:
     vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a
     paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It's
     a great newsletter and I would encourage you to subscribe and become a paid member.
-  address: © 2025 Near Future Laboratory<br>Venice Beach, California<br>United States
+  address: © 2026 Near Future Laboratory<br>Venice Beach, California<br>United States
   colophon: Imagination is not a luxury. It’s an early-warning system for possibility.
 ---

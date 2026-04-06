@@ -255,7 +255,7 @@ function collectDataPathsFromExpression(expr, bindings) {
     if (IGNORE_ROOT_IDENTIFIERS.has(ident)) continue;
     if (bindings.has(ident)) continue; // loop vars are not root keys
     // Heuristic: only accept a few well-known root locals without being too loose
-    if (['title', 'preheader', 'header', 'intro', 'sections', 'footer', 'themeColors', 'theme'].includes(ident)) {
+      if (['title', 'preheader', 'ogImage', 'header', 'intro', 'sections', 'footer', 'themeColors', 'theme'].includes(ident)) {
       paths.add(ident);
     }
   }
@@ -387,6 +387,38 @@ function makeTypedSectionVariant(type, baseSectionPaths, baseItemPaths, typePath
   return sectionSchema;
 }
 
+function findTypedSectionVariant(schema, type) {
+  const variants = schema?.properties?.sections?.items?.allOf;
+  if (!Array.isArray(variants)) return null;
+
+  return (
+    variants.find((variant) => variant?.if?.properties?.type?.const === type)?.then
+    || null
+  );
+}
+
+/**
+ * The template scan can only see fields read directly by Maizzle templates.
+ * Some authoring-only keys are valid before normalization or hydration, so we
+ * layer those allowances back onto the derived schema here.
+ */
+function applyDerivedSchemaOverrides(schema, entryAbsPath) {
+  for (const rootKey of ['ogImageAltText', 'pubDate']) {
+    if (!schema?.properties?.[rootKey]) {
+      schema.properties[rootKey] = {};
+    }
+  }
+
+  const templateId = path.basename(path.dirname(entryAbsPath));
+  if (templateId !== 'dense-discovery') return;
+
+  const adBlockVariant = findTypedSectionVariant(schema, 'ad-block');
+  const adBlockItemProperties = adBlockVariant?.properties?.items?.items?.properties;
+  if (adBlockItemProperties && !adBlockItemProperties.adId) {
+    adBlockItemProperties.adId = {};
+  }
+}
+
 async function main() {
   const args = parseArgs(process.argv);
   if (args.help) {
@@ -515,6 +547,7 @@ async function main() {
     '$schema',
     'title',
     'preheader',
+    'ogImage',
     'template',
     'colorTheme',
     'sectionStylesFile',
@@ -557,6 +590,8 @@ async function main() {
       })),
     };
   }
+
+  applyDerivedSchemaOverrides(schema, entryAbs);
 
   fs.mkdirSync(path.dirname(outAbs), { recursive: true });
   fs.writeFileSync(outAbs, JSON.stringify(schema, null, 2));

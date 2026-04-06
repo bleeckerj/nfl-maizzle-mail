@@ -5,13 +5,22 @@ import path from 'path';
 import { execSync } from 'child_process';
 import https from 'https';
 import http from 'http';
+import MaizzleFramework from '@maizzle/framework';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import { fileURLToPath } from 'url';
 
+import {
+  buildAdjacencyMailSectionStyleOverrides,
+  buildAdjacencyMailThemeTokens,
+} from '../lib/adjacency-mail/adjacency-mail-theme-tokens.mjs';
+import { buildAdjacencyJobsMailSectionStyleOverrides } from '../lib/adjacency-mail/adjacency-jobs-mail-theme-tokens.mjs';
+import { prepareNewsletterData as prepareNormalizedNewsletterData } from '../lib/newsletter-core/index.mjs';
+
 // Get script's directory for repo root detection
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const { build: maizzleBuild } = MaizzleFramework;
 
 /**
  * Determine the repository root directory.
@@ -42,6 +51,111 @@ function getRepoRoot(args) {
  */
 function repoPath(repoRoot, ...segments) {
   return path.join(repoRoot, ...segments);
+}
+
+function resolveBuiltNewsletterPath(baseDir, templateName) {
+  const directNewsletterPath = path.join(baseDir, 'newsletter.html');
+  const templateNewsletterPath = path.join(baseDir, templateName, 'newsletter.html');
+
+  if (fs.existsSync(directNewsletterPath)) return directNewsletterPath;
+  if (fs.existsSync(templateNewsletterPath)) return templateNewsletterPath;
+  return null;
+}
+
+async function buildPopupJobsMailTemplate({ repoRoot, newsletterData, templateName, buildDirName }) {
+  const buildDir = repoPath(repoRoot, buildDirName);
+  fs.rmSync(buildDir, { recursive: true, force: true });
+
+  await maizzleBuild('production', {
+    build: {
+      command: 'build',
+      templates: {
+        source: `templates/${templateName}`,
+        destination: {
+          path: buildDirName,
+        },
+      },
+      components: {
+        source: `templates/${templateName}/components`,
+      },
+    },
+    inlineCSS: false,
+    removeUnusedCSS: {
+      enabled: true,
+      whitelist: ['.mob-text'],
+    },
+    prettify: true,
+    minify: {
+      removeUnusedCSS: false,
+    },
+    locals: newsletterData,
+  });
+
+  return buildDir;
+}
+
+function getAdjacencyMailThemeOverridesPath(args) {
+  const arg = args.find((value) => value.startsWith('--adjacency-mail-theme-overrides='));
+  if (!arg) return null;
+  const rawPath = arg.split('=')[1];
+  if (!rawPath) return null;
+  return path.resolve(rawPath);
+}
+
+function loadAdjacencyMailThemeOverrides(args) {
+  const overridesPath = getAdjacencyMailThemeOverridesPath(args);
+  if (!overridesPath) {
+    return { overridesPath: null, overrides: undefined };
+  }
+
+  let parsed;
+  try {
+    parsed = JSON.parse(fs.readFileSync(overridesPath, 'utf8'));
+  } catch (error) {
+    throw new Error(`Failed to load Adjacency mail theme overrides from ${overridesPath}: ${error.message}`);
+  }
+
+  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) {
+    throw new Error(`Adjacency mail theme overrides must be a JSON object: ${overridesPath}`);
+  }
+
+  return { overridesPath, overrides: parsed };
+}
+
+function extractLeadingFrontmatterBlock(text) {
+  if (typeof text !== 'string' || !text.startsWith('---')) {
+    return null;
+  }
+
+  const match = text.match(/^---\r?\n[\s\S]*?\r?\n---(?:\r?\n)?/);
+  return match ? match[0] : null;
+}
+
+function mergeFrontmatterWithHtml(existingOutputRaw, builtHtmlRaw) {
+  const existingFrontmatter = extractLeadingFrontmatterBlock(existingOutputRaw);
+  if (!existingFrontmatter) {
+    return {
+      content: builtHtmlRaw,
+      preservedFrontmatter: false,
+    };
+  }
+
+  return {
+    content: `${existingFrontmatter}${String(builtHtmlRaw).replace(/^\s+/, '')}`,
+    preservedFrontmatter: true,
+  };
+}
+
+function normalizeInlineStyleAttributeWhitespace(html) {
+  if (typeof html !== 'string' || html.length === 0) return html;
+
+  return html.replace(/style=(["'])([\s\S]*?)\1/gi, (_match, quote, styleValue) => {
+    const normalized = String(styleValue)
+      .replace(/[\r\n\t]+/g, ' ')
+      .replace(/\s{2,}/g, ' ')
+      .trim();
+    return `style=${quote}${normalized}${quote}`;
+  });
 }
 
 function jsonPointerToDotPath(pointer) {
@@ -134,7 +248,205 @@ function validateNewsletterDataAgainstSchema(newsletterData, templateName, args)
   }
 }
 
+function normalizeFontFamilyValue(value) {
+  if (typeof value !== 'string') return value;
+
+  let normalized = value
+    .replace(/&#0*39;|&apos;/gi, "'")
+    .replace(/&quot;/gi, '"')
+    .replace(/[\r\n\t]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  if (!normalized) return normalized;
+
+  const parts = normalized
+    .split(',')
+    .map((part) => part.trim())
+    .filter(Boolean)
+    .map((part) => part.replace(/^['"]+|['"]+$/g, '').trim())
+    .filter(Boolean);
+
+  const lowerParts = parts.map((part) => part.toLowerCase());
+  const appendIfMissing = (fallbackParts) => {
+    fallbackParts.forEach((fallbackPart) => {
+      if (!lowerParts.includes(fallbackPart.toLowerCase())) {
+        parts.push(fallbackPart);
+        lowerParts.push(fallbackPart.toLowerCase());
+      }
+    });
+  };
+
+  const removeIfPresent = (family) => {
+    const familyLower = family.toLowerCase();
+    for (let i = parts.length - 1; i >= 0; i -= 1) {
+      if (lowerParts[i] === familyLower) {
+        parts.splice(i, 1);
+        lowerParts.splice(i, 1);
+      }
+    }
+  };
+
+  if (lowerParts.includes('ibm plex sans')) {
+    appendIfMissing(['Roboto', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif']);
+  }
+
+  if (lowerParts.includes('ubuntu')) {
+    appendIfMissing(['Segoe UI', 'Helvetica', 'Arial', 'sans-serif']);
+  }
+
+  if (lowerParts.includes('roboto')) {
+    appendIfMissing(['Segoe UI', 'Helvetica', 'Arial', 'sans-serif']);
+  }
+
+  if (lowerParts.includes('share tech mono')) {
+    appendIfMissing(['Courier New', 'Courier', 'monospace']);
+  }
+
+  if (lowerParts.includes('workbench')) {
+    appendIfMissing(['IBM Plex Sans', 'Roboto', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif']);
+  }
+
+  const hasKnownSans = ['ibm plex sans', 'ubuntu', 'roboto', 'workbench'].some((family) =>
+    lowerParts.includes(family)
+  );
+
+  const hasKnownMono = lowerParts.includes('share tech mono');
+
+  if (hasKnownSans) {
+    removeIfPresent('serif');
+    removeIfPresent('monospace');
+    appendIfMissing(['sans-serif']);
+  }
+
+  if (hasKnownMono) {
+    removeIfPresent('serif');
+    appendIfMissing(['monospace']);
+  }
+
+  return parts.join(', ');
+}
+
+function normalizeFontFamiliesDeep(value) {
+  if (!value) return;
+  if (Array.isArray(value)) {
+    value.forEach((item) => normalizeFontFamiliesDeep(item));
+    return;
+  }
+
+  if (typeof value !== 'object') return;
+
+  Object.entries(value).forEach(([key, entry]) => {
+    if (key === 'fontFamily' && typeof entry === 'string') {
+      value[key] = normalizeFontFamilyValue(entry);
+      return;
+    }
+
+    if (entry && (typeof entry === 'object' || Array.isArray(entry))) {
+      normalizeFontFamiliesDeep(entry);
+    }
+  });
+}
+
+function pruneBuildInjectedFields(newsletterData) {
+  if (!newsletterData || typeof newsletterData !== 'object') return;
+
+  delete newsletterData.mobileTextFontSize;
+  delete newsletterData.mobileTextLineHeight;
+
+  if (newsletterData.header && typeof newsletterData.header === 'object') {
+    delete newsletterData.header.contentStyles;
+
+    if (newsletterData.header.containerStyles && typeof newsletterData.header.containerStyles === 'object') {
+      delete newsletterData.header.containerStyles.padding;
+      if (Object.keys(newsletterData.header.containerStyles).length === 0) {
+        delete newsletterData.header.containerStyles;
+      }
+    }
+  }
+
+  if (Array.isArray(newsletterData.sections)) {
+    newsletterData.sections.forEach((section) => {
+      if (!section || typeof section !== 'object') return;
+      delete section._contentStyleOverrides;
+      delete section.descriptionStyles;
+      delete section.spacerBackgroundColor;
+      delete section.headingStyles;
+      delete section.linkStyles;
+      delete section.labelStyles;
+      delete section.headingStylesInline;
+      delete section.linkStylesInline;
+      delete section.labelStylesInline;
+    });
+  }
+}
+
+function decodeEscapedUnicodeString(value) {
+  if (typeof value !== 'string' || !/\\u[0-9a-fA-F]{4}|\\U[0-9a-fA-F]{8}/.test(value)) {
+    return value;
+  }
+
+  return value
+    .replace(/\\u([0-9a-fA-F]{4})/g, (_, hex) => String.fromCharCode(parseInt(hex, 16)))
+    .replace(/\\U([0-9a-fA-F]{8})/g, (_, hex) => {
+      try {
+        return String.fromCodePoint(parseInt(hex, 16));
+      } catch {
+        return `\\U${hex}`;
+      }
+    });
+}
+
+function normalizeEscapedUnicodeDeep(value) {
+  if (Array.isArray(value)) {
+    let changes = 0;
+    value.forEach((entry, index) => {
+      if (typeof entry === 'string') {
+        const normalized = decodeEscapedUnicodeString(entry);
+        if (normalized !== entry) {
+          value[index] = normalized;
+          changes += 1;
+        }
+        return;
+      }
+
+      if (entry && typeof entry === 'object') {
+        changes += normalizeEscapedUnicodeDeep(entry);
+      }
+    });
+    return changes;
+  }
+
+  if (!value || typeof value !== 'object') {
+    return 0;
+  }
+
+  let changes = 0;
+  Object.entries(value).forEach(([key, entry]) => {
+    if (typeof entry === 'string') {
+      const normalized = decodeEscapedUnicodeString(entry);
+      if (normalized !== entry) {
+        value[key] = normalized;
+        changes += 1;
+      }
+      return;
+    }
+
+    if (entry && typeof entry === 'object') {
+      changes += normalizeEscapedUnicodeDeep(entry);
+    }
+  });
+  return changes;
+}
+
 function normalizeNewsletterForSchemaValidation(newsletterData) {
+  // Normalize typography values before style preprocessing/rendering so
+  // template interpolation doesn't emit escaped quote entities in inline CSS.
+  const unicodeFixes = normalizeEscapedUnicodeDeep(newsletterData);
+  if (unicodeFixes > 0) {
+    console.log(`🔡 Decoded ${unicodeFixes} escaped Unicode string${unicodeFixes === 1 ? '' : 's'} in newsletter data`);
+  }
+  normalizeFontFamiliesDeep(newsletterData);
   if (!newsletterData || typeof newsletterData !== 'object') return;
   if (!Array.isArray(newsletterData.sections)) return;
 
@@ -166,6 +478,155 @@ function normalizeNewsletterForSchemaValidation(newsletterData) {
         if (item.content && typeof item.description === 'string') delete item.description;
       });
     }
+  });
+}
+
+function getEditorialAdsPath(repoRoot) {
+  const envPath = process.env.NFL_EDITORIAL_ADS_PATH;
+  if (envPath && fs.existsSync(envPath)) {
+    return path.resolve(envPath);
+  }
+
+  const editorialRoot = process.env.NFL_EDITORIAL_ROOT
+    ? path.resolve(process.env.NFL_EDITORIAL_ROOT)
+    : path.resolve(repoRoot, '..', 'nfl-editorial');
+  return path.join(editorialRoot, 'src', 'content', 'ads.json');
+}
+
+function buildEditorialAdsIndex(repoRoot) {
+  const adsPath = getEditorialAdsPath(repoRoot);
+  if (!fs.existsSync(adsPath)) {
+    throw new Error(`Editorial ads inventory not found: ${adsPath}`);
+  }
+
+  let adsData;
+  try {
+    adsData = JSON.parse(fs.readFileSync(adsPath, 'utf8'));
+  } catch (error) {
+    throw new Error(`Failed to parse editorial ads inventory at ${adsPath}: ${error.message}`);
+  }
+
+  if (!Array.isArray(adsData)) {
+    throw new Error(`Editorial ads inventory must be an array: ${adsPath}`);
+  }
+
+  const index = new Map();
+  adsData.forEach((ad, idx) => {
+    if (!ad || typeof ad !== 'object') return;
+    const id = typeof ad.id === 'string' ? ad.id.trim() : '';
+    if (!id) return;
+    if (!index.has(id)) {
+      index.set(id, ad);
+      return;
+    }
+    console.log(`⚠️  Duplicate ad id "${id}" in editorial inventory at position ${idx + 1}; using first occurrence`);
+  });
+
+  return { adsPath, index };
+}
+
+function normalizeAdCopyHtml(copy) {
+  if (typeof copy !== 'string') return '';
+  const trimmed = copy.trim();
+  if (!trimmed) return '';
+  if (/^\s*<(p|div|ul|ol|table|blockquote)\b/i.test(trimmed)) {
+    return trimmed;
+  }
+  return `<p>${trimmed}</p>`;
+}
+
+function hydrateAdBlockSections(newsletterData, repoRoot) {
+  if (!newsletterData || !Array.isArray(newsletterData.sections)) return;
+
+  const adBlockSections = newsletterData.sections.filter((section) => section?.type === 'ad-block');
+  if (adBlockSections.length === 0) return;
+
+  const { adsPath, index } = buildEditorialAdsIndex(repoRoot);
+  console.log(`🧩 Hydrating ${adBlockSections.length} ad-block section(s) from ${adsPath}`);
+
+  newsletterData.sections.forEach((section, sectionIndex) => {
+    if (!section || section.type !== 'ad-block') return;
+
+    // Ignore accidental empty YAML list stubs (e.g. trailing "-" with no fields).
+    if (Array.isArray(section.items)) {
+      section.items = section.items.filter((item) => {
+        if (!item || typeof item !== 'object') return false;
+        return Object.keys(item).length > 0;
+      });
+    }
+
+    if (!Array.isArray(section.items) || section.items.length !== 1) {
+      throw new Error(`Section ${sectionIndex + 1} (ad-block) must contain exactly one item`);
+    }
+
+    const sourceItem = section.items[0];
+    const adId = typeof sourceItem?.adId === 'string' ? sourceItem.adId.trim() : '';
+    if (!adId) {
+      throw new Error(`Section ${sectionIndex + 1} (ad-block) is missing required items[0].adId`);
+    }
+
+    const ad = index.get(adId);
+    if (!ad) {
+      throw new Error(`Section ${sectionIndex + 1} (ad-block) references unknown adId "${adId}"`);
+    }
+
+    const markdownLinkUrl = typeof sourceItem?.link === 'string' && sourceItem.link.trim()
+      ? sourceItem.link.trim()
+      : '';
+    const markdownReadMoreLink = typeof sourceItem?.readMoreLink === 'string' && sourceItem.readMoreLink.trim()
+      ? sourceItem.readMoreLink.trim()
+      : '';
+    const markdownReadMoreText = typeof sourceItem?.readMoreText === 'string' && sourceItem.readMoreText.trim()
+      ? sourceItem.readMoreText.trim()
+      : typeof sourceItem?.readMoreTxt === 'string' && sourceItem.readMoreTxt.trim()
+        ? sourceItem.readMoreTxt.trim()
+        : '';
+    const resolvedCopy = typeof ad.copy === 'string' && ad.copy.trim()
+      ? ad.copy.trim()
+      : typeof ad.landscapeCopy === 'string' && ad.landscapeCopy.trim()
+        ? ad.landscapeCopy.trim()
+        : '';
+    const inventoryLinkUrl = typeof ad.link?.url === 'string' ? ad.link.url.trim() : '';
+    const resolvedLinkUrl = markdownLinkUrl || inventoryLinkUrl;
+    const resolvedReadMoreLink = markdownReadMoreLink || markdownLinkUrl || inventoryLinkUrl;
+    const inventoryLinkLabel = typeof ad.link?.label === 'string' && ad.link.label.trim()
+      ? ad.link.label.trim()
+      : 'Learn more';
+    const resolvedLinkLabel = markdownReadMoreText || inventoryLinkLabel;
+    const markdownLabel = typeof sourceItem?.label === 'string' && sourceItem.label.trim()
+      ? sourceItem.label.trim()
+      : '';
+    const resolvedLabel = markdownLabel
+      ? markdownLabel
+      : typeof ad.label === 'string' && ad.label.trim()
+      ? ad.label.trim()
+      : typeof ad.sponsor === 'string' && ad.sponsor.trim()
+        ? ad.sponsor.trim()
+        : 'Sponsored';
+
+    const hydratedItem = {
+      adId,
+      label: resolvedLabel,
+      sponsor: typeof ad.sponsor === 'string' ? ad.sponsor.trim() : '',
+      title: typeof ad.title === 'string' ? ad.title.trim() : '',
+      description: normalizeAdCopyHtml(resolvedCopy),
+      image: typeof ad.media?.src === 'string' ? ad.media.src.trim() : '',
+      imageAlt: typeof ad.media?.altText === 'string' ? ad.media.altText.trim() : '',
+    };
+
+    if (resolvedLinkUrl) {
+      hydratedItem.link = resolvedLinkUrl;
+    }
+
+    if (resolvedReadMoreLink) {
+      hydratedItem.readMoreLink = resolvedReadMoreLink;
+    }
+
+    if (resolvedLinkLabel && resolvedReadMoreLink) {
+      hydratedItem.readMoreText = resolvedLinkLabel;
+    }
+
+    section.items = [hydratedItem];
   });
 }
 
@@ -496,24 +957,27 @@ function logSectionBackgroundOverrides(sections = [], theme) {
 function catalogSections(newsletterData) {
   console.log('📋 Section Catalog:');
   console.log('═══════════════════');
-  
-  if (!newsletterData.sections) {
+
+  const sectionList = Array.isArray(newsletterData.sections)
+    ? newsletterData.sections
+    : Array.isArray(newsletterData.jobPopupMail?.sections)
+      ? newsletterData.jobPopupMail.sections
+      : null;
+
+  if (!sectionList) {
     console.log('❌ No sections found in newsletter data');
     return;
   }
-  
-  if (!Array.isArray(newsletterData.sections)) {
-    console.log('❌ Sections is not an array:', typeof newsletterData.sections);
-    return;
-  }
-  
-  console.log(`📊 Total sections: ${newsletterData.sections.length}`);
+
+  console.log(`📊 Total sections: ${sectionList.length}`);
   console.log('');
-  
-  newsletterData.sections.forEach((section, index) => {
-    const type = section.type || 'undefined';
+
+  sectionList.forEach((section, index) => {
+    const type = section.type || section.kind || 'undefined';
     const title = section.title || 'No title';
-    const itemCount = section.items ? section.items.length : 0;
+    const itemCount = Array.isArray(section.items)
+      ? section.items.length
+      : (Array.isArray(section.itemsHtml) ? section.itemsHtml.length : 0);
     
     console.log(`${index + 1}. Type: "${type}" | Title: "${title}" | Items: ${itemCount}`);
     
@@ -794,6 +1258,7 @@ if (args.length < 1) {
   console.log('  --no-open            Don\'t auto-open the built newsletter');
   console.log('  --repo-root=<path>   Specify nfl-maizzle-mail repo root (for cross-repo usage)');
   console.log('  --output-dir=<path>  Output directory (default: build_production in repo)');
+  console.log('  --adjacency-mail-theme-overrides=<path>  JSON file with Adjacency mail theme overrides');
   console.log('');
   console.log('Environment Variables:');
   console.log('  NFL_MAIZZLE_MAIL_ROOT  Alternative to --repo-root');
@@ -885,6 +1350,12 @@ async function buildNewsletter() {
   console.log(`🏗️  Output: ${outputName}.html`);
   console.log(`📍 Repo: ${REPO_ROOT}`);
 
+  let dataNewsletterJson = null;
+  let originalNewsletterJsonRaw = null;
+  const finalOutputPath = path.join(outputDir, `${outputName}.html`);
+  const existingOutputRawBeforeBuild = fs.existsSync(finalOutputPath)
+    ? fs.readFileSync(finalOutputPath, 'utf8')
+    : null;
   try {
     let templateName = 'wirecutter'; // default
     
@@ -940,22 +1411,27 @@ async function buildNewsletter() {
       templateName = data.template || 'wirecutter';
       
       // Copy data file to newsletter.json
-      const dataNewsletterJson = repoPath(REPO_ROOT, 'data/newsletter.json');
+      dataNewsletterJson = repoPath(REPO_ROOT, 'data/newsletter.json');
       fs.copyFileSync(inputPath, dataNewsletterJson);
     }
-    
-    const dataNewsletterJson = repoPath(REPO_ROOT, 'data/newsletter.json');
+
+    dataNewsletterJson = repoPath(REPO_ROOT, 'data/newsletter.json');
     console.log(`🎨 Template: "${templateName}"`);
     console.log(`📊 Newsletter: "${JSON.parse(fs.readFileSync(dataNewsletterJson, 'utf8')).title}"`);
 
     // Load newsletter data and display color theme
-    const newsletterData = JSON.parse(fs.readFileSync(dataNewsletterJson, 'utf8'));
+    const sourceNewsletterData = JSON.parse(fs.readFileSync(dataNewsletterJson, 'utf8'));
 
-    // Validate source JSON against a template-specific schema if one exists.
-    // Default behavior is warn-and-continue; pass `--strict-schema` (or set `SCHEMA_STRICT=1`)
-    // to fail the build on schema errors.
-    normalizeNewsletterForSchemaValidation(newsletterData);
-    validateNewsletterDataAgainstSchema(newsletterData, templateName, args);
+    // Remove prior run-injected fields before preserving the JSON file so the
+    // build can always restore a clean author-facing source payload.
+    pruneBuildInjectedFields(sourceNewsletterData);
+    originalNewsletterJsonRaw = `${JSON.stringify(sourceNewsletterData, null, 2)}\n`;
+
+    const newsletterData = prepareNormalizedNewsletterData(sourceNewsletterData, {
+      repoRoot: REPO_ROOT,
+      templateName,
+      args,
+    });
     
     // Catalog sections for debugging
     catalogSections(newsletterData);
@@ -1064,12 +1540,11 @@ async function buildNewsletter() {
             });
           }
         });
-
+        // Normalize any quoted or entity-escaped font family values from section-styles.json
+        // so template interpolation does not emit escaped quotes (e.g. &#039;Roboto&#039;).
+        normalizeFontFamiliesDeep(sectionStyles);
         sectionStyles.sectionStyles = normalized;
       }
-
-      newsletterData.sectionStyles = sectionStyles;
-      console.log(`✅ Loaded section styles from ${sectionStylesPath}: ${Object.keys(sectionStyles.sectionStyles).length} section types (normalized)`);
     } catch (error) {
       const baseMessage = `Failed to load section styles from ${sectionStylesPath}`;
       if (sectionStylesSourceReason === 'specified via sectionStylesFile') {
@@ -1077,6 +1552,46 @@ async function buildNewsletter() {
       }
       console.log(`⚠️  ${baseMessage}, skipping style processing (${error.message})`);
     }
+
+    const { overridesPath: adjacencyMailOverridesPath, overrides: adjacencyMailOverrides } =
+      loadAdjacencyMailThemeOverrides(args);
+    const adjacencyMailTokens = buildAdjacencyMailThemeTokens(adjacencyMailOverrides);
+    const adjacencyMailSectionOverrides = buildAdjacencyMailSectionStyleOverrides(adjacencyMailTokens);
+    const adjacencyJobsMailSectionOverrides = buildAdjacencyJobsMailSectionStyleOverrides();
+    normalizeFontFamiliesDeep(adjacencyMailSectionOverrides);
+    normalizeFontFamiliesDeep(adjacencyJobsMailSectionOverrides);
+
+    const existingSectionStyles =
+      sectionStyles && typeof sectionStyles === 'object' && !Array.isArray(sectionStyles) ? sectionStyles : {};
+    const existingSectionStyleMap =
+      existingSectionStyles.sectionStyles &&
+      typeof existingSectionStyles.sectionStyles === 'object' &&
+      !Array.isArray(existingSectionStyles.sectionStyles)
+        ? existingSectionStyles.sectionStyles
+        : {};
+
+    sectionStyles = {
+      ...existingSectionStyles,
+      sectionStyles: {
+        ...existingSectionStyleMap,
+        ...adjacencyMailSectionOverrides,
+        ...adjacencyJobsMailSectionOverrides,
+      },
+    };
+
+    newsletterData.sectionStyles = sectionStyles;
+    console.log(
+      `🎛️ Applied Adjacency mail theme overrides: ${[
+        ...Object.keys(adjacencyMailSectionOverrides),
+        ...Object.keys(adjacencyJobsMailSectionOverrides),
+      ].join(', ')}`,
+    );
+    if (adjacencyMailOverridesPath) {
+      console.log(`🧪 Adjacency mail theme override file: ${adjacencyMailOverridesPath}`);
+    }
+    console.log(
+      `✅ Loaded section styles from ${sectionStylesPath}: ${Object.keys(sectionStyles.sectionStyles).length} section types (normalized)`,
+    );
 
     // Apply section styles through preprocessing (more reliable for email compatibility)
     if (sectionStyles.sectionStyles && newsletterData.sections) {
@@ -1102,6 +1617,55 @@ async function buildNewsletter() {
 
         return out;
       };
+
+      const applyInlineLinkStyles = (html, linkStyles, theme) => {
+        if (!html || typeof html !== 'string') return html;
+
+        if (linkStyles && Object.keys(linkStyles).length > 0) {
+          let linkCSSProperties = [];
+          if (linkStyles.fontFamily) linkCSSProperties.push(`font-family: ${linkStyles.fontFamily} !important`);
+          if (linkStyles.fontSize) linkCSSProperties.push(`font-size: ${linkStyles.fontSize} !important`);
+          if (linkStyles.fontWeight) linkCSSProperties.push(`font-weight: ${linkStyles.fontWeight} !important`);
+          if (linkStyles.textDecoration) linkCSSProperties.push(`text-decoration: ${linkStyles.textDecoration} !important`);
+          if (linkStyles.color === 'inherit' && theme?.linkAccent) {
+            linkCSSProperties.push(`color: ${theme.linkAccent} !important`);
+          } else if (linkStyles.color && linkStyles.color !== 'inherit') {
+            linkCSSProperties.push(`color: ${linkStyles.color} !important`);
+          } else if (theme?.linkAccent) {
+            linkCSSProperties.push(`color: ${theme.linkAccent} !important`);
+          }
+
+          const linkCSSString = linkCSSProperties.join('; ');
+          return html.replace(/<a(\s[^>]*)?>/gi, (match, attrs) => {
+            attrs = attrs || '';
+            const styleMatch = attrs.match(/style="([^"]*)"/i);
+            if (styleMatch) {
+              let existingStyle = styleMatch[1];
+              existingStyle = existingStyle
+                .replace(/font-family:[^;]*;?/gi, '')
+                .replace(/font-size:[^;]*;?/gi, '')
+                .replace(/font-weight:[^;]*;?/gi, '')
+                .replace(/text-decoration:[^;]*;?/gi, '')
+                .replace(/color:[^;]*;?/gi, '');
+              const combinedLinkStyle = `${existingStyle}; ${linkCSSString}`.replace(/^;+|;+$/g, '');
+              return `<a${attrs.replace(/style="[^"]*"/i, `style="${combinedLinkStyle}"`)}>`;
+            }
+            return `<a${attrs} style="${linkCSSString}">`;
+          });
+        }
+
+        if (!theme?.linkAccent) return html;
+        return html.replace(/<a(\s[^>]*)?>/gi, (match, attrs) => {
+          attrs = attrs || '';
+          if (!attrs.includes('style=')) {
+            return `<a${attrs} style="color: ${theme.linkAccent} !important; text-decoration: underline;">`;
+          }
+          return match.replace(/style="([^"]*)"/, (styleMatch, styles) => {
+            const cleanStyles = styles.replace(/color:[^;]*;?/gi, '');
+            return `style="${cleanStyles}; color: ${theme.linkAccent} !important; text-decoration: underline;"`;
+          });
+        });
+      };
       
       let processedItems = 0;
       let totalItems = 0;
@@ -1115,7 +1679,9 @@ async function buildNewsletter() {
             section.type = String(section.type).trim();
           }
 
-          // Helper to convert style objects into inline CSS strings with camelCase to kebab-case conversion
+          // Helper to convert style objects into inline CSS strings with camelCase to kebab-case conversion.
+          // Uses !important so section-level overrides survive Maizzle's global CSS inlining
+          // (the layout has `a { color: <theme.linkAccent> !important; }` which would otherwise win).
           const toCssString = (styles = {}, theme) => {
             return Object.entries(styles)
               .filter(([, v]) => v !== null && v !== undefined && v !== '')
@@ -1123,9 +1689,9 @@ async function buildNewsletter() {
                 const cssProp = prop.replace(/([A-Z])/g, '-$1').toLowerCase();
                 // Special handling: if color is "inherit", prefer theme link accent when available
                 if (cssProp === 'color' && val === 'inherit' && theme?.linkAccent) {
-                  return `color: ${theme.linkAccent}`;
+                  return `color: ${theme.linkAccent} !important`;
                 }
-                return `${cssProp}: ${val}`;
+                return `${cssProp}: ${val} !important`;
               })
               .join('; ');
           };
@@ -1142,6 +1708,15 @@ async function buildNewsletter() {
           const incomingContainerStyles = section.containerStyles && typeof section.containerStyles === 'object'
             ? { ...section.containerStyles }
             : {};
+          const incomingLinkStyles = section.linkStyles && typeof section.linkStyles === 'object'
+            ? { ...section.linkStyles }
+            : {};
+          const mergedLinkStyles = {
+            ...((safeUsedConfig.linkStyles && typeof safeUsedConfig.linkStyles === 'object')
+              ? safeUsedConfig.linkStyles
+              : {}),
+            ...incomingLinkStyles,
+          };
           // --- PATCH: Apply descriptionStyles/contentStyles/linkStyles to section.description ---
           if (section.description && typeof section.description === 'string') {
             section.description = sanitizeHtmlFragment(section.description);
@@ -1185,51 +1760,8 @@ async function buildNewsletter() {
               wasModified = true;
             }
             // Apply linkStyles
-            if (safeUsedConfig.linkStyles && Object.keys(safeUsedConfig.linkStyles).length > 0) {
-              const linkStyles = safeUsedConfig.linkStyles;
-              let linkCSSProperties = [];
-              if (linkStyles.fontFamily) linkCSSProperties.push(`font-family: ${linkStyles.fontFamily} !important`);
-              if (linkStyles.fontSize) linkCSSProperties.push(`font-size: ${linkStyles.fontSize} !important`);
-              if (linkStyles.fontWeight) linkCSSProperties.push(`font-weight: ${linkStyles.fontWeight} !important`);
-              if (linkStyles.textDecoration) linkCSSProperties.push(`text-decoration: ${linkStyles.textDecoration} !important`);
-              if (linkStyles.color === 'inherit' && theme?.linkAccent) {
-                linkCSSProperties.push(`color: ${theme.linkAccent} !important`);
-              } else if (linkStyles.color && linkStyles.color !== 'inherit') {
-                linkCSSProperties.push(`color: ${linkStyles.color} !important`);
-              } else if (theme?.linkAccent) {
-                linkCSSProperties.push(`color: ${theme.linkAccent} !important`);
-              }
-              const linkCSSString = linkCSSProperties.join('; ');
-              desc = desc.replace(/<a(\s[^>]*)?>/gi, (match, attrs) => {
-                attrs = attrs || '';
-                const styleMatch = attrs.match(/style="([^"]*)"/i);
-                if (styleMatch) {
-                  let existingStyle = styleMatch[1];
-                  existingStyle = existingStyle
-                    .replace(/font-family:[^;]*;?/gi, '')
-                    .replace(/font-size:[^;]*;?/gi, '')
-                    .replace(/font-weight:[^;]*;?/gi, '')
-                    .replace(/text-decoration:[^;]*;?/gi, '')
-                    .replace(/color:[^;]*;?/gi, '');
-                  const combinedLinkStyle = `${existingStyle}; ${linkCSSString}`.replace(/^;+|;+$/g, '');
-                  return `<a${attrs.replace(/style="[^"]*"/i, `style="${combinedLinkStyle}"`)}>`;
-                } else {
-                  return `<a${attrs} style="${linkCSSString}">`;
-                }
-              });
-              wasModified = true;
-            } else if (theme?.linkAccent) {
-              desc = desc.replace(/<a(\s[^>]*)?>/gi, (match, attrs) => {
-                attrs = attrs || '';
-                if (!attrs.includes('style=')) {
-                  return `<a${attrs} style="color: ${theme.linkAccent} !important; text-decoration: underline;">`;
-                } else {
-                  return match.replace(/style="([^"]*)"/, (styleMatch, styles) => {
-                    const cleanStyles = styles.replace(/color:[^;]*;?/gi, '');
-                    return `style="${cleanStyles}; color: ${theme.linkAccent} !important; text-decoration: underline;"`;
-                  });
-                }
-              });
+            if ((mergedLinkStyles && Object.keys(mergedLinkStyles).length > 0) || theme?.linkAccent) {
+              desc = applyInlineLinkStyles(desc, mergedLinkStyles, theme);
               wasModified = true;
             }
             if (wasModified) {
@@ -1283,10 +1815,27 @@ async function buildNewsletter() {
           // Expose headingStyles/linkStyles for template use with sane defaults
           const defaultHeading = { fontFamily: "'Ubuntu', sans-serif", fontSize: '18px', lineHeight: '23px', fontWeight: '600', color: '#000000' };
           const defaultLink = { textDecoration: 'underline', fontWeight: '400', color: theme?.linkAccent || '#707070' };
+          const defaultLabel = {
+            fontFamily: 'Geist, ui-sans-serif, sans-serif',
+            fontSize: '12px',
+            lineHeight: '14px',
+            fontWeight: '300',
+            letterSpacing: '0.12em',
+            textTransform: 'uppercase',
+            color: '#778095'
+          };
           section.headingStyles = safeUsedConfig.headingStyles && typeof safeUsedConfig.headingStyles === 'object' ? { ...safeUsedConfig.headingStyles } : {};
-          section.linkStyles = safeUsedConfig.linkStyles && typeof safeUsedConfig.linkStyles === 'object' ? { ...safeUsedConfig.linkStyles } : {};
+          section.linkStyles = mergedLinkStyles;
+          const incomingLabelStyles = section.labelStyles && typeof section.labelStyles === 'object'
+            ? { ...section.labelStyles }
+            : {};
+          const templateLabelStyles = safeUsedConfig.labelStyles && typeof safeUsedConfig.labelStyles === 'object'
+            ? { ...safeUsedConfig.labelStyles }
+            : {};
+          section.labelStyles = { ...templateLabelStyles, ...incomingLabelStyles };
           section.headingStylesInline = toCssString({ ...defaultHeading, ...section.headingStyles });
           section.linkStylesInline = toCssString({ ...defaultLink, ...section.linkStyles }, theme);
+          section.labelStylesInline = toCssString({ ...defaultLabel, ...section.labelStyles });
         const usingFallback = !sectionConfig;
         
         let sectionProcessedItems = 0;
@@ -1319,6 +1868,19 @@ async function buildNewsletter() {
           }
           
           sectionItems.forEach((item, iIndex) => {
+            if (section.type === 'signals-adjacent-now') {
+              if (Array.isArray(item.storySeeds)) {
+                item.storySeeds = item.storySeeds.map((seed) =>
+                  applyInlineLinkStyles(sanitizeHtmlFragment(seed), mergedLinkStyles, theme)
+                );
+              }
+              if (Array.isArray(item.strategyQuestions)) {
+                item.strategyQuestions = item.strategyQuestions.map((question) =>
+                  applyInlineLinkStyles(sanitizeHtmlFragment(question), mergedLinkStyles, theme)
+                );
+              }
+            }
+
             if (item.description && typeof item.description === 'string') {
               item.description = sanitizeHtmlFragment(item.description);
               let originalDescription = item.description;
@@ -1337,10 +1899,10 @@ async function buildNewsletter() {
                   cssProperties.push(`font-family: ${contentStyles.fontFamily} !important`);
                 }
                 if (contentStyles.fontSize) {
-                  cssProperties.push(`font-size: ${contentStyles.fontSize} !important`);
+                  cssProperties.push(`font-size: ${contentStyles.fontSize}`);
                 }
                 if (contentStyles.lineHeight) {
-                  cssProperties.push(`line-height: ${contentStyles.lineHeight} !important`);
+                  cssProperties.push(`line-height: ${contentStyles.lineHeight}`);
                 }
                 if (contentStyles.color) {
                   cssProperties.push(`color: ${contentStyles.color} !important`);
@@ -1351,9 +1913,18 @@ async function buildNewsletter() {
                 
                 const newCSSString = cssProperties.join('; ');
                 
-                // Process <p> tags
+                // Process <p> tags — add mob-text class for mobile media query targeting
                 item.description = item.description.replace(/<p(\s[^>]*)?>/gi, (match, attrs) => {
                   attrs = attrs || '';
+                  // Add mob-text class for mobile media query targeting
+                  const classMatch = attrs.match(/class="([^"]*)"/i);
+                  if (classMatch) {
+                    if (!classMatch[1].includes('mob-text')) {
+                      attrs = attrs.replace(/class="([^"]*)"/i, `class="$1 mob-text"`);
+                    }
+                  } else {
+                    attrs = ` class="mob-text"${attrs}`;
+                  }
                   const styleMatch = attrs.match(/style="([^"]*)"/i);
                   if (styleMatch) {
                     let existingStyle = styleMatch[1];
@@ -1374,69 +1945,8 @@ async function buildNewsletter() {
               }
               
               // Apply linkStyles properties to <a> tags
-              if (usedConfig.linkStyles && Object.keys(usedConfig.linkStyles).length > 0) {
-                const linkStyles = usedConfig.linkStyles;
-                
-                // Build CSS properties from linkStyles
-                let linkCSSProperties = [];
-                if (linkStyles.fontFamily) {
-                  linkCSSProperties.push(`font-family: ${linkStyles.fontFamily} !important`);
-                }
-                if (linkStyles.fontSize) {
-                  linkCSSProperties.push(`font-size: ${linkStyles.fontSize} !important`);
-                }
-                if (linkStyles.fontWeight) {
-                  linkCSSProperties.push(`font-weight: ${linkStyles.fontWeight} !important`);
-                }
-                if (linkStyles.textDecoration) {
-                  linkCSSProperties.push(`text-decoration: ${linkStyles.textDecoration} !important`);
-                }
-                if (linkStyles.color === 'inherit' && theme?.linkAccent) {
-                  // Use theme color when linkStyles.color is 'inherit'
-                  linkCSSProperties.push(`color: ${theme.linkAccent} !important`);
-                } else if (linkStyles.color && linkStyles.color !== 'inherit') {
-                  // Use specific color from linkStyles
-                  linkCSSProperties.push(`color: ${linkStyles.color} !important`);
-                } else if (theme?.linkAccent) {
-                  // Fallback to theme color if no linkStyles color specified
-                  linkCSSProperties.push(`color: ${theme.linkAccent} !important`);
-                }
-                
-                const linkCSSString = linkCSSProperties.join('; ');
-                
-                // Process <a> tags
-                item.description = item.description.replace(/<a(\s[^>]*)?>/gi, (match, attrs) => {
-                  attrs = attrs || '';
-                  const styleMatch = attrs.match(/style="([^"]*)"/i);
-                  if (styleMatch) {
-                    let existingStyle = styleMatch[1];
-                    // Remove existing properties that we're overriding
-                    existingStyle = existingStyle
-                      .replace(/font-family:[^;]*;?/gi, '')
-                      .replace(/font-size:[^;]*;?/gi, '')
-                      .replace(/font-weight:[^;]*;?/gi, '')
-                      .replace(/text-decoration:[^;]*;?/gi, '')
-                      .replace(/color:[^;]*;?/gi, '');
-                    const combinedLinkStyle = `${existingStyle}; ${linkCSSString}`.replace(/^;+|;+$/g, '');
-                    return `<a${attrs.replace(/style="[^"]*"/i, `style="${combinedLinkStyle}"`)}>`;
-                  } else {
-                    return `<a${attrs} style="${linkCSSString}">`;
-                  }
-                });
-                wasModified = true;
-              } else if (theme?.linkAccent) {
-                // Fallback: apply theme link color if no linkStyles defined
-                item.description = item.description.replace(/<a(\s[^>]*)?>/gi, (match, attrs) => {
-                  attrs = attrs || '';
-                  if (!attrs.includes('style=')) {
-                    return `<a${attrs} style="color: ${theme.linkAccent} !important; text-decoration: underline;">`;
-                  } else {
-                    return match.replace(/style="([^"]*)"/, (styleMatch, styles) => {
-                      const cleanStyles = styles.replace(/color:[^;]*;?/gi, '');
-                      return `style="${cleanStyles}; color: ${theme.linkAccent} !important; text-decoration: underline;"`;
-                    });
-                  }
-                });
+              if ((mergedLinkStyles && Object.keys(mergedLinkStyles).length > 0) || theme?.linkAccent) {
+                item.description = applyInlineLinkStyles(item.description, mergedLinkStyles, theme);
                 wasModified = true;
               }
               
@@ -1490,6 +2000,68 @@ async function buildNewsletter() {
 
               if (inlineStyleSummary.length > 0) {
                 console.log(`   🧷 Item ${iIndex + 1}: ${inlineStyleSummary.join('; ')}`);
+              }
+            }
+
+            if (item.calloutText && typeof item.calloutText === 'string') {
+              item.calloutText = sanitizeHtmlFragment(item.calloutText);
+              let originalCalloutText = item.calloutText;
+              let calloutWasModified = false;
+
+              const mergedContentStyles = section.contentStyles && Object.keys(section.contentStyles).length > 0
+                ? section.contentStyles
+                : safeUsedConfig.contentStyles;
+
+              if (mergedContentStyles && Object.keys(mergedContentStyles).length > 0) {
+                const contentStyles = mergedContentStyles;
+                let cssProperties = [];
+                if (contentStyles.fontFamily) {
+                  cssProperties.push(`font-family: ${contentStyles.fontFamily} !important`);
+                }
+                if (contentStyles.fontSize) {
+                  cssProperties.push(`font-size: ${contentStyles.fontSize}`);
+                }
+                if (contentStyles.lineHeight) {
+                  cssProperties.push(`line-height: ${contentStyles.lineHeight}`);
+                }
+                if (contentStyles.color) {
+                  cssProperties.push(`color: ${contentStyles.color} !important`);
+                }
+                if (contentStyles.textAlign) {
+                  cssProperties.push(`text-align: ${contentStyles.textAlign} !important`);
+                }
+
+                const newCSSString = cssProperties.join('; ');
+
+                item.calloutText = item.calloutText.replace(/<p(\s[^>]*)?>/gi, (match, attrs) => {
+                  attrs = attrs || '';
+                  const classMatch = attrs.match(/class="([^"]*)"/i);
+                  if (classMatch) {
+                    if (!classMatch[1].includes('mob-text')) {
+                      attrs = attrs.replace(/class="([^"]*)"/i, `class="$1 mob-text"`);
+                    }
+                  } else {
+                    attrs = ` class="mob-text"${attrs}`;
+                  }
+                  const styleMatch = attrs.match(/style="([^"]*)"/i);
+                  if (styleMatch) {
+                    let existingStyle = styleMatch[1];
+                    existingStyle = existingStyle
+                      .replace(/font-family:[^;]*;?/gi, '')
+                      .replace(/font-size:[^;]*;?/gi, '')
+                      .replace(/line-height:[^;]*;?/gi, '')
+                      .replace(/color:[^;]*;?/gi, '')
+                      .replace(/text-align:[^;]*;?/gi, '');
+                    const combinedStyle = `${existingStyle}; ${newCSSString}`.replace(/^;+|;+$/g, '');
+                    return `<p${attrs.replace(/style="[^"]*"/i, `style="${combinedStyle}"`)}>`;
+                  }
+                  return `<p${attrs} style="${newCSSString}">`;
+                });
+                calloutWasModified = true;
+              }
+
+              if (calloutWasModified && item.calloutText !== originalCalloutText) {
+                console.log(`    🗨️  Processed calloutText in section "${section.type}" item ${iIndex + 1}`);
               }
             }
           });
@@ -1554,7 +2126,7 @@ async function buildNewsletter() {
         padding: '20px'
       };
       const defaultHeaderContentStyles = {
-        fontFamily: "'IBM Plex Sans', sans-serif",
+        fontFamily: 'IBM Plex Sans, sans-serif',
         fontSize: '18px',
         lineHeight: '23px',
         fontWeight: '400',
@@ -1595,8 +2167,8 @@ async function buildNewsletter() {
         if (!html || typeof html !== 'string') return html;
         const cssProperties = [];
         if (styles.fontFamily) cssProperties.push(`font-family: ${styles.fontFamily} !important`);
-        if (styles.fontSize) cssProperties.push(`font-size: ${styles.fontSize} !important`);
-        if (styles.lineHeight) cssProperties.push(`line-height: ${styles.lineHeight} !important`);
+        if (styles.fontSize) cssProperties.push(`font-size: ${styles.fontSize}`);
+        if (styles.lineHeight) cssProperties.push(`line-height: ${styles.lineHeight}`);
         if (styles.fontStyle) cssProperties.push(`font-style: ${styles.fontStyle} !important`);
         if (styles.color) cssProperties.push(`color: ${styles.color} !important`);
         if (styles.textAlign) cssProperties.push(`text-align: ${styles.textAlign} !important`);
@@ -1604,6 +2176,15 @@ async function buildNewsletter() {
         const newCSSString = cssProperties.join('; ');
         return html.replace(/<p(\s[^>]*)?>/gi, (match, attrs) => {
           attrs = attrs || '';
+          // Add mob-text class for mobile media query targeting
+          const classMatch = attrs.match(/class="([^"]*)"/i);
+          if (classMatch) {
+            if (!classMatch[1].includes('mob-text')) {
+              attrs = attrs.replace(/class="([^"]*)"/i, `class="$1 mob-text"`);
+            }
+          } else {
+            attrs = ` class="mob-text"${attrs}`;
+          }
           const styleMatch = attrs.match(/style="([^"]*)"/i);
           if (styleMatch) {
             let existingStyle = styleMatch[1];
@@ -1621,6 +2202,25 @@ async function buildNewsletter() {
         });
       };
 
+      // --- Set mobile text override properties from globalOverrides.mobileAdjustments ---
+      // These are used by the layout template's media query to override inline
+      // font-size on <p class="mob-text"> elements on mobile viewports.
+      const globalOverrides = sectionStyles.globalOverrides || {};
+      const mobileAdj = globalOverrides.mobileAdjustments || {};
+      if (mobileAdj.contentStyles) {
+        const mc = mobileAdj.contentStyles;
+        if (mc.fontSize) {
+          newsletterData.mobileTextFontSize = mc.fontSize;
+        }
+        if (mc.lineHeight) {
+          newsletterData.mobileTextLineHeight = mc.lineHeight;
+        }
+        const setProps = [mc.fontSize && 'fontSize', mc.lineHeight && 'lineHeight'].filter(Boolean);
+        if (setProps.length) {
+          console.log(`📱 Mobile text overrides: ${setProps.join(', ')} → .mob-text in media query (from globalOverrides.mobileAdjustments)`);
+        }
+      }
+
       const introContentConfig = sectionStyles.sectionStyles
         ? sectionStyles.sectionStyles['intro-content'] ||
           sectionStyles.sectionStyles.introContent ||
@@ -1633,9 +2233,9 @@ async function buildNewsletter() {
         borderRadius: '0px'
       };
       const defaultIntroContentStyles = {
-        fontFamily: "'IBM Plex Sans', sans-serif",
+        fontFamily: 'IBM Plex Sans, sans-serif',
         fontSize: '16px',
-        lineHeight: '1.2rem',
+        lineHeight: '1.5',
         fontWeight: '400',
         color: '#000000',
         textAlign: 'left'
@@ -1678,7 +2278,7 @@ async function buildNewsletter() {
         borderLeftStyle: 'solid'
       };
       const defaultIntroAsideContentStyles = {
-        fontFamily: "'Merriweather', serif",
+        fontFamily: 'Merriweather, serif',
         fontSize: '18px',
         lineHeight: '23px',
         fontStyle: 'italic',
@@ -1717,7 +2317,13 @@ async function buildNewsletter() {
         aside.content = applyContentStylesToHtml(aside.content, aside.contentStyles);
       }
 
-      intro.aside = aside;
+      // Only set intro.aside if there's actual content to display
+      // Otherwise the template conditional will be truthy but render empty/broken
+      if (aside.content) {
+        intro.aside = aside;
+      } else {
+        delete intro.aside;
+      }
     }
     
     // Write updated newsletter data back to file
@@ -1748,37 +2354,60 @@ async function buildNewsletter() {
     // Build the newsletter
     console.log('🔨 Building newsletter...');
     console.log('');
-    
-    // Run Maizzle build from the repo root
-    // We use process.chdir() to ensure Maizzle finds its config files,
-    // since Maizzle uses process.cwd() internally for config resolution.
-    // We also run npx maizzle directly (instead of npm run) to avoid
-    // npm's own path resolution issues when running from external directories.
+
+    // Run Maizzle build from the repo root.
+    // Popup jobs mail uses a dedicated programmatic build path so it can avoid
+    // the shared build_production directory and the fragile juice phase.
     const originalCwd = process.cwd();
+    let builtNewsletterPath = null;
+    let popupJobsBuildDir = null;
     try {
       process.chdir(REPO_ROOT);
       console.log(`📍 Build directory: ${process.cwd()}`);
-      execSync('npx maizzle build production', { stdio: 'inherit' });
+      if (templateName === 'popup-jobs-mail') {
+        const popupJobsBuildDirName = `build_popup_jobs_mail_${process.pid}_${Date.now()}`;
+        popupJobsBuildDir = await buildPopupJobsMailTemplate({
+          repoRoot: REPO_ROOT,
+          newsletterData,
+          templateName,
+          buildDirName: popupJobsBuildDirName,
+        });
+        builtNewsletterPath = resolveBuiltNewsletterPath(popupJobsBuildDir, templateName);
+      } else {
+        execSync('npx maizzle build production', { stdio: 'inherit' });
+        builtNewsletterPath = resolveBuiltNewsletterPath(
+          repoPath(REPO_ROOT, 'build_production'),
+          templateName,
+        );
+      }
     } finally {
       process.chdir(originalCwd);
     }
 
-    // Verify the build worked
-    if (!fs.existsSync(repoPath(REPO_ROOT, 'build_production/newsletter.html'))) {
-      throw new Error('Maizzle build failed - newsletter.html not created');
+    if (!builtNewsletterPath) {
+      throw new Error(`Maizzle build failed - newsletter.html not created in either location`);
     }
 
-    // Determine final output path
-    // If --output-dir was specified, use that; otherwise use repo's build_production
-    const finalOutputPath = path.join(outputDir, `${outputName}.html`);
-    
     // Ensure output directory exists
     if (!fs.existsSync(outputDir)) {
       fs.mkdirSync(outputDir, { recursive: true });
     }
     
     console.log(`📦 Saving as ${finalOutputPath}...`);
-    fs.copyFileSync(repoPath(REPO_ROOT, 'build_production/newsletter.html'), finalOutputPath);
+    const builtHtmlRaw = normalizeInlineStyleAttributeWhitespace(
+      fs.readFileSync(builtNewsletterPath, 'utf8'),
+    );
+    const { content: finalOutputRaw, preservedFrontmatter } = mergeFrontmatterWithHtml(
+      existingOutputRawBeforeBuild,
+      builtHtmlRaw,
+    );
+    fs.writeFileSync(finalOutputPath, finalOutputRaw, 'utf8');
+    if (preservedFrontmatter) {
+      console.log('🧷 Preserved existing HTML frontmatter');
+    }
+    if (popupJobsBuildDir) {
+      fs.rmSync(popupJobsBuildDir, { recursive: true, force: true });
+    }
 
     console.log('');
     console.log('✅ Newsletter Built Successfully!');
@@ -1798,8 +2427,18 @@ async function buildNewsletter() {
         console.log('⚠️  Could not auto-open file (you can open it manually)');
       }
     }
+    if (dataNewsletterJson && originalNewsletterJsonRaw !== null) {
+      fs.writeFileSync(dataNewsletterJson, originalNewsletterJsonRaw);
+    }
 
   } catch (error) {
+    if (dataNewsletterJson && originalNewsletterJsonRaw !== null) {
+      try {
+        fs.writeFileSync(dataNewsletterJson, originalNewsletterJsonRaw);
+      } catch (restoreError) {
+        console.error(`⚠️  Failed to restore source JSON: ${restoreError.message}`);
+      }
+    }
     console.error('❌ Build failed:', error.message);
     process.exit(1);
   }

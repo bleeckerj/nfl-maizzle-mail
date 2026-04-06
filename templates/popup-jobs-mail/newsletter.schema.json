@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["template", "title", "jobPopupMail"],
+  "properties": {
+    "template": {
+      "const": "popup-jobs-mail"
+    },
+    "title": {
+      "type": "string"
+    },
+    "preheader": {
+      "type": "string"
+    },
+    "jobPopupMail": {
+      "type": "object",
+      "required": ["rendererKey", "targetUrl", "company", "title", "brand", "sections"],
+      "properties": {
+        "rendererKey": {
+          "type": "string"
+        },
+        "targetUrl": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "metaLine": {
+          "type": "string"
+        },
+        "brand": {
+          "type": "object"
+        },
+        "sections": {
+          "type": "array"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

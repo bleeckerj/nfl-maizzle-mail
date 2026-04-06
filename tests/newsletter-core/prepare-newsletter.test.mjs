@@ -344,6 +344,33 @@ test('prepareNewsletterData accepts indie-mag-single-column item subtitles under
   assert.equal(prepared.sections[0].items[0].subtitle, 'Episode N°303 of our Weekly Session');
 });
 
+test('prepareNewsletterData rejects indie-mag-single-column items that set both image and images under strict schema validation', () => {
+  assert.throws(
+    () =>
+      prepareNewsletterData(
+        {
+          template: 'dense-discovery',
+          title: 'Strict Schema Image Conflict Test',
+          sections: [
+            {
+              type: 'indie-mag-single-column',
+              title: 'Zines Zone',
+              items: [
+                {
+                  title: 'Conflicting image fields',
+                  image: 'https://example.com/single.webp',
+                  images: [{ src: 'https://example.com/multi.webp' }],
+                },
+              ],
+            },
+          ],
+        },
+        { repoRoot: REPO_ROOT, templateName: 'dense-discovery', strictSchema: true, logger: { log() {} } },
+      ),
+    /strict mode/,
+  );
+});
+
 test('prepareNewsletterData accepts source-model root metadata fields under strict schema validation', () => {
   const prepared = prepareNewsletterData(
     {

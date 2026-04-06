@@ -135,6 +135,21 @@ Every template should have a README.md documenting its structure, variables, and
 
 Every template should also have a generated sample HTML email in `templates/<name>/sample-output.html` for quick reference and review.
 
+---
+
+## Testing Protocol (Comprehensive)
+
+Run tests at these intervals:
+
+1. **After template/component changes**: run the smallest relevant build (`node scripts/build-newsletter.mjs content/<file>.md`).
+2. **After pipeline changes** (scripts, factory): run a full template build and verify output in `build_production/`.
+3. **After schema or content model changes**: regenerate at least one real newsletter and validate rendering.
+4. **Before PR or delivery**: run the full available test/build suite in the repo.
+
+Guidelines:
+- Prefer the smallest scope build first, then expand if it passes.
+- If you add a new template, include sample content + sample output and build it once.
+
 ## Environment Setup
 
 Requires `.env` file with:

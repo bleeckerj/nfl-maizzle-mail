@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="date=no">
+  <title>{{{ page.title }}}</title>
+
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      background: {{ jobPopupMail.brand.theme.pageBackgroundColor || '#f6f2ea' }};
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    table {
+      border-collapse: collapse;
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+
+    img {
+      border: 0;
+      -ms-interpolation-mode: bicubic;
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    @media screen and (max-width: 640px) {
+      .popup-jobs-mail-shell {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+
+      .popup-jobs-mail-shell td {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+      }
+
+      .popup-jobs-mail-actions a {
+        display: block !important;
+        width: 100% !important;
+        margin-right: 0 !important;
+        margin-bottom: 12px !important;
+      }
+    }
+  </style>
+</head>
+<body bgcolor="{{ jobPopupMail.brand.theme.pageBackgroundColor || '#f6f2ea' }}">
+  <block name="template"></block>
+</body>
+</html>

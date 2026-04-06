@@ -54,17 +54,34 @@
   </td>
 </tr>
 
-<!-- Intro Image (optional) -->
-<if condition="intro.image">
+<!-- Intro Image(s) (optional) -->
+<if condition="intro.images && intro.images.length">
+  <each loop="image in intro.images">
+    <tr>
+      <td align="center" class="padt20 padl20 padr20" style="border-collapse: collapse;padding-top: 20px;padding-left: 20px;padding-right: 20px;">
+        <if condition="(typeof image === 'object' && image !== null && image.hasOwnProperty('link')) || intro.imageLink">
+          <a href="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('link')) ? image.link : intro.imageLink }}" target="_blank">
+            <img src="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('src')) ? image.src : image }}" alt="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('alt')) ? image.alt : (intro.imageAlt || intro.title || 'Intro image') }}" width="600" style="-ms-interpolation-mode: bicubic;border-radius: 10px;display: block;width: 100%;max-width: 600px;height: auto;border: 0;">
+          </a>
+        </if>
+        <if condition="!((typeof image === 'object' && image !== null && image.hasOwnProperty('link')) || intro.imageLink)">
+          <img src="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('src')) ? image.src : image }}" alt="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('alt')) ? image.alt : (intro.imageAlt || intro.title || 'Intro image') }}" width="600" style="-ms-interpolation-mode: bicubic;border-radius: 10px;display: block;width: 100%;max-width: 600px;height: auto;border: 0;">
+        </if>
+      </td>
+    </tr>
+  </each>
+</if>
+
+<if condition="(!intro.images || !intro.images.length) && intro.image">
   <tr>
     <td align="center" class="padt20 padl20 padr20" style="border-collapse: collapse;padding-top: 20px;padding-left: 20px;padding-right: 20px;">
-      <if condition="intro.imageLink">
-        <a href="{{ intro.imageLink }}" target="_blank">
-          <img src="{{ intro.image }}" alt="{{ intro.imageAlt || 'Intro image' }}" width="600" style="-ms-interpolation-mode: bicubic;border-radius: 10px;display: block;width: 100%;max-width: 600px;height: auto;border: 0;">
+      <if condition="(typeof intro.image === 'object' && intro.image !== null && intro.image.hasOwnProperty('link')) || intro.imageLink">
+        <a href="{{ (typeof intro.image === 'object' && intro.image !== null && intro.image.hasOwnProperty('link')) ? intro.image.link : intro.imageLink }}" target="_blank">
+          <img src="{{ (typeof intro.image === 'object' && intro.image !== null && intro.image.hasOwnProperty('src')) ? intro.image.src : intro.image }}" alt="{{ (typeof intro.image === 'object' && intro.image !== null && intro.image.hasOwnProperty('alt')) ? intro.image.alt : (intro.imageAlt || intro.title || 'Intro image') }}" width="600" style="-ms-interpolation-mode: bicubic;border-radius: 10px;display: block;width: 100%;max-width: 600px;height: auto;border: 0;">
         </a>
       </if>
-      <if condition="!intro.imageLink">
-        <img src="{{ intro.image }}" alt="{{ intro.imageAlt || 'Intro image' }}" width="600" style="-ms-interpolation-mode: bicubic;border-radius: 10px;display: block;width: 100%;max-width: 600px;height: auto;border: 0;">
+      <if condition="!((typeof intro.image === 'object' && intro.image !== null && intro.image.hasOwnProperty('link')) || intro.imageLink)">
+        <img src="{{ (typeof intro.image === 'object' && intro.image !== null && intro.image.hasOwnProperty('src')) ? intro.image.src : intro.image }}" alt="{{ (typeof intro.image === 'object' && intro.image !== null && intro.image.hasOwnProperty('alt')) ? intro.image.alt : (intro.imageAlt || intro.title || 'Intro image') }}" width="600" style="-ms-interpolation-mode: bicubic;border-radius: 10px;display: block;width: 100%;max-width: 600px;height: auto;border: 0;">
       </if>
     </td>
   </tr>

@@ -74,7 +74,7 @@
       .spacer { padding-top: 15px !important; }
       .browser { display: none !important; }
       .align-left { text-align: left }
-      a.h1byline { line-height: 14px !important; padding-top: 8px; font-size: 14px !important; }
+      .h1byline { line-height: 22px !important; padding-top: 6px; font-size: 19px !important; }
       
       /* Make section content images full-width on mobile, but not logos */
       .force-row img {
@@ -82,6 +82,44 @@
         max-width: 100% !important;
         height: auto !important;
         margin-bottom: 15px !important;
+      }
+
+      /* Mobile text size override for <p class="mob-text"> elements.
+         Configured ONLY in section-styles.json → globalOverrides.mobileAdjustments.
+         If not configured there, these values will be empty and have no effect. */
+      .mob-text {
+        font-size: {{ mobileTextFontSize }} !important;
+        line-height: {{ mobileTextLineHeight }} !important;
+      }
+
+      .mob-title {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+      }
+
+      .mob-subtitle {
+        font-size: 20px !important;
+        line-height: 1.3 !important;
+      }
+
+      .mob-readmore,
+      .mob-readmore a {
+        font-size: {{ mobileTextFontSize }} !important;
+        line-height: {{ mobileTextLineHeight }} !important;
+      }
+
+      .mob-title a,
+      .mob-subtitle a,
+      .mob-readmore a {
+        font-size: inherit !important;
+        line-height: inherit !important;
+      }
+
+      h1 a,
+      h2 a,
+      h3 a {
+        font-size: inherit !important;
+        line-height: inherit !important;
       }
     }
     
@@ -186,12 +224,6 @@
     }
 
     .intro-content p {
-      font-family: inherit;
-      font-size: inherit;
-      line-height: inherit;
-      font-weight: inherit;
-      color: inherit;
-      text-align: inherit;
       margin: 0;
       padding: 0;
       margin-bottom: 15px;
@@ -226,11 +258,11 @@
 </head>
 <body bgcolor="#FFFFFF" style="margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size: 18px;line-height: 27px;">
 
-  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;">
     <tr>
       <td align="center" style="padding:0; margin:0;">
         <!-- Fluid inner table keeps Gmail from zooming the canvas -->
-        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; width:100%; max-width:640px; font-family:'Ubuntu',sans-serif; font-style:normal; font-weight:400;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; width:100%; max-width:640px; font-family:'Ubuntu',sans-serif; font-style:normal; font-weight:400;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;">
           <tr>
             <td style="padding:0; margin:0;">
               <!-- Your email content starts here -->

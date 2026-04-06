@@ -8,6 +8,7 @@
     "build:data": "maizzle build production",
     "dev": "maizzle serve",
     "build:newsletter": "node scripts/build-newsletter.mjs",
+    "export:normalized-newsletter": "node scripts/export-normalized-newsletter.mjs",
     "quick": "node scripts/quick-build.mjs",
     "factory": "node scripts/email-template-factory/index.mjs",
     "factory:anthropic": "node scripts/email-template-factory/index.mjs --provider=anthropic",
@@ -16,6 +17,7 @@
     "templates:info": "node scripts/template_manager.mjs info",
     "schema:generate": "node scripts/generate-template-schema.mjs",
     "lint:content": "node scripts/lint-template.mjs",
+    "test:newsletter-core": "node --test tests/newsletter-core/*.test.mjs",
     "send:test": "node scripts/send-ses-test.mjs"
   },
   "keywords": [

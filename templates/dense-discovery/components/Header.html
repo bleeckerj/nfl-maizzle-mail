@@ -38,8 +38,37 @@
                   </table>
                 </if>
 
+                <!-- If we have a featured image but no featured artist, render image full-width -->
+                <if condition="header.featuredImage && !(header.featuredArtist && (header.featuredArtist.name || header.featuredArtist.link))">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                    <tbody>
+                      <if condition="header.quote">
+                        <tr>
+                          <td class="padt15 padr20 padb5 padl20" style="border-collapse: collapse;padding-top: 15px;padding-right: 20px;padding-bottom: 5px;padding-left: 20px;" valign="top">
+                            <p class="marb5" style="font-family: {{{ header.contentStyles.fontFamily || 'inherit' }}}; font-size: {{ header.contentStyles.fontSize || '18px' }}; line-height: {{ header.contentStyles.lineHeight || '23px' }}; font-weight: {{ header.contentStyles.fontWeight || '400' }}; color: {{ header.contentStyles.color || '#000000' }}; padding: 0; margin: 0; margin-bottom: 5px;">
+                              {{{ header.quote }}}
+                            </p>
+                            <if condition="header.author">
+                              <p class="marb0" style="font-family: {{{ header.contentStyles.fontFamily || 'inherit' }}}; font-size: {{ header.contentStyles.authorFontSize || '16px' }}; line-height: {{ header.contentStyles.lineHeight || '23px' }}; font-weight: {{ header.contentStyles.fontWeight || '400' }}; color: {{ header.contentStyles.color || '#000000' }}; padding: 0; margin: 0; margin-bottom: 0;">
+                                <strong style="font-weight: {{ header.contentStyles.authorFontWeight || '600' }};">– {{ header.author }}</strong>
+                              </p>
+                            </if>
+                          </td>
+                        </tr>
+                      </if>
+                      <tr>
+                        <td class="padt20 padr20 padb5 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 5px;padding-left: 20px;" valign="top">
+                          <p class="marb5" style="font-family: {{{ header.contentStyles.fontFamily || 'inherit' }}}; font-size: {{ header.contentStyles.artistFontSize || '16px' }}; line-height: {{ header.contentStyles.lineHeight || '23px' }}; font-weight: {{ header.contentStyles.fontWeight || '400' }}; color: {{ header.contentStyles.color || '#000000' }}; padding: 0; margin: 0; margin-bottom: 5px;">
+                            <img src="{{ header.featuredImage }}" alt="Featured" width="600" height="auto" class="img" style="-ms-interpolation-mode: bicubic;display: block;max-height: 900px;max-width: 600px;width: 100%;">
+                          </p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </if>
+
                 <!-- Default: two-column layout -->
-                <if condition="!(header.quote && !header.featuredImage)">
+                <if condition="!(header.quote && !header.featuredImage) && !(header.featuredImage && !(header.featuredArtist && (header.featuredArtist.name || header.featuredArtist.link)))">
                   <!--[if mso]>
                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                     <tr><td width="35%" valign="top"><![endif]-->

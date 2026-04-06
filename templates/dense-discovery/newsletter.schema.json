@@ -1424,6 +1424,12 @@
                       "readMoreLink": {},
                       "paywall": {}
                     },
+                    "not": {
+                      "required": [
+                        "image",
+                        "images"
+                      ]
+                    },
                     "additionalProperties": false
                   }
                 },

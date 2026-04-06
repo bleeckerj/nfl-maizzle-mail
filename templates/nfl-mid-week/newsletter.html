@@ -237,14 +237,18 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                       <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
                     </tr>
                     <tr>
-                      <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ themeColors['apps-sites'] || '#ffffff' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
-                        <h1 style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">{{ section.title }}</h1>
-                      </td>
-                    </tr>
-                    
-                    <each loop="item in section.items">
-                      <tr>
-                        <td align="left" style="border-collapse: collapse;background: {{ themeColors['apps-sites'] || '#ffffff' }};">
+                      <td style="border-collapse: collapse;padding: 0;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0; background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites'] || '#ffffff' }}; border-radius: {{ section.containerStyles.borderRadius || '0px' }}; overflow: hidden; padding: 0;">
+                          <tbody>
+                            <tr>
+                              <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites'] || '#ffffff' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;border-top-left-radius: {{ section.containerStyles.borderRadius || '0px' }};border-top-right-radius: {{ section.containerStyles.borderRadius || '0px' }};">
+                                <h1 style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;">{{ section.title }}</h1>
+                              </td>
+                            </tr>
+
+                            <each loop="item in section.items">
+                              <tr>
+                                <td align="left" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites'] || '#ffffff' }};overflow: hidden;border-bottom-left-radius: {{ loop.index === section.items.length ? (section.containerStyles.borderRadius || '0px') : '0px' }};border-bottom-right-radius: {{ loop.index === section.items.length ? (section.containerStyles.borderRadius || '0px') : '0px' }};">
                           <!--[if mso]>
                           <table border="0" cellpadding="0" cellspacing="0" width="100%">
                           <tr><td width="35%" valign="top"><![endif]-->
@@ -253,7 +257,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           <table align="left" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="224">
                             <tbody>
                               <tr>
-                                <td class="padt20 padr10 padl20" style="border-collapse: collapse;background: {{ themeColors['apps-sites'] || '#ffffff' }};padding-top: 20px;padding-right: 10px;padding-left: 20px;" valign="top">
+                                <td class="padt20 padr10 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites'] || '#ffffff' }};padding-top: 20px;padding-right: 10px;padding-left: 20px;" valign="top">
                                   <if condition="item.image">
                                     <img src="{{ item.image }}" alt="{{ item.title || 'App/Site Image' }}" width="194" height="auto" style="-ms-interpolation-mode: bicubic;display: block;max-width: 100%;">
                                   </if>
@@ -268,7 +272,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           <table align="right" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="416">
                             <tbody>
                               <tr>
-                                <td class="padt20 padr20 padl10" style="border-collapse: collapse;background: {{ themeColors['apps-sites'] || '#ffffff' }};padding-top: 20px;padding-right: 20px;padding-left: 10px;" valign="top">
+                                <td class="padt20 padr20 padl10" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites'] || '#ffffff' }};padding-top: 20px;padding-right: 20px;padding-left: 10px;" valign="top">
                                   
                                   <if condition="item.title && item.link">
                                     <h2 style="font-size: 18px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;margin-bottom: 8px;">
@@ -303,9 +307,18 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           </table>
 
                           <!--[if mso]></td></tr></table><![endif]-->
-                        </td>
-                      </tr>
-                    </each>
+                                </td>
+                              </tr>
+                              <if condition="loop.index < section.items.length">
+                                <tr>
+                                  <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites'] || '#ffffff' }};font-size: 1px;line-height: 1;padding-top: {{ section.itemSpacing || '20px' }};"> </td>
+                                </tr>
+                              </if>
+                            </each>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
                     <!-- APPS & SITES End -->
                   </if>
 

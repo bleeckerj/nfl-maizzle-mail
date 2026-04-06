@@ -333,7 +333,11 @@ if (command === 'list') {
     }
 
     const buildNewsletterPath = join(__dirname, 'build-newsletter.mjs');
-    const execCmd = `node ${buildNewsletterPath} ${inputFile} ${outputName} --template=${template}`;
+    // For markdown files, don't force template - let frontmatter take precedence
+    // For JSON files, force the template
+    const isMd = inputFile.endsWith('.md');
+    const templateArg = isMd ? '' : `--template=${template}`;
+    const execCmd = `node ${buildNewsletterPath} ${inputFile} ${outputName} ${templateArg}`.trim();
     console.log(`\nExecuting: ${execCmd}\n`);
     execSync(execCmd, {
       stdio: 'inherit',

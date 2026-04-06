@@ -1,0 +1,51 @@
+---
+title: "{{ title }}"
+preheader: "{{ preheader || title }}"
+---
+
+<extends src="templates/popup-jobs-mail/layouts/main.html">
+  <block name="template">
+    <if condition="jobPopupMail.rendererKey === 'appleish'">
+      <component src="templates/popup-jobs-mail/components/renderers/appleish.html"></component>
+    </if>
+    <if condition="jobPopupMail.rendererKey === 'atlassian'">
+      <component src="templates/popup-jobs-mail/components/renderers/atlassian.html"></component>
+    </if>
+    <if condition="jobPopupMail.rendererKey === 'ableton'">
+      <component src="templates/popup-jobs-mail/components/renderers/ableton.html"></component>
+    </if>
+    <if condition="jobPopupMail.rendererKey === 'anthropic'">
+      <component src="templates/popup-jobs-mail/components/renderers/anthropic.html"></component>
+    </if>
+    <if condition="jobPopupMail.rendererKey === 'comfyui'">
+      <component src="templates/popup-jobs-mail/components/renderers/comfyui.html"></component>
+    </if>
+    <if condition="jobPopupMail.rendererKey === 'ey'">
+      <component src="templates/popup-jobs-mail/components/renderers/ey.html"></component>
+    </if>
+    <if condition="jobPopupMail.rendererKey === 'gartner'">
+      <component src="templates/popup-jobs-mail/components/renderers/gartner.html"></component>
+    </if>
+    <if condition="jobPopupMail.rendererKey === 'googledeepmindish'">
+      <component src="templates/popup-jobs-mail/components/renderers/googledeepmindish.html"></component>
+    </if>
+    <if condition="jobPopupMail.rendererKey === 'kohler'">
+      <component src="templates/popup-jobs-mail/components/renderers/kohler.html"></component>
+    </if>
+    <if condition="jobPopupMail.rendererKey === 'mcdonalds'">
+      <component src="templates/popup-jobs-mail/components/renderers/mcdonalds.html"></component>
+    </if>
+    <if condition="jobPopupMail.rendererKey === 'netflix'">
+      <component src="templates/popup-jobs-mail/components/renderers/netflix.html"></component>
+    </if>
+    <if condition="jobPopupMail.rendererKey === 'openai'">
+      <component src="templates/popup-jobs-mail/components/renderers/openai.html"></component>
+    </if>
+    <if condition="jobPopupMail.rendererKey === 'thenewyorkerish'">
+      <component src="templates/popup-jobs-mail/components/renderers/thenewyorkerish.html"></component>
+    </if>
+    <if condition="jobPopupMail.rendererKey === 'x'">
+      <component src="templates/popup-jobs-mail/components/renderers/x.html"></component>
+    </if>
+  </block>
+</extends>

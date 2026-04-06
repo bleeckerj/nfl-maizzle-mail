@@ -1,0 +1,125 @@
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-spacing: 0; background: {{ jobPopupMail.brand.theme.pageBackgroundColor }};">
+  <tbody>
+    <tr>
+      <td align="center" style="padding: 20px 12px;">
+        <table role="presentation" width="680" cellpadding="0" cellspacing="0" class="popup-jobs-mail-shell" style="border-spacing: 0; width: 100%; max-width: 680px; background: {{ jobPopupMail.brand.theme.surfaceColor }}; border: 1px solid {{ jobPopupMail.brand.theme.borderColor }};">
+          <tbody>
+            <tr>
+              <td style="padding: 0; background: {{ jobPopupMail.brand.masthead.backgroundColor }}; text-align: {{ jobPopupMail.brand.masthead.align || 'left' }};">
+                <div style="padding: {{ jobPopupMail.brand.masthead.padding || '24px 28px' }};">
+                  <if condition="jobPopupMail.brand.masthead.mode === 'image' && jobPopupMail.brand.masthead.imageUrl">
+                    <img
+                      src="{{ jobPopupMail.brand.masthead.imageUrl }}"
+                      alt="{{ jobPopupMail.brand.masthead.altText || jobPopupMail.company }}"
+                      width="{{ jobPopupMail.brand.masthead.imageWidth || 180 }}"
+                      style="display: inline-block; width: 100%; max-width: {{ jobPopupMail.brand.masthead.imageWidth || 180 }}px; height: auto;"
+                    />
+                  </if>
+                  <if condition="jobPopupMail.brand.masthead.mode === 'text'">
+                    <div
+                      style="font-family: {{ jobPopupMail.brand.masthead.fontFamily || jobPopupMail.brand.theme.titleFontFamily }}; font-size: {{ jobPopupMail.brand.masthead.fontSize || '32px' }}; line-height: 1.1; font-weight: {{ jobPopupMail.brand.masthead.fontWeight || '700' }}; letter-spacing: {{ jobPopupMail.brand.masthead.letterSpacing || '0' }}; text-transform: {{ jobPopupMail.brand.masthead.textTransform || 'none' }}; color: {{ jobPopupMail.brand.masthead.textColor || jobPopupMail.brand.theme.textColor }};"
+                    >{{ jobPopupMail.brand.masthead.text }}</div>
+                  </if>
+                  <if condition="jobPopupMail.companyTagline">
+                    <div style="margin-top: 10px; font-family: {{ jobPopupMail.brand.theme.metaFontFamily }}; font-size: 11px; line-height: 1.5; letter-spacing: 0.12em; text-transform: uppercase; color: {{ jobPopupMail.brand.masthead.textColor || jobPopupMail.brand.theme.mutedColor }};">{{ jobPopupMail.companyTagline }}</div>
+                  </if>
+                </div>
+              </td>
+            </tr>
+
+            <if condition="jobPopupMail.brand.partnerMark">
+              <tr>
+                <td style="padding: 12px 28px 0 28px; background: {{ jobPopupMail.brand.theme.surfaceColor }};">
+                  <table role="presentation" cellpadding="0" cellspacing="0" style="border-spacing: 0;">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 0 12px 0 0; font-family: {{ jobPopupMail.brand.theme.metaFontFamily }}; font-size: 10px; line-height: 1.5; letter-spacing: 0.12em; text-transform: uppercase; color: {{ jobPopupMail.brand.theme.mutedColor }};">with</td>
+                        <td style="padding: 0;">
+                          <img src="{{ jobPopupMail.brand.partnerMark.src }}" alt="{{ jobPopupMail.brand.partnerMark.alt }}" width="96" style="display: block; width: 96px; max-width: 96px; height: auto;">
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </if>
+
+            <if condition="jobPopupMail.brand.banner && jobPopupMail.brand.banner.imageUrl">
+              <tr>
+                <td style="padding: 16px 28px 0 28px; background: {{ jobPopupMail.brand.theme.surfaceColor }};">
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-spacing: 0; background: {{ jobPopupMail.brand.banner.backgroundColor || jobPopupMail.brand.theme.surfaceAltColor }};">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 0;">
+                          <img src="{{ jobPopupMail.brand.banner.imageUrl }}" alt="{{ jobPopupMail.brand.banner.altText || jobPopupMail.title }}" width="624" style="display: block; width: 100%; max-width: 624px; height: auto;">
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </if>
+
+            <tr>
+              <td style="padding: 24px 28px 12px 28px; background: {{ jobPopupMail.brand.theme.surfaceColor }};">
+                <div style="font-family: {{ jobPopupMail.brand.theme.metaFontFamily }}; font-size: 11px; line-height: 1.5; letter-spacing: 0.16em; text-transform: uppercase; color: {{ jobPopupMail.brand.theme.mutedColor }};">{{ jobPopupMail.brand.kicker }}</div>
+                <h1 style="margin: 12px 0 0 0; padding: 0; font-family: {{ jobPopupMail.brand.theme.titleFontFamily }}; font-size: 40px; line-height: 1.08; font-weight: 700; color: {{ jobPopupMail.brand.theme.textColor }};">{{ jobPopupMail.title }}</h1>
+                <if condition="jobPopupMail.metaLine">
+                  <p style="margin: 14px 0 0 0; padding: 0; font-family: {{ jobPopupMail.brand.theme.metaFontFamily }}; font-size: 12px; line-height: 1.6; letter-spacing: 0.08em; text-transform: uppercase; color: {{ jobPopupMail.brand.theme.mutedColor }};">{{ jobPopupMail.metaLine }}</p>
+                </if>
+                <if condition="jobPopupMail.primaryAction">
+                  <p style="margin: 20px 0 0 0; padding: 0; font-family: {{ jobPopupMail.brand.theme.metaFontFamily }}; font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;">
+                    <a
+                      href="{{ jobPopupMail.primaryAction.url }}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style="display: inline-block; padding: 12px 16px; text-decoration: none; background: {{ jobPopupMail.brand.theme.ctaPrimaryBackground }}; color: {{ jobPopupMail.brand.theme.ctaPrimaryText }}; border: 1px solid {{ jobPopupMail.brand.theme.ctaPrimaryBorder }};"
+                    >{{ jobPopupMail.primaryAction.label }}</a>
+                  </p>
+                </if>
+              </td>
+            </tr>
+
+            <each loop="section in jobPopupMail.sections">
+              <tr>
+                <td style="padding: 0 28px 0 28px; background: {{ jobPopupMail.brand.theme.surfaceColor }};">
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-spacing: 0; border-top: 1px solid {{ jobPopupMail.brand.theme.borderColor }}; background: {{ section.backgroundColor || jobPopupMail.brand.theme.surfaceColor }};">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 18px 0 0 0;">
+                          <div style="font-family: {{ jobPopupMail.brand.theme.metaFontFamily }}; font-size: 11px; line-height: 1.5; letter-spacing: 0.16em; text-transform: uppercase; color: {{ jobPopupMail.brand.theme.mutedColor }};">{{ section.title }}</div>
+                        </td>
+                      </tr>
+                      <if condition="section.kind === 'html' && section.html">
+                        <tr>
+                          <td style="padding: 12px 0 22px 0;">
+                            <div style="font-family: {{ jobPopupMail.brand.theme.bodyFontFamily }}; font-size: 17px; line-height: 1.72; color: {{ jobPopupMail.brand.theme.textColor }};">
+                              {{{ section.html }}}
+                            </div>
+                          </td>
+                        </tr>
+                      </if>
+                      <if condition="section.kind === 'list' && section.itemsHtml && section.itemsHtml.length">
+                        <tr>
+                          <td style="padding: 14px 0 22px 0;">
+                            <ul style="margin: 0; padding: 0 0 0 20px; font-family: {{ jobPopupMail.brand.theme.bodyFontFamily }}; font-size: 17px; line-height: 1.72; color: {{ jobPopupMail.brand.theme.textColor }};">
+                              <each loop="itemHtml in section.itemsHtml">
+                                <li style="margin: 0 0 12px 0; padding: 0;">{{{ itemHtml }}}</li>
+                              </each>
+                            </ul>
+                          </td>
+                        </tr>
+                      </if>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </each>
+
+            <component src="templates/popup-jobs-mail/components/PopupFooter.html"></component>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>

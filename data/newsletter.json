@@ -1,346 +1,257 @@
 {
   "$schema": "../newsletter.schema.json",
   "template": "dense-discovery",
-  "title": "Near Future Laboratory Newsletter — Week 05, 2026",
-  "preheader": "Week 05 of 2026 — Design Fiction, Speculative Futures, and Creative Provocations",
-  "ogImage": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=900?format=webp",
+  "title": "AI's TR808 Moment",
+  "preheader": "Every new instrument confronts its moment of misrecognition before someone who can see the way it is a future protruding into the present.",
+  "ogImage": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/c15549f1-1b4d-49f6-5015-a115f4798f00/w=600?format=webp",
+  "ogImageAltText": "Black and white image of four people, two men and two women, in formal attire against a dark background.",
   "sectionStylesFile": "templates/dense-discovery/section-styles.json",
-  "colorTheme": "winter",
+  "colorTheme": "monochrome",
   "intro": {
-    "title": "It's Week 05 of 2026",
-    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2026/w05-y26",
-    "aside": {
-      "content": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 23px !important; font-style: normal !important; color: #3f3f3f !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 23px !important; font-style: normal !important; color: #3f3f3f !important; text-align: left !important\">This week is an OoO one up a mountain banging little plastic keys attached to a computer but there's still some good stuff in here for you to chew on while I'm away. We've got an ;upcoming General Seminar with a few spots left to join, Office Hours call log, the GPS effect of AI (via whats-his-names “Question Concerning Technology”) and a few other tidbits. Read on!</p></p>",
-      "containerStyles": {
-        "backgroundColor": "#f4f1ea",
-        "padding": "12px 14px",
-        "borderRadius": "6px",
-        "borderLeftColor": "#d7d1c6",
-        "borderLeftWidth": "3px",
-        "borderLeftStyle": "solid"
-      },
-      "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "18px",
-        "lineHeight": "23px",
-        "fontStyle": "normal",
-        "color": "#3f3f3f",
-        "textAlign": "left"
-      }
-    },
+    "title": "When Recognition Lags",
+    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2026/w15-y26",
     "containerStyles": {
       "backgroundColor": null,
       "padding": "0",
       "borderRadius": "0px"
     },
     "contentStyles": {
-      "fontFamily": "'IBM Plex Sans', sans-serif",
-      "fontSize": "18px",
+      "fontFamily": "IBM Plex Sans, sans-serif",
+      "fontSize": "16px",
       "lineHeight": "1.2rem",
       "fontWeight": "400",
       "color": "#000000",
       "textAlign": "left"
     },
-    "content": "<p style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"><p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 1/ Why do I think that strategy is a kind of fictioning exercise? Because it requires us to imagine futures that don't yet exist, and to create narratives that help us navigate uncertainty. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 2/ This is a well-known idea in design fiction circles, but it bears repeating for those in the strategy world. In both cases, we're not just predicting the future; we're actively shaping it through the stories we tell and the prototypes we build. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 3/ This notion goes further than a purely academic or pedantic exercise. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 4/ Learning how to do this directly and to lead the strategy discussion from this position of “we are doing fictioning” is a powerful way to reframe what strategy work can be, particularly in a world in which AI is becoming ambient and ubiquitous. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 5/ Why do I flag AI directly? </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 6/ Well, partially because it is the dominant emerging science-fiction we are living in at the moment, at least as measured by the <a href='https://www.scrollthefuture.ai'>fictions that are conjured</a> by those who are leading the expedition into this new terrain, and for that reason, it is also dominant in that it is well-incepted into the public imaginary. This is perhaps a useful example of the power of this kind of imagining and fictioning: a bunch of charismatic figures telling stories about what AI will do not just shapes the public imaginary, but also shapes the product roadmaps and investment strategies (often absent a coherent thesis or based on non-disclosed business plans.) </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 7/ We’re in a “breakfast cereal” moment with AI. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 8/ You can be for it..or against it; you can have strong opinions about whether protein-forward breakfast is good or bad; whether morning cartoons should be sponsored by Tony the Tiger or the Trix Rabbit; pro-savory or pro-sweet breakfast; etc. But the fact remains that breakfast cereal is everywhere, and it has changed not just what we eat in the morning but what we think about breakfast itself. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 9/What's breakfast got to do with AI? </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 10/ The Question Concerning Technology — as was famously stated in the essay of the same title — tries to explain how technology is not just a means to an end, but a way of revealing the world. (And thus actually culture by a different set of idioms, practices, and modes of engagement.)  </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 11/ In the same way AI is not just a tool we use to accomplish some fixed, age-old task; it’s more like GPS for cognition.  </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 12/ “Eh?? What’re you talking about, Julian?” </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 13/ Before GPS, “getting somewhere” meant learning a place with landmarks, routes on maps — perhaps an internal sense of direction. GPS didn’t just make navigation faster. It surfaced routes you wouldn’t have imagined, provided a basis for self-driving vehicles, self-landing airplanes, and all the other examples you are certainly aware of. It trained you to <em>outsource orientation</em>, make paper maps a quaint thing meemaw once used, and quietly changed what it even means to “know your way.” </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 14/ It also helped people drive into ponds and off of cliffs and such — and if your household is anything like mine, the occasional pilot-navigator disagreements. The world started showing up as a set of instructions, optimizations, and ranked options in a way that hadn't been anticipated, and that changed how we think about “getting somewhere.” These might be normatively assigned the character of “downsides”, but that loses some of the specificity of the ontological shift that happened. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 15/ (These are the kinds of rhetorical manuevers that shift attention away from the ontological shift and into a moral judgment or, like..blame game..which we now know is largely unproductive, or even worse than that.) </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 16/ (Such becomes <strong>“fightin’ words”</strong>, and things will then become kinetic but quick — rather than reflective. See any number of heated arguments about technology in recent years for examples of this dynamic, which is not to say there isn’t a basis for enthusiasm/concern, but rather that the reflexive move to moralize is often a way to avoid deeper reflection on what’s actually happening.) </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 17/ Anyway.. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 18/ (Oh, as regards GPS — it also introduced a certain kind of brittleness to the world — the Kessler Syndrome effect on navigation and many other things would be cray-cray: if the system goes down, one is more than lost; one is in some epic existential calamity. But that’s a topic for another day.) </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 19/ So — AI works like that. It doesn’t merely help you do the work; it reshapes what counts as the work by shifting what you notice, what you ask for, what “good” looks like, and what competence is. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 20/ If you can’t feel that strange feedback loop and integrate it into your strategy (which is always futures-oriented), you’ll end up being the guy selling beautifully printed paper maps in a world where wayfinding has been reorganized around the algorithm and the world where “the destination” is whatever the system makes easiest to reach, rather than say..more fun to reach or the one with no left turns that expect you to cross four lanes of Los Angeles rush hour traffic. Kinda thing. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 21/ (p.s. Just to say — I collect beautifully printed paper maps, both practical and artistic. So this is not a rant. It’s an observation about ontological shifts and an opportunity for your to think about how strategy can be a kind of fictioning exercise.) </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\">       22/ So I said all of that to say that I’d like you to join me at <a href='https://luma.com/rmv5ta5w'>next week's General Seminar</a>, we'll get into this to recognize the value of strategy as a kind of futures-oriented fictioning, and how that can be done such that your organization can better navigate the curious terrain ahead. This is an important one. </p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 18px !important; line-height: 1.2rem !important; color: #000000 !important; text-align: left !important\"> 23/ Sign up here to attend: <a href='https://luma.com/rmv5ta5w'>General Seminar S07/E02 - Strategy as Science Fiction</a> I hope to see you there! </p></p>"
+    "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">The audio instrument & contrivances manufacturer Roland put the TR-808 into the world as a drum machine. The market met it — and saw an awkward commercial object: it was expensive, somewhat hard to classify as a musical instrument, and difficult to place inside the categories that made sense to the marketplace at the time.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">From inside a normal product organization, discontinuing it was sensible. A way to stanche the losses that could be chalked up to the 808’s weak fit with the existing product line and category logic of the musical instrument market at the time. The purpose was blurry so..the business moved on / caved in.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Then the machine became cheap enough for proper creatives to experiment with. Outside the original frame, the 808 stopped behaving like a product-line problem and started behaving more like a creative surface for something new — a new sound, a new rhythm logic.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Soon artists built styles around its unique and peculiar rhythmic-percussive sound, and whole genres took shape around something its maker had already treated as a dead end.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Even if you don't listen to music, you've heard the 808, I can just about guarantee that. And now, to say “808” is to invoke a whole set of musical ideas, cultural associations, and rhythmic sensibilities that were not visible to the company when it first shipped the machine as a product-line item.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">This is actually one of those moments that is a useful innovation management lesson.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Early forms often fail when the existing system of evaluation is asked to evaluate them. They arrive in the world before the necessary criteria are ready. They look weak when judged against the current portfolio, or the current margin logic, or the current language of value. The organization remains rational all the way through the miss.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">A speculative prototyping function gives leadership a way to hold onto that kind of possibility without forcing an immediate decision that would commit the organization to scaling or killing the idea too early. Speculative prototyping can build the artifact. Test some new and strange behavior. Stage and rehearse and simulate. See what use appears when the object meets a different context.</p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">That is <strong>organizational imagination</strong> at work: protecting an unfamiliar option long enough to tell the difference between a bad idea and an early one.</p>"
   },
   "header": {
+    "featuredImage": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/c15549f1-1b4d-49f6-5015-a115f4798f00/w=600?format=webp",
     "logoBottom": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp",
-    "logoTop": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp",
-    "containerStyles": {
-      "backgroundColor": null,
-      "padding": "20px"
-    },
-    "contentStyles": {
-      "fontFamily": "'IBM Plex Sans', sans-serif",
-      "fontSize": "18px",
-      "lineHeight": "23px",
-      "fontWeight": "400",
-      "color": "#000000",
-      "authorFontSize": "16px",
-      "authorFontWeight": "600",
-      "artistFontSize": "16px",
-      "anchorColor": "#000000"
-    }
+    "logoTop": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp"
   },
   "sections": [
     {
-      "type": "indie-mag-single-column",
-      "title": "General Seminar S07/E02 - Strategy is Science Fiction!",
-      "containerStyles": {
-        "backgroundColor": "#f0f7fa",
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
-      "contentStyles": {
-        "fontFamily": "monospace, sans-serif",
-        "fontSize": "16px",
-        "lineHeight": "1.2rem",
-        "color": "#111111",
-        "textAlign": "left",
-        "fontWeight": "400"
-      },
+      "type": "sponsor",
+      "title": "Upcoming",
+      "sponsorLink": "https://generalseminar.com/seminar/s07/e04",
+      "sponsorLabel": "GENERAL SEMINAR #DISCUSS",
       "items": [
         {
-          "title": "The Science Fiction of Strategy",
-          "link": "https://luma.com/rmv5ta5w",
-          "description": "<p style=\"font-family: monospace, sans-serif !important; font-size: 16px !important; line-height: 1.2rem !important; color: #111111 !important; text-align: left !important\"><strong style='font-family: monospace'>PROMPT</strong> “AI is now ambient in the future or your organization. It’s as normal as butter on toast. It’s in planning, research, marcoms, product, analytics, hiring, and customer interactions. Nobody debates ‘should we use AI’ anymore. The question is: what kind of organization did that create?”</p> <p style=\"font-family: monospace, sans-serif !important; font-size: 16px !important; line-height: 1.2rem !important; color: #111111 !important; text-align: left !important\"><strong style='font-family: monospace'>ACTIVITY</strong> Time For Some Strategy Futures Archeology: you can’t interview the future, you can only come back with evidence (labels, receipts, notices, quick-start guides, stickers, junk mail...fragments like this) that implies this ambient AI world.</p>\n<p style=\"font-family: monospace, sans-serif !important; font-size: 16px !important; line-height: 1.2rem !important; color: #111111 !important; text-align: left !important\"><strong style='font-family: monospace'>STRUCTURE</strong> YOUR STRATEGIC FICTIONAL ARTIFACT — Bring something back from this world. Something that will help you and your organization think about the future you want to inhabit, rather than the future you feel rushed to implement. How do you avoid the pitfalls of thinking of AI as just a screwdriver rather than as a world-building contrivance?</p> <a href='https://luma.com/rmv5ta5w' style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Get Your Ticket →</a></p>",
-          "details": "<p style=\"font-size: 0.9rem; line-height: 0.9rem;\">Psst — <a href='https://generalseminar.com'>General Seminar</a> is the platform I created to use Design Fiction approaches to explore and discuss emerging societal-implicating technologies. It‘s got 4.8 stars according to the average of everyone who has attended over the last 6 Seasons!</p>\n",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/6e1a72b0-a321-4269-a414-8a1a04c1cf00/w=600?format=webp"
+          "title": "General Seminar S07/E04",
+          "link": "https://generalseminar.com/seminar/s07/e04",
+          "subtitle": "A Constitution? For AI?",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>AI labs are writing constitutions for machines while governments are fighting over whether they themselves still get to write the rules. Anthropic has Claude's Constitution. Amanda Askell gives the thing virtues, character, and “hard constraints.” Jill Lepore, writing in <em>The New Yorker</em>, asks the obvious question: what does it mean when a private company starts sounding more constitution-minded than the constitutional order around it?</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>At the same time, the federal government wants one national AI framework and has argued that state laws are an obstacle to innovation, while California and other states keep trying to impose safety, privacy, and reporting guardrails anyway. So this is not a story about \"whether governance exists.\" Governance exists. It is simply fragmented, contradictory, and fighting with itself in public.</p></p>",
+          "images": [
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/91c2bb0d-de36-4ba0-0dea-1bec062ce200/w=600?format=webp",
+              "alt": "General Seminar S07/E04",
+              "link": "https://generalseminar.com/seminar/s07/e04"
+            }
+          ],
+          "readMoreText": "Grab Your Ticket! →",
+          "readMoreLink": "https://luma.com/nearfuturelaboratory"
+        },
+        {
+          "title": "Pitch Picture Prototype",
+          "link": "https://luma.com/7ptssp2o",
+          "subtitle": "Join me for a workshop to help you pitch your value and your story, before someone else defines them for you.",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>There are still seats left! <a href='https://luma.com/7ptssp2o'>April 17th!</a></p> <p>Pitch, Picture, Prototype — a workshop designed to help you clarify and communicate your value and your story by moving from the idea stage into tangible expressions of possibility that you can test and iterate on.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>But not just talking about ideas. This workshop is about taking those ideas and turning them into something you can hold and feel — the prototype part.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>We designed this as a real <em>work</em>shop: active, participatory, and hands-on. It’s for people who feel the pull toward something new but need a way to begin, not just by discussing ideas, but by prototyping possibility. We'll spend time together online, we’ll work through ways of imagining, testing, and shaping what your next step could actually look like. It’s less about polished answers and more about making promising directions tangible enough to move with. The session is just the start of what we hope becomes an ongoing community.</p></p>",
+          "images": [
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/3a4474f7-edd0-4f11-f46b-07d407bf6f00/w=900?format=webp",
+              "alt": "Abstract circular swirls",
+              "link": "https://nearfuturelaboratory.com/blog/2026/03/pitch-picture-prototype-info-session/"
+            }
+          ],
+          "readMoreText": "Grab your ticket →",
+          "readMoreLink": "https://luma.com/7ptssp2o"
         }
-      ],
-      "_contentStyleOverrides": {
-        "fontFamily": "monospace, sans-serif",
-        "fontSize": "16px",
-        "lineHeight": "1.2rem",
-        "fontWeight": "400",
-        "textAlign": "left"
-      },
-      "descriptionStyles": {
-        "fontFamily": "monospace, sans-serif",
-        "fontSize": "16px",
-        "lineHeight": "1.2rem",
-        "color": "#111111",
-        "textAlign": "left",
-        "fontWeight": "400"
-      },
-      "spacerBackgroundColor": "#d8ebf3",
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "19px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
+      ]
+    },
+    {
+      "type": "ad-block",
+      "items": [
+        {
+          "adId": "design-fiction-book-collection-interstitial-01"
+        }
+      ]
     },
     {
       "type": "indie-mag-single-column",
-      "title": "Office Hours Call Log!",
+      "title": "Zines Zone",
+      "items": [
+        {
+          "title": "A Moment's Notice",
+          "subtitle": "Elysia's Group Art Exhibition In Your Mailbox",
+          "link": "https://heyelysia.substack.com",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Issue 002</p>",
+          "images": [
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/f8c03fd1-0bbc-471f-5bff-f875799dc500/w=600?format=webp"
+            },
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2f334920-963f-40f5-a1d4-0d1d5cd14700/w=600?format=webp"
+            },
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b89dedb9-9e94-4e4f-e406-7cba59c0ca00/w=600?format=webp"
+            },
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/ab61f9c9-b88d-4f5f-f6d2-415cf3955e00/w=600?format=webp"
+            }
+          ],
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://heyelysia.substack.com"
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "title": "Welcome and Hello!",
       "containerStyles": {
-        "backgroundColor": "#f0f7fa",
-        "padding": "15px 20px",
-        "borderRadius": "0px"
+        "backgroundColor": null
       },
       "items": [
         {
-          "title": "Office Hours N°298 Recap",
-          "subtitle": "Jan 23, 2026 0900 UTC-8 / California",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/3f3d9c7f-d7ac-4a72-18cc-57bda7bf7a00/w=600?format=webp",
-          "link": "https://patreon.com/nearfuturelaboratory",
-          "readMoreText": "Join the Patreon to Join the Office Hours →",
-          "readMoreLink": "https://patreon.com/nearfuturelaboratory",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Here’s a quick recap of the main threads from this week’s Office Hours call, which featured Sunniva Münster (Oslo), and Shreya Thakkar (Bangalore).</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"> Key themes included speculative design as a civic engagement tool, the intersection of everyday ingenuity and AI, frugal innovation as resistance to consumerism, and the challenges of fostering genuine creativity in AI systems.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\">Sign up for the <a href=\"https://patreon.com/nearfuturelaboratory\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">NFL Patreon</a> to join future Office Hours calls and get access to the full recordings and notes.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>1)</strong> Sunniva Münster shared her PhD work in Oslo on “speculative design in real-world laboratories,” using playful methods to make sustainability and urban transformation something you can actually touch, do, and argue about.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>2)</strong> A useful adjacent read dropped in chat: “Futures of Everyday Life” argues that a lot of scenario “future personas” end up elitist/technocratic, and calls for more polyphonic everyday futures (<a href=\"https://www.researchgate.net/publication/399437034_Futures_of_Everyday_Life_A_Qualitative_Content_Analysis_of_Future_Personas_in_Scenarios\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">ResearchGate PDF page</a>).</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>3)</strong> Sunniva’s throughline: provocative objects (furniture, installations, multi-species seating) aren’t “concept art,” they’re conversational devices that let publics rehearse values in situ—and a reminder that spaces have histories, whether we acknowledge them or not.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>4)</strong> That “spaces with histories” idea clicked hard with the brownfield / Superfund reuse thread: design fiction as a community-input instrument, plus “drosscape” as the frame for turning industrial leftovers into civic imagination material (<a href=\"https://www.alanmberger.com/drosscape\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Drosscape (Alan Berger)</a>).</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>5)</strong> Shreya Thakkar’s side project drilled into the gap between lived-experience intelligence (household hacks, street-vendor ingenuity) and AI’s trained-data “intelligence,” treating everyday hacks as “engineering hidden in plain sight.”</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>6)</strong> The frugal-innovation / jugaad thread landed as an anti-capitalist tactic too: reuse as creative problem-solving, not just thrift cosplay (<a href=\"https://medium.com/@zarana_patel1/the-jugaad-spirit-indias-inborn-culture-of-creative-problem-solving-4b3f235cd897\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Jugaad spirit explainer</a>).</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>7)</strong> A pointed failure mode: when you push image models toward “creative,” they often snap back to stock phrases and cliché imagery (including racialized defaults), which is basically imagination collapse—not a minor “bias footnote.”</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>8)</strong> Practical product gripe that kept resurfacing: give users real knobs for similarity vs variance (how conservative vs weird the generator is) instead of magic defaults—Brandon’s <a href=\"https://ai-interaction.com/\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">AI Atlas</a> and the <a href=\"https://ai-atlas-mu.vercel.app/canvas\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Canvas beta</a> are attempts to build shared language around these interaction patterns.</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>9)</strong> The embodied-cognition anchor: a lot of thinking is “epistemic action,” where we offload cognition into objects/gestures; if AI can’t see that layer, it’ll keep missing the point of how humans actually solve problems (<a href=\"https://adrenaline.ucsd.edu/kirsh/Articles/CogsciJournal/cogsci_journal.pdf\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Kirsh on epistemic actions (PDF)</a>).</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>10)</strong> If you’re tracking the research scene, the recurring “Tools for Thought” workshop is a good map of what’s current (<a href=\"https://ai-tools-for-thought.github.io/workshop/2025\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">CHI Tools for Thought 2025</a>), and Georgetown’s Lab for Relational Cognition came up as a relevant home-base for creativity + relational reasoning (<a href=\"https://cng.georgetown.edu/\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">cng.georgetown.edu</a>).</p> <p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.4 !important; color: #111111 !important; text-align: left !important\"><strong>11)</strong> The money/patronage riff got spicy: token-style funding can work because it feels like buying-in, not “buying a coffee”—see <a href=\"https://bags.fm/\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">bags.fm</a> (and the $GSD example), with the <a href=\"https://en.wikipedia.org/wiki/Garbage_can_model\" style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">garbage can model</a> as an oddly accurate description of how these systems catch on.</p>"
+          "calloutText": "<p>Hi! Welcome. Thanks for reading. In case you're new here and wondering -- I'm Julian Bleecker. I help leaders and strategy teams navigate uncertainty through strategic prototyping -- working backward from plausible near futures to make today's choices clearer.</p>\n<p>I use an approach I pioneered called Design Fiction. You see some of it here in the newsletter and definitely over on my site over at <a href=\"https://nearfuturelaboratory.com\">Near Future Laboratory</a>.</p>\n<p>I create tangible artifacts and narrative experiences that turn abstract foresight into concrete strategic options, alignment, and action. My practice spans engineering (BSEE, MSEng/HCI) and the social sciences/humanities (PhD), so the work holds up technically and lands with cultural relevance and it's grounded and tangible.</p>\n<p>Near Future Laboratory can bring decades of experience, expertise, and an extensive network of similarly talented professionals -- and I'm available for commissions, facilitated workshops, seminars, talks, embedded engagements, and leadership roles.</p>\n",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/9ac810f2-6b5d-48c3-e052-14eced188600/w=600?format=webp",
+          "readMoreText": "Let's Connect →",
+          "readMoreLink": "https://nearfuturelaboratory.com/contact"
         }
-      ],
-      "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.4",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "_contentStyleOverrides": null,
-      "descriptionStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.4",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "spacerBackgroundColor": "#d8ebf3",
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "19px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
+      ]
     },
     {
       "type": "food-for-thought",
       "title": "Food For Thought",
       "items": [
         {
-          "title": "AI Orchards: Algorithms That Decide When to Pick Your Peaches",
-          "link": "https://www.orchard-robotics.com/",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">Orchard Technologies is building AI that autonomously decides when to prune, irrigate, and harvest across millions of fruit trees. Their system already tracks billions of individual pieces of fruit using sensors, drones, and satellite imagery. The next step: Canary AI, which will make all major agronomic decisions without human override. The pitch is compelling — 40% fewer crop losses, half the insurance premiums, 23% less water usage. But it raises questions worth sitting with: What gets optimized away when algorithms make decisions that used to require human judgment and relationship with the land?</p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2f5df854-cdfb-4d47-f13e-a9d2db94cf00/w=600?format=webp",
-          "channel": "digest-this",
-          "category": "AgTech",
+          "title": "Is It Wrong to Write a Book with A.I.? | The New Yorker",
+          "link": "https://www.newyorker.com/culture/open-questions/is-it-wrong-to-write-a-book-with-ai",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>I was reading the New Yorker article “Is It Wrong to Write a Book With AI?” and keep thinking about how “authorship” and its meaning changes when a new instrument/tool shows up. When a new technology enters the picture, it changes what it means to be the author of a work — you're cheating, you're putting someone out of a job, that photography thing is fake painting, etc. — and what gets to count as originality and creative ownership. AI as a writing tool raises these questions in a very acute and concrete way for writing books, but the underlying question about how tools shape authorship is much broader. Good read.</p></p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/4df1a3e2-ca95-4b0b-fdd5-8abd83b40f00/w=600?format=webp",
+          "channel": "digest-this-🥓",
+          "category": "Instruments of Creativity",
           "sharedBy": "julian",
-          "readMoreText": "Orchard Technologies →",
-          "readMoreLink": "https://www.orchard-robotics.com/",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://www.newyorker.com/culture/open-questions/is-it-wrong-to-write-a-book-with-ai",
+          "paywall": true,
+          "readMoreLinks": [
+            {
+              "text": "The 808 Heard Around the World →",
+              "link": "https://www.newyorker.com/culture/culture-desk/the-808-heard-round-the-world",
+              "paywall": true
+            },
+            {
+              "text": "The Battle Over Techno's Origins →",
+              "link": "https://www.newyorker.com/culture/cultural-comment/the-battle-over-technos-origins",
+              "paywall": true
+            }
+          ]
+        },
+        {
+          "title": "Science fiction and innovation: A literature analysis on science",
+          "link": "https://www.sciencedirect.com/science/article/pii/S0016328726000121",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>I keep seeing innovation teams get so good at optimizing for what already happened that they quietly lose the ability to imagine what’s next. Organizational imagination is the capability to envision futures that don’t yet exist and to explore possibilities beyond the immediate constraints of the present — and is a capability that is not easily developed, just as a good science-fiction story requires imagination to construct a world that doesn’t yet exist..something that is exceptionally hard to do.</p> <p>This review pulls science-fiction-related methods out of the literature, narrows them to 17 solid options, and lines them up with a six-phase innovation process so you can actually use them where they fit. It’s a useful bridge between “future stories” and real-world product and R&D work — less random inspiration, more intentional method selection to actually apply these methods in the innovation process and generate actionable insights from speculative futures.</p></p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/4ea1678f-afee-492f-8abd-3fab7f1a9c00/w=600?format=webp",
+          "channel": "digest-this-🥓",
+          "category": "Futures",
+          "sharedBy": "julian",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://www.sciencedirect.com/science/article/pii/S0016328726000121",
           "paywall": false
         },
         {
-          "title": "It's Cool to Have No Followers Now",
-          "link": "https://www.newyorker.com/culture/infinite-scroll/its-cool-to-have-no-followers-now",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 23px !important; color: #000000 !important; text-align: left !important\">Kyle Chayka's <em>Infinite Scroll</em> column captures a cultural shift worth sitting with: having a massive follower count is no longer the flex it used to be. As platforms fill with bots, legacy accounts, and algorithmic manipulation, high numbers have become meaningless—even suspicious. What's admirable now? Posting haphazardly, keeping your circle small, caring more about the real world than your feed. In an age of digital overexposure, authenticity and underexposure have become the new status symbols. The piece raises a question for anyone building community: What happens when not caring about metrics becomes the ultimate metric?</p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/3f2b10b9-d8aa-45cc-b1b1-93efd0d91b00/w=600?format=webp",
-          "channel": "digest-this",
-          "category": "Followers & Influence",
-          "sharedBy": "Julian Bleecker",
-          "readMoreText": "Read the column →",
-          "readMoreLink": "https://www.newyorker.com/culture/infinite-scroll/its-cool-to-have-no-followers-now",
+          "title": "States Plow Ahead With A.I. Regulation",
+          "link": "https://www.nytimes.com/2026/03/30/technology/trump-states-ai-gavin-newsom-california.html",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Of course I‘m watching this continuing and escalating showdown over AI regulation: the White House wants states to back off, but California just moved ahead anyway. Gov. Gavin Newsom’s executive order forces AI contractors to meet safety and privacy guardrails, and he’s promising to fight for California’s tougher protections for kids and against catastrophic harms.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>I've been curious about the policy and governance topic since I first set eyes on that “AI Bill of Rights” the WH issued back during the previous guy’s administration, what all these AI Policy & Governance collectives and labs and assemblies that have sprung up in the meantime are doing, and how the federal guidance and these state-level moves interact as the regulatory and governance landscape around AI continues to evolve — and what the actual manufacturers of the language models and AI systems that are being regulated are doing in response to all of this.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>It’s a messy, hyperlocal-to-global policy fight—especially as states face pressure, rising energy costs, and real-world fears about scams and safety. Meanwhile, the money and lobbying around AI keeps getting louder.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><strong>Parenthetically, this is what's motivating me to host the next General Seminar on AI policy and governance and this whole 'constitution' thing for LLMs — I don't think this is a topic for armchair quarterbacking.</strong></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Wandering into these questions and topic the <a href='https://generalseminar.com/seminar/s07/e04/'>General Seminar</a> way — as archeologists/anthropologists wondering what the traces of practice, the artifacts, the inscriptions, the material and social traces of AI policy and governance might look and feel like in an inhabited near future, and what they tell us about the worlds that are being built and the futures that are being imagined — is the approach I want to take to explore this space in a way that surfaces insight without assuming we already know the answers.</p></p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/527f7a71-2cf5-4980-eb1c-0f6722cdc700/w=600?format=webp",
+          "channel": "digest-this-🥓",
+          "category": "AI Policy Implications Futures",
+          "sharedBy": "julian",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://www.nytimes.com/2026/03/30/technology/trump-states-ai-gavin-newsom-california.html",
+          "paywall": true
+        },
+        {
+          "title": "You Can’t Escape the AI Tax - The Atlantic",
+          "link": "https://archive.is/Cs5nv",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>I keep seeing the same pattern: AI’s appetite for RAM is turning a basic computer component into a luxury. When data centers need more memory to run bigger, smarter models, the supply chain gets re-routed—and the bill lands with everyone else. Dell and Lenovo are already charging more, and the shortage is even fueling theft and bizarre store policies. The weird part is that this “AI tax” isn’t coming from a new subscription—it’s showing up in the hardware you buy.</p></p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/4417d110-f24f-4d5b-d72a-654339faf000/w=600?format=webp",
+          "channel": "digest-this-🥓",
+          "category": "Futures",
+          "sharedBy": "julian",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://www.theatlantic.com/technology/2026/03/laptop-electronics-ram-ai-tax/686628",
           "paywall": true
         }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
-      "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "23px",
-        "color": "#000000",
-        "textAlign": "left"
-      },
-      "_contentStyleOverrides": null,
-      "descriptionStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "23px",
-        "color": "#000000",
-        "textAlign": "left"
-      },
-      "spacerBackgroundColor": "#e2ebf4",
-      "headingStyles": {
-        "fontFamily": "Workbench, 'IBM Plex Sans', sans-serif",
-        "fontSize": "21px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "500",
-        "fontSize": "19px"
-      },
-      "headingStylesInline": "font-family: Workbench, 'IBM Plex Sans', sans-serif; font-size: 21px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB; font-size: 19px"
+      ]
     },
     {
-      "type": "classifieds",
-      "title": "Classifieds",
-      "description": "<p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.2 !important; color: #222222 !important; text-align: left !important\">Opportunities, events, and announcements from the community.</p>",
-      "bookingLink": "mailto:newsletter@nearfuturelaboratory.com",
-      "bookingText": "Book a classified →",
+      "type": "indie-mag-single-column",
+      "title": "Call Log!",
+      "containerStyles": {
+        "backgroundColor": null
+      },
       "items": [
         {
-          "content": "<p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.2 !important; color: #222222 !important; text-align: left !important\">Temporal Tactics is a set of provocation cards designed to help us imagine conscious and equitable futures. Digital cards are available immediately. Physical decks are available for pre-order and will begin shipping March–April 2026.</p>",
-          "title": "Temporal Tactics",
-          "link": "https://cone.metalabel.com/temporaltactics?variantId=1",
-          "linkText": "Learn more →",
-          "images": [
-            {
-              "src": "https://metalabel.imgix.net/QmaYQbpZSN5Ya7n8wN7dCRJF9syapPBUnDKj28nkGDXYHm?bg=ffffff&w=2560&fit=min&auto=format",
-              "alt": "Colorful cards featuring imaginative landscapes and futuristic themes, with text about Temporal Tactics."
-            }
-          ],
-          "description": "<p style=\"font-family: Share Tech Mono, monospace !important; font-size: 16px !important; line-height: 1.2 !important; color: #222222 !important; text-align: left !important\">Temporal Tactics is a set of provocation cards designed to help us imagine conscious and equitable futures. Digital cards are available immediately. Physical decks are available for pre-order and will begin shipping March–April 2026.</p>"
+          "title": "Office Hours N°305 Recap",
+          "subtitle": "Highlights from the XYZ PDQ Weekly Session",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/3f3d9c7f-d7ac-4a72-18cc-57bda7bf7a00/w=600?format=webp",
+          "link": "https://patreon.com/nearfuturelaboratory",
+          "readMoreText": "Join the Patreon →",
+          "readMoreLink": "https://patreon.com/nearfuturelaboratory",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p><strong>1)</strong> The session opened in a more-than-human register: rights of nature, non-human consciousness, DAOs for forests, and even the idea of a “prenup with the next planet” all got airtime as ways of asking what legal standing, agency, and care might look like beyond the human. Useful anchor links included <a href=\"https://en.wikipedia.org/wiki/Rights_of_nature_law\">Rights of Nature law</a>, the <a href=\"https://philiplow.foundation/consciousness/\">Cambridge Declaration of Consciousness</a>, and Dré’s links to <a href=\"https://www.las-art.foundation/programme/terra0-autonomous-forest\">terra0 / Autonomous Forest</a> and <a href=\"https://www.forestdao.dev/\">ForestDAO</a>.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p><strong>2)</strong> Mateusz shared one of the most compelling projects of the morning: a secular oracle constructor that treats divination as a mirror rather than a supernatural window, giving ritual shape to reflection without requiring belief. The tool is live at <a href=\"https://hintlab.org/oracle/\">hintlab.org/oracle</a> and feels like the beginning of a workshop format about ritual, meaning, and designed systems for guidance.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p><strong>3)</strong> The feedback on the oracle project was sharp and useful: less “business-graph Xerox interface,” more commitment to an aesthetic and material form that makes the ritual feel real, durable, and inhabited. The deeper point was that Mateusz may actually have two projects hiding inside one another: the generalized oracle-constructor tool, and the more vulnerable, more interesting personal ritual object he has been avoiding by systematizing it.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p><strong>4)</strong> Rick brought back a strong report from the Metalabel / Artist Corporation conversation in Colorado, where the interesting part was not platform cool-kid vibes so much as the attempt to formalize collaborative ownership, IP protection, and revenue splits for creative work. The relevant links were <a href=\"https://www.artistcorporations.com/\">Artist Corporations</a>, <a href=\"https://leg.colorado.gov/bills/SB26-133\">Colorado SB26-133</a>, and the related <a href=\"https://www.instagram.com/artistcorporations/\">Artist Corporations Instagram</a>.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p><strong>5)</strong> The best phrase to come out of that discussion may have been Seb's “KFI” — Key Failure Indicators — as a useful counterpart to KPI thinking when collaborations go sideways. That turned the conversation away from startup optimism and toward a more honest question: what do we agree counts as drift, non-performance, or damage before the project starts pretending everything is fine.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p><strong>6)</strong> Dré kept pushing on the overlap between old DAO ambitions and current agent systems, especially once agents start getting wallets, payment rails, and task orchestration instead of just vibes. The memorable line was that many agents are basically cron jobs with a bit of brains behind them, which is exactly the right level of demystification for all the “zero-human company” hype.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p><strong>7)</strong> A lot of practical value showed up in the open-source / self-hosted thread: local models, on-device workflows, privacy-preserving classroom systems, and the reminder that many “AI products” are just convenience layers on top of tools you can run yourself if you have the literacy. Useful references included Apple’s <a href=\"https://huggingface.co/apple/FastVLM-0.5B\">FastVLM</a>, <a href=\"https://github.com/apple/ml-fastvlm\">the FastVLM repo</a>, <a href=\"https://hermes-agent.nousresearch.com/\">Hermes</a>, Barry’s Canadian Google Docs alternative <a href=\"https://www.cdox.ca/\">Codox</a>, and Julian’s own <a href=\"https://github.com/bleeckerj/agency-agents\">agency-agents</a> repo.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p><strong>8)</strong> The hardware tangent turned out to be more than a tangent: SSD shortages, access to compute, and the uneven ability to run models locally all pointed to a real infrastructural politics around AI, not just a software story. That connected nicely to Seb’s public-interest framing via <a href=\"https://publicai.ch/\">Public AI</a> and the broader question of who gets access to intelligence systems, under what conditions, and for whose benefit.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p><strong>9)</strong> There was also a strong undercurrent about sovereignty and public infrastructure, with examples of governments and organizations trying to get out from under US platform dependence and rebuild on public code, open standards, or privacy-oriented tools. A couple of useful waypoints here were <a href=\"https://about.publiccode.net/organization/staff.html\">Foundation for Public Code</a> and the live concern that interoperability is both the moat and the trap for incumbent platforms.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p><strong>10)</strong> The AI-and-imagination question landed hardest in the teaching conversation: is AI making people dumber, or is it giving them more to think with? The most grounded answer was that the tool itself is less the issue than judgment, pedagogy, and practice — and that the real work is helping students recognize the gap between generating something and actually noticing whether it says what they think it says, with John Maeda’s <a href=\"https://www.youtube.com/watch?v=dry_rIRsDl8&amp;t=2203s\">Design in Tech 2026 talk</a> offered as a helpful companion.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p><strong>11)</strong> Near the end, the conversation bent toward schools, studios, and alternate institutions: maybe a consultancy, maybe a new kind of futures school, maybe both. The shared feeling was that conventional education is too siloed, too grade-driven, and too timid about real-world problems, which is precisely why these Office Hours keep feeling like a prototype for something else.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p><strong>12)</strong> The final forward-looking thread was Dré’s interest in the <a href=\"https://futurevisionxprize.com/\">Future Vision XPRIZE</a>, which asks for short films imagining optimistic, abundant futures. The interesting challenge here is not to make another shiny sci-fi trailer, but to do what design fiction does best: show the ordinary, believable, near-at-hand texture of a future that sneaks up on you rather than announcing itself with chrome.</p></p>"
         }
-      ],
-      "containerStyles": {
-        "backgroundColor": "f8f8f8",
-        "padding": "12px 20px",
-        "borderRadius": "0px"
-      },
-      "contentStyles": {
-        "fontFamily": "Share Tech Mono, monospace",
-        "fontSize": "16px",
-        "lineHeight": "1.2",
-        "color": "#222222",
-        "textAlign": "left"
-      },
-      "_contentStyleOverrides": null,
-      "descriptionStyles": {
-        "fontFamily": "Share Tech Mono, monospace",
-        "fontSize": "16px",
-        "lineHeight": "1.2",
-        "color": "#222222",
-        "textAlign": "left"
-      },
-      "spacerBackgroundColor": "#eae8e8",
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "20px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "500"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 20px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: 500; color: #EE3BBB"
+      ]
     },
     {
       "type": "sponsor",
       "title": "Join the Near Future Laboratory Discord",
-      "sponsorLabel": "Your support helps",
+      "sponsorLabel": "Join",
       "sponsorLink": "https://patreon.com/nearfuturelaboratory",
       "items": [
         {
           "title": "Near Future Laboratory Patreon",
           "subtitle": "Join the Discord, Support Office Hours, the Newsletter and More",
           "readMoreText": "Join →",
-          "description": "<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">The Near Future Laboratory is supported by its community and members. <a href='https://patreon.com/nearfuturelaboratory' style=\"font-weight: normal !important; text-decoration: underline !important; color: #EE3BBB !important\">Join us on Patreon</a> to support our work, get access to exclusive content, and be part of our vibrant Discord community where we discuss design, technology, creativity, the future and do projects and support each others' work.</p>\n<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">I host weekly Office Hours for Patrons -- now for 289 weeks and running -- every Friday at 0900 (UTC-7 / California). It's a great way to connect, ask questions, and get feedback on your projects.</p>\n<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">Each week two people from the community present a project, idea, or challenge and we discuss it together. It's a great way to get feedback, learn from others, and connect with like-minded people.</p>\n<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">All of this is done in a friendly, supportive, and welcoming environment. We have people from all over the world, from all walks of life, and with all kinds of interests. It's a great way to meet new people, network, show what you can do, and learn from each other.</p>\n<p style=\"font-family: 'IBM Plex Sans', sans-serif !important; font-size: 19px !important; line-height: 1.2 !important; color: #111111 !important; text-align: left !important\">In this time of rapid change and uncertainty, it's more important than ever to have a community of people who can support you, challenge you, and help you grow. The Near Future Laboratory is that community.</p>",
+          "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>The Near Future Laboratory is supported by its community and members. <a href='https://patreon.com/nearfuturelaboratory'>Join us on Patreon</a> to support our work, get access to exclusive content, and be part of our vibrant Discord community where we discuss design, technology, creativity, the future and do projects and support each others' work.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>I host weekly Office Hours for Patrons -- now for 289 weeks and running -- every Friday at 0900 (UTC-7 / California). It's a great way to connect, ask questions, and get feedback on your projects.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Each week two people from the community present a project, idea, or challenge and we discuss it together. It's a great way to get feedback, learn from others, and connect with like-minded people.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>All of this is done in a friendly, supportive, and welcoming environment. We have people from all over the world, from all walks of life, and with all kinds of interests. It's a great way to meet new people, network, show what you can do, and learn from each other.</p></p>\n<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>In this time of rapid change and uncertainty, it's more important than ever to have a community of people who can support you, challenge you, and help you grow. The Near Future Laboratory is that community.</p></p>",
           "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/58baa59a-a7da-4d1a-1f3a-9abdc26f8c00/w=600?format=webp",
           "link": "https://patreon.com/nearfuturelaboratory"
         }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
-      "contentStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.2",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "_contentStyleOverrides": null,
-      "descriptionStyles": {
-        "fontFamily": "'IBM Plex Sans', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "1.2",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "spacerBackgroundColor": "#d1eaff",
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "19px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "headingStylesInline": "font-family: inherit; font-size: 19px; line-height: 23px; font-weight: 600; color: #000000",
-      "linkStylesInline": "text-decoration: underline; font-weight: normal; color: #EE3BBB"
+      ]
+    },
+    {
+      "type": "classifieds",
+      "title": "Classified Jobs Section",
+      "description": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\">Related and associated opportunities and listings.</p>",
+      "bookingLink": "https://nearfuturelaboratory.com/contact",
+      "bookingText": "Book a Listing →",
+      "items": [
+        {
+          "content": "<p style=\"margin: 0 0 16px 0; padding: 0; font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #333;\"><p>Come work at The New Yorker.</p> <p>The New Yorker is seeking to build and maintain their editorial ML facilities to help support longform reporting, essaying, quips, cartoons, opinion columns, criticism, and narrative journalism.</p></p>",
+          "title": "JOB: Editorial Standards Orchestrator",
+          "link": "https://theadjacency.nearfuturelaboratory.com/jobs/editorial-lm-orchestrator--26fce4",
+          "linkText": "Job Posting →",
+          "images": [
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5788718d-42cc-43b2-0a92-b89209333600/full?format=webp",
+              "alt": "The New Yorker at 100 Logo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ad-block",
+      "items": [
+        {
+          "adId": "bedtime-coherence-amplifier-interstitial-02"
+        }
+      ]
     }
   ],
   "footer": {
-    "emailShare": "mailto:?subject=Near%20Future%20Laboratory%20Newsletter%20W05%20Y26&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2026/w05-y26",
+    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2026/w15-y26/",
     "newsletterSubscribeLink": "https://nearfuturelaboratory.com/newsletter/",
     "logo": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=200?format=webp",
     "logoLink": "https://nearfuturelaboratory.com",
@@ -361,6 +272,10 @@
         {
           "url": "https://github.com/bleeckerj",
           "title": "Personal GitHub"
+        },
+        {
+          "url": "https://github.com/nearfuturelaboratory",
+          "title": "Near Future Laboratory GitHub"
         },
         {
           "url": "https://github.com/nearfuturelaboratory",
@@ -407,469 +322,16 @@
       ],
       "substack": [
         {
-          "url": "https://newsletter.substack.com",
-          "title": "Newsletter on Substack"
+          "url": "https://nearfuturelaboratory.substack.com",
+          "title": "Near Future Laboratory on Substack"
         }
       ]
     },
     "unsubscribeLink": "[unsubscribe]",
-    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2026/w05-y26",
+    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2026/w15-y26",
     "archiveUrl": "https://nearfuturelaboratory.com/newsletters",
-    "gratitude": "This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle based production workflow. It's a work-in-progress building on a refactor of the <a href='https://densediscovery.com'>Dense Discovery</a> newsletter's look and vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a paid 'friend of Dense Discovery' for, well..I'm not sure how many years now. It's a great newsletter and I would encourage you to subscribe and become a paid member.",
+    "gratitude": "This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle based production workflow. It's a work-in-progress building on a refactor of the <a href='https://densediscovery.com'>Dense Discovery</a> newsletter's look and vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It's a great newsletter and I would encourage you to subscribe and become a paid member.",
     "address": "© 2026 Near Future Laboratory<br>Venice Beach, California<br>United States",
-    "colophon": "Imagination is not a luxury. It's an early-warning system for possibility."
-  },
-  "themeColors": {
-    "header": "#ffffff",
-    "sponsor": "#f0f8ff",
-    "apps-sites": "#ffffff",
-    "quote": "#e6f3ff",
-    "callout": "#e0f0ff",
-    "indie-mag": "#f5f8ff",
-    "books-accessories": "#ffffff",
-    "food-for-thought": "#f8fafc",
-    "introAside": "#f8fafc",
-    "aesthetically-pleasing": "#ffffff",
-    "classifieds": "#e0f2fe",
-    "gif": "#ffffff",
-    "linkAccent": "#EE3BBB"
-  },
-  "theme": {
-    "name": "Winter Cool",
-    "description": "Cool blues and crisp whites for winter clarity",
-    "colors": {
-      "header": "#ffffff",
-      "sponsor": "#f0f8ff",
-      "apps-sites": "#ffffff",
-      "quote": "#e6f3ff",
-      "callout": "#e0f0ff",
-      "indie-mag": "#f5f8ff",
-      "books-accessories": "#ffffff",
-      "food-for-thought": "#f8fafc",
-      "introAside": "#f8fafc",
-      "aesthetically-pleasing": "#ffffff",
-      "classifieds": "#e0f2fe",
-      "gif": "#ffffff"
-    },
-    "accent": "#4a7c59",
-    "linkAccent": "#EE3BBB"
-  },
-  "sectionStyles": {
-    "$schema": "../section-styles.schema.json",
-    "description": "Configuration for section-specific styling in email templates",
-    "version": "1.0.0",
-    "sectionStyles": {
-      "header": {
-        "name": "Header Section",
-        "description": "Header quote, author, and featured artist text styles",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "20px"
-        },
-        "contentStyles": {
-          "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "18px",
-          "lineHeight": "23px",
-          "fontWeight": "400",
-          "color": "#000000",
-          "authorFontSize": "16px",
-          "authorFontWeight": "600",
-          "artistFontSize": "16px",
-          "anchorColor": "#000000"
-        }
-      },
-      "intro-content": {
-        "name": "Intro Content",
-        "description": "Intro paragraph block content styles",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "0",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "'Roboto', sans-serif",
-          "fontSize": "18px",
-          "lineHeight": "1.2rem",
-          "fontWeight": "500",
-          "color": "#000000",
-          "textAlign": "left"
-        }
-      },
-      "intro-aside": {
-        "name": "Intro Aside",
-        "description": "Teaser/lede block before the intro content",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "12px 14px",
-          "borderRadius": "6px",
-          "borderLeftColor": "#d7d1c6",
-          "borderLeftWidth": "3px",
-          "borderLeftStyle": "solid"
-        },
-        "contentStyles": {
-          "fontFamily": "'Ubuntu', sans-serif",
-          "fontSize": "19px",
-          "lineHeight": "1.2",
-          "fontStyle": "normal",
-          "color": "#3f3f3f",
-          "textAlign": "left"
-        }
-      },
-      "sponsor": {
-        "name": "Sponsor Section",
-        "description": "Sponsored content sections with distinctive monospace font",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "19px",
-          "lineHeight": "1.2",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "normal"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "19px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "dispatch": {
-        "name": "Dispatch Section",
-        "description": "Dispatch content sections with distinctive monospace font",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "8px"
-        },
-        "contentStyles": {
-          "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "19px",
-          "lineHeight": "1.4",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "normal"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "19px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "indie-mag-single-column": {
-        "name": "Indie Magazine Single Column",
-        "description": "Single column indie magazine content with monospace styling",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "19px",
-          "lineHeight": "1.4",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "normal"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "19px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "indie-mag": {
-        "name": "Indie Magazine Multi-Column",
-        "description": "Multi-column indie magazine content with clean serif font",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "19px",
-          "lineHeight": "1.4",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "normal"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "19px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "apps-sites": {
-        "spacerBackgroundAdjust": {
-          "lightness": -8,
-          "saturation": 40
-        },
-        "name": "Apps & Sites",
-        "descriptionStyles": {
-          "fontFamily": "'Ubuntu', sans-serif",
-          "fontSize": "17px",
-          "lineHeight": "1.2",
-          "color": "#000000",
-          "textAlign": "left"
-        },
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "'Ubuntu', sans-serif",
-          "fontSize": "19px",
-          "lineHeight": "1.4",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "500"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "21px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "apps-sites-single-column": {
-        "spacerBackgroundAdjust": {
-          "lightness": -8,
-          "saturation": 40
-        },
-        "name": "Apps & Sites",
-        "descriptionStyles": {
-          "fontFamily": "'Ubuntu', sans-serif",
-          "fontSize": "17px",
-          "lineHeight": "1.2",
-          "color": "#000000",
-          "textAlign": "left"
-        },
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "'Ubuntu', sans-serif",
-          "fontSize": "19px",
-          "lineHeight": "1.4",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "500"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "21px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "books-accessories": {
-        "name": "Books & Accessories",
-        "description": "Product recommendations with clean sans-serif styling",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "19px",
-          "lineHeight": "1.4",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "500"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "21px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "food-for-thought": {
-        "name": "Food for Thought",
-        "description": "Basically Discord Stuff",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "19px",
-          "lineHeight": "23px",
-          "color": "#000000",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "500",
-          "fontSize": "19px"
-        },
-        "headingStyles": {
-          "fontFamily": "Workbench, 'IBM Plex Sans', sans-serif",
-          "fontSize": "21px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "callout": {
-        "name": "Callout",
-        "description": "Callout highlight block",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "19px",
-          "lineHeight": "25px",
-          "color": "#444444",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "#006afa",
-          "textDecoration": "underline",
-          "fontWeight": "normal"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "21px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "classifieds": {
-        "name": "Classifieds",
-        "description": "Classified ads with compact monospace styling",
-        "containerStyles": {
-          "backgroundColor": "f8f8f8",
-          "padding": "12px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "Share Tech Mono, monospace",
-          "fontSize": "16px",
-          "lineHeight": "1.2",
-          "color": "#222222",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "500"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "20px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "aesthetically-pleasing": {
-        "name": "Aesthetically Pleasing",
-        "description": "Cool stuff around the web with modern sans-serif styling",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "12px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "'IBM Plex Sans', sans-serif",
-          "fontSize": "19px",
-          "lineHeight": "1.3",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "normal"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "21px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "default": {
-        "name": "Default Content",
-        "description": "Default styling for unspecified section types",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "Ubuntu, sans-serif",
-          "fontSize": "19px",
-          "lineHeight": "1.2",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "normal"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "21px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      }
-    },
-    "globalOverrides": {
-      "description": "Global style overrides that apply to all sections",
-      "mobileBreakpoint": "600px",
-      "mobileAdjustments": {
-        "contentStyles": {
-          "fontSize": "-1px",
-          "padding": "12px 15px"
-        }
-      }
-    }
+    "colophon": "Imagination is not a luxury. It’s an early-warning system for possibility."
   }
 }

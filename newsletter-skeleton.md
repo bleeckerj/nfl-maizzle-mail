@@ -2,10 +2,38 @@
 template: dense-discovery
 title: Newsletter Title
 preheader: Short preview text that appears in email clients
+ogImage: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=900?format=webp
 sectionStylesFile: templates/dense-discovery/section-styles.json
 intro:
   title: Welcome
-  viewOnlineLink: '#'
+  viewOnlineLink: https://nearfuturelaboratory.com/newsletters/2026/wxx-yxx
+  aside:
+    content: <p>Teaser/lede text that sets up the intro content.</p>
+    containerStyles:
+      backgroundColor: '#f4f1ea'
+      borderLeftWidth: 3px
+      borderLeftStyle: solid
+      borderLeftColor: '#d7d1c6'
+      padding: 12px 14px
+      borderRadius: 6px
+    contentStyles:
+      fontFamily: '''Ubuntu'', sans-serif'
+      fontSize: 18px
+      lineHeight: 23px
+      fontStyle: italic
+      color: '#3f3f3f'
+      textAlign: left
+  containerStyles:
+    backgroundColor: null
+    padding: '0'
+    borderRadius: 0px
+  contentStyles:
+    fontFamily: '''IBM Plex Sans'', sans-serif'
+    fontSize: 16px
+    lineHeight: 1.2rem
+    fontWeight: '400'
+    color: '#000000'
+    textAlign: left
   content: <p>Introduction paragraph for the newsletter.</p>
 header:
   quote: Inspiring header quote
@@ -14,8 +42,8 @@ header:
     name: Artist Name
     link: '#'
   featuredImage: https://fpoimg.com/600x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Featured
-  logoBottom: https://fpoimg.com/163x50?text=Preview&bg_color=e6e6e6&text_color=4FAAAA
-  logoTop: https://fpoimg.com/163x50?text=Preview&bg_color=e6e6e6&text_color=4FAAAA
+  logoBottom: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp
+  logoTop: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp
 sections:
 - type: sponsor
   title: Sponsor Section
@@ -26,7 +54,12 @@ sections:
     link: https://example.com
     subtitle: Example subtitle for item 1
     description: <p>Example description for sponsor item 1.</p>
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+    images:
+    - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+      alt: Alternate text for item 1 image 1
+      link: https://example.com/image-destination
+    - src: https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second
+      alt: Alternate text for item 1 image 2
     readMoreText: Read more →
     readMoreLink: https://example.com
 - type: dispatch
@@ -45,6 +78,9 @@ sections:
     image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     readMoreText: Read more →
     readMoreLink: https://example.com
+- type: ad-block
+  items:
+  - adId: fashion-8bit-pants-interstitial
 - type: apps-sites
   title: Apps Sites Section
   items:
@@ -66,6 +102,7 @@ sections:
     paywall: true
 - type: apps-sites-single-column
   title: Apps Sites Single Column Section
+  description: <p>Description for apps-sites-single-column section.</p>
   items:
   - title: Apps Sites Single Column Item 1
     link: https://example.com
@@ -74,6 +111,16 @@ sections:
     image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     readMoreText: Read more →
     readMoreLink: https://example.com
+- type: callout
+  title: Callout Section
+  items:
+  - calloutText: Callout Item 1
+    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+    imageAlt: Alternate text for callout item 1 image
+    imageLink: https://example.com
+    readMoreText: Read more →
+    readMoreLink: https://example.com
+    author: Example author
 - type: quote
   title: Quote Section
   items:
@@ -92,6 +139,15 @@ sections:
     readMoreText: Read more →
     readMoreLink: https://example.com
     paywall: true
+  - title: Indie Mag Item 2
+    link: https://example.com
+    description: <p>Example description for indie-mag item 2.</p>
+    details: <p>Example details for indie-mag item 2.</p>
+    note: <p>Example note for indie-mag item 2.</p>
+    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+    readMoreText: Read more →
+    readMoreLink: https://example.com
+    paywall: true
 - type: indie-mag-single-column
   title: Indie Mag Single Column Section
   items:
@@ -100,7 +156,26 @@ sections:
     description: <p>Example description for indie-mag-single-column item 1.</p>
     details: <p>Example details for indie-mag-single-column item 1.</p>
     note: <p>Example note for indie-mag-single-column item 1.</p>
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+    images:
+    - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+      alt: Alternate text for item 1 image 1
+      link: https://example.com/image-destination
+    - src: https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second
+      alt: Alternate text for item 1 image 2
+    readMoreText: Read more →
+    readMoreLink: https://example.com
+    paywall: true
+  - title: Indie Mag Single Column Item 2
+    link: https://example.com
+    description: <p>Example description for indie-mag-single-column item 2.</p>
+    details: <p>Example details for indie-mag-single-column item 2.</p>
+    note: <p>Example note for indie-mag-single-column item 2.</p>
+    images:
+    - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+      alt: Alternate text for item 2 image 1
+      link: https://example.com/image-destination
+    - src: https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second
+      alt: Alternate text for item 2 image 2
     readMoreText: Read more →
     readMoreLink: https://example.com
     paywall: true
@@ -108,18 +183,20 @@ sections:
   title: Books Accessories Section
   byline: Example byline
   bylineLink: Example bylineLink
+  authorLabel: Author
   items:
   - title: Books Accessories Item 1
     link: https://example.com
     subtitle: Example subtitle for item 1
     description: <p>Example description for books-accessories item 1.</p>
-    images: # Optional; multiple images supported
-    - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image+1
-      alt: Example image alt text 1
-      link: https://example.com
-    - src: https://fpoimg.com/800x600?text=Preview&bg_color=f5f5f5&text_color=4FAAAA?text=Image+2
-      alt: Example image alt text 2
+    images:
+    - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+      alt: Alternate text for item 1 image 1
+      link: https://example.com/image-destination
+    - src: https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second
+      alt: Alternate text for item 1 image 2
     authorName: Example authorName for item 1
+    authorLabel: Author
     authorLink: https://example.com
     isbn: 978-1-23456-789-7
     linkText: Example linkText for item 1
@@ -181,24 +258,55 @@ sections:
     description: <p>Example description for animated-image item 1.</p>
     link: https://example.com
 footer:
-  emailShare: mailto:?subject=Newsletter&body=Check%20out%20this%20newsletter
-  newsletterSubscribeLink: https://example.com/subscribe
-  logo: https://fpoimg.com/200x50?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Featured
-  logoLink: https://example.com
+  emailShare: mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2026/w50-y25/
+  newsletterSubscribeLink: https://nearfuturelaboratory.com/newsletter/
+  logo: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=200?format=webp
+  logoLink: https://nearfuturelaboratory.com
   socialLinks:
+    applepodcasts:
+    - url: https://podcasts.apple.com/us/podcast/near-future-laboratory-podcast/id1546452193
+      title: Near Future Laboratory on Apple Podcasts
+    spotify:
+    - url: https://open.spotify.com/show/1vHzwGE5J19LvXSo8M93MM
+      title: Near Future Laboratory on Spotify
     github:
-    - url: https://github.com/username
-      title: GitHub
+    - url: https://github.com/bleeckerj
+      title: Personal GitHub
+    - url: https://github.com/nearfuturelaboratory
+      title: Near Future Laboratory GitHub
+    - url: https://github.com/nearfuturelaboratory
+      title: Near Future Laboratory GitHub
     instagram:
-    - url: https://instagram.com/username
-      title: Instagram
+    - url: https://instagram.com/darthjulian
+      title: Personal Instagram
+    - url: https://instagram.com/nearfuturelaboratory
+      title: Company Instagram
     linkedin:
-    - url: https://linkedin.com/in/username
-      title: LinkedIn
+    - url: https://linkedin.com/in/julianbleecker
+      title: Personal LinkedIn
+    - url: https://www.linkedin.com/company/near-future-laboratory/
+      title: Near Future Laboratory LinkedIn
+    youtube:
+    - url: https://youtube.com/@nearfuturelaboratory
+      title: YouTube Channel
+    discord:
+    - url: https://patreon.com/nearfuturelaboratory
+      title: Join Patreon to join the Discord Community
+    patreon:
+    - url: https://patreon.com/nearfuturelaboratory
+      title: Support me on Patreon
+    substack:
+    - url: https://newsletter.substack.com
+      title: Newsletter on Substack
   unsubscribeLink: '[unsubscribe]'
-  shareUrl: https://example.com/newsletter/current
-  archiveUrl: https://example.com/newsletter/archive
-  gratitude: Thank you for reading!
-  address: © 2025 Your Organization<br>City, State<br>Country
-  colophon: Optional colophon text or sign-off message.
+  shareUrl: https://nearfuturelaboratory.com/newsletters/2026/w50-y25
+  archiveUrl: https://nearfuturelaboratory.com/newsletters
+  gratitude: This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle
+    based production workflow. It's a work-in-progress building on a refactor of the
+    <a href='https://densediscovery.com'>Dense Discovery</a> newsletter's look and
+    vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a
+    paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It's
+    a great newsletter and I would encourage you to subscribe and become a paid member.
+  address: © 2026 Near Future Laboratory<br>Venice Beach, California<br>United States
+  colophon: Imagination is not a luxury. It’s an early-warning system for possibility.
 ---
