@@ -108,9 +108,17 @@
         line-height: {{ mobileTextLineHeight }} !important;
       }
 
+      .mob-caption {
+        font-size: {{ mobileCaptionFontSize }} !important;
+        line-height: {{ mobileCaptionLineHeight }} !important;
+      }
+
       .mob-title a,
       .mob-subtitle a,
-      .mob-readmore a {
+      .mob-readmore a,
+      .mob-caption a,
+      .mob-caption strong,
+      .mob-caption em {
         font-size: inherit !important;
         line-height: inherit !important;
       }
@@ -235,6 +243,31 @@
       height: auto !important;
       display: block;
       margin: 0 0 15px 0;
+    }
+
+    .image-caption {
+      margin: 8px 0 12px 0;
+      padding: 0;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 500;
+      color: #495263;
+      text-align: left;
+      text-decoration: none !important;
+    }
+
+    .image-credit {
+      margin: 0;
+      padding: 0;
+      font-family: 'Share Tech Mono', 'Courier New', monospace;
+      font-size: 11px;
+      line-height: 1.45;
+      font-weight: 400;
+      color: #7a859a;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-decoration: none !important;
     }
 
     /* Dynamic theme colors */

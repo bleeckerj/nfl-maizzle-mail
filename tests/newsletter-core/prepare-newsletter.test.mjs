@@ -28,6 +28,7 @@ function withTempRoots(fn) {
     JSON.stringify([
       {
         id: 'comedy-ad-01',
+        label: 'SPONSORED',
         title: 'A Better Fake Ad',
         sponsor: 'Near Future Laboratory',
         copy: 'The future needs stranger ads.',
@@ -78,6 +79,8 @@ test('prepareNewsletterData hydrates ad-block sections and preserves editorial c
           },
           {
             type: 'ad-block',
+            title: 'This Week\'s Partner',
+            description: '<p>Context for why this ad appears here.</p>',
             items: [{ adId: 'comedy-ad-01' }],
           },
         ],
@@ -87,6 +90,9 @@ test('prepareNewsletterData hydrates ad-block sections and preserves editorial c
 
     assert.equal(prepared.sections[0].type, 'sponsor');
     assert.equal(prepared.sections[0].items[0].title, 'Pitch Picture Prototype');
+    assert.equal(prepared.sections[1].title, "This Week's Partner");
+    assert.match(prepared.sections[1].description, /Context for why this ad appears here/);
+    assert.equal(prepared.sections[1].items[0].label, 'SPONSORED');
     assert.equal(prepared.sections[1].items[0].title, 'A Better Fake Ad');
     assert.match(prepared.sections[1].items[0].description, /The future needs stranger ads\./);
     assert.equal(prepared.sections[1].items[0].readMoreLink, 'https://example.com/fake-ad');
@@ -102,6 +108,7 @@ test('prepareNewsletterData accepts ad-block source items under strict schema va
         sections: [
           {
             type: 'ad-block',
+            title: 'Partner Signal',
             items: [{ adId: 'comedy-ad-01' }],
           },
         ],
@@ -109,7 +116,30 @@ test('prepareNewsletterData accepts ad-block source items under strict schema va
       { repoRoot: REPO_ROOT, templateName: 'dense-discovery', strictSchema: true, logger: { log() {} } },
     );
 
+    assert.equal(prepared.sections[0].title, 'Partner Signal');
+    assert.equal(prepared.sections[0].items[0].label, 'SPONSORED');
     assert.equal(prepared.sections[0].items[0].title, 'A Better Fake Ad');
+  });
+});
+
+test('prepareNewsletterData promotes ad-block inventory titles to section headers by default', () => {
+  withTempRoots(({ repoRoot }) => {
+    const prepared = prepareNewsletterData(
+      {
+        template: 'dense-discovery',
+        title: 'Ad Header Test',
+        sections: [
+          {
+            type: 'ad-block',
+            items: [{ adId: 'comedy-ad-01' }],
+          },
+        ],
+      },
+      { repoRoot, templateName: 'dense-discovery', logger: { log() {} } },
+    );
+
+    assert.equal(prepared.sections[0].title, 'A Better Fake Ad');
+    assert.equal(prepared.sections[0].items[0].title, '');
   });
 });
 
@@ -144,6 +174,78 @@ test('prepareNewsletterData accepts food-for-thought items with additional readM
   assert.equal(prepared.sections[0].items[0].readMoreLinks.length, 2);
   assert.equal(prepared.sections[0].items[0].readMoreLinks[0].text, 'Listen to podcast →');
   assert.equal(prepared.sections[0].items[0].readMoreLinks[1].paywall, true);
+});
+
+test('prepareNewsletterData injects the default newsletter footer CTA when frontmatter omits it', () => {
+  const prepared = prepareNewsletterData(
+    {
+      template: 'dense-discovery',
+      title: 'Footer CTA Default Test',
+      footer: {
+        newsletterSubscribeLink: 'https://nearfuturelaboratory.com/newsletter/',
+      },
+      sections: [],
+    },
+    { repoRoot: REPO_ROOT, templateName: 'dense-discovery', logger: { log() {} } },
+  );
+
+  assert.equal(prepared.footer.footerCta.variant, 'default');
+  assert.equal(prepared.footer.footerCta.eyebrow, 'For Decisions That Are Still Taking Shape');
+  assert.equal(
+    prepared.footer.footerCta.text,
+    'I help leadership teams make possible futures tangible so they can see what they are actually committing to before the roadmap hardens.',
+  );
+  assert.equal(prepared.footer.footerCta.primaryAction.label, 'Start a Conversation');
+  assert.equal(prepared.footer.footerCta.secondaryAction.label, 'See How This Works');
+  assert.equal(prepared.footer.footerCta.secondaryAction.url, 'https://nearfuturelaboratory.com/services');
+});
+
+test('prepareNewsletterData preserves newsletter footer CTA variant selection and explicit overrides', () => {
+  const prepared = prepareNewsletterData(
+    {
+      template: 'dense-discovery',
+      title: 'Footer CTA Override Test',
+      footer: {
+        footerCta: {
+          variant: 'workshop',
+          text: 'Custom workshop positioning for this issue.',
+          primaryAction: {
+            label: 'Book Julian',
+          },
+          secondaryAction: {
+            enabled: false,
+          },
+        },
+      },
+      sections: [],
+    },
+    { repoRoot: REPO_ROOT, templateName: 'dense-discovery', logger: { log() {} } },
+  );
+
+  assert.equal(prepared.footer.footerCta.variant, 'workshop');
+  assert.equal(prepared.footer.footerCta.eyebrow, 'Workshops, Talks, Sessions');
+  assert.equal(prepared.footer.footerCta.text, 'Custom workshop positioning for this issue.');
+  assert.equal(prepared.footer.footerCta.primaryAction.label, 'Book Julian');
+  assert.equal(prepared.footer.footerCta.primaryAction.url, 'https://nearfuturelaboratory.com/services');
+  assert.equal('secondaryAction' in prepared.footer.footerCta, false);
+});
+
+test('prepareNewsletterData respects disabled newsletter footer CTA blocks', () => {
+  const prepared = prepareNewsletterData(
+    {
+      template: 'dense-discovery',
+      title: 'Footer CTA Disabled Test',
+      footer: {
+        footerCta: {
+          enabled: false,
+        },
+      },
+      sections: [],
+    },
+    { repoRoot: REPO_ROOT, templateName: 'dense-discovery', logger: { log() {} } },
+  );
+
+  assert.equal(prepared.footer.footerCta.enabled, false);
 });
 
 test('prepareNewsletterData rejects malformed food-for-thought readMoreLinks items under strict schema validation', () => {
@@ -205,7 +307,9 @@ test('loadNewsletterSource resolves outbox issues by issue id and returns normal
     assert.equal(loaded.issueId, 'w13-y26');
     assert.equal(loaded.templateName, 'dense-discovery');
     assert.equal(loaded.newsletterData.sections.length, 2);
-    assert.equal(loaded.newsletterData.sections[1].items[0].title, 'A Better Fake Ad');
+    assert.equal(loaded.newsletterData.sections[1].title, 'A Better Fake Ad');
+    assert.equal(loaded.newsletterData.sections[1].items[0].label, 'SPONSORED');
+    assert.equal(loaded.newsletterData.sections[1].items[0].title, '');
   });
 });
 
@@ -269,7 +373,9 @@ test('prepareNewsletterData preserves adjacency-feature sections and optional fa
     assert.equal(prepared.sections[0].type, 'adjacency-feature');
     assert.match(prepared.sections[0].bodyHtml, /Extended article body/);
     assert.equal(prepared.sections[0].heroImage.src, 'https://imagedelivery.net/example/hero/public');
-    assert.equal(prepared.sections[1].items[0].title, 'A Better Fake Ad');
+    assert.equal(prepared.sections[1].title, 'A Better Fake Ad');
+    assert.equal(prepared.sections[1].items[0].label, 'SPONSORED');
+    assert.equal(prepared.sections[1].items[0].title, '');
   });
 });
 

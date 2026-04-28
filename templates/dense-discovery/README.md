@@ -13,6 +13,8 @@ This email template is a tuned up fork within this repo, a Markdown-JSON-Python-
 ```yaml
 sections:
 - type: ad-block
+  title: This Week's Partner
+  description: <p>A short note explaining why this ad is relevant to this issue.</p>
   items:
   - adId: fashion-8bit-pants-interstitial
 ```
@@ -26,11 +28,13 @@ sections:
 
 ### Rendered hierarchy
 
-- Label/sponsor text at top (light weight)
-- Large image
-- Bold title
-- Copy body
-- Optional CTA row when a link exists
+- Section title in a separate header block; if omitted, the inventory ad title is promoted into this header
+- Optional section description/context
+- Optional top disclosure row from `item.label`
+- Optional image
+- Optional ad title inside the card when the author also supplied a separate section title
+- Optional ad copy
+- Optional footer with `item.sponsor` and CTA
 
 ### Defaults and style tuning
 
@@ -39,6 +43,7 @@ Defaults are defined in `templates/dense-discovery/section-styles.json` under `s
 - Card surface: `backgroundColor: #f5f4f0`
 - Border: `borderWidth`, `borderStyle`, `borderColor`
 - Corners: `borderRadius` (default `0px`)
+- Wrapper styling: `sectionHeaderBackgroundColor`, `sectionHeaderPadding`, `sectionHeaderBorderRadius`, `sectionHeaderGap`, `sectionDescriptionPadding`
 - Sponsor label typography: `labelStyles`
 - Title typography: `headingStyles`
 - Copy typography: `contentStyles`

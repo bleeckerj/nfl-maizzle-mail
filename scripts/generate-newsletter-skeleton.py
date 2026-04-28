@@ -25,7 +25,7 @@ from pathlib import Path
 SECTION_DEFINITIONS = {
     'ad-block': {
         'description': 'Single email-safe ad card resolved from ads inventory',
-        'section_fields': ['type'],
+        'section_fields': ['type', 'title', 'description'],
         'item_fields': {
             'required': ['adId'],
             'optional': []
@@ -371,6 +371,9 @@ def generate_skeleton(sections=None, minimal=False):
         'footer': {
             'emailShare': f'mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/{current_year}/w50-y25/',
             'newsletterSubscribeLink': 'https://nearfuturelaboratory.com/newsletter/',
+            'footerCta': {
+                'variant': 'default'
+            },
             'logo': 'https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=200?format=webp',
             'logoLink': 'https://nearfuturelaboratory.com',
             'socialLinks': {
@@ -415,13 +418,6 @@ def generate_skeleton(sections=None, minimal=False):
             'unsubscribeLink': '[unsubscribe]',
             'shareUrl': f'https://nearfuturelaboratory.com/newsletters/{current_year}/w50-y25',
             'archiveUrl': 'https://nearfuturelaboratory.com/newsletters',
-            'gratitude': (
-                "This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle based production workflow. "
-                "It's a work-in-progress building on a refactor of the <a href='https://densediscovery.com'>Dense Discovery</a> "
-                "newsletter's look and vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. "
-                "I have been a paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. "
-                "It's a great newsletter and I would encourage you to subscribe and become a paid member."
-            ),
             'address': f'© {current_year} Near Future Laboratory<br>Venice Beach, California<br>United States',
             'colophon': 'Imagination is not a luxury. It’s an early-warning system for possibility.'
         }

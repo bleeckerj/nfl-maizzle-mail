@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { mkdtempSync, rmSync, writeFileSync, readFileSync, existsSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, rmSync, writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 import { adjacencyMailThemeTokens } from '../../lib/adjacency-mail/adjacency-mail-theme-tokens.mjs';
@@ -57,6 +57,7 @@ test('build-newsletter accepts an absolute external issue path with adjacency-fe
     JSON.stringify([
       {
         id: 'comedy-ad-01',
+        label: 'SPONSORED',
         title: 'A Better Fake Ad',
         sponsor: 'Near Future Laboratory',
         copy: 'The future needs stranger ads.',
@@ -130,6 +131,8 @@ test('build-newsletter accepts an absolute external issue path with adjacency-fe
       '    ctaText: Read on The Adjacency',
       '    ctaLink: /issue/02/features/external-adjacency-issue',
       '  - type: ad-block',
+      '    title: This Week\'s Partner',
+      '    description: <p>Context for why this ad appears in this issue.</p>',
       '    items:',
       '      - adId: comedy-ad-01',
       'footer:',
@@ -175,7 +178,12 @@ test('build-newsletter accepts an absolute external issue path with adjacency-fe
     assert.match(html, /External Adjacency Issue/);
     assert.match(html, /Read on The Adjacency/);
     assert.match(html, /This body comes from an external issue path/);
+    assert.match(html, /This Week(?:&#0*39;|')s Partner/);
+    assert.match(html, /Context for why this ad appears in this issue\./);
+    assert.match(html, /SPONSORED/);
     assert.match(html, /A Better Fake Ad/);
+    assert.match(html, /Near Future Laboratory/);
+    assert.match(html, /See the fake ad/);
     assert.match(html, /padding:\s*12px 16px 8px 16px/);
     assert.match(html, /padding:\s*6px 14px 12px 14px/);
     assert.match(
@@ -396,6 +404,174 @@ test('build-newsletter accepts an absolute external issue path with popup-jobs-m
     assert.match(html, /https:\/\/patreon\.com\/nearfuturelaboratory/);
     assert.match(html, /http:\/\/127\.0\.0\.1:4411/);
     assert.doesNotMatch(html, /jobs\.greenhouse\.io|example\.com\/apply/);
+  } finally {
+    rmSync(tempRoot, { recursive: true, force: true });
+  }
+});
+
+test('build-newsletter renders commerce ad-blocks as email HTML without uploading snapshots', () => {
+  const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'newsletter-commerce-ad-block-build-'));
+  const issuePath = path.join(tempRoot, 'issue.md');
+  const outputDir = path.join(tempRoot, 'output');
+  const outputName = 'commerce-ad-block-external';
+  const editorialRoot = path.join(tempRoot, 'nfl-editorial');
+  const adsPath = path.join(editorialRoot, 'src', 'content', 'ads.json');
+
+  mkdirSync(path.dirname(adsPath), { recursive: true });
+  writeFileSync(
+    adsPath,
+    JSON.stringify([
+      {
+        id: 'commerce-ad-01',
+        label: 'SPONSORED',
+        title: 'Commerce Ad Title',
+        sponsor: 'Speculative Contrivance',
+        copy: 'Commerce ad copy should render as HTML.',
+        link: { url: 'https://example.com/shop', label: 'Shop now' },
+        media: {
+          src: 'https://imagedelivery.net/example/source/public',
+          altText: 'Snapshot alt text',
+        },
+        commerce: {
+          rating: 4.7,
+          reviewCount: 128,
+          priceText: '$189.99',
+          icon: {
+            src: 'https://imagedelivery.net/example/commerce-icon/public',
+            altText: 'Commerce badge',
+          },
+        },
+      },
+    ]),
+    'utf8',
+  );
+
+  writeFileSync(
+    issuePath,
+    [
+      '---',
+      'template: dense-discovery',
+      'title: Commerce Snapshot Issue',
+      'sections:',
+      '  - type: ad-block',
+      '    items:',
+      '      - adId: commerce-ad-01',
+      'footer:',
+      '  newsletterSubscribeLink: https://nearfuturelaboratory.com/newsletter/',
+      '---',
+      '',
+    ].join('\n'),
+    'utf8',
+  );
+
+  try {
+    execFileSync(
+      process.execPath,
+      [
+        BUILD_SCRIPT,
+        issuePath,
+        outputName,
+        `--repo-root=${REPO_ROOT}`,
+        `--output-dir=${outputDir}`,
+        '--no-open',
+      ],
+      {
+        encoding: 'utf8',
+        env: {
+          ...process.env,
+          NFL_EDITORIAL_ROOT: editorialRoot,
+          NFL_EDITORIAL_ADS_PATH: adsPath,
+          IMAGE_MIGRATION_ENDPOINT: 'http://127.0.0.1:9/should-not-upload',
+        },
+      },
+    );
+
+    const builtHtmlPath = path.join(outputDir, `${outputName}.html`);
+    assert.ok(existsSync(builtHtmlPath));
+
+    const html = readFileSync(builtHtmlPath, 'utf8');
+    assert.match(html, /SPONSORED/);
+    assert.match(html, /Speculative Contrivance/);
+    assert.match(html, /https:\/\/imagedelivery\.net\/example\/source\/public/);
+    assert.match(html, /https:\/\/imagedelivery\.net\/example\/commerce-icon\/public/);
+    assert.match(html, /Commerce Ad Title/);
+    assert.match(html, /Commerce ad copy should render as HTML\./);
+    assert.match(html, /\$189\.99/);
+    assert.match(html, /Rating 4\.7/);
+    assert.match(html, /\(128\)/);
+    assert.match(html, /Shop now/);
+  } finally {
+    rmSync(tempRoot, { recursive: true, force: true });
+  }
+});
+
+test('build-newsletter omits empty ad-block wrapper and footer rows when optional fields are missing', () => {
+  const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'newsletter-sparse-ad-block-build-'));
+  const issuePath = path.join(tempRoot, 'issue.md');
+  const outputDir = path.join(tempRoot, 'output');
+  const outputName = 'sparse-ad-block-external';
+  const adsPath = path.join(tempRoot, 'ads.json');
+
+  writeFileSync(
+    adsPath,
+    JSON.stringify([
+      {
+        id: 'sparse-ad-01',
+        media: {
+          src: 'https://imagedelivery.net/example/sparse/public',
+          altText: 'Sparse ad image',
+        },
+      },
+    ]),
+    'utf8',
+  );
+
+  writeFileSync(
+    issuePath,
+    [
+      '---',
+      'template: dense-discovery',
+      'title: Sparse Ad Issue',
+      'sections:',
+      '  - type: ad-block',
+      '    items:',
+      '      - adId: sparse-ad-01',
+      'footer:',
+      '  newsletterSubscribeLink: https://nearfuturelaboratory.com/newsletter/',
+      '---',
+      '',
+    ].join('\n'),
+    'utf8',
+  );
+
+  try {
+    execFileSync(
+      process.execPath,
+      [
+        BUILD_SCRIPT,
+        issuePath,
+        outputName,
+        `--repo-root=${REPO_ROOT}`,
+        `--output-dir=${outputDir}`,
+        '--no-open',
+      ],
+      {
+        encoding: 'utf8',
+        env: {
+          ...process.env,
+          NFL_EDITORIAL_ADS_PATH: adsPath,
+        },
+      },
+    );
+
+    const builtHtmlPath = path.join(outputDir, `${outputName}.html`);
+    assert.ok(existsSync(builtHtmlPath));
+
+    const html = readFileSync(builtHtmlPath, 'utf8');
+    assert.match(html, /https:\/\/imagedelivery\.net\/example\/sparse\/public/);
+    assert.doesNotMatch(html, /border-top:\s*1px solid #c9cfdb/);
+    assert.doesNotMatch(html, /border-bottom:\s*1px solid #c9cfdb/);
+    assert.doesNotMatch(html, /SPONSORED|Speculative Contrivance|See the fake ad/);
   } finally {
     rmSync(tempRoot, { recursive: true, force: true });
   }

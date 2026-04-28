@@ -119,6 +119,21 @@ async function validateImages(data) {
 
   console.log('🔍 Validating image URLs...');
 
+  const formatSectionReference = (section, sectionIndex) => {
+    const sectionType = section?.type ? String(section.type) : 'unknown-type';
+    const sectionTitle = section?.title ? String(section.title) : null;
+    return sectionTitle
+      ? `Section "${sectionTitle}" (${sectionType})`
+      : `Section ${sectionIndex + 1} (${sectionType})`;
+  };
+
+  const formatItemReference = (item, itemIndex) => {
+    const itemTitle = item?.title ? String(item.title) : null;
+    return itemTitle
+      ? `item ${itemIndex + 1} "${itemTitle}"`
+      : `item ${itemIndex + 1}`;
+  };
+
   // Check header images
   if (data.header?.featuredImage) {
     totalImages++;
@@ -167,11 +182,11 @@ async function validateImages(data) {
             if (result.valid) {
               validImages++;
             } else {
-              errors.push(`❌ Section "${section.title}" (${section.type}), item ${itemIndex + 1} "${item.title}": ${singleImageUrl} (${result.error || result.status})`);
+              errors.push(`❌ ${formatSectionReference(section, sectionIndex)}, ${formatItemReference(item, itemIndex)}: ${singleImageUrl} (${result.error || result.status})`);
             }
           } else if (item.image) {
             totalImages++;
-            errors.push(`❌ Section "${section.title}" (${section.type}), item ${itemIndex + 1} "${item.title}": ${JSON.stringify(item.image)} (URL missing)`);
+            errors.push(`❌ ${formatSectionReference(section, sectionIndex)}, ${formatItemReference(item, itemIndex)}: ${JSON.stringify(item.image)} (URL missing)`);
           }
           
           // Check multiple images (for aesthetically-pleasing section)
@@ -185,11 +200,11 @@ async function validateImages(data) {
                 if (result.valid) {
                   validImages++;
                 } else {
-                  errors.push(`❌ Section "${section.title}" (${section.type}), item ${itemIndex + 1}, image ${imgIndex + 1}: ${imageUrl} (${result.error || result.status})`);
+                  errors.push(`❌ ${formatSectionReference(section, sectionIndex)}, item ${itemIndex + 1}, image ${imgIndex + 1}: ${imageUrl} (${result.error || result.status})`);
                 }
               } else {
                 totalImages++;
-                errors.push(`❌ Section "${section.title}" (${section.type}), item ${itemIndex + 1}, image ${imgIndex + 1}: ${JSON.stringify(imageEntry)} (URL missing)`);
+                errors.push(`❌ ${formatSectionReference(section, sectionIndex)}, item ${itemIndex + 1}, image ${imgIndex + 1}: ${JSON.stringify(imageEntry)} (URL missing)`);
               }
             }
           }
@@ -202,7 +217,7 @@ async function validateImages(data) {
             if (result.valid) {
               validImages++;
             } else {
-              errors.push(`❌ Section "${section.title}" (${section.type}), item ${itemIndex + 1} GIF: ${item.gif} (${result.error || result.status})`);
+              errors.push(`❌ ${formatSectionReference(section, sectionIndex)}, item ${itemIndex + 1} GIF: ${item.gif} (${result.error || result.status})`);
             }
           }
         }

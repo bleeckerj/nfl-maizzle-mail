@@ -15,7 +15,10 @@ import {
   buildAdjacencyMailThemeTokens,
 } from '../lib/adjacency-mail/adjacency-mail-theme-tokens.mjs';
 import { buildAdjacencyJobsMailSectionStyleOverrides } from '../lib/adjacency-mail/adjacency-jobs-mail-theme-tokens.mjs';
-import { prepareNewsletterData as prepareNormalizedNewsletterData } from '../lib/newsletter-core/index.mjs';
+import {
+  prepareNewsletterData as prepareNormalizedNewsletterData,
+} from '../lib/newsletter-core/index.mjs';
+import { hardenEmailHtmlForMobile } from '../lib/newsletter-core/email-html-hardening.mjs';
 
 // Get script's directory for repo root detection
 const __filename = fileURLToPath(import.meta.url);
@@ -156,6 +159,20 @@ function normalizeInlineStyleAttributeWhitespace(html) {
       .trim();
     return `style=${quote}${normalized}${quote}`;
   });
+}
+
+function reportMobileFitWarnings(warnings) {
+  if (!Array.isArray(warnings) || warnings.length === 0) return;
+
+  console.log(`⚠️  Mobile fit warnings: ${warnings.length}`);
+  warnings.slice(0, 10).forEach((warning) => {
+    console.log(
+      `   - ${warning.type} (${warning.length} chars) in "${warning.context}": ${warning.token}`,
+    );
+  });
+  if (warnings.length > 10) {
+    console.log(`   … ${warnings.length - 10} more warning(s) omitted`);
+  }
 }
 
 function jsonPointerToDotPath(pointer) {
@@ -353,6 +370,8 @@ function pruneBuildInjectedFields(newsletterData) {
 
   delete newsletterData.mobileTextFontSize;
   delete newsletterData.mobileTextLineHeight;
+  delete newsletterData.mobileCaptionFontSize;
+  delete newsletterData.mobileCaptionLineHeight;
 
   if (newsletterData.header && typeof newsletterData.header === 'object') {
     delete newsletterData.header.contentStyles;
@@ -599,10 +618,8 @@ function hydrateAdBlockSections(newsletterData, repoRoot) {
     const resolvedLabel = markdownLabel
       ? markdownLabel
       : typeof ad.label === 'string' && ad.label.trim()
-      ? ad.label.trim()
-      : typeof ad.sponsor === 'string' && ad.sponsor.trim()
-        ? ad.sponsor.trim()
-        : 'Sponsored';
+        ? ad.label.trim()
+        : '';
 
     const hydratedItem = {
       adId,
@@ -1125,6 +1142,21 @@ async function validateImages(data) {
 
   console.log('🔍 Validating image URLs...');
 
+  const formatSectionReference = (section, sectionIndex) => {
+    const sectionType = section?.type ? String(section.type) : 'unknown-type';
+    const sectionTitle = section?.title ? String(section.title) : null;
+    return sectionTitle
+      ? `Section "${sectionTitle}" (${sectionType})`
+      : `Section ${sectionIndex + 1} (${sectionType})`;
+  };
+
+  const formatItemReference = (item, itemIndex) => {
+    const itemTitle = item?.title ? String(item.title) : null;
+    return itemTitle
+      ? `item ${itemIndex + 1} "${itemTitle}"`
+      : `item ${itemIndex + 1}`;
+  };
+
   // Check header images
   if (data.header?.featuredImage) {
     totalImages++;
@@ -1173,11 +1205,11 @@ async function validateImages(data) {
             if (result.valid) {
               validImages++;
             } else {
-              errors.push(`❌ Section "${section.title}" (${section.type}), item ${itemIndex + 1} "${item.title}": ${singleImageUrl} (${result.error || result.status})`);
+              errors.push(`❌ ${formatSectionReference(section, sectionIndex)}, ${formatItemReference(item, itemIndex)}: ${singleImageUrl} (${result.error || result.status})`);
             }
           } else if (item.image) {
             totalImages++;
-            errors.push(`❌ Section "${section.title}" (${section.type}), item ${itemIndex + 1} "${item.title}": ${JSON.stringify(item.image)} (URL missing)`);
+            errors.push(`❌ ${formatSectionReference(section, sectionIndex)}, ${formatItemReference(item, itemIndex)}: ${JSON.stringify(item.image)} (URL missing)`);
           }
           
           // Check multiple images (for aesthetically-pleasing section)
@@ -1191,11 +1223,11 @@ async function validateImages(data) {
                 if (result.valid) {
                   validImages++;
                 } else {
-                  errors.push(`❌ Section "${section.title}" (${section.type}), item ${itemIndex + 1}, image ${imgIndex + 1}: ${imageUrl} (${result.error || result.status})`);
+                  errors.push(`❌ ${formatSectionReference(section, sectionIndex)}, item ${itemIndex + 1}, image ${imgIndex + 1}: ${imageUrl} (${result.error || result.status})`);
                 }
               } else {
                 totalImages++;
-                errors.push(`❌ Section "${section.title}" (${section.type}), item ${itemIndex + 1}, image ${imgIndex + 1}: ${JSON.stringify(imageEntry)} (URL missing)`);
+                errors.push(`❌ ${formatSectionReference(section, sectionIndex)}, item ${itemIndex + 1}, image ${imgIndex + 1}: ${JSON.stringify(imageEntry)} (URL missing)`);
               }
             }
           }
@@ -1208,7 +1240,7 @@ async function validateImages(data) {
             if (result.valid) {
               validImages++;
             } else {
-              errors.push(`❌ Section "${section.title}" (${section.type}), item ${itemIndex + 1} GIF: ${item.gif} (${result.error || result.status})`);
+              errors.push(`❌ ${formatSectionReference(section, sectionIndex)}, item ${itemIndex + 1} GIF: ${item.gif} (${result.error || result.status})`);
             }
           }
         }
@@ -1350,8 +1382,16 @@ async function buildNewsletter() {
   console.log(`🏗️  Output: ${outputName}.html`);
   console.log(`📍 Repo: ${REPO_ROOT}`);
 
+  const authorFacingNewsletterJsonPath = repoPath(REPO_ROOT, 'data/newsletter.json');
+  const inputUsesAuthorFacingNewsletterJson =
+    !isMarkdown && path.resolve(inputPath) === path.resolve(authorFacingNewsletterJsonPath);
   let dataNewsletterJson = null;
   let originalNewsletterJsonRaw = null;
+  const priorNewsletterJsonRaw = fs.existsSync(authorFacingNewsletterJsonPath)
+    ? fs.readFileSync(authorFacingNewsletterJsonPath, 'utf8')
+    : null;
+  const shouldRestorePriorNewsletterJson =
+    isMarkdown || !inputUsesAuthorFacingNewsletterJson;
   const finalOutputPath = path.join(outputDir, `${outputName}.html`);
   const existingOutputRawBeforeBuild = fs.existsSync(finalOutputPath)
     ? fs.readFileSync(finalOutputPath, 'utf8')
@@ -1370,21 +1410,20 @@ async function buildNewsletter() {
       }
       
       // Run markdown to JSON conversion with error handling
-      const dataNewsletterJson = repoPath(REPO_ROOT, 'data/newsletter.json');
       const mdToJsonScript = repoPath(REPO_ROOT, 'scripts/md_to_json.mjs');
       try {
-        execSync(`node ${mdToJsonScript} ${inputPath} ${dataNewsletterJson} --template=${templateName}`, { 
+        execSync(`node ${mdToJsonScript} ${inputPath} ${authorFacingNewsletterJsonPath} --template=${templateName}`, { 
           stdio: 'inherit',
           cwd: REPO_ROOT
         });
         
         // Verify the conversion worked
-        if (!fs.existsSync(dataNewsletterJson)) {
+        if (!fs.existsSync(authorFacingNewsletterJsonPath)) {
           throw new Error('Markdown conversion failed - newsletter.json not created');
         }
         
         // After conversion, ensure the template is set correctly in the JSON
-        const newsletterData = JSON.parse(fs.readFileSync(dataNewsletterJson, 'utf8'));
+        const newsletterData = JSON.parse(fs.readFileSync(authorFacingNewsletterJsonPath, 'utf8'));
         
         // If template was provided via CLI, enforce it. Otherwise respect what's in the JSON (from frontmatter)
         if (templateArg) {
@@ -1393,7 +1432,7 @@ async function buildNewsletter() {
           templateName = newsletterData.template;
         }
         
-        fs.writeFileSync(dataNewsletterJson, JSON.stringify(newsletterData, null, 2));
+        fs.writeFileSync(authorFacingNewsletterJsonPath, JSON.stringify(newsletterData, null, 2));
         
         console.log('✅ Markdown converted successfully');
         
@@ -1411,21 +1450,23 @@ async function buildNewsletter() {
       templateName = data.template || 'wirecutter';
       
       // Copy data file to newsletter.json
-      dataNewsletterJson = repoPath(REPO_ROOT, 'data/newsletter.json');
+      dataNewsletterJson = authorFacingNewsletterJsonPath;
       fs.copyFileSync(inputPath, dataNewsletterJson);
     }
 
-    dataNewsletterJson = repoPath(REPO_ROOT, 'data/newsletter.json');
+    dataNewsletterJson = authorFacingNewsletterJsonPath;
     console.log(`🎨 Template: "${templateName}"`);
     console.log(`📊 Newsletter: "${JSON.parse(fs.readFileSync(dataNewsletterJson, 'utf8')).title}"`);
 
     // Load newsletter data and display color theme
     const sourceNewsletterData = JSON.parse(fs.readFileSync(dataNewsletterJson, 'utf8'));
 
-    // Remove prior run-injected fields before preserving the JSON file so the
-    // build can always restore a clean author-facing source payload.
-    pruneBuildInjectedFields(sourceNewsletterData);
-    originalNewsletterJsonRaw = `${JSON.stringify(sourceNewsletterData, null, 2)}\n`;
+    if (!shouldRestorePriorNewsletterJson) {
+      // Remove prior run-injected fields before preserving the JSON file so the
+      // build can always restore a clean author-facing source payload.
+      pruneBuildInjectedFields(sourceNewsletterData);
+      originalNewsletterJsonRaw = `${JSON.stringify(sourceNewsletterData, null, 2)}\n`;
+    }
 
     const newsletterData = prepareNormalizedNewsletterData(sourceNewsletterData, {
       repoRoot: REPO_ROOT,
@@ -1729,7 +1770,9 @@ async function buildNewsletter() {
               : safeUsedConfig.contentStyles;
             const sectionDescStyles = (section.descriptionStyles && Object.keys(section.descriptionStyles).length > 0)
               ? section.descriptionStyles
-              : section.contentStyles;
+              : section.type === 'ad-block'
+                ? {}
+                : section.contentStyles;
             const descStyles = { ...templateDescStyles, ...sectionDescStyles };
             if (descStyles && Object.keys(descStyles).length > 0) {
               const contentStyles = descStyles;
@@ -1742,6 +1785,16 @@ async function buildNewsletter() {
               const newCSSString = cssProperties.join('; ');
               desc = desc.replace(/<p(\s[^>]*)?>/gi, (match, attrs) => {
                 attrs = attrs || '';
+                if (section.type === 'ad-block') {
+                  const classMatch = attrs.match(/class="([^"]*)"/i);
+                  if (classMatch) {
+                    if (!classMatch[1].includes('mob-text')) {
+                      attrs = attrs.replace(/class="([^"]*)"/i, `class="$1 mob-text"`);
+                    }
+                  } else {
+                    attrs = ` class="mob-text"${attrs}`;
+                  }
+                }
                 const styleMatch = attrs.match(/style="([^"]*)"/i);
                 if (styleMatch) {
                   let existingStyle = styleMatch[1];
@@ -1814,6 +1867,7 @@ async function buildNewsletter() {
 
           // Expose headingStyles/linkStyles for template use with sane defaults
           const defaultHeading = { fontFamily: "'Ubuntu', sans-serif", fontSize: '18px', lineHeight: '23px', fontWeight: '600', color: '#000000' };
+          const defaultSectionHeaderHeading = { fontFamily: "'Ubuntu', sans-serif", fontSize: '21px', lineHeight: '23px', fontWeight: '600', color: '#000000' };
           const defaultLink = { textDecoration: 'underline', fontWeight: '400', color: theme?.linkAccent || '#707070' };
           const defaultLabel = {
             fontFamily: 'Geist, ui-sans-serif, sans-serif',
@@ -1832,8 +1886,16 @@ async function buildNewsletter() {
           const templateLabelStyles = safeUsedConfig.labelStyles && typeof safeUsedConfig.labelStyles === 'object'
             ? { ...safeUsedConfig.labelStyles }
             : {};
+          const incomingSectionHeaderHeadingStyles = section.sectionHeaderHeadingStyles && typeof section.sectionHeaderHeadingStyles === 'object'
+            ? { ...section.sectionHeaderHeadingStyles }
+            : {};
+          const templateSectionHeaderHeadingStyles = safeUsedConfig.sectionHeaderHeadingStyles && typeof safeUsedConfig.sectionHeaderHeadingStyles === 'object'
+            ? { ...safeUsedConfig.sectionHeaderHeadingStyles }
+            : {};
           section.labelStyles = { ...templateLabelStyles, ...incomingLabelStyles };
+          section.sectionHeaderHeadingStyles = { ...templateSectionHeaderHeadingStyles, ...incomingSectionHeaderHeadingStyles };
           section.headingStylesInline = toCssString({ ...defaultHeading, ...section.headingStyles });
+          section.sectionHeaderHeadingStylesInline = toCssString({ ...defaultSectionHeaderHeading, ...section.sectionHeaderHeadingStyles });
           section.linkStylesInline = toCssString({ ...defaultLink, ...section.linkStyles }, theme);
           section.labelStylesInline = toCssString({ ...defaultLabel, ...section.labelStyles });
         const usingFallback = !sectionConfig;
@@ -2221,6 +2283,20 @@ async function buildNewsletter() {
         }
       }
 
+      if (mobileAdj.captionStyles) {
+        const mc = mobileAdj.captionStyles;
+        if (mc.fontSize) {
+          newsletterData.mobileCaptionFontSize = mc.fontSize;
+        }
+        if (mc.lineHeight) {
+          newsletterData.mobileCaptionLineHeight = mc.lineHeight;
+        }
+        const setProps = [mc.fontSize && 'fontSize', mc.lineHeight && 'lineHeight'].filter(Boolean);
+        if (setProps.length) {
+          console.log(`📱 Mobile caption overrides: ${setProps.join(', ')} → .mob-caption in media query (from globalOverrides.mobileAdjustments)`);
+        }
+      }
+
       const introContentConfig = sectionStyles.sectionStyles
         ? sectionStyles.sectionStyles['intro-content'] ||
           sectionStyles.sectionStyles.introContent ||
@@ -2397,9 +2473,18 @@ async function buildNewsletter() {
     const builtHtmlRaw = normalizeInlineStyleAttributeWhitespace(
       fs.readFileSync(builtNewsletterPath, 'utf8'),
     );
+    const hardenedBuiltHtml = hardenEmailHtmlForMobile(builtHtmlRaw, {
+      longTokenThreshold: 35,
+    });
+    if (hardenedBuiltHtml.breakInsertions > 0) {
+      console.log(
+        `📱 Inserted ${hardenedBuiltHtml.breakInsertions} mobile break opportunity marker(s) in visible content`,
+      );
+    }
+    reportMobileFitWarnings(hardenedBuiltHtml.warnings);
     const { content: finalOutputRaw, preservedFrontmatter } = mergeFrontmatterWithHtml(
       existingOutputRawBeforeBuild,
-      builtHtmlRaw,
+      hardenedBuiltHtml.html,
     );
     fs.writeFileSync(finalOutputPath, finalOutputRaw, 'utf8');
     if (preservedFrontmatter) {
@@ -2427,14 +2512,30 @@ async function buildNewsletter() {
         console.log('⚠️  Could not auto-open file (you can open it manually)');
       }
     }
-    if (dataNewsletterJson && originalNewsletterJsonRaw !== null) {
-      fs.writeFileSync(dataNewsletterJson, originalNewsletterJsonRaw);
+    if (dataNewsletterJson) {
+      if (shouldRestorePriorNewsletterJson) {
+        if (priorNewsletterJsonRaw !== null) {
+          fs.writeFileSync(dataNewsletterJson, priorNewsletterJsonRaw);
+        } else if (fs.existsSync(dataNewsletterJson)) {
+          fs.unlinkSync(dataNewsletterJson);
+        }
+      } else if (originalNewsletterJsonRaw !== null) {
+        fs.writeFileSync(dataNewsletterJson, originalNewsletterJsonRaw);
+      }
     }
 
   } catch (error) {
-    if (dataNewsletterJson && originalNewsletterJsonRaw !== null) {
+    if (dataNewsletterJson) {
       try {
-        fs.writeFileSync(dataNewsletterJson, originalNewsletterJsonRaw);
+        if (shouldRestorePriorNewsletterJson) {
+          if (priorNewsletterJsonRaw !== null) {
+            fs.writeFileSync(dataNewsletterJson, priorNewsletterJsonRaw);
+          } else if (fs.existsSync(dataNewsletterJson)) {
+            fs.unlinkSync(dataNewsletterJson);
+          }
+        } else if (originalNewsletterJsonRaw !== null) {
+          fs.writeFileSync(dataNewsletterJson, originalNewsletterJsonRaw);
+        }
       } catch (restoreError) {
         console.error(`⚠️  Failed to restore source JSON: ${restoreError.message}`);
       }

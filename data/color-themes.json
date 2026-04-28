@@ -73,11 +73,12 @@
         "indie-mag": "#E5EFF1",
         "indie-mag-single-column": "#E5EFF1",
         "books-accessories": "#eeecde", 
-        "food-for-thought": "#FAECDC",
+        "food-for-thought": "#f6f3ef",
         "introAside": "#F4F6F8",
         "aesthetically-pleasing": "#e6e7e9",
         "classifieds": "#f0f0f0",
-        "animated-image": "#aafafa"
+        "animated-image": "#aafafa",
+        "dispatch": "#e6e8e5"
       },
       "accent": "#4a7c59",
       "linkAccent": "#1c1c1c"

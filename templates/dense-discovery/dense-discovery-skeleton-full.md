@@ -4,6 +4,33 @@ title: Newsletter Title
 preheader: Short preview text that appears in email clients
 ogImage: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=900?format=webp
 ogImageAltText: Open graph preview image for this newsletter
+socialCard:
+  # Export metadata for newsletter social/platform cards. This does not render in the email itself.
+  title: Newsletter Title
+  subtitle: Short preview text that appears in email clients
+  kicker: Welcome
+  backgroundImage: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=900?format=webp
+  logoUrl: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=200?format=webp
+  titleFont: nfl-title-untitled
+  subtitleFont: nfl-subtitle
+  kickerFont: nfl-kicker
+  backgroundOpacity: 1
+  backgroundHueRotate: 0
+  backgroundSaturation: 1.08
+  overlayStrength: 0.46
+  imageBrightness: 0.7
+  textColor: '#f5f2eb'
+  mutedTextColor: 'rgba(255,255,255,0.82)'
+  kickerColor: '#ffb000'
+  animation:
+    mode: none
+    animeModule: deterministic-orbit
+    durationMs: 2400
+    fps: 8
+    loop: true
+    posterFrame: 0.5
+    disableForPresets:
+    - 15x9
 sectionStylesFile: templates/dense-discovery/section-styles.json
 colorTheme: 'winter'
 intro:
@@ -103,6 +130,8 @@ sections:
     readMoreText: Read source →
     readMoreLink: https://example.com
 - type: ad-block
+  title: This Week's Partner
+  description: <p>Optional framing copy for the ad slot.</p>
   items:
   - adId: fashion-8bit-pants-interstitial
 - type: apps-sites
@@ -298,6 +327,10 @@ sections:
 footer:
   emailShare: mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2026/w50-y25/
   newsletterSubscribeLink: https://nearfuturelaboratory.com/newsletter/
+  footerCta:
+    variant: default
+  aboutLabel: About Julian Bleecker
+  aboutUrl: https://julianbleecker.com/
   logo: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=200?format=webp
   logoLink: https://nearfuturelaboratory.com
   socialLinks:
@@ -339,12 +372,6 @@ footer:
   unsubscribeLink: '[unsubscribe]'
   shareUrl: https://nearfuturelaboratory.com/newsletters/2026/w50-y25
   archiveUrl: https://nearfuturelaboratory.com/newsletters
-  gratitude: This email template is a tuned up fork with a Markdown-JSON-Python-Maizzle
-    based production workflow. It's a work-in-progress building on a refactor of the
-    <a href='https://densediscovery.com'>Dense Discovery</a> newsletter's look and
-    vibe, created by <a href='https://www.brizk.com'>Kai Brach</a>. I have been a
-    paid ‘friend of Dense Discovery’ for, well..I'm not sure how many years now. It's
-    a great newsletter and I would encourage you to subscribe and become a paid member.
   address: © 2026 Near Future Laboratory<br>Venice Beach, California<br>United States
   colophon: Imagination is not a luxury. It’s an early-warning system for possibility.
 ---

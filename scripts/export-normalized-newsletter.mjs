@@ -3,7 +3,9 @@
 import path from 'node:path';
 import { parseArgs } from 'node:util';
 
-import { loadNewsletterSource } from '../lib/newsletter-core/index.mjs';
+import {
+  loadNewsletterSource,
+} from '../lib/newsletter-core/index.mjs';
 
 function printHelp() {
   console.log(

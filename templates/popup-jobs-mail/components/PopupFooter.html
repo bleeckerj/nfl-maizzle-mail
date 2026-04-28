@@ -17,6 +17,21 @@
           </tr>
         </if>
 
+        <if condition="jobPopupMail.footerCta">
+          <tr>
+            <td style="padding: 20px 20px 0 20px;">
+              <div style="font-family: {{ jobPopupMail.brand.theme.metaFontFamily }}; font-size: 11px; line-height: 1.4; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: {{ jobPopupMail.brand.theme.mutedColor }};">{{ jobPopupMail.footerCta.eyebrow }}</div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 10px 20px 0 20px;">
+              <div style="font-family: {{ jobPopupMail.brand.theme.bodyFontFamily }}; font-size: 15px; line-height: 1.7; color: {{ jobPopupMail.brand.theme.textColor }};">
+                {{{ jobPopupMail.footerCta.textHtml }}}
+              </div>
+            </td>
+          </tr>
+        </if>
+
         <if condition="jobPopupMail.primaryAction || jobPopupMail.secondaryAction">
           <tr>
             <td class="popup-jobs-mail-actions" style="padding: 18px 20px 0 20px;">
@@ -25,7 +40,7 @@
                   href="{{ jobPopupMail.primaryAction.url }}"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style="display: inline-block; margin: 0 12px 12px 0; padding: 12px 16px; text-decoration: none; font-family: {{ jobPopupMail.brand.theme.metaFontFamily }}; font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; background: {{ jobPopupMail.brand.theme.ctaPrimaryBackground }}; color: {{ jobPopupMail.brand.theme.ctaPrimaryText }}; border: 1px solid {{ jobPopupMail.brand.theme.ctaPrimaryBorder }};"
+                  style="display: inline-block; margin: 0 12px 12px 0; padding: 12px 16px; text-decoration: none; font-family: {{ jobPopupMail.brand.theme.metaFontFamily }}; font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; background: {{ jobPopupMail.brand.theme.ctaPrimaryBackground }}; color: {{ jobPopupMail.brand.theme.ctaPrimaryText }} !important; border: 1px solid {{ jobPopupMail.brand.theme.ctaPrimaryBorder }}; -webkit-text-fill-color: {{ jobPopupMail.brand.theme.ctaPrimaryText }};"
                 >{{ jobPopupMail.primaryAction.label }}</a>
               </if>
               <if condition="jobPopupMail.secondaryAction">
@@ -33,7 +48,7 @@
                   href="{{ jobPopupMail.secondaryAction.url }}"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style="display: inline-block; margin: 0 12px 12px 0; padding: 12px 16px; text-decoration: none; font-family: {{ jobPopupMail.brand.theme.metaFontFamily }}; font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; background: {{ jobPopupMail.brand.theme.ctaSecondaryBackground }}; color: {{ jobPopupMail.brand.theme.ctaSecondaryText }}; border: 1px solid {{ jobPopupMail.brand.theme.ctaSecondaryBorder }};"
+                  style="display: inline-block; margin: 0 12px 12px 0; padding: 12px 16px; text-decoration: none; font-family: {{ jobPopupMail.brand.theme.metaFontFamily }}; font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; background: {{ jobPopupMail.brand.theme.ctaSecondaryBackground }}; color: {{ jobPopupMail.brand.theme.ctaSecondaryText }} !important; border: 1px solid {{ jobPopupMail.brand.theme.ctaSecondaryBorder }}; -webkit-text-fill-color: {{ jobPopupMail.brand.theme.ctaSecondaryText }};"
                 >{{ jobPopupMail.secondaryAction.label }}</a>
               </if>
             </td>

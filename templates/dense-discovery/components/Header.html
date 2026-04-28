@@ -4,7 +4,7 @@
     <tr>
       <td align="center" bgcolor="{{ header.containerStyles.backgroundColor || themeColors.header || '#addcfa' }}" style="background-color: {{ header.containerStyles.backgroundColor || themeColors.header || '#addcfa' }};border-collapse: collapse;" valign="top">
         <!-- Fluid container constrained to 640px -->
-        <table border="0" cellpadding="0" cellspacing="0" class="header mobt0" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;max-width: 640px;padding-top: 20px;" width="640">
+        <table border="0" cellpadding="0" cellspacing="0" class="header mobt0" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;max-width: 640px;padding-top: {{ header.featuredImage ? '0' : '20px' }};" width="640">
           <tbody>
             <tr>
               <td align="left" style="border-collapse: collapse;">
@@ -57,9 +57,9 @@
                         </tr>
                       </if>
                       <tr>
-                        <td class="padt20 padr20 padb5 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 5px;padding-left: 20px;" valign="top">
+                        <td class="padt20 padr20 padb5 padl20" style="border-collapse: collapse;padding-top: 0;padding-right: 0;padding-bottom: 5px;padding-left: 0;" valign="top">
                           <p class="marb5" style="font-family: {{{ header.contentStyles.fontFamily || 'inherit' }}}; font-size: {{ header.contentStyles.artistFontSize || '16px' }}; line-height: {{ header.contentStyles.lineHeight || '23px' }}; font-weight: {{ header.contentStyles.fontWeight || '400' }}; color: {{ header.contentStyles.color || '#000000' }}; padding: 0; margin: 0; margin-bottom: 5px;">
-                            <img src="{{ header.featuredImage }}" alt="Featured" width="600" height="auto" class="img" style="-ms-interpolation-mode: bicubic;display: block;max-height: 900px;max-width: 600px;width: 100%;">
+                            <img src="{{ header.featuredImage }}" alt="Featured" width="640" height="auto" class="img" style="-ms-interpolation-mode: bicubic;display: block;max-height: 900px;max-width: 640px;width: 100%;">
                           </p>
                         </td>
                       </tr>
@@ -99,7 +99,7 @@
                   <table align="right" border="0" cellpadding="0" cellspacing="0" class="force-row" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;max-width: 416px;" width="416">
                     <tbody>
                       <tr>
-                        <td align="right" class="padt20 padr20 padb5 padl10" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 5px;padding-left: 10px;" valign="top">
+                        <td align="right" class="padt20 padr20 padb5 padl10" style="border-collapse: collapse;padding-top: 0;padding-right: 0;padding-bottom: 5px;padding-left: 0;" valign="top">
                           <if condition="header.featuredImage">
                             <p class="marb5" style="font-family: {{{ header.contentStyles.fontFamily || 'inherit' }}}; font-size: {{ header.contentStyles.artistFontSize || '16px' }}; line-height: {{ header.contentStyles.lineHeight || '23px' }}; font-weight: {{ header.contentStyles.fontWeight || '400' }}; color: {{ header.contentStyles.color || '#000000' }}; padding: 0; margin: 0; margin-bottom: 5px;">
                               <img src="{{ header.featuredImage }}" alt="Featured" width="386" height="auto" class="img" style="-ms-interpolation-mode: bicubic;display: block;max-height: 900px;max-width: 416px;width: 100%;">

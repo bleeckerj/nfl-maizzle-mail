@@ -3,8 +3,8 @@
   <tbody>
     <tr>
       <td align="center" bgcolor="{{ footer.containerStyles.backgroundColor || themeColors['footer'] || '#f2f2f2' }}" style="background-color: {{ footer.containerStyles.backgroundColor || themeColors['footer'] || '#f2f2f2' }};border-collapse: collapse;" valign="top">
-        <!-- 640px container -->
-        <table border="0" cellpadding="0" cellspacing="0" class="footer" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 640px;max-width: 640px;" width="640">
+        <!-- Fluid container constrained to 640px -->
+        <table border="0" cellpadding="0" cellspacing="0" class="footer" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;max-width: 640px;" width="640">
           <tbody>
             <tr>
               <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
@@ -19,6 +19,38 @@
                 </td>
               </tr>
             </if>
+            <if condition="footer.footerCta && footer.footerCta.enabled">
+              <tr>
+                <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 20px;" valign="top">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing: 0; border: 1px solid #d7dbe4; background: #f8fafc;" role="none">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 16px 16px 0 16px;">
+                          <p style="margin: 0 0 10px 0; padding: 0; font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; line-height: 1.4; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6e778a;">
+                            {{ footer.footerCta.eyebrow }}
+                          </p>
+                          <p style="margin: 0; padding: 0; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; line-height: 1.7; font-weight: 400; color: #364152;">
+                            {{ footer.footerCta.text }}
+                          </p>
+                        </td>
+                      </tr>
+                      <if condition="footer.footerCta.primaryAction || footer.footerCta.secondaryAction">
+                        <tr>
+                          <td style="padding: 14px 16px 16px 16px;">
+                            <if condition="footer.footerCta.primaryAction">
+                              <a href="{{ footer.footerCta.primaryAction.url }}" style="display: inline-block; margin: 0 12px 12px 0; padding: 12px 16px; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; background: #111111; color: #ffffff !important; border: 1px solid #111111; -webkit-text-fill-color: #ffffff;">{{ footer.footerCta.primaryAction.label }}</a>
+                            </if>
+                            <if condition="footer.footerCta.secondaryAction">
+                              <a href="{{ footer.footerCta.secondaryAction.url }}" style="display: inline-block; margin: 0 12px 12px 0; padding: 12px 16px; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; background: #ffffff; color: #111827 !important; border: 1px solid #d7d1c6; -webkit-text-fill-color: #111827;">{{ footer.footerCta.secondaryAction.label }}</a>
+                            </if>
+                          </td>
+                        </tr>
+                      </if>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </if>
             <tr>
               <td align="left" class="padt20 padr20 padl20" style="text-align: center;border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 20px;" valign="top">
                 <h1 class="padb15" style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;padding-bottom: 15px;">
@@ -27,7 +59,7 @@
                 <if condition="footer.shareUrl">
                   <p class="share" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #535353;padding: 15px 5px;margin: 0;margin-bottom: 15px;border: 1px solid #000000;background: #e0f458;text-align: center;">
                     <a href="{{ footer.shareUrl }}" style="text-decoration: underline;color: #535353 !important;">
-                      <strong style="font-family: 'Share Tech Mono', monospace;font-weight: 600;">{{ footer.shareUrl }}</strong>
+                      <strong style="font-family: 'Share Tech Mono', monospace;font-weight: 600;">View this issue online</strong>
                     </a>
                   </p>
                 </if>
@@ -156,7 +188,7 @@
               <tr>
                 <td align="center" class="padt20 padr20 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 20px;text-align: center;" valign="top">
                   <p style="font-family: 'Ubuntu', sans-serif; font-size: 14px;line-height: 18px;font-weight: 400;color: #999999;padding: 0;margin: 0;margin-bottom: 15px;font-style: italic;">
-                    {{{ footer.gratitude }}}
+                    {{{ footer.gratitudeHtml || footer.gratitude }}}
                   </p>
                 </td>
               </tr>

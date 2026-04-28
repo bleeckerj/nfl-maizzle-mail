@@ -19,6 +19,38 @@
                 </td>
               </tr>
             </if>
+            <if condition="footer.footerCta && footer.footerCta.enabled">
+              <tr>
+                <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 20px;" valign="top">
+                  <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing: 0; border: 1px solid #d7dbe4; background: #f8fafc;" role="none">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 16px 16px 0 16px;">
+                          <p style="margin: 0 0 10px 0; padding: 0; font-family: 'IBM Plex Sans', sans-serif; font-size: 11px; line-height: 1.4; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #6e778a;">
+                            {{ footer.footerCta.eyebrow }}
+                          </p>
+                          <p class="mob-text" style="margin: 0; padding: 0; font-family: 'IBM Plex Sans', sans-serif; font-size: 15px; line-height: 1.7; font-weight: 400; color: #364152;">
+                            {{ footer.footerCta.text }}
+                          </p>
+                        </td>
+                      </tr>
+                      <if condition="footer.footerCta.primaryAction || footer.footerCta.secondaryAction">
+                        <tr>
+                          <td style="padding: 14px 16px 16px 16px;">
+                            <if condition="footer.footerCta.primaryAction">
+                              <a href="{{ footer.footerCta.primaryAction.url }}" style="display: inline-block; margin: 0 12px 12px 0; padding: 12px 16px; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; background: #111111; color: #ffffff !important; border: 1px solid #111111; -webkit-text-fill-color: #ffffff;">{{ footer.footerCta.primaryAction.label }}</a>
+                            </if>
+                            <if condition="footer.footerCta.secondaryAction">
+                              <a href="{{ footer.footerCta.secondaryAction.url }}" style="display: inline-block; margin: 0 12px 12px 0; padding: 12px 16px; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; background: #ffffff; color: #111827 !important; border: 1px solid #d7d1c6; -webkit-text-fill-color: #111827;">{{ footer.footerCta.secondaryAction.label }}</a>
+                            </if>
+                          </td>
+                        </tr>
+                      </if>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </if>
             <tr>
               <td align="left" class="padt20 padr20 padl20" style="text-align: center;border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 20px;" valign="top">
                 <h1 class="padb15" style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;padding-bottom: 15px;">
@@ -27,7 +59,7 @@
                 <if condition="footer.shareUrl">
                   <p class="share" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 15px 5px;margin: 0;margin-bottom: 15px;border: 1px solid #5f5f5f;background: #f8f8f8;text-align: center;">
                     <a href="{{ footer.shareUrl }}" style="text-decoration: underline;color: #000000 !important;">
-                      <strong style="font-weight: 600;">{{ footer.shareUrl }}</strong>
+                      <strong style="font-weight: 600;">View this issue online</strong>
                     </a>
                   </p>
                 </if>
@@ -40,7 +72,7 @@
                 <if condition="footer.newsletterSubscribeLink">
                 <br/><a class="small" href="{{ footer.newsletterSubscribeLink || '#' }}" style="text-decoration: underline;font-size: 14px;line-height: 19px;color: #000000 !important;">Subscribe to the newsletter</a> →
                 </if>
-                <br/><a class="small" href="https://nearfuturelaboratory.com/connect/" style="text-decoration: underline; font-size: 14px; line-height: 19px; color: #000000 !important;">Schedule a consultation call</a> →
+                <br/><a class="small" href="{{ footer.aboutUrl || 'https://julianbleecker.com/' }}" style="text-decoration: underline; font-size: 14px; line-height: 19px; color: #000000 !important;">{{ footer.aboutLabel || 'About Julian Bleecker' }}</a> →
               </td>
             </tr>
             <tr>
@@ -160,7 +192,7 @@
               <tr>
                 <td align="center" class="padt20 padr20 padl20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 20px;text-align: center;" valign="top">
                   <p style="font-family: 'Ubuntu', sans-serif; font-size: 14px;line-height: 18px;font-weight: 400;color: #999999;padding: 0;margin: 0;margin-bottom: 15px;font-style: italic;">
-                    {{{ footer.gratitude }}}
+                    {{{ footer.gratitudeHtml || footer.gratitude }}}
                   </p>
                 </td>
               </tr>
@@ -177,7 +209,7 @@
                     <a href="{{ footer.unsubscribeLink }}" style="text-decoration: underline;color: #888 !important;">Unsubscribe</a><br>
                   </if>
                   <if condition="footer.archiveUrl">
-                    <a href="{{ footer.archiveUrl }}" style="text-decoration: underline;color: #888 !important;">Browse older issues</a><br>
+                    <a href="{{ footer.archiveUrl }}" style="text-decoration: underline;color: #888 !important;">{{ footer.archiveLabel || 'Browse older issues' }}</a><br>
                   </if>
                   Icons by <a href="https://icons8.com" style="text-decoration: underline;color: #888 !important;">Icons8</a><br>
                 </p>
