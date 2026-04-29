@@ -122,6 +122,60 @@ test('prepareNewsletterData accepts ad-block source items under strict schema va
   });
 });
 
+test('prepareNewsletterData rejects raw ad-block image fields under strict schema validation', () => {
+  assert.throws(
+    () =>
+      prepareNewsletterData(
+        {
+          template: 'dense-discovery',
+          title: 'Strict Schema Ad Image Test',
+          sections: [
+            {
+              type: 'ad-block',
+              title: 'Partner Signal',
+              items: [
+                {
+                  adId: 'comedy-ad-01',
+                  image: 'https://example.com/raw-ad-image.webp',
+                },
+              ],
+            },
+          ],
+        },
+        { repoRoot: REPO_ROOT, templateName: 'dense-discovery', strictSchema: true, logger: { log() {} } },
+      ),
+    /strict mode/,
+  );
+});
+
+test('prepareNewsletterData accepts standalone image sections under strict schema validation', () => {
+  const prepared = prepareNewsletterData(
+    {
+      template: 'dense-discovery',
+      title: 'Strict Schema Image Section Test',
+      sections: [
+        {
+          type: 'image',
+          title: 'Visual Note',
+          items: [
+            {
+              image: {
+                src: 'https://example.com/standalone.webp',
+                alt: 'Standalone visual',
+                caption: 'A standalone image.',
+              },
+            },
+          ],
+        },
+      ],
+    },
+    { repoRoot: REPO_ROOT, templateName: 'dense-discovery', strictSchema: true, logger: { log() {} } },
+  );
+
+  assert.equal(prepared.sections[0].type, 'image');
+  assert.equal(prepared.sections[0].items[0].image.src, 'https://example.com/standalone.webp');
+});
+
 test('prepareNewsletterData promotes ad-block inventory titles to section headers by default', () => {
   withTempRoots(({ repoRoot }) => {
     const prepared = prepareNewsletterData(

@@ -148,6 +148,15 @@ SECTION_DEFINITIONS = {
             'optional': ['title', 'description', 'link']
         },
         'example_items': 1
+    },
+    'image': {
+        'description': 'Standalone image section',
+        'section_fields': ['type', 'title'],
+        'item_fields': {
+            'required': ['image'],
+            'optional': ['title', 'description', 'link']
+        },
+        'example_items': 1
     }
 }
 

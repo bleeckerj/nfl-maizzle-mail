@@ -397,6 +397,13 @@ function findTypedSectionVariant(schema, type) {
   );
 }
 
+function findTypedSectionVariantEntry(schema, type) {
+  const variants = schema?.properties?.sections?.items?.allOf;
+  if (!Array.isArray(variants)) return null;
+
+  return variants.find((variant) => variant?.if?.properties?.type?.const === type) || null;
+}
+
 /**
  * The template scan can only see fields read directly by Maizzle templates.
  * Some authoring-only keys are valid before normalization or hydration, so we
@@ -408,14 +415,59 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
       schema.properties[rootKey] = {};
     }
   }
+  schema.properties.socialCard = { type: ['object', 'null'], additionalProperties: true };
+  const footerCtaSchema = schema.properties.footer?.properties?.footerCta;
+  if (footerCtaSchema?.properties && !footerCtaSchema.properties.variant) {
+    footerCtaSchema.properties.variant = {};
+  }
 
   const templateId = path.basename(path.dirname(entryAbsPath));
   if (templateId !== 'dense-discovery') return;
 
   const adBlockVariant = findTypedSectionVariant(schema, 'ad-block');
-  const adBlockItemProperties = adBlockVariant?.properties?.items?.items?.properties;
-  if (adBlockItemProperties && !adBlockItemProperties.adId) {
-    adBlockItemProperties.adId = {};
+  const adBlockItemSchema = adBlockVariant?.properties?.items?.items;
+  if (adBlockItemSchema?.properties) {
+    delete adBlockItemSchema.properties.image;
+    delete adBlockItemSchema.properties.imageAlt;
+    if (!adBlockItemSchema.properties.adId) {
+      adBlockItemSchema.properties.adId = {};
+    }
+  }
+
+  const sectionTypeEnum = schema?.properties?.sections?.items?.properties?.type?.enum;
+  if (Array.isArray(sectionTypeEnum) && !sectionTypeEnum.includes('image')) {
+    const animatedIndex = sectionTypeEnum.indexOf('animated-image');
+    sectionTypeEnum.splice(animatedIndex >= 0 ? animatedIndex + 1 : sectionTypeEnum.length, 0, 'image');
+  }
+
+  const variants = schema?.properties?.sections?.items?.allOf;
+  const animatedImageEntry = findTypedSectionVariantEntry(schema, 'animated-image');
+  if (Array.isArray(variants) && animatedImageEntry && !findTypedSectionVariantEntry(schema, 'image')) {
+    const imageEntry = JSON.parse(JSON.stringify(animatedImageEntry));
+    imageEntry.if.properties.type.const = 'image';
+    imageEntry.then.properties.type.const = 'image';
+    const animatedIndex = variants.indexOf(animatedImageEntry);
+    variants.splice(animatedIndex >= 0 ? animatedIndex + 1 : variants.length, 0, imageEntry);
+  }
+
+  const foodForThoughtVariant = findTypedSectionVariant(schema, 'food-for-thought');
+  const readMoreLinksItemSchema =
+    foodForThoughtVariant?.properties?.items?.items?.properties?.readMoreLinks?.items;
+  if (readMoreLinksItemSchema?.properties) {
+    readMoreLinksItemSchema.required = ['text', 'link'];
+  }
+
+  const indieMagSingleColumnVariant = findTypedSectionVariant(schema, 'indie-mag-single-column');
+  const indieMagSingleColumnItemSchema = indieMagSingleColumnVariant?.properties?.items?.items;
+  if (indieMagSingleColumnItemSchema?.properties?.image && indieMagSingleColumnItemSchema?.properties?.images) {
+    indieMagSingleColumnItemSchema.not = { required: ['image', 'images'] };
+  }
+
+  for (const variant of variants ?? []) {
+    const itemProperties = variant?.then?.properties?.items?.items?.properties;
+    if (itemProperties?.image) {
+      itemProperties.image = {};
+    }
   }
 }
 

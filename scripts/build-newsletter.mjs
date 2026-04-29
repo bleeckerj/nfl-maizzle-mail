@@ -554,6 +554,50 @@ function normalizeAdCopyHtml(copy) {
   return `<p>${trimmed}</p>`;
 }
 
+function isCommerceOverlayLockup(ad) {
+  return ad?.commerce?.presentation === 'overlay-lockup';
+}
+
+function buildCommerceOverlayLockupPayload(ad) {
+  const commerce = ad?.commerce && typeof ad.commerce === 'object' ? ad.commerce : {};
+  const lockup = commerce.lockup && typeof commerce.lockup === 'object' ? commerce.lockup : {};
+  const pricePosition = typeof lockup.pricePosition === 'string' ? lockup.pricePosition.trim() : 'bottom-left';
+  const rightPositionsByPrice = {
+    'top-left': 'top-right',
+    'top-right': 'top-right',
+    'bottom-left': 'bottom-right',
+    'bottom-right': 'bottom-right',
+  };
+  const requestedIconPosition = typeof lockup.iconPosition === 'string' ? lockup.iconPosition.trim() : '';
+  const iconPosition =
+    requestedIconPosition === 'top-right' || requestedIconPosition === 'bottom-right'
+      ? requestedIconPosition
+      : rightPositionsByPrice[pricePosition] ?? 'bottom-right';
+  const positionStyles = {
+    'top-left': 'left: 5.4%;top: 5.4%;',
+    'top-right': 'right: 5.4%;top: 5.4%;',
+    'bottom-left': 'left: 5.4%;bottom: 5.4%;',
+    'bottom-right': 'right: 5.4%;bottom: 5.4%;',
+  };
+  return {
+    priceText: typeof commerce.priceText === 'string' ? commerce.priceText.trim() : '',
+    icon: {
+      src: typeof commerce.icon?.src === 'string' ? commerce.icon.src.trim() : '',
+      altText: typeof commerce.icon?.altText === 'string' ? commerce.icon.altText.trim() : '',
+    },
+    lockup: {
+      aspectRatio: typeof lockup.aspectRatio === 'string' ? lockup.aspectRatio.trim() : '1x1',
+      snapshotSrc: typeof lockup.snapshotSrc === 'string' ? lockup.snapshotSrc.trim() : '',
+      snapshotAltText: typeof lockup.snapshotAltText === 'string' ? lockup.snapshotAltText.trim() : '',
+      pricePosition,
+      iconPosition,
+      pricePositionStyle: positionStyles[pricePosition] ?? positionStyles['bottom-left'],
+      iconPositionStyle: positionStyles[iconPosition] ?? positionStyles['top-right'],
+      textColor: typeof lockup.textColor === 'string' ? lockup.textColor.trim() : '#ff3048',
+    },
+  };
+}
+
 function hydrateAdBlockSections(newsletterData, repoRoot) {
   if (!newsletterData || !Array.isArray(newsletterData.sections)) return;
 
@@ -621,15 +665,29 @@ function hydrateAdBlockSections(newsletterData, repoRoot) {
         ? ad.label.trim()
         : '';
 
+    const isOverlayLockup = isCommerceOverlayLockup(ad);
+    const commerceOverlay = isOverlayLockup ? buildCommerceOverlayLockupPayload(ad) : null;
+    const overlaySnapshotSrc = commerceOverlay?.lockup.snapshotSrc || '';
+    const overlaySnapshotAltText = commerceOverlay?.lockup.snapshotAltText || '';
+
+    if (isOverlayLockup && !overlaySnapshotSrc) {
+      console.log(`⚠️  Ad "${adId}" is a commerce overlay lockup without commerce.lockup.snapshotSrc; using layered email fallback`);
+    }
+
     const hydratedItem = {
       adId,
       label: resolvedLabel,
       sponsor: typeof ad.sponsor === 'string' ? ad.sponsor.trim() : '',
       title: typeof ad.title === 'string' ? ad.title.trim() : '',
-      description: normalizeAdCopyHtml(resolvedCopy),
-      image: typeof ad.media?.src === 'string' ? ad.media.src.trim() : '',
-      imageAlt: typeof ad.media?.altText === 'string' ? ad.media.altText.trim() : '',
+      description: isOverlayLockup ? '' : normalizeAdCopyHtml(resolvedCopy),
+      image: overlaySnapshotSrc || (typeof ad.media?.src === 'string' ? ad.media.src.trim() : ''),
+      imageAlt: overlaySnapshotAltText || (typeof ad.media?.altText === 'string' ? ad.media.altText.trim() : ''),
     };
+
+    if (isOverlayLockup) {
+      hydratedItem.renderMode = overlaySnapshotSrc ? 'snapshot' : 'commerce-overlay-lockup';
+      hydratedItem.commerce = commerceOverlay;
+    }
 
     if (resolvedLinkUrl) {
       hydratedItem.link = resolvedLinkUrl;

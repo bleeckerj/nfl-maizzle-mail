@@ -25,6 +25,7 @@ sections:
 - Exactly one item is allowed in an `ad-block` section.
 - Unknown or missing `adId` fails the build with a clear error.
 - Email rendering ignores web-only variants (`mobile`, slot behavior, responsive layout, carousel/video/embed handling).
+- Commerce ads with `commerce.presentation: overlay-lockup` render as a square lockup. Prefer `commerce.lockup.snapshotSrc` so email receives a flattened image; without it, the template uses a layered fallback for preview/build support.
 
 ### Rendered hierarchy
 
@@ -35,6 +36,8 @@ sections:
 - Optional ad title inside the card when the author also supplied a separate section title
 - Optional ad copy
 - Optional footer with `item.sponsor` and CTA
+
+Commerce overlay lockups use the ad inventory `media.src` as the full-bleed image, `commerce.priceText` as the price, and `commerce.icon.src` as the transparent commerce brand mark.
 
 ### Defaults and style tuning
 

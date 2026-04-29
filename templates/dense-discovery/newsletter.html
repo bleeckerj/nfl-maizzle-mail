@@ -58,7 +58,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                     </if>
                     <tr>
                       <td style="border-collapse: collapse;padding: 0;">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};border: {{ section.containerStyles.borderWidth || '1px' }} {{ section.containerStyles.borderStyle || 'solid' }} {{ section.containerStyles.borderColor || '#c9cfdb' }};border-radius: {{ section.containerStyles.borderRadius || '0px' }};overflow: hidden;">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;background: transparent;">
                           <tbody>
                             <if condition="section.description">
                               <tr>
@@ -68,17 +68,49 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   </div>
                                 </td>
                               </tr>
+                              <tr>
+                                <td style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: {{ section.containerStyles.adDividerGap || '20px' }};background: {{ section.containerStyles.adDividerBackgroundColor || '#FFFFFF' }};"> </td>
+                              </tr>
                             </if>
-                            <each loop="item in section.items">
-                              <if condition="item.label">
+                            <tr>
+                              <td style="border-collapse: collapse;padding: 0;">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};border: {{ section.containerStyles.borderWidth || '1px' }} {{ section.containerStyles.borderStyle || 'solid' }} {{ section.containerStyles.borderColor || '#c9cfdb' }};border-radius: {{ section.containerStyles.borderRadius || '0px' }};overflow: hidden;">
+                                  <tbody>
+                                    <each loop="item in section.items">
+                                      <if condition="item.label">
+                                        <tr>
+                                          <td style="border-collapse: collapse;padding: {{ section.containerStyles.labelPadding || '12px 16px 8px 16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
+                                            <div style="{{{ section.labelStylesInline || '' }}}">{{ item.label }}</div>
+                                          </td>
+                                        </tr>
+                                      </if>
+
+                              <if condition="item.renderMode === 'commerce-overlay-lockup' && item.image && item.commerce">
                                 <tr>
-                                  <td style="border-collapse: collapse;padding: {{ section.containerStyles.labelPadding || '12px 16px 8px 16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
-                                    <div style="{{{ section.labelStylesInline || '' }}}">{{ item.label }}</div>
+                                  <td style="border-collapse: collapse;padding: {{ section.containerStyles.imagePadding || '0 12px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
+                                    <div style="position: relative;width: 100%;max-width: 608px;margin: 0 auto;line-height: 0;overflow: hidden;background: #f5f5f5;">
+                                      <if condition="item.link || item.readMoreLink">
+                                        <a href="{{ item.link || item.readMoreLink }}" style="display: block;position: relative;text-decoration: none;">
+                                          <img src="{{ item.image }}" alt="{{ item.imageAlt || item.title || 'Advertisement' }}" width="608" height="608" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 608px;height: auto;border: 0;">
+                                          <span style="position: absolute;{{ item.commerce.lockup.pricePositionStyle || 'left: 5.4%;bottom: 5.4%;' }}display: inline-block;font-family: Arial, Helvetica, sans-serif;font-size: 72px;line-height: .9;font-weight: 700;letter-spacing: 0;color: {{ item.commerce.lockup.textColor || '#ff3048' }};">{{ item.commerce.priceText }}</span>
+                                          <span style="position: absolute;{{ item.commerce.lockup.iconPositionStyle || 'right: 5.4%;bottom: 5.4%;' }}display: inline-block;">
+                                            <img src="{{ item.commerce.icon.src }}" alt="{{ item.commerce.icon.altText || '' }}" width="187" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: auto;max-width: 187px;height: auto;border: 0;">
+                                          </span>
+                                        </a>
+                                      </if>
+                                      <if condition="!(item.link || item.readMoreLink)">
+                                        <img src="{{ item.image }}" alt="{{ item.imageAlt || item.title || 'Advertisement' }}" width="608" height="608" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 608px;height: auto;border: 0;">
+                                        <span style="position: absolute;{{ item.commerce.lockup.pricePositionStyle || 'left: 5.4%;bottom: 5.4%;' }}display: inline-block;font-family: Arial, Helvetica, sans-serif;font-size: 72px;line-height: .9;font-weight: 700;letter-spacing: 0;color: {{ item.commerce.lockup.textColor || '#ff3048' }};">{{ item.commerce.priceText }}</span>
+                                        <span style="position: absolute;{{ item.commerce.lockup.iconPositionStyle || 'right: 5.4%;bottom: 5.4%;' }}display: inline-block;">
+                                          <img src="{{ item.commerce.icon.src }}" alt="{{ item.commerce.icon.altText || '' }}" width="187" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: auto;max-width: 187px;height: auto;border: 0;">
+                                        </span>
+                                      </if>
+                                    </div>
                                   </td>
                                 </tr>
                               </if>
 
-                              <if condition="item.image">
+                              <if condition="item.image && item.renderMode !== 'commerce-overlay-lockup'">
                                 <tr>
                                   <td style="border-collapse: collapse;padding: {{ section.containerStyles.imagePadding || '0 12px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
                                     <if condition="(typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('link')) || item.link || item.readMoreLink">
@@ -136,7 +168,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                 </tr>
                               </if>
 
-                              <if condition="item.renderMode !== 'snapshot' && item.title">
+                              <if condition="item.renderMode !== 'snapshot' && item.renderMode !== 'commerce-overlay-lockup' && item.title">
                                 <tr>
                                   <td style="border-collapse: collapse;padding: {{ section.containerStyles.titlePadding || '12px 16px 0 16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
                                     <if condition="item.link">
@@ -151,7 +183,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                 </tr>
                               </if>
 
-                              <if condition="item.renderMode !== 'snapshot' && item.description">
+                              <if condition="item.renderMode !== 'snapshot' && item.renderMode !== 'commerce-overlay-lockup' && item.description">
                                 <tr>
                                   <td style="border-collapse: collapse;padding: {{ section.containerStyles.copyPadding || '6px 16px 14px 16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
                                     <div style="font-family: {{ section.contentStyles.fontFamily || 'Geist, ui-sans-serif, sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '1.45' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#44506a' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 0;margin: 0;">
@@ -185,7 +217,11 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   </td>
                                 </tr>
                               </if>
-                            </each>
+                                    </each>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
                           </tbody>
                         </table>
                       </td>
@@ -1760,8 +1796,8 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           <!-- CLASSIFIEDS End -->
                         </if>
                         
-                        <if condition="section.type === 'animated-image'">
-                          <!-- GIF Start -->
+                        <if condition="section.type === 'animated-image' || section.type === 'image'">
+                          <!-- IMAGE Start -->
                           <tr>
                             <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
                           </tr>
@@ -1774,7 +1810,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             <tr>
                               <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors.animatedImage || '#fafafa' }};padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: center;">
                                 <if condition="item.image">
-                                  <img src="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('src')) ? item.image.src : item.image }}" alt="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('alt')) ? item.image.alt : (section.title || item.title || 'Animated image') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;height: auto;margin: 0 auto 15px auto;border-radius: 3%;">
+                                  <img src="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('src')) ? item.image.src : item.image }}" alt="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('alt')) ? item.image.alt : (section.title || item.title || 'Image') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px;height: auto;margin: 0 auto 15px auto;border-radius: 3%;">
                                   <if condition="typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('caption') && item.image.caption">
                                     <p class="image-caption mob-caption" style="margin: 8px 0 15px 0;padding: 0;font-family: 'IBM Plex Sans', sans-serif;font-size: 14px;line-height: 1.2;font-weight: 500;color: #495263;text-align: left;text-decoration: none !important;">{{{ item.image.caption }}}</p>
                                   </if>
@@ -1785,7 +1821,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                               </td>
                             </tr>
                           </each>
-                          <!-- GIF End -->
+                          <!-- IMAGE End -->
                         </if>
                       </each>
                       
