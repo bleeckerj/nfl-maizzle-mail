@@ -185,6 +185,7 @@
           "additionalProperties": false
         },
         "featuredImage": {},
+        "caption": {},
         "quote": {},
         "author": {},
         "contentStyles": {
@@ -400,12 +401,17 @@
                     "properties": {
                       "label": {},
                       "renderMode": {},
+                      "adRenderMode": {},
+                      "adSnapshotPreset": {},
                       "commerce": {
                         "type": "object",
                         "properties": {
+                          "presentation": {},
                           "lockup": {
                             "type": "object",
                             "properties": {
+                              "aspectRatio": {},
+                              "snapshotSrc": {},
                               "pricePositionStyle": {},
                               "textColor": {},
                               "iconPositionStyle": {}

@@ -2,7 +2,7 @@
 <table bgcolor="{{ header.containerStyles.backgroundColor || '#FFFFFF' }}" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="100%">
   <tbody>
     <tr>
-      <td align="center" bgcolor="{{ header.containerStyles.backgroundColor || themeColors.header || '#addcfa' }}" style="background-color: {{ header.containerStyles.backgroundColor || themeColors.header || '#addcfa' }};border-collapse: collapse;" valign="top">
+      <td align="center" bgcolor="{{ header.containerStyles.backgroundColor || themeColors.header || '#ffffff' }}" style="background-color: {{ header.containerStyles.backgroundColor || themeColors.header || '#ffffff' }};border-collapse: collapse;" valign="top">
         <!-- Fluid container constrained to 640px -->
         <table border="0" cellpadding="0" cellspacing="0" class="header mobt0" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;max-width: 640px;padding-top: {{ header.featuredImage ? '0' : '20px' }};" width="640">
           <tbody>
@@ -59,8 +59,11 @@
                       <tr>
                         <td class="padt20 padr20 padb5 padl20" style="border-collapse: collapse;padding-top: 0;padding-right: 0;padding-bottom: 5px;padding-left: 0;" valign="top">
                           <p class="marb5" style="font-family: {{{ header.contentStyles.fontFamily || 'inherit' }}}; font-size: {{ header.contentStyles.artistFontSize || '16px' }}; line-height: {{ header.contentStyles.lineHeight || '23px' }}; font-weight: {{ header.contentStyles.fontWeight || '400' }}; color: {{ header.contentStyles.color || '#000000' }}; padding: 0; margin: 0; margin-bottom: 5px;">
-                            <img src="{{ header.featuredImage }}" alt="Featured" width="640" height="auto" class="img" style="-ms-interpolation-mode: bicubic;display: block;max-height: 900px;max-width: 640px;width: 100%;">
+                            <img src="{{ header.featuredImage }}" alt="Featured" width="640" height="auto" class="img" style="-ms-interpolation-mode: bicubic;border: 0;border-radius: 10px;display: block;max-height: 900px;max-width: 640px;width: 100%;">
                           </p>
+                          <if condition="header.caption">
+                            <p class="image-caption mob-caption" style="margin: 8px 20px 12px 20px;padding: 0;font-family: 'IBM Plex Sans', sans-serif;font-size: 14px;line-height: 1.2;font-weight: 500;color: #495263;text-align: left;text-decoration: none !important;">{{{ header.caption }}}</p>
+                          </if>
                         </td>
                       </tr>
                     </tbody>
@@ -102,8 +105,11 @@
                         <td align="right" class="padt20 padr20 padb5 padl10" style="border-collapse: collapse;padding-top: 0;padding-right: 0;padding-bottom: 5px;padding-left: 0;" valign="top">
                           <if condition="header.featuredImage">
                             <p class="marb5" style="font-family: {{{ header.contentStyles.fontFamily || 'inherit' }}}; font-size: {{ header.contentStyles.artistFontSize || '16px' }}; line-height: {{ header.contentStyles.lineHeight || '23px' }}; font-weight: {{ header.contentStyles.fontWeight || '400' }}; color: {{ header.contentStyles.color || '#000000' }}; padding: 0; margin: 0; margin-bottom: 5px;">
-                              <img src="{{ header.featuredImage }}" alt="Featured" width="386" height="auto" class="img" style="-ms-interpolation-mode: bicubic;display: block;max-height: 900px;max-width: 416px;width: 100%;">
+                              <img src="{{ header.featuredImage }}" alt="Featured" width="386" height="auto" class="img" style="-ms-interpolation-mode: bicubic;border: 0;border-radius: 10px;display: block;max-height: 900px;max-width: 416px;width: 100%;">
                             </p>
+                            <if condition="header.caption">
+                              <p class="image-caption mob-caption align-left" style="margin: 8px 0 12px 0;padding: 0;font-family: 'IBM Plex Sans', sans-serif;font-size: 14px;line-height: 1.2;font-weight: 500;color: #495263;text-align: left;text-decoration: none !important;">{{{ header.caption }}}</p>
+                            </if>
                           </if>
                           <if condition="header.featuredArtist && header.featuredArtist.link">
                             <p class="marb0 mobb15 align-left" style="font-family: {{{ header.contentStyles.fontFamily || 'inherit' }}}; font-size: {{ header.contentStyles.artistFontSize || '16px' }}; line-height: {{ header.contentStyles.lineHeight || '23px' }}; font-weight: {{ header.contentStyles.fontWeight || '400' }}; color: {{ header.contentStyles.color || '#000000' }}; padding: 0; margin: 0; margin-bottom: 0;">

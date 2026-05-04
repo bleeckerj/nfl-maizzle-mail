@@ -1,19 +1,95 @@
 {
   "$schema": "../newsletter.schema.json",
   "template": "dense-discovery",
-  "title": "Sparse Ad Issue",
+  "title": "AI At The Farmer's Market",
+  "pubDate": {},
+  "preheader": "Anticipatory research, AI provenance, and the value of making weak signals tangible before strategy hardens.",
+  "ogImage": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/460588d3-8fc4-400a-36d1-d445d4d5b100/full?format=webp",
+  "ogImageAltText": "Banksy Flag Man",
+  "socialCard": {
+    "title": "AI At The Farmer's Market",
+    "subtitle": "This week — anticipatory research wanders around some agentic farms and an event tomorrow on organizational imagination that you won't want to miss if you want to make better decisions about navigating into and around the AI future. And bonus! A factory-fresh advertisement from a plausible agentic future.\n",
+    "kicker": "Welcome to Week 19",
+    "backgroundImage": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/4ef5e359-6de5-4859-0754-1792f7da7500/w=600?format=webp",
+    "logoUrl": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e98285d8-5856-4005-6fbd-1c322688e700/w=150?format=webp",
+    "titleFont": "nfl-title-untitled",
+    "subtitleFont": "nfl-subtitle",
+    "kickerFont": "nfl-kicker",
+    "backgroundOpacity": 0.8,
+    "backgroundHueRotate": 0,
+    "backgroundSaturation": 1.2,
+    "overlayStrength": 0.6,
+    "imageBrightness": 0.8,
+    "textColor": "#f5f2eb",
+    "mutedTextColor": "rgba(255,255,255,0.82)",
+    "kickerColor": "#ffb000",
+    "animation": {
+      "mode": "none",
+      "animeModule": "deterministic-orbit",
+      "durationMs": 2400,
+      "fps": 8,
+      "loop": true,
+      "posterFrame": 0.5,
+      "disableForPresets": [
+        "15x9"
+      ]
+    }
+  },
+  "sectionStylesFile": "templates/dense-discovery/section-styles.json",
+  "colorTheme": "winter",
+  "intro": {
+    "title": "AI At The Farmer's Market",
+    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2026/w19-y26",
+    "contentStyles": {
+      "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+      "fontSize": "16px",
+      "lineHeight": "1.2rem",
+      "fontWeight": "400",
+      "color": "#000000",
+      "textAlign": "left"
+    },
+    "content": "<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">A reminder for this week: on Tuesday, May 5, 2026, I’ll be joining Jay Hasbrouck for an EPIC People Learning Week fireside chat, <em>Following the Unfamiliar: Why Organizations Need to Cultivate Imagination</em>.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">This phrase — cultivate imagination — may sound softer than it actually is. Trust me.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">Inside organizations, imagination is not a vibe or a decorative capability, although many will treat it as such. Fluff. Expendable. But it is crucially a part of how a team keeps its strategic aperture open long enough such that the organization can notice what is changing right in front of itself before the change has settled into a category or a regulatory fight, or a new product/service segment. That is — before it's too late and you're playing catch-up.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">This is also where anticipatory research earns its keep.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">Formal research is good at clarifying what can be observed, measured, compared, and explained.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><em>Anticipatory</em> research extends that work by translating weak signals into things that can be handled: speculative prototypes, labels on produce, evocative product artifacts, policy notices, lottery ticket stubs, receipts, job postings, scenarios, and other concrete forms, tangible forms.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">The point is not to predict the future with theatrical confidence or as pure entertainment (although speculative prototypes are way more fun than PowerPoint decks!)</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">The point is to make an otherwise faint signal concrete enough that people can point at it, argue with it, pressure-test it, and use it as a better basis for strategic assessment. Especially when the signal is still mostly (or always) cultural.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">So, one of those signals has been hovering around AI for a while now: not just whether artificial intelligence “works”, but how its presence is interpreted in the things people buy, trust, eat, use, recommend, avoid, and feel good about.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">AI is becoming a kind of cultural ingredient - seasoning rather than the main course.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">It can be read as capability, efficiency, personalization, resilience, optimization. It can also be read as intervention, flattening, synthetic authorship, or a loss of taste, craft, provenance, and situated judgment.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">Living here in Venice Beach, adjacent to Hollywood, these concerns are tangible and real as the filmmaking and visual storytelling apparatus feels the drift away from convention.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">Those reactions are not yet a stable marketplace category. They are closer to dispositions. But marketplace tastes often begin this way: as small preferences, awkward language, arguments with no resolution, contradictory behaviors, and weak signals whose meaning is easy to lose because it has not yet become obvious.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">With that, today's Design Fiction Dispatch takes that tension into the farmer's market and the produce aisle. It imagines a near-enough world where “Agentic Agriculture” and “Heritage Farming” become competing ways of talking about food, flavor, terroir, climate resilience, trust, and the intervention of matrix math, algorithms and artificial intelligence.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">If read as fiction, I wrote a story about farming. But try reading it as anticipatory research because then it is a prototype for thinking about how AI provenance may become meaningful across markets long before standards, labels, or governance frameworks know what to do with it. (I added a 'things to look for' section in the notes — a bit of 'Where's Waldo?' to help you through it all and see the real value of these approaches.)</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">This is the useful work of speculative prototyping: it gives formal research a translation layer into artifacts, so uncertain implications can be explored before strategy hardens around them.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">It helps leadership teams see where language breaks, where consumer meaning forms, where policy questions are likely to surface, and where an organization may need to act before the trend has announced itself properly.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">If your team is trying to make sense of AI, governance, policy, product strategy, market taste, or some other unsettled condition, this is the sort of work I would like to help with: turning weak signals into tangible artifacts that make better conversations, sharper assessments, and more grounded decisions possible. Get in touch and let's see how I can help.</p></p>",
+    "containerStyles": {
+      "backgroundColor": null,
+      "padding": "0",
+      "borderRadius": "0px"
+    }
+  },
+  "header": {
+    "featuredImage": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/8857dcdc-fe21-449e-bc7b-8e43021e4300/w=600?format=webp",
+    "caption": "Banksy Flag Man",
+    "logoBottom": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp",
+    "logoTop": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp",
+    "containerStyles": {
+      "backgroundColor": null,
+      "padding": "20px"
+    },
+    "contentStyles": {
+      "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+      "fontSize": "18px",
+      "lineHeight": "23px",
+      "fontWeight": "400",
+      "color": "#000000",
+      "authorFontSize": "16px",
+      "authorFontWeight": "600",
+      "artistFontSize": "16px",
+      "anchorColor": "#000000"
+    }
+  },
   "sections": [
     {
       "type": "ad-block",
+      "title": "Tomorrow's Ads Today",
+      "description": "<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 17px !important; line-height: 1.55 !important; color: #344055 !important; text-align: left !important\">I use these speculative ads as prototypes because advertising is one of the more legible forms of future material culture.</p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 17px !important; line-height: 1.55 !important; color: #344055 !important; text-align: left !important\">An ad from a plausible future does more than describe a product or service. It shows what that future assumes people will want, what problems will feel urgent, what tradeoffs have become normal, and what kinds of stories organizations of all sorts will use to make those tradeoffs acceptable.</p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 17px !important; line-height: 1.55 !important; color: #344055 !important; text-align: left !important\">These are artifacts for thinking. They bring back the tone, aesthetics, promises, anxieties, and implied social contracts of a possible future, giving us a surface where assumptions become visible, consequences can be debated, and decisions can sharpen.</p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 17px !important; line-height: 1.55 !important; color: #344055 !important; text-align: left !important\">A speculative ad lets a team ask: if this existed, what would it mean? Who would it serve? What would it normalize? What would it obscure? What would we be committing to?</p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 17px !important; line-height: 1.55 !important; color: #344055 !important; text-align: left !important\">That is why I make them.</p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 17px !important; line-height: 1.55 !important; color: #344055 !important; text-align: left !important\">Here in the public newsletter, they are often more speculative fiction, sure. Entertainment.</p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 17px !important; line-height: 1.55 !important; color: #344055 !important; text-align: left !important\">But as an archetype of anticipatory strategy, they are incredibly powerful at turning abstract uncertainty into something people can react to, wonder about, create, argue with, and use to make better decisions.</p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 17px !important; line-height: 1.55 !important; color: #344055 !important; text-align: left !important\">If your team is working through an uncertain future, this kind of artifact can help guide decisions and make your proposition tangible and visible while your team is developing a shared understanding of the future you’re trying to create.</p>",
       "items": [
         {
-          "adId": "sparse-ad-01",
-          "label": "",
-          "sponsor": "",
+          "adId": "laborate-interstitial-01",
+          "label": "OMNICOM ADNET",
+          "sponsor": "NEAR FUTURE FOODSTUFFS",
           "title": "",
           "description": "",
-          "image": "https://imagedelivery.net/example/sparse/public",
-          "imageAlt": "Sparse ad image"
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5ddc9acf-2f68-44cd-874c-c75734076700/public",
+          "imageAlt": "Laborate Interstitial 01"
         }
       ],
       "containerStyles": {
@@ -85,55 +161,329 @@
       "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px !important; line-height: 23px !important; font-weight: 600 !important; color: #000000 !important",
       "linkStylesInline": "text-decoration: underline !important; font-weight: 400 !important; color: #44506a !important; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 12px !important; line-height: 1.35 !important; text-transform: uppercase !important; letter-spacing: 0.06em !important",
       "labelStylesInline": "font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 11px !important; line-height: 14px !important; font-weight: 400 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important"
+    },
+    {
+      "type": "sponsor",
+      "title": "Upcoming Online Event",
+      "containerStyles": {
+        "backgroundColor": "#ffecd0",
+        "padding": "15px 20px",
+        "borderRadius": "6px"
+      },
+      "items": [
+        {
+          "title": "Following the Unfamiliar: Why Organizations Need to Cultivate Imagination",
+          "link": "https://www.epicpeople.org/event/following-the-unfamiliar-why-organizations-need-to-cultivate-imagination/",
+          "subtitle": "A May 5 EPIC Learning Week fireside chat with Jay Hasbrouck",
+          "description": "<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important\">On Tuesday, May 5, 2026 (tomorrow!), I’ll join Jay Hasbrouck, Senior Staff Researcher at Google, for an EPIC Learning Week fireside chat about cultivating imagination as a practical organizational capability.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important\">The conversation sits directly beside this issue’s argument: that teams need ways to keep unfamiliar possibilities visible long enough to make better strategic choices, especially when speed, tooling, and institutional habits pull every weak signal back toward the familiar.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important\">We’ll talk about how researchers, designers, strategists, and engineers can make different kinds of thinking actionable without collapsing ambiguity too quickly.</p>",
+          "images": [
+            {
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e8a7c8c9-4ff7-4563-bf05-117cb21c4600/public",
+              "alt": "EPIC Learning Week graphic for Following the Unfamiliar with Julian Bleecker and Jay Hasbrouck",
+              "link": "https://www.epicpeople.org/event/following-the-unfamiliar-why-organizations-need-to-cultivate-imagination/"
+            }
+          ],
+          "readMoreText": "RSVP via EPIC →",
+          "readMoreLink": "https://www.epicpeople.org/event/following-the-unfamiliar-why-organizations-need-to-cultivate-imagination/"
+        }
+      ],
+      "contentStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "lineHeight": "1.2",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "_contentStyleOverrides": null,
+      "descriptionStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "lineHeight": "1.2",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "spacerBackgroundColor": "#ffe0b1",
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "19px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "labelStyles": {},
+      "sectionHeaderHeadingStyles": {},
+      "headingStylesInline": "font-family: inherit !important; font-size: 19px !important; line-height: 23px !important; font-weight: 600 !important; color: #000000 !important",
+      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px !important; line-height: 23px !important; font-weight: 600 !important; color: #000000 !important",
+      "linkStylesInline": "text-decoration: underline !important; font-weight: normal !important; color: #EE3BBB !important",
+      "labelStylesInline": "font-family: Geist, ui-sans-serif, sans-serif !important; font-size: 12px !important; line-height: 14px !important; font-weight: 300 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important"
+    },
+    {
+      "type": "dispatch",
+      "title": "Tomorrow's News Today",
+      "items": [
+        {
+          "title": "Is The Produce Aisle Having a “Raw Milk” Moment?",
+          "link": "https://theadjacency.com/p/heritage-produce-ai-standard-farming--2c8abe",
+          "subtitle": "AI-Standard Farming and Heritage Produce become a dispute over flavor, terroir, resilience, and algorithmic intervention.",
+          "description": "<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">The next Design Fiction Dispatch takes the question of AI provenance into the farmers market, where farms using “technology” — artificial intelligence, AI-based automation, farm management  via machine learning — promise fewer crop failures, better climate resilience, and more precise decision-making, while “heritage” growers point out that algorithmic intervention can flatten flavor, weaken the ineffable “terroir” of everything including vineyard grapes, and basically obscure the human judgment behind food.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">It’s a story about farming, and I chose that because it touches everyone. But the farming is also a metaphor that helps make sense of the way AI provenance may become meaningful across markets long before standards, labels, or policy & governance frameworks know what to do with it..which is basically where we are at now as regards AI in the terrain of creative practices.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">The point is not to decide whether the future belongs to “Agentic Ag” or “Heritage Farming”. The more useful question is how to accept that fields fo human endeavor all always have preferences like this. Whether raw vs. pasteurized, or sparkling vs. still, or digital “film” vs. chemical film — understanding the trade-offs and comprehending that this is a tension that will be with us for a while is the first step toward making better decisions about how to position, talk about, and govern AI.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">The work of speculative prototyping starts with understanding this point, then doing the hard work of making this legible in a compelling way so as to open up the discussions necessary to help inform decision making and point towards reasoned action.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">That legibility is the point. It’s the difference between a vague sense that something is changing and a tangible thing that people can point at, argue with, pressure-test, and use as a better basis for strategic assessment. It’s the difference between a weak signal that can be easily lost and a concrete artifact that can be used to explore implications, make better decisions, and take more reasoned action.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">Can you find the tension in this Design Fiction Dispatch? Look for the labelling, certifications representing policy choices, a food shopping habit, a trust signal, a piece of software indexing new kinds of machine-led automation, a new way of organizing human potential, a new basis for value, new kinds of jobs. They're all in here.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">Most importantly — making the surface upon which all of this lies one of congenial acceptance of different preferences. When our stories index on unrest, distrust, and conflict, we miss the point that these tensions are not going to resolve into a single winner. They are going to coexist for a long time, and the sooner we can get used to that, the better.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">Read as anticipatory research, the piece is a speculative prototype for a marketplace tension that may show up well beyond agriculture wherever AI becomes part of how things are made, described, trusted, and valued.</p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/d94c7505-10b5-4ada-0100-cbdaf5235200/w=600?format=webp",
+          "signalsLabel": "SIGNALS FROM AN ADJACENT NOW",
+          "tags": [
+            "AI agriculture",
+            "heritage produce",
+            "food systems",
+            "algorithmic governance",
+            "terroir",
+            "automation"
+          ],
+          "readMoreText": "Read the Dispatch →",
+          "readMoreLink": "https://theadjacency.com/p/heritage-produce-ai-standard-farming--2c8abe"
+        }
+      ],
+      "dispatchLabel": "A Design Fiction Dispatch",
+      "dispatchLink": "https://theadjacency.com/p/heritage-produce-ai-standard-farming--2c8abe",
+      "containerStyles": {
+        "backgroundColor": "#e6e8e5",
+        "padding": "15px 20px",
+        "borderRadius": "8px"
+      },
+      "contentStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "_contentStyleOverrides": null,
+      "descriptionStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "spacerBackgroundColor": "#d6dbd3",
+      "headingStyles": {
+        "fontFamily": "inherit",
+        "fontSize": "19px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "normal"
+      },
+      "labelStyles": {},
+      "sectionHeaderHeadingStyles": {},
+      "headingStylesInline": "font-family: inherit !important; font-size: 19px !important; line-height: 23px !important; font-weight: 600 !important; color: #000000 !important",
+      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px !important; line-height: 23px !important; font-weight: 600 !important; color: #000000 !important",
+      "linkStylesInline": "text-decoration: underline !important; font-weight: normal !important; color: #EE3BBB !important",
+      "labelStylesInline": "font-family: Geist, ui-sans-serif, sans-serif !important; font-size: 12px !important; line-height: 14px !important; font-weight: 300 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important"
+    },
+    {
+      "type": "food-for-thought",
+      "title": "Food For Thought",
+      "items": [
+        {
+          "title": "Apocalypse Early Warning System",
+          "link": "https://ews.kylemcdonald.net/releasable_aircraft_download",
+          "description": "<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">I’m watching a realtime “apocalypse early warning” Kyle McDonald cobbled. It's a dashboard that treats airborne private jets like a canary in the coal mine. At the moment it reports 546 planes up and about 5,362 people airborne, with an emergency level on a 1–5 scale and a last update at 2:30 PM PDT. The stats are oddly specific — altitudes, speeds, and aircraft types. It feel less like fiction and more like a monitoring system for human behavior. Reminds me of the cool data viz projects one used to see at Ars Electronica back when data was the new oil, and artists treated that ironically.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">The assumption here is that if a ton of PJs suddenly take to the sky, there's something a-foot in the world..maybe besides Davos. Think of it this way: if nothing else, it’s a sharp snapshot of how fast the sky can fill when people think the ground is about to disappear.</p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e9aec2fd-05dc-4e44-6c15-9b8e6c3c4f00/w=600?format=webp",
+          "channel": "digest-this-🥓",
+          "category": "Early Warning Systems",
+          "sharedBy": "julian",
+          "readMoreText": "Bug Out →",
+          "readMoreLink": "https://ews.kylemcdonald.net/",
+          "paywall": false
+        },
+        {
+          "title": "How To Future-Proof Your Career In The Age Of AI",
+          "link": "https://www.noemamag.com/why-a-liberal-arts-education-will-soon-be-more-valuable-than-ever/",
+          "description": "<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">I keep seeing the same fear: AI will erase white-collar work and leave people stranded. I don’t buy it. What I do believe is that the value of typing, drafting, and coding through a QWERTY interface is shrinking fast as models get better at context and intent. The winners won’t just “use AI”—they’ll lean into the human stuff AI struggles with: empathy, negotiation, persuasion, and trust. That’s how you stay employable when the cursor stops being your superpower.</p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/4756962e-f7ea-453d-fef4-902d407edb00/w=600?format=webp",
+          "channel": "digest-this-🥓",
+          "category": "The Real Value of Human Brains",
+          "sharedBy": "julian",
+          "readMoreText": "Shift Your Potential →",
+          "readMoreLink": "https://www.noemamag.com/why-a-liberal-arts-education-will-soon-be-more-valuable-than-ever/",
+          "paywall": false
+        }
+      ],
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "lineHeight": "23px",
+        "color": "#000000",
+        "textAlign": "left"
+      },
+      "_contentStyleOverrides": null,
+      "descriptionStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "lineHeight": "23px",
+        "color": "#000000",
+        "textAlign": "left"
+      },
+      "spacerBackgroundColor": "#e2ebf4",
+      "headingStyles": {
+        "fontFamily": "Workbench, IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "21px",
+        "fontWeight": "600",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "underline",
+        "fontWeight": "500",
+        "fontSize": "19px"
+      },
+      "labelStyles": {},
+      "sectionHeaderHeadingStyles": {},
+      "headingStylesInline": "font-family: Workbench, IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 21px !important; line-height: 23px !important; font-weight: 600 !important; color: #000000 !important",
+      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px !important; line-height: 23px !important; font-weight: 600 !important; color: #000000 !important",
+      "linkStylesInline": "text-decoration: underline !important; font-weight: 500 !important; color: #EE3BBB !important; font-size: 19px !important",
+      "labelStylesInline": "font-family: Geist, ui-sans-serif, sans-serif !important; font-size: 12px !important; line-height: 14px !important; font-weight: 300 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important"
     }
   ],
   "footer": {
+    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2026/w19-y26/",
     "newsletterSubscribeLink": "https://nearfuturelaboratory.com/newsletter/",
     "footerCta": {
       "enabled": true,
       "variant": "default",
-      "eyebrow": "For Decisions That Are Still Taking Shape",
-      "text": "I help leadership teams make possible futures tangible so they can see what they are actually committing to before the roadmap hardens.",
+      "eyebrow": "For Decisions In The Face Of Uncertainty",
+      "text": "I help strategic and executive leadership teams make possible futures tangible so they can make sense of the uncertain, the emerging, and the unfamiliar. A bit like an expedition guide who helps you see and navigate new terrain and territories before you have to walk through it.",
       "primaryAction": {
-        "label": "Start a Conversation",
+        "label": "Start a Chat",
         "url": "https://nearfuturelaboratory.com/contact"
       },
       "secondaryAction": {
         "label": "See How This Works",
         "url": "https://nearfuturelaboratory.com/services"
       }
-    }
+    },
+    "aboutLabel": "About Julian Bleecker",
+    "aboutUrl": "https://julianbleecker.com/",
+    "logo": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=200?format=webp",
+    "logoLink": "https://nearfuturelaboratory.com",
+    "socialLinks": {
+      "applepodcasts": [
+        {
+          "url": "https://podcasts.apple.com/us/podcast/near-future-laboratory-podcast/id1546452193",
+          "title": "Near Future Laboratory on Apple Podcasts"
+        }
+      ],
+      "spotify": [
+        {
+          "url": "https://open.spotify.com/show/1vHzwGE5J19LvXSo8M93MM",
+          "title": "Near Future Laboratory on Spotify"
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/bleeckerj",
+          "title": "Personal GitHub"
+        },
+        {
+          "url": "https://github.com/nearfuturelaboratory",
+          "title": "Near Future Laboratory GitHub"
+        },
+        {
+          "url": "https://github.com/omatainstruments",
+          "title": "Near Future Laboratory GitHub"
+        }
+      ],
+      "instagram": [
+        {
+          "url": "https://instagram.com/darthjulian",
+          "title": "Personal Instagram"
+        },
+        {
+          "url": "https://instagram.com/nearfuturelaboratory",
+          "title": "Company Instagram"
+        }
+      ],
+      "linkedin": [
+        {
+          "url": "https://linkedin.com/in/julianbleecker",
+          "title": "Personal LinkedIn"
+        },
+        {
+          "url": "https://www.linkedin.com/company/near-future-laboratory/",
+          "title": "Near Future Laboratory LinkedIn"
+        }
+      ],
+      "youtube": [
+        {
+          "url": "https://youtube.com/@nearfuturelaboratory",
+          "title": "YouTube Channel"
+        }
+      ],
+      "discord": [
+        {
+          "url": "https://patreon.com/nearfuturelaboratory",
+          "title": "Join Patreon to join the Discord Community"
+        }
+      ],
+      "patreon": [
+        {
+          "url": "https://patreon.com/nearfuturelaboratory",
+          "title": "Support me on Patreon"
+        }
+      ],
+      "substack": [
+        {
+          "url": "https://newsletter.substack.com",
+          "title": "Newsletter on Substack"
+        }
+      ]
+    },
+    "unsubscribeLink": "[unsubscribe]",
+    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2026/w19-y26",
+    "archiveUrl": "https://nearfuturelaboratory.com/newsletters",
+    "address": "© 2026 Near Future Laboratory<br>Venice Beach, California<br>United States",
+    "colophon": "Imagination is not a luxury. It’s an early-warning system for possibility."
   },
   "themeColors": {
-    "header": "#addcfa",
-    "sponsor": "#f8eccf",
-    "apps-sites": "#f0ffff",
-    "quote": "#d1eaf4",
-    "callout": "#d1eaf4",
-    "indie-mag": "#efe2f3",
+    "header": "#ffffff",
+    "sponsor": "#f0f8ff",
+    "apps-sites": "#ffffff",
+    "quote": "#e6f3ff",
+    "callout": "#e0f0ff",
+    "indie-mag": "#f5f8ff",
     "books-accessories": "#ffffff",
-    "food-for-thought": "#f2f2f2",
-    "introAside": "#f4f1ea",
+    "food-for-thought": "#f8fafc",
+    "introAside": "#f8fafc",
     "aesthetically-pleasing": "#ffffff",
-    "classifieds": "#def1ef",
+    "classifieds": "#e0f2fe",
     "gif": "#ffffff",
     "linkAccent": "#EE3BBB"
   },
   "theme": {
-    "name": "Current Dense Discovery",
-    "description": "The existing color scheme currently in use",
+    "name": "Winter Cool",
+    "description": "Cool blues and crisp whites for winter clarity",
     "colors": {
-      "header": "#addcfa",
-      "sponsor": "#f8eccf",
-      "apps-sites": "#f0ffff",
-      "quote": "#d1eaf4",
-      "callout": "#d1eaf4",
-      "indie-mag": "#efe2f3",
+      "header": "#ffffff",
+      "sponsor": "#f0f8ff",
+      "apps-sites": "#ffffff",
+      "quote": "#e6f3ff",
+      "callout": "#e0f0ff",
+      "indie-mag": "#f5f8ff",
       "books-accessories": "#ffffff",
-      "food-for-thought": "#f2f2f2",
-      "introAside": "#f4f1ea",
+      "food-for-thought": "#f8fafc",
+      "introAside": "#f8fafc",
       "aesthetically-pleasing": "#ffffff",
-      "classifieds": "#def1ef",
+      "classifieds": "#e0f2fe",
       "gif": "#ffffff"
     },
     "accent": "#4a7c59",
@@ -799,5 +1149,9 @@
         }
       }
     }
-  }
+  },
+  "mobileTextFontSize": "20px",
+  "mobileTextLineHeight": "1.3",
+  "mobileCaptionFontSize": "16px",
+  "mobileCaptionLineHeight": "1.2"
 }

@@ -17,6 +17,7 @@ import {
 import { buildAdjacencyJobsMailSectionStyleOverrides } from '../lib/adjacency-mail/adjacency-jobs-mail-theme-tokens.mjs';
 import {
   prepareNewsletterData as prepareNormalizedNewsletterData,
+  resolveCommerceAdBlockSnapshots,
 } from '../lib/newsletter-core/index.mjs';
 import { hardenEmailHtmlForMobile } from '../lib/newsletter-core/email-html-hardening.mjs';
 
@@ -1530,6 +1531,10 @@ async function buildNewsletter() {
       repoRoot: REPO_ROOT,
       templateName,
       args,
+    });
+    await resolveCommerceAdBlockSnapshots(newsletterData, {
+      repoRoot: REPO_ROOT,
+      logger: console,
     });
     
     // Catalog sections for debugging
