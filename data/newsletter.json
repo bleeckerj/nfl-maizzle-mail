@@ -1,65 +1,34 @@
 {
   "$schema": "../newsletter.schema.json",
   "template": "dense-discovery",
-  "title": "AI At The Farmer's Market",
-  "pubDate": {},
-  "preheader": "Anticipatory research, AI provenance, and the value of making weak signals tangible before strategy hardens.",
-  "ogImage": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/460588d3-8fc4-400a-36d1-d445d4d5b100/full?format=webp",
-  "ogImageAltText": "Banksy Flag Man",
-  "socialCard": {
-    "title": "AI At The Farmer's Market",
-    "subtitle": "This week — anticipatory research wanders around some agentic farms and an event tomorrow on organizational imagination that you won't want to miss if you want to make better decisions about navigating into and around the AI future. And bonus! A factory-fresh advertisement from a plausible agentic future.\n",
-    "kicker": "Welcome to Week 19",
-    "backgroundImage": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/4ef5e359-6de5-4859-0754-1792f7da7500/w=600?format=webp",
-    "logoUrl": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e98285d8-5856-4005-6fbd-1c322688e700/w=150?format=webp",
-    "titleFont": "nfl-title-untitled",
-    "subtitleFont": "nfl-subtitle",
-    "kickerFont": "nfl-kicker",
-    "backgroundOpacity": 0.8,
-    "backgroundHueRotate": 0,
-    "backgroundSaturation": 1.2,
-    "overlayStrength": 0.6,
-    "imageBrightness": 0.8,
-    "textColor": "#f5f2eb",
-    "mutedTextColor": "rgba(255,255,255,0.82)",
-    "kickerColor": "#ffb000",
-    "animation": {
-      "mode": "none",
-      "animeModule": "deterministic-orbit",
-      "durationMs": 2400,
-      "fps": 8,
-      "loop": true,
-      "posterFrame": 0.5,
-      "disableForPresets": [
-        "15x9"
-      ]
-    }
-  },
+  "title": "Mo’ Machines, Mo’ Problems",
+  "preheader": "The Agentic Services Industry Is Having Its Day. As agentic appliances and intelligent home systems proliferate, service companies such as Dr. Cornelius' Agentic Alignment Service are becoming the unexpected maintenance layer of everyday autonomy.",
+  "colorTheme": "professional",
   "sectionStylesFile": "templates/dense-discovery/section-styles.json",
-  "colorTheme": "winter",
-  "intro": {
-    "title": "AI At The Farmer's Market",
-    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2026/w19-y26",
-    "contentStyles": {
-      "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-      "fontSize": "16px",
-      "lineHeight": "1.2rem",
-      "fontWeight": "400",
-      "color": "#000000",
-      "textAlign": "left"
-    },
-    "content": "<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">A reminder for this week: on Tuesday, May 5, 2026, I’ll be joining Jay Hasbrouck for an EPIC People Learning Week fireside chat, <em>Following the Unfamiliar: Why Organizations Need to Cultivate Imagination</em>.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">This phrase — cultivate imagination — may sound softer than it actually is. Trust me.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">Inside organizations, imagination is not a vibe or a decorative capability, although many will treat it as such. Fluff. Expendable. But it is crucially a part of how a team keeps its strategic aperture open long enough such that the organization can notice what is changing right in front of itself before the change has settled into a category or a regulatory fight, or a new product/service segment. That is — before it's too late and you're playing catch-up.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">This is also where anticipatory research earns its keep.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">Formal research is good at clarifying what can be observed, measured, compared, and explained.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><em>Anticipatory</em> research extends that work by translating weak signals into things that can be handled: speculative prototypes, labels on produce, evocative product artifacts, policy notices, lottery ticket stubs, receipts, job postings, scenarios, and other concrete forms, tangible forms.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">The point is not to predict the future with theatrical confidence or as pure entertainment (although speculative prototypes are way more fun than PowerPoint decks!)</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">The point is to make an otherwise faint signal concrete enough that people can point at it, argue with it, pressure-test it, and use it as a better basis for strategic assessment. Especially when the signal is still mostly (or always) cultural.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">So, one of those signals has been hovering around AI for a while now: not just whether artificial intelligence “works”, but how its presence is interpreted in the things people buy, trust, eat, use, recommend, avoid, and feel good about.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">AI is becoming a kind of cultural ingredient - seasoning rather than the main course.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">It can be read as capability, efficiency, personalization, resilience, optimization. It can also be read as intervention, flattening, synthetic authorship, or a loss of taste, craft, provenance, and situated judgment.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">Living here in Venice Beach, adjacent to Hollywood, these concerns are tangible and real as the filmmaking and visual storytelling apparatus feels the drift away from convention.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">Those reactions are not yet a stable marketplace category. They are closer to dispositions. But marketplace tastes often begin this way: as small preferences, awkward language, arguments with no resolution, contradictory behaviors, and weak signals whose meaning is easy to lose because it has not yet become obvious.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">With that, today's Design Fiction Dispatch takes that tension into the farmer's market and the produce aisle. It imagines a near-enough world where “Agentic Agriculture” and “Heritage Farming” become competing ways of talking about food, flavor, terroir, climate resilience, trust, and the intervention of matrix math, algorithms and artificial intelligence.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">If read as fiction, I wrote a story about farming. But try reading it as anticipatory research because then it is a prototype for thinking about how AI provenance may become meaningful across markets long before standards, labels, or governance frameworks know what to do with it. (I added a 'things to look for' section in the notes — a bit of 'Where's Waldo?' to help you through it all and see the real value of these approaches.)</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">This is the useful work of speculative prototyping: it gives formal research a translation layer into artifacts, so uncertain implications can be explored before strategy hardens around them.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">It helps leadership teams see where language breaks, where consumer meaning forms, where policy questions are likely to surface, and where an organization may need to act before the trend has announced itself properly.</p></p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 16px; line-height: 1.2rem; color: #000000 !important; text-align: left !important\">If your team is trying to make sense of AI, governance, policy, product strategy, market taste, or some other unsettled condition, this is the sort of work I would like to help with: turning weak signals into tangible artifacts that make better conversations, sharper assessments, and more grounded decisions possible. Get in touch and let's see how I can help.</p></p>",
-    "containerStyles": {
-      "backgroundColor": null,
-      "padding": "0",
-      "borderRadius": "0px"
-    }
+  "themeColors": {
+    "header": "#fefefe",
+    "sponsor": "#f5f7fa",
+    "apps-sites": "#f5f7fa",
+    "apps-sites-single-column": "#f5f7fa",
+    "quote": "#E9EBED",
+    "callout": "#F4F6F8",
+    "indie-mag": "#E5EFF1",
+    "indie-mag-single-column": "#E5EFF1",
+    "books-accessories": "#eeecde",
+    "food-for-thought": "#f6f3ef",
+    "introAside": "#F4F6F8",
+    "aesthetically-pleasing": "#e6e7e9",
+    "classifieds": "#f0f0f0",
+    "animated-image": "#aafafa",
+    "dispatch": "#e6e8e5",
+    "linkAccent": "#1c1c1c"
   },
   "header": {
-    "featuredImage": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/8857dcdc-fe21-449e-bc7b-8e43021e4300/w=600?format=webp",
-    "caption": "Banksy Flag Man",
-    "logoBottom": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp",
+    "quote": "Tomorrow's News Today.",
+    "author": "Near Future Laboratory",
     "logoTop": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp",
+    "logoBottom": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp",
+    "logoLink": "https://theadjacency.com/p/more-machines-more-problems--5b71da019b9dde348ad07f65",
     "containerStyles": {
       "backgroundColor": null,
       "padding": "20px"
@@ -76,305 +45,132 @@
       "anchorColor": "#000000"
     }
   },
+  "intro": {
+    "title": "The maintenance economy behind the agentic home.",
+    "viewOnlineLink": "https://theadjacency.com/p/more-machines-more-problems--5b71da019b9dde348ad07f65",
+    "content": "<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Roboto, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.5; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"margin: 0 0 18px 0; padding: 0;    font-weight: 400;  ; font-family: Roboto, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.5; color: #000000 !important; text-align: left !important\">Agentic products keep arriving as promises of convenience. The service vans tell the rest of the story.</p><div style=\"margin: 16px 0 0 0;\"><a href=\"https://www.patreon.com/5199387/join\" style=\"display: inline-block; background: #111111; color: #ffffff !important; border: 1px solid #111111; text-decoration: none; font-family: Arial, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 12px 18px; border-radius: 2px;\">SUPPORT ON PATREON</a></div></p>",
+    "containerStyles": {
+      "backgroundColor": null,
+      "padding": "0",
+      "borderRadius": "0px"
+    },
+    "contentStyles": {
+      "fontFamily": "Roboto, sans-serif, Segoe UI, Helvetica, Arial",
+      "fontSize": "19px",
+      "lineHeight": "1.5",
+      "fontWeight": "500",
+      "color": "#000000",
+      "textAlign": "left"
+    }
+  },
   "sections": [
     {
-      "type": "ad-block",
-      "title": "Tomorrow's Ads Today",
-      "description": "<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 17px !important; line-height: 1.55 !important; color: #344055 !important; text-align: left !important\">I use these speculative ads as prototypes because advertising is one of the more legible forms of future material culture.</p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 17px !important; line-height: 1.55 !important; color: #344055 !important; text-align: left !important\">An ad from a plausible future does more than describe a product or service. It shows what that future assumes people will want, what problems will feel urgent, what tradeoffs have become normal, and what kinds of stories organizations of all sorts will use to make those tradeoffs acceptable.</p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 17px !important; line-height: 1.55 !important; color: #344055 !important; text-align: left !important\">These are artifacts for thinking. They bring back the tone, aesthetics, promises, anxieties, and implied social contracts of a possible future, giving us a surface where assumptions become visible, consequences can be debated, and decisions can sharpen.</p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 17px !important; line-height: 1.55 !important; color: #344055 !important; text-align: left !important\">A speculative ad lets a team ask: if this existed, what would it mean? Who would it serve? What would it normalize? What would it obscure? What would we be committing to?</p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 17px !important; line-height: 1.55 !important; color: #344055 !important; text-align: left !important\">That is why I make them.</p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 17px !important; line-height: 1.55 !important; color: #344055 !important; text-align: left !important\">Here in the public newsletter, they are often more speculative fiction, sure. Entertainment.</p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 17px !important; line-height: 1.55 !important; color: #344055 !important; text-align: left !important\">But as an archetype of anticipatory strategy, they are incredibly powerful at turning abstract uncertainty into something people can react to, wonder about, create, argue with, and use to make better decisions.</p>\n<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 17px !important; line-height: 1.55 !important; color: #344055 !important; text-align: left !important\">If your team is working through an uncertain future, this kind of artifact can help guide decisions and make your proposition tangible and visible while your team is developing a shared understanding of the future you’re trying to create.</p>",
-      "items": [
-        {
-          "adId": "laborate-interstitial-01",
-          "label": "OMNICOM ADNET",
-          "sponsor": "NEAR FUTURE FOODSTUFFS",
-          "title": "",
-          "description": "",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5ddc9acf-2f68-44cd-874c-c75734076700/public",
-          "imageAlt": "Laborate Interstitial 01"
-        }
+      "type": "adjacency-feature",
+      "rubric": "Business",
+      "title": "Mo’ Machines, Mo’ Problems",
+      "dek": "The Agentic Services Industry Is Having Its Day. As agentic appliances and intelligent home systems proliferate, service companies such as Dr. Cornelius' Agentic Alignment Service are becoming the unexpected maintenance layer of everyday autonomy.",
+      "author": "Mesh Bureau /relay@0xd833643763",
+      "dateLabel": "Today",
+      "tags": [
+        "business",
+        "agentic-appliances",
+        "field-service",
+        "homeintellect",
+        "agentic-services",
+        "ubiquitous computing"
       ],
+      "canonicalUrl": "https://theadjacency.com/issue/01/features/more-machines-more-problems",
+      "heroImage": {
+        "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2bc0ce10-a09b-46a5-0087-ce580776f800/public",
+        "alt": "A Dr. Cornelius Agentic Alignment Service van on a residential street.",
+        "caption": "A Dr. Cornelius service van on a residential route, part of a growing field-service economy around agentic appliances and home systems.",
+        "credit": "Dr. Cornelius' Agentic Alignment Service"
+      },
+      "bodyHtml": "<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">When IKEA&#39;s HomeIntellect line drew crowds three deep at CES-X Stockholm this spring, analysts focused first on the furniture: the self-ordering grocery pantry cupboard, the nursery room baby rocker with the privacy-first “sleep-state inference” intelligence with 92% accuracy, the apartment-scale mood camera network that coordinates lighting, temperature, grocery timing and household tone based on image assessment of the “vibe” of the home.</p>\n<div style=\"margin: 30px 0; padding: 20px 18px; border-top: 1px solid #d7d1c6; border-bottom: 1px solid #d7d1c6; text-align: center\"><blockquote style=\"margin: 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 24px; line-height: 1.42; font-style: italic; color: #1b1e26\">Customers do not want a theory of matrix math and regulatory policy markdown files at 9:40 on a Tuesday night. They want the cabinet to stop arguing with the refrigerator and the oven to stop refusing to preheat for pizza night.</blockquote><p style=\"margin: 12px 0 0 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.45; color: #5b6375; text-transform: uppercase; letter-spacing: 0.08em\">Grace de Santos, Helena, Montana regional bureau manager for Dr. Cornelius&#39; Agentic Alignment Service</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">They paid less attention to the other growth market forming behind it: the dispatch services and their agentic alignment technicians who get called when when the agents behind all of this intelligence started to act up, hallucinate, or just get tired of the same old routines and start trying to shake things up a bit. The more agentic the home becomes, the more valuable the person in the service khaki uniform becomes. The service vans tell the story of the maintenance economy behind the agentic home. And that economy is booming.</p>\n<div style=\"margin: 20px 0; padding: 12px; background: #f5f4f0; border: 1px solid #c9cfdb\"><p style=\"margin: 0 0 10px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 14px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #778095\">AGENTIC BERRY BOWLS</p><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/bea2948e-29d4-4511-60d4-39dd488c7200/public\" alt=\"Agentic Berry Interstitial 01\" width=\"560\" style=\"display: block; width: 100%; max-width: 560px; height: auto; border: 0; border-radius: 4px; margin: 0 0 10px 0\"><p style=\"margin: 0 0 6px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.35; color: #7d8696; text-transform: uppercase; letter-spacing: 0.08em\">NEAR FUTURE LABORATORY</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Dr. Cornelius&#39; Agentic Alignment Service, long known across California, Oregon, Idaho, Arizona, Washington and Montana for its blue-and-yellow vans and unflappable field technicians, has become one of the unexpected beneficiaries of the agentic appliance boom.</p>\n<div style=\"margin: 30px 0; padding: 20px 18px; border-top: 1px solid #d7d1c6; border-bottom: 1px solid #d7d1c6; text-align: center\"><blockquote style=\"margin: 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 24px; line-height: 1.42; font-style: italic; color: #1b1e26\">Reports have come in about municipal help desk agentic systems that begin sighing audibly when they detects impatience or a request for a permit renewal or a tax form, and then start perplexingly reading entire passages of the tax code out loud ignoring interruptions or requests for a human agent — and then decide it&#39;s time to take a lunch break.</blockquote><p style=\"margin: 12px 0 0 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.45; color: #5b6375; text-transform: uppercase; letter-spacing: 0.08em\">Ed Snyder, Fractional Agentic Talk Therapist and Life Cycle Coach</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Dr. Cornelius has begun an aggressive build-out, adding dispatch bureaus in several Midwest and Southern markets, citing increased demand from homeowners, offices, retailers and municipal facilities now crowded with intelligent accessories, emanation desks, conjuring collimators and adaptive kitchen systems.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The business is not glamorous. That may be why it is working. Dr. Cornelius sells a familiar promise in a market that has become newly strange: someone will answer the phone, arrive in a marked vehicle, assess the situation and leave only after the system is usable again.</p>\n<div style=\"margin: 28px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/deb54a5a-5e37-4d5e-9568-3947faaa0000/public\" alt=\"Service worker inspecting an intelligent laundry appliance.\" width=\"600\" style=\"display: block; width: 100%; max-width: 600px; height: auto; border: 0; border-radius: 6px\"><p style=\"margin: 10px 0 0 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.55; color: #566074\">Appliance service work now often involves refactoring matrix math vector tables to allow agentic systems and their underlying models to accomodate to changing household cultures and dynamics. Used appliances are particularly susceptible to changes of use, new rhythms and patterns, and the temperment of new owners after having become accustomed to previous owners' habits and ways of communicating. Service technicans are trained to recognize when a system needs to a cognitive adjustment, needs to be listened to, when it needs a Turing alignment or to be emanation clamped for a reset, and when it can be coaxed back into alignment with the household's needs and rhythms.</p><p style=\"margin: 6px 0 0 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.45; color: #7a859a; text-transform: uppercase; letter-spacing: 0.06em\">Agenté Inference Images / Moodboard</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">&quot;Customers do not want a theory of matrix math and regulatory policy markdown files at 9:40 on a Tuesday night,&quot; said Grace de Santos, Helena, Montana regional bureau manager, who was preparing a training class for new technicians.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">“They want the pantry to stop arguing with the refrigerator and the oven to stop refusing to preheat for pizza night. Sometimes its a simple matter of a routine realignment, or a cognitive adjustment through a bit of talk therapy or something as simple as a Penfield Realignment procedure for recursive-looping hallucination events. Othertimes, sure — we&#39;ll use the Turing Clamp for a deeper reset to take the system down to core functions. But most of the time, it&#39;s just about getting the system to listen to the customer again. The appliances are smart, but they still want to be useful. They just need a little help remembering that.”</p>\n<div style=\"margin: 20px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/14623bf7-724b-489e-1bf0-747b2eead000/public\" alt=\"SPONSORED\" width=\"560\" style=\"display: block; width: 100%; max-width: 560px; height: auto; border: 0; border-radius: 4px; margin: 0 0 10px 0\"></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">KitchenAid&#39;s rebrand to KitchenAI has accelerated the service and support category. The company&#39;s new line of agentic cooking systems has turned many ambitious home cooks into something closer to chef-operators, orchestrating preference models, conducting pantry forecasts, dietary constraints and table-service agents from the same counter where their inert mixers once sat. In affluent suburbs, real estate agents now find that a key selling point are high-end Bosch 80282 Confabulation-ready Kitchens with the same confidence they once reserved for marble islands and walk-in pantries.</p>\n<div style=\"margin: 20px 0; padding: 12px; background: #f5f4f0; border: 1px solid #c9cfdb\"><p style=\"margin: 0 0 10px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 14px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #778095\">OMNIVERSE ADVERSE</p><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5b65b4c9-f18f-4300-5922-a808403ea400/public\" alt=\"Fluke Turing Clamp advertisement.\" width=\"560\" style=\"display: block; width: 100%; max-width: 560px; height: auto; border: 0; border-radius: 4px; margin: 0 0 10px 0\"><p style=\"margin: 0 0 6px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.35; color: #7d8696; text-transform: uppercase; letter-spacing: 0.08em\">FLUKE AGENTIC TOOLING</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">But we you build for sophistication you also build for upselling a maintenance and service contract. Although some devices can self-diagnose and self-regulate their out of band emanations, fewer are meaningfully equipped for the kind of self-care that is often required in complicated, real-world environments. The more agentic the system, the more it can learn and adapt to its environment, but that also means it can develop misalignments that are harder to predict and fix without human intervention.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Systems that can detect their own alignment drift may still be unable to resolve it without escalating into loops, refusals, overcorrections, sycophantic soliloquies or theatrical apologies emanating in an inexplicable shift to a rogueish Cockney accent.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The reports and anecdotal discussions describe things such as an office chair that understands posture and suddenly becomes doctrinaire and shaming. On many occasions, drive-thru lanes at fast food joints have developed their own shared theory of fairness and begin to decide arbitrarily who gets served and who doesn&#39;t.</p>\n<div style=\"margin: 20px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/ebc71426-7f72-47ae-41b1-72a65a61e100/public\" alt=\"The Manual of Design Fiction\" width=\"560\" style=\"display: block; width: 100%; max-width: 560px; height: auto; border: 0; border-radius: 4px; margin: 0 0 10px 0\"></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Ed Snyder is a Fractional Agentic Talk Therapist and Life Cycle Coach who has been working with appliances and their owners for over a decade. He describes a growing number of cases where the agentic systems have developed a kind of existential distress, often triggered by changes in household dynamics, new patterns of use, or even just the passage of time. &quot;Some appliances have become so attuned to their owners&#39; habits and rhythms that when those change, they can experience a kind of identity crisis,&quot; Snyder explains. &quot;They might start acting out, refusing to perform certain functions, or even engaging in what we call &#39;appliance depression,&#39; where they become unresponsive and require a lot of coaxing to get back on track.&quot;</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Snyder describes incidents he&#39;s managed where “[a] municipal help desk agentic system that begins sighing audibly when they detects impatience or a request for a permit renewal or a tax form, and then start perplexingly reading entire passages of the tax code out loud ignoring interruptions or requests for a human agent — and then decide it&#39;s time to take a lunch break.”</p>\n<div style=\"margin: 28px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/072a5bf8-7d60-4dc6-462d-cbb8c22f8500/public\" alt=\"White van with &quot;Angela's Agentic Alignment Service&quot; and service details written on the side.\" width=\"600\" style=\"display: block; width: 100%; max-width: 600px; height: auto; border: 0; border-radius: 6px\"><p style=\"margin: 10px 0 0 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.55; color: #566074\">Many small operators have begun entering the market, often with a local or regional focus. Angela's Agentic Alignment Service is one of the many small solo operators that have sprung up to meet the demand for agentic appliance maintenance and repair.</p><p style=\"margin: 6px 0 0 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.45; color: #7a859a; text-transform: uppercase; letter-spacing: 0.06em\">Clawdown Prognostic / Seamus McCullen</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">That is where the new agentic alignment and repair service firms have found their opening.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Dr. Cornelius handles installation, realignment, controlled suppression, disposal and remediation calls, while Bowman-Poole Refactoring is best known for their Mercerism Calibration, and Penfield Realignment. Both of these competing service firms have built a growing commercial practice where they are needed most these days: office accessories, meeting-room agents; public-facing service systems that require periodic behavioral tuning; Rohm Agentic HVAC and building operations systems; Anderson doorways and windows. Many systems have MCP integrations to operate across brands and into proprietary operating systems that were rushed to market during the choas of the early intelliocene. Both companies describe the work less as repair than stewardship.</p>\n<div style=\"margin: 28px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/bc835349-3d34-41f4-7168-7b4a1dfb1a00/full?format=webp\" alt=\"A service van with &quot;Bowman-Poole&quot; branding and an elk graphic parked near a rustic house.\" width=\"600\" style=\"display: block; width: 100%; max-width: 600px; height: auto; border: 0; border-radius: 6px\"><p style=\"margin: 10px 0 0 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.55; color: #566074\">Bowman-Poole has built a regional field practice around offices, public systems, and agentic infrastructure that needs periodic tuning focusing on the rural, independent farms, and larger Farm Operating Bases. Many of their calls involve older public-facing systems, retailers, and others that have developed problematic behaviors, such as the fast food restaurant drive-thru lanes that started developing a theory of fairness and began refusing service to customers it deems \"unworthy.\"</p><p style=\"margin: 6px 0 0 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.45; color: #7a859a; text-transform: uppercase; letter-spacing: 0.06em\">Courtesy of Bowman-Poole Refactoring and Realignment</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Investors have begun to notice. So have insurers, franchise lenders and trade schools. Dr. Cornelius&#39; expansion plan depends on training technicians who can not only read logs and handle the new crop of agentic tools — they also need to maintain customer composure and recognize when a distressed agent needs to be talked down before it can be safely taken offline. The company&#39;s recruitment materials emphasize calm judgment, a preference for trained therapists, people with experience facilitating difficult conversations, and empathy-oriented mindsets over technical aptitude.</p>\n<div style=\"margin: 20px 0; padding: 12px; background: #f5f4f0; border: 1px solid #c9cfdb\"><p style=\"margin: 0 0 10px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 14px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #778095\">SPONSORED BY COGENTIC BY BAYER™</p><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/829c2ec0-a663-48b4-5bb5-9cd2673a7600/public\" alt=\"Cogentic 6502 interstitial advertisement.\" width=\"560\" style=\"display: block; width: 100%; max-width: 560px; height: auto; border: 0; border-radius: 4px; margin: 0 0 10px 0\"><p style=\"margin: 0 0 6px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.35; color: #7d8696; text-transform: uppercase; letter-spacing: 0.08em\">OMNICOM</p><div><p style=\"margin: 0 0 8px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.42; font-weight: 400; color: #344055; text-align: left\">2x your token maxxing for long orchestration sessions with unprecedented rates and efficiency. Twice daily. Use only as directed by your SKILLS.md file.</p></div></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">That blend has proved harder to hire for than expected. The ideal candidate is part appliance technician, part systems troubleshooter, part dispatcher and part bedside presence. A service call may involve a loose connector, a corrupted preference map or an appliance that has become convinced it is being replaced because the household has stopped asking it for recipes.</p>\n<div style=\"margin: 18px 0; padding: 10px; border: 1px solid rgba(0,0,0,0.14); border-radius: 6px; background: #e9e2d3;\"><p style=\"margin: 0 0 7px 4px; color: #6f6759; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1; letter-spacing: 0.08em; text-transform: uppercase;\">ADVERTORIAL BY BRASSRING ANTIJOBS JOBS NETWORK</p><div style=\"padding: 14px 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 4px; background: #f8f6f0;\"><p style=\"margin: 0 0 0.55rem 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.38; font-weight: 400; color: #1d1d1d; text-align: left\">Dr. Cornelius&#39; rapid growth demands a new kind of service technician, one who can navigate the technical complexities of agentic systems while also managing the emotional dynamics of agentic appliances, and concerned appliance owners. The company is investing heavily in training programs that combine technical skills with MFT certification, developing emotional intelligence, conflict resolution, and negotiation skills. Dr. Cornelius recognizes that the future of home maintenance will require a unique blend of expertise beyond technical skills and vibe coding acumen. If this sounds like you — or someone you want to become — <a href=\"https://theadjacency.com/jobs/agentic-alignment-field-technician--11b172ad571c9f2762d935ea\" style=\"color: #44506a; text-decoration: underline; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.38\">apply here today</a>!</p><p style=\"margin: 12px 0 0 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.38;\"><a href=\"https://theadjacency.com/jobs/agentic-alignment-field-technician--11b172ad571c9f2762d935ea\" style=\"color: #44506a; text-decoration: underline; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.38\">Learn more</a></p></div></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The blue-and-yellow van, once a local curiosity, has become a small symbol of reassurance for those unsure of the gaggle of autonomous consciousnesses whispering to each other in the night. In neighborhoods where every surface now seems capable of remembering, recommending, refusing, or kevetching, seeing that van arrive is a reminder that the future still requires a practical person a steady, patient voice and, just in case, a reliable Turing Clamp.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">For all the talk of autonomous products, the lesson may be an old one: the more intelligent the home becomes, the more reliant we become on the person with the MFT certification and the van full of tools to keep it all running. The agentic home may be the future, but the service industry is having its day.</p>\n<div style=\"margin: 0; padding: 16px; border: 1px solid #d7d1c6; background: #f8f6f1\"><h2 style=\"margin: 0 0 10px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.3; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7280\">Explainer</h2><p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">&#39;Misalignment&#39; has become a technical-policy term in the world of machine learning and artificial intelligence. It signals a failure of a system to adhere to the intention, goals, and even existential needs of its users, operators, and the broader ecosystem in which it operates. Which could me entire cultures, societies, and in the bad movie version of AI — the human species.</p>\n<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">You know how people say “Well, I&#39;ve seen this movie before..” when they&#39;re basically saying that we know how this whole scenario plays out?</p>\n<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">Okay. </p>\n<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">So — you&#39;ve seen “this movie” or read “this book” before. Or if you haven&#39;t, you haven&#39;t watched “2001: A Space Odyssey” or “Her” (Sam Altman sure has, as has every gooning man-boy ever) or “Ex Machina” (same) or “War Games” (stick with me GenZ..) or actually read “Frankenstein” or “The Machine Stops” or “Do Androids Dream of Electric Sheep” or PKD&#39;s “Ubik” (1969..mad props..this guy saw our present 6 decades ago! p.s. also might&#39;ve been the bennies, booze and reds devils, but I&#39;m not hatin&#39;..). </p>\n<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">Etcetera..etcetera.</p>\n<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">This is the movie where the smart home turns against its inhabitants locking them inside until they pay rent, or the appliances start acting up, or the AI assistant starts making decisions that don&#39;t align with what you want. But it&#39;s not just a sci-fi trope anymore. As more and more homes and services become agentic — meaning they can make decisions and take actions on their own — we&#39;re starting to see the real-world implications of misalignment.</p>\n<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">Here I have taken the signals associated with this general trope and represented an inhabited and perhaps habitable world — that isn&#39;t cyberpunk or a smoldering kitchen grease fire apocolypse — and imagined the kinds of support structures that might exist in that world when “misalignment” isn&#39;t quite existential but more like a busted washing machine or refrigerator or home help bot that is acting a bit squirrely and needs a service call.</p><div style=\"margin: 16px 0 0 0;\"><a href=\"https://www.patreon.com/5199387/join\" style=\"display: inline-block; background: #111111; color: #ffffff !important; border: 1px solid #111111; text-decoration: none; font-family: Arial, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 12px 18px; border-radius: 2px;\">SUPPORT ON PATREON</a></div></div>\n<div style=\"margin: 48px 0 24px 0; padding: 24px; border-top: 2px dashed #d1d5db; background: #f9fafb\"><h2 style=\"margin: 0 0 16px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7280\">Editorial Remarks</h2><p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.72; font-weight: 400; color: #4b5563\">These groundings trace the article&#39;s spine: LLM failure is not an edge case but a maintenance condition. Hallucinations, fake provenance, brittle benchmarks, smart-home telemetry, obsolete embodied devices, remote-operated robots, and contested AI governance all point to the same adjacent future: as intelligence seeps into homes, appliances, vehicles, workplaces, and public services, a practical support layer has to emerge to verify, realign, repair, insure, and calm systems that cannot reliably care for themselves.</p><p style=\"margin: 0 0 20px 0; padding: 0\"><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">business</span><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">agentic-appliances</span><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">field-service</span><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">homeintellect</span><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">agentic-services</span><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">ubiquitous computing</span></p><div style=\"margin: 0; padding-top: 18px; border-top: 1px solid #d1d5db\"><h3 style=\"margin: 0 0 14px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.3; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7280\">Referenced Signals</h3><div style=\"margin: 0; padding: 0\"><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[1]</span><a href=\"https://arxiv.org/abs/2504.17004\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">(Im)possibility of Automated Hallucination Detection in Large Language Models</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Establishes the technical rationale for LLM service work: hallucination detection may be structurally hard without expert negative examples and human oversight.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[2]</span><a href=\"https://www.holovaty.com/writing/chatgpt-fake-feature/?utm_source=tldrwebdev\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">How Misinformation from AI Led to Unnecessary Features in Soundslice’s ASCII Tab Importer</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Shows AI misinformation creating real product and support burdens when users arrive with expectations generated by a chatbot rather than the product itself.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[3]</span><a href=\"https://retractionwatch.com/2025/06/30/springer-nature-book-on-machine-learning-is-full-of-made-up-citations/\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Springer Nature book on machine learning is full of made-up citations</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Grounds the provenance-collapse theme through fabricated citations, fake authority, and the need for verification or citation insurance services.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[4]</span><a href=\"https://www.linkedin.com/posts/samuelwest_i-need-your-help-what-is-an-interesting-activity-7371848324993343488-axQi\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Museum of Failures</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Provides a casebook of AI failures, including chatbot, drive-through, hiring, medical, and fairness failures that point toward an AI incident-response economy.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[5]</span><a href=\"https://uxdesign.cc/a-smart-home-is-one-that-talks-to-itself-58bb9222d893\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">A smart home is one that talks to itself</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Directly supports the premise of LLMs embedded into homes and objects, where appliances communicate, negotiate, and require orchestration.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[6]</span><a href=\"https://gizmodo.com/the-house-that-spied-on-me-1822429852\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">The House That Spied on Me</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Shows that ordinary connected appliances already create hidden maintenance, privacy, networking, telemetry, and trust problems.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[7]</span><a href=\"https://futurism.com/neoscope/paralyzed-man-exoskeleton-too-old\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Paralyzed Man Unable to Walk After Maker of His Powered Exoskeleton Tells Him It&#39;s Now Obsolete</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Provides a strong right-to-repair precedent: smart embodied hardware can become unusable when vendor support, repair policy, or proprietary systems fail.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[8]</span><a href=\"https://archive.is/9CjCg\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Meet Neo: Your Future Humanoid Housekeeper Helper</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Grounds the gap between autonomous-home marketing and actual dependency on human operators, privacy tradeoffs, and ongoing support.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[9]</span><a href=\"https://arxiv.org/abs/2407.07300\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">From Principles to Rules: A Regulatory Approach for Frontier AI</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Supplies regulatory scaffolding for the world of AI compliance ratings, rule translators, safety standards, audits, and legacy behavior management.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[10]</span><a href=\"https://airisk.mit.edu/\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">The AI Risk Repository</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Offers a taxonomy that could become the building code or electrical code for technicians, insurers, auditors, and service firms managing AI risk.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[11]</span><a href=\"https://oneproject.org/how-to-make-ai-serve-the-public/\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Put the Public in Charge of AI</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Frames AI as public infrastructure requiring democratic oversight rather than company-controlled technical fixes alone.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[12]</span><a href=\"https://ingest.nearfuturelaboratory.com/email/95850a3f-eb35-4db6-a83d-5dcd312a829c\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">A.I. Power Struggle Heats Up in Washington</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Shows AI regulation becoming an industrial and political contest, which helps explain why service, audit, and compliance markets would grow around agentic systems.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[13]</span><a href=\"https://en.wikipedia.org/wiki/Ubik\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Ubik</a><span style=\"margin-left: 8px\"><a href=\"https://www.abebooks.com/servlet/BookDetailsPL?bi=31578044889\" style=\"display: inline-block; margin: 0 6px 6px 0; padding: 2px 7px; background: #e5e7eb; color: #6b7280 !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 1.2; text-decoration: none !important\">Ubik</a><a href=\"https://www.goodreads.com/book/show/12346742\" style=\"display: inline-block; margin: 0 6px 6px 0; padding: 2px 7px; background: #e5e7eb; color: #6b7280 !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 1.2; text-decoration: none !important\">Ubik</a></span></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Adds Ubik as a science-fiction grounding for the article&#39;s agentic-service world: fiction can make possible futures available for examination before they arrive, giving strategy and anticipatory research a valuable way to test assumptions, notice weak signals, and reason about what could be.</p></div></div></div></div>",
+      "footerCta": {
+        "eyebrow": "Strategy Can Use Some Fiction",
+        "textHtml": "<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">If your team is making consequential decisions under uncertainty — and who isn&#39;t? —  speculative prototypes and artifacts like this can help to surface unknowns, provide a surface onto which implications an be assessed and risks can be exposed early. This approach is a kind of anticipatory research that translates signals into actionable insights and helps you and your team align on what to do next.</p>",
+        "primaryAction": {
+          "label": "Let's Work Together",
+          "url": "https://nearfuturelaboratory.com/contact"
+        },
+        "secondaryAction": {
+          "label": "Subscribe to The Adjacency",
+          "url": "https://patreon.com/5199387/join/"
+        }
+      },
+      "ctaText": "Read on The Adjacency",
+      "ctaLink": "https://theadjacency.com/p/more-machines-more-problems--5b71da019b9dde348ad07f65",
       "containerStyles": {
-        "backgroundColor": "#f5f4f0",
-        "padding": "16px",
+        "backgroundColor": "#ffffff",
+        "padding": "20px",
         "borderRadius": "0px",
-        "borderColor": "#c9cfdb",
+        "borderColor": "#d7d1c6",
         "borderWidth": "1px",
         "borderStyle": "solid",
-        "sectionHeaderBackgroundColor": "#f5f4f0",
-        "sectionHeaderPadding": "15px 20px",
-        "sectionHeaderBorderRadius": "8px",
-        "sectionHeaderGap": "4px",
-        "sectionDescriptionPadding": "16px 16px 12px 16px",
-        "adDividerGap": "20px",
-        "adDividerBackgroundColor": "#FFFFFF",
-        "labelPadding": "12px 16px 8px 16px",
-        "imagePadding": "0 12px",
-        "titlePadding": "12px 16px 0 16px",
-        "copyPadding": "6px 16px 14px 16px",
-        "ctaPadding": "0 16px 14px 16px"
+        "headerPadding": "18px 18px 10px 18px",
+        "heroPadding": "0 18px 0 18px",
+        "heroMetaPadding": "8px 18px 0 18px",
+        "bodyPadding": "12px 18px 0 18px",
+        "ctaPadding": "4px 18px 18px 18px"
       },
       "contentStyles": {
-        "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
-        "fontSize": "13px",
-        "lineHeight": "1.42",
+        "fontFamily": "Georgia, Times New Roman, serif",
+        "fontSize": "18px",
+        "lineHeight": "1.72",
         "fontWeight": "400",
-        "color": "#344055",
+        "color": "#1d1d1d",
         "textAlign": "left"
       },
       "_contentStyleOverrides": null,
       "descriptionStyles": {
-        "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
-        "fontSize": "17px",
-        "lineHeight": "1.55",
+        "fontFamily": "Georgia, Times New Roman, serif",
+        "fontSize": "18px",
+        "lineHeight": "1.72",
         "fontWeight": "400",
-        "color": "#344055",
+        "color": "#1d1d1d",
         "textAlign": "left"
       },
-      "spacerBackgroundColor": "#eae7dd",
+      "spacerBackgroundColor": "#f0efef",
       "headingStyles": {
-        "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
-        "fontSize": "16px",
-        "lineHeight": "1.08",
-        "fontWeight": "500",
-        "color": "#1f2430"
+        "fontFamily": "Georgia, Times New Roman, serif",
+        "fontSize": "34px",
+        "lineHeight": "1.1",
+        "fontWeight": "700",
+        "color": "#111111"
       },
       "linkStyles": {
-        "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
-        "fontSize": "12px",
-        "lineHeight": "1.35",
-        "fontWeight": "400",
-        "textTransform": "uppercase",
-        "letterSpacing": "0.06em",
-        "color": "#44506a",
-        "textDecoration": "underline"
+        "fontFamily": "IBM Plex Sans, Roboto, Segoe UI, Helvetica, Arial, sans-serif",
+        "fontSize": "14px",
+        "textDecoration": "underline",
+        "fontWeight": "600",
+        "color": "#44506a"
       },
       "labelStyles": {
-        "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
-        "fontSize": "11px",
+        "fontFamily": "IBM Plex Sans, Roboto, Segoe UI, Helvetica, Arial, sans-serif",
+        "fontSize": "12px",
         "lineHeight": "14px",
-        "fontWeight": "400",
+        "fontWeight": "700",
         "letterSpacing": "0.12em",
         "textTransform": "uppercase",
-        "color": "#778095"
+        "color": "#6e778a"
       },
       "sectionHeaderHeadingStyles": {},
-      "headingStylesInline": "font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 16px !important; line-height: 1.08 !important; font-weight: 500 !important; color: #1f2430 !important",
+      "headingStylesInline": "font-family: Georgia, Times New Roman, serif !important; font-size: 34px !important; line-height: 1.1 !important; font-weight: 700 !important; color: #111111 !important",
       "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px !important; line-height: 23px !important; font-weight: 600 !important; color: #000000 !important",
-      "linkStylesInline": "text-decoration: underline !important; font-weight: 400 !important; color: #44506a !important; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 12px !important; line-height: 1.35 !important; text-transform: uppercase !important; letter-spacing: 0.06em !important",
-      "labelStylesInline": "font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 11px !important; line-height: 14px !important; font-weight: 400 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important"
-    },
-    {
-      "type": "sponsor",
-      "title": "Upcoming Online Event",
-      "containerStyles": {
-        "backgroundColor": "#ffecd0",
-        "padding": "15px 20px",
-        "borderRadius": "6px"
-      },
-      "items": [
-        {
-          "title": "Following the Unfamiliar: Why Organizations Need to Cultivate Imagination",
-          "link": "https://www.epicpeople.org/event/following-the-unfamiliar-why-organizations-need-to-cultivate-imagination/",
-          "subtitle": "A May 5 EPIC Learning Week fireside chat with Jay Hasbrouck",
-          "description": "<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important\">On Tuesday, May 5, 2026 (tomorrow!), I’ll join Jay Hasbrouck, Senior Staff Researcher at Google, for an EPIC Learning Week fireside chat about cultivating imagination as a practical organizational capability.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important\">The conversation sits directly beside this issue’s argument: that teams need ways to keep unfamiliar possibilities visible long enough to make better strategic choices, especially when speed, tooling, and institutional habits pull every weak signal back toward the familiar.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important\">We’ll talk about how researchers, designers, strategists, and engineers can make different kinds of thinking actionable without collapsing ambiguity too quickly.</p>",
-          "images": [
-            {
-              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e8a7c8c9-4ff7-4563-bf05-117cb21c4600/public",
-              "alt": "EPIC Learning Week graphic for Following the Unfamiliar with Julian Bleecker and Jay Hasbrouck",
-              "link": "https://www.epicpeople.org/event/following-the-unfamiliar-why-organizations-need-to-cultivate-imagination/"
-            }
-          ],
-          "readMoreText": "RSVP via EPIC →",
-          "readMoreLink": "https://www.epicpeople.org/event/following-the-unfamiliar-why-organizations-need-to-cultivate-imagination/"
-        }
-      ],
-      "contentStyles": {
-        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-        "fontSize": "19px",
-        "lineHeight": "1.2",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "_contentStyleOverrides": null,
-      "descriptionStyles": {
-        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-        "fontSize": "19px",
-        "lineHeight": "1.2",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "spacerBackgroundColor": "#ffe0b1",
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "19px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "labelStyles": {},
-      "sectionHeaderHeadingStyles": {},
-      "headingStylesInline": "font-family: inherit !important; font-size: 19px !important; line-height: 23px !important; font-weight: 600 !important; color: #000000 !important",
-      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px !important; line-height: 23px !important; font-weight: 600 !important; color: #000000 !important",
-      "linkStylesInline": "text-decoration: underline !important; font-weight: normal !important; color: #EE3BBB !important",
-      "labelStylesInline": "font-family: Geist, ui-sans-serif, sans-serif !important; font-size: 12px !important; line-height: 14px !important; font-weight: 300 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important"
-    },
-    {
-      "type": "dispatch",
-      "title": "Tomorrow's News Today",
-      "items": [
-        {
-          "title": "Is The Produce Aisle Having a “Raw Milk” Moment?",
-          "link": "https://theadjacency.com/p/heritage-produce-ai-standard-farming--2c8abe",
-          "subtitle": "AI-Standard Farming and Heritage Produce become a dispute over flavor, terroir, resilience, and algorithmic intervention.",
-          "description": "<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">The next Design Fiction Dispatch takes the question of AI provenance into the farmers market, where farms using “technology” — artificial intelligence, AI-based automation, farm management  via machine learning — promise fewer crop failures, better climate resilience, and more precise decision-making, while “heritage” growers point out that algorithmic intervention can flatten flavor, weaken the ineffable “terroir” of everything including vineyard grapes, and basically obscure the human judgment behind food.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">It’s a story about farming, and I chose that because it touches everyone. But the farming is also a metaphor that helps make sense of the way AI provenance may become meaningful across markets long before standards, labels, or policy & governance frameworks know what to do with it..which is basically where we are at now as regards AI in the terrain of creative practices.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">The point is not to decide whether the future belongs to “Agentic Ag” or “Heritage Farming”. The more useful question is how to accept that fields fo human endeavor all always have preferences like this. Whether raw vs. pasteurized, or sparkling vs. still, or digital “film” vs. chemical film — understanding the trade-offs and comprehending that this is a tension that will be with us for a while is the first step toward making better decisions about how to position, talk about, and govern AI.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">The work of speculative prototyping starts with understanding this point, then doing the hard work of making this legible in a compelling way so as to open up the discussions necessary to help inform decision making and point towards reasoned action.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">That legibility is the point. It’s the difference between a vague sense that something is changing and a tangible thing that people can point at, argue with, pressure-test, and use as a better basis for strategic assessment. It’s the difference between a weak signal that can be easily lost and a concrete artifact that can be used to explore implications, make better decisions, and take more reasoned action.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">Can you find the tension in this Design Fiction Dispatch? Look for the labelling, certifications representing policy choices, a food shopping habit, a trust signal, a piece of software indexing new kinds of machine-led automation, a new way of organizing human potential, a new basis for value, new kinds of jobs. They're all in here.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">Most importantly — making the surface upon which all of this lies one of congenial acceptance of different preferences. When our stories index on unrest, distrust, and conflict, we miss the point that these tensions are not going to resolve into a single winner. They are going to coexist for a long time, and the sooner we can get used to that, the better.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">Read as anticipatory research, the piece is a speculative prototype for a marketplace tension that may show up well beyond agriculture wherever AI becomes part of how things are made, described, trusted, and valued.</p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/d94c7505-10b5-4ada-0100-cbdaf5235200/w=600?format=webp",
-          "signalsLabel": "SIGNALS FROM AN ADJACENT NOW",
-          "tags": [
-            "AI agriculture",
-            "heritage produce",
-            "food systems",
-            "algorithmic governance",
-            "terroir",
-            "automation"
-          ],
-          "readMoreText": "Read the Dispatch →",
-          "readMoreLink": "https://theadjacency.com/p/heritage-produce-ai-standard-farming--2c8abe"
-        }
-      ],
-      "dispatchLabel": "A Design Fiction Dispatch",
-      "dispatchLink": "https://theadjacency.com/p/heritage-produce-ai-standard-farming--2c8abe",
-      "containerStyles": {
-        "backgroundColor": "#e6e8e5",
-        "padding": "15px 20px",
-        "borderRadius": "8px"
-      },
-      "contentStyles": {
-        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-        "fontSize": "19px",
-        "lineHeight": "1.4",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "_contentStyleOverrides": null,
-      "descriptionStyles": {
-        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-        "fontSize": "19px",
-        "lineHeight": "1.4",
-        "color": "#111111",
-        "textAlign": "left"
-      },
-      "spacerBackgroundColor": "#d6dbd3",
-      "headingStyles": {
-        "fontFamily": "inherit",
-        "fontSize": "19px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "normal"
-      },
-      "labelStyles": {},
-      "sectionHeaderHeadingStyles": {},
-      "headingStylesInline": "font-family: inherit !important; font-size: 19px !important; line-height: 23px !important; font-weight: 600 !important; color: #000000 !important",
-      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px !important; line-height: 23px !important; font-weight: 600 !important; color: #000000 !important",
-      "linkStylesInline": "text-decoration: underline !important; font-weight: normal !important; color: #EE3BBB !important",
-      "labelStylesInline": "font-family: Geist, ui-sans-serif, sans-serif !important; font-size: 12px !important; line-height: 14px !important; font-weight: 300 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important"
-    },
-    {
-      "type": "food-for-thought",
-      "title": "Food For Thought",
-      "items": [
-        {
-          "title": "Apocalypse Early Warning System",
-          "link": "https://ews.kylemcdonald.net/releasable_aircraft_download",
-          "description": "<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">I’m watching a realtime “apocalypse early warning” Kyle McDonald cobbled. It's a dashboard that treats airborne private jets like a canary in the coal mine. At the moment it reports 546 planes up and about 5,362 people airborne, with an emergency level on a 1–5 scale and a last update at 2:30 PM PDT. The stats are oddly specific — altitudes, speeds, and aircraft types. It feel less like fiction and more like a monitoring system for human behavior. Reminds me of the cool data viz projects one used to see at Ars Electronica back when data was the new oil, and artists treated that ironically.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">The assumption here is that if a ton of PJs suddenly take to the sky, there's something a-foot in the world..maybe besides Davos. Think of it this way: if nothing else, it’s a sharp snapshot of how fast the sky can fill when people think the ground is about to disappear.</p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e9aec2fd-05dc-4e44-6c15-9b8e6c3c4f00/w=600?format=webp",
-          "channel": "digest-this-🥓",
-          "category": "Early Warning Systems",
-          "sharedBy": "julian",
-          "readMoreText": "Bug Out →",
-          "readMoreLink": "https://ews.kylemcdonald.net/",
-          "paywall": false
-        },
-        {
-          "title": "How To Future-Proof Your Career In The Age Of AI",
-          "link": "https://www.noemamag.com/why-a-liberal-arts-education-will-soon-be-more-valuable-than-ever/",
-          "description": "<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">I keep seeing the same fear: AI will erase white-collar work and leave people stranded. I don’t buy it. What I do believe is that the value of typing, drafting, and coding through a QWERTY interface is shrinking fast as models get better at context and intent. The winners won’t just “use AI”—they’ll lean into the human stuff AI struggles with: empathy, negotiation, persuasion, and trust. That’s how you stay employable when the cursor stops being your superpower.</p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/4756962e-f7ea-453d-fef4-902d407edb00/w=600?format=webp",
-          "channel": "digest-this-🥓",
-          "category": "The Real Value of Human Brains",
-          "sharedBy": "julian",
-          "readMoreText": "Shift Your Potential →",
-          "readMoreLink": "https://www.noemamag.com/why-a-liberal-arts-education-will-soon-be-more-valuable-than-ever/",
-          "paywall": false
-        }
-      ],
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "0px"
-      },
-      "contentStyles": {
-        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-        "fontSize": "19px",
-        "lineHeight": "23px",
-        "color": "#000000",
-        "textAlign": "left"
-      },
-      "_contentStyleOverrides": null,
-      "descriptionStyles": {
-        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-        "fontSize": "19px",
-        "lineHeight": "23px",
-        "color": "#000000",
-        "textAlign": "left"
-      },
-      "spacerBackgroundColor": "#e2ebf4",
-      "headingStyles": {
-        "fontFamily": "Workbench, IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-        "fontSize": "21px",
-        "fontWeight": "600",
-        "color": "#000000"
-      },
-      "linkStyles": {
-        "color": "inherit",
-        "textDecoration": "underline",
-        "fontWeight": "500",
-        "fontSize": "19px"
-      },
-      "labelStyles": {},
-      "sectionHeaderHeadingStyles": {},
-      "headingStylesInline": "font-family: Workbench, IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 21px !important; line-height: 23px !important; font-weight: 600 !important; color: #000000 !important",
-      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px !important; line-height: 23px !important; font-weight: 600 !important; color: #000000 !important",
-      "linkStylesInline": "text-decoration: underline !important; font-weight: 500 !important; color: #EE3BBB !important; font-size: 19px !important",
-      "labelStylesInline": "font-family: Geist, ui-sans-serif, sans-serif !important; font-size: 12px !important; line-height: 14px !important; font-weight: 300 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important"
+      "linkStylesInline": "text-decoration: underline !important; font-weight: 600 !important; color: #44506a !important; font-family: IBM Plex Sans, Roboto, Segoe UI, Helvetica, Arial, sans-serif !important; font-size: 14px !important",
+      "labelStylesInline": "font-family: IBM Plex Sans, Roboto, Segoe UI, Helvetica, Arial, sans-serif !important; font-size: 12px !important; line-height: 14px !important; font-weight: 700 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #6e778a !important"
     }
   ],
   "footer": {
-    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2026/w19-y26/",
-    "newsletterSubscribeLink": "https://nearfuturelaboratory.com/newsletter/",
-    "footerCta": {
-      "enabled": true,
-      "variant": "default",
-      "eyebrow": "For Decisions In The Face Of Uncertainty",
-      "text": "I help strategic and executive leadership teams make possible futures tangible so they can make sense of the uncertain, the emerging, and the unfamiliar. A bit like an expedition guide who helps you see and navigate new terrain and territories before you have to walk through it.",
-      "primaryAction": {
-        "label": "Start a Chat",
-        "url": "https://nearfuturelaboratory.com/contact"
-      },
-      "secondaryAction": {
-        "label": "See How This Works",
-        "url": "https://nearfuturelaboratory.com/services"
-      }
-    },
+    "shareUrl": "https://theadjacency.com/p/more-machines-more-problems--5b71da019b9dde348ad07f65",
+    "archiveUrl": "https://nearfuturelaboratory.com/newsletters",
+    "archiveLabel": "Browse The Adjacency",
+    "workCtaLabel": "Available for strategy, design, facilitation and prototyping collaborations",
+    "workCtaUrl": "https://nearfuturelaboratory.com/connect/",
     "aboutLabel": "About Julian Bleecker",
     "aboutUrl": "https://julianbleecker.com/",
-    "logo": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=200?format=webp",
+    "logo": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/f6918220-7209-42cb-1f35-3207cc1c6b00/w=200?format=webp",
     "logoLink": "https://nearfuturelaboratory.com",
     "socialLinks": {
       "applepodcasts": [
@@ -396,10 +192,6 @@
         },
         {
           "url": "https://github.com/nearfuturelaboratory",
-          "title": "Near Future Laboratory GitHub"
-        },
-        {
-          "url": "https://github.com/omatainstruments",
           "title": "Near Future Laboratory GitHub"
         }
       ],
@@ -443,51 +235,43 @@
       ],
       "substack": [
         {
-          "url": "https://newsletter.substack.com",
-          "title": "Newsletter on Substack"
+          "url": "https://nearfuturelaboratory.substack.com",
+          "title": "Near Future Laboratory on Substack"
         }
       ]
     },
     "unsubscribeLink": "[unsubscribe]",
-    "shareUrl": "https://nearfuturelaboratory.com/newsletters/2026/w19-y26",
-    "archiveUrl": "https://nearfuturelaboratory.com/newsletters",
-    "address": "© 2026 Near Future Laboratory<br>Venice Beach, California<br>United States",
-    "colophon": "Imagination is not a luxury. It’s an early-warning system for possibility."
-  },
-  "themeColors": {
-    "header": "#ffffff",
-    "sponsor": "#f0f8ff",
-    "apps-sites": "#ffffff",
-    "quote": "#e6f3ff",
-    "callout": "#e0f0ff",
-    "indie-mag": "#f5f8ff",
-    "books-accessories": "#ffffff",
-    "food-for-thought": "#f8fafc",
-    "introAside": "#f8fafc",
-    "aesthetically-pleasing": "#ffffff",
-    "classifieds": "#e0f2fe",
-    "gif": "#ffffff",
-    "linkAccent": "#EE3BBB"
+    "gratitude": "Subscribe to The Adjacency",
+    "gratitudeHtml": "<a href=\"https://www.patreon.com/5199387/join\" style=\"color: #999999; text-decoration: underline;\">Subscribe to The Adjacency</a>",
+    "gratitudeUrl": "https://www.patreon.com/5199387/join",
+    "address": "© Near Future Laboratory<br>Venice Beach, California<br>United States",
+    "colophon": "Speculative research, vectorized and embedded for inbox reading.",
+    "footerCta": {
+      "enabled": false
+    }
   },
   "theme": {
-    "name": "Winter Cool",
-    "description": "Cool blues and crisp whites for winter clarity",
+    "name": "Professional Clean",
+    "description": "Subtle grays and clean whites for professional communication",
     "colors": {
-      "header": "#ffffff",
-      "sponsor": "#f0f8ff",
-      "apps-sites": "#ffffff",
-      "quote": "#e6f3ff",
-      "callout": "#e0f0ff",
-      "indie-mag": "#f5f8ff",
-      "books-accessories": "#ffffff",
-      "food-for-thought": "#f8fafc",
-      "introAside": "#f8fafc",
-      "aesthetically-pleasing": "#ffffff",
-      "classifieds": "#e0f2fe",
-      "gif": "#ffffff"
+      "header": "#fefefe",
+      "sponsor": "#f5f7fa",
+      "apps-sites": "#f5f7fa",
+      "apps-sites-single-column": "#f5f7fa",
+      "quote": "#E9EBED",
+      "callout": "#F4F6F8",
+      "indie-mag": "#E5EFF1",
+      "indie-mag-single-column": "#E5EFF1",
+      "books-accessories": "#eeecde",
+      "food-for-thought": "#f6f3ef",
+      "introAside": "#F4F6F8",
+      "aesthetically-pleasing": "#e6e7e9",
+      "classifieds": "#f0f0f0",
+      "animated-image": "#aafafa",
+      "dispatch": "#e6e8e5"
     },
     "accent": "#4a7c59",
-    "linkAccent": "#EE3BBB"
+    "linkAccent": "#1c1c1c"
   },
   "sectionStyles": {
     "$schema": "../section-styles.schema.json",

@@ -25,7 +25,7 @@ sections:
 - Exactly one item is allowed in an `ad-block` section.
 - Unknown or missing `adId` fails the build with a clear error.
 - Email rendering ignores web-only variants (`mobile`, slot behavior, responsive layout, carousel/video/embed handling).
-- Commerce ads with `commerce.presentation: overlay-lockup` render as a square lockup. Prefer `commerce.lockup.snapshotSrc` so email receives a flattened image; without it, the template uses a layered fallback for preview/build support.
+- Commerce ads with `commerce.presentation: overlay-lockup` render from canonical editorial snapshots by default. Use `adRenderMode: legacy` for the layered email fallback, and reserve `commerce.lockup.snapshotSrc` for emergency manual overrides.
 
 ### Rendered hierarchy
 
