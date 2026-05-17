@@ -1,0 +1,45 @@
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%;">
+  <tr>
+    <td valign="top" align="left" style="padding: 24px 0 0 0;">
+      <p class="review-mobile-meta" style="margin: 0 0 9px 0; font-family: 'nyt-franklin', Arial, Helvetica, sans-serif; font-size: 12px; line-height: 14px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #d0021b;">{{ featuredReview.categoryLabel }}</p>
+      <h1 class="review-headline" style="margin: 0; font-family: 'nyt-franklin', Arial, Helvetica, sans-serif; font-size: 48px; line-height: 49px; font-weight: 800; color: #000000; letter-spacing: 0;">
+        <a href="{{ featuredReview.ctaLink }}" style="color: #000000; text-decoration: none;">{{ featuredReview.headline }}</a>
+      </h1>
+      <if condition="featuredReview.dek">
+        <p class="review-mobile-copy" style="margin: 14px 0 0 0; font-family: 'nyt-imperial', Georgia, 'Times New Roman', serif; font-size: 19px; line-height: 27px; font-weight: 400; color: #333333;">{{ featuredReview.dek }}</p>
+      </if>
+      <p class="review-mobile-meta" style="margin: 14px 0 18px 0; font-family: 'nyt-franklin', Arial, Helvetica, sans-serif; font-size: 12px; line-height: 18px; font-weight: 800; color: #111111;">
+        <if condition="featuredReview.author">By {{ featuredReview.author }}<br></if>
+        <if condition="featuredReview.publishedLabel">{{ featuredReview.publishedLabel }}</if>
+        <if condition="featuredReview.updatedLabel"> · {{ featuredReview.updatedLabel }}</if>
+      </p>
+    </td>
+  </tr>
+  <if condition="featuredReview.heroImage">
+    <tr>
+      <td valign="top" align="left" style="padding: 0 0 5px 0;">
+        <a href="{{ featuredReview.ctaLink }}" style="display: block; text-decoration: none;">
+          <img src="{{ featuredReview.heroImage }}" width="576" class="review-mobile-image" alt="{{ featuredReview.heroImageAlt }}" style="display: block; width: 576px; max-width: 100%; height: auto;">
+        </a>
+      </td>
+    </tr>
+    <if condition="featuredReview.photoCredit">
+      <tr>
+        <td valign="top" align="right" class="review-mobile-caption" style="padding: 0 0 18px 0; font-family: 'nyt-franklin', Arial, Helvetica, sans-serif; font-size: 11px; line-height: 13px; color: #777777;">{{ featuredReview.photoCredit }}</td>
+      </tr>
+    </if>
+  </if>
+  <if condition="featuredReview.disclosure">
+    <tr>
+      <td valign="top" align="left" bgcolor="#e6e2dc" class="review-mobile-compact-copy" style="padding: 18px 20px; font-family: 'nyt-franklin', Arial, Helvetica, sans-serif; font-size: 14px; line-height: 19px; color: #111111;">{{{ featuredReview.disclosure }}}</td>
+    </tr>
+  </if>
+  <if condition="featuredReview.testingSummary">
+    <tr>
+      <td valign="top" align="left" style="padding: 20px 0 0 0;">
+        <p class="review-mobile-meta" style="margin: 0; font-family: 'nyt-franklin', Arial, Helvetica, sans-serif; font-size: 13px; line-height: 18px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #000000;">How we tested</p>
+        <p class="review-mobile-copy" style="margin: 6px 0 0 0; font-family: 'nyt-imperial', Georgia, 'Times New Roman', serif; font-size: 17px; line-height: 25px; color: #222222;">{{ featuredReview.testingSummary }}</p>
+      </td>
+    </tr>
+  </if>
+</table>

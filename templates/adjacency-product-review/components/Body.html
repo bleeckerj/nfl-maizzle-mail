@@ -1,0 +1,32 @@
+<if condition="featuredReview.verdict">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%; border-top: 2px solid #000000; margin-top: 24px;">
+    <tr>
+      <td valign="top" align="left" class="review-mobile-copy" style="padding: 16px 0; font-family: 'nyt-imperial', Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 26px; color: #111111;">
+        <strong class="review-mobile-meta" style="font-family: 'nyt-franklin', Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px; text-transform: uppercase; letter-spacing: 0.08em;">Verdict</strong><br>
+        {{ featuredReview.verdict }}
+      </td>
+    </tr>
+  </table>
+</if>
+<if condition="bodyHtml">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%; border-top: 2px solid #000000; margin-top: 20px;">
+    <tr>
+      <td class="review-body" valign="top" align="left" style="padding: 18px 0 0 0; font-family: 'nyt-imperial', Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 29px; color: #111111;">
+        {{{ bodyHtml }}}
+      </td>
+    </tr>
+  </table>
+</if>
+<if condition="footerCta">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%; margin-top: 22px; border: 1px solid #111111;">
+    <tr>
+      <td valign="top" align="left" style="padding: 18px; font-family: 'nyt-franklin', Arial, Helvetica, sans-serif; color: #111111;">
+        <p class="review-mobile-meta" style="margin: 0 0 7px 0; font-size: 12px; line-height: 14px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">{{ footerCta.eyebrow }}</p>
+        <div class="review-mobile-compact-copy" style="font-family: 'nyt-imperial', Georgia, 'Times New Roman', serif; font-size: 16px; line-height: 24px;">{{{ footerCta.textHtml }}}</div>
+        <if condition="footerCta.primaryAction">
+          <p style="margin: 12px 0 0 0;"><a href="{{ footerCta.primaryAction.url }}" class="review-mobile-button review-footer-cta-button" style="display: inline-block; padding: 10px 14px; background: #111111; color: #ffffff; text-decoration: none; font-size: 12px; line-height: 14px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;">{{ footerCta.primaryAction.label }}</a></p>
+        </if>
+      </td>
+    </tr>
+  </table>
+</if>

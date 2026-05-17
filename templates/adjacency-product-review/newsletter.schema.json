@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Adjacency Product Review Email",
+  "type": "object",
+  "required": ["template", "title", "header", "featuredReview", "reviewPicks", "footer"],
+  "properties": {
+    "template": { "const": "adjacency-product-review" },
+    "title": { "type": "string" },
+    "preheader": { "type": "string" },
+    "header": {
+      "type": "object",
+      "required": ["brandName", "homepageLink"],
+      "properties": {
+        "brandName": { "type": "string" },
+        "sectionName": { "type": "string" },
+        "logoUrl": { "type": "string", "format": "uri" },
+        "logoAlt": { "type": "string" },
+        "sourceBrand": { "type": "string" },
+        "sourceDescription": { "type": "string" },
+        "homepageLink": { "type": "string", "format": "uri" }
+      }
+    },
+    "featuredReview": {
+      "type": "object",
+      "required": ["headline", "ctaLink"],
+      "properties": {
+        "categoryLabel": { "type": "string" },
+        "headline": { "type": "string" },
+        "dek": { "type": "string" },
+        "author": { "type": "string" },
+        "dateLabel": { "type": "string" },
+        "publishedLabel": { "type": "string" },
+        "updatedLabel": { "type": "string" },
+        "heroImage": { "type": "string" },
+        "heroImageAlt": { "type": "string" },
+        "photoCredit": { "type": "string" },
+        "heroCaption": { "type": "string" },
+        "ctaLink": { "type": "string", "format": "uri" },
+        "disclosure": { "type": "string" },
+        "testingSummary": { "type": "string" },
+        "verdict": { "type": "string" }
+      }
+    },
+    "reviewPicks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "title", "subtitle", "priceText", "merchantLinks", "pros", "cons"],
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "badge": { "type": "string" },
+          "title": { "type": "string" },
+          "subtitle": { "type": "string" },
+          "priceText": { "type": "string" },
+          "image": { "type": "string" },
+          "imageAlt": { "type": "string" },
+          "imageCredit": { "type": "string" },
+          "merchantLinks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["label", "url"],
+              "properties": {
+                "label": { "type": "string" },
+                "url": { "type": "string", "format": "uri" },
+                "priceText": { "type": "string" }
+              }
+            }
+          },
+          "pros": { "type": "array", "items": { "type": "string" } },
+          "cons": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "bodyHtml": { "type": "string" },
+    "footerCta": { "type": "object" },
+    "footer": {
+      "type": "object",
+      "required": ["brandName", "unsubscribeText", "companyAddress", "legalLinks"],
+      "properties": {
+        "companyLogo": { "type": "string" },
+        "brandName": { "type": "string" },
+        "unsubscribeText": { "type": "string" },
+        "unsubscribeLink": { "type": "string" },
+        "companyAddress": { "type": "string" },
+        "legalLinks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["text", "url"],
+            "properties": {
+              "text": { "type": "string" },
+              "url": { "type": "string", "format": "uri" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

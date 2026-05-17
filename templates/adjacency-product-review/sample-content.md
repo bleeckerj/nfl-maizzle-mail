@@ -1,0 +1,62 @@
+---
+template: adjacency-product-review
+title: "The Best Household Inference Appliances"
+preheader: "Local routines, fewer cloud dependencies"
+header:
+  brandName: "The Adjacency"
+  sectionName: "The Product Guy"
+  logoUrl: "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/cb546ac8-bfcd-4d2c-5d33-994ce1ce7900/w=150?format=webp"
+  logoAlt: "The Product Guy"
+  sourceBrand: "The Adjacency"
+  sourceDescription: "A Near Future Laboratory Confabulation"
+  homepageLink: "https://nearfuturelaboratory.com"
+featuredReview:
+  categoryLabel: "Products & Services"
+  headline: "The Best Household Inference Appliances"
+  dek: "A Wirecutter-style speculative review for local household agents."
+  author: "The Adjacency Review Desk"
+  publishedLabel: "Published Today"
+  updatedLabel: "Updated Now"
+  heroImage: "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=1200?format=webp"
+  heroImageAlt: "The Adjacency mark"
+  ctaLink: "https://nearfuturelaboratory.com/contact"
+  disclosure: "This speculative review uses fictional products to examine emerging domestic infrastructure."
+  testingSummary: "We evaluated setup clarity, local operation, failure visibility, and how well each appliance explained routine changes."
+  verdict: "The strongest systems made local control legible without turning the household into an admin console."
+reviewPicks:
+  - id: "best-overall"
+    label: "Top pick"
+    badge: "Best overall"
+    title: "Hearthnode Local"
+    subtitle: "A quiet, appliance-side coordinator that made routines visible without making them needy."
+    priceText: "$420 from participating appliance desks"
+    image: "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=600?format=webp"
+    imageAlt: "Speculative product review image"
+    merchantLinks:
+      - label: "Adjacency Catalog"
+        url: "https://nearfuturelaboratory.com/contact"
+        priceText: "$420"
+      - label: "Products & Services"
+        url: "https://www.patreon.com/5199387/join"
+        priceText: "$399"
+    pros:
+      - "Runs core household routines without a cloud account."
+      - "Clear controls for pause, forget, and handoff."
+    cons:
+      - "Setup is slower than cloud-first hubs."
+      - "The local log display is visually plain."
+bodyHtml: "<p>This build-ready sample exercises the product-review email shell without relying on NYT or Wirecutter assets.</p>"
+footer:
+  companyLogo: "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/dd0b1863-ec2a-49f1-6bf2-91475e340800/w=150?format=webp"
+  brandName: "The Adjacency"
+  unsubscribeText: "You are receiving this because you subscribed to Near Future Laboratory and The Adjacency updates."
+  unsubscribeLink: "[unsubscribe]"
+  companyAddress: "Near Future Laboratory"
+  legalLinks:
+    - text: "The Adjacency"
+      url: "https://nearfuturelaboratory.com"
+    - text: "Subscribe"
+      url: "https://www.patreon.com/5199387/join"
+    - text: "Contact"
+      url: "https://nearfuturelaboratory.com/contact"
+---

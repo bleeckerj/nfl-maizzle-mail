@@ -64,3 +64,58 @@ test('build-newsletter renders animated-image sections at the standard content w
     rmSync(tempRoot, { recursive: true, force: true });
   }
 });
+
+test('build-newsletter links standalone image section images when item link is set', () => {
+  const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'image-section-link-'));
+  const issuePath = path.join(tempRoot, 'issue.md');
+  const outputDir = path.join(tempRoot, 'output');
+  const outputName = 'image-section-link';
+
+  writeFileSync(
+    issuePath,
+    [
+      '---',
+      'template: dense-discovery',
+      'title: Image Section Link',
+      'preheader: Verify image section links',
+      'sectionStylesFile: templates/dense-discovery/section-styles.json',
+      'sections:',
+      '  - type: image',
+      '    title: Visual Note',
+      '    items:',
+      '      - image:',
+      '          src: https://example.com/visual-note.webp',
+      '          alt: Visual note',
+      '        link: https://example.com/visual-note',
+      '---',
+      '',
+    ].join('\n'),
+    'utf8',
+  );
+
+  try {
+    execFileSync(
+      process.execPath,
+      [
+        BUILD_SCRIPT,
+        issuePath,
+        outputName,
+        `--repo-root=${REPO_ROOT}`,
+        `--output-dir=${outputDir}`,
+        '--no-open',
+      ],
+      {
+        encoding: 'utf8',
+        cwd: tempRoot,
+      },
+    );
+
+    const html = readFileSync(path.join(outputDir, `${outputName}.html`), 'utf8');
+    assert.match(
+      html,
+      /<a href="https:\/\/example\.com\/visual-note"[^>]*>\s*<img src="https:\/\/example\.com\/visual-note\.webp"/,
+    );
+  } finally {
+    rmSync(tempRoot, { recursive: true, force: true });
+  }
+});

@@ -1,0 +1,26 @@
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%;">
+  <tr>
+    <td valign="top" align="left" style="padding: 0 0 12px 0; border-bottom: 5px solid #000000;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width: 100%;">
+        <tr>
+          <td valign="middle" align="left" style="padding: 0;">
+            <a href="{{ header.homepageLink }}" style="display: inline-block; color: #000000; text-decoration: none;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td valign="middle" style="padding: 0;"><if condition="header.logoUrl"><img src="{{ header.logoUrl }}" width="36" height="36" alt="{{ header.logoAlt || header.sectionName }}" style="display: block; width: 36px; height: 36px;"></if></td>
+                  <td width="12" style="width: 12px; font-size: 0; line-height: 0;">&nbsp;</td>
+                  <td width="2" bgcolor="#000000" style="width: 2px; background: #000000; font-size: 0; line-height: 0;">&nbsp;</td>
+                  <td width="12" style="width: 12px; font-size: 0; line-height: 0;">&nbsp;</td>
+                  <td valign="middle" style="padding: 0; font-family: nyt-franklin, Arial, Helvetica, sans-serif; font-size: 24px; line-height: 26px; font-weight: 800; color: #000000;">{{ header.sectionName || header.brandName }}</td>
+                </tr>
+              </table>
+            </a>
+          </td>
+          <td valign="middle" align="left" style="padding: 0 0 0 24px; font-family: nyt-franklin, Arial, Helvetica, sans-serif; font-size: 12px; line-height: 14px; font-weight: 700; color: #000000;">
+            <if condition="header.sourceBrand">{{ header.sourceBrand }}<br></if>{{ header.sourceDescription || 'A Near Future Laboratory Confabulation' }}
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

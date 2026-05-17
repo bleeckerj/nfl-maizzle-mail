@@ -78,6 +78,11 @@ sections:
   title: Sponsor Section
   sponsorLink: Example sponsorLink
   sponsorLabel: Example sponsorLabel
+  contentStyles:
+    subtitleColor: "#707070"
+    subtitleFontSize: 16px
+    subtitleLineHeight: 18px
+    subtitleFontWeight: "400"
   items:
   - title: Sponsor Item 1
     link: https://example.com

@@ -4,6 +4,25 @@
 
 This email template is a tuned up fork within this repo, a Markdown-JSON-Python-Maizzle based production workflow. It's a work-in-progress building on a refactor of the <a href="https://densediscovery.com">Dense Discovery</a> newsletter's look and vibe, created by <a href="https://www.brizk.com">Kai Brach</a>. I have been a paid ‘friend of Dense Discovery’ for, well… I'm not sure how many years now. It's a great newsletter and I would encourage you to subscribe and become a paid member.
 
+## `sponsor` subtitle styling
+
+Sponsor item subtitles inherit explicit section text color overrides by default. Use subtitle-specific keys inside `contentStyles` when the subtitle needs its own color or type treatment:
+
+```yaml
+sections:
+- type: sponsor
+  title: UPCOMING
+  contentStyles:
+    color: "#f0f0f0"
+    subtitleColor: "#f0f0f0"
+    subtitleFontSize: "16px"
+    subtitleLineHeight: "18px"
+    subtitleFontWeight: "400"
+  items:
+  - title: Denver Premiere of BLKNWS Terms and Conditions
+    subtitle: May 29, 2026, at the MCA Denver Holiday Theater
+```
+
 ## `ad-block` section
 
 `ad-block` renders a single, email-safe ad card in `dense-discovery`.

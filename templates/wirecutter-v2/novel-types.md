@@ -13,8 +13,9 @@ These components were created specifically for this email design.
 - **Similar to**: sponsor
 
 ### Variables
-- `logo_image` (image) - Brand logo with mobile/desktop variants
-- `homepage_link` (url) - Link to main website
+- `header.logoImage` (image) - Desktop brand logo
+- `header.logoImageMobile` (image) - Mobile brand logo
+- `header.homepageLink` (url) - Link to main website
 
 ### HTML Structure
 `table > tr > td with linked image`
@@ -28,11 +29,11 @@ These components were created specifically for this email design.
 - **Status**: Completely new pattern
 
 ### Variables
-- `headline` (string) - Large article title
-- `hero_image` (image) - Main article image
-- `description` (html) - Article content with multiple paragraphs
-- `cta_link` (url) - Call-to-action link
-- `disclaimer` (html) - Editorial disclaimer box
+- `featuredArticle.headline` (string) - Large article title
+- `featuredArticle.heroImage` (image) - Main article image
+- `featuredArticle.description` (html) - Article content with multiple paragraphs
+- `featuredArticle.ctaLink` (url) - Call-to-action link
+- `featuredArticle.disclaimer` (html) - Editorial disclaimer box
 
 ### HTML Structure
 `Large title (46px) + hero image + multi-paragraph content + disclaimer box`
@@ -46,10 +47,10 @@ These components were created specifically for this email design.
 - **Status**: Completely new pattern
 
 ### Variables
-- `title` (string) - Article headline
-- `image` (image) - Article image
-- `content` (html) - Article body text
-- `link` (url) - Link to full article
+- `article.title` (string) - Article headline
+- `article.image` (image) - Article image
+- `article.content` (html) - Article body text
+- `article.link` (url) - Link to full article
 
 ### HTML Structure
 `h2 title + image + content paragraphs`
@@ -63,12 +64,13 @@ These components were created specifically for this email design.
 - **Status**: Completely new pattern
 
 ### Variables
-- `section_title` (string) - Section heading (e.g., 'More outdoor recs')
-- `product_items` (array) - Array of product recommendation items
-- `item_image` (image) - Product or category image
-- `item_title` (string) - Product/category title
-- `item_description` (string) - Brief product description
-- `item_link` (url) - Link to product page
+- `productShowcase.sectionTitle` (string) - Section heading (e.g., 'More outdoor recs')
+- `productShowcase.sectionLink` (url) - Link to the product category
+- `productShowcase.items` (array) - Product recommendation items
+- `productShowcase.items[].image` (image) - Product or category image
+- `productShowcase.items[].title` (string) - Product/category title
+- `productShowcase.items[].description` (string) - Brief product description
+- `productShowcase.items[].link` (url) - Link to product page
 
 ### HTML Structure
 `Section title + two-column grid with 280px width tables, equal-height containers`
@@ -82,10 +84,10 @@ These components were created specifically for this email design.
 - **Status**: Completely new pattern
 
 ### Variables
-- `company_logo` (image) - Small company logo
-- `unsubscribe_text` (html) - Unsubscribe instructions
-- `company_address` (string) - Company physical address
-- `legal_links` (array) - Privacy policy, terms, contact links
+- `footer.companyLogo` (image) - Small company logo
+- `footer.unsubscribeText` (html) - Unsubscribe instructions
+- `footer.companyAddress` (string) - Company physical address
+- `footer.legalLinks` (array) - Privacy policy, terms, contact links
 
 ### HTML Structure
 `Logo + unsubscribe text + address + legal links`
@@ -95,12 +97,20 @@ These components were created specifically for this email design.
 
 ## Usage
 
-These novel types work the same as standard types in your content files:
+This template uses top-level data objects that match its static components:
 
 ```yaml
-sections:
-- type: header
-  # ... section data
+template: wirecutter-v2
+header:
+  # logo fields
+featuredArticle:
+  # hero article fields
+article:
+  # secondary article fields
+productShowcase:
+  # sectionTitle, sectionLink, and items
+footer:
+  # footer fields
 ```
 
 If you want to reuse these types in other templates, copy the corresponding 

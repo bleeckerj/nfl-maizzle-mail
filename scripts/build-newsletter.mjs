@@ -20,6 +20,12 @@ import {
   resolveCommerceAdBlockSnapshots,
 } from '../lib/newsletter-core/index.mjs';
 import { hardenEmailHtmlForMobile } from '../lib/newsletter-core/email-html-hardening.mjs';
+import {
+  buildLinkTrackingMetadataManifest,
+  enrichHtmlWithLinkTrackingMetadata,
+  normalizeNewsletterLinkTracking,
+  reportLinkTrackingMetadataNotices,
+} from '../lib/newsletter-core/link-tracking-metadata.mjs';
 
 // Get script's directory for repo root detection
 const __filename = fileURLToPath(import.meta.url);
@@ -391,9 +397,6 @@ function pruneBuildInjectedFields(newsletterData) {
       delete section._contentStyleOverrides;
       delete section.descriptionStyles;
       delete section.spacerBackgroundColor;
-      delete section.headingStyles;
-      delete section.linkStyles;
-      delete section.labelStyles;
       delete section.headingStylesInline;
       delete section.linkStylesInline;
       delete section.labelStylesInline;
@@ -1072,6 +1075,10 @@ function catalogSections(newsletterData) {
 }
 
 const LINK_FIELD_CANDIDATES = new Set([
+  'abouturl',
+  'applyurl',
+  'archiveurl',
+  'bookinglink',
   'link',
   'readmorelink',
   'imagelink',
@@ -1079,6 +1086,12 @@ const LINK_FIELD_CANDIDATES = new Set([
   'sponsorlink',
   'bylinelink',
   'authorlink',
+  'ctalink',
+  'dispatchlink',
+  'locationpickerurl',
+  'originalsourceurl',
+  'shareurl',
+  'sourcelink',
   'viewonlinelink',
   'newslettersubscribelink',
   'unsubscribelink',
@@ -1126,6 +1139,21 @@ function collectLinkCandidates(value, path = []) {
       const nextPath = [...path, key];
       if (typeof child === 'string' && LINK_FIELD_CANDIDATES.has(key.toLowerCase())) {
         entries.push({ path: nextPath, url: child });
+      }
+      if (
+        child &&
+        typeof child === 'object' &&
+        !Array.isArray(child) &&
+        LINK_FIELD_CANDIDATES.has(key.toLowerCase())
+      ) {
+        const objectUrl = typeof child.href === 'string' && child.href.trim()
+          ? child.href
+          : typeof child.url === 'string' && child.url.trim()
+            ? child.url
+            : '';
+        if (objectUrl) {
+          entries.push({ path: nextPath, url: objectUrl });
+        }
       }
       if (Array.isArray(child) || (child && typeof child === 'object')) {
         entries.push(...collectLinkCandidates(child, nextPath));
@@ -1455,6 +1483,10 @@ async function buildNewsletter() {
   const existingOutputRawBeforeBuild = fs.existsSync(finalOutputPath)
     ? fs.readFileSync(finalOutputPath, 'utf8')
     : null;
+  const sourcePathForWarnings = path.resolve(inputPath);
+  const sourceTextForWarnings = fs.existsSync(inputPath)
+    ? fs.readFileSync(inputPath, 'utf8')
+    : '';
   try {
     let templateName = 'wirecutter'; // default
     
@@ -1536,6 +1568,11 @@ async function buildNewsletter() {
       repoRoot: REPO_ROOT,
       logger: console,
     });
+    const linkTracking = normalizeNewsletterLinkTracking(newsletterData, {
+      sourcePath: sourcePathForWarnings,
+      sourceText: sourceTextForWarnings,
+    });
+    reportLinkTrackingMetadataNotices(linkTracking, { logger: console });
     
     // Catalog sections for debugging
     catalogSections(newsletterData);
@@ -1784,9 +1821,16 @@ async function buildNewsletter() {
           }
 
           // Helper to convert style objects into inline CSS strings with camelCase to kebab-case conversion.
-          // Uses !important so section-level overrides survive Maizzle's global CSS inlining
+          // Uses !important by default so section-level overrides survive Maizzle's global CSS inlining
           // (the layout has `a { color: <theme.linkAccent> !important; }` which would otherwise win).
-          const toCssString = (styles = {}, theme) => {
+          // Mobile-locked typography must not emit inline !important for font size/line height:
+          // inline !important beats the max-width mobile lock in real email clients.
+          const mobileLockTypographyProperties = new Set(['font-size', 'line-height']);
+          const toCssString = (styles = {}, theme, options = {}) => {
+            const withoutImportant = options.withoutImportant instanceof Set
+              ? options.withoutImportant
+              : new Set(options.withoutImportant || []);
+
             return Object.entries(styles)
               .filter(([, v]) => v !== null && v !== undefined && v !== '')
               .map(([prop, val]) => {
@@ -1794,6 +1838,9 @@ async function buildNewsletter() {
                 // Special handling: if color is "inherit", prefer theme link accent when available
                 if (cssProp === 'color' && val === 'inherit' && theme?.linkAccent) {
                   return `color: ${theme.linkAccent} !important`;
+                }
+                if (withoutImportant.has(cssProp)) {
+                  return `${cssProp}: ${val}`;
                 }
                 return `${cssProp}: ${val} !important`;
               })
@@ -1812,13 +1859,36 @@ async function buildNewsletter() {
           const incomingContainerStyles = section.containerStyles && typeof section.containerStyles === 'object'
             ? { ...section.containerStyles }
             : {};
+          const incomingContentStyles = section.contentStyles && typeof section.contentStyles === 'object'
+            ? { ...section.contentStyles }
+            : {};
+          const templateContentStyles = (safeUsedConfig.contentStyles && typeof safeUsedConfig.contentStyles === 'object')
+            ? { ...safeUsedConfig.contentStyles }
+            : {};
+          section.contentStyles = { ...templateContentStyles, ...incomingContentStyles };
+          section._contentStyleOverrides = Object.keys(incomingContentStyles).length > 0 ? incomingContentStyles : null;
+          const subtitleContentStyleKeys = new Set([
+            'subtitleColor',
+            'subtitleFontSize',
+            'subtitleLineHeight',
+            'subtitleFontWeight',
+            'subtitleTextAlign',
+          ]);
+          const inheritableContentStyles = Object.fromEntries(
+            Object.entries(section.contentStyles).filter(([key]) => !subtitleContentStyleKeys.has(key)),
+          );
+          if (section.contentStyles && Object.keys(section.contentStyles).length > 0) {
+            sectionsWithInjectedContentStyles++;
+          }
           const incomingLinkStyles = section.linkStyles && typeof section.linkStyles === 'object'
             ? { ...section.linkStyles }
             : {};
+          const templateLinkStyles = (safeUsedConfig.linkStyles && typeof safeUsedConfig.linkStyles === 'object')
+            ? safeUsedConfig.linkStyles
+            : {};
           const mergedLinkStyles = {
-            ...((safeUsedConfig.linkStyles && typeof safeUsedConfig.linkStyles === 'object')
-              ? safeUsedConfig.linkStyles
-              : {}),
+            ...templateLinkStyles,
+            ...inheritableContentStyles,
             ...incomingLinkStyles,
           };
           // --- PATCH: Apply descriptionStyles/contentStyles/linkStyles to section.description ---
@@ -1841,22 +1911,20 @@ async function buildNewsletter() {
               const contentStyles = descStyles;
               let cssProperties = [];
               if (contentStyles.fontFamily) cssProperties.push(`font-family: ${contentStyles.fontFamily} !important`);
-              if (contentStyles.fontSize) cssProperties.push(`font-size: ${contentStyles.fontSize} !important`);
-              if (contentStyles.lineHeight) cssProperties.push(`line-height: ${contentStyles.lineHeight} !important`);
+              if (contentStyles.fontSize) cssProperties.push(`font-size: ${contentStyles.fontSize}`);
+              if (contentStyles.lineHeight) cssProperties.push(`line-height: ${contentStyles.lineHeight}`);
               if (contentStyles.color) cssProperties.push(`color: ${contentStyles.color} !important`);
               if (contentStyles.textAlign) cssProperties.push(`text-align: ${contentStyles.textAlign} !important`);
               const newCSSString = cssProperties.join('; ');
               desc = desc.replace(/<p(\s[^>]*)?>/gi, (match, attrs) => {
                 attrs = attrs || '';
-                if (section.type === 'ad-block') {
-                  const classMatch = attrs.match(/class="([^"]*)"/i);
-                  if (classMatch) {
-                    if (!classMatch[1].includes('mob-text')) {
-                      attrs = attrs.replace(/class="([^"]*)"/i, `class="$1 mob-text"`);
-                    }
-                  } else {
-                    attrs = ` class="mob-text"${attrs}`;
+                const classMatch = attrs.match(/class="([^"]*)"/i);
+                if (classMatch) {
+                  if (!classMatch[1].includes('mob-text')) {
+                    attrs = attrs.replace(/class="([^"]*)"/i, `class="$1 mob-text"`);
                   }
+                } else {
+                  attrs = ` class="mob-text"${attrs}`;
                 }
                 const styleMatch = attrs.match(/style="([^"]*)"/i);
                 if (styleMatch) {
@@ -1898,20 +1966,6 @@ async function buildNewsletter() {
           // keep explicit null for backgroundColor when not set so templates can fallback to themeColors
           section.containerStyles.backgroundColor = section.containerStyles.backgroundColor == null ? null : String(section.containerStyles.backgroundColor).trim();
 
-          // Expose contentStyles so templates can use configured typography instead of hardcoded values
-          // Merge: template section-styles.json provides defaults, section-level frontmatter overrides
-          const incomingContentStyles = section.contentStyles && typeof section.contentStyles === 'object'
-            ? { ...section.contentStyles }
-            : {};
-          const templateContentStyles = (safeUsedConfig.contentStyles && typeof safeUsedConfig.contentStyles === 'object')
-            ? { ...safeUsedConfig.contentStyles }
-            : {};
-          section.contentStyles = { ...templateContentStyles, ...incomingContentStyles };
-          // Track which properties were overridden by frontmatter for logging
-          section._contentStyleOverrides = Object.keys(incomingContentStyles).length > 0 ? incomingContentStyles : null;
-          if (section.contentStyles && Object.keys(section.contentStyles).length > 0) {
-            sectionsWithInjectedContentStyles++;
-          }
           // Expose descriptionStyles with fallback to contentStyles for section.description rendering
           section.descriptionStyles = (safeUsedConfig.descriptionStyles && typeof safeUsedConfig.descriptionStyles === 'object')
             ? { ...safeUsedConfig.descriptionStyles }
@@ -1941,7 +1995,13 @@ async function buildNewsletter() {
             textTransform: 'uppercase',
             color: '#778095'
           };
-          section.headingStyles = safeUsedConfig.headingStyles && typeof safeUsedConfig.headingStyles === 'object' ? { ...safeUsedConfig.headingStyles } : {};
+          const incomingHeadingStyles = section.headingStyles && typeof section.headingStyles === 'object'
+            ? { ...section.headingStyles }
+            : {};
+          const templateHeadingStyles = safeUsedConfig.headingStyles && typeof safeUsedConfig.headingStyles === 'object'
+            ? { ...safeUsedConfig.headingStyles }
+            : {};
+          section.headingStyles = { ...templateHeadingStyles, ...inheritableContentStyles, ...incomingHeadingStyles };
           section.linkStyles = mergedLinkStyles;
           const incomingLabelStyles = section.labelStyles && typeof section.labelStyles === 'object'
             ? { ...section.labelStyles }
@@ -1957,10 +2017,26 @@ async function buildNewsletter() {
             : {};
           section.labelStyles = { ...templateLabelStyles, ...incomingLabelStyles };
           section.sectionHeaderHeadingStyles = { ...templateSectionHeaderHeadingStyles, ...incomingSectionHeaderHeadingStyles };
-          section.headingStylesInline = toCssString({ ...defaultHeading, ...section.headingStyles });
-          section.sectionHeaderHeadingStylesInline = toCssString({ ...defaultSectionHeaderHeading, ...section.sectionHeaderHeadingStyles });
-          section.linkStylesInline = toCssString({ ...defaultLink, ...section.linkStyles }, theme);
-          section.labelStylesInline = toCssString({ ...defaultLabel, ...section.labelStyles });
+          section.headingStylesInline = toCssString(
+            { ...defaultHeading, ...section.headingStyles },
+            undefined,
+            { withoutImportant: mobileLockTypographyProperties },
+          );
+          section.sectionHeaderHeadingStylesInline = toCssString(
+            { ...defaultSectionHeaderHeading, ...section.sectionHeaderHeadingStyles },
+            undefined,
+            { withoutImportant: mobileLockTypographyProperties },
+          );
+          section.linkStylesInline = toCssString(
+            { ...defaultLink, ...section.linkStyles },
+            theme,
+            { withoutImportant: mobileLockTypographyProperties },
+          );
+          section.labelStylesInline = toCssString(
+            { ...defaultLabel, ...section.labelStyles },
+            undefined,
+            { withoutImportant: mobileLockTypographyProperties },
+          );
         const usingFallback = !sectionConfig;
         
         let sectionProcessedItems = 0;
@@ -2534,7 +2610,10 @@ async function buildNewsletter() {
     
     console.log(`📦 Saving as ${finalOutputPath}...`);
     const builtHtmlRaw = normalizeInlineStyleAttributeWhitespace(
-      fs.readFileSync(builtNewsletterPath, 'utf8'),
+      enrichHtmlWithLinkTrackingMetadata(
+        fs.readFileSync(builtNewsletterPath, 'utf8'),
+        linkTracking.manifest,
+      ),
     );
     const hardenedBuiltHtml = hardenEmailHtmlForMobile(builtHtmlRaw, {
       longTokenThreshold: 35,
@@ -2550,6 +2629,21 @@ async function buildNewsletter() {
       hardenedBuiltHtml.html,
     );
     fs.writeFileSync(finalOutputPath, finalOutputRaw, 'utf8');
+    const linkTrackingManifestPath = path.join(outputDir, `${outputName}.link-tracking-manifest.json`);
+    fs.writeFileSync(
+      linkTrackingManifestPath,
+      `${JSON.stringify(
+        buildLinkTrackingMetadataManifest(linkTracking, {
+          sourcePath: sourcePathForWarnings,
+          outputHtmlPath: finalOutputPath,
+          templateName,
+          outputName,
+        }),
+        null,
+        2,
+      )}\n`,
+      'utf8',
+    );
     if (preservedFrontmatter) {
       console.log('🧷 Preserved existing HTML frontmatter');
     }
@@ -2561,6 +2655,7 @@ async function buildNewsletter() {
     console.log('✅ Newsletter Built Successfully!');
     console.log('═══════════════════════════════');
     console.log(`📧 File: ${finalOutputPath}`);
+    console.log(`🧾 Link tracking manifest: ${linkTrackingManifestPath}`);
     console.log(`🎨 Template: ${templateName}`);
     console.log(`📄 Source: ${inputPath}`);
     

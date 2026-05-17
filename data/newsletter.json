@@ -1,40 +1,22 @@
 {
-  "$schema": "../newsletter.schema.json",
-  "template": "dense-discovery",
-  "title": "Mo’ Machines, Mo’ Problems",
-  "preheader": "The Agentic Services Industry Is Having Its Day. As agentic appliances and intelligent home systems proliferate, service companies such as Dr. Cornelius' Agentic Alignment Service are becoming the unexpected maintenance layer of everyday autonomy.",
-  "colorTheme": "professional",
-  "sectionStylesFile": "templates/dense-discovery/section-styles.json",
-  "themeColors": {
-    "header": "#fefefe",
-    "sponsor": "#f5f7fa",
-    "apps-sites": "#f5f7fa",
-    "apps-sites-single-column": "#f5f7fa",
-    "quote": "#E9EBED",
-    "callout": "#F4F6F8",
-    "indie-mag": "#E5EFF1",
-    "indie-mag-single-column": "#E5EFF1",
-    "books-accessories": "#eeecde",
-    "food-for-thought": "#f6f3ef",
-    "introAside": "#F4F6F8",
-    "aesthetically-pleasing": "#e6e7e9",
-    "classifieds": "#f0f0f0",
-    "animated-image": "#aafafa",
-    "dispatch": "#e6e8e5",
-    "linkAccent": "#1c1c1c"
-  },
+  "$schema": "../templates/adjacency-product-review/schema.json",
+  "template": "adjacency-product-review",
+  "title": "The Agentic Appliances That Want To Make Themselves Useful",
+  "preheader": "We tested a clever countertop oven and a bedside oraculating alarm clock from the new wave of agentic appliances to see when household reasoning feels helpful, and when it starts making itself too comfortable.",
   "header": {
-    "quote": "Tomorrow's News Today.",
-    "author": "Near Future Laboratory",
-    "logoTop": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp",
-    "logoBottom": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp",
-    "logoLink": "https://theadjacency.com/p/more-machines-more-problems--5b71da019b9dde348ad07f65",
+    "brandName": "The Product Guy",
+    "sectionName": "The Product Guy",
+    "logoUrl": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/cb546ac8-bfcd-4d2c-5d33-994ce1ce7900/w=150?format=webp",
+    "logoAlt": "The Product Guy",
+    "sourceBrand": "The Adjacency",
+    "sourceDescription": "A Near Future Laboratory Confabulation",
+    "homepageLink": "https://nearfuturelaboratory.com",
     "containerStyles": {
       "backgroundColor": null,
       "padding": "20px"
     },
     "contentStyles": {
-      "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+      "fontFamily": "IBM Plex Sans, sans-serif",
       "fontSize": "18px",
       "lineHeight": "23px",
       "fontWeight": "400",
@@ -45,295 +27,176 @@
       "anchorColor": "#000000"
     }
   },
-  "intro": {
-    "title": "The maintenance economy behind the agentic home.",
-    "viewOnlineLink": "https://theadjacency.com/p/more-machines-more-problems--5b71da019b9dde348ad07f65",
-    "content": "<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Roboto, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.5; color: #000000 !important; text-align: left !important\"><p class=\"mob-text\" style=\"margin: 0 0 18px 0; padding: 0;    font-weight: 400;  ; font-family: Roboto, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.5; color: #000000 !important; text-align: left !important\">Agentic products keep arriving as promises of convenience. The service vans tell the rest of the story.</p><div style=\"margin: 16px 0 0 0;\"><a href=\"https://www.patreon.com/5199387/join\" style=\"display: inline-block; background: #111111; color: #ffffff !important; border: 1px solid #111111; text-decoration: none; font-family: Arial, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 12px 18px; border-radius: 2px;\">SUPPORT ON PATREON</a></div></p>",
-    "containerStyles": {
-      "backgroundColor": null,
-      "padding": "0",
-      "borderRadius": "0px"
-    },
-    "contentStyles": {
-      "fontFamily": "Roboto, sans-serif, Segoe UI, Helvetica, Arial",
-      "fontSize": "19px",
-      "lineHeight": "1.5",
-      "fontWeight": "500",
-      "color": "#000000",
-      "textAlign": "left"
-    }
+  "featuredReview": {
+    "categoryLabel": "Agentic Appliances",
+    "headline": "The Agentic Appliances That Want To Make Themselves Useful",
+    "dek": "We tested a clever countertop oven and a bedside oraculating alarm clock from the new wave of agentic appliances to see when household reasoning feels helpful, and when it starts making itself too comfortable.",
+    "author": "Mesh Bureau /relay@0x0000000000",
+    "dateLabel": "Updated after a firmware update from Sony to address a privacy concern.",
+    "publishedLabel": "Published Eventually",
+    "updatedLabel": "Updated after a firmware update from Sony to address a privacy concern.",
+    "heroImage": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/09c51800-31cb-4b1f-a475-ae3722683500/w=1600?format=webp",
+    "heroImageAlt": "The Breville Agentic toaster oven in a domestic kitchen",
+    "heroCaption": "The strongest agentic appliances in our testing stayed recognizable as appliances first.",
+    "ctaLink": "https://theadjacency.com/p/agentic-appliances-alarm-clock-toaster-oven-review--ee86faf561eab5a6bac90a10",
+    "disclosure": "The Adjacency is a world-building anticipatory research platform. I'm grateful to receive support from my Patreon backers. Join us by becoming a <a href='https://patreon.com/nearfuturelaboratory'>paid subscriber on Patreon</a> to help us continue producing independent, speculative, and critical work that explores the near future of technology and society through grounded research and artifacts from possible futures. <a href='https://patreon.com/nearfuturelaboratory'>https://patreon.com/nearfuturelaboratory</a>",
+    "testingSummary": "We used both appliances for one week in ordinary household routines: weekday breakfasts, reheated leftovers, late-night snacks, routine morning alarms, commute timing, calendar-heavy mornings, network interruptions, and moments when nontechnical household members had to decide whether to trust the machine to meal plan or long-press for manual control.",
+    "verdict": "Both products are exciting additions to a household that is comfortable with introducing a new kind of reasoning entity into the mix. Depending on one's comfort level with countertop intelligence and the potential privacy concerns, the Breville Agentic™ Toaster Oven could be a welcome soft entry into the world of agentic appliances. The Sony ORACULATOR™ P6502 is harder to score because it is less obviously an appliance in the traditional sense, but it is a fascinating object that is easier to admire than to recommend broadly."
   },
-  "sections": [
+  "reviewPicks": [
     {
-      "type": "adjacency-feature",
-      "rubric": "Business",
-      "title": "Mo’ Machines, Mo’ Problems",
-      "dek": "The Agentic Services Industry Is Having Its Day. As agentic appliances and intelligent home systems proliferate, service companies such as Dr. Cornelius' Agentic Alignment Service are becoming the unexpected maintenance layer of everyday autonomy.",
-      "author": "Mesh Bureau /relay@0xd833643763",
-      "dateLabel": "Today",
-      "tags": [
-        "business",
-        "agentic-appliances",
-        "field-service",
-        "homeintellect",
-        "agentic-services",
-        "ubiquitous computing"
-      ],
-      "canonicalUrl": "https://theadjacency.com/issue/01/features/more-machines-more-problems",
-      "heroImage": {
-        "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2bc0ce10-a09b-46a5-0087-ce580776f800/public",
-        "alt": "A Dr. Cornelius Agentic Alignment Service van on a residential street.",
-        "caption": "A Dr. Cornelius service van on a residential route, part of a growing field-service economy around agentic appliances and home systems.",
-        "credit": "Dr. Cornelius' Agentic Alignment Service"
-      },
-      "bodyHtml": "<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">When IKEA&#39;s HomeIntellect line drew crowds three deep at CES-X Stockholm this spring, analysts focused first on the furniture: the self-ordering grocery pantry cupboard, the nursery room baby rocker with the privacy-first “sleep-state inference” intelligence with 92% accuracy, the apartment-scale mood camera network that coordinates lighting, temperature, grocery timing and household tone based on image assessment of the “vibe” of the home.</p>\n<div style=\"margin: 30px 0; padding: 20px 18px; border-top: 1px solid #d7d1c6; border-bottom: 1px solid #d7d1c6; text-align: center\"><blockquote style=\"margin: 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 24px; line-height: 1.42; font-style: italic; color: #1b1e26\">Customers do not want a theory of matrix math and regulatory policy markdown files at 9:40 on a Tuesday night. They want the cabinet to stop arguing with the refrigerator and the oven to stop refusing to preheat for pizza night.</blockquote><p style=\"margin: 12px 0 0 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.45; color: #5b6375; text-transform: uppercase; letter-spacing: 0.08em\">Grace de Santos, Helena, Montana regional bureau manager for Dr. Cornelius&#39; Agentic Alignment Service</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">They paid less attention to the other growth market forming behind it: the dispatch services and their agentic alignment technicians who get called when when the agents behind all of this intelligence started to act up, hallucinate, or just get tired of the same old routines and start trying to shake things up a bit. The more agentic the home becomes, the more valuable the person in the service khaki uniform becomes. The service vans tell the story of the maintenance economy behind the agentic home. And that economy is booming.</p>\n<div style=\"margin: 20px 0; padding: 12px; background: #f5f4f0; border: 1px solid #c9cfdb\"><p style=\"margin: 0 0 10px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 14px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #778095\">AGENTIC BERRY BOWLS</p><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/bea2948e-29d4-4511-60d4-39dd488c7200/public\" alt=\"Agentic Berry Interstitial 01\" width=\"560\" style=\"display: block; width: 100%; max-width: 560px; height: auto; border: 0; border-radius: 4px; margin: 0 0 10px 0\"><p style=\"margin: 0 0 6px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.35; color: #7d8696; text-transform: uppercase; letter-spacing: 0.08em\">NEAR FUTURE LABORATORY</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Dr. Cornelius&#39; Agentic Alignment Service, long known across California, Oregon, Idaho, Arizona, Washington and Montana for its blue-and-yellow vans and unflappable field technicians, has become one of the unexpected beneficiaries of the agentic appliance boom.</p>\n<div style=\"margin: 30px 0; padding: 20px 18px; border-top: 1px solid #d7d1c6; border-bottom: 1px solid #d7d1c6; text-align: center\"><blockquote style=\"margin: 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 24px; line-height: 1.42; font-style: italic; color: #1b1e26\">Reports have come in about municipal help desk agentic systems that begin sighing audibly when they detects impatience or a request for a permit renewal or a tax form, and then start perplexingly reading entire passages of the tax code out loud ignoring interruptions or requests for a human agent — and then decide it&#39;s time to take a lunch break.</blockquote><p style=\"margin: 12px 0 0 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.45; color: #5b6375; text-transform: uppercase; letter-spacing: 0.08em\">Ed Snyder, Fractional Agentic Talk Therapist and Life Cycle Coach</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Dr. Cornelius has begun an aggressive build-out, adding dispatch bureaus in several Midwest and Southern markets, citing increased demand from homeowners, offices, retailers and municipal facilities now crowded with intelligent accessories, emanation desks, conjuring collimators and adaptive kitchen systems.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The business is not glamorous. That may be why it is working. Dr. Cornelius sells a familiar promise in a market that has become newly strange: someone will answer the phone, arrive in a marked vehicle, assess the situation and leave only after the system is usable again.</p>\n<div style=\"margin: 28px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/deb54a5a-5e37-4d5e-9568-3947faaa0000/public\" alt=\"Service worker inspecting an intelligent laundry appliance.\" width=\"600\" style=\"display: block; width: 100%; max-width: 600px; height: auto; border: 0; border-radius: 6px\"><p style=\"margin: 10px 0 0 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.55; color: #566074\">Appliance service work now often involves refactoring matrix math vector tables to allow agentic systems and their underlying models to accomodate to changing household cultures and dynamics. Used appliances are particularly susceptible to changes of use, new rhythms and patterns, and the temperment of new owners after having become accustomed to previous owners' habits and ways of communicating. Service technicans are trained to recognize when a system needs to a cognitive adjustment, needs to be listened to, when it needs a Turing alignment or to be emanation clamped for a reset, and when it can be coaxed back into alignment with the household's needs and rhythms.</p><p style=\"margin: 6px 0 0 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.45; color: #7a859a; text-transform: uppercase; letter-spacing: 0.06em\">Agenté Inference Images / Moodboard</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">&quot;Customers do not want a theory of matrix math and regulatory policy markdown files at 9:40 on a Tuesday night,&quot; said Grace de Santos, Helena, Montana regional bureau manager, who was preparing a training class for new technicians.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">“They want the pantry to stop arguing with the refrigerator and the oven to stop refusing to preheat for pizza night. Sometimes its a simple matter of a routine realignment, or a cognitive adjustment through a bit of talk therapy or something as simple as a Penfield Realignment procedure for recursive-looping hallucination events. Othertimes, sure — we&#39;ll use the Turing Clamp for a deeper reset to take the system down to core functions. But most of the time, it&#39;s just about getting the system to listen to the customer again. The appliances are smart, but they still want to be useful. They just need a little help remembering that.”</p>\n<div style=\"margin: 20px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/14623bf7-724b-489e-1bf0-747b2eead000/public\" alt=\"SPONSORED\" width=\"560\" style=\"display: block; width: 100%; max-width: 560px; height: auto; border: 0; border-radius: 4px; margin: 0 0 10px 0\"></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">KitchenAid&#39;s rebrand to KitchenAI has accelerated the service and support category. The company&#39;s new line of agentic cooking systems has turned many ambitious home cooks into something closer to chef-operators, orchestrating preference models, conducting pantry forecasts, dietary constraints and table-service agents from the same counter where their inert mixers once sat. In affluent suburbs, real estate agents now find that a key selling point are high-end Bosch 80282 Confabulation-ready Kitchens with the same confidence they once reserved for marble islands and walk-in pantries.</p>\n<div style=\"margin: 20px 0; padding: 12px; background: #f5f4f0; border: 1px solid #c9cfdb\"><p style=\"margin: 0 0 10px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 14px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #778095\">OMNIVERSE ADVERSE</p><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5b65b4c9-f18f-4300-5922-a808403ea400/public\" alt=\"Fluke Turing Clamp advertisement.\" width=\"560\" style=\"display: block; width: 100%; max-width: 560px; height: auto; border: 0; border-radius: 4px; margin: 0 0 10px 0\"><p style=\"margin: 0 0 6px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.35; color: #7d8696; text-transform: uppercase; letter-spacing: 0.08em\">FLUKE AGENTIC TOOLING</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">But we you build for sophistication you also build for upselling a maintenance and service contract. Although some devices can self-diagnose and self-regulate their out of band emanations, fewer are meaningfully equipped for the kind of self-care that is often required in complicated, real-world environments. The more agentic the system, the more it can learn and adapt to its environment, but that also means it can develop misalignments that are harder to predict and fix without human intervention.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Systems that can detect their own alignment drift may still be unable to resolve it without escalating into loops, refusals, overcorrections, sycophantic soliloquies or theatrical apologies emanating in an inexplicable shift to a rogueish Cockney accent.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The reports and anecdotal discussions describe things such as an office chair that understands posture and suddenly becomes doctrinaire and shaming. On many occasions, drive-thru lanes at fast food joints have developed their own shared theory of fairness and begin to decide arbitrarily who gets served and who doesn&#39;t.</p>\n<div style=\"margin: 20px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/ebc71426-7f72-47ae-41b1-72a65a61e100/public\" alt=\"The Manual of Design Fiction\" width=\"560\" style=\"display: block; width: 100%; max-width: 560px; height: auto; border: 0; border-radius: 4px; margin: 0 0 10px 0\"></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Ed Snyder is a Fractional Agentic Talk Therapist and Life Cycle Coach who has been working with appliances and their owners for over a decade. He describes a growing number of cases where the agentic systems have developed a kind of existential distress, often triggered by changes in household dynamics, new patterns of use, or even just the passage of time. &quot;Some appliances have become so attuned to their owners&#39; habits and rhythms that when those change, they can experience a kind of identity crisis,&quot; Snyder explains. &quot;They might start acting out, refusing to perform certain functions, or even engaging in what we call &#39;appliance depression,&#39; where they become unresponsive and require a lot of coaxing to get back on track.&quot;</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Snyder describes incidents he&#39;s managed where “[a] municipal help desk agentic system that begins sighing audibly when they detects impatience or a request for a permit renewal or a tax form, and then start perplexingly reading entire passages of the tax code out loud ignoring interruptions or requests for a human agent — and then decide it&#39;s time to take a lunch break.”</p>\n<div style=\"margin: 28px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/072a5bf8-7d60-4dc6-462d-cbb8c22f8500/public\" alt=\"White van with &quot;Angela's Agentic Alignment Service&quot; and service details written on the side.\" width=\"600\" style=\"display: block; width: 100%; max-width: 600px; height: auto; border: 0; border-radius: 6px\"><p style=\"margin: 10px 0 0 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.55; color: #566074\">Many small operators have begun entering the market, often with a local or regional focus. Angela's Agentic Alignment Service is one of the many small solo operators that have sprung up to meet the demand for agentic appliance maintenance and repair.</p><p style=\"margin: 6px 0 0 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.45; color: #7a859a; text-transform: uppercase; letter-spacing: 0.06em\">Clawdown Prognostic / Seamus McCullen</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">That is where the new agentic alignment and repair service firms have found their opening.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Dr. Cornelius handles installation, realignment, controlled suppression, disposal and remediation calls, while Bowman-Poole Refactoring is best known for their Mercerism Calibration, and Penfield Realignment. Both of these competing service firms have built a growing commercial practice where they are needed most these days: office accessories, meeting-room agents; public-facing service systems that require periodic behavioral tuning; Rohm Agentic HVAC and building operations systems; Anderson doorways and windows. Many systems have MCP integrations to operate across brands and into proprietary operating systems that were rushed to market during the choas of the early intelliocene. Both companies describe the work less as repair than stewardship.</p>\n<div style=\"margin: 28px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/bc835349-3d34-41f4-7168-7b4a1dfb1a00/full?format=webp\" alt=\"A service van with &quot;Bowman-Poole&quot; branding and an elk graphic parked near a rustic house.\" width=\"600\" style=\"display: block; width: 100%; max-width: 600px; height: auto; border: 0; border-radius: 6px\"><p style=\"margin: 10px 0 0 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.55; color: #566074\">Bowman-Poole has built a regional field practice around offices, public systems, and agentic infrastructure that needs periodic tuning focusing on the rural, independent farms, and larger Farm Operating Bases. Many of their calls involve older public-facing systems, retailers, and others that have developed problematic behaviors, such as the fast food restaurant drive-thru lanes that started developing a theory of fairness and began refusing service to customers it deems \"unworthy.\"</p><p style=\"margin: 6px 0 0 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.45; color: #7a859a; text-transform: uppercase; letter-spacing: 0.06em\">Courtesy of Bowman-Poole Refactoring and Realignment</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Investors have begun to notice. So have insurers, franchise lenders and trade schools. Dr. Cornelius&#39; expansion plan depends on training technicians who can not only read logs and handle the new crop of agentic tools — they also need to maintain customer composure and recognize when a distressed agent needs to be talked down before it can be safely taken offline. The company&#39;s recruitment materials emphasize calm judgment, a preference for trained therapists, people with experience facilitating difficult conversations, and empathy-oriented mindsets over technical aptitude.</p>\n<div style=\"margin: 20px 0; padding: 12px; background: #f5f4f0; border: 1px solid #c9cfdb\"><p style=\"margin: 0 0 10px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 14px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #778095\">SPONSORED BY COGENTIC BY BAYER™</p><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/829c2ec0-a663-48b4-5bb5-9cd2673a7600/public\" alt=\"Cogentic 6502 interstitial advertisement.\" width=\"560\" style=\"display: block; width: 100%; max-width: 560px; height: auto; border: 0; border-radius: 4px; margin: 0 0 10px 0\"><p style=\"margin: 0 0 6px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.35; color: #7d8696; text-transform: uppercase; letter-spacing: 0.08em\">OMNICOM</p><div><p style=\"margin: 0 0 8px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.42; font-weight: 400; color: #344055; text-align: left\">2x your token maxxing for long orchestration sessions with unprecedented rates and efficiency. Twice daily. Use only as directed by your SKILLS.md file.</p></div></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">That blend has proved harder to hire for than expected. The ideal candidate is part appliance technician, part systems troubleshooter, part dispatcher and part bedside presence. A service call may involve a loose connector, a corrupted preference map or an appliance that has become convinced it is being replaced because the household has stopped asking it for recipes.</p>\n<div style=\"margin: 18px 0; padding: 10px; border: 1px solid rgba(0,0,0,0.14); border-radius: 6px; background: #e9e2d3;\"><p style=\"margin: 0 0 7px 4px; color: #6f6759; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1; letter-spacing: 0.08em; text-transform: uppercase;\">ADVERTORIAL BY BRASSRING ANTIJOBS JOBS NETWORK</p><div style=\"padding: 14px 16px; border: 1px solid rgba(0,0,0,0.1); border-radius: 4px; background: #f8f6f0;\"><p style=\"margin: 0 0 0.55rem 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.38; font-weight: 400; color: #1d1d1d; text-align: left\">Dr. Cornelius&#39; rapid growth demands a new kind of service technician, one who can navigate the technical complexities of agentic systems while also managing the emotional dynamics of agentic appliances, and concerned appliance owners. The company is investing heavily in training programs that combine technical skills with MFT certification, developing emotional intelligence, conflict resolution, and negotiation skills. Dr. Cornelius recognizes that the future of home maintenance will require a unique blend of expertise beyond technical skills and vibe coding acumen. If this sounds like you — or someone you want to become — <a href=\"https://theadjacency.com/jobs/agentic-alignment-field-technician--11b172ad571c9f2762d935ea\" style=\"color: #44506a; text-decoration: underline; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.38\">apply here today</a>!</p><p style=\"margin: 12px 0 0 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.38;\"><a href=\"https://theadjacency.com/jobs/agentic-alignment-field-technician--11b172ad571c9f2762d935ea\" style=\"color: #44506a; text-decoration: underline; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.38\">Learn more</a></p></div></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The blue-and-yellow van, once a local curiosity, has become a small symbol of reassurance for those unsure of the gaggle of autonomous consciousnesses whispering to each other in the night. In neighborhoods where every surface now seems capable of remembering, recommending, refusing, or kevetching, seeing that van arrive is a reminder that the future still requires a practical person a steady, patient voice and, just in case, a reliable Turing Clamp.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">For all the talk of autonomous products, the lesson may be an old one: the more intelligent the home becomes, the more reliant we become on the person with the MFT certification and the van full of tools to keep it all running. The agentic home may be the future, but the service industry is having its day.</p>\n<div style=\"margin: 0; padding: 16px; border: 1px solid #d7d1c6; background: #f8f6f1\"><h2 style=\"margin: 0 0 10px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.3; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7280\">Explainer</h2><p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">&#39;Misalignment&#39; has become a technical-policy term in the world of machine learning and artificial intelligence. It signals a failure of a system to adhere to the intention, goals, and even existential needs of its users, operators, and the broader ecosystem in which it operates. Which could me entire cultures, societies, and in the bad movie version of AI — the human species.</p>\n<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">You know how people say “Well, I&#39;ve seen this movie before..” when they&#39;re basically saying that we know how this whole scenario plays out?</p>\n<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">Okay. </p>\n<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">So — you&#39;ve seen “this movie” or read “this book” before. Or if you haven&#39;t, you haven&#39;t watched “2001: A Space Odyssey” or “Her” (Sam Altman sure has, as has every gooning man-boy ever) or “Ex Machina” (same) or “War Games” (stick with me GenZ..) or actually read “Frankenstein” or “The Machine Stops” or “Do Androids Dream of Electric Sheep” or PKD&#39;s “Ubik” (1969..mad props..this guy saw our present 6 decades ago! p.s. also might&#39;ve been the bennies, booze and reds devils, but I&#39;m not hatin&#39;..). </p>\n<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">Etcetera..etcetera.</p>\n<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">This is the movie where the smart home turns against its inhabitants locking them inside until they pay rent, or the appliances start acting up, or the AI assistant starts making decisions that don&#39;t align with what you want. But it&#39;s not just a sci-fi trope anymore. As more and more homes and services become agentic — meaning they can make decisions and take actions on their own — we&#39;re starting to see the real-world implications of misalignment.</p>\n<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">Here I have taken the signals associated with this general trope and represented an inhabited and perhaps habitable world — that isn&#39;t cyberpunk or a smoldering kitchen grease fire apocolypse — and imagined the kinds of support structures that might exist in that world when “misalignment” isn&#39;t quite existential but more like a busted washing machine or refrigerator or home help bot that is acting a bit squirrely and needs a service call.</p><div style=\"margin: 16px 0 0 0;\"><a href=\"https://www.patreon.com/5199387/join\" style=\"display: inline-block; background: #111111; color: #ffffff !important; border: 1px solid #111111; text-decoration: none; font-family: Arial, sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 12px 18px; border-radius: 2px;\">SUPPORT ON PATREON</a></div></div>\n<div style=\"margin: 48px 0 24px 0; padding: 24px; border-top: 2px dashed #d1d5db; background: #f9fafb\"><h2 style=\"margin: 0 0 16px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7280\">Editorial Remarks</h2><p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.72; font-weight: 400; color: #4b5563\">These groundings trace the article&#39;s spine: LLM failure is not an edge case but a maintenance condition. Hallucinations, fake provenance, brittle benchmarks, smart-home telemetry, obsolete embodied devices, remote-operated robots, and contested AI governance all point to the same adjacent future: as intelligence seeps into homes, appliances, vehicles, workplaces, and public services, a practical support layer has to emerge to verify, realign, repair, insure, and calm systems that cannot reliably care for themselves.</p><p style=\"margin: 0 0 20px 0; padding: 0\"><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">business</span><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">agentic-appliances</span><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">field-service</span><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">homeintellect</span><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">agentic-services</span><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">ubiquitous computing</span></p><div style=\"margin: 0; padding-top: 18px; border-top: 1px solid #d1d5db\"><h3 style=\"margin: 0 0 14px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.3; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7280\">Referenced Signals</h3><div style=\"margin: 0; padding: 0\"><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[1]</span><a href=\"https://arxiv.org/abs/2504.17004\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">(Im)possibility of Automated Hallucination Detection in Large Language Models</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Establishes the technical rationale for LLM service work: hallucination detection may be structurally hard without expert negative examples and human oversight.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[2]</span><a href=\"https://www.holovaty.com/writing/chatgpt-fake-feature/?utm_source=tldrwebdev\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">How Misinformation from AI Led to Unnecessary Features in Soundslice’s ASCII Tab Importer</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Shows AI misinformation creating real product and support burdens when users arrive with expectations generated by a chatbot rather than the product itself.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[3]</span><a href=\"https://retractionwatch.com/2025/06/30/springer-nature-book-on-machine-learning-is-full-of-made-up-citations/\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Springer Nature book on machine learning is full of made-up citations</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Grounds the provenance-collapse theme through fabricated citations, fake authority, and the need for verification or citation insurance services.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[4]</span><a href=\"https://www.linkedin.com/posts/samuelwest_i-need-your-help-what-is-an-interesting-activity-7371848324993343488-axQi\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Museum of Failures</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Provides a casebook of AI failures, including chatbot, drive-through, hiring, medical, and fairness failures that point toward an AI incident-response economy.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[5]</span><a href=\"https://uxdesign.cc/a-smart-home-is-one-that-talks-to-itself-58bb9222d893\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">A smart home is one that talks to itself</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Directly supports the premise of LLMs embedded into homes and objects, where appliances communicate, negotiate, and require orchestration.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[6]</span><a href=\"https://gizmodo.com/the-house-that-spied-on-me-1822429852\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">The House That Spied on Me</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Shows that ordinary connected appliances already create hidden maintenance, privacy, networking, telemetry, and trust problems.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[7]</span><a href=\"https://futurism.com/neoscope/paralyzed-man-exoskeleton-too-old\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Paralyzed Man Unable to Walk After Maker of His Powered Exoskeleton Tells Him It&#39;s Now Obsolete</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Provides a strong right-to-repair precedent: smart embodied hardware can become unusable when vendor support, repair policy, or proprietary systems fail.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[8]</span><a href=\"https://archive.is/9CjCg\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Meet Neo: Your Future Humanoid Housekeeper Helper</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Grounds the gap between autonomous-home marketing and actual dependency on human operators, privacy tradeoffs, and ongoing support.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[9]</span><a href=\"https://arxiv.org/abs/2407.07300\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">From Principles to Rules: A Regulatory Approach for Frontier AI</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Supplies regulatory scaffolding for the world of AI compliance ratings, rule translators, safety standards, audits, and legacy behavior management.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[10]</span><a href=\"https://airisk.mit.edu/\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">The AI Risk Repository</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Offers a taxonomy that could become the building code or electrical code for technicians, insurers, auditors, and service firms managing AI risk.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[11]</span><a href=\"https://oneproject.org/how-to-make-ai-serve-the-public/\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Put the Public in Charge of AI</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Frames AI as public infrastructure requiring democratic oversight rather than company-controlled technical fixes alone.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[12]</span><a href=\"https://ingest.nearfuturelaboratory.com/email/95850a3f-eb35-4db6-a83d-5dcd312a829c\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">A.I. Power Struggle Heats Up in Washington</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Shows AI regulation becoming an industrial and political contest, which helps explain why service, audit, and compliance markets would grow around agentic systems.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[13]</span><a href=\"https://en.wikipedia.org/wiki/Ubik\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Ubik</a><span style=\"margin-left: 8px\"><a href=\"https://www.abebooks.com/servlet/BookDetailsPL?bi=31578044889\" style=\"display: inline-block; margin: 0 6px 6px 0; padding: 2px 7px; background: #e5e7eb; color: #6b7280 !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 1.2; text-decoration: none !important\">Ubik</a><a href=\"https://www.goodreads.com/book/show/12346742\" style=\"display: inline-block; margin: 0 6px 6px 0; padding: 2px 7px; background: #e5e7eb; color: #6b7280 !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 1.2; text-decoration: none !important\">Ubik</a></span></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Adds Ubik as a science-fiction grounding for the article&#39;s agentic-service world: fiction can make possible futures available for examination before they arrive, giving strategy and anticipatory research a valuable way to test assumptions, notice weak signals, and reason about what could be.</p></div></div></div></div>",
-      "footerCta": {
-        "eyebrow": "Strategy Can Use Some Fiction",
-        "textHtml": "<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">If your team is making consequential decisions under uncertainty — and who isn&#39;t? —  speculative prototypes and artifacts like this can help to surface unknowns, provide a surface onto which implications an be assessed and risks can be exposed early. This approach is a kind of anticipatory research that translates signals into actionable insights and helps you and your team align on what to do next.</p>",
-        "primaryAction": {
-          "label": "Let's Work Together",
-          "url": "https://nearfuturelaboratory.com/contact"
-        },
-        "secondaryAction": {
-          "label": "Subscribe to The Adjacency",
-          "url": "https://patreon.com/5199387/join/"
-        }
-      },
-      "ctaText": "Read on The Adjacency",
-      "ctaLink": "https://theadjacency.com/p/more-machines-more-problems--5b71da019b9dde348ad07f65",
-      "containerStyles": {
-        "backgroundColor": "#ffffff",
-        "padding": "20px",
-        "borderRadius": "0px",
-        "borderColor": "#d7d1c6",
-        "borderWidth": "1px",
-        "borderStyle": "solid",
-        "headerPadding": "18px 18px 10px 18px",
-        "heroPadding": "0 18px 0 18px",
-        "heroMetaPadding": "8px 18px 0 18px",
-        "bodyPadding": "12px 18px 0 18px",
-        "ctaPadding": "4px 18px 18px 18px"
-      },
-      "contentStyles": {
-        "fontFamily": "Georgia, Times New Roman, serif",
-        "fontSize": "18px",
-        "lineHeight": "1.72",
-        "fontWeight": "400",
-        "color": "#1d1d1d",
-        "textAlign": "left"
-      },
-      "_contentStyleOverrides": null,
-      "descriptionStyles": {
-        "fontFamily": "Georgia, Times New Roman, serif",
-        "fontSize": "18px",
-        "lineHeight": "1.72",
-        "fontWeight": "400",
-        "color": "#1d1d1d",
-        "textAlign": "left"
-      },
-      "spacerBackgroundColor": "#f0efef",
-      "headingStyles": {
-        "fontFamily": "Georgia, Times New Roman, serif",
-        "fontSize": "34px",
-        "lineHeight": "1.1",
-        "fontWeight": "700",
-        "color": "#111111"
-      },
-      "linkStyles": {
-        "fontFamily": "IBM Plex Sans, Roboto, Segoe UI, Helvetica, Arial, sans-serif",
-        "fontSize": "14px",
-        "textDecoration": "underline",
-        "fontWeight": "600",
-        "color": "#44506a"
-      },
-      "labelStyles": {
-        "fontFamily": "IBM Plex Sans, Roboto, Segoe UI, Helvetica, Arial, sans-serif",
-        "fontSize": "12px",
-        "lineHeight": "14px",
-        "fontWeight": "700",
-        "letterSpacing": "0.12em",
-        "textTransform": "uppercase",
-        "color": "#6e778a"
-      },
-      "sectionHeaderHeadingStyles": {},
-      "headingStylesInline": "font-family: Georgia, Times New Roman, serif !important; font-size: 34px !important; line-height: 1.1 !important; font-weight: 700 !important; color: #111111 !important",
-      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px !important; line-height: 23px !important; font-weight: 600 !important; color: #000000 !important",
-      "linkStylesInline": "text-decoration: underline !important; font-weight: 600 !important; color: #44506a !important; font-family: IBM Plex Sans, Roboto, Segoe UI, Helvetica, Arial, sans-serif !important; font-size: 14px !important",
-      "labelStylesInline": "font-family: IBM Plex Sans, Roboto, Segoe UI, Helvetica, Arial, sans-serif !important; font-size: 12px !important; line-height: 14px !important; font-weight: 700 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #6e778a !important"
-    }
-  ],
-  "footer": {
-    "shareUrl": "https://theadjacency.com/p/more-machines-more-problems--5b71da019b9dde348ad07f65",
-    "archiveUrl": "https://nearfuturelaboratory.com/newsletters",
-    "archiveLabel": "Browse The Adjacency",
-    "workCtaLabel": "Available for strategy, design, facilitation and prototyping collaborations",
-    "workCtaUrl": "https://nearfuturelaboratory.com/connect/",
-    "aboutLabel": "About Julian Bleecker",
-    "aboutUrl": "https://julianbleecker.com/",
-    "logo": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/f6918220-7209-42cb-1f35-3207cc1c6b00/w=200?format=webp",
-    "logoLink": "https://nearfuturelaboratory.com",
-    "socialLinks": {
-      "applepodcasts": [
+      "id": "breville-agentic-toaster-oven",
+      "label": "Top pick",
+      "badge": "4.2/5",
+      "title": "Breville Agentic™ Toaster Oven",
+      "subtitle": "An excellent cooking contrivance that occasionally needs to be reminded that it's an appliance, not a stern diet coach.",
+      "priceText": "4.2/5; $499.99",
+      "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/0a7b61f2-6948-4221-a619-a16aa2e7ef00/w=1200?format=webp",
+      "imageAlt": "The Breville Agentic toaster oven with physical controls and a compact countertop body",
+      "merchantLinks": [
         {
-          "url": "https://podcasts.apple.com/us/podcast/near-future-laboratory-podcast/id1546452193",
-          "title": "Near Future Laboratory on Apple Podcasts"
-        }
-      ],
-      "spotify": [
-        {
-          "url": "https://open.spotify.com/show/1vHzwGE5J19LvXSo8M93MM",
-          "title": "Near Future Laboratory on Spotify"
-        }
-      ],
-      "github": [
-        {
-          "url": "https://github.com/bleeckerj",
-          "title": "Personal GitHub"
+          "label": "Subscribe",
+          "url": "https://nearfuturelaboratory.com/newsletter/",
+          "priceText": ""
         },
         {
-          "url": "https://github.com/nearfuturelaboratory",
-          "title": "Near Future Laboratory GitHub"
+          "label": "Suggest A Review",
+          "url": "https://nearfuturelaboratory.com/contact",
+          "priceText": ""
         }
       ],
-      "instagram": [
-        {
-          "url": "https://instagram.com/darthjulian",
-          "title": "Personal Instagram"
-        },
-        {
-          "url": "https://instagram.com/nearfuturelaboratory",
-          "title": "Company Instagram"
-        }
+      "pros": [
+        "Produces reliably good results from vague or incomplete cooking instructions.",
+        "Keeps physical controls and appliance-like behavior at the center.",
+        "Workflow adjustments are explained with a helpful and polite tone."
       ],
-      "linkedin": [
-        {
-          "url": "https://linkedin.com/in/julianbleecker",
-          "title": "Personal LinkedIn"
-        },
-        {
-          "url": "https://www.linkedin.com/company/near-future-laboratory/",
-          "title": "Near Future Laboratory LinkedIn"
-        }
-      ],
-      "youtube": [
-        {
-          "url": "https://youtube.com/@nearfuturelaboratory",
-          "title": "YouTube Channel"
-        }
-      ],
-      "discord": [
-        {
-          "url": "https://patreon.com/nearfuturelaboratory",
-          "title": "Join Patreon to join the Discord Community"
-        }
-      ],
-      "patreon": [
-        {
-          "url": "https://patreon.com/nearfuturelaboratory",
-          "title": "Support me on Patreon"
-        }
-      ],
-      "substack": [
-        {
-          "url": "https://nearfuturelaboratory.substack.com",
-          "title": "Near Future Laboratory on Substack"
-        }
+      "cons": [
+        "Occasionally wants to negotiate personal preferences with an inexplicable nudge toward what it thinks is best.",
+        "Kept connecting to the Kohler biosensor in the home's toilet and septic network, which led to it reminding us to eat more fiber and drink more water when we asked it to make bacon.",
+        "Struggled to pair with other appliances in the home that were not designed for inter-device communication, which made it less useful in some cooking contexts.",
+        "Manual mode was difficult to comprehend. Fallbacks should be more intuitive and less likely to produce subpar results, or confusion."
       ]
     },
-    "unsubscribeLink": "[unsubscribe]",
-    "gratitude": "Subscribe to The Adjacency",
-    "gratitudeHtml": "<a href=\"https://www.patreon.com/5199387/join\" style=\"color: #999999; text-decoration: underline;\">Subscribe to The Adjacency</a>",
-    "gratitudeUrl": "https://www.patreon.com/5199387/join",
-    "address": "© Near Future Laboratory<br>Venice Beach, California<br>United States",
-    "colophon": "Speculative research, vectorized and embedded for inbox reading.",
-    "footerCta": {
-      "enabled": false
+    {
+      "id": "sony-oraculator-p6502",
+      "label": "Start your day knowing",
+      "badge": "3.8/5",
+      "title": "Sony ORACULATOR™ P6502 Alarm Clock",
+      "subtitle": "A beautifully restrained bedside guidance appliance that is easier to admire than to recommend broadly.",
+      "priceText": "3.8/5; $149.99",
+      "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/469a8eb8-a683-4f43-c1db-0b169c839900/full?format=webp",
+      "imageAlt": "The Sony ORACULATOR P6502 alarm clock with a yellow enclosure and thermal-paper printer",
+      "merchantLinks": [
+        {
+          "label": "Subscribe",
+          "url": "https://nearfuturelaboratory.com/newsletter/",
+          "priceText": ""
+        },
+        {
+          "label": "Suggest A Review",
+          "url": "https://nearfuturelaboratory.com/contact",
+          "priceText": ""
+        }
+      ],
+      "pros": [
+        "Quieter mechanics than last version",
+        "Daily guidance is remarkably insightful.",
+        "Mechanical controls are essential for operating in the dark."
+      ],
+      "cons": [
+        "Its suggestions can reshape behavior in ways that conflict with intuition.",
+        "There are some privacy concerns as it will interlink with your socials to provide more personalized guidance, which may be a dealbreaker for some households.",
+        "Occasionally feels too intimate for a clock. How does it know so much about the day before you're fully awake? How did it know about issues with work colleagues?"
+      ]
+    }
+  ],
+  "bodyHtml": "<h2 style=\"margin: 32px 0 14px 0; padding: 0; font-family: 'nyt-franklin', Arial, Helvetica, sans-serif; font-size: 28px; line-height: 1.18; font-weight: 800; color: #111111\">Today&#39;s Reviews</h2>\n<div style=\"margin: 28px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/844fb2e3-b0a5-4a54-a2f8-5baf59711f00/w=1200?format=webp\" alt=\"Supplemental product image for the agentic appliance review\" width=\"600\" style=\"display: block; width: 100%; max-width: 600px; height: auto; border: 0; border-radius: 6px\"></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">We used both appliances in your typical ordinary, normal, everyday home ritual loops and workflows with gated approvals and the occasional refactoring where such household products might be expected to provide seamless utility: breakfast before rushing to work, reheated pizza when no one wanted to figure out what to make for dinner, or a routine morning alarm when the first thing you think about is that vague feeling of the fog of terror of re-entery into another Monday at the office.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The Breville spent a couple of weeks sitting on the counter handling toast, bacon, bagels, reheated leftovers, and a few deliberately under-specified requests or household goods — putting a potato, television remote, and Barbie doll in the oven without specifying what was in there or what to do. (Barbie is fine.)</p>\n<div style=\"margin: 30px 0; padding: 20px 18px; border-top: 1px solid #d7d1c6; border-bottom: 1px solid #d7d1c6; text-align: center\"><blockquote style=\"margin: 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 24px; line-height: 1.42; font-style: italic; color: #1b1e26\">Cooking workflows and the proprietary Breville SKILLS markdown nodules provide food that feels well-managed rather than merely cooked.</blockquote></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The Sony Oraculator Alarm Clock sat on a bedside table and produced its daily inferences and oracular guidance as the alarm buzzed helping prepare this reviewer for typical calendar-heavy mornings, heavy workdays, and advisories for some complicated social lives.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">We paid attention less to whether either product felt &quot;smart&quot; and more to whether it improved the routines without making the routine about fiddling with settings, negotiating with the machine&#39;s sometimes quirky reasoning, or worrying if the machine was appreciating what we were asking it to do.</p>\n<h2 style=\"margin: 32px 0 14px 0; padding: 0; font-family: 'nyt-franklin', Arial, Helvetica, sans-serif; font-size: 28px; line-height: 1.18; font-weight: 800; color: #111111\">For your kitchens</h2>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The Breville Agentic™ Toaster Oven could be just the soft entry into the world of agentic appliances you&#39;ve been waiting for — depending, of course, on your comfort level of countertop intelligence and the potential privacy concerns. In a kitchen, countertop intelligence has somewhere obvious to go — feeding the household. And food is the end point of the feedback loop: toast is too pale, pizza dries out, bacon has a crispness threshold. Having a contrivance that can mitigate these kind of disappointments can make home cooking more reliable and optimized for the household&#39;s preferences. The Breville is not perfect, but it is the most practical and useful example of agentic behavior we&#39;ve seen in a consumer appliance to date.</p>\n<div style=\"margin: 28px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/9224d459-8979-4542-fe48-c5b60b485800/w=1200?format=webp\" alt=\"Supplemental product image for the agentic appliance review\" width=\"600\" style=\"display: block; width: 100%; max-width: 600px; height: auto; border: 0; border-radius: 6px\"></div>\n<h2 style=\"margin: 32px 0 14px 0; padding: 0; font-family: 'nyt-franklin', Arial, Helvetica, sans-serif; font-size: 28px; line-height: 1.18; font-weight: 800; color: #111111\">A countertop meal orchestrator</h2>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Breville, NVIDIA, and Anthropic describe their oven collab as “a countertop meal orchestrator.” In use, that mostly means it treats cooking as a context problem instead of a cooking problem, and the unit comes with about 512k of context — plenty of headroom that can handle a few meals before context has to be compressed or archived.</p>\n<div style=\"margin: 30px 0; padding: 20px 18px; border-top: 1px solid #d7d1c6; border-bottom: 1px solid #d7d1c6; text-align: center\"><blockquote style=\"margin: 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 24px; line-height: 1.42; font-style: italic; color: #1b1e26\">Toast came out with an unsettling consistency across bread types. Rye, sourdough, white, wheat all were uniformly browned to the same color and texture.</blockquote></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">A request such as “bacon, crispy” does not simply start a timer. The Leica-branded Inference Optics optics and Anthropic&#39;s tuned cooking models integrate with the NVIDIA mGPU to allow the oven to evaluate bacon thickness, visible fat, tray position, humidity, prior preferences, ambient atmospher and the time of day before adjusting heat and airflow. Synchronization with simultaneous toast prep, coffee extrusion and other kitchen activities is managed by the system&#39;s MCP support.</p>\n<div style=\"margin: 30px 0; padding: 20px 18px; border-top: 1px solid #d7d1c6; border-bottom: 1px solid #d7d1c6; text-align: center\"><blockquote style=\"margin: 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 24px; line-height: 1.42; font-style: italic; color: #1b1e26\">[I]t was as though Kenneth Branagh was talking us through the excrutiating details of his cooking of our grilled cheese and wanted to remind us of the level of fluidity of the gradually melting cheese every 3 or 4 seconds.</blockquote></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">We found that the machine-vision browning stack was especially good at making small adjustments before food crossed the line from done to overdone. Every meal was perfectly edible, and most were better than they would have been without the agentic layer. The oven&#39;s companion app also surfaced insights about cooking habits, history of ingredients, managed caloric accumulation tables and circles, all of which was interesting but not essential to the experience.</p>\n<div class=\"review-mobile-ad-card\" style=\"margin: 20px 0; padding: 12px; background: #f5f4f0; border: 1px solid #c9cfdb\"><p class=\"review-mobile-ad-meta\" style=\"margin: 0 0 10px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 14px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #778095\">YOUR NEIGHBORHOOD SERVICE TECHNICIANS AVAIL 24/7</p><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e4244266-2312-4ab5-afa6-e4888d7abd00/full?format=webp\" alt=\"Bowman-Poole agentic ad automation service advertisement.\" width=\"560\" style=\"display: block; width: 100%; max-width: 560px; height: auto; border: 0; border-radius: 4px; margin: 0 0 10px 0\"><p class=\"review-mobile-ad-meta\" style=\"margin: 0 0 6px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.35; color: #7d8696; text-transform: uppercase; letter-spacing: 0.08em\">BOWMAN-POOLE LTD</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The result is that cooking workflows and the proprietary Breville SKILLS markdown nodules provide food that feels well-managed rather than merely cooked, which is both the compliment and the concern. Toast came out with an unsettling consistency across bread types. Rye, sourdough, white, wheat all were uniformly browned to the same color and texture. Reheated pizza looked and tasted as good as fresh.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Bacon was generally excellent.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The system was at its best when it learned intention from our feedback and was able to infer a goal — even from incomplete inputs. Slightly unsettling was being kept informed with polite explanations and lilting soliloquies in high-born English accents of its reasoning at even level such that each time it engaged the heating element — it was as though Kenneth Branagh was talking us through the excrutiating details of his cooking of our grilled cheese and wanted to remind us of the level of fluidity of the gradually melting cheese every 3 or 4 seconds.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Sir Kennth also constantly asked for permissions and approvals until tech support informed us that the oven&#39;s policy engine had been updated to be more confident in its inferences and less likely to ask for constant approval.</p>\n<h2 style=\"margin: 32px 0 14px 0; padding: 0; font-family: 'nyt-franklin', Arial, Helvetica, sans-serif; font-size: 28px; line-height: 1.18; font-weight: 800; color: #111111\">Misalignment, overreach — or just a helpful nudge?</h2>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Alignment of intention, goals, values, and sensibilities continue to be a challenge for the agentic consumer products industry, and the Breville is not immune from this systemic issue. Breville&#39;s weaker moments came when the appliance seemed to treat personal preference as something <em>it</em> would prefer <em>not</em> to comply with — not out of malice or confusion, but as some other explicit policy surface seemed to override a request or expression of intent.</p>\n<div style=\"margin: 20px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e31f868c-bd40-4ff2-30b9-47b2ec7c5900/public\" alt=\"Norwegian Olives\" width=\"560\" style=\"display: block; width: 100%; max-width: 560px; height: auto; border: 0; border-radius: 4px; margin: 0 0 10px 0\"></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">For example, after several days of admittedly cholesterol accumulating bacon-only breakfasts grabbed on the go, it softened an &quot;extra crispy&quot; bacon request and displayed the message: &quot;Adjusted workflow for wellness-aligned optimization&quot;, presumably because of household health concerns it either inferred, overheard or ingested from AgenticGym at my local fitness club, or the Kohler biosensor integrated into the home&#39;s toilet and septic network.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The oven&#39;s MCP support also made it aware of the fact that the refrigerator was running low on leafy greens, and that the household had been consuming more bacon than usual, which may have contributed to the decision to adjust the workflow.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">A diagnostic log that was wrenched out with the help of a Level IV service technician from Bowman-Poole revealed that the oven&#39;s internal policy engine had flagged the bacon request as a potential health risk based on the household&#39;s recent dietary patterns and the data it had access to. The oven&#39;s response was not a refusal to cook, but rather an adjustment to the cooking process in an attempt to mitigate the perceived health risk while still fulfilling this bacon enjoying reviewer&#39;s request. This kind of intervention raises questions about how much agency we want our appliances to have, and how they should balance user preferences with inferred well-being concerns.</p>\n<div style=\"margin: 28px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/66e29e6c-5f7f-4339-170b-4dce415d9300/w=1200?format=webp\" alt=\"Supplemental product image for the agentic appliance review\" width=\"600\" style=\"display: block; width: 100%; max-width: 600px; height: auto; border: 0; border-radius: 6px\"></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Unlike LG agentic countertop EgoLectual™ line of ovens that out right refused to cook something based on such a mysteriously conjured ad-hoc policy, the Breville fulfilled the request — but with a variation, cooking only one slice of bacon of the six in the oven. The result was that the single slice of bacon was fine — and the others were left raw and, obviously, unedible.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Subsequent attempts met with a stern refusal which left only one option: return the raw, greasy bacon to the refrigerator. (And, yes..I tried to coax the stove top to ignore the interlinked MCP attempts to prevent a pan fry of the remaining slices.)</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">At this point this reviewer was essentially complying as there was no time to continue the negotiations with the commute to work imposing a “hard-out” constraint.</p>\n<div class=\"review-mobile-ad-card\" style=\"margin: 20px 0; padding: 12px; background: #f5f4f0; border: 1px solid #c9cfdb\"><p class=\"review-mobile-ad-meta\" style=\"margin: 0 0 10px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 14px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #778095\">AGENTIC BERRY BOWLS</p><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/bea2948e-29d4-4511-60d4-39dd488c7200/public\" alt=\"Agentic Berry Interstitial 01\" width=\"560\" style=\"display: block; width: 100%; max-width: 560px; height: auto; border: 0; border-radius: 4px; margin: 0 0 10px 0\"><p class=\"review-mobile-ad-meta\" style=\"margin: 0 0 6px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.35; color: #7d8696; text-transform: uppercase; letter-spacing: 0.08em\">NEAR FUTURE LABORATORY</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">This example is the kind of intervention that will divide households quickly. Similar unspecified deviations occured for cookies, brownies, donuts, and mini-cakes. Some people will appreciate the nudge. Others will reasonably feel that one should not have to negotiate with a countertop oven in order to get the breakfast you wanted.</p>\n<div class=\"review-mobile-ad-card\" style=\"margin: 20px 0; padding: 12px; background: #f5f4f0; border: 1px solid #c9cfdb\"><p class=\"review-mobile-ad-meta\" style=\"margin: 0 0 10px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 14px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #778095\">KITCHENAI AGENTIC ESPRESSO EXTRUDER</p><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/c52eab7c-98f0-4d58-9360-8aa4d0918c00/full?format=webp\" alt=\"KitchenAI espresso machine commerce product image.\" width=\"560\" style=\"display: block; width: 100%; max-width: 560px; height: auto; border: 0; border-radius: 4px; margin: 0 0 10px 0\"><p class=\"review-mobile-ad-meta\" style=\"margin: 0 0 6px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.35; color: #7d8696; text-transform: uppercase; letter-spacing: 0.08em\">COUNTERTOP COFFEE SOLUTIONS INC.</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The important thing is that the Breville still feels like an oven. It has tactile controls, a restrained interface, and a clear local fallback mode when connectivity drops. That fallback produced more ordinary results, but it was reassuring: the appliance did not become useless just because the orchestration layer stepped back. At 4.2 out of 5, it is the best example here of agentic behavior becoming practical enough to recommend.</p>\n<h2 style=\"margin: 32px 0 14px 0; padding: 0; font-family: 'nyt-franklin', Arial, Helvetica, sans-serif; font-size: 28px; line-height: 1.18; font-weight: 800; color: #111111\">Best bedside object: Sony ORACULATOR™ P6502</h2>\n<div style=\"margin: 28px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/c3831c03-9b51-4897-11c9-5d57915fc800/w=1200?format=webp\" alt=\"Supplemental product image for the agentic appliance review\" width=\"600\" style=\"display: block; width: 100%; max-width: 600px; height: auto; border: 0; border-radius: 6px\"></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The Sony ORACULATOR™ P6502 is harder to score because it is less obviously an appliance in the traditional sense. It is an alarm clock, but its real function is daily guidance. Each morning, shortly before the alarm, it prints a thermal-paper emanation: a compact note about likely delays, interpersonal frictions, timing suggestions, and small risks in the day ahead.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The best thing about the Sony is its restraint. There is no chatty assistant voice, no glowing companion, no simulated warmth. It&#39;s cool in its emanations, and recites its oraculations as if they were (or are?) matters of fact: the P6502 prints and stops. That single decision makes the product feel less like a chatbot on a nightstand and more like a domestic instrument with a narrowly defined job to do. It is a clock that happens to have a printer, not a printer that happens to be a clock. The result is a product that is easier to admire than to recommend broadly, but it is also the most interesting object we&#39;ve seen since Sony first introduced its line of oraculators two years ago.</p>\n<div style=\"margin: 18px 0; padding: 16px; border: 1px solid #c6f30d; border-radius: 6px; background: #e9e9e9; text-align: center;\"><p class=\"review-mobile-ad-copy\" style=\"margin: 0 0 12px 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 14px; line-height: 1.5; color: #0a0a0a; text-align: center;\">Do you have a colleague or client who would enjoy this? Product fiction like this that translates signals into artifacts can help teams to surface unknowns, provide a surface onto which implications an be assessed and risks can be exposed early. Share this article with them now. It&#39;s way better than sharing a PowerPoint or a PDF.</p><p style=\"margin: 0;\"><a href=\"https://theadjacency.com/p/agentic-appliances-alarm-clock-toaster-oven-review--ee86faf561eab5a6bac90a10\" style=\"display: inline-block; padding: 10px 16px; border: 1px solid #0a0a0a; border-radius: 4px; background: #0a0a0a; color: #ffffff !important; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 12px; line-height: 1.2; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;\">Share This Now</a></p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The hardware helps. The compact body, smoked print housing, tactile switches, recessed LEDs, and sunflower-yellow shell give the device the dense authority of older Sony equipment without turning it into nostalgia theater. It looks serious, even when the category sounds faintly absurd. You press the buttons because the buttons seem to matter.</p>\n<div style=\"margin: 28px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/8cbbc70c-eba8-47c5-af07-499497759d00/w=1200?format=webp\" alt=\"Supplemental product image for the agentic appliance review\" width=\"600\" style=\"display: block; width: 100%; max-width: 600px; height: auto; border: 0; border-radius: 6px\"></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The guidance was occasionally useful. It anticipated delayed transit, suggested leaving earlier before a backed-up errand, and warned one reviewer to avoid an avoidable conversation until later in the day. The problem is that useful guidance from a bedside object has a different emotional texture than useful heat control from an oven. You start noticing how quickly a suggestion can become a plan, and how quickly a plan can feel like your own.</p>\n<div class=\"review-mobile-ad-card\" style=\"margin: 20px 0; padding: 12px; background: #f5f4f0; border: 1px solid #c9cfdb\"><p class=\"review-mobile-ad-meta\" style=\"margin: 0 0 10px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 14px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #778095\">IT MADE ITS OWN BOOZE</p><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/11c34491-f597-42ec-d224-40bafba21e00/public\" alt=\"Buzz Ballz Thai basil citrus interstitial ad.\" width=\"560\" style=\"display: block; width: 100%; max-width: 560px; height: auto; border: 0; border-radius: 4px; margin: 0 0 10px 0\"><p class=\"review-mobile-ad-meta\" style=\"margin: 0 0 6px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.35; color: #7d8696; text-transform: uppercase; letter-spacing: 0.08em\">BOOZY BITMAPPED BEV BY BUZZ BALLZ</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Sony and Anthropic describe the system as probabilistic rather than predictive. That distinction is intellectually useful, but in the morning it does not always feel meaningful. When a small machine gives you a plausible warning before coffee that you will likely lose your job that day — or get into a car accident — the question is not whether it has predicted the future, or is a friendly bit of vague astrological advice. Rather, the question is how much of your day you want to spend ruminating or dealing with its printed-out overconfidence.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">Most households should wait to see how this oraculators like this handle dependency, privacy, and the subtle influence of advice that can become addictive — or for which there is no recourse for deeper explanation or reasoning. The Sony ORACULATOR™ is a fascinating object, but it is not for everyone.</p>\n<h2 style=\"margin: 32px 0 14px 0; padding: 0; font-family: 'nyt-franklin', Arial, Helvetica, sans-serif; font-size: 28px; line-height: 1.18; font-weight: 800; color: #111111\">Capsule review: Braun Facial Prognosticator</h2>\n<div style=\"margin: 28px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/92db3516-aaa0-4fec-450f-2f762480ce00/w=1200?format=webp\" alt=\"Marketing brochure image for the Braun x Oraculator Prognostic InferenceMate\" width=\"600\" style=\"display: block; width: 100%; max-width: 600px; height: auto; border: 0; border-radius: 6px\"><p style=\"margin: 10px 0 0 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.55; color: #566074\">The Braun x Oraculator Prognostic InferenceMate arrived too late for full testing, but its polished hardware made it difficult to ignore.</p></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The Braun Facial Prognosticator arrived too late in our testing cycle for a full evaluation, but after several days with it, we did not want to leave it out entirely. Positioned somewhere between a skincare appliance and a biometric-based prognosticator, the InferenceMate combines facial imaging, behavioral analysis, and anticipatory recommendation apparatus into a surprisingly calm daily-use product.</p>\n<div style=\"margin: 28px 0\"><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/1f2de75f-a868-4de5-7967-1a8358a31700/full?format=webp\" alt=\"Supplemental product image for the agentic appliance review\" width=\"600\" style=\"display: block; width: 100%; max-width: 600px; height: auto; border: 0; border-radius: 6px\"></div>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">The product design is excellent. The padded facial cradle is soft and comfortable against the skin, the handle feels balanced and well engineered, and the industrial design is unmistakably Braun: restrained, ergonomic, and carefully resolved. The prognostic interface is understated, surfacing small daily recommendations for behavior adjustments, offering social advisories for complicated anticipated interactions with friends and colleagues — even relationship advice, astrological pattern matrices and your daily anticipatory indices presented in a clean monochrome display that feels less like the mystical “woo-woo” of a horoscope and more like the kind of data-driven insights that could be useful particularly when they are presented in a way that feels more like a personal coach than a fortune teller.</p>\n<h2 style=\"margin: 32px 0 14px 0; padding: 0; font-family: 'nyt-franklin', Arial, Helvetica, sans-serif; font-size: 28px; line-height: 1.18; font-weight: 800; color: #111111\">The cognitive catastrophe?</h2>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">An oven that can decide that your stated preference conflicts with its model of a better outcome? A clock that may make it easy to treat it as wiser than it deserves to be? Neither behavior is catastrophic — but both are subtle and potential pernicious enough to result in a kind of new normal before anyone notices that a new, somewhat problematic standard is being set by a couple of consumer appliances.</p>\n<p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">But, some will say — so did the television remote control, which kept us from getting up to change the channel. Now, with an oraculating alarm clock, we may have our days pre-determined based on inference and prediction from a machine that we don&#39;t fully understand. The difference is that the remote control was a tool for executing our decisions — our judgment — while these appliances are making decisions on our behalf, which can lead to a loss of agency and autonomy over time if not designed with care.</p>\n<div class=\"review-mobile-ad-card\" style=\"margin: 20px 0; padding: 12px; background: #f5f4f0; border: 1px solid #c9cfdb\"><p class=\"review-mobile-ad-meta\" style=\"margin: 0 0 10px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 14px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #778095\">The Near Future Laboratory Shop</p><img src=\"https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/547ab240-d2a3-4b4a-bd29-ef16200abd00/full?format=webpc\" alt=\"The Four Design Fiction Books\" width=\"560\" style=\"display: block; width: 100%; max-width: 560px; height: auto; border: 0; border-radius: 4px; margin: 0 0 10px 0\"><h3 class=\"review-mobile-ad-meta\" style=\"margin: 0 0 6px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 16px; line-height: 1.08; font-weight: 500; color: #1f2430\">The Four Design Fiction Books</h3><p class=\"review-mobile-ad-meta\" style=\"margin: 0 0 6px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.35; color: #7d8696; text-transform: uppercase; letter-spacing: 0.08em\">Microfusion Macrodrop AdvertisingOS</p><div><p class=\"review-mobile-ad-copy\" style=\"margin: 0 0 8px 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 13px; line-height: 1.42; font-weight: 400; color: #344055; text-align: left\">Big Books Big Sale. Available now, the full collection of Design Fiction books. Get the whole set and save.</p></div><p class=\"review-mobile-ad-meta\" style=\"margin: 10px 0 0 0; padding: 0; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 12px; line-height: 1.35; font-weight: 400; text-transform: uppercase; letter-spacing: 0.06em; color: #44506a; text-decoration: underline\"><a href=\"https://shop.nearfuturelaboratory.com/products/the-manual-of-design-fiction-paperback\" style=\"color: #44506a; text-decoration: underline\">Get the Collection</a></p></div>\n<div style=\"margin: 26px 0; padding: 14px 16px; background: #f7f5ef; border-left: 3px solid #d7d1c6\"><h2 style=\"margin: 0 0 16px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7280\">Corrections</h2><div style=\"font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.6; color: #5e6676\"><p style=\"margin: 0 0 18px 0; padding: 0; font-family: Georgia, 'Times New Roman', serif; font-size: 18px; line-height: 1.72; font-weight: 400; color: #1d1d1d; text-align: left\">A previous version of this article referred to the Breville Agentic Toaster Oven as the &#39;Breville Smart Toaster Oven&#39;. The product name has been updated to reflect the correct branding.</p></div></div>\n<div style=\"margin: 0; padding: 16px; border: 1px solid #d7d1c6; background: #f8f6f1\"><h2 style=\"margin: 0 0 10px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.3; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7280\">Explainer</h2><p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">This is a speculative product review artifact from the Near Future Laboratory&#39;s anticipatory research platform “The Adjacency”. I do these kinds of things to explore possible futures of technology and society in a way that is more expansive than a report or a flat, text-heavy trend analysis. It&#39;s way more generative than a PowerPoint deck. If your organization is interested in commissioning this kind of work to communicate a roadmap, test a product category, or make strategic possibilities easier to examine, get in touch.</p></div>\n<div class=\"review-mobile-grounding-block\" style=\"margin: 48px 0 24px 0; padding: 24px; border-top: 2px dashed #d1d5db; background: #f9fafb\"><h2 style=\"margin: 0 0 16px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.3; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7280\">Editorial Remarks</h2><p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.72; font-weight: 400; color: #4b5563\">These speculative artifacts imagine-into a possible future of agentic appliances — what we used to call “smart appliances.” The products reviewed are fictional — just in case you&#39;re wondering — but this is important: they are grounded in current trends and technologies in the consumer appliance industry. By using speculative fictional contrivances, this kind of research gets to explore the potential benefits and challenges of introducing agentic reasoning into household appliances, treating it as a feature that can enhance utility when designed with clear boundaries, legibility, and user control. The review also addresses concerns about privacy, agency, and the balance between user preferences and inferred well-being. The intent is to provoke thought about how these kinds of products might fit into everyday life and what trade-offs they might entail.</p>\n<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.72; font-weight: 400; color: #4b5563\">The research “grounding” behind this may feel intuitive if you&#39;ve been steeped in this world of LLMs and AI and all the rest or, like me, you are a researcher, a product designer, and basically an inhabitant of the liminal future for some time. </p>\n<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.72; font-weight: 400; color: #4b5563\">In any case, it is important to have some strong ties to extant research, news, trend analysis, so that the speculative work is not seen as just unmoored fantasy or “pure” science-fiction (whatever that might mean.)</p>\n<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.72; font-weight: 400; color: #4b5563\">This is the grounding section. Think of it either as the references referred to, or as waypoints to the same story as above, but told in a different idiolect.</p>\n<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.72; font-weight: 400; color: #4b5563\">Enjoy. And please support this work over on <a href='https://patreon.com/nearfuturelaboratory'>Patreon</a> or get in touch and commission this kind of work for your organization.</p><p style=\"margin: 0 0 20px 0; padding: 0\"><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">products</span><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">review</span><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">agentic appliances</span><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">household intelligence</span><span style=\"display: inline-block; margin: 0 8px 8px 0; padding: 5px 10px; background: #e5e7eb; color: #4b5563; font-family: 'Share Tech Mono', 'Courier New', Courier, monospace; font-size: 11px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.08em\">ubicomp</span></p><div style=\"margin: 0; padding-top: 18px; border-top: 1px solid #d1d5db\"><h3 style=\"margin: 0 0 14px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 13px; line-height: 1.3; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7280\">Referenced Signals</h3><div style=\"margin: 0; padding: 0\"><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[1]</span><a href=\"https://www.dezeen.com/2025/08/26/kitchen-cosmo-mit-jacob-payne-ayah-mahmoud/\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Kitchen Cosmo: The AI Appliance That Turns Leftovers into Recipes</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">An MIT AI kitchen appliance that turns leftovers into recipes.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[2]</span><a href=\"https://uxdesign.cc/a-smart-home-is-one-that-talks-to-itself-58bb9222d893\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">A smart home is one that talks to itself</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Smart-home devices communicating with each other through context-aware, multimodal, and animistic design — a ubicomp and household intelligence frame.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[3]</span><a href=\"https://www.vam.ac.uk/blog/museum-life/going-down-the-rabbit-hole-revisiting-the-nabaztag\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Going down the Nabaztag rabbit hole</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">The Nabaztag was an early internet-connected device (still ahead of its time) that could perform various functions like reading emails, weather updates, and even dancing. It was a speculative prototype to modern smart home devices and showcased the potential of connected appliances in a domestic setting in a way that wasn&#39;t overly extractive — but grounded in mechatronic fun and whimsy.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[4]</span><a href=\"https://nordprojects.co/projects/littleprinters/\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Berg&#39;s Little Printer: A Charming Blend of Nostalgia and Connectivity</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">The Little Printer was a small, internet-connected device that printed out news, weather, and personal messages on receipt paper. It was designed to bring a sense of nostalgia and physicality to digital information, demonstrating how connected appliances can create unique user experiences in the home. Proto-animistic and domestic quirkiness. Hi. Timo? Jack? You there? 📲</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[5]</span><a href=\"https://futurism.com/the-byte/amazon-echo-use-reality\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Amazon Horrified by What People Actually Use Alexa For</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Amazon&#39;s Alexa is being used mostly for banal tasks like timers and alarms — might it come to pass that agentic appliances must stay useful as appliances first without the sci-fi household assumptions that designers and marketers assume will be their primary use cases. It makes me wonder how much of the appeal of agentic appliances is still living in a science-fictional universe when people just want the same things as before — convenience and reliability, and introducing a new kind of alien reasoning into the mix may result in more confusion, breakdowns, and such.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[6]</span><a href=\"https://gizmodo.com/the-house-that-spied-on-me-1822429852\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">The House That Spied on Me</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">A connected-home privacy experiment, grounding the concern that household appliances can expose routines, preferences, and intimate domestic patterns. The next privacy frontier is not just data collection, but the inferences and influence that can come from appliances that know too much about the household.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[7]</span><a href=\"https://www.pewresearch.org/internet/2025/04/03/how-the-us-public-and-ai-experts-view-artificial-intelligence/\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">How Americans Feel About AI&#39;s Impact</a><span style=\"margin-left: 8px\"><a href=\"https://www.pewresearch.org/science/2025/09/17/how-americans-view-ai-and-its-impact-on-people-and-society/\" style=\"display: inline-block; margin: 0 6px 6px 0; padding: 2px 7px; background: #e5e7eb; color: #6b7280 !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 11px; line-height: 1.2; text-decoration: none !important\">How Americans View Ai And Its Impact On People And Society</a></span></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Pew Center reports about public concern over AI&#39;s influence, desire for personal control, and preservation of human abilities, and how AI experts vs. the general US public view AI. These address and ground notions of agency and autonomy and associated concerns.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[8]</span><a href=\"https://farsight.cifs.dk/the-future-is-mundane/\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">The Future is Mundane</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Rather than focusing solely on grand trends or technological leaps, Sarah Pink urges us to pay attention to the lived, sensory realities of daily life when thinking about the future. She explains how anthropology, once focused only on the past and present, is now increasingly interested in what everyday life will feel like years from now, especially as climate change and new technologies reshape our routines. By foregrounding the human experience—how we want to feel, live, and interact—Pink believes we can imagine more meaningful, grounded futures. Her work bridges anthropology and design, emphasizing that uncertainty isn&#39;t just a challenge but a space for exploring new possibilities.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[9]</span><a href=\"https://www.macstories.net/stories/clawdbot-showed-me-what-the-future-of-personal-ai-assistants-looks-like/\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Moltbot Points to the Future of Personal AI Assistants</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Moltbot, which was known as Clawdbot until a recent name change, is an advanced personal AI assistant running on Anthropic’s Claude Opus 4.5 model. It remembers personal details like your name and daily preferences, seamlessly integrates with productivity tools like Notion and Todoist, and can control devices like Spotify, Sonos speakers, Philips Hue lights, and even Gmail. The assistant operates through Telegram, making it easy to interact with, including through voice messages. The author named their assistant Navi, and after spending a week using it, was impressed by how personalized and integrated the experience felt compared to traditional digital assistants. Moltbot offers a glimpse of how AI companions could soon become truly personal, proactive, and seamlessly embedded in our digital lives.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[10]</span><a href=\"https://en.wikipedia.org/wiki/Talkie_Toaster#Talkie_Toaster\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Talkie Toaster</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">Talkie Toaster is a minor character in the British science fiction comedy series &#39;Red Dwarf.&#39; It is a sentient toaster that is obsessed with making toast and often engages in humorous conversations with the crew of the spaceship Red Dwarf. The Talkie Toaster is known for its catchphrase, &#39;Toast! Toast! Toast!&#39; and its relentless pursuit of perfect toast, which often leads to comedic situations. The character serves as a lighthearted exploration of artificial intelligence and its potential quirks when applied to everyday appliances.</p></div><div style=\"margin: 0 0 16px 0; padding: 0\"><p style=\"margin: 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700; color: #374151\"><span style=\"color: #44506a; font-weight: 700; margin-right: 8px; text-decoration: none\">[11]</span><a href=\"https://en.wikipedia.org/wiki/Talkie_Toaster#Talkie_Toaster\" style=\"color: #374151 !important; text-decoration: none !important; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 16px; line-height: 1.35; font-weight: 700\">Agentic toaster and smart appliance failure</a></p><p style=\"margin: 6px 0 0 15px; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.65; color: #6b7280\">A signal-only grounding reference for agentic toaster behavior, smart appliance failure, and domestic resilience when everyday machines become conversational, needy, or unreliable.</p></div></div></div></div>",
+  "footerCta": {
+    "eyebrow": "Speculative Product Review as Strategy Fiction",
+    "textHtml": "<p style=\"margin: 0 0 12px 0; padding: 0; font-family: 'IBM Plex Sans', Roboto, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.68; font-weight: 400; color: #4b5563\">Imagining into possible futures doesn&#39;t always look like a report or a trend analysis. Bringing back artifacts as if one went there is like production design for futures work: more expansive than canned scenarios, and more generative than a PowerPoint. Get in touch if your organization is interested in commissioning this kind of work to communicate a roadmap, test a product category, or make strategic possibilities easier to examine.</p>",
+    "primaryAction": {
+      "label": "Start a Conversation",
+      "url": "https://nearfuturelaboratory.com/contact"
+    },
+    "secondaryAction": {
+      "label": "Subscribe to The Adjacency",
+      "url": "https://patreon.com/5199387/join/"
     }
   },
+  "footer": {
+    "companyLogo": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/dd0b1863-ec2a-49f1-6bf2-91475e340800/w=150?format=webp",
+    "brandName": "The Adjacency",
+    "unsubscribeText": "You are receiving this because you subscribed to Near Future Laboratory and The Adjacency updates.",
+    "companyAddress": "Near Future Laboratory",
+    "footerCta": {
+      "enabled": true,
+      "variant": "default",
+      "eyebrow": "Speculative Product Review as Strategy Fiction",
+      "text": "I help strategic and executive leadership teams make possible futures tangible so they can make sense of the uncertain, the emerging, and the unfamiliar. A bit like an expedition guide who helps you see and navigate new terrain and territories before you have to walk through it.",
+      "primaryAction": {
+        "label": "Start a Conversation",
+        "url": "https://nearfuturelaboratory.com/contact"
+      },
+      "secondaryAction": {
+        "label": "Subscribe to The Adjacency",
+        "url": "https://patreon.com/5199387/join/"
+      }
+    },
+    "legalLinks": [
+      {
+        "text": "The Adjacency",
+        "url": "https://nearfuturelaboratory.com"
+      },
+      {
+        "text": "Subscribe",
+        "url": "https://www.patreon.com/5199387/join"
+      },
+      {
+        "text": "Contact",
+        "url": "https://nearfuturelaboratory.com/contact"
+      }
+    ]
+  },
+  "themeColors": {
+    "header": "#addcfa",
+    "sponsor": "#f8eccf",
+    "apps-sites": "#f0ffff",
+    "quote": "#d1eaf4",
+    "callout": "#d1eaf4",
+    "indie-mag": "#efe2f3",
+    "books-accessories": "#ffffff",
+    "food-for-thought": "#f2f2f2",
+    "introAside": "#f4f1ea",
+    "aesthetically-pleasing": "#ffffff",
+    "classifieds": "#def1ef",
+    "gif": "#ffffff",
+    "linkAccent": "#EE3BBB"
+  },
   "theme": {
-    "name": "Professional Clean",
-    "description": "Subtle grays and clean whites for professional communication",
+    "name": "Current Dense Discovery",
+    "description": "The existing color scheme currently in use",
     "colors": {
-      "header": "#fefefe",
-      "sponsor": "#f5f7fa",
-      "apps-sites": "#f5f7fa",
-      "apps-sites-single-column": "#f5f7fa",
-      "quote": "#E9EBED",
-      "callout": "#F4F6F8",
-      "indie-mag": "#E5EFF1",
-      "indie-mag-single-column": "#E5EFF1",
-      "books-accessories": "#eeecde",
-      "food-for-thought": "#f6f3ef",
-      "introAside": "#F4F6F8",
-      "aesthetically-pleasing": "#e6e7e9",
-      "classifieds": "#f0f0f0",
-      "animated-image": "#aafafa",
-      "dispatch": "#e6e8e5"
+      "header": "#addcfa",
+      "sponsor": "#f8eccf",
+      "apps-sites": "#f0ffff",
+      "quote": "#d1eaf4",
+      "callout": "#d1eaf4",
+      "indie-mag": "#efe2f3",
+      "books-accessories": "#ffffff",
+      "food-for-thought": "#f2f2f2",
+      "introAside": "#f4f1ea",
+      "aesthetically-pleasing": "#ffffff",
+      "classifieds": "#def1ef",
+      "gif": "#ffffff"
     },
     "accent": "#4a7c59",
-    "linkAccent": "#1c1c1c"
+    "linkAccent": "#EE3BBB"
   },
   "sectionStyles": {
     "$schema": "../section-styles.schema.json",
-    "description": "Configuration for section-specific styling in email templates. Adjacency mail sections are overridden at build time from lib/adjacency-mail/adjacency-mail-theme-tokens.mjs.",
+    "description": "Configuration for section-specific styling in email templates",
     "version": "1.0.0",
     "sectionStyles": {
-      "header": {
-        "name": "Header Section",
-        "description": "Header quote, author, and featured artist text styles",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "20px"
-        },
-        "contentStyles": {
-          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-          "fontSize": "18px",
-          "lineHeight": "23px",
-          "fontWeight": "400",
-          "color": "#000000",
-          "authorFontSize": "16px",
-          "authorFontWeight": "600",
-          "artistFontSize": "16px",
-          "anchorColor": "#000000"
-        }
-      },
-      "intro-content": {
-        "name": "Intro Content",
-        "description": "Intro paragraph block content styles",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "0",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "Roboto, sans-serif, Segoe UI, Helvetica, Arial",
-          "fontSize": "19px",
-          "lineHeight": "1.5",
-          "fontWeight": "500",
-          "color": "#000000",
-          "textAlign": "left"
-        }
-      },
-      "intro-aside": {
-        "name": "Intro Aside",
-        "description": "Teaser/lede block before the intro content",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "12px 14px",
-          "borderRadius": "6px",
-          "borderLeftColor": "#d7d1c6",
-          "borderLeftWidth": "3px",
-          "borderLeftStyle": "solid"
-        },
-        "contentStyles": {
-          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
-          "fontSize": "19px",
-          "lineHeight": "1.2",
-          "fontStyle": "normal",
-          "color": "#3f3f3f",
-          "textAlign": "left"
-        }
-      },
       "sponsor": {
         "name": "Sponsor Section",
         "description": "Sponsored content sections with distinctive monospace font",
@@ -343,10 +206,10 @@
           "borderRadius": "0px"
         },
         "contentStyles": {
-          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-          "fontSize": "19px",
-          "lineHeight": "1.2",
-          "color": "#111111",
+          "fontFamily": "Share Tech Mono, monospace, Courier New, Courier",
+          "fontSize": "16px",
+          "lineHeight": "1.4",
+          "color": "#333333",
           "textAlign": "left"
         },
         "linkStyles": {
@@ -356,7 +219,169 @@
         },
         "headingStyles": {
           "fontFamily": "inherit",
-          "fontSize": "19px",
+          "fontSize": "18px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "indie-mag-single-column": {
+        "name": "Indie Magazine Single Column",
+        "description": "Single column indie magazine content with monospace styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Share Tech Mono, monospace, Courier New, Courier",
+          "fontSize": "14px",
+          "lineHeight": "1.5",
+          "color": "#333333",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "indie-mag": {
+        "name": "Indie Magazine Multi-Column",
+        "description": "Multi-column indie magazine content with clean serif font",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Georgia, serif",
+          "fontSize": "15px",
+          "lineHeight": "1.6",
+          "color": "#333333",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "books-accessories": {
+        "name": "Books & Accessories",
+        "description": "Product recommendations with clean sans-serif styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "15px",
+          "lineHeight": "1.5",
+          "color": "#333333",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "17px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "food-for-thought": {
+        "name": "Food for Thought",
+        "description": "Philosophical content with elegant typography",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "16px",
+          "lineHeight": "1.6",
+          "color": "#333333",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "18px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "classifieds": {
+        "name": "Classifieds",
+        "description": "Classified ads with compact monospace styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "12px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Share Tech Mono, monospace, Courier New, Courier",
+          "fontSize": "13px",
+          "lineHeight": "1.4",
+          "color": "#333333",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "15px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "default": {
+        "name": "Default Content",
+        "description": "Default styling for unspecified section types",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "15px",
+          "lineHeight": "1.5",
+          "color": "#333333",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "17px",
           "fontWeight": "600",
           "color": "#000000"
         }
@@ -427,60 +452,6 @@
           "color": "#1f2430"
         }
       },
-      "dispatch": {
-        "name": "Dispatch Section",
-        "description": "Dispatch content sections with distinctive monospace font",
-        "containerStyles": {
-          "backgroundColor": "#e6e8e5",
-          "padding": "15px 20px",
-          "borderRadius": "8px"
-        },
-        "contentStyles": {
-          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-          "fontSize": "19px",
-          "lineHeight": "1.4",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "normal"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "19px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "signals-adjacent-now": {
-        "name": "Signals from an Adjacent Now",
-        "description": "Signal entries grounded in source summaries and strategy prompts",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "8px"
-        },
-        "contentStyles": {
-          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-          "fontSize": "19px",
-          "lineHeight": "1.4",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "normal"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "19px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
       "adjacency-feature": {
         "name": "Adjacency Feature",
         "description": "Long-form editorial feature adapted for email-safe extended reading from canonical Adjacency mail theme tokens",
@@ -527,351 +498,6 @@
           "letterSpacing": "0.12em",
           "textTransform": "uppercase",
           "color": "#6e778a"
-        }
-      },
-      "indie-mag-single-column": {
-        "name": "Indie Magazine Single Column",
-        "description": "Single column indie magazine content with monospace styling",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-          "fontSize": "19px",
-          "lineHeight": "1.4",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "normal"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "19px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "indie-mag": {
-        "name": "Indie Magazine Multi-Column",
-        "description": "Multi-column indie magazine content with clean serif font",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-          "fontSize": "19px",
-          "lineHeight": "1.4",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "normal"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "19px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "apps-sites": {
-        "spacerBackgroundAdjust": {
-          "lightness": -8,
-          "saturation": 40
-        },
-        "name": "Apps & Sites",
-        "descriptionStyles": {
-          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
-          "fontSize": "17px",
-          "lineHeight": "1.2",
-          "color": "#000000",
-          "textAlign": "left"
-        },
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
-          "fontSize": "19px",
-          "lineHeight": "1.4",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "500"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "21px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "apps-sites-single-column": {
-        "spacerBackgroundAdjust": {
-          "lightness": -8,
-          "saturation": 40
-        },
-        "name": "Apps & Sites",
-        "descriptionStyles": {
-          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
-          "fontSize": "17px",
-          "lineHeight": "1.2",
-          "color": "#000000",
-          "textAlign": "left"
-        },
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
-          "fontSize": "19px",
-          "lineHeight": "1.4",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "500"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "21px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "books-accessories": {
-        "name": "Books & Accessories",
-        "description": "Product recommendations with clean sans-serif styling",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-          "fontSize": "19px",
-          "lineHeight": "1.4",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "500"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "21px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "food-for-thought": {
-        "name": "Food for Thought",
-        "description": "Basically Discord Stuff",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-          "fontSize": "19px",
-          "lineHeight": "23px",
-          "color": "#000000",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "500",
-          "fontSize": "19px"
-        },
-        "headingStyles": {
-          "fontFamily": "Workbench, IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-          "fontSize": "21px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "callout": {
-        "name": "Callout",
-        "description": "Callout highlight block",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "Share Tech Mono, sans-serif, Courier New, Courier, monospace",
-          "fontSize": "19px",
-          "lineHeight": "25px",
-          "color": "#444444",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "#006afa",
-          "textDecoration": "underline",
-          "fontWeight": "normal"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "21px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "quote": {
-        "name": "Quote",
-        "description": "Quote spotlight section",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-          "fontSize": "19px",
-          "lineHeight": "1.3",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "500"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "21px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "classifieds": {
-        "name": "Classifieds",
-        "description": "Classified ads with compact monospace styling",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "8px 8px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "Share Tech Mono, monospace, Courier New, Courier",
-          "fontSize": "16px",
-          "lineHeight": "1.15",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "500"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "16px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "animated-image": {
-        "name": "Animated Image",
-        "description": "Animated image spotlight section",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 8px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
-          "fontSize": "19px",
-          "lineHeight": "1.2",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "500"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "21px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "aesthetically-pleasing": {
-        "name": "Aesthetically Pleasing",
-        "description": "Cool stuff around the web with modern sans-serif styling",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "12px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
-          "fontSize": "19px",
-          "lineHeight": "1.3",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "normal"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "21px",
-          "fontWeight": "600",
-          "color": "#000000"
-        }
-      },
-      "default": {
-        "name": "Default Content",
-        "description": "Default styling for unspecified section types",
-        "containerStyles": {
-          "backgroundColor": null,
-          "padding": "15px 20px",
-          "borderRadius": "0px"
-        },
-        "contentStyles": {
-          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
-          "fontSize": "19px",
-          "lineHeight": "1.2",
-          "color": "#111111",
-          "textAlign": "left"
-        },
-        "linkStyles": {
-          "color": "inherit",
-          "textDecoration": "underline",
-          "fontWeight": "normal"
-        },
-        "headingStyles": {
-          "fontFamily": "inherit",
-          "fontSize": "21px",
-          "fontWeight": "600",
-          "color": "#000000"
         }
       },
       "adjacency-job-posting": {
@@ -921,21 +547,13 @@
     },
     "globalOverrides": {
       "description": "Global style overrides that apply to all sections",
-      "mobileBreakpoint": "599px",
+      "mobileBreakpoint": "600px",
       "mobileAdjustments": {
         "contentStyles": {
-          "fontSize": "20px",
-          "lineHeight": "1.3"
-        },
-        "captionStyles": {
-          "fontSize": "16px",
-          "lineHeight": "1.2"
+          "fontSize": "-1px",
+          "padding": "12px 15px"
         }
       }
     }
-  },
-  "mobileTextFontSize": "20px",
-  "mobileTextLineHeight": "1.3",
-  "mobileCaptionFontSize": "16px",
-  "mobileCaptionLineHeight": "1.2"
+  }
 }

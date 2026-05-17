@@ -30,26 +30,25 @@ article:
   content: "<p>Spatial repellents work like diffusers, releasing a bug-repelling mist that creates a protective zone around you. The Thermacell E90 is our top pick—it's rechargeable, quiet, and actually works.</p>"
   link: "https://www.nytimes.com/wirecutter/reviews/mosquito-control-gear/"
 
-sections:
-  - type: product-showcase
-    sectionTitle: "More outdoor recs"
-    sectionLink: "https://www.nytimes.com/wirecutter/home-garden/gardening/"
-    items:
-      - title: "The best patio umbrella"
-        image: "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/643f075c7086e-1681852252.4609.png"
-        imageAlt: "Five patio umbrellas tested shown setup outdoors side by side"
-        description: "A patio umbrella is an invitation to laze and linger."
-        link: "https://www.nytimes.com/wirecutter/reviews/best-patio-umbrella-and-stand/"
-      - title: "The best grill"
-        image: "https://fpoimg.com/400x300?text=Grill"
-        imageAlt: "Weber Spirit II E-310 gas grill"
-        description: "Our favorite gas grill for most people balances performance and price."
-        link: "https://www.nytimes.com/wirecutter/reviews/best-gas-grills/"
-      - title: "The best outdoor string lights"
-        image: "https://fpoimg.com/400x300?text=String+Lights"
-        imageAlt: "Brightech Ambience Pro string lights"
-        description: "Add atmosphere to your backyard with weatherproof string lights."
-        link: "https://www.nytimes.com/wirecutter/reviews/best-outdoor-string-lights/"
+productShowcase:
+  sectionTitle: "More outdoor recs"
+  sectionLink: "https://www.nytimes.com/wirecutter/home-garden/gardening/"
+  items:
+    - title: "The best patio umbrella"
+      image: "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/643f075c7086e-1681852252.4609.png"
+      imageAlt: "Five patio umbrellas tested shown setup outdoors side by side"
+      description: "A patio umbrella is an invitation to laze and linger."
+      link: "https://www.nytimes.com/wirecutter/reviews/best-patio-umbrella-and-stand/"
+    - title: "The best grill"
+      image: "https://fpoimg.com/400x300?text=Grill"
+      imageAlt: "Weber Spirit II E-310 gas grill"
+      description: "Our favorite gas grill for most people balances performance and price."
+      link: "https://www.nytimes.com/wirecutter/reviews/best-gas-grills/"
+    - title: "The best outdoor string lights"
+      image: "https://fpoimg.com/400x300?text=String+Lights"
+      imageAlt: "Brightech Ambience Pro string lights"
+      description: "Add atmosphere to your backyard with weatherproof string lights."
+      link: "https://www.nytimes.com/wirecutter/reviews/best-outdoor-string-lights/"
 
 footer:
   companyLogo: "https://www.cdnxs3cjc.com/hkb9nw76eo/en_us/images/60ff3c3959268-1627339833.3652.png"

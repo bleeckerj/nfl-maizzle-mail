@@ -25,7 +25,20 @@ module.exports = {
   inlineCSS: true,
   removeUnusedCSS: {
     enabled: true,
-    whitelist: ['.mob-text'],
+    whitelist: [
+      '.mob-text',
+      '.mob-title',
+      '.mob-subtitle',
+      '.mob-readmore',
+      '.mob-caption',
+      '.intro-content',
+      '.intro-aside',
+      '.wirecutter-mobile-copy',
+      '.wirecutter-mobile-disclaimer',
+      '.review-mobile-copy',
+      '.review-mobile-compact-copy',
+      '.review-body',
+    ],
   },
   prettify: true,
   minify: {

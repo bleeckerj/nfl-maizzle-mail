@@ -1,0 +1,14 @@
+---
+title: "{{ title }}"
+preheader: "{{ preheader || 'Product review from The Adjacency' }}"
+---
+
+<extends src="templates/adjacency-product-review/layouts/main.html">
+  <block name="template">
+    <component src="templates/adjacency-product-review/components/Header.html"></component>
+    <component src="templates/adjacency-product-review/components/FeaturedReview.html"></component>
+    <component src="templates/adjacency-product-review/components/ReviewPicks.html"></component>
+    <component src="templates/adjacency-product-review/components/Body.html"></component>
+    <component src="templates/adjacency-product-review/components/Footer.html"></component>
+  </block>
+</extends>

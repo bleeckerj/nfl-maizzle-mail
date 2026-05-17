@@ -5,6 +5,30 @@
   "type": "object",
   "additionalProperties": true,
   "required": ["template", "title", "header", "featuredArticle", "article", "productShowcase", "footer"],
+  "definitions": {
+    "trackedLink": {
+      "oneOf": [
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "href": { "type": "string", "minLength": 1 },
+            "url": { "type": "string", "minLength": 1 },
+            "label": { "type": "string", "minLength": 1 },
+            "category": { "type": "string", "minLength": 1 }
+          },
+          "anyOf": [
+            { "required": ["href"] },
+            { "required": ["url"] }
+          ]
+        }
+      ]
+    }
+  },
   "properties": {
     "template": {
       "const": "wirecutter-v2"
@@ -28,7 +52,7 @@
       "properties": {
         "logoImage": { "type": "string", "minLength": 1 },
         "logoImageMobile": { "type": "string", "minLength": 1 },
-        "homepageLink": { "type": "string", "minLength": 1 }
+        "homepageLink": { "$ref": "#/definitions/trackedLink" }
       }
     },
     "featuredArticle": {
@@ -40,7 +64,7 @@
         "heroImageAlt": { "type": "string" },
         "photoCredit": { "type": "string" },
         "description": { "type": "string", "minLength": 1 },
-        "ctaLink": { "type": "string", "minLength": 1 },
+        "ctaLink": { "$ref": "#/definitions/trackedLink" },
         "disclaimer": { "type": "string" }
       }
     },
@@ -53,7 +77,7 @@
         "imageAlt": { "type": "string" },
         "photoCredit": { "type": "string" },
         "content": { "type": "string", "minLength": 1 },
-        "link": { "type": "string", "minLength": 1 }
+        "link": { "$ref": "#/definitions/trackedLink" }
       }
     },
     "productShowcase": {
@@ -61,7 +85,7 @@
       "required": ["sectionTitle", "sectionLink", "items"],
       "properties": {
         "sectionTitle": { "type": "string", "minLength": 1 },
-        "sectionLink": { "type": "string", "minLength": 1 },
+        "sectionLink": { "$ref": "#/definitions/trackedLink" },
         "items": {
           "type": "array",
           "minItems": 1,
@@ -73,7 +97,7 @@
               "image": { "type": "string", "minLength": 1 },
               "imageAlt": { "type": "string" },
               "description": { "type": "string", "minLength": 1 },
-              "link": { "type": "string", "minLength": 1 }
+              "link": { "$ref": "#/definitions/trackedLink" }
             }
           }
         }
@@ -93,7 +117,7 @@
             "required": ["text", "url"],
             "properties": {
               "text": { "type": "string", "minLength": 1 },
-              "url": { "type": "string", "minLength": 1 }
+              "url": { "$ref": "#/definitions/trackedLink" }
             }
           }
         }

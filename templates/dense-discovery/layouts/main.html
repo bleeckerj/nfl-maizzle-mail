@@ -84,33 +84,54 @@
         margin-bottom: 15px !important;
       }
 
-      /* Mobile text size override for <p class="mob-text"> elements.
-         Configured ONLY in section-styles.json → globalOverrides.mobileAdjustments.
-         If not configured there, these values will be empty and have no effect. */
-      .mob-text {
-        font-size: {{ mobileTextFontSize }} !important;
-        line-height: {{ mobileTextLineHeight }} !important;
+      /* MOBILE FONT SIZE LOCK:
+         Keep dense-discovery body copy larger on mobile. This intentionally
+         overrides inline font sizes in email clients. Do not remove, lower, or
+         narrow these selectors unless the operator explicitly requests that
+         change and updates mobile-font-size-lock.test.mjs with the new rule. */
+      .mob-text,
+      .mob-text p,
+      .mob-text li,
+      .intro-content,
+      .intro-content p,
+      .intro-content li,
+      .intro-aside,
+      .intro-aside p,
+      .intro-aside li {
+        font-size: 23px !important;
+        line-height: 1.3 !important;
       }
 
       .mob-title {
-        font-size: 22px !important;
+        font-size: 26px !important;
         line-height: 1.3 !important;
       }
 
       .mob-subtitle {
-        font-size: 20px !important;
+        font-size: 23px !important;
         line-height: 1.3 !important;
       }
 
       .mob-readmore,
       .mob-readmore a {
-        font-size: {{ mobileTextFontSize }} !important;
-        line-height: {{ mobileTextLineHeight }} !important;
+        font-size: 23px !important;
+        line-height: 1.3 !important;
       }
 
-      .mob-caption {
-        font-size: {{ mobileCaptionFontSize }} !important;
-        line-height: {{ mobileCaptionLineHeight }} !important;
+      .mob-caption,
+      .mob-caption p,
+      .mob-caption span,
+      .mob-caption li,
+      .mob-caption .mob-text {
+        font-size: 14px !important;
+        line-height: 1.2 !important;
+      }
+
+      .mob-meta,
+      .mob-meta span,
+      .mob-meta a {
+        font-size: 16px !important;
+        line-height: 1.1 !important;
       }
 
       .mob-title a,
@@ -128,6 +149,13 @@
       h3 a {
         font-size: inherit !important;
         line-height: inherit !important;
+      }
+
+      .mob-title .mob-meta,
+      .mob-title .mob-meta span,
+      .mob-title .mob-meta a {
+        font-size: 16px !important;
+        line-height: 1.1 !important;
       }
     }
     

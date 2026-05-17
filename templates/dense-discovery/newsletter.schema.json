@@ -824,6 +824,7 @@
                     "properties": {
                       "image": {},
                       "title": {},
+                      "link": {},
                       "description": {}
                     },
                     "additionalProperties": false
@@ -1459,6 +1460,7 @@
                     "properties": {
                       "image": {},
                       "title": {},
+                      "link": {},
                       "description": {}
                     },
                     "additionalProperties": false

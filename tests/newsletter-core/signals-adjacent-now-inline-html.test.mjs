@@ -63,7 +63,7 @@ test('build-newsletter renders inline HTML inside signals-adjacent-now list item
     const html = readFileSync(path.join(outputDir, `${outputName}.html`), 'utf8');
     assert.match(html, /•\s*<strong>Token quotas\?<\/strong>/);
     assert.doesNotMatch(html, /&lt;strong&gt;Token quotas\?&lt;\/strong&gt;/);
-    assert.match(html, /<a href="https:\/\/example\.com\/seeds"[^>]*>the seeds archive<\/a>/);
+    assert.match(html, /<a href="https:\/\/example\.com\/seeds"[^>]*>the seeds\s+archive<\/a>/);
     assert.match(html, /•\s*<strong>What changes first\?<\/strong>/);
     assert.match(html, /<a href="https:\/\/example\.com\/plan"[^>]*>plan for this now<\/a>/);
   } finally {

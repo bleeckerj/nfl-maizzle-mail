@@ -164,6 +164,7 @@ test('prepareNewsletterData accepts standalone image sections under strict schem
                 alt: 'Standalone visual',
                 caption: 'A standalone image.',
               },
+              link: 'https://example.com/standalone',
             },
           ],
         },
@@ -173,6 +174,7 @@ test('prepareNewsletterData accepts standalone image sections under strict schem
   );
 
   assert.equal(prepared.sections[0].type, 'image');
+  assert.equal(prepared.sections[0].items[0].link, 'https://example.com/standalone');
   assert.equal(prepared.sections[0].items[0].image.src, 'https://example.com/standalone.webp');
 });
 
