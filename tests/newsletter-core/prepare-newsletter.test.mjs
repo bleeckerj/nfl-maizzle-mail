@@ -246,10 +246,10 @@ test('prepareNewsletterData injects the default newsletter footer CTA when front
   );
 
   assert.equal(prepared.footer.footerCta.variant, 'default');
-  assert.equal(prepared.footer.footerCta.eyebrow, 'For Decisions That Are Still Taking Shape');
+  assert.equal(prepared.footer.footerCta.eyebrow, 'Commissions, Collaborations, Full-Time Roles');
   assert.equal(
     prepared.footer.footerCta.text,
-    'I help leadership teams make possible futures tangible so they can see what they are actually committing to before the roadmap hardens.',
+    'I work with teams that need speculative and material prototyping, anticipatory research, and design fiction to make possible futures easier to see, discuss, and act on. I am open to commissions, collaborations, advisory work, and full-time roles where this kind of artifact-led thinking can shape strategy, products, services, and organizational imagination.',
   );
   assert.equal(prepared.footer.footerCta.primaryAction.label, 'Start a Conversation');
   assert.equal(prepared.footer.footerCta.secondaryAction.label, 'See How This Works');
