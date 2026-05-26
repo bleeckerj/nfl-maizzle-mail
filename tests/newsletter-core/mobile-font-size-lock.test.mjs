@@ -71,7 +71,7 @@ test('dense-discovery layout forces larger mobile body copy with literal values'
   const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
   const mobileBlock = extractMobileMediaBlock(layout);
 
-  assert.match(mobileBlock, /\.mob-text,\s*\.mob-text p,\s*\.mob-text li,\s*\.intro-content,\s*\.intro-content p,\s*\.intro-content li,\s*\.intro-aside,\s*\.intro-aside p,\s*\.intro-aside li\s*\{\s*font-size:\s*23px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
+  assert.match(mobileBlock, /\.mob-text,\s*\.mob-text a,\s*\.mob-text p,\s*\.mob-text li,\s*\.intro-content,\s*\.intro-content a,\s*\.intro-content p,\s*\.intro-content li,\s*\.intro-aside,\s*\.intro-aside a,\s*\.intro-aside p,\s*\.intro-aside li\s*\{\s*font-size:\s*23px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
   assert.match(mobileBlock, /\.mob-title\s*\{\s*font-size:\s*26px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
   assert.match(mobileBlock, /\.mob-subtitle\s*\{\s*font-size:\s*23px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
   assert.match(mobileBlock, /\.mob-readmore,\s*\.mob-readmore a\s*\{\s*font-size:\s*23px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
@@ -79,7 +79,7 @@ test('dense-discovery layout forces larger mobile body copy with literal values'
   assert.match(mobileBlock, /\.mob-meta,\s*\.mob-meta span,\s*\.mob-meta a\s*\{\s*font-size:\s*16px\s*!important;\s*line-height:\s*1\.1\s*!important;/);
   assert.match(
     mobileBlock,
-    /\.mob-title a,\s*\.mob-subtitle a,\s*\.mob-readmore a,\s*\.mob-caption a,\s*\.mob-caption strong,\s*\.mob-caption em\s*\{\s*font-size:\s*inherit\s*!important;\s*line-height:\s*inherit\s*!important;/,
+    /\.mob-title a,\s*\.mob-subtitle a,\s*\.mob-text a,\s*\.intro-content a,\s*\.intro-aside a,\s*\.mob-readmore a,\s*\.mob-caption a,\s*\.mob-caption strong,\s*\.mob-caption em\s*\{\s*font-size:\s*inherit\s*!important;\s*line-height:\s*inherit\s*!important;/,
   );
   assert.doesNotMatch(mobileBlock, /mobile(?:Text|Caption)(?:FontSize|LineHeight)/);
   assert.doesNotMatch(mobileBlock, /undefined\s*!important/);

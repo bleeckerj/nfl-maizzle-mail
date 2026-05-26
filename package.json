@@ -33,8 +33,10 @@
     "@anthropic-ai/sdk": "^0.71.2",
     "@aws-sdk/client-ses": "^3.688.0",
     "@maizzle/framework": "^4.5.1",
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "dotenv": "^17.2.3",
     "js-yaml": "^4.1.0",
+    "jsonrepair": "^3.14.0",
     "openai": "^6.2.0"
   },
   "devDependencies": {

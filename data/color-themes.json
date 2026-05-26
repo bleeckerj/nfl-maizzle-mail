@@ -4,7 +4,7 @@
       "name": "Spring Fresh",
       "description": "Fresh greens and soft pastels for a spring feeling",
       "colors": {
-        "header": "#addcfa",
+        "header": "#ffffff",
         "sponsor": "#e8f5e8",
         "apps-sites": "#ffffff",
         "quote": "#f0f8ff", 
@@ -24,7 +24,7 @@
       "name": "Autumn Warmth", 
       "description": "Warm oranges, browns and deep reds for cozy autumn vibes",
       "colors": {
-        "header": "#f4e6d3",
+        "header": "#ffffff",
         "sponsor": "#fdf2e9",
         "apps-sites": "#ffffff", 
         "quote": "#fff4e6",
@@ -87,7 +87,7 @@
       "name": "Current Dense Discovery",
       "description": "The existing color scheme currently in use",
       "colors": {
-        "header": "#addcfa",
+        "header": "#ffffff",
         "sponsor": "#f8eccf",
         "apps-sites": "#f0ffff",
         "quote": "#d1eaf4",

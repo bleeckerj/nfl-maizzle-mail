@@ -1,0 +1,147 @@
+{
+  "source": {
+    "file": "templates/new-yorker/new-yorker-sample.html",
+    "imgs": [
+      "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Layer_1@2x.png",
+      "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202b@2x.png",
+      "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%207b@2x.png",
+      "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive1a2.png",
+      "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive4.png",
+      "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202a@2x.png",
+      "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive6.png",
+      "http://links.newyorker.mkt4334.com/open/log/15404918/NDQzMzg5NTk0NzI3S0/0/MTcyMDM2MjQyMwS2/2/MTcyMDM2MjQyMQS2/0"
+    ],
+    "links": [
+      "http://links.newyorker.mkt4334.com/ctt?kn=10&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=16&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=7&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=13&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=15&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=1&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=20&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=23&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=2&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=25&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=24&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=5&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=6&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=3&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=21&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=11&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=8&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=18&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=17&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=12&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=22&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=4&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "#",
+      "http://links.newyorker.mkt4334.com/ctt?kn=19&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=14&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+    ],
+    "headings": [],
+    "tagCounts": {
+      "html": 1,
+      "head": 1,
+      "meta": 3,
+      "title": 1,
+      "style": 1,
+      "body": 1,
+      "table": 34,
+      "tbody": 34,
+      "tr": 34,
+      "td": 34,
+      "div": 54,
+      "em": 4,
+      "a": 27,
+      "img": 8,
+      "br": 13
+    },
+    "textLength": 2005
+  },
+  "rebuild": {
+    "file": "build_production/new-yorker-sample-rebuilt.html",
+    "imgs": [
+      "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Layer_1@2x.png",
+      "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202b@2x.png",
+      "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%207b@2x.png",
+      "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive1a2.png",
+      "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive4.png",
+      "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202a@2x.png",
+      "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive6.png"
+    ],
+    "links": [
+      "http://links.newyorker.mkt4334.com/ctt?kn=10&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=16&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=13&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=15&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=1&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=20&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=23&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=2&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=25&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=24&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=5&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=6&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=3&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=21&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=11&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=8&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=18&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=17&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=12&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=22&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=4&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "#",
+      "http://links.newyorker.mkt4334.com/ctt?kn=19&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=14&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+    ],
+    "headings": [],
+    "tagCounts": {
+      "html": 1,
+      "head": 1,
+      "meta": 5,
+      "title": 1,
+      "body": 1,
+      "table": 27,
+      "tbody": 27,
+      "tr": 27,
+      "td": 27,
+      "div": 54,
+      "em": 2,
+      "a": 26,
+      "img": 7,
+      "br": 9
+    },
+    "textLength": 2259
+  },
+  "diffs": {
+    "images": {
+      "sourceCount": 8,
+      "rebuildCount": 7,
+      "inBoth": 7,
+      "onlyInSource": [
+        "http://links.newyorker.mkt4334.com/open/log/15404918/NDQzMzg5NTk0NzI3S0/0/MTcyMDM2MjQyMwS2/2/MTcyMDM2MjQyMQS2/0"
+      ],
+      "onlyInRebuild": [],
+      "preserved": 0.875
+    },
+    "links": {
+      "sourceCount": 25,
+      "rebuildCount": 24,
+      "inBoth": 24,
+      "onlyInSource": [
+        "http://links.newyorker.mkt4334.com/ctt?kn=7&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+      ],
+      "onlyInRebuild": [],
+      "preserved": 0.96
+    },
+    "headings": {
+      "sourceCount": 0,
+      "rebuildCount": 0,
+      "inBoth": 0,
+      "onlyInSource": [],
+      "onlyInRebuild": [],
+      "preserved": 1
+    }
+  }
+}

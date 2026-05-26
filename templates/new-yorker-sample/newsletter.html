@@ -1,0 +1,136 @@
+---
+title: "{{ page.title }}"
+---
+
+<extends src="templates/new-yorker-sample/layouts/main.html">
+  <block name="template">
+
+  <each loop="section in sections">
+    <if condition="section.type === 'masthead'">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" class="full-width mob-text" style="width:650px;min-width:650px;" width="650">
+        <tbody><tr>
+          <td bgcolor="#f5f6f6" style="font-family: arial,helv,sans-serif; font-size: 10px; color: rgb(35, 31, 32); padding: 0px 0px 26px; text-align: center;" valign="top" width="650">
+            <div style="text-align: right;font-family: helvetica, arial,sans-serif;line-height:16px;font-size: 10px; color: #f5f6f6;padding:5px 38px 10px 0px;"><em>{{ section.eyebrow_text }}</em></div>
+            <div style="font-size:30px;line-height:30px;"><a href="{{ section.logo_href }}" name="logo" target="_blank"><img alt="{{ section.logo_alt }}" border="0" height="{{ section.logo_height }}" src="{{ section.logo_src }}" title="{{ section.logo_alt }}" width="{{ section.logo_width }}"></a></div>
+          </td>
+        </tr></tbody>
+      </table>
+    </if>
+    <if condition="section.type === 'section_header'">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" class="full-width mob-text" style="width:650px;min-width:650px;" width="650">
+        <tbody><tr>
+          <td bgcolor="#ffffff" class="main-text-welcome" style="text-align:center; padding: 40px 80px 40px 80px; font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-bottom: 1px solid #e8e7e7;" valign="top" width="650">
+            <div style="margin-top:20px;"><a href="{{ section.section_title_href }}" name="hedtext" style="color: #DF3331; text-decoration: none; font-size:40px; line-height:46px; font-family: Georgia, times, serif;">{{ section.section_title }}</a></div>
+            <div style="margin-top:20px;"><a href="{{ section.section_dek_href }}" name="hedtext" style="color: #121212; text-decoration: none; font-size:22px; line-height:34px; font-family: Georgia, times, serif;">{{ section.section_dek }}</a></div>
+          </td>
+        </tr></tbody>
+      </table>
+    </if>
+    <if condition="section.type === 'editorial_intro'">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" class="full-width mob-text" style="width:650px;min-width:650px;" width="650">
+        <tbody><tr>
+          <td bgcolor="#ffffff" class="main-text-welcome" style="text-align:left;padding: 40px 50px 40px 50px;font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-bottom: 1px solid #e8e7e7;border-top: 1px solid #e8e7e7;" valign="top" width="650">
+            <div style="color: #121212; text-decoration: none; font-size:18px; line-height:26px; font-family: Georgia, times, serif; ">{{{ section.body_html }}}</div>
+          </td>
+        </tr></tbody>
+      </table>
+    </if>
+    <if condition="section.type === 'article_card_pair'">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" class="full-width mob-text" style="width:650px;min-width:650px;" width="650">
+        <tbody><tr>
+          <td bgcolor="#ffffff" style="padding: 25px 0px 0px 0px;font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-top: 1px solid #e8e7e7;font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-bottom: 1px solid #e8e7e7;" valign="top" width="650">
+            <!--[if gte mso 9]><table cellpadding="0" cellspacing="0" border="0" width="650"><tr><td valign="top"><![endif]-->
+            <table align="left" border="0" cellpadding="0" cellspacing="0" class="full-width" width="325">
+              <tbody><tr>
+                <td valign="top" width="325">
+                  <table align="center" border="0" cellpadding="0" cellspacing="0" class="full-width" width="325">
+                    <tbody><tr>
+                      <td style="padding:0px 0px 0px 0px;" valign="top" width="325">
+                        <div style="padding:0px 25px 10px 25px;text-decoration: none; font-size:14px; line-height:22px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #E71B22;letter-spacing:1px; ">{{ section.left_section_label }}</div>
+                        <div style="padding:0px 25px 10px 25px;text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212; "><a href="{{ section.left_image_href }}" style="text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif;color: #121212;" target="_blank"><img alt="{{ section.left_image_alt }}" border="0" class="full-width" src="{{ section.left_image_src }}" width="100%"></a></div>
+                        <div style="padding:0px 20px 0px 25px;text-decoration: none; font-size:13px; line-height:19px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #000000;letter-spacing:0px; ">{{ section.left_issue_date }}</div>
+                        <div style="text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;padding:0px 20px 5px 25px;"><a href="{{ section.left_title_href }}" style="text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;" target="_blank">{{ section.left_title }}</a></div>
+                        <div style="margin:10 0 20px 0px; padding:0px 20px 0px 25px;font-family: Georgia, Times, 'Times New Roman', serif; font-size: 16px; line-height: 22px; color: #121212;">{{ section.left_dek }}</div>
+                        <div style="padding:0px 20px 10px 25px;margin:15px 0 15px 0;font-family:Helvetica, Arial, sans-serif; font-size:14px;line-height:22px;color:#333;font-weight:bold;">{{ section.left_byline }}</div>
+                        <div>
+                          <div style="padding:0px 20px 25px 25px;font-family: Georgia, Times, 'Times New Roman', serif; font-size: 16px; line-height: 22px; align:left;color: #121212;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100">
+                              <tbody><tr>
+                                <td bgcolor=" #0773b5" height="32" style="font-family:helvetica, arial, sans-serif;font-size:15px;line-height:30px;text-align:center;border-radius:2px;color:#ffffff;font-weight:normal;" valign="middle" width="100"><a href="{{ section.left_cta_href }}" style="text-decoration:none;color:#ffffff;display:block;" target="_blank">{{ section.left_cta_label }}</a></td>
+                              </tr></tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </td>
+                    </tr></tbody>
+                  </table>
+                </td>
+              </tr></tbody>
+            </table>
+            <!--[if gte mso 9]></td><td valign="top"><![endif]-->
+            <table align="left" border="0" cellpadding="0" cellspacing="0" class="right-block" width="325">
+              <tbody><tr>
+                <td valign="top" width="325">
+                  <table align="center" border="0" cellpadding="0" cellspacing="0" class="full-width" width="325">
+                    <tbody><tr>
+                      <td style="padding:0px 0px 0px 0px;" valign="top" width="325">
+                        <div style="padding:0px 25px 10px 25px;text-decoration: none; font-size:14px; line-height:22px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #E71B22;letter-spacing:1px; ">{{ section.right_section_label }}</div>
+                        <div style="padding:0px 25px 10px 25px;text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212; "><a href="{{ section.right_image_href }}" style="text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif;color: #121212;" target="_blank"><img alt="{{ section.right_image_alt }}" border="0" class="full-width" src="{{ section.right_image_src }}" width="100%"></a></div>
+                        <div style="padding:0px 20px 0px 25px;text-decoration: none; font-size:13px; line-height:19px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #000000;letter-spacing:0px; ">{{ section.right_issue_date }}</div>
+                        <div style="text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;padding:0px 20px 5px 25px;"><a href="{{ section.right_title_href }}" style="text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;" target="_blank">{{ section.right_title }}</a></div>
+                        <div style="margin:10 0 20px 0px; padding:0px 20px 0px 25px;font-family: Georgia, Times, 'Times New Roman', serif; font-size: 16px; line-height: 22px; color: #121212;">{{ section.right_dek }}</div>
+                        <div style="padding:0px 20px 10px 25px;margin:15px 0 15px 0;font-family:Helvetica, Arial, sans-serif; font-size:14px;line-height:22px;color:#333;font-weight:bold;">{{ section.right_byline }}</div>
+                        <div>
+                          <div style="padding:0px 20px 25px 25px;font-family: Georgia, Times, 'Times New Roman', serif; font-size: 16px; line-height: 22px; align:left;color: #121212;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100">
+                              <tbody><tr>
+                                <td bgcolor=" #0773b5" height="32" style="font-family:helvetica, arial, sans-serif;font-size:15px;line-height:30px;text-align:center;border-radius:2px;color:#ffffff;font-weight:normal;" valign="middle" width="100"><a href="{{ section.right_cta_href }}" style="text-decoration:none;color:#ffffff;display:block;" target="_blank">{{ section.right_cta_label }}</a></td>
+                              </tr></tbody>
+                            </table>
+                          </div>
+                        </div>
+                      </td>
+                    </tr></tbody>
+                  </table>
+                </td>
+              </tr></tbody>
+            </table>
+            <!--[if gte mso 9]></td></tr></table><![endif]-->
+          </td>
+        </tr></tbody>
+      </table>
+    </if>
+    <if condition="section.type === 'archive_cta_banner'">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" class="full-width mob-text" style="width:650px;min-width:650px;" width="650">
+        <tbody><tr>
+          <td bgcolor="#ffffff" class="main-text-welcome" style="text-align:left;padding: 0px 45px 0px 45px;font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-bottom: 1px solid #e8e7e7;font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-top: 1px solid #e8e7e7;" valign="top" width="650">
+            <div style="color: #000000; text-decoration: none; text-align: center;font-size:22px; line-height:26px; font-family: Georgia, times, serif;padding:40px 0px 40px 0px; ">{{ section.prompt_text }}</div>
+            <table align="center" border="0" cellpadding="0" cellspacing="0" class="image-width-290" style="padding: 0px 0px 40px 0px;" width="290">
+              <tbody><tr>
+                <td bgcolor="#DF3331" height="48" style="font-family:helvetica, arial, sans-serif;font-size:14px;line-height:30px;padding:0px 17px 00px 17px;text-align:center;border-radius:2px;color:#ffffff;font-weight:bold;" valign="middle" width="100%"><a href="{{ section.cta_href }}" name="explore_cta" style="text-decoration:none;color:#ffffff;display:block;" target="_blank">{{ section.cta_label }}</a></td>
+              </tr></tbody>
+            </table>
+          </td>
+        </tr></tbody>
+      </table>
+    </if>
+    <if condition="section.type === 'colophon'">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" class="full-width mob-text" style="width:650px;min-width:650px;" width="650">
+        <tbody><tr>
+          <td bgcolor="#f5f6f6" style="color: #333333; text-decoration: none; font-size:13px; line-height:20px; font-family: Georgia, times, serif; text-align:center; padding: 30px 20px 20px 20px;" valign="top" width="650"><a href="{{ section.view_in_browser_href }}" name="view_in_browser" style="color: #333333; text-decoration: underline; " target="_blank" xt="SPCLICKTOVIEW">{{ section.view_in_browser_label }}</a><br>
+            <br>
+            You received this email because you are a subscriber to <em>{{ section.publication_name }}</em>. Question about your subscription? Contact <a href="{{ section.customer_care_href }}" name="subscriptions_newyorker_com_pubs_N3" style="color: #333333; text-decoration: underline;">Customer Care</a>.<br>
+            <br>
+            View our <a href="{{ section.privacy_policy_href }}" name="privacypolicy" style="color: #333333; text-decoration: underline;" target="_blank">Privacy Policy</a><br>
+            <a href="{{ section.unsubscribe_href }}" name="unsubscribe" style="color: #333333; text-decoration: underline;" target="_blank">Unsubscribe</a><br>
+            <br>
+            {{ section.sender_address }}<br>
+            <br>
+            {{ section.copyright_line }}</td>
+        </tr></tbody>
+      </table>
+    </if>
+  </each>
+
+  </block>
+</extends>

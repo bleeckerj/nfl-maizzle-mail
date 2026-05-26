@@ -1,0 +1,21 @@
+<!--
+  Section Header
+  Centered section title (e.g. 'From the Archive') in large serif red type, with a subtitle/dek below it. Both are linked.
+
+  Slots:
+  - section_title (text) — Large red linked title text
+  - section_title_href (link_url) — URL for the section title link
+  - section_dek (text) — Subtitle/dek linked text below the title
+  - section_dek_href (link_url) — URL for the dek link
+
+  Used by section indexes: [1] in the source email.
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="full-width" style="width:650px;min-width:650px;" width="650">
+  <tbody><tr>
+    <td bgcolor="#ffffff" class="main-text-welcome" style="text-align:center; padding: 40px 80px 40px 80px; font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-bottom: 1px solid #e8e7e7;" valign="top" width="650">
+      <div style="margin-top:20px;"><a href="{{ section.section_title_href }}" name="hedtext" style="color: #DF3331; text-decoration: none; font-size:40px; line-height:46px; font-family: Georgia, times, serif;">{{ section.section_title }}</a></div>
+      <div style="margin-top:20px;"><a href="{{ section.section_dek_href }}" name="hedtext" style="color: #121212; text-decoration: none; font-size:22px; line-height:34px; font-family: Georgia, times, serif;">{{ section.section_dek }}</a></div>
+    </td>
+  </tr></tbody>
+</table>

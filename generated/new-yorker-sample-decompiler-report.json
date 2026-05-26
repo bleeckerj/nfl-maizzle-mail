@@ -1,0 +1,214 @@
+{
+  "source": "/Users/julian/Code/nfl-maizzle-mail/templates/new-yorker/new-yorker-sample.html",
+  "templateName": "new-yorker-sample",
+  "layoutRoot": "td",
+  "sections": [
+    {
+      "index": 0,
+      "tag": "table",
+      "className": "full-width",
+      "textSnippet": "Read our “Literary Lives” collection.",
+      "textLength": 37,
+      "imageCount": 1,
+      "linkCount": 1,
+      "styles": {
+        "containerStyles": {
+          "padding": "0px 0px 26px"
+        },
+        "contentStyles": {},
+        "linkStyles": {},
+        "headingStyles": {}
+      }
+    },
+    {
+      "index": 1,
+      "tag": "table",
+      "className": "full-width",
+      "textSnippet": "From the Archive Highs and lows in pursuit of the literary life.",
+      "textLength": 64,
+      "imageCount": 0,
+      "linkCount": 2,
+      "styles": {
+        "containerStyles": {
+          "padding": "40px 80px 40px 80px",
+          "borderBottom": "1px solid #e8e7e7"
+        },
+        "contentStyles": {},
+        "linkStyles": {
+          "color": "#DF3331",
+          "textDecoration": "none"
+        },
+        "headingStyles": {}
+      }
+    },
+    {
+      "index": 2,
+      "tag": "table",
+      "className": "full-width",
+      "textSnippet": "The New Yorker archive presents thematic selections of articles from the magazine’s past, highlighting stories that feel as fresh as ever. In our “Literary Lives” collection, we bring you pieces about the dynamic authors behind literary masterworks. From F. Scott and Zelda Fitzge",
+      "textLength": 622,
+      "imageCount": 0,
+      "linkCount": 1,
+      "styles": {
+        "containerStyles": {
+          "padding": "40px 50px 40px 50px",
+          "borderTop": "1px solid #e8e7e7",
+          "borderBottom": "1px solid #e8e7e7"
+        },
+        "contentStyles": {
+          "fontFamily": "Georgia, times, serif",
+          "fontSize": "18px",
+          "lineHeight": "26px",
+          "color": "#121212"
+        },
+        "linkStyles": {
+          "color": "#0773b5",
+          "textDecoration": "none"
+        },
+        "headingStyles": {}
+      }
+    },
+    {
+      "index": 3,
+      "tag": "table",
+      "className": "full-width",
+      "textSnippet": "A CRITIC AT LARGE January 29, 2001 Issue This Lonesome Place Flannery O’Connor on race and religion in the unreconstructed South. By Hilton Als Read now LIFE AND LETTERS November 9, 1998 Issue Last Words Those Hemingway wrote, and those he didn’t. By Joan Didion Read now",
+      "textLength": 271,
+      "imageCount": 2,
+      "linkCount": 6,
+      "styles": {
+        "containerStyles": {
+          "padding": "25px 0px 0px 0px",
+          "borderTop": "1px solid #e8e7e7",
+          "borderBottom": "1px solid #e8e7e7"
+        },
+        "contentStyles": {
+          "fontFamily": "Georgia, times, serif",
+          "fontSize": "14px",
+          "lineHeight": "22px",
+          "color": "#E71B22",
+          "textAlign": "left",
+          "fontWeight": "bold"
+        },
+        "linkStyles": {
+          "color": "#121212",
+          "textDecoration": "none"
+        },
+        "headingStyles": {}
+      }
+    },
+    {
+      "index": 4,
+      "tag": "table",
+      "className": "full-width",
+      "textSnippet": "A CRITIC AT LARGE February 17, 1997 Issue A Society of One Zora Neale Hurston, American contrarian. By Claudia Roth Pierpont Read now PROFILES March 2, 1929 Issue Dearest Edith Edith Wharton was a society insider—until she started writing about her friends. By Janet Flanner Read ",
+      "textLength": 283,
+      "imageCount": 2,
+      "linkCount": 6,
+      "styles": {
+        "containerStyles": {
+          "padding": "25px 0px 0px 0px",
+          "borderTop": "1px solid #e8e7e7",
+          "borderBottom": "1px solid #e8e7e7"
+        },
+        "contentStyles": {
+          "fontFamily": "Georgia, times, serif",
+          "fontSize": "14px",
+          "lineHeight": "22px",
+          "color": "#E71B22",
+          "textAlign": "left",
+          "fontWeight": "bold"
+        },
+        "linkStyles": {
+          "color": "#121212",
+          "textDecoration": "none"
+        },
+        "headingStyles": {}
+      }
+    },
+    {
+      "index": 5,
+      "tag": "table",
+      "className": "full-width",
+      "textSnippet": "THE ARTS November 7, 1959 Issue The Wings of Henry James How “The Wings of the Dove” shaped a whole generation of writers, critics, playwrights, producers, and publishers. By James Thurber Read now PROFILES April 17, 1926 Issue That Sad Young Man All was quiet on the Riviera, and",
+      "textLength": 338,
+      "imageCount": 2,
+      "linkCount": 6,
+      "styles": {
+        "containerStyles": {
+          "padding": "25px 0px 0px 0px",
+          "borderTop": "1px solid #e8e7e7",
+          "borderBottom": "1px solid #e8e7e7"
+        },
+        "contentStyles": {
+          "fontFamily": "Georgia, times, serif",
+          "fontSize": "14px",
+          "lineHeight": "22px",
+          "color": "#E71B22",
+          "textAlign": "left",
+          "fontWeight": "bold"
+        },
+        "linkStyles": {
+          "color": "#121212",
+          "textDecoration": "none"
+        },
+        "headingStyles": {}
+      }
+    },
+    {
+      "index": 6,
+      "tag": "table",
+      "className": "full-width",
+      "textSnippet": "Our full archive awaits. Explore now",
+      "textLength": 36,
+      "imageCount": 0,
+      "linkCount": 1,
+      "styles": {
+        "containerStyles": {
+          "padding": "0px 45px 0px 45px",
+          "borderTop": "1px solid #e8e7e7",
+          "borderBottom": "1px solid #e8e7e7",
+          "borderRadius": "2px"
+        },
+        "contentStyles": {
+          "fontFamily": "Georgia, times, serif",
+          "fontSize": "22px",
+          "lineHeight": "26px",
+          "color": "#000000",
+          "textAlign": "center"
+        },
+        "linkStyles": {
+          "color": "#ffffff",
+          "textDecoration": "none"
+        },
+        "headingStyles": {}
+      }
+    },
+    {
+      "index": 7,
+      "tag": "table",
+      "className": "full-width",
+      "textSnippet": "View this email in your browser. You received this email because you are a subscriber to The New Yorker. Question about your subscription? Contact Customer Care. View our Privacy Policy Unsubscribe Sent from Condé Nast, 1 World Trade Center, New York, NY 10007, attn: Email Coordi",
+      "textLength": 335,
+      "imageCount": 0,
+      "linkCount": 4,
+      "styles": {
+        "containerStyles": {
+          "padding": "30px 20px 20px 20px"
+        },
+        "contentStyles": {
+          "fontFamily": "Georgia, times, serif",
+          "fontSize": "13px",
+          "lineHeight": "20px",
+          "color": "#333333",
+          "textAlign": "center"
+        },
+        "linkStyles": {
+          "color": "#333333",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {}
+      }
+    }
+  ]
+}

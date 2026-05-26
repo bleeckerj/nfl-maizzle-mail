@@ -1,0 +1,23 @@
+<!--
+  Masthead
+  Top banner with publication logo and a preheader/eyebrow text line. Uses a light grey background.
+
+  Slots:
+  - eyebrow_text (text) — Small italic text displayed above the logo, often a promotional line
+  - logo_href (link_url) — URL the logo links to
+  - logo_src (image_url) — Logo image source URL
+  - logo_alt (image_alt) — Logo image alt text
+  - logo_width (text) — Logo image width
+  - logo_height (text) — Logo image height
+
+  Used by section indexes: [0] in the source email.
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="full-width" style="width:650px;min-width:650px;" width="650">
+  <tbody><tr>
+    <td bgcolor="#f5f6f6" style="font-family: arial,helv,sans-serif; font-size: 10px; color: rgb(35, 31, 32); padding: 0px 0px 26px; text-align: center;" valign="top" width="650">
+      <div style="text-align: right;font-family: helvetica, arial,sans-serif;line-height:16px;font-size: 10px; color: #f5f6f6;padding:5px 38px 10px 0px;"><em>{{ section.eyebrow_text }}</em></div>
+      <div style="font-size:30px;line-height:30px;"><a href="{{ section.logo_href }}" name="logo" target="_blank"><img alt="{{ section.logo_alt }}" border="0" height="{{ section.logo_height }}" src="{{ section.logo_src }}" title="{{ section.logo_alt }}" width="{{ section.logo_width }}"></a></div>
+    </td>
+  </tr></tbody>
+</table>

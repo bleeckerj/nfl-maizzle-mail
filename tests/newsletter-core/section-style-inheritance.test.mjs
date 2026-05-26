@@ -161,6 +161,83 @@ test('sponsor subtitle preserves legacy gray when no section color override is s
   }
 });
 
+test('indie-mag-single-column subtitle inherits explicit content color and radius override', () => {
+  const { html, cleanup } = buildNewsletter(
+    [
+      '---',
+      'template: dense-discovery',
+      'title: Indie Mag Subtitle Inheritance',
+      'preheader: Verify indie-mag subtitle inheritance',
+      'sectionStylesFile: templates/dense-discovery/section-styles.json',
+      'sections:',
+      '  - type: indie-mag-single-column',
+      '    title: From The Tape Archives',
+      '    containerStyles:',
+      "      backgroundColor: '#41a67a'",
+      '      borderRadius: 18px',
+      '    contentStyles:',
+      "      color: '#f5f2eb'",
+      '    items:',
+      '      - title: Podcast Archive',
+      '        subtitle: Near Future Laboratory Podcast',
+      '        description: "<p>Archive note.</p>"',
+      '---',
+      '',
+    ],
+    'indie-mag-subtitle-inheritance',
+  );
+
+  try {
+    assert.match(
+      html,
+      /<td[^>]*class="headline"[^>]*style="[^"]*border-radius:\s*18px 18px 0 0[^"]*"/,
+    );
+    assert.match(html, /<td[^>]*style="[^"]*border-radius:\s*0 0 18px 18px[^"]*"/);
+    assert.match(
+      html,
+      /<p class="mob-text mob-subtitle"[^>]*style="[^"]*color:\s*#f5f2eb[^"]*"[^>]*>Near Future Laboratory Podcast<\/p>/,
+    );
+  } finally {
+    cleanup();
+  }
+});
+
+test('indie-mag-single-column subtitle preserves legacy gray and default radius', () => {
+  const { html, cleanup } = buildNewsletter(
+    [
+      '---',
+      'template: dense-discovery',
+      'title: Indie Mag Subtitle Fallback',
+      'preheader: Verify indie-mag subtitle fallback',
+      'sectionStylesFile: templates/dense-discovery/section-styles.json',
+      'sections:',
+      '  - type: indie-mag-single-column',
+      '    title: From The Tape Archives',
+      '    items:',
+      '      - title: Podcast Archive',
+      '        subtitle: Legacy Subtitle Gray',
+      '        description: "<p>Archive note.</p>"',
+      '---',
+      '',
+    ],
+    'indie-mag-subtitle-fallback',
+  );
+
+  try {
+    assert.match(
+      html,
+      /<td[^>]*class="headline"[^>]*style="[^"]*border-radius:\s*10px 10px 0 0[^"]*"/,
+    );
+    assert.match(html, /<td[^>]*style="[^"]*border-radius:\s*0 0 10px 10px[^"]*"/);
+    assert.match(
+      html,
+      /<p class="mob-text mob-subtitle"[^>]*style="[^"]*color:\s*#707070[^"]*"[^>]*>Legacy Subtitle Gray<\/p>/,
+    );
+  } finally {
+    cleanup();
+  }
+});
+
 test('explicit headingStyles and linkStyles override inherited contentStyles', () => {
   const { html, cleanup } = buildNewsletter(
     [

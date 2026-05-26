@@ -1,5 +1,8 @@
 # Node modules
 node_modules/
+.cache/
+.codex/
+.claude/
 
 gpt-prompts/
 emails-to-templatize/
@@ -36,4 +39,4 @@ Thumbs.db
 npm-debug.log*
 
 # Generated data files (optional - remove if you want to track them)
-# data/newsletter.json
+# data/newsletter.json.cache

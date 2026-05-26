@@ -1,0 +1,466 @@
+{
+  "source": "templates/new-yorker/new-yorker-sample.html",
+  "templateName": "new-yorker-sample",
+  "model": "claude-sonnet-4-6",
+  "usage": {
+    "input_tokens": 17658,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 11355,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "elapsedMs": 130919,
+  "result": {
+    "components": [
+      {
+        "type": "masthead",
+        "displayName": "Masthead",
+        "description": "Top banner with publication logo and a preheader/eyebrow text line. Uses a light grey background.",
+        "sectionIndexes": [
+          0
+        ],
+        "slots": [
+          {
+            "name": "eyebrow_text",
+            "kind": "text",
+            "description": "Small italic text displayed above the logo, often a promotional line"
+          },
+          {
+            "name": "logo_href",
+            "kind": "link_url",
+            "description": "URL the logo links to"
+          },
+          {
+            "name": "logo_src",
+            "kind": "image_url",
+            "description": "Logo image source URL"
+          },
+          {
+            "name": "logo_alt",
+            "kind": "image_alt",
+            "description": "Logo image alt text"
+          },
+          {
+            "name": "logo_width",
+            "kind": "text",
+            "description": "Logo image width"
+          },
+          {
+            "name": "logo_height",
+            "kind": "text",
+            "description": "Logo image height"
+          }
+        ],
+        "template": "<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" style=\"width:650px;min-width:650px;\" width=\"650\">\n  <tbody><tr>\n    <td bgcolor=\"#f5f6f6\" style=\"font-family: arial,helv,sans-serif; font-size: 10px; color: rgb(35, 31, 32); padding: 0px 0px 26px; text-align: center;\" valign=\"top\" width=\"650\">\n      <div style=\"text-align: right;font-family: helvetica, arial,sans-serif;line-height:16px;font-size: 10px; color: #f5f6f6;padding:5px 38px 10px 0px;\"><em>{{eyebrow_text}}</em></div>\n      <div style=\"font-size:30px;line-height:30px;\"><a href=\"{{logo_href}}\" name=\"logo\" target=\"_blank\"><img alt=\"{{logo_alt}}\" border=\"0\" height=\"{{logo_height}}\" src=\"{{logo_src}}\" title=\"{{logo_alt}}\" width=\"{{logo_width}}\"></a></div>\n    </td>\n  </tr></tbody>\n</table>",
+        "confidence": 1
+      },
+      {
+        "type": "section_header",
+        "displayName": "Section Header",
+        "description": "Centered section title (e.g. 'From the Archive') in large serif red type, with a subtitle/dek below it. Both are linked.",
+        "sectionIndexes": [
+          1
+        ],
+        "slots": [
+          {
+            "name": "section_title",
+            "kind": "text",
+            "description": "Large red linked title text"
+          },
+          {
+            "name": "section_title_href",
+            "kind": "link_url",
+            "description": "URL for the section title link"
+          },
+          {
+            "name": "section_dek",
+            "kind": "text",
+            "description": "Subtitle/dek linked text below the title"
+          },
+          {
+            "name": "section_dek_href",
+            "kind": "link_url",
+            "description": "URL for the dek link"
+          }
+        ],
+        "template": "<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" style=\"width:650px;min-width:650px;\" width=\"650\">\n  <tbody><tr>\n    <td bgcolor=\"#ffffff\" class=\"main-text-welcome\" style=\"text-align:center; padding: 40px 80px 40px 80px; font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-bottom: 1px solid #e8e7e7;\" valign=\"top\" width=\"650\">\n      <div style=\"margin-top:20px;\"><a href=\"{{section_title_href}}\" name=\"hedtext\" style=\"color: #DF3331; text-decoration: none; font-size:40px; line-height:46px; font-family: Georgia, times, serif;\">{{section_title}}</a></div>\n      <div style=\"margin-top:20px;\"><a href=\"{{section_dek_href}}\" name=\"hedtext\" style=\"color: #121212; text-decoration: none; font-size:22px; line-height:34px; font-family: Georgia, times, serif;\">{{section_dek}}</a></div>\n    </td>\n  </tr></tbody>\n</table>",
+        "confidence": 1
+      },
+      {
+        "type": "editorial_intro",
+        "displayName": "Editorial Intro",
+        "description": "Full-width prose introduction block with body copy in serif type, including an inline text link.",
+        "sectionIndexes": [
+          2
+        ],
+        "slots": [
+          {
+            "name": "body_html",
+            "kind": "rich_text",
+            "description": "Full body HTML including inline links and emphasis tags"
+          }
+        ],
+        "template": "<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" style=\"width:650px;min-width:650px;\" width=\"650\">\n  <tbody><tr>\n    <td bgcolor=\"#ffffff\" class=\"main-text-welcome\" style=\"text-align:left;padding: 40px 50px 40px 50px;font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-bottom: 1px solid #e8e7e7;border-top: 1px solid #e8e7e7;\" valign=\"top\" width=\"650\">\n      <div style=\"color: #121212; text-decoration: none; font-size:18px; line-height:26px; font-family: Georgia, times, serif; \">{{body_html}}</div>\n    </td>\n  </tr></tbody>\n</table>",
+        "confidence": 1
+      },
+      {
+        "type": "article_card_pair",
+        "displayName": "Article Card Pair",
+        "description": "Two-column row of archive article cards side by side. Each card has: section label, linked image, issue date, linked article title, dek/description, byline, and a blue 'Read now' CTA button.",
+        "sectionIndexes": [
+          3,
+          4,
+          5
+        ],
+        "slots": [
+          {
+            "name": "left_section_label",
+            "kind": "label",
+            "description": "Red all-caps section/rubric label for left card"
+          },
+          {
+            "name": "left_image_href",
+            "kind": "link_url",
+            "description": "Link URL wrapping the left card image"
+          },
+          {
+            "name": "left_image_src",
+            "kind": "image_url",
+            "description": "Left card image source URL"
+          },
+          {
+            "name": "left_image_alt",
+            "kind": "image_alt",
+            "description": "Left card image alt text"
+          },
+          {
+            "name": "left_issue_date",
+            "kind": "date",
+            "description": "Issue date text for left card"
+          },
+          {
+            "name": "left_title",
+            "kind": "text",
+            "description": "Left card article title text"
+          },
+          {
+            "name": "left_title_href",
+            "kind": "link_url",
+            "description": "Left card article title link URL"
+          },
+          {
+            "name": "left_dek",
+            "kind": "text",
+            "description": "Left card article dek/description text"
+          },
+          {
+            "name": "left_byline",
+            "kind": "text",
+            "description": "Left card byline (e.g. 'By Author Name')"
+          },
+          {
+            "name": "left_cta_href",
+            "kind": "link_url",
+            "description": "Left card CTA button link URL"
+          },
+          {
+            "name": "left_cta_label",
+            "kind": "link_label",
+            "description": "Left card CTA button label text"
+          },
+          {
+            "name": "right_section_label",
+            "kind": "label",
+            "description": "Red all-caps section/rubric label for right card"
+          },
+          {
+            "name": "right_image_href",
+            "kind": "link_url",
+            "description": "Link URL wrapping the right card image"
+          },
+          {
+            "name": "right_image_src",
+            "kind": "image_url",
+            "description": "Right card image source URL"
+          },
+          {
+            "name": "right_image_alt",
+            "kind": "image_alt",
+            "description": "Right card image alt text"
+          },
+          {
+            "name": "right_issue_date",
+            "kind": "date",
+            "description": "Issue date text for right card"
+          },
+          {
+            "name": "right_title",
+            "kind": "text",
+            "description": "Right card article title text"
+          },
+          {
+            "name": "right_title_href",
+            "kind": "link_url",
+            "description": "Right card article title link URL"
+          },
+          {
+            "name": "right_dek",
+            "kind": "text",
+            "description": "Right card article dek/description text"
+          },
+          {
+            "name": "right_byline",
+            "kind": "text",
+            "description": "Right card byline (e.g. 'By Author Name')"
+          },
+          {
+            "name": "right_cta_href",
+            "kind": "link_url",
+            "description": "Right card CTA button link URL"
+          },
+          {
+            "name": "right_cta_label",
+            "kind": "link_label",
+            "description": "Right card CTA button label text"
+          }
+        ],
+        "template": "<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" style=\"width:650px;min-width:650px;\" width=\"650\">\n  <tbody><tr>\n    <td bgcolor=\"#ffffff\" style=\"padding: 25px 0px 0px 0px;font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-top: 1px solid #e8e7e7;font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-bottom: 1px solid #e8e7e7;\" valign=\"top\" width=\"650\">\n      <!--[if gte mso 9]><table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"650\"><tr><td valign=\"top\"><![endif]-->\n      <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" width=\"325\">\n        <tbody><tr>\n          <td valign=\"top\" width=\"325\">\n            <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" width=\"325\">\n              <tbody><tr>\n                <td style=\"padding:0px 0px 0px 0px;\" valign=\"top\" width=\"325\">\n                  <div style=\"padding:0px 25px 10px 25px;text-decoration: none; font-size:14px; line-height:22px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #E71B22;letter-spacing:1px; \">{{left_section_label}}</div>\n                  <div style=\"padding:0px 25px 10px 25px;text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212; \"><a href=\"{{left_image_href}}\" style=\"text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif;color: #121212;\" target=\"_blank\"><img alt=\"{{left_image_alt}}\" border=\"0\" class=\"full-width\" src=\"{{left_image_src}}\" width=\"100%\"></a></div>\n                  <div style=\"padding:0px 20px 0px 25px;text-decoration: none; font-size:13px; line-height:19px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #000000;letter-spacing:0px; \">{{left_issue_date}}</div>\n                  <div style=\"text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;padding:0px 20px 5px 25px;\"><a href=\"{{left_title_href}}\" style=\"text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;\" target=\"_blank\">{{left_title}}</a></div>\n                  <div style=\"margin:10 0 20px 0px; padding:0px 20px 0px 25px;font-family: Georgia, Times, 'Times New Roman', serif; font-size: 16px; line-height: 22px; color: #121212;\">{{left_dek}}</div>\n                  <div style=\"padding:0px 20px 10px 25px;margin:15px 0 15px 0;font-family:Helvetica, Arial, sans-serif; font-size:14px;line-height:22px;color:#333;font-weight:bold;\">{{left_byline}}</div>\n                  <div>\n                    <div style=\"padding:0px 20px 25px 25px;font-family: Georgia, Times, 'Times New Roman', serif; font-size: 16px; line-height: 22px; align:left;color: #121212;\">\n                      <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100\">\n                        <tbody><tr>\n                          <td bgcolor=\" #0773b5\" height=\"32\" style=\"font-family:helvetica, arial, sans-serif;font-size:15px;line-height:30px;text-align:center;border-radius:2px;color:#ffffff;font-weight:normal;\" valign=\"middle\" width=\"100\"><a href=\"{{left_cta_href}}\" style=\"text-decoration:none;color:#ffffff;display:block;\" target=\"_blank\">{{left_cta_label}}</a></td>\n                        </tr></tbody>\n                      </table>\n                    </div>\n                  </div>\n                </td>\n              </tr></tbody>\n            </table>\n          </td>\n        </tr></tbody>\n      </table>\n      <!--[if gte mso 9]></td><td valign=\"top\"><![endif]-->\n      <table align=\"left\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"right-block\" width=\"325\">\n        <tbody><tr>\n          <td valign=\"top\" width=\"325\">\n            <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" width=\"325\">\n              <tbody><tr>\n                <td style=\"padding:0px 0px 0px 0px;\" valign=\"top\" width=\"325\">\n                  <div style=\"padding:0px 25px 10px 25px;text-decoration: none; font-size:14px; line-height:22px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #E71B22;letter-spacing:1px; \">{{right_section_label}}</div>\n                  <div style=\"padding:0px 25px 10px 25px;text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212; \"><a href=\"{{right_image_href}}\" style=\"text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif;color: #121212;\" target=\"_blank\"><img alt=\"{{right_image_alt}}\" border=\"0\" class=\"full-width\" src=\"{{right_image_src}}\" width=\"100%\"></a></div>\n                  <div style=\"padding:0px 20px 0px 25px;text-decoration: none; font-size:13px; line-height:19px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #000000;letter-spacing:0px; \">{{right_issue_date}}</div>\n                  <div style=\"text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;padding:0px 20px 5px 25px;\"><a href=\"{{right_title_href}}\" style=\"text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;\" target=\"_blank\">{{right_title}}</a></div>\n                  <div style=\"margin:10 0 20px 0px; padding:0px 20px 0px 25px;font-family: Georgia, Times, 'Times New Roman', serif; font-size: 16px; line-height: 22px; color: #121212;\">{{right_dek}}</div>\n                  <div style=\"padding:0px 20px 10px 25px;margin:15px 0 15px 0;font-family:Helvetica, Arial, sans-serif; font-size:14px;line-height:22px;color:#333;font-weight:bold;\">{{right_byline}}</div>\n                  <div>\n                    <div style=\"padding:0px 20px 25px 25px;font-family: Georgia, Times, 'Times New Roman', serif; font-size: 16px; line-height: 22px; align:left;color: #121212;\">\n                      <table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100\">\n                        <tbody><tr>\n                          <td bgcolor=\" #0773b5\" height=\"32\" style=\"font-family:helvetica, arial, sans-serif;font-size:15px;line-height:30px;text-align:center;border-radius:2px;color:#ffffff;font-weight:normal;\" valign=\"middle\" width=\"100\"><a href=\"{{right_cta_href}}\" style=\"text-decoration:none;color:#ffffff;display:block;\" target=\"_blank\">{{right_cta_label}}</a></td>\n                        </tr></tbody>\n                      </table>\n                    </div>\n                  </div>\n                </td>\n              </tr></tbody>\n            </table>\n          </td>\n        </tr></tbody>\n      </table>\n      <!--[if gte mso 9]></td></tr></table><![endif]-->\n    </td>\n  </tr></tbody>\n</table>",
+        "confidence": 0.97,
+        "notes": "Sections 3, 4, and 5 are structurally identical two-column article card pairs. The right-column HTML was truncated in the source for sections 3 and 5; slot values are populated from fully available data in each section's link/image metadata."
+      },
+      {
+        "type": "archive_cta_banner",
+        "displayName": "Archive CTA Banner",
+        "description": "Centered text prompt with a large red CTA button, inviting readers to explore the full archive.",
+        "sectionIndexes": [
+          6
+        ],
+        "slots": [
+          {
+            "name": "prompt_text",
+            "kind": "text",
+            "description": "Centered prose prompt above the button"
+          },
+          {
+            "name": "cta_href",
+            "kind": "link_url",
+            "description": "CTA button link URL"
+          },
+          {
+            "name": "cta_label",
+            "kind": "link_label",
+            "description": "CTA button label text"
+          }
+        ],
+        "template": "<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" style=\"width:650px;min-width:650px;\" width=\"650\">\n  <tbody><tr>\n    <td bgcolor=\"#ffffff\" class=\"main-text-welcome\" style=\"text-align:left;padding: 0px 45px 0px 45px;font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-bottom: 1px solid #e8e7e7;font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-top: 1px solid #e8e7e7;\" valign=\"top\" width=\"650\">\n      <div style=\"color: #000000; text-decoration: none; text-align: center;font-size:22px; line-height:26px; font-family: Georgia, times, serif;padding:40px 0px 40px 0px; \">{{prompt_text}}</div>\n      <table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"image-width-290\" style=\"padding: 0px 0px 40px 0px;\" width=\"290\">\n        <tbody><tr>\n          <td bgcolor=\"#DF3331\" height=\"48\" style=\"font-family:helvetica, arial, sans-serif;font-size:14px;line-height:30px;padding:0px 17px 00px 17px;text-align:center;border-radius:2px;color:#ffffff;font-weight:bold;\" valign=\"middle\" width=\"100%\"><a href=\"{{cta_href}}\" name=\"explore_cta\" style=\"text-decoration:none;color:#ffffff;display:block;\" target=\"_blank\">{{cta_label}}</a></td>\n        </tr></tbody>\n      </table>\n    </td>\n  </tr></tbody>\n</table>",
+        "confidence": 1
+      },
+      {
+        "type": "colophon",
+        "displayName": "Colophon / Footer",
+        "description": "Footer with view-in-browser link, subscription notice, customer care link, privacy policy link, unsubscribe link, sender address, and copyright.",
+        "sectionIndexes": [
+          7
+        ],
+        "slots": [
+          {
+            "name": "view_in_browser_href",
+            "kind": "link_url",
+            "description": "View in browser link URL"
+          },
+          {
+            "name": "view_in_browser_label",
+            "kind": "link_label",
+            "description": "View in browser link text"
+          },
+          {
+            "name": "publication_name",
+            "kind": "text",
+            "description": "Name of the publication (italicised in source)"
+          },
+          {
+            "name": "customer_care_href",
+            "kind": "link_url",
+            "description": "Customer Care link URL"
+          },
+          {
+            "name": "privacy_policy_href",
+            "kind": "link_url",
+            "description": "Privacy Policy link URL"
+          },
+          {
+            "name": "unsubscribe_href",
+            "kind": "link_url",
+            "description": "Unsubscribe link URL"
+          },
+          {
+            "name": "sender_address",
+            "kind": "text",
+            "description": "Physical mailing address of the sender"
+          },
+          {
+            "name": "copyright_line",
+            "kind": "text",
+            "description": "Copyright notice text"
+          }
+        ],
+        "template": "<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" class=\"full-width\" style=\"width:650px;min-width:650px;\" width=\"650\">\n  <tbody><tr>\n    <td bgcolor=\"#f5f6f6\" style=\"color: #333333; text-decoration: none; font-size:13px; line-height:20px; font-family: Georgia, times, serif; text-align:center; padding: 30px 20px 20px 20px;\" valign=\"top\" width=\"650\"><a href=\"{{view_in_browser_href}}\" name=\"view_in_browser\" style=\"color: #333333; text-decoration: underline; \" target=\"_blank\" xt=\"SPCLICKTOVIEW\">{{view_in_browser_label}}</a><br>\n      <br>\n      You received this email because you are a subscriber to <em>{{publication_name}}</em>. Question about your subscription? Contact <a href=\"{{customer_care_href}}\" name=\"subscriptions_newyorker_com_pubs_N3\" style=\"color: #333333; text-decoration: underline;\">Customer Care</a>.<br>\n      <br>\n      View our <a href=\"{{privacy_policy_href}}\" name=\"privacypolicy\" style=\"color: #333333; text-decoration: underline;\" target=\"_blank\">Privacy Policy</a><br>\n      <a href=\"{{unsubscribe_href}}\" name=\"unsubscribe\" style=\"color: #333333; text-decoration: underline;\" target=\"_blank\">Unsubscribe</a><br>\n      <br>\n      {{sender_address}}<br>\n      <br>\n      {{copyright_line}}</td>\n  </tr></tbody>\n</table>",
+        "confidence": 1
+      }
+    ],
+    "sectionAssignments": [
+      {
+        "index": 0,
+        "type": "masthead",
+        "confidence": 1,
+        "itemValues": {
+          "eyebrow_text": "Read our “Literary Lives” collection.",
+          "logo_href": "http://links.newyorker.mkt4334.com/ctt?kn=10&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "logo_src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Layer_1@2x.png",
+          "logo_alt": "The New Yorker",
+          "logo_width": "150",
+          "logo_height": "35"
+        }
+      },
+      {
+        "index": 1,
+        "type": "section_header",
+        "confidence": 1,
+        "itemValues": {
+          "section_title": "From the Archive",
+          "section_title_href": "http://links.newyorker.mkt4334.com/ctt?kn=16&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "section_dek": "Highs and lows in pursuit of the literary life.",
+          "section_dek_href": "http://links.newyorker.mkt4334.com/ctt?kn=16&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
+        }
+      },
+      {
+        "index": 2,
+        "type": "editorial_intro",
+        "confidence": 1,
+        "itemValues": {
+          "body_html": "<em>The New Yorker</em> archive presents thematic selections of articles from the magazine’s past, highlighting stories that feel as fresh as ever.<br>\n                  <br>\n                  In our “Literary Lives” collection, we bring you pieces about the dynamic authors behind literary masterworks. From F. Scott and Zelda Fitzgerald’s legendary zeal for dancing and drinking to Zora Neale Hurston’s role as a leader of the Harlem Renaissance, these pieces reveal the depths of literary life, in all its ardency and struggle.<br>\n                  <br>\n                  To enjoy more collections, or to browse through nine decades of <em>The New Yorker</em>, from complete issues to carefully selected favorites, <a href=\"http://links.newyorker.mkt4334.com/ctt?kn=7&amp;ms=MTU0MDQ5MTgS1&amp;r=NDQzMzg5NTk0NzI3S0&amp;b=0&amp;j=MTcyMDM2MjQyMwS2&amp;mt=2&amp;rj=MTcyMDM2MjQyMQS2&amp;rt=0\" name=\"intro_text\" style=\"text-decoration:none; color: #0773b5;\" target=\"_blank\">click here</a>."
+        }
+      },
+      {
+        "index": 3,
+        "type": "article_card_pair",
+        "confidence": 0.95,
+        "notes": "Right column HTML was truncated in source. Slot values for right card populated from full link/image metadata available in section data.",
+        "itemValues": {
+          "left_section_label": "A CRITIC AT LARGE",
+          "left_image_href": "http://links.newyorker.mkt4334.com/ctt?kn=13&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "left_image_src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202b@2x.png",
+          "left_image_alt": "This Lonesome Place",
+          "left_issue_date": "January 29, 2001 Issue",
+          "left_title": "This Lonesome Place",
+          "left_title_href": "http://links.newyorker.mkt4334.com/ctt?kn=15&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "left_dek": "Flannery O’Connor on race and religion in the unreconstructed South.",
+          "left_byline": "By Hilton Als",
+          "left_cta_href": "http://links.newyorker.mkt4334.com/ctt?kn=1&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "left_cta_label": "Read now",
+          "right_section_label": "LIFE AND LETTERS",
+          "right_image_href": "http://links.newyorker.mkt4334.com/ctt?kn=20&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "right_image_src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%207b@2x.png",
+          "right_image_alt": "Ernest Hemingway",
+          "right_issue_date": "November 9, 1998 Issue",
+          "right_title": "Last Words",
+          "right_title_href": "http://links.newyorker.mkt4334.com/ctt?kn=23&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "right_dek": "Those Hemingway wrote, and those he didn’t.",
+          "right_byline": "By Joan Didion",
+          "right_cta_href": "http://links.newyorker.mkt4334.com/ctt?kn=2&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "right_cta_label": "Read now"
+        }
+      },
+      {
+        "index": 4,
+        "type": "article_card_pair",
+        "confidence": 0.97,
+        "notes": "Right column HTML was truncated in source. Slot values for right card populated from full link/image metadata available in section data.",
+        "itemValues": {
+          "left_section_label": "A CRITIC AT LARGE",
+          "left_image_href": "http://links.newyorker.mkt4334.com/ctt?kn=25&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "left_image_src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive1a2.png",
+          "left_image_alt": "Zora Neale Hurston",
+          "left_issue_date": "February 17, 1997 Issue",
+          "left_title": "A Society of One",
+          "left_title_href": "http://links.newyorker.mkt4334.com/ctt?kn=24&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "left_dek": "Zora Neale Hurston, American contrarian.",
+          "left_byline": "By Claudia Roth Pierpont",
+          "left_cta_href": "http://links.newyorker.mkt4334.com/ctt?kn=5&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "left_cta_label": "Read now",
+          "right_section_label": "PROFILES",
+          "right_image_href": "http://links.newyorker.mkt4334.com/ctt?kn=6&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "right_image_src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive4.png",
+          "right_image_alt": "Edith Wharton",
+          "right_issue_date": "March 2, 1929 Issue",
+          "right_title": "Dearest Edith",
+          "right_title_href": "http://links.newyorker.mkt4334.com/ctt?kn=3&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "right_dek": "Edith Wharton was a society insider—until she started writing about her friends.",
+          "right_byline": "By Janet Flanner",
+          "right_cta_href": "http://links.newyorker.mkt4334.com/ctt?kn=21&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "right_cta_label": "Read now"
+        }
+      },
+      {
+        "index": 5,
+        "type": "article_card_pair",
+        "confidence": 0.95,
+        "notes": "Right column HTML was truncated in source. Slot values for right card populated from full link/image metadata available in section data.",
+        "itemValues": {
+          "left_section_label": "THE ARTS",
+          "left_image_href": "http://links.newyorker.mkt4334.com/ctt?kn=11&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "left_image_src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202a@2x.png",
+          "left_image_alt": "Henry James",
+          "left_issue_date": "November 7, 1959 Issue",
+          "left_title": "The Wings of Henry James",
+          "left_title_href": "http://links.newyorker.mkt4334.com/ctt?kn=8&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "left_dek": "How “The Wings of the Dove” shaped a whole generation of writers, critics, playwrights, producers, and publishers.",
+          "left_byline": "By James Thurber",
+          "left_cta_href": "http://links.newyorker.mkt4334.com/ctt?kn=18&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "left_cta_label": "Read now",
+          "right_section_label": "PROFILES",
+          "right_image_href": "http://links.newyorker.mkt4334.com/ctt?kn=17&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "right_image_src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive6.png",
+          "right_image_alt": "F. Scott Fitzgerald",
+          "right_issue_date": "April 17, 1926 Issue",
+          "right_title": "That Sad Young Man",
+          "right_title_href": "http://links.newyorker.mkt4334.com/ctt?kn=12&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "right_dek": "All was quiet on the Riviera, and then F. Scott Fitzgerald arrived.",
+          "right_byline": "By Anonymous",
+          "right_cta_href": "http://links.newyorker.mkt4334.com/ctt?kn=22&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "right_cta_label": "Read now"
+        }
+      },
+      {
+        "index": 6,
+        "type": "archive_cta_banner",
+        "confidence": 1,
+        "itemValues": {
+          "prompt_text": "Our full archive awaits.",
+          "cta_href": "http://links.newyorker.mkt4334.com/ctt?kn=4&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "cta_label": "Explore now"
+        }
+      },
+      {
+        "index": 7,
+        "type": "colophon",
+        "confidence": 1,
+        "itemValues": {
+          "view_in_browser_href": "#",
+          "view_in_browser_label": "View this email in your browser.",
+          "publication_name": "The New Yorker",
+          "customer_care_href": "http://links.newyorker.mkt4334.com/ctt?kn=19&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "privacy_policy_href": "http://links.newyorker.mkt4334.com/ctt?kn=14&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "unsubscribe_href": "#",
+          "sender_address": "Sent from Condé Nast, 1 World Trade Center, New York, NY 10007, attn: Email Coordinator",
+          "copyright_line": "Copyright © 2018 Condé Nast. All rights reserved."
+        }
+      }
+    ]
+  }
+}

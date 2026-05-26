@@ -1,0 +1,127 @@
+{
+  "description": "Decompiled section styles for template \"8 sections\" (auto-generated).",
+  "version": "1.0.0",
+  "sectionStyles": {
+    "masthead": {
+      "name": "Masthead",
+      "description": "Top banner with publication logo and a preheader/eyebrow text line. Uses a light grey background.",
+      "containerStyles": {
+        "padding": "0px 0px 26px"
+      },
+      "contentStyles": {},
+      "linkStyles": {},
+      "headingStyles": {}
+    },
+    "section_header": {
+      "name": "Section Header",
+      "description": "Centered section title (e.g. 'From the Archive') in large serif red type, with a subtitle/dek below it. Both are linked.",
+      "containerStyles": {
+        "padding": "40px 80px 40px 80px",
+        "borderBottom": "1px solid #e8e7e7"
+      },
+      "contentStyles": {},
+      "linkStyles": {
+        "color": "#DF3331",
+        "textDecoration": "none"
+      },
+      "headingStyles": {}
+    },
+    "editorial_intro": {
+      "name": "Editorial Intro",
+      "description": "Full-width prose introduction block with body copy in serif type, including an inline text link.",
+      "containerStyles": {
+        "padding": "40px 50px 40px 50px",
+        "borderTop": "1px solid #e8e7e7",
+        "borderBottom": "1px solid #e8e7e7"
+      },
+      "contentStyles": {
+        "fontFamily": "Georgia, times, serif",
+        "fontSize": "18px",
+        "lineHeight": "26px",
+        "color": "#121212"
+      },
+      "linkStyles": {
+        "color": "#0773b5",
+        "textDecoration": "none"
+      },
+      "headingStyles": {}
+    },
+    "article_card_pair": {
+      "name": "Article Card Pair",
+      "description": "Two-column row of archive article cards side by side. Each card has: section label, linked image, issue date, linked article title, dek/description, byline, and a blue 'Read now' CTA button.",
+      "containerStyles": {
+        "padding": "25px 0px 0px 0px",
+        "borderTop": "1px solid #e8e7e7",
+        "borderBottom": "1px solid #e8e7e7"
+      },
+      "contentStyles": {
+        "fontFamily": "Georgia, times, serif",
+        "fontSize": "14px",
+        "lineHeight": "22px",
+        "color": "#E71B22",
+        "textAlign": "left",
+        "fontWeight": "bold"
+      },
+      "linkStyles": {
+        "color": "#121212",
+        "textDecoration": "none"
+      },
+      "headingStyles": {}
+    },
+    "archive_cta_banner": {
+      "name": "Archive CTA Banner",
+      "description": "Centered text prompt with a large red CTA button, inviting readers to explore the full archive.",
+      "containerStyles": {
+        "padding": "0px 45px 0px 45px",
+        "borderTop": "1px solid #e8e7e7",
+        "borderBottom": "1px solid #e8e7e7",
+        "borderRadius": "2px"
+      },
+      "contentStyles": {
+        "fontFamily": "Georgia, times, serif",
+        "fontSize": "22px",
+        "lineHeight": "26px",
+        "color": "#000000",
+        "textAlign": "center"
+      },
+      "linkStyles": {
+        "color": "#ffffff",
+        "textDecoration": "none"
+      },
+      "headingStyles": {}
+    },
+    "colophon": {
+      "name": "Colophon / Footer",
+      "description": "Footer with view-in-browser link, subscription notice, customer care link, privacy policy link, unsubscribe link, sender address, and copyright.",
+      "containerStyles": {
+        "padding": "30px 20px 20px 20px"
+      },
+      "contentStyles": {
+        "fontFamily": "Georgia, times, serif",
+        "fontSize": "13px",
+        "lineHeight": "20px",
+        "color": "#333333",
+        "textAlign": "center"
+      },
+      "linkStyles": {
+        "color": "#333333",
+        "textDecoration": "underline"
+      },
+      "headingStyles": {}
+    }
+  },
+  "globalOverrides": {
+    "description": "Mobile font-size lock — bumps body copy larger on small screens for readability. Same pattern as dense-discovery.",
+    "mobileBreakpoint": "599px",
+    "mobileAdjustments": {
+      "contentStyles": {
+        "fontSize": "23px",
+        "lineHeight": "1.3"
+      },
+      "captionStyles": {
+        "fontSize": "14px",
+        "lineHeight": "1.2"
+      }
+    }
+  }
+}

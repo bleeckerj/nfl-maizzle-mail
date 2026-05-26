@@ -1,0 +1,286 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "new-yorker-sample newsletter schema",
+  "description": "Schema for newsletters built on the \"new-yorker-sample\" decompiled component palette.",
+  "type": "object",
+  "properties": {
+    "template": {
+      "type": "string",
+      "const": "new-yorker-sample"
+    },
+    "title": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "title": "Masthead",
+            "description": "Top banner with publication logo and a preheader/eyebrow text line. Uses a light grey background.",
+            "properties": {
+              "type": {
+                "const": "masthead"
+              },
+              "eyebrow_text": {
+                "type": "string",
+                "description": "Small italic text displayed above the logo, often a promotional line"
+              },
+              "logo_href": {
+                "type": "string",
+                "description": "URL the logo links to"
+              },
+              "logo_src": {
+                "type": "string",
+                "description": "Logo image source URL"
+              },
+              "logo_alt": {
+                "type": "string",
+                "description": "Logo image alt text"
+              },
+              "logo_width": {
+                "type": "string",
+                "description": "Logo image width"
+              },
+              "logo_height": {
+                "type": "string",
+                "description": "Logo image height"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Section Header",
+            "description": "Centered section title (e.g. 'From the Archive') in large serif red type, with a subtitle/dek below it. Both are linked.",
+            "properties": {
+              "type": {
+                "const": "section_header"
+              },
+              "section_title": {
+                "type": "string",
+                "description": "Large red linked title text"
+              },
+              "section_title_href": {
+                "type": "string",
+                "description": "URL for the section title link"
+              },
+              "section_dek": {
+                "type": "string",
+                "description": "Subtitle/dek linked text below the title"
+              },
+              "section_dek_href": {
+                "type": "string",
+                "description": "URL for the dek link"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Editorial Intro",
+            "description": "Full-width prose introduction block with body copy in serif type, including an inline text link.",
+            "properties": {
+              "type": {
+                "const": "editorial_intro"
+              },
+              "body_html": {
+                "type": "string",
+                "description": "Full body HTML including inline links and emphasis tags (HTML allowed)"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Article Card Pair",
+            "description": "Two-column row of archive article cards side by side. Each card has: section label, linked image, issue date, linked article title, dek/description, byline, and a blue 'Read now' CTA button.",
+            "properties": {
+              "type": {
+                "const": "article_card_pair"
+              },
+              "left_section_label": {
+                "type": "string",
+                "description": "Red all-caps section/rubric label for left card"
+              },
+              "left_image_href": {
+                "type": "string",
+                "description": "Link URL wrapping the left card image"
+              },
+              "left_image_src": {
+                "type": "string",
+                "description": "Left card image source URL"
+              },
+              "left_image_alt": {
+                "type": "string",
+                "description": "Left card image alt text"
+              },
+              "left_issue_date": {
+                "type": "string",
+                "description": "Issue date text for left card"
+              },
+              "left_title": {
+                "type": "string",
+                "description": "Left card article title text"
+              },
+              "left_title_href": {
+                "type": "string",
+                "description": "Left card article title link URL"
+              },
+              "left_dek": {
+                "type": "string",
+                "description": "Left card article dek/description text"
+              },
+              "left_byline": {
+                "type": "string",
+                "description": "Left card byline (e.g. 'By Author Name')"
+              },
+              "left_cta_href": {
+                "type": "string",
+                "description": "Left card CTA button link URL"
+              },
+              "left_cta_label": {
+                "type": "string",
+                "description": "Left card CTA button label text"
+              },
+              "right_section_label": {
+                "type": "string",
+                "description": "Red all-caps section/rubric label for right card"
+              },
+              "right_image_href": {
+                "type": "string",
+                "description": "Link URL wrapping the right card image"
+              },
+              "right_image_src": {
+                "type": "string",
+                "description": "Right card image source URL"
+              },
+              "right_image_alt": {
+                "type": "string",
+                "description": "Right card image alt text"
+              },
+              "right_issue_date": {
+                "type": "string",
+                "description": "Issue date text for right card"
+              },
+              "right_title": {
+                "type": "string",
+                "description": "Right card article title text"
+              },
+              "right_title_href": {
+                "type": "string",
+                "description": "Right card article title link URL"
+              },
+              "right_dek": {
+                "type": "string",
+                "description": "Right card article dek/description text"
+              },
+              "right_byline": {
+                "type": "string",
+                "description": "Right card byline (e.g. 'By Author Name')"
+              },
+              "right_cta_href": {
+                "type": "string",
+                "description": "Right card CTA button link URL"
+              },
+              "right_cta_label": {
+                "type": "string",
+                "description": "Right card CTA button label text"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Archive CTA Banner",
+            "description": "Centered text prompt with a large red CTA button, inviting readers to explore the full archive.",
+            "properties": {
+              "type": {
+                "const": "archive_cta_banner"
+              },
+              "prompt_text": {
+                "type": "string",
+                "description": "Centered prose prompt above the button"
+              },
+              "cta_href": {
+                "type": "string",
+                "description": "CTA button link URL"
+              },
+              "cta_label": {
+                "type": "string",
+                "description": "CTA button label text"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Colophon / Footer",
+            "description": "Footer with view-in-browser link, subscription notice, customer care link, privacy policy link, unsubscribe link, sender address, and copyright.",
+            "properties": {
+              "type": {
+                "const": "colophon"
+              },
+              "view_in_browser_href": {
+                "type": "string",
+                "description": "View in browser link URL"
+              },
+              "view_in_browser_label": {
+                "type": "string",
+                "description": "View in browser link text"
+              },
+              "publication_name": {
+                "type": "string",
+                "description": "Name of the publication (italicised in source)"
+              },
+              "customer_care_href": {
+                "type": "string",
+                "description": "Customer Care link URL"
+              },
+              "privacy_policy_href": {
+                "type": "string",
+                "description": "Privacy Policy link URL"
+              },
+              "unsubscribe_href": {
+                "type": "string",
+                "description": "Unsubscribe link URL"
+              },
+              "sender_address": {
+                "type": "string",
+                "description": "Physical mailing address of the sender"
+              },
+              "copyright_line": {
+                "type": "string",
+                "description": "Copyright notice text"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "template",
+    "sections"
+  ]
+}

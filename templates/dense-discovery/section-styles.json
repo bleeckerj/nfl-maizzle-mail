@@ -102,6 +102,7 @@
         "sectionHeaderBorderRadius": "8px",
         "sectionHeaderGap": "4px",
         "sectionDescriptionPadding": "16px 16px 12px 16px",
+        "firstAdItemGap": "4px",
         "adDividerGap": "20px",
         "adDividerBackgroundColor": "#FFFFFF",
         "sectionDescriptionFontSize": "15px",
@@ -270,7 +271,7 @@
       "containerStyles": {
         "backgroundColor": null,
         "padding": "15px 20px",
-        "borderRadius": "0px"
+        "borderRadius": "10px"
       },
       "contentStyles": {
         "fontFamily": "'IBM Plex Sans', sans-serif",

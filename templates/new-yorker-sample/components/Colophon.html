@@ -1,0 +1,31 @@
+<!--
+  Colophon / Footer
+  Footer with view-in-browser link, subscription notice, customer care link, privacy policy link, unsubscribe link, sender address, and copyright.
+
+  Slots:
+  - view_in_browser_href (link_url) — View in browser link URL
+  - view_in_browser_label (link_label) — View in browser link text
+  - publication_name (text) — Name of the publication (italicised in source)
+  - customer_care_href (link_url) — Customer Care link URL
+  - privacy_policy_href (link_url) — Privacy Policy link URL
+  - unsubscribe_href (link_url) — Unsubscribe link URL
+  - sender_address (text) — Physical mailing address of the sender
+  - copyright_line (text) — Copyright notice text
+
+  Used by section indexes: [7] in the source email.
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="full-width" style="width:650px;min-width:650px;" width="650">
+  <tbody><tr>
+    <td bgcolor="#f5f6f6" style="color: #333333; text-decoration: none; font-size:13px; line-height:20px; font-family: Georgia, times, serif; text-align:center; padding: 30px 20px 20px 20px;" valign="top" width="650"><a href="{{ section.view_in_browser_href }}" name="view_in_browser" style="color: #333333; text-decoration: underline; " target="_blank" xt="SPCLICKTOVIEW">{{ section.view_in_browser_label }}</a><br>
+      <br>
+      You received this email because you are a subscriber to <em>{{ section.publication_name }}</em>. Question about your subscription? Contact <a href="{{ section.customer_care_href }}" name="subscriptions_newyorker_com_pubs_N3" style="color: #333333; text-decoration: underline;">Customer Care</a>.<br>
+      <br>
+      View our <a href="{{ section.privacy_policy_href }}" name="privacypolicy" style="color: #333333; text-decoration: underline;" target="_blank">Privacy Policy</a><br>
+      <a href="{{ section.unsubscribe_href }}" name="unsubscribe" style="color: #333333; text-decoration: underline;" target="_blank">Unsubscribe</a><br>
+      <br>
+      {{ section.sender_address }}<br>
+      <br>
+      {{ section.copyright_line }}</td>
+  </tr></tbody>
+</table>

@@ -1,0 +1,615 @@
+{
+  "source": "emails-to-templatize/the-atlantic.html",
+  "templateName": "the-atlantic",
+  "layoutRoot": "div",
+  "sectionCount": 11,
+  "sections": [
+    {
+      "index": 0,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "",
+      "textLength": 0,
+      "imageCount": 1,
+      "linkCount": 0,
+      "headings": [],
+      "images": [
+        {
+          "src": "https://cdn.theatlantic.com/assets/media/files/daily-header2x.png",
+          "alt": "The Daily",
+          "width": "238",
+          "height": ""
+        }
+      ],
+      "links": [],
+      "styles": {
+        "containerStyles": {
+          "padding": "0",
+          "backgroundColor": "#ffffff"
+        },
+        "contentStyles": {},
+        "linkStyles": {},
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 2085
+    },
+    {
+      "index": 1,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "May 24, 2020",
+      "textLength": 12,
+      "imageCount": 0,
+      "linkCount": 0,
+      "headings": [
+        {
+          "level": 4,
+          "text": "May 24, 2020"
+        }
+      ],
+      "images": [],
+      "links": [],
+      "styles": {
+        "containerStyles": {
+          "backgroundColor": "#ffffff",
+          "padding": "0px 24px 24px 24px",
+          "paddingTop": "8px"
+        },
+        "contentStyles": {},
+        "linkStyles": {},
+        "headingStyles": {
+          "fontFamily": "Courier, monospace",
+          "fontSize": "14px",
+          "fontWeight": "normal",
+          "color": "#8592a4",
+          "lineHeight": "18px"
+        }
+      },
+      "outerHTMLLength": 1554
+    },
+    {
+      "index": 2,
+      "tag": "table",
+      "className": "c-author",
+      "id": "",
+      "textSnippet": "Annika Neklason Assistant editor",
+      "textLength": 32,
+      "imageCount": 1,
+      "linkCount": 2,
+      "headings": [
+        {
+          "level": 3,
+          "text": "Annika Neklason"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://cdn.theatlantic.com/thumbor/5HFdgZ7fXUx5VCfk-K6-RgqopLs=/200x200/media/None/Headshot2-1/original.jpg",
+          "alt": "Annika Neklason headshot",
+          "width": "50",
+          "height": "50"
+        }
+      ],
+      "links": [
+        {
+          "href": "https://www.theatlantic.com/author/annika-neklason/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": ""
+        },
+        {
+          "href": "https://www.theatlantic.com/author/annika-neklason/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "Annika Neklason"
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "backgroundColor": "#ffffff",
+          "padding": "0 24px 24px 24px"
+        },
+        "contentStyles": {
+          "fontFamily": "'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "1.5",
+          "fontWeight": "400",
+          "color": "#37424e"
+        },
+        "linkStyles": {
+          "color": "#21272c",
+          "textDecoration": "none",
+          "fontWeight": "600"
+        },
+        "headingStyles": {
+          "color": "#ffffff"
+        }
+      },
+      "outerHTMLLength": 3447
+    },
+    {
+      "index": 3,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "It’s nearly Memorial Day. To commemorate, we’re revisiting a poem by Henry Wadsworth Longfellow. Then: This holiday tends to be a day spent in contemplation, in the great outdoors. If you’re unable to take on such adventures today, bask in the work of John Muir and read about the",
+      "textLength": 344,
+      "imageCount": 0,
+      "linkCount": 0,
+      "headings": [],
+      "images": [],
+      "links": [],
+      "styles": {
+        "containerStyles": {
+          "backgroundColor": "#ffffff",
+          "padding": "0px 24px 24px 24px"
+        },
+        "contentStyles": {
+          "fontFamily": "'Lyon Text', Georgia, serif",
+          "fontSize": "17px",
+          "lineHeight": "25px",
+          "fontWeight": "400",
+          "color": "#21272c"
+        },
+        "linkStyles": {},
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 1306
+    },
+    {
+      "index": 4,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "A Poem for Memorial Day (SUSAN WALSH / AP) Decoration Day By Henry Wadsworth Longfellow Sleep, comrades, sleep and rest On this Field of Grounded Arms, Where foes no more molest, Nor sentry’s shot alarms! *** Ye have slept on the ground before, And started to your feet At the can",
+      "textLength": 1572,
+      "imageCount": 1,
+      "linkCount": 2,
+      "headings": [
+        {
+          "level": 1,
+          "text": "A Poem for Memorial Day"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://cdn.theatlantic.com/thumbor/rKk1IcaEZdl9xuwGpovWGc8ACVA=/700x394/media/newsletters/2020/05/original_17-1/original.jpg",
+          "alt": "",
+          "width": "588",
+          "height": "auto"
+        }
+      ],
+      "links": [
+        {
+          "href": "https://www.theatlantic.com/magazine/archive/1882/06/decoration-day/539601/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "Decoration Day"
+        },
+        {
+          "href": "https://www.theatlantic.com/entertainment/archive/2011/05/a-memorial-day-poem-by-longfellow-from-the-atlantic-june-1882/239636/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "the piece predates the Memorial Day holiday as we know it:"
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "backgroundColor": "#ffffff",
+          "padding": "0px 24px 24px 24px"
+        },
+        "contentStyles": {
+          "fontFamily": "'Lyon Text', Georgia, serif",
+          "fontSize": "17px",
+          "lineHeight": "25px",
+          "fontWeight": "400",
+          "color": "#21272c"
+        },
+        "linkStyles": {
+          "color": "#21272c",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {
+          "fontFamily": "'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif",
+          "fontSize": "24px",
+          "fontWeight": "600",
+          "color": "#39434b",
+          "lineHeight": "32.5px"
+        }
+      },
+      "outerHTMLLength": 9538
+    },
+    {
+      "index": 5,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "Four Adventure Reads (ERIC RISBERG / AP) HIKE THE SIERRA WITH JOHN MUIR. Decades before Yosemite Valley became a national park, Muir made a home for himself in the area. His journal entries from those years provide a window into a daily life full of wild beauty and free from resp",
+      "textLength": 1746,
+      "imageCount": 1,
+      "linkCount": 4,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Four Adventure Reads"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://cdn.theatlantic.com/thumbor/p398wzNB1ojTH2YRO3br3O7eU3I=/700x394/media/newsletters/2020/05/original_16-1/original.jpg",
+          "alt": "",
+          "width": "588",
+          "height": "auto"
+        }
+      ],
+      "links": [
+        {
+          "href": "https://www.theatlantic.com/magazine/archive/1911/01/my-first-summer-in-the-sierra-part-i/543654/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "HIKE THE SIERRA WITH JOHN MUIR"
+        },
+        {
+          "href": "https://www.theatlantic.com/magazine/archive/1997/04/rough-terrain-unicycling/376837/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "UNICYCLE UP AND DOWN MOUNTAINS"
+        },
+        {
+          "href": "https://www.theatlantic.com/magazine/archive/1998/03/tree-surfing-and-other-lofty-pleasures/306486/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "CLIMB THE WORLD’S TALLEST TREES"
+        },
+        {
+          "href": "https://www.theatlantic.com/magazine/archive/2012/04/the-peaks-of-persia/308914/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "SCALE PEAKS IN IRAN"
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "backgroundColor": "#ffffff",
+          "padding": "0px 24px 24px 24px"
+        },
+        "contentStyles": {
+          "fontFamily": "'Lyon Text', Georgia, serif",
+          "fontSize": "17px",
+          "lineHeight": "25px",
+          "fontWeight": "400",
+          "color": "#21272c"
+        },
+        "linkStyles": {
+          "color": "#21272c",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {
+          "fontFamily": "'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif",
+          "fontSize": "24px",
+          "fontWeight": "600",
+          "color": "#39434b",
+          "lineHeight": "32.5px"
+        }
+      },
+      "outerHTMLLength": 9973
+    },
+    {
+      "index": 6,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "(HERITAGE IMAGES / GETTY) If an escape to the mountains isn’t possible, here are a few slightly less adventurous suggestions for the holiday. Get engrossed in a new book, whatever your mood. Our warm-weather reading listoffers something for every craving, whether page-turners or ",
+      "textLength": 1027,
+      "imageCount": 1,
+      "linkCount": 7,
+      "headings": [],
+      "images": [
+        {
+          "src": "https://cdn.theatlantic.com/thumbor/SbJFTUHQpovn7zkW-8qPXYcQ2ks=/700x394/media/newsletters/2020/05/original_18-1/original.jpg",
+          "alt": "",
+          "width": "588",
+          "height": "auto"
+        }
+      ],
+      "links": [
+        {
+          "href": "https://www.theatlantic.com/newsletters/archive/2020/05/pandemic-summer-reading-books-briefing/611821/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "reading list"
+        },
+        {
+          "href": "https://www.theatlantic.com/culture/archive/2020/05/30-singular-films-watch-quarantine/611956/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "compiled a list"
+        },
+        {
+          "href": "https://www.theatlantic.com/culture/archive/2020/04/free-things-watch-listen-and-learn-quarantine/609667/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "free cultural activities"
+        },
+        {
+          "href": "https://www.theatlantic.com/magazine/archive/2020/06/why-birds-do-what-they-do/610588/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "“They remind me of what I’m doing, and why,”"
+        },
+        {
+          "href": "https://www.theatlantic.com/free-daily-crossword-puzzle/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "It’s bigger than our weekday puzzles—and themed"
+        },
+        {
+          "href": "https://open.spotify.com/playlist/46IcjO2pnFrAmzA5lTN7J7?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "playlist"
+        },
+        {
+          "href": "https://www.theatlantic.com/newsletters/archive/2020/05/covid-19-playlist-for-partying-alone/612049/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "thrive in solitude."
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "backgroundColor": "#ffffff",
+          "padding": "0px 24px 24px 24px"
+        },
+        "contentStyles": {
+          "fontFamily": "'Lyon Text', Georgia, serif",
+          "fontSize": "17px",
+          "lineHeight": "25px",
+          "fontWeight": "400",
+          "color": "#21272c"
+        },
+        "linkStyles": {
+          "color": "#21272c",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 8058
+    },
+    {
+      "index": 7,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "About Us This email was written by Isabel Fattal and Annika Neklason. It was edited by Caroline Mimbs Nyce. Questions, suggestions, typos?Reply directly to this newsletter or write to caroline@theatlantic.comanytime. Did someone forward you this newsletter? Sign yourself up for T",
+      "textLength": 294,
+      "imageCount": 0,
+      "linkCount": 3,
+      "headings": [
+        {
+          "level": 1,
+          "text": "About Us"
+        }
+      ],
+      "images": [],
+      "links": [
+        {
+          "href": "https://docs.google.com/forms/d/e/1FAIpQLScsMFPHUuTAPFnuqC6gLmby2qBK2xw57KGFFmzYcTc52Cge3w/viewform?usp=send_form",
+          "text": "Questions, suggestions, typos?"
+        },
+        {
+          "href": "mailto:caroline@theatlantic.com?subject=Feedback%20from%20The%20Atlantic%20Daily&utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "caroline@theatlantic.com"
+        },
+        {
+          "href": "https://www.theatlantic.com/newsletters/sign-up/daily/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "Sign yourself up for The Daily here."
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "backgroundColor": "#ffffff",
+          "padding": "0px 24px 24px 24px"
+        },
+        "contentStyles": {
+          "fontFamily": "'Lyon Text', Georgia, serif",
+          "fontSize": "17px",
+          "lineHeight": "25px",
+          "fontWeight": "400",
+          "color": "#21272c"
+        },
+        "linkStyles": {
+          "color": "#21272c",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {
+          "fontFamily": "'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif",
+          "fontSize": "24px",
+          "fontWeight": "600",
+          "color": "#39434b",
+          "lineHeight": "32.5px"
+        }
+      },
+      "outerHTMLLength": 2973
+    },
+    {
+      "index": 8,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "Most Popular on The Atlantic The Prophecies of Q America’s Patchwork Pandemic Is Fraying Even Further ‘How Could the CDC Make That Mistake?’ Social Distancing Is Not Enough The End of Hong Kong",
+      "textLength": 193,
+      "imageCount": 0,
+      "linkCount": 5,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Most Popular on The Atlantic"
+        }
+      ],
+      "images": [],
+      "links": [
+        {
+          "href": "https://www.theatlantic.com/magazine/archive/2020/06/qanon-nothing-can-stop-what-is-coming/610567/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "The Prophecies of Q"
+        },
+        {
+          "href": "https://www.theatlantic.com/health/archive/2020/05/patchwork-pandemic-states-reopening-inequalities/611866/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "America’s Patchwork Pandemic Is Fraying Even Further"
+        },
+        {
+          "href": "https://www.theatlantic.com/health/archive/2020/05/cdc-and-states-are-misreporting-covid-19-test-data-pennsylvania-georgia-texas/611935/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "‘How Could the CDC Make That Mistake?’"
+        },
+        {
+          "href": "https://www.theatlantic.com/ideas/archive/2020/05/how-will-we-ever-be-safe-inside/611953/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "Social Distancing Is Not Enough"
+        },
+        {
+          "href": "https://www.theatlantic.com/international/archive/2020/05/china-hong-kong-pandemic-autonomy-law-aggression/611983/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "The End of Hong Kong"
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "backgroundColor": "#ffffff",
+          "padding": "0px 24px 24px 24px"
+        },
+        "contentStyles": {},
+        "linkStyles": {
+          "color": "#21272c",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {
+          "fontFamily": "'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif",
+          "fontSize": "24px",
+          "fontWeight": "600",
+          "color": "#39434b",
+          "lineHeight": "32.5px"
+        }
+      },
+      "outerHTMLLength": 4454
+    },
+    {
+      "index": 9,
+      "tag": "table",
+      "className": "c-housepromo",
+      "id": "",
+      "textSnippet": "Support independent journalism. Subscribe today. Since 1857, readers have trusted The Atlantic to examine the world with depth and accuracy. Become a Subscriber",
+      "textLength": 160,
+      "imageCount": 1,
+      "linkCount": 2,
+      "headings": [
+        {
+          "level": 1,
+          "text": "Support independent journalism. Subscribe today."
+        }
+      ],
+      "images": [
+        {
+          "src": "https://cdn.theatlantic.com/thumbor/ua1vJ_xiIpWrl_O3aS0GQ2Fjams=/filters:format(png)/media/img/newsletter_native_promo/2019_11/Newsletter_Promo-2/original.png",
+          "alt": "",
+          "width": "636",
+          "height": "auto"
+        }
+      ],
+      "links": [
+        {
+          "href": "https://accounts.theatlantic.com/products?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter-promo&utm_content=Daily-NL-ad&utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": ""
+        },
+        {
+          "href": "https://accounts.theatlantic.com/products?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter-promo&utm_content=Daily-NL-ad&utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+          "text": "Become a Subscriber"
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "backgroundColor": "#eff2f7",
+          "padding": "24px 24px 32px 24px",
+          "paddingBottom": "24px"
+        },
+        "contentStyles": {
+          "fontFamily": "'Lyon Text', Georgia, serif",
+          "fontSize": "17px",
+          "lineHeight": "25px",
+          "fontWeight": "400",
+          "color": "#21272c"
+        },
+        "linkStyles": {
+          "color": "#ffffff",
+          "textDecoration": "none",
+          "fontWeight": "400"
+        },
+        "headingStyles": {
+          "fontFamily": "'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif",
+          "fontSize": "24px",
+          "fontWeight": "600",
+          "color": "#21272c",
+          "lineHeight": "30px"
+        }
+      },
+      "outerHTMLLength": 6164
+    },
+    {
+      "index": 10,
+      "tag": "div",
+      "className": "c-footer full-wrap",
+      "id": "",
+      "textSnippet": "The Atlantic Daily Newsletter You’re receiving this newsletter because you’ve signed up to receive The Daily. See all of our newsletters. Subscribe to The Atlantic | Get The Atlantic’s iOS app",
+      "textLength": 192,
+      "imageCount": 5,
+      "linkCount": 7,
+      "headings": [],
+      "images": [
+        {
+          "src": "https://cdn.theatlantic.com/assets/media/files/atl-wordmark.png",
+          "alt": "",
+          "width": "146",
+          "height": ""
+        },
+        {
+          "src": "https://cdn.theatlantic.com/assets/media/files/daily-icon-facebook.png",
+          "alt": "Facebook Logo",
+          "width": "20",
+          "height": ""
+        },
+        {
+          "src": "https://cdn.theatlantic.com/assets/media/files/daily-icon-twitter.png",
+          "alt": "Twitter Logo",
+          "width": "20",
+          "height": ""
+        },
+        {
+          "src": "https://cdn.theatlantic.com/assets/media/files/daily-icon-instagram.png",
+          "alt": "Instagram Logo",
+          "width": "20",
+          "height": ""
+        },
+        {
+          "src": "https://cdn.theatlantic.com/assets/media/files/daily-icon-youtube.png",
+          "alt": "Youtube Logo",
+          "width": "20",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "/newsletters/",
+          "text": "See all of our newsletters."
+        },
+        {
+          "href": "https://accounts.theatlantic.com/products?source=subscribeurl",
+          "text": "Subscribe to The Atlantic"
+        },
+        {
+          "href": "https://apps.apple.com/us/app/the-atlantic-magazine/id397599894",
+          "text": "Get The Atlantic’s iOS app"
+        },
+        {
+          "href": "https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2FTheAtlantic%2F",
+          "text": ""
+        },
+        {
+          "href": "https://twitter.com/theatlantic/",
+          "text": ""
+        },
+        {
+          "href": "https://www.instagram.com/accounts/login/",
+          "text": ""
+        },
+        {
+          "href": "https://www.youtube.com/user/TheAtlantic/",
+          "text": ""
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "backgroundColor": "#39434b",
+          "padding": "48px 24px 32px 24px"
+        },
+        "contentStyles": {
+          "color": "#ffffff"
+        },
+        "linkStyles": {
+          "color": "#ffffff",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 8423
+    }
+  ]
+}

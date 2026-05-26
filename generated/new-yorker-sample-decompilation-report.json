@@ -1,0 +1,173 @@
+{
+  "source": "/Users/julian/Code/nfl-maizzle-mail/templates/new-yorker/new-yorker-sample.html",
+  "templateName": "new-yorker-sample",
+  "model": "claude-sonnet-4-6",
+  "usage": {
+    "input_tokens": 17658,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 11355,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "layoutRoot": "td",
+  "sectionCount": 8,
+  "components": [
+    {
+      "type": "masthead",
+      "displayName": "Masthead",
+      "sectionIndexes": [
+        0
+      ],
+      "slots": [
+        "eyebrow_text",
+        "logo_href",
+        "logo_src",
+        "logo_alt",
+        "logo_width",
+        "logo_height"
+      ],
+      "confidence": 1
+    },
+    {
+      "type": "section_header",
+      "displayName": "Section Header",
+      "sectionIndexes": [
+        1
+      ],
+      "slots": [
+        "section_title",
+        "section_title_href",
+        "section_dek",
+        "section_dek_href"
+      ],
+      "confidence": 1
+    },
+    {
+      "type": "editorial_intro",
+      "displayName": "Editorial Intro",
+      "sectionIndexes": [
+        2
+      ],
+      "slots": [
+        "body_html"
+      ],
+      "confidence": 1
+    },
+    {
+      "type": "article_card_pair",
+      "displayName": "Article Card Pair",
+      "sectionIndexes": [
+        3,
+        4,
+        5
+      ],
+      "slots": [
+        "left_section_label",
+        "left_image_href",
+        "left_image_src",
+        "left_image_alt",
+        "left_issue_date",
+        "left_title",
+        "left_title_href",
+        "left_dek",
+        "left_byline",
+        "left_cta_href",
+        "left_cta_label",
+        "right_section_label",
+        "right_image_href",
+        "right_image_src",
+        "right_image_alt",
+        "right_issue_date",
+        "right_title",
+        "right_title_href",
+        "right_dek",
+        "right_byline",
+        "right_cta_href",
+        "right_cta_label"
+      ],
+      "confidence": 0.97,
+      "notes": "Sections 3, 4, and 5 are structurally identical two-column article card pairs. The right-column HTML was truncated in the source for sections 3 and 5; slot values are populated from fully available data in each section's link/image metadata."
+    },
+    {
+      "type": "archive_cta_banner",
+      "displayName": "Archive CTA Banner",
+      "sectionIndexes": [
+        6
+      ],
+      "slots": [
+        "prompt_text",
+        "cta_href",
+        "cta_label"
+      ],
+      "confidence": 1
+    },
+    {
+      "type": "colophon",
+      "displayName": "Colophon / Footer",
+      "sectionIndexes": [
+        7
+      ],
+      "slots": [
+        "view_in_browser_href",
+        "view_in_browser_label",
+        "publication_name",
+        "customer_care_href",
+        "privacy_policy_href",
+        "unsubscribe_href",
+        "sender_address",
+        "copyright_line"
+      ],
+      "confidence": 1
+    }
+  ],
+  "sectionAssignments": [
+    {
+      "index": 0,
+      "type": "masthead",
+      "confidence": 1
+    },
+    {
+      "index": 1,
+      "type": "section_header",
+      "confidence": 1
+    },
+    {
+      "index": 2,
+      "type": "editorial_intro",
+      "confidence": 1
+    },
+    {
+      "index": 3,
+      "type": "article_card_pair",
+      "confidence": 0.95,
+      "notes": "Right column HTML was truncated in source. Slot values for right card populated from full link/image metadata available in section data."
+    },
+    {
+      "index": 4,
+      "type": "article_card_pair",
+      "confidence": 0.97,
+      "notes": "Right column HTML was truncated in source. Slot values for right card populated from full link/image metadata available in section data."
+    },
+    {
+      "index": 5,
+      "type": "article_card_pair",
+      "confidence": 0.95,
+      "notes": "Right column HTML was truncated in source. Slot values for right card populated from full link/image metadata available in section data."
+    },
+    {
+      "index": 6,
+      "type": "archive_cta_banner",
+      "confidence": 1
+    },
+    {
+      "index": 7,
+      "type": "colophon",
+      "confidence": 1
+    }
+  ]
+}

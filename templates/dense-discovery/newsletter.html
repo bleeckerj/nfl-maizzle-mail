@@ -69,7 +69,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                 </td>
                               </tr>
                               <tr>
-                                <td style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: {{ section.containerStyles.adDividerGap || '20px' }};background: {{ section.containerStyles.adDividerBackgroundColor || '#FFFFFF' }};"> </td>
+                                <td style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: {{ section.containerStyles.firstAdItemGap || section.containerStyles.sectionHeaderGap || '4px' }};background: {{ section.containerStyles.adDividerBackgroundColor || '#FFFFFF' }};"> </td>
                               </tr>
                             </if>
                             <tr>
@@ -1269,14 +1269,14 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
 		                            <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
 		                          </tr>
                           <tr>
-                              <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;border-radius: {{ section.containerStyles.borderRadius || '0px' }} {{ section.containerStyles.borderRadius || '0px' }} 0 0;">
+                              <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;border-radius: {{ section.containerStyles.borderRadius || '10px' }} {{ section.containerStyles.borderRadius || '10px' }} 0 0;">
                                 <h1 class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} color: {{ section.contentStyles.color || '#000000' }} !important; mso-line-height-rule: exactly; margin: 0;padding: 0;">{{ section.title }}</h1>
                               </td>
                           </tr>
                           
                           <each loop="item in section.items">
                           <tr>
-                            <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};padding: {{ section.containerStyles.padding || '20px' }};border-radius: 0 0 {{ section.containerStyles.borderRadius || '0px' }} {{ section.containerStyles.borderRadius || '0px' }};">
+                            <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};padding: {{ section.containerStyles.padding || '20px' }};border-radius: 0 0 {{ section.containerStyles.borderRadius || '10px' }} {{ section.containerStyles.borderRadius || '10px' }};">
                                 
                                 <if condition="item.images && item.images.length">
 	                                  <each loop="image in item.images">
@@ -1323,7 +1323,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                 </if>
 
                                 <if condition="item.subtitle">
-                                  <p class="mob-text mob-subtitle" style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070 !important;padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
+                                  <p class="mob-text mob-subtitle" style="font-size: {{ section.contentStyles.subtitleFontSize || '14px' }};line-height: {{ section.contentStyles.subtitleLineHeight || '19px' }};font-weight: {{ section.contentStyles.subtitleFontWeight || '400' }};color: {{ section.contentStyles.subtitleColor || (section._contentStyleOverrides && section._contentStyleOverrides.color) || '#707070' }} !important;text-align: {{ section.contentStyles.subtitleTextAlign || section.contentStyles.textAlign || 'left' }};padding: 0;margin: 0;margin-bottom: 10px;">{{ item.subtitle }}</p>
                                 </if>
                                 
                                 <if condition="item.description">
@@ -1552,6 +1552,9 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                     <if condition="item.paywall">
                                       <span title="Paywalled" style="font-weight: bold; font-size: 18px; background-color: white; padding: 4px; border-radius: 2px; color: #f3d305; margin-right: 4px; vertical-align: middle;">$</span>
                                     </if>
+                                    <if condition="item.podcast">
+                                      <img src="https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/4823d5b1-e888-4c07-6199-1015c1781300/public" alt="Podcast" width="16" height="16" style="-ms-interpolation-mode: bicubic;display: inline-block;width: 16px;height: 16px;border: 0;margin-right: 4px;vertical-align: middle;">
+                                    </if>
                                     <a href="{{ item.readMoreLink || item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">
                                       {{ item.readMoreText || item.readMoreTxt }}
                                     </a>
@@ -1564,6 +1567,9 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                       <p class="mob-readmore" style="font-size: 17px;line-height: 19px;font-weight: 400;color: {{ themeColors.linkAccent || '#707070' }};padding: 0;margin: 10px 0 0 0;display: flex;align-items: center;gap: 4px;">
                                         <if condition="cta.paywall">
                                           <span title="Paywalled" style="font-weight: bold; font-size: 18px; background-color: white; padding: 4px; border-radius: 2px; color: #f3d305; margin-right: 4px; vertical-align: middle;">$</span>
+                                        </if>
+                                        <if condition="cta.podcast">
+                                          <img src="https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/4823d5b1-e888-4c07-6199-1015c1781300/public" alt="Podcast" width="16" height="16" style="-ms-interpolation-mode: bicubic;display: inline-block;width: 16px;height: 16px;border: 0;margin-right: 4px;vertical-align: middle;">
                                         </if>
                                         <a href="{{ cta.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">
                                           {{ cta.text }}

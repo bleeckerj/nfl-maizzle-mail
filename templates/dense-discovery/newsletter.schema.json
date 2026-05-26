@@ -1387,6 +1387,7 @@
                       "readMoreTxt": {},
                       "readMoreLink": {},
                       "paywall": {},
+                      "podcast": {},
                       "readMoreLinks": {
                         "type": "array",
                         "items": {
@@ -1394,7 +1395,8 @@
                           "properties": {
                             "text": {},
                             "link": {},
-                            "paywall": {}
+                            "paywall": {},
+                            "podcast": {}
                           },
                           "additionalProperties": false,
                           "required": [

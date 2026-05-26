@@ -188,6 +188,10 @@ test('build-newsletter accepts an absolute external issue path with adjacency-fe
     assert.match(html, /padding:\s*6px 14px 12px 14px/);
     assert.match(
       html,
+      /Context for why this ad appears in this issue\.[\s\S]*?padding-top:\s*4px;background:\s*#FFFFFF/,
+    );
+    assert.match(
+      html,
       new RegExp(
         `font-family:[^"]*${adjacencyMailThemeTokens.ad.title.fontFamily
           .split(',')

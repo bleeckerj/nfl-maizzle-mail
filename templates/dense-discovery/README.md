@@ -65,7 +65,7 @@ Defaults are defined in `templates/dense-discovery/section-styles.json` under `s
 - Card surface: `backgroundColor: #f5f4f0`
 - Border: `borderWidth`, `borderStyle`, `borderColor`
 - Corners: `borderRadius` (default `0px`)
-- Wrapper styling: `sectionHeaderBackgroundColor`, `sectionHeaderPadding`, `sectionHeaderBorderRadius`, `sectionHeaderGap`, `sectionDescriptionPadding`
+- Wrapper styling: `sectionHeaderBackgroundColor`, `sectionHeaderPadding`, `sectionHeaderBorderRadius`, `sectionHeaderGap`, `sectionDescriptionPadding`, `firstAdItemGap`
 - Sponsor label typography: `labelStyles`
 - Title typography: `headingStyles`
 - Copy typography: `contentStyles`
@@ -92,15 +92,18 @@ sections:
   - title: Example item
     readMoreText: Read more →
     readMoreLink: https://example.com/article
+    podcast: true
     readMoreLinks:
     - text: Listen to podcast →
       link: https://example.com/podcast
+      podcast: true
     - text: View references →
       link: https://example.com/references
 ```
 
 - `readMoreText` + `readMoreLink` renders first.
 - `readMoreLinks` renders one additional row per entry.
+- `podcast: true` renders the Photarium podcast icon before the corresponding link.
 - Existing content without `readMoreLinks` remains valid.
 
 ## `indie-mag-single-column` image precedence

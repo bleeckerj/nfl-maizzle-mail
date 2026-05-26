@@ -1,0 +1,294 @@
+```json
+{
+  "components": [
+    {
+      "type": "masthead",
+      "displayName": "Masthead",
+      "description": "Newsletter header with logo image",
+      "sectionIndexes": [0],
+      "template": "<table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 0; border-collapse: collapse !important;\" width=\"100%\">\n  <tr>\n    <td align=\"center\" valign=\"center\" class=\"c-header\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; text-align: center; padding: 32px 24px;\" bgcolor=\"#ffffff\">\n      <div class=\"full-wrap\">\n        <table role=\"presentation\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 0; border-collapse: collapse !important;\" width=\"100%\">\n          <tr>\n            <td align=\"center\" valign=\"top\" class=\"c-dailyheader__art-container\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0 0 12px 0;\">\n              <img src=\"{{logo_src}}\" alt=\"{{logo_alt}}\" width=\"{{logo_width}}\" class=\"c-dailyheader__art js-text-remove\" style=\"-ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; width: {{logo_width}}px;\">\n            </td>\n          </tr>\n          <tr>\n            <td align=\"center\" valign=\"top\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;\"></td>\n          </tr>\n        </table>\n      </div>\n    </td>\n  </tr>\n</table>",
+      "slots": [
+        {"name": "logo_src", "kind": "image_url", "description": "Logo image URL"},
+        {"name": "logo_alt", "kind": "image_alt", "description": "Logo alt text"},
+        {"name": "logo_width", "kind": "text", "description": "Logo width in pixels"}
+      ],
+      "confidence": 0.95,
+      "notes": ""
+    },
+    {
+      "type": "date_label",
+      "displayName": "Date Label",
+      "description": "Small date heading in monospace font",
+      "sectionIndexes": [1],
+      "template": "<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" class=\"\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;\">\n  <tr>\n    <td class=\"c-rich-text \" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; padding: 0px 24px 24px 24px;\" bgcolor=\"#ffffff\">\n      <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;\">\n        <tr>\n          <td align=\"left\" valign=\"top\" class=\"e-h4__container\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-top: 8px;\">\n            <h4 class=\"e-h4\" style=\"font-family: Courier, monospace; font-size: 14px; font-weight: normal; line-height: 18px; color: #8592a4; margin: 0px 0px 4px 0px; text-transform: uppercase;\">{{date_text}}</h4>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>",
+      "slots": [
+        {"name": "date_text", "kind": "text", "description": "Date string to display"}
+      ],
+      "confidence": 0.95,
+      "notes": ""
+    },
+    {
+      "type": "byline",
+      "displayName": "Byline",
+      "description": "Author byline with circular headshot, name, and job title",
+      "sectionIndexes": [2],
+      "template": "<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" class=\"c-author\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; border-collapse: collapse !important;\" bgcolor=\"#ffffff\">\n  <tr>\n    <td align=\"left\" valign=\"top\" class=\"c-author__content\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0 24px 24px 24px;\">\n      <table role=\"presentation\" width=\"100%\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;\">\n        <tr>\n          <td align=\"left\" valign=\"center\" class=\"c-author__headshot\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 74px;\" width=\"74\">\n            <a href=\"{{author_url}}\" title=\"{{author_name}}\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline;\">\n              <img src=\"{{headshot_src}}\" alt=\"{{headshot_alt}}\" width=\"50\" height=\"50\" class=\"c-author__img\" style=\"-ms-interpolation-mode: bicubic; border: 0; line-height: 100%; outline: none; text-decoration: none; border-radius: 50%; width: 50px; height: 50px;\">\n            </a>\n          </td>\n          <td align=\"left\" valign=\"center\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;\">\n            <h3 class=\"c-author__name\" style=\"color: #ffffff; margin: 0; padding-bottom: 4px;\">\n              <a class=\"c-author__link\" href=\"{{author_url}}\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; color: #21272c; font-weight: 600; line-height: 1; text-decoration: none; font-size: 16px;\">{{author_name}}</a>\n            </h3>\n            <span class=\"c-author__bio\" style=\"color: #ffffff; color: #37424e; font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-weight: 400; font-size: 14px; line-height: 1.5;\">{{author_title}}</span>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>",
+      "slots": [
+        {"name": "headshot_src", "kind": "image_url", "description": "Author headshot image URL"},
+        {"name": "headshot_alt", "kind": "image_alt", "description": "Author headshot alt text"},
+        {"name": "author_url", "kind": "link_url", "description": "Link to author page"},
+        {"name": "author_name", "kind": "text", "description": "Author's name"},
+        {"name": "author_title", "kind": "text", "description": "Author's job title"}
+      ],
+      "confidence": 0.95,
+      "notes": ""
+    },
+    {
+      "type": "text_block",
+      "displayName": "Text Block",
+      "description": "Simple paragraph block with serif text",
+      "sectionIndexes": [3],
+      "template": "<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" class=\"\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;\">\n  <tr>\n    <td class=\"c-rich-text \" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; padding: 0px 24px 24px 24px;\" bgcolor=\"#ffffff\">\n      <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0; margin-bottom: 0;\">{{body_text}}</p>\n    </td>\n  </tr>\n</table>",
+      "slots": [
+        {"name": "body_text", "kind": "text", "description": "Paragraph text content"}
+      ],
+      "confidence": 0.95,
+      "notes": ""
+    },
+    {
+      "type": "featured_article",
+      "displayName": "Featured Article",
+      "description": "Article with heading, hero image, attribution, and rich text body with links",
+      "sectionIndexes": [4, 5],
+      "template": "<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" class=\"\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;\">\n  <tr>\n    <td class=\"c-rich-text \" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; padding: 0px 24px 24px 24px;\" bgcolor=\"#ffffff\">\n      <h1 class=\"e-h1\" style=\"font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-size: 24px; font-weight: 600; color: #39434b; line-height: 32.5px; letter-spacing: 0.33px; margin: 8px 0 24px 0; padding-top: 8px; border-top: 1px solid #ef3b24;\">{{title}}</h1>\n      <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" class=\"c-imgblock\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;\">\n        <tr>\n          <td align=\"center\" valign=\"top\" class=\"c-imgblock__container c-imgblock__container--richtext\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0 0 24px 0;\">\n            <img class=\"c-imgblock__img\" src=\"{{image_src}}\" alt=\"{{image_alt}}\" width=\"588\" height=\"auto\" style=\"-ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; max-width: 100%;\">\n            <p class=\"c-imgblock__meta\" style=\"margin: 4px 0 0 0; text-align: left; margin-bottom: 0;\">\n              <span class=\"c-imgblock__attribution\" style=\"font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-size: 12px; font-weight: 400; color: #21272c; line-height: 15px;\">{{image_attribution}}</span>\n            </p>\n          </td>\n        </tr>\n      </table>\n      {{{body_html}}}\n    </td>\n  </tr>\n</table>",
+      "slots": [
+        {"name": "title", "kind": "text", "description": "Article headline"},
+        {"name": "image_src", "kind": "image_url", "description": "Hero image URL"},
+        {"name": "image_alt", "kind": "image_alt", "description": "Hero image alt text"},
+        {"name": "image_attribution", "kind": "text", "description": "Image credit/attribution"},
+        {"name": "body_html", "kind": "rich_text", "description": "Article body HTML with paragraphs, links, etc."}
+      ],
+      "confidence": 0.9,
+      "notes": "This component handles rich multi-paragraph articles with images"
+    },
+    {
+      "type": "mixed_content_block",
+      "displayName": "Mixed Content Block",
+      "description": "Block with image, multiple paragraphs, and mixed inline links",
+      "sectionIndexes": [6],
+      "template": "<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" class=\"\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;\">\n  <tr>\n    <td class=\"c-rich-text \" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; padding: 0px 24px 24px 24px;\" bgcolor=\"#ffffff\">\n      <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" class=\"c-imgblock\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;\">\n        <tr>\n          <td align=\"center\" valign=\"top\" class=\"c-imgblock__container c-imgblock__container--richtext\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0 0 24px 0;\">\n            <img class=\"c-imgblock__img\" src=\"{{image_src}}\" alt=\"{{image_alt}}\" width=\"588\" height=\"auto\" style=\"-ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; max-width: 100%;\">\n            <p class=\"c-imgblock__meta\" style=\"margin: 4px 0 0 0; text-align: left; margin-bottom: 0;\">\n              <span class=\"c-imgblock__attribution\" style=\"font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-size: 12px; font-weight: 400; color: #21272c; line-height: 15px;\">{{image_attribution}}</span>\n            </p>\n          </td>\n        </tr>\n      </table>\n      {{{body_html}}}\n    </td>\n  </tr>\n</table>",
+      "slots": [
+        {"name": "image_src", "kind": "image_url", "description": "Image URL"},
+        {"name": "image_alt", "kind": "image_alt", "description": "Image alt text"},
+        {"name": "image_attribution", "kind": "text", "description": "Image credit"},
+        {"name": "body_html", "kind": "rich_text", "description": "Body HTML with paragraphs and inline links"}
+      ],
+      "confidence": 0.9,
+      "notes": ""
+    },
+    {
+      "type": "section_divider",
+      "displayName": "Section Divider",
+      "description": "Section heading with red top border divider",
+      "sectionIndexes": [7, 8],
+      "template": "<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" class=\"\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;\">\n  <tr>\n    <td class=\"c-rich-text \" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; padding: 0px 24px 24px 24px;\" bgcolor=\"#ffffff\">\n      <h1 class=\"e-h1\" style=\"font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-size: 24px; font-weight: 600; color: #39434b; line-height: 32.5px; letter-spacing: 0.33px; margin: 8px 0 24px 0; padding-top: 8px; border-top: 1px solid #ef3b24;\">{{title}}</h1>\n      {{{body_html}}}\n    </td>\n  </tr>\n</table>",
+      "slots": [
+        {"name": "title", "kind": "text", "description": "Section heading text"},
+        {"name": "body_html", "kind": "rich_text", "description": "Optional body content HTML"}
+      ],
+      "confidence": 0.85,
+      "notes": "Can contain ordered lists or other HTML content after heading"
+    },
+    {
+      "type": "subscription_promo",
+      "displayName": "Subscription Promo",
+      "description": "Promotional block with heading, image, description, and CTA button",
+      "sectionIndexes": [9],
+      "template": "<table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" class=\"c-housepromo\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #eff2f7; border-collapse: collapse !important;\" bgcolor=\"#eff2f7\">\n  <tr>\n    <td align=\"center\" valign=\"top\" class=\"c-housepromo__container\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #eff2f7; padding: 24px 24px 32px 24px;\" bgcolor=\"#eff2f7\">\n      <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;\">\n        <tr>\n          <td align=\"left\" valign=\"top\" width=\"100%\" class=\"c-housepromo__title\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-bottom: 24px;\">\n            <h1 class=\"c-housepromo__header\" style=\"font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-size: 24px; font-weight: 600; color: #21272c; margin: 0; line-height: 30px; letter-spacing: 0.33px; padding-bottom: 16px; border-bottom: 1px solid #c0ccda;\">{{title}}</h1>\n          </td>\n        </tr>\n        <tr>\n          <td align=\"center\" valign=\"top\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;\">\n            <a class=\"c-housepromo__link\" href=\"{{image_link_url}}\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: none;\">\n              <img class=\"c-housepromo__img\" alt=\"{{image_alt}}\" src=\"{{image_src}}\" width=\"636\" height=\"auto\" style=\"-ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; padding-bottom: 24px; max-width: 100%;\">\n            </a>\n          </td>\n        </tr>\n        <tr>\n          <td align=\"left\" valign=\"top\" width=\"100%\" class=\"c-housepromo__dek\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: block; padding-bottom: 24px;\">\n            <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0;\">{{description}}</p>\n          </td>\n        </tr>\n        <tr>\n          <td align=\"center\" valign=\"center\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;\">\n            <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;\">\n              <tr>\n                <td align=\"center\" valign=\"center\" class=\"c-housepromo__btn\" height=\"40\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #21272c; border-radius: 4px; text-align: center;\" bgcolor=\"#21272c\">\n                  <a href=\"{{cta_url}}\" class=\"c-housepromo__btn--text\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #ffffff; font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-weight: 400; font-size: 17px; line-height: 25px; border-radius: 4px; padding: 8px 24px; text-decoration: none; display: inline-block;\">{{cta_label}}</a>\n                </td>\n              </tr>\n            </table>\n          </td>\n        </tr>\n      </table>\n    </td>\n  </tr>\n</table>",
+      "slots": [
+        {"name": "title", "kind": "text", "description": "Promo heading"},
+        {"name": "image_src", "kind": "image_url", "description": "Promo image URL"},
+        {"name": "image_alt", "kind": "image_alt", "description": "Image alt text"},
+        {"name": "image_link_url", "kind": "link_url", "description": "Image click-through URL"},
+        {"name": "description", "kind": "text", "description": "Promo description text"},
+        {"name": "cta_url", "kind": "link_url", "description": "CTA button URL"},
+        {"name": "cta_label", "kind": "link_label", "description": "CTA button text"}
+      ],
+      "confidence": 0.95,
+      "notes": ""
+    },
+    {
+      "type": "footer",
+      "displayName": "Footer",
+      "description": "Email footer with logo, newsletter info, links, and social icons",
+      "sectionIndexes": [10],
+      "template": "<div class=\"c-footer full-wrap\" style=\"background-color: #39434b; color: #ffffff; font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; text-align: left; font-size: 12px;\">\n  <div class=\"c-footer__break\" style=\"display: none; mso-hide: all; max-height: 0px; overflow: hidden;\">\n    <hr>\n  </div>\n  <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;\">\n    <tr>\n      <td align=\"left\" valign=\"center\" class=\"c-dailyfooter\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 48px 24px 32px 24px; background-color: #39434b; width: 100%;\" width=\"100%\" bgcolor=\"#39434b\">\n        <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" width=\"100%\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;\">\n          <tr>\n            <td class=\"c-dailyfooter__logo\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 146px; padding: 0 0 24px 0;\" width=\"146\">\n              <img src=\"{{logo_src}}\" width=\"{{logo_width}}\" class=\"js-text-remove\" style=\"-ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;\">\n            </td>\n          </tr>\n          <tr>\n            <td style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;\">\n              <p class=\"c-dailyfooter__title\" style=\"color: #ffffff; text-transform: uppercase; margin: 0 0 16px 0;\">{{newsletter_title}}</p>\n            </td>\n          </tr>\n          <tr>\n            <td style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;\">\n              <p class=\"c-dailyfooter__info\" style=\"color: #ffffff; margin: 0 0 16px 0;\">{{newsletter_description}} <a class=\"c-dailyfooter__link\" href=\"{{all_newsletters_url}}\" target=\"_blank\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; text-decoration: underline; color: #ffffff;\">{{all_newsletters_label}}</a></p>\n            </td>\n          </tr>\n          <tr>\n            <td style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;\">\n              <p class=\"c-dailyfooter__subscribe\" style=\"color: #ffffff; margin: 0 0 32px 0;\">\n                <a class=\"c-dailyfooter__link\" href=\"{{subscribe_url}}\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; text-decoration: underline; color: #ffffff;\">{{subscribe_label}}</a> | <a class=\"c-dailyfooter__link\" href=\"{{app_url}}\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; text-decoration: underline; color: #ffffff;\">{{app_label}}</a>\n              </p>\n            </td>\n          </tr>\n          <tr>\n            <td style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;\">\n              <table role=\"presentation\" cellspacing=\"0\" cellpadding=\"0\" border=\"0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;\">\n                <tr>\n                  <td class=\"c-dailyfooter__icon\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0 32px 0 0; vertical-align: middle;\" valign=\"middle\">\n                    <a href=\"{{facebook_url}}\" target=\"_blank\" title=\"Facebook\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline;\">\n                      <img src=\"{{facebook_icon_src}}\" width=\"20\" alt=\"Facebook Logo\" style=\"-ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;\">\n                    </a>\n                  </td>\n                  <td class=\"c-dailyfooter__icon\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0 32px 0 0; vertical-align: middle;\" valign=\"middle\">\n                    <a href=\"{{twitter_url}}\" target=\"_blank\" title=\"Twitter\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline;\">\n                      <img src=\"{{twitter_icon_src}}\" width=\"20\" alt=\"Twitter Logo\" style=\"-ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;\">\n                    </a>\n                  </td>\n                  <td class=\"c-dailyfooter__icon\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0 32px 0 0; vertical-align: middle;\" valign=\"middle\">\n                    <a href=\"{{instagram_url}}\" target=\"_blank\" title=\"Instagram\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline;\">\n                      <img src=\"{{instagram_icon_src}}\" width=\"20\" alt=\"Instagram Logo\" style=\"-ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;\">\n                    </a>\n                  </td>\n                  <td class=\"c-dailyfooter__icon\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0 32px 0 0; vertical-align: middle;\" valign=\"middle\">\n                    <a href=\"{{youtube_url}}\" target=\"_blank\" title=\"Youtube\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline;\">\n                      <img src=\"{{youtube_icon_src}}\" width=\"20\" alt=\"Youtube Logo\" style=\"-ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;\">\n                    </a>\n                  </td>\n                </tr>\n              </table>\n            </td>\n          </tr>\n        </table>\n      </td>\n    </tr>\n  </table>\n</div>",
+      "slots": [
+        {"name": "logo_src", "kind": "image_url", "description": "Footer logo URL"},
+        {"name": "logo_width", "kind": "text", "description": "Logo width in pixels"},
+        {"name": "newsletter_title", "kind": "text", "description": "Newsletter name"},
+        {"name": "newsletter_description", "kind": "text", "description": "Newsletter description text"},
+        {"name": "all_newsletters_url", "kind": "link_url", "description": "All newsletters page URL"},
+        {"name": "all_newsletters_label", "kind": "link_label", "description": "All newsletters link text"},
+        {"name": "subscribe_url", "kind": "link_url", "description": "Subscribe URL"},
+        {"name": "subscribe_label", "kind": "link_label", "description": "Subscribe link text"},
+        {"name": "app_url", "kind": "link_url", "description": "App download URL"},
+        {"name": "app_label", "kind": "link_label", "description": "App link text"},
+        {"name": "facebook_url", "kind": "link_url", "description": "Facebook URL"},
+        {"name": "facebook_icon_src", "kind": "image_url", "description": "Facebook icon URL"},
+        {"name": "twitter_url", "kind": "link_url", "description": "Twitter URL"},
+        {"name": "twitter_icon_src", "kind": "image_url", "description": "Twitter icon URL"},
+        {"name": "instagram_url", "kind": "link_url", "description": "Instagram URL"},
+        {"name": "instagram_icon_src", "kind": "image_url", "description": "Instagram icon URL"},
+        {"name": "youtube_url", "kind": "link_url", "description": "YouTube URL"},
+        {"name": "youtube_icon_src", "kind": "image_url", "description": "YouTube icon URL"}
+      ],
+      "confidence": 0.95,
+      "notes": ""
+    }
+  ],
+  "sectionAssignments": [
+    {
+      "index": 0,
+      "type": "masthead",
+      "confidence": 0.95,
+      "itemValues": {
+        "logo_src": "https://cdn.theatlantic.com/assets/media/files/daily-header2x.png",
+        "logo_alt": "The Daily",
+        "logo_width": "238"
+      },
+      "notes": ""
+    },
+    {
+      "index": 1,
+      "type": "date_label",
+      "confidence": 0.95,
+      "itemValues": {
+        "date_text": "May 24, 2020"
+      },
+      "notes": ""
+    },
+    {
+      "index": 2,
+      "type": "byline",
+      "confidence": 0.95,
+      "itemValues": {
+        "headshot_src": "https://cdn.theatlantic.com/thumbor/5HFdgZ7fXUx5VCfk-K6-RgqopLs=/200x200/media/None/Headshot2-1/original.jpg",
+        "headshot_alt": "Annika Neklason headshot",
+        "author_url": "https://www.theatlantic.com/author/annika-neklason/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+        "author_name": "Annika Neklason",
+        "author_title": "Assistant editor"
+      },
+      "notes": ""
+    },
+    {
+      "index": 3,
+      "type": "text_block",
+      "confidence": 0.95,
+      "itemValues": {
+        "body_text": "It's nearly Memorial Day. To commemorate, we're revisiting a poem by Henry Wadsworth Longfellow. Then: This holiday tends to be a day spent in contemplation, in the great outdoors. If you're unable to take on such adventures today, bask in the work of John Muir and read about the journeys of yesteryear, with four selections from our archives."
+      },
+      "notes": ""
+    },
+    {
+      "index": 4,
+      "type": "featured_article",
+      "confidence": 0.9,
+      "itemValues": {
+        "title": "A Poem for Memorial Day",
+        "image_src": "https://cdn.theatlantic.com/thumbor/rKk1IcaEZdl9xuwGpovWGc8ACVA=/700x394/media/newsletters/2020/05/original_17-1/original.jpg",
+        "image_alt": "",
+        "image_attribution": "(SUSAN WALSH / AP)",
+        "body_html": "<p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\">\n                          <a name=\"www_theatlantic_com_magazine_a\" href=\"https://www.theatlantic.com/magazine/archive/1882/06/decoration-day/539601/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\"><strong><em>Decoration Day</em></strong>\n                          </a>\n                        </p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\"><strong>By Henry Wadsworth Longfellow</strong>\n                        </p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\">Sleep, comrades, sleep and rest\n                          <br>On this Field of Grounded Arms,\n                          <br>Where foes no more molest,\n                          <br>Nor sentry's shot alarms!</p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\">***</p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\">Ye have slept on the ground before,\n                          <br>And started to your feet\n                          <br>At the cannon's sudden roar,\n                          <br>Or the drum's redoubling beat.</p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\">***</p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\">But in this camp of Death\n                          <br>No sound your slumber breaks;\n                          <br>Here is no fevered breath,\n                          <br>No wound that bleeds and aches.</p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\">***</p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\">All is repose and peace,\n                          <br>Untrampled lies the sod;\n                          <br>The shouts of battle cease,\n                          <br>It is the Truce of God!</p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\">***</p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0; margin-bottom: 0;\">Published in the June 1882 edition of <em>The Atlantic</em>,\n                          <a name=\"www_theatlantic_com_entertain\" href=\"https://www.theatlantic.com/entertainment/archive/2011/05/a-memorial-day-poem-by-longfellow-from-the-atlantic-june-1882/239636/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">the piece predates the Memorial Day holiday as we know it:</a>At the time, the day was known as Decoration Day, when the graves of those who\n                          died in the Civil War were decorated with flowers.</p>"
+      },
+      "notes": ""
+    },
+    {
+      "index": 5,
+      "type": "featured_article",
+      "confidence": 0.9,
+      "itemValues": {
+        "title": "Four Adventure Reads",
+        "image_src": "https://cdn.theatlantic.com/thumbor/p398wzNB1ojTH2YRO3br3O7eU3I=/700x394/media/newsletters/2020/05/original_16-1/original.jpg",
+        "image_alt": "",
+        "image_attribution": "(ERIC RISBERG / AP)",
+        "body_html": "<p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\"><strong><a name=\"www_theatlantic_com_magaz_1\" href=\"https://www.theatlantic.com/magazine/archive/1911/01/my-first-summer-in-the-sierra-part-i/543654/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">HIKE THE SIERRA WITH JOHN MUIR</a>.</strong>\n                        </p>\n                        <div class=\"e-blockquote js-blockquote\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 24px 0; padding-left: 16px; border-left: 1px solid #000000;\">\n                          <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0; margin-bottom: 0;\">Decades before Yosemite Valley became a national park, Muir made a home for himself\n                            in the area. His journal entries from those years provide a window into a daily\n                            life full of wild beauty and free from responsibility: He leads a meandering months-long\n                            excursion with a flock of sheep at his heels, sleeps on a boulder beneath a waterfall,\n                            and faces off with more than one bear.</p>\n                        </div>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\"><strong><a name=\"www_theatlantic_com_magaz_2\" href=\"https://www.theatlantic.com/magazine/archive/1997/04/rough-terrain-unicycling/376837/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">UNICYCLE UP AND DOWN MOUNTAINS</a>.</strong>\n                        </p>\n                        <div class=\"e-blockquote js-blockquote\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 24px 0; padding-left: 16px; border-left: 1px solid #000000;\">\n                          <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0; margin-bottom: 0;\">Mountain biking? Too "safe and slow" for George Peck, who taught himself to ride\n                            a unicycle through boulder fields and along snow-crusted mountain trails, and even\n                            jump it over picnic tables. At the age of 56, he was still doing it, and he wasn't\n                            alone: In a 1997 profile, the writer Michael Finkel detailed how Peck, through\n                            his strange obsession, helped invent a sport.</p>\n                        </div>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\"><strong><a name=\"www_theatlantic_com_magaz_3\" href=\"https://www.theatlantic.com/magazine/archive/1998/03/tree-surfing-and-other-lofty-pleasures/306486/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">CLIMB THE WORLD'S TALLEST TREES</a>.</strong>\n                        </p>\n                        <div class=\"e-blockquote js-blockquote\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 24px 0; padding-left: 16px; border-left: 1px solid #000000;\">\n                          <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0; margin-bottom: 0;\">In 1998, Richard Preston took readers to a particularly treacherous destination:\n                            California's redwoods. The world's tallest trees are dizzying to climb, sure, but\n                            they also function as vertically oriented ecosystems: They house hundreds of species\n                            in their canopies, and sometimes the bodies of the people who have fallen from their\n                            summits.</p>\n                        </div>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\"><strong><a name=\"www_theatlantic_com_magaz_4\" href=\"https://www.theatlantic.com/magazine/archive/2012/04/the-peaks-of-persia/308914/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">SCALE PEAKS IN IRAN</a>.</strong>\n                        </p>\n                        <div class=\"e-blockquote js-blockquote\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 24px 0; padding-left: 16px; border-left: 1px solid #000000;\">\n                          <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0; margin-bottom: 0;\">Iran, known to the West for so many things, is apparently little-known for its\n                            soaring peaks. The scholar Rebecca Witt wrote about the mountains of Tehran in 2012,\n                            describing ski slopes and a wilderness that's been increasingly developed in recent\n                            decades. But even as the sport of mountaineering became popular, she notes, Iranians\n                            found a shared sense of freedom in the act of climbing.</p>\n                        </div>"
+      },
+      "notes": ""
+    },
+    {
+      "index": 6,
+      "type": "mixed_content_block",
+      "confidence": 0.9,
+      "itemValues": {
+        "image_src": "https://cdn.theatlantic.com/thumbor/SbJFTUHQpovn7zkW-8qPXYcQ2ks=/700x394/media/newsletters/2020/05/original_18-1/original.jpg",
+        "image_alt": "",
+        "image_attribution": "(HERITAGE IMAGES / GETTY)",
+        "body_html": "<p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\">If an escape to the mountains isn't possible, here are a few slightly less adventurous\n                          suggestions for the holiday.</p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\"><strong>Get engrossed in a new book, whatever your mood.</strong> Our warm-weather\n                          <a name=\"www_theatlantic_com_newsletter\" href=\"https://www.theatlantic.com/newsletters/archive/2020/05/pandemic-summer-reading-books-briefing/611821/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">reading list</a>offers something for every craving, whether page-turners or tales\n                            of human connection.</p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\"><strong>Watch a movie—but make it interesting. </strong>Our film critic\n                          <a name=\"www_theatlantic_com_culture_ar\" href=\"https://www.theatlantic.com/culture/archive/2020/05/30-singular-films-watch-quarantine/611956/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">compiled a list</a>of 30 "genuinely unprecedented" films. It's easy to call a\n                          movie unique—but these actually are, he says.</p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\"><strong>Feeling cooped up? Wander the halls of a virtual museum. </strong>Try\n                          a tour of the Metropolitan Museum of Art (or something else from our list of\n                          <a name=\"www_theatlantic_com_cultu_1\" href=\"https://www.theatlantic.com/culture/archive/2020/04/free-things-watch-listen-and-learn-quarantine/609667/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">free cultural activities</a>you can do from home).</p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\"><strong>Pay attention to the birds outside your window.</strong> \n                          <a name=\"www_theatlantic_com_magaz_5\" href=\"https://www.theatlantic.com/magazine/archive/2020/06/why-birds-do-what-they-do/610588/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">"They remind me of what I'm doing, and why,"</a>an ardent bird-watcher writes.</p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\"><strong>Sunday got you down? Take on a puzzle. </strong>\n                          <a name=\"www_theatlantic_com_free_daily\" href=\"https://www.theatlantic.com/free-daily-crossword-puzzle/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">It's bigger than our weekday puzzles—and themed</a>, too.</p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0; margin-bottom: 0;\"><strong>Feeling lonely? Turn on this</strong>\n                          <a name=\"open_spotify_com_playlist_46Icj\" href=\"https://open.spotify.com/playlist/46IcjO2pnFrAmzA5lTN7J7?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">playlist</a>. We've sourced dozens of songs that\n                          <a name=\"www_theatlantic_com_newslett_1\" href=\"https://www.theatlantic.com/newsletters/archive/2020/05/covid-19-playlist-for-partying-alone/612049/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">thrive in solitude.</a>\n                        </p>"
+      },
+      "notes": ""
+    },
+    {
+      "index": 7,
+      "type": "section_divider",
+      "confidence": 0.85,
+      "itemValues": {
+        "title": "About Us",
+        "body_html": "<p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0;\">This email was written by Isabel Fattal and Annika Neklason. It was edited by\n                          Caroline Mimbs Nyce.\n                          <a name=\"forms_gle_qU4NbtTxec92fXsy6_ut\" href=\"https://docs.google.com/forms/d/e/1FAIpQLScsMFPHUuTAPFnuqC6gLmby2qBK2xw57KGFFmzYcTc52Cge3w/viewform?usp=send_form\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">Questions, suggestions, typos?</a>Reply directly to this newsletter or write to\n                          <a name=\"caroline_theatlantic_com_subje\" href=\"mailto:caroline@theatlantic.com?subject=Feedback%20from%20The%20Atlantic%20Daily&utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">caroline@theatlantic.com</a>anytime.</p>\n                        <p class=\"e-p\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0; margin-bottom: 0;\">Did someone forward you this newsletter?\n                          <a name=\"www_theatlantic_com_newsl_2\" href=\"https://www.theatlantic.com/newsletters/sign-up/daily/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">Sign yourself up for The Daily here.</a>\n                        </p>"
+      },
+      "notes": ""
+    },
+    {
+      "index": 8,
+      "type": "section_divider",
+      "confidence": 0.85,
+      "itemValues": {
+        "title": "Most Popular on The Atlantic",
+        "body_html": "<ol class=\"e-ol\" style=\"font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; margin: 0 0 16px 0; padding-inline-start: 16px; margin-bottom: 0;\">\n                          <li class=\"e-li\" style=\"margin-bottom: 8px; padding-left: 4px;\">\n                            <a name=\"www_theatlantic_com_magaz_6\" href=\"https://www.theatlantic.com/magazine/archive/2020/06/qanon-nothing-can-stop-what-is-coming/610567/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">The Prophecies of Q</a>\n                          </li>\n                          <li class=\"e-li\" style=\"margin-bottom: 8px; padding-left: 4px;\">\n                            <a name=\"www_theatlantic_com_health_arc\" href=\"https://www.theatlantic.com/health/archive/2020/05/patchwork-pandemic-states-reopening-inequalities/611866/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">America's Patchwork Pandemic Is Fraying Even Further</a>\n                          </li>\n                          <li class=\"e-li\" style=\"margin-bottom: 8px; padding-left: 4px;\">\n                            <a name=\"www_theatlantic_com_healt_1\" href=\"https://www.theatlantic.com/health/archive/2020/05/cdc-and-states-are-misreporting-covid-19-test-data-pennsylvania-georgia-texas/611935/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">'How Could the CDC Make That Mistake?'</a>\n                          </li>\n                          <li class=\"e-li\" style=\"margin-bottom: 8px; padding-left: 4px;\">\n                            <a name=\"www_theatlantic_com_ideas_arch\" href=\"https://www.theatlantic.com/ideas/archive/2020/05/how-will-we-ever-be-safe-inside/611953/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">Social Distancing Is Not Enough</a>\n                          </li>\n                          <li class=\"e-li\" style=\"margin-bottom: 0; padding-left: 4px;\">\n                            <a name=\"www_theatlantic_com_internatio\" href=\"https://www.theatlantic.com/international/archive/2020/05/china-hong-kong-pandemic-autonomy-law-aggression/611983/?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0\" style=\"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline; text-decoration-color: #21272c;\">The End of Hong Kong</a>\n                          </li>\n                        </ol>"
+      },
+      "notes": ""
+    },
+    {
+      "index": 9,
+      "type": "subscription_promo",
+      "confidence": 0.95,
+      "itemValues": {
+        "title": "Support independent journalism. Subscribe today.",
+        "image_src": "https://cdn.theatlantic.com/thumbor/ua1vJ_xiIpWrl_O3aS0GQ2Fjams=/filters:format(png)/media/img/newsletter_native_promo/2019_11/Newsletter_Promo-2/original.png",
+        "image_alt": "",
+        "image_link_url": "https://accounts.theatlantic.com/products?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter-promo&utm_content=Daily-NL-ad&utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+        "description": "Since 1857, readers have trusted The Atlantic to examine the world with depth and accuracy.",
+        "cta_url": "https://accounts.theatlantic.com/products?utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter-promo&utm_content=Daily-NL-ad&utm_source=newsletter&utm_medium=email&utm_campaign=atlantic-daily-newsletter&utm_content=20200524&silverid=NjU4MTEyNDAxMTg1S0",
+        "cta_label": "Become a Subscriber"
+      },
+      "notes": ""
+    },
+    {
+      "index": 10,
+      "type": "footer",
+      "confidence": 0.95,
+      "itemValues": {
+        "logo_src": "https://cdn.theatlantic.com/assets/media/files/atl-wordmark.png",
+        "logo_width": "146",
+        "newsletter_title": "The Atlantic Daily Newsletter",
+        "newsletter_description": "You're receiving this newsletter because you've signed up to receive The Daily.",
+        "all_newsletters_url": "/newsletters/",
+        "all_newsletters_label": "See all of our newsletters.",
+        "subscribe_url": "https://accounts.theatlantic.com/products?source=subscribeurl",
+        "subscribe_label": "Subscribe to The Atlantic",
+        "app_url": "https://apps.apple.com/us/app/the-atlantic-magazine/id397599894",
+        "app_label": "Get The Atlantic's iOS app",
+        "facebook_url": "https://www.facebook.com/login/?next=https%3A%2F%2Fwww.facebook.com%2FTheAtlantic%2F",
+        "facebook_icon_src": "https://cdn.theatlantic.com/assets/media/files/daily-icon-facebook.png",
+        "twitter_url": "https://twitter.com/theatlantic/",
+        "twitter_icon_src": "https://cdn.theatlantic.com/assets/media/files/daily-icon-twitter.png",
+        "instagram_url": "https://www.instagram.com/accounts/login/",
+        "instagram_icon_src": "https://cdn.theatlantic.com/assets/media/files/daily-icon-instagram.png",
+        "youtube_url": "https://www.youtube.com/user/TheAtlantic/",
+        "youtube_icon_src": "https://cdn.theatlantic.com/assets/media/files/daily-icon-youtube.png"
+      },
+      "notes": ""
+    }
+  ]
+}
+```
