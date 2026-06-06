@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import os from 'node:os';
 import path from 'node:path';
-import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 
 import { resolveCommerceAdBlockSnapshots } from '../../lib/newsletter-core/index.mjs';
 
@@ -17,6 +17,7 @@ function writeFakeSnapshotRuntime(editorialRoot) {
 
       export async function editorialAdsSnapshotsRenderBatch(args) {
         await mkdir(args.outputRoot, { recursive: true });
+        await writeFile(path.join(args.outputRoot, 'last-args.json'), JSON.stringify(args, null, 2));
         const preset = args.lockupPresets[0] || 'native';
         return {
           items: await Promise.all(args.ids.map(async (adId) => {
@@ -33,34 +34,36 @@ function writeFakeSnapshotRuntime(editorialRoot) {
             const animatedPath = path.join(args.outputRoot, adId + '-' + preset + '.webp');
             await writeFile(stillPath, 'still');
             await writeFile(animatedPath, 'animated');
+            const rendered = {
+              presetId: preset === '4x5' ? 'social-4x5' : preset === '1x1' ? 'custom-1x1' : preset,
+              sourceFingerprint: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+              artifact: {
+                localPath: stillPath,
+                mimeType: 'image/png',
+                photariumId: adId + '-still-id',
+                photariumUrl: 'https://imagedelivery.net/example/' + adId + '-still/public',
+                photariumParentId: adId + '-parent-id',
+              },
+              stillArtifact: {
+                localPath: stillPath,
+                mimeType: 'image/png',
+                photariumId: adId + '-still-id',
+                photariumUrl: 'https://imagedelivery.net/example/' + adId + '-still/public',
+                photariumParentId: adId + '-parent-id',
+              },
+              animatedWebpArtifact: {
+                localPath: animatedPath,
+                mimeType: 'image/webp',
+                photariumId: adId + '-animated-id',
+                photariumUrl: 'https://imagedelivery.net/example/' + adId + '-animated/public',
+                photariumParentId: adId + '-parent-id',
+              },
+              warnings: [],
+            };
             return {
               adId,
-              rendered: [{
-                presetId: preset === '4x5' ? 'social-4x5' : preset,
-                sourceFingerprint: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                artifact: {
-                  localPath: stillPath,
-                  mimeType: 'image/png',
-                  photariumId: adId + '-still-id',
-                  photariumUrl: 'https://imagedelivery.net/example/' + adId + '-still/public',
-                  photariumParentId: adId + '-parent-id',
-                },
-                stillArtifact: {
-                  localPath: stillPath,
-                  mimeType: 'image/png',
-                  photariumId: adId + '-still-id',
-                  photariumUrl: 'https://imagedelivery.net/example/' + adId + '-still/public',
-                  photariumParentId: adId + '-parent-id',
-                },
-                animatedWebpArtifact: {
-                  localPath: animatedPath,
-                  mimeType: 'image/webp',
-                  photariumId: adId + '-animated-id',
-                  photariumUrl: 'https://imagedelivery.net/example/' + adId + '-animated/public',
-                  photariumParentId: adId + '-parent-id',
-                },
-                warnings: [],
-              }],
+              rendered: [],
+              skipped: [{ presetId: rendered.presetId, reason: 'up-to-date snapshot exists', existing: rendered }],
               failed: [],
               warnings: [],
             };
@@ -124,8 +127,8 @@ async function withTempRoots(fn) {
   }
 }
 
-test('resolveCommerceAdBlockSnapshots renders overlay commerce ads as uploaded snapshots', async () => {
-  await withTempRoots(async ({ repoRoot }) => {
+test('resolveCommerceAdBlockSnapshots renders explicitly requested overlay commerce snapshots', async () => {
+  await withTempRoots(async ({ repoRoot, editorialRoot }) => {
     const originalFetch = globalThis.fetch;
     let fetchCount = 0;
     globalThis.fetch = async () => {
@@ -139,7 +142,7 @@ test('resolveCommerceAdBlockSnapshots renders overlay commerce ads as uploaded s
         sections: [
           {
             type: 'ad-block',
-            items: [{ adId: 'commerce-ad', image: 'https://example.com/source.png' }],
+            items: [{ adId: 'commerce-ad', adRenderMode: 'snapshot', image: 'https://example.com/source.png' }],
           },
         ],
       };
@@ -148,14 +151,19 @@ test('resolveCommerceAdBlockSnapshots renders overlay commerce ads as uploaded s
       const item = newsletterData.sections[0].items[0];
 
       assert.equal(item.renderMode, 'snapshot', logs.join('\n'));
-      assert.equal(item.image, 'https://imagedelivery.net/example/commerce-ad-animated/public');
-      assert.equal(item.snapshotPreset, '4x5');
-      assert.equal(item.snapshotEditorialPreset, 'social-4x5');
-      assert.equal(item.snapshotArtifactKind, 'animated-webp');
+      assert.equal(item.image, 'https://imagedelivery.net/example/commerce-ad-still/public');
+      assert.equal(item.snapshotPreset, '1x1');
+      assert.equal(item.snapshotEditorialPreset, 'custom-1x1');
+      assert.equal(item.snapshotArtifactKind, 'static-png');
       assert.equal(item.snapshotSourceFingerprint, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-      assert.equal(item.snapshotPhotariumId, 'commerce-ad-animated-id');
+      assert.equal(item.snapshotPhotariumId, 'commerce-ad-still-id');
       assert.equal(item.snapshotPhotariumParentId, 'commerce-ad-parent-id');
       assert.equal(fetchCount, 0);
+      const lastArgs = JSON.parse(readFileSync(path.join(editorialRoot, 'output', 'ads-snapshots', 'last-args.json'), 'utf8'));
+      assert.deepEqual(lastArgs.lockupPresets, ['1x1']);
+      assert.equal(lastArgs.lockupRenderer, 'preview-lockup');
+      assert.equal(lastArgs.photariumNamespace, 'cf-speculative-ads');
+      assert.equal(lastArgs.photariumFolder, 'ads-snapshots');
     } finally {
       globalThis.fetch = originalFetch;
     }
@@ -193,13 +201,34 @@ test('resolveCommerceAdBlockSnapshots respects adRenderMode legacy', async () =>
   });
 });
 
+test('resolveCommerceAdBlockSnapshots leaves overlay commerce ads on the hydrated email card by default', async () => {
+  await withTempRoots(async ({ repoRoot }) => {
+    const newsletterData = {
+      sections: [
+        {
+          type: 'ad-block',
+          items: [{ adId: 'commerce-ad', image: 'https://example.com/source.png' }],
+        },
+      ],
+    };
+    const logs = [];
+
+    await resolveCommerceAdBlockSnapshots(newsletterData, { repoRoot, logger: { log: (message) => logs.push(message) } });
+    const item = newsletterData.sections[0].items[0];
+
+    assert.equal(item.renderMode, undefined);
+    assert.equal(item.image, 'https://example.com/source.png');
+    assert.deepEqual(logs, []);
+  });
+});
+
 test('resolveCommerceAdBlockSnapshots falls back to the hydrated email card on render failure', async () => {
   await withTempRoots(async ({ repoRoot }) => {
     const newsletterData = {
       sections: [
         {
           type: 'ad-block',
-          items: [{ adId: 'failed-commerce-ad', image: 'https://example.com/fallback.png' }],
+          items: [{ adId: 'failed-commerce-ad', adRenderMode: 'snapshot', image: 'https://example.com/fallback.png' }],
         },
       ],
     };
