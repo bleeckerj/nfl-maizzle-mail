@@ -155,10 +155,15 @@ test('normalized-export CLI leaves commerce ad-blocks as normal hydrated ads', (
     );
 
     const cliPayload = JSON.parse(cliRaw);
-    const item = cliPayload.newsletter.sections[0].items[0];
+    const section = cliPayload.newsletter.sections[0];
+    const item = section.items[0];
     assert.equal(item.label, 'SPONSORED');
     assert.equal(item.renderMode, undefined);
-    assert.equal(item.title, 'Commerce Ad Title');
+    // The ad's inventory title is promoted to the section heading when the
+    // section has no title of its own, so the hydrated item carries no
+    // duplicate item-level title.
+    assert.equal(section.title, 'Commerce Ad Title');
+    assert.equal(item.title, '');
     assert.equal(item.description, '<p>Commerce copy should stay visible.</p>');
     assert.equal(item.image, 'https://imagedelivery.net/example/source/public');
     assert.equal(item.imageAlt, 'Snapshot alt text');
