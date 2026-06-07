@@ -3,8 +3,6 @@
 import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
-import https from 'https';
-import http from 'http';
 import MaizzleFramework from '@maizzle/framework';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
@@ -16,8 +14,10 @@ import {
 } from '../lib/adjacency-mail/adjacency-mail-theme-tokens.mjs';
 import { buildAdjacencyJobsMailSectionStyleOverrides } from '../lib/adjacency-mail/adjacency-jobs-mail-theme-tokens.mjs';
 import {
+  buildContentSlotManifest,
   prepareNewsletterData as prepareNormalizedNewsletterData,
   resolveCommerceAdBlockSnapshots,
+  resolveIssueSourcePath,
 } from '../lib/newsletter-core/index.mjs';
 import { hardenEmailHtmlForMobile } from '../lib/newsletter-core/email-html-hardening.mjs';
 import {
@@ -26,11 +26,44 @@ import {
   normalizeNewsletterLinkTracking,
   reportLinkTrackingMetadataNotices,
 } from '../lib/newsletter-core/link-tracking-metadata.mjs';
+import {
+  checkHttpUrl,
+  validateLinks,
+} from '../lib/newsletter-core/link-validation.mjs';
+import { withBuildProductionLock } from '../lib/newsletter-core/build-directory-lock.mjs';
+
+const DARK_MODE_FLATTEN_DISABLE_FLAG = '--no-dark-mode-flatten';
+const DARK_MODE_FLATTEN_COLORS = {
+  pageBackground: '#111318',
+  surface: '#1b1f27',
+  text: '#f2f4f8',
+  mutedText: '#b8c0cc',
+  link: '#8ecbff',
+  border: '#343b48',
+};
 
 // Get script's directory for repo root detection
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const { build: maizzleBuild } = MaizzleFramework;
+
+function isDarkModeFlattenEnabled(args = []) {
+  return !args.includes(DARK_MODE_FLATTEN_DISABLE_FLAG);
+}
+
+function darkModeFlattenPolicy() {
+  return {
+    flatten: true,
+    mode: 'flatten',
+    colors: { ...DARK_MODE_FLATTEN_COLORS },
+  };
+}
+
+function magentaInfo(message) {
+  const magenta = '\x1b[95m';
+  const reset = '\x1b[0m';
+  console.log(`${magenta}INFO${reset} ${message}`);
+}
 
 /**
  * Determine the repository root directory.
@@ -92,7 +125,20 @@ async function buildPopupJobsMailTemplate({ repoRoot, newsletterData, templateNa
     inlineCSS: false,
     removeUnusedCSS: {
       enabled: true,
-      whitelist: ['.mob-text'],
+      whitelist: [
+        '.mob-text',
+        '.mob-ad-copy',
+        '.mob-ad-meta',
+        '.ad-section-title',
+        '.ad-title',
+        '.article-cta-pill',
+        '.article-cta-desktop',
+        '.article-cta-mobile',
+        '.footer-cta-eyebrow',
+        '.footer-cta-copy',
+        '.footer-cta-button',
+        '.mob-footer',
+      ],
     },
     prettify: true,
     minify: {
@@ -372,13 +418,63 @@ function normalizeFontFamiliesDeep(value) {
   });
 }
 
+function mergeStyleConfig(base, override) {
+  if (!base || typeof base !== 'object' || Array.isArray(base)) {
+    return override && typeof override === 'object' && !Array.isArray(override)
+      ? { ...override }
+      : override;
+  }
+
+  if (!override || typeof override !== 'object' || Array.isArray(override)) {
+    return { ...base };
+  }
+
+  const merged = { ...base };
+  Object.entries(override).forEach(([key, value]) => {
+    const baseValue = merged[key];
+    merged[key] =
+      baseValue &&
+      typeof baseValue === 'object' &&
+      !Array.isArray(baseValue) &&
+      value &&
+      typeof value === 'object' &&
+      !Array.isArray(value)
+        ? mergeStyleConfig(baseValue, value)
+        : value;
+  });
+  return merged;
+}
+
+function mergeDailyHeadlinesSectionStyleOverrides(existingSectionStyleMap, adjacencyMailSectionOverrides) {
+  const merged = { ...adjacencyMailSectionOverrides };
+  Object.entries(existingSectionStyleMap).forEach(([sectionType, localConfig]) => {
+    if (sectionType === 'ad-block' && adjacencyMailSectionOverrides[sectionType]) {
+      const mergedAdBlockConfig = mergeStyleConfig(adjacencyMailSectionOverrides[sectionType], localConfig);
+      if (!Object.prototype.hasOwnProperty.call(localConfig, 'descriptionStyles')) {
+        delete mergedAdBlockConfig.descriptionStyles;
+      }
+      merged[sectionType] = mergedAdBlockConfig;
+      return;
+    }
+
+    merged[sectionType] = localConfig;
+  });
+  return merged;
+}
+
 function pruneBuildInjectedFields(newsletterData) {
   if (!newsletterData || typeof newsletterData !== 'object') return;
 
+  delete newsletterData.darkModePolicy;
   delete newsletterData.mobileTextFontSize;
   delete newsletterData.mobileTextLineHeight;
   delete newsletterData.mobileCaptionFontSize;
   delete newsletterData.mobileCaptionLineHeight;
+  delete newsletterData.mobileAdCopyClass;
+  delete newsletterData.mobileAdCopyFontSize;
+  delete newsletterData.mobileAdCopyLineHeight;
+  delete newsletterData.mobileAdCopyFontWeight;
+  delete newsletterData.mobileAdCopyFontFamily;
 
   if (newsletterData.header && typeof newsletterData.header === 'object') {
     delete newsletterData.header.contentStyles;
@@ -400,6 +496,7 @@ function pruneBuildInjectedFields(newsletterData) {
       delete section.headingStylesInline;
       delete section.linkStylesInline;
       delete section.labelStylesInline;
+      delete section.articleCtaStylesInline;
     });
   }
 }
@@ -502,249 +599,6 @@ function normalizeNewsletterForSchemaValidation(newsletterData) {
       });
     }
   });
-}
-
-function getEditorialAdsPath(repoRoot) {
-  const envPath = process.env.NFL_EDITORIAL_ADS_PATH;
-  if (envPath && fs.existsSync(envPath)) {
-    return path.resolve(envPath);
-  }
-
-  const editorialRoot = process.env.NFL_EDITORIAL_ROOT
-    ? path.resolve(process.env.NFL_EDITORIAL_ROOT)
-    : path.resolve(repoRoot, '..', 'nfl-editorial');
-  return path.join(editorialRoot, 'src', 'content', 'ads.json');
-}
-
-function buildEditorialAdsIndex(repoRoot) {
-  const adsPath = getEditorialAdsPath(repoRoot);
-  if (!fs.existsSync(adsPath)) {
-    throw new Error(`Editorial ads inventory not found: ${adsPath}`);
-  }
-
-  let adsData;
-  try {
-    adsData = JSON.parse(fs.readFileSync(adsPath, 'utf8'));
-  } catch (error) {
-    throw new Error(`Failed to parse editorial ads inventory at ${adsPath}: ${error.message}`);
-  }
-
-  if (!Array.isArray(adsData)) {
-    throw new Error(`Editorial ads inventory must be an array: ${adsPath}`);
-  }
-
-  const index = new Map();
-  adsData.forEach((ad, idx) => {
-    if (!ad || typeof ad !== 'object') return;
-    const id = typeof ad.id === 'string' ? ad.id.trim() : '';
-    if (!id) return;
-    if (!index.has(id)) {
-      index.set(id, ad);
-      return;
-    }
-    console.log(`⚠️  Duplicate ad id "${id}" in editorial inventory at position ${idx + 1}; using first occurrence`);
-  });
-
-  return { adsPath, index };
-}
-
-function normalizeAdCopyHtml(copy) {
-  if (typeof copy !== 'string') return '';
-  const trimmed = copy.trim();
-  if (!trimmed) return '';
-  if (/^\s*<(p|div|ul|ol|table|blockquote)\b/i.test(trimmed)) {
-    return trimmed;
-  }
-  return `<p>${trimmed}</p>`;
-}
-
-function isCommerceOverlayLockup(ad) {
-  return ad?.commerce?.presentation === 'overlay-lockup';
-}
-
-function buildCommerceOverlayLockupPayload(ad) {
-  const commerce = ad?.commerce && typeof ad.commerce === 'object' ? ad.commerce : {};
-  const lockup = commerce.lockup && typeof commerce.lockup === 'object' ? commerce.lockup : {};
-  const pricePosition = typeof lockup.pricePosition === 'string' ? lockup.pricePosition.trim() : 'bottom-left';
-  const rightPositionsByPrice = {
-    'top-left': 'top-right',
-    'top-right': 'top-right',
-    'bottom-left': 'bottom-right',
-    'bottom-right': 'bottom-right',
-  };
-  const requestedIconPosition = typeof lockup.iconPosition === 'string' ? lockup.iconPosition.trim() : '';
-  const iconPosition =
-    requestedIconPosition === 'top-right' || requestedIconPosition === 'bottom-right'
-      ? requestedIconPosition
-      : rightPositionsByPrice[pricePosition] ?? 'bottom-right';
-  const positionStyles = {
-    'top-left': 'left: 5.4%;top: 5.4%;',
-    'top-right': 'right: 5.4%;top: 5.4%;',
-    'bottom-left': 'left: 5.4%;bottom: 5.4%;',
-    'bottom-right': 'right: 5.4%;bottom: 5.4%;',
-  };
-  return {
-    priceText: typeof commerce.priceText === 'string' ? commerce.priceText.trim() : '',
-    icon: {
-      src: typeof commerce.icon?.src === 'string' ? commerce.icon.src.trim() : '',
-      altText: typeof commerce.icon?.altText === 'string' ? commerce.icon.altText.trim() : '',
-    },
-    lockup: {
-      aspectRatio: typeof lockup.aspectRatio === 'string' ? lockup.aspectRatio.trim() : '1x1',
-      snapshotSrc: typeof lockup.snapshotSrc === 'string' ? lockup.snapshotSrc.trim() : '',
-      snapshotAltText: typeof lockup.snapshotAltText === 'string' ? lockup.snapshotAltText.trim() : '',
-      pricePosition,
-      iconPosition,
-      pricePositionStyle: positionStyles[pricePosition] ?? positionStyles['bottom-left'],
-      iconPositionStyle: positionStyles[iconPosition] ?? positionStyles['top-right'],
-      textColor: typeof lockup.textColor === 'string' ? lockup.textColor.trim() : '#ff3048',
-    },
-  };
-}
-
-function hydrateAdBlockSections(newsletterData, repoRoot) {
-  if (!newsletterData || !Array.isArray(newsletterData.sections)) return;
-
-  const adBlockSections = newsletterData.sections.filter((section) => section?.type === 'ad-block');
-  if (adBlockSections.length === 0) return;
-
-  const { adsPath, index } = buildEditorialAdsIndex(repoRoot);
-  console.log(`🧩 Hydrating ${adBlockSections.length} ad-block section(s) from ${adsPath}`);
-
-  newsletterData.sections.forEach((section, sectionIndex) => {
-    if (!section || section.type !== 'ad-block') return;
-
-    // Ignore accidental empty YAML list stubs (e.g. trailing "-" with no fields).
-    if (Array.isArray(section.items)) {
-      section.items = section.items.filter((item) => {
-        if (!item || typeof item !== 'object') return false;
-        return Object.keys(item).length > 0;
-      });
-    }
-
-    if (!Array.isArray(section.items) || section.items.length !== 1) {
-      throw new Error(`Section ${sectionIndex + 1} (ad-block) must contain exactly one item`);
-    }
-
-    const sourceItem = section.items[0];
-    const adId = typeof sourceItem?.adId === 'string' ? sourceItem.adId.trim() : '';
-    if (!adId) {
-      throw new Error(`Section ${sectionIndex + 1} (ad-block) is missing required items[0].adId`);
-    }
-
-    const ad = index.get(adId);
-    if (!ad) {
-      throw new Error(`Section ${sectionIndex + 1} (ad-block) references unknown adId "${adId}"`);
-    }
-
-    const markdownLinkUrl = typeof sourceItem?.link === 'string' && sourceItem.link.trim()
-      ? sourceItem.link.trim()
-      : '';
-    const markdownReadMoreLink = typeof sourceItem?.readMoreLink === 'string' && sourceItem.readMoreLink.trim()
-      ? sourceItem.readMoreLink.trim()
-      : '';
-    const markdownReadMoreText = typeof sourceItem?.readMoreText === 'string' && sourceItem.readMoreText.trim()
-      ? sourceItem.readMoreText.trim()
-      : typeof sourceItem?.readMoreTxt === 'string' && sourceItem.readMoreTxt.trim()
-        ? sourceItem.readMoreTxt.trim()
-        : '';
-    const resolvedCopy = typeof ad.copy === 'string' && ad.copy.trim()
-      ? ad.copy.trim()
-      : typeof ad.landscapeCopy === 'string' && ad.landscapeCopy.trim()
-        ? ad.landscapeCopy.trim()
-        : '';
-    const inventoryLinkUrl = typeof ad.link?.url === 'string' ? ad.link.url.trim() : '';
-    const resolvedLinkUrl = markdownLinkUrl || inventoryLinkUrl;
-    const resolvedReadMoreLink = markdownReadMoreLink || markdownLinkUrl || inventoryLinkUrl;
-    const inventoryLinkLabel = typeof ad.link?.label === 'string' && ad.link.label.trim()
-      ? ad.link.label.trim()
-      : 'Learn more';
-    const resolvedLinkLabel = markdownReadMoreText || inventoryLinkLabel;
-    const markdownLabel = typeof sourceItem?.label === 'string' && sourceItem.label.trim()
-      ? sourceItem.label.trim()
-      : '';
-    const resolvedLabel = markdownLabel
-      ? markdownLabel
-      : typeof ad.label === 'string' && ad.label.trim()
-        ? ad.label.trim()
-        : '';
-
-    const isOverlayLockup = isCommerceOverlayLockup(ad);
-    const commerceOverlay = isOverlayLockup ? buildCommerceOverlayLockupPayload(ad) : null;
-    const overlaySnapshotSrc = commerceOverlay?.lockup.snapshotSrc || '';
-    const overlaySnapshotAltText = commerceOverlay?.lockup.snapshotAltText || '';
-
-    if (isOverlayLockup && !overlaySnapshotSrc) {
-      console.log(`⚠️  Ad "${adId}" is a commerce overlay lockup without commerce.lockup.snapshotSrc; using layered email fallback`);
-    }
-
-    const hydratedItem = {
-      adId,
-      label: resolvedLabel,
-      sponsor: typeof ad.sponsor === 'string' ? ad.sponsor.trim() : '',
-      title: typeof ad.title === 'string' ? ad.title.trim() : '',
-      description: isOverlayLockup ? '' : normalizeAdCopyHtml(resolvedCopy),
-      image: overlaySnapshotSrc || (typeof ad.media?.src === 'string' ? ad.media.src.trim() : ''),
-      imageAlt: overlaySnapshotAltText || (typeof ad.media?.altText === 'string' ? ad.media.altText.trim() : ''),
-    };
-
-    if (isOverlayLockup) {
-      hydratedItem.renderMode = overlaySnapshotSrc ? 'snapshot' : 'commerce-overlay-lockup';
-      hydratedItem.commerce = commerceOverlay;
-    }
-
-    if (resolvedLinkUrl) {
-      hydratedItem.link = resolvedLinkUrl;
-    }
-
-    if (resolvedReadMoreLink) {
-      hydratedItem.readMoreLink = resolvedReadMoreLink;
-    }
-
-    if (resolvedLinkLabel && resolvedReadMoreLink) {
-      hydratedItem.readMoreText = resolvedLinkLabel;
-    }
-
-    section.items = [hydratedItem];
-  });
-}
-
-function checkHttpUrl(url) {
-  return new Promise((resolve) => {
-    if (!url || typeof url !== 'string') {
-      resolve({ valid: false, error: 'URL missing' });
-      return;
-    }
-
-    const trimmed = url.trim();
-    if (!trimmed) {
-      resolve({ valid: false, error: 'URL empty' });
-      return;
-    }
-
-    const lowercase = trimmed.toLowerCase();
-    if (!lowercase.startsWith('https:') && !lowercase.startsWith('http:')) {
-      resolve({ valid: false, error: 'Unsupported protocol' });
-      return;
-    }
-
-    const client = lowercase.startsWith('https:') ? https : http;
-    const req = client.request(trimmed, { method: 'HEAD', timeout: 5000 }, (res) => {
-      const isValid = res.statusCode >= 200 && res.statusCode < 400;
-      resolve({ valid: isValid, status: res.statusCode });
-    });
-
-    req.on('error', (error) => {
-      resolve({ valid: false, error: error.message });
-    });
-
-    req.on('timeout', () => {
-      req.destroy();
-      resolve({ valid: false, error: 'Request timeout' });
-    });
-
-  req.end();
-});
 }
 
 function resolveImageEntryUrl(entry) {
@@ -1074,151 +928,6 @@ function catalogSections(newsletterData) {
   console.log('');
 }
 
-const LINK_FIELD_CANDIDATES = new Set([
-  'abouturl',
-  'applyurl',
-  'archiveurl',
-  'bookinglink',
-  'link',
-  'readmorelink',
-  'imagelink',
-  'logolink',
-  'sponsorlink',
-  'bylinelink',
-  'authorlink',
-  'ctalink',
-  'dispatchlink',
-  'locationpickerurl',
-  'originalsourceurl',
-  'shareurl',
-  'sourcelink',
-  'viewonlinelink',
-  'newslettersubscribelink',
-  'unsubscribelink',
-  'url'
-]);
-
-function isHttpLink(value) {
-  return /^https?:/i.test(value);
-}
-
-function isPlaceholderLink(value) {
-  if (!value) return true;
-  const normalized = value.trim().toLowerCase();
-  return (
-    normalized === '' ||
-    normalized === '#' ||
-    normalized === 'undefined' ||
-    normalized === 'null' ||
-    normalized === 'javascript:void(0)' ||
-    normalized === 'javascript:;'
-  );
-}
-
-function formatLinkPath(path = []) {
-  if (!path.length) return 'root';
-  return path.reduce((acc, segment, index) => {
-    if (typeof segment === 'number' || /^\d+$/.test(segment)) {
-      return `${acc}[${segment}]`;
-    }
-    return index === 0 ? segment : `${acc}.${segment}`;
-  }, '');
-}
-
-function collectLinkCandidates(value, path = []) {
-  const entries = [];
-  if (Array.isArray(value)) {
-    value.forEach((item, index) => {
-      entries.push(...collectLinkCandidates(item, [...path, index]));
-    });
-    return entries;
-  }
-
-  if (value && typeof value === 'object') {
-    Object.entries(value).forEach(([key, child]) => {
-      const nextPath = [...path, key];
-      if (typeof child === 'string' && LINK_FIELD_CANDIDATES.has(key.toLowerCase())) {
-        entries.push({ path: nextPath, url: child });
-      }
-      if (
-        child &&
-        typeof child === 'object' &&
-        !Array.isArray(child) &&
-        LINK_FIELD_CANDIDATES.has(key.toLowerCase())
-      ) {
-        const objectUrl = typeof child.href === 'string' && child.href.trim()
-          ? child.href
-          : typeof child.url === 'string' && child.url.trim()
-            ? child.url
-            : '';
-        if (objectUrl) {
-          entries.push({ path: nextPath, url: objectUrl });
-        }
-      }
-      if (Array.isArray(child) || (child && typeof child === 'object')) {
-        entries.push(...collectLinkCandidates(child, nextPath));
-      }
-    });
-  }
-
-  return entries;
-}
-
-async function validateLinks(data) {
-  const entries = collectLinkCandidates(data);
-  if (entries.length === 0) {
-    console.log('🔍 No hyperlink candidates found for validation');
-    return;
-  }
-
-  console.log('🔍 Validating hyperlinks...');
-  const errors = [];
-  const warnings = [];
-  let validLinks = 0;
-
-  for (const entry of entries) {
-    const rawUrl = entry.url;
-    const trimmed = typeof rawUrl === 'string' ? rawUrl.trim() : '';
-    const pathLabel = formatLinkPath(entry.path);
-
-    if (!trimmed) {
-      errors.push(`❌ ${pathLabel}: link is empty`);
-      continue;
-    }
-
-    if (isPlaceholderLink(trimmed)) {
-      errors.push(`❌ ${pathLabel}: placeholder link value "${trimmed}"`);
-      continue;
-    }
-
-    if (isHttpLink(trimmed)) {
-      const result = await checkHttpUrl(trimmed);
-      if (result.valid) {
-        validLinks++;
-      } else {
-        const reason = result.error ? result.error : `HTTP ${result.status}`;
-        if (result.status === 403 || result.status === 999) {
-          warnings.push(`⚠️  ${pathLabel}: ${trimmed} (${reason})`);
-          validLinks++;
-        } else {
-          errors.push(`❌ ${pathLabel}: ${trimmed} (${reason})`);
-        }
-      }
-    } else {
-      validLinks++; // Non-HTTP links (mailto, tel, relative) are assumed acceptable
-    }
-  }
-
-  if (errors.length > 0 || warnings.length > 0) {
-    console.log(`\n⚠️  Link Validation Results: ${validLinks}/${entries.length} links passed`);
-    errors.forEach(error => console.log(`   ${error}`));
-    warnings.forEach(warning => console.log(`   ${warning}`));
-    console.log('');
-  } else {
-    console.log(`✅ All ${entries.length} links validated successfully`);
-  }
-}
-
 /**
  * Validate all images in newsletter data
  */
@@ -1420,18 +1129,22 @@ const fileArgs = args.filter(arg => !arg.startsWith('--'));
 const inputFile = fileArgs[0];
 const outputName = fileArgs[1] || path.basename(inputFile, path.extname(inputFile));
 
-// Determine if input is Markdown or JSON
-const isMarkdown = inputFile.endsWith('.md');
+// Determine if input is Markdown, JSON, or a Backoffice outbox issue id.
+let isMarkdown = inputFile.endsWith('.md');
 const isJson = inputFile.endsWith('.json');
+const isIssueId = !isMarkdown && !isJson && /(?:^|-)y\d{2,4}$/i.test(inputFile);
 
-if (!isMarkdown && !isJson) {
-  console.error(`❌ File must be .md or .json: ${inputFile}`);
+if (!isMarkdown && !isJson && !isIssueId) {
+  console.error(`❌ File must be .md, .json, or an issue id ending in -yYY: ${inputFile}`);
   process.exit(1);
 }
 
 // Set up paths - handle both absolute and relative paths
 let inputPath;
-if (isMarkdown) {
+if (isIssueId) {
+  inputPath = resolveIssueSourcePath(inputFile);
+  isMarkdown = true;
+} else if (isMarkdown) {
   // If it's an absolute path, use it directly
   if (path.isAbsolute(inputFile)) {
     inputPath = inputFile;
@@ -1563,7 +1276,17 @@ async function buildNewsletter() {
       repoRoot: REPO_ROOT,
       templateName,
       args,
+      outputName,
+      sourcePath: sourcePathForWarnings,
     });
+    if (isDarkModeFlattenEnabled(args)) {
+      newsletterData.darkModePolicy = darkModeFlattenPolicy();
+      magentaInfo(
+        'dark-mode flatten enabled: controlled dark fallback will override section colors in clients that honor prefers-color-scheme. Use --no-dark-mode-flatten to disable.',
+      );
+    } else {
+      delete newsletterData.darkModePolicy;
+    }
     await resolveCommerceAdBlockSnapshots(newsletterData, {
       repoRoot: REPO_ROOT,
       logger: console,
@@ -1711,13 +1434,21 @@ async function buildNewsletter() {
         ? existingSectionStyles.sectionStyles
         : {};
 
+    const sectionStyleMapWithAdjacencyOverrides =
+      templateName === 'near-future-lab-daily-headlines'
+        ? {
+            ...mergeDailyHeadlinesSectionStyleOverrides(existingSectionStyleMap, adjacencyMailSectionOverrides),
+            ...adjacencyJobsMailSectionOverrides,
+          }
+        : {
+            ...existingSectionStyleMap,
+            ...adjacencyMailSectionOverrides,
+            ...adjacencyJobsMailSectionOverrides,
+          };
+
     sectionStyles = {
       ...existingSectionStyles,
-      sectionStyles: {
-        ...existingSectionStyleMap,
-        ...adjacencyMailSectionOverrides,
-        ...adjacencyJobsMailSectionOverrides,
-      },
+      sectionStyles: sectionStyleMapWithAdjacencyOverrides,
     };
 
     newsletterData.sectionStyles = sectionStyles;
@@ -1907,24 +1638,35 @@ async function buildNewsletter() {
                 ? {}
                 : section.contentStyles;
             const descStyles = { ...templateDescStyles, ...sectionDescStyles };
+            const descriptionMobileClass =
+              typeof safeUsedConfig.descriptionMobileClass === 'string' &&
+              /^[A-Za-z0-9_-]+$/.test(safeUsedConfig.descriptionMobileClass.trim())
+                ? safeUsedConfig.descriptionMobileClass.trim()
+                : section.type === 'ad-block'
+                  ? ''
+                  : 'mob-text';
             if (descStyles && Object.keys(descStyles).length > 0) {
               const contentStyles = descStyles;
               let cssProperties = [];
               if (contentStyles.fontFamily) cssProperties.push(`font-family: ${contentStyles.fontFamily} !important`);
               if (contentStyles.fontSize) cssProperties.push(`font-size: ${contentStyles.fontSize}`);
               if (contentStyles.lineHeight) cssProperties.push(`line-height: ${contentStyles.lineHeight}`);
+              if (contentStyles.fontWeight) cssProperties.push(`font-weight: ${contentStyles.fontWeight}`);
               if (contentStyles.color) cssProperties.push(`color: ${contentStyles.color} !important`);
               if (contentStyles.textAlign) cssProperties.push(`text-align: ${contentStyles.textAlign} !important`);
               const newCSSString = cssProperties.join('; ');
               desc = desc.replace(/<p(\s[^>]*)?>/gi, (match, attrs) => {
                 attrs = attrs || '';
-                const classMatch = attrs.match(/class="([^"]*)"/i);
-                if (classMatch) {
-                  if (!classMatch[1].includes('mob-text')) {
-                    attrs = attrs.replace(/class="([^"]*)"/i, `class="$1 mob-text"`);
+                if (descriptionMobileClass) {
+                  const classMatch = attrs.match(/class="([^"]*)"/i);
+                  if (classMatch) {
+                    const existingClasses = classMatch[1].split(/\s+/);
+                    if (!existingClasses.includes(descriptionMobileClass)) {
+                      attrs = attrs.replace(/class="([^"]*)"/i, `class="$1 ${descriptionMobileClass}"`);
+                    }
+                  } else {
+                    attrs = ` class="${descriptionMobileClass}"${attrs}`;
                   }
-                } else {
-                  attrs = ` class="mob-text"${attrs}`;
                 }
                 const styleMatch = attrs.match(/style="([^"]*)"/i);
                 if (styleMatch) {
@@ -1933,6 +1675,7 @@ async function buildNewsletter() {
                     .replace(/font-family:[^;]*;?/gi, '')
                     .replace(/font-size:[^;]*;?/gi, '')
                     .replace(/line-height:[^;]*;?/gi, '')
+                    .replace(/font-weight:[^;]*;?/gi, '')
                     .replace(/color:[^;]*;?/gi, '')
                     .replace(/text-align:[^;]*;?/gi, '');
                   const combinedStyle = `${existingStyle}; ${newCSSString}`.replace(/^;+|;+$/g, '');
@@ -2015,8 +1758,15 @@ async function buildNewsletter() {
           const templateSectionHeaderHeadingStyles = safeUsedConfig.sectionHeaderHeadingStyles && typeof safeUsedConfig.sectionHeaderHeadingStyles === 'object'
             ? { ...safeUsedConfig.sectionHeaderHeadingStyles }
             : {};
+          const incomingCtaStyles = section.ctaStyles && typeof section.ctaStyles === 'object'
+            ? { ...section.ctaStyles }
+            : {};
+          const templateCtaStyles = safeUsedConfig.ctaStyles && typeof safeUsedConfig.ctaStyles === 'object'
+            ? { ...safeUsedConfig.ctaStyles }
+            : {};
           section.labelStyles = { ...templateLabelStyles, ...incomingLabelStyles };
           section.sectionHeaderHeadingStyles = { ...templateSectionHeaderHeadingStyles, ...incomingSectionHeaderHeadingStyles };
+          section.ctaStyles = { ...templateCtaStyles, ...incomingCtaStyles };
           section.headingStylesInline = toCssString(
             { ...defaultHeading, ...section.headingStyles },
             undefined,
@@ -2034,6 +1784,11 @@ async function buildNewsletter() {
           );
           section.labelStylesInline = toCssString(
             { ...defaultLabel, ...section.labelStyles },
+            undefined,
+            { withoutImportant: mobileLockTypographyProperties },
+          );
+          section.articleCtaStylesInline = toCssString(
+            section.ctaStyles,
             undefined,
             { withoutImportant: mobileLockTypographyProperties },
           );
@@ -2114,17 +1869,21 @@ async function buildNewsletter() {
                 
                 const newCSSString = cssProperties.join('; ');
                 
-                // Process <p> tags — add mob-text class for mobile media query targeting
+                const mobileDescriptionClass =
+                  typeof safeUsedConfig.descriptionMobileClass === 'string' && safeUsedConfig.descriptionMobileClass.trim()
+                    ? safeUsedConfig.descriptionMobileClass.trim()
+                    : 'mob-text';
+
+                // Process <p> tags — add the section's mobile class for media query targeting.
                 item.description = item.description.replace(/<p(\s[^>]*)?>/gi, (match, attrs) => {
                   attrs = attrs || '';
-                  // Add mob-text class for mobile media query targeting
                   const classMatch = attrs.match(/class="([^"]*)"/i);
                   if (classMatch) {
-                    if (!classMatch[1].includes('mob-text')) {
-                      attrs = attrs.replace(/class="([^"]*)"/i, `class="$1 mob-text"`);
+                    if (!classMatch[1].split(/\s+/).includes(mobileDescriptionClass)) {
+                      attrs = attrs.replace(/class="([^"]*)"/i, `class="$1 ${mobileDescriptionClass}"`);
                     }
                   } else {
-                    attrs = ` class="mob-text"${attrs}`;
+                    attrs = ` class="${mobileDescriptionClass}"${attrs}`;
                   }
                   const styleMatch = attrs.match(/style="([^"]*)"/i);
                   if (styleMatch) {
@@ -2362,9 +2121,84 @@ async function buildNewsletter() {
       header.contentStyles = { ...baseHeaderContentStyles, ...incomingHeaderContentStyles };
     }
 
-    if (newsletterData.intro) {
-      const intro = newsletterData.intro;
-      const applyContentStylesToHtml = (html, styles = {}) => {
+    // --- Set mobile text override properties from globalOverrides.mobileAdjustments ---
+    // These are used by layout templates' media queries to override inline
+    // font-size on mobile viewports.
+    const globalOverrides = sectionStyles.globalOverrides || {};
+    const mobileAdj = globalOverrides.mobileAdjustments || {};
+    if (mobileAdj.contentStyles) {
+      const mc = mobileAdj.contentStyles;
+      if (mc.fontSize) {
+        newsletterData.mobileTextFontSize = mc.fontSize;
+      }
+      if (mc.lineHeight) {
+        newsletterData.mobileTextLineHeight = mc.lineHeight;
+      }
+      const setProps = [mc.fontSize && 'fontSize', mc.lineHeight && 'lineHeight'].filter(Boolean);
+      if (setProps.length) {
+        console.log(`📱 Mobile text overrides: ${setProps.join(', ')} → .mob-text in media query (from globalOverrides.mobileAdjustments)`);
+      }
+    }
+
+    if (mobileAdj.captionStyles) {
+      const mc = mobileAdj.captionStyles;
+      if (mc.fontSize) {
+        newsletterData.mobileCaptionFontSize = mc.fontSize;
+      }
+      if (mc.lineHeight) {
+        newsletterData.mobileCaptionLineHeight = mc.lineHeight;
+      }
+      const setProps = [mc.fontSize && 'fontSize', mc.lineHeight && 'lineHeight'].filter(Boolean);
+      if (setProps.length) {
+        console.log(`📱 Mobile caption overrides: ${setProps.join(', ')} → .mob-caption in media query (from globalOverrides.mobileAdjustments)`);
+      }
+    }
+
+    const adBlockStyleConfig = sectionStyles.sectionStyles?.['ad-block'];
+    const adCopyMobileStyles =
+      adBlockStyleConfig?.mobileDescriptionStyles &&
+      typeof adBlockStyleConfig.mobileDescriptionStyles === 'object' &&
+      !Array.isArray(adBlockStyleConfig.mobileDescriptionStyles)
+        ? adBlockStyleConfig.mobileDescriptionStyles
+        : {};
+    const adMetaMobileStyles =
+      adBlockStyleConfig?.mobileMetaStyles &&
+      typeof adBlockStyleConfig.mobileMetaStyles === 'object' &&
+      !Array.isArray(adBlockStyleConfig.mobileMetaStyles)
+        ? adBlockStyleConfig.mobileMetaStyles
+        : {};
+    if (typeof adBlockStyleConfig?.descriptionMobileClass === 'string' && adBlockStyleConfig.descriptionMobileClass.trim()) {
+      newsletterData.mobileAdCopyClass = adBlockStyleConfig.descriptionMobileClass.trim();
+    }
+    if (adCopyMobileStyles.fontSize) {
+      newsletterData.mobileAdCopyFontSize = adCopyMobileStyles.fontSize;
+    }
+    if (adCopyMobileStyles.lineHeight) {
+      newsletterData.mobileAdCopyLineHeight = adCopyMobileStyles.lineHeight;
+    }
+    if (adCopyMobileStyles.fontWeight) {
+      newsletterData.mobileAdCopyFontWeight = adCopyMobileStyles.fontWeight;
+    }
+    if (adCopyMobileStyles.fontFamily) {
+      newsletterData.mobileAdCopyFontFamily = adCopyMobileStyles.fontFamily;
+    }
+    if (typeof adBlockStyleConfig?.metaMobileClass === 'string' && adBlockStyleConfig.metaMobileClass.trim()) {
+      newsletterData.mobileAdMetaClass = adBlockStyleConfig.metaMobileClass.trim();
+    }
+    if (adMetaMobileStyles.fontSize) {
+      newsletterData.mobileAdMetaFontSize = adMetaMobileStyles.fontSize;
+    }
+    if (adMetaMobileStyles.lineHeight) {
+      newsletterData.mobileAdMetaLineHeight = adMetaMobileStyles.lineHeight;
+    }
+    if (adMetaMobileStyles.fontWeight) {
+      newsletterData.mobileAdMetaFontWeight = adMetaMobileStyles.fontWeight;
+    }
+    if (adMetaMobileStyles.fontFamily) {
+      newsletterData.mobileAdMetaFontFamily = adMetaMobileStyles.fontFamily;
+    }
+
+    const applyContentStylesToHtml = (html, styles = {}) => {
         if (!html || typeof html !== 'string') return html;
         const cssProperties = [];
         if (styles.fontFamily) cssProperties.push(`font-family: ${styles.fontFamily} !important`);
@@ -2403,38 +2237,8 @@ async function buildNewsletter() {
         });
       };
 
-      // --- Set mobile text override properties from globalOverrides.mobileAdjustments ---
-      // These are used by the layout template's media query to override inline
-      // font-size on <p class="mob-text"> elements on mobile viewports.
-      const globalOverrides = sectionStyles.globalOverrides || {};
-      const mobileAdj = globalOverrides.mobileAdjustments || {};
-      if (mobileAdj.contentStyles) {
-        const mc = mobileAdj.contentStyles;
-        if (mc.fontSize) {
-          newsletterData.mobileTextFontSize = mc.fontSize;
-        }
-        if (mc.lineHeight) {
-          newsletterData.mobileTextLineHeight = mc.lineHeight;
-        }
-        const setProps = [mc.fontSize && 'fontSize', mc.lineHeight && 'lineHeight'].filter(Boolean);
-        if (setProps.length) {
-          console.log(`📱 Mobile text overrides: ${setProps.join(', ')} → .mob-text in media query (from globalOverrides.mobileAdjustments)`);
-        }
-      }
-
-      if (mobileAdj.captionStyles) {
-        const mc = mobileAdj.captionStyles;
-        if (mc.fontSize) {
-          newsletterData.mobileCaptionFontSize = mc.fontSize;
-        }
-        if (mc.lineHeight) {
-          newsletterData.mobileCaptionLineHeight = mc.lineHeight;
-        }
-        const setProps = [mc.fontSize && 'fontSize', mc.lineHeight && 'lineHeight'].filter(Boolean);
-        if (setProps.length) {
-          console.log(`📱 Mobile caption overrides: ${setProps.join(', ')} → .mob-caption in media query (from globalOverrides.mobileAdjustments)`);
-        }
-      }
+    if (newsletterData.intro) {
+      const intro = newsletterData.intro;
 
       const introContentConfig = sectionStyles.sectionStyles
         ? sectionStyles.sectionStyles['intro-content'] ||
@@ -2564,7 +2368,7 @@ async function buildNewsletter() {
     
     // Validate images in the newsletter data
     await validateImages(newsletterData);
-    await validateLinks(newsletterData);
+    await validateLinks(newsletterData, { checkHttpUrl });
 
     // Build the newsletter
     console.log('🔨 Building newsletter...');
@@ -2589,7 +2393,9 @@ async function buildNewsletter() {
         });
         builtNewsletterPath = resolveBuiltNewsletterPath(popupJobsBuildDir, templateName);
       } else {
-        execSync('npx maizzle build production', { stdio: 'inherit' });
+        withBuildProductionLock(REPO_ROOT, () => {
+          execSync('npx maizzle build production', { stdio: 'inherit' });
+        });
         builtNewsletterPath = resolveBuiltNewsletterPath(
           repoPath(REPO_ROOT, 'build_production'),
           templateName,
@@ -2644,6 +2450,21 @@ async function buildNewsletter() {
       )}\n`,
       'utf8',
     );
+    const contentSlotManifestPath = path.join(outputDir, `${outputName}.content-slots.json`);
+    fs.writeFileSync(
+      contentSlotManifestPath,
+      `${JSON.stringify(
+        buildContentSlotManifest(finalOutputRaw, {
+          sourcePath: sourcePathForWarnings,
+          outputHtmlPath: finalOutputPath,
+          templateName,
+          outputName,
+        }),
+        null,
+        2,
+      )}\n`,
+      'utf8',
+    );
     if (preservedFrontmatter) {
       console.log('🧷 Preserved existing HTML frontmatter');
     }
@@ -2656,6 +2477,7 @@ async function buildNewsletter() {
     console.log('═══════════════════════════════');
     console.log(`📧 File: ${finalOutputPath}`);
     console.log(`🧾 Link tracking manifest: ${linkTrackingManifestPath}`);
+    console.log(`🧩 Content slot manifest: ${contentSlotManifestPath}`);
     console.log(`🎨 Template: ${templateName}`);
     console.log(`📄 Source: ${inputPath}`);
     

@@ -1,0 +1,28 @@
+<if condition="footer.footerCta && (footer.footerCta.enabled || footer.footerCta.eyebrow || footer.footerCta.text || footer.footerCta.primaryAction || footer.footerCta.secondaryAction)">
+  <table border="0" cellpadding="0" cellspacing="0" style="width:100%;border-top:1px solid #000;border-bottom:1px solid #dcdcdc;background:#f5f4f0" role="presentation" class="mob-text footer-cta{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" data-content-slot="footer_cta">
+    <tbody>
+      <tr>
+        <td style="padding:18px 20px 0 20px">
+          <if condition="footer.footerCta.eyebrow">
+            <p class="footer-cta-eyebrow" style="margin:0 0 8px 0;padding:0;color:#555;font:700 11px/16px arial,sans-serif;letter-spacing:.75px;text-transform:uppercase">{{ footer.footerCta.eyebrow }}</p>
+          </if>
+          <if condition="footer.footerCta.text">
+            <p class="footer-cta-copy" style="margin:0;padding:0;color:#333;font:17px/23px georgia,serif">{{ footer.footerCta.text }}</p>
+          </if>
+        </td>
+      </tr>
+      <if condition="footer.footerCta.primaryAction || footer.footerCta.secondaryAction">
+        <tr>
+          <td style="padding:14px 20px 18px 20px">
+            <if condition="footer.footerCta.primaryAction">
+              <a class="footer-cta-button" href="{{ footer.footerCta.primaryAction.url }}" style="display:inline-block;margin:0 12px 12px 0;padding:10px 14px;text-decoration:none;font-family:Arial,sans-serif;font-size:12px;line-height:1.2;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:#111111;border:1px solid #111111;color:#ffffff!important;-webkit-text-fill-color:#ffffff">{{ footer.footerCta.primaryAction.label }}</a>
+            </if>
+            <if condition="footer.footerCta.secondaryAction">
+              <a class="footer-cta-button" href="{{ footer.footerCta.secondaryAction.url }}" style="display:inline-block;margin:0 12px 12px 0;padding:10px 14px;text-decoration:none;font-family:Arial,sans-serif;font-size:12px;line-height:1.2;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:#ffffff;border:1px solid #111111;color:#111111!important;-webkit-text-fill-color:#111111">{{ footer.footerCta.secondaryAction.label }}</a>
+            </if>
+          </td>
+        </tr>
+      </if>
+    </tbody>
+  </table>
+</if>
