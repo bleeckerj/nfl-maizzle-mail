@@ -563,21 +563,32 @@
             "category": {
               "type": "string",
               "minLength": 1
+            },
+            "sourceRef": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Adjacency artifact slug or content entry id. Resolved to an edition-specific popup href by the newsletter build before Maizzle renders; mutually exclusive with href/url."
             }
           },
           "required": [
-            "label",
             "category"
           ],
           "anyOf": [
             {
               "required": [
-                "href"
+                "href",
+                "label"
               ]
             },
             {
               "required": [
-                "url"
+                "url",
+                "label"
+              ]
+            },
+            {
+              "required": [
+                "sourceRef"
               ]
             }
           ],
