@@ -1,0 +1,23 @@
+<!--
+  Email Footer
+  Full footer with subscription-management text, links, social icons, and mailing
+  address. This is the table WRAPPER (class "mob-text mob-footer"); the body inside
+  <tbody> is the FooterBody dispatch (structured slots with a legacy footer_html
+  fallback).
+
+  Slots (all on the email_footer section):
+  - paragraphs (string[])     — Boilerplate / legal body paragraphs (may include inline <a>).
+  - address (text/html)       — Lighter legal line (org, location, copyright) with optional inline <a>.
+  - unsubscribe_label (text)  — Visible unsubscribe link text. unsubscribe_href defaults to "[unsubscribe]".
+  - social_links (object[])   — Optional { label, href, category? } social/profile links.
+  - footer_html (rich_text)   — LEGACY fallback: complete inner HTML of the footer table, used
+                                verbatim only when no structured slot is set.
+
+  See components/FooterBody.html for the full slot docs and the link-tracking note.
+
+  Used by section indexes: [31] in the source email.
+  Reference only — render-time dispatch is inlined in templates/<name>/newsletter.html.
+-->
+<table class="mob-text mob-footer{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><tbody>
+  <component src="templates/near-future-lab-daily-headlines/components/FooterBody.html"></component>
+</tbody></table>

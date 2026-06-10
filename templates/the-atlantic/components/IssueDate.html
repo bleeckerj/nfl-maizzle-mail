@@ -1,0 +1,27 @@
+<!--
+  Issue Date
+  Uppercase monospace date label for the issue.
+
+  Slots:
+  - date (date) — Issue date text
+
+  Used by section indexes: [1] in the source email.
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+  <tbody>
+    <tr>
+      <td class="c-rich-text " style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; padding: 0px 24px 24px 24px;" bgcolor="#ffffff">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+          <tbody>
+            <tr>
+              <td align="left" valign="top" class="e-h4__container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-top: 8px;">
+                <h4 class="e-h4" style="font-family: Courier, monospace; font-size: 14px; font-weight: normal; line-height: 18px; color: #8592a4; margin: 0px 0px 4px 0px; text-transform: uppercase;">{{ section.date }}</h4>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>

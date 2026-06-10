@@ -1,0 +1,94 @@
+{
+  "title": "Near Future Laboratory Daily Headlines Sample",
+  "preheader": "A compact sample for the Near Future Laboratory Daily Headlines style template.",
+  "sections": [
+    {
+      "type": "newsletter_masthead",
+      "logoLink": {
+        "href": "https://nearfuturelaboratory.com/?nfl_link=sample-masthead-home",
+        "label": "Near Future Laboratory home",
+        "category": "operations"
+      },
+      "logo_src": "https://static01.nytimes.com/email-images/NYT-Nameplate-Alerts@2x.png",
+      "logo_alt": "Near Future Laboratory",
+      "logo_width": 190,
+      "title_src": "https://static01.nytimes.com/email-images/Karnak_Headers/NYT-Newsletters-TodaysHeadlines-Header.png",
+      "title_alt": "Today's Headlines",
+      "title_width": 300,
+      "dateline": "June 1, 2026, 4:30 a.m. Eastern time"
+    },
+    {
+      "type": "intro_statement",
+      "label": "From the Editor",
+      "statement": "A short introductory statement can frame the daily headlines before the first article group.",
+      "show_bottom_rule": true
+    },
+    {
+      "type": "ad-block",
+      "title": "Sponsor",
+      "show_bottom_rule": true,
+      "items": [
+        {
+          "adId": "the-manual-pb-interstitial-01"
+        }
+      ]
+    },
+    {
+      "type": "section_article_group",
+      "section_label": "Design",
+      "articles": [
+        {
+          "link": {
+            "href": "https://nearfuturelaboratory.com/?nfl_link=sample-objects-that-talk-back",
+            "label": "Objects That Talk Back",
+            "category": "editorial"
+          },
+          "image_src": "https://picsum.photos/seed/near-future-lab-daily-headlines-design/240/160",
+          "image_alt": "Interface detail",
+          "kicker": "Near Future Laboratory",
+          "headline": "Objects That Talk Back",
+          "lede": "A reusable article row with a kicker, headline, lede, thumbnail and link."
+        },
+        {
+          "link": {
+            "href": "https://nearfuturelaboratory.com/?nfl_link=sample-design-script",
+            "label": "Design as a Script for Daily Life",
+            "category": "editorial"
+          },
+          "image_src": "https://picsum.photos/seed/near-future-lab-daily-headlines-culture/240/160",
+          "image_alt": "Museum installation",
+          "headline": "Design as a Script for Daily Life",
+          "lede": "A second item demonstrates the section's repeated structured article model."
+        }
+	      ],
+	      "show_bottom_rule": true,
+	      "more_link": {
+	        "link": {
+	          "href": "https://nearfuturelaboratory.com/?nfl_link=sample-more-design",
+	          "label": "See more design dispatches",
+	          "category": "editorial"
+	        },
+	        "label": "See more design dispatches"
+	      }
+	    },
+    {
+      "type": "share_this",
+      "eyebrow": "Share this issue",
+      "statement": "Know someone who&rsquo;d want a peek at their near future? Pass it along.",
+      "online_url": "https://nearfuturelaboratory.com/newsletters/2026/sample-issue",
+      "email_href": "mailto:?subject=Near%20Future%20Laboratory%20Daily%20Headlines&body=Thought%20you%27d%20like%20this%3A%20https%3A%2F%2Fnearfuturelaboratory.com%2Fnewsletters%2F2026%2Fsample-issue"
+    },
+    {
+      "type": "email_footer",
+      "paragraphs": [
+        "This is sample footer content for the reusable Near Future Laboratory Daily Headlines style template.",
+        "Boilerplate and legal copy go here. Inline links work too, e.g. <a href=\"https://nearfuturelaboratory.com/contact\" data-link-category=\"site-nav\" data-link-label=\"sample footer | contact\">get in touch</a>."
+      ],
+      "social_links": [
+        { "label": "Website", "href": "https://nearfuturelaboratory.com", "category": "social" }
+      ],
+      "address": "A Research Initiative by <a data-link-category=\"site-nav\" data-link-label=\"sample footer | home\" href=\"https://nearfuturelaboratory.com\">Near Future Laboratory</a>. Venice Beach, CA. (c) 2026.",
+      "unsubscribe_label": "Unsubscribe"
+    }
+  ]
+}

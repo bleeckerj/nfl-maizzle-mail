@@ -47,7 +47,7 @@ title: "{{ page.title }}"
                     <tbody><tr>
                       <td style="padding:0px 0px 0px 0px;" valign="top" width="325">
                         <div style="padding:0px 25px 10px 25px;text-decoration: none; font-size:14px; line-height:22px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #E71B22;letter-spacing:1px; ">{{ section.left_section_label }}</div>
-                        <div style="padding:0px 25px 10px 25px;text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212; "><a href="{{ section.left_image_href }}" style="text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif;color: #121212;" target="_blank"><img alt="{{ section.left_image_alt }}" border="0" class="full-width" src="{{ section.left_image_src }}" width="100%"></a></div>
+                        <div style="padding:0px 25px 10px 25px;text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212; "><a href="{{ section.left_image_href }}" style="text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif;color: #121212;" target="_blank"><div style="{{ section.left_image_frame_style }}"><img alt="{{ section.left_image_alt }}" border="0" class="full-width" src="{{ section.left_image_src }}" style="{{ section.left_image_style }}" width="{{ section.left_image_width }}"></div></a></div>
                         <div style="padding:0px 20px 0px 25px;text-decoration: none; font-size:13px; line-height:19px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #000000;letter-spacing:0px; ">{{ section.left_issue_date }}</div>
                         <div style="text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;padding:0px 20px 5px 25px;"><a href="{{ section.left_title_href }}" style="text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;" target="_blank">{{ section.left_title }}</a></div>
                         <div style="margin:10 0 20px 0px; padding:0px 20px 0px 25px;font-family: Georgia, Times, 'Times New Roman', serif; font-size: 16px; line-height: 22px; color: #121212;">{{ section.left_dek }}</div>
@@ -75,7 +75,7 @@ title: "{{ page.title }}"
                     <tbody><tr>
                       <td style="padding:0px 0px 0px 0px;" valign="top" width="325">
                         <div style="padding:0px 25px 10px 25px;text-decoration: none; font-size:14px; line-height:22px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #E71B22;letter-spacing:1px; ">{{ section.right_section_label }}</div>
-                        <div style="padding:0px 25px 10px 25px;text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212; "><a href="{{ section.right_image_href }}" style="text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif;color: #121212;" target="_blank"><img alt="{{ section.right_image_alt }}" border="0" class="full-width" src="{{ section.right_image_src }}" width="100%"></a></div>
+                        <div style="padding:0px 25px 10px 25px;text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212; "><a href="{{ section.right_image_href }}" style="text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif;color: #121212;" target="_blank"><div style="{{ section.right_image_frame_style }}"><img alt="{{ section.right_image_alt }}" border="0" class="full-width" src="{{ section.right_image_src }}" style="{{ section.right_image_style }}" width="{{ section.right_image_width }}"></div></a></div>
                         <div style="padding:0px 20px 0px 25px;text-decoration: none; font-size:13px; line-height:19px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #000000;letter-spacing:0px; ">{{ section.right_issue_date }}</div>
                         <div style="text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;padding:0px 20px 5px 25px;"><a href="{{ section.right_title_href }}" style="text-decoration: none; font-size:28px; line-height:32px; font-family: Georgia, times, serif; text-align:left; margin:0px 0 10px 0; color: #121212;" target="_blank">{{ section.right_title }}</a></div>
                         <div style="margin:10 0 20px 0px; padding:0px 20px 0px 25px;font-family: Georgia, Times, 'Times New Roman', serif; font-size: 16px; line-height: 22px; color: #121212;">{{ section.right_dek }}</div>
@@ -96,6 +96,31 @@ title: "{{ page.title }}"
               </tr></tbody>
             </table>
             <!--[if gte mso 9]></td></tr></table><![endif]-->
+          </td>
+        </tr></tbody>
+      </table>
+    </if>
+    <if condition="section.type === 'classifieds'">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" class="full-width mob-text" style="width:650px;min-width:650px;" width="650">
+        <tbody><tr>
+          <td bgcolor="{{ section.containerStyles.backgroundColor || '#def1ef' }}" style="padding: 24px 45px 24px 45px;font-size: 1px; color: #e8e7e7; mso-line-height-rule: exactly; line-height: 1px; border-bottom: 1px solid #e8e7e7;" valign="top" width="650">
+            <div style="font-family: Georgia, times, serif; font-size:28px; line-height:34px; color:#121212; margin:0 0 14px 0;">{{ section.title }}</div>
+            <if condition="section.description">
+              <div style="font-family: 'Share Tech Mono', Courier, monospace; font-size:14px; line-height:20px; color:#333333; margin:0 0 14px 0;">{{{ section.description }}}</div>
+            </if>
+            <each loop="item in section.items">
+              <div style="background: rgba(255,255,255,0.78); padding:16px 18px; margin:0 0 12px 0; font-family: 'Share Tech Mono', Courier, monospace; font-size:15px; line-height:22px; color:#000000;">
+                <if condition="item.title">
+                  <div style="font-family: 'Share Tech Mono', Courier, monospace; font-size:16px; line-height:22px; font-weight:bold; text-transform:uppercase; letter-spacing:0.5px; margin:0 0 8px 0;">{{ item.title }}</div>
+                </if>
+                <if condition="item.content">
+                  <div style="margin:0 0 10px 0;">{{{ item.content }}}</div>
+                </if>
+                <if condition="item.link">
+                  <a href="{{ item.link }}" style="font-family: Helvetica, Arial, sans-serif; font-size:14px; line-height:20px; color:#0773b5; text-decoration:underline;" target="_blank">{{ item.linkText || 'Learn More →' }}</a>
+                </if>
+              </div>
+            </each>
           </td>
         </tr></tbody>
       </table>

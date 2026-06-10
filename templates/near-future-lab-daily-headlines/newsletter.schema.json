@@ -1,0 +1,589 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Near Future Laboratory Daily Headlines newsletter schema",
+  "description": "Schema for newsletters built on the \"near-future-lab-daily-headlines\" decompiled component palette.",
+  "type": "object",
+  "properties": {
+    "template": {
+      "type": "string",
+      "const": "near-future-lab-daily-headlines"
+    },
+    "title": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "title": "Masthead Ad Bar",
+            "description": "Top-of-email bar with a 'View in browser' link and an inline ad image (desktop + mobile variants).",
+            "properties": {
+              "type": {
+                "const": "masthead_ad_bar"
+              },
+              "view_in_browser_href": {
+                "type": "string",
+                "description": "Legacy URL for the 'View in browser' link. Prefer viewOnlineLink for new content."
+              },
+              "viewOnlineLink": {
+                "$ref": "#/definitions/trackedLink",
+                "description": "Tracked URL for the 'View in browser' link."
+              },
+              "ad_href": {
+                "type": "string",
+                "description": "Legacy URL the ad image links to. Prefer sponsorLink for new content."
+              },
+              "sponsorLink": {
+                "$ref": "#/definitions/trackedLink",
+                "description": "Tracked sponsor URL the ad image links to."
+              },
+              "ad_src_desktop": {
+                "type": "string",
+                "description": "Desktop ad image src (600px)"
+              },
+              "ad_src_mobile": {
+                "type": "string",
+                "description": "Mobile ad image src (480px)"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Newsletter Masthead",
+            "description": "Publication logo, newsletter title image, and dateline. Top identity block for the email.",
+            "properties": {
+              "type": {
+                "const": "newsletter_masthead"
+              },
+              "logo_href": {
+                "type": "string",
+                "description": "Legacy URL for the logo and title links. Prefer logoLink for new content."
+              },
+              "logoLink": {
+                "$ref": "#/definitions/trackedLink",
+                "description": "Tracked URL for the logo and title links"
+              },
+              "viewOnlineLink": {
+                "$ref": "#/definitions/trackedLink",
+                "description": "Build-injected tracked URL for the public issue page. Do not author this by hand."
+              },
+              "logo_src": {
+                "type": "string",
+                "description": "Near Future Laboratory wordmark image src"
+              },
+              "logo_alt": {
+                "type": "string",
+                "description": "Alt text for Near Future Laboratory wordmark"
+              },
+              "logo_width": {
+                "type": "number",
+                "description": "Rendered masthead logo width in pixels. Defaults to 190 for a reserved reference-style masthead."
+              },
+              "title_src": {
+                "type": "string",
+                "description": "Newsletter title image src"
+              },
+              "title_alt": {
+                "type": "string",
+                "description": "Alt text for newsletter title image"
+              },
+              "title_width": {
+                "type": "number",
+                "description": "Rendered newsletter title image width in pixels. Defaults to 300."
+              },
+              "dateline": {
+                "type": "string",
+                "description": "Date and time string"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Intro Statement",
+            "description": "A short introductory editor's note or framing statement rendered below the masthead and before article groups.",
+            "properties": {
+              "type": {
+                "const": "intro_statement"
+              },
+              "label": {
+                "type": "string",
+                "description": "Optional small uppercase label shown above the statement"
+              },
+              "statement": {
+                "type": "string",
+                "description": "Introductory statement. May include simple <p>, <em>, <strong>, and <a href=\"\"> HTML."
+              },
+              "statement_html": {
+                "type": "string",
+                "description": "Optional rich HTML statement. If present, this is rendered instead of statement. Only simple <p>, <em>, <strong>, and <a href=\"\"> HTML is preserved."
+              },
+              "statement_rendered_html": {
+                "type": "string",
+                "description": "Build-generated sanitized HTML derived from statement_html or an HTML-bearing statement."
+              },
+              "show_bottom_rule": {
+                "type": "boolean",
+                "description": "Render a light divider after the statement"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Ad Block",
+            "description": "Inventory-backed ad card hydrated from nfl-editorial/src/content/ads.json. New ads should use this section with items[0].adId instead of hand-authored ad URLs.",
+            "properties": {
+              "type": {
+                "const": "ad-block"
+              },
+              "title": {
+                "type": "string",
+                "description": "Optional section title. If omitted, the inventory ad title may be promoted during hydration."
+              },
+              "description": {
+                "type": "string",
+                "description": "Optional issue-specific context rendered above the ad card."
+              },
+              "show_bottom_rule": {
+                "type": "boolean",
+                "description": "Render the light divider after the ad card. Defaults to true when omitted."
+              },
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "adId": {
+                      "type": "string",
+                      "description": "Ad inventory id from nfl-editorial/src/content/ads.json."
+                    },
+                    "label": {
+                      "type": "string",
+                      "description": "Optional issue-specific label override."
+                    },
+                    "readMoreText": {
+                      "type": "string",
+                      "description": "Optional CTA label override."
+                    },
+                    "adRenderMode": {
+                      "type": "string",
+                      "enum": [
+                        "snapshot",
+                        "legacy"
+                      ]
+                    },
+                    "adSnapshotPreset": {
+                      "type": "string",
+                      "enum": [
+                        "native",
+                        "1x1",
+                        "4x5",
+                        "9x16"
+                      ]
+                    },
+                    "commerceLockup": {
+                      "type": "boolean",
+                      "description": "Set true to render a commerce ad as its composited lockup image (price + icon baked in) instead of the plain product image. Requires commerce.lockup.snapshotSrc on the ad (generate with `npm run ads:preview -- <adId> --save-snapshot` or the editorial_ads_preview_snapshot MCP tool, then upload to Photarium). Label and sponsor still render as live text."
+                    }
+                  },
+                  "required": [
+                    "adId"
+                  ],
+                  "additionalProperties": true
+                }
+              }
+            },
+            "required": [
+              "type",
+              "items"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Section Article Group",
+            "description": "A named news section (e.g. Top News, World, U.S., Politics) with a bold section heading and 1–5 article cards, each with a thumbnail image, headline, and summary, all linked.",
+            "properties": {
+              "type": {
+                "const": "section_article_group"
+              },
+              "section_label": {
+                "type": "string",
+                "description": "Section heading text (e.g. 'Top News', 'World')"
+              },
+              "articles": {
+                "type": "array",
+                "description": "Structured article rows rendered with the Near Future Laboratory Daily Headlines table layout and inline font styles.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "href": {
+                      "type": "string",
+                      "description": "Legacy article URL. Prefer link for new content."
+                    },
+                    "link": {
+                      "$ref": "#/definitions/trackedLink",
+                      "description": "Tracked article URL"
+                    },
+                    "image_src": {
+                      "type": "string",
+                      "description": "Thumbnail image URL"
+                    },
+                    "image_alt": {
+                      "type": "string",
+                      "description": "Thumbnail alt text"
+                    },
+                    "kicker": {
+                      "type": "string",
+                      "description": "Optional byline, columnist name, or article label shown above the headline"
+                    },
+                    "headline": {
+                      "type": "string",
+                      "description": "Article headline"
+                    },
+                    "lede": {
+                      "type": "string",
+                      "description": "Article summary/deck text"
+                    },
+                    "cta_label": {
+                      "type": "string",
+                      "description": "Optional visual CTA pill text rendered inside the article link"
+                    }
+                  },
+                  "required": [
+                    "headline"
+                  ],
+                  "anyOf": [
+                    {
+                      "required": [
+                        "link"
+                      ]
+                    },
+                    {
+                      "required": [
+                        "href"
+                      ]
+                    }
+                  ],
+                  "additionalProperties": true
+                }
+              },
+	              "show_bottom_rule": {
+	                "type": "boolean",
+	                "description": "Render the bottom divider used before a following 'See more' link"
+	              },
+	              "more_link": {
+	                "type": "object",
+	                "description": "Optional section-level 'See more...' link rendered after the article rows.",
+	                "properties": {
+	                  "href": {
+	                    "type": "string",
+	                    "description": "Legacy URL for the section-level follow-up link. Prefer link for new content."
+	                  },
+	                  "link": {
+	                    "$ref": "#/definitions/trackedLink",
+	                    "description": "Tracked URL for the section-level follow-up link"
+	                  },
+	                  "label": {
+	                    "type": "string",
+	                    "description": "Visible text for the section-level follow-up link"
+	                  }
+	                },
+	                "required": [
+	                  "label"
+	                ],
+	                "anyOf": [
+	                  {
+	                    "required": [
+	                      "link"
+	                    ]
+	                  },
+	                  {
+	                    "required": [
+	                      "href"
+	                    ]
+	                  }
+	                ],
+	                "additionalProperties": true
+	              },
+	              "articles_html": {
+	                "type": "string",
+	                "description": "Legacy fallback: full rendered HTML for all article rows within the section (HTML allowed)"
+	              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+	          {
+	            "type": "object",
+	            "title": "Section 'See More' Link",
+	            "description": "Legacy standalone paragraph with a single 'See more [section] news' link. Prefer section_article_group.more_link for new content.",
+            "properties": {
+              "type": {
+                "const": "section_more_link"
+              },
+              "link_href": {
+                "type": "string",
+                "description": "Legacy URL for the 'see more' link. Prefer link for new content."
+              },
+              "link": {
+                "$ref": "#/definitions/trackedLink",
+                "description": "Tracked URL for the 'see more' link"
+              },
+              "link_label": {
+                "type": "string",
+                "description": "Visible text of the link (e.g. 'See more world news')"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Inline Ad Block",
+            "description": "Mid- or end-of-email inline advertisement with a small label image, a desktop ad image and a hidden mobile ad image.",
+            "properties": {
+              "type": {
+                "const": "inline_ad_block"
+              },
+              "label_src": {
+                "type": "string",
+                "description": "Small 'Ad' label image src"
+              },
+              "ad_href": {
+                "type": "string",
+                "description": "Legacy URL the ad images link to. Prefer sponsorLink for new content."
+              },
+              "sponsorLink": {
+                "$ref": "#/definitions/trackedLink",
+                "description": "Tracked sponsor URL the ad images link to."
+              },
+              "ad_src_desktop": {
+                "type": "string",
+                "description": "Desktop ad image src (600px)"
+              },
+              "ad_src_mobile": {
+                "type": "string",
+                "description": "Mobile ad image src (480px)"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Tracking Pixel Row",
+            "description": "Hidden div containing a row of tiny 2×6 tracking/preheader pixel images, aria-hidden.",
+            "properties": {
+              "type": {
+                "const": "tracking_pixel_row"
+              },
+              "pixels_html": {
+                "type": "string",
+                "description": "Full HTML of all pixel <img> elements (HTML allowed)"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Share This",
+            "description": "Slim 'share this issue' CTA bar (tinted, like the footer CTA). A short statement plus a 'Forward by email' button and an optional 'Open online' button. All copy is configurable; sensible defaults render when omitted.",
+            "properties": {
+              "type": {
+                "const": "share_this"
+              },
+              "eyebrow": {
+                "type": "string",
+                "description": "Small uppercase label above the statement. Defaults to 'Share this issue'."
+              },
+              "statement": {
+                "type": "string",
+                "description": "One-line CTA statement. May include simple <em>/<strong>/<a> HTML. Defaults to a 'pass it along' line."
+              },
+              "email_label": {
+                "type": "string",
+                "description": "Label for the primary (solid) email button. Defaults to 'Forward by email'."
+              },
+              "email_href": {
+                "type": "string",
+                "description": "Pre-formed mailto: URL for the email button (subject/body already percent-encoded). Defaults to a generic mailto: with the online_url in the body."
+              },
+              "online_label": {
+                "type": "string",
+                "description": "Label for the secondary (outline) button. Defaults to 'Open online →'. Button is omitted entirely if online_url is absent."
+              },
+              "online_url": {
+                "type": "string",
+                "description": "Canonical public issue URL (plain string, not a tracked-link object) for the 'Open online' button and the default email body. Use the issue's archive URL, e.g. https://nearfuturelaboratory.com/newsletters/<year>/<issueId>. The build auto-stamps data-link tracking when it matches that archive pattern."
+              },
+              "background": {
+                "type": "string",
+                "description": "CSS color for the bar background. Defaults to '#f5f4f0' (the footer-CTA tint). Honored in light mode; dark-mode flatten overrides it (see README)."
+              },
+              "text_color": {
+                "type": "string",
+                "description": "CSS color for the statement copy. Defaults to '#333'. Honored in light mode; dark-mode flatten overrides it."
+              },
+              "eyebrow_color": {
+                "type": "string",
+                "description": "CSS color for the small uppercase eyebrow label. Defaults to '#555'."
+              },
+              "space_top": {
+                "type": ["integer", "string"],
+                "description": "Vertical gap (px) above the bar so it reads as its own section rather than glued to the section above. Defaults to 28."
+              },
+              "space_bottom": {
+                "type": ["integer", "string"],
+                "description": "Vertical gap (px) below the bar. Defaults to 28."
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Email Footer",
+            "description": "Full footer with subscription management text, links, social icons, legal logos, and mailing address. Prefer the structured slots (paragraphs / address / unsubscribe_label / social_links); footer_html is kept as a legacy fallback used only when no structured slot is set.",
+            "properties": {
+              "type": {
+                "const": "email_footer"
+              },
+              "paragraphs": {
+                "type": "array",
+                "description": "Boilerplate/legal body paragraphs (the #666 block under the heavy black rule). Each entry is one paragraph's inner HTML and may contain simple inline markup including <a href> links. Add data-link-category/data-link-label to footer anchors for tracking (same convention as footer_html).",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "address": {
+                "type": "string",
+                "description": "The lighter #999 legal line (organization, location, copyright). May contain an inline <a> (e.g. the publication link). Rendered in the same paragraph as the unsubscribe link, separated by a non-breaking space."
+              },
+              "unsubscribe_label": {
+                "type": "string",
+                "description": "Visible text for the unsubscribe link (e.g. 'Unsubscribe'). The link is omitted entirely when this is absent."
+              },
+              "unsubscribe_href": {
+                "type": "string",
+                "description": "Href for the unsubscribe link. Defaults to '[unsubscribe]' (the ESP merge-tag placeholder), which the live-link check leaves unvalidated."
+              },
+              "social_links": {
+                "type": "array",
+                "description": "Optional row of social/profile links rendered above the address line.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "description": "Visible link text (e.g. 'Mastodon')."
+                    },
+                    "href": {
+                      "type": "string",
+                      "description": "Destination URL. Keep it real or mailto so the live-link check passes."
+                    },
+                    "category": {
+                      "type": "string",
+                      "description": "data-link-category for tracking. Defaults to 'social'."
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "href"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "footer_html": {
+                "type": "string",
+                "description": "Legacy fallback: complete inner HTML of the footer table (the <tr><td>… rows). Used verbatim only when no structured slot (paragraphs/address/unsubscribe_label/social_links) is set."
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "template",
+    "sections"
+  ],
+  "definitions": {
+    "trackedLink": {
+      "description": "Tracked link accepted by nfl-maizzle-mail. Object-valued links normalize to URL strings before Maizzle renders and then enrich matching anchors with data-link-label and data-link-category.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string",
+              "format": "uri"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri"
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "category": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "label",
+            "category"
+          ],
+          "anyOf": [
+            {
+              "required": [
+                "href"
+              ]
+            },
+            {
+              "required": [
+                "url"
+              ]
+            }
+          ],
+          "additionalProperties": true
+        }
+      ]
+    }
+  }
+}

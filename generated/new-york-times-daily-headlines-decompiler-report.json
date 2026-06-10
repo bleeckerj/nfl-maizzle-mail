@@ -1,0 +1,1926 @@
+{
+  "source": "generated/new-york-times-daily-headlines.sanitized.html",
+  "templateName": "new-york-times-daily-headlines",
+  "layoutRoot": "div",
+  "sectionCount": 32,
+  "sections": [
+    {
+      "index": 0,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "View in browser",
+      "textLength": 15,
+      "imageCount": 2,
+      "linkCount": 3,
+      "headings": [],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-137",
+          "alt": "Ad",
+          "width": "600",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-138",
+          "alt": "Ad",
+          "width": "480",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-135",
+          "text": "View in browser"
+        },
+        {
+          "href": "https://redacted.invalid/href-136",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-136",
+          "text": ""
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "padding": "15px 0 5px"
+        },
+        "contentStyles": {},
+        "linkStyles": {
+          "color": "#666",
+          "textDecoration": "none"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 1603
+    },
+    {
+      "index": 1,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "June 1, 2026, 4:30 a.m. Eastern time",
+      "textLength": 36,
+      "imageCount": 2,
+      "linkCount": 2,
+      "headings": [],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-140",
+          "alt": "The New York Times",
+          "width": "",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-141",
+          "alt": "Today's Headlines",
+          "width": "",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-139",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-139",
+          "text": ""
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "borderTop": "1px solid #000",
+          "padding": "0",
+          "borderBottom": "0 solid #000"
+        },
+        "contentStyles": {},
+        "linkStyles": {},
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 1014
+    },
+    {
+      "index": 2,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "Top NewsTrump Hits the Stalemate Phase of His International Interventions, and It StingsIn Ukraine, Gaza and now Iran, President Trump’s early declarations of easy wins have given way to harsh reality.Iran War Live Updates: U.S. and Iran Exchange New AttacksU.S. Central Command s",
+      "textLength": 687,
+      "imageCount": 3,
+      "linkCount": 6,
+      "headings": [
+        {
+          "level": 2,
+          "text": "Top News"
+        },
+        {
+          "level": 3,
+          "text": "Trump Hits the Stalemate Phase of His International Interventions, and It Stings"
+        },
+        {
+          "level": 3,
+          "text": "Iran War Live Updates: U.S. and Iran Exchange New Attacks"
+        },
+        {
+          "level": 3,
+          "text": "Trump Administration Sees Striking Exodus of Legal Talent"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-143",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-145",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-147",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-142",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-142",
+          "text": "Trump Hits the Stalemate Phase of His International Interventions, and It StingsIn Ukraine, Gaza and now Iran, President Trump’s early declarations of easy wins have given way to harsh reality."
+        },
+        {
+          "href": "https://redacted.invalid/href-144",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-144",
+          "text": "Iran War Live Updates: U.S. and Iran Exchange New AttacksU.S. Central Command said it conducted a round of “self-defense strikes” on military targets in southern Iran over the weekend. Iran’s military later said it had targeted a base in retaliation."
+        },
+        {
+          "href": "https://redacted.invalid/href-146",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-146",
+          "text": "Trump Administration Sees Striking Exodus of Legal TalentThe departure of more than 10,000 federal lawyers has left some agencies without sufficient staff and has boosted the ranks of state attorneys general offices and advocacy groups."
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "padding": "12px 0 13px 0",
+          "borderTop": "9px solid #000",
+          "borderBottom": "1px solid #000",
+          "paddingTop": "15px"
+        },
+        "contentStyles": {
+          "color": "#333"
+        },
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "none"
+        },
+        "headingStyles": {
+          "color": "#000"
+        }
+      },
+      "outerHTMLLength": 4154
+    },
+    {
+      "index": 3,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "WorldFar-Right Outsider Advances in Colombia’s Heated Presidential ElectionThe candidate, Abelardo de la Espriella, will face a senator from the left-wing party of the outgoing president, Gustavo Petro, in a June runoff.To Improve Ukraine’s Military, She Calls Out the Ugly PartsO",
+      "textLength": 677,
+      "imageCount": 3,
+      "linkCount": 6,
+      "headings": [
+        {
+          "level": 2,
+          "text": "World"
+        },
+        {
+          "level": 3,
+          "text": "Far-Right Outsider Advances in Colombia’s Heated Presidential Election"
+        },
+        {
+          "level": 3,
+          "text": "To Improve Ukraine’s Military, She Calls Out the Ugly Parts"
+        },
+        {
+          "level": 3,
+          "text": "India’s Hindu Right Has a New Hero: A 17th-Century Warrior King"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-149",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-151",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-153",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-148",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-148",
+          "text": "Far-Right Outsider Advances in Colombia’s Heated Presidential ElectionThe candidate, Abelardo de la Espriella, will face a senator from the left-wing party of the outgoing president, Gustavo Petro, in a June runoff."
+        },
+        {
+          "href": "https://redacted.invalid/href-150",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-150",
+          "text": "To Improve Ukraine’s Military, She Calls Out the Ugly PartsOlha Reshetylova has been tasked by the government with overseeing soldiers’ rights. Some commanders resent her, but she says her work makes the armed forces stronger."
+        },
+        {
+          "href": "https://redacted.invalid/href-152",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-152",
+          "text": "India’s Hindu Right Has a New Hero: A 17th-Century Warrior KingStatues of Shivaji are rising everywhere. The founder of the Maratha empire who fought against the Mughal dynasty is now a symbol for nationalists remaking the country."
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "padding": "12px 0 13px 0",
+          "borderTop": "9px solid #000",
+          "borderBottom": "1px solid #000",
+          "paddingTop": "15px"
+        },
+        "contentStyles": {
+          "color": "#333"
+        },
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "none"
+        },
+        "headingStyles": {
+          "color": "#000"
+        }
+      },
+      "outerHTMLLength": 4241
+    },
+    {
+      "index": 4,
+      "tag": "p",
+      "className": "",
+      "id": "",
+      "textSnippet": "See more world news",
+      "textLength": 19,
+      "imageCount": 0,
+      "linkCount": 1,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-154",
+          "text": "See more world news"
+        }
+      ],
+      "styles": {
+        "containerStyles": {},
+        "contentStyles": {},
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 243
+    },
+    {
+      "index": 5,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "U.S.Notre Dame Students Abused by Priest in ‘Weighing Scheme,’ Report FindsAn investigation commissioned by Notre Dame found that the Catholic university could have done more to respond to allegations of sexual misconduct.The Earth Shook. Tanks Burst. Now Kona Faces a Water Crisi",
+      "textLength": 575,
+      "imageCount": 3,
+      "linkCount": 6,
+      "headings": [
+        {
+          "level": 2,
+          "text": "U.S."
+        },
+        {
+          "level": 3,
+          "text": "Notre Dame Students Abused by Priest in ‘Weighing Scheme,’ Report Finds"
+        },
+        {
+          "level": 3,
+          "text": "The Earth Shook. Tanks Burst. Now Kona Faces a Water Crisis."
+        },
+        {
+          "level": 3,
+          "text": "In U.F.O. Files, Some Christians See Vexing Questions — and Demons"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-156",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-158",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-160",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-155",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-155",
+          "text": "Notre Dame Students Abused by Priest in ‘Weighing Scheme,’ Report FindsAn investigation commissioned by Notre Dame found that the Catholic university could have done more to respond to allegations of sexual misconduct."
+        },
+        {
+          "href": "https://redacted.invalid/href-157",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-157",
+          "text": "The Earth Shook. Tanks Burst. Now Kona Faces a Water Crisis.An earthquake destroyed many water catchment systems on Hawaii’s Big Island, capping a spring filled with devastating floods."
+        },
+        {
+          "href": "https://redacted.invalid/href-159",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-159",
+          "text": "In U.F.O. Files, Some Christians See Vexing Questions — and DemonsThe prospect of intelligent life elsewhere in the universe raises unsettling theological implications."
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "padding": "12px 0 13px 0",
+          "borderTop": "9px solid #000",
+          "borderBottom": "1px solid #000",
+          "paddingTop": "15px"
+        },
+        "contentStyles": {
+          "color": "#333"
+        },
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "none"
+        },
+        "headingStyles": {
+          "color": "#000"
+        }
+      },
+      "outerHTMLLength": 4139
+    },
+    {
+      "index": 6,
+      "tag": "p",
+      "className": "",
+      "id": "",
+      "textSnippet": "See more U.S. news",
+      "textLength": 18,
+      "imageCount": 0,
+      "linkCount": 1,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-161",
+          "text": "See more U.S. news"
+        }
+      ],
+      "styles": {
+        "containerStyles": {},
+        "contentStyles": {},
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 242
+    },
+    {
+      "index": 7,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "PoliticsTrump Is Dominating G.O.P. Primaries. Does That Mean Victory in the Midterms?Come November, the Republican Party will need the support of voters outside of President Trump’s base, many of whom are deeply dissatisfied with the economy and the Iran war.After Voting Decision",
+      "textLength": 670,
+      "imageCount": 3,
+      "linkCount": 6,
+      "headings": [
+        {
+          "level": 2,
+          "text": "Politics"
+        },
+        {
+          "level": 3,
+          "text": "Trump Is Dominating G.O.P. Primaries. Does That Mean Victory in the Midterms?"
+        },
+        {
+          "level": 3,
+          "text": "After Voting Decision, a Month of Political Earthquakes Across the South"
+        },
+        {
+          "level": 3,
+          "text": "The Wars, Raids and Airstrikes Under Trump"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-163",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-165",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-167",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-162",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-162",
+          "text": "Trump Is Dominating G.O.P. Primaries. Does That Mean Victory in the Midterms?Come November, the Republican Party will need the support of voters outside of President Trump’s base, many of whom are deeply dissatisfied with the economy and the Iran war."
+        },
+        {
+          "href": "https://redacted.invalid/href-164",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-164",
+          "text": "After Voting Decision, a Month of Political Earthquakes Across the SouthAs Republicans rush to redraw the region’s congressional maps, some voters are confused and concerned, and civil rights activists are gearing up for the fight of a generation."
+        },
+        {
+          "href": "https://redacted.invalid/href-166",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-166",
+          "text": "The Wars, Raids and Airstrikes Under TrumpThe United States has been involved in many military operations around the world since President Trump returned to office."
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "padding": "12px 0 13px 0",
+          "borderTop": "9px solid #000",
+          "borderBottom": "1px solid #000",
+          "paddingTop": "15px"
+        },
+        "contentStyles": {
+          "color": "#333"
+        },
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "none"
+        },
+        "headingStyles": {
+          "color": "#000"
+        }
+      },
+      "outerHTMLLength": 4234
+    },
+    {
+      "index": 8,
+      "tag": "p",
+      "className": "",
+      "id": "",
+      "textSnippet": "See more political news",
+      "textLength": 23,
+      "imageCount": 0,
+      "linkCount": 1,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-168",
+          "text": "See more political news"
+        }
+      ],
+      "styles": {
+        "containerStyles": {},
+        "contentStyles": {},
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 247
+    },
+    {
+      "index": 9,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "BusinessNvidia Has a Plan to Put Its Chips in Personal ComputersThe world’s most valuable company is chasing Intel and Apple as it tries to bring A.I. agents to laptops and desktops.Pulling Customs From ‘Sanctuary’ City Airports Would Cause Chaos, Business Groups SayHomeland Secu",
+      "textLength": 659,
+      "imageCount": 3,
+      "linkCount": 6,
+      "headings": [
+        {
+          "level": 2,
+          "text": "Business"
+        },
+        {
+          "level": 3,
+          "text": "Nvidia Has a Plan to Put Its Chips in Personal Computers"
+        },
+        {
+          "level": 3,
+          "text": "Pulling Customs From ‘Sanctuary’ City Airports Would Cause Chaos, Business Groups Say"
+        },
+        {
+          "level": 3,
+          "text": "An Air Taxi Lands in Manhattan, but You Can’t Fly in It Yet"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-170",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-172",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-174",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-169",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-169",
+          "text": "Nvidia Has a Plan to Put Its Chips in Personal ComputersThe world’s most valuable company is chasing Intel and Apple as it tries to bring A.I. agents to laptops and desktops."
+        },
+        {
+          "href": "https://redacted.invalid/href-171",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-171",
+          "text": "Pulling Customs From ‘Sanctuary’ City Airports Would Cause Chaos, Business Groups SayHomeland Security Secretary Markwayne Mullin’s proposal could block hubs like Boston, New York and Los Angeles from accepting international flights."
+        },
+        {
+          "href": "https://redacted.invalid/href-173",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-173",
+          "text": "An Air Taxi Lands in Manhattan, but You Can’t Fly in It YetAviation start-ups and the Trump administration want to replace helicopters with electric aircraft, but the new vehicles still have to pass arduous tests before the public can use them."
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "padding": "12px 0 13px 0",
+          "borderTop": "9px solid #000",
+          "borderBottom": "1px solid #000",
+          "paddingTop": "15px"
+        },
+        "contentStyles": {
+          "color": "#333"
+        },
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "none"
+        },
+        "headingStyles": {
+          "color": "#000"
+        }
+      },
+      "outerHTMLLength": 4223
+    },
+    {
+      "index": 10,
+      "tag": "p",
+      "className": "",
+      "id": "",
+      "textSnippet": "See more business news",
+      "textLength": 22,
+      "imageCount": 0,
+      "linkCount": 1,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-175",
+          "text": "See more business news"
+        }
+      ],
+      "styles": {
+        "containerStyles": {},
+        "contentStyles": {},
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 246
+    },
+    {
+      "index": 11,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "New YorkHigh-Speed Sailboats Race Past the New York SkylineSailGP, a two-day competition some say is like Formula 1 on the water, has replaced part of the normal traffic in New York Harbor with high-tech catamarans.A Long History of Handwritten Police Logs Comes to an EndCommand ",
+      "textLength": 725,
+      "imageCount": 3,
+      "linkCount": 6,
+      "headings": [
+        {
+          "level": 2,
+          "text": "New York"
+        },
+        {
+          "level": 3,
+          "text": "High-Speed Sailboats Race Past the New York Skyline"
+        },
+        {
+          "level": 3,
+          "text": "A Long History of Handwritten Police Logs Comes to an End"
+        },
+        {
+          "level": 3,
+          "text": "Israel Day Parade in New York Proceeds Peacefully, Without the Mayor"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-177",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-179",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-181",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-176",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-176",
+          "text": "High-Speed Sailboats Race Past the New York SkylineSailGP, a two-day competition some say is like Formula 1 on the water, has replaced part of the normal traffic in New York Harbor with high-tech catamarans."
+        },
+        {
+          "href": "https://redacted.invalid/href-178",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-178",
+          "text": "A Long History of Handwritten Police Logs Comes to an EndCommand logs date back as far as the 1860s, bearing witness to everything from the Civil War draft riots to the Sept. 11 terror attacks. The Police Department will soon replace the analog system with a digital one."
+        },
+        {
+          "href": "https://redacted.invalid/href-180",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-180",
+          "text": "Israel Day Parade in New York Proceeds Peacefully, Without the MayorMayor Zohran Mamdani did not attend the annual parade, which took place amid a deterioration of public support for Israel and rising antisemitism across the United States."
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "padding": "12px 0 13px 0",
+          "borderTop": "9px solid #000",
+          "borderBottom": "1px solid #000",
+          "paddingTop": "15px"
+        },
+        "contentStyles": {
+          "color": "#333"
+        },
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "none"
+        },
+        "headingStyles": {
+          "color": "#000"
+        }
+      },
+      "outerHTMLLength": 4289
+    },
+    {
+      "index": 12,
+      "tag": "p",
+      "className": "",
+      "id": "",
+      "textSnippet": "See more New York news",
+      "textLength": 22,
+      "imageCount": 0,
+      "linkCount": 1,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-182",
+          "text": "See more New York news"
+        }
+      ],
+      "styles": {
+        "containerStyles": {},
+        "contentStyles": {},
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 246
+    },
+    {
+      "index": 13,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "ArtsAudio | Why ‘Euphoria’ Had to End This Way. For Good.In an exclusive interview, Sam Levinson explained why he felt it was time to bring the series to a close and responded to its detractors.‘Othello’ Review: Wendell Pierce Steps Into Iago’s Twisted WebThis production in the n",
+      "textLength": 528,
+      "imageCount": 3,
+      "linkCount": 6,
+      "headings": [
+        {
+          "level": 2,
+          "text": "Arts"
+        },
+        {
+          "level": 3,
+          "text": "Audio | Why ‘Euphoria’ Had to End This Way. For Good."
+        },
+        {
+          "level": 3,
+          "text": "‘Othello’ Review: Wendell Pierce Steps Into Iago’s Twisted Web"
+        },
+        {
+          "level": 3,
+          "text": "10-Minute Challenge: ‘The Painted Room’ by Lois Dodd"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-184",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-186",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-188",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-183",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-183",
+          "text": "Audio | Why ‘Euphoria’ Had to End This Way. For Good.In an exclusive interview, Sam Levinson explained why he felt it was time to bring the series to a close and responded to its detractors."
+        },
+        {
+          "href": "https://redacted.invalid/href-185",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-185",
+          "text": "‘Othello’ Review: Wendell Pierce Steps Into Iago’s Twisted WebThis production in the nation’s capital, with an enticingly opaque Iago, attempts to make Shakespeare’s tragedy relevant to our age of conspiracies."
+        },
+        {
+          "href": "https://redacted.invalid/href-187",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-187",
+          "text": "10-Minute Challenge: ‘The Painted Room’ by Lois DoddWe’d like you to look at one piece of art for 10 minutes, uninterrupted."
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "padding": "12px 0 13px 0",
+          "borderTop": "9px solid #000",
+          "borderBottom": "1px solid #000",
+          "paddingTop": "15px"
+        },
+        "contentStyles": {
+          "color": "#333"
+        },
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "none"
+        },
+        "headingStyles": {
+          "color": "#000"
+        }
+      },
+      "outerHTMLLength": 4124
+    },
+    {
+      "index": 14,
+      "tag": "p",
+      "className": "",
+      "id": "",
+      "textSnippet": "See more arts news",
+      "textLength": 18,
+      "imageCount": 0,
+      "linkCount": 1,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-189",
+          "text": "See more arts news"
+        }
+      ],
+      "styles": {
+        "containerStyles": {},
+        "contentStyles": {},
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 242
+    },
+    {
+      "index": 15,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "BooksThis Modern Fable Uses ‘Uncle Remus’ to Reclaim Black HistoryIn “Rabbit, Fox, Tar,” a white neighborhood’s local election is complicated when a mysterious, dark-skinned woman suddenly appears in town.The Hit Man Who Owns a Radio Station, and Other Riveting Crime NovelsOur cr",
+      "textLength": 316,
+      "imageCount": 2,
+      "linkCount": 4,
+      "headings": [
+        {
+          "level": 2,
+          "text": "Books"
+        },
+        {
+          "level": 3,
+          "text": "This Modern Fable Uses ‘Uncle Remus’ to Reclaim Black History"
+        },
+        {
+          "level": 3,
+          "text": "The Hit Man Who Owns a Radio Station, and Other Riveting Crime Novels"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-191",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-193",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-190",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-190",
+          "text": "This Modern Fable Uses ‘Uncle Remus’ to Reclaim Black HistoryIn “Rabbit, Fox, Tar,” a white neighborhood’s local election is complicated when a mysterious, dark-skinned woman suddenly appears in town."
+        },
+        {
+          "href": "https://redacted.invalid/href-192",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-192",
+          "text": "The Hit Man Who Owns a Radio Station, and Other Riveting Crime NovelsOur critic on four terrific new mysteries."
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "padding": "12px 0 13px 0",
+          "borderTop": "9px solid #000",
+          "borderBottom": "1px solid #000",
+          "paddingTop": "15px"
+        },
+        "contentStyles": {
+          "color": "#333"
+        },
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "none"
+        },
+        "headingStyles": {
+          "color": "#000"
+        }
+      },
+      "outerHTMLLength": 2827
+    },
+    {
+      "index": 16,
+      "tag": "p",
+      "className": "",
+      "id": "",
+      "textSnippet": "See more books news",
+      "textLength": 19,
+      "imageCount": 0,
+      "linkCount": 1,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-194",
+          "text": "See more books news"
+        }
+      ],
+      "styles": {
+        "containerStyles": {},
+        "contentStyles": {},
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 243
+    },
+    {
+      "index": 17,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "FoodGrilled Za’atar Chicken, Lemon Sorbet and More Alfresco DaydreamsAfter a long stretch of dining out on the road, I’m fantasizing about enjoying these recipes at home, in the fresh air.Dijon Chicken, Tomatoes and ScallionsAnd more recipes to harness a fresh jar of eye-watering",
+      "textLength": 303,
+      "imageCount": 2,
+      "linkCount": 4,
+      "headings": [
+        {
+          "level": 2,
+          "text": "Food"
+        },
+        {
+          "level": 3,
+          "text": "Grilled Za’atar Chicken, Lemon Sorbet and More Alfresco Daydreams"
+        },
+        {
+          "level": 3,
+          "text": "Dijon Chicken, Tomatoes and Scallions"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-196",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-198",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-195",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-195",
+          "text": "Grilled Za’atar Chicken, Lemon Sorbet and More Alfresco DaydreamsAfter a long stretch of dining out on the road, I’m fantasizing about enjoying these recipes at home, in the fresh air."
+        },
+        {
+          "href": "https://redacted.invalid/href-197",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-197",
+          "text": "Dijon Chicken, Tomatoes and ScallionsAnd more recipes to harness a fresh jar of eye-watering-in-a-good-way mustard."
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "padding": "12px 0 13px 0",
+          "borderTop": "9px solid #000",
+          "borderBottom": "1px solid #000",
+          "paddingTop": "15px"
+        },
+        "contentStyles": {
+          "color": "#333"
+        },
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "none"
+        },
+        "headingStyles": {
+          "color": "#000"
+        }
+      },
+      "outerHTMLLength": 2814
+    },
+    {
+      "index": 18,
+      "tag": "p",
+      "className": "",
+      "id": "",
+      "textSnippet": "See more food news",
+      "textLength": 18,
+      "imageCount": 0,
+      "linkCount": 1,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-199",
+          "text": "See more food news"
+        }
+      ],
+      "styles": {
+        "containerStyles": {},
+        "contentStyles": {},
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 242
+    },
+    {
+      "index": 19,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "Science2025 Wildfires Were the Costliest Ever, Researchers SaySevere, hard-to-control blazes in densely populated areas like Los Angeles drove the year’s record losses.",
+      "textLength": 168,
+      "imageCount": 1,
+      "linkCount": 2,
+      "headings": [
+        {
+          "level": 2,
+          "text": "Science"
+        },
+        {
+          "level": 3,
+          "text": "2025 Wildfires Were the Costliest Ever, Researchers Say"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-201",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-200",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-200",
+          "text": "2025 Wildfires Were the Costliest Ever, Researchers SaySevere, hard-to-control blazes in densely populated areas like Los Angeles drove the year’s record losses."
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "padding": "12px 0 13px 0",
+          "borderTop": "9px solid #000",
+          "borderBottom": "1px solid #000",
+          "paddingTop": "15px"
+        },
+        "contentStyles": {
+          "color": "#333"
+        },
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "none"
+        },
+        "headingStyles": {
+          "color": "#000"
+        }
+      },
+      "outerHTMLLength": 1626
+    },
+    {
+      "index": 20,
+      "tag": "p",
+      "className": "",
+      "id": "",
+      "textSnippet": "See more science news",
+      "textLength": 21,
+      "imageCount": 0,
+      "linkCount": 1,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-202",
+          "text": "See more science news"
+        }
+      ],
+      "styles": {
+        "containerStyles": {},
+        "contentStyles": {},
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 245
+    },
+    {
+      "index": 21,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "Real EstateMore Shelters Make Room for Four-Legged FriendsShelters recognize that many would rather sleep on the street than leave their animals behind.",
+      "textLength": 152,
+      "imageCount": 1,
+      "linkCount": 2,
+      "headings": [
+        {
+          "level": 2,
+          "text": "Real Estate"
+        },
+        {
+          "level": 3,
+          "text": "More Shelters Make Room for Four-Legged Friends"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-204",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-203",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-203",
+          "text": "More Shelters Make Room for Four-Legged FriendsShelters recognize that many would rather sleep on the street than leave their animals behind."
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "padding": "12px 0 13px 0",
+          "borderTop": "9px solid #000",
+          "borderBottom": "1px solid #000",
+          "paddingTop": "15px"
+        },
+        "contentStyles": {
+          "color": "#333"
+        },
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "none"
+        },
+        "headingStyles": {
+          "color": "#000"
+        }
+      },
+      "outerHTMLLength": 1610
+    },
+    {
+      "index": 22,
+      "tag": "p",
+      "className": "",
+      "id": "",
+      "textSnippet": "See more real estate news",
+      "textLength": 25,
+      "imageCount": 0,
+      "linkCount": 1,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-205",
+          "text": "See more real estate news"
+        }
+      ],
+      "styles": {
+        "containerStyles": {},
+        "contentStyles": {},
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 249
+    },
+    {
+      "index": 23,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "Fashion & StyleThe Woman Who Beat Zero BondWhen a buyer sought to convert the historic Hedges Inn in East Hampton into a sceney private club, Sarah Wetenhall had a different idea.Lights, Camera … I DoMovie theaters are emerging as an unexpected and inexpensive wedding venue — sea",
+      "textLength": 326,
+      "imageCount": 2,
+      "linkCount": 4,
+      "headings": [
+        {
+          "level": 2,
+          "text": "Fashion & Style"
+        },
+        {
+          "level": 3,
+          "text": "The Woman Who Beat Zero Bond"
+        },
+        {
+          "level": 3,
+          "text": "Lights, Camera … I Do"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-207",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-209",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-206",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-206",
+          "text": "The Woman Who Beat Zero BondWhen a buyer sought to convert the historic Hedges Inn in East Hampton into a sceney private club, Sarah Wetenhall had a different idea."
+        },
+        {
+          "href": "https://redacted.invalid/href-208",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-208",
+          "text": "Lights, Camera … I DoMovie theaters are emerging as an unexpected and inexpensive wedding venue — seating, stage and (some) entertainment included."
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "padding": "12px 0 13px 0",
+          "borderTop": "9px solid #000",
+          "borderBottom": "1px solid #000",
+          "paddingTop": "15px"
+        },
+        "contentStyles": {
+          "color": "#333"
+        },
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "none"
+        },
+        "headingStyles": {
+          "color": "#000"
+        }
+      },
+      "outerHTMLLength": 2841
+    },
+    {
+      "index": 24,
+      "tag": "p",
+      "className": "",
+      "id": "",
+      "textSnippet": "See more fashion news",
+      "textLength": 21,
+      "imageCount": 0,
+      "linkCount": 1,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-210",
+          "text": "See more fashion news"
+        }
+      ],
+      "styles": {
+        "containerStyles": {},
+        "contentStyles": {},
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 245
+    },
+    {
+      "index": 25,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "MagazineI Profile Celebrities for a Living. Nothing Prepared Me for Tilly Norwood.The A.I. actress on her craft, the future of film and how she definitely does not intend to murder us.",
+      "textLength": 184,
+      "imageCount": 1,
+      "linkCount": 2,
+      "headings": [
+        {
+          "level": 2,
+          "text": "Magazine"
+        },
+        {
+          "level": 3,
+          "text": "I Profile Celebrities for a Living. Nothing Prepared Me for Tilly Norwood."
+        }
+      ],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-212",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-211",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-211",
+          "text": "I Profile Celebrities for a Living. Nothing Prepared Me for Tilly Norwood.The A.I. actress on her craft, the future of film and how she definitely does not intend to murder us."
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "padding": "12px 0 13px 0",
+          "borderTop": "9px solid #000",
+          "borderBottom": "1px solid #000",
+          "paddingTop": "15px"
+        },
+        "contentStyles": {
+          "color": "#333"
+        },
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "none"
+        },
+        "headingStyles": {
+          "color": "#000"
+        }
+      },
+      "outerHTMLLength": 1642
+    },
+    {
+      "index": 26,
+      "tag": "p",
+      "className": "",
+      "id": "",
+      "textSnippet": "See more magazine content",
+      "textLength": 25,
+      "imageCount": 0,
+      "linkCount": 1,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-213",
+          "text": "See more magazine content"
+        }
+      ],
+      "styles": {
+        "containerStyles": {},
+        "contentStyles": {},
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 249
+    },
+    {
+      "index": 27,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "OpinionDavid FrenchThe Fire of Stupidity Cannot Be ContainedWe seem to have forgotten more or less everything.Guest EssayMake America Read AgainThe reading crisis is real, but the solution does not require new inventions.Ezra KleinThere’s Something Else We Should Be Worrying Abou",
+      "textLength": 741,
+      "imageCount": 5,
+      "linkCount": 10,
+      "headings": [
+        {
+          "level": 2,
+          "text": "Opinion"
+        },
+        {
+          "level": 3,
+          "text": "The Fire of Stupidity Cannot Be Contained"
+        },
+        {
+          "level": 3,
+          "text": "Make America Read Again"
+        },
+        {
+          "level": 3,
+          "text": "There’s Something Else We Should Be Worrying About"
+        },
+        {
+          "level": 3,
+          "text": "The Problem With Martin Luther King Jr.’s Origin Story"
+        },
+        {
+          "level": 3,
+          "text": "There’s Nothing Wrong With Wanting Men"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-215",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-217",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-219",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-221",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-223",
+          "alt": "",
+          "width": "120",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-214",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-214",
+          "text": "David FrenchThe Fire of Stupidity Cannot Be ContainedWe seem to have forgotten more or less everything."
+        },
+        {
+          "href": "https://redacted.invalid/href-216",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-216",
+          "text": "Guest EssayMake America Read AgainThe reading crisis is real, but the solution does not require new inventions."
+        },
+        {
+          "href": "https://redacted.invalid/href-218",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-218",
+          "text": "Ezra KleinThere’s Something Else We Should Be Worrying AboutWe’ve heard a lot about what it can do for businesses, and for individuals, but what about society?"
+        },
+        {
+          "href": "https://redacted.invalid/href-220",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-220",
+          "text": "Guest EssayThe Problem With Martin Luther King Jr.’s Origin StoryA civil-rights leader’s friendship with a white boy sits at the heart of his account of how he encountered racism."
+        },
+        {
+          "href": "https://redacted.invalid/href-222",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-222",
+          "text": "Guest EssayThere’s Nothing Wrong With Wanting Men“Heteropessimism” is all the rage — but really, there’s never been a better time to be looking for love. Go on, be a hetero-optimist."
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "padding": "12px 0 13px 0",
+          "borderTop": "9px solid #000",
+          "borderBottom": "1px solid #000",
+          "paddingTop": "15px"
+        },
+        "contentStyles": {
+          "color": "#555"
+        },
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "none"
+        },
+        "headingStyles": {
+          "color": "#000"
+        }
+      },
+      "outerHTMLLength": 6991
+    },
+    {
+      "index": 28,
+      "tag": "p",
+      "className": "",
+      "id": "",
+      "textSnippet": "See more Opinion",
+      "textLength": 16,
+      "imageCount": 0,
+      "linkCount": 1,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-224",
+          "text": "See more Opinion"
+        }
+      ],
+      "styles": {
+        "containerStyles": {},
+        "contentStyles": {},
+        "linkStyles": {
+          "color": "#333",
+          "textDecoration": "underline"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 240
+    },
+    {
+      "index": 29,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "",
+      "textLength": 0,
+      "imageCount": 3,
+      "linkCount": 2,
+      "headings": [],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-225",
+          "alt": "Ad",
+          "width": "",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-227",
+          "alt": "Ad",
+          "width": "600",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-228",
+          "alt": "Ad",
+          "width": "480",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-226",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-226",
+          "text": ""
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "paddingTop": "15px",
+          "borderTop": "1px solid #dcdcdc"
+        },
+        "contentStyles": {},
+        "linkStyles": {},
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 1444
+    },
+    {
+      "index": 30,
+      "tag": "div",
+      "className": "",
+      "id": "",
+      "textSnippet": "",
+      "textLength": 0,
+      "imageCount": 20,
+      "linkCount": 0,
+      "headings": [],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-229",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-230",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-231",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-232",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-233",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-234",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-235",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-236",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-237",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-238",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-239",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-240",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-241",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-242",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-243",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-244",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-245",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-246",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-247",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        },
+        {
+          "src": "https://redacted.invalid/src-248",
+          "alt": "",
+          "width": "2",
+          "height": "6"
+        }
+      ],
+      "links": [],
+      "styles": {
+        "containerStyles": {},
+        "contentStyles": {},
+        "linkStyles": {},
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 2117
+    },
+    {
+      "index": 31,
+      "tag": "table",
+      "className": "",
+      "id": "",
+      "textSnippet": "If you received this newsletter from someone else, subscribe here.Need help? Review our newsletter help page or contact us for assistance.You received this email because you signed up for Today's Headlines from The New York Times.To stop receiving Today's Headlines, unsubscribe. ",
+      "textLength": 592,
+      "imageCount": 3,
+      "linkCount": 14,
+      "headings": [],
+      "images": [
+        {
+          "src": "https://redacted.invalid/src-257",
+          "alt": "whatsapp",
+          "width": "25",
+          "height": "25"
+        },
+        {
+          "src": "https://redacted.invalid/src-263",
+          "alt": "Zeta Logo",
+          "width": "150",
+          "height": ""
+        },
+        {
+          "src": "https://redacted.invalid/src-265",
+          "alt": "AdChoices Logo",
+          "width": "70",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "https://redacted.invalid/href-249",
+          "text": "subscribe here"
+        },
+        {
+          "href": "https://redacted.invalid/href-250",
+          "text": "newsletter help page"
+        },
+        {
+          "href": "https://redacted.invalid/href-251",
+          "text": "contact us"
+        },
+        {
+          "href": "https://redacted.invalid/href-252",
+          "text": "unsubscribe"
+        },
+        {
+          "href": "https://redacted.invalid/href-253",
+          "text": "manage your email settings"
+        },
+        {
+          "href": "https://redacted.invalid/href-254",
+          "text": "Subscribe to The Times"
+        },
+        {
+          "href": "https://redacted.invalid/href-255",
+          "text": "Get The New York Times app"
+        },
+        {
+          "href": "https://redacted.invalid/href-256",
+          "text": ""
+        },
+        {
+          "href": "https://redacted.invalid/href-258",
+          "text": "Change Your Email"
+        },
+        {
+          "href": "https://redacted.invalid/href-259",
+          "text": "Privacy Policy"
+        }
+      ],
+      "styles": {
+        "containerStyles": {
+          "padding": "12px 0",
+          "borderTop": "1px solid #dcdcdc",
+          "paddingRight": "15px"
+        },
+        "contentStyles": {
+          "color": "#666"
+        },
+        "linkStyles": {
+          "color": "#286ed0",
+          "textDecoration": "none"
+        },
+        "headingStyles": {}
+      },
+      "outerHTMLLength": 4541
+    }
+  ]
+}

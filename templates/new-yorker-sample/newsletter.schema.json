@@ -231,6 +231,47 @@
           },
           {
             "type": "object",
+            "title": "Classifieds",
+            "description": "Single-column classified-style list for live job popup entries.",
+            "properties": {
+              "type": {
+                "const": "classifieds"
+              },
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "containerStyles": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "contentStyles": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {},
+                    "content": {},
+                    "link": {},
+                    "linkText": {}
+                  },
+                  "additionalProperties": true
+                }
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
             "title": "Colophon / Footer",
             "description": "Footer with view-in-browser link, subscription notice, customer care link, privacy policy link, unsubscribe link, sender address, and copyright.",
             "properties": {

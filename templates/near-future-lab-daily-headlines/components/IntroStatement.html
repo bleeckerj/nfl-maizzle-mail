@@ -1,0 +1,18 @@
+<!--
+  Intro Statement
+  A short introductory editor's note or framing statement rendered below the masthead and before article groups.
+
+  Slots:
+  - label (text) — Optional small uppercase label shown above the statement
+  - statement (text) — Introductory statement. May include simple <p>, <em>, <strong>, and <a href=""> HTML.
+  - statement_html (rich_text) — Optional rich HTML statement rendered instead of statement
+  - statement_rendered_html (build) — Sanitized render-time HTML derived from statement_html or HTML-bearing statement
+  - show_bottom_rule (boolean) — Whether to render a light divider after the statement
+
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="mob-text intro-statement{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><tbody><tr><td style="padding:0 0 24px 0">
+  <if condition="section.label"><p class="intro-statement-label" style="color:#555;font:700 12px/18px arial,sans-serif;margin:0 0 8px;text-transform:uppercase;letter-spacing:.75px">{{ section.label }}</p></if>
+  <if condition="section.statement_rendered_html"><div class="intro-statement-copy" style="color:#333;font:18px/26px georgia,serif;margin:0">{{{ section.statement_rendered_html }}}</div></if>
+  <if condition="!section.statement_rendered_html && section.statement"><p class="intro-statement-copy" style="color:#333;font:18px/26px georgia,serif;margin:0">{{ section.statement }}</p></if>
+</td></tr><if condition="section.show_bottom_rule"><tr><td style="border-bottom:1px solid #dcdcdc;height:1px;line-height:1px;font-size:1px"></td></tr><tr><td height="15"></td></tr></if></tbody></table>

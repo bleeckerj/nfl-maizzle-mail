@@ -1,0 +1,585 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>nfl-maizzle-mail — README</title><style>
+:root {
+  --color-text: #1f2328;
+  --color-muted: #59636e;
+  --color-link: #0969da;
+  --color-bg: #ffffff;
+  --color-border: #d1d9e0;
+  --color-code-bg: #f6f8fa;
+  --color-table-stripe: #f6f8fa;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  margin: 0;
+  padding: 32px;
+  max-width: 1012px;
+  margin-left: auto;
+  margin-right: auto;
+}
+h1, h2, h3, h4 { font-weight: 600; margin-top: 24px; margin-bottom: 16px; line-height: 1.25; }
+h1 { font-size: 2em; padding-bottom: .3em; border-bottom: 1px solid var(--color-border); }
+h2 { font-size: 1.5em; padding-bottom: .3em; border-bottom: 1px solid var(--color-border); }
+h3 { font-size: 1.25em; }
+h4 { font-size: 1em; }
+p, blockquote, ul, ol, dl, table, pre { margin-top: 0; margin-bottom: 16px; }
+a { color: var(--color-link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+blockquote {
+  padding: 0 1em;
+  color: var(--color-muted);
+  border-left: .25em solid var(--color-border);
+  margin-left: 0;
+}
+code {
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 85%;
+  background: rgba(175, 184, 193, 0.2);
+  padding: .2em .4em;
+  border-radius: 6px;
+}
+pre {
+  background: var(--color-code-bg);
+  padding: 16px;
+  border-radius: 6px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+}
+pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  font-size: 100%;
+}
+table {
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+}
+table th, table td {
+  padding: 6px 13px;
+  border: 1px solid var(--color-border);
+}
+table th { background: var(--color-code-bg); font-weight: 600; }
+table tr:nth-child(2n) { background: var(--color-table-stripe); }
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 24px 0;
+}
+ul, ol { padding-left: 2em; }
+img { max-width: 100%; }
+.banner {
+  background: #ddf4ff;
+  border: 1px solid #b6e3ff;
+  color: #0969da;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+</style></head><body><div class='banner'>Rendered preview of README.md (GitHub-style)</div><h1>nfl-maizzle-mail</h1>
+<p>A self-hosted newsletter production system that turns one of your existing branded HTML emails into a reusable, LLM-augmented authoring workflow. Built on <a href="https://maizzle.com/">Maizzle</a> for the rendering layer; extended with a decompiler that derives a working template from an existing email, and an MCP server that lets your team author and build issues through natural-language chat with Claude or any MCP-aware tool.</p>
+<p>This repository is the operational backbone for the Near Future Laboratory newsletters and is being productized so other operators can bring their own brand and run their own newsletter pipelines on the same infrastructure.</p>
+<hr>
+<h2>Who this is for</h2>
+<p>A technical email marketing specialist who:</p>
+<ul>
+<li>Owns or operates one or more recurring email newsletters and wants to reduce per-issue production time without losing brand fidelity.</li>
+<li>Has an existing branded HTML email design that has been validated across email clients and wants to keep using it as the structural template — not start over inside a SaaS templating tool.</li>
+<li>Wants a Markdown-based authoring surface so writers and editors can ship issues without touching HTML.</li>
+<li>Wants the option to author issues through chat with an LLM (“add an article card pair for this URL”) rather than only by hand.</li>
+<li>Cares about deliverability, mobile rendering, link-level analytics, audit trail, and not being locked into a single ESP or platform.</li>
+<li>Is comfortable with a terminal and a YAML editor but does not want to maintain a custom Maizzle template by hand.</li>
+</ul>
+<p>This is not a hosted SaaS. It runs on your machine or your server, against ESPs of your choice (Sendy, Mailchimp, Campaign Monitor, AWS SES, ConvertKit, Klaviyo, etc.).</p>
+<hr>
+<h2>Key value (and why this is different from “another templating system”)</h2>
+<h3>Your brand is the template, not an approximation of it</h3>
+<p>Most email tools force you to start from their design language and bend your brand to fit. This system inverts that. You point the decompiler at an HTML email you and your team already approve of — last issue, your designer’s reference, a competitor’s email you admire — and get back a production-ready template that reproduces that design as a reusable component palette. The first-pass template is yours from the start.</p>
+<h3>Issue authoring goes from hours to minutes</h3>
+<p>Once a template exists, a new issue is a Markdown file with YAML frontmatter. Reorder, duplicate, or remove sections by editing the list. No HTML table wrangling, no Outlook-specific debugging, no waiting on a designer for a routine layout change.</p>
+<h3>LLM-augmented authoring through chat</h3>
+<p>The system ships with a Model Context Protocol (MCP) server. Once configured against Claude Desktop, Claude Code, or any MCP-aware client, your team can author issues through natural language:</p>
+<blockquote>
+<p>“List my newsletter templates.”
+“Decompile the wirecutter HTML email.”
+“Add an article card pair for this URL with the title ‘Foo Bar’ and the byline ‘By Anyone’.”
+“Validate and build the issue as the weekly-12 campaign.”</p>
+</blockquote>
+<p>The LLM calls the right tools without anyone typing shell commands. The chat-driven workflow is the product surface for non-technical contributors; the CLI is still available for power users.</p>
+<h3>Production-grade output, not preview HTML</h3>
+<p>Every build runs through a canonical pipeline that applies:</p>
+<ul>
+<li>Mobile font-size lock — body type is bumped to 23px on small screens for readability, regardless of the desktop spec.</li>
+<li>Link tracking metadata — every outbound link gets a structured manifest entry that downstream tracking systems can consume.</li>
+<li>Schema validation against the per-template <code>newsletter.schema.json</code> — you cannot ship a broken issue.</li>
+<li>Image URL validation against the live web (catches 404s before send).</li>
+<li>Outlook-safe table-based markup with VML fallbacks where needed.</li>
+<li>CSS inlining for client compatibility.</li>
+</ul>
+<h3>Audit trail and version control by default</h3>
+<p>Every newsletter issue is a Markdown file you commit to git. Every build is reproducible from that file plus a pinned template. Every link goes into a tracking manifest you can diff between issues. Rolling back is a <code>git revert</code>. Comparing two issues is <code>git diff</code>. Reproducing a six-month-old issue exactly is a <code>git checkout</code>.</p>
+<h3>ESP-agnostic and self-hosted</h3>
+<p>Output is a single production-ready HTML file you can paste into any email service provider or feed to a delivery pipeline (AWS SES integration is included). No SaaS lock-in, no per-send fees, no proprietary data formats, no data-export complications when you switch providers.</p>
+<h3>Multi-brand from one repository</h3>
+<p>Decompile multiple source emails; each becomes its own template under <code>templates/&lt;name&gt;/</code>. Run multiple newsletter products — different brands, different cadences, different design languages — from one repository with one toolchain.</p>
+<h3>Open-vocabulary component classification</h3>
+<p>The decompiler does not force your design into a fixed taxonomy of “header / hero / footer”. It discovers the component vocabulary that fits the source email — <code>article_card_pair</code>, <code>editorial_intro</code>, <code>archive_cta_banner</code>, <code>colophon</code> — whatever your brand actually uses. Two newsletters by the same operator can have completely different palettes.</p>
+<h3>Per-decompilation cost is trivial</h3>
+<p>A first-pass template setup runs $0.05 with Claude Sonnet 4.6 or $0.30 with Claude Opus 4.7. After that, the template is yours forever — every subsequent issue costs nothing extra. Compare to the cost of a designer day-rate to recreate a template from scratch in HTML.</p>
+<hr>
+<h2>How it works</h2>
+<p>The product is structured as a three-phase workflow.</p>
+<pre><code>        +-----------------+       +------------------+       +------------------+
+        |    DECOMPILE    |  --&gt;  |      REFINE      |  --&gt;  |      AUTHOR      |
+        |                 |       |                  |       |                  |
+existing HTML            template files +         renamed types,            one Markdown
+email file               per-template guide       tweaked styles,           file per issue
+                         + report + samples       slot defaults             -&gt; built email
+                                                                            (canonical pipeline)
+</code></pre>
+<h3>Phase 1 — Decompile (one time per brand)</h3>
+<p>You point the decompiler at an HTML email. It runs:</p>
+<ol>
+<li><strong>Deterministic segmentation</strong> — JSDOM walks the email and identifies its top-level structural sections.</li>
+<li><strong>Deterministic style harvesting</strong> — inline styles per section are extracted into a structured token map (containerStyles, contentStyles, linkStyles, headingStyles).</li>
+<li><strong>LLM-driven classification</strong> — Claude (Opus 4.7 by default, Sonnet 4.6 for cheaper runs) groups similar sections into reusable component types, names them in snake_case, and emits a Maizzle component template with mustache slots for everything that varies.</li>
+<li><strong>Artifact emission</strong> — a complete Maizzle template gets written to <code>templates/&lt;name&gt;/</code>, along with the source-rebuild as a Markdown file under <code>content/</code>, a JSON schema, a section-styles file with mobile font lock baked in, and an analysis report.</li>
+</ol>
+<p>Output: a directory of templates and content files that immediately round-trips through the canonical build to produce the source email.</p>
+<h3>Phase 2 — Refine (iterative, lightweight)</h3>
+<p>The auto-generated template is a starting point, not a finished product. Operators (or their LLM assistants) typically iterate to:</p>
+<ul>
+<li>Rename component types from machine-readable names to brand-readable ones (<code>article_card_pair</code> to <code>feature_pair</code>, <code>editorial_intro</code> to <code>letter</code>).</li>
+<li>Adjust default styles in <code>section-styles.json</code>.</li>
+<li>Add or tweak slot defaults for fields that should be the same across most issues.</li>
+<li>Add custom layout for component types the classifier didn’t quite capture.</li>
+</ul>
+<p>This phase is mostly editing two files: <code>templates/&lt;name&gt;/section-styles.json</code> and (if needed) the component HTML. An LLM with the MCP server connected can drive most of these edits through chat.</p>
+<h3>Phase 3 — Author (every issue forever)</h3>
+<p>A new issue is a Markdown file you write (or generate via LLM chat) and build:</p>
+<pre><code class="language-bash">node scripts/build-newsletter.mjs content/your-issue.md campaign-name --template=your-template
+</code></pre>
+<p>The build produces <code>build_production/campaign-name.html</code> and <code>build_production/campaign-name.link-tracking-manifest.json</code>. Drop the HTML into your ESP and send.</p>
+<p>For LLM-augmented authoring, see the MCP integration section below.</p>
+<hr>
+<h2>Quick start</h2>
+<h3>Requirements</h3>
+<ul>
+<li>Node.js 20.6 or higher (uses the built-in <code>--env-file</code> flag and modern ESM modules).</li>
+<li>An Anthropic API key for the decompiler (<code>ANTHROPIC_API_KEY</code>).</li>
+<li>Optional: AWS SES credentials for test sends.</li>
+</ul>
+<h3>Install</h3>
+<pre><code class="language-bash">git clone &lt;this-repo&gt;
+cd nfl-maizzle-mail
+npm install
+</code></pre>
+<h3>Configure</h3>
+<p>Create a <code>.env</code> file in the repo root. Minimum:</p>
+<pre><code class="language-env">ANTHROPIC_API_KEY=sk-ant-api03-...
+
+# Recommended model pinning for the decompiler
+DECOMPILER_MODEL=claude-opus-4-7
+# Lower-cost alternative: claude-sonnet-4-6
+</code></pre>
+<p>Optional (for test sending and other workflows):</p>
+<pre><code class="language-env">OPENAI_API_KEY=sk-...
+AWS_REGION=us-west-2
+AWS_ACCESS_KEY_ID=AKIA...
+AWS_SECRET_ACCESS_KEY=...
+SES_FROM=you@yourdomain.com
+SES_TO=test@example.com
+</code></pre>
+<h3>First-pass: decompile an email and build it</h3>
+<pre><code class="language-bash"># Sample emails are pre-loaded under emails-to-templatize/
+node scripts/decompile-email.mjs emails-to-templatize/the-atlantic.html --model=claude-sonnet-4-6
+
+# Build the rebuild through the canonical pipeline
+node scripts/build-newsletter.mjs content/the-atlantic-source.md round-trip-test \
+  --template=the-atlantic --no-open
+
+# Open the result
+open build_production/round-trip-test.html
+</code></pre>
+<p>Total time: 1-5 minutes for the LLM call, plus a few seconds for the build. Total cost: $0.05-0.30 in API tokens depending on the model.</p>
+<h3>Subsequent issues</h3>
+<p>Once a template is set up, every new issue is:</p>
+<pre><code class="language-bash">cp content/the-atlantic-source.md content/2026-05-28-issue.md
+# edit content/2026-05-28-issue.md
+node scripts/build-newsletter.mjs content/2026-05-28-issue.md issue-2026-05-28 \
+  --template=the-atlantic
+</code></pre>
+<h3>LLM-augmented authoring through MCP</h3>
+<p>The repository ships with an MCP server at <code>scripts/mcp-server.mjs</code>. Wire it into Claude Desktop or Claude Code (see <a href="docs/MCP-SETUP.md">docs/MCP-SETUP.md</a> for the config snippets) and then drive the workflow conversationally:</p>
+<blockquote>
+<p>“List my newsletter templates and show me the authoring guide for the-atlantic.”
+“Add an article_card_pair to content/2026-05-28-issue.md with these values…”
+“Validate the issue and build it as the may-28 campaign.”</p>
+</blockquote>
+<p>The LLM invokes the right tools. No shell access required for the operator.</p>
+<hr>
+<h2>Usage</h2>
+<h3>Decompile a new branded email</h3>
+<pre><code class="language-bash">node scripts/decompile-email.mjs &lt;input.html&gt; [template-name] [flags]
+</code></pre>
+<p>Flags:</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--dry-run</code></td>
+<td>Run only the deterministic segmenter and style harvester. No LLM call, no template files written. Useful for previewing what sections the system found.</td>
+</tr>
+<tr>
+<td><code>--classify-only</code></td>
+<td>Run the LLM classifier and save its output, but do not emit template files. Useful for inspecting classifier quality before committing to a template directory.</td>
+</tr>
+<tr>
+<td><code>--from-cache</code></td>
+<td>Re-emit template files from a previously cached classifier output. No LLM call. Useful after changes to the emitter or after editing the cached output by hand.</td>
+</tr>
+<tr>
+<td><code>--model=&lt;id&gt;</code></td>
+<td>Override the classifier model for this run (e.g. <code>--model=claude-sonnet-4-6</code>).</td>
+</tr>
+</tbody>
+</table>
+<p>The template name defaults to the input filename stem. If a template already exists at <code>templates/&lt;name&gt;/</code>, it is overwritten — back it up first if you want to preserve a prior iteration.</p>
+<h3>Author an issue</h3>
+<p>Each issue is a Markdown file with YAML frontmatter. The minimum shape:</p>
+<pre><code class="language-yaml">---
+template: the-atlantic
+title: &quot;Issue #42 — Memorial Day reading&quot;
+preheader: &quot;Three stories to spend a long weekend with.&quot;
+sectionStylesFile: templates/the-atlantic/section-styles.json
+sections:
+  - type: masthead_logo
+    logo_src: https://cdn.example.com/logo.png
+    logo_alt: The Daily
+  - type: issue_date
+    date: &quot;May 24, 2026&quot;
+  - type: editorial_intro
+    body_html: |
+      &lt;p&gt;It's nearly Memorial Day...&lt;/p&gt;
+  - type: article_card_pair
+    left_title: &quot;First story&quot;
+    left_body_html: &quot;&lt;p&gt;...&lt;/p&gt;&quot;
+    right_title: &quot;Second story&quot;
+    right_body_html: &quot;&lt;p&gt;...&lt;/p&gt;&quot;
+  - type: footer
+    publication_name: &quot;The Daily&quot;
+    unsubscribe_href: &quot;#&quot;
+---
+</code></pre>
+<p>The component types and slot names are specific to each template. To see what is available for a template:</p>
+<ul>
+<li>Look at <code>content/&lt;template&gt;-source.md</code> (the source-rebuild generated during decompilation).</li>
+<li>Look at <code>templates/&lt;template&gt;/newsletter.schema.json</code>.</li>
+<li>Run the MCP tool <code>get_template_authoring_guide</code> for an explanatory summary.</li>
+</ul>
+<h3>Override styles per-section in an issue</h3>
+<p>You can override the template’s default styles for one instance of a section without changing the template itself:</p>
+<pre><code class="language-yaml">  - type: editorial_intro
+    body_html: &quot;&lt;p&gt;This week's intro.&lt;/p&gt;&quot;
+    containerStyles:
+      backgroundColor: '#fff7e6'
+      padding: '24px'
+      borderRadius: '8px'
+    contentStyles:
+      fontSize: '20px'
+      lineHeight: '1.5'
+</code></pre>
+<p>The four override buckets are <code>containerStyles</code>, <code>contentStyles</code>, <code>linkStyles</code>, and <code>headingStyles</code>. Properties are written in camelCase (<code>backgroundColor</code>, <code>fontSize</code>, <code>lineHeight</code>). See <a href="docs/AUTHORING-A-NEWSLETTER.md">docs/AUTHORING-A-NEWSLETTER.md</a> for full details.</p>
+<h3>Build a newsletter</h3>
+<pre><code class="language-bash">node scripts/build-newsletter.mjs content/&lt;your-issue&gt;.md &lt;campaign-name&gt; \
+  --template=&lt;template-name&gt;
+</code></pre>
+<p>Flags:</p>
+<table>
+<thead>
+<tr>
+<th>Flag</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--template=&lt;name&gt;</code></td>
+<td>Override the <code>template:</code> value in frontmatter.</td>
+</tr>
+<tr>
+<td><code>--no-open</code></td>
+<td>Do not auto-open the resulting HTML in a browser.</td>
+</tr>
+<tr>
+<td><code>--output-dir=&lt;path&gt;</code></td>
+<td>Write to a directory other than <code>build_production/</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Output:</p>
+<ul>
+<li><code>build_production/&lt;campaign-name&gt;.html</code> — the production-ready email.</li>
+<li><code>build_production/&lt;campaign-name&gt;.link-tracking-manifest.json</code> — every outbound link with its metadata for downstream tracking.</li>
+</ul>
+<h3>Validate before building</h3>
+<pre><code class="language-bash">node scripts/lint-template.mjs content/&lt;your-issue&gt;.md --template=&lt;template-name&gt;
+</code></pre>
+<p>Or via MCP: <code>validate_newsletter_markdown</code>.</p>
+<h3>Send a test through AWS SES</h3>
+<pre><code class="language-bash">npm run send:test -- build_production/&lt;campaign-name&gt;.html
+</code></pre>
+<p>Requires the <code>SES_*</code> environment variables to be set. See the test-send section in <a href="docs/AUTHORING-A-NEWSLETTER.md">docs/AUTHORING-A-NEWSLETTER.md</a>.</p>
+<h3>Inspect the decompilation analysis</h3>
+<p>The decompiler writes a structured analysis report to <code>generated/&lt;template&gt;-decompilation-report.json</code>. It lists each discovered component type, its slot definitions, its confidence score, and which source-email sections were assigned to it. Useful for understanding the system’s judgement before committing to a refinement pass.</p>
+<hr>
+<h2>Project structure</h2>
+<pre><code>nfl-maizzle-mail/
+|
++-- content/                          # Issue Markdown files (one per issue)
+|   +-- the-atlantic-source.md        # Source-rebuild generated by the decompiler
+|   +-- new-yorker-sample-source.md
+|   +-- ...
+|
++-- templates/                        # One directory per template
+|   +-- the-atlantic/
+|   |   +-- newsletter.html           # Maizzle entry point
+|   |   +-- layouts/main.html         # Base layout with mobile font lock
+|   |   +-- components/               # Component palette reference
+|   |   +-- section-styles.json       # Design tokens per component type
+|   |   +-- newsletter.schema.json    # JSON schema for the data shape
+|   +-- new-yorker-sample/
+|   +-- dense-discovery/              # Hand-built template (reference / production)
+|   +-- ...
+|
++-- emails-to-templatize/             # Source HTML emails to decompile
+|   +-- the-atlantic.html
+|   +-- wirecutter.html
+|   +-- ...
+|
++-- build_production/                 # Final HTML output (commit-friendly or .gitignored)
+|
++-- generated/                        # Decompilation reports, classifier caches, diff reports
+|
++-- lib/
+|   +-- decompiler/                   # Decompiler engine
+|   |   +-- segmenter.mjs             # JSDOM section detection
+|   |   +-- styles.mjs                # Inline-style harvester
+|   |   +-- classifier.mjs            # Claude tool-use classifier
+|   |   +-- emitter.mjs               # Template artifact writer
+|   |   +-- config.mjs                # Centralized configuration
+|   +-- mcp/                          # MCP server tools and resources
+|   +-- newsletter-core/              # Build-pipeline support (hardening, link tracking)
+|   +-- adjacency-mail/               # Theme tokens
+|
++-- scripts/
+|   +-- decompile-email.mjs           # CLI entry for decompilation
+|   +-- build-newsletter.mjs          # CANONICAL build pipeline (do not bypass)
+|   +-- mcp-server.mjs                # MCP server entry point
+|   +-- decompiler-roundtrip-diff.mjs # Structural fidelity diff tool
+|   +-- lint-template.mjs             # Schema validator
+|   +-- md_to_json.mjs                # Markdown frontmatter to JSON
+|   +-- send-ses-test.mjs             # SES test send
+|
++-- docs/                             # Documentation
+|   +-- PRODUCT.md                    # Three-phase product vision
+|   +-- AUTHORING-A-NEWSLETTER.md     # How to write a newsletter issue
+|   +-- MCP-SETUP.md                  # Wiring MCP into Claude Desktop / Code
+|   +-- MCP-TOOL-REFERENCE.md         # Full MCP tool surface reference
+|   +-- TROUBLESHOOTING.md            # Consolidated FAQ of known gotchas
+|   +-- decompiler-current-state.md   # Implementation reference
+|
++-- data/                             # Build pipeline transient artifacts
++-- .env                              # API keys and config (gitignored)
++-- README.md                         # You are here
+</code></pre>
+<hr>
+<h2>Toolchain summary</h2>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://maizzle.com/">Maizzle</a></td>
+<td>Email templating, CSS inlining, output for Outlook / Gmail / Apple Mail</td>
+</tr>
+<tr>
+<td><a href="https://github.com/jsdom/jsdom">JSDOM</a></td>
+<td>HTML parsing for the decompiler’s deterministic segmentation pass</td>
+</tr>
+<tr>
+<td><a href="https://github.com/anthropics/anthropic-sdk-typescript">Anthropic SDK</a></td>
+<td>Streaming tool-use calls to Claude for classification</td>
+</tr>
+<tr>
+<td><a href="https://modelcontextprotocol.io/">Model Context Protocol SDK</a></td>
+<td>Exposes the decompiler and build pipeline as a chat-driven tool surface</td>
+</tr>
+<tr>
+<td><a href="https://ajv.js.org/">Ajv</a> + <a href="https://github.com/ajv-validator/ajv-formats">ajv-formats</a></td>
+<td>JSON schema validation</td>
+</tr>
+<tr>
+<td><a href="https://github.com/jonschlinkert/gray-matter">gray-matter</a></td>
+<td>YAML frontmatter parsing</td>
+</tr>
+<tr>
+<td><a href="https://github.com/motdotla/dotenv">dotenv</a></td>
+<td>Environment configuration</td>
+</tr>
+<tr>
+<td>AWS SES (optional)</td>
+<td>Test sends through your existing SES setup</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>Documentation map</h2>
+<table>
+<thead>
+<tr>
+<th>Document</th>
+<th>Read this when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="docs/PRODUCT.md">docs/PRODUCT.md</a></td>
+<td>You want to understand the product vision and three-phase workflow at a strategic level.</td>
+</tr>
+<tr>
+<td><a href="docs/AUTHORING-A-NEWSLETTER.md">docs/AUTHORING-A-NEWSLETTER.md</a></td>
+<td>You are about to write an issue and want the full reference for slots, section types, inline style overrides, validation, and building.</td>
+</tr>
+<tr>
+<td><a href="docs/MCP-SETUP.md">docs/MCP-SETUP.md</a></td>
+<td>You want to wire the MCP server into Claude Desktop, Claude Code, or Codex so you can drive the workflow through chat.</td>
+</tr>
+<tr>
+<td><a href="docs/MCP-TOOL-REFERENCE.md">docs/MCP-TOOL-REFERENCE.md</a></td>
+<td>You want the full reference for the 7 MCP tools and 4 resource URI patterns the server exposes. Useful as LLM context.</td>
+</tr>
+<tr>
+<td><a href="docs/TROUBLESHOOTING.md">docs/TROUBLESHOOTING.md</a></td>
+<td>Something is broken and you want the consolidated FAQ of known gotchas with symptoms, causes, and fixes.</td>
+</tr>
+<tr>
+<td><a href="docs/decompiler-current-state.md">docs/decompiler-current-state.md</a></td>
+<td>You want to understand the decompiler implementation in detail (segmenter, harvester, classifier, emitter).</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>FAQ</h2>
+<h3>What ESPs does this work with?</h3>
+<p>The build pipeline produces standard HTML email. Any ESP that accepts pasted HTML works — Sendy, Mailchimp, Campaign Monitor, Klaviyo, ConvertKit, ActiveCampaign, AWS SES (with built-in integration), HubSpot, Iterable, <a href="http://Customer.io">Customer.io</a>. The link-tracking manifest is ESP-agnostic and can feed any downstream analytics or attribution system.</p>
+<h3>Will the output render correctly in Outlook?</h3>
+<p>Yes. The decompiler-generated templates and the canonical build pipeline use table-based markup with conditional VML fallbacks where needed (e.g. for <code>border-radius</code>). The included mobile font lock works in Outlook for Mac, Outlook for Windows, <a href="http://Outlook.com">Outlook.com</a>, Apple Mail, Gmail, and the major mobile clients. Cross-client testing in Litmus or Email on Acid is still recommended before shipping a new template into production.</p>
+<h3>How does an LLM “know” my brand?</h3>
+<p>It does not need to. The decompiler classifies what is structurally present in YOUR source HTML — your colors, your fonts, your section types, your layout patterns. The LLM names what it sees; it does not invent. As long as your source email is on-brand, the resulting template is on-brand by construction.</p>
+<h3>What happens if my brand evolves?</h3>
+<p>Two paths. If the change is minor (color tweak, font size, copy of a button), edit <code>templates/&lt;name&gt;/section-styles.json</code> or the relevant component file directly. If the brand is substantially redesigned, decompile a new representative email — the new template lives alongside the old one and you can keep both running in parallel during a transition.</p>
+<h3>Can a non-technical writer use this?</h3>
+<p>Yes, in two ways. Either they edit Markdown files directly (the YAML frontmatter is the only thing they touch) and run a single build command; or they interact entirely through chat with an LLM connected to the MCP server, and never see a terminal. The MCP path is the natural one for non-technical authors — the LLM handles the file edits, the validation, and the build commands.</p>
+<h3>What is the per-issue LLM cost?</h3>
+<p>Authoring an issue with LLM assistance through MCP uses tokens proportional to the conversation length. A typical “add a section, validate, build” cycle is well under a dollar. Decompilation itself (the one-time setup per template) is $0.05 with Sonnet 4.6 or $0.30 with Opus 4.7. The build pipeline itself uses no LLM tokens.</p>
+<h3>Can I A/B test issues?</h3>
+<p>The Markdown-based authoring makes A/B variants natural. Duplicate an issue file, change the variant (subject line, hero section, CTA copy), build both, and dispatch them to the relevant audience segments through your ESP. The link-tracking manifest distinguishes the variants at the URL level.</p>
+<h3>How do I add UTM parameters to every link?</h3>
+<p>The link-tracking metadata system supports per-link tagging. Include a <code>tracking:</code> block alongside any link slot in your frontmatter to control its UTM and category metadata. The link tracking manifest collects all of these into a single JSON artifact next to the built HTML. A future enhancement will auto-apply UTM defaults per campaign; today the metadata is captured and you can apply it downstream.</p>
+<h3>What about deliverability?</h3>
+<p>The system produces standards-compliant HTML email with inline CSS and table-based layout. Deliverability is governed by your sending infrastructure (SPF, DKIM, DMARC, sender reputation, list hygiene), not by the markup. If you send through SES with verified domains and reasonable sending patterns, deliverability is excellent.</p>
+<h3>Can I commit this to version control?</h3>
+<p>Yes. The repository is designed to live in git. Every template, every issue, every section-style override is a file you can review, diff, and roll back. <code>build_production/</code> can be either committed (for full historical record of shipped artifacts) or ignored (if you only care about source). The link-tracking manifests are JSON and diff cleanly.</p>
+<h3>Does it support dark mode?</h3>
+<p>The decompiler-generated layouts include sensible <code>prefers-color-scheme: dark</code> defaults at the markup level. Templates can opt into bespoke dark-mode image swaps via Maizzle’s standard pattern. This is on the roadmap for stronger first-class support.</p>
+<h3>Multilingual?</h3>
+<p>The system is language-agnostic — Markdown content is just UTF-8 text. Right-to-left layouts (Hebrew, Arabic) work but may need template-level adjustments to alignment. Multi-language issues from one source file are not directly supported; the operational pattern is one issue file per language.</p>
+<h3>How do I migrate from Mailchimp or Klaviyo?</h3>
+<p>Export an HTML email from your current ESP (most platforms have an “export HTML” or “view source” option), drop it into <code>emails-to-templatize/</code>, and run the decompiler against it. The result is a template that reproduces the design, plus a source-rebuild Markdown that gives you a clean authoring starting point. You can then keep sending through the same ESP — just paste the HTML into the new-campaign form — or move to SES via the included test-send integration.</p>
+<h3>How do I host images?</h3>
+<p>Bring your own image hosting. The decompiler preserves whatever image URLs are in your source email; the build pipeline does not rehost. Common choices: Cloudflare Images, S3 with a CloudFront distribution, Bunny CDN, your existing CMS, or your ESP’s image hosting. The system validates image URLs at build time and warns on 404s.</p>
+<h3>Can I extend the system with my own components?</h3>
+<p>Yes. After decompiling, edit <code>templates/&lt;name&gt;/components/*.html</code> directly or add new ones. Update <code>section-styles.json</code> with the matching design tokens and <code>newsletter.schema.json</code> with the data shape. Any LLM that knows about the MCP server’s <code>get_template_schema</code> tool can be brought up to speed on the new components by re-reading the schema.</p>
+<h3>What about CAN-SPAM, GDPR, unsubscribe links, postal addresses?</h3>
+<p>The decompiler preserves whatever footer / colophon / unsubscribe / postal-address slots existed in the source email. The build pipeline does not enforce CAN-SPAM or GDPR; that is your responsibility as the operator. The recommended pattern is to template the footer once (with valid unsubscribe link, postal address, sender identity) and reference it in every issue.</p>
+<h3>What is the licensing situation?</h3>
+<p>This repository is currently designed as a self-hosted system for the operator. Refer to the LICENSE file for the canonical terms.</p>
+<h3>How do I report a bug or request a feature?</h3>
+<p>File an issue on the repository’s GitHub page. For decompiler-specific quirks (e.g. “decompilation failed on email X”), include the source HTML and the error output, plus the model name used.</p>
+<hr>
+<h2>Status and roadmap</h2>
+<p>The system is in production use at Near Future Laboratory and is being productized for general use. Current state:</p>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decompiler — segmentation, style harvesting, LLM classification, artifact emission</td>
+<td>Production</td>
+</tr>
+<tr>
+<td>Canonical build pipeline — schema validation, link tracking, mobile font hardening, image URL validation, CSS inlining, Outlook-safe markup</td>
+<td>Production</td>
+</tr>
+<tr>
+<td>MCP server — 7 tools and 4 resource URI patterns over stdio, validated against Claude Code and Claude Desktop</td>
+<td>Production</td>
+</tr>
+<tr>
+<td>Per-template authoring guide (<code>AUTHORING.md</code> generator)</td>
+<td>Planned (Phase A)</td>
+</tr>
+<tr>
+<td>Per-template human-readable analysis report (<code>REPORT.md</code> generator)</td>
+<td>Planned (Phase A)</td>
+</tr>
+<tr>
+<td>Lorem-ipsum starter Markdown generator (per-template “blank canvas”)</td>
+<td>Planned (Phase A)</td>
+</tr>
+<tr>
+<td>Per-section inline style override end-to-end validation</td>
+<td>Partial — the pattern works for hand-built templates; needs verification on decompiler-generated templates</td>
+</tr>
+<tr>
+<td>One-command setup (<code>npm run init -- --from-email=path/to.html</code>)</td>
+<td>Planned (Phase C)</td>
+</tr>
+<tr>
+<td>Top-level README rewrite for the three-phase workflow</td>
+<td>Done (this document)</td>
+</tr>
+<tr>
+<td>Example fork-and-go newsletter project repository</td>
+<td>Planned (Phase C)</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="docs/PRODUCT.md">docs/PRODUCT.md</a> for the full phase breakdown and rationale.</p>
+<hr>
+<h2>Provenance</h2>
+<p>Built on top of <a href="https://maizzle.com/">Maizzle</a> (the email build system) by the Near Future Laboratory team. The decompiler and MCP layer are this repository’s own contribution and are designed to be useful to any operator with a branded HTML email they want to keep using.</p>
+<p>For questions, contributions, or operational support: refer to the documentation in <code>docs/</code>, or use the MCP-driven chat workflow with Claude to navigate the codebase.</p>
+</body></html>

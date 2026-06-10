@@ -1,0 +1,21 @@
+<!--
+  Most Popular Link List
+  Heading plus ordered list of linked articles.
+
+  Slots:
+  - heading_html (rich_text) — Section heading HTML
+  - items_html (rich_text) — Concatenated <li> entries with anchors
+
+  Used by section indexes: [8] in the source email.
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+  <tbody>
+    <tr>
+      <td class="c-rich-text " style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; padding: 0px 24px 24px 24px;" bgcolor="#ffffff">
+        <h1 class="e-h1" style="font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-size: 24px; font-weight: 600; color: #39434b; line-height: 32.5px; letter-spacing: 0.33px; margin: 8px 0 24px 0; padding-top: 8px; border-top: 1px solid #ef3b24;">{{{ section.heading_html }}}</h1>
+        <ol class="e-ol" style="font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; margin: 0 0 16px 0; padding-inline-start: 16px; margin-bottom: 0;">{{{ section.items_html }}}</ol>
+      </td>
+    </tr>
+  </tbody>
+</table>

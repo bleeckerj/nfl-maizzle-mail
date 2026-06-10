@@ -1,0 +1,17 @@
+<!--
+  Newsletter Masthead
+  Publication logo, newsletter title image, and dateline. Top identity block for the email.
+
+  Slots:
+  - logoLink (link_url) — Tracked URL for the logo and title links; legacy logo_href is still rendered as a fallback
+  - viewOnlineLink (link_url) — Build-injected tracked URL for the public issue page
+  - logo_src (image_url) — Near Future Laboratory wordmark image src
+  - logo_alt (image_alt) — Alt text for Near Future Laboratory wordmark
+  - title_src (image_url) — Newsletter title image src
+  - title_alt (image_alt) — Alt text for newsletter title image
+  - dateline (text) — Date and time string
+
+  Used by section indexes: [1] in the source email.
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<table border="0" cellpadding="0" cellspacing="0" style="width:100%"><tbody><tr><td style="border-top:1px solid #000"></td></tr><if condition="section.viewOnlineLink"><tr><td style="padding:12px 0 0;text-align:right;font:normal 12px/18px arial,sans-serif"><a title="View online" href="{{ section.viewOnlineLink }}" style="color:#666;-webkit-text-decoration:none;text-decoration:none">View online</a><br><a title="Share this issue" href="{{ section.viewOnlineLink }}" style="color:#666;-webkit-text-decoration:underline;text-decoration:underline">Share this issue</a></td></tr></if><tr><td style="padding:18px 0 20px"><a href="{{ section.logoLink || section.logo_href }}" style="color:#333;-webkit-text-decoration:underline;text-decoration:underline"><img class="masthead-logo" src="{{ section.logo_src }}" alt="{{ section.logo_alt }}" width="{{ section.logo_width || 190 }}" style="display:block;width:{{ section.logo_width || 190 }}px;max-width:{{ section.logo_width || 190 }}px;height:auto;padding:0;margin:0"></a></td></tr><tr><td style="padding:18px 0 0;border-top:1px solid #000"><a href="{{ section.logoLink || section.logo_href }}" style="color:#333;-webkit-text-decoration:underline;text-decoration:underline"><img class="newsletter-title-logo" src="{{ section.title_src }}" alt="{{ section.title_alt }}" width="{{ section.title_width || 300 }}" style="display:block;width:{{ section.title_width || 300 }}px;max-width:{{ section.title_width || 300 }}px;height:auto;padding:0 0 1px 0;margin:0"></a></td></tr><tr><td style="display:block;padding:3px 0 36px 0;margin:0;font:normal 12px/12px georgia,serif">{{ section.dateline }}</td></tr><tr><td style="border-bottom:0 solid #000"></td></tr></tbody></table>

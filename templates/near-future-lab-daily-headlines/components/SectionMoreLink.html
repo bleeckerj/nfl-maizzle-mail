@@ -1,0 +1,13 @@
+<!--
+  Section 'See More' Link
+  Legacy standalone paragraph with a single 'See more [section] news' link.
+  New content should prefer section_article_group.more_link so the link belongs to the article section metadata.
+
+  Slots:
+  - link (link_url) — Tracked URL for the 'see more' link; legacy link_href is still rendered as a fallback
+  - link_label (link_label) — Visible text of the link (e.g. 'See more world news')
+
+  Used by section indexes: [4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28] in the source email.
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<p style="font:normal 17px/25px georgia,serif;color:#333;margin:0 0 15px"><a href="{{ section.link || section.link_href }}" style="color:#333;-webkit-text-decoration:underline;text-decoration:underline">{{ section.link_label }}</a></p>

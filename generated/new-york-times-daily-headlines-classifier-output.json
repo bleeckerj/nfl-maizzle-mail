@@ -1,0 +1,531 @@
+{
+  "source": "generated/new-york-times-daily-headlines.sanitized.html",
+  "templateName": "new-york-times-daily-headlines",
+  "model": "claude-sonnet-4-6",
+  "usage": {
+    "input_tokens": 40835,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 23444,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "elapsedMs": 266219,
+  "result": {
+    "components": [
+      {
+        "type": "masthead_ad_bar",
+        "displayName": "Masthead Ad Bar",
+        "description": "Top-of-email bar with a 'View in browser' link and an inline ad image (desktop + mobile variants).",
+        "sectionIndexes": [
+          0
+        ],
+        "slots": [
+          {
+            "name": "view_in_browser_href",
+            "kind": "link_url",
+            "description": "URL for the 'View in browser' link"
+          },
+          {
+            "name": "ad_href",
+            "kind": "link_url",
+            "description": "URL the ad image links to"
+          },
+          {
+            "name": "ad_src_desktop",
+            "kind": "image_url",
+            "description": "Desktop ad image src (600px)"
+          },
+          {
+            "name": "ad_src_mobile",
+            "kind": "image_url",
+            "description": "Mobile ad image src (480px)"
+          }
+        ],
+        "template": "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\"><tbody><tr><td height=\"15\"></td></tr><tr><td style=\"padding:15px 0 5px;text-align:right;width:100%;font-family:arial,sans-serif;font-size:12px\"><a title=\"View in browser\" href=\"{{view_in_browser_href}}\" style=\"color:#666;-webkit-text-decoration:none;text-decoration:none;line-height:18px\">View in browser</a><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\"><tbody><tr aria-hidden=\"true\"><td><span style=\"text-align:center\"><table style=\"margin:0 auto\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tbody><tr><td style=\"line-height:0;font-size:0\"><a rel=\"noopener noreferrer nofollow\" tabindex=\"-1\" target=\"_blank\" href=\"{{ad_href}}\"><img src=\"{{ad_src_desktop}}\" alt=\"Ad\" border=\"0\" width=\"600\" style=\"display:block;width:100%;max-width:600px\"></a></td></tr><tr style=\"display:none\"><td style=\"line-height:0;font-size:0\"><a rel=\"noopener noreferrer nofollow\" tabindex=\"-1\" target=\"_blank\" href=\"{{ad_href}}\"><img src=\"{{ad_src_mobile}}\" alt=\"Ad\" border=\"0\" width=\"480\" style=\"display:block;width:100%;max-width:480px\"></a></td></tr></tbody></table></span></td></tr><tr><td height=\"10\"></td></tr></tbody></table></td></tr><tr><td height=\"5\"></td></tr></tbody></table>",
+        "confidence": 0.98
+      },
+      {
+        "type": "newsletter_masthead",
+        "displayName": "Newsletter Masthead",
+        "description": "Publication logo, newsletter title image, and dateline. Top identity block for the email.",
+        "sectionIndexes": [
+          1
+        ],
+        "slots": [
+          {
+            "name": "logo_href",
+            "kind": "link_url",
+            "description": "URL for the logo and title links"
+          },
+          {
+            "name": "logo_src",
+            "kind": "image_url",
+            "description": "NYT wordmark image src"
+          },
+          {
+            "name": "logo_alt",
+            "kind": "image_alt",
+            "description": "Alt text for NYT wordmark"
+          },
+          {
+            "name": "title_src",
+            "kind": "image_url",
+            "description": "Newsletter title image src"
+          },
+          {
+            "name": "title_alt",
+            "kind": "image_alt",
+            "description": "Alt text for newsletter title image"
+          },
+          {
+            "name": "dateline",
+            "kind": "text",
+            "description": "Date and time string"
+          }
+        ],
+        "template": "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\"><tbody><tr><td style=\"border-top:1px solid #000\"></td></tr><tr><td><a href=\"{{logo_href}}\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:underline\"><img src=\"{{logo_src}}\" alt=\"{{logo_alt}}\" style=\"display:block;width:345px;padding:0 0 1px 0;margin:0\"></a></td></tr><tr><td style=\"padding:0;border-top:1px solid #000\"><a href=\"{{logo_href}}\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:underline\"><img src=\"{{title_src}}\" alt=\"{{title_alt}}\" style=\"display:block;width:345px;padding:0 0 1px 0;margin:0\"></a></td></tr><tr><td style=\"display:block;padding:3px 0 0 0;margin:0 0 26px 0;font:normal 12px/12px georgia,serif\">{{dateline}}</td></tr><tr><td style=\"border-bottom:0 solid #000\"></td></tr></tbody></table>",
+        "confidence": 0.99
+      },
+      {
+        "type": "section_article_group",
+        "displayName": "Section Article Group",
+        "description": "A named news section (e.g. Top News, World, U.S., Politics) with a bold section heading and 1–5 article cards, each with a thumbnail image, headline, and summary, all linked.",
+        "sectionIndexes": [
+          2,
+          3,
+          5,
+          7,
+          9,
+          11,
+          13,
+          15,
+          17,
+          19,
+          21,
+          23,
+          25,
+          27
+        ],
+        "slots": [
+          {
+            "name": "section_label",
+            "kind": "label",
+            "description": "Section heading text (e.g. 'Top News', 'World')"
+          },
+          {
+            "name": "articles_html",
+            "kind": "rich_text",
+            "description": "Full rendered HTML for all article rows within the section"
+          }
+        ],
+        "template": "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td height=\"30\"></td></tr><tr><td style=\"padding:12px 0 13px 0;border-top:9px solid #000;border-bottom:1px solid #000\"><h2 style=\"font:700 17px/24px arial,sans-serif;color:#000;margin:0;padding:0\">{{section_label}}</h2></td></tr><tr><td style=\"padding-top:15px\"></td></tr>{{articles_html}}</tbody></table>",
+        "confidence": 0.97,
+        "notes": "articles_html contains the full repeated article-row markup for each article in the section. The Opinion section (index 27) adds a byline/kicker <p> above each <h3>; this variation is captured verbatim in articles_html."
+      },
+      {
+        "type": "section_more_link",
+        "displayName": "Section 'See More' Link",
+        "description": "A standalone paragraph with a single 'See more [section] news' link appearing below each section article group.",
+        "sectionIndexes": [
+          4,
+          6,
+          8,
+          10,
+          12,
+          14,
+          16,
+          18,
+          20,
+          22,
+          24,
+          26,
+          28
+        ],
+        "slots": [
+          {
+            "name": "link_href",
+            "kind": "link_url",
+            "description": "URL for the 'see more' link"
+          },
+          {
+            "name": "link_label",
+            "kind": "link_label",
+            "description": "Visible text of the link (e.g. 'See more world news')"
+          }
+        ],
+        "template": "<p style=\"font:normal 17px/25px georgia,serif;color:#333;margin:0 0 15px\"><a href=\"{{link_href}}\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:underline\">{{link_label}}</a></p>",
+        "confidence": 0.99
+      },
+      {
+        "type": "inline_ad_block",
+        "displayName": "Inline Ad Block",
+        "description": "Mid- or end-of-email inline advertisement with a small label image, a desktop ad image and a hidden mobile ad image.",
+        "sectionIndexes": [
+          29
+        ],
+        "slots": [
+          {
+            "name": "label_src",
+            "kind": "image_url",
+            "description": "Small 'Ad' label image src"
+          },
+          {
+            "name": "ad_href",
+            "kind": "link_url",
+            "description": "URL the ad images link to"
+          },
+          {
+            "name": "ad_src_desktop",
+            "kind": "image_url",
+            "description": "Desktop ad image src (600px)"
+          },
+          {
+            "name": "ad_src_mobile",
+            "kind": "image_url",
+            "description": "Mobile ad image src (480px)"
+          }
+        ],
+        "template": "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\"><tbody><tr><td height=\"10\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr aria-hidden=\"true\"><td><div style=\"width:100%;text-align:center;line-height:0\"><img alt=\"Ad\" src=\"{{label_src}}\" border=\"0\" style=\"max-width:96px;margin-bottom:7px\"></div><span style=\"text-align:center\"><table style=\"margin:0 auto\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\"><tbody><tr><td style=\"line-height:0;font-size:0\"><a rel=\"noopener noreferrer nofollow\" tabindex=\"-1\" target=\"_blank\" href=\"{{ad_href}}\"><img src=\"{{ad_src_desktop}}\" alt=\"Ad\" border=\"0\" width=\"600\" style=\"display:block;width:100%;max-width:600px\"></a></td></tr><tr style=\"display:none\"><td style=\"line-height:0;font-size:0\"><a rel=\"noopener noreferrer nofollow\" tabindex=\"-1\" target=\"_blank\" href=\"{{ad_href}}\"><img src=\"{{ad_src_mobile}}\" alt=\"Ad\" border=\"0\" width=\"480\" style=\"display:block;width:100%;max-width:480px\"></a></td></tr></tbody></table></span></td></tr><tr><td style=\"padding-bottom:15px;border-bottom:0 solid #dcdcdc\"></td></tr></tbody></table>",
+        "confidence": 0.97
+      },
+      {
+        "type": "tracking_pixel_row",
+        "displayName": "Tracking Pixel Row",
+        "description": "Hidden div containing a row of tiny 2×6 tracking/preheader pixel images, aria-hidden.",
+        "sectionIndexes": [
+          30
+        ],
+        "slots": [
+          {
+            "name": "pixels_html",
+            "kind": "rich_text",
+            "description": "Full HTML of all pixel <img> elements"
+          }
+        ],
+        "template": "<div style=\"overflow:hidden;height:0;width:100%;max-width:600px;margin:0 auto\" aria-hidden=\"true\"><table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"40\"><tbody><tr>{{pixels_html}}</tr></tbody></table></div>",
+        "confidence": 0.92,
+        "notes": "These are likely email-client preheader / tracking pixel rows. Content is fully verbatim in pixels_html."
+      },
+      {
+        "type": "email_footer",
+        "displayName": "Email Footer",
+        "description": "Full footer with subscription management text, links, social icons, legal logos, and mailing address.",
+        "sectionIndexes": [
+          31
+        ],
+        "slots": [
+          {
+            "name": "footer_html",
+            "kind": "rich_text",
+            "description": "Complete inner HTML of the footer table"
+          }
+        ],
+        "template": "<table><tbody>{{footer_html}}</tbody></table>",
+        "confidence": 0.96,
+        "notes": "Footer is complex and unique; all content is captured verbatim in footer_html."
+      }
+    ],
+    "sectionAssignments": [
+      {
+        "index": 0,
+        "type": "masthead_ad_bar",
+        "confidence": 0.98,
+        "itemValues": {
+          "view_in_browser_href": "https://redacted.invalid/href-135",
+          "ad_href": "https://redacted.invalid/href-136",
+          "ad_src_desktop": "https://redacted.invalid/src-137",
+          "ad_src_mobile": "https://redacted.invalid/src-138"
+        }
+      },
+      {
+        "index": 1,
+        "type": "newsletter_masthead",
+        "confidence": 0.99,
+        "itemValues": {
+          "logo_href": "https://redacted.invalid/href-139",
+          "logo_src": "https://redacted.invalid/src-140",
+          "logo_alt": "The New York Times",
+          "title_src": "https://redacted.invalid/src-141",
+          "title_alt": "Today's Headlines",
+          "dateline": "June 1, 2026, 4:30 a.m. Eastern time"
+        }
+      },
+      {
+        "index": 2,
+        "type": "section_article_group",
+        "confidence": 0.97,
+        "itemValues": {
+          "section_label": "Top News",
+          "articles_html": "<tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-142\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-143\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-142\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">Trump Hits the Stalemate Phase of His International Interventions, and It Stings</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">In Ukraine, Gaza and now Iran, President Trump's early declarations of easy wins have given way to harsh reality.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-144\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-145\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-144\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">Iran War Live Updates: U.S. and Iran Exchange New Attacks</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">U.S. Central Command said it conducted a round of “self-defense strikes” on military targets in southern Iran over the weekend. Iran’s military later said it had targeted a base in retaliation.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-146\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-147\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-146\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">Trump Administration Sees Striking Exodus of Legal Talent</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">The departure of more than 10,000 federal lawyers has left some agencies without sufficient staff and has boosted the ranks of state attorneys general offices and advocacy groups.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr>"
+        }
+      },
+      {
+        "index": 3,
+        "type": "section_article_group",
+        "confidence": 0.97,
+        "itemValues": {
+          "section_label": "World",
+          "articles_html": "<tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-148\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-149\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-148\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">Far-Right Outsider Advances in Colombia’s Heated Presidential Election</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">The candidate, Abelardo de la Espriella, will face a senator from the left-wing party of the outgoing president, Gustavo Petro, in a June runoff.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-150\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-151\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-150\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">To Improve Ukraine’s Military, She Calls Out the Ugly Parts</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">Olha Reshetylova has been tasked by the government with overseeing soldiers’ rights. Some commanders resent her, but she says her work makes the armed forces stronger.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-152\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-153\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-152\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">India’s Hindu Right Has a New Hero: A 17th-Century Warrior King</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">Statues of Shivaji are rising everywhere. The founder of the Maratha empire who fought against the Mughal dynasty is now a symbol for nationalists remaking the country.</p></a></td></tr></tbody></table></td></tr><tr><td style=\"padding-bottom:30px;border-bottom:1px solid #dcdcdc\"></td></tr><tr><td height=\"15\" class=\"css-uo1kc3\"></td></tr>"
+        }
+      },
+      {
+        "index": 4,
+        "type": "section_more_link",
+        "confidence": 0.99,
+        "itemValues": {
+          "link_href": "https://redacted.invalid/href-154",
+          "link_label": "See more world news"
+        }
+      },
+      {
+        "index": 5,
+        "type": "section_article_group",
+        "confidence": 0.97,
+        "itemValues": {
+          "section_label": "U.S.",
+          "articles_html": "<tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-155\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-156\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-155\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">Notre Dame Students Abused by Priest in ‘Weighing Scheme,’ Report Finds</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">An investigation commissioned by Notre Dame found that the Catholic university could have done more to respond to allegations of sexual misconduct.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-157\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-158\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-157\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">The Earth Shook. Tanks Burst. Now Kona Faces a Water Crisis.</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">An earthquake destroyed many water catchment systems on Hawaii’s Big Island, capping a spring filled with devastating floods.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-159\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-160\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-159\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">In U.F.O. Files, Some Christians See Vexing Questions — and Demons</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">The prospect of intelligent life elsewhere in the universe raises unsettling theological implications.</p></a></td></tr></tbody></table></td></tr><tr><td style=\"padding-bottom:30px;border-bottom:1px solid #dcdcdc\"></td></tr><tr><td height=\"15\" class=\"css-uo1kc3\"></td></tr>"
+        }
+      },
+      {
+        "index": 6,
+        "type": "section_more_link",
+        "confidence": 0.99,
+        "itemValues": {
+          "link_href": "https://redacted.invalid/href-161",
+          "link_label": "See more U.S. news"
+        }
+      },
+      {
+        "index": 7,
+        "type": "section_article_group",
+        "confidence": 0.97,
+        "itemValues": {
+          "section_label": "Politics",
+          "articles_html": "<tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-162\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-163\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-162\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">Trump Is Dominating G.O.P. Primaries. Does That Mean Victory in the Midterms?</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">Come November, the Republican Party will need the support of voters outside of President Trump’s base, many of whom are deeply dissatisfied with the economy and the Iran war.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-164\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-165\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-164\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">After Voting Decision, a Month of Political Earthquakes Across the South</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">As Republicans rush to redraw the region’s congressional maps, some voters are confused and concerned, and civil rights activists are gearing up for the fight of a generation.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-166\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-167\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-166\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">The Wars, Raids and Airstrikes Under Trump</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">The United States has been involved in many military operations around the world since President Trump returned to office.</p></a></td></tr></tbody></table></td></tr><tr><td style=\"padding-bottom:30px;border-bottom:1px solid #dcdcdc\"></td></tr><tr><td height=\"15\" class=\"css-uo1kc3\"></td></tr>"
+        }
+      },
+      {
+        "index": 8,
+        "type": "section_more_link",
+        "confidence": 0.99,
+        "itemValues": {
+          "link_href": "https://redacted.invalid/href-168",
+          "link_label": "See more political news"
+        }
+      },
+      {
+        "index": 9,
+        "type": "section_article_group",
+        "confidence": 0.97,
+        "itemValues": {
+          "section_label": "Business",
+          "articles_html": "<tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-169\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-170\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-169\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">Nvidia Has a Plan to Put Its Chips in Personal Computers</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">The world’s most valuable company is chasing Intel and Apple as it tries to bring A.I. agents to laptops and desktops.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-171\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-172\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-171\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">Pulling Customs From ‘Sanctuary’ City Airports Would Cause Chaos, Business Groups Say</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">Homeland Security Secretary Markwayne Mullin’s proposal could block hubs like Boston, New York and Los Angeles from accepting international flights.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-173\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-174\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-173\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">An Air Taxi Lands in Manhattan, but You Can’t Fly in It Yet</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">Aviation start-ups and the Trump administration want to replace helicopters with electric aircraft, but the new vehicles still have to pass arduous tests before the public can use them.</p></a></td></tr></tbody></table></td></tr><tr><td style=\"padding-bottom:30px;border-bottom:1px solid #dcdcdc\"></td></tr><tr><td height=\"15\" class=\"css-uo1kc3\"></td></tr>"
+        }
+      },
+      {
+        "index": 10,
+        "type": "section_more_link",
+        "confidence": 0.99,
+        "itemValues": {
+          "link_href": "https://redacted.invalid/href-175",
+          "link_label": "See more business news"
+        }
+      },
+      {
+        "index": 11,
+        "type": "section_article_group",
+        "confidence": 0.97,
+        "itemValues": {
+          "section_label": "New York",
+          "articles_html": "<tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-176\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-177\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-176\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">High-Speed Sailboats Race Past the New York Skyline</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">SailGP, a two-day competition some say is like Formula 1 on the water, has replaced part of the normal traffic in New York Harbor with high-tech catamarans.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-178\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-179\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-178\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">A Long History of Handwritten Police Logs Comes to an End</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">Command logs date back as far as the 1860s, bearing witness to everything from the Civil War draft riots to the Sept. 11 terror attacks. The Police Department will soon replace the analog system with a digital one.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-180\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-181\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-180\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">Israel Day Parade in New York Proceeds Peacefully, Without the Mayor</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">Mayor Zohran Mamdani did not attend the annual parade, which took place amid a deterioration of public support for Israel and rising antisemitism across the United States.</p></a></td></tr></tbody></table></td></tr><tr><td style=\"padding-bottom:30px;border-bottom:1px solid #dcdcdc\"></td></tr><tr><td height=\"15\" class=\"css-uo1kc3\"></td></tr>"
+        }
+      },
+      {
+        "index": 12,
+        "type": "section_more_link",
+        "confidence": 0.99,
+        "itemValues": {
+          "link_href": "https://redacted.invalid/href-182",
+          "link_label": "See more New York news"
+        }
+      },
+      {
+        "index": 13,
+        "type": "section_article_group",
+        "confidence": 0.97,
+        "itemValues": {
+          "section_label": "Arts",
+          "articles_html": "<tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-183\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-184\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-183\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\"><span style=\"color:#888\">Audio | </span>Why ‘Euphoria’ Had to End This Way. For Good.</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">In an exclusive interview, Sam Levinson explained why he felt it was time to bring the series to a close and responded to its detractors.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-185\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-186\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-185\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">‘Othello’ Review: Wendell Pierce Steps Into Iago’s Twisted Web</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">This production in the nation’s capital, with an enticingly opaque Iago, attempts to make Shakespeare’s tragedy relevant to our age of conspiracies.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-187\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-188\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-187\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">10-Minute Challenge: ‘The Painted Room’ by Lois Dodd</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">We’d like you to look at one piece of art for 10 minutes, uninterrupted.</p></a></td></tr></tbody></table></td></tr><tr><td style=\"padding-bottom:30px;border-bottom:1px solid #dcdcdc\"></td></tr><tr><td height=\"15\" class=\"css-uo1kc3\"></td></tr>"
+        }
+      },
+      {
+        "index": 14,
+        "type": "section_more_link",
+        "confidence": 0.99,
+        "itemValues": {
+          "link_href": "https://redacted.invalid/href-189",
+          "link_label": "See more arts news"
+        }
+      },
+      {
+        "index": 15,
+        "type": "section_article_group",
+        "confidence": 0.97,
+        "itemValues": {
+          "section_label": "Books",
+          "articles_html": "<tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-190\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-191\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-190\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">This Modern Fable Uses ‘Uncle Remus’ to Reclaim Black History</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">In “Rabbit, Fox, Tar,” a white neighborhood’s local election is complicated when a mysterious, dark-skinned woman suddenly appears in town.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-192\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-193\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-192\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">The Hit Man Who Owns a Radio Station, and Other Riveting Crime Novels</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">Our critic on four terrific new mysteries.</p></a></td></tr></tbody></table></td></tr><tr><td style=\"padding-bottom:30px;border-bottom:1px solid #dcdcdc\"></td></tr><tr><td height=\"15\" class=\"css-uo1kc3\"></td></tr>"
+        }
+      },
+      {
+        "index": 16,
+        "type": "section_more_link",
+        "confidence": 0.99,
+        "itemValues": {
+          "link_href": "https://redacted.invalid/href-194",
+          "link_label": "See more books news"
+        }
+      },
+      {
+        "index": 17,
+        "type": "section_article_group",
+        "confidence": 0.97,
+        "itemValues": {
+          "section_label": "Food",
+          "articles_html": "<tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-195\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-196\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-195\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">Grilled Za’atar Chicken, Lemon Sorbet and More Alfresco Daydreams</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">After a long stretch of dining out on the road, I’m fantasizing about enjoying these recipes at home, in the fresh air.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-197\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-198\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-197\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">Dijon Chicken, Tomatoes and Scallions</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">And more recipes to harness a fresh jar of eye-watering-in-a-good-way mustard.</p></a></td></tr></tbody></table></td></tr><tr><td style=\"padding-bottom:30px;border-bottom:1px solid #dcdcdc\"></td></tr><tr><td height=\"15\" class=\"css-uo1kc3\"></td></tr>"
+        }
+      },
+      {
+        "index": 18,
+        "type": "section_more_link",
+        "confidence": 0.99,
+        "itemValues": {
+          "link_href": "https://redacted.invalid/href-199",
+          "link_label": "See more food news"
+        }
+      },
+      {
+        "index": 19,
+        "type": "section_article_group",
+        "confidence": 0.97,
+        "itemValues": {
+          "section_label": "Science",
+          "articles_html": "<tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-200\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-201\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-200\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">2025 Wildfires Were the Costliest Ever, Researchers Say</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">Severe, hard-to-control blazes in densely populated areas like Los Angeles drove the year’s record losses.</p></a></td></tr></tbody></table></td></tr><tr><td style=\"padding-bottom:30px;border-bottom:1px solid #dcdcdc\"></td></tr><tr><td height=\"15\" class=\"css-uo1kc3\"></td></tr>"
+        }
+      },
+      {
+        "index": 20,
+        "type": "section_more_link",
+        "confidence": 0.99,
+        "itemValues": {
+          "link_href": "https://redacted.invalid/href-202",
+          "link_label": "See more science news"
+        }
+      },
+      {
+        "index": 21,
+        "type": "section_article_group",
+        "confidence": 0.97,
+        "itemValues": {
+          "section_label": "Real Estate",
+          "articles_html": "<tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-203\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-204\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-203\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">More Shelters Make Room for Four-Legged Friends</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">Shelters recognize that many would rather sleep on the street than leave their animals behind.</p></a></td></tr></tbody></table></td></tr><tr><td style=\"padding-bottom:30px;border-bottom:1px solid #dcdcdc\"></td></tr><tr><td height=\"15\" class=\"css-uo1kc3\"></td></tr>"
+        }
+      },
+      {
+        "index": 22,
+        "type": "section_more_link",
+        "confidence": 0.99,
+        "itemValues": {
+          "link_href": "https://redacted.invalid/href-205",
+          "link_label": "See more real estate news"
+        }
+      },
+      {
+        "index": 23,
+        "type": "section_article_group",
+        "confidence": 0.97,
+        "itemValues": {
+          "section_label": "Fashion &amp; Style",
+          "articles_html": "<tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-206\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-207\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-206\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">The Woman Who Beat Zero Bond</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">When a buyer sought to convert the historic Hedges Inn in East Hampton into a sceney private club, Sarah Wetenhall had a different idea.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-208\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-209\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-208\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">Lights, Camera … I Do</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">Movie theaters are emerging as an unexpected and inexpensive wedding venue — seating, stage and (some) entertainment included.</p></a></td></tr></tbody></table></td></tr><tr><td style=\"padding-bottom:30px;border-bottom:1px solid #dcdcdc\"></td></tr><tr><td height=\"15\" class=\"css-uo1kc3\"></td></tr>"
+        }
+      },
+      {
+        "index": 24,
+        "type": "section_more_link",
+        "confidence": 0.99,
+        "itemValues": {
+          "link_href": "https://redacted.invalid/href-210",
+          "link_label": "See more fashion news"
+        }
+      },
+      {
+        "index": 25,
+        "type": "section_article_group",
+        "confidence": 0.97,
+        "itemValues": {
+          "section_label": "Magazine",
+          "articles_html": "<tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-211\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-212\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-211\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">I Profile Celebrities for a Living. Nothing Prepared Me for Tilly Norwood.</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">The A.I. actress on her craft, the future of film and how she definitely does not intend to murder us.</p></a></td></tr></tbody></table></td></tr><tr><td style=\"padding-bottom:30px;border-bottom:1px solid #dcdcdc\"></td></tr><tr><td height=\"15\" class=\"css-uo1kc3\"></td></tr>"
+        }
+      },
+      {
+        "index": 26,
+        "type": "section_more_link",
+        "confidence": 0.99,
+        "itemValues": {
+          "link_href": "https://redacted.invalid/href-213",
+          "link_label": "See more magazine content"
+        }
+      },
+      {
+        "index": 27,
+        "type": "section_article_group",
+        "confidence": 0.95,
+        "notes": "Opinion section adds a byline/kicker <p> element above each article <h3>. The source HTML was truncated; articles_html is reconstructed from the visible links/images data combined with the partial HTML provided.",
+        "itemValues": {
+          "section_label": "Opinion",
+          "articles_html": "<tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-214\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-215\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-214\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><p style=\"color:#555;font:14px/21px georgia,serif;margin:0 0 2px;text-transform:uppercase;letter-spacing:.75px\">David French</p><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">The Fire of Stupidity Cannot Be Contained</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">We seem to have forgotten more or less everything.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-216\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-217\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-216\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><p style=\"color:#555;font:14px/21px georgia,serif;margin:0 0 2px;text-transform:uppercase;letter-spacing:.75px\">Guest Essay</p><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">Make America Read Again</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">The reading crisis is real, but the solution does not require new inventions.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-218\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-219\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-218\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><p style=\"color:#555;font:14px/21px georgia,serif;margin:0 0 2px;text-transform:uppercase;letter-spacing:.75px\">Ezra Klein</p><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">There’s Something Else We Should Be Worrying About</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">We’ve heard a lot about what it can do for businesses, and for individuals, but what about society?</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-220\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-221\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-220\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><p style=\"color:#555;font:14px/21px georgia,serif;margin:0 0 2px;text-transform:uppercase;letter-spacing:.75px\">Guest Essay</p><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">The Problem With Martin Luther King Jr.’s Origin Story</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">A civil-rights leader’s friendship with a white boy sits at the heart of his account of how he encountered racism.</p></a></td></tr></tbody></table></td></tr><tr><td height=\"30\"></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding-top:15px\"></td></tr><tr><td><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" style=\"width:100%\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top\" class=\"css-6bqu73\"><table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"120\" align=\"right\" role=\"presentation\"><tbody><tr><td style=\"vertical-align:top;padding:0 0 0 20px\"><a href=\"https://redacted.invalid/href-222\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><img src=\"https://redacted.invalid/src-223\" style=\"display:block;width:120px\" class=\"css-1oqy46o\" width=\"120\"></a></td></tr></tbody></table><a href=\"https://redacted.invalid/href-222\" class=\"css-yf3a57\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block\"><p style=\"color:#555;font:14px/21px georgia,serif;margin:0 0 2px;text-transform:uppercase;letter-spacing:.75px\">Guest Essay</p><h3 style=\"color:#000;margin:0;padding:0 0 5px;font:700 18px/22.5px georgia,serif\">There’s Nothing Wrong With Wanting Men</h3><p style=\"color:#333;font:17px/22.5px georgia,serif;margin:0\">“Heteropessimism” is all the rage — but really, there’s never been a better time to be looking for love. Go on, be a hetero-optimist.</p></a></td></tr></tbody></table></td></tr><tr><td style=\"padding-bottom:30px;border-bottom:1px solid #dcdcdc\"></td></tr><tr><td height=\"15\" class=\"css-uo1kc3\"></td></tr>"
+        }
+      },
+      {
+        "index": 28,
+        "type": "section_more_link",
+        "confidence": 0.99,
+        "itemValues": {
+          "link_href": "https://redacted.invalid/href-224",
+          "link_label": "See more Opinion"
+        }
+      },
+      {
+        "index": 29,
+        "type": "inline_ad_block",
+        "confidence": 0.97,
+        "itemValues": {
+          "label_src": "https://redacted.invalid/src-225",
+          "ad_href": "https://redacted.invalid/href-226",
+          "ad_src_desktop": "https://redacted.invalid/src-227",
+          "ad_src_mobile": "https://redacted.invalid/src-228"
+        }
+      },
+      {
+        "index": 30,
+        "type": "tracking_pixel_row",
+        "confidence": 0.92,
+        "itemValues": {
+          "pixels_html": "<td height=\"6\"><img src=\"https://redacted.invalid/src-229\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-230\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-231\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-232\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-233\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-234\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-235\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-236\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-237\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-238\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-239\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-240\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-241\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-242\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-243\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-244\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-245\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-246\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-247\" width=\"2\" height=\"6\" border=\"0\"></td><td height=\"6\"><img src=\"https://redacted.invalid/src-248\" width=\"2\" height=\"6\" border=\"0\"></td>"
+        }
+      },
+      {
+        "index": 31,
+        "type": "email_footer",
+        "confidence": 0.96,
+        "itemValues": {
+          "footer_html": "<tr><td style=\"height:15px\"></td></tr><tr><td style=\"padding:12px 0;border-top:1px solid #000\"><p style=\"font:12px/15px arial,sans-serif;color:#666;margin-bottom:7px\">If you received this newsletter from someone else, <a href=\"https://redacted.invalid/href-249\" style=\"-webkit-text-decoration:underline;text-decoration:none;color:#286ed0\">subscribe here</a>.</p><p style=\"font:12px/15px arial,sans-serif;color:#666;margin-bottom:7px\">Need help? Review our <a href=\"https://redacted.invalid/href-250\" style=\"-webkit-text-decoration:underline;text-decoration:none;color:#286ed0\">newsletter help page</a> or <a href=\"https://redacted.invalid/href-251\" style=\"-webkit-text-decoration:underline;text-decoration:none;color:#286ed0\">contact us</a> for assistance.</p><p style=\"font:12px/15px arial,sans-serif;color:#666;margin-bottom:7px\"><span>You received this email because you signed up for Today’s Headlines from The New York Times.</span></p><p style=\"font:12px/15px arial,sans-serif;color:#666;margin-bottom:7px\">To stop receiving Today’s Headlines, <a href=\"https://redacted.invalid/href-252\" style=\"-webkit-text-decoration:underline;text-decoration:none;color:#286ed0\">unsubscribe</a>. To opt out of other promotional emails from The Times, including those regarding The Athletic, <a href=\"https://redacted.invalid/href-253\" style=\"-webkit-text-decoration:underline;text-decoration:none;color:#286ed0\">manage your&nbsp;email&nbsp;settings</a>.</p></td></tr><tr><td style=\"padding:10px 0;border-top:1px solid #dcdcdc\"><p style=\"font:12px/15px arial,sans-serif;color:#666;margin:0\"><a href=\"https://redacted.invalid/href-254\" style=\"-webkit-text-decoration:underline;text-decoration:none;color:#286ed0\">Subscribe to The Times</a><a href=\"https://redacted.invalid/href-255\" style=\"-webkit-text-decoration:underline;text-decoration:none;color:#286ed0;display:none\">Get The New York Times app</a></p></td></tr><tr><td style=\"padding:9px 0 8px;border-top:1px solid #dcdcdc\"><table><tbody><tr><td style=\"padding-right:15px\"><p style=\"font:12px/15px arial,sans-serif;color:#666;margin:0\">Connect with us on:</p></td><td style=\"padding-right:15px\"><a href=\"https://redacted.invalid/href-256\" style=\"color:#333;-webkit-text-decoration:underline;text-decoration:underline\"><img width=\"25\" height=\"25\" alt=\"whatsapp\" style=\"vertical-align:middle\" src=\"https://redacted.invalid/src-257\"></a></td></tr></tbody></table></td></tr><tr><td style=\"padding:10px 0;border-top:1px solid #dcdcdc\"><p style=\"font:12px/15px arial,sans-serif;color:#666;margin:0;line-height:20px\"><a href=\"https://redacted.invalid/href-258\" style=\"-webkit-text-decoration:underline;text-decoration:none;color:#286ed0;display:inline-block;border-right:1px solid #dcdcdc;padding-right:10px;margin-right:10px\">Change Your Email</a><a href=\"https://redacted.invalid/href-259\" style=\"-webkit-text-decoration:underline;text-decoration:none;color:#286ed0;display:inline-block;border-right:1px solid #dcdcdc;padding-right:10px;margin-right:10px\">Privacy Policy</a><a href=\"https://redacted.invalid/href-260\" style=\"-webkit-text-decoration:underline;text-decoration:none;color:#286ed0;display:inline-block;border-right:1px solid #dcdcdc;padding-right:10px;margin-right:10px\">Contact Us</a><a href=\"https://redacted.invalid/href-261\" style=\"-webkit-text-decoration:underline;text-decoration:none;color:#286ed0\">California Notices</a></p></td></tr><tr><td style=\"padding:5px 0 7px;border-top:1px solid #dcdcdc\"><a href=\"https://redacted.invalid/href-262\" style=\"-webkit-text-decoration:underline;text-decoration:none;color:#666;line-height:0;display:inline-block;border-right:1px solid #dcdcdc;padding-right:10px;margin-right:10px\"><img width=\"150\" alt=\"Zeta Logo\" style=\"vertical-align:middle\" src=\"https://redacted.invalid/src-263\"></a><a href=\"https://redacted.invalid/href-264\" style=\"-webkit-text-decoration:underline;text-decoration:none;color:#666;line-height:0\"><img width=\"70\" alt=\"AdChoices Logo\" style=\"vertical-align:middle\" src=\"https://redacted.invalid/src-265\"></a></td></tr><tr><td style=\"border-top:1px solid #dcdcdc;padding:10px 0 30px\"><p style=\"color:#999;font:12px/15px arial,sans-serif;margin:0\">The New York Times Company. 620 Eighth Avenue New York, NY 10018</p></td></tr>"
+        }
+      }
+    ]
+  }
+}

@@ -72,6 +72,7 @@
     "links": [
       "http://links.newyorker.mkt4334.com/ctt?kn=10&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
       "http://links.newyorker.mkt4334.com/ctt?kn=16&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+      "http://links.newyorker.mkt4334.com/ctt?kn=7&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
       "http://links.newyorker.mkt4334.com/ctt?kn=13&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
       "http://links.newyorker.mkt4334.com/ctt?kn=15&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
       "http://links.newyorker.mkt4334.com/ctt?kn=1&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
@@ -101,18 +102,19 @@
       "head": 1,
       "meta": 5,
       "title": 1,
+      "style": 1,
       "body": 1,
       "table": 27,
       "tbody": 27,
       "tr": 27,
       "td": 27,
       "div": 54,
-      "em": 2,
-      "a": 26,
+      "em": 4,
+      "a": 27,
       "img": 7,
-      "br": 9
+      "br": 13
     },
-    "textLength": 2259
+    "textLength": 1966
   },
   "diffs": {
     "images": {
@@ -127,13 +129,11 @@
     },
     "links": {
       "sourceCount": 25,
-      "rebuildCount": 24,
-      "inBoth": 24,
-      "onlyInSource": [
-        "http://links.newyorker.mkt4334.com/ctt?kn=7&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0"
-      ],
+      "rebuildCount": 25,
+      "inBoth": 25,
+      "onlyInSource": [],
       "onlyInRebuild": [],
-      "preserved": 0.96
+      "preserved": 1
     },
     "headings": {
       "sourceCount": 0,

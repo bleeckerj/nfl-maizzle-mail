@@ -1,0 +1,302 @@
+{
+  "source": "generated/new-york-times-daily-headlines.sanitized.html",
+  "templateName": "new-york-times-daily-headlines",
+  "model": "claude-sonnet-4-6",
+  "usage": {
+    "input_tokens": 40835,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 23444,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "layoutRoot": "div",
+  "sectionCount": 32,
+  "components": [
+    {
+      "type": "masthead_ad_bar",
+      "displayName": "Masthead Ad Bar",
+      "sectionIndexes": [
+        0
+      ],
+      "slots": [
+        "view_in_browser_href",
+        "ad_href",
+        "ad_src_desktop",
+        "ad_src_mobile"
+      ],
+      "confidence": 0.98
+    },
+    {
+      "type": "newsletter_masthead",
+      "displayName": "Newsletter Masthead",
+      "sectionIndexes": [
+        1
+      ],
+      "slots": [
+        "logo_href",
+        "logo_src",
+        "logo_alt",
+        "title_src",
+        "title_alt",
+        "dateline"
+      ],
+      "confidence": 0.99
+    },
+    {
+      "type": "section_article_group",
+      "displayName": "Section Article Group",
+      "sectionIndexes": [
+        2,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27
+      ],
+      "slots": [
+        "section_label",
+        "articles_html"
+      ],
+      "confidence": 0.97,
+      "notes": "articles_html contains the full repeated article-row markup for each article in the section. The Opinion section (index 27) adds a byline/kicker <p> above each <h3>; this variation is captured verbatim in articles_html."
+    },
+    {
+      "type": "section_more_link",
+      "displayName": "Section 'See More' Link",
+      "sectionIndexes": [
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28
+      ],
+      "slots": [
+        "link_href",
+        "link_label"
+      ],
+      "confidence": 0.99
+    },
+    {
+      "type": "inline_ad_block",
+      "displayName": "Inline Ad Block",
+      "sectionIndexes": [
+        29
+      ],
+      "slots": [
+        "label_src",
+        "ad_href",
+        "ad_src_desktop",
+        "ad_src_mobile"
+      ],
+      "confidence": 0.97
+    },
+    {
+      "type": "tracking_pixel_row",
+      "displayName": "Tracking Pixel Row",
+      "sectionIndexes": [
+        30
+      ],
+      "slots": [
+        "pixels_html"
+      ],
+      "confidence": 0.92,
+      "notes": "These are likely email-client preheader / tracking pixel rows. Content is fully verbatim in pixels_html."
+    },
+    {
+      "type": "email_footer",
+      "displayName": "Email Footer",
+      "sectionIndexes": [
+        31
+      ],
+      "slots": [
+        "footer_html"
+      ],
+      "confidence": 0.96,
+      "notes": "Footer is complex and unique; all content is captured verbatim in footer_html."
+    }
+  ],
+  "sectionAssignments": [
+    {
+      "index": 0,
+      "type": "masthead_ad_bar",
+      "confidence": 0.98
+    },
+    {
+      "index": 1,
+      "type": "newsletter_masthead",
+      "confidence": 0.99
+    },
+    {
+      "index": 2,
+      "type": "section_article_group",
+      "confidence": 0.97
+    },
+    {
+      "index": 3,
+      "type": "section_article_group",
+      "confidence": 0.97
+    },
+    {
+      "index": 4,
+      "type": "section_more_link",
+      "confidence": 0.99
+    },
+    {
+      "index": 5,
+      "type": "section_article_group",
+      "confidence": 0.97
+    },
+    {
+      "index": 6,
+      "type": "section_more_link",
+      "confidence": 0.99
+    },
+    {
+      "index": 7,
+      "type": "section_article_group",
+      "confidence": 0.97
+    },
+    {
+      "index": 8,
+      "type": "section_more_link",
+      "confidence": 0.99
+    },
+    {
+      "index": 9,
+      "type": "section_article_group",
+      "confidence": 0.97
+    },
+    {
+      "index": 10,
+      "type": "section_more_link",
+      "confidence": 0.99
+    },
+    {
+      "index": 11,
+      "type": "section_article_group",
+      "confidence": 0.97
+    },
+    {
+      "index": 12,
+      "type": "section_more_link",
+      "confidence": 0.99
+    },
+    {
+      "index": 13,
+      "type": "section_article_group",
+      "confidence": 0.97
+    },
+    {
+      "index": 14,
+      "type": "section_more_link",
+      "confidence": 0.99
+    },
+    {
+      "index": 15,
+      "type": "section_article_group",
+      "confidence": 0.97
+    },
+    {
+      "index": 16,
+      "type": "section_more_link",
+      "confidence": 0.99
+    },
+    {
+      "index": 17,
+      "type": "section_article_group",
+      "confidence": 0.97
+    },
+    {
+      "index": 18,
+      "type": "section_more_link",
+      "confidence": 0.99
+    },
+    {
+      "index": 19,
+      "type": "section_article_group",
+      "confidence": 0.97
+    },
+    {
+      "index": 20,
+      "type": "section_more_link",
+      "confidence": 0.99
+    },
+    {
+      "index": 21,
+      "type": "section_article_group",
+      "confidence": 0.97
+    },
+    {
+      "index": 22,
+      "type": "section_more_link",
+      "confidence": 0.99
+    },
+    {
+      "index": 23,
+      "type": "section_article_group",
+      "confidence": 0.97
+    },
+    {
+      "index": 24,
+      "type": "section_more_link",
+      "confidence": 0.99
+    },
+    {
+      "index": 25,
+      "type": "section_article_group",
+      "confidence": 0.97
+    },
+    {
+      "index": 26,
+      "type": "section_more_link",
+      "confidence": 0.99
+    },
+    {
+      "index": 27,
+      "type": "section_article_group",
+      "confidence": 0.95,
+      "notes": "Opinion section adds a byline/kicker <p> element above each article <h3>. The source HTML was truncated; articles_html is reconstructed from the visible links/images data combined with the partial HTML provided."
+    },
+    {
+      "index": 28,
+      "type": "section_more_link",
+      "confidence": 0.99
+    },
+    {
+      "index": 29,
+      "type": "inline_ad_block",
+      "confidence": 0.97
+    },
+    {
+      "index": 30,
+      "type": "tracking_pixel_row",
+      "confidence": 0.92
+    },
+    {
+      "index": 31,
+      "type": "email_footer",
+      "confidence": 0.96
+    }
+  ]
+}

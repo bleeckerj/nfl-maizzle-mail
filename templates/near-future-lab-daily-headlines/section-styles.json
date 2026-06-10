@@ -1,0 +1,213 @@
+{
+  "description": "Decompiled section styles for template \"32 sections\" (auto-generated).",
+  "version": "1.0.0",
+  "sectionStyles": {
+    "masthead_ad_bar": {
+      "name": "Masthead Ad Bar",
+      "description": "Top-of-email bar with a 'View in browser' link and an inline ad image (desktop + mobile variants).",
+      "containerStyles": {
+        "padding": "15px 0 5px"
+      },
+      "contentStyles": {},
+      "linkStyles": {
+        "color": "#666",
+        "textDecoration": "none"
+      },
+      "headingStyles": {}
+    },
+    "newsletter_masthead": {
+      "name": "Newsletter Masthead",
+      "description": "Publication logo, newsletter title image, and dateline. Top identity block for the email.",
+      "containerStyles": {
+        "borderTop": "1px solid #000",
+        "padding": "0",
+        "borderBottom": "0 solid #000"
+      },
+      "contentStyles": {},
+      "linkStyles": {},
+      "headingStyles": {}
+    },
+    "intro_statement": {
+      "name": "Intro Statement",
+      "description": "A short introductory editor's note or framing statement rendered below the masthead and before article groups.",
+      "containerStyles": {
+        "padding": "0 0 24px 0"
+      },
+      "contentStyles": {
+        "color": "#333",
+        "fontFamily": "Georgia, serif",
+        "fontSize": "18px",
+        "lineHeight": "26px"
+      },
+      "linkStyles": {
+        "color": "#333",
+        "textDecoration": "underline"
+      },
+      "headingStyles": {}
+    },
+    "ad-block": {
+      "name": "Ad Block",
+      "description": "Inventory-backed ad card hydrated from nfl-editorial/src/content/ads.json.",
+      "containerStyles": {
+        "paddingTop": "15px",
+        "borderTop": "1px solid #dcdcdc",
+        "borderBottom": "1px solid #dcdcdc"
+      },
+      "contentStyles": {
+        "color": "#37435b",
+        "fontFamily": "Share Tech Mono, monospace",
+        "fontSize": "13px",
+        "fontWeight": "300",
+        "lineHeight": "1rem",
+        "textAlign": "left"
+      },
+      "descriptionMobileClass": "mob-ad-copy",
+      "mobileDescriptionStyles": {
+        "fontSize": "17px",
+        "fontWeight": "400",
+        "lineHeight": "1.35",
+        "fontFamily": "Share Tech Mono, Courier New, Courier, monospace"
+      },
+      "metaMobileClass": "mob-ad-meta",
+      "mobileMetaStyles": {
+        "fontSize": "13px",
+        "fontWeight": "700",
+        "lineHeight": "1.15",
+        "fontFamily": "Arial, sans-serif"
+      },
+      "linkStyles": {
+        "color": "#333",
+        "textDecoration": "underline"
+      },
+      "headingStyles": {
+        "color": "#000"
+      }
+    },
+    "section_article_group": {
+      "name": "Section Article Group",
+      "description": "A named news section (e.g. Top News, World, U.S., Politics) with a bold section heading and 1–5 article cards, each with a thumbnail image, headline, and summary, all linked.",
+      "containerStyles": {
+        "padding": "12px 0 13px 0",
+        "borderTop": "9px solid #000",
+        "borderBottom": "1px solid #000",
+        "paddingTop": "15px"
+      },
+      "contentStyles": {
+        "color": "#333"
+      },
+      "linkStyles": {
+        "color": "#333",
+        "textDecoration": "none"
+      },
+      "ctaStyles": {
+        "display": "inline-block",
+        "marginTop": "12px",
+        "padding": "6px 10px",
+        "border": "1px solid #111",
+        "borderRadius": "4px",
+        "fontFamily": "Arial, sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "1.2",
+        "fontWeight": "700",
+        "color": "#111",
+        "textDecoration": "none"
+      },
+      "headingStyles": {
+        "color": "#000"
+      }
+    },
+    "section_more_link": {
+      "name": "Section 'See More' Link",
+      "description": "A standalone paragraph with a single 'See more [section] news' link appearing below each section article group.",
+      "containerStyles": {},
+      "contentStyles": {},
+      "linkStyles": {
+        "color": "#333",
+        "textDecoration": "underline"
+      },
+      "headingStyles": {}
+    },
+    "inline_ad_block": {
+      "name": "Inline Ad Block",
+      "description": "Mid- or end-of-email inline advertisement with a small label image, a desktop ad image and a hidden mobile ad image.",
+      "containerStyles": {
+        "paddingTop": "15px",
+        "borderTop": "1px solid #dcdcdc"
+      },
+      "contentStyles": {},
+      "linkStyles": {},
+      "headingStyles": {}
+    },
+    "tracking_pixel_row": {
+      "name": "Tracking Pixel Row",
+      "description": "Hidden div containing a row of tiny 2×6 tracking/preheader pixel images, aria-hidden.",
+      "containerStyles": {},
+      "contentStyles": {},
+      "linkStyles": {},
+      "headingStyles": {}
+    },
+    "email_footer": {
+      "name": "Email Footer",
+      "description": "Full footer with subscription management text, links, social icons, legal logos, and mailing address. Authored via structured slots (paragraphs / address / unsubscribe_label / social_links) with a legacy footer_html fallback; see components/FooterBody.html.",
+      "containerStyles": {
+        "padding": "12px 0",
+        "borderTop": "1px solid #dcdcdc",
+        "paddingRight": "15px"
+      },
+      "contentStyles": {
+        "color": "#666"
+      },
+      "linkStyles": {
+        "color": "#286ed0",
+        "textDecoration": "none"
+      },
+      "headingStyles": {}
+    },
+    "share_this": {
+      "name": "Share This",
+      "description": "Slim, tinted 'share this issue' CTA bar with a statement and Forward-by-email / Open-online buttons. All copy is configurable with sensible defaults.",
+      "containerStyles": {
+        "borderTop": "1px solid #000",
+        "borderBottom": "1px solid #dcdcdc",
+        "background": "#f5f4f0",
+        "padding": "18px 20px"
+      },
+      "contentStyles": {
+        "color": "#333"
+      },
+      "linkStyles": {
+        "color": "#111",
+        "textDecoration": "none"
+      },
+      "headingStyles": {}
+    }
+  },
+  "globalOverrides": {
+    "description": "Mobile font-size lock — bumps body copy larger on small screens for readability. Same pattern as dense-discovery.",
+    "mobileBreakpoint": "599px",
+    "mobileAdjustments": {
+      "contentStyles": {
+        "fontSize": "23px",
+        "lineHeight": "1.3"
+      },
+      "captionStyles": {
+        "fontSize": "14px",
+        "lineHeight": "1.2"
+      }
+    },
+    "darkModeFlatten": {
+      "enabledByDefault": true,
+      "disableFlag": "--no-dark-mode-flatten",
+      "mode": "flatten",
+      "description": "Defensive dark-mode fallback. Build-time policy flattens colored sections to dark gray surfaces with off-white text when the recipient client honors prefers-color-scheme: dark.",
+      "colors": {
+        "pageBackground": "#111318",
+        "surface": "#1b1f27",
+        "text": "#f2f4f8",
+        "mutedText": "#b8c0cc",
+        "link": "#8ecbff",
+        "border": "#343b48"
+      }
+    }
+  }
+}

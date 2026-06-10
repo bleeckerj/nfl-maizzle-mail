@@ -1,0 +1,11 @@
+<!--
+  Tracking Pixel Row
+  Hidden div containing a row of tiny 2×6 tracking/preheader pixel images, aria-hidden.
+
+  Slots:
+  - pixels_html (rich_text) — Full HTML of all pixel <img> elements
+
+  Used by section indexes: [30] in the source email.
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<div style="overflow:hidden;height:0;width:100%;max-width:600px;margin:0 auto" aria-hidden="true"><table cellpadding="0" cellspacing="0" border="0" width="40"><tbody><tr>{{{ section.pixels_html }}}</tr></tbody></table></div>

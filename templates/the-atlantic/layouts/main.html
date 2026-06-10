@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+  <meta charset="utf-8">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <title>{{ page.title || title || 'the-atlantic' }}</title>
+  <style>
+    /* Mobile font-size lock — bumps body copy larger on small screens so
+       readers don't have to zoom. Same pattern as dense-discovery. Don't
+       lower these without updating tests/newsletter-core/mobile-font-size-lock.test.mjs. */
+    @media screen and (max-width: 599px) {
+      .mob-text,
+      .mob-text a,
+      .mob-text p,
+      .mob-text li,
+      .mob-text span,
+      .mob-text td,
+      .mob-text div {
+        font-size: 23px !important;
+        line-height: 1.3 !important;
+      }
+      .mob-title,
+      .mob-title a {
+        font-size: 26px !important;
+        line-height: 1.3 !important;
+      }
+      .mob-subtitle,
+      .mob-subtitle a {
+        font-size: 21px !important;
+        line-height: 1.3 !important;
+      }
+      .mob-caption,
+      .mob-caption a,
+      .mob-caption p,
+      .mob-caption span {
+        font-size: 14px !important;
+        line-height: 1.2 !important;
+      }
+      table.full-width,
+      .full-width,
+      table[role="presentation"],
+      table[width],
+      td[width] {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+      }
+      img {
+        max-width: 100% !important;
+        height: auto !important;
+        width: auto !important;
+      }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; width: 100%; background-color: #ffffff;">
+  <block name="template"></block>
+</body>
+</html>

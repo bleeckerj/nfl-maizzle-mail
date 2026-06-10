@@ -1,0 +1,55 @@
+<!--
+  Subscription House Promo
+  Boxed subscriber promo card with header, hero image, dek, and CTA button.
+
+  Slots:
+  - title (text) — Promo headline
+  - image_src (image_url) — Promo hero image URL
+  - image_alt (image_alt) — Promo hero image alt
+  - cta_href (link_url) — CTA link URL
+  - cta_label (link_label) — CTA button label
+  - dek (text) — Supporting paragraph
+
+  Used by section indexes: [9] in the source email.
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="c-housepromo" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #eff2f7; border-collapse: collapse !important;" bgcolor="#eff2f7">
+  <tbody>
+    <tr>
+      <td align="center" valign="top" class="c-housepromo__container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #eff2f7; padding: 24px 24px 32px 24px;" bgcolor="#eff2f7">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+          <tbody>
+            <tr>
+              <td align="left" valign="top" width="100%" class="c-housepromo__title" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-bottom: 24px;">
+                <h1 class="c-housepromo__header" style="font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-size: 24px; font-weight: 600; color: #21272c; margin: 0; line-height: 30px; letter-spacing: 0.33px; padding-bottom: 16px; border-bottom: 1px solid #c0ccda;">{{ section.title }}</h1>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" valign="top" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                <a class="c-housepromo__link" href="{{ section.cta_href }}" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: none;">
+                  <img class="c-housepromo__img" alt="{{ section.image_alt }}" src="{{ section.image_src }}" width="636" height="auto" style="-ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; padding-bottom: 24px; max-width: 100%;">
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td align="left" valign="top" width="100%" class="c-housepromo__dek" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: block; padding-bottom: 24px;">
+                <p class="e-p" style="font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0;">{{ section.dek }}</p>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" valign="center" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                  <tbody><tr>
+                    <td align="center" valign="center" class="c-housepromo__btn" height="40" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #21272c; border-radius: 4px; text-align: center;" bgcolor="#21272c">
+                      <a href="{{ section.cta_href }}" class="c-housepromo__btn--text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #ffffff; font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-weight: 400; font-size: 17px; line-height: 25px; border-radius: 4px; padding: 8px 24px; text-decoration: none; display: inline-block;">{{ section.cta_label }}</a>
+                    </td>
+                  </tr>
+                </tbody></table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>

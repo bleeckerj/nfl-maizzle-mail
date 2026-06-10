@@ -1,0 +1,268 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "the-atlantic newsletter schema",
+  "description": "Schema for newsletters built on the \"the-atlantic\" decompiled component palette.",
+  "type": "object",
+  "properties": {
+    "template": {
+      "type": "string",
+      "const": "the-atlantic"
+    },
+    "title": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "title": "Masthead Logo",
+            "description": "Top branded header image for The Daily newsletter.",
+            "properties": {
+              "type": {
+                "const": "masthead_logo"
+              },
+              "logo_src": {
+                "type": "string",
+                "description": "Masthead image URL"
+              },
+              "logo_alt": {
+                "type": "string",
+                "description": "Masthead image alt text"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Issue Date",
+            "description": "Uppercase monospace date label for the issue.",
+            "properties": {
+              "type": {
+                "const": "issue_date"
+              },
+              "date": {
+                "type": "string",
+                "description": "Issue date text"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Author Byline",
+            "description": "Author headshot, linked name, and short bio/title.",
+            "properties": {
+              "type": {
+                "const": "author_byline"
+              },
+              "author_url": {
+                "type": "string",
+                "description": "Author profile URL"
+              },
+              "author_name": {
+                "type": "string",
+                "description": "Author display name"
+              },
+              "headshot_src": {
+                "type": "string",
+                "description": "Author headshot URL"
+              },
+              "headshot_alt": {
+                "type": "string",
+                "description": "Author headshot alt text"
+              },
+              "author_bio": {
+                "type": "string",
+                "description": "Author role/bio"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Intro Paragraph",
+            "description": "Plain rich-text intro paragraph (no heading, no image).",
+            "properties": {
+              "type": {
+                "const": "intro_paragraph"
+              },
+              "body_html": {
+                "type": "string",
+                "description": "Intro paragraph HTML content (HTML allowed)"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Feature Story Section",
+            "description": "Section with red-rule H1 heading, optional hero image with attribution caption, and rich-text body (paragraphs, blockquotes, links).",
+            "properties": {
+              "type": {
+                "const": "feature_story"
+              },
+              "heading_html": {
+                "type": "string",
+                "description": "Section heading (may include <em>) (HTML allowed)"
+              },
+              "image_block_html": {
+                "type": "string",
+                "description": "Optional hero image block with attribution; empty string if no image (HTML allowed)"
+              },
+              "body_html": {
+                "type": "string",
+                "description": "Body HTML: paragraphs, blockquotes, links (HTML allowed)"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Image with Intro Rich Text",
+            "description": "Hero image (with attribution caption) followed by rich-text paragraphs and bolded link callouts. No heading.",
+            "properties": {
+              "type": {
+                "const": "image_with_intro"
+              },
+              "image_src": {
+                "type": "string",
+                "description": "Hero image URL"
+              },
+              "image_alt": {
+                "type": "string",
+                "description": "Hero image alt text"
+              },
+              "image_attribution": {
+                "type": "string",
+                "description": "Image attribution caption"
+              },
+              "body_html": {
+                "type": "string",
+                "description": "Body paragraphs HTML (HTML allowed)"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Most Popular Link List",
+            "description": "Heading plus ordered list of linked articles.",
+            "properties": {
+              "type": {
+                "const": "popular_link_list"
+              },
+              "heading_html": {
+                "type": "string",
+                "description": "Section heading HTML (HTML allowed)"
+              },
+              "items_html": {
+                "type": "string",
+                "description": "Concatenated <li> entries with anchors (HTML allowed)"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Subscription House Promo",
+            "description": "Boxed subscriber promo card with header, hero image, dek, and CTA button.",
+            "properties": {
+              "type": {
+                "const": "subscription_promo"
+              },
+              "title": {
+                "type": "string",
+                "description": "Promo headline"
+              },
+              "image_src": {
+                "type": "string",
+                "description": "Promo hero image URL"
+              },
+              "image_alt": {
+                "type": "string",
+                "description": "Promo hero image alt"
+              },
+              "cta_href": {
+                "type": "string",
+                "description": "CTA link URL"
+              },
+              "cta_label": {
+                "type": "string",
+                "description": "CTA button label"
+              },
+              "dek": {
+                "type": "string",
+                "description": "Supporting paragraph"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
+            "title": "Newsletter Footer",
+            "description": "Dark global footer with wordmark, newsletter name, signup note, subscribe links and social icons.",
+            "properties": {
+              "type": {
+                "const": "footer"
+              },
+              "wordmark_src": {
+                "type": "string",
+                "description": "Atlantic wordmark image URL"
+              },
+              "newsletter_name": {
+                "type": "string",
+                "description": "Newsletter name title"
+              },
+              "info_html": {
+                "type": "string",
+                "description": "Info paragraph with see-all newsletters link (HTML allowed)"
+              },
+              "subscribe_html": {
+                "type": "string",
+                "description": "Subscribe + app links paragraph (HTML allowed)"
+              },
+              "social_html": {
+                "type": "string",
+                "description": "Social icons block HTML (HTML allowed)"
+              }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "template",
+    "sections"
+  ]
+}

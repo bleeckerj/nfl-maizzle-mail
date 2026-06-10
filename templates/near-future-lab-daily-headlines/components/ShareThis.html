@@ -1,0 +1,47 @@
+<!--
+  Share This
+  Slim, tinted "share this issue" CTA bar (modeled on the footer CTA). A short
+  statement plus a primary "Forward by email" button and an optional outline
+  "Open online" button. Built for 1:1 sharing while reading on mobile or online.
+
+  Every slot is optional and falls back to a sensible default, so a bare
+  `- type: share_this` (ideally with `online_url`) renders the full component.
+
+  Slots:
+  - eyebrow (text)        — Small uppercase label. Default: "Share this issue".
+  - statement (text/html) — One-line CTA. Simple <em>/<strong>/<a> allowed.
+                            Default: "Know someone who'd want a peek at their near future? Pass it along."
+  - email_label (text)    — Primary (solid) button label. Default: "Forward by email".
+  - email_href (string)   — Pre-encoded mailto: URL. If omitted, built from online_url.
+  - online_label (text)   — Secondary (outline) button label. Default: "Open online →".
+  - online_url (string)   — Canonical public issue URL (PLAIN STRING, not a tracked-link
+                            object). Drives the "Open online" button and the default email
+                            body. The outline button is omitted entirely when this is absent.
+  - background (color)    — Bar background. Default: "#f5f4f0".
+  - text_color (color)    — Statement copy color. Default: "#333".
+  - eyebrow_color (color) — Eyebrow label color. Default: "#555".
+  - space_top (px)        — Vertical gap above the bar so it reads as its own
+                            section (not glued to the section above). Default: 28.
+  - space_bottom (px)     — Vertical gap below the bar. Default: 28.
+
+  Mobile scale lives in layouts/main.html under .share-cta-eyebrow / .share-cta-copy /
+  .share-cta-button — deliberately NOT tied to .mob-text so this lockup tunes on its own.
+
+  Dark-mode note: when dark-mode flatten is enabled, .dm-surface / .dm-text override the
+  inline `background` and `text_color` in clients that honor prefers-color-scheme. The
+  outline button keeps dark text on the flattened-dark bar (same behavior as FooterCta).
+
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface' : '' }}"><tbody><tr><td height="{{ section.space_top || 28 }}" style="font-size:0;line-height:0">&#8203;</td></tr></tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" style="width:100%;border-top:1px solid #000;border-bottom:1px solid #dcdcdc;background:{{ section.background || '#f5f4f0' }}" role="presentation" class="share-cta{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" data-content-slot="share_this"><tbody>
+  <tr><td style="padding:18px 20px 0 20px">
+    <p class="share-cta-eyebrow" style="margin:0 0 4px 0;padding:0;color:{{ section.eyebrow_color || '#555' }};font:700 11px/16px arial,sans-serif;letter-spacing:.75px;text-transform:uppercase">{{ section.eyebrow || 'Share this issue' }}</p>
+    <p class="share-cta-copy" style="margin:0;padding:0;color:{{ section.text_color || '#333' }};font:16px/22px georgia,serif">{{{ section.statement || 'Know someone who&rsquo;d want a peek at their near future? Pass it along.' }}}</p>
+  </td></tr>
+  <tr><td style="padding:14px 20px 18px 20px">
+    <a class="share-cta-button" href="{{ section.email_href || ('mailto:?subject=Near%20Future%20Laboratory%20Daily%20Headlines&body=Thought%20you%27d%20like%20this%3A%20' + (section.online_url || '')) }}" style="display:inline-block;margin:0 8px 0 0;padding:6px 10px;border:1px solid #111;border-radius:4px;background:#111;font:700 12px/1.2 arial,sans-serif;color:#ffffff!important;-webkit-text-fill-color:#ffffff;text-decoration:none">{{ section.email_label || 'Forward by email' }}</a>
+    <if condition="section.online_url"><a class="share-cta-button" href="{{ section.online_url }}" style="display:inline-block;margin:0;padding:6px 10px;border:1px solid #111;border-radius:4px;background:#ffffff;font:700 12px/1.2 arial,sans-serif;color:#111111!important;-webkit-text-fill-color:#111111;text-decoration:none">{{ section.online_label || 'Open online →' }}</a></if>
+  </td></tr>
+</tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface' : '' }}"><tbody><tr><td height="{{ section.space_bottom || 28 }}" style="font-size:0;line-height:0">&#8203;</td></tr></tbody></table>

@@ -1,0 +1,26 @@
+<!--
+  Masthead Logo
+  Top branded header image for The Daily newsletter.
+
+  Slots:
+  - logo_src (image_url) — Masthead image URL
+  - logo_alt (image_alt) — Masthead image alt text
+
+  Used by section indexes: [0] in the source email.
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 0; border-collapse: collapse !important;" width="100%">
+  <tbody><tr>
+    <td align="center" valign="center" class="c-header" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; text-align: center; padding: 32px 24px;" bgcolor="#ffffff">
+      <div class="full-wrap">
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 0; border-collapse: collapse !important;" width="100%">
+          <tbody><tr>
+            <td align="center" valign="top" class="c-dailyheader__art-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0 0 12px 0;">
+              <img src="{{ section.logo_src }}" alt="{{ section.logo_alt }}" width="238" class="c-dailyheader__art js-text-remove" style="-ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; width: 238px;">
+            </td>
+          </tr>
+        </tbody></table>
+      </div>
+    </td>
+  </tr>
+</tbody></table>

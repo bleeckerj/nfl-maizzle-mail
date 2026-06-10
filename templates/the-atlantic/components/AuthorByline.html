@@ -1,0 +1,38 @@
+<!--
+  Author Byline
+  Author headshot, linked name, and short bio/title.
+
+  Slots:
+  - author_url (link_url) — Author profile URL
+  - author_name (text) — Author display name
+  - headshot_src (image_url) — Author headshot URL
+  - headshot_alt (image_alt) — Author headshot alt text
+  - author_bio (text) — Author role/bio
+
+  Used by section indexes: [2] in the source email.
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="c-author" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; border-collapse: collapse !important;" bgcolor="#ffffff">
+  <tbody>
+    <tr>
+      <td align="left" valign="top" class="c-author__content" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0 24px 24px 24px;">
+        <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+          <tbody>
+            <tr>
+              <td align="left" valign="center" class="c-author__headshot" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 74px;" width="74">
+                <a href="{{ section.author_url }}" title="{{ section.author_name }}" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline;">
+                  <img src="{{ section.headshot_src }}" alt="{{ section.headshot_alt }}" width="50" height="50" class="c-author__img" style="-ms-interpolation-mode: bicubic; border: 0; line-height: 100%; outline: none; text-decoration: none; border-radius: 50%; width: 50px; height: 50px;">
+                </a>
+              </td>
+              <td align="left" valign="center" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                <h3 class="c-author__name" style="color: #ffffff; margin: 0; padding-bottom: 4px;">
+                  <a class="c-author__link" href="{{ section.author_url }}" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; color: #21272c; font-weight: 600; line-height: 1; text-decoration: none; font-size: 16px;">{{ section.author_name }}</a>
+                </h3><span class="c-author__bio" style="color: #ffffff; color: #37424e; font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-weight: 400; font-size: 14px; line-height: 1.5;">{{ section.author_bio }}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>

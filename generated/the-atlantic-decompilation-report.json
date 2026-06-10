@@ -1,0 +1,204 @@
+{
+  "source": "/Users/julian/Code/nfl-maizzle-mail/emails-to-templatize/the-atlantic.html",
+  "templateName": "the-atlantic",
+  "model": "claude-opus-4-7",
+  "usage": {
+    "input_tokens": 33629,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 19342,
+    "service_tier": "standard",
+    "inference_geo": "global"
+  },
+  "layoutRoot": "div",
+  "sectionCount": 11,
+  "components": [
+    {
+      "type": "masthead_logo",
+      "displayName": "Masthead Logo",
+      "sectionIndexes": [
+        0
+      ],
+      "slots": [
+        "logo_src",
+        "logo_alt"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "type": "issue_date",
+      "displayName": "Issue Date",
+      "sectionIndexes": [
+        1
+      ],
+      "slots": [
+        "date"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "type": "author_byline",
+      "displayName": "Author Byline",
+      "sectionIndexes": [
+        2
+      ],
+      "slots": [
+        "author_url",
+        "author_name",
+        "headshot_src",
+        "headshot_alt",
+        "author_bio"
+      ],
+      "confidence": 0.95
+    },
+    {
+      "type": "intro_paragraph",
+      "displayName": "Intro Paragraph",
+      "sectionIndexes": [
+        3
+      ],
+      "slots": [
+        "body_html"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "type": "feature_story",
+      "displayName": "Feature Story Section",
+      "sectionIndexes": [
+        4,
+        5,
+        7
+      ],
+      "slots": [
+        "heading_html",
+        "image_block_html",
+        "body_html"
+      ],
+      "confidence": 0.85
+    },
+    {
+      "type": "image_with_intro",
+      "displayName": "Image with Intro Rich Text",
+      "sectionIndexes": [
+        6
+      ],
+      "slots": [
+        "image_src",
+        "image_alt",
+        "image_attribution",
+        "body_html"
+      ],
+      "confidence": 0.8
+    },
+    {
+      "type": "popular_link_list",
+      "displayName": "Most Popular Link List",
+      "sectionIndexes": [
+        8
+      ],
+      "slots": [
+        "heading_html",
+        "items_html"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "type": "subscription_promo",
+      "displayName": "Subscription House Promo",
+      "sectionIndexes": [
+        9
+      ],
+      "slots": [
+        "title",
+        "image_src",
+        "image_alt",
+        "cta_href",
+        "cta_label",
+        "dek"
+      ],
+      "confidence": 0.9
+    },
+    {
+      "type": "footer",
+      "displayName": "Newsletter Footer",
+      "sectionIndexes": [
+        10
+      ],
+      "slots": [
+        "wordmark_src",
+        "newsletter_name",
+        "info_html",
+        "subscribe_html",
+        "social_html"
+      ],
+      "confidence": 0.85,
+      "notes": "Source HTML truncated; social_html contains full set of social icon anchors."
+    }
+  ],
+  "sectionAssignments": [
+    {
+      "index": 0,
+      "type": "masthead_logo",
+      "confidence": 0.95
+    },
+    {
+      "index": 1,
+      "type": "issue_date",
+      "confidence": 0.95
+    },
+    {
+      "index": 2,
+      "type": "author_byline",
+      "confidence": 0.95
+    },
+    {
+      "index": 3,
+      "type": "intro_paragraph",
+      "confidence": 0.9
+    },
+    {
+      "index": 4,
+      "type": "feature_story",
+      "confidence": 0.8,
+      "notes": "Source HTML was truncated at ~9538 chars; body_html below contains the visible/recoverable poem text and links from the provided snippet."
+    },
+    {
+      "index": 5,
+      "type": "feature_story",
+      "confidence": 0.78,
+      "notes": "Source HTML truncated at ~9973 chars; body_html reconstructed from the four article links and their blockquote summaries that were visible in the snippet."
+    },
+    {
+      "index": 6,
+      "type": "image_with_intro",
+      "confidence": 0.78,
+      "notes": "Source HTML truncated at ~8058 chars; body_html assembled from the seven links and surrounding bolded callouts that were present in the snippet."
+    },
+    {
+      "index": 7,
+      "type": "feature_story",
+      "confidence": 0.85
+    },
+    {
+      "index": 8,
+      "type": "popular_link_list",
+      "confidence": 0.95
+    },
+    {
+      "index": 9,
+      "type": "subscription_promo",
+      "confidence": 0.9
+    },
+    {
+      "index": 10,
+      "type": "footer",
+      "confidence": 0.85,
+      "notes": "Source HTML truncated at ~8423 chars; social_html reconstructed from the four social link/image pairs in the section's images and links arrays."
+    }
+  ]
+}

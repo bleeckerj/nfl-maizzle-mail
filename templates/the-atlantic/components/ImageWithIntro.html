@@ -1,0 +1,32 @@
+<!--
+  Image with Intro Rich Text
+  Hero image (with attribution caption) followed by rich-text paragraphs and bolded link callouts. No heading.
+
+  Slots:
+  - image_src (image_url) — Hero image URL
+  - image_alt (image_alt) — Hero image alt text
+  - image_attribution (text) — Image attribution caption
+  - body_html (rich_text) — Body paragraphs HTML
+
+  Used by section indexes: [6] in the source email.
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+  <tbody>
+    <tr>
+      <td class="c-rich-text " style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; padding: 0px 24px 24px 24px;" bgcolor="#ffffff">
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="c-imgblock" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+          <tbody>
+            <tr>
+              <td align="center" valign="top" class="c-imgblock__container c-imgblock__container--richtext" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0 0 24px 0;">
+                <img class="c-imgblock__img" src="{{ section.image_src }}" alt="{{ section.image_alt }}" width="588" height="auto" style="-ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; max-width: 100%;">
+                <p class="c-imgblock__meta" style="margin: 4px 0 0 0; text-align: left; margin-bottom: 0;"><span class="c-imgblock__attribution" style="font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-size: 12px; font-weight: 400; color: #21272c; line-height: 15px;">{{ section.image_attribution }}</span></p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        {{{ section.body_html }}}
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -90,6 +90,29 @@
       },
       "headingStyles": {}
     },
+    "classifieds": {
+      "name": "Classifieds",
+      "description": "Single-column job listing block adapted from dense-discovery classifieds.",
+      "containerStyles": {
+        "padding": "16px 20px",
+        "backgroundColor": "#def1ef",
+        "borderTop": "1px solid #000000",
+        "borderBottom": "1px solid #000000"
+      },
+      "contentStyles": {
+        "fontFamily": "Share Tech Mono, monospace, Courier New, Courier",
+        "fontSize": "16px",
+        "lineHeight": "23px",
+        "fontWeight": "400",
+        "color": "#000000",
+        "textAlign": "left"
+      },
+      "linkStyles": {
+        "color": "#000000",
+        "textDecoration": "underline"
+      },
+      "headingStyles": {}
+    },
     "colophon": {
       "name": "Colophon / Footer",
       "description": "Footer with view-in-browser link, subscription notice, customer care link, privacy policy link, unsubscribe link, sender address, and copyright.",

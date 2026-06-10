@@ -1,0 +1,19 @@
+<!--
+  Intro Paragraph
+  Plain rich-text intro paragraph (no heading, no image).
+
+  Slots:
+  - body_html (rich_text) — Intro paragraph HTML content
+
+  Used by section indexes: [3] in the source email.
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+  <tbody>
+    <tr>
+      <td class="c-rich-text " style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; padding: 0px 24px 24px 24px;" bgcolor="#ffffff">
+        <p class="e-p" style="font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0; margin-bottom: 0;">{{{ section.body_html }}}</p>
+      </td>
+    </tr>
+  </tbody>
+</table>

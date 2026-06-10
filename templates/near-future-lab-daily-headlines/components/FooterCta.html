@@ -1,13 +1,28 @@
+<!--
+  Footer CTA
+  Tinted "work with me" bar rendered automatically with the email_footer section,
+  driven by the `footer.footerCta` frontmatter (resolved in lib/newsletter-core/footer-cta.mjs).
+
+  Appearance overrides (optional; mirror the share_this section — all honored in
+  light mode, overridden by dark-mode flatten):
+  - footer.footerCta.background        — bar background. Default: "#f5f4f0".
+  - footer.footerCta.text_color        — statement copy color. Default: "#333".
+  - footer.footerCta.eyebrow_color     — eyebrow label color. Default: "#555".
+  - footer.footerCta.heavy_top_border  — when true, use the heavy 9px black top rule
+                                         (like section_article_group) instead of 1px. Default: false.
+  Custom fields must be added to resolvedFooterCta in footer-cta.mjs to survive
+  normalization (the resolver rebuilds the object rather than spreading raw input).
+-->
 <if condition="footer.footerCta && (footer.footerCta.enabled || footer.footerCta.eyebrow || footer.footerCta.text || footer.footerCta.primaryAction || footer.footerCta.secondaryAction)">
-  <table border="0" cellpadding="0" cellspacing="0" style="width:100%;border-top:1px solid #000;border-bottom:1px solid #dcdcdc;background:#f5f4f0" role="presentation" class="mob-text footer-cta{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" data-content-slot="footer_cta">
+  <table border="0" cellpadding="0" cellspacing="0" style="width:100%;border-top:{{ footer.footerCta.heavy_top_border ? '9px' : '1px' }} solid #000;border-bottom:1px solid #dcdcdc;background:{{ footer.footerCta.background || '#f5f4f0' }}" role="presentation" class="mob-text footer-cta{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" data-content-slot="footer_cta">
     <tbody>
       <tr>
         <td style="padding:18px 20px 0 20px">
           <if condition="footer.footerCta.eyebrow">
-            <p class="footer-cta-eyebrow" style="margin:0 0 8px 0;padding:0;color:#555;font:700 11px/16px arial,sans-serif;letter-spacing:.75px;text-transform:uppercase">{{ footer.footerCta.eyebrow }}</p>
+            <p class="footer-cta-eyebrow" style="margin:0 0 8px 0;padding:0;color:{{ footer.footerCta.eyebrow_color || '#555' }};font:700 11px/16px arial,sans-serif;letter-spacing:.75px;text-transform:uppercase">{{ footer.footerCta.eyebrow }}</p>
           </if>
           <if condition="footer.footerCta.text">
-            <p class="footer-cta-copy" style="margin:0;padding:0;color:#333;font:17px/23px georgia,serif">{{ footer.footerCta.text }}</p>
+            <p class="footer-cta-copy" style="margin:0;padding:0;color:{{ footer.footerCta.text_color || '#333' }};font:17px/23px georgia,serif">{{ footer.footerCta.text }}</p>
           </if>
         </td>
       </tr>

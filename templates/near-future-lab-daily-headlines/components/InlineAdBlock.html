@@ -1,0 +1,14 @@
+<!--
+  Inline Ad Block
+  Mid- or end-of-email inline advertisement with a small label image, a desktop ad image and a hidden mobile ad image.
+
+  Slots:
+  - label_src (image_url) — Small 'Ad' label image src
+  - sponsorLink (link_url) — Tracked sponsor URL the ad images link to; legacy ad_href is still rendered as a fallback
+  - ad_src_desktop (image_url) — Desktop ad image src (600px)
+  - ad_src_mobile (image_url) — Mobile ad image src (480px)
+
+  Used by section indexes: [29] in the source email.
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<table border="0" cellpadding="0" cellspacing="0" style="width:100%"><tbody><tr><td height="10"></td></tr><tr><td style="border-top:1px solid #dcdcdc;padding-top:15px"></td></tr><tr aria-hidden="true"><td><div style="width:100%;text-align:center;line-height:0"><img alt="Ad" src="{{ section.label_src }}" border="0" style="max-width:96px;margin-bottom:7px"></div><span style="text-align:center"><table style="margin:0 auto" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="line-height:0;font-size:0"><a rel="noopener noreferrer nofollow" tabindex="-1" target="_blank" href="{{ section.sponsorLink || section.ad_href }}"><img src="{{ section.ad_src_desktop }}" alt="Ad" border="0" width="600" style="display:block;width:100%;max-width:600px"></a></td></tr><tr style="display:none"><td style="line-height:0;font-size:0"><a rel="noopener noreferrer nofollow" tabindex="-1" target="_blank" href="{{ section.sponsorLink || section.ad_href }}"><img src="{{ section.ad_src_mobile }}" alt="Ad" border="0" width="480" style="display:block;width:100%;max-width:480px"></a></td></tr></tbody></table></span></td></tr><tr><td style="padding-bottom:15px;border-bottom:0 solid #dcdcdc"></td></tr></tbody></table>

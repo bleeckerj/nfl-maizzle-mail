@@ -1,0 +1,13 @@
+{
+  "template": "near-future-lab-daily-headlines",
+  "templateDir": "/Users/julian/Code/nfl-maizzle-mail/templates/near-future-lab-daily-headlines",
+  "timestamp": "2026-06-01T19:00:56.376Z",
+  "passed": true,
+  "summary": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "errors": [],
+  "warnings": [],
+  "recommendations": []
+}

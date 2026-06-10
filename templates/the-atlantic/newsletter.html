@@ -1,0 +1,195 @@
+---
+title: "{{ page.title }}"
+---
+
+<extends src="templates/the-atlantic/layouts/main.html">
+  <block name="template">
+
+  <each loop="section in sections">
+    <if condition="section.type === 'masthead_logo'">
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 0; border-collapse: collapse !important;" width="100%" class="mob-text">
+        <tbody><tr>
+          <td align="center" valign="center" class="c-header" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; text-align: center; padding: 32px 24px;" bgcolor="#ffffff">
+            <div class="full-wrap">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 0; border-collapse: collapse !important;" width="100%">
+                <tbody><tr>
+                  <td align="center" valign="top" class="c-dailyheader__art-container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0 0 12px 0;">
+                    <img src="{{ section.logo_src }}" alt="{{ section.logo_alt }}" width="238" class="c-dailyheader__art js-text-remove" style="-ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; width: 238px;">
+                  </td>
+                </tr>
+              </tbody></table>
+            </div>
+          </td>
+        </tr>
+      </tbody></table>
+    </if>
+    <if condition="section.type === 'issue_date'">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;" class="mob-text">
+        <tbody>
+          <tr>
+            <td class="c-rich-text " style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; padding: 0px 24px 24px 24px;" bgcolor="#ffffff">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                <tbody>
+                  <tr>
+                    <td align="left" valign="top" class="e-h4__container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-top: 8px;">
+                      <h4 class="e-h4" style="font-family: Courier, monospace; font-size: 14px; font-weight: normal; line-height: 18px; color: #8592a4; margin: 0px 0px 4px 0px; text-transform: uppercase;">{{ section.date }}</h4>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </if>
+    <if condition="section.type === 'author_byline'">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="c-author mob-text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; border-collapse: collapse !important;" bgcolor="#ffffff">
+        <tbody>
+          <tr>
+            <td align="left" valign="top" class="c-author__content" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0 24px 24px 24px;">
+              <table role="presentation" width="100%" border="0" cellpadding="0" cellspacing="0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                <tbody>
+                  <tr>
+                    <td align="left" valign="center" class="c-author__headshot" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 74px;" width="74">
+                      <a href="{{ section.author_url }}" title="{{ section.author_name }}" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: underline;">
+                        <img src="{{ section.headshot_src }}" alt="{{ section.headshot_alt }}" width="50" height="50" class="c-author__img" style="-ms-interpolation-mode: bicubic; border: 0; line-height: 100%; outline: none; text-decoration: none; border-radius: 50%; width: 50px; height: 50px;">
+                      </a>
+                    </td>
+                    <td align="left" valign="center" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                      <h3 class="c-author__name" style="color: #ffffff; margin: 0; padding-bottom: 4px;">
+                        <a class="c-author__link" href="{{ section.author_url }}" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; color: #21272c; font-weight: 600; line-height: 1; text-decoration: none; font-size: 16px;">{{ section.author_name }}</a>
+                      </h3><span class="c-author__bio" style="color: #ffffff; color: #37424e; font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-weight: 400; font-size: 14px; line-height: 1.5;">{{ section.author_bio }}</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </if>
+    <if condition="section.type === 'intro_paragraph'">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;" class="mob-text">
+        <tbody>
+          <tr>
+            <td class="c-rich-text " style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; padding: 0px 24px 24px 24px;" bgcolor="#ffffff">
+              <p class="e-p" style="font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0 0 16px 0; margin-bottom: 0;">{{{ section.body_html }}}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </if>
+    <if condition="section.type === 'feature_story'">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;" class="mob-text">
+        <tbody>
+          <tr>
+            <td class="c-rich-text " style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; padding: 0px 24px 24px 24px;" bgcolor="#ffffff">
+              <h1 class="e-h1" style="font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-size: 24px; font-weight: 600; color: #39434b; line-height: 32.5px; letter-spacing: 0.33px; margin: 8px 0 24px 0; padding-top: 8px; border-top: 1px solid #ef3b24;">{{{ section.heading_html }}}</h1>
+              {{{ section.image_block_html }}}
+              {{{ section.body_html }}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </if>
+    <if condition="section.type === 'image_with_intro'">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;" class="mob-text">
+        <tbody>
+          <tr>
+            <td class="c-rich-text " style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; padding: 0px 24px 24px 24px;" bgcolor="#ffffff">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="c-imgblock" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                <tbody>
+                  <tr>
+                    <td align="center" valign="top" class="c-imgblock__container c-imgblock__container--richtext" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0 0 24px 0;">
+                      <img class="c-imgblock__img" src="{{ section.image_src }}" alt="{{ section.image_alt }}" width="588" height="auto" style="-ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; max-width: 100%;">
+                      <p class="c-imgblock__meta" style="margin: 4px 0 0 0; text-align: left; margin-bottom: 0;"><span class="c-imgblock__attribution" style="font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-size: 12px; font-weight: 400; color: #21272c; line-height: 15px;">{{ section.image_attribution }}</span></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              {{{ section.body_html }}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </if>
+    <if condition="section.type === 'popular_link_list'">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;" class="mob-text">
+        <tbody>
+          <tr>
+            <td class="c-rich-text " style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; padding: 0px 24px 24px 24px;" bgcolor="#ffffff">
+              <h1 class="e-h1" style="font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-size: 24px; font-weight: 600; color: #39434b; line-height: 32.5px; letter-spacing: 0.33px; margin: 8px 0 24px 0; padding-top: 8px; border-top: 1px solid #ef3b24;">{{{ section.heading_html }}}</h1>
+              <ol class="e-ol" style="font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; margin: 0 0 16px 0; padding-inline-start: 16px; margin-bottom: 0;">{{{ section.items_html }}}</ol>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </if>
+    <if condition="section.type === 'subscription_promo'">
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="c-housepromo mob-text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #eff2f7; border-collapse: collapse !important;" bgcolor="#eff2f7">
+        <tbody>
+          <tr>
+            <td align="center" valign="top" class="c-housepromo__container" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #eff2f7; padding: 24px 24px 32px 24px;" bgcolor="#eff2f7">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                <tbody>
+                  <tr>
+                    <td align="left" valign="top" width="100%" class="c-housepromo__title" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-bottom: 24px;">
+                      <h1 class="c-housepromo__header" style="font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-size: 24px; font-weight: 600; color: #21272c; margin: 0; line-height: 30px; letter-spacing: 0.33px; padding-bottom: 16px; border-bottom: 1px solid #c0ccda;">{{ section.title }}</h1>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="top" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                      <a class="c-housepromo__link" href="{{ section.cta_href }}" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #21272c; text-decoration: none;">
+                        <img class="c-housepromo__img" alt="{{ section.image_alt }}" src="{{ section.image_src }}" width="636" height="auto" style="-ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; padding-bottom: 24px; max-width: 100%;">
+                      </a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top" width="100%" class="c-housepromo__dek" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; display: block; padding-bottom: 24px;">
+                      <p class="e-p" style="font-family: 'Lyon Text', Georgia, serif; font-size: 17px; font-weight: 400; color: #21272c; line-height: 25px; letter-spacing: 0; margin: 0;">{{ section.dek }}</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="center" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                        <tbody><tr>
+                          <td align="center" valign="center" class="c-housepromo__btn" height="40" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #21272c; border-radius: 4px; text-align: center;" bgcolor="#21272c">
+                            <a href="{{ section.cta_href }}" class="c-housepromo__btn--text" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; color: #ffffff; font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-weight: 400; font-size: 17px; line-height: 25px; border-radius: 4px; padding: 8px 24px; text-decoration: none; display: inline-block;">{{ section.cta_label }}</a>
+                          </td>
+                        </tr>
+                      </tbody></table>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </if>
+    <if condition="section.type === 'footer'">
+      <div class="c-footer full-wrap mob-text" style="background-color: #39434b; color: #ffffff; font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; text-align: left; font-size: 12px;">
+        <div class="c-footer__break" style="display: none; mso-hide: all; max-height: 0px; overflow: hidden;"><hr></div>
+        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+          <tbody><tr>
+            <td align="left" valign="center" class="c-dailyfooter" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 48px 24px 32px 24px; background-color: #39434b; width: 100%;" width="100%" bgcolor="#39434b">
+              <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+                <tbody><tr>
+                  <td class="c-dailyfooter__logo" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 146px; padding: 0 0 24px 0;" width="146">
+                    <img src="{{ section.wordmark_src }}" width="146" class="js-text-remove" style="-ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;">
+                  </td>
+                </tr>
+                <tr><td><p class="c-dailyfooter__title" style="color: #ffffff; text-transform: uppercase; margin: 0 0 16px 0;">{{ section.newsletter_name }}</p></td></tr>
+                <tr><td><p class="c-dailyfooter__info" style="color: #ffffff; margin: 0 0 16px 0;">{{{ section.info_html }}}</p></td></tr>
+                <tr><td><p class="c-dailyfooter__subscribe" style="color: #ffffff; margin: 0 0 32px 0;">{{{ section.subscribe_html }}}</p></td></tr>
+                <tr><td>{{{ section.social_html }}}</td></tr>
+              </tbody></table>
+            </td>
+          </tr></tbody>
+        </table>
+      </div>
+    </if>
+  </each>
+
+  </block>
+</extends>

@@ -1,0 +1,49 @@
+<!--
+  Component: Ad Block
+  Type: ad-block
+  Description: Inventory-backed ad card hydrated from nfl-editorial/src/content/ads.json.
+  Fields:
+  - title (text) — Optional section title
+  - description (rich_text) — Optional issue-specific context rendered above the ad card
+  - items (array) — Exactly one source item with adId before hydration; hydrated item fields render below
+  - show_bottom_rule (boolean) — Set false to suppress the light divider after the ad
+-->
+
+<table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation"><tbody><tr><td height="10"></td></tr><tr><td style="border-top:1px solid #dcdcdc;padding-top:15px"></td></tr>
+  <if condition="section.title">
+    <tr><td style="padding:0 0 10px"><h2 class="ad-section-title" style="font:700 17px/24px arial,sans-serif;color:#000;margin:0;padding:0">{{ section.title }}</h2></td></tr>
+  </if>
+  <if condition="section.description">
+    <tr><td style="padding:0 0 12px"><div style="margin:0">{{{ section.description }}}</div></td></tr>
+  </if>
+  <each loop="item in section.items">
+    <if condition="item.label && item.renderMode !== 'snapshot'">
+      <tr><td><p class="mob-ad-meta" style="color:#555;font:700 11px/16px arial,sans-serif;margin:0 0 7px;text-transform:uppercase;letter-spacing:.75px">{{ item.label }}</p></td></tr>
+    </if>
+    <if condition="item.image">
+      <tr><td style="line-height:0;font-size:0;text-align:center">
+        <if condition="item.link || item.readMoreLink">
+          <a rel="noopener noreferrer nofollow" target="_blank" href="{{ item.link || item.readMoreLink }}" style="display:block;text-decoration:none"><img src="{{ item.image }}" alt="{{ item.imageAlt || item.title || 'Advertisement' }}" border="0" width="600" style="display:block;width:100%;max-width:600px;height:auto"></a>
+        </if>
+        <if condition="!(item.link || item.readMoreLink)">
+          <img src="{{ item.image }}" alt="{{ item.imageAlt || item.title || 'Advertisement' }}" border="0" width="600" style="display:block;width:100%;max-width:600px;height:auto">
+        </if>
+      </td></tr>
+    </if>
+    <if condition="item.title && item.renderMode !== 'snapshot'">
+      <tr><td style="padding:12px 0 0"><h3 class="ad-title" style="color:#000;margin:0;padding:0;font:700 18px/22.5px georgia,serif"><if condition="item.link"><a href="{{ item.link }}" style="color:#000;text-decoration:none">{{ item.title }}</a></if><if condition="!item.link">{{ item.title }}</if></h3></td></tr>
+    </if>
+    <if condition="item.description && item.renderMode !== 'snapshot'">
+      <tr><td style="padding:8px 0 0"><div style="margin:0">{{{ item.description }}}</div></td></tr>
+    </if>
+    <if condition="item.renderMode !== 'snapshot' && (item.sponsor || ((item.readMoreLink || item.link) && item.readMoreText))">
+      <tr><td style="padding:12px 0 15px"><table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation"><tbody><tr><td style="vertical-align:middle"><if condition="item.sponsor"><p class="mob-ad-meta" style="color:#555;font:700 11px/16px arial,sans-serif;margin:0;text-transform:uppercase;letter-spacing:.75px">{{ item.sponsor }}</p></if></td><td align="right" style="vertical-align:middle"><if condition="(item.readMoreLink || item.link) && item.readMoreText"><a class="mob-ad-meta" href="{{ item.readMoreLink || item.link }}" style="color:#333;font:700 12px/16px arial,sans-serif;text-decoration:underline">{{ item.readMoreText }}</a></if></td></tr></tbody></table></td></tr>
+    </if>
+  </each>
+  <if condition="section.show_bottom_rule !== false">
+    <tr><td style="padding-bottom:15px;border-bottom:1px solid #dcdcdc"></td></tr><tr><td height="15"></td></tr>
+  </if>
+  <if condition="section.show_bottom_rule === false">
+    <tr><td style="padding-bottom:15px;border-bottom:0 solid #dcdcdc"></td></tr><tr><td height="15"></td></tr>
+  </if>
+</tbody></table>

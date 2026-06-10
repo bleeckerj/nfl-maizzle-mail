@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+  <meta charset="utf-8">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+  <if condition="darkModePolicy && darkModePolicy.flatten">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  </if>
+  <title>{{ page.title || title || 'Near Future Laboratory Daily Headlines' }}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    /* Mobile font-size lock — bumps body copy larger on small screens so
+       readers don't have to zoom. Same pattern as dense-discovery. Don't
+       lower these without updating tests/newsletter-core/mobile-font-size-lock.test.mjs. */
+    @media screen and (max-width: 599px) {
+      .email-gutter {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+      }
+      .email-container {
+        max-width: 600px !important;
+        width: 100% !important;
+      }
+      .masthead-logo {
+        width: 190px !important;
+        max-width: 190px !important;
+        height: auto !important;
+      }
+      .newsletter-title-logo {
+        width: 300px !important;
+        max-width: 300px !important;
+        height: auto !important;
+      }
+      .article-image-table {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .article-row-table {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .article-copy-cell,
+      .article-image-cell {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .article-copy-cell {
+        padding: 0 0 14px 0 !important;
+      }
+      .article-image-cell {
+        padding: 0 !important;
+      }
+      .article-image {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+      }
+      .mob-text,
+      .mob-text a,
+      .mob-text p,
+      .mob-text li,
+      .mob-text span,
+      .mob-text td,
+      .mob-text div {
+        font-size: 23px !important;
+        line-height: 1.3 !important;
+      }
+      table.intro-statement p.intro-statement-label,
+      table.intro-statement p.intro-statement-label span,
+      p.intro-statement-label,
+      p.intro-statement-label span {
+        font-size: 12px !important;
+        line-height: 1.3 !important;
+      }
+      table.intro-statement .intro-statement-copy,
+      table.intro-statement p.intro-statement-copy,
+      table.intro-statement .intro-statement-copy p,
+      table.intro-statement .intro-statement-copy a,
+      table.intro-statement .intro-statement-copy span,
+      table.intro-statement .intro-statement-copy em,
+      table.intro-statement .intro-statement-copy strong,
+      .intro-statement-copy,
+      p.intro-statement-copy,
+      .intro-statement-copy p,
+      .intro-statement-copy a,
+      .intro-statement-copy span,
+      .intro-statement-copy em,
+      .intro-statement-copy strong {
+        font-size: 18px !important;
+        line-height: 1.35 !important;
+      }
+      .mob-title,
+      .mob-title a {
+        font-size: 26px !important;
+        line-height: 1.3 !important;
+      }
+      .mob-subtitle,
+      .mob-subtitle a {
+        font-size: 21px !important;
+        line-height: 1.3 !important;
+      }
+      .mob-caption,
+      .mob-caption a,
+      .mob-caption p,
+      .mob-caption span {
+        font-size: 14px !important;
+        line-height: 1.2 !important;
+      }
+      h2.ad-section-title,
+      h2.ad-section-title a {
+        font-size: 20px !important;
+        line-height: 1.2 !important;
+      }
+      h3.ad-title,
+      h3.ad-title a {
+        font-size: 22px !important;
+        line-height: 1.24 !important;
+      }
+      p.article-kicker,
+      p.article-kicker a,
+      p.article-kicker span {
+        font-size: 16px !important;
+        line-height: 1.2 !important;
+      }
+      h3.article-title,
+      h3.article-title a {
+        font-size: 24px !important;
+        line-height: 1.22 !important;
+      }
+      p.article-lede,
+      p.article-lede a,
+      p.article-lede span,
+      p.article-lede em,
+      p.article-lede strong {
+        font-size: 19px !important;
+        line-height: 1.35 !important;
+      }
+      .article-cta-desktop {
+        display: none !important;
+      }
+      .article-cta-mobile {
+        display: block !important;
+      }
+      span.article-cta-pill,
+      a.article-cta-pill,
+      .article-cta-pill {
+        font-size: 16px !important;
+        line-height: 1.25 !important;
+      }
+      p.mob-ad-copy,
+      p.mob-ad-copy a,
+      p.mob-ad-copy span,
+      p.mob-ad-copy em,
+      p.mob-ad-copy strong {
+        font-size: {{ mobileAdCopyFontSize || '16px' }} !important;
+        line-height: {{ mobileAdCopyLineHeight || '1.25' }} !important;
+        font-weight: {{ mobileAdCopyFontWeight || '500' }} !important;
+        font-family: {{ mobileAdCopyFontFamily || 'Share Tech Mono, Courier New, Courier, monospace' }} !important;
+      }
+      p.mob-ad-meta,
+      p.mob-ad-meta a,
+      p.mob-ad-meta span,
+      a.mob-ad-meta,
+      a.mob-ad-meta span {
+        font-size: {{ mobileAdMetaFontSize || '10px' }} !important;
+        line-height: {{ mobileAdMetaLineHeight || '1.2' }} !important;
+        font-weight: {{ mobileAdMetaFontWeight || '700' }} !important;
+        font-family: {{ mobileAdMetaFontFamily || 'Arial, sans-serif' }} !important;
+      }
+      table.footer-cta p.footer-cta-eyebrow,
+      table.footer-cta p.footer-cta-eyebrow a,
+      table.footer-cta p.footer-cta-eyebrow span,
+      p.footer-cta-eyebrow,
+      p.footer-cta-eyebrow a,
+      p.footer-cta-eyebrow span {
+        font-size: 15px !important;
+        line-height: 1.2 !important;
+      }
+      table.footer-cta p.footer-cta-copy,
+      table.footer-cta p.footer-cta-copy a,
+      table.footer-cta p.footer-cta-copy span,
+      table.footer-cta p.footer-cta-copy em,
+      table.footer-cta p.footer-cta-copy strong,
+      p.footer-cta-copy,
+      p.footer-cta-copy a,
+      p.footer-cta-copy span,
+      p.footer-cta-copy em,
+      p.footer-cta-copy strong {
+        font-size: 18px !important;
+        line-height: 1.15 !important;
+      }
+      table.footer-cta a.footer-cta-button,
+      table.footer-cta a.footer-cta-button span,
+      a.footer-cta-button,
+      a.footer-cta-button span {
+        font-size: 14px !important;
+        line-height: 1.1 !important;
+      }
+      /* Share-this CTA: its own mobile scale, deliberately NOT tied to .mob-text
+         so this lockup can be tuned independently of body copy. */
+      p.share-cta-eyebrow,
+      p.share-cta-eyebrow span {
+        font-size: 12px !important;
+        line-height: 1.3 !important;
+      }
+      p.share-cta-copy,
+      p.share-cta-copy a,
+      p.share-cta-copy span,
+      p.share-cta-copy em,
+      p.share-cta-copy strong {
+        font-size: 18px !important;
+        line-height: 1.4 !important;
+      }
+      a.share-cta-button,
+      a.share-cta-button span {
+        font-size: 13px !important;
+        line-height: 1.2 !important;
+        padding-top: 7px !important;
+        padding-bottom: 7px !important;
+      }
+      .mob-footer,
+      .mob-footer p,
+      .mob-footer a,
+      .mob-footer span,
+      .mob-footer td {
+        font-size: 15px !important;
+        line-height: 1.35 !important;
+      }
+      table.full-width,
+      .full-width {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+      }
+      img:not(.masthead-logo):not(.newsletter-title-logo):not(.article-image) {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+    }
+    /* Defensive dark-mode flatten: enabled by build-newsletter.mjs unless --no-dark-mode-flatten is set. */
+    @media (prefers-color-scheme: dark) {
+      body.dm-bg,
+      .dm-bg {
+        background-color: #111318 !important;
+      }
+
+      .dm-bg table,
+      .dm-bg td,
+      .dm-surface {
+        background-color: #1b1f27 !important;
+      }
+
+      .dm-text,
+      .dm-bg,
+      .dm-bg p,
+      .dm-bg div,
+      .dm-bg span,
+      .dm-bg h1,
+      .dm-bg h2,
+      .dm-bg h3,
+      .dm-bg h4,
+      .dm-bg h5,
+      .dm-bg h6 {
+        color: #f2f4f8 !important;
+      }
+
+      .dm-muted,
+      .dm-bg .mob-meta,
+      .dm-bg .image-caption,
+      .dm-bg .image-credit {
+        color: #b8c0cc !important;
+      }
+
+      .dm-link,
+      .dm-bg a,
+      .dm-bg .theme-link {
+        color: #8ecbff !important;
+      }
+
+      .dm-border,
+      .dm-bg table,
+      .dm-bg td {
+        border-color: #343b48 !important;
+      }
+    }
+
+  </style>
+</head>
+<body class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-bg dm-text' : '' }}" style="margin: 0; padding: 0; width: 100%; background-color: #ffffff;">
+  <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="width: 100%; background-color: #ffffff;" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface' : '' }}">
+    <tr>
+      <td align="center" class="email-gutter" style="padding: 0 15px;">
+        <!--[if mso | IE]>
+        <table border="0" cellpadding="0" cellspacing="0" role="presentation" align="center" width="600">
+          <tr>
+            <td>
+        <![endif]-->
+        <div class="email-container" style="margin: 0 auto; max-width: 600px; width: 100%;">
+          <block name="template"></block>
+        </div>
+        <!--[if mso | IE]>
+            </td>
+          </tr>
+        </table>
+        <![endif]-->
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

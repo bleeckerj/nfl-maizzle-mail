@@ -2,15 +2,32 @@
   "source": "/Users/julian/Code/nfl-maizzle-mail/templates/new-yorker/new-yorker-sample.html",
   "templateName": "new-yorker-sample",
   "layoutRoot": "td",
+  "sectionCount": 8,
   "sections": [
     {
       "index": 0,
       "tag": "table",
       "className": "full-width",
+      "id": "",
       "textSnippet": "Read our “Literary Lives” collection.",
       "textLength": 37,
       "imageCount": 1,
       "linkCount": 1,
+      "headings": [],
+      "images": [
+        {
+          "src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Layer_1@2x.png",
+          "alt": "The New Yorker",
+          "width": "150",
+          "height": "35"
+        }
+      ],
+      "links": [
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=10&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": ""
+        }
+      ],
       "styles": {
         "containerStyles": {
           "padding": "0px 0px 26px"
@@ -18,16 +35,30 @@
         "contentStyles": {},
         "linkStyles": {},
         "headingStyles": {}
-      }
+      },
+      "outerHTMLLength": 1063
     },
     {
       "index": 1,
       "tag": "table",
       "className": "full-width",
+      "id": "",
       "textSnippet": "From the Archive Highs and lows in pursuit of the literary life.",
       "textLength": 64,
       "imageCount": 0,
       "linkCount": 2,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=16&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "From the Archive"
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=16&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "Highs and lows in pursuit of the literary life."
+        }
+      ],
       "styles": {
         "containerStyles": {
           "padding": "40px 80px 40px 80px",
@@ -39,16 +70,26 @@
           "textDecoration": "none"
         },
         "headingStyles": {}
-      }
+      },
+      "outerHTMLLength": 1271
     },
     {
       "index": 2,
       "tag": "table",
       "className": "full-width",
+      "id": "",
       "textSnippet": "The New Yorker archive presents thematic selections of articles from the magazine’s past, highlighting stories that feel as fresh as ever. In our “Literary Lives” collection, we bring you pieces about the dynamic authors behind literary masterworks. From F. Scott and Zelda Fitzge",
       "textLength": 622,
       "imageCount": 0,
       "linkCount": 1,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=7&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "click here"
+        }
+      ],
       "styles": {
         "containerStyles": {
           "padding": "40px 50px 40px 50px",
@@ -66,16 +107,59 @@
           "textDecoration": "none"
         },
         "headingStyles": {}
-      }
+      },
+      "outerHTMLLength": 1641
     },
     {
       "index": 3,
       "tag": "table",
       "className": "full-width",
+      "id": "",
       "textSnippet": "A CRITIC AT LARGE January 29, 2001 Issue This Lonesome Place Flannery O’Connor on race and religion in the unreconstructed South. By Hilton Als Read now LIFE AND LETTERS November 9, 1998 Issue Last Words Those Hemingway wrote, and those he didn’t. By Joan Didion Read now",
       "textLength": 271,
       "imageCount": 2,
       "linkCount": 6,
+      "headings": [],
+      "images": [
+        {
+          "src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202b@2x.png",
+          "alt": "This Lonesome Place",
+          "width": "100%",
+          "height": ""
+        },
+        {
+          "src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%207b@2x.png",
+          "alt": "Ernest Hemingway",
+          "width": "100%",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=13&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": ""
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=15&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "This Lonesome Place"
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=1&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "Read now"
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=20&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": ""
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=23&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "Last Words"
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=2&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "Read now"
+        }
+      ],
       "styles": {
         "containerStyles": {
           "padding": "25px 0px 0px 0px",
@@ -95,16 +179,59 @@
           "textDecoration": "none"
         },
         "headingStyles": {}
-      }
+      },
+      "outerHTMLLength": 9547
     },
     {
       "index": 4,
       "tag": "table",
       "className": "full-width",
+      "id": "",
       "textSnippet": "A CRITIC AT LARGE February 17, 1997 Issue A Society of One Zora Neale Hurston, American contrarian. By Claudia Roth Pierpont Read now PROFILES March 2, 1929 Issue Dearest Edith Edith Wharton was a society insider—until she started writing about her friends. By Janet Flanner Read ",
       "textLength": 283,
       "imageCount": 2,
       "linkCount": 6,
+      "headings": [],
+      "images": [
+        {
+          "src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive1a2.png",
+          "alt": "Zora Neale Hurston",
+          "width": "100%",
+          "height": ""
+        },
+        {
+          "src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive4.png",
+          "alt": "Edith Wharton",
+          "width": "100%",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=25&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": ""
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=24&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "A Society of One"
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=5&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "Read now"
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=6&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": ""
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=3&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "Dearest Edith"
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=21&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "Read now"
+        }
+      ],
       "styles": {
         "containerStyles": {
           "padding": "25px 0px 0px 0px",
@@ -124,16 +251,59 @@
           "textDecoration": "none"
         },
         "headingStyles": {}
-      }
+      },
+      "outerHTMLLength": 9672
     },
     {
       "index": 5,
       "tag": "table",
       "className": "full-width",
+      "id": "",
       "textSnippet": "THE ARTS November 7, 1959 Issue The Wings of Henry James How “The Wings of the Dove” shaped a whole generation of writers, critics, playwrights, producers, and publishers. By James Thurber Read now PROFILES April 17, 1926 Issue That Sad Young Man All was quiet on the Riviera, and",
       "textLength": 338,
       "imageCount": 2,
       "linkCount": 6,
+      "headings": [],
+      "images": [
+        {
+          "src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202a@2x.png",
+          "alt": "Henry James",
+          "width": "100%",
+          "height": ""
+        },
+        {
+          "src": "http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive6.png",
+          "alt": "F. Scott Fitzgerald",
+          "width": "100%",
+          "height": ""
+        }
+      ],
+      "links": [
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=11&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": ""
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=8&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "The Wings of Henry James"
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=18&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "Read now"
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=17&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": ""
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=12&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "That Sad Young Man"
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=22&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "Read now"
+        }
+      ],
       "styles": {
         "containerStyles": {
           "padding": "25px 0px 0px 0px",
@@ -153,16 +323,26 @@
           "textDecoration": "none"
         },
         "headingStyles": {}
-      }
+      },
+      "outerHTMLLength": 9731
     },
     {
       "index": 6,
       "tag": "table",
       "className": "full-width",
+      "id": "",
       "textSnippet": "Our full archive awaits. Explore now",
       "textLength": 36,
       "imageCount": 0,
       "linkCount": 1,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=4&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "Explore now"
+        }
+      ],
       "styles": {
         "containerStyles": {
           "padding": "0px 45px 0px 45px",
@@ -182,16 +362,38 @@
           "textDecoration": "none"
         },
         "headingStyles": {}
-      }
+      },
+      "outerHTMLLength": 1846
     },
     {
       "index": 7,
       "tag": "table",
       "className": "full-width",
+      "id": "",
       "textSnippet": "View this email in your browser. You received this email because you are a subscriber to The New Yorker. Question about your subscription? Contact Customer Care. View our Privacy Policy Unsubscribe Sent from Condé Nast, 1 World Trade Center, New York, NY 10007, attn: Email Coordi",
       "textLength": 335,
       "imageCount": 0,
       "linkCount": 4,
+      "headings": [],
+      "images": [],
+      "links": [
+        {
+          "href": "#",
+          "text": "View this email in your browser."
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=19&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "Customer Care"
+        },
+        {
+          "href": "http://links.newyorker.mkt4334.com/ctt?kn=14&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0",
+          "text": "Privacy Policy"
+        },
+        {
+          "href": "#",
+          "text": "Unsubscribe"
+        }
+      ],
       "styles": {
         "containerStyles": {
           "padding": "30px 20px 20px 20px"
@@ -208,7 +410,8 @@
           "textDecoration": "underline"
         },
         "headingStyles": {}
-      }
+      },
+      "outerHTMLLength": 1733
     }
   ]
 }

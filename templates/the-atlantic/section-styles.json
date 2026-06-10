@@ -1,0 +1,199 @@
+{
+  "description": "Decompiled section styles for template \"11 sections\" (auto-generated).",
+  "version": "1.0.0",
+  "sectionStyles": {
+    "masthead_logo": {
+      "name": "Masthead Logo",
+      "description": "Top branded header image for The Daily newsletter.",
+      "containerStyles": {
+        "padding": "0",
+        "backgroundColor": "#ffffff"
+      },
+      "contentStyles": {},
+      "linkStyles": {},
+      "headingStyles": {}
+    },
+    "issue_date": {
+      "name": "Issue Date",
+      "description": "Uppercase monospace date label for the issue.",
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "padding": "0px 24px 24px 24px",
+        "paddingTop": "8px"
+      },
+      "contentStyles": {},
+      "linkStyles": {},
+      "headingStyles": {
+        "fontFamily": "Courier, monospace",
+        "fontSize": "14px",
+        "fontWeight": "normal",
+        "color": "#8592a4",
+        "lineHeight": "18px"
+      }
+    },
+    "author_byline": {
+      "name": "Author Byline",
+      "description": "Author headshot, linked name, and short bio/title.",
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "padding": "0 24px 24px 24px"
+      },
+      "contentStyles": {
+        "fontFamily": "'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif",
+        "fontSize": "14px",
+        "lineHeight": "1.5",
+        "fontWeight": "400",
+        "color": "#37424e"
+      },
+      "linkStyles": {
+        "color": "#21272c",
+        "textDecoration": "none",
+        "fontWeight": "600"
+      },
+      "headingStyles": {
+        "color": "#ffffff"
+      }
+    },
+    "intro_paragraph": {
+      "name": "Intro Paragraph",
+      "description": "Plain rich-text intro paragraph (no heading, no image).",
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "padding": "0px 24px 24px 24px"
+      },
+      "contentStyles": {
+        "fontFamily": "'Lyon Text', Georgia, serif",
+        "fontSize": "17px",
+        "lineHeight": "25px",
+        "fontWeight": "400",
+        "color": "#21272c"
+      },
+      "linkStyles": {},
+      "headingStyles": {}
+    },
+    "feature_story": {
+      "name": "Feature Story Section",
+      "description": "Section with red-rule H1 heading, optional hero image with attribution caption, and rich-text body (paragraphs, blockquotes, links).",
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "padding": "0px 24px 24px 24px"
+      },
+      "contentStyles": {
+        "fontFamily": "'Lyon Text', Georgia, serif",
+        "fontSize": "17px",
+        "lineHeight": "25px",
+        "fontWeight": "400",
+        "color": "#21272c"
+      },
+      "linkStyles": {
+        "color": "#21272c",
+        "textDecoration": "underline"
+      },
+      "headingStyles": {
+        "fontFamily": "'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif",
+        "fontSize": "24px",
+        "fontWeight": "600",
+        "color": "#39434b",
+        "lineHeight": "32.5px"
+      }
+    },
+    "image_with_intro": {
+      "name": "Image with Intro Rich Text",
+      "description": "Hero image (with attribution caption) followed by rich-text paragraphs and bolded link callouts. No heading.",
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "padding": "0px 24px 24px 24px"
+      },
+      "contentStyles": {
+        "fontFamily": "'Lyon Text', Georgia, serif",
+        "fontSize": "17px",
+        "lineHeight": "25px",
+        "fontWeight": "400",
+        "color": "#21272c"
+      },
+      "linkStyles": {
+        "color": "#21272c",
+        "textDecoration": "underline"
+      },
+      "headingStyles": {}
+    },
+    "popular_link_list": {
+      "name": "Most Popular Link List",
+      "description": "Heading plus ordered list of linked articles.",
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "padding": "0px 24px 24px 24px"
+      },
+      "contentStyles": {},
+      "linkStyles": {
+        "color": "#21272c",
+        "textDecoration": "underline"
+      },
+      "headingStyles": {
+        "fontFamily": "'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif",
+        "fontSize": "24px",
+        "fontWeight": "600",
+        "color": "#39434b",
+        "lineHeight": "32.5px"
+      }
+    },
+    "subscription_promo": {
+      "name": "Subscription House Promo",
+      "description": "Boxed subscriber promo card with header, hero image, dek, and CTA button.",
+      "containerStyles": {
+        "backgroundColor": "#eff2f7",
+        "padding": "24px 24px 32px 24px",
+        "paddingBottom": "24px"
+      },
+      "contentStyles": {
+        "fontFamily": "'Lyon Text', Georgia, serif",
+        "fontSize": "17px",
+        "lineHeight": "25px",
+        "fontWeight": "400",
+        "color": "#21272c"
+      },
+      "linkStyles": {
+        "color": "#ffffff",
+        "textDecoration": "none",
+        "fontWeight": "400"
+      },
+      "headingStyles": {
+        "fontFamily": "'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif",
+        "fontSize": "24px",
+        "fontWeight": "600",
+        "color": "#21272c",
+        "lineHeight": "30px"
+      }
+    },
+    "footer": {
+      "name": "Newsletter Footer",
+      "description": "Dark global footer with wordmark, newsletter name, signup note, subscribe links and social icons.",
+      "containerStyles": {
+        "backgroundColor": "#39434b",
+        "padding": "48px 24px 32px 24px"
+      },
+      "contentStyles": {
+        "color": "#ffffff"
+      },
+      "linkStyles": {
+        "color": "#ffffff",
+        "textDecoration": "underline"
+      },
+      "headingStyles": {}
+    }
+  },
+  "globalOverrides": {
+    "description": "Mobile font-size lock — bumps body copy larger on small screens for readability. Same pattern as dense-discovery.",
+    "mobileBreakpoint": "599px",
+    "mobileAdjustments": {
+      "contentStyles": {
+        "fontSize": "23px",
+        "lineHeight": "1.3"
+      },
+      "captionStyles": {
+        "fontSize": "14px",
+        "lineHeight": "1.2"
+      }
+    }
+  }
+}

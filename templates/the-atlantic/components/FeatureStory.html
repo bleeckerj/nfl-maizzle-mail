@@ -1,0 +1,23 @@
+<!--
+  Feature Story Section
+  Section with red-rule H1 heading, optional hero image with attribution caption, and rich-text body (paragraphs, blockquotes, links).
+
+  Slots:
+  - heading_html (rich_text) — Section heading (may include <em>)
+  - image_block_html (rich_text) — Optional hero image block with attribution; empty string if no image
+  - body_html (rich_text) — Body HTML: paragraphs, blockquotes, links
+
+  Used by section indexes: [4, 5, 7] in the source email.
+  Reference only — render-time dispatch is in templates/<name>/newsletter.html.
+-->
+<table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: collapse !important;">
+  <tbody>
+    <tr>
+      <td class="c-rich-text " style="-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background-color: #ffffff; padding: 0px 24px 24px 24px;" bgcolor="#ffffff">
+        <h1 class="e-h1" style="font-family: 'Graphik', -apple-system, BlinkMacSystemFont, 'Google Sans', 'Roboto', 'Helvetica Neue', Helvetica, Segoe UI, Arial, sans-serif; font-size: 24px; font-weight: 600; color: #39434b; line-height: 32.5px; letter-spacing: 0.33px; margin: 8px 0 24px 0; padding-top: 8px; border-top: 1px solid #ef3b24;">{{{ section.heading_html }}}</h1>
+        {{{ section.image_block_html }}}
+        {{{ section.body_html }}}
+      </td>
+    </tr>
+  </tbody>
+</table>
