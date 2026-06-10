@@ -33,6 +33,7 @@ sections:
 sections:
 - type: ad-block
   title: This Week's Partner
+  show_bottom_rule: true
   description: <p>A short note explaining why this ad is relevant to this issue.</p>
   items:
   - adId: fashion-8bit-pants-interstitial
@@ -42,6 +43,7 @@ sections:
 
 - `adId` is looked up in `../nfl-editorial/src/content/ads.json` during `build-newsletter.mjs`.
 - Exactly one item is allowed in an `ad-block` section.
+- Set `show_bottom_rule: false` when a template renders a light divider after the ad and this placement should omit it.
 - Unknown or missing `adId` fails the build with a clear error.
 - Email rendering ignores web-only variants (`mobile`, slot behavior, responsive layout, carousel/video/embed handling).
 - Commerce ads with `commerce.presentation: overlay-lockup` render from canonical editorial snapshots by default. Use `adRenderMode: legacy` for the layered email fallback, and reserve `commerce.lockup.snapshotSrc` for emergency manual overrides.

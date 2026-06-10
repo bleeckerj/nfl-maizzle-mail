@@ -2,6 +2,8 @@
 
 **One sentence:** a non-technical newsletter operator should be able to point at an HTML email they already like, and end up with a working LLM-assisted authoring workflow purpose-built around this repo's Maizzle pipeline — without writing code.
 
+For the implementation snapshot, known gaps, and continuation notes, see [`docs/decompiler-current-state.md`](decompiler-current-state.md).
+
 ## Audience
 
 Two operators interact with the product, often the same person:

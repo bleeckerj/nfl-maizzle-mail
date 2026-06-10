@@ -36,6 +36,10 @@ This file documents the canonical structure and workflow for `nfl-maizzle-mail` 
    - Build-time style augmentation keys (e.g., derived section style helpers) are runtime artifacts.
    - `scripts/build-newsletter.mjs` restores `data/newsletter.json` to clean source state after build.
 
+5. **Use the newsletter template operating process for new templates.**
+   - Before scaffolding or revising a production newsletter template, read `docs/newsletter-template-operating-process.md`.
+   - New templates should carry forward the dense-discovery-derived workflow for tracked link objects, `ad-block` hydration from `nfl-editorial` ad ids, deterministic build-injected view-online links, per-template schemas, and canonical build verification.
+
 ## Expected Build Flow
 
 1. Input Markdown or JSON is normalized into `data/newsletter.json`.
