@@ -39,6 +39,17 @@ const ADJACENCY_PRODUCT_REVIEW_BODY = path.join(
 );
 const ADJACENCY_PRODUCT_REVIEW_README = path.join(ADJACENCY_PRODUCT_REVIEW_ROOT, 'README.md');
 const WIRECUTTER_V2_LAYOUT = path.join(REPO_ROOT, 'templates', 'wirecutter-v2', 'layouts', 'main.html');
+const DAILY_HEADLINES_ROOT = path.join(REPO_ROOT, 'templates', 'near-future-lab-daily-headlines');
+const DAILY_HEADLINES_LAYOUT = path.join(DAILY_HEADLINES_ROOT, 'layouts', 'main.html');
+const DAILY_HEADLINES_TEMPLATE = path.join(DAILY_HEADLINES_ROOT, 'newsletter.html');
+const DAILY_HEADLINES_ARTICLE_GROUP = path.join(
+  DAILY_HEADLINES_ROOT,
+  'components',
+  'SectionArticleGroup.html',
+);
+const DAILY_HEADLINES_AD_BLOCK = path.join(DAILY_HEADLINES_ROOT, 'components', 'AdBlock.html');
+const DAILY_HEADLINES_FOOTER_CTA = path.join(DAILY_HEADLINES_ROOT, 'components', 'FooterCta.html');
+const DAILY_HEADLINES_EMAIL_FOOTER = path.join(DAILY_HEADLINES_ROOT, 'components', 'EmailFooter.html');
 const BUILD_NEWSLETTER_SCRIPT = path.join(REPO_ROOT, 'scripts', 'build-newsletter.mjs');
 
 function extractMobileMediaBlock(layout, mediaQuery = '@media screen and (max-width:599px)') {
@@ -263,4 +274,66 @@ test('wirecutter-v2 locks ad mobile typography separately from editorial copy', 
   assert.match(mobileBlock, /\.wirecutter-mobile-copy,\s*\.wirecutter-mobile-copy p,\s*\.wirecutter-mobile-copy span,\s*\.wirecutter-mobile-copy li\s*\{\s*font-size:\s*20px\s*!important;\s*line-height:\s*29px\s*!important;/);
   assert.match(mobileBlock, /\.wirecutter-mobile-ad-copy,\s*\.wirecutter-mobile-ad-copy p,[\s\S]*\.wirecutter-mobile-copy \.mob-ad-copy a\s*\{\s*font-size:\s*16px\s*!important;\s*line-height:\s*22px\s*!important;/);
   assert.match(mobileBlock, /\.wirecutter-mobile-ad-label,\s*\.wirecutter-mobile-ad-label span,[\s\S]*\.wirecutter-mobile-copy \.mob-meta a\s*\{\s*font-size:\s*14px\s*!important;\s*line-height:\s*1\.1\s*!important;/);
+});
+
+test('daily-headlines article groups lock mobile article title and lede sizes separately', () => {
+  const layout = readFileSync(DAILY_HEADLINES_LAYOUT, 'utf8');
+  const mobileBlock = extractMobileMediaBlock(layout, '@media screen and (max-width: 599px)');
+
+  assert.match(mobileBlock, /\.mob-text,\s*\.mob-text a,\s*\.mob-text p,[\s\S]*font-size:\s*23px\s*!important;/);
+  assert.match(mobileBlock, /table\.intro-statement p\.intro-statement-label,[\s\S]*p\.intro-statement-label span\s*\{\s*font-size:\s*12px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
+  assert.match(mobileBlock, /table\.intro-statement \.intro-statement-copy,[\s\S]*\.intro-statement-copy strong\s*\{\s*font-size:\s*18px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
+  assert.match(mobileBlock, /h2\.ad-section-title,[\s\S]*h2\.ad-section-title a\s*\{\s*font-size:\s*20px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
+  assert.match(mobileBlock, /h3\.ad-title,[\s\S]*h3\.ad-title a\s*\{\s*font-size:\s*22px\s*!important;\s*line-height:\s*1\.24\s*!important;/);
+  assert.match(mobileBlock, /p\.article-kicker,[\s\S]*p\.article-kicker span\s*\{\s*font-size:\s*16px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
+  assert.match(mobileBlock, /h3\.article-title,[\s\S]*h3\.article-title a\s*\{\s*font-size:\s*24px\s*!important;\s*line-height:\s*1\.22\s*!important;/);
+  assert.match(mobileBlock, /p\.article-lede,[\s\S]*p\.article-lede strong\s*\{\s*font-size:\s*19px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
+  assert.match(mobileBlock, /span\.article-cta-pill,[\s\S]*\.article-cta-pill\s*\{\s*font-size:\s*16px\s*!important;\s*line-height:\s*1\.25\s*!important;/);
+  assert.match(mobileBlock, /p\.mob-ad-copy,[\s\S]*p\.mob-ad-copy strong\s*\{\s*font-size:\s*\{\{ mobileAdCopyFontSize \|\| '16px' \}\}\s*!important;\s*line-height:\s*\{\{ mobileAdCopyLineHeight \|\| '1\.25' \}\}\s*!important;/);
+  assert.match(mobileBlock, /p\.mob-ad-meta,[\s\S]*a\.mob-ad-meta span\s*\{\s*font-size:\s*\{\{ mobileAdMetaFontSize \|\| '10px' \}\}\s*!important;\s*line-height:\s*\{\{ mobileAdMetaLineHeight \|\| '1\.2' \}\}\s*!important;/);
+  assert.match(mobileBlock, /table\.footer-cta p\.footer-cta-eyebrow,[\s\S]*p\.footer-cta-eyebrow span\s*\{\s*font-size:\s*15px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
+  assert.match(mobileBlock, /table\.footer-cta p\.footer-cta-copy,[\s\S]*p\.footer-cta-copy strong\s*\{\s*font-size:\s*20px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
+  assert.match(mobileBlock, /table\.footer-cta a\.footer-cta-button,[\s\S]*a\.footer-cta-button span\s*\{\s*font-size:\s*16px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
+  assert.match(mobileBlock, /\.mob-footer,[\s\S]*\.mob-footer td\s*\{\s*font-size:\s*15px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
+});
+
+test('daily-headlines article group markup opts semantic text into article mobile locks', () => {
+  const sources = [
+    readFileSync(DAILY_HEADLINES_TEMPLATE, 'utf8'),
+    readFileSync(DAILY_HEADLINES_ARTICLE_GROUP, 'utf8'),
+  ].join('\n');
+
+  assert.match(sources, /<p class="article-kicker"[^>]*>\{\{ article\.kicker \}\}<\/p>/);
+  assert.match(sources, /<h3 class="article-title"[^>]*>\{\{ article\.headline \}\}<\/h3>/);
+  assert.match(sources, /<p class="article-lede"[^>]*>\{\{\{ article\.lede \}\}\}<\/p>/);
+});
+
+test('daily-headlines intro statement markup opts into proportional mobile locks', () => {
+  const sources = [
+    readFileSync(DAILY_HEADLINES_TEMPLATE, 'utf8'),
+    readFileSync(path.join(DAILY_HEADLINES_ROOT, 'components', 'IntroStatement.html'), 'utf8'),
+  ].join('\n');
+
+  assert.match(sources, /class="mob-text intro-statement/);
+  assert.match(sources, /<p class="intro-statement-label"[^>]*>\{\{ section\.label \}\}<\/p>/);
+  assert.match(sources, /<div class="intro-statement-copy"[^>]*>\{\{\{ section\.statement_rendered_html \}\}\}<\/div>/);
+  assert.match(sources, /<p class="intro-statement-copy"[^>]*>\{\{ section\.statement \}\}<\/p>/);
+});
+
+test('daily-headlines ad and footer markup opts into proportional mobile locks', () => {
+  const sources = [
+    readFileSync(DAILY_HEADLINES_TEMPLATE, 'utf8'),
+    readFileSync(DAILY_HEADLINES_AD_BLOCK, 'utf8'),
+    readFileSync(DAILY_HEADLINES_FOOTER_CTA, 'utf8'),
+    readFileSync(DAILY_HEADLINES_EMAIL_FOOTER, 'utf8'),
+  ].join('\n');
+
+  assert.match(sources, /<h2 class="ad-section-title"[^>]*>\{\{ section\.title \}\}<\/h2>/);
+  assert.match(sources, /<h3 class="ad-title"[^>]*>/);
+  assert.match(sources, /class="mob-text mob-footer/);
+  assert.match(sources, /class="mob-text footer-cta/);
+  assert.match(sources, /<p class="footer-cta-eyebrow"[^>]*>\{\{ footer\.footerCta\.eyebrow \}\}<\/p>/);
+  assert.match(sources, /<p class="footer-cta-copy"[^>]*>\{\{ footer\.footerCta\.text \}\}<\/p>/);
+  assert.match(sources, /<a class="footer-cta-button"[^>]*>\{\{ footer\.footerCta\.primaryAction\.label \}\}<\/a>/);
+  assert.match(sources, /<a class="footer-cta-button"[^>]*>\{\{ footer\.footerCta\.secondaryAction\.label \}\}<\/a>/);
 });

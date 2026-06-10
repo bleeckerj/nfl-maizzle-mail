@@ -31,6 +31,8 @@ module.exports = {
       '.mob-subtitle',
       '.mob-readmore',
       '.mob-caption',
+      '.mob-ad-copy',
+      '.article-cta-pill',
       '.intro-content',
       '.intro-aside',
       '.wirecutter-mobile-copy',

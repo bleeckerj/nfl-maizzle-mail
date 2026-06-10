@@ -15,6 +15,8 @@ import {
 import { buildAdjacencyJobsMailSectionStyleOverrides } from '../lib/adjacency-mail/adjacency-jobs-mail-theme-tokens.mjs';
 import {
   buildContentSlotManifest,
+  normalizeIntroStatementSection,
+  normalizeIntroStatementSections,
   prepareNewsletterData as prepareNormalizedNewsletterData,
   resolveCommerceAdBlockSnapshots,
   resolveIssueSourcePath,
@@ -1291,6 +1293,7 @@ async function buildNewsletter() {
       repoRoot: REPO_ROOT,
       logger: console,
     });
+    normalizeIntroStatementSections(newsletterData);
     const linkTracking = normalizeNewsletterLinkTracking(newsletterData, {
       sourcePath: sourcePathForWarnings,
       sourceText: sourceTextForWarnings,
@@ -1622,6 +1625,16 @@ async function buildNewsletter() {
             ...inheritableContentStyles,
             ...incomingLinkStyles,
           };
+          if (section.type === 'intro_statement' && normalizeIntroStatementSection(section)) {
+            section.statement_rendered_html = sanitizeHtmlFragment(section.statement_rendered_html);
+            if ((mergedLinkStyles && Object.keys(mergedLinkStyles).length > 0) || theme?.linkAccent) {
+              section.statement_rendered_html = applyInlineLinkStyles(
+                section.statement_rendered_html,
+                mergedLinkStyles,
+                theme,
+              );
+            }
+          }
           // --- PATCH: Apply descriptionStyles/contentStyles/linkStyles to section.description ---
           if (section.description && typeof section.description === 'string') {
             section.description = sanitizeHtmlFragment(section.description);

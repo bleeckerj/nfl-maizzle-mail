@@ -9,12 +9,12 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
     <component src="templates/dense-discovery/components/Header.html"></component>
     
     <!-- Body with Dynamic Sections -->
-    <table bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="100%">
+    <table class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-bg dm-text' : '' }}" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" width="100%">
       <tbody>
         <tr>
-          <td align="center" bgcolor="#FFFFFF" style="background-color: #FFFFFF;border-collapse: collapse;" valign="top">
+          <td class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-bg dm-text' : '' }}" align="center" bgcolor="#FFFFFF" style="background-color: #FFFFFF;border-collapse: collapse;" valign="top">
             <!-- 640px container -->
-            <table border="0" cellpadding="0" cellspacing="0" class="body" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;max-width: 640px;" width="640">
+            <table border="0" cellpadding="0" cellspacing="0" class="body{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;max-width: 640px;" width="640">
               <tbody>
                 
                 <!-- Logo Bottom Section -->
@@ -819,6 +819,162 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
               <!-- ADJACENCY JOB POSTING End -->
             </if>
 
+            <if condition="section.type === 'microdrop-product-launch'">
+              <!-- MICRODROP PRODUCT LAUNCH Start -->
+              <tr>
+                <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+              </tr>
+              <tr>
+                <td style="border-collapse: collapse;padding: 0;">
+                  <table data-section="microdrop-product-launch" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;background: {{ section.theme.backgroundColor || '#fff8f5' }};border: 1px solid {{ section.theme.accentColor || '#fb436e' }};border-radius: 0;overflow: hidden;">
+                    <tbody>
+                      <tr>
+                        <td style="border-collapse: collapse;padding: 24px 22px 18px 22px;background: {{ section.theme.backgroundColor || '#fff8f5' }};">
+                          <p class="mob-meta" style="margin: 0 0 10px 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 12px;line-height: 1.35;font-weight: 700;letter-spacing: 0.14em;text-transform: uppercase;color: {{ section.theme.accentColor || '#fb436e' }};">{{ section.brand }}</p>
+                          <h1 class="mob-text mob-title" style="margin: 0;padding: 0;font-family: 'Ubuntu', Arial, sans-serif;font-size: 38px;line-height: 1.04;font-weight: 700;color: {{ section.theme.textColor || '#351414' }};">{{ section.hero.headline || section.title }}</h1>
+                          <if condition="section.hero.dek">
+                            <p class="mob-text" style="margin: 14px 0 0 0;padding: 0;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 18px;line-height: 1.5;font-weight: 500;color: {{ section.theme.textColor || '#351414' }};opacity: 0.78;">{{ section.hero.dek }}</p>
+                          </if>
+                        </td>
+                      </tr>
+                      <if condition="section.hero.image && section.hero.image.src">
+                        <tr>
+                          <td style="border-collapse: collapse;padding: 0 22px 24px 22px;background: {{ section.theme.backgroundColor || '#fff8f5' }};">
+                            <a href="{{ section.canonicalUrl }}" style="text-decoration: none;color: inherit;">
+                              <img src="{{ section.hero.image.src }}" alt="{{ section.hero.image.alt || section.title }}" width="596" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 596px;height: auto;border: 0;">
+                            </a>
+                          </td>
+                        </tr>
+                      </if>
+
+                      <if condition="section.products && section.products.length">
+                        <tr>
+                          <td style="border-collapse: collapse;padding: 0 22px 8px 22px;background: {{ section.theme.backgroundColor || '#fff8f5' }};">
+                            <p class="mob-meta" style="margin: 0 0 12px 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 12px;line-height: 1.35;font-weight: 700;letter-spacing: 0.14em;text-transform: uppercase;color: {{ section.theme.textColor || '#351414' }};">The Drop</p>
+                          </td>
+                        </tr>
+                        <each loop="product in section.products">
+                          <tr>
+                            <td style="border-collapse: collapse;padding: 0 22px 18px 22px;background: {{ section.theme.backgroundColor || '#fff8f5' }};">
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;background: {{ section.theme.surfaceColor || '#fffef8' }};border: 1px solid rgba(53,20,20,0.22);">
+                                <tbody>
+                                  <tr>
+                                    <td style="border-collapse: collapse;padding: 0;">
+                                      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;">
+                                        <tbody>
+                                          <tr>
+                                            <td valign="top" width="42%" style="border-collapse: collapse;padding: 18px;background: {{ product.color || section.theme.accentColor || '#fb436e' }};">
+                                              <if condition="product.image && product.image.src">
+                                                <img src="{{ product.image.src }}" alt="{{ product.image.alt || product.name }}" width="220" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 220px;height: auto;border: 0;margin: 0 auto;">
+                                              </if>
+                                            </td>
+                                            <td valign="top" width="58%" style="border-collapse: collapse;padding: 18px 18px 16px 18px;background: {{ section.theme.surfaceColor || '#fffef8' }};">
+                                              <p class="mob-meta" style="margin: 0 0 8px 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 11px;line-height: 1.35;font-weight: 700;letter-spacing: 0.12em;text-transform: uppercase;color: {{ product.color || section.theme.accentColor || '#fb436e' }};">{{ product.badge || product.catalog }}</p>
+                                              <h2 class="mob-text mob-title" style="margin: 0;padding: 0;font-family: 'Ubuntu', Arial, sans-serif;font-size: 28px;line-height: 1.05;font-weight: 700;color: {{ section.theme.textColor || '#351414' }};">{{ product.name }}</h2>
+                                              <if condition="product.price">
+                                                <p style="margin: 8px 0 0 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 13px;line-height: 1.35;font-weight: 700;color: {{ section.theme.textColor || '#351414' }};">{{ product.price }}</p>
+                                              </if>
+                                              <if condition="product.ritual">
+                                                <p style="margin: 12px 0 0 0;padding: 0;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 18px;line-height: 1.25;font-weight: 700;color: {{ section.theme.textColor || '#351414' }};">{{ product.ritual }}</p>
+                                              </if>
+                                              <if condition="product.descriptionText">
+                                                <p class="mob-text" style="margin: 10px 0 0 0;padding: 0;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 15px;line-height: 1.5;font-weight: 500;color: {{ section.theme.textColor || '#351414' }};opacity: 0.82;">{{ product.descriptionText }}</p>
+                                              </if>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </each>
+                      </if>
+
+                      <if condition="section.protocol && section.protocol.heading">
+                        <tr>
+                          <td style="border-collapse: collapse;padding: 18px 22px 8px 22px;background: {{ section.theme.textColor || '#351414' }};">
+                            <p class="mob-meta" style="margin: 0 0 8px 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 12px;line-height: 1.35;font-weight: 700;letter-spacing: 0.14em;text-transform: uppercase;color: {{ section.theme.accentColor || '#fb436e' }};">{{ section.protocol.eyebrow || 'Protocol' }}</p>
+                            <h2 class="mob-text mob-title" style="margin: 0;padding: 0;font-family: 'Ubuntu', Arial, sans-serif;font-size: 30px;line-height: 1.08;font-weight: 700;color: #fff8f5;">{{ section.protocol.heading }}</h2>
+                            <if condition="section.protocol.body">
+                              <p class="mob-text" style="margin: 12px 0 0 0;padding: 0;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 17px;line-height: 1.48;font-weight: 500;color: #decac8;">{{ section.protocol.body }}</p>
+                            </if>
+                          </td>
+                        </tr>
+                        <if condition="section.protocol.items && section.protocol.items.length">
+                          <tr>
+                            <td style="border-collapse: collapse;padding: 10px 22px 24px 22px;background: {{ section.theme.textColor || '#351414' }};">
+                              <each loop="item in section.protocol.items">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;border-top: 1px solid rgba(255,248,245,0.26);">
+                                  <tbody>
+                                    <tr>
+                                      <td style="border-collapse: collapse;padding: 14px 0;">
+                                        <p class="mob-meta" style="margin: 0 0 6px 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 11px;line-height: 1.35;font-weight: 700;letter-spacing: 0.12em;text-transform: uppercase;color: {{ section.theme.accentColor || '#fb436e' }};">{{ item.label }}</p>
+                                        <p class="mob-text mob-title" style="margin: 0;padding: 0;font-family: 'Ubuntu', Arial, sans-serif;font-size: 21px;line-height: 1.18;font-weight: 700;color: #fff8f5;">{{ item.value }}</p>
+                                        <if condition="item.body">
+                                          <p class="mob-text" style="margin: 8px 0 0 0;padding: 0;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 15px;line-height: 1.5;font-weight: 500;color: #decac8;">{{ item.body }}</p>
+                                        </if>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </each>
+                            </td>
+                          </tr>
+                        </if>
+                      </if>
+
+                      <if condition="section.finalCta && section.finalCta.heading">
+                        <tr>
+                          <td style="border-collapse: collapse;padding: 24px 22px;background: {{ section.theme.backgroundColor || '#fff8f5' }};">
+                            <p class="mob-meta" style="margin: 0 0 8px 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 11px;line-height: 1.35;font-weight: 700;letter-spacing: 0.12em;text-transform: uppercase;color: {{ section.theme.accentColor || '#fb436e' }};">{{ section.finalCta.eyebrow }}</p>
+                            <h2 class="mob-text mob-title" style="margin: 0;padding: 0;font-family: 'Ubuntu', Arial, sans-serif;font-size: 29px;line-height: 1.08;font-weight: 700;color: {{ section.theme.textColor || '#351414' }};">{{ section.finalCta.heading }}</h2>
+                            <if condition="section.finalCta.body">
+                              <p class="mob-text" style="margin: 12px 0 0 0;padding: 0;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 16px;line-height: 1.5;font-weight: 500;color: {{ section.theme.textColor || '#351414' }};opacity: 0.8;">{{ section.finalCta.body }}</p>
+                            </if>
+                            <p style="margin: 18px 0 0 0;padding: 0;">
+                              <a href="{{ section.finalCta.href || section.canonicalUrl }}" style="display: inline-block;padding: 13px 16px;text-decoration: none;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 12px;line-height: 1.2;font-weight: 700;letter-spacing: 0.1em;text-transform: uppercase;background: {{ section.theme.textColor || '#351414' }};color: #fff8f5 !important;border: 1px solid {{ section.theme.textColor || '#351414' }};-webkit-text-fill-color: #fff8f5;">{{ section.finalCta.label || 'View Microdrop' }}</a>
+                            </p>
+                          </td>
+                        </tr>
+                      </if>
+
+                      <if condition="section.editorialNote && section.editorialNote.heading">
+                        <tr>
+                          <td style="border-collapse: collapse;padding: 24px 22px;background: #f6f2ec;border-top: 1px solid rgba(53,20,20,0.18);">
+                            <p class="mob-meta" style="margin: 0 0 8px 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 11px;line-height: 1.35;font-weight: 700;letter-spacing: 0.14em;text-transform: uppercase;color: #7a6c67;">{{ section.editorialNote.eyebrow || 'Editorial Note' }}</p>
+                            <h2 class="mob-text mob-title" style="margin: 0 0 12px 0;padding: 0;font-family: 'Ubuntu', Arial, sans-serif;font-size: 24px;line-height: 1.14;font-weight: 700;color: #352d2a;">{{ section.editorialNote.heading }}</h2>
+                            <each loop="paragraph in section.editorialNote.body">
+                              <p class="mob-text" style="margin: 0 0 12px 0;padding: 0;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 15px;line-height: 1.58;font-weight: 400;color: #5b514d;">{{ paragraph }}</p>
+                            </each>
+                            <if condition="section.editorialNote.notes && section.editorialNote.notes.length">
+                              <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;margin-top: 10px;">
+                                <tbody>
+                                  <each loop="note in section.editorialNote.notes">
+                                    <tr>
+                                      <td valign="top" width="34%" style="border-collapse: collapse;padding: 12px 12px 12px 0;border-top: 1px solid #d8d0c8;">
+                                        <p class="mob-meta" style="margin: 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 11px;line-height: 1.35;font-weight: 700;letter-spacing: 0.1em;text-transform: uppercase;color: #7a6c67;">{{ note.label }}</p>
+                                      </td>
+                                      <td valign="top" width="66%" style="border-collapse: collapse;padding: 12px 0;border-top: 1px solid #d8d0c8;">
+                                        <p class="mob-text" style="margin: 0;padding: 0;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;line-height: 1.55;font-weight: 400;color: #5b514d;">{{ note.body }}</p>
+                                      </td>
+                                    </tr>
+                                  </each>
+                                </tbody>
+                              </table>
+                            </if>
+                          </td>
+                        </tr>
+                      </if>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <!-- MICRODROP PRODUCT LAUNCH End -->
+            </if>
+
             <if condition="section.type === 'adjacency-feature'">
               <!-- ADJACENCY FEATURE Start -->
               <tr>
@@ -833,9 +989,9 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           <if condition="section.rubric">
                             <p class="mob-meta" style="{{{ section.labelStylesInline || '' }}}{{{ section.labelStylesInline ? '; ' : '' }}}margin: 0 0 12px 0;padding: 0;">{{ section.rubric }}</p>
                           </if>
-                          <h1 class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}}margin: 0;padding: 0;">{{ section.title }}</h1>
+                          <h1 class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}}font-size: 21px;margin: 0;padding: 0;">{{ section.title }}</h1>
                           <if condition="section.dek">
-                            <p style="margin: 14px 0 0 0;padding: 0;font-family: Georgia, 'Times New Roman', serif;font-size: 21px;line-height: 1.45;font-style: italic;color: #374151;">{{ section.dek }}</p>
+                            <p style="margin: 14px 0 0 0;padding: 0;font-family: Georgia, 'Times New Roman', serif;font-size: 18px;line-height: 1.45;font-style: italic;color: #374151;">{{ section.dek }}</p>
                           </if>
                           <if condition="section.author || section.dateLabel">
                             <p style="margin: 16px 0 0 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', monospace;font-size: 12px;line-height: 1.45;color: #6b7280;text-transform: uppercase;letter-spacing: 0.08em;">
@@ -1243,7 +1399,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                         </if>
                                         
                                         <if condition="item.note">
-                                          <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;font-style: italic;">{{ item.note }}</p>
+                                          <div class="note-content" style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;font-style: italic;">{{{ item.note }}}</div>
                                         </if>
                                         
                                       </td>
@@ -1339,7 +1495,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                 </if>
                                 
                                 <if condition="item.note">
-                                  <p style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;font-style: italic;">{{ item.note }}</p>
+                                  <div class="note-content" style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;font-style: italic;">{{{ item.note }}}</div>
                                 </if>
                                 <if condition="(item.readMoreText || item.readMoreTxt) && (item.readMoreLink || item.link)">
                                     <p class="mob-readmore" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}padding: 0;margin: 10px 0 0 0;">

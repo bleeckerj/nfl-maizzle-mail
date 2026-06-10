@@ -25,7 +25,7 @@ from pathlib import Path
 SECTION_DEFINITIONS = {
     'ad-block': {
         'description': 'Single email-safe ad card resolved from ads inventory',
-        'section_fields': ['type', 'title', 'description'],
+        'section_fields': ['type', 'title', 'description', 'show_bottom_rule'],
         'item_fields': {
             'required': ['adId'],
             'optional': []
@@ -298,6 +298,8 @@ def generate_section(section_type, minimal=False):
             section[field] = ['TAG1', 'TAG2'] if not minimal else []
         elif field == 'description':
             section[field] = f'<p>Description for {section_type} section.</p>'
+        elif field == 'show_bottom_rule':
+            section[field] = True
         elif field == 'authorLabel':
             if not minimal:
                 section[field] = 'Author'

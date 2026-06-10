@@ -6,7 +6,11 @@ import path from 'node:path';
 import { mkdtempSync, rmSync, mkdirSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
-import { loadNewsletterSource, prepareNewsletterData } from '../../lib/newsletter-core/index.mjs';
+import {
+  loadNewsletterSource,
+  normalizeNewsletterLinkTracking,
+  prepareNewsletterData,
+} from '../../lib/newsletter-core/index.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -95,7 +99,16 @@ test('prepareNewsletterData hydrates ad-block sections and preserves editorial c
     assert.equal(prepared.sections[1].items[0].label, 'SPONSORED');
     assert.equal(prepared.sections[1].items[0].title, 'A Better Fake Ad');
     assert.match(prepared.sections[1].items[0].description, /The future needs stranger ads\./);
-    assert.equal(prepared.sections[1].items[0].readMoreLink, 'https://example.com/fake-ad');
+    assert.deepEqual(prepared.sections[1].items[0].readMoreLink, {
+      href: 'https://example.com/fake-ad',
+      label: 'comedy-ad-01',
+      category: 'ad-block',
+    });
+
+    const linkTracking = normalizeNewsletterLinkTracking(prepared);
+    const adBlockLink = linkTracking.manifest.get('https://example.com/fake-ad');
+    assert.equal(adBlockLink.label, 'comedy-ad-01');
+    assert.equal(adBlockLink.category, 'ad-block');
   });
 });
 
@@ -109,7 +122,21 @@ test('prepareNewsletterData accepts ad-block source items under strict schema va
           {
             type: 'ad-block',
             title: 'Partner Signal',
-            items: [{ adId: 'comedy-ad-01' }],
+            items: [
+              {
+                adId: 'comedy-ad-01',
+                link: {
+                  href: 'https://example.com/issue-ad',
+                  label: 'issue | ad-block | primary',
+                  category: 'ad-block',
+                },
+                readMoreLink: {
+                  href: 'https://example.com/issue-ad',
+                  label: 'issue | ad-block | primary',
+                  category: 'ad-block',
+                },
+              },
+            ],
           },
         ],
       },
@@ -119,6 +146,11 @@ test('prepareNewsletterData accepts ad-block source items under strict schema va
     assert.equal(prepared.sections[0].title, 'Partner Signal');
     assert.equal(prepared.sections[0].items[0].label, 'SPONSORED');
     assert.equal(prepared.sections[0].items[0].title, 'A Better Fake Ad');
+    assert.deepEqual(prepared.sections[0].items[0].link, {
+      href: 'https://example.com/issue-ad',
+      label: 'issue | ad-block | primary',
+      category: 'ad-block',
+    });
   });
 });
 
@@ -242,18 +274,41 @@ test('prepareNewsletterData injects the default newsletter footer CTA when front
       },
       sections: [],
     },
-    { repoRoot: REPO_ROOT, templateName: 'dense-discovery', logger: { log() {} } },
+    { repoRoot: REPO_ROOT, templateName: 'dense-discovery', outputName: 'w24-y26', logger: { log() {} } },
   );
 
   assert.equal(prepared.footer.footerCta.variant, 'default');
-  assert.equal(prepared.footer.footerCta.eyebrow, 'Commissions, Collaborations, Full-Time Roles');
+  assert.equal(prepared.footer.footerCta.eyebrow, 'Commissions, Collaborations, Integrated Roles');
   assert.equal(
     prepared.footer.footerCta.text,
-    'I work with teams that need speculative and material prototyping, anticipatory research, and design fiction to make possible futures easier to see, discuss, and act on. I am open to commissions, collaborations, advisory work, and full-time roles where this kind of artifact-led thinking can shape strategy, products, services, and organizational imagination.',
+    "Organizations get really good at reproducing the world they already understand. Near Future Laboratory helps teams surface their unspoken inherited assumptions and explore alternative possibilities through artifacts from possible futures. If you're looking to get out of that loop, let's talk.",
   );
-  assert.equal(prepared.footer.footerCta.primaryAction.label, 'Start a Conversation');
-  assert.equal(prepared.footer.footerCta.secondaryAction.label, 'See How This Works');
-  assert.equal(prepared.footer.footerCta.secondaryAction.url, 'https://nearfuturelaboratory.com/services');
+  assert.equal(prepared.footer.footerCta.primaryAction.label, 'Let’s Talk');
+  assert.deepEqual(prepared.footer.footerCta.primaryAction.url, {
+    href: 'https://nearfuturelaboratory.com/contact',
+    label: 'w24-y26 | footer CTA | contact | Near Future Laboratory',
+    category: 'services',
+  });
+  assert.equal(prepared.footer.footerCta.secondaryAction.label, 'See How I Work');
+  assert.deepEqual(prepared.footer.footerCta.secondaryAction.url, {
+    href: 'https://nearfuturelaboratory.com/services',
+    label: 'w24-y26 | footer CTA | services | Near Future Laboratory',
+    category: 'services',
+  });
+
+  const linkTracking = normalizeNewsletterLinkTracking(prepared);
+  assert.equal(
+    linkTracking.manifest.get('https://nearfuturelaboratory.com/contact').label,
+    'w24-y26 | footer CTA | contact | Near Future Laboratory',
+  );
+  assert.equal(
+    linkTracking.manifest.get('https://nearfuturelaboratory.com/services').category,
+    'services',
+  );
+  assert.equal(
+    linkTracking.defaultWarnings.some((warning) => warning.pathLabel.includes('footerCta')),
+    false,
+  );
 });
 
 test('prepareNewsletterData preserves newsletter footer CTA variant selection and explicit overrides', () => {
@@ -282,8 +337,55 @@ test('prepareNewsletterData preserves newsletter footer CTA variant selection an
   assert.equal(prepared.footer.footerCta.eyebrow, 'Workshops, Talks, Sessions');
   assert.equal(prepared.footer.footerCta.text, 'Custom workshop positioning for this issue.');
   assert.equal(prepared.footer.footerCta.primaryAction.label, 'Book Julian');
-  assert.equal(prepared.footer.footerCta.primaryAction.url, 'https://nearfuturelaboratory.com/services');
+  assert.deepEqual(prepared.footer.footerCta.primaryAction.url, {
+    href: 'https://nearfuturelaboratory.com/services',
+    label: 'footer CTA | services | Near Future Laboratory',
+    category: 'services',
+  });
   assert.equal('secondaryAction' in prepared.footer.footerCta, false);
+});
+
+test('prepareNewsletterData preserves object-valued newsletter footer CTA URLs for link tracking', () => {
+  const prepared = prepareNewsletterData(
+    {
+      template: 'dense-discovery',
+      title: 'Footer CTA Link Metadata Test',
+      footer: {
+        footerCta: {
+          variant: 'default',
+          primaryAction: {
+            label: 'Let’s Talk',
+            url: {
+              href: 'https://nearfuturelaboratory.com/contact',
+              label: 'w23-y26 | footer CTA | contact',
+              category: 'site-nav',
+            },
+          },
+          secondaryAction: {
+            label: 'See How I Work',
+            url: {
+              href: 'https://nearfuturelaboratory.com/services',
+              label: 'w23-y26 | footer CTA | services',
+              category: 'site-nav',
+            },
+          },
+        },
+      },
+      sections: [],
+    },
+    { repoRoot: REPO_ROOT, templateName: 'dense-discovery', logger: { log() {} } },
+  );
+
+  assert.deepEqual(prepared.footer.footerCta.primaryAction.url, {
+    href: 'https://nearfuturelaboratory.com/contact',
+    label: 'w23-y26 | footer CTA | contact',
+    category: 'site-nav',
+  });
+  assert.deepEqual(prepared.footer.footerCta.secondaryAction.url, {
+    href: 'https://nearfuturelaboratory.com/services',
+    label: 'w23-y26 | footer CTA | services',
+    category: 'site-nav',
+  });
 });
 
 test('prepareNewsletterData respects disabled newsletter footer CTA blocks', () => {
@@ -369,28 +471,55 @@ test('loadNewsletterSource resolves outbox issues by issue id and returns normal
   });
 });
 
-test('loadNewsletterSource fails on known malformed outbox issues', () => {
-  assert.throws(
-    () =>
-      loadNewsletterSource({
-        repoRoot: REPO_ROOT,
-        backofficeRoot: BACKOFFICE_ROOT,
-        issueId: 'w11-y26',
-        logger: { log() {} },
-      }),
-    /duplicated mapping key/i,
-  );
+test('loadNewsletterSource fails on malformed outbox issue frontmatter', () => {
+  withTempRoots(({ repoRoot, backofficeRoot }) => {
+    writeIssue(
+      backofficeRoot,
+      'w13-y26',
+      [
+        '---',
+        'template: dense-discovery',
+        'title: First Title',
+        'title: Duplicate Title',
+        'sections: []',
+        '---',
+      ].join('\n'),
+    );
 
-  assert.throws(
-    () =>
-      loadNewsletterSource({
-        repoRoot: REPO_ROOT,
-        backofficeRoot: BACKOFFICE_ROOT,
-        issueId: 'w08-y26',
-        logger: { log() {} },
-      }),
-    /end of the stream|document separator/i,
-  );
+    assert.throws(
+      () =>
+        loadNewsletterSource({
+          repoRoot,
+          backofficeRoot,
+          issueId: 'w13-y26',
+          logger: { log() {} },
+        }),
+      /duplicated mapping key/i,
+    );
+
+    writeIssue(
+      backofficeRoot,
+      'w14-y26',
+      [
+        '---',
+        'template: dense-discovery',
+        'title: Broken Flow Collection',
+        'sections: [',
+        '---',
+      ].join('\n'),
+    );
+
+    assert.throws(
+      () =>
+        loadNewsletterSource({
+          repoRoot,
+          backofficeRoot,
+          issueId: 'w14-y26',
+          logger: { log() {} },
+        }),
+      /end of the stream|document separator/i,
+    );
+  });
 });
 
 test('prepareNewsletterData preserves adjacency-feature sections and optional fallback ad blocks', () => {

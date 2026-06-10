@@ -276,3 +276,39 @@ test('explicit headingStyles and linkStyles override inherited contentStyles', (
     cleanup();
   }
 });
+
+test('adjacency feature title renders larger than dek while preserving typography', () => {
+  const { html, cleanup } = buildNewsletter(
+    [
+      '---',
+      'template: dense-discovery',
+      'title: Adjacency Feature Header Sizes',
+      'preheader: Verify title and dek hierarchy',
+      'sectionStylesFile: templates/dense-discovery/section-styles.json',
+      'sections:',
+      '  - type: adjacency-feature',
+      '    rubric: Features',
+      '    title: Example Feature Title',
+      '    dek: Example feature dek.',
+      '    bodyHtml: <p>Body copy.</p>',
+      '    ctaText: Read More',
+      '    ctaLink: https://example.com/read',
+      '---',
+      '',
+    ],
+    'adjacency-feature-header-sizes',
+  );
+
+  try {
+    assert.match(
+      html,
+      /<h1 class="mob-text mob-title"[^>]*style="(?=[^"]*font-family:\s*Georgia)(?=[^"]*font-size:\s*21px)[^"]*"[^>]*>\s*Example Feature Title\s*<\/h1>/,
+    );
+    assert.match(
+      html,
+      /<p style="[^"]*font-family:\s*Georgia[^"]*font-size:\s*18px[^"]*font-style:\s*italic[^"]*"[^>]*>Example feature dek\.<\/p>/,
+    );
+  } finally {
+    cleanup();
+  }
+});

@@ -1,5 +1,6 @@
 ---
 template: dense-discovery
+newsletterFormat: discovery
 title: Newsletter Title
 preheader: Short preview text that appears in email clients
 ogImage: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=900?format=webp
@@ -73,6 +74,7 @@ sections:
   - title: Signal Item 1
 - type: ad-block
   title: This Week's Partner
+  show_bottom_rule: true
   items:
   - adId: fashion-8bit-pants-interstitial
 - type: apps-sites

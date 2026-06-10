@@ -20,6 +20,9 @@
 //   --model=<id>      override the classifier model for this run only.
 //                     Defaults to DECOMPILER_MODEL from .env, then to
 //                     claude-opus-4-7. See lib/decompiler/config.mjs.
+//   --no-dark-mode-flatten
+//                     emit a light-only reconstruction without the defensive
+//                     dark-mode flatten scaffold.
 
 import fs from 'fs';
 import path from 'path';
@@ -41,11 +44,13 @@ let dryRun = false;
 let classifyOnly = false;
 let fromCache = false;
 let modelOverride = null;
+let darkModeFlatten = true;
 for (const a of args.slice(1)) {
   if (a === '--dry-run') dryRun = true;
   else if (a === '--classify-only') classifyOnly = true;
   else if (a === '--from-cache') fromCache = true;
   else if (a.startsWith('--model=')) modelOverride = a.split('=')[1];
+  else if (a === '--no-dark-mode-flatten') darkModeFlatten = false;
   else if (!a.startsWith('-') && !templateName) templateName = a;
 }
 if (!templateName) {
@@ -198,12 +203,18 @@ const segmentationForEmit = {
 
 console.log('');
 console.log('Emitting template artifacts...');
+if (darkModeFlatten) {
+  const magenta = '\x1b[95m';
+  const reset = '\x1b[0m';
+  console.log(`${magenta}INFO${reset} generated template will include dark-mode flatten defaults. Use --no-dark-mode-flatten to emit a light-only reconstruction.`);
+}
 const written = emit({
   repoRoot: process.cwd(),
   templateName,
   sourcePath: inputFile,
   segmentation: segmentationForEmit,
   classifier: classifierResult,
+  darkModeFlatten,
 });
 
 console.log(`Template:       ${path.relative(process.cwd(), written.templateDir)}/`);

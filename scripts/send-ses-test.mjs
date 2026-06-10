@@ -6,10 +6,19 @@ import process from 'node:process';
 import dotenv from 'dotenv';
 import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
 
+import { validateRenderedHtmlLinks } from '../lib/newsletter-core/index.mjs';
+
 dotenv.config();
 
 const DEFAULT_HTML_PATH = 'workflow-test.html';
-const htmlPath = resolve(process.cwd(), process.argv[2] ?? DEFAULT_HTML_PATH);
+if (process.argv.includes('--allow-broken-links-for-visual-test')) {
+  console.error(
+    'Refusing to send: --allow-broken-links-for-visual-test is not permitted for outbound email sends.'
+  );
+  process.exit(1);
+}
+const htmlArg = process.argv.slice(2).find((arg) => !arg.startsWith('--'));
+const htmlPath = resolve(process.cwd(), htmlArg ?? DEFAULT_HTML_PATH);
 const fromAddress = process.env.SES_FROM;
 const toAddresses = process.env.SES_TO?.split(',').map((entry) => entry.trim()).filter(Boolean) ?? [];
 const subjectLine = process.env.SES_SUBJECT || 'Newsletter Test from Maizzle Workflow';
@@ -22,6 +31,7 @@ if (!fromAddress || toAddresses.length === 0) {
 
 async function main() {
   const htmlBody = await readFile(htmlPath, 'utf8');
+  await validateRenderedHtmlLinks(htmlBody);
 
   const clientConfig = { region };
   if (process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY) {

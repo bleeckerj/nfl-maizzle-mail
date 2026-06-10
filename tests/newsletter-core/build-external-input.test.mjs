@@ -13,6 +13,18 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.resolve(__dirname, '..', '..');
 const BUILD_SCRIPT = path.join(REPO_ROOT, 'scripts', 'build-newsletter.mjs');
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function fontFamilyPattern(value) {
+  return String(value)
+    .split(',')
+    .map((part) => escapeRegExp(part.trim()))
+    .join('\\s*,\\s*');
+}
+
 const POPUP_JOBS_RENDERERS = [
   'appleish',
   'atlassian',
@@ -227,7 +239,7 @@ test('build-newsletter accepts an absolute external issue path with adjacency-jo
       '    title: "[Expression of Interest] Team Founder, Speculative Prototyping"',
       '    location: "San Francisco, CA | New York, NY"',
       '    applyLabel: "Apply"',
-      '    applyUrl: "https://example.com/apply"',
+      '    applyUrl: "mailto:apply@example.com"',
       '    canonicalUrl: "https://theadjacency.com/jobs/anthropic/expression-of-interest-team-founder-speculative-prototyping"',
       "    summaryHtml: '<p>External jobs body should be styled by newsletter-core preprocessing.</p>'",
       '    lists:',
@@ -431,7 +443,7 @@ test('build-newsletter renders commerce ad-blocks as email HTML without uploadin
         title: 'Commerce Ad Title',
         sponsor: 'Speculative Contrivance',
         copy: 'Commerce ad copy should render as HTML.',
-        link: { url: 'https://example.com/shop', label: 'Shop now' },
+        link: { url: '/shop', label: 'Shop now' },
         media: {
           src: 'https://imagedelivery.net/example/source/public',
           altText: 'Snapshot alt text',
@@ -509,6 +521,215 @@ test('build-newsletter renders commerce ad-blocks as email HTML without uploadin
   }
 });
 
+test('daily-headlines ad-block description styling comes from template section styles', () => {
+  const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'daily-headlines-ad-copy-build-'));
+  const issuePath = path.join(tempRoot, 'issue.md');
+  const outputDir = path.join(tempRoot, 'output');
+  const outputName = 'daily-headlines-ad-copy-external';
+  const adsPath = path.join(tempRoot, 'ads.json');
+  const sectionStylesPath = path.join(REPO_ROOT, 'templates', 'near-future-lab-daily-headlines', 'section-styles.json');
+  const sectionStyles = JSON.parse(readFileSync(sectionStylesPath, 'utf8'));
+  const adBlockStyles = sectionStyles.sectionStyles['ad-block'];
+  const desktopAdCopyStyles = adBlockStyles.contentStyles;
+  const mobileAdCopyStyles = adBlockStyles.mobileDescriptionStyles;
+
+  writeFileSync(
+    adsPath,
+    JSON.stringify([
+      {
+        id: 'daily-ad-01',
+        label: 'SPONSORED',
+        title: 'Hydrated Daily Ad',
+        copy: 'Hydrated inventory ad copy should use the template-owned ad-copy styles.',
+        media: {
+          src: 'cid:daily-ad-image',
+          altText: 'Daily ad image',
+        },
+      },
+    ]),
+    'utf8',
+  );
+
+  writeFileSync(
+    issuePath,
+    [
+      '---',
+      'template: near-future-lab-daily-headlines',
+      'title: Daily Headlines Ad Copy Issue',
+      'sectionStylesFile: templates/near-future-lab-daily-headlines/section-styles.json',
+      'sections:',
+      '  - type: ad-block',
+      '    title: "Tomorrow\'s Ads Today"',
+      '    description: |',
+      '      Daily ad description should use the template-owned ad-copy styles.',
+      '    items:',
+      '      - adId: daily-ad-01',
+      'footer:',
+      '  footerCta:',
+      '    variant: default',
+      '    eyebrow: "Footer"',
+      '    text: "Footer copy."',
+      '    primaryAction:',
+      '      label: "Contact"',
+      '      url:',
+      '        href: /contact',
+      '        label: "daily test | footer | contact"',
+      '        category: operations',
+      '    secondaryAction:',
+      '      label: "Services"',
+      '      url:',
+      '        href: /services',
+      '        label: "daily test | footer | services"',
+      '        category: operations',
+      '---',
+      '',
+    ].join('\n'),
+    'utf8',
+  );
+
+  try {
+    execFileSync(
+      process.execPath,
+      [
+        BUILD_SCRIPT,
+        issuePath,
+        outputName,
+        `--repo-root=${REPO_ROOT}`,
+        `--output-dir=${outputDir}`,
+        '--no-open',
+      ],
+      {
+        encoding: 'utf8',
+        env: {
+          ...process.env,
+          NFL_EDITORIAL_ADS_PATH: adsPath,
+        },
+      },
+    );
+
+    const builtHtmlPath = path.join(outputDir, `${outputName}.html`);
+    assert.ok(existsSync(builtHtmlPath));
+
+    const html = readFileSync(builtHtmlPath, 'utf8');
+    assert.match(html, /https:\/\/fonts\.googleapis\.com\/css2\?family=Share\+Tech\+Mono&display=swap/);
+    assert.match(
+      html,
+      new RegExp(
+        `p\\.mob-ad-copy,\\s*p\\.mob-ad-copy a,\\s*p\\.mob-ad-copy span,[\\s\\S]*p\\.mob-ad-copy strong\\s*\\{\\s*font-size:\\s*${escapeRegExp(mobileAdCopyStyles.fontSize)}\\s*!important;\\s*line-height:\\s*${escapeRegExp(mobileAdCopyStyles.lineHeight)}\\s*!important;\\s*font-weight:\\s*${escapeRegExp(mobileAdCopyStyles.fontWeight)}\\s*!important;\\s*font-family:\\s*${fontFamilyPattern(mobileAdCopyStyles.fontFamily)}\\s*!important;`
+      ),
+    );
+    const adCopyParagraph = html.match(/<p class="mob-ad-copy" style="([^"]*)"[^>]*>Daily ad description should use the template-owned ad-copy styles\.<\/p>/);
+    assert.ok(adCopyParagraph);
+    const inlineAdCopyStyle = adCopyParagraph[1];
+    assert.match(inlineAdCopyStyle, new RegExp(`font-size:\\s*${escapeRegExp(desktopAdCopyStyles.fontSize)}`));
+    assert.match(inlineAdCopyStyle, new RegExp(`line-height:\\s*${escapeRegExp(desktopAdCopyStyles.lineHeight)}`));
+    assert.match(inlineAdCopyStyle, new RegExp(`font-weight:\\s*${escapeRegExp(desktopAdCopyStyles.fontWeight)}`));
+    const primaryDesktopAdCopyFont = desktopAdCopyStyles.fontFamily.split(',')[0].trim();
+    assert.match(inlineAdCopyStyle, new RegExp(`font-family:\\s*${escapeRegExp(primaryDesktopAdCopyFont)}`));
+    assert.match(html, /<div style="margin:0"><p class="mob-ad-copy"/);
+    assert.doesNotMatch(html, /<p class="[^"]*mob-text[^"]*"[^>]*>Daily ad description should use the template-owned ad-copy styles\.<\/p>/);
+    const hydratedAdCopyParagraph = html.match(/<p class="mob-ad-copy" style="([^"]*)"[^>]*>Hydrated inventory ad copy should use the template-owned ad-copy styles\.<\/p>/);
+    assert.ok(hydratedAdCopyParagraph);
+    assert.doesNotMatch(html, /<p class="[^"]*mob-text[^"]*"[^>]*>Hydrated inventory ad copy should use the template-owned ad-copy styles\.<\/p>/);
+  } finally {
+    rmSync(tempRoot, { recursive: true, force: true });
+  }
+});
+
+test('daily-headlines article CTA pill renders inside existing article link only when configured', () => {
+  const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'daily-headlines-article-cta-build-'));
+  const issuePath = path.join(tempRoot, 'issue.md');
+  const outputDir = path.join(tempRoot, 'output');
+  const outputName = 'daily-headlines-article-cta-external';
+  const sectionStylesPath = path.join(REPO_ROOT, 'templates', 'near-future-lab-daily-headlines', 'section-styles.json');
+  const sectionStyles = JSON.parse(readFileSync(sectionStylesPath, 'utf8'));
+  const ctaStyles = sectionStyles.sectionStyles.section_article_group.ctaStyles;
+
+  writeFileSync(
+    issuePath,
+    [
+      '---',
+      'template: near-future-lab-daily-headlines',
+      'title: Daily Headlines Article CTA Issue',
+      'sectionStylesFile: templates/near-future-lab-daily-headlines/section-styles.json',
+      'sections:',
+      '  - type: section_article_group',
+      '    section_label: "Tomorrow\'s News Today: Headlines"',
+      '    articles:',
+      '      - link:',
+      '          href: mailto:cta-story@example.com',
+      '          label: "daily test | headlines | cta story"',
+      '          category: editorial',
+      '        image_src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/dc57ddc1-f8b9-4662-f63e-1c62c3d79900/full?format=webp',
+      '        image_alt: "CTA story image"',
+      '        kicker: "Labor"',
+      '        headline: "CTA story headline"',
+      '        lede: "CTA story lede."',
+      '        cta_label: "Do you want to know more?"',
+      '      - link:',
+      '          href: mailto:no-cta-story@example.com',
+      '          label: "daily test | headlines | no cta story"',
+      '          category: editorial',
+      '        headline: "No CTA story headline"',
+      '        lede: "No CTA story lede."',
+      'footer:',
+      '  footerCta:',
+      '    variant: default',
+      '    eyebrow: "Footer"',
+      '    text: "Footer copy."',
+      '    primaryAction:',
+      '      label: "Contact"',
+      '      url:',
+      '        href: /contact',
+      '        label: "daily test | footer | contact"',
+      '        category: operations',
+      '    secondaryAction:',
+      '      label: "Services"',
+      '      url:',
+      '        href: /services',
+      '        label: "daily test | footer | services"',
+      '        category: operations',
+      '---',
+      '',
+    ].join('\n'),
+    'utf8',
+  );
+
+  try {
+    execFileSync(
+      process.execPath,
+      [
+        BUILD_SCRIPT,
+        issuePath,
+        outputName,
+        `--repo-root=${REPO_ROOT}`,
+        `--output-dir=${outputDir}`,
+        '--no-open',
+      ],
+      { encoding: 'utf8' },
+    );
+
+    const builtHtmlPath = path.join(outputDir, `${outputName}.html`);
+    assert.ok(existsSync(builtHtmlPath));
+
+    const html = readFileSync(builtHtmlPath, 'utf8');
+    const ctaPillMatch = html.match(/<span class="article-cta-pill" style="([^"]*)">Do you want to know more\?<\/span>/);
+    assert.ok(ctaPillMatch);
+    const ctaInlineStyle = ctaPillMatch[1];
+    assert.match(ctaInlineStyle, new RegExp(`display:\\s*${escapeRegExp(ctaStyles.display)}`));
+    assert.match(ctaInlineStyle, new RegExp(`margin-top:\\s*${escapeRegExp(ctaStyles.marginTop)}`));
+    assert.match(ctaInlineStyle, new RegExp(`border-radius:\\s*${escapeRegExp(ctaStyles.borderRadius)}`));
+    assert.match(ctaInlineStyle, new RegExp(`font-weight:\\s*${escapeRegExp(ctaStyles.fontWeight)}`));
+    assert.match(html, /<a href="mailto:cta-story@example\.com"[^>]*>[\s\S]*<span class="article-cta-pill"[^>]*>Do you want to know more\?<\/span>[\s\S]*<\/a>/);
+    assert.doesNotMatch(html, /<a[^>]*>\s*Do you want to know more\?\s*<\/a>/);
+    assert.doesNotMatch(html, /No CTA story lede\.[\s\S]*article-cta-pill/);
+    assert.match(html, /<div class="article-cta-mobile"[^>]*>[\s\S]*href="mailto:cta-story@example\.com"[\s\S]*<span class="article-cta-pill"[^>]*>Do you want to know more\?<\/span>/);
+    assert.equal((html.match(/href="mailto:cta-story@example\.com"/g) || []).length, 3);
+  } finally {
+    rmSync(tempRoot, { recursive: true, force: true });
+  }
+});
+
 test('build-newsletter omits empty ad-block wrapper and footer rows when optional fields are missing', () => {
   const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'newsletter-sparse-ad-block-build-'));
   const issuePath = path.join(tempRoot, 'issue.md');
@@ -576,6 +797,91 @@ test('build-newsletter omits empty ad-block wrapper and footer rows when optiona
     assert.doesNotMatch(html, /border-top:\s*1px solid #c9cfdb/);
     assert.doesNotMatch(html, /border-bottom:\s*1px solid #c9cfdb/);
     assert.doesNotMatch(html, /SPONSORED|Speculative Contrivance|See the fake ad/);
+  } finally {
+    rmSync(tempRoot, { recursive: true, force: true });
+  }
+});
+
+test('build-newsletter renders commerceLockup opt-in as the composited lockup image with live label and sponsor', () => {
+  const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'newsletter-commerce-lockup-optin-'));
+  const issuePath = path.join(tempRoot, 'issue.md');
+  const outputDir = path.join(tempRoot, 'output');
+  const outputName = 'commerce-lockup-optin-external';
+  const adsPath = path.join(tempRoot, 'ads.json');
+
+  writeFileSync(
+    adsPath,
+    JSON.stringify([
+      {
+        id: 'commerce-lockup-ad-01',
+        label: 'SPONSORED',
+        sponsor: 'NearFutureTestCo',
+        media: { src: 'https://imagedelivery.net/example/plain-media/public', altText: 'Plain product image' },
+        commerce: {
+          presentation: 'overlay-lockup',
+          priceText: '$12.34',
+          icon: { src: 'https://imagedelivery.net/example/icon/public', altText: 'Badge' },
+          lockup: {
+            aspectRatio: '4x3',
+            snapshotSrc: 'https://imagedelivery.net/example/composited-lockup/public',
+            snapshotAltText: 'Composited lockup image',
+          },
+        },
+      },
+    ]),
+    'utf8',
+  );
+
+  writeFileSync(
+    issuePath,
+    [
+      '---',
+      'template: near-future-lab-daily-headlines',
+      'title: Commerce Lockup Optin Issue',
+      'sectionStylesFile: templates/near-future-lab-daily-headlines/section-styles.json',
+      'sections:',
+      '  - type: ad-block',
+      '    title: "Tomorrow\'s Ads Today"',
+      '    items:',
+      '      - adId: commerce-lockup-ad-01',
+      '        commerceLockup: true',
+      'footer:',
+      '  footerCta:',
+      '    variant: default',
+      '    eyebrow: "Footer"',
+      '    text: "Footer copy."',
+      '    primaryAction:',
+      '      label: "Contact"',
+      '      url:',
+      '        href: /contact',
+      '        label: "lockup test | footer | contact"',
+      '        category: operations',
+      '    secondaryAction:',
+      '      label: "Services"',
+      '      url:',
+      '        href: /services',
+      '        label: "lockup test | footer | services"',
+      '        category: operations',
+      '---',
+      '',
+    ].join('\n'),
+    'utf8',
+  );
+
+  try {
+    execFileSync(
+      process.execPath,
+      [BUILD_SCRIPT, issuePath, outputName, `--repo-root=${REPO_ROOT}`, `--output-dir=${outputDir}`, '--no-open'],
+      { encoding: 'utf8', env: { ...process.env, NFL_EDITORIAL_ADS_PATH: adsPath } },
+    );
+
+    const html = readFileSync(path.join(outputDir, `${outputName}.html`), 'utf8');
+    // Image is the composited lockup snapshot, not the plain product image.
+    assert.match(html, /https:\/\/imagedelivery\.net\/example\/composited-lockup\/public/);
+    assert.doesNotMatch(html, /https:\/\/imagedelivery\.net\/example\/plain-media\/public/);
+    // Label and sponsor remain as live HTML text (not suppressed).
+    assert.match(html, /SPONSORED/);
+    assert.match(html, /NearFutureTestCo/);
   } finally {
     rmSync(tempRoot, { recursive: true, force: true });
   }

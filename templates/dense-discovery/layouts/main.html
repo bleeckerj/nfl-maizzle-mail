@@ -21,6 +21,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="format-detection" content="date=no">
   <meta name="format-detection" content="telephone=no">
+  <if condition="darkModePolicy && darkModePolicy.flatten">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  </if>
   <title>{{{ page.title }}}</title>
 
   <!-- Google Fonts -->
@@ -46,6 +50,23 @@
       line-height: 27px;
       margin-top: 0;
       margin-bottom: 16px;
+    }
+
+    .note-content,
+    .note-content p,
+    .note-content span,
+    .note-content a,
+    .note-content code {
+      font-size: 14px;
+      line-height: 19px;
+      font-weight: 400;
+      color: #707070;
+      font-style: italic;
+    }
+
+    .note-content p {
+      margin: 0;
+      padding: 0;
     }
 
     h1 {
@@ -309,9 +330,60 @@
       color: {{{ page.theme.linkAccent || '#0066cc' }}};
     }
 
-  </style>
-  
-  <if condition="page.dynamicCSS">
+	  </style>
+
+	  <if condition="darkModePolicy && darkModePolicy.flatten">
+	  <style type="text/css">
+	    @media (prefers-color-scheme: dark) {
+	      body.dm-bg,
+	      .dm-bg {
+	        background-color: #111318 !important;
+	      }
+
+	      .dm-bg table,
+	      .dm-bg td,
+	      .dm-surface {
+	        background-color: #1b1f27 !important;
+	      }
+
+	      .dm-text,
+	      .dm-bg,
+	      .dm-bg p,
+	      .dm-bg div,
+	      .dm-bg span,
+	      .dm-bg h1,
+	      .dm-bg h2,
+	      .dm-bg h3,
+	      .dm-bg h4,
+	      .dm-bg h5,
+	      .dm-bg h6 {
+	        color: #f2f4f8 !important;
+	      }
+
+	      .dm-muted,
+	      .dm-bg .mob-meta,
+	      .dm-bg .image-caption,
+	      .dm-bg .image-credit {
+	        color: #b8c0cc !important;
+	      }
+
+	      .dm-link,
+	      .dm-bg a,
+	      .dm-bg .theme-link {
+	        color: #8ecbff !important;
+	      }
+
+	      .dm-border,
+	      .dm-bg .headline,
+	      .dm-bg table,
+	      .dm-bg td {
+	        border-color: #343b48 !important;
+	      }
+	    }
+	  </style>
+	  </if>
+
+	  <if condition="page.dynamicCSS">
   <style type="text/css">
     {{{ page.dynamicCSS }}}
   </style>
@@ -323,13 +395,13 @@
     </style>
   <![endif]-->
 </head>
-<body bgcolor="#FFFFFF" style="margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size: 18px;line-height: 27px;">
+<body class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-bg dm-text' : '' }}" bgcolor="#FFFFFF" style="margin: 0;padding: 0;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: -apple-system,system-ui,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size: 18px;line-height: 27px;">
 
-  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;">
+  <table class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-bg dm-text' : '' }}" role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;">
     <tr>
-      <td align="center" style="padding:0; margin:0;">
+      <td class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-bg dm-text' : '' }}" align="center" style="padding:0; margin:0;">
         <!-- Fluid inner table keeps Gmail from zooming the canvas -->
-        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; width:100%; max-width:640px; font-family:'Ubuntu',sans-serif; font-style:normal; font-weight:400;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;">
+        <table class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}" role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="border-spacing:0; mso-table-lspace:0pt; mso-table-rspace:0pt; width:100%; max-width:640px; font-family:'Ubuntu',sans-serif; font-style:normal; font-weight:400;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;">
           <tr>
             <td style="padding:0; margin:0;">
               <!-- Your email content starts here -->
