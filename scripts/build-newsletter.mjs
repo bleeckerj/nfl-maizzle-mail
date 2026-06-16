@@ -1493,6 +1493,25 @@ async function buildNewsletter() {
         return out;
       };
 
+      const removeInlineStyleProperties = (style, propertiesToRemove) => {
+        if (!style || typeof style !== 'string') return style;
+        const blockedProperties = new Set(
+          propertiesToRemove.map((property) => String(property).trim().toLowerCase()),
+        );
+
+        return style
+          .split(';')
+          .map((declaration) => declaration.trim())
+          .filter(Boolean)
+          .filter((declaration) => {
+            const colonIndex = declaration.indexOf(':');
+            if (colonIndex === -1) return true;
+            const property = declaration.slice(0, colonIndex).trim().toLowerCase();
+            return !blockedProperties.has(property);
+          })
+          .join('; ');
+      };
+
       const applyInlineLinkStyles = (html, linkStyles, theme) => {
         if (!html || typeof html !== 'string') return html;
 
@@ -1515,13 +1534,13 @@ async function buildNewsletter() {
             attrs = attrs || '';
             const styleMatch = attrs.match(/style="([^"]*)"/i);
             if (styleMatch) {
-              let existingStyle = styleMatch[1];
-              existingStyle = existingStyle
-                .replace(/font-family:[^;]*;?/gi, '')
-                .replace(/font-size:[^;]*;?/gi, '')
-                .replace(/font-weight:[^;]*;?/gi, '')
-                .replace(/text-decoration:[^;]*;?/gi, '')
-                .replace(/color:[^;]*;?/gi, '');
+              const existingStyle = removeInlineStyleProperties(styleMatch[1], [
+                'font-family',
+                'font-size',
+                'font-weight',
+                'text-decoration',
+                'color',
+              ]);
               const combinedLinkStyle = `${existingStyle}; ${linkCSSString}`.replace(/^;+|;+$/g, '');
               return `<a${attrs.replace(/style="[^"]*"/i, `style="${combinedLinkStyle}"`)}>`;
             }
@@ -1536,7 +1555,7 @@ async function buildNewsletter() {
             return `<a${attrs} style="color: ${theme.linkAccent} !important; text-decoration: underline;">`;
           }
           return match.replace(/style="([^"]*)"/, (styleMatch, styles) => {
-            const cleanStyles = styles.replace(/color:[^;]*;?/gi, '');
+            const cleanStyles = removeInlineStyleProperties(styles, ['color']);
             return `style="${cleanStyles}; color: ${theme.linkAccent} !important; text-decoration: underline;"`;
           });
         });
@@ -1683,14 +1702,14 @@ async function buildNewsletter() {
                 }
                 const styleMatch = attrs.match(/style="([^"]*)"/i);
                 if (styleMatch) {
-                  let existingStyle = styleMatch[1];
-                  existingStyle = existingStyle
-                    .replace(/font-family:[^;]*;?/gi, '')
-                    .replace(/font-size:[^;]*;?/gi, '')
-                    .replace(/line-height:[^;]*;?/gi, '')
-                    .replace(/font-weight:[^;]*;?/gi, '')
-                    .replace(/color:[^;]*;?/gi, '')
-                    .replace(/text-align:[^;]*;?/gi, '');
+                  const existingStyle = removeInlineStyleProperties(styleMatch[1], [
+                    'font-family',
+                    'font-size',
+                    'line-height',
+                    'font-weight',
+                    'color',
+                    'text-align',
+                  ]);
                   const combinedStyle = `${existingStyle}; ${newCSSString}`.replace(/^;+|;+$/g, '');
                   return `<p${attrs.replace(/style="[^"]*"/i, `style="${combinedStyle}"`)}>`;
                 } else {
@@ -1900,14 +1919,14 @@ async function buildNewsletter() {
                   }
                   const styleMatch = attrs.match(/style="([^"]*)"/i);
                   if (styleMatch) {
-                    let existingStyle = styleMatch[1];
-                    // Remove existing properties that we're overriding
-                    existingStyle = existingStyle
-                      .replace(/font-family:[^;]*;?/gi, '')
-                      .replace(/font-size:[^;]*;?/gi, '')
-                      .replace(/line-height:[^;]*;?/gi, '')
-                      .replace(/color:[^;]*;?/gi, '')
-                      .replace(/text-align:[^;]*;?/gi, '');
+                    // Remove only exact properties that we're overriding.
+                    const existingStyle = removeInlineStyleProperties(styleMatch[1], [
+                      'font-family',
+                      'font-size',
+                      'line-height',
+                      'color',
+                      'text-align',
+                    ]);
                     const combinedStyle = `${existingStyle}; ${newCSSString}`.replace(/^;+|;+$/g, '');
                     return `<p${attrs.replace(/style="[^"]*"/i, `style="${combinedStyle}"`)}>`;
                   } else {

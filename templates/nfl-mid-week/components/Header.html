@@ -46,12 +46,12 @@
                         </if>
                         <if condition="header.featuredArtist && header.featuredArtist.link">
                           <p class="marb0 mobb15 align-left" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 0;">
-                            Featured artist: <a href="{{ header.featuredArtist.link }}" style="text-decoration: underline;color: #000000 !important;">{{ header.featuredArtist.name }}</a>
+                            Observed: <a href="{{ header.featuredArtist.link }}" style="text-decoration: underline;color: #000000 !important;">{{ header.featuredArtist.name }}</a>
                           </p>
                         </if>
                         <if condition="header.featuredArtist && !header.featuredArtist.link">
                           <p class="marb0 mobb15 align-left" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 0;">
-                            Featured artist: {{ header.featuredArtist.name }}
+                            Observed: {{ header.featuredArtist.name }}
                           </p>
                         </if>
                       </td>

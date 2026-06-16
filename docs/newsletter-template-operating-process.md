@@ -126,6 +126,21 @@ Author-facing source:
 The draft should not include ad URLs or ad media URLs. `lib/newsletter-core/hydrate-ad-blocks.mjs` hydrates ad content from `/Users/julian/Code/nfl-editorial/src/content/ads.json`.
 Set `show_bottom_rule: false` when a specific ad placement should omit the light divider after the ad.
 
+By default, hydrated ad-block links use `ad-block` as their tracking category, which becomes `data-link-category="ad-block"` in the rendered HTML and appears as `ad-block` in downstream click-category analytics. To control the analytics category for a specific placement, author the item link as a tracked-link object with `href`, `label`, and `category`:
+
+```yaml
+- type: ad-block
+  title: "Tomorrow's Ads Today"
+  items:
+    - adId: the-manual-pb-interstitial-01
+      link:
+        href: https://example.com/speculative-product
+        label: the-manual-pb-interstitial-01
+        category: speculative-products
+```
+
+Use the same object shape for `readMoreLink` when the visible CTA should point somewhere different from the primary ad link. Keep the `href` aligned with the intended destination; category-only overrides are not supported.
+
 Templates should render the hydrated item fields:
 
 - `item.link`

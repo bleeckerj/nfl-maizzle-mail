@@ -62,11 +62,11 @@ test('section headings and links inherit contentStyles when no explicit heading 
       "      color: '#f0f0f0'",
       '    items:',
       '      - title: Inherited Title Color',
-      '        link: https://example.com/inherited',
+      '        link: https://nearfuturelaboratory.com/newsletters/2026/style-inheritance-test',
       '        subtitle: Inherited Subtitle Color',
       '        description: "<p>Inherited body color.</p>"',
       '        readMoreText: Read more',
-      '        readMoreLink: https://example.com/read-more',
+      '        readMoreLink: https://nearfuturelaboratory.com/newsletters/2026/style-inheritance-read-more',
       '---',
       '',
     ],
@@ -77,11 +77,11 @@ test('section headings and links inherit contentStyles when no explicit heading 
     assert.match(html, /<h1[^>]*style="[^"]*color:\s*#f0f0f0[^"]*"[^>]*>\s*UPCOMING/);
     assert.match(
       html,
-      /<a href="https:\/\/example\.com\/inherited"[^>]*style="[^"]*color:\s*#f0f0f0[^"]*"[^>]*>Inherited Title Color<\/a>/,
+      /<a href="https:\/\/nearfuturelaboratory\.com\/newsletters\/2026\/style-inheritance-test"[^>]*style="[^"]*color:\s*#f0f0f0[^"]*"[^>]*>Inherited Title Color<\/a>/,
     );
     assert.match(
       html,
-      /<a href="https:\/\/example\.com\/read-more"[^>]*style="[^"]*text-decoration:\s*underline[^"]*color:\s*#f0f0f0[^"]*"[^>]*>Read more<\/a>/,
+      /<a href="https:\/\/nearfuturelaboratory\.com\/newsletters\/2026\/style-inheritance-read-more"[^>]*style="[^"]*text-decoration:\s*underline[^"]*color:\s*#f0f0f0[^"]*"[^>]*>Read more<\/a>/,
     );
     assert.match(
       html,
@@ -258,7 +258,7 @@ test('explicit headingStyles and linkStyles override inherited contentStyles', (
       '      textDecoration: underline',
       '    items:',
       '      - title: Explicit Link Color',
-      '        link: https://example.com/explicit',
+      '        link: https://nearfuturelaboratory.com/newsletters/2026/style-explicit-link',
       '        description: "<p>Explicit body color.</p>"',
       '---',
       '',
@@ -270,8 +270,47 @@ test('explicit headingStyles and linkStyles override inherited contentStyles', (
     assert.match(html, /<h1[^>]*style="[^"]*color:\s*#ffffff[^"]*"[^>]*>\s*UPCOMING/);
     assert.match(
       html,
-      /<a href="https:\/\/example\.com\/explicit"[^>]*style="[^"]*color:\s*#ffd6d6[^"]*"[^>]*>Explicit Link Color<\/a>/,
+      /<a href="https:\/\/nearfuturelaboratory\.com\/newsletters\/2026\/style-explicit-link"[^>]*style="[^"]*color:\s*#ffd6d6[^"]*"[^>]*>Explicit Link Color<\/a>/,
     );
+  } finally {
+    cleanup();
+  }
+});
+
+test('inline link style cleanup preserves non-overridden background and box styles', () => {
+  const { html, cleanup } = buildNewsletter(
+    [
+      '---',
+      'template: dense-discovery',
+      'title: Inline Link Style Preservation',
+      'preheader: Verify inline link background style survives preprocessing',
+      'sectionStylesFile: templates/dense-discovery/section-styles.json',
+      'sections:',
+      '  - type: indie-mag-single-column',
+      '    title: Office Hours',
+      '    linkStyles:',
+      "      color: '#111111'",
+      '      textDecoration: underline',
+      '    items:',
+      '      - title: Office Hours N°312',
+      '        description: |-',
+      '          <p><a style="text-decoration: none; background-color: #eeeeee; padding: 0 6px; border-radius: 4%;" href="https://www.visionandartproject.org/">The Artist’s Eyes</a></p>',
+      '---',
+      '',
+    ],
+    'inline-link-style-preservation',
+  );
+
+  try {
+    const anchorMatch = html.match(/<a[^>]+href="https:\/\/www\.visionandartproject\.org\/"[^>]*>The Artist’s Eyes<\/a>/);
+    assert.ok(anchorMatch, 'expected rendered inline link');
+    const anchor = anchorMatch[0];
+    assert.match(anchor, /style="[^"]*background-color:\s*#eeeeee[^"]*"/);
+    assert.match(anchor, /style="[^"]*padding:\s*0 6px[^"]*"/);
+    assert.match(anchor, /style="[^"]*border-radius:\s*4%[^"]*"/);
+    assert.match(anchor, /style="[^"]*text-decoration:\s*underline[^"]*"/);
+    assert.match(anchor, /style="[^"]*color:\s*#111111[^"]*"/);
+    assert.doesNotMatch(anchor, /background-padding/);
   } finally {
     cleanup();
   }
@@ -292,7 +331,7 @@ test('adjacency feature title renders larger than dek while preserving typograph
       '    dek: Example feature dek.',
       '    bodyHtml: <p>Body copy.</p>',
       '    ctaText: Read More',
-      '    ctaLink: https://example.com/read',
+      '    ctaLink: https://nearfuturelaboratory.com/newsletters/2026/adjacency-feature-read',
       '---',
       '',
     ],

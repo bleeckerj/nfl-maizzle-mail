@@ -253,9 +253,12 @@ test('collects inline anchors from item description prose', () => {
   const time = result.manifest.get('https://example.com/time');
 
   assert.equal(vision.label, 'Vision and Art');
-  assert.equal(vision.category, 'indie-mag-single-column');
+  assert.equal(vision.category, 'uncategorized');
   assert.equal(vision.pathLabel, 'sections[0].items[0].description.a[0]');
   assert.equal(vision.line, 7);
+  assert.match(vision.contextText, /section title: Office Hours N°312/);
+  assert.match(vision.contextText, /item title: Office Hours N°312/);
+  assert.match(vision.contextText, /field: description/);
   assert.equal(vision.metadataSource, undefined);
   assert.equal(vision.defaultedLabel, false);
   assert.equal(vision.defaultedCategory, true);
@@ -286,7 +289,7 @@ test('collects markdown links from converted item description prose', () => {
   const time = result.manifest.get('https://example.com/time');
 
   assert.equal(vision.label, 'Vision and Art');
-  assert.equal(vision.category, 'indie-mag-single-column');
+  assert.equal(vision.category, 'uncategorized');
   assert.equal(vision.pathLabel, 'sections[0].items[0].description.a[0]');
   assert.equal(vision.defaultedCategory, true);
   assert.equal(time.label, 'Broken Time');
@@ -372,6 +375,8 @@ test('builds a serializable link tracking metadata manifest', () => {
           {
             title: 'Story',
             category: 'Research',
+            subtitle: 'A useful research tool',
+            description: 'A compact studio for making ideas easier to compare.',
             link: {
               href: 'https://example.com/story',
               label: 'Explicit story label',
@@ -438,6 +443,9 @@ test('builds a serializable link tracking metadata manifest', () => {
       },
     ],
   );
+  assert.match(manifest.links[0].contextText, /item title: Story/);
+  assert.match(manifest.links[0].contextText, /subtitle: A useful research tool/);
+  assert.match(manifest.links[0].contextText, /description: A compact studio/);
   assert.equal(manifest.warnings.defaulted.length, 1);
   assert.match(manifest.warnings.defaulted[0], /readMoreLink missing label, category/);
 });

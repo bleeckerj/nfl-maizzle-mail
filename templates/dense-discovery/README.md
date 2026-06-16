@@ -39,6 +39,22 @@ sections:
   - adId: fashion-8bit-pants-interstitial
 ```
 
+By default, the hydrated link is tracked with category `ad-block`. That category is emitted as `data-link-category` in the final HTML and appears as `ad-block` in click-category analytics. To choose the analytics category for one placement, author the item link as a tracked-link object:
+
+```yaml
+sections:
+- type: ad-block
+  title: This Week's Partner
+  items:
+  - adId: fashion-8bit-pants-interstitial
+    link:
+      href: https://example.com/speculative-product
+      label: fashion-8bit-pants-interstitial
+      category: speculative-products
+```
+
+Use `readMoreLink` with the same `{ href, label, category }` shape when the CTA should use a different destination from the primary ad link.
+
 ### How it resolves data
 
 - `adId` is looked up in `../nfl-editorial/src/content/ads.json` during `build-newsletter.mjs`.

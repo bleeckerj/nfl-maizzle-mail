@@ -119,7 +119,19 @@ sections:
 - Backoffice publishing metadata such as `ogImage`, `ogImageAltText`, and `socialCard` may exist on outbox issues, but those fields are not part of this email template’s render path.
 - New editorial content should use the evolved tracked link object shape on fields named `link`, `logoLink`, or top-level CTA `url`: `{ href, label, category }`. The build emits those labels/categories as `data-link-label` and `data-link-category` for `nfl-newsletter-email-soup-to-nuts`.
 - Do not author `viewOnlineLink`. The build computes it from `issueId` as `https://nearfuturelaboratory.com/newsletters/<year>/<issueId>` and injects it into the masthead before rendering.
-- New ad content should use `ad-block` with `adId`; do not hand-author ad destination URLs or ad image URLs in the newsletter draft.
+- New ad content should use `ad-block` with `adId`; do not hand-author ad destination URLs or ad image URLs in the newsletter draft. Hydrated ad links default to tracking category `ad-block`. When a placement needs a more specific click-category analytics label, set the item `link` or `readMoreLink` to `{ href, label, category }`, for example:
+
+```yaml
+- type: ad-block
+  title: "Tomorrow's Ads Today"
+  items:
+    - adId: fashion-8bit-pants-interstitial
+      link:
+        href: https://example.com/speculative-product
+        label: fashion-8bit-pants-interstitial
+        category: speculative-products
+```
+
 - The footer CTA bar (`footer.footerCta`, rendered automatically with `email_footer`) accepts the same appearance overrides as `share_this`: `background`, `text_color`, and `eyebrow_color`. Set `heavy_top_border: true` to use the heavy 9px black top rule (like `section_article_group`) instead of the default 1px hairline. Set them under `footer.footerCta`. They are resolved in `lib/newsletter-core/footer-cta.mjs` (which rebuilds the object, so any new field must be added there to survive normalization) and honored in light mode only.
 - `share_this` colors (`background`, `text_color`, `eyebrow_color`) are honored in light mode only. When dark-mode flatten is enabled (the default), `.dm-surface` / `.dm-text` override the bar background and statement color in clients that honor `prefers-color-scheme`. The black/white buttons are intentional brand pills and are not configurable; the outline button keeps dark text on the flattened-dark bar, matching the footer CTA.
 - Legacy fields such as `href`, `logo_href`, `view_in_browser_href`, `ad_href`, and `link_href` still render as fallbacks, but they do not carry explicit tracking metadata.

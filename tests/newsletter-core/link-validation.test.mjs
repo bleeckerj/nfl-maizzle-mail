@@ -1,12 +1,39 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import http from 'node:http';
 
 import {
+  checkHttpUrl,
   collectHtmlLinkCandidates,
   collectLinkCandidates,
   validateRenderedHtmlLinks,
   validateLinks,
 } from '../../lib/newsletter-core/index.mjs';
+
+async function withLocalServer(handler, callback) {
+  const requests = [];
+  const server = http.createServer((req, res) => {
+    requests.push({
+      method: req.method,
+      url: req.url,
+      headers: req.headers,
+    });
+    handler(req, res);
+  });
+
+  await new Promise((resolve) => {
+    server.listen(0, '127.0.0.1', resolve);
+  });
+
+  try {
+    const { port } = server.address();
+    return await callback(`http://127.0.0.1:${port}`, requests);
+  } finally {
+    await new Promise((resolve, reject) => {
+      server.close((error) => (error ? reject(error) : resolve()));
+    });
+  }
+}
 
 test('collects href fields from section article groups and nested more links', () => {
   const newsletterData = {
@@ -68,6 +95,61 @@ test('validateLinks fails the build path on broken article hrefs', async () => {
     }),
     /Link validation failed with 1 error/,
   );
+});
+
+test('checkHttpUrl accepts links when HEAD 404 falls back to GET 200', async () => {
+  await withLocalServer((req, res) => {
+    if (req.method === 'HEAD') {
+      res.writeHead(404);
+      res.end();
+      return;
+    }
+    res.writeHead(200, { 'Content-Type': 'application/pdf' });
+    res.end('ok');
+  }, async (origin, requests) => {
+    const result = await checkHttpUrl(`${origin}/head-404-get-200.pdf`);
+
+    assert.deepEqual(result, { valid: true, status: 200 });
+    assert.deepEqual(requests.map((request) => request.method), ['HEAD', 'GET']);
+    assert.equal(requests[1].headers.range, 'bytes=0-0');
+    assert.match(requests[1].headers['user-agent'], /Newsletter Link Validator/);
+  });
+});
+
+test('checkHttpUrl accepts links when HEAD 405 falls back to GET 200', async () => {
+  await withLocalServer((req, res) => {
+    res.writeHead(req.method === 'HEAD' ? 405 : 200);
+    res.end();
+  }, async (origin, requests) => {
+    const result = await checkHttpUrl(`${origin}/head-405-get-200`);
+
+    assert.deepEqual(result, { valid: true, status: 200 });
+    assert.deepEqual(requests.map((request) => request.method), ['HEAD', 'GET']);
+  });
+});
+
+test('checkHttpUrl accepts links when HEAD 403 falls back to GET 200', async () => {
+  await withLocalServer((req, res) => {
+    res.writeHead(req.method === 'HEAD' ? 403 : 200);
+    res.end();
+  }, async (origin, requests) => {
+    const result = await checkHttpUrl(`${origin}/head-403-get-200`);
+
+    assert.deepEqual(result, { valid: true, status: 200 });
+    assert.deepEqual(requests.map((request) => request.method), ['HEAD', 'GET']);
+  });
+});
+
+test('checkHttpUrl keeps HEAD 404 when GET fallback also returns 404', async () => {
+  await withLocalServer((_req, res) => {
+    res.writeHead(404);
+    res.end();
+  }, async (origin, requests) => {
+    const result = await checkHttpUrl(`${origin}/missing`);
+
+    assert.deepEqual(result, { valid: false, status: 404 });
+    assert.deepEqual(requests.map((request) => request.method), ['HEAD', 'GET']);
+  });
 });
 
 test('validateLinks warns instead of failing on method-blocked links', async () => {

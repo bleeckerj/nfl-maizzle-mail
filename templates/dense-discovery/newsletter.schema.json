@@ -208,6 +208,11 @@
         "featuredArtist": {
           "type": "object",
           "properties": {
+            "category": {},
+            "interest": {},
+            "interests": {},
+            "intent": {},
+            "label": {},
             "link": {},
             "name": {}
           },

@@ -24,12 +24,12 @@
                           </if>
                           <if condition="header.featuredArtist && header.featuredArtist.link">
                             <p class="marb0 mobb15" style="font-family: {{{ header.contentStyles.fontFamily || 'inherit' }}}; font-size: {{ header.contentStyles.artistFontSize || '16px' }}; line-height: {{ header.contentStyles.lineHeight || '23px' }}; font-weight: {{ header.contentStyles.fontWeight || '400' }}; color: {{ header.contentStyles.color || '#000000' }}; padding: 0; margin: 0; margin-top: 10px;">
-                              Featured artist: <a href="{{ header.featuredArtist.link }}" style="text-decoration: underline; color: {{ header.contentStyles.anchorColor || '#000000' }} !important;">{{ header.featuredArtist.name }}</a>
+                              Observed: <a href="{{ header.featuredArtist.link }}" data-link-label="{{ header.featuredArtist.label || 'header link' }}" data-link-category="{{ header.featuredArtist.category || 'events' }}" data-link-interest="{{ header.featuredArtist.interest || '' }}" data-link-intent="{{ header.featuredArtist.intent || 'read-related' }}" style="text-decoration: underline; color: {{ header.contentStyles.anchorColor || '#000000' }} !important;">{{ header.featuredArtist.name }}</a>
                             </p>
                           </if>
                           <if condition="header.featuredArtist && !header.featuredArtist.link">
                             <p class="marb0 mobb15" style="font-family: {{{ header.contentStyles.fontFamily || 'inherit' }}}; font-size: {{ header.contentStyles.artistFontSize || '16px' }}; line-height: {{ header.contentStyles.lineHeight || '23px' }}; font-weight: {{ header.contentStyles.fontWeight || '400' }}; color: {{ header.contentStyles.color || '#000000' }}; padding: 0; margin: 0; margin-top: 10px;">
-                              Featured artist: {{ header.featuredArtist.name }}
+                              Observed: {{ header.featuredArtist.name }}
                             </p>
                           </if>
                         </td>
@@ -113,12 +113,12 @@
                           </if>
                           <if condition="header.featuredArtist && header.featuredArtist.link">
                             <p class="marb0 mobb15 align-left" style="font-family: {{{ header.contentStyles.fontFamily || 'inherit' }}}; font-size: {{ header.contentStyles.artistFontSize || '16px' }}; line-height: {{ header.contentStyles.lineHeight || '23px' }}; font-weight: {{ header.contentStyles.fontWeight || '400' }}; color: {{ header.contentStyles.color || '#000000' }}; padding: 0; margin: 0; margin-bottom: 0;">
-                              Featured artist: <a href="{{ header.featuredArtist.link }}" style="text-decoration: underline; color: {{ header.contentStyles.anchorColor || '#000000' }} !important;">{{ header.featuredArtist.name }}</a>
+                              Observed: <a href="{{ header.featuredArtist.link }}" data-link-label="{{ header.featuredArtist.label || 'header link' }}" data-link-category="{{ header.featuredArtist.category || 'events' }}" data-link-interest="{{ header.featuredArtist.interest || '' }}" data-link-intent="{{ header.featuredArtist.intent || 'read-related' }}" style="text-decoration: underline; color: {{ header.contentStyles.anchorColor || '#000000' }} !important;">{{ header.featuredArtist.name }}</a>
                             </p>
                           </if>
                           <if condition="header.featuredArtist && !header.featuredArtist.link">
                             <p class="marb0 mobb15 align-left" style="font-family: {{{ header.contentStyles.fontFamily || 'inherit' }}}; font-size: {{ header.contentStyles.artistFontSize || '16px' }}; line-height: {{ header.contentStyles.lineHeight || '23px' }}; font-weight: {{ header.contentStyles.fontWeight || '400' }}; color: {{ header.contentStyles.color || '#000000' }}; padding: 0; margin: 0; margin-bottom: 0;">
-                              Featured artist: {{ header.featuredArtist.name }}
+                              Observed: {{ header.featuredArtist.name }}
                             </p>
                           </if>
                         </td>

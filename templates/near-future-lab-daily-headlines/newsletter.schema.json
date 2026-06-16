@@ -540,7 +540,7 @@
   ],
   "definitions": {
     "trackedLink": {
-      "description": "Tracked link accepted by nfl-maizzle-mail. Object-valued links normalize to URL strings before Maizzle renders and then enrich matching anchors with data-link-label and data-link-category.",
+      "description": "Tracked link accepted by nfl-maizzle-mail. Object-valued links normalize to URL strings before Maizzle renders and then enrich matching anchors with data-link-label, data-link-category, data-link-interest, and data-link-intent.",
       "anyOf": [
         {
           "type": "string"
@@ -561,6 +561,29 @@
               "minLength": 1
             },
             "category": {
+              "type": "string",
+              "minLength": 1
+            },
+            "interest": {
+              "type": "string",
+              "minLength": 1
+            },
+            "interests": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              ]
+            },
+            "intent": {
               "type": "string",
               "minLength": 1
             },
