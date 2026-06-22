@@ -1,0 +1,174 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Brain Dead Four-Book Sales Email",
+  "type": "object",
+  "required": ["template", "title", "books"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "template": { "const": "brain-dead-template" },
+    "title": { "type": "string" },
+    "preheader": { "type": "string" },
+    "issueId": { "type": "string" },
+    "markdownContent": { "type": "string" },
+    "booksLabel": { "type": "string" },
+    "brand": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "logoUrl": { "type": "string", "format": "uri" },
+        "logoAlt": { "type": "string" },
+        "logoWidth": { "type": ["string", "number"] },
+        "logoLink": { "$ref": "#/definitions/trackedLink" },
+        "navLinks": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/navLink" }
+        }
+      }
+    },
+    "hero": {
+      "type": "object",
+      "required": ["headline"],
+      "properties": {
+        "eyebrow": { "type": "string" },
+        "headline": { "type": "string" },
+        "subhead": { "type": "string" },
+        "body": { "type": "string" },
+        "image": { "type": "string", "format": "uri" },
+        "imageAlt": { "type": "string" },
+        "ctaText": { "type": "string" },
+        "ctaLink": { "$ref": "#/definitions/trackedLink" }
+      }
+    },
+    "books": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["title", "link"],
+        "properties": {
+          "kicker": { "type": "string" },
+          "format": { "type": "string" },
+          "title": { "type": "string" },
+          "subtitle": { "type": "string" },
+          "body": { "type": "string" },
+          "image": { "type": "string", "format": "uri" },
+          "imageAlt": { "type": "string" },
+          "price": { "type": "string" },
+          "link": { "$ref": "#/definitions/trackedLink" },
+          "ctaText": { "type": "string" }
+        }
+      }
+    },
+    "offer": {
+      "type": "object",
+      "properties": {
+        "eyebrow": { "type": "string" },
+        "headline": { "type": "string" },
+        "body": { "type": "string" },
+        "ctaText": { "type": "string" },
+        "ctaLink": { "$ref": "#/definitions/trackedLink" }
+      }
+    },
+    "bottomCta": {
+      "type": "object",
+      "properties": {
+        "eyebrow": { "type": "string" },
+        "headline": { "type": "string" },
+        "body": { "type": "string" },
+        "ctaText": { "type": "string" },
+        "ctaLink": { "$ref": "#/definitions/trackedLink" }
+      }
+    },
+    "footer": {
+      "type": "object",
+      "properties": {
+        "paragraphs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "address": { "type": "string" },
+        "socialLinks": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/socialLink" }
+        },
+        "footerCta": {
+          "type": "object",
+          "properties": {
+            "enabled": { "type": "boolean" },
+            "variant": { "type": "string" }
+          }
+        },
+        "unsubscribeLabel": { "type": "string" },
+        "unsubscribeLink": { "type": "string" }
+      }
+    },
+    "logoUrl": { "type": "string", "format": "uri" },
+    "logoAlt": { "type": "string" },
+    "logoWidth": { "type": ["string", "number"] },
+    "logoLink": { "$ref": "#/definitions/trackedLink" },
+    "collectionTitle": { "type": "string" },
+    "collectionDescription": { "type": "string" },
+    "collectionDetails": { "type": "string" },
+    "mainImage": { "type": "string", "format": "uri" },
+    "productImages": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" }
+    },
+    "shopLink": { "$ref": "#/definitions/trackedLink" },
+    "socialLinks": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/socialLink" }
+    }
+  },
+  "definitions": {
+    "trackedLink": {
+      "oneOf": [
+        { "type": "string", "format": "uri" },
+        {
+          "type": "object",
+          "required": ["href"],
+          "properties": {
+            "href": { "type": "string", "format": "uri" },
+            "url": { "type": "string", "format": "uri" },
+            "label": { "type": "string" },
+            "category": { "type": "string" },
+            "interest": {
+              "oneOf": [
+                { "type": "string" },
+                { "type": "array", "items": { "type": "string" } }
+              ]
+            },
+            "interests": {
+              "oneOf": [
+                { "type": "string" },
+                { "type": "array", "items": { "type": "string" } }
+              ]
+            },
+            "intent": { "type": "string" }
+          }
+        }
+      ]
+    },
+    "navLink": {
+      "type": "object",
+      "required": ["label"],
+      "properties": {
+        "label": { "type": "string" },
+        "text": { "type": "string" },
+        "href": { "$ref": "#/definitions/trackedLink" },
+        "url": { "$ref": "#/definitions/trackedLink" }
+      }
+    },
+    "socialLink": {
+      "type": "object",
+      "required": ["label", "url"],
+      "properties": {
+        "label": { "type": "string" },
+        "text": { "type": "string" },
+        "title": { "type": "string" },
+        "href": { "$ref": "#/definitions/trackedLink" },
+        "url": { "$ref": "#/definitions/trackedLink" }
+      }
+    }
+  }
+}

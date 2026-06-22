@@ -1,11 +1,14 @@
 ---
 title: "{{ title }}"
+preheader: "{{ preheader || '' }}"
 ---
 
 <extends src="templates/brain-dead-template/layouts/main.html">
   <block name="template">
     <component src="templates/brain-dead-template/components/Header.html"></component>
-    <component src="templates/brain-dead-template/components/ArticleSection.html"></component>
+    <component src="templates/brain-dead-template/components/Hero.html"></component>
+    <component src="templates/brain-dead-template/components/BookGrid.html"></component>
+    <component src="templates/brain-dead-template/components/OfferCta.html"></component>
     <component src="templates/brain-dead-template/components/Footer.html"></component>
   </block>
 </extends>

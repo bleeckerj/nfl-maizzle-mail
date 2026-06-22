@@ -20,6 +20,7 @@
         "authorFontSize": "16px",
         "authorFontWeight": "600",
         "artistFontSize": "16px",
+        "quoteImageGap": "24px",
         "anchorColor": "#000000"
       }
     },

@@ -88,6 +88,7 @@ test('dense-discovery layout forces larger mobile body copy with literal values'
   assert.match(mobileBlock, /\.mob-readmore,\s*\.mob-readmore a\s*\{\s*font-size:\s*23px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
   assert.match(mobileBlock, /\.mob-caption,\s*\.mob-caption p,\s*\.mob-caption span,\s*\.mob-caption li,\s*\.mob-caption \.mob-text\s*\{\s*font-size:\s*14px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
   assert.match(mobileBlock, /\.mob-meta,\s*\.mob-meta span,\s*\.mob-meta a\s*\{\s*font-size:\s*16px\s*!important;\s*line-height:\s*1\.1\s*!important;/);
+  assert.match(mobileBlock, /\.item-details,\s*\.item-details p,\s*\.item-details span,\s*\.item-details a,\s*\.item-details \.mob-text\s*\{\s*font-family:\s*"Share Tech Mono", monospace\s*!important;\s*font-size:\s*13px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
   assert.match(
     mobileBlock,
     /\.mob-title a,\s*\.mob-subtitle a,\s*\.mob-text a,\s*\.intro-content a,\s*\.intro-aside a,\s*\.mob-readmore a,\s*\.mob-caption a,\s*\.mob-caption strong,\s*\.mob-caption em\s*\{\s*font-size:\s*inherit\s*!important;\s*line-height:\s*inherit\s*!important;/,
@@ -117,6 +118,15 @@ test('dense-discovery semantic metadata labels opt into the mobile metadata lock
   assert.match(template, /<div class="mob-meta"[^>]*>\{\{ item\.signalsLabel \|\| section\.signalsLabel \|\| 'SIGNALS' \}\}<\/div>/);
   assert.match(template, /<div class="mob-meta"[^>]*>Story Seeds<\/div>/);
   assert.match(template, /<p class="mob-meta" style="\{\{\{ section\.labelStylesInline \|\| '' \}\}\}\{\{\{ section\.labelStylesInline \? '; ' : '' \}\}\}margin: 0 0 12px 0;padding: 0;">\{\{ section\.rubric \}\}<\/p>/);
+});
+
+test('dense-discovery item details stay small monospace outside the body-copy mobile lock', () => {
+  const template = readFileSync(DENSE_DISCOVERY_TEMPLATE, 'utf8');
+  const detailBlocks = template.match(
+    /<div class="item-details" style="font-family: 'Share Tech Mono', monospace;font-size: 13px;line-height: 1\.35;font-weight: 400;color: #707070;padding: 0;margin: 0;margin-bottom: 10px;">\s*\{\{\{ item\.details \}\}\}\s*<\/div>/g,
+  ) || [];
+
+  assert.equal(detailBlocks.length, 2);
 });
 
 test('dense-discovery generated inline typography does not block the mobile font lock', () => {

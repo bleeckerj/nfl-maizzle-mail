@@ -1,39 +1,5 @@
 {
-  "type": "object",
-  "properties": {
-    "title": {
-      "type": "string"
-    },
-    "articles": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string"
-          },
-          "description": {
-            "type": "string"
-          },
-          "imageUrl": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "socialLinks": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "url": {
-            "type": "string"
-          },
-          "text": {
-            "type": "string"
-          }
-        }
-      }
-    }
-  }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$ref": "newsletter.schema.json",
+  "description": "Legacy alias. The canonical schema for this template is newsletter.schema.json."
 }

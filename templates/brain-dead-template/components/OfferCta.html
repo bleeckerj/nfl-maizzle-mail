@@ -1,0 +1,36 @@
+<!-- OfferCta Component -->
+<!-- Purpose: Renders the closing sales offer. -->
+<!-- Variables: offer.*, bottomCta.*, shopLink -->
+
+<if condition="offer || bottomCta || shopLink">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;">
+    <tr>
+      <td class="bd-pad" style="padding:18px 32px 28px 32px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#000000" style="width:100%;background:#000000;">
+          <tr>
+            <td style="padding:24px;">
+              <p class="bd-mono" style="margin:0 0 10px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:17px;letter-spacing:0.12em;text-transform:uppercase;color:#f2ff3d;">
+                {{ (offer && offer.eyebrow) || (bottomCta && bottomCta.eyebrow) || 'Bundle offer' }}
+              </p>
+              <h2 class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:28px;line-height:32px;font-weight:700;color:#ffffff;">
+                {{ (offer && offer.headline) || (bottomCta && bottomCta.headline) || 'Get the set' }}
+              </h2>
+              <if condition="(offer && offer.body) || (bottomCta && bottomCta.body)">
+                <p class="bd-copy bd-mono" style="margin:14px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:15px;line-height:22px;color:#ffffff;">
+                  {{{ (offer && offer.body) || (bottomCta && bottomCta.body) }}}
+                </p>
+              </if>
+              <if condition="(offer && offer.ctaLink) || (bottomCta && bottomCta.ctaLink) || shopLink">
+                <p style="margin:20px 0 0 0;">
+                  <a class="bd-button bd-mono" href="{{ (offer && offer.ctaLink) || (bottomCta && bottomCta.ctaLink) || shopLink }}" style="display:inline-block;background:#ffffff;color:#000000!important;-webkit-text-fill-color:#000000;font-family:'Courier New',Courier,monospace;font-size:13px;line-height:16px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:13px 17px;border:2px solid #ffffff;">
+                    {{ (offer && offer.ctaText) || (bottomCta && bottomCta.ctaText) || 'Shop all four' }}
+                  </a>
+                </p>
+              </if>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</if>

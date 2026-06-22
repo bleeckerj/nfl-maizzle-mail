@@ -1,22 +1,41 @@
 <!-- Footer Component -->
-<!-- Purpose: Displays footer with social media links -->
-<!-- Variables: socialLinks -->
+<!-- Purpose: Renders sales email footer copy, social links, and unsubscribe affordance. -->
+<!-- Variables: footer.paragraphs, footer.address, footer.socialLinks, footer.unsubscribeLink -->
 
-<table class="wrapper" role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;">
   <tr>
-    <td class="content-block" style="padding: 20px;">
-      <div class="footer" style="text-align: center; margin-top: 40px; font-family: Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;">
-        <p style="font-size: 13px; color: #000000; margin: 10px 0;">
-          Brain Dead<br>
-          943 North Hill Street<br>
-          Los Angeles, California 90012
-        </p>
-        <p style="font-size: 13px; color: #000000; margin: 20px 0;">
-          <each loop="link in socialLinks">
-            <a href="{{ link.url }}" style="color: #15c; font-weight: normal; text-decoration: none; margin: 0 10px;">{{ link.text }}</a>
-          </each>
-        </p>
-      </div>
+    <td class="bd-pad bd-mono" style="padding:8px 32px 36px 32px;font-family:'Courier New',Courier,monospace;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border-top:2px solid #000000;">
+        <tr>
+          <td align="left" style="padding:18px 0 0 0;">
+            <if condition="footer && footer.paragraphs && footer.paragraphs.length">
+              <each loop="paragraph in footer.paragraphs">
+                <p style="margin:0 0 10px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:18px;color:#000000;">
+                  {{{ paragraph }}}
+                </p>
+              </each>
+            </if>
+            <if condition="!(footer && footer.paragraphs && footer.paragraphs.length)">
+              <p style="margin:0 0 10px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:18px;color:#000000;">
+                You are receiving this email because you subscribed to Near Future Laboratory updates.
+              </p>
+            </if>
+            <p style="margin:0 0 12px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:18px;color:#000000;">
+              {{{ (footer && footer.address) || companyAddress || 'Near Future Laboratory, Venice Beach, California' }}}
+            </p>
+            <if condition="(footer && footer.socialLinks && footer.socialLinks.length) || (socialLinks && socialLinks.length)">
+              <p style="margin:0 0 12px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:18px;color:#000000;">
+                <each loop="link in ((footer && footer.socialLinks) || socialLinks)">
+                  <a href="{{ link.url || link.href }}" style="color:#000000;text-decoration:underline;">{{ link.label || link.text || link.title }}</a><if condition="!@last"><span style="padding:0 7px;color:#000000;">/</span></if>
+                </each>
+              </p>
+            </if>
+            <p style="margin:0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:18px;color:#000000;">
+              <a href="{{ (footer && footer.unsubscribeLink) || unsubscribeLink || '[unsubscribe]' }}" style="color:#000000;text-decoration:underline;">{{ (footer && footer.unsubscribeLabel) || unsubscribeLabel || 'Unsubscribe' }}</a>
+            </p>
+          </td>
+        </tr>
+      </table>
     </td>
   </tr>
 </table>

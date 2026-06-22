@@ -1,15 +1,31 @@
 <!-- Header Component -->
-<!-- Purpose: Displays the logo and navigation links -->
-<!-- Variables: logoUrl, logoLink -->
+<!-- Purpose: Renders the brand mark and optional small navigation row. -->
+<!-- Variables: brand.logoUrl, brand.logoAlt, brand.logoLink, brand.name, brand.navLinks -->
 
-<table class="wrapper" role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;">
   <tr>
-    <td class="content-block" style="padding: 20px;">
-      <div class="header" style="text-align: center; margin-bottom: 20px;">
-        <a href="{{ logoLink }}">
-          <img src="{{ logoUrl }}" alt="Brain Dead Logo" width="80" style="display: block; outline: none; text-decoration: none; height: auto; width: 80px; background-color: transparent;">
-        </a>
-      </div>
+    <td class="bd-pad" style="padding:28px 32px 10px 32px;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;">
+        <tr>
+          <td align="left" valign="middle" class="bd-mono" style="font-family:'Courier New',Courier,monospace;font-size:13px;line-height:18px;letter-spacing:0.08em;text-transform:uppercase;color:#000000;">
+            <a href="{{ (brand && brand.logoLink) || logoLink || 'https://nearfuturelaboratory.com' }}" style="color:#000000;text-decoration:none;">
+              <if condition="(brand && brand.logoUrl) || logoUrl">
+                <img src="{{ (brand && brand.logoUrl) || logoUrl }}" alt="{{ (brand && brand.logoAlt) || logoAlt || (brand && brand.name) || brandName || 'Near Future Laboratory' }}" width="{{ (brand && brand.logoWidth) || logoWidth || 96 }}" style="width:{{ (brand && brand.logoWidth) || logoWidth || 96 }}px;max-width:180px;height:auto;">
+              </if>
+              <if condition="!((brand && brand.logoUrl) || logoUrl)">
+                <span style="font-weight:700;">{{ (brand && brand.name) || brandName || 'Near Future Laboratory' }}</span>
+              </if>
+            </a>
+          </td>
+          <td align="right" valign="middle" class="bd-mono" style="font-family:'Courier New',Courier,monospace;font-size:12px;line-height:18px;letter-spacing:0.08em;text-transform:uppercase;color:#000000;">
+            <if condition="brand && brand.navLinks && brand.navLinks.length">
+              <each loop="navLink in brand.navLinks">
+                <a href="{{ navLink.url || navLink.href }}" style="color:#000000;text-decoration:none;">{{ navLink.label || navLink.text }}</a><if condition="!@last"><span style="padding:0 7px;color:#000000;">/</span></if>
+              </each>
+            </if>
+          </td>
+        </tr>
+      </table>
     </td>
   </tr>
 </table>

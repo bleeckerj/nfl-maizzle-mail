@@ -14,11 +14,12 @@ test('buildViewOnlineUrl derives deterministic public newsletter URL from issue 
   );
 });
 
-test('buildViewOnlineTrackedLink includes label and operations category', () => {
+test('buildViewOnlineTrackedLink includes label and issue navigation tracking', () => {
   assert.deepEqual(buildViewOnlineTrackedLink('w23-y26'), {
     href: 'https://nearfuturelaboratory.com/newsletters/2026/w23-y26',
     label: 'w23-y26 | view online',
-    category: 'operations',
+    category: 'issue-nav',
+    intent: 'read-related',
   });
 });
 
@@ -42,7 +43,8 @@ test('injectViewOnlineLink fills dense-discovery intro link from output name', (
     newsletterData.intro.viewOnlineLink.href,
     'https://nearfuturelaboratory.com/newsletters/2026/w23-y26',
   );
-  assert.equal(newsletterData.intro.viewOnlineLink.category, 'operations');
+  assert.equal(newsletterData.intro.viewOnlineLink.category, 'issue-nav');
+  assert.equal(newsletterData.intro.viewOnlineLink.intent, 'read-related');
 });
 
 test('injectViewOnlineLink fills daily-headlines masthead link from issue id', () => {

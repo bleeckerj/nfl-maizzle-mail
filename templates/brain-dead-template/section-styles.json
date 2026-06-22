@@ -1,0 +1,96 @@
+{
+  "description": "Section style metadata for the Brain Dead four-book sales template. This template renders from top-level sales fields, so these keys document the visual sections rather than driving section-array preprocessing.",
+  "sectionStyles": {
+    "default": {
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "padding": "18px 32px",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontSize": "15px",
+        "lineHeight": "22px",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontWeight": "700",
+        "textDecoration": "underline",
+        "color": "#000000"
+      }
+    },
+    "book-sales-hero": {
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "padding": "16px 32px 20px",
+        "borderRadius": "0px"
+      },
+      "headingStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontSize": "46px",
+        "lineHeight": "48px",
+        "fontWeight": "700",
+        "color": "#000000"
+      },
+      "contentStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontSize": "18px",
+        "lineHeight": "25px",
+        "color": "#000000"
+      }
+    },
+    "book-sales-grid": {
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "padding": "12px 32px 8px",
+        "borderRadius": "0px"
+      },
+      "headingStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontSize": "25px",
+        "lineHeight": "29px",
+        "fontWeight": "700",
+        "color": "#000000"
+      },
+      "contentStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontWeight": "700",
+        "textDecoration": "none",
+        "color": "#000000"
+      }
+    },
+    "book-sales-offer": {
+      "containerStyles": {
+        "backgroundColor": "#000000",
+        "padding": "24px",
+        "borderRadius": "0px"
+      },
+      "headingStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontSize": "28px",
+        "lineHeight": "32px",
+        "fontWeight": "700",
+        "color": "#ffffff"
+      },
+      "contentStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontSize": "15px",
+        "lineHeight": "22px",
+        "color": "#ffffff"
+      },
+      "linkStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontWeight": "700",
+        "textDecoration": "none",
+        "color": "#000000"
+      }
+    }
+  }
+}

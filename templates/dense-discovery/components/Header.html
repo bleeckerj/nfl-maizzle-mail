@@ -44,7 +44,7 @@
                     <tbody>
                       <if condition="header.quote">
                         <tr>
-                          <td class="padt15 padr20 padb5 padl20" style="border-collapse: collapse;padding-top: 15px;padding-right: 20px;padding-bottom: 5px;padding-left: 20px;" valign="top">
+                          <td class="padt15 padr20 padb5 padl20" style="border-collapse: collapse;padding-top: 15px;padding-right: 20px;padding-bottom: {{ header.contentStyles.quoteImageGap || '24px' }};padding-left: 20px;" valign="top">
                             <p class="marb5" style="font-family: {{{ header.contentStyles.fontFamily || 'inherit' }}}; font-size: {{ header.contentStyles.fontSize || '18px' }}; line-height: {{ header.contentStyles.lineHeight || '23px' }}; font-weight: {{ header.contentStyles.fontWeight || '400' }}; color: {{ header.contentStyles.color || '#000000' }}; padding: 0; margin: 0; margin-bottom: 5px;">
                               {{{ header.quote }}}
                             </p>
