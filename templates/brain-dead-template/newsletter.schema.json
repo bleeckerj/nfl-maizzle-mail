@@ -1,8 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Brain Dead Four-Book Sales Email",
+  "title": "Brain Dead Content Email",
   "type": "object",
-  "required": ["template", "title", "books"],
+  "required": ["template", "title"],
+  "anyOf": [
+    { "required": ["sections"] },
+    { "required": ["books"] },
+    { "required": ["productImages"] }
+  ],
   "properties": {
     "$schema": { "type": "string" },
     "template": { "const": "brain-dead-template" },
@@ -10,7 +15,15 @@
     "preheader": { "type": "string" },
     "issueId": { "type": "string" },
     "markdownContent": { "type": "string" },
-    "booksLabel": { "type": "string" },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/definitions/contentSection" }
+    },
+    "booksLabel": {
+      "type": "string",
+      "description": "Deprecated legacy label for the former books array. Use sections[].label instead."
+    },
     "brand": {
       "type": "object",
       "properties": {
@@ -41,23 +54,9 @@
     },
     "books": {
       "type": "array",
+      "description": "Deprecated legacy dual-column items. Use sections[] with type dual-column instead.",
       "minItems": 1,
-      "items": {
-        "type": "object",
-        "required": ["title", "link"],
-        "properties": {
-          "kicker": { "type": "string" },
-          "format": { "type": "string" },
-          "title": { "type": "string" },
-          "subtitle": { "type": "string" },
-          "body": { "type": "string" },
-          "image": { "type": "string", "format": "uri" },
-          "imageAlt": { "type": "string" },
-          "price": { "type": "string" },
-          "link": { "$ref": "#/definitions/trackedLink" },
-          "ctaText": { "type": "string" }
-        }
-      }
+      "items": { "$ref": "#/definitions/contentItem" }
     },
     "offer": {
       "type": "object",
@@ -121,6 +120,36 @@
     }
   },
   "definitions": {
+    "contentSection": {
+      "type": "object",
+      "required": ["type", "items"],
+      "properties": {
+        "type": { "enum": ["dual-column", "single-column"] },
+        "label": { "type": "string" },
+        "title": { "type": "string" },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/contentItem" }
+        }
+      }
+    },
+    "contentItem": {
+      "type": "object",
+      "required": ["title"],
+      "properties": {
+        "kicker": { "type": "string" },
+        "format": { "type": "string" },
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "body": { "type": "string" },
+        "image": { "type": "string", "format": "uri" },
+        "imageAlt": { "type": "string" },
+        "price": { "type": "string" },
+        "link": { "$ref": "#/definitions/trackedLink" },
+        "ctaText": { "type": "string" }
+      }
+    },
     "trackedLink": {
       "oneOf": [
         { "type": "string", "format": "uri" },

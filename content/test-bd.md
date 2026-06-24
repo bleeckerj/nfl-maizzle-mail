@@ -31,64 +31,69 @@ hero:
     category: commerce
     interest: books-writing
     intent: purchase
-booksLabel: Included in the set
-books:
-  - kicker: Book 01
-    title: Book One Title
-    subtitle: Replace this with the first book subtitle.
-    body: A short sales paragraph for the first book. Keep it specific to what the reader can use it for.
-    image: https://dummyimage.com/376x520/ffffff/000000.png&text=BOOK+01
-    imageAlt: Cover of Book One Title
-    price: "$00"
-    link:
-      href: https://example.com/?book=one
-      label: four-books | Book One Title
-      category: commerce
-      interest: books-writing
-      intent: purchase
-    ctaText: View book one
-  - kicker: Book 02
-    title: Book Two Title
-    subtitle: Replace this with the second book subtitle.
-    body: A short sales paragraph for the second book. Name the reader, use case, or decision it helps with.
-    image: https://dummyimage.com/376x520/000000/ffffff.png&text=BOOK+02
-    imageAlt: Cover of Book Two Title
-    price: "$00"
-    link:
-      href: https://example.com/?book=two
-      label: four-books | Book Two Title
-      category: commerce
-      interest: books-writing
-      intent: purchase
-    ctaText: View book two
-  - kicker: Book 03
-    title: Book Three Title
-    subtitle: Replace this with the third book subtitle.
-    body: A short sales paragraph for the third book. Mention the artifact, method, or project it contains.
-    image: https://dummyimage.com/376x520/f2ff3d/000000.png&text=BOOK+03
-    imageAlt: Cover of Book Three Title
-    price: "$00"
-    link:
-      href: https://example.com/?book=three
-      label: four-books | Book Three Title
-      category: commerce
-      interest: books-writing
-      intent: purchase
-    ctaText: View book three
-  - kicker: Book 04
-    title: Book Four Title
-    subtitle: Replace this with the fourth book subtitle.
-    body: A short sales paragraph for the fourth book. Make the reason to own it easy to scan.
-    image: https://dummyimage.com/376x520/ffffff/000000.png&text=BOOK+04
-    imageAlt: Cover of Book Four Title
-    price: "$00"
-    link:
-      href: https://example.com/?book=four
-      label: four-books | Book Four Title
-      category: commerce
-      interest: books-writing
-      intent: purchase
-    ctaText: View book four
+sections:
+  - type: dual-column
+    label: Included in the set
+    items:
+      - kicker: Book 01
+        title: Book One Title
+        subtitle: Replace this with the first book subtitle.
+        body: A short sales paragraph for the first book. Keep it specific to what the reader can use it for.
+        image: https://dummyimage.com/376x520/ffffff/000000.png&text=BOOK+01
+        imageAlt: Cover of Book One Title
+        price: "$00"
+        link:
+          href: https://example.com/?book=one
+          label: four-books | Book One Title
+          category: commerce
+          interest: books-writing
+          intent: purchase
+        ctaText: View book one
+      - kicker: Book 02
+        title: Book Two Title
+        subtitle: Replace this with the second book subtitle.
+        body: A short sales paragraph for the second book. Name the reader, use case, or decision it helps with.
+        image: https://dummyimage.com/376x520/000000/ffffff.png&text=BOOK+02
+        imageAlt: Cover of Book Two Title
+        price: "$00"
+        link:
+          href: https://example.com/?book=two
+          label: four-books | Book Two Title
+          category: commerce
+          interest: books-writing
+          intent: purchase
+        ctaText: View book two
+      - kicker: Book 03
+        title: Book Three Title
+        subtitle: Replace this with the third book subtitle.
+        body: A short sales paragraph for the third book. Mention the artifact, method, or project it contains.
+        image: https://dummyimage.com/376x520/f2ff3d/000000.png&text=BOOK+03
+        imageAlt: Cover of Book Three Title
+        price: "$00"
+        link:
+          href: https://example.com/?book=three
+          label: four-books | Book Three Title
+          category: commerce
+          interest: books-writing
+          intent: purchase
+        ctaText: View book three
+  - type: single-column
+    label: Featured separately
+    items:
+      - kicker: Book 04
+        title: Book Four Title
+        subtitle: Replace this with the fourth book subtitle.
+        body: A short sales paragraph for the fourth book. Make the reason to own it easy to scan.
+        image: https://dummyimage.com/1200x760/ffffff/000000.png&text=BOOK+04
+        imageAlt: Cover of Book Four Title
+        price: "$00"
+        link:
+          href: https://example.com/?book=four
+          label: four-books | Book Four Title
+          category: commerce
+          interest: books-writing
+          intent: purchase
+        ctaText: View book four
 offer:
   eyebrow: Set offer
   headline: Buy all four together.

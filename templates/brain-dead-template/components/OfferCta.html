@@ -1,5 +1,5 @@
 <!-- OfferCta Component -->
-<!-- Purpose: Renders the closing sales offer. -->
+<!-- Purpose: Renders the closing offer. -->
 <!-- Variables: offer.*, bottomCta.*, shopLink -->
 
 <if condition="offer || bottomCta || shopLink">
@@ -23,7 +23,7 @@
               <if condition="(offer && offer.ctaLink) || (bottomCta && bottomCta.ctaLink) || shopLink">
                 <p style="margin:20px 0 0 0;">
                   <a class="bd-button bd-mono" href="{{ (offer && offer.ctaLink) || (bottomCta && bottomCta.ctaLink) || shopLink }}" style="display:inline-block;background:#ffffff;color:#000000!important;-webkit-text-fill-color:#000000;font-family:'Courier New',Courier,monospace;font-size:13px;line-height:16px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:13px 17px;border:2px solid #ffffff;">
-                    {{ (offer && offer.ctaText) || (bottomCta && bottomCta.ctaText) || 'Shop all four' }}
+                    {{ (offer && offer.ctaText) || (bottomCta && bottomCta.ctaText) || 'View offer' }}
                   </a>
                 </p>
               </if>

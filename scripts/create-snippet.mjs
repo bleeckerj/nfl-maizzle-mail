@@ -72,10 +72,34 @@ collectionTitle: "[Collection Name]"
 collectionDescription: "[Brief collection description]"
 collectionDetails: "[Detailed description of the collection, materials, inspiration, etc.]"
 mainImage: "https://picsum.photos/800/600"
-productImages:
-  - "https://picsum.photos/400/400"
-  - "https://picsum.photos/400/400"
-  - "https://picsum.photos/400/400"
+sections:
+  - type: dual-column
+    label: "[Dual-column section]"
+    items:
+      - kicker: "[Item kicker]"
+        title: "[Item title]"
+        subtitle: "[Short subtitle]"
+        body: "[Brief item description]"
+        image: "https://picsum.photos/400/400"
+        imageAlt: "[Image description]"
+        link:
+          href: "https://example.com/item"
+          label: "[Tracked item label]"
+          category: "commerce"
+        ctaText: "View item"
+  - type: single-column
+    label: "[Single-column section]"
+    items:
+      - kicker: "[Feature kicker]"
+        title: "[Full-width item title]"
+        body: "[Longer description for a full-width item]"
+        image: "https://picsum.photos/800/600"
+        imageAlt: "[Feature image description]"
+        link:
+          href: "https://example.com/feature"
+          label: "[Tracked feature label]"
+          category: "commerce"
+        ctaText: "View feature"
 shopLink: "https://example.com/shop"
 articles:
   - title: "[Article Title]"

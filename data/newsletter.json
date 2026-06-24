@@ -1,84 +1,171 @@
 {
   "$schema": "../templates/brain-dead-template/schema.json",
   "template": "brain-dead-template",
-  "title": "Four Books From Near Future Laboratory",
-  "preheader": "A compact sales email starter for the four-book offer.",
+  "title": "Midweek 26, 2026",
+  "issueId": "mw26-y26",
+  "preheader": "Friday, June 26: Office Hours, project-share slots, Dubai Future Horizons, Futuring 2.0, and the four Design Fiction books.",
   "brand": {
     "name": "Near Future Laboratory",
-    "logoUrl": "https://dummyimage.com/180x60/000000/ffffff.png&text=NFL",
+    "logoUrl": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/f6918220-7209-42cb-1f35-3207cc1c6b00/w=300?format=webp",
     "logoAlt": "Near Future Laboratory",
     "logoWidth": 96,
-    "logoLink": "https://example.com/?nav=home",
+    "logoLink": "https://nearfuturelaboratory.com/",
     "navLinks": [
       {
-        "label": "Shop",
-        "url": "https://example.com/?nav=shop"
+        "label": "RSVP",
+        "url": "https://luma.com/e1dfha2r"
+      },
+      {
+        "label": "Signup for project share",
+        "url": "https://nearfuturelaboratory.com/office-hours-signup"
       }
     ]
   },
   "hero": {
-    "eyebrow": "Four books",
-    "headline": "A field kit for near-future thinking.",
-    "subhead": "Four printed references for research, design fiction, strategy, and useful speculation.",
-    "body": "Use this slot for the sales note: why these four books belong together, who they are for, and what changes when someone has them on the desk.",
-    "image": "https://dummyimage.com/1200x760/f2ff3d/000000.png&text=FOUR+BOOKS",
-    "imageAlt": "The four books arranged together",
-    "ctaText": "Shop the set",
-    "ctaLink": "https://example.com/?offer=four-books-hero"
+    "eyebrow": "Office Hours N°314",
+    "headline": "Weekly Office Hours.",
+    "subhead": "June 26, 2026, 9:00-10:30 AM Pacific, on Zoom.",
+    "body": "Weekly Office Hours is open for this Friday. Come by for the usual generous, curious, smart group conversation around Design Fiction, speculative practice, creative work, side projects, tools, systems, and whatever else is moving through the Lab orbit this week.<br><br>\nThere are <a href='https://nearfuturelaboratory.com/office-hours-signup'>project-share slots</a> open. If you have something you want help with, bring it. The format is tight: 10 minutes to introduce the project, share slides, show what you are making, or frame the question, followed by 20 minutes of polite, useful group feedback and help.\n",
+    "image": "https://images.lumacdn.com/event-social/z4/c1eb8b18-6f45-4e2c-ba6c-cf5a0dca15d0.png",
+    "imageAlt": "Office Hours N°314 event image from Luma",
+    "ctaText": "RSVP on Luma",
+    "ctaLink": "https://luma.com/e1dfha2r"
   },
-  "booksLabel": "Included in the set",
-  "books": [
+  "sections": [
     {
-      "kicker": "Book 01",
-      "title": "Book One Title",
-      "subtitle": "Replace this with the first book subtitle.",
-      "body": "A short sales paragraph for the first book. Keep it specific to what the reader can use it for.",
-      "image": "https://dummyimage.com/376x520/ffffff/000000.png&text=BOOK+01",
-      "imageAlt": "Cover of Book One Title",
-      "price": "$00",
-      "link": "https://example.com/?book=one",
-      "ctaText": "View book one"
+      "type": "single-column",
+      "label": "Featured from the Lab",
+      "items": [
+        {
+          "kicker": "On sale",
+          "title": "The Four Design Fiction Books",
+          "subtitle": "Four printed references for Design Fiction, imagination, artifacts from possible futures, and speculative scenarios.",
+          "body": "The Manual of Design Fiction, It's Time to Imagine Harder, TBD Catalog, and Androids Dream of Electric Sheep are bundled together as a compact shelf of Near Future Laboratory practice.<br><br>\nIf Office Hours gives you the conversation, these books give you the longer-form references: methods, examples, prompts, artifacts, and ways to keep your own work moving.\n",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/547ab240-d2a3-4b4a-bd29-ef16200abd00/full?format=webpc",
+          "imageAlt": "Four Design Fiction books from Near Future Laboratory",
+          "price": "Sale bundle",
+          "link": "https://shop.nearfuturelaboratory.com/products/the-manual-of-design-fiction-paperback",
+          "ctaText": "Shop the books"
+        }
+      ],
+      "contentStyles": {
+        "fontFamily": "Courier New, Courier, monospace",
+        "fontSize": "15px",
+        "lineHeight": "22px",
+        "color": "#000000"
+      },
+      "_contentStyleOverrides": null,
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "padding": "12px 32px 8px",
+        "borderRadius": "0px"
+      },
+      "descriptionStyles": {
+        "fontFamily": "Courier New, Courier, monospace",
+        "fontSize": "15px",
+        "lineHeight": "22px",
+        "color": "#000000"
+      },
+      "spacerBackgroundColor": "#f0efef",
+      "headingStyles": {
+        "fontFamily": "Courier New, Courier, monospace",
+        "fontSize": "15px",
+        "lineHeight": "22px",
+        "fontWeight": "700",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "fontFamily": "Courier New, Courier, monospace",
+        "fontWeight": "700",
+        "textDecoration": "none",
+        "color": "#000000",
+        "fontSize": "15px",
+        "lineHeight": "22px"
+      },
+      "labelStyles": {},
+      "sectionHeaderHeadingStyles": {},
+      "ctaStyles": {},
+      "headingStylesInline": "font-family: Courier New, Courier, monospace !important; font-size: 15px; line-height: 22px; font-weight: 700 !important; color: #000000 !important",
+      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important",
+      "linkStylesInline": "text-decoration: none !important; font-weight: 700 !important; color: #000000 !important; font-family: Courier New, Courier, monospace !important; font-size: 15px; line-height: 22px",
+      "labelStylesInline": "font-family: Geist, ui-sans-serif, sans-serif !important; font-size: 12px; line-height: 14px; font-weight: 300 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important",
+      "articleCtaStylesInline": ""
     },
     {
-      "kicker": "Book 02",
-      "title": "Book Two Title",
-      "subtitle": "Replace this with the second book subtitle.",
-      "body": "A short sales paragraph for the second book. Name the reader, use case, or decision it helps with.",
-      "image": "https://dummyimage.com/376x520/000000/ffffff.png&text=BOOK+02",
-      "imageAlt": "Cover of Book Two Title",
-      "price": "$00",
-      "link": "https://example.com/?book=two",
-      "ctaText": "View book two"
-    },
-    {
-      "kicker": "Book 03",
-      "title": "Book Three Title",
-      "subtitle": "Replace this with the third book subtitle.",
-      "body": "A short sales paragraph for the third book. Mention the artifact, method, or project it contains.",
-      "image": "https://dummyimage.com/376x520/f2ff3d/000000.png&text=BOOK+03",
-      "imageAlt": "Cover of Book Three Title",
-      "price": "$00",
-      "link": "https://example.com/?book=three",
-      "ctaText": "View book three"
-    },
-    {
-      "kicker": "Book 04",
-      "title": "Book Four Title",
-      "subtitle": "Replace this with the fourth book subtitle.",
-      "body": "A short sales paragraph for the fourth book. Make the reason to own it easy to scan.",
-      "image": "https://dummyimage.com/376x520/ffffff/000000.png&text=BOOK+04",
-      "imageAlt": "Cover of Book Four Title",
-      "price": "$00",
-      "link": "https://example.com/?book=four",
-      "ctaText": "View book four"
+      "type": "dual-column",
+      "label": "Also from the Lab",
+      "items": [
+        {
+          "kicker": "Upcoming event",
+          "title": "Dubai Future Horizons",
+          "subtitle": "Human by Design: Who Will We Become?",
+          "body": "On June 30, I’ll join Professor John E. Katsos and host Felix Zeltzer for a Dubai Future Horizons conversation on identity, ethics, resilience, and the human capabilities we will need to navigate the futures we are creating.<br><br>\nThe session is live on Zoom at 10:00 AM Eastern, 7:00 AM Pacific, and 6:00 PM Dubai time.\n",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e20d543a-394f-4b90-8211-aca7d259e100/public",
+          "imageAlt": "Dubai Future Horizons Human by Design event graphic, orange version",
+          "link": "https://zoom.us/meeting/register/Dk8gyYX_SqupRimhXVXvAg#/registration",
+          "ctaText": "Register on Zoom"
+        },
+        {
+          "kicker": "Denver workshop",
+          "title": "Futuring 2.0",
+          "subtitle": "Futuring in Print at The Shop at MATTER",
+          "body": "In collaboration with The Shop at MATTER, I’ll be running a workshop and seminar on futuring on June 27 in Denver with Becky Vartabedian, PhD.<br><br>\nThe seminar covers the history of futuring, methods and tools, and how the practice is evolving in the context of AI and other emerging technologies. The workshop is a hands-on session where participants can apply futuring techniques to their own projects and challenges.\n",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/1211e67e-9fce-412c-394c-74fd5d065c00/w=600?format=webp",
+          "imageAlt": "Futuring 2.0 workshop graphic",
+          "link": "https://www.eventbrite.com/e/the-seminar-year-2-tickets-1977107660234",
+          "ctaText": "RSVP on Eventbrite"
+        }
+      ],
+      "contentStyles": {
+        "fontFamily": "Courier New, Courier, monospace",
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "color": "#000000"
+      },
+      "_contentStyleOverrides": null,
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "padding": "12px 32px 8px",
+        "borderRadius": "0px"
+      },
+      "descriptionStyles": {
+        "fontFamily": "Courier New, Courier, monospace",
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "color": "#000000"
+      },
+      "spacerBackgroundColor": "#f0efef",
+      "headingStyles": {
+        "fontFamily": "Courier New, Courier, monospace",
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "fontWeight": "700",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "fontFamily": "Courier New, Courier, monospace",
+        "fontWeight": "700",
+        "textDecoration": "none",
+        "color": "#000000",
+        "fontSize": "14px",
+        "lineHeight": "21px"
+      },
+      "labelStyles": {},
+      "sectionHeaderHeadingStyles": {},
+      "ctaStyles": {},
+      "headingStylesInline": "font-family: Courier New, Courier, monospace !important; font-size: 14px; line-height: 21px; font-weight: 700 !important; color: #000000 !important",
+      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important",
+      "linkStylesInline": "text-decoration: none !important; font-weight: 700 !important; color: #000000 !important; font-family: Courier New, Courier, monospace !important; font-size: 14px; line-height: 21px",
+      "labelStylesInline": "font-family: Geist, ui-sans-serif, sans-serif !important; font-size: 12px; line-height: 14px; font-weight: 300 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important",
+      "articleCtaStylesInline": ""
     }
   ],
   "offer": {
-    "eyebrow": "Set offer",
-    "headline": "Buy all four together.",
-    "body": "Use this final block for bundle pricing, shipping timing, signed-copy language, or a deadline.",
-    "ctaText": "Shop all four",
-    "ctaLink": "https://example.com/?offer=four-books-footer"
+    "eyebrow": "Project-share slots",
+    "headline": "Want to share a side project?",
+    "body": "Sign up to do a project share at Office Hours. You get 10 minutes for the presentation, slide share, demo, or introduction, then 20 minutes of generous, polite group feedback and help.<br><br>\nBring a rough question, an unfinished prototype, an idea that needs witnesses, or a project that would benefit from other people's attention.\n",
+    "ctaText": "Sign up to share",
+    "ctaLink": "https://nearfuturelaboratory.com/office-hours-signup"
   },
   "footer": {
     "footerCta": {
@@ -86,19 +173,23 @@
     },
     "paragraphs": [
       "You are receiving this because you subscribed to Near Future Laboratory updates.",
-      "Questions about the books or shipping? Reply to this email."
+      "Questions about Office Hours or project shares? Reply to this email."
     ],
     "address": "Near Future Laboratory, Venice Beach, California",
     "socialLinks": [
       {
         "label": "Website",
-        "url": "https://example.com/?social=website"
+        "url": "https://nearfuturelaboratory.com/"
+      },
+      {
+        "label": "Patreon",
+        "url": "https://patreon.com/nearfuturelaboratory"
       }
     ],
     "unsubscribeLabel": "Unsubscribe",
     "unsubscribeLink": "[unsubscribe]"
   },
-  "markdownContent": "<p>This body is intentionally unused by the template. Keep the sales content in frontmatter so Backoffice and the build pipeline can validate the structured fields.</p>",
+  "markdownContent": "<p>This body is intentionally unused by the template. Keep the email content in frontmatter so Backoffice and the Maizzle build pipeline can validate the structured fields.</p>",
   "darkModePolicy": {
     "flatten": true,
     "mode": "flatten",
@@ -147,7 +238,7 @@
     "linkAccent": "#EE3BBB"
   },
   "sectionStyles": {
-    "description": "Section style metadata for the Brain Dead four-book sales template. This template renders from top-level sales fields, so these keys document the visual sections rather than driving section-array preprocessing.",
+    "description": "Section style metadata for the Brain Dead content template. Sections render from sections[] with dual-column and single-column types.",
     "sectionStyles": {
       "default": {
         "containerStyles": {
@@ -168,7 +259,7 @@
           "color": "#000000"
         }
       },
-      "book-sales-hero": {
+      "content-hero": {
         "containerStyles": {
           "backgroundColor": "#ffffff",
           "padding": "16px 32px 20px",
@@ -188,7 +279,7 @@
           "color": "#000000"
         }
       },
-      "book-sales-grid": {
+      "dual-column": {
         "containerStyles": {
           "backgroundColor": "#ffffff",
           "padding": "12px 32px 8px",
@@ -214,7 +305,33 @@
           "color": "#000000"
         }
       },
-      "book-sales-offer": {
+      "single-column": {
+        "containerStyles": {
+          "backgroundColor": "#ffffff",
+          "padding": "12px 32px 8px",
+          "borderRadius": "0px"
+        },
+        "headingStyles": {
+          "fontFamily": "Courier New, Courier, monospace",
+          "fontSize": "28px",
+          "lineHeight": "32px",
+          "fontWeight": "700",
+          "color": "#000000"
+        },
+        "contentStyles": {
+          "fontFamily": "Courier New, Courier, monospace",
+          "fontSize": "15px",
+          "lineHeight": "22px",
+          "color": "#000000"
+        },
+        "linkStyles": {
+          "fontFamily": "Courier New, Courier, monospace",
+          "fontWeight": "700",
+          "textDecoration": "none",
+          "color": "#000000"
+        }
+      },
+      "content-offer": {
         "containerStyles": {
           "backgroundColor": "#000000",
           "padding": "24px",

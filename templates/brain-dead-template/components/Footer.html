@@ -10,28 +10,28 @@
           <td align="left" style="padding:18px 0 0 0;">
             <if condition="footer && footer.paragraphs && footer.paragraphs.length">
               <each loop="paragraph in footer.paragraphs">
-                <p style="margin:0 0 10px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:18px;color:#000000;">
+                <p style="margin:0 0 9px 0;font-family:'Courier New',Courier,monospace;font-size:9px;line-height:10px;color:#000000;">
                   {{{ paragraph }}}
                 </p>
               </each>
             </if>
             <if condition="!(footer && footer.paragraphs && footer.paragraphs.length)">
-              <p style="margin:0 0 10px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:18px;color:#000000;">
+              <p style="margin:0 0 9px 0;font-family:'Courier New',Courier,monospace;font-size:9px;line-height:11px;color:#0f0f0f;">
                 You are receiving this email because you subscribed to Near Future Laboratory updates.
               </p>
             </if>
-            <p style="margin:0 0 12px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:18px;color:#000000;">
+            <p style="margin:0 0 9px 0;font-family:'Courier New',Courier,monospace;font-size:9px;line-height:11px;color:#0e0e0e;">
               {{{ (footer && footer.address) || companyAddress || 'Near Future Laboratory, Venice Beach, California' }}}
             </p>
             <if condition="(footer && footer.socialLinks && footer.socialLinks.length) || (socialLinks && socialLinks.length)">
-              <p style="margin:0 0 12px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:18px;color:#000000;">
+              <p style="margin:0 0 9px 0;font-family:'Courier New',Courier,monospace;font-size:9px;line-height:11px;color:#000000;">
                 <each loop="link in ((footer && footer.socialLinks) || socialLinks)">
-                  <a href="{{ link.url || link.href }}" style="color:#000000;text-decoration:underline;">{{ link.label || link.text || link.title }}</a><if condition="!@last"><span style="padding:0 7px;color:#000000;">/</span></if>
+                  <a href="{{ link.url || link.href }}" style="color:#0e0e0e;text-decoration:underline;">{{ link.label || link.text || link.title }}</a><if condition="!@last"><span style="padding:0 7px;color:#0e0e0e;">/</span></if>
                 </each>
               </p>
             </if>
-            <p style="margin:0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:18px;color:#000000;">
-              <a href="{{ (footer && footer.unsubscribeLink) || unsubscribeLink || '[unsubscribe]' }}" style="color:#000000;text-decoration:underline;">{{ (footer && footer.unsubscribeLabel) || unsubscribeLabel || 'Unsubscribe' }}</a>
+            <p style="margin:0;font-family:'Courier New',Courier,monospace;font-size:9px;line-height:11px;color:#0e0e0e;">
+              <a href="{{ (footer && footer.unsubscribeLink) || unsubscribeLink || '[unsubscribe]' }}" style="color:#0e0e0e;text-decoration:underline;">{{ (footer && footer.unsubscribeLabel) || unsubscribeLabel || 'Unsubscribe' }}</a>
             </p>
           </td>
         </tr>

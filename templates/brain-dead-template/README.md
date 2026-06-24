@@ -1,10 +1,17 @@
-# Brain Dead Four-Book Sales Template
+# Brain Dead Content Template
 
-This template is prepared for a direct sales email with a Brain Dead-style black, white, mono, and acid-highlight layout. It now builds from the canonical `templates/brain-dead-template` directory and validates with `newsletter.schema.json`.
+This template is prepared for a direct sales email with a Brain Dead-style black, white, mono, and acid-highlight layout. It builds from the canonical `templates/brain-dead-template` directory and validates with `newsletter.schema.json`.
 
 ## Author-Owned Fields
 
-Use `books` for the four sales items. Each book supports:
+Use `sections` for repeatable content blocks. Each section has `type`, `label`, and `items`.
+
+Supported section types:
+
+- `dual-column` - image and copy sit side by side on wide screens, then stack on mobile.
+- `single-column` - each item stays full width on wide screens and mobile.
+
+Each item supports:
 
 - `title`
 - `subtitle`
@@ -15,15 +22,25 @@ Use `books` for the four sales items. Each book supports:
 - `link`
 - `ctaText`
 
-Use tracked link objects for `brand.logoLink`, `hero.ctaLink`, each `book.link`, `offer.ctaLink`, and footer/social links:
+Use tracked link objects for `brand.logoLink`, `hero.ctaLink`, each `sections[].items[].link`, `offer.ctaLink`, and footer/social links:
 
 ```yaml
-link:
-  href: https://example.com/?book=book-one
-  label: four-books | book one
-  category: commerce
-  interest: books-writing
-  intent: purchase
+sections:
+  - type: dual-column
+    label: Included in the set
+    items:
+      - title: Item title
+        link:
+          href: https://example.com/?item=one
+          label: content | item one
+          category: commerce
+          interest: products
+          intent: purchase
+  - type: single-column
+    label: Featured separately
+    items:
+      - title: Full-width item
+        body: A single-column item can carry more copy or a larger image.
 ```
 
 The build normalizes these objects into template-safe URL strings and adds `data-link-label` / `data-link-category` to the rendered anchors.
@@ -55,6 +72,6 @@ node scripts/build-newsletter.mjs data/brain-dead-20251007.json brain-dead-four-
 
 ## Notes
 
-- Keep book cover art hosted outside this repository, for example Photarium or another approved image host.
-- The template preserves the full image aspect ratio. It does not crop book covers or hero art.
+- Keep content images hosted outside this repository, for example Photarium or another approved image host.
+- The template preserves the full image aspect ratio. It does not crop item images or hero art.
 - `schema.json` is retained only as a legacy alias for tools that still look for that filename. The current build validates `newsletter.schema.json`.

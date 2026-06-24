@@ -1,0 +1,226 @@
+<!-- ContentSections Component -->
+<!-- Purpose: Renders generic dual-column and single-column item sections. -->
+<!-- Variables: sections[] with type, label, items[]; legacy books[] fallback -->
+
+<if condition="sections && sections.length">
+  <each loop="section in sections">
+    <if condition="section.type === 'dual-column'">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;">
+        <tr>
+          <td class="bd-pad" style="padding:12px 32px 8px 32px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border-top:2px solid #000000;">
+              <tr>
+                <td style="padding:16px 0 10px 0;">
+                  <p class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:13px;line-height:18px;letter-spacing:0.12em;text-transform:uppercase;color:#000000;">
+                    {{ section.label || section.title || 'Dual column' }}
+                  </p>
+                </td>
+              </tr>
+            </table>
+            <each loop="item in section.items">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border-top:1px solid #000000;">
+                <tr>
+                  <td class="bd-item-image-cell" valign="top" width="188" style="width:188px;padding:22px 24px 22px 0;">
+                    <if condition="item.image">
+                      <if condition="item.link">
+                        <a href="{{ item.link }}" style="text-decoration:none;">
+                          <img class="bd-item-image" src="{{ item.image }}" alt="{{ item.imageAlt || item.title }}" width="188" style="width:188px;max-width:188px;height:auto;">
+                        </a>
+                      </if>
+                      <if condition="!item.link">
+                        <img class="bd-item-image" src="{{ item.image }}" alt="{{ item.imageAlt || item.title }}" width="188" style="width:188px;max-width:188px;height:auto;">
+                      </if>
+                    </if>
+                  </td>
+                  <td class="bd-item-copy-cell" valign="top" style="padding:22px 0;">
+                    <p class="bd-mono" style="margin:0 0 6px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:16px;letter-spacing:0.1em;text-transform:uppercase;color:#000000;">
+                      {{ item.kicker || item.format || 'Item' }}
+                    </p>
+                    <h2 class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:25px;line-height:29px;font-weight:700;letter-spacing:0;color:#000000;">
+                      <if condition="item.link">
+                        <a href="{{ item.link }}" style="color:#000000;text-decoration:none;">{{ item.title }}</a>
+                      </if>
+                      <if condition="!item.link">{{ item.title }}</if>
+                    </h2>
+                    <if condition="item.subtitle">
+                      <p class="bd-item-copy bd-mono" style="margin:8px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:15px;line-height:22px;color:#000000;">
+                        {{ item.subtitle }}
+                      </p>
+                    </if>
+                    <if condition="item.body">
+                      <p class="bd-item-copy bd-mono" style="margin:12px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:14px;line-height:21px;color:#000000;">
+                        {{{ item.body }}}
+                      </p>
+                    </if>
+                    <if condition="item.price">
+                      <p class="bd-mono" style="margin:14px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:13px;line-height:18px;font-weight:700;color:#000000;">
+                        {{ item.price }}
+                      </p>
+                    </if>
+                    <if condition="item.link">
+                      <p style="margin:16px 0 0 0;">
+                        <a class="bd-button bd-mono" href="{{ item.link }}" style="display:inline-block;background:#f2ff3d;color:#000000!important;-webkit-text-fill-color:#000000;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:11px 14px;border:2px solid #000000;">
+                          {{ item.ctaText || 'View item' }}
+                        </a>
+                      </p>
+                    </if>
+                  </td>
+                </tr>
+              </table>
+            </each>
+          </td>
+        </tr>
+      </table>
+    </if>
+
+    <if condition="section.type === 'single-column'">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;">
+        <tr>
+          <td class="bd-pad" style="padding:12px 32px 8px 32px;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border-top:2px solid #000000;">
+              <tr>
+                <td style="padding:16px 0 10px 0;">
+                  <p class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:13px;line-height:18px;letter-spacing:0.12em;text-transform:uppercase;color:#000000;">
+                    {{ section.label || section.title || 'Single column' }}
+                  </p>
+                </td>
+              </tr>
+            </table>
+            <each loop="item in section.items">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border-top:1px solid #000000;">
+                <tr>
+                  <td valign="top" style="padding:22px 0;">
+                    <if condition="item.image">
+                      <p style="margin:0 0 18px 0;">
+                        <if condition="item.link">
+                          <a href="{{ item.link }}" style="text-decoration:none;">
+                            <img src="{{ item.image }}" alt="{{ item.imageAlt || item.title }}" width="576" style="width:100%;max-width:576px;height:auto;">
+                          </a>
+                        </if>
+                        <if condition="!item.link">
+                          <img src="{{ item.image }}" alt="{{ item.imageAlt || item.title }}" width="576" style="width:100%;max-width:576px;height:auto;">
+                        </if>
+                      </p>
+                    </if>
+                    <p class="bd-mono" style="margin:0 0 6px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:16px;letter-spacing:0.1em;text-transform:uppercase;color:#000000;">
+                      {{ item.kicker || item.format || 'Item' }}
+                    </p>
+                    <h2 class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:28px;line-height:32px;font-weight:700;letter-spacing:0;color:#000000;">
+                      <if condition="item.link">
+                        <a href="{{ item.link }}" style="color:#000000;text-decoration:none;">{{ item.title }}</a>
+                      </if>
+                      <if condition="!item.link">{{ item.title }}</if>
+                    </h2>
+                    <if condition="item.subtitle">
+                      <p class="bd-item-copy bd-mono" style="margin:8px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:16px;line-height:23px;color:#000000;">
+                        {{ item.subtitle }}
+                      </p>
+                    </if>
+                    <if condition="item.body">
+                      <p class="bd-item-copy bd-mono" style="margin:12px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:15px;line-height:22px;color:#000000;">
+                        {{{ item.body }}}
+                      </p>
+                    </if>
+                    <if condition="item.price">
+                      <p class="bd-mono" style="margin:14px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:13px;line-height:18px;font-weight:700;color:#000000;">
+                        {{ item.price }}
+                      </p>
+                    </if>
+                    <if condition="item.link">
+                      <p style="margin:16px 0 0 0;">
+                        <a class="bd-button bd-mono" href="{{ item.link }}" style="display:inline-block;background:#f2ff3d;color:#000000!important;-webkit-text-fill-color:#000000;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:11px 14px;border:2px solid #000000;">
+                          {{ item.ctaText || 'View item' }}
+                        </a>
+                      </p>
+                    </if>
+                  </td>
+                </tr>
+              </table>
+            </each>
+          </td>
+        </tr>
+      </table>
+    </if>
+  </each>
+</if>
+
+<if condition="(!sections || !sections.length) && books && books.length">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;">
+    <tr>
+      <td class="bd-pad" style="padding:12px 32px 8px 32px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border-top:2px solid #000000;">
+          <tr>
+            <td style="padding:16px 0 10px 0;">
+              <p class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:13px;line-height:18px;letter-spacing:0.12em;text-transform:uppercase;color:#000000;">
+                {{ booksLabel || 'Dual column' }}
+              </p>
+            </td>
+          </tr>
+        </table>
+        <each loop="item in books">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border-top:1px solid #000000;">
+            <tr>
+              <td class="bd-item-image-cell" valign="top" width="188" style="width:188px;padding:22px 24px 22px 0;">
+                <if condition="item.image">
+                  <if condition="item.link">
+                    <a href="{{ item.link }}" style="text-decoration:none;">
+                      <img class="bd-item-image" src="{{ item.image }}" alt="{{ item.imageAlt || item.title }}" width="188" style="width:188px;max-width:188px;height:auto;">
+                    </a>
+                  </if>
+                  <if condition="!item.link">
+                    <img class="bd-item-image" src="{{ item.image }}" alt="{{ item.imageAlt || item.title }}" width="188" style="width:188px;max-width:188px;height:auto;">
+                  </if>
+                </if>
+              </td>
+              <td class="bd-item-copy-cell" valign="top" style="padding:22px 0;">
+                <p class="bd-mono" style="margin:0 0 6px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:16px;letter-spacing:0.1em;text-transform:uppercase;color:#000000;">
+                  {{ item.kicker || item.format || 'Item' }}
+                </p>
+                <h2 class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:25px;line-height:29px;font-weight:700;letter-spacing:0;color:#000000;">
+                  <if condition="item.link">
+                    <a href="{{ item.link }}" style="color:#000000;text-decoration:none;">{{ item.title }}</a>
+                  </if>
+                  <if condition="!item.link">{{ item.title }}</if>
+                </h2>
+                <if condition="item.subtitle">
+                  <p class="bd-item-copy bd-mono" style="margin:8px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:15px;line-height:22px;color:#000000;">
+                    {{ item.subtitle }}
+                  </p>
+                </if>
+                <if condition="item.body">
+                  <p class="bd-item-copy bd-mono" style="margin:12px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:14px;line-height:21px;color:#000000;">
+                    {{{ item.body }}}
+                  </p>
+                </if>
+                <if condition="item.price">
+                  <p class="bd-mono" style="margin:14px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:13px;line-height:18px;font-weight:700;color:#000000;">
+                    {{ item.price }}
+                  </p>
+                </if>
+                <if condition="item.link">
+                  <p style="margin:16px 0 0 0;">
+                    <a class="bd-button bd-mono" href="{{ item.link }}" style="display:inline-block;background:#f2ff3d;color:#000000!important;-webkit-text-fill-color:#000000;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:11px 14px;border:2px solid #000000;">
+                      {{ item.ctaText || 'View item' }}
+                    </a>
+                  </p>
+                </if>
+              </td>
+            </tr>
+          </table>
+        </each>
+      </td>
+    </tr>
+  </table>
+</if>
+
+<if condition="(!sections || !sections.length) && (!books || !books.length) && productImages && productImages.length">
+  <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;">
+    <tr>
+      <td class="bd-pad bd-mono" align="center" style="padding:18px 32px 24px 32px;font-family:'Courier New',Courier,monospace;">
+        <each loop="image in productImages">
+          <img src="{{ image }}" alt="Product" width="176" style="display:inline-block;width:176px;max-width:176px;height:auto;margin:6px;">
+        </each>
+      </td>
+    </tr>
+  </table>
+</if>

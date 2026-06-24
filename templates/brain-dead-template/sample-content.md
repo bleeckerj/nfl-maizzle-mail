@@ -22,27 +22,33 @@ hero:
     href: https://example.com/?offer=four-books-hero
     label: four-books | hero CTA
     category: commerce
-books:
-  - title: Book One Title
-    link:
-      href: https://example.com/?book=one
-      label: four-books | Book One Title
-      category: commerce
-  - title: Book Two Title
-    link:
-      href: https://example.com/?book=two
-      label: four-books | Book Two Title
-      category: commerce
-  - title: Book Three Title
-    link:
-      href: https://example.com/?book=three
-      label: four-books | Book Three Title
-      category: commerce
-  - title: Book Four Title
-    link:
-      href: https://example.com/?book=four
-      label: four-books | Book Four Title
-      category: commerce
+sections:
+  - type: dual-column
+    label: Included in the set
+    items:
+      - title: Book One Title
+        link:
+          href: https://example.com/?book=one
+          label: four-books | Book One Title
+          category: commerce
+      - title: Book Two Title
+        link:
+          href: https://example.com/?book=two
+          label: four-books | Book Two Title
+          category: commerce
+      - title: Book Three Title
+        link:
+          href: https://example.com/?book=three
+          label: four-books | Book Three Title
+          category: commerce
+  - type: single-column
+    label: Featured separately
+    items:
+      - title: Book Four Title
+        link:
+          href: https://example.com/?book=four
+          label: four-books | Book Four Title
+          category: commerce
 offer:
   headline: Buy all four together.
   ctaText: Shop all four

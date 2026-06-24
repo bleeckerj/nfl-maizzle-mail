@@ -1,5 +1,5 @@
 {
-  "description": "Section style metadata for the Brain Dead four-book sales template. This template renders from top-level sales fields, so these keys document the visual sections rather than driving section-array preprocessing.",
+  "description": "Section style metadata for the Brain Dead content template. Sections render from sections[] with dual-column and single-column types.",
   "sectionStyles": {
     "default": {
       "containerStyles": {
@@ -20,7 +20,7 @@
         "color": "#000000"
       }
     },
-    "book-sales-hero": {
+    "content-hero": {
       "containerStyles": {
         "backgroundColor": "#ffffff",
         "padding": "16px 32px 20px",
@@ -40,7 +40,7 @@
         "color": "#000000"
       }
     },
-    "book-sales-grid": {
+    "dual-column": {
       "containerStyles": {
         "backgroundColor": "#ffffff",
         "padding": "12px 32px 8px",
@@ -66,7 +66,33 @@
         "color": "#000000"
       }
     },
-    "book-sales-offer": {
+    "single-column": {
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "padding": "12px 32px 8px",
+        "borderRadius": "0px"
+      },
+      "headingStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontSize": "28px",
+        "lineHeight": "32px",
+        "fontWeight": "700",
+        "color": "#000000"
+      },
+      "contentStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontSize": "15px",
+        "lineHeight": "22px",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontWeight": "700",
+        "textDecoration": "none",
+        "color": "#000000"
+      }
+    },
+    "content-offer": {
       "containerStyles": {
         "backgroundColor": "#000000",
         "padding": "24px",
