@@ -252,6 +252,15 @@ function listContentFiles() {
 /**
  * Resolve input file path - handles both absolute and relative paths
  */
+function resolveCalendarPublicRoot(outputPath) {
+  if (!outputPath) return '';
+  const resolved = path.resolve(process.cwd(), outputPath);
+  const marker = `${path.sep}public${path.sep}`;
+  const index = resolved.indexOf(marker);
+  if (index === -1) return '';
+  return resolved.slice(0, index + marker.length - 1);
+}
+
 function resolveInputPath(inputPath) {
   if (!inputPath) {
     return selectFile();
@@ -352,7 +361,9 @@ if (command === 'list') {
     // For JSON files, force the template
     const isMd = inputFile.endsWith('.md');
     const templateArg = isMd ? '' : `--template=${template}`;
-    const execCmd = `node ${buildNewsletterPath} ${inputFile} ${outputName} ${templateArg}`.trim();
+    const calendarPublicRoot = resolveCalendarPublicRoot(outputFile);
+    const calendarArg = calendarPublicRoot ? `--calendar-public-root=${calendarPublicRoot}` : '';
+    const execCmd = `node ${buildNewsletterPath} ${inputFile} ${outputName} ${templateArg} ${calendarArg}`.trim();
     console.log(`\nExecuting: ${execCmd}\n`);
     execSync(execCmd, {
       stdio: 'inherit',

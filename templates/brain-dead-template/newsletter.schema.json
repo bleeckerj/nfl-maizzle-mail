@@ -122,17 +122,41 @@
   "definitions": {
     "contentSection": {
       "type": "object",
-      "required": ["type", "items"],
+      "required": ["type"],
       "properties": {
-        "type": { "enum": ["dual-column", "single-column"] },
+        "type": { "enum": ["dual-column", "single-column", "calendar_event"] },
         "label": { "type": "string" },
         "title": { "type": "string" },
         "items": {
           "type": "array",
           "minItems": 1,
           "items": { "$ref": "#/definitions/contentItem" }
+        },
+        "id": { "type": "string" },
+        "eyebrow": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "startsAt": { "type": "string" },
+        "endsAt": { "type": "string" },
+        "durationMinutes": { "type": ["integer", "number", "string"] },
+        "timezone": { "type": "string" },
+        "description": { "type": "string" },
+        "location": { "type": "string" },
+        "url": { "$ref": "#/definitions/trackedLink" },
+        "calendarLabel": { "type": "string" },
+        "calendarLink": { "$ref": "#/definitions/trackedLink" },
+        "eventLabel": { "type": "string" },
+        "eventLink": { "$ref": "#/definitions/trackedLink" },
+        "displayDate": { "type": "string" },
+        "displayTime": { "type": "string" },
+        "displayWeekday": { "type": "string" }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "type": { "const": "calendar_event" } } },
+          "then": { "required": ["title", "startsAt"] },
+          "else": { "required": ["items"] }
         }
-      }
+      ]
     },
     "contentItem": {
       "type": "object",

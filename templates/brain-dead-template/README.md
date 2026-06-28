@@ -10,8 +10,30 @@ Supported section types:
 
 - `dual-column` - image and copy sit side by side on wide screens, then stack on mobile.
 - `single-column` - each item stays full width on wide screens and mobile.
+- `calendar_event` - a generated add-to-calendar card. The build writes an `.ics` file and injects `calendarLink`.
 
-Each item supports:
+For `calendar_event`, author event metadata directly on the section:
+
+```yaml
+sections:
+  - type: calendar_event
+    id: dubai-future-horizons-human-by-design
+    eyebrow: Live Zoom Conversation
+    title: Dubai Future Horizons
+    subtitle: "Human by Design: Who Will We Become?"
+    startsAt: "2026-06-30T10:00:00-04:00"
+    durationMinutes: 60
+    timezone: America/New_York
+    location: Zoom
+    description: A live conversation with Julian Bleecker and Professor John E. Katsos.
+    url:
+      href: https://zoom.us/meeting/register/example
+      label: issue | event | registration
+      category: events
+      intent: attend-event
+```
+
+Each content item supports:
 
 - `title`
 - `subtitle`

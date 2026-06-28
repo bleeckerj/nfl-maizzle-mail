@@ -18,8 +18,10 @@ import {
   normalizeIntroStatementSection,
   normalizeIntroStatementSections,
   prepareNewsletterData as prepareNormalizedNewsletterData,
+  normalizeCalendarEventSections,
   resolveCommerceAdBlockSnapshots,
   resolveIssueSourcePath,
+  writeCalendarEventFiles,
 } from '../lib/newsletter-core/index.mjs';
 import { hardenEmailHtmlForMobile } from '../lib/newsletter-core/email-html-hardening.mjs';
 import {
@@ -1069,6 +1071,10 @@ const outputDirArg = args.find(arg => arg.startsWith('--output-dir='));
 const outputDir = outputDirArg 
   ? path.resolve(outputDirArg.split('=')[1])
   : repoPath(REPO_ROOT, 'build_production');
+const calendarPublicRootArg = args.find(arg => arg.startsWith('--calendar-public-root='));
+const calendarPublicRoot = calendarPublicRootArg
+  ? path.resolve(calendarPublicRootArg.split('=').slice(1).join('='))
+  : null;
 
 if (args.length < 1) {
   console.log('📧 Newsletter Builder');
@@ -1291,6 +1297,14 @@ async function buildNewsletter() {
     }
     await resolveCommerceAdBlockSnapshots(newsletterData, {
       repoRoot: REPO_ROOT,
+      logger: console,
+    });
+    const calendarEvents = normalizeCalendarEventSections(newsletterData, {
+      repoRoot: REPO_ROOT,
+      outputDir,
+      finalOutputPath,
+      calendarPublicRoot,
+      outputName,
       logger: console,
     });
     normalizeIntroStatementSections(newsletterData);
@@ -2467,6 +2481,7 @@ async function buildNewsletter() {
       hardenedBuiltHtml.html,
     );
     fs.writeFileSync(finalOutputPath, finalOutputRaw, 'utf8');
+    writeCalendarEventFiles(calendarEvents.events, { fs, path, logger: console });
     const linkTrackingManifestPath = path.join(outputDir, `${outputName}.link-tracking-manifest.json`);
     fs.writeFileSync(
       linkTrackingManifestPath,
