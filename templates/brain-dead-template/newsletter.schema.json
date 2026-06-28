@@ -148,7 +148,42 @@
         "eventLink": { "$ref": "#/definitions/trackedLink" },
         "displayDate": { "type": "string" },
         "displayTime": { "type": "string" },
-        "displayWeekday": { "type": "string" }
+        "displayWeekday": { "type": "string" },
+        "containerStyles": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "backgroundColor": { "type": "string" },
+            "textColor": { "type": "string" },
+            "headingColor": { "type": "string" },
+            "eyebrowColor": { "type": "string" },
+            "dateColor": { "type": "string" },
+            "timeColor": { "type": "string" },
+            "locationColor": { "type": "string" },
+            "borderColor": { "type": "string" },
+            "borderWidth": { "type": "string" },
+            "dividerColor": { "type": "string" },
+            "dividerWidth": { "type": "string" },
+            "headerPadding": { "type": "string" },
+            "bodyPadding": { "type": "string" },
+            "buttonBackgroundColor": { "type": "string" },
+            "buttonTextColor": { "type": "string" },
+            "buttonBorderColor": { "type": "string" },
+            "buttonBorderWidth": { "type": "string" },
+            "buttonPadding": { "type": "string" },
+            "secondaryLinkColor": { "type": "string" }
+          }
+        },
+        "contentStyles": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "fontFamily": { "type": "string" },
+            "fontSize": { "type": "string" },
+            "lineHeight": { "type": "string" },
+            "color": { "type": "string" }
+          }
+        }
       },
       "allOf": [
         {

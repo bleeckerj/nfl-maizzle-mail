@@ -92,6 +92,31 @@
         "color": "#000000"
       }
     },
+    "calendar_event": {
+      "containerStyles": {
+        "backgroundColor": "#fffdf4",
+        "textColor": "#000000",
+        "borderColor": "#000000",
+        "borderWidth": "2px",
+        "dividerColor": "#000000",
+        "buttonBackgroundColor": "#000000",
+        "buttonTextColor": "#ffffff",
+        "buttonBorderColor": "#000000",
+        "secondaryLinkColor": "#000000"
+      },
+      "contentStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontSize": "15px",
+        "lineHeight": "22px",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontWeight": "700",
+        "textDecoration": "underline",
+        "color": "#000000"
+      }
+    },
     "content-offer": {
       "containerStyles": {
         "backgroundColor": "#000000",

@@ -151,50 +151,50 @@
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;">
         <tr>
           <td class="bd-pad" style="padding:12px 32px 8px 32px;">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border:2px solid #000000;background:#fffdf4;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border:{{ section.containerStyles.borderWidth || '2px' }} solid {{ section.containerStyles.borderColor || '#000000' }};background:{{ section.containerStyles.backgroundColor || '#fffdf4' }};">
               <tr>
-                <td style="padding:18px 20px 14px 20px;border-bottom:2px solid #000000;">
-                  <p class="bd-mono" style="margin:0 0 6px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:16px;letter-spacing:0.12em;text-transform:uppercase;color:#000000;">
+                <td style="padding:{{ section.containerStyles.headerPadding || '18px 20px 14px 20px' }};border-bottom:{{ section.containerStyles.dividerWidth || section.containerStyles.borderWidth || '2px' }} solid {{ section.containerStyles.dividerColor || section.containerStyles.borderColor || '#000000' }};">
+                  <p class="bd-mono" style="margin:0 0 6px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:16px;letter-spacing:0.12em;text-transform:uppercase;color:{{ section.containerStyles.eyebrowColor || section.containerStyles.textColor || section.contentStyles.color || '#000000' }};">
                     {{ section.eyebrow || 'Calendar Event' }}
                   </p>
-                  <h2 class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:28px;line-height:32px;font-weight:700;letter-spacing:0;color:#000000;">
+                  <h2 class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:28px;line-height:32px;font-weight:700;letter-spacing:0;color:{{ section.containerStyles.headingColor || section.containerStyles.textColor || section.contentStyles.color || '#000000' }};">
                     {{ section.title }}
                   </h2>
                   <if condition="section.subtitle">
-                    <p class="bd-mono" style="margin:6px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:16px;line-height:22px;color:#000000;">
+                    <p class="bd-mono" style="margin:6px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:16px;line-height:22px;color:{{ section.containerStyles.textColor || section.contentStyles.color || '#000000' }};">
                       {{ section.subtitle }}
                     </p>
                   </if>
                 </td>
               </tr>
               <tr>
-                <td style="padding:18px 20px 20px 20px;">
+                <td style="padding:{{ section.containerStyles.bodyPadding || '18px 20px 20px 20px' }};">
                   <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;">
                     <tr>
                       <td class="bd-item-image-cell" valign="top" width="170" style="width:170px;padding:0 22px 14px 0;">
-                        <p class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:29px;line-height:31px;font-weight:700;color:#000000;">
+                        <p class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:29px;line-height:31px;font-weight:700;color:{{ section.containerStyles.dateColor || section.containerStyles.textColor || section.contentStyles.color || '#000000' }};">
                           {{ section.displayDate }}
                         </p>
-                        <p class="bd-mono" style="margin:4px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:14px;line-height:20px;color:#000000;">
+                        <p class="bd-mono" style="margin:4px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:14px;line-height:20px;color:{{ section.containerStyles.timeColor || section.containerStyles.textColor || section.contentStyles.color || '#000000' }};">
                           {{ section.displayTime }}
                         </p>
                         <if condition="section.location">
-                          <p class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:18px;color:#000000;">
+                          <p class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:18px;color:{{ section.containerStyles.locationColor || section.containerStyles.textColor || section.contentStyles.color || '#000000' }};">
                             {{ section.location }}
                           </p>
                         </if>
                       </td>
                       <td class="bd-item-copy-cell" valign="top" style="padding:0;">
                         <if condition="section.description">
-                          <p class="bd-item-copy bd-mono" style="margin:0 0 16px 0;font-family:'Courier New',Courier,monospace;font-size:15px;line-height:22px;color:#000000;">
+                          <p class="bd-item-copy bd-mono" style="margin:0 0 16px 0;font-family:'Courier New',Courier,monospace;font-size:15px;line-height:22px;color:{{ section.containerStyles.textColor || section.contentStyles.color || '#000000' }};">
                             {{{ section.description }}}
                           </p>
                         </if>
-                        <a class="bd-button bd-mono" href="{{ section.calendarLink }}" style="display:inline-block;background:#000000;color:#ffffff!important;-webkit-text-fill-color:#ffffff;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:11px 14px;border:2px solid #000000;">
+                        <a class="bd-button bd-mono" href="{{ section.calendarLink }}" style="display:inline-block;background:{{ section.containerStyles.buttonBackgroundColor || '#000000' }};color:{{ section.containerStyles.buttonTextColor || '#ffffff' }}!important;-webkit-text-fill-color:{{ section.containerStyles.buttonTextColor || '#ffffff' }};font-family:'Courier New',Courier,monospace;font-size:12px;line-height:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:{{ section.containerStyles.buttonPadding || '11px 14px' }};border:{{ section.containerStyles.buttonBorderWidth || section.containerStyles.borderWidth || '2px' }} solid {{ section.containerStyles.buttonBorderColor || section.containerStyles.borderColor || '#000000' }};">
                           {{ section.calendarLabel || 'Add to calendar' }}
                         </a>
                         <if condition="section.eventLink">
-                          <a class="bd-mono" href="{{ section.eventLink }}" style="display:inline-block;color:#000000!important;-webkit-text-fill-color:#000000;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:underline;padding:11px 0 11px 14px;">
+                          <a class="bd-mono" href="{{ section.eventLink }}" style="display:inline-block;color:{{ section.containerStyles.secondaryLinkColor || section.containerStyles.textColor || section.contentStyles.color || '#000000' }}!important;-webkit-text-fill-color:{{ section.containerStyles.secondaryLinkColor || section.containerStyles.textColor || section.contentStyles.color || '#000000' }};font-family:'Courier New',Courier,monospace;font-size:12px;line-height:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:underline;padding:11px 0 11px 14px;">
                             {{ section.eventLabel || 'Event page' }}
                           </a>
                         </if>
