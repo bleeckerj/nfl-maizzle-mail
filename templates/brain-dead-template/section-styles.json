@@ -94,7 +94,7 @@
     },
     "calendar_event": {
       "containerStyles": {
-        "backgroundColor": "#fffdf4",
+        "backgroundColor": "#f9fcff",
         "textColor": "#000000",
         "borderColor": "#000000",
         "borderWidth": "2px",
