@@ -332,6 +332,7 @@
           "type": {
             "enum": [
               "ad-block",
+              "calendar_event",
               "adjacency-feature",
               "adjacency-job-posting",
               "aesthetically-pleasing",
@@ -475,6 +476,70 @@
                 }
               },
               "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "calendar_event"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": { "const": "calendar_event" },
+                "id": { "type": "string" },
+                "slug": { "type": "string" },
+                "eyebrow": { "type": "string" },
+                "title": { "type": "string" },
+                "subtitle": { "type": "string" },
+                "startsAt": { "type": "string" },
+                "start": { "type": "string" },
+                "date": { "type": "string" },
+                "endsAt": { "type": "string" },
+                "end": { "type": "string" },
+                "durationMinutes": { "type": "number" },
+                "duration": { "type": "number" },
+                "timezone": { "type": "string" },
+                "location": { "type": "string" },
+                "description": { "type": "string" },
+                "url": {},
+                "link": {},
+                "eventUrl": {},
+                "calendarLink": {},
+                "eventLink": {},
+                "displayDate": { "type": "string" },
+                "displayTime": { "type": "string" },
+                "displayWeekday": { "type": "string" },
+                "calendarLabel": { "type": "string" },
+                "eventLabel": { "type": "string" },
+                "containerStyles": {
+                  "type": ["object", "null"],
+                  "additionalProperties": true
+                },
+                "contentStyles": {
+                  "type": ["object", "null"],
+                  "additionalProperties": true
+                },
+                "linkStyles": {
+                  "type": ["object", "null"],
+                  "additionalProperties": true
+                },
+                "headingStyles": {
+                  "type": ["object", "null"],
+                  "additionalProperties": true
+                },
+                "labelStylesInline": {},
+                "headingStylesInline": {},
+                "linkStylesInline": {}
+              },
+              "additionalProperties": true
             }
           },
           {

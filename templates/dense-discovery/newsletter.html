@@ -613,6 +613,50 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
               <!-- SIGNALS FROM AN ADJACENT NOW End -->
             </if>
 
+
+            <if condition="section.type === 'calendar_event'">
+              <!-- CALENDAR EVENT Start -->
+              <tr>
+                <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+              </tr>
+              <tr>
+                <td style="border-collapse: collapse;padding: 0;">
+                  <table data-section="calendar_event" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;background: {{ section.containerStyles.backgroundColor || '#f7fbff' }};border: {{ section.containerStyles.borderWidth || '1px' }} {{ section.containerStyles.borderStyle || 'solid' }} {{ section.containerStyles.borderColor || '#c9cfdb' }};border-radius: {{ section.containerStyles.borderRadius || '0px' }};overflow: hidden;">
+                    <tbody>
+                      <tr>
+                        <td style="border-collapse: collapse;padding: {{ section.containerStyles.headerPadding || '18px 20px 12px 20px' }};border-bottom: {{ section.containerStyles.dividerWidth || section.containerStyles.borderWidth || '1px' }} solid {{ section.containerStyles.dividerColor || section.containerStyles.borderColor || '#d7dbe4' }};background: {{ section.containerStyles.backgroundColor || '#f7fbff' }};">
+                          <p class="mob-meta" style="margin: 0 0 8px 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 11px;line-height: 14px;font-weight: 700;letter-spacing: 0.12em;text-transform: uppercase;color: {{ section.containerStyles.eyebrowColor || section.containerStyles.textColor || section.contentStyles.color || '#566074' }};">{{ section.eyebrow || 'Calendar Event' }}</p>
+                          <h2 class="mob-text mob-title" style="margin: 0;padding: 0;font-family: 'Ubuntu', Arial, sans-serif;font-size: {{ section.containerStyles.headingFontSize || '28px' }};line-height: {{ section.containerStyles.headingLineHeight || '1.1' }};font-weight: {{ section.containerStyles.headingFontWeight || '700' }};color: {{ section.containerStyles.headingColor || section.containerStyles.textColor || '#111111' }};">{{ section.title }}</h2>
+                          <if condition="section.subtitle"><p class="mob-text" style="margin: 8px 0 0 0;padding: 0;font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }};font-size: 17px;line-height: 1.4;font-weight: 500;color: {{ section.containerStyles.textColor || section.contentStyles.color || '#111111' }};">{{ section.subtitle }}</p></if>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="border-collapse: collapse;padding: {{ section.containerStyles.bodyPadding || '18px 20px 20px 20px' }};background: {{ section.containerStyles.backgroundColor || '#f7fbff' }};">
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;">
+                            <tbody>
+                              <tr>
+                                <td class="bd-item-image-cell" valign="top" width="155" style="border-collapse: collapse;width:155px;padding: 0 22px 12px 0;">
+                                  <p class="mob-title" style="margin: 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 28px;line-height: 1.05;font-weight: 700;color: {{ section.containerStyles.dateColor || section.containerStyles.textColor || '#111111' }};">{{ section.displayDate }}</p>
+                                  <p class="mob-meta" style="margin: 6px 0 0 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 13px;line-height: 18px;font-weight: 700;color: {{ section.containerStyles.timeColor || section.containerStyles.textColor || '#111111' }};">{{ section.displayTime }}</p>
+                                  <if condition="section.location"><p class="mob-meta" style="margin: 2px 0 0 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 12px;line-height: 16px;color: {{ section.containerStyles.locationColor || section.containerStyles.textColor || '#566074' }};">{{ section.location }}</p></if>
+                                </td>
+                                <td valign="top" style="border-collapse: collapse;padding: 0;">
+                                  <if condition="section.description"><div class="mob-text" style="margin: 0 0 16px 0;padding: 0;font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }};font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '1.5' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.containerStyles.textColor || section.contentStyles.color || '#111111' }};">{{{ section.description }}}</div></if>
+                                  <a class="mob-meta" href="{{ section.calendarLink }}" style="display:inline-block;background:{{ section.containerStyles.buttonBackgroundColor || '#111111' }};color:{{ section.containerStyles.buttonTextColor || '#ffffff' }}!important;-webkit-text-fill-color:{{ section.containerStyles.buttonTextColor || '#ffffff' }};font-family:'Share Tech Mono','Courier New',Courier,monospace;font-size:12px;line-height:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:{{ section.containerStyles.buttonPadding || '11px 14px' }};border:{{ section.containerStyles.buttonBorderWidth || section.containerStyles.borderWidth || '1px' }} solid {{ section.containerStyles.buttonBorderColor || section.containerStyles.borderColor || '#111111' }};">{{ section.calendarLabel || 'Add to calendar' }}</a>
+                                  <if condition="section.eventLink"><a class="mob-meta" href="{{ section.eventLink }}" style="display:inline-block;color:{{ section.containerStyles.secondaryLinkColor || section.containerStyles.textColor || '#111111' }}!important;-webkit-text-fill-color:{{ section.containerStyles.secondaryLinkColor || section.containerStyles.textColor || '#111111' }};font-family:'Share Tech Mono','Courier New',Courier,monospace;font-size:12px;line-height:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:underline;padding:11px 0 11px 14px;">{{ section.eventLabel || 'Event page' }}</a></if>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <!-- CALENDAR EVENT End -->
+            </if>
+
             <if condition="section.type === 'adjacency-job-posting'">
               <!-- ADJACENCY JOB POSTING Start -->
               <tr>

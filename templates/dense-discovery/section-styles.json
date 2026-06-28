@@ -163,6 +163,54 @@
         "color": "#000000"
       }
     },
+    "calendar_event": {
+      "name": "Calendar Event",
+      "description": "Generated add-to-calendar card. The build writes an .ics file and injects calendarLink.",
+      "containerStyles": {
+        "backgroundColor": "#f7fbff",
+        "textColor": "#111111",
+        "borderColor": "#c9cfdb",
+        "borderWidth": "1px",
+        "borderStyle": "solid",
+        "dividerColor": "#d7dbe4",
+        "headerPadding": "18px 20px 12px 20px",
+        "bodyPadding": "18px 20px 20px 20px",
+        "buttonBackgroundColor": "#111111",
+        "buttonTextColor": "#ffffff",
+        "secondaryLinkColor": "#111111"
+      },
+      "contentStyles": {
+        "fontFamily": "'IBM Plex Sans', sans-serif",
+        "fontSize": "16px",
+        "lineHeight": "1.5",
+        "fontWeight": "400",
+        "color": "#111111"
+      },
+      "labelStyles": {
+        "fontFamily": "'Share Tech Mono', 'Courier New', Courier, monospace",
+        "fontSize": "11px",
+        "lineHeight": "14px",
+        "fontWeight": "700",
+        "letterSpacing": "0.12em",
+        "textTransform": "uppercase",
+        "color": "#566074"
+      },
+      "headingStyles": {
+        "fontFamily": "'Ubuntu', Arial, sans-serif",
+        "fontSize": "28px",
+        "lineHeight": "1.1",
+        "fontWeight": "700",
+        "color": "#111111"
+      },
+      "linkStyles": {
+        "fontFamily": "'Share Tech Mono', 'Courier New', Courier, monospace",
+        "fontSize": "12px",
+        "lineHeight": "15px",
+        "fontWeight": "700",
+        "textDecoration": "underline",
+        "color": "#111111"
+      }
+    },
     "dispatch": {
       "name": "Dispatch Section",
       "description": "Dispatch content sections with distinctive monospace font",

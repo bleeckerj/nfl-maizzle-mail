@@ -83,6 +83,53 @@
         "color": "#000"
       }
     },
+    "calendar_event": {
+      "name": "Calendar Event",
+      "description": "Generated add-to-calendar card. The build writes an .ics file and injects calendarLink.",
+      "containerStyles": {
+        "backgroundColor": "#f5f4f0",
+        "textColor": "#333333",
+        "borderColor": "#111111",
+        "borderWidth": "1px",
+        "borderStyle": "solid",
+        "dividerColor": "#dcdcdc",
+        "headerPadding": "18px 20px 10px 20px",
+        "bodyPadding": "16px 20px 18px 20px",
+        "buttonBackgroundColor": "#111111",
+        "buttonTextColor": "#ffffff",
+        "secondaryLinkColor": "#111111"
+      },
+      "contentStyles": {
+        "fontFamily": "Georgia, serif",
+        "fontSize": "16px",
+        "lineHeight": "22px",
+        "color": "#333333"
+      },
+      "labelStyles": {
+        "fontFamily": "Arial, sans-serif",
+        "fontSize": "11px",
+        "lineHeight": "16px",
+        "fontWeight": "700",
+        "letterSpacing": ".75px",
+        "textTransform": "uppercase",
+        "color": "#555555"
+      },
+      "headingStyles": {
+        "fontFamily": "Georgia, serif",
+        "fontSize": "24px",
+        "lineHeight": "28px",
+        "fontWeight": "700",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "fontFamily": "Arial, sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "1.2",
+        "fontWeight": "700",
+        "textDecoration": "underline",
+        "color": "#111111"
+      }
+    },
     "section_article_group": {
       "name": "Section Article Group",
       "description": "A named news section (e.g. Top News, World, U.S., Politics) with a bold section heading and 1–5 article cards, each with a thumbnail image, headline, and summary, all linked.",

@@ -216,6 +216,62 @@
           },
           {
             "type": "object",
+            "title": "Calendar Event",
+            "description": "Generated add-to-calendar card. The build writes an .ics file and injects calendarLink.",
+            "properties": {
+              "type": { "const": "calendar_event" },
+              "id": { "type": "string" },
+              "slug": { "type": "string" },
+              "eyebrow": { "type": "string" },
+              "title": { "type": "string" },
+              "subtitle": { "type": "string" },
+              "startsAt": { "type": "string" },
+              "start": { "type": "string" },
+              "date": { "type": "string" },
+              "endsAt": { "type": "string" },
+              "end": { "type": "string" },
+              "durationMinutes": { "type": "number" },
+              "duration": { "type": "number" },
+              "timezone": { "type": "string" },
+              "location": { "type": "string" },
+              "description": { "type": "string" },
+              "url": { "$ref": "#/definitions/trackedLink" },
+              "link": { "$ref": "#/definitions/trackedLink" },
+              "eventUrl": { "$ref": "#/definitions/trackedLink" },
+              "calendarLink": { "$ref": "#/definitions/trackedLink" },
+              "eventLink": { "$ref": "#/definitions/trackedLink" },
+              "displayDate": { "type": "string" },
+              "displayTime": { "type": "string" },
+              "displayWeekday": { "type": "string" },
+              "calendarLabel": { "type": "string" },
+              "eventLabel": { "type": "string" },
+              "containerStyles": {
+                "type": ["object", "null"],
+                "additionalProperties": true
+              },
+              "contentStyles": {
+                "type": ["object", "null"],
+                "additionalProperties": true
+              },
+              "linkStyles": {
+                "type": ["object", "null"],
+                "additionalProperties": true
+              },
+              "headingStyles": {
+                "type": ["object", "null"],
+                "additionalProperties": true
+              },
+              "labelStylesInline": { "type": "string" },
+              "headingStylesInline": { "type": "string" },
+              "linkStylesInline": { "type": "string" }
+            },
+            "required": [
+              "type"
+            ],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
             "title": "Section Article Group",
             "description": "A named news section (e.g. Top News, World, U.S., Politics) with a bold section heading and 1–5 article cards, each with a thumbnail image, headline, and summary, all linked.",
             "properties": {
