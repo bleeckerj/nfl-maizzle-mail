@@ -7,9 +7,9 @@ sectionStylesFile: templates/dense-discovery/section-styles.json
 colorTheme: winter
 intro:
   title: Dense Discovery Section Guide
-  content: <p>FPO source issue for rendering every dense-discovery section branch through the canonical Maizzle build.</p>
+  content: <p>This source issue renders every dense-discovery section branch through the canonical Maizzle build. The copy is intentionally FPO, but it is sized to show how each component handles real editorial rhythm, line wrapping, captions, links, and repeated content.</p>
 header:
-  quote: FPO header quote for the dense-discovery section guide.
+  quote: A guide should show the pressure a layout feels when the words become more than labels.
   author: Near Future Laboratory
   featuredArtist:
     name: FPO Featured Artist
@@ -32,7 +32,7 @@ sections:
   - title: Feature item title
     link: mailto:guide@example.com
     subtitle: Feature item subtitle
-    description: <p>Feature item description HTML.</p>
+    description: <p>Feature sections often need enough room for a compact sponsor note, announcement, or editorial aside. This FPO paragraph gives the card a realistic amount of body copy so spacing, link color, and image rhythm can be judged in the rendered email.</p>
     images:
     - src: https://fpoimg.com/800x600?text=Feature%20Image&bg_color=e6e8e5&text_color=44506a
       alt: Feature image alt text
@@ -48,7 +48,7 @@ sections:
   - title: Sponsor item title
     link: mailto:guide@example.com
     subtitle: Sponsor item subtitle
-    description: <p>Sponsor item description HTML.</p>
+    description: <p>This sponsor-style FPO copy uses a moderate paragraph length, close to what a paid placement or partner note might carry. It should reveal whether the title, subtitle, image, and CTA remain readable when the card contains more than a single sentence.</p>
     images:
     - src: https://fpoimg.com/800x600?text=Sponsor%20Image&bg_color=f8eccf&text_color=44506a
       alt: Sponsor image alt text
@@ -67,7 +67,7 @@ sections:
     - TAG TWO
     link: mailto:guide@example.com
     subtitle: Dispatch item subtitle
-    description: <p>Dispatch item description HTML.</p>
+    description: <p>A dispatch item usually carries a short reported setup; what happened, why it matters now, and what a reader should notice. This placeholder paragraph is long enough to test the section's image-to-copy balance without turning the card into a full essay.</p>
     image:
       src: https://fpoimg.com/800x600?text=Dispatch%20Image&bg_color=f8eccf&text_color=44506a
       alt: Dispatch image alt text
@@ -77,7 +77,7 @@ sections:
 - type: signals-adjacent-now
   title: Signals From An Adjacent Now Title
   signalsLabel: SIGNALS LABEL
-  description: <p>Signals section description HTML.</p>
+  description: <p>This FPO section introduction gives the signals block a brief editorial frame before the item content begins. It is meant to show how a section-level description reads above tags, title, image, source summary, story seeds, and strategy questions.</p>
   items:
   - title: Signal item title
     tags:
@@ -89,8 +89,8 @@ sections:
       src: https://fpoimg.com/800x600?text=Signal%20Image&bg_color=f8eccf&text_color=44506a
       alt: Signal image alt text
       caption: Signal image caption
-    description: <p>Signal item description HTML.</p>
-    sourceDigestSummary: <p>Source digest summary HTML.</p>
+    description: <p>The signal body should feel like a concise observation rather than a caption. This FPO copy names a pattern, gives it a little context, and leaves enough length for the template to demonstrate paragraph wrapping inside the colored section surface.</p>
+    sourceDigestSummary: <p>This FPO source summary compresses the relevant evidence into a smaller block. In production, this might summarize a linked article, paper, launch, policy note, or cultural artifact before the newsletter moves into interpretation.</p>
     storySeeds:
     - Story seed element one
     - Story seed element two
@@ -102,7 +102,7 @@ sections:
 - type: ad-block
   title: Ad Block Section Title
   show_bottom_rule: true
-  description: <p>Ad block section description HTML.</p>
+  description: <p>This optional FPO setup explains why the partner placement belongs in the issue. It is intentionally shorter than the ad body, but long enough to show how contextual copy sits above the hydrated ad card.</p>
   items:
   - adId: fashion-8bit-pants-interstitial
     link:
@@ -122,7 +122,7 @@ sections:
   durationMinutes: 60
   timezone: America/Los_Angeles
   location: Online
-  description: <p>Calendar event description HTML.</p>
+  description: <p>This FPO event description gives the calendar card enough copy to show the two-column date layout, button placement, and secondary event link. It should still read as a quick invitation rather than a full event page.</p>
   calendarLabel: Add calendar FPO
   calendarLink:
     href: mailto:guide@example.com
@@ -155,20 +155,20 @@ sections:
   applyLabel: Apply label element
   locationPickerUrl: mailto:guide@example.com
   locationPickerLabel: Location picker label element
-  summaryHtml: <p>Summary HTML element.</p>
-  descriptionHtml: <p>Description HTML element.</p>
+  summaryHtml: <p>This FPO job summary gives the role card a concise opening paragraph. It should describe the opportunity at a high level, establish the tone of the employer block, and leave the calls to action visible near the top.</p>
+  descriptionHtml: <p>The description area can carry a more substantial explanation of the work. This placeholder copy is long enough to test prose styling, divider spacing, and how the job card handles multiple content modules without overwhelming the header.</p>
   lists:
   - title: List title element
     itemsHtml:
-    - List item HTML element with <a href="mailto:guide@example.com">inline link</a>.
-  payRangeHtml: <p>Pay range HTML element.</p>
-  bodyHtml: <p>Additional body HTML element.</p>
+    - Lead a focused workstream, coordinate with a small cross-functional group, and maintain a clear record of decisions, tradeoffs, and open questions with an <a href="mailto:guide@example.com">inline link</a>.
+  payRangeHtml: <p>This FPO compensation note stands in for a salary band, equity note, benefits summary, or regional pay statement. The length tests the boxed compensation treatment.</p>
+  bodyHtml: <p>Additional FPO information can include hiring process notes, equal opportunity language, work authorization details, or context that does not fit cleanly into the summary or description modules.</p>
   originalSourceUrl: mailto:guide@example.com
   footerNotesHtml:
   - <p>Footer note HTML element.</p>
   footerCta:
     eyebrow: Footer CTA eyebrow element
-    textHtml: <p>Footer CTA text HTML element.</p>
+    textHtml: <p>This FPO footer CTA invites the reader to keep going after reviewing the job post. It should be long enough to show how the CTA box wraps before the primary and secondary actions.</p>
     primaryAction:
       url: mailto:guide@example.com
       label: Primary CTA label
@@ -186,7 +186,7 @@ sections:
     accentColor: "#fb436e"
   hero:
     headline: Hero headline element
-    dek: Hero dek element
+    dek: A short FPO dek that gives the launch card a little product-world texture before the image and product modules appear.
     image:
       src: https://fpoimg.com/800x600?text=Microdrop%20Hero&bg_color=fb436e&text_color=fff8f5
       alt: Microdrop hero image alt text
@@ -204,44 +204,44 @@ sections:
   protocol:
     eyebrow: Protocol eyebrow element
     heading: Protocol heading element
-    body: Protocol body element
+    body: This FPO protocol copy describes how the product is meant to be used, collected, or interpreted. It should read as a compact supporting paragraph inside the darker launch module.
     items:
     - label: Protocol item label
       value: Protocol item value
-      body: Protocol item body
+      body: A short FPO note that explains the protocol item without adding another full paragraph.
   finalCta:
     eyebrow: Final CTA eyebrow element
     heading: Final CTA heading element
-    body: Final CTA body element
+    body: This FPO final CTA body gives the section a closing beat, with enough text to test the spacing above the action button.
     href: mailto:guide@example.com
     label: Final CTA label
   editorialNote:
     eyebrow: Editorial note eyebrow element
     heading: Editorial note heading element
     body:
-    - Editorial note body paragraph element.
+    - This FPO editorial note gives the product launch section a quieter explanatory close. It should feel like context from the editor rather than marketing copy.
     notes:
     - label: Editorial note label
-      body: Editorial note body element
+      body: FPO note text that names a detail, source, or caveat associated with the launch.
 - type: adjacency-feature
   rubric: Rubric element
   title: Adjacency Feature Title
-  dek: Dek element for the adjacency feature.
+  dek: A measured FPO dek for a longer editorial feature, sized to show how the serif italic line wraps below the title.
   author: Author element
   dateLabel: Date label element
   tags:
   - Feature tag
   - Second tag
-  explainerHtml: <p>Explainer HTML element.</p>
+  explainerHtml: <p>This FPO explainer gives the feature a short orientation before the hero image. It should be enough copy to show the treatment for an opening note, thesis, or context paragraph.</p>
   heroImage:
     src: https://fpoimg.com/800x600?text=Feature%20Hero&bg_color=f5f4f0&text_color=374151
     alt: Feature hero image alt text
     caption: Feature hero caption element
     credit: Feature hero credit element
-  bodyHtml: <p>Body HTML element for an adjacency feature.</p>
+  bodyHtml: <p>This FPO feature body uses a longer paragraph to test the article-like reading surface inside the email. It should show how serif body copy, margins, and line length behave when the section carries a real editorial passage rather than a label.</p><p>A second paragraph gives the rendered guide a better sense of flow. In production, this space might carry analysis, scene-setting, or a compact argument that leads to the CTA at the bottom of the feature card.</p>
   footerCta:
     eyebrow: Footer CTA eyebrow element
-    textHtml: <p>Footer CTA text HTML element.</p>
+    textHtml: <p>This FPO footer callout gives the feature a related action after the article body. It should show how a supporting prompt wraps before the pair of CTA buttons.</p>
     primaryAction:
       url: mailto:guide@example.com
       label: Primary CTA label
@@ -256,7 +256,7 @@ sections:
   - title: Apps Sites item title
     link: mailto:guide@example.com
     subtitle: Apps Sites item subtitle
-    description: <p>Apps Sites item description HTML.</p>
+    description: <p>Apps and sites items usually need a brisk explanation of what the linked thing does and why it is worth a click. This FPO copy gives the two-column layout enough text to test title, subtitle, description, paywall marker, and CTA spacing.</p>
     image:
       src: https://fpoimg.com/800x600?text=Apps%20Image&bg_color=ffffff&text_color=44506a
       alt: Apps Sites image alt text
@@ -266,12 +266,12 @@ sections:
     paywall: true
 - type: apps-sites-single-column
   title: Apps Sites Single Column Section Title
-  description: <p>Apps Sites Single Column section description HTML.</p>
+  description: <p>This FPO section-level description introduces the single-column apps/sites variant. It is sized to show how introductory copy sits between the section header and the first full-width item.</p>
   items:
   - title: Apps Sites Single Column item title
     link: mailto:guide@example.com
     subtitle: Apps Sites Single Column item subtitle
-    description: <p>Apps Sites Single Column item description HTML.</p>
+    description: <p>The single-column item has more horizontal space, so this FPO description is slightly longer. It should show how the full-width image, subtitle, body copy, and CTA stack in a mobile-friendly email layout.</p>
     image:
       src: https://fpoimg.com/800x600?text=Single%20Column%20Image&bg_color=ffffff&text_color=44506a
       alt: Apps Sites Single Column image alt text
@@ -281,7 +281,7 @@ sections:
 - type: callout
   title: Callout Section Title
   items:
-  - calloutText: Callout text element.
+  - calloutText: This FPO callout text is deliberately a little emphatic and self-contained. It should show how a highlighted idea, prompt, or editorial aside reads when it occupies the large padded text area below an optional image.
     image:
       src: https://fpoimg.com/800x600?text=Callout%20Image&bg_color=d1eaf4&text_color=44506a
       alt: Callout image alt text
@@ -293,7 +293,7 @@ sections:
 - type: quote
   title: Quote Section Title
   items:
-  - quote: Quote text element.
+  - quote: This FPO quote has enough length to test the blockquote line breaks, left rule, and author attribution without becoming a wall of text.
     author: Quote author element
     authorLink: mailto:guide@example.com
 - type: indie-mag
@@ -301,9 +301,9 @@ sections:
   items:
   - title: Indie Mag item title
     link: mailto:guide@example.com
-    description: <p>Indie Mag item description HTML.</p>
-    details: <p>Details HTML element.</p>
-    note: <p>Note HTML element.</p>
+    description: <p>This FPO indie-mag description gives the cover image and text column a realistic relationship. It should read like a compact magazine blurb with enough lines to test the two-column layout.</p>
+    details: <p>Issue details, format, region, frequency, or ordering notes can live here.</p>
+    note: <p>This FPO note adds a small editorial aside, useful for testing italic secondary text.</p>
     image:
       src: https://fpoimg.com/800x1000?text=Indie%20Cover&bg_color=efe2f3&text_color=44506a
       alt: Indie Mag image alt text
@@ -314,9 +314,9 @@ sections:
   - title: Indie Mag Single Column item title
     link: mailto:guide@example.com
     subtitle: Indie Mag Single Column subtitle
-    description: <p>Indie Mag Single Column description HTML.</p>
-    details: <p>Details HTML element.</p>
-    note: <p>Note HTML element.</p>
+    description: <p>This FPO single-column magazine copy can be a little more expansive because the layout gives the image and prose separate vertical space. It should show how a stacked editorial item handles a full paragraph before details, note, and CTA.</p>
+    details: <p>FPO details might include publisher, format, page count, release cadence, or availability.</p>
+    note: <p>This FPO note gives the section a secondary voice after the primary description.</p>
     images:
     - src: https://fpoimg.com/800x600?text=Image%20One&bg_color=efe2f3&text_color=44506a
       alt: Indie Mag Single Column image one alt text
@@ -336,7 +336,7 @@ sections:
   - title: Books Accessories item title
     link: mailto:guide@example.com
     subtitle: Books Accessories subtitle
-    description: <p>Books Accessories description HTML.</p>
+    description: <p>This FPO books/accessories description gives the product or publication enough context to feel like a recommendation. It should test the full-width image, author metadata, ISBN line, body copy, and link text as a complete item.</p>
     images:
     - src: https://fpoimg.com/800x600?text=Book%20Image&bg_color=ffffff&text_color=44506a
       alt: Books Accessories image alt text
@@ -352,7 +352,7 @@ sections:
   items:
   - title: Food For Thought item title
     link: mailto:guide@example.com
-    description: <p>Food For Thought description HTML.</p>
+    description: <p>Food for Thought items often carry a conversational summary, a source note, or a reason the item belongs in a channel. This FPO paragraph is sized to test the metadata stack, image, title, body copy, primary CTA, and extra CTA rows.</p>
     image:
       src: https://fpoimg.com/800x600?text=Food%20Image&bg_color=f2f2f2&text_color=44506a
       alt: Food For Thought image alt text
@@ -372,7 +372,7 @@ sections:
     paywall: true
 - type: aesthetically-pleasing
   title: Aesthetically Pleasing Section Title
-  description: <p>Aesthetically Pleasing section description HTML.</p>
+  description: <p>This FPO section description introduces the visual item with a short curatorial note. It should show whether the header, intro, image, and item copy have enough breathing room.</p>
   items:
   - image:
       src: https://fpoimg.com/800x600?text=Aesthetic%20Image&bg_color=f6eadf&text_color=44506a
@@ -381,15 +381,15 @@ sections:
     title: Aesthetically Pleasing item title
     imageLink: mailto:guide@example.com
     link: mailto:guide@example.com
-    description: <p>Aesthetically Pleasing item description HTML.</p>
+    description: <p>This FPO item description gives the image a little interpretive context, close to what a visual recommendation or design note might contain. The length is meant to test the centered image treatment and supporting body copy.</p>
     readMoreText: Aesthetically Pleasing read more
 - type: classifieds
   title: Classifieds Section Title
-  description: <p>Classifieds section description HTML.</p>
+  description: <p>This FPO classifieds introduction gives readers a short setup before the listings. It should be enough text to show the section-level body style without distracting from the individual classified card.</p>
   bookingLink: mailto:guide@example.com
   bookingText: Booking text element
   items:
-  - content: <p>Classified content HTML element.</p>
+  - content: <p>This FPO classified has enough copy to resemble a real short listing; a project, offer, opening, or request with a clear next step. It should show how the boxed content, title, image grid, and link work together.</p>
     title: Classified item title
     link: mailto:guide@example.com
     linkText: Classified link text
@@ -409,7 +409,7 @@ sections:
       alt: Animated image alt text
       caption: Animated image caption
     title: Animated image item title
-    description: <p>Animated Image description HTML.</p>
+    description: <p>This FPO image caption-body gives the animated image section a brief note below the media. It is short enough to keep the image dominant while still testing text wrapping.</p>
     link: mailto:guide@example.com
 - type: image
   title: Image Section Title
@@ -419,7 +419,7 @@ sections:
       alt: Image alias alt text
       caption: Image alias caption
     title: Image alias item title
-    description: <p>Image alias description HTML.</p>
+    description: <p>This FPO image alias description confirms that the plain image section renders through the same branch as animated-image, with enough text to show the final spacing below the media.</p>
     link: mailto:guide@example.com
 footer:
   shareUrl: mailto:guide@example.com
