@@ -14,9 +14,9 @@ header:
   featuredArtist:
     name: FPO Featured Artist
     link: mailto:guide@example.com
-  featuredImage: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23e6e8e5'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%2344506a'%3EFPO header image%3C/text%3E%3C/svg%3E"
-  logoBottom: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='326' height='80'%3E%3Crect width='100%25' height='100%25' fill='%23111111'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%23ffffff'%3ENFL%3C/text%3E%3C/svg%3E"
-  logoTop: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='326' height='80'%3E%3Crect width='100%25' height='100%25' fill='%23111111'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='24' fill='%23ffffff'%3ENFL%3C/text%3E%3C/svg%3E"
+  featuredImage: https://fpoimg.com/800x600?text=FPO%20Header&bg_color=e6e8e5&text_color=44506a
+  logoBottom: https://fpoimg.com/326x80?text=NFL%20Logo&bg_color=111111&text_color=ffffff
+  logoTop: https://fpoimg.com/326x80?text=NFL%20Logo&bg_color=111111&text_color=ffffff
   logoLink: mailto:guide@example.com
 sections:
 - type: feature
@@ -34,7 +34,7 @@ sections:
     subtitle: Feature item subtitle
     description: <p>Feature item description HTML.</p>
     images:
-    - src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23e6e8e5'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%2344506a'%3Efeature image%3C/text%3E%3C/svg%3E"
+    - src: https://fpoimg.com/800x600?text=Feature%20Image&bg_color=e6e8e5&text_color=44506a
       alt: Feature image alt text
       link: mailto:guide@example.com
       caption: Feature image caption
@@ -50,7 +50,7 @@ sections:
     subtitle: Sponsor item subtitle
     description: <p>Sponsor item description HTML.</p>
     images:
-    - src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23f8eccf'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%2344506a'%3Esponsor image%3C/text%3E%3C/svg%3E"
+    - src: https://fpoimg.com/800x600?text=Sponsor%20Image&bg_color=f8eccf&text_color=44506a
       alt: Sponsor image alt text
     readMoreText: Sponsor read more
     readMoreLink: mailto:guide@example.com
@@ -69,7 +69,7 @@ sections:
     subtitle: Dispatch item subtitle
     description: <p>Dispatch item description HTML.</p>
     image:
-      src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23f8eccf'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%2344506a'%3Edispatch image%3C/text%3E%3C/svg%3E"
+      src: https://fpoimg.com/800x600?text=Dispatch%20Image&bg_color=f8eccf&text_color=44506a
       alt: Dispatch image alt text
       caption: Dispatch image caption
     readMoreText: Dispatch read more
@@ -86,7 +86,7 @@ sections:
     link: mailto:guide@example.com
     subtitle: Signal item subtitle
     image:
-      src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23f8eccf'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%2344506a'%3Esignal image%3C/text%3E%3C/svg%3E"
+      src: https://fpoimg.com/800x600?text=Signal%20Image&bg_color=f8eccf&text_color=44506a
       alt: Signal image alt text
       caption: Signal image caption
     description: <p>Signal item description HTML.</p>
@@ -136,7 +136,7 @@ sections:
 - type: adjacency-job-posting
   brandVariant: openai
   companyIcon:
-    src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='112' height='112'%3E%3Crect width='100%25' height='100%25' fill='%23111111'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='22' fill='%23ffffff'%3EJOB%3C/text%3E%3C/svg%3E"
+    src: https://fpoimg.com/112x112?text=JOB&bg_color=111111&text_color=ffffff
     alt: Company icon alt text
   company: Company Name Element
   companyTagline: Company tagline element
@@ -188,7 +188,7 @@ sections:
     headline: Hero headline element
     dek: Hero dek element
     image:
-      src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23fb436e'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%23fff8f5'%3Emicrodrop hero%3C/text%3E%3C/svg%3E"
+      src: https://fpoimg.com/800x600?text=Microdrop%20Hero&bg_color=fb436e&text_color=fff8f5
       alt: Microdrop hero image alt text
   products:
   - badge: Product badge element
@@ -199,7 +199,7 @@ sections:
     descriptionText: Product description text element
     color: "#fb436e"
     image:
-      src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23fff8f5'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='%23fb436e'%3Eproduct%3C/text%3E%3C/svg%3E"
+      src: https://fpoimg.com/400x400?text=Product&bg_color=fff8f5&text_color=fb436e
       alt: Product image alt text
   protocol:
     eyebrow: Protocol eyebrow element
@@ -234,7 +234,7 @@ sections:
   - Second tag
   explainerHtml: <p>Explainer HTML element.</p>
   heroImage:
-    src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23f5f4f0'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%23374151'%3Efeature hero%3C/text%3E%3C/svg%3E"
+    src: https://fpoimg.com/800x600?text=Feature%20Hero&bg_color=f5f4f0&text_color=374151
     alt: Feature hero image alt text
     caption: Feature hero caption element
     credit: Feature hero credit element
@@ -258,7 +258,7 @@ sections:
     subtitle: Apps Sites item subtitle
     description: <p>Apps Sites item description HTML.</p>
     image:
-      src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23ffffff'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%2344506a'%3Eapps image%3C/text%3E%3C/svg%3E"
+      src: https://fpoimg.com/800x600?text=Apps%20Image&bg_color=ffffff&text_color=44506a
       alt: Apps Sites image alt text
       caption: Apps Sites image caption
     readMoreText: Apps Sites read more
@@ -273,7 +273,7 @@ sections:
     subtitle: Apps Sites Single Column item subtitle
     description: <p>Apps Sites Single Column item description HTML.</p>
     image:
-      src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23ffffff'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%2344506a'%3Esingle column image%3C/text%3E%3C/svg%3E"
+      src: https://fpoimg.com/800x600?text=Single%20Column%20Image&bg_color=ffffff&text_color=44506a
       alt: Apps Sites Single Column image alt text
       caption: Apps Sites Single Column image caption
     readMoreText: Single Column read more
@@ -283,7 +283,7 @@ sections:
   items:
   - calloutText: Callout text element.
     image:
-      src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23d1eaf4'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%2344506a'%3Ecallout image%3C/text%3E%3C/svg%3E"
+      src: https://fpoimg.com/800x600?text=Callout%20Image&bg_color=d1eaf4&text_color=44506a
       alt: Callout image alt text
       link: mailto:guide@example.com
       caption: Callout image caption
@@ -305,7 +305,7 @@ sections:
     details: <p>Details HTML element.</p>
     note: <p>Note HTML element.</p>
     image:
-      src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='1000'%3E%3Crect width='100%25' height='100%25' fill='%23efe2f3'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%2344506a'%3Eindie cover%3C/text%3E%3C/svg%3E"
+      src: https://fpoimg.com/800x1000?text=Indie%20Cover&bg_color=efe2f3&text_color=44506a
       alt: Indie Mag image alt text
       caption: Indie Mag image caption
 - type: indie-mag-single-column
@@ -318,11 +318,11 @@ sections:
     details: <p>Details HTML element.</p>
     note: <p>Note HTML element.</p>
     images:
-    - src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23efe2f3'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%2344506a'%3Eimage one%3C/text%3E%3C/svg%3E"
+    - src: https://fpoimg.com/800x600?text=Image%20One&bg_color=efe2f3&text_color=44506a
       alt: Indie Mag Single Column image one alt text
       link: mailto:guide@example.com
       caption: Image one caption
-    - src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23f5f5f5'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%2344506a'%3Eimage two%3C/text%3E%3C/svg%3E"
+    - src: https://fpoimg.com/800x600?text=Image%20Two&bg_color=f5f5f5&text_color=44506a
       alt: Indie Mag Single Column image two alt text
     readMoreText: Indie Mag Single Column read more
     readMoreLink: mailto:guide@example.com
@@ -338,7 +338,7 @@ sections:
     subtitle: Books Accessories subtitle
     description: <p>Books Accessories description HTML.</p>
     images:
-    - src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23ffffff'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%2344506a'%3Ebook image%3C/text%3E%3C/svg%3E"
+    - src: https://fpoimg.com/800x600?text=Book%20Image&bg_color=ffffff&text_color=44506a
       alt: Books Accessories image alt text
       link: mailto:guide@example.com
       caption: Books Accessories image caption
@@ -354,7 +354,7 @@ sections:
     link: mailto:guide@example.com
     description: <p>Food For Thought description HTML.</p>
     image:
-      src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23f2f2f2'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%2344506a'%3Efood image%3C/text%3E%3C/svg%3E"
+      src: https://fpoimg.com/800x600?text=Food%20Image&bg_color=f2f2f2&text_color=44506a
       alt: Food For Thought image alt text
       caption: Food For Thought image caption
     channel: Channel element
@@ -375,7 +375,7 @@ sections:
   description: <p>Aesthetically Pleasing section description HTML.</p>
   items:
   - image:
-      src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23f6eadf'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%2344506a'%3Eaesthetic image%3C/text%3E%3C/svg%3E"
+      src: https://fpoimg.com/800x600?text=Aesthetic%20Image&bg_color=f6eadf&text_color=44506a
       alt: Aesthetically Pleasing image alt text
       caption: Aesthetically Pleasing image caption
     title: Aesthetically Pleasing item title
@@ -394,18 +394,18 @@ sections:
     link: mailto:guide@example.com
     linkText: Classified link text
     images:
-    - src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23def1ef'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='%2344506a'%3Eclassified one%3C/text%3E%3C/svg%3E"
+    - src: https://fpoimg.com/600x400?text=Classified%20One&bg_color=def1ef&text_color=44506a
       alt: Classified image one alt text
       caption: Classified image one caption
-    - src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23def1ef'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='%2344506a'%3Eclassified two%3C/text%3E%3C/svg%3E"
+    - src: https://fpoimg.com/600x400?text=Classified%20Two&bg_color=def1ef&text_color=44506a
       alt: Classified image two alt text
-    - src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400'%3E%3Crect width='100%25' height='100%25' fill='%23def1ef'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='32' fill='%2344506a'%3Eclassified three%3C/text%3E%3C/svg%3E"
+    - src: https://fpoimg.com/600x400?text=Classified%20Three&bg_color=def1ef&text_color=44506a
       alt: Classified image three alt text
 - type: animated-image
   title: Animated Image Section Title
   items:
   - image:
-      src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23fafafa'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%2344506a'%3Eanimated image%3C/text%3E%3C/svg%3E"
+      src: https://fpoimg.com/800x600?text=Animated%20Image&bg_color=fafafa&text_color=44506a
       alt: Animated image alt text
       caption: Animated image caption
     title: Animated image item title
@@ -415,7 +415,7 @@ sections:
   title: Image Section Title
   items:
   - image:
-      src: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23fafafa'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='42' fill='%2344506a'%3Eimage alias%3C/text%3E%3C/svg%3E"
+      src: https://fpoimg.com/800x600?text=Image%20Alias&bg_color=fafafa&text_color=44506a
       alt: Image alias alt text
       caption: Image alias caption
     title: Image alias item title
@@ -446,7 +446,7 @@ footer:
     href: mailto:guide@example.com
     label: dense-discovery-section-guide | about
     category: site-nav
-  logo: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='80'%3E%3Crect width='100%25' height='100%25' fill='%23111111'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='20' fill='%23ffffff'%3ENFL%3C/text%3E%3C/svg%3E"
+  logo: https://fpoimg.com/200x80?text=NFL%20Logo&bg_color=111111&text_color=ffffff
   logoLink:
     href: mailto:guide@example.com
     label: dense-discovery-section-guide | home
