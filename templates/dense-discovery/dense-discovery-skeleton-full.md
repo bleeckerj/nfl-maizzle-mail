@@ -36,7 +36,6 @@ sectionStylesFile: templates/dense-discovery/section-styles.json
 colorTheme: 'winter'
 intro:
   title: Welcome
-  viewOnlineLink: https://nearfuturelaboratory.com/newsletters/2026/wxx-yxx
   aside:
     content: <p>Teaser/lede text that sets up the intro content.</p>
     containerStyles:
@@ -333,52 +332,114 @@ sections:
     link: https://example.com
 footer:
   emailShare: mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2026/w50-y25/
-  newsletterSubscribeLink: https://nearfuturelaboratory.com/newsletter/
+  newsletterSubscribeLink:
+    href: https://nearfuturelaboratory.com/newsletter/
+    label: wXX-yYY | newsletter subscribe | Near Future Laboratory
+    category: subscribe
+    intent: subscribe
   footerCta:
     variant: default
   aboutLabel: About Julian Bleecker
-  aboutUrl: https://julianbleecker.com/
+  aboutUrl:
+    href: https://julianbleecker.com/
+    label: wXX-yYY | about | Julian Bleecker
+    category: site-nav
   logo: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=200?format=webp
-  logoLink: https://nearfuturelaboratory.com
+  logoLink:
+    href: https://nearfuturelaboratory.com
+    label: wXX-yYY | home | Near Future Laboratory
+    category: site-nav
   socialLinks:
     applepodcasts:
-    - url: https://podcasts.apple.com/us/podcast/near-future-laboratory-podcast/id1546452193
+    - url:
+        href: https://podcasts.apple.com/us/podcast/near-future-laboratory-podcast/id1546452193
+        label: wXX-yYY | podcast | Apple Podcasts | Near Future Laboratory
+        category: podcast
+        intent: subscribe
       title: Near Future Laboratory on Apple Podcasts
     spotify:
-    - url: https://open.spotify.com/show/1vHzwGE5J19LvXSo8M93MM
+    - url:
+        href: https://open.spotify.com/show/1vHzwGE5J19LvXSo8M93MM
+        label: wXX-yYY | podcast | Spotify | Near Future Laboratory
+        category: podcast
+        intent: subscribe
       title: Near Future Laboratory on Spotify
     github:
-    - url: https://github.com/bleeckerj
+    - url:
+        href: https://github.com/bleeckerj
+        label: wXX-yYY | social | Personal GitHub
+        category: social
       title: Personal GitHub
-    - url: https://github.com/nearfuturelaboratory
+    - url:
+        href: https://github.com/nearfuturelaboratory
+        label: wXX-yYY | social | Near Future Laboratory GitHub
+        category: social
       title: Near Future Laboratory GitHub
-    - url: https://github.com/nearfuturelaboratory
+    - url:
+        href: https://github.com/nearfuturelaboratory
+        label: wXX-yYY | social | Near Future Laboratory GitHub
+        category: social
       title: Near Future Laboratory GitHub
     instagram:
-    - url: https://instagram.com/darthjulian
+    - url:
+        href: https://instagram.com/darthjulian
+        label: wXX-yYY | social | Personal Instagram
+        category: social
       title: Personal Instagram
-    - url: https://instagram.com/nearfuturelaboratory
+    - url:
+        href: https://instagram.com/nearfuturelaboratory
+        label: wXX-yYY | social | Company Instagram
+        category: social
       title: Company Instagram
     linkedin:
-    - url: https://linkedin.com/in/julianbleecker
+    - url:
+        href: https://linkedin.com/in/julianbleecker
+        label: wXX-yYY | social | Personal LinkedIn
+        category: social
       title: Personal LinkedIn
-    - url: https://www.linkedin.com/company/near-future-laboratory/
+    - url:
+        href: https://www.linkedin.com/company/near-future-laboratory/
+        label: wXX-yYY | social | Near Future Laboratory LinkedIn
+        category: social
       title: Near Future Laboratory LinkedIn
     youtube:
-    - url: https://youtube.com/@nearfuturelaboratory
+    - url:
+        href: https://youtube.com/@nearfuturelaboratory
+        label: wXX-yYY | social | YouTube Channel
+        category: social
       title: YouTube Channel
     discord:
-    - url: https://patreon.com/nearfuturelaboratory
+    - url:
+        href: https://patreon.com/nearfuturelaboratory
+        label: wXX-yYY | community | Patreon | Near Future Laboratory
+        category: community
+        intent: support-work
       title: Join Patreon to join the Discord Community
     patreon:
-    - url: https://patreon.com/nearfuturelaboratory
+    - url:
+        href: https://patreon.com/nearfuturelaboratory
+        label: wXX-yYY | community | Patreon | Near Future Laboratory
+        category: community
+        intent: support-work
       title: Support me on Patreon
     substack:
-    - url: https://newsletter.substack.com
+    - url:
+        href: https://newsletter.substack.com
+        label: wXX-yYY | newsletter subscribe | Substack
+        category: subscribe
+        intent: subscribe
       title: Newsletter on Substack
   unsubscribeLink: '[unsubscribe]'
-  shareUrl: https://nearfuturelaboratory.com/newsletters/2026/w50-y25
-  archiveUrl: https://nearfuturelaboratory.com/newsletters
+  shareUrl:
+    href: https://nearfuturelaboratory.com/newsletters/2026/wXX-yYY
+    label: wXX-yYY | view online
+    category: issue-nav
+    intent: read-related
+  archiveUrl:
+    href: https://nearfuturelaboratory.com/newsletters
+    label: wXX-yYY | newsletter archive
+    category: issue-nav
+    intent: read-related
   address: © 2026 Near Future Laboratory<br>Venice Beach, California<br>United States
   colophon: Imagination is not a luxury. It’s an early-warning system for possibility.
 ---

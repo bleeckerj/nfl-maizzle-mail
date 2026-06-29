@@ -180,6 +180,91 @@ test('enriches rendered anchors with manifest label and category', () => {
   assert.match(html, /data-link-category="food-for-thought"/);
 });
 
+test('normalizes boilerplate footer tracking metadata without default notices or conflicts', () => {
+  const newsletterData = {
+    title: 'Footer Boilerplate Tracking Test',
+    footer: {
+      newsletterSubscribeLink: {
+        href: 'https://nearfuturelaboratory.com/newsletter/',
+        label: 'w27-y26 | newsletter subscribe | Near Future Laboratory',
+        category: 'subscribe',
+        intent: 'subscribe',
+      },
+      aboutUrl: {
+        href: 'https://julianbleecker.com/',
+        label: 'w27-y26 | about | Julian Bleecker',
+        category: 'site-nav',
+      },
+      logoLink: {
+        href: 'https://nearfuturelaboratory.com',
+        label: 'w27-y26 | home | Near Future Laboratory',
+        category: 'site-nav',
+      },
+      socialLinks: {
+        applepodcasts: [
+          {
+            url: {
+              href: 'https://podcasts.apple.com/us/podcast/near-future-laboratory-podcast/id1546452193',
+              label: 'w27-y26 | podcast | Apple Podcasts | Near Future Laboratory',
+              category: 'podcast',
+              intent: 'subscribe',
+            },
+            title: 'Near Future Laboratory on Apple Podcasts',
+          },
+        ],
+        discord: [
+          {
+            url: {
+              href: 'https://patreon.com/nearfuturelaboratory',
+              label: 'w27-y26 | community | Patreon | Near Future Laboratory',
+              category: 'community',
+              intent: 'support-work',
+            },
+            title: 'Join Patreon to join the Discord Community',
+          },
+        ],
+        patreon: [
+          {
+            url: {
+              href: 'https://patreon.com/nearfuturelaboratory',
+              label: 'w27-y26 | community | Patreon | Near Future Laboratory',
+              category: 'community',
+              intent: 'support-work',
+            },
+            title: 'Support me on Patreon',
+          },
+        ],
+      },
+      shareUrl: {
+        href: 'https://nearfuturelaboratory.com/newsletters/2026/w27-y26',
+        label: 'w27-y26 | view online',
+        category: 'issue-nav',
+        intent: 'read-related',
+      },
+      archiveUrl: {
+        href: 'https://nearfuturelaboratory.com/newsletters',
+        label: 'w27-y26 | newsletter archive',
+        category: 'issue-nav',
+        intent: 'read-related',
+      },
+    },
+    sections: [],
+  };
+
+  const result = normalizeNewsletterLinkTracking(newsletterData);
+
+  assert.equal(result.defaultWarnings.length, 0);
+  assert.equal(result.conflictWarnings.length, 0);
+  assert.equal(newsletterData.footer.shareUrl, 'https://nearfuturelaboratory.com/newsletters/2026/w27-y26');
+  assert.equal(newsletterData.footer.newsletterSubscribeLink, 'https://nearfuturelaboratory.com/newsletter/');
+  assert.equal(
+    newsletterData.footer.socialLinks.discord[0].url,
+    newsletterData.footer.socialLinks.patreon[0].url,
+  );
+  assert.equal(result.manifest.get('https://patreon.com/nearfuturelaboratory').category, 'community');
+  assert.equal(result.manifest.get('https://patreon.com/nearfuturelaboratory').intent, 'support-work');
+});
+
 test('enriches rendered anchors with semantic interest and intent', () => {
   const newsletterData = {
     title: 'Tracking Test',
