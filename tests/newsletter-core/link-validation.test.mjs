@@ -234,6 +234,9 @@ test('validateLinks warns instead of failing on transient request timeouts', asy
 
 test('validateLinks warns instead of failing on build-owned newsletter archive URLs before publication', async () => {
   const newsletterData = {
+    footer: {
+      shareUrl: 'https://nearfuturelaboratory.com/newsletters/2026/w27-y26/',
+    },
     sections: [
       {
         type: 'newsletter_masthead',
@@ -248,8 +251,9 @@ test('validateLinks warns instead of failing on build-owned newsletter archive U
   });
 
   assert.equal(result.errors.length, 0);
-  assert.equal(result.warnings.length, 1);
+  assert.equal(result.warnings.length, 2);
   assert.match(result.warnings[0], /HTTP 404/);
+  assert.match(result.warnings[1], /HTTP 404/);
 });
 
 test('validateRenderedHtmlLinks fails send preflight on broken rendered anchors', async () => {
