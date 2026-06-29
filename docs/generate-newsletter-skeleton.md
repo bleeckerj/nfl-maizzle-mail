@@ -18,7 +18,7 @@ python scripts/generate-newsletter-skeleton.py [--minimal] [--output FILE] [--se
 - `--output`, `-o FILE`  
   Destination filename. Defaults to `newsletter-skeleton.md` in the current directory. Accepts relative or absolute paths.
 - `--sections TYPE [TYPE ...]`  
-  Limit output to specific section types. Valid types match the newsletter template: `sponsor`, `dispatch`, `apps-sites`, `apps-sites-single-column`, `quote`, `indie-mag`, `indie-mag-single-column`, `books-accessories`, `food-for-thought`, `aesthetically-pleasing`, `classifieds`, `animated-image`.
+  Limit output to specific section types. Valid types match the newsletter template: `feature`, `dispatch`, `apps-sites`, `apps-sites-single-column`, `quote`, `indie-mag`, `indie-mag-single-column`, `books-accessories`, `food-for-thought`, `aesthetically-pleasing`, `classifieds`, `animated-image`. The legacy `sponsor` alias is still accepted for older workflows.
 - `--list-sections`  
   Print all available section types with their required/optional fields and exit.
 
@@ -42,9 +42,9 @@ Minimal skeleton (fewer sample items/fields) to `drafts/w50.md`:
 python scripts/generate-newsletter-skeleton.py --minimal --output drafts/w50.md
 ```
 
-Only “food-for-thought” and “sponsor” sections:
+Only “food-for-thought” and “feature” sections:
 ```bash
-python scripts/generate-newsletter-skeleton.py --sections food-for-thought sponsor --output focused.md
+python scripts/generate-newsletter-skeleton.py --sections food-for-thought feature --output focused.md
 ```
 
 See available section types and fields:

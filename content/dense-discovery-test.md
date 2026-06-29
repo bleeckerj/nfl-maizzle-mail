@@ -24,10 +24,10 @@ intro:
   viewOnlineLink: "https://nearfuturelaboratory.com/newsletters/2025/w42y25"
 
 sections:
-  - type: "sponsor"
+  - type: "feature"
     title: "Sascha Pohflepp's Blind Camera"
-    sponsorLabel: "ARCHIVES"
-    sponsorLink: "https://example.com/sponsor"
+    featureLabel: "ARCHIVES"
+    featureLink: "https://example.com/sponsor"
     items:
       - title: "Blind Camera"
         subtitle: "The collaborative design platform teams love"

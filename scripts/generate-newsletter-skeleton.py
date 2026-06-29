@@ -32,9 +32,9 @@ SECTION_DEFINITIONS = {
         },
         'example_items': 1
     },
-    'sponsor': {
-        'description': 'Sponsored content section',
-        'section_fields': ['type', 'title', 'sponsorLink', 'sponsorLabel'],
+    'feature': {
+        'description': 'Featured content section',
+        'section_fields': ['type', 'title', 'featureLink', 'featureLabel'],
         'item_fields': {
             'required': ['title'],
             'optional': ['link', 'subtitle', 'description', 'image', 'images', 'readMoreText', 'readMoreLink']
@@ -160,10 +160,18 @@ SECTION_DEFINITIONS = {
     }
 }
 
+SECTION_ALIASES = {
+    'sponsor': 'feature',
+}
+
+
+def get_section_definition(section_type):
+    return SECTION_DEFINITIONS[SECTION_ALIASES.get(section_type, section_type)]
+
 
 def generate_example_item(section_type, item_num=1, minimal=False):
     """Generate an example item for a given section type."""
-    definition = SECTION_DEFINITIONS[section_type]
+    definition = get_section_definition(section_type)
     item = {}
     
     # Add required fields
@@ -285,7 +293,7 @@ def generate_example_item(section_type, item_num=1, minimal=False):
 
 def generate_section(section_type, minimal=False):
     """Generate an example section of the given type."""
-    definition = SECTION_DEFINITIONS[section_type]
+    definition = get_section_definition(section_type)
     section = {'type': section_type}
     
     # Add section-level fields
@@ -455,7 +463,7 @@ def main():
     parser.add_argument(
         '--sections',
         nargs='+',
-        choices=list(SECTION_DEFINITIONS.keys()),
+        choices=list(SECTION_DEFINITIONS.keys()) + list(SECTION_ALIASES.keys()),
         help='Only include specific section types'
     )
     parser.add_argument(
@@ -475,6 +483,10 @@ def main():
             print(f"    Required fields: {', '.join(definition['item_fields']['required'])}")
             print(f"    Optional fields: {', '.join(definition['item_fields']['optional'])}")
             print()
+        print("Deprecated aliases still accepted in --sections:")
+        for alias, target in SECTION_ALIASES.items():
+            print(f"  {alias} -> {target}")
+        print()
         return
     
     # Generate the skeleton

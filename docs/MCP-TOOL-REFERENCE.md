@@ -102,7 +102,7 @@ List all templates installed under `templates/` with each template's component p
     { "name": "dense-discovery", "dir": "templates/dense-discovery", "hasReport": false,
       "hasAuthoringGuide": false,
       "palette": [
-        { "type": "sponsor", "displayName": "Sponsor Section" },
+        { "type": "feature", "displayName": "Feature Section" },
         { "type": "dispatch", "displayName": "Dispatch Section" }
       ] },
     { "name": "new-yorker-sample", "dir": "templates/new-yorker-sample", "hasReport": true,

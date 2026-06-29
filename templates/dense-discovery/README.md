@@ -4,14 +4,18 @@
 
 This email template is a tuned up fork within this repo, a Markdown-JSON-Python-Maizzle based production workflow. It's a work-in-progress building on a refactor of the <a href="https://densediscovery.com">Dense Discovery</a> newsletter's look and vibe, created by <a href="https://www.brizk.com">Kai Brach</a>. I have been a paid ‘friend of Dense Discovery’ for, well… I'm not sure how many years now. It's a great newsletter and I would encourage you to subscribe and become a paid member.
 
-## `sponsor` subtitle styling
+## `feature` subtitle styling
 
-Sponsor item subtitles inherit explicit section text color overrides by default. Use subtitle-specific keys inside `contentStyles` when the subtitle needs its own color or type treatment:
+Feature item subtitles inherit explicit section text color overrides by default. Use subtitle-specific keys inside `contentStyles` when the subtitle needs its own color or type treatment.
+
+The legacy section type `sponsor` still renders through this same branch for backward compatibility. New issues should use `type: feature` and, when needed, `featureLink` / `featureLabel` for the small heading-side link.
 
 ```yaml
 sections:
-- type: sponsor
+- type: feature
   title: UPCOMING
+  featureLink: https://example.com/calendar
+  featureLabel: CALENDAR
   contentStyles:
     color: "#f0f0f0"
     subtitleColor: "#f0f0f0"

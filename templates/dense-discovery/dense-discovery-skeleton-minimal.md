@@ -59,10 +59,10 @@ header:
   logoBottom: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp
   logoTop: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp
 sections:
-- type: sponsor
-  title: Sponsor Section
+- type: feature
+  title: Feature Section
   items:
-  - title: Sponsor Item 1
+  - title: Feature Item 1
 - type: dispatch
   title: Dispatch Section
   items:

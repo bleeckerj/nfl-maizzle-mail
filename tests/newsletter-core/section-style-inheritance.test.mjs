@@ -54,8 +54,10 @@ test('section headings and links inherit contentStyles when no explicit heading 
       'preheader: Verify heading and link inheritance',
       'sectionStylesFile: templates/dense-discovery/section-styles.json',
       'sections:',
-      '  - type: sponsor',
+      '  - type: feature',
       '    title: UPCOMING',
+      '    featureLink: https://nearfuturelaboratory.com',
+      '    featureLabel: CALENDAR',
       '    containerStyles:',
       "      backgroundColor: '#560d0f'",
       '    contentStyles:',
@@ -77,6 +79,10 @@ test('section headings and links inherit contentStyles when no explicit heading 
     assert.match(html, /<h1[^>]*style="[^"]*color:\s*#f0f0f0[^"]*"[^>]*>\s*UPCOMING/);
     assert.match(
       html,
+      /<a class="h1byline mob-meta" href="https:\/\/nearfuturelaboratory\.com"[^>]*>CALENDAR<\/a>/,
+    );
+    assert.match(
+      html,
       /<a href="https:\/\/nearfuturelaboratory\.com\/newsletters\/2026\/style-inheritance-test"[^>]*style="[^"]*color:\s*#f0f0f0[^"]*"[^>]*>Inherited Title Color<\/a>/,
     );
     assert.match(
@@ -92,16 +98,16 @@ test('section headings and links inherit contentStyles when no explicit heading 
   }
 });
 
-test('sponsor subtitleColor overrides inherited contentStyles color', () => {
+test('feature subtitleColor overrides inherited contentStyles color', () => {
   const { html, cleanup } = buildNewsletter(
     [
       '---',
       'template: dense-discovery',
-      'title: Sponsor Subtitle Override',
-      'preheader: Verify sponsor subtitle override',
+      'title: Feature Subtitle Override',
+      'preheader: Verify feature subtitle override',
       'sectionStylesFile: templates/dense-discovery/section-styles.json',
       'sections:',
-      '  - type: sponsor',
+      '  - type: feature',
       '    title: UPCOMING',
       '    contentStyles:',
       "      color: '#f0f0f0'",
@@ -130,7 +136,7 @@ test('sponsor subtitleColor overrides inherited contentStyles color', () => {
   }
 });
 
-test('sponsor subtitle preserves legacy gray when no section color override is set', () => {
+test('legacy sponsor subtitle preserves gray fallback when no section color override is set', () => {
   const { html, cleanup } = buildNewsletter(
     [
       '---',
@@ -156,6 +162,7 @@ test('sponsor subtitle preserves legacy gray when no section color override is s
       html,
       /<p class="mob-text mob-subtitle"[^>]*style="[^"]*font-size:\s*16px[^"]*line-height:\s*18px[^"]*font-weight:\s*400[^"]*color:\s*#707070[^"]*"[^>]*>Legacy Subtitle Gray<\/p>/,
     );
+    assert.match(html, />\s*Legacy Subtitle Title\s*<\/p>/);
   } finally {
     cleanup();
   }
@@ -247,7 +254,7 @@ test('explicit headingStyles and linkStyles override inherited contentStyles', (
       'preheader: Verify explicit heading and link overrides',
       'sectionStylesFile: templates/dense-discovery/section-styles.json',
       'sections:',
-      '  - type: sponsor',
+      '  - type: feature',
       '    title: UPCOMING',
       '    contentStyles:',
       "      color: '#f0f0f0'",

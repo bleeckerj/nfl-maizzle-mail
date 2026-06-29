@@ -10,7 +10,7 @@
  *   node scripts/generate-skeleton-from-schema.mjs --template dense-discovery
  *   node scripts/generate-skeleton-from-schema.mjs --schema templates/dense-discovery/newsletter.schema.json
  *   node scripts/generate-skeleton-from-schema.mjs --template dense-discovery --minimal
- *   node scripts/generate-skeleton-from-schema.mjs --template dense-discovery --sections sponsor dispatch
+ *   node scripts/generate-skeleton-from-schema.mjs --template dense-discovery --sections feature dispatch
  *   node scripts/generate-skeleton-from-schema.mjs --template dense-discovery --output content/my-newsletter.md
  */
 
@@ -46,7 +46,7 @@ Examples:
   node scripts/generate-skeleton-from-schema.mjs --template dense-discovery --minimal --output content/minimal.md
 
   # Generate with specific sections only
-  node scripts/generate-skeleton-from-schema.mjs --template dense-discovery --sections sponsor dispatch food-for-thought
+  node scripts/generate-skeleton-from-schema.mjs --template dense-discovery --sections feature dispatch food-for-thought
 
   # List available section types
   node scripts/generate-skeleton-from-schema.mjs --template dense-discovery --list-sections
@@ -147,6 +147,8 @@ function loadSchema(schemaPath) {
 
 const PLACEHOLDER_IMAGE = (width = 800, height = 600, text = 'Image') =>
   `https://fpoimg.com/${width}x${height}?text=${encodeURIComponent(text)}&bg_color=e6e6e6&text_color=4FAAAA`;
+
+const DEPRECATED_SECTION_TYPES = new Set(['sponsor']);
 
 function generatePlaceholderValue(propName, propSchema = {}, context = {}) {
   const type = propSchema.type || inferTypeFromName(propName);
@@ -346,7 +348,10 @@ function extractSectionSchema(schema, sectionType) {
   // Look in allOf for conditional schemas
   const allOf = itemsSchema.allOf || [];
   for (const condition of allOf) {
-    if (condition.if?.properties?.type?.const === sectionType) {
+    const conditionType = condition.if?.properties?.type;
+    const matchesConst = conditionType?.const === sectionType;
+    const matchesEnum = Array.isArray(conditionType?.enum) && conditionType.enum.includes(sectionType);
+    if (matchesConst || matchesEnum) {
       return condition.then;
     }
   }
@@ -395,7 +400,7 @@ function generateSkeleton(schema, options = {}) {
   const availableSections = extractSectionTypes(schema);
   const sectionsToGenerate = requestedSections
     ? requestedSections.filter((s) => availableSections.includes(s))
-    : availableSections;
+    : availableSections.filter((sectionType) => !DEPRECATED_SECTION_TYPES.has(sectionType));
 
   if (sectionsToGenerate.length > 0) {
     lines.push('');

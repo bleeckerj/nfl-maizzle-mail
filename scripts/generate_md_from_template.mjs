@@ -115,8 +115,10 @@ function makeFpoItemForType(type) {
   const approx30 = (seed) => {
     // produce ~30-word descriptive sentence tuned to the seed
     switch (seed) {
+      case 'feature':
+        return 'This featured note highlights a project or event connected to the issue, with enough context for readers to understand why it belongs here.'
       case 'sponsor':
-        return 'This sponsored note highlights a partner project that supports our work — a concise, tangible reason readers might engage, with guidance on where to learn more.'
+        return 'This legacy sponsor note highlights a project connected to the issue, with enough context for readers to understand why it belongs here.'
       case 'apps-sites':
         return 'A compact review of a useful app or site, focusing on one notable feature and how it changes a simple daily task for the better.'
       case 'quote':
@@ -145,11 +147,18 @@ function makeFpoItemForType(type) {
     const outputs = []
     for (let p = 0; p < paragraphs; p++) {
       switch (seed) {
+        case 'feature':
+          outputs.push(
+            p === 0
+              ? 'This featured item introduces a project, event, or resource connected to the issue. The note explains why it belongs here and gives readers one clear reason to look closer.'
+              : 'The follow-up copy can point to a use case, date, release, or related context. Readers can follow the link for details, registration, demos, or further reading.'
+          )
+          break
         case 'sponsor':
           outputs.push(
             p === 0
-              ? 'Our sponsor this week supports investigative work that extends the research we publish. This short note explains the partnership and gives readers one clear reason to look closer: the project produces useful tools and insights that directly relate to our reporting.'
-              : 'Beyond sponsorship, the item points to a concrete use-case: how their tool saved time or enabled a specific kind of analysis. Readers can follow the link for details, demos, or trial access.'
+              ? 'This legacy sponsor item introduces a project, event, or resource connected to the issue. The note explains why it belongs here and gives readers one clear reason to look closer.'
+              : 'The follow-up copy can point to a use case, date, release, or related context. Readers can follow the link for details, registration, demos, or further reading.'
           )
           break
         case 'apps-sites':
@@ -221,9 +230,17 @@ function makeFpoItemForType(type) {
   }
 
   switch (type) {
+    case 'feature':
+      return {
+        title: 'Featured note',
+        link: baseLink,
+        description: generateLongText('feature', 4),
+        readMoreText: 'Learn more'
+      }
+
     case 'sponsor':
       return {
-        title: 'Sponsor feature: a quick note',
+        title: 'Legacy sponsor note',
         link: baseLink,
         description: generateLongText('sponsor', 4),
         readMoreText: 'Learn more'
@@ -315,7 +332,7 @@ async function generateForTemplate(template) {
     }
   }
 
-  const types = uniquePreserveOrder(sectionTypes.length ? sectionTypes : ['sponsor', 'apps-sites', 'quote', 'indie-mag'])
+  const types = uniquePreserveOrder(sectionTypes.length ? sectionTypes : ['feature', 'apps-sites', 'quote', 'indie-mag'])
 
   // Build frontmatter
   const front = {

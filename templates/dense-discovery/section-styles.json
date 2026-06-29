@@ -61,9 +61,9 @@
         "textAlign": "left"
       }
     },
-    "sponsor": {
-      "name": "Sponsor Section",
-      "description": "Sponsored content sections with distinctive monospace font",
+    "feature, sponsor": {
+      "name": "Feature Section",
+      "description": "Featured content sections with distinctive monospace font. The legacy sponsor type remains accepted for backward compatibility.",
       "containerStyles": {
         "backgroundColor": null,
         "padding": "15px 20px",

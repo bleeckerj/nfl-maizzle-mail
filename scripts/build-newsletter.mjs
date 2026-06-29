@@ -1760,9 +1760,14 @@ async function buildNewsletter() {
             ? { ...safeUsedConfig.descriptionStyles }
             : { ...section.contentStyles };
           // Compute a spacer background derived from the section background color.
+          const themeSectionColor =
+            theme?.colors?.[section.type] ||
+            (section.type === 'feature' ? theme?.colors?.sponsor : null) ||
+            (section.type === 'sponsor' ? theme?.colors?.feature : null) ||
+            null;
           const baseBackground =
             section.containerStyles.backgroundColor ||
-            theme?.colors?.[section.type] ||
+            themeSectionColor ||
             null;
           const spacerAdjust = safeUsedConfig.spacerBackgroundAdjust && typeof safeUsedConfig.spacerBackgroundAdjust === 'object'
             ? safeUsedConfig.spacerBackgroundAdjust

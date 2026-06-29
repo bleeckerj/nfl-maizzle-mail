@@ -25,7 +25,7 @@ This directory contains automation scripts for the NFL Maizzle Mail newsletter s
 ```bash
 # Generate with specific section types only
 python scripts/generate-newsletter-skeleton.py \
-  --sections sponsor dispatch food-for-thought \
+  --sections feature dispatch food-for-thought \
   --output content/custom-newsletter.md
 
 # List all available section types
@@ -81,10 +81,10 @@ Examples:
 # Full skeleton with all section types
 python scripts/generate-newsletter-skeleton.py --output my-newsletter.md
 
-# Only sponsor and articles
+# Only features and articles
 python scripts/generate-newsletter-skeleton.py \
-  --sections sponsor food-for-thought \
-  --output sponsor-digest.md
+  --sections feature food-for-thought \
+  --output feature-digest.md
 
 # Minimal skeleton
 python scripts/generate-newsletter-skeleton.py --minimal -o minimal.md
@@ -94,7 +94,7 @@ python scripts/generate-newsletter-skeleton.py --minimal -o minimal.md
 
 | Section Type | Description | Common Use |
 |--------------|-------------|------------|
-| `sponsor` | Sponsored content | Paid sponsor blocks |
+| `feature` | Featured content | Project, event, or resource highlights |
 | `dispatch` | Announcements | News, updates, signals |
 | `apps-sites` | Apps/websites (2-col) | App/site reviews |
 | `apps-sites-single-column` | Apps/websites (1-col) | Full-width app features |
@@ -132,7 +132,7 @@ Create a custom skeleton for newsletters you send regularly:
 ```bash
 # Create your template once
 python scripts/generate-newsletter-skeleton.py \
-  --sections sponsor dispatch food-for-thought quote \
+  --sections feature dispatch food-for-thought quote \
   --output templates/weekly-template.md
 
 # Copy it for each new newsletter
@@ -173,7 +173,7 @@ header:
   quote: Header quote
   author: Author
 sections:
-  - type: sponsor
+  - type: feature
     title: Section Title
     items:
       - title: Item Title
