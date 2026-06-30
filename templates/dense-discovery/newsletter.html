@@ -331,6 +331,9 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   </td>
                                 </tr>
                               </if>
+                              <if condition="item.platformLinksHtml">
+                                {{{ item.platformLinksHtml }}}
+                              </if>
                               <if condition="(item.readMoreText || item.readMoreTxt) && (item.readMoreLink || item.link)">
                                 <tr>
                                   <td style="border-collapse: collapse;background: transparent;padding: 0 20px 20px 20px;">

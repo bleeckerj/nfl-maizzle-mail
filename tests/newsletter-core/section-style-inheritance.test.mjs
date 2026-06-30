@@ -385,6 +385,98 @@ test('inline link style cleanup preserves non-overridden background and box styl
   }
 });
 
+test('sponsor platformLinks render small buttons without shrinking title or read more links', () => {
+  const { html, cleanup } = buildNewsletter(
+    [
+      '---',
+      'template: dense-discovery',
+      'title: Platform Links',
+      'preheader: Verify platform links render outside rich text link styling',
+      'sectionStylesFile: templates/dense-discovery/section-styles.json',
+      'sections:',
+      '  - type: sponsor',
+      '    title: Podcast',
+      '    linkStyles:',
+      "      color: '#111111'",
+      '      textDecoration: none',
+      "      fontFamily: '''Share Tech Mono'', ''IBM Plex Mono'', monospace'",
+      '      fontSize: 19px',
+      '    items:',
+      '      - title: Episode 104',
+      '        link: https://example.com/?episode',
+      '        description: "<p>Episode description.</p>"',
+      '        platformLinks:',
+      '          - platform: spotify',
+      '            label: Spotify',
+      '            url: https://example.com/?spotify',
+      '            category: podcast',
+      '            intent: listen',
+      '            interests:',
+      '              - audio',
+      '          - platform: youtube',
+      '            label: YouTube',
+      '            url: https://example.com/?youtube',
+      '            category: podcast',
+      '            intent: watch',
+      '            interests:',
+      '              - video',
+      '          - platform: apple-podcasts',
+      '            label: Apple Podcasts',
+      '            url: https://example.com/?apple',
+      '            category: podcast',
+      '            intent: listen',
+      '            interests:',
+      '              - audio',
+      '        readMoreText: Listen and read',
+      '        readMoreLink: https://example.com/?read-more',
+      '---',
+      '',
+    ],
+    'sponsor-platform-links',
+  );
+
+  try {
+    const descriptionIndex = html.indexOf('Episode description.');
+    const spotifyIndex = html.indexOf('data-link-label="Spotify"');
+    const readMoreIndex = html.indexOf('Listen and read');
+    assert.ok(descriptionIndex >= 0, 'expected description to render');
+    assert.ok(spotifyIndex > descriptionIndex, 'expected platform buttons after description');
+    assert.ok(readMoreIndex > spotifyIndex, 'expected read more after platform buttons');
+
+    const spotifyAnchor = html.match(/<a href="https:\/\/example\.com\/\?spotify"[^>]*>[\s\S]*?Spotify[\s\S]*?<\/a>/)?.[0] || '';
+    assert.match(spotifyAnchor, /padding:6px 10px/);
+    assert.match(spotifyAnchor, /font-size:14px/);
+    assert.match(spotifyAnchor, /color:#111111/);
+    assert.match(spotifyAnchor, /-webkit-text-fill-color:#111111/);
+    assert.doesNotMatch(spotifyAnchor, /color:#EE3BBB/);
+    assert.match(spotifyAnchor, /data-link-category="podcast"/);
+    assert.match(spotifyAnchor, /data-link-intent="listen"/);
+    assert.match(spotifyAnchor, /data-link-interest="audio"/);
+    assert.match(spotifyAnchor, /img\.icons8\.com\/ios-glyphs\/20\/000000\/spotify\.png/);
+    assert.match(spotifyAnchor, /width="20"/);
+    assert.match(spotifyAnchor, /height="20"/);
+
+    const youtubeAnchor = html.match(/<a href="https:\/\/example\.com\/\?youtube"[^>]*>[\s\S]*?YouTube[\s\S]*?<\/a>/)?.[0] || '';
+    assert.match(youtubeAnchor, /data-link-label="YouTube"/);
+    assert.match(youtubeAnchor, /data-link-intent="watch"/);
+    assert.match(youtubeAnchor, /data-link-interest="video"/);
+
+    const appleAnchor = html.match(/<a href="https:\/\/example\.com\/\?apple"[^>]*>[\s\S]*?Apple\s+Podcasts[\s\S]*?<\/a>/)?.[0] || '';
+    assert.match(appleAnchor, /data-link-label="Apple Podcasts"/);
+    assert.match(appleAnchor, /img\.icons8\.com\/\?size=20&amp;id=ZsAN3pzKcy09&amp;format=png/);
+
+    const titleAnchor = html.match(/<a href="https:\/\/example\.com\/\?episode"[^>]*>Episode 104<\/a>/)?.[0] || '';
+    assert.match(titleAnchor, /font-size:19px/);
+    assert.doesNotMatch(titleAnchor, /font-size:14px/);
+
+    const readMoreAnchor = html.match(/<a href="https:\/\/example\.com\/\?read-more"[^>]*>Listen and read<\/a>/)?.[0] || '';
+    assert.match(readMoreAnchor, /font-size:19px/);
+    assert.doesNotMatch(readMoreAnchor, /font-size:14px/);
+  } finally {
+    cleanup();
+  }
+});
+
 test('adjacency feature title renders larger than dek while preserving typography', () => {
   const { html, cleanup } = buildNewsletter(
     [

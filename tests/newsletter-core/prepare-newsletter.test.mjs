@@ -154,6 +154,61 @@ test('prepareNewsletterData accepts ad-block source items under strict schema va
   });
 });
 
+test('prepareNewsletterData accepts sponsor platformLinks under strict schema validation', () => {
+  const prepared = prepareNewsletterData(
+    {
+      template: 'dense-discovery',
+      title: 'Strict Schema Platform Links Test',
+      sections: [
+        {
+          type: 'sponsor',
+          title: 'Podcast',
+          items: [
+            {
+              title: 'Episode 104',
+              link: 'https://example.com/episode',
+              description: '<p>Episode description.</p>',
+              platformLinks: [
+                {
+                  platform: 'spotify',
+                  label: 'Spotify',
+                  url: 'https://example.com/spotify',
+                  category: 'podcast',
+                  intent: 'listen',
+                  interests: ['audio'],
+                },
+                {
+                  platform: 'youtube',
+                  label: 'YouTube',
+                  url: 'https://example.com/youtube',
+                  category: 'podcast',
+                  intent: 'watch',
+                  interests: ['video'],
+                },
+                {
+                  platform: 'apple-podcasts',
+                  label: 'Apple Podcasts',
+                  url: 'https://example.com/apple',
+                  category: 'podcast',
+                  intent: 'listen',
+                  interests: ['audio'],
+                },
+              ],
+              readMoreText: 'Listen and read',
+              readMoreLink: 'https://example.com/read-more',
+            },
+          ],
+        },
+      ],
+    },
+    { repoRoot: REPO_ROOT, templateName: 'dense-discovery', strictSchema: true, logger: { log() {} } },
+  );
+
+  assert.equal(prepared.sections[0].items[0].platformLinks.length, 3);
+  assert.equal(prepared.sections[0].items[0].platformLinks[0].platform, 'spotify');
+  assert.equal(prepared.sections[0].items[0].platformLinks[1].intent, 'watch');
+});
+
 test('prepareNewsletterData rejects raw ad-block image fields under strict schema validation', () => {
   assert.throws(
     () =>

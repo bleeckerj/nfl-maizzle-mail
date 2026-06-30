@@ -1575,6 +1575,87 @@ async function buildNewsletter() {
           });
         });
       };
+
+      const escapeHtmlAttribute = (value) =>
+        String(value ?? '')
+          .replace(/&/g, '&amp;')
+          .replace(/"/g, '&quot;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+
+      const escapeHtmlText = (value) =>
+        String(value ?? '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+
+      const normalizePlatformLinkInterests = (value) => {
+        if (Array.isArray(value)) {
+          return value
+            .map((entry) => String(entry ?? '').trim())
+            .filter(Boolean)
+            .join(',');
+        }
+        return String(value ?? '').trim();
+      };
+
+      const platformLinkIconUrls = {
+        spotify: 'https://img.icons8.com/ios-glyphs/20/000000/spotify.png',
+        youtube: 'https://img.icons8.com/ios-glyphs/20/000000/youtube-play.png',
+        'apple-podcasts': 'https://img.icons8.com/?size=20&id=ZsAN3pzKcy09&format=png',
+      };
+
+      const renderPlatformLinksHtml = (platformLinks) => {
+        if (!Array.isArray(platformLinks) || platformLinks.length === 0) return '';
+
+        const cells = platformLinks
+          .map((link) => {
+            if (!link || typeof link !== 'object' || Array.isArray(link)) return '';
+
+            const platform = String(link.platform ?? '').trim();
+            const label = String(link.label ?? '').trim();
+            const url = String(link.url ?? '').trim();
+            const iconUrl = platformLinkIconUrls[platform];
+            if (!platform || !label || !url || !/^https?:\/\//i.test(url) || !iconUrl) {
+              return '';
+            }
+
+            const dataAttributes = [
+              ['data-link-label', label],
+              ['data-link-category', link.category],
+              ['data-link-intent', link.intent],
+              ['data-link-interest', normalizePlatformLinkInterests(link.interests ?? link.interest)],
+            ]
+              .filter(([, value]) => String(value ?? '').trim())
+              .map(([name, value]) => `${name}="${escapeHtmlAttribute(value)}"`)
+              .join(' ');
+            const dataAttributeText = dataAttributes ? ` ${dataAttributes}` : '';
+
+            return [
+              '<td style="padding:0 6px 6px 0;">',
+              `<a href="${escapeHtmlAttribute(url)}" style="display:inline-block;border:1px solid #c9c9c9;border-radius:3px;background:#f8f8f8;padding:6px 10px;line-height:14px;white-space:nowrap;font-family:'Share Tech Mono','IBM Plex Mono',monospace;font-size:14px;font-weight:normal;text-decoration:none;color:#111111 !important;-webkit-text-fill-color:#111111;"${dataAttributeText}>`,
+              `<img src="${escapeHtmlAttribute(iconUrl)}" alt="" width="20" height="20" style="display:inline-block;vertical-align:middle;border:0;margin-right:6px;width:20px;height:20px;">`,
+              `<span style="vertical-align:middle;text-decoration:none;color:#111111 !important;-webkit-text-fill-color:#111111;font-size:14px;line-height:14px;">${escapeHtmlText(label)}</span>`,
+              '</a>',
+              '</td>',
+            ].join('');
+          })
+          .filter(Boolean);
+
+        if (cells.length === 0) return '';
+
+        return [
+          '<tr>',
+          '<td style="border-collapse:collapse;background:transparent;padding:0 20px 20px 20px;">',
+          '<table role="presentation" cellpadding="0" cellspacing="0" style="border-collapse:separate;border-spacing:0;margin:0;">',
+          '<tr>',
+          cells.join(''),
+          '</tr>',
+          '</table>',
+          '</td>',
+          '</tr>',
+        ].join('');
+      };
       
       let processedItems = 0;
       let totalItems = 0;
@@ -1881,6 +1962,15 @@ async function buildNewsletter() {
           }
           
           sectionItems.forEach((item, iIndex) => {
+            if (section.type === 'feature' || section.type === 'sponsor') {
+              const platformLinksHtml = renderPlatformLinksHtml(item.platformLinks);
+              if (platformLinksHtml) {
+                item.platformLinksHtml = platformLinksHtml;
+              } else {
+                delete item.platformLinksHtml;
+              }
+            }
+
             if (section.type === 'signals-adjacent-now') {
               if (Array.isArray(item.storySeeds)) {
                 item.storySeeds = item.storySeeds.map((seed) =>

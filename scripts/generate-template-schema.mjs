@@ -463,6 +463,44 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
     indieMagSingleColumnItemSchema.not = { required: ['image', 'images'] };
   }
 
+  const platformLinksSchema = {
+    type: 'array',
+    items: {
+      type: 'object',
+      required: ['platform', 'label', 'url'],
+      properties: {
+        platform: { enum: ['spotify', 'youtube', 'apple-podcasts'] },
+        label: { type: 'string' },
+        url: { type: 'string' },
+        category: { type: 'string' },
+        intent: { type: 'string' },
+        interests: {
+          oneOf: [
+            { type: 'array', items: { type: 'string' } },
+            { type: 'string' },
+          ],
+        },
+        interest: {
+          oneOf: [
+            { type: 'array', items: { type: 'string' } },
+            { type: 'string' },
+          ],
+        },
+      },
+      additionalProperties: false,
+    },
+  };
+
+  for (const variant of variants ?? []) {
+    const typeEnum = variant?.then?.properties?.type?.enum;
+    if (Array.isArray(typeEnum) && typeEnum.includes('feature') && typeEnum.includes('sponsor')) {
+      const itemProperties = variant?.then?.properties?.items?.items?.properties;
+      if (itemProperties) {
+        itemProperties.platformLinks = platformLinksSchema;
+      }
+    }
+  }
+
   for (const variant of variants ?? []) {
     const itemProperties = variant?.then?.properties?.items?.items?.properties;
     if (itemProperties?.image) {
