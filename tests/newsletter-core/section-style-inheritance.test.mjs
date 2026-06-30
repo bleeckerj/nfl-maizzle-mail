@@ -209,6 +209,68 @@ test('indie-mag-single-column subtitle inherits explicit content color and radiu
   }
 });
 
+test('indie-mag-single-column uses normalized style buckets for text and links', () => {
+  const { html, cleanup } = buildNewsletter(
+    [
+      '---',
+      'template: dense-discovery',
+      'title: Indie Mag Bucket Overrides',
+      'preheader: Verify indie-mag text and link buckets',
+      'sectionStylesFile: templates/dense-discovery/section-styles.json',
+      'sections:',
+      '  - type: indie-mag-single-column',
+      '    title: Boston ICA',
+      '    containerStyles:',
+      "      backgroundColor: '#ff9567'",
+      '      padding: 12px 14px',
+      '      borderRadius: 6px',
+      '    contentStyles:',
+      "      color: '#fafafa'",
+      '    headingStyles:',
+      "      color: '#fffdf5'",
+      '    linkStyles:',
+      "      color: '#ffe8dc'",
+      '    items:',
+      '      - title: AIGA Boston / ICA Boston Present Rick Griffith',
+      '        link: https://superquietkeystrokes.com/Boston_ICA_Talk/',
+      '        description: "<p>A hosted video page.</p>"',
+      '        details: "<p>RISD conversation details.</p>"',
+      '        note: "Video archive note."',
+      '        readMoreText: Watch the talk',
+      '        readMoreLink: https://superquietkeystrokes.com/Boston_ICA_Talk/',
+      '---',
+      '',
+    ],
+    'indie-mag-bucket-overrides',
+  );
+
+  try {
+    assert.match(html, /<h1 class="mob-text mob-title"[^>]*style="[^"]*color:\s*#fffdf5[^"]*"[^>]*>Boston ICA<\/h1>/);
+    assert.match(
+      html,
+      /<a href="https:\/\/superquietkeystrokes\.com\/Boston_ICA_Talk\/"[^>]*style="[^"]*color:\s*#ffe8dc[^"]*"[^>]*>AIGA Boston \/ ICA Boston Present Rick Griffith<\/a>/,
+    );
+    assert.match(
+      html,
+      /<p class="mob-text"[^>]*style="[^"]*color:\s*#fafafa[^"]*"[^>]*>A hosted video page\.<\/p>/,
+    );
+    assert.match(
+      html,
+      /<div class="item-details"[^>]*style="[^"]*color:\s*#fafafa[^"]*"[^>]*>\s*<p[^>]*>RISD conversation details\.<\/p>/,
+    );
+    assert.match(
+      html,
+      /<div[^>]*style="[^"]*color:\s*#fafafa[^"]*"[^>]*>Video archive note\.<\/div>/,
+    );
+    assert.match(
+      html,
+      /<a href="https:\/\/superquietkeystrokes\.com\/Boston_ICA_Talk\/"[^>]*style="[^"]*color:\s*#ffe8dc[^"]*"[^>]*>Watch the talk<\/a>/,
+    );
+  } finally {
+    cleanup();
+  }
+});
+
 test('indie-mag-single-column subtitle preserves legacy gray and default radius', () => {
   const { html, cleanup } = buildNewsletter(
     [

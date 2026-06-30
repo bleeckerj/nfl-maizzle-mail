@@ -1470,7 +1470,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
 		                          </tr>
                           <tr>
                               <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;border-radius: {{ section.containerStyles.borderRadius || '10px' }} {{ section.containerStyles.borderRadius || '10px' }} 0 0;">
-                                <h1 class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} color: {{ section.contentStyles.color || '#000000' }} !important; mso-line-height-rule: exactly; margin: 0;padding: 0;">{{ section.title }}</h1>
+                                <h1 class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}}mso-line-height-rule: exactly; margin: 0;padding: 0;">{{ section.title }}</h1>
                               </td>
                           </tr>
                           
@@ -1512,12 +1512,12 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                 </if>
                                 
                                 <if condition="item.title && item.link">
-                                  <h2 class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} color: {{ section.contentStyles.color || '#000000' }} !important; margin: 0;padding: 0;margin-bottom: 8px;">
+                                  <h2 class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}}margin: 0;padding: 0;margin-bottom: 8px;">
                                     <a href="{{ item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ item.title }}</a>
                                   </h2>
                                 </if>
                                 <if condition="item.title && !item.link">
-                                  <h2 class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} color: {{ section.contentStyles.color || '#000000' }} !important; margin: 0;padding: 0;margin-bottom: 8px;">
+                                  <h2 class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}}margin: 0;padding: 0;margin-bottom: 8px;">
                                     {{ item.title }}
                                   </h2>
                                 </if>
@@ -1527,19 +1527,19 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                 </if>
                                 
                                 <if condition="item.description">
-                                  <div style="font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '23px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#000000' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 0;margin: 0;">
+                                  <div style="{{{ section.contentStylesInline || '' }}}{{{ section.contentStylesInline ? '; ' : '' }}}padding: 0;margin: 0;">
                                     {{{ item.description }}}
                                   </div>
                                 </if>
                                 
                                 <if condition="item.details">
-                                  <div class="item-details" style="font-family: 'Share Tech Mono', monospace;font-size: 13px;line-height: 1.35;font-weight: 400;color: #707070;padding: 0;margin: 0;margin-bottom: 10px;">
+                                  <div class="item-details" style="{{{ section.contentStylesInline || '' }}}{{{ section.contentStylesInline ? '; ' : '' }}}padding: 0;margin: 0;margin-bottom: 10px;">
                                     {{{ item.details }}}
                                   </div>
                                 </if>
                                 
                                 <if condition="item.note">
-                                  <div class="note-content" style="font-size: 14px;line-height: 19px;font-weight: 400;color: #707070;padding: 0;margin: 0;font-style: italic;">{{{ item.note }}}</div>
+                                  <div class="note-content" style="{{{ section.contentStylesInline || '' }}}{{{ section.contentStylesInline ? '; ' : '' }}}padding: 0;margin: 0;font-style: italic;">{{{ item.note }}}</div>
                                 </if>
                                 <if condition="(item.readMoreText || item.readMoreTxt) && (item.readMoreLink || item.link)">
                                     <p class="mob-readmore" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}padding: 0;margin: 10px 0 0 0;">

@@ -497,6 +497,7 @@ function pruneBuildInjectedFields(newsletterData) {
       delete section._contentStyleOverrides;
       delete section.descriptionStyles;
       delete section.spacerBackgroundColor;
+      delete section.contentStylesInline;
       delete section.headingStylesInline;
       delete section.linkStylesInline;
       delete section.labelStylesInline;
@@ -1818,6 +1819,11 @@ async function buildNewsletter() {
           section.labelStyles = { ...templateLabelStyles, ...incomingLabelStyles };
           section.sectionHeaderHeadingStyles = { ...templateSectionHeaderHeadingStyles, ...incomingSectionHeaderHeadingStyles };
           section.ctaStyles = { ...templateCtaStyles, ...incomingCtaStyles };
+          section.contentStylesInline = toCssString(
+            inheritableContentStyles,
+            undefined,
+            { withoutImportant: mobileLockTypographyProperties },
+          );
           section.headingStylesInline = toCssString(
             { ...defaultHeading, ...section.headingStyles },
             undefined,

@@ -123,10 +123,13 @@ test('dense-discovery semantic metadata labels opt into the mobile metadata lock
 test('dense-discovery item details stay small monospace outside the body-copy mobile lock', () => {
   const template = readFileSync(DENSE_DISCOVERY_TEMPLATE, 'utf8');
   const detailBlocks = template.match(
-    /<div class="item-details" style="font-family: 'Share Tech Mono', monospace;font-size: 13px;line-height: 1\.35;font-weight: 400;color: #707070;padding: 0;margin: 0;margin-bottom: 10px;">\s*\{\{\{ item\.details \}\}\}\s*<\/div>/g,
+    /<div class="item-details" style="[^"]*">\s*\{\{\{ item\.details \}\}\}\s*<\/div>/g,
   ) || [];
 
   assert.equal(detailBlocks.length, 2);
+  detailBlocks.forEach((block) => {
+    assert.doesNotMatch(block, /class="[^"]*\bmob-text\b/);
+  });
 });
 
 test('dense-discovery generated inline typography does not block the mobile font lock', () => {
@@ -135,6 +138,7 @@ test('dense-discovery generated inline typography does not block the mobile font
   assert.match(buildScript, /mobileLockTypographyProperties\s*=\s*new Set\(\['font-size', 'line-height'\]\)/);
   assert.match(buildScript, /section\.headingStylesInline\s*=\s*toCssString\([\s\S]*withoutImportant:\s*mobileLockTypographyProperties/);
   assert.match(buildScript, /section\.sectionHeaderHeadingStylesInline\s*=\s*toCssString\([\s\S]*withoutImportant:\s*mobileLockTypographyProperties/);
+  assert.match(buildScript, /section\.contentStylesInline\s*=\s*toCssString\([\s\S]*withoutImportant:\s*mobileLockTypographyProperties/);
   assert.match(buildScript, /section\.linkStylesInline\s*=\s*toCssString\([\s\S]*withoutImportant:\s*mobileLockTypographyProperties/);
   assert.match(buildScript, /section\.labelStylesInline\s*=\s*toCssString\([\s\S]*withoutImportant:\s*mobileLockTypographyProperties/);
 });
