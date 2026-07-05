@@ -49,7 +49,7 @@ function collectLeafPaths(value, prefix = '') {
 }
 
 function getSectionDisplayText(section) {
-  if (section.type === 'microdrop-product-launch') {
+  if (section.type === 'microdrop-product-launch' || section.type === 'microdrop-institution-service') {
     return section.hero?.headline || section.title;
   }
   return section.title || section.rubric || section.type;

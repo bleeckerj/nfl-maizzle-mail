@@ -223,6 +223,70 @@ sections:
     notes:
     - label: Editorial note label
       body: FPO note text that names a detail, source, or caveat associated with the launch.
+- type: microdrop-institution-service
+  brand: Institution/service brand element
+  title: Microdrop Institution Service Title
+  canonicalUrl: mailto:guide@example.com
+  theme:
+    backgroundColor: "#f3eee4"
+    surfaceColor: "#fff8ea"
+    textColor: "#18251f"
+    accentColor: "#c05b32"
+  hero:
+    eyebrow: Neighborhood service technicians available 24/7
+    headline: Hero headline element for an institution-service drop
+    dek: A short FPO dek that frames the service or institution as an ordinary destination in its world.
+    image:
+      src: https://fpoimg.com/800x520?text=Institution%20Service%20Hero&bg_color=f3eee4&text_color=18251f
+      alt: Institution-service hero image alt text
+  serviceStrip:
+    eyebrow: Service strip eyebrow element
+    heading: Service strip heading element
+    body: This FPO service strip explains the operational promise, coverage, mandate, or public role behind the institution-service artifact.
+    items:
+    - label: Service item label
+      value: Service item value
+      body: A short FPO service detail that makes the service feel staffed, mundane, and procedural.
+  gallery:
+  - src: https://fpoimg.com/800x520?text=Field%20Image&bg_color=fff8ea&text_color=c05b32
+    alt: Field image alt text
+    label: Field image label
+    caption: A short FPO caption for a large field image, testimonial scene, service record, or institutional view.
+  process:
+    eyebrow: Process eyebrow element
+    heading: Process heading element
+    body: This FPO process block describes common calls, visitor use, public services, or operating procedure.
+    items:
+    - label: Process item label
+      value: Process item value
+      body: A short FPO detail that describes what happens in this service moment.
+  offerings:
+  - badge: Service badge element
+    name: Service line name element
+    slogan: Service line slogan element
+    descriptionText: FPO service line description for a non-transactional institution-service microdrop.
+    color: "#c05b32"
+    ksp:
+    - Service line detail element
+  caseFile:
+    eyebrow: Case file eyebrow element
+    heading: Case file heading element
+    body: This FPO case-file block gives the email a paperwork, record, directory, or proof surface.
+    items:
+    - label: Case file item label
+      value: Case file item value
+      body: A short FPO record detail that supports the institution-service premise.
+  finalCta:
+    eyebrow: Final CTA eyebrow element
+    heading: Final CTA heading element
+    body: This FPO final CTA points to the microdrop without turning the service into checkout.
+    href: mailto:guide@example.com
+    label: Final CTA label
+  editorialNote:
+    eyebrow: Editorial note eyebrow element
+    heading: Editorial note heading element
+    body:
+    - This FPO editorial note gives the institution-service section a quieter explanatory close.
 - type: adjacency-feature
   rubric: Rubric element
   title: Adjacency Feature Title
