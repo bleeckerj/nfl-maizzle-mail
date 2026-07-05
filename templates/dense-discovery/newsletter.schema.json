@@ -1861,6 +1861,25 @@
                       "image": {},
                       "description": {},
                       "sourceDigestSummary": {},
+                      "additionalReferences": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "title": {},
+                            "href": {},
+                            "label": {},
+                            "category": {},
+                            "intent": {},
+                            "description": {}
+                          },
+                          "additionalProperties": false,
+                          "required": [
+                            "title",
+                            "href"
+                          ]
+                        }
+                      },
                       "storySeeds": {},
                       "strategyQuestions": {},
                       "readMoreText": {},

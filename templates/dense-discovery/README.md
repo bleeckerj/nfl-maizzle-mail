@@ -128,6 +128,31 @@ sections:
 - `podcast: true` renders the Photarium podcast icon before the corresponding link.
 - Existing content without `readMoreLinks` remains valid.
 
+## `signals-adjacent-now` additional references
+
+`signals-adjacent-now` items support a structured `additionalReferences` list for source links that support the main signal without replacing the primary CTA.
+
+```yaml
+sections:
+- type: signals-adjacent-now
+  title: Signals from an Adjacent Now
+  items:
+  - title: Example signal
+    readMoreText: Read source →
+    readMoreLink: https://example.com/source
+    additionalReferences:
+    - title: Related paper
+      href: https://example.com/paper
+      label: example signal related paper
+      category: futures
+      intent: read-related
+      description: A supporting source that gives the signal more context.
+```
+
+- `title` and `href` are required for each reference.
+- `label`, `category`, and `intent` preserve link metadata for analytics.
+- `description` renders after the link as short context.
+
 ## `indie-mag-single-column` image precedence
 
 `indie-mag-single-column` supports either:

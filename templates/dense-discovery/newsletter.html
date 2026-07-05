@@ -577,6 +577,26 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           </tr>
                         </if>
 
+                        <if condition="item.additionalReferences && item.additionalReferences.length">
+                          <tr>
+                            <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['signals-adjacent-now'] || themeColors.dispatch || '#f8eccf' }};padding: 0 20px 16px 20px;">
+                              <div class="mob-meta" style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 700;color: #404040;text-transform: uppercase;letter-spacing: 0.08em;margin: 0 0 8px 0;">Additional References</div>
+                              <each loop="reference in item.additionalReferences">
+                                <if condition="reference && reference.title && reference.href">
+                                  <p style="margin: 0 0 8px 0;padding: 0;font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }};font-size: 15px;line-height: 20px;font-weight: 400;color: #333;">
+                                    <a href="{{ reference.href }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}">{{ reference.title }}</a>
+                                  </p>
+                                  <if condition="reference.description">
+                                    <div style="margin: -4px 0 8px 0;padding: 0;font-family: {{ section.contentStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }};font-size: 15px;line-height: 20px;font-weight: 400;color: #333;">
+                                      {{{ reference.description }}}
+                                    </div>
+                                  </if>
+                                </if>
+                              </each>
+                            </td>
+                          </tr>
+                        </if>
+
                         <if condition="item.storySeeds && item.storySeeds.length">
                           <tr>
                             <td style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['signals-adjacent-now'] || themeColors.dispatch || '#f8eccf' }};padding: 0 20px 14px 20px;">

@@ -91,6 +91,13 @@ sections:
       caption: Signal image caption
     description: <p>The signal body should feel like a concise observation rather than a caption. This FPO copy names a pattern, gives it a little context, and leaves enough length for the template to demonstrate paragraph wrapping inside the colored section surface.</p>
     sourceDigestSummary: <p>This FPO source summary compresses the relevant evidence into a smaller block. In production, this might summarize a linked article, paper, launch, policy note, or cultural artifact before the newsletter moves into interpretation.</p>
+    additionalReferences:
+    - title: Related reference
+      href: mailto:guide@example.com
+      label: section guide signal reference
+      category: futures
+      intent: read-related
+      description: A supporting source that gives the signal more context.
     storySeeds:
     - Story seed element one
     - Story seed element two
