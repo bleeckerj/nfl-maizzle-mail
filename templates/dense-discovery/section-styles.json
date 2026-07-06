@@ -348,6 +348,10 @@
       "containerStyles": {
         "backgroundColor": null,
         "padding": "15px 20px",
+        "sectionHeaderPadding": "15px 20px 6px 20px",
+        "sectionDescriptionPadding": "0 20px 0 20px",
+        "firstItemPadding": "0 20px 15px 20px",
+        "itemPadding": "15px 20px",
         "borderRadius": "0px"
       },
       "contentStyles": {

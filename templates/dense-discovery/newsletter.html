@@ -1553,15 +1553,15 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                       <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
                     </tr>
                     <tr>
-                      <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;border-radius: {{ section.containerStyles.borderRadius || '0px' }} {{ section.containerStyles.borderRadius || '0px' }} 0 0;">
+                      <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};border-bottom: 2px solid #FFFFFF;padding: {{ section.containerStyles.sectionHeaderPadding || section.containerStyles.headerPadding || '15px 20px 6px 20px' }};border-radius: {{ section.containerStyles.borderRadius || '0px' }} {{ section.containerStyles.borderRadius || '0px' }} 0 0;">
                         <h1 class="mob-text mob-title" style="mso-line-height-rule: exactly; margin: 0;padding: 0; {{{ section.headingStylesInline || '' }}}">{{ section.title }}</h1>
                       </td>
                     </tr>
 
                     <if condition="section.description">
                       <tr>
-                        <td align="left" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};padding: {{ section.containerStyles.padding || '20px' }};border-radius: 0 0 {{ section.containerStyles.borderRadius || '0px' }} {{ section.containerStyles.borderRadius || '0px' }};">
-                          <div style="font-family: {{ section.descriptionStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: {{ section.descriptionStyles.fontSize || '16px' }};line-height: {{ section.descriptionStyles.lineHeight || '23px' }};font-weight: {{ section.descriptionStyles.fontWeight || '400' }};color: {{ section.descriptionStyles.color || '#000000' }};text-align: {{ section.descriptionStyles.textAlign || 'left' }};padding: 0;margin: 0;">
+                        <td align="left" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};padding: {{ section.containerStyles.sectionDescriptionPadding || section.containerStyles.descriptionPadding || '0 20px 0 20px' }};border-radius: 0 0 {{ section.containerStyles.borderRadius || '0px' }} {{ section.containerStyles.borderRadius || '0px' }};">
+                          <div class="section-description-tight" style="font-family: {{ section.descriptionStyles.fontFamily || '\'IBM Plex Sans\', sans-serif' }}; font-size: {{ section.descriptionStyles.fontSize || '16px' }};line-height: {{ section.descriptionStyles.lineHeight || '23px' }};font-weight: {{ section.descriptionStyles.fontWeight || '400' }};color: {{ section.descriptionStyles.color || '#000000' }};text-align: {{ section.descriptionStyles.textAlign || 'left' }};padding: 0;margin: 0;">
                             {{{ section.description }}}
                           </div>
                         </td>
@@ -1575,7 +1575,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                         </tr>
                       </if>
                       <tr>
-                        <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};padding: {{ section.containerStyles.padding || '20px' }};border-radius: 0 0 {{ section.containerStyles.borderRadius || '0px' }} {{ section.containerStyles.borderRadius || '0px' }};">
+                        <td align="left" class="padt20 padr20 padl20{{ section.description && loop.index === 0 ? ' mobt0' : '' }}" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['apps-sites-single-column'] || themeColors['apps-sites'] || '#ffffff' }};padding: {{ section.description && loop.index === 0 ? (section.containerStyles.firstItemPadding || '0 20px 15px 20px') : (section.containerStyles.itemPadding || section.containerStyles.padding || '20px') }};border-radius: 0 0 {{ section.containerStyles.borderRadius || '0px' }} {{ section.containerStyles.borderRadius || '0px' }};">
                           
                           <if condition="item.image">
                             <div style="margin-bottom: 15px;">
