@@ -1126,6 +1126,39 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                         </each>
                       </if>
 
+                      <if condition="section.eligibility && section.eligibility.heading">
+                        <tr>
+                          <td style="border-collapse: collapse;padding: 24px 22px 8px 22px;background: {{ section.theme.surfaceColor || '#fff8ea' }};">
+                            <p class="mob-meta" style="margin: 0 0 8px 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 11px;line-height: 1.35;font-weight: 700;letter-spacing: 0.14em;text-transform: uppercase;color: {{ section.theme.accentColor || '#c05b32' }};">{{ section.eligibility.eyebrow || 'Eligibility' }}</p>
+                            <h2 class="mob-text mob-title" style="margin: 0;padding: 0;font-family: Georgia, 'Times New Roman', serif;font-size: 29px;line-height: 1.1;font-weight: 700;color: {{ section.theme.textColor || '#18251f' }};">{{ section.eligibility.heading }}</h2>
+                            <if condition="section.eligibility.body">
+                              <p class="mob-text" style="margin: 12px 0 0 0;padding: 0;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 15px;line-height: 1.52;font-weight: 500;color: {{ section.theme.textColor || '#18251f' }};opacity: 0.78;">{{ section.eligibility.body }}</p>
+                            </if>
+                          </td>
+                        </tr>
+                        <if condition="section.eligibility.items && section.eligibility.items.length">
+                          <tr>
+                            <td style="border-collapse: collapse;padding: 0 22px 20px 22px;background: {{ section.theme.surfaceColor || '#fff8ea' }};">
+                              <each loop="item in section.eligibility.items">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;border-top: 1px solid rgba(24,37,31,0.18);">
+                                  <tbody>
+                                    <tr>
+                                      <td style="border-collapse: collapse;padding: 13px 0;">
+                                        <p class="mob-meta" style="margin: 0 0 5px 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 11px;line-height: 1.35;font-weight: 700;letter-spacing: 0.12em;text-transform: uppercase;color: {{ section.theme.accentColor || '#c05b32' }};">{{ item.label }}</p>
+                                        <p class="mob-text mob-title" style="margin: 0;padding: 0;font-family: Georgia, 'Times New Roman', serif;font-size: 20px;line-height: 1.16;font-weight: 700;color: {{ section.theme.textColor || '#18251f' }};">{{ item.value }}</p>
+                                        <if condition="item.body">
+                                          <p class="mob-text" style="margin: 7px 0 0 0;padding: 0;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;line-height: 1.5;font-weight: 500;color: {{ section.theme.textColor || '#18251f' }};opacity: 0.78;">{{ item.body }}</p>
+                                        </if>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </each>
+                            </td>
+                          </tr>
+                        </if>
+                      </if>
+
                       <if condition="section.process && section.process.heading">
                         <tr>
                           <td style="border-collapse: collapse;padding: 24px 22px 8px 22px;background: {{ section.theme.surfaceColor || '#fff8ea' }};">
@@ -1196,6 +1229,35 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                         </each>
                       </if>
 
+                      <if condition="section.statusBoard && section.statusBoard.heading">
+                        <tr>
+                          <td style="border-collapse: collapse;padding: 24px 22px;background: {{ section.theme.surfaceColor || '#fff8ea' }};">
+                            <p class="mob-meta" style="margin: 0 0 8px 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 11px;line-height: 1.35;font-weight: 700;letter-spacing: 0.14em;text-transform: uppercase;color: {{ section.theme.accentColor || '#c05b32' }};">{{ section.statusBoard.eyebrow || 'Status Board' }}</p>
+                            <h2 class="mob-text mob-title" style="margin: 0;padding: 0;font-family: Georgia, 'Times New Roman', serif;font-size: 28px;line-height: 1.1;font-weight: 700;color: {{ section.theme.textColor || '#18251f' }};">{{ section.statusBoard.heading }}</h2>
+                            <if condition="section.statusBoard.body">
+                              <p class="mob-text" style="margin: 12px 0 0 0;padding: 0;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 15px;line-height: 1.52;font-weight: 500;color: {{ section.theme.textColor || '#18251f' }};opacity: 0.78;">{{ section.statusBoard.body }}</p>
+                            </if>
+                            <if condition="section.statusBoard.items && section.statusBoard.items.length">
+                              <each loop="item in section.statusBoard.items">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;margin-top: 14px;border-top: 1px solid rgba(24,37,31,0.2);">
+                                  <tbody>
+                                    <tr>
+                                      <td style="border-collapse: collapse;padding: 13px 0 0 0;">
+                                        <p class="mob-meta" style="margin: 0 0 5px 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 11px;line-height: 1.35;font-weight: 700;letter-spacing: 0.12em;text-transform: uppercase;color: {{ section.theme.accentColor || '#c05b32' }};">{{ item.label }}</p>
+                                        <p class="mob-text mob-title" style="margin: 0;padding: 0;font-family: Georgia, 'Times New Roman', serif;font-size: 20px;line-height: 1.16;font-weight: 700;color: {{ section.theme.textColor || '#18251f' }};">{{ item.value }}</p>
+                                        <if condition="item.body">
+                                          <p class="mob-text" style="margin: 7px 0 0 0;padding: 0;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;line-height: 1.5;font-weight: 500;color: {{ section.theme.textColor || '#18251f' }};opacity: 0.78;">{{ item.body }}</p>
+                                        </if>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </each>
+                            </if>
+                          </td>
+                        </tr>
+                      </if>
+
                       <if condition="section.caseFile && section.caseFile.heading">
                         <tr>
                           <td style="border-collapse: collapse;padding: 24px 22px;background: {{ section.theme.textColor || '#18251f' }};">
@@ -1214,6 +1276,35 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                         <p class="mob-text mob-title" style="margin: 0;padding: 0;font-family: Georgia, 'Times New Roman', serif;font-size: 20px;line-height: 1.16;font-weight: 700;color: #fff8ea;">{{ item.value }}</p>
                                         <if condition="item.body">
                                           <p class="mob-text" style="margin: 7px 0 0 0;padding: 0;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;line-height: 1.5;font-weight: 500;color: #efe4d4;">{{ item.body }}</p>
+                                        </if>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </each>
+                            </if>
+                          </td>
+                        </tr>
+                      </if>
+
+                      <if condition="section.intakePreview && section.intakePreview.heading">
+                        <tr>
+                          <td style="border-collapse: collapse;padding: 24px 22px;background: {{ section.theme.surfaceColor || '#fff8ea' }};">
+                            <p class="mob-meta" style="margin: 0 0 8px 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 11px;line-height: 1.35;font-weight: 700;letter-spacing: 0.14em;text-transform: uppercase;color: {{ section.theme.accentColor || '#c05b32' }};">{{ section.intakePreview.eyebrow || 'Intake Preview' }}</p>
+                            <h2 class="mob-text mob-title" style="margin: 0;padding: 0;font-family: Georgia, 'Times New Roman', serif;font-size: 29px;line-height: 1.1;font-weight: 700;color: {{ section.theme.textColor || '#18251f' }};">{{ section.intakePreview.heading }}</h2>
+                            <if condition="section.intakePreview.body">
+                              <p class="mob-text" style="margin: 12px 0 0 0;padding: 0;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 15px;line-height: 1.52;font-weight: 500;color: {{ section.theme.textColor || '#18251f' }};opacity: 0.78;">{{ section.intakePreview.body }}</p>
+                            </if>
+                            <if condition="section.intakePreview.items && section.intakePreview.items.length">
+                              <each loop="item in section.intakePreview.items">
+                                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;margin-top: 14px;border-top: 1px solid rgba(24,37,31,0.18);">
+                                  <tbody>
+                                    <tr>
+                                      <td style="border-collapse: collapse;padding: 13px 0 0 0;">
+                                        <p class="mob-meta" style="margin: 0 0 5px 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;font-size: 11px;line-height: 1.35;font-weight: 700;letter-spacing: 0.12em;text-transform: uppercase;color: {{ section.theme.accentColor || '#c05b32' }};">{{ item.label }}</p>
+                                        <p class="mob-text mob-title" style="margin: 0;padding: 0;font-family: Georgia, 'Times New Roman', serif;font-size: 20px;line-height: 1.16;font-weight: 700;color: {{ section.theme.textColor || '#18251f' }};">{{ item.value }}</p>
+                                        <if condition="item.body">
+                                          <p class="mob-text" style="margin: 7px 0 0 0;padding: 0;font-family: 'IBM Plex Sans', Arial, sans-serif;font-size: 14px;line-height: 1.5;font-weight: 500;color: {{ section.theme.textColor || '#18251f' }};opacity: 0.78;">{{ item.body }}</p>
                                         </if>
                                       </td>
                                     </tr>

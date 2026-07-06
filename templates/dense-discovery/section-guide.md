@@ -232,7 +232,9 @@ sections:
       body: FPO note text that names a detail, source, or caveat associated with the launch.
 - type: microdrop-institution-service
   brand: Institution/service brand element
+  campaign: Institution-service campaign element
   title: Microdrop Institution Service Title
+  summary: A short summary for the institution-service archetype, suitable for the dense-discovery issue payload.
   canonicalUrl: mailto:guide@example.com
   theme:
     backgroundColor: "#f3eee4"
@@ -267,6 +269,14 @@ sections:
     - label: Process item label
       value: Process item value
       body: A short FPO detail that describes what happens in this service moment.
+  eligibility:
+    eyebrow: Eligibility eyebrow element
+    heading: Eligibility heading element
+    body: This FPO eligibility block explains who can use the service, what records help, or which systems qualify.
+    items:
+    - label: Eligibility item label
+      value: Eligibility item value
+      body: A short FPO eligibility note.
   offerings:
   - badge: Service badge element
     name: Service line name element
@@ -283,6 +293,22 @@ sections:
     - label: Case file item label
       value: Case file item value
       body: A short FPO record detail that supports the institution-service premise.
+  statusBoard:
+    eyebrow: Status board eyebrow element
+    heading: Status board heading element
+    body: This FPO status board shows how the institution tracks cases, calls, records, or service states.
+    items:
+    - label: Status item label
+      value: Status item value
+      body: A short FPO status detail.
+  intakePreview:
+    eyebrow: Intake preview eyebrow element
+    heading: Intake preview heading element
+    body: This FPO intake preview shows what the service asks for without rendering a transactional form.
+    items:
+    - label: Intake item label
+      value: Intake item value
+      body: A short FPO intake detail.
   finalCta:
     eyebrow: Final CTA eyebrow element
     heading: Final CTA heading element
@@ -294,6 +320,39 @@ sections:
     heading: Editorial note heading element
     body:
     - This FPO editorial note gives the institution-service section a quieter explanatory close.
+- type: microdrop-institution-service
+  brand: Sparse Civic Institution
+  campaign: Public desk preview
+  title: Sparse Civic Institution Microdrop
+  summary: A lighter institution-service payload for a civic desk with only the durable email surfaces supplied.
+  canonicalUrl: mailto:guide@example.com
+  theme:
+    backgroundColor: "#f6f1e7"
+    surfaceColor: "#fffaf0"
+    textColor: "#1f2f29"
+    accentColor: "#8a5a2b"
+  hero:
+    headline: Public records for complicated residents.
+    dek: A sparse FPO civic service card that still renders hero, image, process, case-file, CTA, and note.
+    image:
+      src: https://fpoimg.com/800x520?text=Sparse%20Civic%20Hero&bg_color=f6f1e7&text_color=1f2f29
+      alt: Sparse civic hero image alt text
+  gallery:
+  - src: https://fpoimg.com/800x520?text=Sparse%20Civic%20Gallery&bg_color=fffaf0&text_color=8a5a2b
+    alt: Sparse civic gallery image alt text
+  process:
+    heading: Bring the record, not the whole story.
+  caseFile:
+    heading: Case file reviewed at the public desk.
+  finalCta:
+    heading: Visit the public desk record.
+    body: A sparse final CTA still points to the full microdrop without commerce language.
+    href: mailto:guide@example.com
+    label: View Microdrop
+  editorialNote:
+    heading: Editorial note heading element
+    body:
+    - This sparse note verifies the optional editorial surface without requiring every institution-service panel.
 - type: adjacency-feature
   rubric: Rubric element
   title: Adjacency Feature Title

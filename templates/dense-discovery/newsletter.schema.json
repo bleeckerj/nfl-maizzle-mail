@@ -478,6 +478,192 @@
                 }
               },
               "additionalProperties": false
+          }
+        },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "microdrop-institution-service"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "required": [
+                "type",
+                "brand",
+                "campaign",
+                "title",
+                "summary",
+                "canonicalUrl",
+                "theme",
+                "hero"
+              ],
+              "properties": {
+                "type": {
+                  "const": "microdrop-institution-service"
+                },
+                "brand": { "type": "string" },
+                "campaign": { "type": "string" },
+                "title": { "type": "string" },
+                "summary": { "type": "string" },
+                "canonicalUrl": { "type": "string" },
+                "theme": {
+                  "type": "object",
+                  "properties": {
+                    "accentColor": {},
+                    "backgroundColor": {},
+                    "textColor": {},
+                    "surfaceColor": {}
+                  },
+                  "additionalProperties": true
+                },
+                "hero": {
+                  "type": "object",
+                  "properties": {
+                    "headline": {},
+                    "eyebrow": {},
+                    "dek": {},
+                    "image": {
+                      "type": ["object", "null"],
+                      "properties": {
+                        "src": {},
+                        "alt": {}
+                      },
+                      "additionalProperties": true
+                    },
+                    "cta": {
+                      "type": ["object", "null"],
+                      "properties": {
+                        "label": {},
+                        "href": {}
+                      },
+                      "additionalProperties": true
+                    }
+                  },
+                  "additionalProperties": true
+                },
+                "gallery": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "required": ["src"],
+                    "properties": {
+                      "src": {},
+                      "alt": {},
+                      "label": {},
+                      "caption": {}
+                    },
+                    "additionalProperties": true
+                  }
+                },
+                "serviceStrip": {
+                  "$ref": "#/properties/sections/items/allOf/1/then/properties/process"
+                },
+                "process": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "eyebrow": {},
+                    "heading": {},
+                    "body": {},
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "label": {},
+                          "value": {},
+                          "body": {}
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  },
+                  "additionalProperties": true
+                },
+                "caseFile": {
+                  "$ref": "#/properties/sections/items/allOf/1/then/properties/process"
+                },
+                "eligibility": {
+                  "$ref": "#/properties/sections/items/allOf/1/then/properties/process"
+                },
+                "statusBoard": {
+                  "$ref": "#/properties/sections/items/allOf/1/then/properties/process"
+                },
+                "intakePreview": {
+                  "$ref": "#/properties/sections/items/allOf/1/then/properties/process"
+                },
+                "offerings": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {},
+                      "name": {},
+                      "badge": {},
+                      "catalog": {},
+                      "color": {},
+                      "slogan": {},
+                      "ritual": {},
+                      "state": {},
+                      "descriptionText": {},
+                      "image": {
+                        "type": ["object", "null"],
+                        "properties": {
+                          "src": {},
+                          "alt": {}
+                        },
+                        "additionalProperties": true
+                      },
+                      "ksp": {
+                        "type": "array",
+                        "items": {}
+                      }
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "finalCta": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "eyebrow": {},
+                    "heading": {},
+                    "body": {},
+                    "href": {},
+                    "label": {}
+                  },
+                  "additionalProperties": true
+                },
+                "editorialNote": {
+                  "type": ["object", "null"],
+                  "properties": {
+                    "eyebrow": {},
+                    "heading": {},
+                    "body": {
+                      "type": "array",
+                      "items": {}
+                    },
+                    "notes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "label": {},
+                          "body": {}
+                        },
+                        "additionalProperties": true
+                      }
+                    }
+                  },
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
             }
           },
           {
