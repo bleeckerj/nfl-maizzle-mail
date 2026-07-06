@@ -91,6 +91,9 @@ test('normalizeCorrespondenceEmailData builds correspondence locals with shared 
   });
   assert.equal(data.correspondence.footerLinks.length, 1);
   assert.match(data.correspondence.theme.fontFamily, /JetBrainsMono Nerd Font/);
+  assert.equal(data.correspondence.theme.backgroundColor, '#ffffff');
+  assert.equal(data.correspondence.theme.surfaceColor, '#ffffff');
+  assert.equal(data.correspondence.theme.borderColor, '#e5e5e5');
 });
 
 test('normalizeCorrespondenceEmailData renders signature lines as links after the signature name', () => {

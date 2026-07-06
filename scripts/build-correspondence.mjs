@@ -2,8 +2,10 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
+import dotenv from 'dotenv';
 import MaizzleFramework from '@maizzle/framework';
 
 import {
@@ -13,7 +15,10 @@ import {
   slugifyOutputName,
   validateCorrespondenceEmailData,
 } from '../lib/correspondence-email/index.mjs';
+import { sendSesTestEmail } from '../lib/email-send/ses-test-mailer.mjs';
 import { hardenEmailHtmlForMobile } from '../lib/newsletter-core/email-html-hardening.mjs';
+
+dotenv.config();
 
 const { build: maizzleBuild } = MaizzleFramework;
 
@@ -48,6 +53,11 @@ function printUsage(repoRoot) {
   console.log('  --output-dir=<path>   Output directory (default: build_correspondence)');
   console.log('  --repo-root=<path>    Repository root override');
   console.log('  --strict-schema       Fail on schema validation warnings');
+  console.log('  --send-test           Send the generated HTML through the SES test sender');
+  console.log('  --dry-run             With --send-test, validate without sending');
+  console.log('  --skip-link-validation');
+  console.log('                         With --send-test --dry-run, skip link validation');
+  console.log('  --no-open             Do not open the generated HTML preview');
   console.log('');
   console.log(`Current Repo Root: ${repoRoot}`);
 }
@@ -73,14 +83,41 @@ function resolveBuiltTemplatePath(baseDir, templateName) {
   return null;
 }
 
-async function buildCorrespondence() {
-  const args = process.argv.slice(2);
+export function openPreviewPath(filePath, { logger = console } = {}) {
+  const previewUrl = pathToFileURL(filePath).href;
+  const command = process.platform === 'darwin'
+    ? 'open'
+    : process.platform === 'win32'
+      ? 'cmd'
+      : 'xdg-open';
+  const args = process.platform === 'win32'
+    ? ['/c', 'start', '', previewUrl]
+    : process.platform === 'darwin'
+      ? [filePath]
+      : [previewUrl];
+
+  const result = spawnSync(command, args, { stdio: 'ignore' });
+  if (result.error) {
+    logger.warn(`Could not open preview automatically: ${result.error.message}`);
+  } else if (result.status && result.status !== 0) {
+    logger.warn('Could not open preview automatically.');
+  } else {
+    logger.log(`Opened preview: ${previewUrl}`);
+  }
+
+  return previewUrl;
+}
+
+export async function buildCorrespondenceEmail({
+  args = process.argv.slice(2),
+  openPreview = true,
+} = {}) {
   const repoRoot = path.resolve(getOptionValue(args, 'repo-root') || process.env.NFL_MAIZZLE_MAIL_ROOT || DEFAULT_REPO_ROOT);
   const fileArgs = args.filter((arg) => !arg.startsWith('--'));
 
   if (fileArgs.length < 1) {
     printUsage(repoRoot);
-    process.exit(1);
+    throw new Error('Missing correspondence input file');
   }
 
   const inputFile = fileArgs[0];
@@ -93,8 +130,18 @@ async function buildCorrespondence() {
   const outputDir = path.resolve(getOptionValue(args, 'output-dir') || path.join(repoRoot, 'build_correspondence'));
   const templateName = getOptionValue(args, 'template') || DEFAULT_CORRESPONDENCE_TEMPLATE;
   const finalOutputPath = path.join(outputDir, `${outputName}.html`);
+  const shouldSendTest = args.includes('--send-test');
+  const sendDryRun = args.includes('--dry-run');
+  const skipLinkValidation = args.includes('--skip-link-validation');
   const tempBuildDirName = `.tmp_correspondence_build_${process.pid}_${Date.now()}`;
   const tempBuildDir = path.join(repoRoot, tempBuildDirName);
+
+  if (args.includes('--allow-broken-links-for-visual-test') && shouldSendTest) {
+    throw new Error('--allow-broken-links-for-visual-test is not permitted with --send-test.');
+  }
+  if (skipLinkValidation && (!shouldSendTest || !sendDryRun)) {
+    throw new Error('--skip-link-validation is only allowed with --send-test --dry-run.');
+  }
 
   log('Building correspondence email');
   log(`Input: ${inputPath}`);
@@ -183,10 +230,38 @@ async function buildCorrespondence() {
 
   log('Correspondence email built');
   log(`HTML: ${finalOutputPath}`);
+  if (openPreview && !args.includes('--no-open')) {
+    openPreviewPath(finalOutputPath, {
+      logger: {
+        log,
+        warn: (message) => console.warn(`[${timestamp()}] ${message}`),
+      },
+    });
+  }
+  if (shouldSendTest) {
+    await sendSesTestEmail({
+      htmlPath: finalOutputPath,
+      subjectLine: data.subject || outputName,
+      dryRun: sendDryRun,
+      validateLinks: !skipLinkValidation,
+    });
+  }
   log('No archive URL, view-online link, unsubscribe link, or newsletter manifest was generated.');
+
+  return {
+    finalOutputPath,
+    data,
+    inputPath,
+    outputName,
+    outputDir,
+    templateName,
+  };
 }
 
-buildCorrespondence().catch((error) => {
-  console.error(`❌ ${error.message}`);
-  process.exit(1);
-});
+const invokedPath = process.argv[1] ? pathToFileURL(path.resolve(process.argv[1])).href : '';
+if (import.meta.url === invokedPath) {
+  buildCorrespondenceEmail().catch((error) => {
+    console.error(`❌ ${error.message}`);
+    process.exit(1);
+  });
+}

@@ -20,7 +20,8 @@
     "lint:content": "node scripts/lint-template.mjs",
     "test:newsletter-core": "node --test tests/newsletter-core/*.test.mjs",
     "test:correspondence": "node --test tests/correspondence-email/*.test.mjs",
-    "send:test": "node scripts/send-ses-test.mjs"
+    "send:test": "node scripts/send-ses-test.mjs",
+    "send:correspondence:test": "node scripts/send-correspondence-test.mjs"
   },
   "keywords": [
     "email",

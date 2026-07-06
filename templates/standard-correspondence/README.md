@@ -18,6 +18,15 @@ npm run build:correspondence -- correspondence/client-note.md client-note
 ```
 
 Output is written to `build_correspondence/<output-name>.html`.
+The build command opens the generated HTML preview by default. Add `--no-open` for scripted runs.
+
+## Send Test
+
+```bash
+npm run build:correspondence -- correspondence/client-note.md client-note --send-test
+```
+
+The `--send-test` flag validates links and sends the rendered HTML through the shared SES test sender. It uses `SES_FROM`, `SES_TO`, optional `SES_SUBJECT`, and optional `AWS_REGION`.
 
 ## Author-Owned Fields
 

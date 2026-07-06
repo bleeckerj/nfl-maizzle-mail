@@ -116,6 +116,7 @@ build_production/<output-name>.content-slots.json
 | `npm run build:data` | `maizzle build production` | Alias for raw Maizzle production build. |
 | `npm run dev` | `maizzle serve` | Maizzle development server. |
 | `npm run build:newsletter` | `node scripts/build-newsletter.mjs` | Canonical newsletter build entry. |
+| `npm run build:correspondence` | `node scripts/build-correspondence.mjs` | Build local one-off correspondence email HTML. |
 | `npm run export:normalized-newsletter` | `node scripts/export-normalized-newsletter.mjs` | Emit normalized newsletter JSON for downstream tooling. |
 | `npm run quick` | `node scripts/quick-build.mjs` | Convenience wrapper for building a content file with a chosen template. |
 | `npm run factory` | `node scripts/email-template-factory/index.mjs` | Generate or refine templates through the email template factory. |
@@ -127,6 +128,7 @@ build_production/<output-name>.content-slots.json
 | `npm run lint:content` | `node scripts/lint-template.mjs` | Validate Markdown or JSON content against template rules. |
 | `npm run test:newsletter-core` | `node --test tests/newsletter-core/*.test.mjs` | Run focused build-helper tests. |
 | `npm run send:test` | `node scripts/send-ses-test.mjs` | Send a built HTML file through AWS SES. |
+| `npm run send:correspondence:test` | `node scripts/send-correspondence-test.mjs` | Compatibility wrapper for building and sending a correspondence email through AWS SES. |
 
 ## Direct Scripts
 

@@ -1,12 +1,10 @@
 #!/usr/bin/env node
-import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import process from 'node:process';
 
 import dotenv from 'dotenv';
-import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
 
-import { validateRenderedHtmlLinks } from '../lib/newsletter-core/index.mjs';
+import { sendSesTestEmail } from '../lib/email-send/ses-test-mailer.mjs';
 
 dotenv.config();
 
@@ -17,51 +15,20 @@ if (process.argv.includes('--allow-broken-links-for-visual-test')) {
   );
   process.exit(1);
 }
-const htmlArg = process.argv.slice(2).find((arg) => !arg.startsWith('--'));
-const htmlPath = resolve(process.cwd(), htmlArg ?? DEFAULT_HTML_PATH);
-const fromAddress = process.env.SES_FROM;
-const toAddresses = process.env.SES_TO?.split(',').map((entry) => entry.trim()).filter(Boolean) ?? [];
-const subjectLine = process.env.SES_SUBJECT || 'Newsletter Test from Maizzle Workflow';
-const region = process.env.AWS_REGION || 'us-west-2';
-
-if (!fromAddress || toAddresses.length === 0) {
-  console.error('Missing SES_FROM or SES_TO environment variables.');
+if (process.argv.includes('--skip-link-validation') && !process.argv.includes('--dry-run')) {
+  console.error('--skip-link-validation is only allowed with --dry-run.');
   process.exit(1);
 }
 
+const htmlArg = process.argv.slice(2).find((arg) => !arg.startsWith('--'));
+const htmlPath = resolve(process.cwd(), htmlArg ?? DEFAULT_HTML_PATH);
+
 async function main() {
-  const htmlBody = await readFile(htmlPath, 'utf8');
-  await validateRenderedHtmlLinks(htmlBody);
-
-  const clientConfig = { region };
-  if (process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY) {
-    clientConfig.credentials = {
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-    };
-  }
-
-  const client = new SESClient(clientConfig);
-  const command = new SendEmailCommand({
-    Source: fromAddress,
-    Destination: {
-      ToAddresses: toAddresses,
-    },
-    Message: {
-      Subject: {
-        Data: subjectLine,
-      },
-      Body: {
-        Html: {
-          Data: htmlBody,
-          Charset: 'UTF-8',
-        },
-      },
-    },
+  await sendSesTestEmail({
+    htmlPath,
+    dryRun: process.argv.includes('--dry-run'),
+    validateLinks: !process.argv.includes('--skip-link-validation'),
   });
-
-  await client.send(command);
-  console.log(`✓ Sent ${htmlPath} to ${toAddresses.join(', ')} via SES (${region}).`);
 }
 
 main().catch((error) => {
