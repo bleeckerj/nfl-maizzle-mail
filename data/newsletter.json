@@ -1,359 +1,525 @@
 {
-  "$schema": "../templates/brain-dead-template/schema.json",
-  "template": "brain-dead-template",
-  "title": "Midweek 26, 2026",
-  "issueId": "mw26-y26",
-  "preheader": "Friday, June 26: Office Hours, project-share slots, Dubai Future Horizons, Futuring 2.0, and the four Design Fiction books.",
-  "brand": {
-    "name": "Near Future Laboratory",
-    "logoUrl": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/f6918220-7209-42cb-1f35-3207cc1c6b00/w=300?format=webp",
-    "logoAlt": "Near Future Laboratory",
-    "logoWidth": 96,
-    "logoLink": "https://nearfuturelaboratory.com/",
-    "navLinks": [
-      {
-        "label": "RSVP",
-        "url": "https://luma.com/e1dfha2r"
-      },
-      {
-        "label": "Signup for project share",
-        "url": "https://nearfuturelaboratory.com/office-hours-signup"
-      }
-    ]
+  "$schema": "../newsletter.schema.json",
+  "template": "dense-discovery",
+  "title": "studies + observations",
+  "newsletterFormat": "discovery",
+  "pubDate": "2026-07-03 22:47:53-07:00",
+  "preheader": "Week 28, Year 26",
+  "ogImage": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/4fec45f3-b7ab-4494-581d-86282bf90e00/w=600?format=webp",
+  "ogImageAltText": "A worn sofa",
+  "socialCard": {
+    "title": "Wk 28 Yr 26",
+    "subtitle": "Abundance, housing, repair, circularity, and the material limits that sit behind policy language.",
+    "kicker": "STUDIES & OBSERVATIONS",
+    "backgroundImage": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/4fec45f3-b7ab-4494-581d-86282bf90e00/w=600?format=webp",
+    "logoUrl": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/f6918220-7209-42cb-1f35-3207cc1c6b00/w=150?format=webp",
+    "titleFont": "nfl-title-untitled",
+    "subtitleFont": "nfl-subtitle",
+    "kickerFont": "nfl-kicker",
+    "backgroundOpacity": 1,
+    "backgroundHueRotate": 0,
+    "backgroundSaturation": 1,
+    "overlayStrength": 0.15,
+    "imageBrightness": 1,
+    "textColor": "#f5f2eb",
+    "mutedTextColor": "rgba(255,255,255,0.82)",
+    "kickerColor": "#ffb000",
+    "animation": {
+      "mode": "none",
+      "animeModule": "deterministic-orbit",
+      "durationMs": 8000,
+      "fps": 8,
+      "loop": true,
+      "posterFrame": 0.5,
+      "disableForPresets": [
+        "1x1",
+        "1520x1000"
+      ]
+    }
   },
-  "hero": {
-    "eyebrow": "Office Hours N°314",
-    "headline": "Weekly Office Hours.",
-    "subhead": "June 26, 2026, 9:00-10:30 AM Pacific, on Zoom.",
-    "body": "Weekly Office Hours is open for this Friday. Come by for the usual generous, curious, smart group conversation around Design Fiction, speculative practice, creative work, side projects, tools, systems, and whatever else is moving through the Lab orbit this week.<br><br>\nThere are <a href='https://nearfuturelaboratory.com/office-hours-signup'>project-share slots</a> open. If you have something you want help with, bring it. The format is tight: 10 minutes to introduce the project, share slides, show what you are making, or frame the question, followed by 20 minutes of polite, useful group feedback and help.\n",
-    "image": "https://images.lumacdn.com/event-social/z4/c1eb8b18-6f45-4e2c-ba6c-cf5a0dca15d0.png",
-    "imageAlt": "Office Hours N°314 event image from Luma",
-    "ctaText": "RSVP on Luma",
-    "ctaLink": "https://luma.com/e1dfha2r"
+  "sectionStylesFile": "templates/dense-discovery/section-styles.json",
+  "colorTheme": "winter",
+  "intro": {
+    "title": "Week 28, Year 26",
+    "aside": {
+      "content": "<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0;    ; font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 18px; line-height: 23px; font-style: italic !important; color: #3f3f3f !important; text-align: left !important\">Last week we talked about dirt. This week we talk about where we leave it and what we actually do when we live in a world of just-enough.</p>",
+      "containerStyles": {
+        "backgroundColor": "#fbfaf2",
+        "padding": "12px 14px",
+        "borderRadius": "6px",
+        "borderLeftColor": "#ff00f3",
+        "borderLeftWidth": "2px",
+        "borderLeftStyle": "solid"
+      },
+      "contentStyles": {
+        "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+        "fontSize": "18px",
+        "lineHeight": "23px",
+        "fontStyle": "italic",
+        "color": "#3f3f3f",
+        "textAlign": "left"
+      }
+    },
+    "containerStyles": {
+      "backgroundColor": null,
+      "padding": "0",
+      "borderRadius": "0px"
+    },
+    "viewOnlineLink": "https://nearfuturelaboratory.com/newsletters/2026/w28-y26",
+    "contentStyles": {
+      "fontFamily": "Roboto, sans-serif, Segoe UI, Helvetica, Arial",
+      "fontSize": "19px",
+      "lineHeight": "1.5",
+      "fontWeight": "500",
+      "color": "#000000",
+      "textAlign": "left"
+    }
+  },
+  "header": {
+    "logoLink": "https://nearfuturelaboratory.com/",
+    "featuredImage": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/4fec45f3-b7ab-4494-581d-86282bf90e00/w=600?format=webp",
+    "logoBottom": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp",
+    "logoTop": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp",
+    "containerStyles": {
+      "backgroundColor": null
+    }
   },
   "sections": [
     {
-      "type": "single-column",
-      "label": "Featured from the Lab",
+      "type": "apps-sites-single-column",
+      "title": "The E-Z Form",
+      "description": "<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0; font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">There's still a form in a world of just-enough.</p>",
       "items": [
         {
-          "kicker": "On sale",
-          "title": "The Four Design Fiction Books",
-          "subtitle": "Four printed references for Design Fiction, imagination, artifacts from possible futures, and speculative scenarios.",
-          "body": "The Manual of Design Fiction, It's Time to Imagine Harder, TBD Catalog, and Androids Dream of Electric Sheep are bundled together as a compact shelf of Near Future Laboratory practice.<br><br>\nIf Office Hours gives you the conversation, these books give you the longer-form references: methods, examples, prompts, artifacts, and ways to keep your own work moving.\n",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/547ab240-d2a3-4b4a-bd29-ef16200abd00/full?format=webpc",
-          "imageAlt": "Four Design Fiction books from Near Future Laboratory",
-          "price": "Sale bundle",
-          "link": "https://shop.nearfuturelaboratory.com/products/the-manual-of-design-fiction-paperback",
-          "ctaText": "Shop the books"
+          "title": "Reciprocity Service Return Card",
+          "link": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/f166a01b-cb3a-4448-b523-77e6daa17700/full",
+          "subtitle": "The TSR-4890/12A",
+          "description": "<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">The last workshop exercise at the Futures 2.0 seminar last weekend (was it last weekend?) rested on the question that percolates around in my head: seriously..if there was universal basic income — pray tell — would you do? (Which begs the question as to why you aren't doing it now, but I don't want to get you all worked up.)</p>\n<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">So — the exercise started with this form I sketched and then Rick made into somethign that actually looked like a form rather than a sketch.</p>\n<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">The form looks like this so that one “falls into” the sense that this is a real artifact, the conceit being this:</p>\n<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">In the UBI world, every year, or maybe twice a year, one has to do some kind of reciprocity service — contributing to the larger social organization (perhaps your Farm Operating Base pop. 2,604) in a meaningful way. So, you fill out this form with your proposed “service”. That is to say, <em>you make a proposal as to what to do</em>.</p>\n<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">Of course, that doesn't mean proposing “sitting on my sofa playing Fortnite” is what you will do because presumably that is how you spend your time otherwise, if you're that kind of person. You might propose to teach a class on soil cultivation, or host a reading group on phenomenology, or a teach a class on Manga illustration. Something that reciprocates the value that you draw-down upon by otherwise and generally being self-indulgent for 2/3rds of the year.</p>\n<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">The provocation was accepted by the seminar group and we ran the exercise with enthusiasm. I would say that it was a group of ringers — everyone there has the “giver” gene so they were excited to propose what they would do (or rather be doing in this world, I would guess.)</p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/f166a01b-cb3a-4448-b523-77e6daa17700/full",
+          "readMoreText": "View image →",
+          "readMoreLink": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/f166a01b-cb3a-4448-b523-77e6daa17700/full"
         }
       ],
       "contentStyles": {
-        "fontFamily": "Courier New, Courier, monospace",
-        "fontSize": "15px",
-        "lineHeight": "22px",
-        "color": "#000000"
+        "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "color": "#111111",
+        "textAlign": "left"
       },
-      "_contentStyleOverrides": null,
       "containerStyles": {
-        "backgroundColor": "#ffffff",
-        "padding": "12px 32px 8px",
+        "backgroundColor": null,
+        "padding": "15px 20px",
         "borderRadius": "0px"
       },
-      "descriptionStyles": {
-        "fontFamily": "Courier New, Courier, monospace",
-        "fontSize": "15px",
-        "lineHeight": "22px",
-        "color": "#000000"
-      },
-      "spacerBackgroundColor": "#f0efef",
       "headingStyles": {
-        "fontFamily": "Courier New, Courier, monospace",
-        "fontSize": "15px",
-        "lineHeight": "22px",
-        "fontWeight": "700",
-        "color": "#000000"
+        "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "fontWeight": "600",
+        "color": "#111111",
+        "lineHeight": "1.4",
+        "textAlign": "left"
       },
       "linkStyles": {
-        "fontFamily": "Courier New, Courier, monospace",
-        "fontWeight": "700",
-        "textDecoration": "none",
-        "color": "#000000",
-        "fontSize": "15px",
-        "lineHeight": "22px"
+        "color": "#111111",
+        "textDecoration": "underline",
+        "fontWeight": "500",
+        "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "lineHeight": "1.4",
+        "textAlign": "left"
       },
       "labelStyles": {},
       "sectionHeaderHeadingStyles": {},
       "ctaStyles": {},
-      "headingStylesInline": "font-family: Courier New, Courier, monospace !important; font-size: 15px; line-height: 22px; font-weight: 700 !important; color: #000000 !important",
-      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important",
-      "linkStylesInline": "text-decoration: none !important; font-weight: 700 !important; color: #000000 !important; font-family: Courier New, Courier, monospace !important; font-size: 15px; line-height: 22px",
-      "labelStylesInline": "font-family: Geist, ui-sans-serif, sans-serif !important; font-size: 12px; line-height: 14px; font-weight: 300 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important",
-      "articleCtaStylesInline": ""
+      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important"
     },
     {
-      "type": "dual-column",
-      "label": "Also from the Lab",
+      "type": "food-for-thought",
+      "title": "Food For Thought",
       "items": [
         {
-          "kicker": "Upcoming event",
-          "title": "Dubai Future Horizons",
-          "subtitle": "Human by Design: Who Will We Become?",
-          "body": "On June 30, I’ll join Professor John E. Katsos and host Felix Zeltzer for a Dubai Future Horizons conversation on identity, ethics, resilience, and the human capabilities we will need to navigate the futures we are creating.<br><br>\nThe session is live on Zoom at 10:00 AM Eastern, 7:00 AM Pacific, and 6:00 PM Dubai time.\n",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e20d543a-394f-4b90-8211-aca7d259e100/public",
-          "imageAlt": "Dubai Future Horizons Human by Design event graphic, orange version",
-          "link": "https://zoom.us/meeting/register/Dk8gyYX_SqupRimhXVXvAg#/registration",
-          "ctaText": "Register on Zoom"
+          "title": "The Poetics of Design Fiction",
+          "link": "https://dl.acm.org/doi/10.1145/2513506.2513531",
+          "description": "<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">I’ve been thinking about design fiction as more than “making up the future.” The authors of this academic-y paper — Markussen and Knutz — lay out a practical way to do design fiction by blending literary practice with design practice — so the story isn’t an accessory, it’s fully enmeshed in the method. They start with a sharper definition rooted in poetics and possible worlds, then back it up with four workshop projects co-developed with a Danish author. Their takeaway is this: good design fiction has craft in both directions, on the page and in the interface.</p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/6506caea-1f60-4469-42a7-e8c1bc084b00/w=600?format=webp",
+          "channel": "digest-this-🥓",
+          "category": "Futures",
+          "sharedBy": "julian",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://dl.acm.org/doi/10.1145/2513506.2513531",
+          "paywall": false
         },
         {
-          "kicker": "Denver workshop",
-          "title": "Futuring 2.0",
-          "subtitle": "Futuring in Print at The Shop at MATTER",
-          "body": "In collaboration with The Shop at MATTER, I’ll be running a workshop and seminar on futuring on June 27 in Denver with Becky Vartabedian, PhD.<br><br>\nThe seminar covers the history of futuring, methods and tools, and how the practice is evolving in the context of AI and other emerging technologies. The workshop is a hands-on session where participants can apply futuring techniques to their own projects and challenges.\n",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/1211e67e-9fce-412c-394c-74fd5d065c00/w=600?format=webp",
-          "imageAlt": "Futuring 2.0 workshop graphic",
-          "link": "https://www.eventbrite.com/e/the-seminar-year-2-tickets-1977107660234",
-          "ctaText": "RSVP on Eventbrite"
+          "title": "The Real Housing Crisis - Future Observatory Journal",
+          "link": "https://www.abc.net.au/news/2025-08-23/national-construction-code-pause-housing-minister-clare-oneil/105689760",
+          "description": "<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">This piece from friend-of-the-blog Dan Hill resonated because when I was in Denver last weekend, Rafael pointed out how there was an area of downtown Denver that had “over built” and was somewhat latently occupied or something. That inspired a forward-facing wonderment: <em>suppose there was a world where that space was used for indoor farming?</em></p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">I know..I know..crazy, right?</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">Or maybe just weird enough such that sticking with that thought before dismissing is out of hand would be somehow...generative?</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">So..we sat with it and then the whole idea of a soil cultivation depository/repository led to the further design fiction of the Denver Public Biometic Hybridatarium so..I'm good with sufficiently weird to widen the conversation kind of things.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">But, anyway — Dan's saying that he keeps hearing that the housing crisis is solved by “abundance” politics: loosen regulations, flood the market with more homes, and affordability will follow. But the piece makes a sharper point: there may not be a true housing shortage, and building more the same way won’t automatically fix affordability. Worse, the built environment’s extractive footprint means careless “build baby build” could wreck carbon budgets without delivering the housing outcomes we actually want. The real work, it argues, is changing the system settings and focusing emissions-aware, not-for-profit housing strategies.</p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2cb326fd-644a-4858-18dd-21fa486f5700/w=600?format=webp",
+          "channel": "digest-this-🥓",
+          "category": "Housing",
+          "sharedBy": "julian",
+          "readMoreText": "Read more →",
+          "readMoreLink": "https://www.abc.net.au/news/2025-08-23/national-construction-code-pause-housing-minister-clare-oneil/105689760",
+          "paywall": false
         }
       ],
       "contentStyles": {
-        "fontFamily": "Courier New, Courier, monospace",
-        "fontSize": "14px",
-        "lineHeight": "21px",
-        "color": "#000000"
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "lineHeight": "23px",
+        "color": "#000000",
+        "textAlign": "left"
       },
-      "_contentStyleOverrides": null,
       "containerStyles": {
-        "backgroundColor": "#ffffff",
-        "padding": "12px 32px 8px",
+        "backgroundColor": null,
+        "padding": "15px 20px",
         "borderRadius": "0px"
       },
-      "descriptionStyles": {
-        "fontFamily": "Courier New, Courier, monospace",
-        "fontSize": "14px",
-        "lineHeight": "21px",
-        "color": "#000000"
-      },
-      "spacerBackgroundColor": "#f0efef",
       "headingStyles": {
-        "fontFamily": "Courier New, Courier, monospace",
-        "fontSize": "14px",
-        "lineHeight": "21px",
-        "fontWeight": "700",
-        "color": "#000000"
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "fontWeight": "600",
+        "color": "#000000",
+        "lineHeight": "23px",
+        "textAlign": "left"
       },
       "linkStyles": {
-        "fontFamily": "Courier New, Courier, monospace",
-        "fontWeight": "700",
-        "textDecoration": "none",
         "color": "#000000",
-        "fontSize": "14px",
-        "lineHeight": "21px"
+        "textDecoration": "underline",
+        "fontWeight": "500",
+        "fontSize": "19px",
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "lineHeight": "23px",
+        "textAlign": "left"
       },
       "labelStyles": {},
       "sectionHeaderHeadingStyles": {},
       "ctaStyles": {},
-      "headingStylesInline": "font-family: Courier New, Courier, monospace !important; font-size: 14px; line-height: 21px; font-weight: 700 !important; color: #000000 !important",
-      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important",
-      "linkStylesInline": "text-decoration: none !important; font-weight: 700 !important; color: #000000 !important; font-family: Courier New, Courier, monospace !important; font-size: 14px; line-height: 21px",
-      "labelStylesInline": "font-family: Geist, ui-sans-serif, sans-serif !important; font-size: 12px; line-height: 14px; font-weight: 300 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important",
-      "articleCtaStylesInline": ""
+      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important"
+    },
+    {
+      "type": "sponsor",
+      "title": "Join the Near Future Laboratory",
+      "items": [
+        {
+          "title": "Near Future Laboratory Patreon",
+          "link": "https://patreon.com/nearfuturelaboratory",
+          "subtitle": "Join the Discord, support Office Hours, and help keep the newsletter moving.",
+          "description": "<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important\">The Near Future Laboratory is supported by its community and members. <a href=\"https://patreon.com/nearfuturelaboratory\" data-link-label=\"patreon | Near Future Laboratory\" data-link-category=\"community\" data-link-intent=\"support-work\" data-link-interest=\"speculative-practice\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px !important; font-weight: normal !important; text-decoration: underline !important; color: #111111 !important\">Join us on Patreon</a> to support the newsletter, Office Hours, podcasts, Design Fiction experiments, and the ongoing Discord conversation around design, technology, creativity, and possible futures.</p>\n<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important\">Patrons get an invitation to the Near Future Laboratory Discord and weekly Office Hours, where people bring projects, questions, half-formed ideas, and useful references into a generous working conversation.</p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/8949bc0c-92a1-4034-ad32-aeff96caaf00/w=600?format=webp",
+          "readMoreText": "Join the Patreon",
+          "readMoreLink": "https://patreon.com/nearfuturelaboratory"
+        }
+      ],
+      "sponsorLabel": "COMMUNITY",
+      "sponsorLink": "https://patreon.com/nearfuturelaboratory",
+      "contentStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "lineHeight": "1.2",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "10px"
+      },
+      "headingStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "fontWeight": "600",
+        "color": "#111111",
+        "lineHeight": "1.2",
+        "textAlign": "left"
+      },
+      "linkStyles": {
+        "color": "#111111",
+        "textDecoration": "underline",
+        "fontWeight": "normal",
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "lineHeight": "1.2",
+        "textAlign": "left"
+      },
+      "labelStyles": {},
+      "sectionHeaderHeadingStyles": {},
+      "ctaStyles": {},
+      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important"
+    },
+    {
+      "type": "ad-block",
+      "title": "Ad Block",
+      "items": [
+        {
+          "adId": "bowman-poole-interstitial-03",
+          "label": "YOUR NEIGHBORHOOD SERVICE TECHNICIANS AVAIL 24/7",
+          "sponsor": "BOWMAN-POOLE LTD",
+          "title": "",
+          "description": "",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/fdfdd797-13fb-4ff7-a01b-473dbe9e0100/full?format=webp",
+          "imageAlt": "Bowman-Poole agentic ad automation service advertisement.",
+          "link": "https://theadjacency.com/microdrop/bowman-poole-agentic-alignment/",
+          "readMoreLink": "https://theadjacency.com/microdrop/bowman-poole-agentic-alignment/",
+          "readMoreText": "Request Dispatch"
+        }
+      ],
+      "contentStyles": {
+        "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+        "fontSize": "13px",
+        "lineHeight": "1.42",
+        "fontWeight": "400",
+        "color": "#344055",
+        "textAlign": "left"
+      },
+      "containerStyles": {
+        "backgroundColor": "#f5f4f0",
+        "padding": "16px",
+        "borderRadius": "0px",
+        "borderColor": "#c9cfdb",
+        "borderWidth": "1px",
+        "borderStyle": "solid",
+        "sectionHeaderBackgroundColor": "#f5f4f0",
+        "sectionHeaderPadding": "15px 20px",
+        "sectionHeaderBorderRadius": "8px",
+        "sectionHeaderGap": "4px",
+        "sectionDescriptionPadding": "16px 16px 12px 16px",
+        "firstAdItemGap": "4px",
+        "adDividerGap": "20px",
+        "adDividerBackgroundColor": "#FFFFFF",
+        "labelPadding": "12px 16px 8px 16px",
+        "imagePadding": "0 12px",
+        "titlePadding": "12px 16px 0 16px",
+        "copyPadding": "6px 16px 14px 16px",
+        "ctaPadding": "0 16px 14px 16px"
+      },
+      "headingStyles": {
+        "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+        "fontSize": "13px",
+        "lineHeight": "1.42",
+        "fontWeight": "400",
+        "color": "#344055",
+        "textAlign": "left"
+      },
+      "linkStyles": {
+        "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+        "fontSize": "13px",
+        "lineHeight": "1.42",
+        "fontWeight": "400",
+        "textTransform": "uppercase",
+        "letterSpacing": "0.06em",
+        "color": "#344055",
+        "textDecoration": "underline",
+        "textAlign": "left"
+      },
+      "labelStyles": {
+        "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+        "fontSize": "11px",
+        "lineHeight": "14px",
+        "fontWeight": "400",
+        "letterSpacing": "0.12em",
+        "textTransform": "uppercase",
+        "color": "#778095"
+      },
+      "sectionHeaderHeadingStyles": {},
+      "ctaStyles": {},
+      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important"
     }
   ],
-  "offer": {
-    "eyebrow": "Project-share slots",
-    "headline": "Want to share a side project?",
-    "body": "Sign up to do a project share at Office Hours. You get 10 minutes for the presentation, slide share, demo, or introduction, then 20 minutes of generous, polite group feedback and help.<br><br>\nBring a rough question, an unfinished prototype, an idea that needs witnesses, or a project that would benefit from other people's attention.\n",
-    "ctaText": "Sign up to share",
-    "ctaLink": "https://nearfuturelaboratory.com/office-hours-signup"
-  },
   "footer": {
+    "emailShare": "mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2026/w28-y26/",
+    "newsletterSubscribeLink": "https://nearfuturelaboratory.com/newsletter",
     "footerCta": {
-      "enabled": false
-    },
-    "paragraphs": [
-      "You are receiving this because you subscribed to Near Future Laboratory updates.",
-      "Questions about Office Hours or project shares? Reply to this email."
-    ],
-    "address": "Near Future Laboratory, Venice Beach, California",
-    "socialLinks": [
-      {
-        "label": "Website",
-        "url": "https://nearfuturelaboratory.com/"
+      "enabled": true,
+      "variant": "default",
+      "eyebrow": "Commissions, Collaborations, Integrated Roles",
+      "text": "Organizations get really good at reproducing the world they already understand. Near Future Laboratory helps teams surface their unspoken inherited assumptions and explore alternative possibilities through artifacts from possible futures. If you're looking to get out of that loop, let's talk.",
+      "primaryAction": {
+        "label": "Let’s Talk",
+        "url": "https://nearfuturelaboratory.com/contact"
       },
-      {
-        "label": "Patreon",
-        "url": "https://patreon.com/nearfuturelaboratory"
+      "secondaryAction": {
+        "label": "See How I Work",
+        "url": "https://nearfuturelaboratory.com/services"
       }
-    ],
-    "unsubscribeLabel": "Unsubscribe",
-    "unsubscribeLink": "[unsubscribe]"
-  },
-  "markdownContent": "<p>This body is intentionally unused by the template. Keep the email content in frontmatter so Backoffice and the Maizzle build pipeline can validate the structured fields.</p>",
-  "darkModePolicy": {
-    "flatten": true,
-    "mode": "flatten",
-    "colors": {
-      "pageBackground": "#111318",
-      "surface": "#1b1f27",
-      "text": "#f2f4f8",
-      "mutedText": "#b8c0cc",
-      "link": "#8ecbff",
-      "border": "#343b48"
+    },
+    "aboutLabel": "About Julian Bleecker",
+    "aboutUrl": "https://julianbleecker.com/",
+    "logo": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/f6918220-7209-42cb-1f35-3207cc1c6b00/w=300?format=webp",
+    "logoLink": "https://nearfuturelaboratory.com/",
+    "socialLinks": {
+      "applepodcasts": [
+        {
+          "url": "https://podcasts.apple.com/us/podcast/near-future-laboratory-podcast/id1546452193",
+          "title": "Near Future Laboratory on Apple Podcasts"
+        }
+      ],
+      "spotify": [
+        {
+          "url": "https://open.spotify.com/show/1vHzwGE5J19LvXSo8M93MM",
+          "title": "Near Future Laboratory on Spotify"
+        }
+      ],
+      "github": [
+        {
+          "url": "https://github.com/bleeckerj",
+          "title": "Personal GitHub"
+        },
+        {
+          "url": "https://github.com/nearfuturelaboratory",
+          "title": "Near Future Laboratory GitHub"
+        }
+      ]
     }
   },
   "themeColors": {
     "header": "#ffffff",
-    "sponsor": "#f8eccf",
-    "apps-sites": "#f0ffff",
-    "quote": "#d1eaf4",
-    "callout": "#d1eaf4",
-    "indie-mag": "#efe2f3",
+    "sponsor": "#f0f8ff",
+    "apps-sites": "#ffffff",
+    "quote": "#e6f3ff",
+    "callout": "#e0f0ff",
+    "indie-mag": "#f5f8ff",
     "books-accessories": "#ffffff",
-    "food-for-thought": "#f2f2f2",
-    "introAside": "#f4f1ea",
+    "food-for-thought": "#f8fafc",
+    "introAside": "#f8fafc",
     "aesthetically-pleasing": "#ffffff",
-    "classifieds": "#def1ef",
+    "classifieds": "#e0f2fe",
     "gif": "#ffffff",
     "linkAccent": "#EE3BBB"
   },
   "theme": {
-    "name": "Current Dense Discovery",
-    "description": "The existing color scheme currently in use",
+    "name": "Winter Cool",
+    "description": "Cool blues and crisp whites for winter clarity",
     "colors": {
       "header": "#ffffff",
-      "sponsor": "#f8eccf",
-      "apps-sites": "#f0ffff",
-      "quote": "#d1eaf4",
-      "callout": "#d1eaf4",
-      "indie-mag": "#efe2f3",
+      "sponsor": "#f0f8ff",
+      "apps-sites": "#ffffff",
+      "quote": "#e6f3ff",
+      "callout": "#e0f0ff",
+      "indie-mag": "#f5f8ff",
       "books-accessories": "#ffffff",
-      "food-for-thought": "#f2f2f2",
-      "introAside": "#f4f1ea",
+      "food-for-thought": "#f8fafc",
+      "introAside": "#f8fafc",
       "aesthetically-pleasing": "#ffffff",
-      "classifieds": "#def1ef",
+      "classifieds": "#e0f2fe",
       "gif": "#ffffff"
     },
     "accent": "#4a7c59",
     "linkAccent": "#EE3BBB"
   },
   "sectionStyles": {
-    "description": "Section style metadata for the Brain Dead content template. Sections render from sections[] with dual-column and single-column types.",
+    "$schema": "../section-styles.schema.json",
+    "description": "Configuration for section-specific styling in email templates. Adjacency mail sections are overridden at build time from lib/adjacency-mail/adjacency-mail-theme-tokens.mjs.",
+    "version": "1.0.0",
     "sectionStyles": {
-      "default": {
+      "header": {
+        "name": "Header Section",
+        "description": "Header quote, author, and featured artist text styles",
         "containerStyles": {
-          "backgroundColor": "#ffffff",
-          "padding": "18px 32px",
-          "borderRadius": "0px"
+          "backgroundColor": null,
+          "padding": "20px"
         },
         "contentStyles": {
-          "fontFamily": "Courier New, Courier, monospace",
-          "fontSize": "15px",
-          "lineHeight": "22px",
-          "color": "#000000"
-        },
-        "linkStyles": {
-          "fontFamily": "Courier New, Courier, monospace",
-          "fontWeight": "700",
-          "textDecoration": "underline",
-          "color": "#000000"
-        }
-      },
-      "content-hero": {
-        "containerStyles": {
-          "backgroundColor": "#ffffff",
-          "padding": "16px 32px 20px",
-          "borderRadius": "0px"
-        },
-        "headingStyles": {
-          "fontFamily": "Courier New, Courier, monospace",
-          "fontSize": "46px",
-          "lineHeight": "48px",
-          "fontWeight": "700",
-          "color": "#000000"
-        },
-        "contentStyles": {
-          "fontFamily": "Courier New, Courier, monospace",
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
           "fontSize": "18px",
-          "lineHeight": "25px",
+          "lineHeight": "23px",
+          "fontWeight": "400",
+          "color": "#000000",
+          "authorFontSize": "16px",
+          "authorFontWeight": "600",
+          "artistFontSize": "16px",
+          "quoteImageGap": "24px",
+          "anchorColor": "#000000"
+        }
+      },
+      "intro-content": {
+        "name": "Intro Content",
+        "description": "Intro paragraph block content styles",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "0",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Roboto, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.5",
+          "fontWeight": "500",
+          "color": "#000000",
+          "textAlign": "left"
+        }
+      },
+      "intro-aside": {
+        "name": "Intro Aside",
+        "description": "Teaser/lede block before the intro content",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "12px 14px",
+          "borderRadius": "6px",
+          "borderLeftColor": "#d7d1c6",
+          "borderLeftWidth": "3px",
+          "borderLeftStyle": "solid"
+        },
+        "contentStyles": {
+          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.2",
+          "fontStyle": "normal",
+          "color": "#3f3f3f",
+          "textAlign": "left"
+        }
+      },
+      "feature": {
+        "name": "Feature Section",
+        "description": "Featured content sections with distinctive monospace font. The legacy sponsor type remains accepted for backward compatibility.",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "10px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.2",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "19px",
+          "fontWeight": "600",
           "color": "#000000"
         }
       },
-      "dual-column": {
+      "sponsor": {
+        "name": "Feature Section",
+        "description": "Featured content sections with distinctive monospace font. The legacy sponsor type remains accepted for backward compatibility.",
         "containerStyles": {
-          "backgroundColor": "#ffffff",
-          "padding": "12px 32px 8px",
-          "borderRadius": "0px"
-        },
-        "headingStyles": {
-          "fontFamily": "Courier New, Courier, monospace",
-          "fontSize": "25px",
-          "lineHeight": "29px",
-          "fontWeight": "700",
-          "color": "#000000"
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "10px"
         },
         "contentStyles": {
-          "fontFamily": "Courier New, Courier, monospace",
-          "fontSize": "14px",
-          "lineHeight": "21px",
-          "color": "#000000"
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.2",
+          "color": "#111111",
+          "textAlign": "left"
         },
         "linkStyles": {
-          "fontFamily": "Courier New, Courier, monospace",
-          "fontWeight": "700",
-          "textDecoration": "none",
-          "color": "#000000"
-        }
-      },
-      "single-column": {
-        "containerStyles": {
-          "backgroundColor": "#ffffff",
-          "padding": "12px 32px 8px",
-          "borderRadius": "0px"
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
         },
         "headingStyles": {
-          "fontFamily": "Courier New, Courier, monospace",
-          "fontSize": "28px",
-          "lineHeight": "32px",
-          "fontWeight": "700",
-          "color": "#000000"
-        },
-        "contentStyles": {
-          "fontFamily": "Courier New, Courier, monospace",
-          "fontSize": "15px",
-          "lineHeight": "22px",
-          "color": "#000000"
-        },
-        "linkStyles": {
-          "fontFamily": "Courier New, Courier, monospace",
-          "fontWeight": "700",
-          "textDecoration": "none",
-          "color": "#000000"
-        }
-      },
-      "content-offer": {
-        "containerStyles": {
-          "backgroundColor": "#000000",
-          "padding": "24px",
-          "borderRadius": "0px"
-        },
-        "headingStyles": {
-          "fontFamily": "Courier New, Courier, monospace",
-          "fontSize": "28px",
-          "lineHeight": "32px",
-          "fontWeight": "700",
-          "color": "#ffffff"
-        },
-        "contentStyles": {
-          "fontFamily": "Courier New, Courier, monospace",
-          "fontSize": "15px",
-          "lineHeight": "22px",
-          "color": "#ffffff"
-        },
-        "linkStyles": {
-          "fontFamily": "Courier New, Courier, monospace",
-          "fontWeight": "700",
-          "textDecoration": "none",
+          "fontFamily": "inherit",
+          "fontSize": "19px",
+          "fontWeight": "600",
           "color": "#000000"
         }
       },
@@ -424,6 +590,108 @@
           "color": "#1f2430"
         }
       },
+      "calendar_event": {
+        "name": "Calendar Event",
+        "description": "Generated add-to-calendar card. The build writes an .ics file and injects calendarLink.",
+        "containerStyles": {
+          "backgroundColor": "#f7fbff",
+          "textColor": "#111111",
+          "borderColor": "#c9cfdb",
+          "borderWidth": "1px",
+          "borderStyle": "solid",
+          "dividerColor": "#d7dbe4",
+          "headerPadding": "18px 20px 12px 20px",
+          "bodyPadding": "18px 20px 20px 20px",
+          "buttonBackgroundColor": "#111111",
+          "buttonTextColor": "#ffffff",
+          "secondaryLinkColor": "#111111"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "16px",
+          "lineHeight": "1.5",
+          "fontWeight": "400",
+          "color": "#111111"
+        },
+        "labelStyles": {
+          "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+          "fontSize": "11px",
+          "lineHeight": "14px",
+          "fontWeight": "700",
+          "letterSpacing": "0.12em",
+          "textTransform": "uppercase",
+          "color": "#566074"
+        },
+        "headingStyles": {
+          "fontFamily": "Ubuntu, Arial, sans-serif, Segoe UI, Helvetica",
+          "fontSize": "28px",
+          "lineHeight": "1.1",
+          "fontWeight": "700",
+          "color": "#111111"
+        },
+        "linkStyles": {
+          "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+          "fontSize": "12px",
+          "lineHeight": "15px",
+          "fontWeight": "700",
+          "textDecoration": "underline",
+          "color": "#111111"
+        }
+      },
+      "dispatch": {
+        "name": "Dispatch Section",
+        "description": "Dispatch content sections with distinctive monospace font",
+        "containerStyles": {
+          "backgroundColor": "#e6e8e5",
+          "padding": "15px 20px",
+          "borderRadius": "8px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.4",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "19px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "signals-adjacent-now": {
+        "name": "Signals from an Adjacent Now",
+        "description": "Signal entries grounded in source summaries and strategy prompts",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "8px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.4",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "19px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
       "adjacency-feature": {
         "name": "Adjacency Feature",
         "description": "Long-form editorial feature adapted for email-safe extended reading from canonical Adjacency mail theme tokens",
@@ -472,6 +740,351 @@
           "color": "#6e778a"
         }
       },
+      "indie-mag-single-column": {
+        "name": "Indie Magazine Single Column",
+        "description": "Single column indie magazine content with monospace styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "10px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.4",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "19px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "indie-mag": {
+        "name": "Indie Magazine Multi-Column",
+        "description": "Multi-column indie magazine content with clean serif font",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.4",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "19px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "apps-sites": {
+        "spacerBackgroundAdjust": {
+          "lightness": -8,
+          "saturation": 40
+        },
+        "name": "Apps & Sites",
+        "descriptionStyles": {
+          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "17px",
+          "lineHeight": "1.2",
+          "color": "#000000",
+          "textAlign": "left"
+        },
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.4",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "apps-sites-single-column": {
+        "spacerBackgroundAdjust": {
+          "lightness": -8,
+          "saturation": 40
+        },
+        "name": "Apps & Sites",
+        "descriptionStyles": {
+          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "17px",
+          "lineHeight": "1.2",
+          "color": "#000000",
+          "textAlign": "left"
+        },
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.4",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "books-accessories": {
+        "name": "Books & Accessories",
+        "description": "Product recommendations with clean sans-serif styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.4",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "food-for-thought": {
+        "name": "Food for Thought",
+        "description": "Basically Discord Stuff",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "23px",
+          "color": "#000000",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500",
+          "fontSize": "19px"
+        },
+        "headingStyles": {
+          "fontFamily": "Workbench, IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "callout": {
+        "name": "Callout",
+        "description": "Callout highlight block",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Share Tech Mono, sans-serif, Courier New, Courier, monospace",
+          "fontSize": "19px",
+          "lineHeight": "25px",
+          "color": "#444444",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "#006afa",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "quote": {
+        "name": "Quote",
+        "description": "Quote spotlight section",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.3",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "classifieds": {
+        "name": "Classifieds",
+        "description": "Classified ads with compact monospace styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "8px 8px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Share Tech Mono, monospace, Courier New, Courier",
+          "fontSize": "16px",
+          "lineHeight": "1.15",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "animated-image": {
+        "name": "Animated Image",
+        "description": "Animated image spotlight section",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 8px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.2",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "aesthetically-pleasing": {
+        "name": "Aesthetically Pleasing",
+        "description": "Cool stuff around the web with modern sans-serif styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "12px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.3",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "default": {
+        "name": "Default Content",
+        "description": "Default styling for unspecified section types",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.2",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
       "adjacency-job-posting": {
         "name": "Adjacency Job Posting",
         "description": "Structured branded job-post email section resolved from Adjacency jobs mail theme tokens",
@@ -514,6 +1127,20 @@
           "letterSpacing": "0.12em",
           "textTransform": "uppercase",
           "color": "#5a6476"
+        }
+      }
+    },
+    "globalOverrides": {
+      "description": "Global style overrides that apply to all sections",
+      "mobileBreakpoint": "599px",
+      "mobileAdjustments": {
+        "contentStyles": {
+          "fontSize": "23px",
+          "lineHeight": "1.3"
+        },
+        "captionStyles": {
+          "fontSize": "14px",
+          "lineHeight": "1.2"
         }
       }
     }
