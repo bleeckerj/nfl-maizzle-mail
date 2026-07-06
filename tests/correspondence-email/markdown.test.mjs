@@ -52,7 +52,7 @@ test('normalizeCorrespondenceEmailData builds correspondence locals with shared 
           href: 'https://example.com/prototype-review',
           label: 'Reference',
           image: {
-            src: 'https://example.com/prototype-review.jpg',
+            src: 'data:image/svg+xml,%3Csvg%3E%3C%2Fsvg%3E',
             alt: 'Prototype review materials',
           },
           description: 'Notes for the review.',
@@ -77,10 +77,12 @@ test('normalizeCorrespondenceEmailData builds correspondence locals with shared 
   assert.equal(data.subject, 'Follow up');
   assert.match(data.correspondence.bodyHtml, /Hi there\./);
   assert.match(data.correspondence.signatureHtml, /Julian/);
+  assert.match(data.correspondence.signatureHtml, /<div class="correspondence-signature-lines">/);
+  assert.doesNotMatch(data.correspondence.signatureHtml, /<strong>Julian<\/strong>/);
   assert.equal(data.correspondence.sharedItems.length, 2);
   assert.equal(data.correspondence.sharedItemRows.length, 1);
   assert.deepEqual(data.correspondence.sharedItems[0].image, {
-    src: 'https://example.com/prototype-review.jpg',
+    src: 'data:image/svg+xml,%3Csvg%3E%3C%2Fsvg%3E',
     alt: 'Prototype review materials',
   });
   assert.deepEqual(data.correspondence.sharedItems[1].image, {
@@ -88,6 +90,26 @@ test('normalizeCorrespondenceEmailData builds correspondence locals with shared 
     alt: 'Session outline preview',
   });
   assert.equal(data.correspondence.footerLinks.length, 1);
+  assert.match(data.correspondence.theme.fontFamily, /JetBrainsMono Nerd Font/);
+});
+
+test('normalizeCorrespondenceEmailData renders signature lines as links after the signature name', () => {
+  const data = normalizeCorrespondenceEmailData({
+    subject: 'Signature links',
+    bodyMarkdown: 'Hi.',
+    signature: {
+      name: 'Julian',
+      lines: [
+        '[Near Future Laboratory](https://nearfuturelaboratory.com)',
+        '[hello@nearfuturelaboratory.com](mailto:hello@nearfuturelaboratory.com)',
+      ],
+    },
+  });
+
+  assert.match(data.correspondence.signatureHtml, /correspondence-signature-name">Julian/);
+  assert.match(data.correspondence.signatureHtml, /correspondence-signature-lines/);
+  assert.match(data.correspondence.signatureHtml, /href="https:\/\/nearfuturelaboratory\.com"/);
+  assert.match(data.correspondence.signatureHtml, /href="mailto:hello@nearfuturelaboratory\.com"/);
 });
 
 test('normalizeCorrespondenceEmailData drops unsafe shared item image sources', () => {

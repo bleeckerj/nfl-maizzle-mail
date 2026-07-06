@@ -38,16 +38,6 @@
       padding: 36px 42px 32px 42px;
     }
 
-    .correspondence-brand {
-      color: {{ correspondence.theme.mutedTextColor }};
-      font-family: {{ correspondence.theme.fontFamily }};
-      font-size: 12px;
-      line-height: 16px;
-      letter-spacing: 0;
-      margin: 0 0 24px 0;
-      text-transform: uppercase;
-    }
-
     .correspondence-subject {
       color: {{ correspondence.theme.textColor }};
       font-family: {{ correspondence.theme.serifFontFamily }};
@@ -153,11 +143,17 @@
     }
 
     .correspondence-signature-name {
-      font-weight: bold;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .correspondence-signature-lines {
+      margin: 24px 0 0 0;
     }
 
     .correspondence-signature-line {
       color: {{ correspondence.theme.mutedTextColor }};
+      margin: 0 0 3px 0;
     }
 
     .correspondence-shared {

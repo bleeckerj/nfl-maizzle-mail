@@ -3,6 +3,7 @@
 `standard-correspondence` is for one-off HTML email correspondence generated with the Maizzle toolchain. It intentionally omits newsletter-only affordances: no unsubscribe link, no view-online link, no public archive URL, no ad hydration, and no link-tracking manifest.
 
 The body renders as general correspondence first. An optional shared-items block can appear below the signature with either two or four link items.
+The default type stack is monospace-first, with common Nerd Font faces first when available.
 
 ## Build
 
@@ -22,10 +23,8 @@ Output is written to `build_correspondence/<output-name>.html`.
 
 - `subject` - email subject and HTML title.
 - `preheader` - hidden inbox preview text.
-- `eyebrow` - optional small label above the message body.
-- `brand.name` / `brand.url` - optional lightweight brand label.
 - `from` - optional preview header metadata, shown only when `showFromHeader: true`.
-- `signature` - optional signature lines rendered after the Markdown body.
+- `signature` - optional signature name plus `lines` rendered after the Markdown body. The name is not bolded; `lines` may contain Markdown links and render after a visible pause.
 - `sharedItems` - optional `{ heading, items }` block rendered below the signature as a grid. The item count must be either two or four. Items may include `image: { src, alt }`, `imageUrl`, or `imageSrc`.
 - `footerNote` / `footerLinks` - optional short contact note, kept minimal.
 - Markdown body - the correspondence content.

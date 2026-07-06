@@ -101,15 +101,6 @@
             "email": { "type": "string" }
           }
         },
-        "brand": {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "name": { "type": "string" },
-            "url": { "type": "string" }
-          }
-        },
-        "eyebrow": { "type": "string" },
         "showSubject": { "type": "boolean" },
         "showFromHeader": { "type": "boolean" },
         "sourcePath": { "type": "string" },

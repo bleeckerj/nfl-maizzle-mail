@@ -36,14 +36,11 @@ The correspondence builder does not create a newsletter archive page, view-onlin
 ---
 subject: "Follow-up on the workshop brief"
 preheader: "A short note with the revised framing."
-eyebrow: "Near Future Laboratory"
-brand:
-  name: "Near Future Laboratory"
-  url: "https://nearfuturelaboratory.com"
 signature:
   name: "Julian"
   lines:
-    - "Near Future Laboratory"
+    - "[Near Future Laboratory](https://nearfuturelaboratory.com)"
+    - "[hello@nearfuturelaboratory.com](mailto:hello@nearfuturelaboratory.com)"
 sharedItems:
   heading: "Shared items"
   items:
@@ -51,7 +48,7 @@ sharedItems:
       href: "https://example.com/prototype-review"
       label: "Reference"
       image:
-        src: "https://example.com/prototype-review.jpg"
+        src: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22520%22%20height%3D%22320%22%20viewBox%3D%220%200%20520%20320%22%3E%3Crect%20width%3D%22520%22%20height%3D%22320%22%20fill%3D%22%23f4f1ea%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%22168%22%20font-family%3D%22monospace%22%20font-size%3D%2228%22%20fill%3D%22%23222222%22%3EPrototype%20Review%3C%2Ftext%3E%3C%2Fsvg%3E"
         alt: "Prototype review materials"
       description: "A short description of why this is useful."
     - title: "Session Outline"
@@ -66,4 +63,4 @@ Hi Alex,
 Here is the revised note.
 ```
 
-`sharedItems` is optional. When present, it must include either two or four valid items. Each item may include `image: { src, alt }`, `imageUrl`, or `imageSrc`; use hosted image URLs or `cid:` references, and keep image files out of the repository. Set `showSubject: true` only when the email body itself should include a heading. Set `showFromHeader: true` only when the HTML preview should show sender metadata above the message body.
+`sharedItems` is optional. When present, it must include either two or four valid items. Each item may include `image: { src, alt }`, `imageUrl`, or `imageSrc`; use hosted image URLs, `cid:` references, or small `data:image/...` placeholders, and keep image files out of the repository. Signature `lines` render Markdown links and appear after a visible pause below the signature name. Set `showSubject: true` only when the email body itself should include a heading. Set `showFromHeader: true` only when the HTML preview should show sender metadata above the message body.

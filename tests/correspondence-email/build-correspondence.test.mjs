@@ -10,6 +10,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.resolve(__dirname, '..', '..');
 const BUILD_SCRIPT = path.join(REPO_ROOT, 'scripts', 'build-correspondence.mjs');
+const PROTOTYPE_IMAGE_SRC = 'data:image/svg+xml,%3Csvg%3E%3C%2Fsvg%3E';
+const SESSION_IMAGE_SRC = 'data:image/svg+xml,%3Csvg%3E%3C%2Fsvg%3E';
 
 test('build-correspondence renders local correspondence HTML with optional shared items', () => {
   const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'correspondence-email-build-'));
@@ -22,11 +24,11 @@ test('build-correspondence renders local correspondence HTML with optional share
       '---',
       'subject: "Client note"',
       'preheader: "A direct note."',
-      'eyebrow: "Near Future Laboratory"',
       'signature:',
       '  name: "Julian"',
       '  lines:',
-      '    - "Near Future Laboratory"',
+      '    - "[Near Future Laboratory](https://nearfuturelaboratory.com)"',
+      '    - "[hello@nearfuturelaboratory.com](mailto:hello@nearfuturelaboratory.com)"',
       'sharedItems:',
       '  heading: "Shared items"',
       '  items:',
@@ -34,13 +36,13 @@ test('build-correspondence renders local correspondence HTML with optional share
       '      href: "https://example.com/prototype-review"',
       '      label: "Reference"',
       '      image:',
-      '        src: "https://example.com/prototype-review.jpg"',
+      `        src: "${PROTOTYPE_IMAGE_SRC}"`,
       '        alt: "Prototype review materials"',
       '      description: "Notes for the review."',
       '    - title: "Session Outline"',
       '      href: "https://example.com/session-outline"',
       '      label: "Brief"',
-      '      imageSrc: "cid:session-outline-image"',
+      `      imageSrc: "${SESSION_IMAGE_SRC}"`,
       '      imageAlt: "Session outline preview"',
       '      description: "The current outline."',
       '---',
@@ -73,11 +75,16 @@ test('build-correspondence renders local correspondence HTML with optional share
     assert.match(html, /Hi Alex/);
     assert.match(html, /https:\/\/example\.com\/brief/);
     assert.match(html, /Julian/);
+    assert.doesNotMatch(html, /correspondence-brand/);
+    assert.doesNotMatch(html, /<strong>Julian<\/strong>/);
+    assert.match(html, /JetBrainsMono Nerd Font/);
+    assert.match(html, /href="https:\/\/nearfuturelaboratory\.com"/);
+    assert.match(html, /href="mailto:hello@nearfuturelaboratory\.com"/);
+    assert.match(html, /margin:24px 0 0 0/);
     assert.match(html, /Shared items/);
     assert.match(html, /data-correspondence-grid="shared-items"/);
-    assert.match(html, /<img src="https:\/\/example\.com\/prototype-review\.jpg"/);
+    assert.match(html, /<img src="data:image\/svg\+xml,%3Csvg%3E%3C%2Fsvg%3E"/);
     assert.match(html, /alt="Prototype review materials"/);
-    assert.match(html, /<img src="cid:session-outline-image"/);
     assert.match(html, /height:auto/);
     assert.match(html, /Prototype Review Notes/);
     assert.match(html, /Session Outline/);
