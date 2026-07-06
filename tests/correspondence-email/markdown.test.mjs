@@ -51,12 +51,18 @@ test('normalizeCorrespondenceEmailData builds correspondence locals with shared 
           title: 'Prototype Review Notes',
           href: 'https://example.com/prototype-review',
           label: 'Reference',
+          image: {
+            src: 'https://example.com/prototype-review.jpg',
+            alt: 'Prototype review materials',
+          },
           description: 'Notes for the review.',
         },
         {
           title: 'Session Outline',
           href: 'https://example.com/session-outline',
           label: 'Brief',
+          imageSrc: 'cid:session-outline-image',
+          imageAlt: 'Session outline preview',
           description: 'The current outline.',
         },
       ],
@@ -73,7 +79,35 @@ test('normalizeCorrespondenceEmailData builds correspondence locals with shared 
   assert.match(data.correspondence.signatureHtml, /Julian/);
   assert.equal(data.correspondence.sharedItems.length, 2);
   assert.equal(data.correspondence.sharedItemRows.length, 1);
+  assert.deepEqual(data.correspondence.sharedItems[0].image, {
+    src: 'https://example.com/prototype-review.jpg',
+    alt: 'Prototype review materials',
+  });
+  assert.deepEqual(data.correspondence.sharedItems[1].image, {
+    src: 'cid:session-outline-image',
+    alt: 'Session outline preview',
+  });
   assert.equal(data.correspondence.footerLinks.length, 1);
+});
+
+test('normalizeCorrespondenceEmailData drops unsafe shared item image sources', () => {
+  const data = normalizeCorrespondenceEmailData({
+    subject: 'Unsafe image',
+    bodyMarkdown: 'Hi.',
+    sharedItems: [
+      {
+        title: 'One',
+        href: 'https://example.com/one',
+        image: 'file:///tmp/one.jpg',
+      },
+      {
+        title: 'Two',
+        href: 'https://example.com/two',
+      },
+    ],
+  });
+
+  assert.equal(data.correspondence.sharedItems[0].image, null);
 });
 
 test('normalizeCorrespondenceEmailData rejects shared item counts other than two or four', () => {

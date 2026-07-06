@@ -33,10 +33,15 @@ test('build-correspondence renders local correspondence HTML with optional share
       '    - title: "Prototype Review Notes"',
       '      href: "https://example.com/prototype-review"',
       '      label: "Reference"',
+      '      image:',
+      '        src: "https://example.com/prototype-review.jpg"',
+      '        alt: "Prototype review materials"',
       '      description: "Notes for the review."',
       '    - title: "Session Outline"',
       '      href: "https://example.com/session-outline"',
       '      label: "Brief"',
+      '      imageSrc: "cid:session-outline-image"',
+      '      imageAlt: "Session outline preview"',
       '      description: "The current outline."',
       '---',
       '',
@@ -69,6 +74,11 @@ test('build-correspondence renders local correspondence HTML with optional share
     assert.match(html, /https:\/\/example\.com\/brief/);
     assert.match(html, /Julian/);
     assert.match(html, /Shared items/);
+    assert.match(html, /data-correspondence-grid="shared-items"/);
+    assert.match(html, /<img src="https:\/\/example\.com\/prototype-review\.jpg"/);
+    assert.match(html, /alt="Prototype review materials"/);
+    assert.match(html, /<img src="cid:session-outline-image"/);
+    assert.match(html, /height:auto/);
     assert.match(html, /Prototype Review Notes/);
     assert.match(html, /Session Outline/);
     assert.doesNotMatch(html, /unsubscribe/i);

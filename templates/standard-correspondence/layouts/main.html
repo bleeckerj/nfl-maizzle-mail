@@ -195,6 +195,23 @@
       text-transform: uppercase;
     }
 
+    .correspondence-shared-image-link {
+      display: block;
+      margin: 0 0 10px 0;
+      text-decoration: none;
+    }
+
+    .correspondence-shared-image {
+      border: 0;
+      display: block;
+      height: auto;
+      margin: 0;
+      max-width: 260px;
+      outline: none;
+      text-decoration: none;
+      width: 100%;
+    }
+
     .correspondence-shared-title {
       color: {{ correspondence.theme.textColor }};
       font-family: {{ correspondence.theme.serifFontFamily }};
@@ -255,6 +272,10 @@
         display: block !important;
         width: 100% !important;
         padding-right: 0 !important;
+      }
+
+      .correspondence-shared-image {
+        max-width: 100% !important;
       }
     }
   </style>

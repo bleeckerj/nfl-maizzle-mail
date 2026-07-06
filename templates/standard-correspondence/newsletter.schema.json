@@ -37,6 +37,15 @@
               "title": { "type": "string", "minLength": 1 },
               "href": { "type": "string", "minLength": 1 },
               "label": { "type": "string" },
+              "image": {
+                "type": ["object", "null"],
+                "required": ["src", "alt"],
+                "additionalProperties": false,
+                "properties": {
+                  "src": { "type": "string", "minLength": 1 },
+                  "alt": { "type": "string" }
+                }
+              },
               "descriptionHtml": { "type": "string" }
             }
           }
@@ -55,6 +64,15 @@
                 "title": { "type": "string", "minLength": 1 },
                 "href": { "type": "string", "minLength": 1 },
                 "label": { "type": "string" },
+                "image": {
+                  "type": ["object", "null"],
+                  "required": ["src", "alt"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "src": { "type": "string", "minLength": 1 },
+                    "alt": { "type": "string" }
+                  }
+                },
                 "descriptionHtml": { "type": "string" }
               }
             }

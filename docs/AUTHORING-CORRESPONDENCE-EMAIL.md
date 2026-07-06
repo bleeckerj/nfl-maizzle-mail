@@ -50,6 +50,9 @@ sharedItems:
     - title: "Prototype Review Notes"
       href: "https://example.com/prototype-review"
       label: "Reference"
+      image:
+        src: "https://example.com/prototype-review.jpg"
+        alt: "Prototype review materials"
       description: "A short description of why this is useful."
     - title: "Session Outline"
       href: "https://example.com/session-outline"
@@ -63,4 +66,4 @@ Hi Alex,
 Here is the revised note.
 ```
 
-`sharedItems` is optional. When present, it must include either two or four valid items. Set `showSubject: true` only when the email body itself should include a heading. Set `showFromHeader: true` only when the HTML preview should show sender metadata above the message body.
+`sharedItems` is optional. When present, it must include either two or four valid items. Each item may include `image: { src, alt }`, `imageUrl`, or `imageSrc`; use hosted image URLs or `cid:` references, and keep image files out of the repository. Set `showSubject: true` only when the email body itself should include a heading. Set `showFromHeader: true` only when the HTML preview should show sender metadata above the message body.

@@ -26,7 +26,7 @@ Output is written to `build_correspondence/<output-name>.html`.
 - `brand.name` / `brand.url` - optional lightweight brand label.
 - `from` - optional preview header metadata, shown only when `showFromHeader: true`.
 - `signature` - optional signature lines rendered after the Markdown body.
-- `sharedItems` - optional `{ heading, items }` block rendered below the signature. The item count must be either two or four.
+- `sharedItems` - optional `{ heading, items }` block rendered below the signature as a grid. The item count must be either two or four. Items may include `image: { src, alt }`, `imageUrl`, or `imageSrc`.
 - `footerNote` / `footerLinks` - optional short contact note, kept minimal.
 - Markdown body - the correspondence content.
 

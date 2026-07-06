@@ -38,11 +38,16 @@
       <if condition="correspondence.sharedItems && correspondence.sharedItems.length">
         <div class="correspondence-shared">
           <div class="correspondence-shared-heading">{{ correspondence.sharedItemsHeading }}</div>
-          <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="correspondence-shared-table">
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" class="correspondence-shared-table" data-correspondence-grid="shared-items">
             <each loop="row in correspondence.sharedItemRows">
               <tr>
                 <each loop="item in row">
                   <td class="correspondence-shared-cell">
+                    <if condition="item.image">
+                      <a href="{{ item.href }}" class="correspondence-shared-image-link">
+                        <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" width="260" class="correspondence-shared-image">
+                      </a>
+                    </if>
                     <if condition="item.label">
                       <div class="correspondence-shared-kicker">{{ item.label }}</div>
                     </if>

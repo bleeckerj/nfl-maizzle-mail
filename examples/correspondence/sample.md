@@ -15,10 +15,16 @@ sharedItems:
     - title: "Prototype Review Notes"
       href: "https://example.com/prototype-review"
       label: "Reference"
+      image:
+        src: "https://example.com/prototype-review.jpg"
+        alt: "Prototype review materials"
       description: "A short set of notes for comparing the examples in the brief."
     - title: "Session Outline"
       href: "https://example.com/session-outline"
       label: "Brief"
+      image:
+        src: "cid:session-outline-image"
+        alt: "Session outline preview"
       description: "The current outline for the workshop conversation."
 footerNote: "Reply directly to this email with questions."
 ---

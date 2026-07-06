@@ -151,6 +151,8 @@ async function buildCorrespondence() {
           '.correspondence-quote',
           '.correspondence-rule',
           '.correspondence-code',
+          '.correspondence-shared-image-link',
+          '.correspondence-shared-image',
         ],
       },
       prettify: true,
