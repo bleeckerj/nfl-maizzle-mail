@@ -86,6 +86,9 @@ test('build-correspondence renders local correspondence HTML with optional share
     assert.match(html, /Shared items/);
     assert.match(html, /data-correspondence-grid="shared-items"/);
     assert.match(html, /table-layout:fixed/);
+    assert.match(html, /align="center" class="correspondence-shared-item"/);
+    assert.match(html, /text-align:center!important/);
+    assert.match(html, /margin-left:auto!important;margin-right:auto!important/);
     assert.match(html, /max-width:260px;width:260px/);
     assert.doesNotMatch(html, /correspondence-shared-item[^}]+width:100%!important/);
     assert.match(html, /width="260"/);
