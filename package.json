@@ -8,6 +8,7 @@
     "build:data": "maizzle build production",
     "dev": "maizzle serve",
     "build:newsletter": "node scripts/build-newsletter.mjs",
+    "build:correspondence": "node scripts/build-correspondence.mjs",
     "export:normalized-newsletter": "node scripts/export-normalized-newsletter.mjs",
     "quick": "node scripts/quick-build.mjs",
     "factory": "node scripts/email-template-factory/index.mjs",
@@ -18,6 +19,7 @@
     "schema:generate": "node scripts/generate-template-schema.mjs",
     "lint:content": "node scripts/lint-template.mjs",
     "test:newsletter-core": "node --test tests/newsletter-core/*.test.mjs",
+    "test:correspondence": "node --test tests/correspondence-email/*.test.mjs",
     "send:test": "node scripts/send-ses-test.mjs"
   },
   "keywords": [

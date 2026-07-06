@@ -1,0 +1,10 @@
+---
+title: "{{ subject }}"
+preheader: "{{ preheader || subject }}"
+---
+
+<extends src="templates/standard-correspondence/layouts/main.html">
+  <block name="template">
+    <component src="templates/standard-correspondence/components/Message.html"></component>
+  </block>
+</extends>

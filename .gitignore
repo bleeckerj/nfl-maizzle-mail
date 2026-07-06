@@ -6,11 +6,14 @@ node_modules/
 
 gpt-prompts/
 emails-to-templatize/
+/correspondence/
 content/
 data/
 # Build outputs
 build_local/
 build_production/
+/build_correspondence/
+/.tmp_correspondence_build_*/
 
 gpt-prompts/
 data/

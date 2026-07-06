@@ -1,0 +1,127 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Standard Correspondence Email",
+  "type": "object",
+  "required": ["template", "subject", "correspondence"],
+  "additionalProperties": false,
+  "properties": {
+    "template": {
+      "const": "standard-correspondence"
+    },
+    "subject": {
+      "type": "string",
+      "minLength": 1
+    },
+    "preheader": {
+      "type": "string"
+    },
+    "correspondence": {
+      "type": "object",
+      "required": ["subject", "bodyHtml", "theme"],
+      "additionalProperties": false,
+      "properties": {
+        "subject": { "type": "string", "minLength": 1 },
+        "preheader": { "type": "string" },
+        "bodyHtml": { "type": "string", "minLength": 1 },
+        "signatureHtml": { "type": "string" },
+        "sharedItemsHeading": { "type": "string" },
+        "sharedItems": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": ["title", "href"],
+            "additionalProperties": false,
+            "properties": {
+              "title": { "type": "string", "minLength": 1 },
+              "href": { "type": "string", "minLength": 1 },
+              "label": { "type": "string" },
+              "descriptionHtml": { "type": "string" }
+            }
+          }
+        },
+        "sharedItemRows": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "required": ["title", "href"],
+              "additionalProperties": false,
+              "properties": {
+                "title": { "type": "string", "minLength": 1 },
+                "href": { "type": "string", "minLength": 1 },
+                "label": { "type": "string" },
+                "descriptionHtml": { "type": "string" }
+              }
+            }
+          }
+        },
+        "footerNote": { "type": "string" },
+        "footerLinks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["href", "label"],
+            "additionalProperties": false,
+            "properties": {
+              "href": { "type": "string", "minLength": 1 },
+              "label": { "type": "string", "minLength": 1 }
+            }
+          }
+        },
+        "from": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": { "type": "string" },
+            "role": { "type": "string" },
+            "organization": { "type": "string" },
+            "email": { "type": "string" }
+          }
+        },
+        "brand": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "name": { "type": "string" },
+            "url": { "type": "string" }
+          }
+        },
+        "eyebrow": { "type": "string" },
+        "showSubject": { "type": "boolean" },
+        "showFromHeader": { "type": "boolean" },
+        "sourcePath": { "type": "string" },
+        "theme": {
+          "type": "object",
+          "required": [
+            "backgroundColor",
+            "surfaceColor",
+            "textColor",
+            "mutedTextColor",
+            "linkColor",
+            "borderColor",
+            "accentColor",
+            "fontFamily",
+            "serifFontFamily"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "backgroundColor": { "type": "string" },
+            "surfaceColor": { "type": "string" },
+            "textColor": { "type": "string" },
+            "mutedTextColor": { "type": "string" },
+            "linkColor": { "type": "string" },
+            "borderColor": { "type": "string" },
+            "accentColor": { "type": "string" },
+            "fontFamily": { "type": "string" },
+            "serifFontFamily": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}
