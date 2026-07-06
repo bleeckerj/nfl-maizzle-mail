@@ -48,7 +48,7 @@ if (!args.some((arg) => !arg.startsWith('--'))) {
   process.exit(1);
 }
 
-const builderArgs = args.filter((arg) => !['--dry-run', '--skip-link-validation', '--send-test'].includes(arg));
+const builderArgs = args.filter((arg) => !['--dry-run', '--skip-link-validation', '--send-test', 'send-test'].includes(arg));
 if (!builderArgs.includes('--no-open')) {
   builderArgs.push('--no-open');
 }
@@ -62,6 +62,7 @@ async function main() {
   await sendSesTestEmail({
     htmlPath: result.finalOutputPath,
     subjectLine: result.data.subject || result.outputName,
+    preferSubjectLine: true,
     dryRun,
     validateLinks: !skipLinkValidation,
   });

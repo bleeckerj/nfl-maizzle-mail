@@ -152,6 +152,7 @@ test('send-correspondence-test builds the rendered HTML before a dry-run send', 
           ...process.env,
           SES_FROM: 'sender@example.com',
           SES_TO: 'recipient@example.com',
+          SES_SUBJECT: 'Wrong env subject',
         },
       },
     );
@@ -213,8 +214,61 @@ test('build-correspondence supports --send-test dry runs on the main CLI', () =>
     const builtHtmlPath = path.join(outputDir, 'client-note.html');
     const html = readFileSync(builtHtmlPath, 'utf8');
     assert.match(output, /Dry run/);
+    assert.match(output, /Send-test requested/);
+    assert.match(output, /Preparing SES test email/);
+    assert.match(output, /subject "Build CLI send-test"/);
+    assert.doesNotMatch(output, /Wrong env subject/);
     assert.match(html, /href="https:\/\/nearfuturelaboratory\.com"/);
     assert.doesNotMatch(html, /&lt;a href/);
+  } finally {
+    rmSync(tempRoot, { recursive: true, force: true });
+  }
+});
+
+test('build-correspondence accepts the bare send-test alias used by backoffice', () => {
+  const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'correspondence-email-build-send-alias-'));
+  const inputPath = path.join(tempRoot, 'client-note.md');
+  const outputDir = path.join(tempRoot, 'output');
+
+  writeFileSync(
+    inputPath,
+    [
+      '---',
+      'subject: "Build CLI send-test alias"',
+      '---',
+      '',
+      'Hi Alex,',
+    ].join('\n'),
+    'utf8',
+  );
+
+  try {
+    const output = execFileSync(
+      process.execPath,
+      [
+        BUILD_SCRIPT,
+        inputPath,
+        'send-test',
+        `--repo-root=${REPO_ROOT}`,
+        `--output-dir=${outputDir}`,
+        '--no-open',
+        '--dry-run',
+        '--skip-link-validation',
+      ],
+      {
+        encoding: 'utf8',
+        env: {
+          ...process.env,
+          SES_FROM: 'sender@example.com',
+          SES_TO: 'recipient@example.com',
+        },
+      },
+    );
+
+    assert.ok(existsSync(path.join(outputDir, 'client-note.html')));
+    assert.ok(!existsSync(path.join(outputDir, 'send-test.html')));
+    assert.match(output, /Send-test requested/);
+    assert.match(output, /Dry run/);
   } finally {
     rmSync(tempRoot, { recursive: true, force: true });
   }

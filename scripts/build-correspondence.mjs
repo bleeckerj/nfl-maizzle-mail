@@ -47,6 +47,8 @@ function printUsage(repoRoot) {
   console.log('Examples:');
   console.log('  node scripts/build-correspondence.mjs examples/correspondence/sample.md');
   console.log('  node scripts/build-correspondence.mjs correspondence/client-note.md client-note');
+  console.log('  node scripts/build-correspondence.mjs correspondence/client-note.md --send-test');
+  console.log('  node scripts/build-correspondence.mjs correspondence/client-note.md send-test');
   console.log('');
   console.log('Options:');
   console.log('  --template=<name>     Template name (default: standard-correspondence)');
@@ -113,7 +115,8 @@ export async function buildCorrespondenceEmail({
   openPreview = true,
 } = {}) {
   const repoRoot = path.resolve(getOptionValue(args, 'repo-root') || process.env.NFL_MAIZZLE_MAIL_ROOT || DEFAULT_REPO_ROOT);
-  const fileArgs = args.filter((arg) => !arg.startsWith('--'));
+  const shouldSendTest = args.includes('--send-test') || args.includes('send-test');
+  const fileArgs = args.filter((arg) => !arg.startsWith('--') && arg !== 'send-test');
 
   if (fileArgs.length < 1) {
     printUsage(repoRoot);
@@ -130,7 +133,6 @@ export async function buildCorrespondenceEmail({
   const outputDir = path.resolve(getOptionValue(args, 'output-dir') || path.join(repoRoot, 'build_correspondence'));
   const templateName = getOptionValue(args, 'template') || DEFAULT_CORRESPONDENCE_TEMPLATE;
   const finalOutputPath = path.join(outputDir, `${outputName}.html`);
-  const shouldSendTest = args.includes('--send-test');
   const sendDryRun = args.includes('--dry-run');
   const skipLinkValidation = args.includes('--skip-link-validation');
   const tempBuildDirName = `.tmp_correspondence_build_${process.pid}_${Date.now()}`;
@@ -232,20 +234,26 @@ export async function buildCorrespondenceEmail({
 
   log('Correspondence email built');
   log(`HTML: ${finalOutputPath}`);
-  if (openPreview && !args.includes('--no-open')) {
-    openPreviewPath(finalOutputPath, {
+  if (shouldSendTest) {
+    log(`Send-test requested (${sendDryRun ? 'dry run' : 'live SES send'})`);
+    await sendSesTestEmail({
+      htmlPath: finalOutputPath,
+      subjectLine: data.subject || outputName,
+      preferSubjectLine: true,
+      dryRun: sendDryRun,
+      validateLinks: !skipLinkValidation,
       logger: {
         log,
         warn: (message) => console.warn(`[${timestamp()}] ${message}`),
       },
     });
   }
-  if (shouldSendTest) {
-    await sendSesTestEmail({
-      htmlPath: finalOutputPath,
-      subjectLine: data.subject || outputName,
-      dryRun: sendDryRun,
-      validateLinks: !skipLinkValidation,
+  if (openPreview && !args.includes('--no-open')) {
+    openPreviewPath(finalOutputPath, {
+      logger: {
+        log,
+        warn: (message) => console.warn(`[${timestamp()}] ${message}`),
+      },
     });
   }
   log('No archive URL, view-online link, unsubscribe link, or newsletter manifest was generated.');
