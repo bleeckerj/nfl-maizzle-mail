@@ -200,6 +200,8 @@ export async function buildCorrespondenceEmail({
           '.correspondence-code',
           '.correspondence-shared-image-link',
           '.correspondence-shared-image',
+          '.correspondence-shared-item',
+          '.correspondence-shared-item-cell',
         ],
       },
       prettify: true,

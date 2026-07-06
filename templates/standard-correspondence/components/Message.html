@@ -31,21 +31,27 @@
             <each loop="row in correspondence.sharedItemRows">
               <tr>
                 <each loop="item in row">
-                  <td class="correspondence-shared-cell">
-                    <if condition="item.image">
-                      <a href="{{ item.href }}" class="correspondence-shared-image-link">
-                        <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" width="260" class="correspondence-shared-image">
-                      </a>
-                    </if>
-                    <if condition="item.label">
-                      <div class="correspondence-shared-kicker">{{ item.label }}</div>
-                    </if>
-                    <div class="correspondence-shared-title">
-                      <a href="{{ item.href }}">{{ item.title }}</a>
-                    </div>
-                    <if condition="item.descriptionHtml">
-                      <div class="correspondence-shared-description">{{{ item.descriptionHtml }}}</div>
-                    </if>
+                  <td class="correspondence-shared-cell" width="50%">
+                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="260" class="correspondence-shared-item">
+                      <tr>
+                        <td width="260" class="correspondence-shared-item-cell">
+                          <if condition="item.image">
+                            <a href="{{ item.href }}" class="correspondence-shared-image-link">
+                              <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" width="260" class="correspondence-shared-image">
+                            </a>
+                          </if>
+                          <if condition="item.label">
+                            <div class="correspondence-shared-kicker">{{ item.label }}</div>
+                          </if>
+                          <div class="correspondence-shared-title">
+                            <a href="{{ item.href }}">{{ item.title }}</a>
+                          </div>
+                          <if condition="item.descriptionHtml">
+                            <div class="correspondence-shared-description">{{{ item.descriptionHtml }}}</div>
+                          </if>
+                        </td>
+                      </tr>
+                    </table>
                   </td>
                 </each>
               </tr>

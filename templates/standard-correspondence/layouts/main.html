@@ -173,13 +173,20 @@
     }
 
     .correspondence-shared-table {
+      table-layout: fixed;
       width: 100%;
     }
 
     .correspondence-shared-cell {
-      padding: 0 12px 18px 0;
+      padding: 0 24px 22px 0;
       vertical-align: top;
       width: 50%;
+    }
+
+    .correspondence-shared-item,
+    .correspondence-shared-item-cell {
+      max-width: 260px;
+      width: 260px;
     }
 
     .correspondence-shared-kicker {
@@ -227,6 +234,8 @@
       font-size: 13px;
       line-height: 19px;
       margin: 0;
+      overflow-wrap: break-word;
+      word-break: normal;
     }
 
     .correspondence-footer {
@@ -268,6 +277,12 @@
         display: block !important;
         width: 100% !important;
         padding-right: 0 !important;
+      }
+
+      .correspondence-shared-item,
+      .correspondence-shared-item-cell {
+        max-width: 100% !important;
+        width: 100% !important;
       }
 
       .correspondence-shared-image {

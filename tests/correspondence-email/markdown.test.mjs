@@ -44,7 +44,7 @@ test('renderInlineMarkdown restores links after italic parsing', () => {
   ].join('\n'));
 
   assert.match(html, /<a href="https:\/\/calendly\.com\/julian" class="correspondence-link">pick a time<\/a>/);
-  assert.match(html, /<em>Julian<\/em>/);
+  assert.match(html, /<span style="font-style: italic;">Julian<\/span>/);
   assert.match(html, /<a href="https:\/\/nearfuturelaboratory\.com" class="correspondence-link">Near Future Laboratory<\/a>/);
   assert.doesNotMatch(html, /CORRESPONDENCEHTMLTOKEN/);
 });

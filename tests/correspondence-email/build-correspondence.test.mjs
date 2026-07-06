@@ -85,6 +85,9 @@ test('build-correspondence renders local correspondence HTML with optional share
     assert.match(html, /margin:24px 0 0 0/);
     assert.match(html, /Shared items/);
     assert.match(html, /data-correspondence-grid="shared-items"/);
+    assert.match(html, /table-layout:fixed/);
+    assert.match(html, /max-width:260px;width:260px/);
+    assert.match(html, /width="260"/);
     assert.match(html, /<img src="data:image\/svg\+xml,%3Csvg%3E%3C%2Fsvg%3E"/);
     assert.match(html, /alt="Prototype review materials"/);
     assert.match(html, /height:auto/);
