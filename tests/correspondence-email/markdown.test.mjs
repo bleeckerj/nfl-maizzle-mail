@@ -36,6 +36,19 @@ test('renderInlineMarkdown strips unsafe hrefs and escapes raw HTML', () => {
   assert.match(html, /&lt;script&gt;alert\(1\)&lt;\/script&gt;/);
 });
 
+test('renderInlineMarkdown restores links after italic parsing', () => {
+  const html = renderInlineMarkdown([
+    'Calendly: <a href="https://calendly.com/julian">pick a time</a>',
+    '_Julian_',
+    '[Near Future Laboratory](https://nearfuturelaboratory.com)',
+  ].join('\n'));
+
+  assert.match(html, /<a href="https:\/\/calendly\.com\/julian" class="correspondence-link">pick a time<\/a>/);
+  assert.match(html, /<em>Julian<\/em>/);
+  assert.match(html, /<a href="https:\/\/nearfuturelaboratory\.com" class="correspondence-link">Near Future Laboratory<\/a>/);
+  assert.doesNotMatch(html, /CORRESPONDENCEHTMLTOKEN/);
+});
+
 test('normalizeCorrespondenceEmailData builds correspondence locals with shared items below the signature', () => {
   const data = normalizeCorrespondenceEmailData({
     subject: 'Follow up',

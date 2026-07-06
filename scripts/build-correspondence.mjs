@@ -18,7 +18,7 @@ import {
 import { sendSesTestEmail } from '../lib/email-send/ses-test-mailer.mjs';
 import { hardenEmailHtmlForMobile } from '../lib/newsletter-core/email-html-hardening.mjs';
 
-dotenv.config();
+dotenv.config({ quiet: true });
 
 const { build: maizzleBuild } = MaizzleFramework;
 

@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 
 import { sendSesTestEmail } from '../lib/email-send/ses-test-mailer.mjs';
 
-dotenv.config();
+dotenv.config({ quiet: true });
 
 const DEFAULT_HTML_PATH = 'workflow-test.html';
 if (process.argv.includes('--allow-broken-links-for-visual-test')) {

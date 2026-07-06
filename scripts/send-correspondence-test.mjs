@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 import { sendSesTestEmail } from '../lib/email-send/ses-test-mailer.mjs';
 import { buildCorrespondenceEmail } from './build-correspondence.mjs';
 
-dotenv.config();
+dotenv.config({ quiet: true });
 
 function printUsage() {
   console.log('📧 Correspondence Test Sender');
