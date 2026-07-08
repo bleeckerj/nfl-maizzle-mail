@@ -634,8 +634,12 @@ function checkImageUrl(url) {
  * Convert hex color to ANSI RGB background color
  */
 function hexToAnsiBackground(hex) {
+  if (typeof hex !== 'string') return '';
+
   // Remove # if present
   hex = hex.replace('#', '');
+
+  if (!/^[0-9a-fA-F]{6}$/.test(hex)) return '';
   
   // Convert to RGB
   const r = parseInt(hex.substr(0, 2), 16);
@@ -644,6 +648,65 @@ function hexToAnsiBackground(hex) {
   
   // Return ANSI RGB background color code
   return `\x1b[48;2;${r};${g};${b}m`;
+}
+
+function rgbToAnsiBackground({ r, g, b }) {
+  return `\x1b[48;2;${r};${g};${b}m`;
+}
+
+function parseCssColorStops(value) {
+  if (typeof value !== 'string') return [];
+
+  const stops = [];
+  const hexMatches = value.matchAll(/#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})\b/g);
+  for (const match of hexMatches) {
+    const rgb = hexToRgb(`#${match[1]}`);
+    if (rgb) stops.push({ index: match.index, rgb });
+  }
+
+  const rgbMatches = value.matchAll(/rgba?\(\s*([0-9.]+)\s*,\s*([0-9.]+)\s*,\s*([0-9.]+)(?:\s*,\s*([0-9.]+))?\s*\)/g);
+  for (const match of rgbMatches) {
+    const alpha = match[4] == null ? 1 : Number(match[4]);
+    if (alpha <= 0) continue;
+    const stop = {
+      r: Number(match[1]),
+      g: Number(match[2]),
+      b: Number(match[3]),
+    };
+    if ([stop.r, stop.g, stop.b].every(Number.isFinite)) {
+      stops.push({ index: match.index, rgb: stop });
+    }
+  }
+
+  return stops
+    .sort((a, b) => a.index - b.index)
+    .map(stop => stop.rgb)
+    .slice(0, 6);
+}
+
+function formatBackgroundPreview(color, reset) {
+  if (typeof color !== 'string') {
+    return { colorBlock: '        ', label: String(color || '') };
+  }
+
+  if (/gradient\(/i.test(color)) {
+    const stops = parseCssColorStops(color);
+    const colorBlock = stops.length
+      ? stops.map(stop => `${rgbToAnsiBackground(stop)}  `).join('') + reset
+      : '        ';
+    const stopSummary = stops.length
+      ? stops.map(rgbToHex).join(' ')
+      : 'no color stops parsed';
+    return {
+      colorBlock,
+      label: `gradient (${stopSummary})`,
+    };
+  }
+
+  return {
+    colorBlock: `${hexToAnsiBackground(color)}        ${reset}`,
+    label: color,
+  };
 }
 
 /**
@@ -883,9 +946,8 @@ function logSectionBackgroundOverrides(sections = [], theme) {
       fallbackColor && fallbackColor.toLowerCase() !== color.toLowerCase()
         ? ` (theme default ${fallbackColor})`
         : '';
-    const bgColor = hexToAnsiBackground(color);
-    const colorBlock = `${bgColor}        ${reset}`;
-    console.log(`  ${colorBlock} ${labelParts.join(' / ')}: ${color}${fallbackNote}`);
+    const preview = formatBackgroundPreview(color, reset);
+    console.log(`  ${preview.colorBlock} ${labelParts.join(' / ')}: ${preview.label}${fallbackNote}`);
   });
 }
 
