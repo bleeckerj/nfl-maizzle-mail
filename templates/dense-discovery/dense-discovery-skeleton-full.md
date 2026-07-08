@@ -214,15 +214,15 @@ sections:
     readMoreText: Read more →
     readMoreLink: https://example.com
     paywall: true
-- type: indie-mag-single-column
-  title: Indie Mag Single Column Section
+- type: single-column
+  title: Single Column Section
   items:
-  - title: Indie Mag Single Column Item 1
+  - title: Single Column Item 1
     link: https://example.com
-    subtitle: Example subtitle for indie-mag-single-column item 1
-    description: <p>Example description for indie-mag-single-column item 1.</p>
-    details: <p>Example details for indie-mag-single-column item 1.</p>
-    note: <p>Example note for indie-mag-single-column item 1.</p>
+    subtitle: Example subtitle for single-column item 1
+    description: <p>Example description for single-column item 1.</p>
+    details: <p>Example details for single-column item 1.</p>
+    note: <p>Example note for single-column item 1.</p>
     images:
     - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
       alt: Alternate text for item 1 image 1
@@ -232,12 +232,12 @@ sections:
     readMoreText: Read more →
     readMoreLink: https://example.com
     paywall: true
-  - title: Indie Mag Single Column Item 2
+  - title: Single Column Item 2
     link: https://example.com
-    subtitle: Example subtitle for indie-mag-single-column item 2
-    description: <p>Example description for indie-mag-single-column item 2.</p>
-    details: <p>Example details for indie-mag-single-column item 2.</p>
-    note: <p>Example note for indie-mag-single-column item 2.</p>
+    subtitle: Example subtitle for single-column item 2
+    description: <p>Example description for single-column item 2.</p>
+    details: <p>Example details for single-column item 2.</p>
+    note: <p>Example note for single-column item 2.</p>
     images:
     - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
       alt: Alternate text for item 2 image 1

@@ -98,11 +98,11 @@ sections:
   title: Indie Mag Section
   items:
   - title: Indie Mag Item 1
-- type: indie-mag-single-column
-  title: Indie Mag Single Column Section
+- type: single-column
+  title: Single Column Section
   items:
-  - title: Indie Mag Single Column Item 1
-    subtitle: Example subtitle for indie-mag-single-column item 1
+  - title: Single Column Item 1
+    subtitle: Example subtitle for single-column item 1
 - type: books-accessories
   title: Books Accessories Section
   items:

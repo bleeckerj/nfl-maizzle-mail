@@ -314,9 +314,9 @@
       }
     },
     
-    "indie-mag-single-column": {
-      "name": "Indie Magazine Single Column",
-      "description": "Single column indie magazine content with monospace styling",
+    "single-column,indie-mag-single-column": {
+      "name": "Single Column",
+      "description": "Single column publication content with monospace styling",
       "containerStyles": {
         "backgroundColor": null,
         "padding": "15px 20px",

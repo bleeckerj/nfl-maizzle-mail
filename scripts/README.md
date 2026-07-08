@@ -100,7 +100,7 @@ python scripts/generate-newsletter-skeleton.py --minimal -o minimal.md
 | `apps-sites-single-column` | Apps/websites (1-col) | Full-width app features |
 | `quote` | Quotes | Inspirational quotes |
 | `indie-mag` | Publications (2-col) | Magazine features |
-| `indie-mag-single-column` | Publications (1-col) | Full-width articles |
+| `single-column` | Publications (1-col) | Full-width articles |
 | `books-accessories` | Products | Book/product reviews |
 | `food-for-thought` | Articles | Recommended reading |
 | `aesthetically-pleasing` | Visual content | Image showcases |

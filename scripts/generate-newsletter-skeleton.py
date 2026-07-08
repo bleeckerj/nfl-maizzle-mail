@@ -95,8 +95,8 @@ SECTION_DEFINITIONS = {
         },
         'example_items': 2
     },
-    'indie-mag-single-column': {
-        'description': 'Independent magazine/publication (single-column)',
+    'single-column': {
+        'description': 'Publication feature (single-column)',
         'section_fields': ['type', 'title'],
         'item_fields': {
             'required': ['title'],
@@ -162,6 +162,7 @@ SECTION_DEFINITIONS = {
 
 SECTION_ALIASES = {
     'sponsor': 'feature',
+    'indie-mag-single-column': 'single-column',
 }
 
 

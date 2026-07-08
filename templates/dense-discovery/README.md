@@ -153,11 +153,13 @@ sections:
 - `label`, `category`, and `intent` preserve link metadata for analytics.
 - `description` renders after the link as short context.
 
-## `indie-mag-single-column` image precedence
+## `single-column` image precedence
 
-`indie-mag-single-column` supports either:
+`single-column` supports either:
 
 - `images` for one or more images
 - `image` for a single fallback image
 
 When `images` is present, the template renders that array and ignores `image`. Under strict schema validation, do not supply both fields on the same item.
+
+The legacy `indie-mag-single-column` section type remains supported as an alias for older newsletters.

@@ -1793,20 +1793,20 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
 	                          <!-- INDIE MAG End -->
 	                        </if>
                         
-		                        <if condition="section.type === 'indie-mag-single-column'">
+		                        <if condition="section.type === 'single-column' || section.type === 'indie-mag-single-column'">
 		                          <!-- INDIE MAG SINGLE COLUMN Start -->
 		                          <tr>
 		                            <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
 		                          </tr>
                           <tr>
-                              <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;border-radius: {{ section.containerStyles.borderRadius || '10px' }} {{ section.containerStyles.borderRadius || '10px' }} 0 0;">
+                              <td align="left" class="headline" style="font-family: 'Ubuntu', sans-serif;font-weight: 700; font-style: normal; border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['single-column'] || themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;border-radius: {{ section.containerStyles.borderRadius || '10px' }} {{ section.containerStyles.borderRadius || '10px' }} 0 0;">
                                 <h1 class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}}mso-line-height-rule: exactly; margin: 0;padding: 0;">{{ section.title }}</h1>
                               </td>
                           </tr>
                           
                           <each loop="item in section.items">
                           <tr>
-                            <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};padding: {{ section.containerStyles.padding || '20px' }};border-radius: 0 0 {{ section.containerStyles.borderRadius || '10px' }} {{ section.containerStyles.borderRadius || '10px' }};">
+                            <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['single-column'] || themeColors['indie-mag-single-column'] || themeColors['indie-mag'] || '#efe2f3' }};padding: {{ section.containerStyles.padding || '20px' }};border-radius: 0 0 {{ section.containerStyles.borderRadius || '10px' }} {{ section.containerStyles.borderRadius || '10px' }};">
                                 
                                 <if condition="item.images && item.images.length">
 	                                  <each loop="image in item.images">

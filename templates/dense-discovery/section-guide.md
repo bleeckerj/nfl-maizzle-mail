@@ -438,18 +438,18 @@ sections:
       src: https://fpoimg.com/800x1000?text=Indie%20Cover&bg_color=efe2f3&text_color=44506a
       alt: Indie Mag image alt text
       caption: Indie Mag image caption
-- type: indie-mag-single-column
-  title: Indie Mag Single Column Section Title
+- type: single-column
+  title: Single Column Section Title
   items:
-  - title: Indie Mag Single Column item title
+  - title: Single Column item title
     link: mailto:guide@example.com
-    subtitle: Indie Mag Single Column subtitle
+    subtitle: Single Column subtitle
     description: <p>This FPO single-column magazine copy can be a little more expansive because the layout gives the image and prose separate vertical space. It should show how a stacked editorial item handles a full paragraph before details, note, and CTA.</p>
     details: <p>FPO details might include publisher, format, page count, release cadence, or availability.</p>
     note: <p>This FPO note gives the section a secondary voice after the primary description.</p>
     images:
     - src: https://fpoimg.com/800x600?text=Image%20One&bg_color=efe2f3&text_color=44506a
-      alt: Indie Mag Single Column image one alt text
+      alt: Single Column image one alt text
       link: mailto:guide@example.com
       caption: Image one caption
     - src: https://fpoimg.com/800x600?text=Image%20Two&bg_color=f5f5f5&text_color=44506a

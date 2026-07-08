@@ -457,10 +457,12 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
     readMoreLinksItemSchema.required = ['text', 'link'];
   }
 
-  const indieMagSingleColumnVariant = findTypedSectionVariant(schema, 'indie-mag-single-column');
-  const indieMagSingleColumnItemSchema = indieMagSingleColumnVariant?.properties?.items?.items;
-  if (indieMagSingleColumnItemSchema?.properties?.image && indieMagSingleColumnItemSchema?.properties?.images) {
-    indieMagSingleColumnItemSchema.not = { required: ['image', 'images'] };
+  for (const type of ['single-column', 'indie-mag-single-column']) {
+    const singleColumnVariant = findTypedSectionVariant(schema, type);
+    const singleColumnItemSchema = singleColumnVariant?.properties?.items?.items;
+    if (singleColumnItemSchema?.properties?.image && singleColumnItemSchema?.properties?.images) {
+      singleColumnItemSchema.not = { required: ['image', 'images'] };
+    }
   }
 
   const platformLinksSchema = {
