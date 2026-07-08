@@ -146,7 +146,8 @@
         "fontSize": "12px",
         "textDecoration": "underline",
         "fontWeight": "400",
-        "color": "#44506a"
+        "color": "#44506a",
+        "textAlign": "right"
       },
       "headingStyles": {
         "fontFamily": "'Ubuntu', sans-serif",

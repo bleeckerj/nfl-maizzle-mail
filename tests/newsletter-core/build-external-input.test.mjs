@@ -802,6 +802,80 @@ test('build-newsletter omits empty ad-block wrapper and footer rows when optiona
   }
 });
 
+test('build-newsletter aligns dense-discovery ad-block footer CTA to the image rail', () => {
+  const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'newsletter-ad-block-footer-align-'));
+  const issuePath = path.join(tempRoot, 'issue.md');
+  const outputDir = path.join(tempRoot, 'output');
+  const outputName = 'ad-block-footer-align-external';
+  const adsPath = path.join(tempRoot, 'ads.json');
+
+  writeFileSync(
+    adsPath,
+    JSON.stringify([
+      {
+        id: 'footer-align-ad-01',
+        sponsor: 'Bowman-Poole Ltd',
+        media: {
+          src: 'https://imagedelivery.net/example/footer-align/public',
+          altText: 'Bowman-Poole service ad',
+        },
+        link: 'https://nearfuturelaboratory.com/contact',
+        linkText: 'Request Dispatch',
+      },
+    ]),
+    'utf8',
+  );
+
+  writeFileSync(
+    issuePath,
+    [
+      '---',
+      'template: dense-discovery',
+      'title: Ad Block Footer Alignment Issue',
+      'sections:',
+      '  - type: ad-block',
+      '    items:',
+      '      - adId: footer-align-ad-01',
+      'footer:',
+      '  newsletterSubscribeLink: https://nearfuturelaboratory.com/newsletter/',
+      '---',
+      '',
+    ].join('\n'),
+    'utf8',
+  );
+
+  try {
+    execFileSync(
+      process.execPath,
+      [
+        BUILD_SCRIPT,
+        issuePath,
+        outputName,
+        `--repo-root=${REPO_ROOT}`,
+        `--output-dir=${outputDir}`,
+        '--no-open',
+      ],
+      {
+        encoding: 'utf8',
+        env: {
+          ...process.env,
+          NFL_EDITORIAL_ADS_PATH: adsPath,
+        },
+      },
+    );
+
+    const html = readFileSync(path.join(outputDir, `${outputName}.html`), 'utf8');
+    assert.match(html, /padding:\s*0 12px 14px 12px/);
+    assert.match(html, /table-layout:\s*fixed/);
+    assert.match(html, /align="left"[^>]*width="50%"[^>]*width:\s*50%/);
+    assert.match(html, /align="right"[^>]*width="50%"[^>]*text-align:\s*right/);
+    assert.match(html, /<p class="mob-readmore" align="right"[^>]*display:\s*inline-block/);
+    assert.match(html, /<a href="https:\/\/nearfuturelaboratory\.com\/contact"[^>]*display:\s*inline-block[^>]*>/);
+  } finally {
+    rmSync(tempRoot, { recursive: true, force: true });
+  }
+});
+
 test('build-newsletter renders commerceLockup opt-in as the composited lockup image with live label and sponsor', () => {
   const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'newsletter-commerce-lockup-optin-'));
   const issuePath = path.join(tempRoot, 'issue.md');
