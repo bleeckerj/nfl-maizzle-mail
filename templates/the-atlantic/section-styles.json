@@ -183,15 +183,15 @@
     }
   },
   "globalOverrides": {
-    "description": "Mobile font-size lock — bumps body copy larger on small screens for readability. Same pattern as dense-discovery.",
+    "description": "Mobile font-size lock — sets body copy explicitly on small screens. Same pattern as dense-discovery.",
     "mobileBreakpoint": "599px",
     "mobileAdjustments": {
       "contentStyles": {
-        "fontSize": "23px",
-        "lineHeight": "1.3"
+        "fontSize": "19px",
+        "lineHeight": "1.2"
       },
       "captionStyles": {
-        "fontSize": "14px",
+        "fontSize": "12px",
         "lineHeight": "1.2"
       }
     }

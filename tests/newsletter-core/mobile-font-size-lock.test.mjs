@@ -64,31 +64,31 @@ test('dense-discovery source labels the mobile font-size rule as an intentional 
   const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
 
   assert.match(layout, /MOBILE FONT SIZE LOCK/);
-  assert.match(layout, /Do not remove, lower, or\s+narrow these selectors/);
+  assert.match(layout, /Do not change or narrow\s+these selectors/);
   assert.match(layout, /mobile-font-size-lock\.test\.mjs/);
 });
 
-test('dense-discovery mobile typography defaults remain locked to larger body copy', () => {
+test('dense-discovery mobile typography defaults remain locked to explicit body copy', () => {
   const sectionStyles = JSON.parse(readFileSync(DENSE_DISCOVERY_SECTION_STYLES, 'utf8'));
   const mobileAdjustments = sectionStyles.globalOverrides?.mobileAdjustments;
 
-  assert.equal(mobileAdjustments?.contentStyles?.fontSize, '23px');
-  assert.equal(mobileAdjustments?.contentStyles?.lineHeight, '1.3');
-  assert.equal(mobileAdjustments?.captionStyles?.fontSize, '14px');
+  assert.equal(mobileAdjustments?.contentStyles?.fontSize, '19px');
+  assert.equal(mobileAdjustments?.contentStyles?.lineHeight, '1.2');
+  assert.equal(mobileAdjustments?.captionStyles?.fontSize, '12px');
   assert.equal(mobileAdjustments?.captionStyles?.lineHeight, '1.2');
 });
 
-test('dense-discovery layout forces larger mobile body copy with literal values', () => {
+test('dense-discovery layout forces explicit mobile body copy with literal values', () => {
   const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
   const mobileBlock = extractMobileMediaBlock(layout);
 
-  assert.match(mobileBlock, /\.mob-text,\s*\.mob-text a,\s*\.mob-text p,\s*\.mob-text li,\s*\.intro-content,\s*\.intro-content a,\s*\.intro-content p,\s*\.intro-content li,\s*\.intro-aside,\s*\.intro-aside a,\s*\.intro-aside p,\s*\.intro-aside li\s*\{\s*font-size:\s*23px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
-  assert.match(mobileBlock, /\.mob-title\s*\{\s*font-size:\s*26px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
-  assert.match(mobileBlock, /\.mob-subtitle\s*\{\s*font-size:\s*23px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
-  assert.match(mobileBlock, /\.mob-readmore,\s*\.mob-readmore a\s*\{\s*font-size:\s*23px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
-  assert.match(mobileBlock, /\.mob-caption,\s*\.mob-caption p,\s*\.mob-caption span,\s*\.mob-caption li,\s*\.mob-caption \.mob-text\s*\{\s*font-size:\s*14px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
-  assert.match(mobileBlock, /\.mob-meta,\s*\.mob-meta span,\s*\.mob-meta a\s*\{\s*font-size:\s*16px\s*!important;\s*line-height:\s*1\.1\s*!important;/);
-  assert.match(mobileBlock, /\.item-details,\s*\.item-details p,\s*\.item-details span,\s*\.item-details a,\s*\.item-details \.mob-text\s*\{\s*font-family:\s*"Share Tech Mono", monospace\s*!important;\s*font-size:\s*13px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
+  assert.match(mobileBlock, /\.mob-text,\s*\.mob-text a,\s*\.mob-text p,\s*\.mob-text li,\s*\.intro-content,\s*\.intro-content a,\s*\.intro-content p,\s*\.intro-content li,\s*\.intro-aside,\s*\.intro-aside a,\s*\.intro-aside p,\s*\.intro-aside li\s*\{\s*font-size:\s*19px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
+  assert.match(mobileBlock, /\.mob-title\s*\{\s*font-size:\s*21\.5px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
+  assert.match(mobileBlock, /\.mob-subtitle\s*\{\s*font-size:\s*19px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
+  assert.match(mobileBlock, /\.mob-readmore,\s*\.mob-readmore a\s*\{\s*font-size:\s*19px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
+  assert.match(mobileBlock, /\.mob-caption,\s*\.mob-caption p,\s*\.mob-caption span,\s*\.mob-caption li,\s*\.mob-caption \.mob-text\s*\{\s*font-size:\s*12px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
+  assert.match(mobileBlock, /\.mob-meta,\s*\.mob-meta span,\s*\.mob-meta a\s*\{\s*font-size:\s*13px\s*!important;\s*line-height:\s*1\.1\s*!important;/);
+  assert.match(mobileBlock, /\.item-details,\s*\.item-details p,\s*\.item-details span,\s*\.item-details a,\s*\.item-details \.mob-text\s*\{\s*font-family:\s*"Share Tech Mono", monospace\s*!important;\s*font-size:\s*11px\s*!important;\s*line-height:\s*1\.25\s*!important;/);
   assert.match(
     mobileBlock,
     /\.mob-title a,\s*\.mob-subtitle a,\s*\.mob-text a,\s*\.intro-content a,\s*\.intro-aside a,\s*\.mob-readmore a,\s*\.mob-caption a,\s*\.mob-caption strong,\s*\.mob-caption em\s*\{\s*font-size:\s*inherit\s*!important;\s*line-height:\s*inherit\s*!important;/,
@@ -294,7 +294,7 @@ test('daily-headlines article groups lock mobile article title and lede sizes se
   const layout = readFileSync(DAILY_HEADLINES_LAYOUT, 'utf8');
   const mobileBlock = extractMobileMediaBlock(layout, '@media screen and (max-width: 599px)');
 
-  assert.match(mobileBlock, /\.mob-text,\s*\.mob-text a,\s*\.mob-text p,[\s\S]*font-size:\s*23px\s*!important;/);
+  assert.match(mobileBlock, /\.mob-text,\s*\.mob-text a,\s*\.mob-text p,[\s\S]*font-size:\s*19px\s*!important;/);
   assert.match(mobileBlock, /table\.intro-statement p\.intro-statement-label,[\s\S]*p\.intro-statement-label span\s*\{\s*font-size:\s*12px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
   assert.match(mobileBlock, /table\.intro-statement \.intro-statement-copy,[\s\S]*\.intro-statement-copy strong\s*\{\s*font-size:\s*18px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
   assert.match(mobileBlock, /h2\.ad-section-title,[\s\S]*h2\.ad-section-title a\s*\{\s*font-size:\s*20px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
