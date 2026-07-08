@@ -81,58 +81,81 @@
     "logoBottom": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp",
     "logoTop": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp",
     "containerStyles": {
-      "backgroundColor": null
+      "backgroundColor": null,
+      "padding": "20px"
+    },
+    "contentStyles": {
+      "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+      "fontSize": "18px",
+      "lineHeight": "23px",
+      "fontWeight": "400",
+      "color": "#000000",
+      "authorFontSize": "16px",
+      "authorFontWeight": "600",
+      "artistFontSize": "16px",
+      "anchorColor": "#000000",
+      "quoteImageGap": "24px"
     }
   },
   "sections": [
     {
-      "type": "apps-sites-single-column",
+      "type": "single-column",
       "title": "The E-Z Form",
-      "description": "<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0; font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">There's still a form in a world of just-enough.</p>",
+      "description": "<p class=\"mob-text\" style=\"margin: 0 0 16px 0; padding: 0; font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important\">There's still a form in a world of just-enough.</p>",
       "items": [
         {
           "title": "Reciprocity Service Return Card",
-          "link": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/f166a01b-cb3a-4448-b523-77e6daa17700/full",
-          "subtitle": "The TSR-4890/12A",
-          "description": "<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">The last workshop exercise at the Futures 2.0 seminar last weekend (was it last weekend?) rested on the question that percolates around in my head: seriously..if there was universal basic income — pray tell — would you do? (Which begs the question as to why you aren't doing it now, but I don't want to get you all worked up.)</p>\n<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">So — the exercise started with this form I sketched and then Rick made into somethign that actually looked like a form rather than a sketch.</p>\n<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">The form looks like this so that one “falls into” the sense that this is a real artifact, the conceit being this:</p>\n<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">In the UBI world, every year, or maybe twice a year, one has to do some kind of reciprocity service — contributing to the larger social organization (perhaps your Farm Operating Base pop. 2,604) in a meaningful way. So, you fill out this form with your proposed “service”. That is to say, <em>you make a proposal as to what to do</em>.</p>\n<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">Of course, that doesn't mean proposing “sitting on my sofa playing Fortnite” is what you will do because presumably that is how you spend your time otherwise, if you're that kind of person. You might propose to teach a class on soil cultivation, or host a reading group on phenomenology, or a teach a class on Manga illustration. Something that reciprocates the value that you draw-down upon by otherwise and generally being self-indulgent for 2/3rds of the year.</p>\n<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.4; color: #111111 !important; text-align: left !important\">The provocation was accepted by the seminar group and we ran the exercise with enthusiasm. I would say that it was a group of ringers — everyone there has the “giver” gene so they were excited to propose what they would do (or rather be doing in this world, I would guess.)</p>",
-          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/f166a01b-cb3a-4448-b523-77e6daa17700/full",
-          "readMoreText": "View image →",
-          "readMoreLink": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/f166a01b-cb3a-4448-b523-77e6daa17700/full"
+          "description": "<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important\">The last workshop exercise at the Futures 2.0 seminar last weekend (was it last weekend?) rested on the question that percolates around in my head: seriously..if there was universal basic income — pray tell — would you do? (Which begs the question as to why you aren't doing it now, but I don't want to get you all worked up.)</p>\n<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important\">So — the exercise started with this form I sketched and then Rick made into somethign that actually looked like a form rather than a sketch.</p>\n<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important\">The form looks like this so that one “falls into” the sense that this is a real artifact, the conceit being this:</p>\n<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important\">In the UBI world, every year, or maybe twice a year, one has to do some kind of reciprocity service — contributing to the larger social organization (perhaps your Farm Operating Base pop. 2,604) in a meaningful way. So, you fill out this form with your proposed “service”. That is to say, <em>you make a proposal as to what to do</em>.</p>\n<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important\">Of course, that doesn't mean proposing “sitting on my sofa playing Fortnite” is what you will do because presumably that is how you spend your time otherwise, if you're that kind of person. You might propose to teach a class on soil cultivation, or host a reading group on phenomenology, or a teach a class on Manga illustration. Something that reciprocates the value that you draw-down upon by otherwise and generally being self-indulgent for 2/3rds of the year.</p>\n<p class=\"mob-text\" style=\"font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important\">The provocation was accepted by the seminar group and we ran the exercise with enthusiasm. I would say that it was a group of ringers — everyone there has the “giver” gene so they were excited to propose what they would do (or rather be doing in this world, I would guess.)</p>",
+          "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/f166a01b-cb3a-4448-b523-77e6daa17700/full"
         }
       ],
       "contentStyles": {
         "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
         "fontSize": "19px",
-        "lineHeight": "1.4",
+        "lineHeight": "1.2",
         "color": "#111111",
         "textAlign": "left"
       },
+      "_contentStyleOverrides": null,
       "containerStyles": {
         "backgroundColor": null,
         "padding": "15px 20px",
         "borderRadius": "0px"
       },
+      "descriptionStyles": {
+        "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "lineHeight": "1.2",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "spacerBackgroundColor": null,
       "headingStyles": {
         "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
         "fontSize": "19px",
         "fontWeight": "600",
         "color": "#111111",
-        "lineHeight": "1.4",
+        "lineHeight": "1.2",
         "textAlign": "left"
       },
       "linkStyles": {
         "color": "#111111",
         "textDecoration": "underline",
-        "fontWeight": "500",
+        "fontWeight": "normal",
         "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
         "fontSize": "19px",
-        "lineHeight": "1.4",
+        "lineHeight": "1.2",
         "textAlign": "left"
       },
       "labelStyles": {},
       "sectionHeaderHeadingStyles": {},
       "ctaStyles": {},
-      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important"
+      "contentStylesInline": "font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important",
+      "headingStylesInline": "font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; font-weight: 600 !important; color: #111111 !important; text-align: left !important",
+      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important",
+      "linkStylesInline": "text-decoration: underline !important; font-weight: normal !important; color: #111111 !important; font-family: Ubuntu, sans-serif, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; text-align: left !important",
+      "labelStylesInline": "font-family: Geist, ui-sans-serif, sans-serif !important; font-size: 12px; line-height: 14px; font-weight: 300 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important",
+      "articleCtaStylesInline": ""
     },
     {
       "type": "food-for-thought",
@@ -152,14 +175,14 @@
         },
         {
           "title": "The Real Housing Crisis - Future Observatory Journal",
-          "link": "https://www.abc.net.au/news/2025-08-23/national-construction-code-pause-housing-minister-clare-oneil/105689760",
-          "description": "<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">This piece from friend-of-the-blog Dan Hill resonated because when I was in Denver last weekend, Rafael pointed out how there was an area of downtown Denver that had “over built” and was somewhat latently occupied or something. That inspired a forward-facing wonderment: <em>suppose there was a world where that space was used for indoor farming?</em></p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">I know..I know..crazy, right?</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">Or maybe just weird enough such that sticking with that thought before dismissing is out of hand would be somehow...generative?</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">So..we sat with it and then the whole idea of a soil cultivation depository/repository led to the further design fiction of the Denver Public Biometic Hybridatarium so..I'm good with sufficiently weird to widen the conversation kind of things.</p> <p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">But, anyway — Dan's saying that he keeps hearing that the housing crisis is solved by “abundance” politics: loosen regulations, flood the market with more homes, and affordability will follow. But the piece makes a sharper point: there may not be a true housing shortage, and building more the same way won’t automatically fix affordability. Worse, the built environment’s extractive footprint means careless “build baby build” could wreck carbon budgets without delivering the housing outcomes we actually want. The real work, it argues, is changing the system settings and focusing emissions-aware, not-for-profit housing strategies.</p>",
+          "link": "https://fojournal.org/essay/the-real-housing-crisis/",
+          "description": "<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">This piece from friend-of-the-blog Dan Hill resonated because when I was in Denver last weekend, Rafael pointed out how there was an area of downtown Denver that had “over built” and was somewhat latently occupied or something. That inspired a forward-facing wonderment: <em>suppose there was a world where that space was used for indoor farming?</em></p>\n<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">I know..I know..crazy, right?</p>\n<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">Or maybe just weird enough such that sticking with that thought before dismissing is out of hand would be somehow...generative?</p>\n<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">So..we sat with it and then the whole idea of a soil cultivation depository/repository led to the further design fiction of the Denver Public Biometic Hybridatarium so..I'm good with sufficiently weird to widen the conversation kind of things.</p>\n<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important\">But, anyway — Dan's saying that he keeps hearing that the housing crisis is solved by “abundance” politics: loosen regulations, flood the market with more homes, and affordability will follow. But the piece makes a sharper point: there may not be a true housing shortage, and building more the same way won’t automatically fix affordability. Worse, the built environment’s extractive footprint means careless “build baby build” could wreck carbon budgets without delivering the housing outcomes we actually want. The real work, it argues, is changing the system settings and focusing emissions-aware, not-for-profit housing strategies.</p>",
           "image": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2cb326fd-644a-4858-18dd-21fa486f5700/w=600?format=webp",
           "channel": "digest-this-🥓",
           "category": "Housing",
           "sharedBy": "julian",
           "readMoreText": "Read more →",
-          "readMoreLink": "https://www.abc.net.au/news/2025-08-23/national-construction-code-pause-housing-minister-clare-oneil/105689760",
+          "readMoreLink": "https://fojournal.org/essay/the-real-housing-crisis/",
           "paywall": false
         }
       ],
@@ -170,11 +193,20 @@
         "color": "#000000",
         "textAlign": "left"
       },
+      "_contentStyleOverrides": null,
       "containerStyles": {
         "backgroundColor": null,
         "padding": "15px 20px",
         "borderRadius": "0px"
       },
+      "descriptionStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "lineHeight": "23px",
+        "color": "#000000",
+        "textAlign": "left"
+      },
+      "spacerBackgroundColor": "#e2ebf4",
       "headingStyles": {
         "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
         "fontSize": "19px",
@@ -195,11 +227,21 @@
       "labelStyles": {},
       "sectionHeaderHeadingStyles": {},
       "ctaStyles": {},
-      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important"
+      "contentStylesInline": "font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; color: #000000 !important; text-align: left !important",
+      "headingStylesInline": "font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 23px; font-weight: 600 !important; color: #000000 !important; text-align: left !important",
+      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important",
+      "linkStylesInline": "text-decoration: underline !important; font-weight: 500 !important; color: #000000 !important; font-size: 19px; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; line-height: 23px; text-align: left !important",
+      "labelStylesInline": "font-family: Geist, ui-sans-serif, sans-serif !important; font-size: 12px; line-height: 14px; font-weight: 300 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important",
+      "articleCtaStylesInline": ""
     },
     {
       "type": "sponsor",
       "title": "Join the Near Future Laboratory",
+      "containerStyles": {
+        "backgroundColor": "radial-gradient(circle at 14% 18%, rgba(255, 116, 216, 0.18) 0, rgba(255, 116, 216, 0) 28%), radial-gradient(circle at 78% 22%, rgba(95, 220, 255, 0.22) 0, rgba(95, 220, 255, 0) 30%), radial-gradient(circle at 50% 82%, rgba(255, 238, 150, 0.16) 0, rgba(255, 238, 150, 0) 34%), linear-gradient(135deg, #edf6ff 0%, #f8fbff 34%, #eef8f5 58%, #fff3fb 100%)",
+        "padding": "15px 20px",
+        "borderRadius": "10px"
+      },
       "items": [
         {
           "title": "Near Future Laboratory Patreon",
@@ -220,11 +262,15 @@
         "color": "#111111",
         "textAlign": "left"
       },
-      "containerStyles": {
-        "backgroundColor": null,
-        "padding": "15px 20px",
-        "borderRadius": "10px"
+      "_contentStyleOverrides": null,
+      "descriptionStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "lineHeight": "1.2",
+        "color": "#111111",
+        "textAlign": "left"
       },
+      "spacerBackgroundColor": "radial-gradient(circle at 14% 18%, rgba(255, 116, 216, 0.18) 0, rgba(255, 116, 216, 0) 28%), radial-gradient(circle at 78% 22%, rgba(95, 220, 255, 0.22) 0, rgba(95, 220, 255, 0) 30%), radial-gradient(circle at 50% 82%, rgba(255, 238, 150, 0.16) 0, rgba(255, 238, 150, 0) 34%), linear-gradient(135deg, #edf6ff 0%, #f8fbff 34%, #eef8f5 58%, #fff3fb 100%)",
       "headingStyles": {
         "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
         "fontSize": "19px",
@@ -245,11 +291,16 @@
       "labelStyles": {},
       "sectionHeaderHeadingStyles": {},
       "ctaStyles": {},
-      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important"
+      "contentStylesInline": "font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important",
+      "headingStylesInline": "font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; font-weight: 600 !important; color: #111111 !important; text-align: left !important",
+      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important",
+      "linkStylesInline": "text-decoration: underline !important; font-weight: normal !important; color: #111111 !important; font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; text-align: left !important",
+      "labelStylesInline": "font-family: Geist, ui-sans-serif, sans-serif !important; font-size: 12px; line-height: 14px; font-weight: 300 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important",
+      "articleCtaStylesInline": ""
     },
     {
       "type": "ad-block",
-      "title": "Ad Block",
+      "title": "The Alignment Question",
       "items": [
         {
           "adId": "bowman-poole-interstitial-03",
@@ -272,6 +323,7 @@
         "color": "#344055",
         "textAlign": "left"
       },
+      "_contentStyleOverrides": null,
       "containerStyles": {
         "backgroundColor": "#f5f4f0",
         "padding": "16px",
@@ -293,6 +345,15 @@
         "copyPadding": "6px 16px 14px 16px",
         "ctaPadding": "0 16px 14px 16px"
       },
+      "descriptionStyles": {
+        "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+        "fontSize": "17px",
+        "lineHeight": "1.55",
+        "fontWeight": "400",
+        "color": "#344055",
+        "textAlign": "left"
+      },
+      "spacerBackgroundColor": "#eae7dd",
       "headingStyles": {
         "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
         "fontSize": "13px",
@@ -323,7 +384,12 @@
       },
       "sectionHeaderHeadingStyles": {},
       "ctaStyles": {},
-      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important"
+      "contentStylesInline": "font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 13px; line-height: 1.42; font-weight: 400 !important; color: #344055 !important; text-align: left !important",
+      "headingStylesInline": "font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 13px; line-height: 1.42; font-weight: 400 !important; color: #344055 !important; text-align: left !important",
+      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important",
+      "linkStylesInline": "text-decoration: underline !important; font-weight: 400 !important; color: #344055 !important; font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 13px; line-height: 1.42; text-transform: uppercase !important; letter-spacing: 0.06em !important; text-align: left !important",
+      "labelStylesInline": "font-family: Share Tech Mono, Courier New, Courier, monospace !important; font-size: 11px; line-height: 14px; font-weight: 400 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important",
+      "articleCtaStylesInline": ""
     }
   ],
   "footer": {
@@ -370,6 +436,18 @@
           "title": "Near Future Laboratory GitHub"
         }
       ]
+    }
+  },
+  "darkModePolicy": {
+    "flatten": true,
+    "mode": "flatten",
+    "colors": {
+      "pageBackground": "#111318",
+      "surface": "#1b1f27",
+      "text": "#f2f4f8",
+      "mutedText": "#b8c0cc",
+      "link": "#8ecbff",
+      "border": "#343b48"
     }
   },
   "themeColors": {
@@ -773,6 +851,10 @@
         "containerStyles": {
           "backgroundColor": null,
           "padding": "15px 20px",
+          "sectionHeaderPadding": "15px 20px 6px 20px",
+          "sectionDescriptionPadding": "0 20px 0 20px",
+          "firstItemPadding": "0 20px 15px 20px",
+          "itemPadding": "15px 20px",
           "borderRadius": "0px"
         },
         "contentStyles": {
@@ -1144,5 +1226,9 @@
         }
       }
     }
-  }
+  },
+  "mobileTextFontSize": "23px",
+  "mobileTextLineHeight": "1.3",
+  "mobileCaptionFontSize": "14px",
+  "mobileCaptionLineHeight": "1.2"
 }
