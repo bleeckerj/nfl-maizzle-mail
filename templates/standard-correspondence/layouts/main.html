@@ -11,7 +11,6 @@
     body {
       margin: 0;
       padding: 0;
-      background: {{ correspondence.theme.backgroundColor }};
       -ms-text-size-adjust: 100%;
       -webkit-text-size-adjust: 100%;
     }
@@ -23,7 +22,6 @@
     }
 
     a {
-      color: {{ correspondence.theme.linkColor }};
       text-decoration: underline;
     }
 
@@ -33,14 +31,11 @@
     }
 
     .correspondence-card {
-      background: {{ correspondence.theme.surfaceColor }};
       border: 0;
       padding: 36px 0 32px 0;
     }
 
     .correspondence-subject {
-      color: {{ correspondence.theme.textColor }};
-      font-family: {{ correspondence.theme.serifFontFamily }};
       font-size: 26px;
       line-height: 33px;
       font-weight: normal;
@@ -48,9 +43,7 @@
     }
 
     .correspondence-from {
-      border-left: 3px solid {{ correspondence.theme.accentColor }};
-      color: {{ correspondence.theme.mutedTextColor }};
-      font-family: {{ correspondence.theme.fontFamily }};
+      border-left: 3px solid;
       font-size: 13px;
       line-height: 18px;
       margin: 0 0 24px 0;
@@ -58,8 +51,6 @@
     }
 
     .correspondence-body {
-      color: {{ correspondence.theme.textColor }};
-      font-family: {{ correspondence.theme.fontFamily }};
       font-size: 16px;
       line-height: 25px;
     }
@@ -70,8 +61,6 @@
     }
 
     .correspondence-heading {
-      color: {{ correspondence.theme.textColor }};
-      font-family: {{ correspondence.theme.serifFontFamily }};
       font-weight: normal;
       margin: 26px 0 12px 0;
       padding: 0;
@@ -99,14 +88,11 @@
     }
 
     .correspondence-link {
-      color: {{ correspondence.theme.linkColor }};
       text-decoration: underline;
     }
 
     .correspondence-quote {
-      border-left: 3px solid {{ correspondence.theme.borderColor }};
-      color: {{ correspondence.theme.mutedTextColor }};
-      font-family: {{ correspondence.theme.serifFontFamily }};
+      border-left: 3px solid;
       font-size: 17px;
       line-height: 25px;
       margin: 20px 0;
@@ -120,7 +106,7 @@
 
     .correspondence-rule {
       border: 0;
-      border-top: 1px solid {{ correspondence.theme.borderColor }};
+      border-top: 1px solid;
       margin: 24px 0;
     }
 
@@ -128,15 +114,12 @@
       background: #f1f3f5;
       border: 1px solid #d8dde3;
       border-radius: 3px;
-      color: {{ correspondence.theme.textColor }};
       font-family: Courier, "Courier New", monospace;
       font-size: 14px;
       padding: 1px 4px;
     }
 
     .correspondence-signature {
-      color: {{ correspondence.theme.textColor }};
-      font-family: {{ correspondence.theme.fontFamily }};
       font-size: 15px;
       line-height: 22px;
       margin: 24px 0 0 0;
@@ -152,19 +135,16 @@
     }
 
     .correspondence-signature-line {
-      color: {{ correspondence.theme.mutedTextColor }};
       margin: 0 0 3px 0;
     }
 
     .correspondence-shared {
-      border-top: 1px solid {{ correspondence.theme.borderColor }};
+      border-top: 1px solid;
       margin: 28px 0 0 0;
       padding: 24px 0 0 0;
     }
 
     .correspondence-shared-heading {
-      color: {{ correspondence.theme.mutedTextColor }};
-      font-family: {{ correspondence.theme.fontFamily }};
       font-size: 12px;
       line-height: 16px;
       letter-spacing: 0;
@@ -194,8 +174,6 @@
     }
 
     .correspondence-shared-kicker {
-      color: {{ correspondence.theme.mutedTextColor }};
-      font-family: {{ correspondence.theme.fontFamily }};
       font-size: 11px;
       line-height: 15px;
       margin: 0 0 4px 0;
@@ -220,21 +198,16 @@
     }
 
     .correspondence-shared-title {
-      color: {{ correspondence.theme.textColor }};
-      font-family: {{ correspondence.theme.serifFontFamily }};
       font-size: 17px;
       line-height: 22px;
       margin: 0 0 6px 0;
     }
 
     .correspondence-shared-title a {
-      color: {{ correspondence.theme.textColor }};
       text-decoration: underline;
     }
 
     .correspondence-shared-description {
-      color: {{ correspondence.theme.mutedTextColor }};
-      font-family: {{ correspondence.theme.fontFamily }};
       font-size: 13px;
       line-height: 19px;
       margin: 0;
@@ -243,17 +216,11 @@
     }
 
     .correspondence-footer {
-      border-top: 1px solid {{ correspondence.theme.borderColor }};
-      color: {{ correspondence.theme.mutedTextColor }};
-      font-family: {{ correspondence.theme.fontFamily }};
+      border-top: 1px solid;
       font-size: 12px;
       line-height: 18px;
       margin: 28px 0 0 0;
       padding: 18px 0 0 0;
-    }
-
-    .correspondence-footer a {
-      color: {{ correspondence.theme.mutedTextColor }};
     }
 
     @media screen and (max-width: 680px) {
@@ -295,9 +262,9 @@
     }
   </style>
 </head>
-<body bgcolor="{{ correspondence.theme.backgroundColor }}">
+<body style="margin: 0; padding: 0; background-color: {{ correspondence.theme.backgroundColor }};">
   <div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;">{{ preheader }}</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="{{ correspondence.theme.backgroundColor }}">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: {{ correspondence.theme.backgroundColor }};">
     <tr>
       <td align="center" class="correspondence-pad" style="padding: 28px 20px;">
         <block name="template"></block>
