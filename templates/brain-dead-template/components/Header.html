@@ -7,7 +7,8 @@
     <td class="bd-pad" style="padding:28px 32px 10px 32px;">
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;">
         <tr>
-          <td align="left" valign="middle" class="bd-mono" style="font-family:'Courier New',Courier,monospace;font-size:13px;line-height:18px;letter-spacing:0.08em;text-transform:uppercase;color:#000000;">
+          <!-- padding-right keeps a fixed gutter so wrapped nav links never touch the logo on narrow screens -->
+          <td align="left" valign="middle" class="bd-mono" style="padding:0 18px 0 0;font-family:'Courier New',Courier,monospace;font-size:13px;line-height:18px;letter-spacing:0.08em;text-transform:uppercase;color:#000000;">
             <a href="{{ (brand && brand.logoLink) || logoLink || 'https://nearfuturelaboratory.com' }}" style="color:#000000;text-decoration:none;">
               <if condition="(brand && brand.logoUrl) || logoUrl">
                 <img src="{{ (brand && brand.logoUrl) || logoUrl }}" alt="{{ (brand && brand.logoAlt) || logoAlt || (brand && brand.name) || brandName || 'Near Future Laboratory' }}" width="{{ (brand && brand.logoWidth) || logoWidth || 96 }}" style="width:{{ (brand && brand.logoWidth) || logoWidth || 96 }}px;max-width:180px;height:auto;">
@@ -20,7 +21,7 @@
           <td align="right" valign="middle" class="bd-mono" style="font-family:'Courier New',Courier,monospace;font-size:12px;line-height:18px;letter-spacing:0.08em;text-transform:uppercase;color:#000000;">
             <if condition="brand && brand.navLinks && brand.navLinks.length">
               <each loop="navLink in brand.navLinks">
-                <a href="{{ navLink.url || navLink.href }}" style="color:#000000;text-decoration:none;">{{ navLink.label || navLink.text }}</a><if condition="!@last"><span style="padding:0 7px;color:#000000;">/</span></if>
+                <a href="{{ navLink.url || navLink.href }}" style="color:#000000;text-decoration:none;">{{ navLink.label || navLink.text }}</a><if condition="loop.index < brand.navLinks.length - 1"><span style="padding:0 7px;color:#000000;">/</span></if>
               </each>
             </if>
           </td>
