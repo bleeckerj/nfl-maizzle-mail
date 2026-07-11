@@ -102,6 +102,22 @@ The classifier tags every slot with a *kind* so authors know what to put there:
 
 For hand-built templates that don't have a slot manifest, you'll need to read the component HTML to see what mustache placeholders it expects.
 
+### Registry-backed sections
+
+Some production sections store only a registry id in the issue. The canonical build validates the compact source shape and hydrates the render fields before section-style preprocessing.
+
+Dense Discovery and Daily Headlines support Short Takes:
+
+```yaml
+- type: short-take
+  items:
+    - shortTakeId: dhl-autonomous-catapult-delivery-trials
+```
+
+Each `short-take` section requires exactly one item and one non-empty `shortTakeId`. Headline, caption, image, alt text, destination, edge metadata, and width metadata come from `nfl-editorial/src/content/shortTakes.json`. Issue-level overrides are rejected. Place multiple cards by adding multiple `short-take` sections at the required positions in `sections[]`.
+
+The build loads the registry only when the issue contains a Short Take. Inventory resolution uses `NFL_EDITORIAL_SHORT_TAKES_PATH`, then `NFL_EDITORIAL_ROOT`, then the sibling `../nfl-editorial` repository. Linked records use the registry id as the tracking label and `short-take` as the category; records without a destination render without anchors.
+
 ---
 
 ## Reordering, duplicating, removing sections
@@ -216,12 +232,14 @@ The build pipeline runs these passes automatically, in order:
 
 1. Markdown → JSON conversion (`md_to_json.mjs`)
 2. Schema validation against `templates/<name>/newsletter.schema.json`
-3. Section-style preprocessing — injects design tokens from `section-styles.json`
-4. Maizzle build (templating, CSS inlining, HTML emit)
-5. Link tracking metadata injection
-6. Mobile font hardening
-7. Image URL validation
-8. Content slot manifest extraction
+3. Registry hydration for referenced ad blocks and Short Takes
+4. Link tracking normalization and manifest preparation
+5. Section-style preprocessing — injects design tokens from `section-styles.json`
+6. Image and link validation
+7. Maizzle build (templating, CSS inlining, HTML emit)
+8. Rendered link tracking metadata injection
+9. Mobile font hardening
+10. Content slot manifest extraction
 
 If any pass fails, you'll see an error explaining where.
 

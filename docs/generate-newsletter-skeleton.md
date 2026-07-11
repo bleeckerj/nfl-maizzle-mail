@@ -18,7 +18,7 @@ python scripts/generate-newsletter-skeleton.py [--minimal] [--output FILE] [--se
 - `--output`, `-o FILE`  
   Destination filename. Defaults to `newsletter-skeleton.md` in the current directory. Accepts relative or absolute paths.
 - `--sections TYPE [TYPE ...]`  
-  Limit output to specific section types. Valid types match the newsletter template: `feature`, `dispatch`, `apps-sites`, `apps-sites-single-column`, `quote`, `indie-mag`, `single-column`, `books-accessories`, `food-for-thought`, `aesthetically-pleasing`, `classifieds`, `animated-image`. The legacy `sponsor` and `indie-mag-single-column` aliases are still accepted for older workflows.
+  Limit output to types supported by this legacy generator: `ad-block`, `feature`, `dispatch`, `apps-sites`, `apps-sites-single-column`, `callout`, `quote`, `indie-mag`, `single-column`, `books-accessories`, `food-for-thought`, `aesthetically-pleasing`, `classifieds`, `animated-image`, and `image`.
 - `--list-sections`  
   Print all available section types with their required/optional fields and exit.
 
@@ -29,6 +29,7 @@ python scripts/generate-newsletter-skeleton.py [--minimal] [--output FILE] [--se
 - For `dispatch` sections, `signalsLabel` and `tags` are item-level fields (`sections[].items[]`) used to render the SIGNALS tag bar.
 - For `food-for-thought` sections, the legacy `readMoreText` + `readMoreLink` pair remains the primary CTA row, and optional `readMoreLinks` entries add extra CTA rows as `{ text, link }`.
 - Sample image URLs use placeholders; replace them with real assets before building.
+- The checked-in `templates/dense-discovery/dense-discovery-skeleton-full.md` also includes the registry-backed `short-take` type. The Python generator does not emit it yet; copy that block or author it manually with one `shortTakeId`.
 
 ## Examples
 

@@ -171,6 +171,14 @@ Authors supply one registry id and no issue-level content overrides. `lib/newsle
 
 Each section contains exactly one item. Multiple cards use multiple `short-take` sections in the required issue order. Email rendering preserves the complete source image and uses the available template column width.
 
+The inventory is loaded only when an issue contains `short-take`. Path resolution follows this precedence:
+
+1. `NFL_EDITORIAL_SHORT_TAKES_PATH` — direct path to `shortTakes.json`.
+2. `NFL_EDITORIAL_ROOT` — editorial repository root; the build appends `src/content/shortTakes.json`.
+3. Sibling fallback at `../nfl-editorial/src/content/shortTakes.json`.
+
+The canonical registry accepts HTTPS and site-relative destinations. The mail build expands site-relative destinations against `https://nearfuturelaboratory.com` before link validation and tracking normalization.
+
 ## Authoring Surface
 
 Each new template should define an editor-friendly introductory field or section when the newsletter format needs an opening note. Use a named section type when that keeps the authoring model legible; for example, `near-future-lab-daily-headlines` uses `intro_statement`.

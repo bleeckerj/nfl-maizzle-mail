@@ -212,6 +212,8 @@ animated-image
 image
 ```
 
+`short-take` is supported by the production template and canonical builder, but is not yet included in the generated section-guide source above. Use the registry-backed authoring shape in `templates/dense-discovery/README.md` or the full Dense Discovery skeleton.
+
 Generated files in `build_production/` are build artifacts. Regenerate them from the source Markdown and script when reviewing the guide.
 
 ## Dense Discovery Authoring Notes
@@ -235,6 +237,7 @@ Template-specific notes in `templates/dense-discovery/README.md` cover:
 - `feature` subtitle styling.
 - `sponsor` as a legacy alias rendered through the feature branch.
 - `ad-block` frontmatter, hydration, analytics categories, and render hierarchy.
+- `short-take` registry-id authoring, ordered placement, link tracking, and complete-image rendering.
 - `food-for-thought` multi-CTA rows.
 - `indie-mag-single-column` image precedence.
 
