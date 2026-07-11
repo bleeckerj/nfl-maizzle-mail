@@ -83,6 +83,47 @@
         "color": "#000"
       }
     },
+    "short-take": {
+      "name": "Short Take",
+      "description": "Registry-backed editorial card with full-width image, headline, caption, and optional edge metadata.",
+      "containerStyles": {
+        "paddingTop": "15px",
+        "paddingBottom": "15px",
+        "backgroundColor": "#ffffff",
+        "borderColor": "#dcdcdc",
+        "borderWidth": "1px",
+        "borderStyle": "solid",
+        "copyPadding": "16px 18px 18px",
+        "metaPadding": "8px 10px"
+      },
+      "labelStyles": {
+        "fontFamily": "Arial, sans-serif",
+        "fontSize": "10px",
+        "lineHeight": "13px",
+        "fontWeight": "700",
+        "letterSpacing": ".65px",
+        "textTransform": "uppercase",
+        "color": "#666666"
+      },
+      "headingStyles": {
+        "fontFamily": "Georgia, serif",
+        "fontSize": "23px",
+        "lineHeight": "27px",
+        "fontWeight": "700",
+        "color": "#111111"
+      },
+      "contentStyles": {
+        "fontFamily": "Arial, sans-serif",
+        "fontSize": "14px",
+        "lineHeight": "20px",
+        "fontWeight": "400",
+        "color": "#555555"
+      },
+      "linkStyles": {
+        "color": "inherit",
+        "textDecoration": "none"
+      }
+    },
     "calendar_event": {
       "name": "Calendar Event",
       "description": "Generated add-to-calendar card. The build writes an .ics file and injects calendarLink.",

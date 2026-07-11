@@ -362,6 +362,7 @@
               "microdrop-institution-service",
               "microdrop-product-launch",
               "quote",
+              "short-take",
               "signals-adjacent-now",
               "single-column",
               "sponsor"
@@ -480,6 +481,51 @@
                   "additionalProperties": true
                 }
               },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "short-take"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "short-take"
+                },
+                "items": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 1,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "shortTakeId": {
+                        "type": "string",
+                        "pattern": "\\S",
+                        "description": "Short Take id from nfl-editorial/src/content/shortTakes.json."
+                      }
+                    },
+                    "required": [
+                      "shortTakeId"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "type",
+                "items"
+              ],
               "additionalProperties": false
             }
           },

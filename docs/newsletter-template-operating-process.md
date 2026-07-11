@@ -9,6 +9,7 @@ Use this document before scaffolding a new template under `templates/<template-n
 - `nfl-backoffice` owns author-facing drafts at `/Users/julian/Code/nfl-backoffice/public/outbox/data/<year>/<issue-id>.md`.
 - `nfl-maizzle-mail` owns template rendering, schema validation, build-time field injection, ad hydration, link metadata enrichment, image/link validation, and final HTML.
 - `nfl-editorial` owns ad inventory at `/Users/julian/Code/nfl-editorial/src/content/ads.json`.
+- `nfl-editorial` owns the Short Take registry at `/Users/julian/Code/nfl-editorial/src/content/shortTakes.json`.
 - `nfl-newsletter-email-soup-to-nuts` consumes rendered HTML and link metadata for tracked delivery.
 
 ## New Template Required Files
@@ -53,6 +54,7 @@ The schema should describe:
 - object-valued tracked links
 - build-injected fields, clearly marked as generated/runtime fields
 - `ad-block` as an ad-id-driven section
+- `short-take` as a Short Take registry-id-driven section when supported
 
 Tracked link fields should accept the evolved object shape:
 
@@ -155,6 +157,20 @@ Templates should render the hydrated item fields:
 
 If the same ad URL is used by image, title, and CTA anchors, the metadata should remain consistent so the manifest has no conflicts.
 
+## Short Take Contract
+
+Supported templates use this compact source shape anywhere in `sections[]`:
+
+```yaml
+- type: short-take
+  items:
+    - shortTakeId: dhl-autonomous-catapult-delivery-trials
+```
+
+Authors supply one registry id and no issue-level content overrides. `lib/newsletter-core/hydrate-short-takes.mjs` validates and resolves the record from `nfl-editorial/src/content/shortTakes.json`. The hydrated card includes the Photarium image, alt text, headline, caption, optional destination, optional edge metadata, and tracking category `short-take`.
+
+Each section contains exactly one item. Multiple cards use multiple `short-take` sections in the required issue order. Email rendering preserves the complete source image and uses the available template column width.
+
 ## Authoring Surface
 
 Each new template should define an editor-friendly introductory field or section when the newsletter format needs an opening note. Use a named section type when that keeps the authoring model legible; for example, `near-future-lab-daily-headlines` uses `intro_statement`.
@@ -170,7 +186,8 @@ For each new template or boilerplate issue:
 3. Confirm schema validation passes.
 4. Confirm the build injects the deterministic view-online link when the template renders one.
 5. Confirm `ad-block` hydrates from `ads.json` using only `adId` in source.
-6. Confirm rendered HTML includes `data-link-label` and `data-link-category` on expected anchors.
-7. Confirm the link manifest has no unexpected defaults or conflicts.
-8. Confirm generated build-only fields are pruned from normalized author-facing exports.
-9. Document any expected warnings, such as unpublished archive URL 404s or HEAD-blocked commerce URLs.
+6. When supported, confirm `short-take` hydrates from `shortTakes.json` using only `shortTakeId` in source.
+7. Confirm rendered HTML includes `data-link-label` and `data-link-category` on expected anchors.
+8. Confirm the link manifest has no unexpected defaults or conflicts.
+9. Confirm generated build-only fields are pruned from normalized author-facing exports.
+10. Document any expected warnings, such as unpublished archive URL 404s or HEAD-blocked commerce URLs.

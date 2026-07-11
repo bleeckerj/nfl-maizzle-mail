@@ -36,6 +36,10 @@ sections:
     items:
       - adId: the-manual-pb-interstitial-01
 
+  - type: short-take
+    items:
+      - shortTakeId: dhl-autonomous-catapult-delivery-trials
+
   - type: section_article_group
     section_label: Top News
     articles:
@@ -95,6 +99,9 @@ sections:
 `ad-block`
 : Inventory-backed ad card. Author only `items[0].adId`; the build looks up the ad in `/Users/julian/Code/nfl-editorial/src/content/ads.json` and hydrates URL, media, copy, sponsor, and tracking metadata. Exactly one item is allowed. Set `show_bottom_rule: false` to suppress the light divider after the ad.
 
+`short-take`
+: Inventory-backed editorial card. Author only `items[0].shortTakeId`; the build resolves headline, caption, Photarium image, alt text, optional destination, and optional edge metadata from `/Users/julian/Code/nfl-editorial/src/content/shortTakes.json`. Exactly one item is allowed, and multiple cards use multiple ordered sections. Linked records use tracking category `short-take`; records without a destination render without anchors. Images remain complete within the 600px column.
+
 `section_more_link`
 : Legacy standalone follow-up link. Prefer `section_article_group.more_link` for new content.
 
@@ -119,6 +126,7 @@ sections:
 - Backoffice publishing metadata such as `ogImage`, `ogImageAltText`, and `socialCard` may exist on outbox issues, but those fields are not part of this email template’s render path.
 - New editorial content should use the evolved tracked link object shape on fields named `link`, `logoLink`, or top-level CTA `url`: `{ href, label, category }`. The build emits those labels/categories as `data-link-label` and `data-link-category` for `nfl-newsletter-email-soup-to-nuts`.
 - Do not author `viewOnlineLink`. The build computes it from `issueId` as `https://nearfuturelaboratory.com/newsletters/<year>/<issueId>` and injects it into the masthead before rendering.
+- Short Take content is registry-owned. Newsletter drafts carry only `shortTakeId`; issue-level headline, caption, image, URL, edge metadata, width, and style overrides are rejected.
 - New ad content should use `ad-block` with `adId`; do not hand-author ad destination URLs or ad image URLs in the newsletter draft. Hydrated ad links default to tracking category `ad-block`. When a placement needs a more specific click-category analytics label, set the item `link` or `readMoreLink` to `{ href, label, category }`, for example:
 
 ```yaml

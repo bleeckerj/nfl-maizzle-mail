@@ -102,6 +102,23 @@ Font defaults for this section use:
 
 Use `content/test-ads.md` as the working sample file for `ad-block` validation and visual QA.
 
+## `short-take` section
+
+`short-take` renders one editorial registry card at its exact position in `sections[]`:
+
+```yaml
+sections:
+- type: short-take
+  items:
+  - shortTakeId: dhl-autonomous-catapult-delivery-trials
+```
+
+The build resolves `shortTakeId` from `../nfl-editorial/src/content/shortTakes.json`. Exactly one item is required. Headline, caption, Photarium image, alt text, destination, edge metadata, and width metadata remain registry-owned; issue-level overrides fail validation. Multiple cards use multiple ordered sections.
+
+Linked records emit separate image and copy anchors with the registry id as the tracking label and `short-take` as the category. Records without a destination render without anchors. The complete image remains visible within the 640px Dense Discovery column; responsive web `maxWidth` variants are retained in normalized data and are not applied to email layout.
+
+Defaults are defined under `sectionStyles["short-take"]` and use Dense Discovery’s Ubuntu headline, IBM Plex Sans caption, and Share Tech Mono edge metadata treatment.
+
 ## `food-for-thought` multi-CTA rows
 
 `food-for-thought` items support one primary CTA row plus optional extra CTA rows.

@@ -147,6 +147,9 @@ sections:
   description: <p>Optional framing copy for the ad slot.</p>
   items:
   - adId: fashion-8bit-pants-interstitial
+- type: short-take
+  items:
+  - shortTakeId: dhl-autonomous-catapult-delivery-trials
 - type: apps-sites
   title: Apps Sites Section
   items:

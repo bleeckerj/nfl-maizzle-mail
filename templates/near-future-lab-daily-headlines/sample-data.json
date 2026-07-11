@@ -1,4 +1,5 @@
 {
+  "template": "near-future-lab-daily-headlines",
   "title": "Near Future Laboratory Daily Headlines Sample",
   "preheader": "A compact sample for the Near Future Laboratory Daily Headlines style template.",
   "sections": [
@@ -30,6 +31,14 @@
       "items": [
         {
           "adId": "the-manual-pb-interstitial-01"
+        }
+      ]
+    },
+    {
+      "type": "short-take",
+      "items": [
+        {
+          "shortTakeId": "dhl-autonomous-catapult-delivery-trials"
         }
       ]
     },
