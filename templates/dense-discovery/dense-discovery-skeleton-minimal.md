@@ -17,6 +17,9 @@ socialCard:
   textColor: '#f5f2eb'
   mutedTextColor: 'rgba(255,255,255,0.82)'
   kickerColor: '#ffb000'
+  animation:
+    mode: none
+    duration: source
 sectionStylesFile: templates/dense-discovery/section-styles.json
 intro:
   title: Welcome

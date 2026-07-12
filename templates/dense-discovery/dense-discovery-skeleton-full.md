@@ -26,8 +26,7 @@ socialCard:
   animation:
     mode: none
     animeModule: deterministic-orbit
-    durationMs: 2400
-    fps: 8
+    duration: 2400
     loop: true
     posterFrame: 0.5
     disableForPresets:
