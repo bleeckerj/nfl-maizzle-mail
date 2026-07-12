@@ -83,6 +83,7 @@ sections:
     text_color: '#333'
     eyebrow_color: '#555'
     border_color: '#222'
+    border_radius: 12    # pixels; omit for square corners
     primaryAction:
       label: Subscribe
       url:

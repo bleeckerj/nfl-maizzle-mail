@@ -604,11 +604,11 @@
               },
               "border_color": {
                 "type": "string",
-                "description": "CSS color for the top and bottom rules."
+                "description": "CSS color for the full border on all four edges."
               },
               "border_width": {
                 "type": ["integer", "string"],
-                "description": "Top rule width in pixels. Defaults to 1."
+                "description": "Full border width in pixels. Defaults to 1."
               },
               "border_radius": {
                 "type": ["integer", "string"],
