@@ -57,6 +57,7 @@ sections:
     background: '#000000'
     text_color: '#ffffff'
     eyebrow_color: '#f2ff3d'
+    border_radius: 12
     primaryAction:
       label: Subscribe
       url:

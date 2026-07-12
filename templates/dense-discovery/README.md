@@ -183,7 +183,7 @@ The legacy `indie-mag-single-column` section type remains supported as an alias 
 
 ## `inline_cta`
 
-An inline CTA can appear anywhere in `sections`; place it immediately before the footer when it should read as the final editorial block. Use `renderFor: public` or `renderFor: preview` for the public edition only, `renderFor: full` for the full edition only, or omit it / use `both` for both editions. The required `primaryAction` and optional `secondaryAction` use tracked-link objects. `font_family` accepts `mono` or `sans`, and the appearance fields mirror the Daily Headlines inline CTA contract.
+An inline CTA can appear anywhere in `sections`; place it immediately before the footer when it should read as the final editorial block. Use `renderFor: public` or `renderFor: preview` for the public edition only, `renderFor: full` for the full edition only, or omit it / use `both` for both editions. The required `primaryAction` and optional `secondaryAction` use tracked-link objects. `font_family` accepts `mono` or `sans`, and the appearance fields mirror the Daily Headlines inline CTA contract. The block has a full border on all four edges; set `border_radius` in pixels for rounded corners (for example, `12`), or omit it for square corners.
 
 ```yaml
 sections:
@@ -196,6 +196,7 @@ sections:
   text_color: '#333333'
   eyebrow_color: '#555555'
   border_color: '#222222'
+  border_radius: 12
   primaryAction:
     label: Subscribe
     url:

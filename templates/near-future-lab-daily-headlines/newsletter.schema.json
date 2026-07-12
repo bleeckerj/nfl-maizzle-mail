@@ -610,6 +610,10 @@
                 "type": ["integer", "string"],
                 "description": "Top rule width in pixels. Defaults to 1."
               },
+              "border_radius": {
+                "type": ["integer", "string"],
+                "description": "Corner radius in pixels. Defaults to 0 (square corners)."
+              },
               "button_background": {
                 "type": "string",
                 "description": "Primary button background color."

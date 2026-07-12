@@ -368,6 +368,10 @@
               "sponsor",
               "inline_cta"
             ]
+          },
+          "border_radius": {
+            "type": ["integer", "string"],
+            "description": "Corner radius in pixels for inline_cta. Defaults to 0 (square corners)."
           }
         },
         "additionalProperties": true,

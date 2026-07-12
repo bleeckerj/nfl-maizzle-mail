@@ -54,6 +54,7 @@ test('inline_cta renders its styling, actions, and position before email_footer'
         background: '#f5f4f0',
         text_color: '#333333',
         eyebrow_color: '#555555',
+        border_radius: 12,
         border_color: '#222222',
         primaryAction: { label: 'Subscribe', url: 'mailto:subscribe@example.com' },
         secondaryAction: { label: 'Read online', url: 'mailto:online@example.com' },
@@ -82,6 +83,8 @@ test('inline_cta renders its styling, actions, and position before email_footer'
     assert.match(html, /Public preview/);
     assert.match(html, /You are reading the <strong>public preview<\/strong>\./);
     assert.match(html, /background:#f5f4f0/);
+    assert.match(html, /border:1px solid #222222/);
+    assert.match(html, /border-radius:12px/);
     assert.match(html, /color:#333333/);
     assert.match(html, /font:16px\/22px monospace/);
     assert.match(html, /href="mailto:subscribe@example\.com"/);
@@ -105,6 +108,7 @@ test('dense-discovery and brain-dead-template render the shared inline_cta contr
       eyebrow: 'Public preview',
       statement: 'Dense CTA copy.',
       font_family: 'mono',
+      border_radius: '12px',
       primaryAction: { label: 'Subscribe', url: 'mailto:dense@example.com' },
     }],
   };
@@ -117,6 +121,7 @@ test('dense-discovery and brain-dead-template render the shared inline_cta contr
       eyebrow: 'Full edition',
       statement: 'Brain Dead CTA copy.',
       font_family: 'mono',
+      border_radius: 12,
       primaryAction: { label: 'Continue', url: 'mailto:brain@example.com' },
     }],
     footer: { footerCta: { enabled: false } },
@@ -131,10 +136,14 @@ test('dense-discovery and brain-dead-template render the shared inline_cta contr
     assert.match(denseHtml, /Dense\s+CTA copy\./);
     assert.match(denseHtml, /href="mailto:dense@example\.com"/);
     assert.match(denseHtml, /Share Tech Mono/);
+    assert.match(denseHtml, /border:\s*1px solid #000000/);
+    assert.match(denseHtml, /border-radius:\s*12px/);
     assert.match(brainHtml, /data-content-slot="inline_cta"/);
     assert.match(brainHtml, /Brain Dead CTA copy\./);
     assert.match(brainHtml, /href="mailto:brain@example\.com"/);
     assert.match(brainHtml, /Courier New/);
+    assert.match(brainHtml, /border:2px solid #000000/);
+    assert.match(brainHtml, /border-radius:12px/);
   } finally {
     rmSync(tempRoot, { recursive: true, force: true });
   }

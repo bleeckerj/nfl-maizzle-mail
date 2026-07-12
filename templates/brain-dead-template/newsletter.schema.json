@@ -194,6 +194,7 @@
         "background": { "type": "string" },
         "border_color": { "type": "string" },
         "border_width": { "type": ["integer", "string"] },
+        "border_radius": { "type": ["integer", "string"] },
         "font_family": { "enum": ["mono", "sans"] },
         "space_top": { "type": ["integer", "string"] },
         "space_bottom": { "type": ["integer", "string"] },

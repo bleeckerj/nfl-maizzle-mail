@@ -68,7 +68,7 @@ sections:
 
 The build normalizes these objects into template-safe URL strings and adds `data-link-label` / `data-link-category` to the rendered anchors.
 
-`inline_cta` uses the same tracked action shape for `primaryAction` and optional `secondaryAction`. Use `renderFor: public` or `preview` for the public edition only, `renderFor: full` for the full edition only, or omit it / use `both` for both editions. Its `font_family` can be `mono` or `sans`; colors, borders, spacing, and button colors are configurable.
+`inline_cta` uses the same tracked action shape for `primaryAction` and optional `secondaryAction`. Use `renderFor: public` or `preview` for the public edition only, `renderFor: full` for the full edition only, or omit it / use `both` for both editions. Its `font_family` can be `mono` or `sans`; colors, borders, spacing, button colors, and `border_radius` are configurable. The section has a full border on all four edges; specify `border_radius` in pixels, such as `12`, for rounded corners.
 
 ```yaml
 sections:
@@ -80,6 +80,7 @@ sections:
     background: '#000000'
     text_color: '#ffffff'
     eyebrow_color: '#f2ff3d'
+    border_radius: 12
     primaryAction:
       label: Subscribe
       url:

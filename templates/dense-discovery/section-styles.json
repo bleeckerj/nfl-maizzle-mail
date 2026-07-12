@@ -653,8 +653,8 @@
       "containerStyles": {
         "backgroundColor": "#f5f4f0",
         "padding": "18px 20px",
-        "borderColor": "#dcdcdc",
-        "borderWidth": "1px"
+        "border": "1px solid #000000",
+        "borderRadius": "0px"
       },
       "contentStyles": {
         "fontFamily": "'Share Tech Mono', 'Courier New', Courier, monospace",

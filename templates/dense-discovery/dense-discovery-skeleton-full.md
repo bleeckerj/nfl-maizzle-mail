@@ -349,6 +349,7 @@ sections:
   text_color: '#333333'
   eyebrow_color: '#555555'
   border_color: '#222222'
+  border_radius: 12
   primaryAction:
     label: Subscribe
     url:

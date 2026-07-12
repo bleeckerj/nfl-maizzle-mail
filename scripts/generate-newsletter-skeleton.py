@@ -336,6 +336,7 @@ def generate_section(section_type, minimal=False):
             'background': '#f5f4f0',
             'text_color': '#333333',
             'eyebrow_color': '#555555',
+            'border_radius': 12,
             'border_color': '#222222',
             'primaryAction': {
                 'label': 'Subscribe',
