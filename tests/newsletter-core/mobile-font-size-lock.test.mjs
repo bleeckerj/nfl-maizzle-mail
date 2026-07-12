@@ -294,21 +294,21 @@ test('daily-headlines article groups lock mobile article title and lede sizes se
   const layout = readFileSync(DAILY_HEADLINES_LAYOUT, 'utf8');
   const mobileBlock = extractMobileMediaBlock(layout, '@media screen and (max-width: 599px)');
 
-  assert.match(mobileBlock, /\.mob-text,\s*\.mob-text a,\s*\.mob-text p,[\s\S]*font-size:\s*19px\s*!important;/);
+  assert.match(mobileBlock, /\.mob-text,\s*\.mob-text a,\s*\.mob-text p,[\s\S]*font-size:\s*17px\s*!important;/);
   assert.match(mobileBlock, /table\.intro-statement p\.intro-statement-label,[\s\S]*p\.intro-statement-label span\s*\{\s*font-size:\s*12px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
-  assert.match(mobileBlock, /table\.intro-statement \.intro-statement-copy,[\s\S]*\.intro-statement-copy strong\s*\{\s*font-size:\s*18px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
-  assert.match(mobileBlock, /h2\.ad-section-title,[\s\S]*h2\.ad-section-title a\s*\{\s*font-size:\s*20px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
-  assert.match(mobileBlock, /h3\.ad-title,[\s\S]*h3\.ad-title a\s*\{\s*font-size:\s*22px\s*!important;\s*line-height:\s*1\.24\s*!important;/);
-  assert.match(mobileBlock, /p\.article-kicker,[\s\S]*p\.article-kicker span\s*\{\s*font-size:\s*16px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
-  assert.match(mobileBlock, /h3\.article-title,[\s\S]*h3\.article-title a\s*\{\s*font-size:\s*24px\s*!important;\s*line-height:\s*1\.22\s*!important;/);
-  assert.match(mobileBlock, /p\.article-lede,[\s\S]*p\.article-lede strong\s*\{\s*font-size:\s*19px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
-  assert.match(mobileBlock, /span\.article-cta-pill,[\s\S]*\.article-cta-pill\s*\{\s*font-size:\s*16px\s*!important;\s*line-height:\s*1\.25\s*!important;/);
+  assert.match(mobileBlock, /table\.intro-statement \.intro-statement-copy,[\s\S]*\.intro-statement-copy strong\s*\{\s*font-size:\s*17px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
+  assert.match(mobileBlock, /h2\.ad-section-title,[\s\S]*h2\.ad-section-title a\s*\{\s*font-size:\s*17px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
+  assert.match(mobileBlock, /h3\.ad-title,[\s\S]*h3\.ad-title a\s*\{\s*font-size:\s*18px\s*!important;\s*line-height:\s*1\.24\s*!important;/);
+  assert.match(mobileBlock, /p\.article-kicker,[\s\S]*p\.article-kicker span\s*\{\s*font-size:\s*13px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
+  assert.match(mobileBlock, /h3\.article-title,[\s\S]*h3\.article-title a\s*\{\s*font-size:\s*20px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
+  assert.match(mobileBlock, /p\.article-lede,[\s\S]*p\.article-lede strong\s*\{\s*font-size:\s*17px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
+  assert.match(mobileBlock, /span\.article-cta-pill,[\s\S]*\.article-cta-pill\s*\{\s*font-size:\s*14px\s*!important;\s*line-height:\s*1\.25\s*!important;/);
   assert.match(mobileBlock, /p\.mob-ad-copy,[\s\S]*p\.mob-ad-copy strong\s*\{\s*font-size:\s*\{\{ mobileAdCopyFontSize \|\| '16px' \}\}\s*!important;\s*line-height:\s*\{\{ mobileAdCopyLineHeight \|\| '1\.25' \}\}\s*!important;/);
   assert.match(mobileBlock, /p\.mob-ad-meta,[\s\S]*a\.mob-ad-meta span\s*\{\s*font-size:\s*\{\{ mobileAdMetaFontSize \|\| '10px' \}\}\s*!important;\s*line-height:\s*\{\{ mobileAdMetaLineHeight \|\| '1\.2' \}\}\s*!important;/);
-  assert.match(mobileBlock, /table\.footer-cta p\.footer-cta-eyebrow,[\s\S]*p\.footer-cta-eyebrow span\s*\{\s*font-size:\s*15px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
-  assert.match(mobileBlock, /table\.footer-cta p\.footer-cta-copy,[\s\S]*p\.footer-cta-copy strong\s*\{\s*font-size:\s*20px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
-  assert.match(mobileBlock, /table\.footer-cta a\.footer-cta-button,[\s\S]*a\.footer-cta-button span\s*\{\s*font-size:\s*16px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
-  assert.match(mobileBlock, /\.mob-footer,[\s\S]*\.mob-footer td\s*\{\s*font-size:\s*15px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
+  assert.match(mobileBlock, /table\.footer-cta p\.footer-cta-eyebrow,[\s\S]*p\.footer-cta-eyebrow span\s*\{\s*font-size:\s*12px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
+  assert.match(mobileBlock, /table\.footer-cta p\.footer-cta-copy,[\s\S]*p\.footer-cta-copy strong\s*\{\s*font-size:\s*17px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
+  assert.match(mobileBlock, /table\.footer-cta a\.footer-cta-button,[\s\S]*a\.footer-cta-button span\s*\{\s*font-size:\s*14px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
+  assert.match(mobileBlock, /\.mob-footer,[\s\S]*\.mob-footer td\s*\{\s*font-size:\s*12px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
 });
 
 test('daily-headlines article group markup opts semantic text into article mobile locks', () => {
