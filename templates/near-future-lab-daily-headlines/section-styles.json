@@ -268,6 +268,22 @@
         "textDecoration": "none"
       },
       "headingStyles": {}
+    },
+    "inline_cta": {
+      "name": "Inline CTA",
+      "description": "Edition-aware inline CTA bar for public-preview or full-edition subscription and editorial messages.",
+      "containerStyles": {
+        "borderTop": "1px solid #000",
+        "borderBottom": "1px solid #dcdcdc",
+        "background": "#f5f4f0",
+        "padding": "18px 20px"
+      },
+      "contentStyles": {
+        "color": "#333",
+        "fontFamily": "monospace"
+      },
+      "linkStyles": {},
+      "headingStyles": {}
     }
   },
   "globalOverrides": {

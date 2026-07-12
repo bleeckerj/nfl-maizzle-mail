@@ -74,6 +74,24 @@ sections:
     # space_top: 28      # gap (px) above the bar
     # space_bottom: 28   # gap (px) below the bar
 
+  - type: inline_cta
+    renderFor: public       # public/preview, full, both, or omit for both
+    eyebrow: Public preview
+    statement: 'You’re reading the public preview. Subscribe for the full issue.'
+    font_family: mono       # mono or sans
+    background: '#f5f4f0'
+    text_color: '#333'
+    eyebrow_color: '#555'
+    border_color: '#222'
+    primaryAction:
+      label: Subscribe
+      url:
+        href: https://nearfuturelaboratory.com/subscribe
+        label: Daily Headlines subscribe
+        category: subscribe
+        intent: subscribe
+    # secondaryAction: { label: Read online, url: { href: https://..., label: Read online, category: newsletter } }
+
   - type: email_footer
     paragraphs:
       - Boilerplate / legal paragraph. Inline <a href> links are allowed.
@@ -110,6 +128,9 @@ sections:
 
 `email_footer`
 : The full footer below the footer CTA bar. Author it with structured slots — `paragraphs` (boilerplate/legal body paragraphs, each may contain inline `<a href>` links), `address` (the lighter legal line: organization, location, copyright, with an optional inline `<a>`), `unsubscribe_label` (+ optional `unsubscribe_href`, default `[unsubscribe]`), and optional `social_links` (`{ label, href, category }`). The component supplies all the table-row + paragraph chrome. `footer_html` (the complete inner table-row HTML) is kept as a legacy fallback and is used verbatim only when no structured slot is set, so existing issues keep rendering unchanged. Reference markup + full slot docs live in `components/FooterBody.html`.
+
+`inline_cta`
+: Edition-aware CTA bar rendered at the authored position. Place it immediately before `email_footer`. Use `renderFor: public` or `renderFor: preview` for the public preview only, `renderFor: full` for the full edition only, or omit `renderFor` / use `both` to render it in both. The required `primaryAction` and optional `secondaryAction` use the tracked-link shape. `statement` accepts simple inline HTML. `font_family` is `mono` by default and can be set to `sans`; appearance fields include `background`, `text_color`, `eyebrow_color`, `border_color`, button colors, `space_top`, and `space_bottom`. The block uses the same dark-mode flatten classes as `share_this`.
 
 `masthead_ad_bar`
 : Legacy ad/view-in-browser bar above the masthead. New ad placements should use `ad-block` so ad URLs and media come from the editorial ads inventory.

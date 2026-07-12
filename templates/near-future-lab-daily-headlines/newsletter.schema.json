@@ -559,6 +559,95 @@
           },
           {
             "type": "object",
+            "title": "Inline CTA",
+            "description": "Inline CTA bar rendered at the authored position, typically immediately before email_footer. It can be limited to the public preview or full edition with renderFor.",
+            "properties": {
+              "type": {
+                "const": "inline_cta"
+              },
+              "renderFor": {
+                "type": "string",
+                "enum": ["public", "preview", "full", "both"],
+                "description": "Edition visibility. Omit or use both to render in both editions; public and preview mean the public preview only."
+              },
+              "eyebrow": {
+                "type": "string",
+                "description": "Small uppercase label above the CTA statement."
+              },
+              "statement": {
+                "type": "string",
+                "description": "CTA statement. Simple inline HTML such as <em>, <strong>, and <a> is allowed."
+              },
+              "primaryAction": {
+                "$ref": "#/definitions/inlineCtaAction"
+              },
+              "secondaryAction": {
+                "$ref": "#/definitions/inlineCtaAction"
+              },
+              "font_family": {
+                "type": "string",
+                "enum": ["mono", "sans"],
+                "default": "mono",
+                "description": "Typography for the eyebrow, statement, and buttons. Defaults to mono."
+              },
+              "background": {
+                "type": "string",
+                "description": "CSS background color."
+              },
+              "text_color": {
+                "type": "string",
+                "description": "CSS color for the statement."
+              },
+              "eyebrow_color": {
+                "type": "string",
+                "description": "CSS color for the eyebrow."
+              },
+              "border_color": {
+                "type": "string",
+                "description": "CSS color for the top and bottom rules."
+              },
+              "border_width": {
+                "type": ["integer", "string"],
+                "description": "Top rule width in pixels. Defaults to 1."
+              },
+              "button_background": {
+                "type": "string",
+                "description": "Primary button background color."
+              },
+              "button_text_color": {
+                "type": "string",
+                "description": "Primary button text color."
+              },
+              "button_border_color": {
+                "type": "string",
+                "description": "Primary button border color."
+              },
+              "secondary_button_background": {
+                "type": "string",
+                "description": "Secondary button background color."
+              },
+              "secondary_button_text_color": {
+                "type": "string",
+                "description": "Secondary button text color."
+              },
+              "secondary_button_border_color": {
+                "type": "string",
+                "description": "Secondary button border color."
+              },
+              "space_top": {
+                "type": ["integer", "string"],
+                "description": "Vertical gap above the CTA. Defaults to 28."
+              },
+              "space_bottom": {
+                "type": ["integer", "string"],
+                "description": "Vertical gap below the CTA. Defaults to 28."
+              }
+            },
+            "required": ["type", "primaryAction"],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
             "title": "Email Footer",
             "description": "Full footer with subscription management text, links, social icons, legal logos, and mailing address. Prefer the structured slots (paragraphs / address / unsubscribe_label / social_links); footer_html is kept as a legacy fallback used only when no structured slot is set.",
             "properties": {
@@ -708,6 +797,19 @@
           "additionalProperties": true
         }
       ]
+    },
+    "inlineCtaAction": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "url": {
+          "$ref": "#/definitions/trackedLink"
+        }
+      },
+      "required": ["label", "url"],
+      "additionalProperties": true
     }
   }
 }

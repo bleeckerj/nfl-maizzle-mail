@@ -176,6 +176,20 @@ title: "Near Future Laboratory Daily Headlines"
       </tbody></table>
       <table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface' : '' }}"><tbody><tr><td height="{{ section.space_bottom || 28 }}" style="font-size:0;line-height:0">&#8203;</td></tr></tbody></table>
     </if>
+    <if condition="section.type === 'inline_cta'">
+      <table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface' : '' }}"><tbody><tr><td height="{{ section.space_top || 28 }}" style="font-size:0;line-height:0">&#8203;</td></tr></tbody></table>
+      <table border="0" cellpadding="0" cellspacing="0" style="width:100%;border-top:{{ section.border_width || 1 }}px solid {{ section.border_color || '#000' }};border-bottom:1px solid {{ section.border_color || '#dcdcdc' }};background:{{ section.background || '#f5f4f0' }}" role="presentation" class="inline-cta{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" data-content-slot="inline_cta"><tbody>
+        <tr><td style="padding:18px 20px 0">
+          <if condition="section.eyebrow"><p class="inline-cta-eyebrow" style="margin:0 0 4px 0;padding:0;color:{{ section.eyebrow_color || '#555' }};font:700 11px/16px {{ section.font_family === 'sans' ? 'arial,sans-serif' : 'monospace' }};letter-spacing:.75px;text-transform:uppercase">{{ section.eyebrow }}</p></if>
+          <if condition="section.statement"><div class="inline-cta-copy" style="margin:0;padding:0;color:{{ section.text_color || '#333' }};font:16px/22px {{ section.font_family === 'sans' ? 'arial,sans-serif' : 'monospace' }}">{{{ section.statement }}}</div></if>
+        </td></tr>
+        <tr><td style="padding:14px 20px 18px">
+          <if condition="section.primaryAction && section.primaryAction.url"><a class="inline-cta-button inline-cta-primary" href="{{ section.primaryAction.url }}" style="display:inline-block;margin:0 8px 0 0;padding:6px 10px;border:1px solid {{ section.button_border_color || section.button_background || '#111' }};border-radius:4px;background:{{ section.button_background || '#111' }};font:700 12px/1.2 {{ section.font_family === 'sans' ? 'arial,sans-serif' : 'monospace' }};color:{{ section.button_text_color || '#fff' }}!important;-webkit-text-fill-color:{{ section.button_text_color || '#fff' }};text-decoration:none">{{ section.primaryAction.label }}</a></if>
+          <if condition="section.secondaryAction && section.secondaryAction.url"><a class="inline-cta-button inline-cta-secondary" href="{{ section.secondaryAction.url }}" style="display:inline-block;margin:0;padding:6px 10px;border:1px solid {{ section.secondary_button_border_color || section.border_color || '#111' }};border-radius:4px;background:{{ section.secondary_button_background || '#fff' }};font:700 12px/1.2 {{ section.font_family === 'sans' ? 'arial,sans-serif' : 'monospace' }};color:{{ section.secondary_button_text_color || '#111' }}!important;-webkit-text-fill-color:{{ section.secondary_button_text_color || '#111' }};text-decoration:none">{{ section.secondaryAction.label }}</a></if>
+        </td></tr>
+      </tbody></table>
+      <table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface' : '' }}"><tbody><tr><td height="{{ section.space_bottom || 28 }}" style="font-size:0;line-height:0">&#8203;</td></tr></tbody></table>
+    </if>
     <if condition="section.type === 'email_footer'">
       <component src="templates/near-future-lab-daily-headlines/components/FooterCta.html"></component>
       <table class="mob-text mob-footer{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><tbody>
