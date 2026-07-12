@@ -365,7 +365,8 @@
               "short-take",
               "signals-adjacent-now",
               "single-column",
-              "sponsor"
+              "sponsor",
+              "inline_cta"
             ]
           }
         },

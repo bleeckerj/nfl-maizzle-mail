@@ -157,6 +157,16 @@ SECTION_DEFINITIONS = {
             'optional': ['title', 'description', 'link']
         },
         'example_items': 1
+    },
+    'inline_cta': {
+        'description': 'Edition-aware inline CTA block',
+        'section_fields': ['type'],
+        'item_fields': {
+            'required': [],
+            'optional': []
+        },
+        'example_items': 0,
+        'itemless': True
     }
 }
 
@@ -316,6 +326,23 @@ def generate_section(section_type, minimal=False):
             # Optional fields - skip in minimal mode
             if not minimal:
                 section[field] = f'Example {field}'
+
+    if definition.get('itemless'):
+        section.update({
+            'renderFor': 'public',
+            'eyebrow': 'Public preview',
+            'statement': 'You’re reading the public preview. Subscribe for the full issue.',
+            'font_family': 'mono',
+            'background': '#f5f4f0',
+            'text_color': '#333333',
+            'eyebrow_color': '#555555',
+            'border_color': '#222222',
+            'primaryAction': {
+                'label': 'Subscribe',
+                'url': 'https://theadjacency.com/subscribe'
+            }
+        })
+        return section
     
     # Add items
     num_items = 1 if minimal else definition['example_items']

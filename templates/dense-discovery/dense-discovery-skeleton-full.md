@@ -340,6 +340,22 @@ sections:
     title: Example title
     description: <p>Example description for animated-image item 1.</p>
     link: https://example.com
+- type: inline_cta
+  renderFor: public
+  eyebrow: Public preview
+  statement: "You’re reading the public preview. Subscribe for the full issue."
+  font_family: mono
+  background: '#f5f4f0'
+  text_color: '#333333'
+  eyebrow_color: '#555555'
+  border_color: '#222222'
+  primaryAction:
+    label: Subscribe
+    url:
+      href: https://theadjacency.com/subscribe
+      label: wXX-yYY | inline CTA | subscribe
+      category: newsletter
+      intent: subscribe
 footer:
   emailShare: mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2026/w50-y25/
   newsletterSubscribeLink:

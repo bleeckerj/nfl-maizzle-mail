@@ -49,6 +49,21 @@ sections:
           href: https://example.com/?book=four
           label: four-books | Book Four Title
           category: commerce
+  - type: inline_cta
+    renderFor: public
+    eyebrow: Public preview
+    statement: "You’re reading the public preview. Subscribe to get the full issue."
+    font_family: mono
+    background: '#000000'
+    text_color: '#ffffff'
+    eyebrow_color: '#f2ff3d'
+    primaryAction:
+      label: Subscribe
+      url:
+        href: https://theadjacency.com/subscribe
+        label: four-books | inline CTA | subscribe
+        category: newsletter
+        intent: subscribe
 offer:
   headline: Buy all four together.
   ctaText: Shop all four

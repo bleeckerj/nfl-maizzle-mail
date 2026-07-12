@@ -124,7 +124,12 @@
       "type": "object",
       "required": ["type"],
       "properties": {
-        "type": { "enum": ["dual-column", "single-column", "calendar_event"] },
+        "type": { "enum": ["dual-column", "single-column", "calendar_event", "inline_cta"] },
+        "renderFor": {
+          "type": "string",
+          "enum": ["public", "preview", "full", "both"],
+          "description": "Edition visibility. Omit or use both to render in both editions; public and preview mean the public preview only."
+        },
         "label": { "type": "string" },
         "title": { "type": "string" },
         "items": {
@@ -183,13 +188,33 @@
             "lineHeight": { "type": "string" },
             "color": { "type": "string" }
           }
-        }
+        },
+        "eyebrow_color": { "type": "string" },
+        "text_color": { "type": "string" },
+        "background": { "type": "string" },
+        "border_color": { "type": "string" },
+        "border_width": { "type": ["integer", "string"] },
+        "font_family": { "enum": ["mono", "sans"] },
+        "space_top": { "type": ["integer", "string"] },
+        "space_bottom": { "type": ["integer", "string"] },
+        "button_background": { "type": "string" },
+        "button_text_color": { "type": "string" },
+        "button_border_color": { "type": "string" },
+        "secondary_button_background": { "type": "string" },
+        "secondary_button_text_color": { "type": "string" },
+        "secondary_button_border_color": { "type": "string" },
+        "primaryAction": { "$ref": "#/definitions/inlineCtaAction" },
+        "secondaryAction": { "$ref": "#/definitions/inlineCtaAction" }
       },
       "allOf": [
         {
           "if": { "properties": { "type": { "const": "calendar_event" } } },
           "then": { "required": ["title", "startsAt"] },
-          "else": { "required": ["items"] }
+          "else": {
+            "if": { "properties": { "type": { "const": "inline_cta" } } },
+            "then": { "required": ["primaryAction"] },
+            "else": { "required": ["items"] }
+          }
         }
       ]
     },
@@ -236,6 +261,15 @@
           }
         }
       ]
+    },
+    "inlineCtaAction": {
+      "type": "object",
+      "required": ["label", "url"],
+      "properties": {
+        "label": { "type": "string" },
+        "url": { "$ref": "#/definitions/trackedLink" }
+      },
+      "additionalProperties": true
     },
     "navLink": {
       "type": "object",

@@ -11,6 +11,7 @@ Supported section types:
 - `dual-column` - image and copy sit side by side on wide screens, then stack on mobile.
 - `single-column` - each item stays full width on wide screens and mobile.
 - `calendar_event` - a generated add-to-calendar card. The build writes an `.ics` file and injects `calendarLink`.
+- `inline_cta` - an edition-aware inline CTA block rendered in the authored section order before the closing offer/footer.
 
 For `calendar_event`, author event metadata directly on the section:
 
@@ -66,6 +67,27 @@ sections:
 ```
 
 The build normalizes these objects into template-safe URL strings and adds `data-link-label` / `data-link-category` to the rendered anchors.
+
+`inline_cta` uses the same tracked action shape for `primaryAction` and optional `secondaryAction`. Use `renderFor: public` or `preview` for the public edition only, `renderFor: full` for the full edition only, or omit it / use `both` for both editions. Its `font_family` can be `mono` or `sans`; colors, borders, spacing, and button colors are configurable.
+
+```yaml
+sections:
+  - type: inline_cta
+    renderFor: public
+    eyebrow: Public preview
+    statement: "You’re reading the public preview. Subscribe for the full issue."
+    font_family: mono
+    background: '#000000'
+    text_color: '#ffffff'
+    eyebrow_color: '#f2ff3d'
+    primaryAction:
+      label: Subscribe
+      url:
+        href: https://theadjacency.com/subscribe
+        label: issue | inline CTA | subscribe
+        category: newsletter
+        intent: subscribe
+```
 
 ## Build-Owned Fields
 

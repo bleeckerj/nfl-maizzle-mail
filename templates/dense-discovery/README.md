@@ -180,3 +180,27 @@ sections:
 When `images` is present, the template renders that array and ignores `image`. Under strict schema validation, do not supply both fields on the same item.
 
 The legacy `indie-mag-single-column` section type remains supported as an alias for older newsletters.
+
+## `inline_cta`
+
+An inline CTA can appear anywhere in `sections`; place it immediately before the footer when it should read as the final editorial block. Use `renderFor: public` or `renderFor: preview` for the public edition only, `renderFor: full` for the full edition only, or omit it / use `both` for both editions. The required `primaryAction` and optional `secondaryAction` use tracked-link objects. `font_family` accepts `mono` or `sans`, and the appearance fields mirror the Daily Headlines inline CTA contract.
+
+```yaml
+sections:
+- type: inline_cta
+  renderFor: public
+  eyebrow: Public preview
+  statement: "You’re reading the public preview. Subscribe for the full issue."
+  font_family: mono
+  background: '#f5f4f0'
+  text_color: '#333333'
+  eyebrow_color: '#555555'
+  border_color: '#222222'
+  primaryAction:
+    label: Subscribe
+    url:
+      href: https://theadjacency.com/subscribe
+      label: issue | inline CTA | subscribe
+      category: newsletter
+      intent: subscribe
+```

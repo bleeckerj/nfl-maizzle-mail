@@ -647,6 +647,24 @@
         "color": "#000000"
       }
     },    
+    "inline_cta": {
+      "name": "Inline CTA",
+      "description": "Edition-aware inline CTA bar for subscription or editorial notes before the footer.",
+      "containerStyles": {
+        "backgroundColor": "#f5f4f0",
+        "padding": "18px 20px",
+        "borderColor": "#dcdcdc",
+        "borderWidth": "1px"
+      },
+      "contentStyles": {
+        "fontFamily": "'Share Tech Mono', 'Courier New', Courier, monospace",
+        "fontSize": "16px",
+        "lineHeight": "22px",
+        "color": "#333333"
+      },
+      "linkStyles": {},
+      "headingStyles": {}
+    },
     "default": {
       "name": "Default Content",
       "description": "Default styling for unspecified section types",
