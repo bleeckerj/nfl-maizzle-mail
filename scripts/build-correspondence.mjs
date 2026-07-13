@@ -113,7 +113,9 @@ export function openPreviewPath(filePath, { logger = console } = {}) {
 export async function buildCorrespondenceEmail({
   args = process.argv.slice(2),
   openPreview = true,
+  logger = console,
 } = {}) {
+  const log = (message) => logger.log(`[${timestamp()}] ${message}`);
   const repoRoot = path.resolve(getOptionValue(args, 'repo-root') || process.env.NFL_MAIZZLE_MAIL_ROOT || DEFAULT_REPO_ROOT);
   const shouldSendTest = args.includes('--send-test') || args.includes('send-test');
   const fileArgs = args.filter((arg) => !arg.startsWith('--') && arg !== 'send-test');
