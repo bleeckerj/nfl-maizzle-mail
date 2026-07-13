@@ -68,8 +68,8 @@ title: "Near Future Laboratory Daily Headlines"
             <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" data-short-take-id="{{ item.shortTakeId }}" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}" style="border-spacing:0;background:{{ section.containerStyles.backgroundColor || '#ffffff' }};border:{{ section.containerStyles.borderWidth || '1px' }} {{ section.containerStyles.borderStyle || 'solid' }} {{ section.containerStyles.borderColor || '#dcdcdc' }}"><tbody>
               <if condition="item.topLeft || item.topRight"><tr><td style="padding:{{ section.containerStyles.metaPadding || '8px 10px' }};border-bottom:1px solid {{ section.containerStyles.borderColor || '#dcdcdc' }}">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation"><tbody><tr>
-                  <td align="left" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}">{{ item.topLeft || '' }}</td>
-                  <td align="right" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}">{{ item.topRight || '' }}</td>
+                  <td align="left" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}"><if condition="item.link && item.topLeft"><a href="{{ item.link }}" style="color:inherit;text-decoration:none">{{ item.topLeft }}</a></if><if condition="!item.link || !item.topLeft">{{ item.topLeft || '' }}</if></td>
+                  <td align="right" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}"><if condition="item.link && item.topRight"><a href="{{ item.link }}" style="color:inherit;text-decoration:none">{{ item.topRight }}</a></if><if condition="!item.link || !item.topRight">{{ item.topRight || '' }}</if></td>
                 </tr></tbody></table>
               </td></tr></if>
               <tr><td style="padding:0;line-height:0;font-size:0">
@@ -82,8 +82,8 @@ title: "Near Future Laboratory Daily Headlines"
               </td></tr>
               <if condition="item.bottomLeft || item.bottomRight"><tr><td style="padding:{{ section.containerStyles.metaPadding || '8px 10px' }};border-top:1px solid {{ section.containerStyles.borderColor || '#dcdcdc' }}">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation"><tbody><tr>
-                  <td align="left" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}">{{ item.bottomLeft || '' }}</td>
-                  <td align="right" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}">{{ item.bottomRight || '' }}</td>
+                  <td align="left" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}"><if condition="item.link && item.bottomLeft"><a href="{{ item.link }}" style="color:inherit;text-decoration:none">{{ item.bottomLeft }}</a></if><if condition="!item.link || !item.bottomLeft">{{ item.bottomLeft || '' }}</if></td>
+                  <td align="right" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}"><if condition="item.link && item.bottomRight"><a href="{{ item.link }}" style="color:inherit;text-decoration:none">{{ item.bottomRight }}</a></if><if condition="!item.link || !item.bottomRight">{{ item.bottomRight || '' }}</if></td>
                 </tr></tbody></table>
               </td></tr></if>
             </tbody></table>
