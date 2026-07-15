@@ -1,0 +1,10 @@
+{
+  "sectionStyles": {
+    "infra-product": { "backgroundColor": "#ffffff", "accentColor": "#f4511e" },
+    "infra-image-heading": { "backgroundColor": "#ffffff", "accentColor": "#f4511e" },
+    "infra-copy": { "backgroundColor": "#1d1d1f", "accentColor": "#f4511e" },
+    "infra-exposure": { "backgroundColor": "#111111", "accentColor": "#f4511e" },
+    "infra-legal": { "backgroundColor": "#f0eee9", "accentColor": "#f4511e" }
+  },
+  "globalOverrides": { "mobileAdjustments": { "enabled": true } }
+}

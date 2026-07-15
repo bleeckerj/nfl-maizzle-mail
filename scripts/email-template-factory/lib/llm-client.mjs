@@ -198,7 +198,6 @@ Start your response with { and end with }. This is mandatory.`;
       const stream = this.client.messages.stream({
         model: this.modelName,
         max_tokens: config.maxTokens,
-        temperature: config.temperature,
         system: enhancedSystem,
         messages: [
           { role: 'user', content: prompt.user }

@@ -1,0 +1,19 @@
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background: #1d1d1f; color: #ffffff;">
+  <tr>
+    <td class="mf-shell mf-pad" style="padding: 18px 28px 16px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td valign="middle" style="font-size: 14px; line-height: 18px; font-weight: 700; letter-spacing: .04em;">
+            <a href="{{ header.homepageLink }}" style="text-decoration: none; color: #ffffff;">{{ header.brandName }}</a>
+          </td>
+          <td align="right" valign="middle" class="mf-meta" style="font-size: 10px; line-height: 13px; color: #d9d9d9;">
+            {{ header.sectionName }}
+          </td>
+        </tr>
+      </table>
+      <if condition="header.navigation && header.navigation.product">
+        <p class="mf-meta" style="margin: 17px 0 0; color: #f4511e;">{{ header.navigation.product.join(' / ') }}</p>
+      </if>
+    </td>
+  </tr>
+</table>

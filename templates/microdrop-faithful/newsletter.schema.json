@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Faithful Microdrop Email",
+  "type": "object",
+  "required": ["template", "title", "preheader", "canonicalUrl", "theme", "header", "sections", "footer"],
+  "properties": {
+    "template": { "const": "microdrop-faithful" },
+    "title": { "type": "string", "minLength": 1 },
+    "preheader": { "type": "string" },
+    "canonicalUrl": { "type": "string", "format": "uri" },
+    "theme": { "type": "object" },
+    "header": { "type": "object", "required": ["brandName", "sectionName", "homepageLink"], "properties": { "brandName": { "type": "string" }, "sectionName": { "type": "string" }, "logoUrl": { "type": "string", "format": "uri" }, "logoAlt": { "type": "string" }, "sourceBrand": { "type": "string" }, "sourceDescription": { "type": "string" }, "homepageLink": { "type": "string", "format": "uri" }, "navigation": { "type": "object" } } },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": { "type": "string", "enum": ["infra-product", "infra-image-heading", "infra-copy", "infra-subscribe", "infra-exposure", "infra-definition", "infra-pairing", "infra-compatibility", "infra-legal", "infra-about"] }
+        },
+        "additionalProperties": true
+      }
+    },
+    "footer": { "type": "object", "required": ["brandName", "unsubscribeText", "unsubscribeLink", "companyAddress", "legalLinks"], "properties": { "brandName": { "type": "string" }, "unsubscribeText": { "type": "string" }, "unsubscribeLink": { "type": "string" }, "companyAddress": { "type": "string" }, "legalLinks": { "type": "array", "items": { "type": "object", "required": ["text", "url"], "properties": { "text": { "type": "string" }, "url": { "type": "string", "format": "uri" } } } } } }
+  }
+}

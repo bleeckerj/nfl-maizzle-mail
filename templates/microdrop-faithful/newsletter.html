@@ -1,0 +1,117 @@
+---
+title: "{{ title }}"
+preheader: "{{ preheader }}"
+---
+
+<extends src="templates/microdrop-faithful/layouts/main.html">
+  <block name="template">
+    <component src="templates/microdrop-faithful/components/Header.html"></component>
+
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background: {{ theme.backgroundColor || '#f5f3ef' }};">
+      <tr>
+        <td class="mf-shell" style="padding: 0;">
+          <each loop="section in sections">
+            <if condition="section.type === 'infra-product'">
+              <table data-section="infra-product" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background: {{ theme.surfaceColor || '#ffffff' }};">
+                <tr><td class="mf-pad" style="padding: 26px 28px 12px;">
+                  <p class="mf-meta" style="margin: 0 0 10px; color: {{ theme.accentColor || '#f4511e' }};">{{ section.breadcrumb }}</p>
+                  <p class="mf-meta" style="margin: 0 0 10px; color: #666666;">{{ section.eyebrow }}</p>
+                  <h1 class="mf-heading" style="margin: 0; font-size: 54px; line-height: .98; font-weight: 700; color: {{ theme.textColor || '#1d1d1f' }};">{{ section.headline }}</h1>
+                  <if condition="section.dek"><p class="mf-copy" style="margin: 16px 0 0; color: #4b4b4b;">{{ section.dek }}</p></if>
+                </td></tr>
+                <if condition="section.views && section.views.length">
+                  <each loop="view in section.views">
+                    <tr><td style="padding: 0 0 12px; background: {{ theme.surfaceColor || '#ffffff' }};">
+                      <img class="mf-image" src="{{ view.src }}" alt="{{ view.alt }}" width="{{ view.width || 640 }}" height="{{ view.height || 640 }}" style="width: 100%; height: auto;">
+                      <div class="mf-pad" style="padding: 8px 28px 0;"><p class="mf-meta" style="margin: 0; color: {{ theme.accentColor || '#f4511e' }};">{{ view.label }} · {{ view.detail }}</p></div>
+                    </td></tr>
+                  </each>
+                </if>
+                <tr><td class="mf-pad" style="padding: 20px 28px 28px; background: {{ theme.surfaceColor || '#ffffff' }};">
+                  <p style="margin: 0 0 3px; font-size: 28px; line-height: 1.1; font-weight: 700; color: {{ theme.textColor || '#1d1d1f' }};">{{ section.price }}</p>
+                  <p class="mf-meta" style="margin: 0 0 20px; color: #666666;">{{ section.priceNote }}</p>
+                  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                    <each loop="item in section.configuration">
+                      <tr><td style="padding: 8px 0; border-top: 1px solid #dddddd; font-size: 13px; line-height: 18px; color: #666666;">{{ item.label }}</td><td align="right" style="padding: 8px 0; border-top: 1px solid #dddddd; font-size: 13px; line-height: 18px; font-weight: 700; color: {{ theme.textColor || '#1d1d1f' }};">{{ item.value }}</td></tr>
+                    </each>
+                  </table>
+                  <p class="mf-meta" style="margin: 22px 0 5px; color: #666666;">Regional containment · United States</p>
+                  <p class="mf-copy" style="margin: 0; font-size: 14px; line-height: 20px; color: #555555;">{{ section.regionalContainment }}</p>
+                  <p class="mf-copy" style="margin: 20px 0 0; font-size: 14px; line-height: 20px; color: #555555;">{{ section.panelNote }}</p>
+                </td></tr>
+              </table>
+            </if>
+
+            <if condition="section.type === 'infra-image-heading'">
+              <table data-section="infra-image-heading" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px; background: {{ theme.surfaceColor || '#ffffff' }};">
+                <if condition="section.image && section.image.src"><tr><td style="padding: 0;"><img class="mf-image" src="{{ section.image.src }}" alt="{{ section.image.alt }}" width="{{ section.image.width || 640 }}" height="{{ section.image.height || 480 }}" style="width: 100%; height: auto;"></td></tr></if>
+                <tr><td class="mf-pad" style="padding: 24px 28px 28px;"><p class="mf-meta" style="margin: 0 0 9px; color: {{ theme.accentColor || '#f4511e' }};">{{ section.eyebrow }}</p><h2 class="mf-section-heading" style="margin: 0; font-size: 36px; line-height: 1.02; color: {{ theme.textColor || '#1d1d1f' }};">{{ section.heading }}</h2><if condition="section.body"><p class="mf-copy" style="margin: 13px 0 0; color: #4b4b4b;">{{ section.body }}</p></if></td></tr>
+              </table>
+            </if>
+
+            <if condition="section.type === 'infra-copy'">
+              <table data-section="infra-copy" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px; background: {{ section.image ? '#ffffff' : '#1d1d1f' }}; color: {{ section.image ? '#1d1d1f' : '#ffffff' }};">
+                <if condition="section.image && section.image.src"><tr><td style="padding: 0;"><img class="mf-image" src="{{ section.image.src }}" alt="{{ section.image.alt }}" width="{{ section.image.width || 640 }}" height="{{ section.image.height || 480 }}" style="width: 100%; height: auto;"></td></tr></if>
+                <tr><td class="mf-pad" style="padding: 24px 28px 28px;"><p class="mf-meta" style="margin: 0 0 9px; color: {{ theme.accentColor || '#f4511e' }};">{{ section.eyebrow }}</p><h2 class="mf-section-heading" style="margin: 0; font-size: 34px; line-height: 1.05; color: {{ section.image ? '#1d1d1f' : '#ffffff' }};">{{ section.heading }}</h2><if condition="section.body"><p class="mf-copy" style="margin: 14px 0 0; color: {{ section.image ? '#4b4b4b' : '#d9d9d9' }};">{{ section.body }}</p></if><if condition="section.microcopy"><p class="mf-meta" style="margin: 18px 0 0; font-size: 10px; color: {{ section.image ? '#666666' : '#999999' }};">{{ section.microcopy }}</p></if></td></tr>
+              </table>
+            </if>
+
+            <if condition="section.type === 'infra-subscribe'">
+              <table data-section="infra-subscribe" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px; background: #0071e3; color: #ffffff;">
+                <tr><td class="mf-pad" style="padding: 24px 28px 28px;"><p class="mf-meta" style="margin: 0 0 8px; color: #ffffff;">{{ section.eyebrow }}</p><h2 class="mf-section-heading" style="margin: 0; font-size: 32px; line-height: 1.05; color: #ffffff;">{{ section.title }}</h2><p class="mf-copy" style="margin: 12px 0 0; color: #ffffff;">{{ section.text }}</p><p style="margin: 18px 0 0;"><a href="{{ canonicalUrl }}" style="display: inline-block; padding: 11px 16px; background: #ffffff; color: #0071e3; text-decoration: none; font-size: 13px; line-height: 17px; font-weight: 700;">Read the next dispatch</a></p><p style="margin: 14px 0 0; font-size: 11px; line-height: 15px; color: #dbeeff;">{{ section.finePrint }}</p></td></tr>
+              </table>
+            </if>
+
+            <if condition="section.type === 'infra-exposure'">
+              <table data-section="infra-exposure" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px; background: #111111; color: #ffffff;">
+                <tr><td class="mf-pad" style="padding: 26px 28px 18px;"><p class="mf-meta" style="margin: 0 0 9px; color: {{ theme.accentColor || '#f4511e' }};">{{ section.eyebrow }}</p><h2 class="mf-section-heading" style="margin: 0; font-size: 36px; line-height: 1.02; color: #ffffff;">{{ section.heading }}</h2><p class="mf-copy" style="margin: 13px 0 0; color: #d9d9d9;">{{ section.body }}</p></td></tr>
+                <tr><td style="padding: 0;"><img class="mf-image" src="{{ section.image.src }}" alt="{{ section.image.alt }}" width="{{ section.image.width || 640 }}" height="{{ section.image.height || 480 }}" style="width: 100%; height: auto;"></td></tr>
+                <tr><td class="mf-pad" style="padding: 12px 28px 24px;"><p class="mf-meta" style="margin: 0 0 6px; color: {{ theme.accentColor || '#f4511e' }};">{{ section.captionEyebrow }}</p><p style="margin: 0; font-size: 14px; line-height: 20px; color: #d9d9d9;">{{ section.caption }}</p></td></tr>
+                <tr><td class="mf-pad" style="padding: 0 28px 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><each loop="metric in section.metrics"><tr><td style="padding: 12px 0; border-top: 1px solid #444444; font-size: 12px; line-height: 16px; color: #bbbbbb;">{{ metric.label }}<br><strong style="font-size: 25px; line-height: 29px; color: #ffffff;">{{ metric.value }} <small style="font-size: 11px; color: #bbbbbb;">{{ metric.unit }}</small></strong><br><span class="mf-meta" style="font-size: 9px; color: #888888;">{{ metric.note }}</span></td></tr></each></table></td></tr>
+                <tr><td class="mf-pad" style="padding: 0 28px 28px;"><p class="mf-meta" style="margin: 0 0 6px; color: {{ theme.accentColor || '#f4511e' }};">Model mix</p><h3 style="margin: 0 0 13px; font-size: 22px; line-height: 1.15; color: #ffffff;">{{ section.ledgerHeading }}</h3><each loop="item in section.ledger"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding: 5px 0; font-size: 13px; color: #d9d9d9;">{{ item.label }}</td><td align="right" style="padding: 5px 0; font-size: 13px; font-weight: 700; color: #ffffff;">{{ item.value }}</td></tr></table></each></td></tr>
+              </table>
+            </if>
+
+            <if condition="section.type === 'infra-definition'">
+              <table data-section="infra-definition" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px; background: #ffffff;">
+                <tr><td style="padding: 0;"><img class="mf-image" src="{{ section.image.src }}" alt="{{ section.image.alt }}" width="{{ section.image.width || 640 }}" height="{{ section.image.height || 480 }}" style="width: 100%; height: auto;"></td></tr>
+                <tr><td class="mf-pad" style="padding: 24px 28px 28px;"><p class="mf-meta" style="margin: 0 0 9px; color: {{ theme.accentColor || '#f4511e' }};">{{ section.eyebrow }}</p><h2 class="mf-section-heading" style="margin: 0; font-size: 34px; line-height: 1.05; color: #1d1d1f;">{{ section.heading }}</h2><p class="mf-copy" style="margin: 13px 0 0; color: #4b4b4b;">{{ section.body }}</p><each loop="item in section.definitions"><p style="margin: 18px 0 0; padding-top: 12px; border-top: 1px solid #dddddd; font-size: 13px; line-height: 18px; color: #1d1d1f;"><strong>{{ item.label }}</strong><br><span style="color: #666666;">{{ item.body }}</span></p></each></td></tr>
+              </table>
+            </if>
+
+            <if condition="section.type === 'infra-pairing'">
+              <table data-section="infra-pairing" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px; background: #e9e9e7;">
+                <tr><td class="mf-pad" style="padding: 24px 28px 18px;"><p class="mf-meta" style="margin: 0 0 9px; color: {{ theme.accentColor || '#f4511e' }};">{{ section.eyebrow }}</p><h2 class="mf-section-heading" style="margin: 0; font-size: 34px; line-height: 1.05; color: #1d1d1f;">{{ section.heading }}</h2></td></tr>
+                <each loop="card in section.cards"><tr><td class="mf-pad" style="padding: 0 28px 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background: #ffffff;"><each loop="image in card.images"><tr><td style="padding: 0;"><img class="mf-image" src="{{ image.src }}" alt="{{ image.alt }}" width="{{ image.width || 640 }}" height="{{ image.height || 480 }}" style="width: 100%; height: auto;"></td></tr></each><tr><td style="padding: 18px;"><p class="mf-meta" style="margin: 0 0 6px; color: {{ theme.accentColor || '#f4511e' }};">{{ card.eyebrow }}</p><h3 style="margin: 0; font-size: 25px; line-height: 1.1; color: #1d1d1f;">{{ card.heading }}</h3><p class="mf-copy" style="margin: 9px 0 0; font-size: 15px; color: #555555;">{{ card.body }}</p></td></tr></table></td></tr></each>
+              </table>
+            </if>
+
+            <if condition="section.type === 'infra-compatibility'">
+              <table data-section="infra-compatibility" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px; background: #ffffff;">
+                <tr><td class="mf-pad" style="padding: 24px 28px 18px;"><p class="mf-meta" style="margin: 0 0 9px; color: {{ theme.accentColor || '#f4511e' }};">{{ section.eyebrow }}</p><h2 class="mf-section-heading" style="margin: 0; font-size: 34px; line-height: 1.05; color: #1d1d1f;">{{ section.heading }}</h2><p class="mf-copy" style="margin: 13px 0 0; color: #4b4b4b;">{{ section.body }}</p></td></tr>
+                <each loop="item in section.items"><tr><td class="mf-pad" style="padding: 15px 28px; border-top: 1px solid #dddddd;"><p class="mf-meta" style="margin: 0 0 5px; color: {{ theme.accentColor || '#f4511e' }};">{{ item.label }}</p><p style="margin: 0; font-size: 17px; line-height: 22px; font-weight: 700; color: #1d1d1f;">{{ item.value }}</p><p class="mf-copy" style="margin: 7px 0 0; font-size: 14px; color: #666666;">{{ item.body }}</p></td></tr></each>
+              </table>
+            </if>
+
+            <if condition="section.type === 'infra-legal'">
+              <table data-section="infra-legal" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px; background: #f0eee9;">
+                <tr><td class="mf-pad" style="padding: 24px 28px 18px;"><p class="mf-meta" style="margin: 0 0 9px; color: {{ theme.accentColor || '#f4511e' }};">{{ section.eyebrow }}</p><h2 class="mf-section-heading" style="margin: 0; font-size: 31px; line-height: 1.08; color: #1d1d1f;">{{ section.heading }}</h2></td></tr>
+                <each loop="item in section.items"><tr><td class="mf-pad" style="padding: 16px 28px; border-top: 1px solid #d2d0cb;"><p style="margin: 0 0 8px; font-size: 15px; line-height: 19px; font-weight: 700; color: #1d1d1f;">{{ item.heading }}</p><p class="mf-copy" style="margin: 0; font-size: 14px; line-height: 21px; color: #555555;">{{ item.body }}</p></td></tr></each>
+                <tr><td class="mf-pad" style="padding: 20px 28px 26px;"><p class="mf-meta" style="margin: 0; font-size: 10px; line-height: 15px; color: #777777;">{{ section.fineprint }}</p></td></tr>
+              </table>
+            </if>
+
+            <if condition="section.type === 'infra-about'">
+              <table data-section="infra-about" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px; background: #ffffff;">
+                <tr><td class="mf-pad" style="padding: 24px 28px 18px;"><p class="mf-meta" style="margin: 0 0 9px; color: {{ theme.accentColor || '#f4511e' }};">{{ section.eyebrow }}</p><h2 class="mf-section-heading" style="margin: 0; font-size: 31px; line-height: 1.08; color: #1d1d1f;">{{ section.heading }}</h2></td></tr>
+                <tr><td class="mf-pad" style="padding: 0 28px 28px;"><each loop="column in section.columns"><p class="mf-copy" style="margin: 13px 0 0; color: #4b4b4b;">{{ column }}</p></each></td></tr>
+              </table>
+            </if>
+          </each>
+        </td>
+      </tr>
+    </table>
+
+    <component src="templates/microdrop-faithful/components/Footer.html"></component>
+  </block>
+</extends>
