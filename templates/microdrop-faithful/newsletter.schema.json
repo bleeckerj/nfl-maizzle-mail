@@ -17,7 +17,7 @@
         "type": "object",
         "required": ["type"],
         "properties": {
-          "type": { "type": "string", "enum": ["infra-product", "infra-image-heading", "infra-copy", "infra-subscribe", "infra-exposure", "infra-definition", "infra-pairing", "infra-compatibility", "infra-legal", "infra-about"] }
+          "type": { "type": "string", "enum": ["infra-product", "infra-image-heading", "infra-copy", "infra-subscribe", "infra-exposure", "infra-definition", "infra-pairing", "infra-compatibility", "infra-legal", "infra-about", "culture-hero", "culture-menu", "culture-methods", "culture-copy", "culture-feature", "culture-gallery", "culture-shop", "culture-find"] }
         },
         "additionalProperties": true
       }

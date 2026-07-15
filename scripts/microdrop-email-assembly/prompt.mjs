@@ -30,13 +30,6 @@ Rules:
 - Use the canonical page link only where the template contract provides a suitable link or CTA slot.
 - If a source block cannot be represented, report it in warnings and assemblyPlan rather than inventing a new template type.
 
-Apple InfraMaximal-specific context:
-- The product-stage-views block is the page carousel linearized as the ordered Face, Profile, Sensors, and Worn image sequence.
-- Preserve the product configuration panel, United States regional containment copy, exposure metrics, and model ledger.
-- Preserve the worn-use, sensor-system, pairing-product, context, compatibility/service, legal, and in-world About sections in their supplied order.
-- Treat editorialNote and MicrodropAboutPanel as excluded metadata. They are authoring/provenance surfaces, not page content for this email.
-- Treat the existing subscription CTA as a static email-safe fallback that links to the canonical page.
-
 Before writing Markdown:
 1. Inventory source blocks.
 2. Mark each block include, omit, or transform.
@@ -52,11 +45,39 @@ The response must contain these top-level fields:
 - warnings: an array of unresolved issues.
 - promptVersion: the supplied prompt version.`;
 
+function artifactContext(sourcePacket) {
+  if (sourcePacket.renderer?.id === 'apple-watch-inframaximal-6502') {
+    return [
+      'APPLE INFRAMAXIMAL CONTEXT:',
+      '- The product-stage-views block is a four-image carousel linearized as Face, Profile, Sensors, and Worn.',
+      '- Preserve the configuration panel, United States regional containment, exposure metrics, and model ledger.',
+      '- Preserve worn-use, sensor, pairing, context, compatibility/service, legal, and in-world About sections in order.',
+      '- Exclude editorialNote and MicrodropAboutPanel metadata; use the subscription CTA as a static canonical-page fallback.',
+    ].join('\n');
+  }
+  if (sourcePacket.renderer?.id === 'titos-agentic-tamales') {
+    return [
+      "TITO'S TAMALES CONTEXT:",
+      '- Preserve the printed-menu identity, four flavors, prices, and product descriptions supplied by the page.',
+      '- In the culture-menu section, put each product description in the plain-text copy field; do not use a description field.',
+      '- Keep the first-person kitchen log as authored in-world copy; do not turn it into an editorial explanation.',
+      '- Expand the How To Eat section into static methods, and flatten the autonomous-truck photo essay and shop extensions into ordered image-led sections.',
+      '- Use static canonical-page links in email; do not reproduce anchor-only web controls or cart buttons.',
+      '- Exclude editorialNote, aboutPanel, grounding, researchLinks, and provenance metadata.',
+    ].join('\n');
+  }
+  return sourcePacket.assemblyGuidance?.length
+    ? `SOURCE-SPECIFIC CONTEXT:\n- ${sourcePacket.assemblyGuidance.join('\n- ')}`
+    : 'SOURCE-SPECIFIC CONTEXT: Follow the ordered semantic blocks and excluded metadata supplied in the source packet.';
+}
+
 export function buildMicrodropAssemblyPrompt({ sourcePacket, templatePacket, repairContext = '' }) {
   return {
     system: SYSTEM_PROMPT,
     user: [
       `PROMPT VERSION: ${MICRODROP_ASSEMBLY_PROMPT_VERSION}`,
+      '',
+      artifactContext(sourcePacket),
       '',
       'SOURCE PACKET:',
       JSON.stringify(sourcePacket, null, 2),

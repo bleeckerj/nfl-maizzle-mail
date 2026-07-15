@@ -11,6 +11,62 @@ preheader: "{{ preheader }}"
       <tr>
         <td class="mf-shell" style="padding: 0;">
           <each loop="section in sections">
+            <if condition="section.type === 'culture-hero'">
+              <table data-section="culture-hero" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background: {{ theme.surfaceColor || '#fffaf0' }};">
+                <if condition="section.image && section.image.src"><tr><td style="padding: 0;"><img class="mf-image" src="{{ section.image.src }}" alt="{{ section.image.alt }}" width="{{ section.image.width || 1200 }}" height="{{ section.image.height || 800 }}" style="width: 100%; height: auto;"></td></tr></if>
+                <tr><td class="mf-pad" style="padding: 26px 28px 30px;"><p class="mf-meta" style="margin: 0 0 9px; color: {{ theme.accentColor || '#f4c33f' }};">{{ section.brand }}</p><h1 class="mf-heading" style="margin: 0; font-size: 52px; line-height: 1; color: {{ theme.textColor || '#2a1a12' }};">{{ section.headline }}</h1><p class="mf-copy" style="margin: 15px 0 0; color: #5b4437;">{{ section.dek }}</p><p style="margin: 20px 0 0;"><a href="{{ section.canonicalUrl }}" style="display: inline-block; padding: 11px 16px; background: {{ theme.accentColor || '#f4c33f' }}; color: {{ theme.textColor || '#2a1a12' }}; text-decoration: none; font-size: 13px; line-height: 17px; font-weight: 700;">{{ section.ctaLabel }}</a></p></td></tr>
+              </table>
+            </if>
+
+            <if condition="section.type === 'culture-menu'">
+              <table data-section="culture-menu" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px; background: #fffaf0;">
+                <tr><td class="mf-pad" style="padding: 26px 28px 18px;"><p class="mf-meta" style="margin: 0 0 9px; color: #c83a24;">Menu</p><h2 class="mf-section-heading" style="margin: 0; font-size: 36px; line-height: 1.02; color: #2a1a12;">{{ section.heading }}</h2><p class="mf-copy" style="margin: 12px 0 0; color: #5b4437;">{{ section.body }}</p></td></tr>
+                <each loop="product in section.products"><tr><td class="mf-pad" style="padding: 14px 28px; border-top: 1px solid rgba(42, 26, 18, .16);"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="font-size: 18px; line-height: 23px; font-weight: 700; color: #2a1a12;">{{ product.name }}</td><td align="right" style="font-size: 17px; line-height: 23px; font-weight: 700; color: #2a1a12;">{{ product.price }}</td></tr><tr><td colspan="2" style="padding-top: 5px; font-size: 14px; line-height: 20px; color: #6a5143;">{{ product.copy }}</td></tr></table></td></tr></each>
+                <tr><td class="mf-pad" style="padding: 18px 28px 28px;"><a href="{{ section.canonicalUrl }}" style="color: #c83a24; font-size: 13px; font-weight: 700;">Open the full menu</a></td></tr>
+              </table>
+            </if>
+
+            <if condition="section.type === 'culture-methods'">
+              <table data-section="culture-methods" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px; background: #2a1a12; color: #fffaf0;">
+                <tr><td class="mf-pad" style="padding: 26px 28px 18px;"><p class="mf-meta" style="margin: 0 0 9px; color: #f4c33f;">How to eat one</p><h2 class="mf-section-heading" style="margin: 0; font-size: 34px; line-height: 1.04; color: #fffaf0;">{{ section.heading }}</h2><p class="mf-copy" style="margin: 12px 0 0; color: #eadfce;">{{ section.body }}</p></td></tr>
+                <each loop="item in section.items"><tr><td class="mf-pad" style="padding: 14px 28px; border-top: 1px solid rgba(255, 250, 240, .25);"><p style="margin: 0 0 4px; font-size: 12px; line-height: 16px; color: #f4c33f;">{{ item.value }}</p><p style="margin: 0; font-size: 20px; line-height: 25px; font-weight: 700; color: #fffaf0;">{{ item.label }}</p><p style="margin: 6px 0 0; font-size: 14px; line-height: 20px; color: #eadfce;">{{ item.body }}</p></td></tr></each>
+              </table>
+            </if>
+
+            <if condition="section.type === 'culture-copy'">
+              <table data-section="culture-copy" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px; background: #f4c33f; color: #2a1a12;">
+                <tr><td class="mf-pad" style="padding: 26px 28px 30px;"><p class="mf-meta" style="margin: 0 0 9px; color: #2a1a12;">{{ section.eyebrow }}</p><h2 class="mf-section-heading" style="margin: 0; font-size: 34px; line-height: 1.04; color: #2a1a12;">{{ section.heading }}</h2><if condition="section.meta"><p class="mf-meta" style="margin: 14px 0 0; color: #4f321d;">{{ section.meta }}</p></if><if condition="section.paragraphs && section.paragraphs.length"><each loop="paragraph in section.paragraphs"><p class="mf-copy" style="margin: 14px 0 0; color: #4f321d;">{{ paragraph }}</p></each></if><if condition="!section.paragraphs || !section.paragraphs.length"><p class="mf-copy" style="margin: 14px 0 0; color: #4f321d;">{{ section.body }}</p></if></td></tr>
+              </table>
+            </if>
+
+            <if condition="section.type === 'culture-feature'">
+              <table data-section="culture-feature" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px; background: #ffffff;">
+                <if condition="section.image && section.image.src"><tr><td style="padding: 0;"><img class="mf-image" src="{{ section.image.src }}" alt="{{ section.image.alt }}" width="{{ section.image.width || 1200 }}" height="{{ section.image.height || 800 }}" style="width: 100%; height: auto;"></td></tr></if>
+                <tr><td class="mf-pad" style="padding: 24px 28px 28px;"><p class="mf-meta" style="margin: 0 0 9px; color: #c83a24;">{{ section.eyebrow }}</p><h2 class="mf-section-heading" style="margin: 0; font-size: 34px; line-height: 1.04; color: #2a1a12;">{{ section.heading }}</h2><p class="mf-copy" style="margin: 13px 0 0; color: #5b4437;">{{ section.body }}</p></td></tr>
+              </table>
+            </if>
+
+            <if condition="section.type === 'culture-gallery'">
+              <table data-section="culture-gallery" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px; background: #2a1a12; color: #fffaf0;">
+                <tr><td class="mf-pad" style="padding: 26px 28px 18px;"><p class="mf-meta" style="margin: 0 0 9px; color: #f4c33f;">{{ section.eyebrow }}</p><h2 class="mf-section-heading" style="margin: 0; font-size: 34px; line-height: 1.04; color: #fffaf0;">{{ section.heading }}</h2><p class="mf-copy" style="margin: 12px 0 0; color: #eadfce;">{{ section.body }}</p></td></tr>
+                <each loop="image in section.images"><tr><td style="padding: 0 0 16px;"><img class="mf-image" src="{{ image.src }}" alt="{{ image.alt }}" width="{{ image.width || 1200 }}" height="{{ image.height || 800 }}" style="width: 100%; height: auto;"><p class="mf-meta mf-pad" style="margin: 9px 0 0; color: #f4c33f;">{{ image.caption }}</p></td></tr></each>
+              </table>
+            </if>
+
+            <if condition="section.type === 'culture-shop'">
+              <table data-section="culture-shop" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px; background: #fffaf0;">
+                <tr><td class="mf-pad" style="padding: 26px 28px 18px;"><p class="mf-meta" style="margin: 0 0 9px; color: #c83a24;">The rest of the shop</p><h2 class="mf-section-heading" style="margin: 0; font-size: 34px; line-height: 1.04; color: #2a1a12;">{{ section.heading }}</h2><p class="mf-copy" style="margin: 12px 0 0; color: #5b4437;">{{ section.body }}</p></td></tr>
+                <each loop="item in section.items"><tr><td class="mf-pad" style="padding: 0 28px 24px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background: #ffffff;"><if condition="item.image && item.image.src"><tr><td style="padding: 0;"><img class="mf-image" src="{{ item.image.src }}" alt="{{ item.image.alt }}" width="{{ item.image.width || 1200 }}" height="{{ item.image.height || 800 }}" style="width: 100%; height: auto;"></td></tr></if><tr><td style="padding: 16px;"><p style="margin: 0 0 6px; font-size: 20px; line-height: 25px; font-weight: 700; color: #2a1a12;">{{ item.label }}</p><p class="mf-copy" style="margin: 0; font-size: 14px; color: #5b4437;">{{ item.body }}</p></td></tr></table></td></tr></each>
+              </table>
+            </if>
+
+            <if condition="section.type === 'culture-find'">
+              <table data-section="culture-find" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top: 18px; background: #ffffff;">
+                <if condition="section.image && section.image.src"><tr><td style="padding: 0;"><img class="mf-image" src="{{ section.image.src }}" alt="{{ section.image.alt }}" width="{{ section.image.width || 1200 }}" height="{{ section.image.height || 800 }}" style="width: 100%; height: auto;"></td></tr></if>
+                <tr><td class="mf-pad" style="padding: 24px 28px 28px;"><p class="mf-meta" style="margin: 0 0 9px; color: #c83a24;">Find it</p><h2 class="mf-section-heading" style="margin: 0; font-size: 34px; line-height: 1.04; color: #2a1a12;">{{ section.heading }}</h2><p class="mf-copy" style="margin: 13px 0 0; color: #5b4437;">{{ section.body }}</p></td></tr>
+              </table>
+            </if>
+
             <if condition="section.type === 'infra-product'">
               <table data-section="infra-product" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background: {{ theme.surfaceColor || '#ffffff' }};">
                 <tr><td class="mf-pad" style="padding: 26px 28px 12px;">

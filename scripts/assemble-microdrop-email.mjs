@@ -25,6 +25,14 @@ const SUPPORTED_SECTION_TYPES = [
   'infra-compatibility',
   'infra-legal',
   'infra-about',
+  'culture-hero',
+  'culture-menu',
+  'culture-methods',
+  'culture-copy',
+  'culture-feature',
+  'culture-gallery',
+  'culture-shop',
+  'culture-find',
 ];
 
 function printHelp() {
@@ -130,6 +138,15 @@ function validateDraft(markdown, sourcePacket, schema) {
   if (parsed.data.template !== TEMPLATE_NAME) {
     errors.push(`template must be ${TEMPLATE_NAME}`);
   }
+  for (const currentSection of parsed.data.sections || []) {
+    if (currentSection.type === 'culture-menu') {
+      for (const product of currentSection.products || []) {
+        if (Object.prototype.hasOwnProperty.call(product, 'description')) {
+          errors.push('culture-menu product descriptions must use the plain-text copy field.');
+        }
+      }
+    }
+  }
   const allowedUrls = collectUrls(sourcePacket);
   for (const url of collectUrls(parsed.data)) {
     if (!allowedUrls.has(url) && url !== '[unsubscribe]') {
@@ -140,7 +157,16 @@ function validateDraft(markdown, sourcePacket, schema) {
 }
 
 function image(image) {
-  return image ? { src: image.src, alt: image.alt, width: image.width, height: image.height } : undefined;
+  return image
+    ? {
+        src: image.src,
+        alt: image.alt,
+        width: image.width,
+        height: image.height,
+        ...(image.label ? { label: image.label } : {}),
+        ...(image.caption ? { caption: image.caption } : {}),
+      }
+    : undefined;
 }
 
 function section(type, fields) {
@@ -149,6 +175,13 @@ function section(type, fields) {
 
 function fallbackSectionType(block) {
   if (block.id === 'navigation') return 'header.navigation';
+  if (block.kind === 'culture-hero') return 'culture-hero';
+  if (block.kind === 'culture-menu') return 'culture-menu';
+  if (block.kind === 'culture-methods') return 'culture-methods';
+  if (block.kind === 'culture-owner-log') return 'culture-copy';
+  if (block.kind === 'culture-feature') return 'culture-feature';
+  if (block.kind === 'culture-gallery') return 'culture-gallery';
+  if (block.kind === 'culture-shop') return 'culture-shop';
   if (block.id === 'product-stage' || block.id === 'product-stage-views') return 'infra-product';
   if (block.id === 'think-different' || block.kind === 'context-feature') return 'infra-image-heading';
   if (block.id === 'intro-band' || block.id === 'sensor-system') return 'infra-copy';
@@ -183,7 +216,97 @@ function fallbackAudit(sourcePacket) {
   return { assemblyPlan, sourceCoverage };
 }
 
+function deterministicCultureDraft(sourcePacket) {
+  const page = sourcePacket.page;
+  const entry = sourcePacket.entry;
+  const imageByLabel = (label) => page.gallery.find((image) => image.label === label);
+  const sections = [
+    section('culture-hero', {
+      brand: page.brand,
+      campaign: page.campaign,
+      headline: page.hero.headline,
+      dek: page.hero.dek,
+      image: image(page.hero.image),
+      canonicalUrl: entry.canonicalUrl,
+      ctaLabel: 'See the menu',
+    }),
+    section('culture-menu', {
+      heading: page.menu.heading,
+      body: page.menu.body,
+      products: page.products.map(({ description, ...product }) => ({
+        ...product,
+        copy: description,
+      })),
+      canonicalUrl: entry.canonicalUrl,
+    }),
+    section('culture-methods', {
+      heading: page.howToEat.heading,
+      body: page.howToEat.body,
+      items: page.howToEat.items || [],
+    }),
+    section('culture-copy', {
+      eyebrow: 'Kitchen log',
+      heading: page.kitchenLog.heading,
+      meta: page.ownerMeta,
+      body: page.ownerBody,
+      paragraphs: page.ownerParagraphs,
+    }),
+    section('culture-feature', {
+      eyebrow: 'Catering',
+      heading: page.catering.heading,
+      body: page.catering.body,
+      image: image(imageByLabel('Catering')),
+    }),
+    section('culture-gallery', {
+      eyebrow: 'The truck',
+      heading: page.foodTruck.heading,
+      body: page.foodTruck.body,
+      images: ['Turing Day', 'Street Fair'].map(imageByLabel).filter(Boolean).map(image),
+    }),
+    section('culture-shop', {
+      heading: page.more.heading,
+      body: page.more.body,
+      items: (page.more.items || []).map((item) => ({
+        label: item.label,
+        body: item.body,
+        image: image(item.image),
+      })),
+    }),
+    section('culture-find', {
+      heading: page.findIt.heading,
+      body: page.findIt.body,
+      image: image(imageByLabel('Shelf')),
+    }),
+  ];
+  const data = {
+    template: TEMPLATE_NAME,
+    title: `${entry.title} — ${entry.brand}`,
+    preheader: entry.summary || `${entry.brand}: ${entry.title}`,
+    canonicalUrl: entry.canonicalUrl,
+    theme: page.theme,
+    header: {
+      brandName: 'The Adjacency',
+      sectionName: page.productName,
+      sourceBrand: page.brand,
+      sourceDescription: 'A culture-drop page from an adjacent world',
+      homepageLink: entry.canonicalUrl,
+      navigation: { actions: page.actions.map((action) => action.label) },
+    },
+    sections,
+    footer: {
+      brandName: 'The Adjacency',
+      unsubscribeText: 'You are receiving this because you subscribed to The Adjacency updates.',
+      unsubscribeLink: '[unsubscribe]',
+      companyAddress: 'Near Future Laboratory',
+      footerCta: { enabled: false },
+      legalLinks: [{ text: 'The Adjacency', url: entry.canonicalUrl }],
+    },
+  };
+  return `---\n${YAML.stringify(data, { lineWidth: 0 })}---\n`;
+}
+
 function deterministicDraft(sourcePacket) {
+  if (sourcePacket.archetype === 'culture-drop') return deterministicCultureDraft(sourcePacket);
   const page = sourcePacket.page;
   const entry = sourcePacket.entry;
   const stage = page.productStage;

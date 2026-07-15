@@ -4,7 +4,15 @@
     "infra-image-heading": { "backgroundColor": "#ffffff", "accentColor": "#f4511e" },
     "infra-copy": { "backgroundColor": "#1d1d1f", "accentColor": "#f4511e" },
     "infra-exposure": { "backgroundColor": "#111111", "accentColor": "#f4511e" },
-    "infra-legal": { "backgroundColor": "#f0eee9", "accentColor": "#f4511e" }
+    "infra-legal": { "backgroundColor": "#f0eee9", "accentColor": "#f4511e" },
+    "culture-hero": { "backgroundColor": "#fbf3e2", "accentColor": "#f4c33f" },
+    "culture-menu": { "backgroundColor": "#fffaf0", "accentColor": "#c83a24" },
+    "culture-methods": { "backgroundColor": "#2a1a12", "accentColor": "#f4c33f" },
+    "culture-copy": { "backgroundColor": "#f4c33f", "accentColor": "#2a1a12" },
+    "culture-feature": { "backgroundColor": "#ffffff", "accentColor": "#c83a24" },
+    "culture-gallery": { "backgroundColor": "#2a1a12", "accentColor": "#f4c33f" },
+    "culture-shop": { "backgroundColor": "#fffaf0", "accentColor": "#c83a24" },
+    "culture-find": { "backgroundColor": "#ffffff", "accentColor": "#c83a24" }
   },
   "globalOverrides": { "mobileAdjustments": { "enabled": true } }
 }

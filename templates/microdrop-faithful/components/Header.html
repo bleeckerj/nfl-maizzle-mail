@@ -14,6 +14,9 @@
       <if condition="header.navigation && header.navigation.product">
         <p class="mf-meta" style="margin: 17px 0 0; color: #f4511e;">{{ header.navigation.product.join(' / ') }}</p>
       </if>
+      <if condition="header.navigation && header.navigation.actions">
+        <p class="mf-meta" style="margin: 17px 0 0; color: #f4c33f;">{{ header.navigation.actions.join(' / ') }}</p>
+      </if>
     </td>
   </tr>
 </table>
