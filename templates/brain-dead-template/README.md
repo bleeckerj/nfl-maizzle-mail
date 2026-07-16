@@ -10,6 +10,8 @@ Supported section types:
 
 - `dual-column` - image and copy sit side by side on wide screens, then stack on mobile.
 - `single-column` - each item stays full width on wide screens and mobile.
+- `ad-block` - one editorial ad hydrated from `nfl-editorial/src/content/ads.json` by `adId`.
+- `short-take` - one registry-backed Short Take hydrated from `nfl-editorial/src/content/shortTakes.json` by `shortTakeId`.
 - `calendar_event` - a generated add-to-calendar card. The build writes an `.ics` file and injects `calendarLink`.
 - `inline_cta` - an edition-aware inline CTA block rendered in the authored section order before the closing offer/footer.
 
@@ -64,6 +66,18 @@ sections:
     items:
       - title: Full-width item
         body: A single-column item can carry more copy or a larger image.
+```
+
+Registry-backed sections use compact source shapes and receive their image, copy, and links from the editorial inventories during the build:
+
+```yaml
+sections:
+  - type: ad-block
+    items:
+      - adId: four-design-fiction-interstitial-01
+  - type: short-take
+    items:
+      - shortTakeId: foucault-called-it
 ```
 
 The build normalizes these objects into template-safe URL strings and adds `data-link-label` / `data-link-category` to the rendered anchors.

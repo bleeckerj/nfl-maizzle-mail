@@ -161,7 +161,8 @@ function validateSections(sections) {
       report('warnings', `${sectionPath}.type`, `Unknown section type "${type}" (not defined in section-styles.json)`);
     }
 
-    if (!title) {
+    const compactRegistrySection = type === 'ad-block' || type === 'short-take';
+    if (!title && !compactRegistrySection) {
       report('warnings', `${sectionPath}.title`, 'Section title is empty');
     }
 
@@ -177,6 +178,13 @@ function validateSections(sections) {
       const itemPath = `${sectionPath}.items[${itemIndex}]`;
       if (!item || typeof item !== 'object') {
         report('errors', itemPath, 'Item must be an object');
+        return;
+      }
+
+      if (
+        (section.type === 'ad-block' && typeof item.adId === 'string' && item.adId.trim()) ||
+        (section.type === 'short-take' && typeof item.shortTakeId === 'string' && item.shortTakeId.trim())
+      ) {
         return;
       }
 
@@ -216,8 +224,8 @@ function validateSections(sections) {
 
       // Basic type verification for common fields
       ['link', 'url', 'imageLink', 'readMoreLink'].forEach((field) => {
-        if (field in item && typeof item[field] !== 'string') {
-          report('warnings', `${itemPath}.${field}`, `${field} should be a string`);
+        if (field in item && !isLinkLike(item[field])) {
+          report('warnings', `${itemPath}.${field}`, `${field} should be a URL string or tracked-link object`);
         }
       });
 
@@ -249,8 +257,18 @@ function checkMediaString(media) {
   return false;
 }
 
+function isLinkLike(value) {
+  if (typeof value === 'string') return value.trim().length > 0;
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return false;
+  return typeof value.href === 'string' || typeof value.url === 'string';
+}
+
 function validateSchema() {
-  const schemaPath = path.resolve(PROJECT_ROOT, 'templates', normalizedTemplate, 'schema.json');
+  const templateDir = path.resolve(PROJECT_ROOT, 'templates', normalizedTemplate);
+  const schemaPath = [
+    path.join(templateDir, 'newsletter.schema.json'),
+    path.join(templateDir, 'schema.json'),
+  ].find((candidate) => fs.existsSync(candidate));
   if (!fs.existsSync(schemaPath)) return;
 
   let schemaContent;

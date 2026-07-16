@@ -124,7 +124,7 @@
       "type": "object",
       "required": ["type"],
       "properties": {
-        "type": { "enum": ["dual-column", "single-column", "calendar_event", "inline_cta"] },
+        "type": { "enum": ["dual-column", "single-column", "calendar_event", "inline_cta", "ad-block", "short-take"] },
         "renderFor": {
           "type": "string",
           "enum": ["public", "preview", "full", "both"],
@@ -134,8 +134,7 @@
         "title": { "type": "string" },
         "items": {
           "type": "array",
-          "minItems": 1,
-          "items": { "$ref": "#/definitions/contentItem" }
+          "minItems": 1
         },
         "id": { "type": "string" },
         "eyebrow": { "type": "string" },
@@ -209,6 +208,38 @@
       },
       "allOf": [
         {
+          "if": { "properties": { "type": { "enum": ["dual-column", "single-column"] } } },
+          "then": {
+            "properties": {
+              "items": {
+                "items": { "$ref": "#/definitions/contentItem" }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "ad-block" } } },
+          "then": {
+            "properties": {
+              "items": {
+                "maxItems": 1,
+                "items": { "$ref": "#/definitions/adBlockSourceItem" }
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "short-take" } } },
+          "then": {
+            "properties": {
+              "items": {
+                "maxItems": 1,
+                "items": { "$ref": "#/definitions/shortTakeSourceItem" }
+              }
+            }
+          }
+        },
+        {
           "if": { "properties": { "type": { "const": "calendar_event" } } },
           "then": { "required": ["title", "startsAt"] },
           "else": {
@@ -234,6 +265,22 @@
         "link": { "$ref": "#/definitions/trackedLink" },
         "ctaText": { "type": "string" }
       }
+    },
+    "adBlockSourceItem": {
+      "type": "object",
+      "required": ["adId"],
+      "properties": {
+        "adId": { "type": "string", "pattern": "\\S" }
+      },
+      "additionalProperties": false
+    },
+    "shortTakeSourceItem": {
+      "type": "object",
+      "required": ["shortTakeId"],
+      "properties": {
+        "shortTakeId": { "type": "string", "pattern": "\\S" }
+      },
+      "additionalProperties": false
     },
     "trackedLink": {
       "oneOf": [

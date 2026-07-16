@@ -1,5 +1,5 @@
 {
-  "description": "Section style metadata for the Brain Dead content template. Sections render from sections[] with dual-column and single-column types.",
+  "description": "Section style metadata for the Brain Dead content template. Sections render from sections[] with content, ad-block, and registry-backed short-take types.",
   "sectionStyles": {
     "default": {
       "containerStyles": {
@@ -83,6 +83,62 @@
         "fontFamily": "'Courier New', Courier, monospace",
         "fontSize": "15px",
         "lineHeight": "22px",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontWeight": "700",
+        "textDecoration": "none",
+        "color": "#000000"
+      }
+    },
+    "ad-block": {
+      "containerStyles": {
+        "backgroundColor": "#fffdf4",
+        "padding": "18px 32px 8px",
+        "borderRadius": "0px",
+        "borderColor": "#000000",
+        "borderWidth": "2px"
+      },
+      "headingStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontSize": "15px",
+        "lineHeight": "18px",
+        "fontWeight": "700",
+        "color": "#000000"
+      },
+      "contentStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontSize": "14px",
+        "lineHeight": "21px",
+        "color": "#000000"
+      },
+      "linkStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontWeight": "700",
+        "textDecoration": "underline",
+        "color": "#000000"
+      }
+    },
+    "short-take": {
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "padding": "18px 32px 8px",
+        "borderRadius": "0px",
+        "borderColor": "#000000",
+        "borderWidth": "2px"
+      },
+      "headingStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontSize": "25px",
+        "lineHeight": "29px",
+        "fontWeight": "700",
+        "color": "#000000"
+      },
+      "contentStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontSize": "14px",
+        "lineHeight": "21px",
         "color": "#000000"
       },
       "linkStyles": {
