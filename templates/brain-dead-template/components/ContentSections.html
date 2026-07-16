@@ -149,7 +149,7 @@
     <if condition="section.type === 'ad-block'">
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;">
         <tr>
-          <td class="bd-pad" style="padding:18px 32px 8px 32px;">
+          <td class="bd-pad" style="padding:18px 32px 18px 32px;">
             <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border:2px solid #000000;background:#fffdf4;">
               <if condition="section.title">
                 <tr>
@@ -168,7 +168,7 @@
                 </if>
                 <if condition="item.image">
                   <tr>
-                    <td style="padding:0 18px;line-height:0;font-size:0;">
+                    <td style="padding:0 18px 18px;line-height:0;font-size:0;">
                       <if condition="item.link"><a href="{{ item.link }}" style="display:block;text-decoration:none;"><img src="{{ item.image }}" alt="{{ item.imageAlt || item.title || 'Advertisement' }}" width="540" style="display:block;width:100%;max-width:540px;height:auto;border:0;"></a></if>
                       <if condition="!item.link"><img src="{{ item.image }}" alt="{{ item.imageAlt || item.title || 'Advertisement' }}" width="540" style="display:block;width:100%;max-width:540px;height:auto;border:0;"></if>
                     </td>
