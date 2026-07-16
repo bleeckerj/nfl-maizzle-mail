@@ -51,30 +51,32 @@
                 </td>
               </tr>
             </if>
-            <tr>
-              <td align="left" class="padt20 padr20 padl20" style="text-align: center;border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 20px;" valign="top">
-                <h1 class="padb15" style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;padding-bottom: 15px;">
-                  Share this issue:
-                </h1>
-                <if condition="footer.shareUrl">
-                  <p class="share" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 15px 5px;margin: 0;margin-bottom: 15px;border: 1px solid #5f5f5f;background: #f8f8f8;text-align: center;">
-                    <a href="{{ footer.shareUrl }}" style="text-decoration: underline;color: #000000 !important;">
-                      <strong style="font-weight: 600;">View this issue online</strong>
-                    </a>
-                  </p>
-                </if>
-                <if condition="footer.linkedInFollow">
-                  <a class="small" href="{{ footer.linkedInFollow }}" style="text-decoration: underline;font-size: 14px;line-height: 19px;color: #000000 !important;">Follow me on LinkedIn</a> →   
-                </if>
-                <if condition="footer.emailShare">
-                  <a class="small" href="{{ footer.emailShare }}" style="text-decoration: underline;font-size: 14px;line-height: 19px;color: #000000 !important;">Forward via email</a> →
-                </if>
-                <if condition="footer.newsletterSubscribeLink">
-                <br/><a class="small" href="{{ footer.newsletterSubscribeLink || '#' }}" style="text-decoration: underline;font-size: 14px;line-height: 19px;color: #000000 !important;">Subscribe to the newsletter</a> →
-                </if>
-                <br/><a class="small" href="{{ footer.aboutUrl || 'https://julianbleecker.com/' }}" style="text-decoration: underline; font-size: 14px; line-height: 19px; color: #000000 !important;">{{ footer.aboutLabel || 'About Julian Bleecker' }}</a> →
-              </td>
-            </tr>
+            <if condition="publicationMode !== 'campaign'">
+              <tr>
+                <td align="left" class="padt20 padr20 padl20" style="text-align: center;border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-left: 20px;" valign="top">
+                  <h1 class="padb15" style="mso-line-height-rule: exactly;font-size: 21px;font-weight: 600;line-height: 23px;color: #000000;margin: 0;padding: 0;padding-bottom: 15px;">
+                    Share this issue:
+                  </h1>
+                  <if condition="footer.shareUrl">
+                    <p class="share" style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 15px 5px;margin: 0;margin-bottom: 15px;border: 1px solid #5f5f5f;background: #f8f8f8;text-align: center;">
+                      <a href="{{ footer.shareUrl }}" style="text-decoration: underline;color: #000000 !important;">
+                        <strong style="font-weight: 600;">View this issue online</strong>
+                      </a>
+                    </p>
+                  </if>
+                  <if condition="footer.linkedInFollow">
+                    <a class="small" href="{{ footer.linkedInFollow }}" style="text-decoration: underline;font-size: 14px;line-height: 19px;color: #000000 !important;">Follow me on LinkedIn</a> →
+                  </if>
+                  <if condition="footer.emailShare">
+                    <a class="small" href="{{ footer.emailShare }}" style="text-decoration: underline;font-size: 14px;line-height: 19px;color: #000000 !important;">Forward via email</a> →
+                  </if>
+                  <if condition="footer.newsletterSubscribeLink">
+                  <br/><a class="small" href="{{ footer.newsletterSubscribeLink || '#' }}" style="text-decoration: underline;font-size: 14px;line-height: 19px;color: #000000 !important;">Subscribe to the newsletter</a> →
+                  </if>
+                  <br/><a class="small" href="{{ footer.aboutUrl || 'https://julianbleecker.com/' }}" style="text-decoration: underline; font-size: 14px; line-height: 19px; color: #000000 !important;">{{ footer.aboutLabel || 'About Julian Bleecker' }}</a> →
+                </td>
+              </tr>
+            </if>
             <tr>
               <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
             </tr>
@@ -208,7 +210,7 @@
                   <if condition="footer.unsubscribeLink">
                     <a href="{{ footer.unsubscribeLink }}" style="text-decoration: underline;color: #888 !important;">Unsubscribe</a><br>
                   </if>
-                  <if condition="footer.archiveUrl">
+                  <if condition="publicationMode !== 'campaign' && footer.archiveUrl">
                     <a href="{{ footer.archiveUrl }}" style="text-decoration: underline;color: #888 !important;">{{ footer.archiveLabel || 'Browse older issues' }}</a><br>
                   </if>
                   Icons by <a href="https://icons8.com" style="text-decoration: underline;color: #888 !important;">Icons8</a><br>

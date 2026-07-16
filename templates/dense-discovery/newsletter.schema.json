@@ -1525,6 +1525,65 @@
                       },
                       "image": {},
                       "description": {},
+                      "platformLinks": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "platform",
+                            "label",
+                            "url"
+                          ],
+                          "properties": {
+                            "platform": {
+                              "enum": [
+                                "spotify",
+                                "youtube",
+                                "apple-podcasts"
+                              ]
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "url": {
+                              "type": "string"
+                            },
+                            "category": {
+                              "type": "string"
+                            },
+                            "intent": {
+                              "type": "string"
+                            },
+                            "interests": {
+                              "oneOf": [
+                                {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "interest": {
+                              "oneOf": [
+                                {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "type": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "additionalProperties": false
+                        }
+                      },
                       "platformLinksHtml": {},
                       "readMoreText": {},
                       "readMoreTxt": {},
@@ -2657,6 +2716,65 @@
                       },
                       "image": {},
                       "description": {},
+                      "platformLinks": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "platform",
+                            "label",
+                            "url"
+                          ],
+                          "properties": {
+                            "platform": {
+                              "enum": [
+                                "spotify",
+                                "youtube",
+                                "apple-podcasts"
+                              ]
+                            },
+                            "label": {
+                              "type": "string"
+                            },
+                            "url": {
+                              "type": "string"
+                            },
+                            "category": {
+                              "type": "string"
+                            },
+                            "intent": {
+                              "type": "string"
+                            },
+                            "interests": {
+                              "oneOf": [
+                                {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "type": "string"
+                                }
+                              ]
+                            },
+                            "interest": {
+                              "oneOf": [
+                                {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                },
+                                {
+                                  "type": "string"
+                                }
+                              ]
+                            }
+                          },
+                          "additionalProperties": false
+                        }
+                      },
                       "platformLinksHtml": {},
                       "readMoreText": {},
                       "readMoreTxt": {},
@@ -2704,6 +2822,9 @@
     },
     "$schema": {},
     "ogImage": {},
+    "publicationMode": {
+      "enum": ["public-issue", "campaign"]
+    },
     "template": {},
     "colorTheme": {},
     "sectionStylesFile": {},

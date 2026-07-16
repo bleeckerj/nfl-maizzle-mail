@@ -7,6 +7,7 @@ import MaizzleFramework from '@maizzle/framework';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import { fileURLToPath } from 'url';
+import matter from 'gray-matter';
 
 import {
   buildAdjacencyMailSectionStyleOverrides,
@@ -1134,6 +1135,10 @@ const outputDirArg = args.find(arg => arg.startsWith('--output-dir='));
 const outputDir = outputDirArg 
   ? path.resolve(outputDirArg.split('=')[1])
   : repoPath(REPO_ROOT, 'build_production');
+const publicationModeArg = args.find(arg => arg.startsWith('--publication-mode='));
+const requestedPublicationMode = publicationModeArg
+  ? publicationModeArg.split('=').slice(1).join('=')
+  : null;
 const calendarPublicRootArg = args.find(arg => arg.startsWith('--calendar-public-root='));
 const calendarPublicRoot = calendarPublicRootArg
   ? path.resolve(calendarPublicRootArg.split('=').slice(1).join('='))
@@ -1157,6 +1162,7 @@ if (args.length < 1) {
   console.log('  --no-open            Don\'t auto-open the built newsletter');
   console.log('  --repo-root=<path>   Specify nfl-maizzle-mail repo root (for cross-repo usage)');
   console.log('  --output-dir=<path>  Output directory (default: build_production in repo)');
+  console.log('  --publication-mode=<public-issue|campaign>  Explicit publication context');
   console.log('  --adjacency-mail-theme-overrides=<path>  JSON file with Adjacency mail theme overrides');
   console.log('');
   console.log('Environment Variables:');
@@ -1299,6 +1305,24 @@ async function buildNewsletter() {
         
         // After conversion, ensure the template is set correctly in the JSON
         const newsletterData = JSON.parse(fs.readFileSync(authorFacingNewsletterJsonPath, 'utf8'));
+        const sourceFrontmatter = matter(sourceTextForWarnings).data || {};
+        const sourceTemplateName = typeof sourceFrontmatter.template === 'string'
+          ? sourceFrontmatter.template.trim()
+          : '';
+        const sourcePublicationMode = typeof sourceFrontmatter.publicationMode === 'string'
+          ? sourceFrontmatter.publicationMode.trim()
+          : '';
+        const campaignRequested = requestedPublicationMode === 'campaign' || sourcePublicationMode === 'campaign';
+        if (campaignRequested && !sourceTemplateName && !templateArg) {
+          throw new Error(
+            'Campaign Markdown must declare an explicit template; add template: to the source or pass --template=<name>.',
+          );
+        }
+        if (campaignRequested && sourceTemplateName && templateArg && sourceTemplateName !== templateName) {
+          throw new Error(
+            `Campaign template mismatch: source declares "${sourceTemplateName}" but build requested "${templateName}".`,
+          );
+        }
         
         // If template was provided via CLI, enforce it. Otherwise respect what's in the JSON (from frontmatter)
         if (templateArg) {
@@ -1343,12 +1367,34 @@ async function buildNewsletter() {
       originalNewsletterJsonRaw = `${JSON.stringify(sourceNewsletterData, null, 2)}\n`;
     }
 
+    const sourceFrontmatter = isMarkdown ? (matter(sourceTextForWarnings).data || {}) : sourceNewsletterData;
+    const effectivePublicationMode = requestedPublicationMode || sourceFrontmatter.publicationMode || 'public-issue';
+    if (!['public-issue', 'campaign'].includes(effectivePublicationMode)) {
+      throw new Error(
+        `Unsupported publication mode "${effectivePublicationMode}". Expected "public-issue" or "campaign".`,
+      );
+    }
+    if (effectivePublicationMode === 'campaign') {
+      const publicRoot = path.resolve(REPO_ROOT, 'public');
+      const relativeToPublic = path.relative(publicRoot, outputDir);
+      if (relativeToPublic === '' || (!relativeToPublic.startsWith('..') && !path.isAbsolute(relativeToPublic))) {
+        throw new Error(`Campaign output must stay outside the public directory: ${outputDir}`);
+      }
+      if (!sourceFrontmatter.template && !templateName) {
+        throw new Error('Campaign Markdown must declare an explicit template.');
+      }
+    }
+    if (effectivePublicationMode === 'campaign' || sourceFrontmatter.publicationMode) {
+      sourceNewsletterData.publicationMode = effectivePublicationMode;
+    }
+
     const newsletterData = prepareNormalizedNewsletterData(sourceNewsletterData, {
       repoRoot: REPO_ROOT,
       templateName,
       args,
       outputName,
       sourcePath: sourcePathForWarnings,
+      publicationMode: effectivePublicationMode,
     });
     if (isDarkModeFlattenEnabled(args)) {
       newsletterData.darkModePolicy = darkModeFlattenPolicy();
@@ -2650,6 +2696,7 @@ async function buildNewsletter() {
       linkTrackingManifestPath,
       `${JSON.stringify(
         buildLinkTrackingMetadataManifest(linkTracking, {
+          ...(effectivePublicationMode === 'campaign' ? { generatedAt: 'deterministic-campaign-build' } : {}),
           sourcePath: sourcePathForWarnings,
           outputHtmlPath: finalOutputPath,
           templateName,

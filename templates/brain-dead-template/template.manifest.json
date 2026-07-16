@@ -1,0 +1,20 @@
+{
+  "template": "brain-dead-template",
+  "supportedPublicationModes": ["public-issue", "campaign"],
+  "starterMarkdown": {
+    "campaign": "campaign-starter.md"
+  },
+  "supportedSections": [
+    "dual-column",
+    "single-column",
+    "calendar_event",
+    "inline_cta",
+    "ad-block",
+    "short-take"
+  ],
+  "registryHydrations": ["ad-block", "short-take"],
+  "footerBehavior": {
+    "public-issue": "template-defined footer",
+    "campaign": "unsubscribe-only; public issue navigation suppressed"
+  }
+}

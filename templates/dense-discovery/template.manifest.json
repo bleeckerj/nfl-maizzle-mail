@@ -1,0 +1,26 @@
+{
+  "template": "dense-discovery",
+  "supportedPublicationModes": ["public-issue", "campaign"],
+  "starterMarkdown": {
+    "campaign": "campaign-starter.md"
+  },
+  "supportedSections": [
+    "ad-block",
+    "short-take",
+    "single-column",
+    "feature",
+    "dispatch",
+    "food-for-thought",
+    "apps-sites",
+    "quote",
+    "classifieds",
+    "sponsor",
+    "image",
+    "inline_cta"
+  ],
+  "registryHydrations": ["ad-block", "short-take"],
+  "footerBehavior": {
+    "public-issue": "share, archive, subscribe, and footer navigation",
+    "campaign": "unsubscribe-only; public issue navigation suppressed"
+  }
+}

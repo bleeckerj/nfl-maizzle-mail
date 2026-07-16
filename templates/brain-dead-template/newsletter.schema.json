@@ -10,6 +10,7 @@
   ],
   "properties": {
     "$schema": { "type": "string" },
+    "publicationMode": { "enum": ["public-issue", "campaign"] },
     "template": { "const": "brain-dead-template" },
     "title": { "type": "string" },
     "preheader": { "type": "string" },

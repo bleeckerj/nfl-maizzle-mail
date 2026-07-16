@@ -160,7 +160,7 @@ function buildFixture(templateName, source) {
   }
 }
 
-function assertRenderedShortTakes(html, middleSentinel, endSentinel) {
+function assertRenderedShortTakes(html, middleSentinel, endSentinel, { linkedAnchorCount = 2 } = {}) {
   const dom = new JSDOM(html);
   const { document } = dom.window;
   const cards = [...document.querySelectorAll('[data-short-take-id]')];
@@ -189,7 +189,7 @@ function assertRenderedShortTakes(html, middleSentinel, endSentinel) {
 
   const linkedCard = cards[1];
   const anchors = [...linkedCard.querySelectorAll('a[href="https://example.com/short-take"]')];
-  assert.equal(anchors.length, 2);
+  assert.equal(anchors.length, linkedAnchorCount);
   anchors.forEach((anchor) => {
     assert.equal(anchor.getAttribute('data-link-label'), 'short-take-linked');
     assert.equal(anchor.getAttribute('data-link-category'), 'short-take');
@@ -211,5 +211,6 @@ test('near-future-lab-daily-headlines builds ordered linked and unlinked Short T
     buildFixture('near-future-lab-daily-headlines', dailyFixture()),
     'DAILY MIDDLE SENTINEL',
     'DAILY END SENTINEL',
+    { linkedAnchorCount: 4 },
   );
 });
