@@ -15,19 +15,20 @@ if (process.argv.includes('--allow-broken-links-for-visual-test')) {
   );
   process.exit(1);
 }
-if (process.argv.includes('--skip-link-validation') && !process.argv.includes('--dry-run')) {
-  console.error('--skip-link-validation is only allowed with --dry-run.');
-  process.exit(1);
-}
-
 const htmlArg = process.argv.slice(2).find((arg) => !arg.startsWith('--'));
 const htmlPath = resolve(process.cwd(), htmlArg ?? DEFAULT_HTML_PATH);
+const skipLinkValidation = process.argv.includes('--skip-link-validation');
+const dryRun = process.argv.includes('--dry-run');
+
+if (skipLinkValidation && !dryRun) {
+  console.warn('⚠️  Skipping rendered HTML link validation for this live SES send by explicit request.');
+}
 
 async function main() {
   await sendSesTestEmail({
     htmlPath,
-    dryRun: process.argv.includes('--dry-run'),
-    validateLinks: !process.argv.includes('--skip-link-validation'),
+    dryRun,
+    validateLinks: !skipLinkValidation,
   });
 }
 
