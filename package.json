@@ -19,6 +19,7 @@
     "schema:generate": "node scripts/generate-template-schema.mjs",
     "lint:content": "node scripts/lint-template.mjs",
     "test:newsletter-core": "node --test tests/newsletter-core/*.test.mjs",
+    "test:microdrop-faithful": "node --test tests/microdrop-faithful/*.test.mjs",
     "test:correspondence": "node --test tests/correspondence-email/*.test.mjs",
     "send:test": "node scripts/send-ses-test.mjs",
     "send:correspondence:test": "node scripts/send-correspondence-test.mjs"

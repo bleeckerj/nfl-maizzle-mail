@@ -1,4 +1,4 @@
-export const MICRODROP_ASSEMBLY_PROMPT_VERSION = 'apple-inframaximal-v1';
+export const MICRODROP_ASSEMBLY_PROMPT_VERSION = 'microdrop-faithful-v2';
 
 const SYSTEM_PROMPT = `You are the Microdrop Email Assembly Agent.
 
@@ -64,6 +64,17 @@ function artifactContext(sourcePacket) {
       '- Expand the How To Eat section into static methods, and flatten the autonomous-truck photo essay and shop extensions into ordered image-led sections.',
       '- Use static canonical-page links in email; do not reproduce anchor-only web controls or cart buttons.',
       '- Exclude editorialNote, aboutPanel, grounding, researchLinks, and provenance metadata.',
+    ].join('\n');
+  }
+  if (sourcePacket.renderer?.id === 'tensor-dosimeter') {
+    return [
+      'TENSOR DOSIMETER CONTEXT:',
+      '- Preserve the product-stage sequence as exactly four ordered images: hero, reverse, alternate μIEM display, and connected 816 gNIT display.',
+      '- Keep the μIEM exposure metrics and model-identification ledger as authored product information.',
+      '- The connected 816 gNIT display can cycle through wayfinding, family photos, and self-aware explanatory representations when inference exposure is not active; expand this behavior as static email-safe copy.',
+      '- Preserve worn-use/carry context, the provisional-readout boundary, complete legal language, compatibility/service information, and the in-world About sentence.',
+      '- Use the supplied United States regional language and canonical page link only in supported template slots.',
+      '- Exclude editorialNote, aboutPanel, MicrodropAboutPanel, grounding, researchLinks, and provenance metadata. Do not add a generic explanatory introduction.',
     ].join('\n');
   }
   return sourcePacket.assemblyGuidance?.length

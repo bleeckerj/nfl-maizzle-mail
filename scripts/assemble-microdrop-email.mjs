@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { parseArgs } from 'node:util';
 import YAML from 'yaml';
 import matter from 'gray-matter';
@@ -156,6 +158,41 @@ function validateDraft(markdown, sourcePacket, schema) {
   return { valid: errors.length === 0, errors, data: parsed.data };
 }
 
+function validateMaizzleBuild(markdown) {
+  const validationDir = fs.mkdtempSync(path.join(os.tmpdir(), 'microdrop-faithful-build-'));
+  const markdownPath = path.join(validationDir, 'email.md');
+  const outputDir = path.join(validationDir, 'build');
+  fs.writeFileSync(markdownPath, markdown, 'utf8');
+
+  try {
+    execFileSync(process.execPath, [
+      path.join(REPO_ROOT, 'scripts', 'build-newsletter.mjs'),
+      markdownPath,
+      'microdrop-faithful-validation',
+      `--repo-root=${REPO_ROOT}`,
+      `--output-dir=${outputDir}`,
+      '--template=microdrop-faithful',
+      '--no-open',
+    ], {
+      cwd: REPO_ROOT,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'pipe'],
+      maxBuffer: 2 * 1024 * 1024,
+    });
+    return { valid: true, errors: [] };
+  } catch (error) {
+    const stdout = typeof error.stdout === 'string' ? error.stdout : '';
+    const stderr = typeof error.stderr === 'string' ? error.stderr : '';
+    const details = `${stdout}\n${stderr}`.trim().slice(-8000);
+    return {
+      valid: false,
+      errors: [`Maizzle build validation failed${details ? `:\n${details}` : '.'}`],
+    };
+  } finally {
+    fs.rmSync(validationDir, { recursive: true, force: true });
+  }
+}
+
 function image(image) {
   return image
     ? {
@@ -188,6 +225,7 @@ function fallbackSectionType(block) {
   if (block.id === 'subscription-fallback') return 'infra-subscribe';
   if (block.id === 'exposure-profile') return 'infra-exposure';
   if (block.id === 'worn-context') return 'infra-definition';
+  if (block.id === 'connected-display') return 'infra-copy';
   if (block.id === 'pairing-products') return 'infra-pairing';
   if (block.id === 'compatibility-service') return 'infra-compatibility';
   if (block.id === 'legal-disclosures') return 'infra-legal';
@@ -307,6 +345,7 @@ function deterministicCultureDraft(sourcePacket) {
 
 function deterministicDraft(sourcePacket) {
   if (sourcePacket.archetype === 'culture-drop') return deterministicCultureDraft(sourcePacket);
+  if (sourcePacket.renderer?.id === 'tensor-dosimeter') return deterministicTensorDraft(sourcePacket);
   const page = sourcePacket.page;
   const entry = sourcePacket.entry;
   const stage = page.productStage;
@@ -394,6 +433,76 @@ function deterministicDraft(sourcePacket) {
   return `---\n${YAML.stringify(data, { lineWidth: 0 })}---\n`;
 }
 
+function deterministicTensorDraft(sourcePacket) {
+  const page = sourcePacket.page;
+  const entry = sourcePacket.entry;
+  const stage = page.productStage;
+  const sections = [
+    section('infra-product', {
+      brand: page.brand,
+      productName: page.productName,
+      breadcrumb: page.navigation.local.join(' / '),
+      eyebrow: stage.eyebrow,
+      headline: stage.headline,
+      dek: stage.dek,
+      views: page.productStageViews,
+      configuration: stage.configuration.map(([label, value]) => ({ label, value })),
+      regionalContainment: stage.regionalContainment,
+      panelNote: stage.panelNote,
+      canonicalUrl: entry.canonicalUrl,
+    }),
+    section('infra-exposure', {
+      ...page.exposure,
+      metrics: page.exposure.metrics.map((metric) => ({
+        label: metric.label,
+        value: metric.value,
+        unit: '',
+        note: metric.body,
+      })),
+      ledger: page.exposure.ledger,
+      image: undefined,
+      captionEyebrow: '',
+      caption: '',
+    }),
+    section('infra-definition', {
+      ...page.worn,
+      definitions: page.worn.definitions,
+    }),
+    section('infra-copy', {
+      ...page.connectedDisplay,
+      microcopy: page.connectedDisplay.modes.join(' · '),
+    }),
+    section('infra-compatibility', page.compatibility),
+    section('infra-legal', page.legal),
+    section('infra-about', page.about),
+  ];
+  const data = {
+    template: TEMPLATE_NAME,
+    title: `${entry.title} — ${entry.brand}`,
+    preheader: entry.summary || `${entry.brand}: ${entry.title}`,
+    canonicalUrl: entry.canonicalUrl,
+    theme: page.theme,
+    header: {
+      brandName: 'The Adjacency',
+      sectionName: page.productName,
+      sourceBrand: page.brand,
+      sourceDescription: 'A product page from an adjacent world',
+      homepageLink: entry.canonicalUrl,
+      navigation: page.navigation,
+    },
+    sections,
+    footer: {
+      brandName: 'The Adjacency',
+      unsubscribeText: 'You are receiving this because you subscribed to The Adjacency updates.',
+      unsubscribeLink: '[unsubscribe]',
+      companyAddress: 'Near Future Laboratory',
+      footerCta: { enabled: false },
+      legalLinks: [{ text: 'The Adjacency', url: entry.canonicalUrl }],
+    },
+  };
+  return `---\n${YAML.stringify(data, { lineWidth: 0 })}---\n`;
+}
+
 async function assembleWithLlm(sourcePacket, template, repairContext = '') {
   const provider = values.provider || process.env.MICRODROP_EMAIL_PROVIDER || 'anthropic';
   const client = new LLMClient(provider, values.model || process.env.MICRODROP_EMAIL_MODEL || null);
@@ -406,26 +515,44 @@ async function assembleWithLlm(sourcePacket, template, repairContext = '') {
   );
 }
 
-async function generateDraft(sourcePacket, template, fallbackAllowed) {
+async function generateDraft(sourcePacket, template, fallbackAllowed, buildValidationEnabled) {
   let repairContext = '';
   let lastResult;
+  let lastError = '';
   for (let attempt = 0; attempt < 2; attempt += 1) {
     try {
       const result = await assembleWithLlm(sourcePacket, template, repairContext);
       lastResult = result;
       const validation = validateDraft(result.markdown, sourcePacket, template.schema);
-      if (validation.valid) return { result, usedFallback: false };
-      repairContext = `The previous draft failed deterministic validation. Repair it without changing sourced content. Errors:\n${validation.errors.join('\n')}\n\nPrevious draft:\n${result.markdown}`;
+      if (!validation.valid) {
+        repairContext = `The previous draft failed deterministic validation. Repair it without changing sourced content. Errors:\n${validation.errors.join('\n')}\n\nPrevious draft:\n${result.markdown}`;
+        continue;
+      }
+      if (buildValidationEnabled) {
+        const buildValidation = validateMaizzleBuild(result.markdown);
+        if (!buildValidation.valid) {
+          repairContext = `The previous draft passed schema validation but failed the Maizzle build. Repair the Markdown using only supported template fields. Errors:\n${buildValidation.errors.join('\n')}\n\nPrevious draft:\n${result.markdown}`;
+          continue;
+        }
+      }
+      return { result, usedFallback: false };
     } catch (error) {
-      repairContext = `The previous attempt failed before producing a usable draft. Return a complete response. Error: ${error.message}`;
+      lastError = error instanceof Error ? error.message : String(error);
+      repairContext = `The previous attempt failed before producing a usable draft. Return a complete response. Error: ${lastError}`;
     }
   }
   if (!fallbackAllowed) {
-    throw new Error(`Agent draft did not validate: ${JSON.stringify(lastResult?.warnings || [])}`);
+    throw new Error(
+      `Agent draft did not validate after two attempts: ${lastError || JSON.stringify(lastResult?.warnings || [])}`,
+    );
   }
   const markdown = deterministicDraft(sourcePacket);
   const validation = validateDraft(markdown, sourcePacket, template.schema);
   if (!validation.valid) throw new Error(`Deterministic fallback did not validate: ${validation.errors.join('; ')}`);
+  if (buildValidationEnabled) {
+    const buildValidation = validateMaizzleBuild(markdown);
+    if (!buildValidation.valid) throw new Error(`Deterministic fallback did not build: ${buildValidation.errors.join('; ')}`);
+  }
   return {
     result: {
       ...fallbackAudit(sourcePacket),
@@ -467,7 +594,7 @@ async function main() {
           usedFallback: true,
         };
       })()
-    : await generateDraft(sourcePacket, template, !values['no-fallback']);
+    : await generateDraft(sourcePacket, template, !values['no-fallback'], !values['draft-only']);
   ensureParent(generatedMarkdownPath);
   fs.writeFileSync(generatedMarkdownPath, result.markdown, 'utf8');
   if (!fs.existsSync(workingMarkdownPath)) {

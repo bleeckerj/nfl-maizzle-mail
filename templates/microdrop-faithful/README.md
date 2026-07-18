@@ -25,7 +25,7 @@ Supported section types:
 - `culture-shop`
 - `culture-find`
 
-The authoring Markdown should contain source-backed text, hosted image URLs, and ordered `sections`. Do not author HTML, CSS, JavaScript, editorial notes, grounding, or provenance in the email source.
+The authoring Markdown should contain source-backed text, hosted image URLs, and ordered `sections`. Do not author HTML, CSS, JavaScript, editorial notes, grounding, or provenance in the email source. The Tensor Dosimeter adapter uses the existing `infra-product`, `infra-exposure`, `infra-definition`, `infra-copy`, `infra-compatibility`, `infra-legal`, and `infra-about` sections; it does not add a template type for the connected display.
 
 For `culture-menu`, product descriptions use the plain-text `copy` field so the canonical mail pipeline does not interpret them as rich text.
 

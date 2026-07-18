@@ -23,10 +23,24 @@ npm run mail:build:microdrop -- apple-watch-inframaximal-6502 --build-from-draft
 ```
 
 Use `--source-markdown /path/to/email.md` when the operator-owned source should
-live outside the disposable export bundle. Use `--fallback-only` for a
-source-backed local draft when an LLM call is unavailable. The fallback follows
-the same section contract and still passes through the canonical newsletter
-schema and Maizzle build.
+live outside the disposable export bundle.
+
+There are three deliberate assembly modes:
+
+- Agentic faithful assembly is the default. The provider selects and linearizes
+  source blocks into supported template sections. Normal builds validate the
+  generated Markdown through the schema and a temporary Maizzle build; one or
+  two repair attempts can use those failures as context.
+- `--fallback-only` writes deterministic source-backed Markdown without an LLM
+  call. It uses the same section contract and normal builds still validate it
+  through Maizzle.
+- `--legacy-teaser` belongs to the editorial wrapper and explicitly selects the
+  older explanatory/dispatch path. It is separate from faithful assembly.
+
+Use `--no-fallback` when a live run must prove that the provider produced the
+draft. Use `--draft-only` to create or regenerate Markdown without building
+HTML, then use `--build-from-draft` to build the operator-owned source without
+calling the LLM.
 
 The template linearizes browser interactions as follows:
 
