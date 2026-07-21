@@ -50,9 +50,9 @@
                       </p>
                     </if>
                     <if condition="item.body">
-                      <p class="bd-item-copy bd-mono" style="margin:12px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:14px;line-height:21px;color:#000000;">
+                      <div class="bd-item-copy bd-mono" style="margin:12px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:14px;line-height:21px;color:#000000;">
                         {{{ item.body }}}
-                      </p>
+                      </div>
                     </if>
                     <if condition="item.price">
                       <p class="bd-mono" style="margin:14px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:13px;line-height:18px;font-weight:700;color:#000000;">
@@ -121,9 +121,9 @@
                       </p>
                     </if>
                     <if condition="item.body">
-                      <p class="bd-item-copy bd-mono" style="margin:12px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:15px;line-height:22px;color:#000000;">
+                      <div class="bd-item-copy bd-mono" style="margin:12px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:15px;line-height:22px;color:#000000;">
                         {{{ item.body }}}
-                      </p>
+                      </div>
                     </if>
                     <if condition="item.price">
                       <p class="bd-mono" style="margin:14px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:13px;line-height:18px;font-weight:700;color:#000000;">
@@ -287,9 +287,9 @@
                       </td>
                       <td class="bd-item-copy-cell" valign="top" style="padding:0;">
                         <if condition="section.description">
-                          <p class="bd-item-copy bd-mono" style="margin:0 0 16px 0;font-family:'Courier New',Courier,monospace;font-size:15px;line-height:22px;color:{{ section.containerStyles.textColor || section.contentStyles.color || '#000000' }};">
+                          <div class="bd-item-copy bd-mono" style="margin:0 0 16px 0;font-family:'Courier New',Courier,monospace;font-size:15px;line-height:22px;color:{{ section.containerStyles.textColor || section.contentStyles.color || '#000000' }};">
                             {{{ section.description }}}
-                          </p>
+                          </div>
                         </if>
                         <a class="bd-button bd-mono" href="{{ section.calendarLink }}" style="display:inline-block;background:{{ section.containerStyles.buttonBackgroundColor || '#000000' }};color:{{ section.containerStyles.buttonTextColor || '#ffffff' }}!important;-webkit-text-fill-color:{{ section.containerStyles.buttonTextColor || '#ffffff' }};font-family:'Courier New',Courier,monospace;font-size:12px;line-height:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:{{ section.containerStyles.buttonPadding || '11px 14px' }};border:{{ section.containerStyles.buttonBorderWidth || section.containerStyles.borderWidth || '2px' }} solid {{ section.containerStyles.buttonBorderColor || section.containerStyles.borderColor || '#000000' }};">
                           {{ section.calendarLabel || 'Add to calendar' }}
@@ -380,9 +380,9 @@
                   </p>
                 </if>
                 <if condition="item.body">
-                  <p class="bd-item-copy bd-mono" style="margin:12px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:14px;line-height:21px;color:#000000;">
+                  <div class="bd-item-copy bd-mono" style="margin:12px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:14px;line-height:21px;color:#000000;">
                     {{{ item.body }}}
-                  </p>
+                  </div>
                 </if>
                 <if condition="item.price">
                   <p class="bd-mono" style="margin:14px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:13px;line-height:18px;font-weight:700;color:#000000;">

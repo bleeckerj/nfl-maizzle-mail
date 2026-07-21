@@ -16,9 +16,9 @@
                 {{ (offer && offer.headline) || (bottomCta && bottomCta.headline) || 'Get the set' }}
               </h2>
               <if condition="(offer && offer.body) || (bottomCta && bottomCta.body)">
-                <p class="bd-copy bd-mono" style="margin:14px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:15px;line-height:22px;color:#ffffff;">
+                <div class="bd-copy bd-mono" style="margin:14px 0 0 0;font-family:'Courier New',Courier,monospace;font-size:15px;line-height:22px;color:#ffffff;">
                   {{{ (offer && offer.body) || (bottomCta && bottomCta.body) }}}
-                </p>
+                </div>
               </if>
               <if condition="(offer && offer.ctaLink) || (bottomCta && bottomCta.ctaLink) || shopLink">
                 <p style="margin:20px 0 0 0;">
