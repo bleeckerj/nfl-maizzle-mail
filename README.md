@@ -203,7 +203,7 @@ apps-sites-single-column
 callout
 quote
 indie-mag
-indie-mag-single-column
+single-column
 books-accessories
 food-for-thought
 aesthetically-pleasing
@@ -211,6 +211,8 @@ classifieds
 animated-image
 image
 ```
+
+The legacy `indie-mag-single-column` name remains supported as an alias for `single-column`.
 
 `short-take` is supported by the production template and canonical builder, but is not yet included in the generated section-guide source above. Use the registry-backed authoring shape in `templates/dense-discovery/README.md` or the full Dense Discovery skeleton.
 
@@ -239,7 +241,7 @@ Template-specific notes in `templates/dense-discovery/README.md` cover:
 - `ad-block` frontmatter, hydration, analytics categories, and render hierarchy.
 - `short-take` registry-id authoring, ordered placement, link tracking, and complete-image rendering.
 - `food-for-thought` multi-CTA rows.
-- `indie-mag-single-column` image precedence.
+- `single-column` image precedence; `indie-mag-single-column` remains a legacy alias.
 
 Dense Discovery issues usually include:
 

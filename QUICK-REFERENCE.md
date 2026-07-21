@@ -43,7 +43,7 @@ python scripts/generate-newsletter-skeleton.py --list-sections
 | `apps-sites-single-column` | App/site reviews (full-width) |
 | `quote` | Inspirational quotes |
 | `indie-mag` | Magazine content (2-column) |
-| `indie-mag-single-column` | Magazine content (full-width) |
+| `single-column` | Magazine content (full-width) |
 | `books-accessories` | Book/product reviews |
 | `food-for-thought` | Recommended articles |
 | `aesthetically-pleasing` | Visual showcase |
@@ -68,7 +68,7 @@ python scripts/generate-newsletter-skeleton.py --list-sections
 - **dispatch**: `tags`, `signalsLabel`
 - **quote**: `quote`, `author`, `authorLink`
 - **food-for-thought**: `category`, `sharedBy`, `channel`, `paywall`, `readMoreLinks`
-- **indie-mag-single-column**: use `images` for multi-image items; do not pair `images` with `image`
+- **single-column**: use `images` for multi-image items; do not pair `images` with `image` (`indie-mag-single-column` remains a legacy alias)
 - **books-accessories**: `authorName`, `isbn`
 
 ## 📚 Documentation
