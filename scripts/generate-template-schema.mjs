@@ -461,6 +461,28 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
     const singleColumnVariant = findTypedSectionVariant(schema, type);
     const singleColumnItemSchema = singleColumnVariant?.properties?.items?.items;
     if (singleColumnItemSchema?.properties?.image && singleColumnItemSchema?.properties?.images) {
+      const singleColumnImageSchema = {
+        oneOf: [
+          { type: 'string' },
+          {
+            type: 'object',
+            required: ['src'],
+            properties: {
+              src: { type: 'string' },
+              alt: { type: 'string' },
+              link: {},
+              caption: { type: 'string' },
+            },
+            additionalProperties: false,
+          },
+        ],
+      };
+
+      singleColumnItemSchema.properties.image = singleColumnImageSchema;
+      singleColumnItemSchema.properties.images = {
+        type: 'array',
+        items: singleColumnImageSchema,
+      };
       singleColumnItemSchema.not = { required: ['image', 'images'] };
     }
   }
@@ -505,7 +527,8 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
 
   for (const variant of variants ?? []) {
     const itemProperties = variant?.then?.properties?.items?.items?.properties;
-    if (itemProperties?.image) {
+    const variantType = variant?.then?.properties?.type?.const;
+    if (itemProperties?.image && !['single-column', 'indie-mag-single-column'].includes(variantType)) {
       itemProperties.image = {};
     }
   }

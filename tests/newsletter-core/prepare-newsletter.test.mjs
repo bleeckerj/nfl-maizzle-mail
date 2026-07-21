@@ -690,6 +690,44 @@ test('prepareNewsletterData accepts indie-mag-single-column item subtitles under
   assert.equal(prepared.sections[0].items[0].subtitle, 'Episode N°303 of our Weekly Session');
 });
 
+test('prepareNewsletterData accepts canonical single-column string and object images under strict schema validation', () => {
+  const prepared = prepareNewsletterData(
+    {
+      template: 'dense-discovery',
+      title: 'Strict Schema Single Column Image Test',
+      sections: [
+        {
+          type: 'single-column',
+          title: 'Long Reads',
+          items: [
+            {
+              title: 'String image list',
+              images: ['https://example.com/cover.webp'],
+            },
+            {
+              title: 'Object fallback image',
+              image: {
+                src: 'https://example.com/fallback.webp',
+                alt: 'Fallback image',
+              },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      repoRoot: REPO_ROOT,
+      templateName: 'dense-discovery',
+      strictSchema: true,
+      logger: { log() {} },
+    },
+  );
+
+  assert.equal(prepared.sections[0].type, 'single-column');
+  assert.equal(prepared.sections[0].items[0].images[0], 'https://example.com/cover.webp');
+  assert.equal(prepared.sections[0].items[1].image.src, 'https://example.com/fallback.webp');
+});
+
 test('prepareNewsletterData rejects indie-mag-single-column items that set both image and images under strict schema validation', () => {
   assert.throws(
     () =>

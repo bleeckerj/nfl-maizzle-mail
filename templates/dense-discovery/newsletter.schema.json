@@ -1900,19 +1900,60 @@
                       "images": {
                         "type": "array",
                         "items": {
-                          "type": "object",
-                          "properties": {
-                            "link": {},
-                            "src": {},
-                            "alt": {},
-                            "caption": {}
-                          },
-                          "additionalProperties": false
+                          "oneOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "object",
+                              "required": [
+                                "src"
+                              ],
+                              "properties": {
+                                "src": {
+                                  "type": "string"
+                                },
+                                "alt": {
+                                  "type": "string"
+                                },
+                                "link": {},
+                                "caption": {
+                                  "type": "string"
+                                }
+                              },
+                              "additionalProperties": false
+                            }
+                          ]
                         }
                       },
                       "link": {},
                       "title": {},
-                      "image": {},
+                      "image": {
+                        "oneOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "object",
+                            "required": [
+                              "src"
+                            ],
+                            "properties": {
+                              "src": {
+                                "type": "string"
+                              },
+                              "alt": {
+                                "type": "string"
+                              },
+                              "link": {},
+                              "caption": {
+                                "type": "string"
+                              }
+                            },
+                            "additionalProperties": false
+                          }
+                        ]
+                      },
                       "subtitle": {},
                       "description": {},
                       "details": {},
@@ -2597,19 +2638,60 @@
                       "images": {
                         "type": "array",
                         "items": {
-                          "type": "object",
-                          "properties": {
-                            "link": {},
-                            "src": {},
-                            "alt": {},
-                            "caption": {}
-                          },
-                          "additionalProperties": false
+                          "oneOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "object",
+                              "required": [
+                                "src"
+                              ],
+                              "properties": {
+                                "src": {
+                                  "type": "string"
+                                },
+                                "alt": {
+                                  "type": "string"
+                                },
+                                "link": {},
+                                "caption": {
+                                  "type": "string"
+                                }
+                              },
+                              "additionalProperties": false
+                            }
+                          ]
                         }
                       },
                       "link": {},
                       "title": {},
-                      "image": {},
+                      "image": {
+                        "oneOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "object",
+                            "required": [
+                              "src"
+                            ],
+                            "properties": {
+                              "src": {
+                                "type": "string"
+                              },
+                              "alt": {
+                                "type": "string"
+                              },
+                              "link": {},
+                              "caption": {
+                                "type": "string"
+                              }
+                            },
+                            "additionalProperties": false
+                          }
+                        ]
+                      },
                       "subtitle": {},
                       "description": {},
                       "details": {},
