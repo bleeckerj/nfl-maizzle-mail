@@ -71,6 +71,8 @@ function campaignSource() {
     '  headline: Campaign fixture',
     '  subhead: Two registry-backed sections.',
     'sections:',
+    '  - type: ad-slot',
+    '  - type: short-take-slot',
     '  - type: short-take',
     '    items:',
     '      - shortTakeId: campaign-short-take',
@@ -188,6 +190,17 @@ test('campaign brain-dead builds are source-preserving and omit public issue nav
     };
     assert.match(first.html, /A campaign Short Take/);
     assert.match(first.html, /A campaign ad/);
+    assert.match(first.html, /data-content-slot="ad_slot"/);
+    assert.match(first.html, /data-content-slot="short_take"/);
+    const contentSlotManifest = JSON.parse(first.slots);
+    assert.deepEqual(
+      contentSlotManifest.slots.map((slot) => slot.slotKey),
+      ['ad_slot', 'short_take'],
+    );
+    assert.deepEqual(
+      contentSlotManifest.slots.map((slot) => slot.textMarker),
+      ['[[content-slot:ad_slot]]', '[[content-slot:short_take]]'],
+    );
     assert.match(first.html, /\[unsubscribe\]/);
     assert.doesNotMatch(first.html, /View\/share online/);
     assert.doesNotMatch(first.html, /View this issue online/);

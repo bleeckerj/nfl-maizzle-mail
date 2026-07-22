@@ -120,6 +120,19 @@
         "color": "#000000"
       }
     },
+    "ad-slot": {
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "padding": "0",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontSize": "0",
+        "lineHeight": "0",
+        "color": "#000000"
+      }
+    },
     "short-take": {
       "containerStyles": {
         "backgroundColor": "#ffffff",
@@ -145,6 +158,19 @@
         "fontFamily": "'Courier New', Courier, monospace",
         "fontWeight": "700",
         "textDecoration": "none",
+        "color": "#000000"
+      }
+    },
+    "short-take-slot": {
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "padding": "0",
+        "borderRadius": "0px"
+      },
+      "contentStyles": {
+        "fontFamily": "'Courier New', Courier, monospace",
+        "fontSize": "0",
+        "lineHeight": "0",
         "color": "#000000"
       }
     },

@@ -125,7 +125,7 @@
       "type": "object",
       "required": ["type"],
       "properties": {
-        "type": { "enum": ["dual-column", "single-column", "calendar_event", "inline_cta", "ad-block", "short-take"] },
+        "type": { "enum": ["dual-column", "single-column", "calendar_event", "inline_cta", "ad-slot", "short-take-slot", "ad-block", "short-take"] },
         "renderFor": {
           "type": "string",
           "enum": ["public", "preview", "full", "both"],
@@ -246,7 +246,11 @@
           "else": {
             "if": { "properties": { "type": { "const": "inline_cta" } } },
             "then": { "required": ["primaryAction"] },
-            "else": { "required": ["items"] }
+            "else": {
+              "if": { "properties": { "type": { "enum": ["ad-slot", "short-take-slot"] } } },
+              "then": {},
+              "else": { "required": ["items"] }
+            }
           }
         }
       ]

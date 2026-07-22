@@ -162,8 +162,13 @@ function validateSections(sections) {
     }
 
     const compactRegistrySection = type === 'ad-block' || type === 'short-take';
-    if (!title && !compactRegistrySection) {
+    const placeholderSlotSection = type === 'ad-slot' || type === 'short-take-slot';
+    if (!title && !compactRegistrySection && !placeholderSlotSection) {
       report('warnings', `${sectionPath}.title`, 'Section title is empty');
+    }
+
+    if (placeholderSlotSection) {
+      return;
     }
 
     if (!Array.isArray(items)) {

@@ -9,6 +9,8 @@
     "single-column",
     "calendar_event",
     "inline_cta",
+    "ad-slot",
+    "short-take-slot",
     "ad-block",
     "short-take"
   ],
