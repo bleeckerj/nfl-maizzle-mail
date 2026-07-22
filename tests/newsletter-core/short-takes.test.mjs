@@ -100,6 +100,43 @@ test('hydrateShortTakeSections preserves scalar maxWidth and HTTPS destinations'
   });
 });
 
+test('hydrateShortTakeSections threads tracked-link destination metadata with defaults', () => {
+  withInventory([
+    record({
+      url: {
+        href: 'https://example.com/sponsored-take',
+        category: 'sponsored',
+        interests: ['robotics', 'logistics'],
+        intent: 'consideration',
+      },
+    }),
+    record({ id: 'short-take-two', url: { href: '/editorial/defaulted' } }),
+  ], ({ repoRoot }) => {
+    const newsletter = { sections: [section(), section('short-take-two')] };
+    hydrateShortTakeSections(newsletter, repoRoot, { logger: { log() {} } });
+
+    const explicit = newsletter.sections[0].items[0].link;
+    assert.equal(explicit.href, 'https://example.com/sponsored-take');
+    assert.equal(explicit.label, 'short-take-one'); // label defaults to the id
+    assert.equal(explicit.category, 'sponsored'); // explicit override wins
+    assert.deepEqual(explicit.interests, ['robotics', 'logistics']);
+    assert.equal(explicit.intent, 'consideration');
+
+    const defaulted = newsletter.sections[1].items[0].link;
+    assert.equal(defaulted.href, 'https://nearfuturelaboratory.com/editorial/defaulted');
+    assert.equal(defaulted.label, 'short-take-two');
+    assert.equal(defaulted.category, 'short-take'); // default category
+    assert.equal(defaulted.interests, undefined);
+    assert.equal(defaulted.intent, undefined);
+
+    const tracking = normalizeNewsletterLinkTracking(newsletter);
+    const tracked = tracking.manifest.get('https://example.com/sponsored-take');
+    assert.equal(tracked.category, 'sponsored');
+    assert.deepEqual(tracked.interests, ['robotics', 'logistics']);
+    assert.equal(tracked.intent, 'consideration');
+  });
+});
+
 test('hydrateShortTakeSections reports malformed source sections with section indexes', () => {
   withInventory([record()], ({ repoRoot }) => {
     for (const [source, message] of [
@@ -131,6 +168,10 @@ test('hydrateShortTakeSections reports unknown ids and invalid inventories', () 
     { inventory: [record({ extra: true })], message: /unsupported field: extra/ },
     { inventory: [record({ image: { url: 'https://example.com/image.jpg', altText: 'Wrong host' } })], message: /Photarium Cloudflare Image Delivery URL/ },
     { inventory: [record({ url: 'http://example.com/insecure' })], message: /HTTPS URL or a site-relative path/ },
+    { inventory: [record({ url: { href: 'https://example.com/take', tag: 'nope' } })], message: /url contains unsupported field: tag/ },
+    { inventory: [record({ url: { href: 'http://example.com/insecure' } })], message: /url\.href must be an HTTPS URL/ },
+    { inventory: [record({ url: { href: 'https://example.com/take', category: '  ' } })], message: /url\.category must be a non-empty string/ },
+    { inventory: [record({ url: { href: 'https://example.com/take', interests: [] } })], message: /url\.interests must be a non-empty array/ },
     { inventory: [record({ maxWidth: { base: '', desktop: '40rem' } })], message: /unsupported field: desktop/ },
   ];
   for (const { inventory, raw, message } of invalidCases) {

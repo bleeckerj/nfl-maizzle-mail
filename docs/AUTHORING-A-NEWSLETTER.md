@@ -116,7 +116,24 @@ Dense Discovery and Daily Headlines support Short Takes:
 
 Each `short-take` section requires exactly one item and one non-empty `shortTakeId`. Headline, caption, image, alt text, destination, edge metadata, and width metadata come from `nfl-editorial/src/content/shortTakes.json`. Issue-level overrides are rejected. Place multiple cards by adding multiple `short-take` sections at the required positions in `sections[]`.
 
-The build loads the registry only when the issue contains a Short Take. Inventory resolution uses `NFL_EDITORIAL_SHORT_TAKES_PATH`, then `NFL_EDITORIAL_ROOT`, then the sibling `../nfl-editorial` repository. Linked records use the registry id as the tracking label and `short-take` as the category; records without a destination render without anchors.
+The build loads the registry only when the issue contains a Short Take. Inventory resolution uses `NFL_EDITORIAL_SHORT_TAKES_PATH`, then `NFL_EDITORIAL_ROOT`, then the sibling `../nfl-editorial` repository. Records without a destination render without anchors.
+
+A registry record's `url` (destination) may be authored two ways:
+
+- A bare string — one HTTPS URL or a site-relative path beginning with `/`. The whole card links there, tracked with the registry id as the label and `short-take` as the category.
+- A tracked-link object carrying the same analytics metadata the rest of the newsletter uses:
+
+  ```json
+  {
+    "href": "https://example.com/story",
+    "label": "sponsored short take",
+    "category": "sponsored",
+    "interests": ["robotics", "logistics"],
+    "intent": "consideration"
+  }
+  ```
+
+  `href` is required. `label` defaults to the registry id and `category` defaults to `short-take` when omitted; `interests` and `intent` are optional. Authors set these once on the registry record, so a Short Take carries the same destination and tracking wherever it is placed.
 
 ---
 

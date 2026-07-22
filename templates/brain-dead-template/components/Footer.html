@@ -33,7 +33,7 @@
             <if condition="(footer && footer.socialLinks && footer.socialLinks.length) || (socialLinks && socialLinks.length)">
               <p style="margin:0 0 9px 0;font-family:'Courier New',Courier,monospace;font-size:9px;line-height:11px;color:#000000;">
                 <each loop="link in ((footer && footer.socialLinks) || socialLinks)">
-                  <a href="{{ link.url || link.href }}" style="color:#0e0e0e;text-decoration:underline;">{{ link.label || link.text || link.title }}</a><if condition="!@last"><span style="padding:0 7px;color:#0e0e0e;">/</span></if>
+                  <a href="{{ link.url || link.href }}" style="color:#0e0e0e;text-decoration:underline;">{{ link.label || link.text || link.title }}</a><if condition="loop.index < ((footer && footer.socialLinks) || socialLinks).length - 1"><span style="padding:0 7px;color:#0e0e0e;">/</span></if>
                 </each>
               </p>
             </if>
