@@ -1,5 +1,5 @@
 <!-- Footer Component -->
-<!-- Purpose: Renders sales email footer copy, social links, and unsubscribe affordance. -->
+<!-- Purpose: Renders sales email footer copy, social links, and optional unsubscribe affordance. -->
 <!-- Variables: footer.paragraphs, footer.address, footer.socialLinks, footer.unsubscribeLink -->
 
 <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;">
@@ -20,9 +20,16 @@
                 You are receiving this email because you subscribed to Near Future Laboratory updates.
               </p>
             </if>
-            <p style="margin:0 0 9px 0;font-family:'Courier New',Courier,monospace;font-size:9px;line-height:11px;color:#0e0e0e;">
-              {{{ (footer && footer.address) || companyAddress || 'Near Future Laboratory, Venice Beach, California' }}}
-            </p>
+            <if condition="footer && footer.address">
+              <p style="margin:0 0 9px 0;font-family:'Courier New',Courier,monospace;font-size:9px;line-height:11px;color:#0e0e0e;">
+                {{{ footer.address }}}
+              </p>
+            </if>
+            <if condition="!(footer && footer.address) && companyAddress">
+              <p style="margin:0 0 9px 0;font-family:'Courier New',Courier,monospace;font-size:9px;line-height:11px;color:#0e0e0e;">
+                {{{ companyAddress }}}
+              </p>
+            </if>
             <if condition="(footer && footer.socialLinks && footer.socialLinks.length) || (socialLinks && socialLinks.length)">
               <p style="margin:0 0 9px 0;font-family:'Courier New',Courier,monospace;font-size:9px;line-height:11px;color:#000000;">
                 <each loop="link in ((footer && footer.socialLinks) || socialLinks)">
@@ -30,9 +37,16 @@
                 </each>
               </p>
             </if>
-            <p style="margin:0;font-family:'Courier New',Courier,monospace;font-size:9px;line-height:11px;color:#0e0e0e;">
-              <a href="{{ (footer && footer.unsubscribeLink) || unsubscribeLink || '[unsubscribe]' }}" style="color:#0e0e0e;text-decoration:underline;">{{ (footer && footer.unsubscribeLabel) || unsubscribeLabel || 'Unsubscribe' }}</a>
-            </p>
+            <if condition="footer && footer.unsubscribeLink">
+              <p style="margin:0;font-family:'Courier New',Courier,monospace;font-size:9px;line-height:11px;color:#0e0e0e;">
+                <a href="{{ footer.unsubscribeLink }}" style="color:#0e0e0e;text-decoration:underline;"><if condition="footer.unsubscribeLabel">{{ footer.unsubscribeLabel }}</if><if condition="!footer.unsubscribeLabel">Unsubscribe</if></a>
+              </p>
+            </if>
+            <if condition="!(footer && footer.unsubscribeLink) && unsubscribeLink">
+              <p style="margin:0;font-family:'Courier New',Courier,monospace;font-size:9px;line-height:11px;color:#0e0e0e;">
+                <a href="{{ unsubscribeLink }}" style="color:#0e0e0e;text-decoration:underline;"><if condition="unsubscribeLabel">{{ unsubscribeLabel }}</if><if condition="!unsubscribeLabel">Unsubscribe</if></a>
+              </p>
+            </if>
           </td>
         </tr>
       </table>
