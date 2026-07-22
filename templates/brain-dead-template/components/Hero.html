@@ -24,12 +24,23 @@
         <if condition="(hero && hero.image) || mainImage">
           <tr>
             <td style="padding:24px 0 0 0;">
-              <if condition="(hero && hero.ctaLink) || shopLink">
-                <a href="{{ (hero && hero.ctaLink) || shopLink }}" style="text-decoration:none;">
+              <!-- POLICY: the hero image must NOT auto-inherit the action CTA (e.g. a Zoom join link) -
+                   clicking an image is not an intent to launch the event. It links only to an explicit
+                   hero.imageLink, or shopLink for shop emails. Set hero.imageLink: 'none' to force no link. -->
+              <if condition="hero && hero.imageLink && hero.imageLink !== 'none'">
+                <a href="{{ hero.imageLink }}" style="text-decoration:none;">
                   <img src="{{ (hero && hero.image) || mainImage }}" alt="{{ (hero && hero.imageAlt) || collectionTitle || title }}" width="576" style="width:100%;max-width:576px;height:auto;">
                 </a>
               </if>
-              <if condition="!((hero && hero.ctaLink) || shopLink)">
+              <if condition="!(hero && hero.imageLink) && shopLink">
+                <a href="{{ shopLink }}" style="text-decoration:none;">
+                  <img src="{{ (hero && hero.image) || mainImage }}" alt="{{ (hero && hero.imageAlt) || collectionTitle || title }}" width="576" style="width:100%;max-width:576px;height:auto;">
+                </a>
+              </if>
+              <if condition="hero && hero.imageLink === 'none'">
+                <img src="{{ (hero && hero.image) || mainImage }}" alt="{{ (hero && hero.imageAlt) || collectionTitle || title }}" width="576" style="width:100%;max-width:576px;height:auto;">
+              </if>
+              <if condition="!(hero && hero.imageLink) && !shopLink">
                 <img src="{{ (hero && hero.image) || mainImage }}" alt="{{ (hero && hero.imageAlt) || collectionTitle || title }}" width="576" style="width:100%;max-width:576px;height:auto;">
               </if>
             </td>
