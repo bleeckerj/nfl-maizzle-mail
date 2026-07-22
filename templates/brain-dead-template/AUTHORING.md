@@ -27,10 +27,10 @@ slots for Soup-to-Nuts imports:
 
 | Section type | Slot key | Text marker |
 |---|---|---|
-| `ad-slot` | `ad_slot` | `[[content-slot:ad_slot]]` |
-| `ad-block` | `ad_slot` | `[[content-slot:ad_slot]]` |
-| `short-take-slot` | `short_take` | `[[content-slot:short_take]]` |
-| `short-take` | `short_take` | `[[content-slot:short_take]]` |
+| `ad-slot` | `ad-slot` | `[[content-slot:ad-slot]]` |
+| `ad-block` | `ad-slot` | `[[content-slot:ad-slot]]` |
+| `short-take-slot` | `short-take` | `[[content-slot:short-take]]` |
+| `short-take` | `short-take` | `[[content-slot:short-take]]` |
 
 ```sh
 node scripts/build-newsletter.mjs /path/to/email-campaigns/example.md example \

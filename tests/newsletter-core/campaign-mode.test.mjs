@@ -190,16 +190,16 @@ test('campaign brain-dead builds are source-preserving and omit public issue nav
     };
     assert.match(first.html, /A campaign Short Take/);
     assert.match(first.html, /A campaign ad/);
-    assert.match(first.html, /data-content-slot="ad_slot"/);
-    assert.match(first.html, /data-content-slot="short_take"/);
+    assert.match(first.html, /data-content-slot="ad-slot"/);
+    assert.match(first.html, /data-content-slot="short-take"/);
     const contentSlotManifest = JSON.parse(first.slots);
     assert.deepEqual(
       contentSlotManifest.slots.map((slot) => slot.slotKey),
-      ['ad_slot', 'short_take'],
+      ['ad-slot', 'short-take'],
     );
     assert.deepEqual(
       contentSlotManifest.slots.map((slot) => slot.textMarker),
-      ['[[content-slot:ad_slot]]', '[[content-slot:short_take]]'],
+      ['[[content-slot:ad-slot]]', '[[content-slot:short-take]]'],
     );
     assert.match(first.html, /\[unsubscribe\]/);
     assert.doesNotMatch(first.html, /View\/share online/);
