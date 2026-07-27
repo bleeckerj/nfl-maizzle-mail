@@ -233,7 +233,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                     <!-- SHORT TAKE Start -->
                     <each loop="item in section.items">
                       <tr>
-                        <td style="border-collapse:collapse;padding:0">
+                        <td style="border-collapse:collapse;padding:{{ section.containerStyles.outerPadding || '20px 12px 25px' }}">
                           <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" data-short-take-id="{{ item.shortTakeId }}" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}" style="border-spacing:0;background:{{ section.containerStyles.backgroundColor || '#FFFFFF' }};border:{{ section.containerStyles.borderWidth || '1px' }} {{ section.containerStyles.borderStyle || 'solid' }} {{ section.containerStyles.borderColor || '#c9cfdb' }}">
                             <tbody>
                               <if condition="item.topLeft || item.topRight">
@@ -244,11 +244,11 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   </tr></tbody></table>
                                 </td></tr>
                               </if>
-                              <tr><td class="short-take-image" style="border-collapse:collapse;padding:{{ section.containerStyles.imagePadding || '0 20px 15px' }};line-height:0;font-size:0">
+                              <tr><td class="short-take-image" style="border-collapse:collapse;padding:{{ section.containerStyles.imagePadding || '0 12px 15px' }};line-height:0;font-size:0">
                                 <if condition="item.link"><a href="{{ item.link }}" style="display:block;text-decoration:none;color:inherit"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" border="0" width="638" style="-ms-interpolation-mode:bicubic;display:block;width:100%;max-width:638px;height:auto;border:0"></a></if>
                                 <if condition="!item.link"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" border="0" width="638" style="-ms-interpolation-mode:bicubic;display:block;width:100%;max-width:638px;height:auto;border:0"></if>
                               </td></tr>
-                              <tr><td class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}" style="border-collapse:collapse;padding:{{ section.containerStyles.copyPadding || '18px 20px 20px' }};background:{{ section.containerStyles.backgroundColor || '#FFFFFF' }}">
+                              <tr><td class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}" style="border-collapse:collapse;padding:{{ section.containerStyles.copyPadding || '18px 12px 20px' }};background:{{ section.containerStyles.backgroundColor || '#FFFFFF' }}">
                                 <if condition="item.link"><a href="{{ item.link }}" style="display:block;color:inherit;text-decoration:none"><h2 class="mob-title short-take-headline" style="margin:0;padding:0;{{{ section.headingStylesInline || '' }}}">{{ item.headline }}</h2><div class="mob-short-take-caption" style="margin:9px 0 0;padding:0;{{{ section.contentStylesInline || '' }}}">{{{ item.caption }}}</div></a></if>
                                 <if condition="!item.link"><h2 class="mob-title short-take-headline" style="margin:0;padding:0;{{{ section.headingStylesInline || '' }}}">{{ item.headline }}</h2><div class="mob-short-take-caption" style="margin:9px 0 0;padding:0;{{{ section.contentStylesInline || '' }}}">{{{ item.caption }}}</div></if>
                               </td></tr>

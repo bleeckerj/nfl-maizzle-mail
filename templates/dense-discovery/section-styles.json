@@ -166,13 +166,15 @@
     },
     "short-take": {
       "name": "Short Take",
-      "description": "Registry-backed editorial card with full-width image, headline, caption, and optional edge metadata.",
+      "description": "Registry-backed editorial card with an inset container, image, headline, caption, and optional edge metadata.",
       "containerStyles": {
         "backgroundColor": "#FFFFFF",
         "borderColor": "#c9cfdb",
         "borderWidth": "1px",
         "borderStyle": "solid",
-        "copyPadding": "18px 20px 20px",
+        "outerPadding": "20px 12px 25px",
+        "imagePadding": "0 12px 15px",
+        "copyPadding": "18px 12px 20px",
         "metaPadding": "9px 12px"
       },
       "labelStyles": {
