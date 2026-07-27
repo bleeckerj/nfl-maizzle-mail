@@ -71,6 +71,21 @@ header:
   logoBottom: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp
   logoTop: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp
 sections:
+- type: single-column
+  title: From the Projects Collection
+  items:
+  - title: Car and Driverless
+    link:
+      href: https://nearfuturelaboratory.com/projects/en/car-and-driverless/
+      label: wXX-yYY | project | Car and Driverless
+      category: speculative-practice
+      intent: read-related
+    subtitle: Imagine a world where self-driving cars are normal, ordinary, and everyday.
+    description: <p>A 72 page full-color Design Fiction magazine from an autonomous vehicle future, based on internal strategic vision and roadmaps, industry focus, market analysis, and STEEP foresight research.</p>
+    image:
+      src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2375047f-1603-4221-98fc-ee9cf6a90c00/public
+      alt: Car and Driverless, a magazine from a possible autonomous vehicle future.
+    readMoreText: View project →
 - type: feature
   title: Feature Section
   items:

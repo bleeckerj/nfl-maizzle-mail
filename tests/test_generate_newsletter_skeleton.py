@@ -53,13 +53,41 @@ class GenerateNewsletterSkeletonTest(unittest.TestCase):
         )
         self.assertIn("AlgoAllo", intro_image["alt"])
 
+    def assert_featured_project(self, payload: dict) -> None:
+        section = payload["sections"][0]
+        self.assertEqual(section["type"], "single-column")
+        self.assertEqual(section["title"], "From the Projects Collection")
+
+        item = section["items"][0]
+        self.assertEqual(item["title"], "Car and Driverless")
+        self.assertEqual(
+            item["link"]["href"],
+            "https://nearfuturelaboratory.com/projects/en/car-and-driverless/",
+        )
+        self.assertEqual(item["link"]["category"], "speculative-practice")
+        self.assertEqual(
+            item["image"]["src"],
+            (
+                "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/"
+                "2375047f-1603-4221-98fc-ee9cf6a90c00/public"
+            ),
+        )
+
     def test_generator_includes_visual_defaults(self) -> None:
-        self.assert_visual_defaults(GENERATOR.generate_skeleton())
-        self.assert_visual_defaults(GENERATOR.generate_skeleton(minimal=True))
+        full = GENERATOR.generate_skeleton()
+        minimal = GENERATOR.generate_skeleton(minimal=True)
+        self.assert_visual_defaults(full)
+        self.assert_visual_defaults(minimal)
+        self.assert_featured_project(full)
+        self.assert_featured_project(minimal)
 
     def test_checked_in_skeletons_include_visual_defaults(self) -> None:
-        self.assert_visual_defaults(load_skeleton(FULL_SKELETON_PATH))
-        self.assert_visual_defaults(load_skeleton(MINIMAL_SKELETON_PATH))
+        full = load_skeleton(FULL_SKELETON_PATH)
+        minimal = load_skeleton(MINIMAL_SKELETON_PATH)
+        self.assert_visual_defaults(full)
+        self.assert_visual_defaults(minimal)
+        self.assert_featured_project(full)
+        self.assert_featured_project(minimal)
 
 
 if __name__ == "__main__":

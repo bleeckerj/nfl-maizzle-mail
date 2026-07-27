@@ -30,6 +30,16 @@ DEFAULT_INTRO_IMAGE_ALT = (
     'Newspaper page about AlgoAllo’s AI-driven sports-model training studio, '
     'with a photo of people working in a colorful office.'
 )
+DEFAULT_FEATURED_PROJECT_URL = (
+    'https://nearfuturelaboratory.com/projects/en/car-and-driverless/'
+)
+DEFAULT_FEATURED_PROJECT_IMAGE_URL = (
+    'https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/'
+    '2375047f-1603-4221-98fc-ee9cf6a90c00/public'
+)
+DEFAULT_FEATURED_PROJECT_IMAGE_ALT = (
+    'Car and Driverless, a magazine from a possible autonomous vehicle future.'
+)
 
 
 # Define all available section types and their field structures
@@ -363,6 +373,38 @@ def generate_section(section_type, minimal=False):
     return section
 
 
+def generate_featured_project_section():
+    """Generate the project item that follows the newsletter introduction."""
+    return {
+        'type': 'single-column',
+        'title': 'From the Projects Collection',
+        'items': [{
+            'title': 'Car and Driverless',
+            'link': {
+                'href': DEFAULT_FEATURED_PROJECT_URL,
+                'label': 'wXX-yYY | project | Car and Driverless',
+                'category': 'speculative-practice',
+                'intent': 'read-related'
+            },
+            'subtitle': (
+                'Imagine a world where self-driving cars are normal, ordinary, '
+                'and everyday.'
+            ),
+            'description': (
+                '<p>A 72 page full-color Design Fiction magazine from an '
+                'autonomous vehicle future, based on internal strategic vision '
+                'and roadmaps, industry focus, market analysis, and STEEP '
+                'foresight research.</p>'
+            ),
+            'image': {
+                'src': DEFAULT_FEATURED_PROJECT_IMAGE_URL,
+                'alt': DEFAULT_FEATURED_PROJECT_IMAGE_ALT
+            },
+            'readMoreText': 'View project →'
+        }]
+    }
+
+
 def generate_skeleton(sections=None, minimal=False):
     """Generate the complete newsletter skeleton."""
     
@@ -454,7 +496,10 @@ def generate_skeleton(sections=None, minimal=False):
             'logoBottom': 'https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp',
             'logoTop': 'https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp'
         },
-        'sections': [generate_section(s, minimal) for s in sections],
+        'sections': [
+            generate_featured_project_section(),
+            *[generate_section(s, minimal) for s in sections]
+        ],
         'footer': {
             'emailShare': f'mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/{current_year}/w50-y25/',
             'newsletterSubscribeLink': 'https://nearfuturelaboratory.com/newsletter/',
