@@ -71,7 +71,7 @@ title: "Near Future Laboratory Daily Headlines"
                   <td align="right" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}"><if condition="item.link && item.topRight"><a href="{{ item.link }}" style="color:inherit;text-decoration:none">{{ item.topRight }}</a></if><if condition="!item.link || !item.topRight">{{ item.topRight || '' }}</if></td>
                 </tr></tbody></table>
               </td></tr></if>
-              <tr><td style="padding:0;line-height:0;font-size:0">
+              <tr><td class="short-take-image" style="padding:{{ section.containerStyles.imagePadding || '0 18px 15px' }};line-height:0;font-size:0">
                 <if condition="item.link"><a href="{{ item.link }}" style="display:block;color:inherit;text-decoration:none"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" border="0" width="598" style="display:block;width:100%;max-width:598px;height:auto;border:0"></a></if>
                 <if condition="!item.link"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" border="0" width="598" style="display:block;width:100%;max-width:598px;height:auto;border:0"></if>
               </td></tr>

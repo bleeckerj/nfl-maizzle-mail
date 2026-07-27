@@ -100,7 +100,7 @@ test('hydrateShortTakeSections preserves scalar maxWidth and HTTPS destinations'
   });
 });
 
-test('hydrateShortTakeSections flattens caption paragraph wrappers into one flowing caption', () => {
+test('hydrateShortTakeSections preserves caption paragraph breaks', () => {
   withInventory([record({ caption: '<p>First paragraph.</p><p>Second paragraph with <strong>inline emphasis</strong>.</p>' })], ({ repoRoot }) => {
     const newsletter = { sections: [section()] };
 
@@ -108,7 +108,7 @@ test('hydrateShortTakeSections flattens caption paragraph wrappers into one flow
 
     assert.equal(
       newsletter.sections[0].items[0].caption,
-      'First paragraph. Second paragraph with <strong>inline emphasis</strong>.',
+      '<p>First paragraph.</p><p>Second paragraph with <strong>inline emphasis</strong>.</p>',
     );
   });
 });

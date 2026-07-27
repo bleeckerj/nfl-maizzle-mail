@@ -244,7 +244,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   </tr></tbody></table>
                                 </td></tr>
                               </if>
-                              <tr><td style="border-collapse:collapse;padding:0;line-height:0;font-size:0">
+                              <tr><td class="short-take-image" style="border-collapse:collapse;padding:{{ section.containerStyles.imagePadding || '0 20px 15px' }};line-height:0;font-size:0">
                                 <if condition="item.link"><a href="{{ item.link }}" style="display:block;text-decoration:none;color:inherit"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" border="0" width="638" style="-ms-interpolation-mode:bicubic;display:block;width:100%;max-width:638px;height:auto;border:0"></a></if>
                                 <if condition="!item.link"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" border="0" width="638" style="-ms-interpolation-mode:bicubic;display:block;width:100%;max-width:638px;height:auto;border:0"></if>
                               </td></tr>

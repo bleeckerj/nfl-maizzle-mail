@@ -15,6 +15,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
+    .short-take-caption p {
+      margin: 0 0 12px 0;
+      padding: 0;
+    }
+
+    .short-take-caption p:last-child {
+      margin-bottom: 0;
+    }
+
     /* Mobile font-size lock — sets body copy explicitly on small screens.
        Same pattern as dense-discovery. Don't change these without updating
        tests/newsletter-core/mobile-font-size-lock.test.mjs. */
@@ -130,9 +139,13 @@
       }
 
       .short-take-caption p {
-        display: inline !important;
-        margin: 0 !important;
+        display: block !important;
+        margin: 0 0 12px 0 !important;
         padding: 0 !important;
+      }
+
+      .short-take-caption p:last-child {
+        margin-bottom: 0 !important;
       }
       .short-take-meta,
       .short-take-meta span {

@@ -186,8 +186,11 @@ function assertRenderedShortTakes(html, templateName, middleSentinel, endSentine
   assert.equal(unlinkedCard.querySelector('img').getAttribute('alt'), 'A complete unlinked Short Take image');
   assert.match(unlinkedCard.querySelector('img').getAttribute('style'), /width:\s*100%/i);
   assert.match(unlinkedCard.querySelector('img').getAttribute('style'), /height:\s*auto/i);
-  assert.equal(unlinkedCard.querySelectorAll('p').length, 0);
-  assert.match(unlinkedCard.textContent, /Short Take caption\. Second caption sentence\./);
+  const imagePadding = templateName === 'dense-discovery' ? /padding:0 20px 15px/i : /padding:0 18px 15px/i;
+  assert.match(unlinkedCard.querySelector('img').closest('td').getAttribute('style'), imagePadding);
+  assert.equal(unlinkedCard.querySelectorAll('p').length, 2);
+  assert.equal(unlinkedCard.querySelectorAll('p')[0].textContent.trim(), 'Unlinked Short Take caption.');
+  assert.equal(unlinkedCard.querySelectorAll('p')[1].textContent.trim(), 'Second caption sentence.');
 
   const linkedCard = cards[1];
   const anchors = [...linkedCard.querySelectorAll('a[href="https://example.com/short-take"]')];
