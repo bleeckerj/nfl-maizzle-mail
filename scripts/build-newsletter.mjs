@@ -1991,7 +1991,11 @@ async function buildNewsletter() {
           const templateHeadingStyles = safeUsedConfig.headingStyles && typeof safeUsedConfig.headingStyles === 'object'
             ? { ...safeUsedConfig.headingStyles }
             : {};
-          section.headingStyles = { ...templateHeadingStyles, ...inheritableContentStyles, ...incomingHeadingStyles };
+          // A Short Take headline has an independent typographic role. Do not let
+          // its caption styles overwrite its size, family, or weight.
+          section.headingStyles = section.type === 'short-take'
+            ? { ...templateHeadingStyles, ...incomingHeadingStyles }
+            : { ...templateHeadingStyles, ...inheritableContentStyles, ...incomingHeadingStyles };
           section.linkStyles = mergedLinkStyles;
           const incomingLabelStyles = section.labelStyles && typeof section.labelStyles === 'object'
             ? { ...section.labelStyles }

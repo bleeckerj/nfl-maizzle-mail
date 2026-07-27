@@ -195,6 +195,19 @@ function assertRenderedShortTakes(html, templateName, middleSentinel, endSentine
   assert.equal(unlinkedCard.querySelectorAll('p').length, 2);
   assert.equal(unlinkedCard.querySelectorAll('p')[0].textContent.trim(), 'Unlinked Short Take caption.');
   assert.equal(unlinkedCard.querySelectorAll('p')[1].textContent.trim(), 'Second caption sentence.');
+  const shortTakeHeadline = unlinkedCard.querySelector('h2');
+  const shortTakeCaption = shortTakeHeadline?.nextElementSibling;
+  assert.ok(shortTakeHeadline);
+  assert.ok(shortTakeCaption);
+  const expectedType = templateName === 'dense-discovery'
+    ? { headlineSize: '24px', headlineLineHeight: '28px', captionSize: '15px', captionLineHeight: '21px' }
+    : { headlineSize: '23px', headlineLineHeight: '27px', captionSize: '14px', captionLineHeight: '20px' };
+  assert.match(shortTakeHeadline.getAttribute('style') || '', new RegExp(`font-size:\\s*${expectedType.headlineSize}`, 'i'));
+  assert.match(shortTakeHeadline.getAttribute('style') || '', new RegExp(`line-height:\\s*${expectedType.headlineLineHeight}`, 'i'));
+  assert.match(shortTakeHeadline.getAttribute('style') || '', /font-weight:\s*700/i);
+  assert.match(shortTakeCaption.getAttribute('style') || '', new RegExp(`font-size:\\s*${expectedType.captionSize}`, 'i'));
+  assert.match(shortTakeCaption.getAttribute('style') || '', new RegExp(`line-height:\\s*${expectedType.captionLineHeight}`, 'i'));
+  assert.match(shortTakeCaption.getAttribute('style') || '', /font-weight:\s*400/i);
 
   const linkedCard = cards[1];
   const anchors = [...linkedCard.querySelectorAll('a[href="https://example.com/short-take"]')];
