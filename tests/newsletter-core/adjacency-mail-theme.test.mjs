@@ -23,6 +23,18 @@ test('adjacency mail section overrides derive from the canonical mail theme toke
     adjacencyMailThemeTokens.ad.copy.fontFamily,
   );
   assert.equal(
+    overrides['ad-block'].linkStyles.fontSize,
+    overrides['ad-block'].labelStyles.fontSize,
+  );
+  assert.equal(
+    overrides['ad-block'].linkStyles.lineHeight,
+    overrides['ad-block'].labelStyles.lineHeight,
+  );
+  assert.equal(
+    overrides['ad-block'].linkStyles.letterSpacing,
+    overrides['ad-block'].labelStyles.letterSpacing,
+  );
+  assert.equal(
     overrides['adjacency-feature'].headingStyles.fontFamily,
     adjacencyMailThemeTokens.featureSection.title.fontFamily,
   );

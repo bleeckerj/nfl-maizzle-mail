@@ -1843,11 +1843,17 @@ async function buildNewsletter() {
           const templateLinkStyles = (safeUsedConfig.linkStyles && typeof safeUsedConfig.linkStyles === 'object')
             ? safeUsedConfig.linkStyles
             : {};
-          const mergedLinkStyles = {
-            ...templateLinkStyles,
-            ...inheritableContentStyles,
-            ...incomingLinkStyles,
-          };
+          const mergedLinkStyles = section.type === 'ad-block'
+            ? {
+                ...inheritableContentStyles,
+                ...templateLinkStyles,
+                ...incomingLinkStyles,
+              }
+            : {
+                ...templateLinkStyles,
+                ...inheritableContentStyles,
+                ...incomingLinkStyles,
+              };
           if (section.type === 'intro_statement' && normalizeIntroStatementSection(section)) {
             section.statement_rendered_html = sanitizeHtmlFragment(section.statement_rendered_html);
             if ((mergedLinkStyles && Object.keys(mergedLinkStyles).length > 0) || theme?.linkAccent) {

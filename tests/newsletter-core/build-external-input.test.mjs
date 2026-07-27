@@ -870,6 +870,8 @@ test('build-newsletter aligns dense-discovery ad-block footer CTA to the image r
     assert.match(html, /align="left"[^>]*width="50%"[^>]*width:\s*50%/);
     assert.match(html, /align="right"[^>]*width="50%"[^>]*text-align:\s*right/);
     assert.match(html, /<p class="mob-readmore" align="right"[^>]*display:\s*inline-block/);
+    assert.match(html, /<p class="mob-readmore"[^>]*font-size:11px;line-height:14px/);
+    assert.match(html, /<a href="https:\/\/nearfuturelaboratory\.com\/contact"[^>]*font-size:11px;line-height:14px/);
     assert.match(html, /<a href="https:\/\/nearfuturelaboratory\.com\/contact"[^>]*display:\s*inline-block[^>]*>/);
   } finally {
     rmSync(tempRoot, { recursive: true, force: true });
