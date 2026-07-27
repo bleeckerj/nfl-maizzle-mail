@@ -405,6 +405,7 @@ def generate_skeleton(sections=None, minimal=False):
             'content': '<p>Introduction paragraph for the newsletter.</p>'
         },
         'header': {
+            'logoLink': 'https://nearfuturelaboratory.com',
             'quote': 'Inspiring header quote',
             'author': 'Quote Author',
             'featuredArtist': {
