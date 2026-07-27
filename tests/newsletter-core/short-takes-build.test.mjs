@@ -19,7 +19,7 @@ const inventory = [
       url: 'https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b3786ce1-69f3-4bc5-b55a-6b3f5e77f800/public',
       altText: 'A complete unlinked Short Take image',
     },
-    caption: 'Unlinked Short Take caption.',
+    caption: '<p>Unlinked Short Take caption.</p><p>Second caption sentence.</p>',
     maxWidth: '95%',
     topLeft: 'AUTONOMOUS NEWS',
     bottomLeft: 'WOULD YOU LIKE TO KNOW MORE?',
@@ -160,7 +160,7 @@ function buildFixture(templateName, source) {
   }
 }
 
-function assertRenderedShortTakes(html, middleSentinel, endSentinel, { linkedAnchorCount = 2 } = {}) {
+function assertRenderedShortTakes(html, templateName, middleSentinel, endSentinel, { linkedAnchorCount = 2 } = {}) {
   const dom = new JSDOM(html);
   const { document } = dom.window;
   const cards = [...document.querySelectorAll('[data-short-take-id]')];
@@ -186,6 +186,8 @@ function assertRenderedShortTakes(html, middleSentinel, endSentinel, { linkedAnc
   assert.equal(unlinkedCard.querySelector('img').getAttribute('alt'), 'A complete unlinked Short Take image');
   assert.match(unlinkedCard.querySelector('img').getAttribute('style'), /width:\s*100%/i);
   assert.match(unlinkedCard.querySelector('img').getAttribute('style'), /height:\s*auto/i);
+  assert.equal(unlinkedCard.querySelectorAll('p').length, 0);
+  assert.match(unlinkedCard.textContent, /Short Take caption\. Second caption sentence\./);
 
   const linkedCard = cards[1];
   const anchors = [...linkedCard.querySelectorAll('a[href="https://example.com/short-take"]')];
@@ -200,15 +202,29 @@ function assertRenderedShortTakes(html, middleSentinel, endSentinel, { linkedAnc
   assert.match(linkedCard.textContent, /Linked Short Take Headline/);
   assert.match(linkedCard.textContent, /SHORT TAKES FROM AN ADJACENT NOW/);
   assert.match(linkedCard.textContent, /NFL/);
+
+  if (templateName === 'dense-discovery') {
+    assert.equal(cardRow(unlinkedCard).previousElementSibling?.querySelector('.spacer'), null);
+  } else {
+    const wrapper = unlinkedCard.parentElement?.parentElement?.parentElement?.parentElement;
+    assert.ok(wrapper);
+    assert.equal(wrapper.tBodies[0].rows.length, 1);
+    assert.equal(wrapper.tBodies[0].rows[0].querySelector('table[data-short-take-id]'), unlinkedCard);
+  }
+}
+
+function cardRow(card) {
+  return card.closest('tr');
 }
 
 test('dense-discovery builds ordered linked and unlinked Short Takes', () => {
-  assertRenderedShortTakes(buildFixture('dense-discovery', denseFixture()), 'DENSE MIDDLE SENTINEL', 'DENSE END SENTINEL');
+  assertRenderedShortTakes(buildFixture('dense-discovery', denseFixture()), 'dense-discovery', 'DENSE MIDDLE SENTINEL', 'DENSE END SENTINEL');
 });
 
 test('near-future-lab-daily-headlines builds ordered linked and unlinked Short Takes', () => {
   assertRenderedShortTakes(
     buildFixture('near-future-lab-daily-headlines', dailyFixture()),
+    'near-future-lab-daily-headlines',
     'DAILY MIDDLE SENTINEL',
     'DAILY END SENTINEL',
     { linkedAnchorCount: 4 },

@@ -168,7 +168,6 @@
       "name": "Short Take",
       "description": "Registry-backed editorial card with full-width image, headline, caption, and optional edge metadata.",
       "containerStyles": {
-        "paddingTop": "25px",
         "backgroundColor": "#FFFFFF",
         "borderColor": "#c9cfdb",
         "borderWidth": "1px",

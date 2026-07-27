@@ -100,6 +100,19 @@ test('hydrateShortTakeSections preserves scalar maxWidth and HTTPS destinations'
   });
 });
 
+test('hydrateShortTakeSections flattens caption paragraph wrappers into one flowing caption', () => {
+  withInventory([record({ caption: '<p>First paragraph.</p><p>Second paragraph with <strong>inline emphasis</strong>.</p>' })], ({ repoRoot }) => {
+    const newsletter = { sections: [section()] };
+
+    hydrateShortTakeSections(newsletter, repoRoot, { logger: { log() {} } });
+
+    assert.equal(
+      newsletter.sections[0].items[0].caption,
+      'First paragraph. Second paragraph with <strong>inline emphasis</strong>.',
+    );
+  });
+});
+
 test('hydrateShortTakeSections threads tracked-link destination metadata with defaults', () => {
   withInventory([
     record({

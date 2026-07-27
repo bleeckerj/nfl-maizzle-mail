@@ -62,7 +62,6 @@ title: "Near Future Laboratory Daily Headlines"
 
     <if condition="section.type === 'short-take'">
       <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" class="short-take{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" style="border-spacing:0;width:100%"><tbody>
-        <tr><td style="height:{{ section.containerStyles.paddingTop || '15px' }};font-size:0;line-height:0">&#8203;</td></tr>
         <each loop="item in section.items">
           <tr><td style="padding:0">
             <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" data-short-take-id="{{ item.shortTakeId }}" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}" style="border-spacing:0;background:{{ section.containerStyles.backgroundColor || '#ffffff' }};border:{{ section.containerStyles.borderWidth || '1px' }} {{ section.containerStyles.borderStyle || 'solid' }} {{ section.containerStyles.borderColor || '#dcdcdc' }}"><tbody>
@@ -89,7 +88,6 @@ title: "Near Future Laboratory Daily Headlines"
             </tbody></table>
           </td></tr>
         </each>
-        <tr><td style="height:{{ section.containerStyles.paddingBottom || '15px' }};font-size:0;line-height:0">&#8203;</td></tr>
       </tbody></table>
     </if>
 
