@@ -190,7 +190,7 @@ function assertRenderedShortTakes(html, templateName, middleSentinel, endSentine
   assert.equal(unlinkedCard.querySelector('img').getAttribute('alt'), 'A complete unlinked Short Take image');
   assert.match(unlinkedCard.querySelector('img').getAttribute('style'), /width:\s*100%/i);
   assert.match(unlinkedCard.querySelector('img').getAttribute('style'), /height:\s*auto/i);
-  const imagePadding = templateName === 'dense-discovery' ? /padding:0 12px 15px/i : /padding:0 18px 15px/i;
+  const imagePadding = templateName === 'dense-discovery' ? /padding:0 0 15px/i : /padding:0 18px 15px/i;
   assert.match(unlinkedCard.querySelector('img').closest('td').getAttribute('style'), imagePadding);
   assert.equal(unlinkedCard.querySelectorAll('p').length, 2);
   assert.equal(unlinkedCard.querySelectorAll('p')[0].textContent.trim(), 'Unlinked Short Take caption.');
