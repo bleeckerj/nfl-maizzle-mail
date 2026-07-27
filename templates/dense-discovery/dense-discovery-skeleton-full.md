@@ -13,8 +13,12 @@ socialCard:
   backgroundImage: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=900?format=webp
   logoUrl: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=200?format=webp
   titleFont: nfl-title-untitled
+  titleFontScale: 0.7
   subtitleFont: nfl-subtitle
+  subtitleFontScale: 0.9
   kickerFont: nfl-kicker
+  kickerFontScale: 1.0
+  footerFontScale: 1.0
   backgroundOpacity: 1
   backgroundHueRotate: 0
   backgroundSaturation: 1.08
@@ -35,6 +39,9 @@ sectionStylesFile: templates/dense-discovery/section-styles.json
 colorTheme: 'winter'
 intro:
   title: Welcome
+  images:
+  - src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=600?format=webp
+    alt: Newspaper page about AlgoAllo’s AI-driven sports-model training studio, with a photo of people working in a colorful office.
   aside:
     content: <p>Teaser/lede text that sets up the intro content.</p>
     containerStyles:

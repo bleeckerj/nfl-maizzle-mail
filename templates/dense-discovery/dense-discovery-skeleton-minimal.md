@@ -8,7 +8,13 @@ socialCard:
   # Export metadata for social/platform cards; not rendered inside the email.
   title: Newsletter Title
   subtitle: Short preview text that appears in email clients
+  titleFont: nfl-title-untitled
+  titleFontScale: 0.7
+  subtitleFont: nfl-subtitle
+  subtitleFontScale: 0.9
   kickerFont: nfl-kicker
+  kickerFontScale: 1.0
+  footerFontScale: 1.0
   backgroundImage: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=900?format=webp
   logoUrl: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=200?format=webp
   backgroundOpacity: 1
@@ -23,7 +29,9 @@ socialCard:
 sectionStylesFile: templates/dense-discovery/section-styles.json
 intro:
   title: Welcome
-  viewOnlineLink: https://nearfuturelaboratory.com/newsletters/2026/wxx-yxx
+  images:
+  - src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=600?format=webp
+    alt: Newspaper page about AlgoAllo’s AI-driven sports-model training studio, with a photo of people working in a colorful office.
   aside:
     content: <p>Teaser/lede text that sets up the intro content.</p>
     containerStyles:

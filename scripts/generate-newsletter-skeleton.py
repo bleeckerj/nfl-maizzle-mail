@@ -21,6 +21,17 @@ from datetime import datetime
 from pathlib import Path
 
 
+DEFAULT_NEWSLETTER_IMAGE_ID = 'b1ae3684-fdc5-4665-95ae-0a66893ff200'
+DEFAULT_NEWSLETTER_IMAGE_BASE_URL = (
+    'https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/'
+    f'{DEFAULT_NEWSLETTER_IMAGE_ID}'
+)
+DEFAULT_INTRO_IMAGE_ALT = (
+    'Newspaper page about AlgoAllo’s AI-driven sports-model training studio, '
+    'with a photo of people working in a colorful office.'
+)
+
+
 # Define all available section types and their field structures
 SECTION_DEFINITIONS = {
     'ad-block': {
@@ -363,13 +374,40 @@ def generate_skeleton(sections=None, minimal=False):
     # Build the data structure
     data = {
         'template': 'dense-discovery',
+        'newsletterFormat': 'discovery',
         'title': 'Newsletter Title',
         'preheader': 'Short preview text that appears in email clients',
-        'ogImage': 'https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=900?format=webp',
+        'ogImage': f'{DEFAULT_NEWSLETTER_IMAGE_BASE_URL}/w=900?format=webp',
+        'ogImageAltText': 'Open graph preview image for this newsletter',
+        'socialCard': {
+            'title': 'Newsletter Title',
+            'subtitle': 'Short preview text that appears in email clients',
+            'kicker': 'Welcome',
+            'backgroundImage': f'{DEFAULT_NEWSLETTER_IMAGE_BASE_URL}/w=900?format=webp',
+            'logoUrl': 'https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=200?format=webp',
+            'titleFont': 'nfl-title-untitled',
+            'titleFontScale': 0.7,
+            'subtitleFont': 'nfl-subtitle',
+            'subtitleFontScale': 0.9,
+            'kickerFont': 'nfl-kicker',
+            'kickerFontScale': 1.0,
+            'footerFontScale': 1.0,
+            'backgroundOpacity': 1,
+            'backgroundHueRotate': 0,
+            'backgroundSaturation': 1.08,
+            'overlayStrength': 0.46,
+            'imageBrightness': 0.7,
+            'textColor': '#f5f2eb',
+            'mutedTextColor': 'rgba(255,255,255,0.82)',
+            'kickerColor': '#ffb000'
+        },
         'sectionStylesFile': 'templates/dense-discovery/section-styles.json',
         'intro': {
             'title': 'Welcome',
-            'viewOnlineLink': f'https://nearfuturelaboratory.com/newsletters/{current_year}/wxx-yxx',
+            'images': [{
+                'src': f'{DEFAULT_NEWSLETTER_IMAGE_BASE_URL}/w=600?format=webp',
+                'alt': DEFAULT_INTRO_IMAGE_ALT
+            }],
             'aside': {
                 'content': '<p>Teaser/lede text that sets up the intro content.</p>',
                 'containerStyles': {
