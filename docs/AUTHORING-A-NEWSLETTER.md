@@ -224,6 +224,8 @@ Dense-discovery's approved mobile scale is recorded in the append-only, hash-cha
 
 Do not edit or remove an existing ledger record. An explicitly approved typography change is represented by appending a new sequence entry whose `previousHash` is the prior entry's `hash`. The verifier checks the hash chain and compares the ledger with its Git parent, so a previously committed line cannot be rewritten or deleted. The canonical build also fails if the source or rendered CSS drifts from the latest record.
 
+Ad-card chrome has one size contract: the top label, lower-left sponsor, and lower-right CTA all use the `mob-meta` mobile role. Keep linked CTA text in that role as well; `mob-readmore` is reserved for full-size editorial read-more links and will make an ad-corner CTA larger than its neighboring metadata.
+
 ---
 
 ## Building the email

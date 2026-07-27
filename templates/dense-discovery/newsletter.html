@@ -206,7 +206,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                           </td>
                                           <td align="right" valign="middle" width="50%" style="border-collapse: collapse;padding: 0;width: 50%;text-align: right;">
                                             <if condition="(item.readMoreLink || item.link) && item.readMoreText">
-                                              <p class="mob-readmore" align="right" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}margin: 0;padding: 0;display: inline-block;text-align: right;">
+                                              <p class="mob-meta" align="right" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}margin: 0;padding: 0;display: inline-block;text-align: right;">
                                                 <a href="{{ item.readMoreLink || item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}display: inline-block;text-align: right;">{{ item.readMoreText }}</a>
                                               </p>
                                             </if>

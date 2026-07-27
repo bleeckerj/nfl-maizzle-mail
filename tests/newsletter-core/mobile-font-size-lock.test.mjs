@@ -102,6 +102,26 @@ test('dense-discovery layout forces larger mobile body copy with literal values'
   assert.doesNotMatch(mobileBlock, /undefined\s*!important/);
 });
 
+test('dense-discovery ad footer CTA uses the same mobile metadata size as the other corner text', () => {
+  const template = readFileSync(DENSE_DISCOVERY_TEMPLATE, 'utf8');
+  const adBlockStart = template.indexOf("section.type === 'ad-block'");
+  const adBlockEnd = template.indexOf('<!-- AD-BLOCK End -->', adBlockStart);
+  const adBlock = template.slice(adBlockStart, adBlockEnd);
+
+  assert.notEqual(adBlockStart, -1);
+  assert.notEqual(adBlockEnd, -1);
+  assert.match(adBlock, /<div class="mob-meta"[^>]*>\{\{ item\.label \}\}<\/div>/);
+  assert.match(adBlock, /<p class="mob-meta"[^>]*>\{\{ item\.sponsor \}\}<\/p>/);
+  assert.match(
+    adBlock,
+    /<p class="mob-meta"[^>]*>[\s\S]*?<a href="\{\{ item\.readMoreLink \|\| item\.link \}\}"[^>]*>\{\{ item\.readMoreText \}\}<\/a>\s*<\/p>/,
+  );
+  assert.doesNotMatch(
+    adBlock,
+    /<p class="mob-readmore"[^>]*>[\s\S]*?\{\{ item\.readMoreText \}\}[\s\S]*?<\/p>/,
+  );
+});
+
 test('dense-discovery mobile typography ledger is hash-chained and verifies source CSS', () => {
   const { entry } = getLatestMobileTypographyLock(REPO_ROOT, 'dense-discovery');
   const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
