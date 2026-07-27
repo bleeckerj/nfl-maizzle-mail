@@ -220,7 +220,9 @@ Each bucket accepts CSS-style properties in camelCase (`backgroundColor`, `fontS
 
 Every decompiler-generated template ships with a `globalOverrides.mobileAdjustments` block in `section-styles.json` that bumps body text to 23px on screens ≤ 599px (matching the dense-discovery readability pattern). You don't need to do anything in your Markdown to opt in — components automatically get `class="mob-text"` applied so the media query targets them.
 
-If you want to disable or change this for a specific newsletter, edit the template's `section-styles.json` — but that change affects all issues built against that template.
+Dense-discovery's approved mobile scale is recorded in the append-only, hash-chained `config/mobile-typography-locks.jsonl` ledger. Every canonical build compares the template CSS, `section-styles.json`, and rendered HTML with the latest ledger entry. A successful build writes `<output>.mobile-typography-verification.json` beside the HTML.
+
+Do not edit or remove an existing ledger record. An explicitly approved typography change is represented by appending a new sequence entry whose `previousHash` is the prior entry's `hash`. The verifier checks the hash chain and compares the ledger with its Git parent, so a previously committed line cannot be rewritten or deleted. The canonical build also fails if the source or rendered CSS drifts from the latest record.
 
 ---
 

@@ -36,6 +36,7 @@ import {
   validateLinks,
 } from '../lib/newsletter-core/link-validation.mjs';
 import { withBuildProductionLock } from '../lib/newsletter-core/build-directory-lock.mjs';
+import { verifyMobileTypographyLock } from '../lib/newsletter-core/mobile-typography-lock.mjs';
 
 const DARK_MODE_FLATTEN_DISABLE_FLAG = '--no-dark-mode-flatten';
 const DARK_MODE_FLATTEN_COLORS = {
@@ -2699,6 +2700,14 @@ async function buildNewsletter() {
       existingOutputRawBeforeBuild,
       hardenedBuiltHtml.html,
     );
+    const mobileTypographyVerification = verifyMobileTypographyLock({
+      repoRoot: REPO_ROOT,
+      templateName,
+      renderedHtml: finalOutputRaw,
+      sourcePath: sourcePathForWarnings,
+      outputHtmlPath: finalOutputPath,
+      outputName,
+    });
     fs.writeFileSync(finalOutputPath, finalOutputRaw, 'utf8');
     writeCalendarEventFiles(calendarEvents.events, { fs, path, logger: console });
     const linkTrackingManifestPath = path.join(outputDir, `${outputName}.link-tracking-manifest.json`);
@@ -2732,6 +2741,19 @@ async function buildNewsletter() {
       )}\n`,
       'utf8',
     );
+    const mobileTypographyVerificationPath = mobileTypographyVerification
+      ? path.join(outputDir, `${outputName}.mobile-typography-verification.json`)
+      : null;
+    if (mobileTypographyVerificationPath) {
+      fs.writeFileSync(
+        mobileTypographyVerificationPath,
+        `${JSON.stringify(mobileTypographyVerification, null, 2)}\n`,
+        'utf8',
+      );
+      console.log(
+        `🔒 Mobile typography verified against append-only lock ${mobileTypographyVerification.lock.hash}`,
+      );
+    }
     if (preservedFrontmatter) {
       console.log('🧷 Preserved existing HTML frontmatter');
     }
@@ -2745,6 +2767,9 @@ async function buildNewsletter() {
     console.log(`📧 File: ${finalOutputPath}`);
     console.log(`🧾 Link tracking manifest: ${linkTrackingManifestPath}`);
     console.log(`🧩 Content slot manifest: ${contentSlotManifestPath}`);
+    if (mobileTypographyVerificationPath) {
+      console.log(`🔒 Mobile typography verification: ${mobileTypographyVerificationPath}`);
+    }
     console.log(`🎨 Template: ${templateName}`);
     console.log(`📄 Source: ${inputPath}`);
     

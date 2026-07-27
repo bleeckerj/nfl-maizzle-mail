@@ -40,6 +40,11 @@ This file documents the canonical structure and workflow for `nfl-maizzle-mail` 
    - Before scaffolding or revising a production newsletter template, read `docs/newsletter-template-operating-process.md`.
    - New templates should carry forward the dense-discovery-derived workflow for tracked link objects, `ad-block` hydration from `nfl-editorial` ad ids, deterministic build-injected view-online links, per-template schemas, and canonical build verification.
 
+6. **Treat mobile typography approvals as append-only records.**
+   - `config/mobile-typography-locks.jsonl` is the canonical mobile-size ledger.
+   - Never edit or remove an existing record. Explicitly approved changes append a new hash-chained record.
+   - Canonical builds must verify template CSS, section-style tokens, and rendered HTML, then write the mobile typography verification sidecar.
+
 ## Expected Build Flow
 
 1. Input Markdown or JSON is normalized into `data/newsletter.json`.
