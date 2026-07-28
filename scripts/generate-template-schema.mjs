@@ -421,8 +421,38 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
     footerCtaSchema.properties.variant = {};
   }
 
+  const footerProperties = schema.properties.footer?.properties;
+  if (footerProperties) {
+    footerProperties.workCtaLabel = {};
+    footerProperties.workCtaUrl = {};
+  }
+
+  const viewOnlineLinkSchema = schema.properties.intro?.properties?.viewOnlineLink;
+  if (viewOnlineLinkSchema) {
+    schema.properties.intro.properties.viewOnlineLink = {
+      oneOf: [
+        { type: 'string' },
+        viewOnlineLinkSchema,
+      ],
+    };
+  }
+
   const templateId = path.basename(path.dirname(entryAbsPath));
   if (templateId !== 'dense-discovery') return;
+
+  const adjacencyJobsVariant = findTypedSectionVariant(schema, 'adjacency-job-posting');
+  if (adjacencyJobsVariant?.properties) {
+    adjacencyJobsVariant.properties.brandVariant = {};
+    adjacencyJobsVariant.properties.canonicalUrl = {};
+
+    const listsSchema = adjacencyJobsVariant.properties.lists;
+    const listProperties = listsSchema?.items?.properties;
+    if (listProperties) {
+      listProperties.id = {};
+      listProperties.items = { type: 'array', items: {} };
+      listProperties.itemsHtml = { type: 'array', items: {} };
+    }
+  }
 
   const adBlockVariant = findTypedSectionVariant(schema, 'ad-block');
   const adBlockItemSchema = adBlockVariant?.properties?.items?.items;

@@ -231,6 +231,13 @@ test('build-newsletter accepts an absolute external issue path with adjacency-jo
       'title: External Adjacency Jobs Issue',
       'preheader: External jobs issue build validation',
       'sectionStylesFile: templates/dense-discovery/section-styles.json',
+      'intro:',
+      '  title: Jobs Dispatch',
+      '  viewOnlineLink: https://theadjacency.com/jobs/anthropic/expression-of-interest-team-founder-speculative-prototyping',
+      '  content: <p>Read this job on The Adjacency.</p>',
+      'footer:',
+      '  workCtaLabel: Available for strategy collaborations',
+      '  workCtaUrl: https://nearfuturelaboratory.com/connect/',
       'sections:',
       '  - type: adjacency-job-posting',
       '    brandVariant: anthropic',
@@ -258,7 +265,7 @@ test('build-newsletter accepts an absolute external issue path with adjacency-jo
   );
 
   try {
-    execFileSync(
+    const buildOutput = execFileSync(
       process.execPath,
       [
         BUILD_SCRIPT,
@@ -272,6 +279,8 @@ test('build-newsletter accepts an absolute external issue path with adjacency-jo
         encoding: 'utf8',
       },
     );
+
+    assert.doesNotMatch(buildOutput, /Schema validation found/);
 
     const builtHtmlPath = path.join(outputDir, `${outputName}.html`);
     assert.ok(existsSync(builtHtmlPath));

@@ -148,19 +148,40 @@ test('dense-discovery mobile typography verifier rejects rendered size drift', (
     'font-size: 23px !important;',
     'font-size: 19px !important;',
   );
+  const renderedHtml = `${extractMobileMediaBlock(driftedLayout)}<p class="mob-text">Body copy</p>`;
 
   assert.throws(
     () =>
       verifyMobileTypographyLock({
         repoRoot: REPO_ROOT,
         templateName: 'dense-discovery',
-        renderedHtml: driftedLayout,
+        renderedHtml,
         sourcePath: 'fixture.md',
         outputHtmlPath: 'fixture.html',
         outputName: 'fixture',
       }),
     /rendered HTML mobile typography drift for body font-size/,
   );
+});
+
+test('dense-discovery mobile typography verifier skips unused compound selectors in rendered jobs markup', () => {
+  const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
+  const mobileBlock = extractMobileMediaBlock(layout).replace(
+    /\n\s*\.mob-title \.mob-meta,[\s\S]*?\n\s*\}/,
+    '',
+  );
+  const renderedHtml = `${mobileBlock}<h1 class="mob-title">Job title</h1><p class="mob-meta">Meta</p>`;
+
+  const verification = verifyMobileTypographyLock({
+    repoRoot: REPO_ROOT,
+    templateName: 'dense-discovery',
+    renderedHtml,
+    sourcePath: 'fixture.md',
+    outputHtmlPath: 'fixture.html',
+    outputName: 'fixture',
+  });
+
+  assert.equal(verification.status, 'verified');
 });
 
 test('dense-discovery semantic section and item headings opt into the mobile title lock', () => {

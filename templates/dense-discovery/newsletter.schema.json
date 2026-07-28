@@ -158,7 +158,9 @@
         "unsubscribeLink": {},
         "archiveUrl": {},
         "archiveLabel": {},
-        "address": {}
+        "address": {},
+        "workCtaLabel": {},
+        "workCtaUrl": {}
       },
       "additionalProperties": false
     },
@@ -235,11 +237,18 @@
         "quote": {},
         "title": {},
         "viewOnlineLink": {
-          "type": "object",
-          "properties": {
-            "href": {}
-          },
-          "additionalProperties": false
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "href": {}
+              },
+              "additionalProperties": false
+            }
+          ]
         },
         "images": {
           "type": "array",
@@ -359,19 +368,15 @@
               "image",
               "indie-mag",
               "indie-mag-single-column",
+              "inline_cta",
               "microdrop-institution-service",
               "microdrop-product-launch",
               "quote",
               "short-take",
               "signals-adjacent-now",
               "single-column",
-              "sponsor",
-              "inline_cta"
+              "sponsor"
             ]
-          },
-          "border_radius": {
-            "type": ["integer", "string"],
-            "description": "Corner radius in pixels for inline_cta. Defaults to 0 (square corners)."
           }
         },
         "additionalProperties": true,
@@ -486,51 +491,6 @@
                   "additionalProperties": true
                 }
               },
-              "additionalProperties": false
-            }
-          },
-          {
-            "if": {
-              "type": "object",
-              "required": [
-                "type"
-              ],
-              "properties": {
-                "type": {
-                  "const": "short-take"
-                }
-              }
-            },
-            "then": {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "const": "short-take"
-                },
-                "items": {
-                  "type": "array",
-                  "minItems": 1,
-                  "maxItems": 1,
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "shortTakeId": {
-                        "type": "string",
-                        "pattern": "\\S",
-                        "description": "Short Take id from nfl-editorial/src/content/shortTakes.json."
-                      }
-                    },
-                    "required": [
-                      "shortTakeId"
-                    ],
-                    "additionalProperties": false
-                  }
-                }
-              },
-              "required": [
-                "type",
-                "items"
-              ],
               "additionalProperties": false
             }
           },
@@ -722,7 +682,15 @@
                     "type": "object",
                     "properties": {
                       "title": {},
-                      "itemsHtml": {}
+                      "itemsHtml": {
+                        "type": "array",
+                        "items": {}
+                      },
+                      "id": {},
+                      "items": {
+                        "type": "array",
+                        "items": {}
+                      }
                     },
                     "additionalProperties": false
                   }
@@ -792,7 +760,9 @@
                     "null"
                   ],
                   "additionalProperties": true
-                }
+                },
+                "brandVariant": {},
+                "canonicalUrl": {}
               },
               "additionalProperties": false
             }
@@ -1525,65 +1495,6 @@
                       },
                       "image": {},
                       "description": {},
-                      "platformLinks": {
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "required": [
-                            "platform",
-                            "label",
-                            "url"
-                          ],
-                          "properties": {
-                            "platform": {
-                              "enum": [
-                                "spotify",
-                                "youtube",
-                                "apple-podcasts"
-                              ]
-                            },
-                            "label": {
-                              "type": "string"
-                            },
-                            "url": {
-                              "type": "string"
-                            },
-                            "category": {
-                              "type": "string"
-                            },
-                            "intent": {
-                              "type": "string"
-                            },
-                            "interests": {
-                              "oneOf": [
-                                {
-                                  "type": "array",
-                                  "items": {
-                                    "type": "string"
-                                  }
-                                },
-                                {
-                                  "type": "string"
-                                }
-                              ]
-                            },
-                            "interest": {
-                              "oneOf": [
-                                {
-                                  "type": "array",
-                                  "items": {
-                                    "type": "string"
-                                  }
-                                },
-                                {
-                                  "type": "string"
-                                }
-                              ]
-                            }
-                          },
-                          "additionalProperties": false
-                        }
-                      },
                       "platformLinksHtml": {},
                       "readMoreText": {},
                       "readMoreTxt": {},
@@ -1988,6 +1899,99 @@
                   "additionalProperties": false
                 },
                 "contentStylesInline": {},
+                "headingStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "linkStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
+                  "const": "inline_cta"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "inline_cta"
+                },
+                "space_top": {},
+                "background": {},
+                "border_width": {},
+                "border_color": {},
+                "border_radius": {},
+                "eyebrow_color": {},
+                "font_family": {},
+                "eyebrow": {},
+                "statement": {},
+                "text_color": {},
+                "primaryAction": {
+                  "type": "object",
+                  "properties": {
+                    "url": {},
+                    "label": {}
+                  },
+                  "additionalProperties": false
+                },
+                "button_background": {},
+                "button_border_color": {},
+                "button_text_color": {},
+                "secondaryAction": {
+                  "type": "object",
+                  "properties": {
+                    "url": {},
+                    "label": {}
+                  },
+                  "additionalProperties": false
+                },
+                "secondary_button_background": {},
+                "secondary_button_border_color": {},
+                "secondary_button_text_color": {},
+                "space_bottom": {},
+                "headingStylesInline": {},
+                "linkStylesInline": {},
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {},
+                    "additionalProperties": false
+                  }
+                },
+                "containerStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "contentStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
                 "headingStyles": {
                   "type": [
                     "object",
@@ -2509,6 +2513,79 @@
               ],
               "properties": {
                 "type": {
+                  "const": "short-take"
+                }
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "short-take"
+                },
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "shortTakeId": {},
+                      "topLeft": {},
+                      "topRight": {},
+                      "link": {},
+                      "image": {},
+                      "imageAlt": {},
+                      "headline": {},
+                      "caption": {},
+                      "bottomLeft": {},
+                      "bottomRight": {}
+                    },
+                    "additionalProperties": false
+                  }
+                },
+                "containerStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "labelStylesInline": {},
+                "headingStylesInline": {},
+                "contentStylesInline": {},
+                "linkStylesInline": {},
+                "contentStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "headingStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                },
+                "linkStyles": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "properties": {
+                "type": {
                   "const": "signals-adjacent-now"
                 }
               }
@@ -2798,65 +2875,6 @@
                       },
                       "image": {},
                       "description": {},
-                      "platformLinks": {
-                        "type": "array",
-                        "items": {
-                          "type": "object",
-                          "required": [
-                            "platform",
-                            "label",
-                            "url"
-                          ],
-                          "properties": {
-                            "platform": {
-                              "enum": [
-                                "spotify",
-                                "youtube",
-                                "apple-podcasts"
-                              ]
-                            },
-                            "label": {
-                              "type": "string"
-                            },
-                            "url": {
-                              "type": "string"
-                            },
-                            "category": {
-                              "type": "string"
-                            },
-                            "intent": {
-                              "type": "string"
-                            },
-                            "interests": {
-                              "oneOf": [
-                                {
-                                  "type": "array",
-                                  "items": {
-                                    "type": "string"
-                                  }
-                                },
-                                {
-                                  "type": "string"
-                                }
-                              ]
-                            },
-                            "interest": {
-                              "oneOf": [
-                                {
-                                  "type": "array",
-                                  "items": {
-                                    "type": "string"
-                                  }
-                                },
-                                {
-                                  "type": "string"
-                                }
-                              ]
-                            }
-                          },
-                          "additionalProperties": false
-                        }
-                      },
                       "platformLinksHtml": {},
                       "readMoreText": {},
                       "readMoreTxt": {},
@@ -2904,9 +2922,6 @@
     },
     "$schema": {},
     "ogImage": {},
-    "publicationMode": {
-      "enum": ["public-issue", "campaign"]
-    },
     "template": {},
     "colorTheme": {},
     "sectionStylesFile": {},
