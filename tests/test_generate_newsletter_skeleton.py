@@ -1,4 +1,5 @@
 import importlib.util
+import json
 import unittest
 from pathlib import Path
 
@@ -18,6 +19,12 @@ MINIMAL_SKELETON_PATH = (
     / "templates"
     / "dense-discovery"
     / "dense-discovery-skeleton-minimal.md"
+)
+FULL_SKELETON_SNIPPET_PATH = (
+    REPO_ROOT
+    / "templates"
+    / "dense-discovery"
+    / "dense-discovery-skeleton-full.snippet"
 )
 
 SPEC = importlib.util.spec_from_file_location(
@@ -73,6 +80,11 @@ class GenerateNewsletterSkeletonTest(unittest.TestCase):
             ),
         )
 
+    def assert_intro_typography_is_inherited(self, payload: dict) -> None:
+        content_styles = payload["intro"]["contentStyles"]
+        self.assertNotIn("fontSize", content_styles)
+        self.assertNotIn("lineHeight", content_styles)
+
     def test_generator_includes_visual_defaults(self) -> None:
         full = GENERATOR.generate_skeleton()
         minimal = GENERATOR.generate_skeleton(minimal=True)
@@ -80,6 +92,8 @@ class GenerateNewsletterSkeletonTest(unittest.TestCase):
         self.assert_visual_defaults(minimal)
         self.assert_featured_project(full)
         self.assert_featured_project(minimal)
+        self.assert_intro_typography_is_inherited(full)
+        self.assert_intro_typography_is_inherited(minimal)
 
     def test_checked_in_skeletons_include_visual_defaults(self) -> None:
         full = load_skeleton(FULL_SKELETON_PATH)
@@ -88,6 +102,19 @@ class GenerateNewsletterSkeletonTest(unittest.TestCase):
         self.assert_visual_defaults(minimal)
         self.assert_featured_project(full)
         self.assert_featured_project(minimal)
+        self.assert_intro_typography_is_inherited(full)
+        self.assert_intro_typography_is_inherited(minimal)
+
+    def test_full_skeleton_snippet_matches_checked_in_skeleton(self) -> None:
+        snippet = json.loads(FULL_SKELETON_SNIPPET_PATH.read_text(encoding="utf-8"))
+        snippet_definition = next(iter(snippet.values()))
+        snippet_body = snippet_definition["body"]
+
+        self.assertEqual(snippet_body[-1], "$0")
+        self.assertEqual(
+            "\n".join(snippet_body[:-1]),
+            FULL_SKELETON_PATH.read_text(encoding="utf-8"),
+        )
 
 
 if __name__ == "__main__":

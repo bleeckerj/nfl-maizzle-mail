@@ -54,8 +54,6 @@ intro:
     borderRadius: 0px
   contentStyles:
     fontFamily: '''IBM Plex Sans'', sans-serif'
-    fontSize: 16px
-    lineHeight: 1.2rem
     fontWeight: '400'
     color: '#000000'
     textAlign: left

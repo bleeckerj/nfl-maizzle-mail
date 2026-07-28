@@ -37,6 +37,10 @@ import {
 } from '../lib/newsletter-core/link-validation.mjs';
 import { withBuildProductionLock } from '../lib/newsletter-core/build-directory-lock.mjs';
 import { verifyMobileTypographyLock } from '../lib/newsletter-core/mobile-typography-lock.mjs';
+import {
+  DENSE_DISCOVERY_LOCKED_INTRO_TYPOGRAPHY_PROPERTIES,
+  resolveIntroContentStyles,
+} from '../lib/newsletter-core/resolve-intro-content-styles.mjs';
 
 const DARK_MODE_FLATTEN_DISABLE_FLAG = '--no-dark-mode-flatten';
 const DARK_MODE_FLATTEN_COLORS = {
@@ -2503,6 +2507,8 @@ async function buildNewsletter() {
         });
       };
 
+    let ignoredAuthoredTypographyOverrides = [];
+
     if (newsletterData.intro) {
       const intro = newsletterData.intro;
 
@@ -2542,8 +2548,20 @@ async function buildNewsletter() {
           ? { ...defaultIntroContentStyles, ...introContentConfig.contentStyles }
           : { ...defaultIntroContentStyles };
 
+      const lockedIntroTypographyProperties =
+        templateName === 'dense-discovery'
+          ? DENSE_DISCOVERY_LOCKED_INTRO_TYPOGRAPHY_PROPERTIES
+          : [];
+      const resolvedIntroContentStyles = resolveIntroContentStyles({
+        baseStyles: baseIntroContentStyles,
+        incomingStyles: incomingIntroContentStyles,
+        lockedProperties: lockedIntroTypographyProperties,
+      });
+
       intro.containerStyles = { ...baseIntroContainerStyles, ...incomingIntroContainerStyles };
-      intro.contentStyles = { ...baseIntroContentStyles, ...incomingIntroContentStyles };
+      intro.contentStyles = resolvedIntroContentStyles.styles;
+      ignoredAuthoredTypographyOverrides =
+        resolvedIntroContentStyles.ignoredAuthoredOverrides;
       if (intro.content && intro.contentStyles) {
         intro.content = applyContentStylesToHtml(intro.content, intro.contentStyles);
       }
@@ -2707,6 +2725,7 @@ async function buildNewsletter() {
       sourcePath: sourcePathForWarnings,
       outputHtmlPath: finalOutputPath,
       outputName,
+      ignoredAuthoredOverrides: ignoredAuthoredTypographyOverrides,
     });
     fs.writeFileSync(finalOutputPath, finalOutputRaw, 'utf8');
     writeCalendarEventFiles(calendarEvents.events, { fs, path, logger: console });

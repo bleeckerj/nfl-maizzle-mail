@@ -8,12 +8,23 @@ import {
   getLatestMobileTypographyLock,
   verifyMobileTypographyLock,
 } from '../../lib/newsletter-core/mobile-typography-lock.mjs';
+import {
+  DENSE_DISCOVERY_LOCKED_INTRO_TYPOGRAPHY_PROPERTIES,
+  resolveIntroContentStyles,
+} from '../../lib/newsletter-core/resolve-intro-content-styles.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.resolve(__dirname, '..', '..');
 const DENSE_DISCOVERY_LAYOUT = path.join(REPO_ROOT, 'templates', 'dense-discovery', 'layouts', 'main.html');
 const DENSE_DISCOVERY_TEMPLATE = path.join(REPO_ROOT, 'templates', 'dense-discovery', 'newsletter.html');
+const DENSE_DISCOVERY_INTRO_COMPONENT = path.join(
+  REPO_ROOT,
+  'templates',
+  'dense-discovery',
+  'components',
+  'IntroSection.html',
+);
 const DENSE_DISCOVERY_SECTION_STYLES = path.join(
   REPO_ROOT,
   'templates',
@@ -82,6 +93,81 @@ test('dense-discovery mobile typography defaults remain locked to larger body co
   assert.equal(mobileAdjustments?.captionStyles?.lineHeight, '1.2');
 });
 
+test('dense-discovery intro typography ignores authored size overrides', () => {
+  const baseStyles = {
+    fontFamily: "'Roboto', sans-serif",
+    fontSize: '19px',
+    lineHeight: '1.5',
+    fontWeight: '500',
+  };
+  const incomingStyles = {
+    fontFamily: "'IBM Plex Sans', sans-serif",
+    fontSize: '16px',
+    lineHeight: '1.2rem',
+    fontWeight: '400',
+  };
+
+  const resolution = resolveIntroContentStyles({
+    baseStyles,
+    incomingStyles,
+    lockedProperties: DENSE_DISCOVERY_LOCKED_INTRO_TYPOGRAPHY_PROPERTIES,
+  });
+
+  assert.equal(resolution.styles.fontFamily, incomingStyles.fontFamily);
+  assert.equal(resolution.styles.fontWeight, incomingStyles.fontWeight);
+  assert.equal(resolution.styles.fontSize, '19px');
+  assert.equal(resolution.styles.lineHeight, '1.5');
+  assert.deepEqual(resolution.ignoredAuthoredOverrides, [
+    {
+      path: 'intro.contentStyles.fontSize',
+      authoredValue: '16px',
+      resolvedValue: '19px',
+    },
+    {
+      path: 'intro.contentStyles.lineHeight',
+      authoredValue: '1.2rem',
+      resolvedValue: '1.5',
+    },
+  ]);
+});
+
+test('dense-discovery intro typography ignores arbitrary authored size overrides', () => {
+  const resolution = resolveIntroContentStyles({
+    baseStyles: { fontSize: '19px', lineHeight: '1.5' },
+    incomingStyles: { fontSize: '31px', lineHeight: '2' },
+    lockedProperties: DENSE_DISCOVERY_LOCKED_INTRO_TYPOGRAPHY_PROPERTIES,
+  });
+
+  assert.equal(resolution.styles.fontSize, '19px');
+  assert.equal(resolution.styles.lineHeight, '1.5');
+  assert.deepEqual(
+    resolution.ignoredAuthoredOverrides.map((override) => override.authoredValue),
+    ['31px', '2'],
+  );
+});
+
+test('dense-discovery intro component consumes resolved typography without local size fallbacks', () => {
+  const component = readFileSync(DENSE_DISCOVERY_INTRO_COMPONENT, 'utf8');
+
+  assert.match(component, /font-size: \{\{ intro\.contentStyles\.fontSize \}\}/);
+  assert.match(component, /line-height: \{\{ intro\.contentStyles\.lineHeight \}\}/);
+  assert.doesNotMatch(component, /intro\.contentStyles\.fontSize \|\|/);
+  assert.doesNotMatch(component, /intro\.contentStyles\.lineHeight \|\|/);
+});
+
+test('intro typography resolution preserves authored sizes when no lock applies', () => {
+  const resolution = resolveIntroContentStyles({
+    baseStyles: { fontSize: '19px', lineHeight: '1.5' },
+    incomingStyles: { fontSize: '17px', lineHeight: '1.25' },
+  });
+
+  assert.deepEqual(resolution.styles, {
+    fontSize: '17px',
+    lineHeight: '1.25',
+  });
+  assert.deepEqual(resolution.ignoredAuthoredOverrides, []);
+});
+
 test('dense-discovery layout forces larger mobile body copy with literal values', () => {
   const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
   const mobileBlock = extractMobileMediaBlock(layout);
@@ -125,21 +211,35 @@ test('dense-discovery ad footer CTA uses the same mobile metadata size as the ot
 test('dense-discovery mobile typography ledger is hash-chained and verifies source CSS', () => {
   const { entry } = getLatestMobileTypographyLock(REPO_ROOT, 'dense-discovery');
   const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
+  const renderedHtml = `${layout}
+    <div class="intro-content" style="font-size: 19px; line-height: 1.5;">
+      <p style="font-size: 19px; line-height: 1.5;">Intro copy</p>
+    </div>`;
   const verification = verifyMobileTypographyLock({
     repoRoot: REPO_ROOT,
     templateName: 'dense-discovery',
-    renderedHtml: layout,
+    renderedHtml,
     sourcePath: 'fixture.md',
     outputHtmlPath: 'fixture.html',
     outputName: 'fixture',
+    ignoredAuthoredOverrides: [
+      {
+        path: 'intro.contentStyles.fontSize',
+        authoredValue: '16px',
+        resolvedValue: '19px',
+      },
+    ],
   });
 
-  assert.equal(entry.sequence, 1);
-  assert.equal(entry.previousHash, null);
+  assert.equal(entry.sequence, 2);
   assert.match(entry.hash, /^[a-f0-9]{64}$/);
+  assert.match(entry.previousHash, /^[a-f0-9]{64}$/);
   assert.equal(verification.status, 'verified');
+  assert.equal(verification.schemaVersion, 2);
   assert.equal(verification.lock.hash, entry.hash);
   assert.equal(verification.roles.find((role) => role.id === 'body').declarations['font-size'], '23px !important');
+  assert.equal(verification.baseRoles.find((role) => role.id === 'intro-content').declarations['font-size'], '19px');
+  assert.equal(verification.ignoredAuthoredOverrides[0].authoredValue, '16px');
 });
 
 test('dense-discovery mobile typography verifier rejects rendered size drift', () => {
@@ -148,7 +248,11 @@ test('dense-discovery mobile typography verifier rejects rendered size drift', (
     'font-size: 23px !important;',
     'font-size: 19px !important;',
   );
-  const renderedHtml = `${extractMobileMediaBlock(driftedLayout)}<p class="mob-text">Body copy</p>`;
+  const renderedHtml = `${driftedLayout}
+    <div class="intro-content" style="font-size: 19px; line-height: 1.5;">
+      <p style="font-size: 19px; line-height: 1.5;">Intro copy</p>
+    </div>
+    <p class="mob-text">Body copy</p>`;
 
   assert.throws(
     () =>
@@ -170,7 +274,12 @@ test('dense-discovery mobile typography verifier skips unused compound selectors
     /\n\s*\.mob-title \.mob-meta,[\s\S]*?\n\s*\}/,
     '',
   );
-  const renderedHtml = `${mobileBlock}<h1 class="mob-title">Job title</h1><p class="mob-meta">Meta</p>`;
+  const renderedHtml = `${layout.replace(extractMobileMediaBlock(layout), mobileBlock)}
+    <div class="intro-content" style="font-size: 19px; line-height: 1.5;">
+      <p style="font-size: 19px; line-height: 1.5;">Intro copy</p>
+    </div>
+    <h1 class="mob-title">Job title</h1>
+    <p class="mob-meta">Meta</p>`;
 
   const verification = verifyMobileTypographyLock({
     repoRoot: REPO_ROOT,
@@ -182,6 +291,27 @@ test('dense-discovery mobile typography verifier skips unused compound selectors
   });
 
   assert.equal(verification.status, 'verified');
+});
+
+test('dense-discovery mobile typography verifier rejects rendered base intro drift', () => {
+  const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
+  const renderedHtml = `${layout}
+    <div class="intro-content" style="font-size: 16px; line-height: 1.2rem;">
+      <p style="font-size: 16px; line-height: 1.2rem;">Intro copy</p>
+    </div>`;
+
+  assert.throws(
+    () =>
+      verifyMobileTypographyLock({
+        repoRoot: REPO_ROOT,
+        templateName: 'dense-discovery',
+        renderedHtml,
+        sourcePath: 'fixture.md',
+        outputHtmlPath: 'fixture.html',
+        outputName: 'fixture',
+      }),
+    /rendered HTML base typography drift for intro-content\[0\] font-size/,
+  );
 });
 
 test('dense-discovery semantic section and item headings opt into the mobile title lock', () => {
