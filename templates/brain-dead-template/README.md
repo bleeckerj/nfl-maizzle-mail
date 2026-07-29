@@ -84,20 +84,24 @@ The build normalizes these objects into template-safe URL strings and adds `data
 
 ## Hero Image
 
-The optional `hero.image` field renders the full supplied image at its natural aspect ratio. Add `hero.imageAlt` for accessible alternative text. The image is unlinked by default, follows legacy `shopLink` behavior when present, or accepts an explicit `hero.imageLink`:
+The optional `hero.image` field renders the full supplied image at its natural aspect ratio. Add `hero.imageAlt` for accessible alternative text. When present, the image follows `hero.ctaLink`; legacy `shopLink` remains the fallback. Use `hero.imageLink` for an explicit image-only destination or to override the CTA link:
 
 ```yaml
 hero:
   headline: A field kit for near-future thinking.
   image: https://example.com/hero.png
   imageAlt: A field kit laid out on a desk
-  imageLink:
+  ctaLink:
     href: https://example.com/shop
-    label: issue | hero image | shop
+    label: issue | hero CTA | shop
+    category: commerce
+  imageLink:
+    href: https://example.com/hero-detail
+    label: issue | hero image | detail
     category: commerce
 ```
 
-Use `imageLink: none` to force an unlinked image. Tracked `imageLink` objects are normalized to their `href` during the build.
+Use `imageLink: none` to force an unlinked image. Tracked `imageLink` objects are normalized to their `href` during the build. If `imageLink` is omitted, the build uses `hero.ctaLink` and then legacy `shopLink`.
 
 `inline_cta` uses the same tracked action shape for `primaryAction` and optional `secondaryAction`. Use `renderFor: public` or `preview` for the public edition only, `renderFor: full` for the full edition only, or omit it / use `both` for both editions. Its `font_family` can be `mono` or `sans`; colors, borders, spacing, button colors, and `border_radius` are configurable. The section has a full border on all four edges; specify `border_radius` in pixels, such as `12`, for rounded corners.
 

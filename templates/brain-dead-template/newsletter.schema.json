@@ -54,7 +54,7 @@
             { "const": "none" },
             { "$ref": "#/definitions/trackedLink" }
           ],
-          "description": "Optional image destination. Use 'none' to keep the hero image unlinked; tracked link objects are normalized to their href during the build."
+          "description": "Optional image destination override. When omitted, the hero image uses hero.ctaLink, then legacy shopLink. Use 'none' to keep the hero image unlinked; tracked link objects are normalized to their href during the build."
         },
         "ctaText": { "type": "string" },
         "ctaLink": { "$ref": "#/definitions/trackedLink" }

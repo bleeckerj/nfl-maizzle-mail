@@ -24,15 +24,15 @@
         <if condition="hero && hero.image">
           <tr>
             <td style="padding:24px 0 0 0;">
-              <!-- POLICY: the hero image must not inherit the action CTA. It links only to an explicit
-                   hero.imageLink, or shopLink for legacy shop emails. Set hero.imageLink: 'none' to leave it unlinked. -->
+              <!-- The hero image follows the hero action link. Use hero.imageLink for an explicit
+                   image-only destination, or hero.imageLink: 'none' to leave it unlinked. -->
               <if condition="hero.imageLink && hero.imageLink !== 'none'">
                 <a href="{{ hero.imageLink }}" style="text-decoration:none;">
                   <img src="{{ hero.image }}" alt="{{ hero.imageAlt || collectionTitle || title }}" width="576" style="width:100%;max-width:576px;height:auto;">
                 </a>
               </if>
-              <if condition="!hero.imageLink && shopLink">
-                <a href="{{ shopLink }}" style="text-decoration:none;">
+              <if condition="!hero.imageLink && ((hero && hero.ctaLink) || shopLink)">
+                <a href="{{ (hero && hero.ctaLink) || shopLink }}" style="text-decoration:none;">
                   <img src="{{ hero.image }}" alt="{{ hero.imageAlt || collectionTitle || title }}" width="576" style="width:100%;max-width:576px;height:auto;">
                 </a>
               </if>

@@ -60,23 +60,30 @@ async function renderNewsletter(newsletter) {
   }
 }
 
-test('brain-dead hero renders an explicit image link and preserves the full image sizing', async () => {
+test('brain-dead hero wraps the image with hero.ctaLink and preserves full image sizing', async () => {
   const newsletter = baseNewsletter({
     brand: { logoUrl: 'https://images.example/logo.png' },
     hero: {
       headline: 'A hero fixture',
       image: 'https://images.example/hero.png',
       imageAlt: 'A complete hero image',
-      imageLink: {
+      ctaLink: {
         href: 'https://example.com/hero',
-        label: 'fixture | hero image | shop',
+        label: 'fixture | hero CTA | shop',
         category: 'commerce',
       },
     },
   });
   assertSchemaValid(newsletter);
   normalizeNewsletterLinkTracking(newsletter);
-  const html = await renderNewsletter(newsletter);
+  const prepared = prepareNewsletterData(newsletter, {
+    repoRoot: REPO_ROOT,
+    templateName: 'brain-dead-template',
+    outputName: 'hero-cta-regression',
+    logger: { log() {} },
+  });
+  assert.equal(prepared.hero.imageLink, undefined);
+  const html = await renderNewsletter(prepared);
 
   assert.match(html, /<a href="https:\/\/example\.com\/hero"[^>]*>\s*<img[^>]+src="https:\/\/images\.example\/hero\.png"[^>]+alt="A complete hero image"[^>]+width="576"[^>]+height:auto/);
   assert.doesNotMatch(html, /hero\.png[^>]*src=""/);
@@ -85,6 +92,25 @@ test('brain-dead hero renders an explicit image link and preserves the full imag
     templateName: 'brain-dead-template',
     renderedHtml: html,
   }));
+});
+
+test('brain-dead hero imageLink overrides hero.ctaLink', async () => {
+  const newsletter = baseNewsletter({
+    hero: {
+      headline: 'Override fixture',
+      image: 'https://images.example/override.png',
+      ctaLink: 'https://example.com/cta',
+      imageLink: {
+        href: 'https://example.com/image-detail',
+        label: 'fixture | hero image | detail',
+        category: 'commerce',
+      },
+    },
+  });
+  normalizeNewsletterLinkTracking(newsletter);
+  const html = await renderNewsletter(newsletter);
+  assert.match(html, /<a href="https:\/\/example\.com\/image-detail"[^>]*>\s*<img[^>]+src="https:\/\/images\.example\/override\.png"/);
+  assert.doesNotMatch(html, /href="https:\/\/example\.com\/cta"[^>]*>\s*<img[^>]+src="https:\/\/images\.example\/override\.png"/);
 });
 
 test('brain-dead hero keeps legacy shopLink behavior and supports an unlinked image', async () => {
