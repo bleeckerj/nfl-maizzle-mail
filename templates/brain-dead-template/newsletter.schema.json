@@ -276,7 +276,8 @@
         "price": { "type": "string" },
         "link": { "$ref": "#/definitions/trackedLink" },
         "ctaText": { "type": "string" }
-      }
+      },
+      "additionalProperties": false
     },
     "adBlockSourceItem": {
       "type": "object",
