@@ -35,6 +35,8 @@ import {
   checkHttpUrl,
   validateLinks,
 } from '../lib/newsletter-core/link-validation.mjs';
+import { validateNewsletterImages as validateImages } from '../lib/newsletter-core/image-validation.mjs';
+import { assertDeclaredTemplateImagesRendered } from '../lib/newsletter-core/rendered-image-validation.mjs';
 import { withBuildProductionLock } from '../lib/newsletter-core/build-directory-lock.mjs';
 import { verifyMobileTypographyLock } from '../lib/newsletter-core/mobile-typography-lock.mjs';
 import {
@@ -612,30 +614,6 @@ function normalizeNewsletterForSchemaValidation(newsletterData) {
   });
 }
 
-function resolveImageEntryUrl(entry) {
-  if (!entry) return null;
-  if (typeof entry === 'string') {
-    const trimmed = entry.trim();
-    return trimmed.length ? trimmed : null;
-  }
-  if (typeof entry === 'object') {
-    if (typeof entry.src === 'string' && entry.src.trim().length) {
-      return entry.src.trim();
-    }
-    if (typeof entry.image === 'string' && entry.image.trim().length) {
-      return entry.image.trim();
-    }
-  }
-  return null;
-}
-
-/**
- * Check if an image URL exists and is accessible
- */
-function checkImageUrl(url) {
-  return checkHttpUrl(url);
-}
-
 /**
  * Convert hex color to ANSI RGB background color
  */
@@ -999,134 +977,6 @@ function catalogSections(newsletterData) {
   });
   
   console.log('');
-}
-
-/**
- * Validate all images in newsletter data
- */
-async function validateImages(data) {
-  const errors = [];
-  let totalImages = 0;
-  let validImages = 0;
-
-  console.log('🔍 Validating image URLs...');
-
-  const formatSectionReference = (section, sectionIndex) => {
-    const sectionType = section?.type ? String(section.type) : 'unknown-type';
-    const sectionTitle = section?.title ? String(section.title) : null;
-    return sectionTitle
-      ? `Section "${sectionTitle}" (${sectionType})`
-      : `Section ${sectionIndex + 1} (${sectionType})`;
-  };
-
-  const formatItemReference = (item, itemIndex) => {
-    const itemTitle = item?.title ? String(item.title) : null;
-    return itemTitle
-      ? `item ${itemIndex + 1} "${itemTitle}"`
-      : `item ${itemIndex + 1}`;
-  };
-
-  // Check header images
-  if (data.header?.featuredImage) {
-    totalImages++;
-    const result = await checkImageUrl(data.header.featuredImage);
-    if (result.valid) {
-      validImages++;
-    } else {
-      errors.push(`❌ Header featured image: ${data.header.featuredImage} (${result.error || result.status})`);
-    }
-  }
-
-  if (data.header?.logoTop) {
-    totalImages++;
-    const result = await checkImageUrl(data.header.logoTop);
-    if (result.valid) {
-      validImages++;
-    } else {
-      errors.push(`❌ Header logo top: ${data.header.logoTop} (${result.error || result.status})`);
-    }
-  }
-
-  if (data.header?.logoBottom) {
-    totalImages++;
-    const result = await checkImageUrl(data.header.logoBottom);
-    if (result.valid) {
-      validImages++;
-    } else {
-      errors.push(`❌ Header logo bottom: ${data.header.logoBottom} (${result.error || result.status})`);
-    }
-  }
-
-  // Check section images
-  if (data.sections) {
-    for (let sectionIndex = 0; sectionIndex < data.sections.length; sectionIndex++) {
-      const section = data.sections[sectionIndex];
-      
-      if (section.items) {
-        for (let itemIndex = 0; itemIndex < section.items.length; itemIndex++) {
-          const item = section.items[itemIndex];
-          
-          // Check single image
-          const singleImageUrl = resolveImageEntryUrl(item.image);
-          if (singleImageUrl) {
-            totalImages++;
-            const result = await checkImageUrl(singleImageUrl);
-            if (result.valid) {
-              validImages++;
-            } else {
-              errors.push(`❌ ${formatSectionReference(section, sectionIndex)}, ${formatItemReference(item, itemIndex)}: ${singleImageUrl} (${result.error || result.status})`);
-            }
-          } else if (item.image) {
-            totalImages++;
-            errors.push(`❌ ${formatSectionReference(section, sectionIndex)}, ${formatItemReference(item, itemIndex)}: ${JSON.stringify(item.image)} (URL missing)`);
-          }
-          
-          // Check multiple images (for aesthetically-pleasing section)
-          if (item.images && Array.isArray(item.images)) {
-            for (let imgIndex = 0; imgIndex < item.images.length; imgIndex++) {
-              const imageEntry = item.images[imgIndex];
-              const imageUrl = resolveImageEntryUrl(imageEntry);
-              if (imageUrl) {
-                totalImages++;
-                const result = await checkImageUrl(imageUrl);
-                if (result.valid) {
-                  validImages++;
-                } else {
-                  errors.push(`❌ ${formatSectionReference(section, sectionIndex)}, item ${itemIndex + 1}, image ${imgIndex + 1}: ${imageUrl} (${result.error || result.status})`);
-                }
-              } else {
-                totalImages++;
-                errors.push(`❌ ${formatSectionReference(section, sectionIndex)}, item ${itemIndex + 1}, image ${imgIndex + 1}: ${JSON.stringify(imageEntry)} (URL missing)`);
-              }
-            }
-          }
-          
-          // Check GIF
-          if (item.gif) {
-            totalImages++;
-            console.log('Checking GIF URL:', item.gif);
-            const result = await checkImageUrl(item.gif);
-            if (result.valid) {
-              validImages++;
-            } else {
-              errors.push(`❌ ${formatSectionReference(section, sectionIndex)}, item ${itemIndex + 1} GIF: ${item.gif} (${result.error || result.status})`);
-            }
-          }
-        }
-      }
-    }
-  }
-
-  // Report results
-  if (errors.length > 0) {
-    console.log(`\n⚠️  Image Validation Results: ${validImages}/${totalImages} images valid\n`);
-    errors.forEach(error => console.log(error));
-    console.log('');
-  } else if (totalImages > 0) {
-    console.log(`✅ All ${totalImages} images validated successfully`);
-  }
-
-  return { totalImages, validImages, errors };
 }
 
 // Get command line arguments
@@ -2651,7 +2501,13 @@ async function buildNewsletter() {
     console.log(`✅ Theme and section style data injected for Maizzle processing`);
     
     // Validate images in the newsletter data
-    await validateImages(newsletterData);
+    const imageValidation = await validateImages(newsletterData, {
+      checkImageUrl: checkHttpUrl,
+      logger: console,
+    });
+    if (imageValidation.errors.length > 0) {
+      throw new Error('Image validation failed; no sendable HTML was produced.');
+    }
     await validateLinks(newsletterData, { checkHttpUrl });
 
     // Build the newsletter
@@ -2718,6 +2574,11 @@ async function buildNewsletter() {
       existingOutputRawBeforeBuild,
       hardenedBuiltHtml.html,
     );
+    assertDeclaredTemplateImagesRendered({
+      newsletterData,
+      templateName,
+      renderedHtml: finalOutputRaw,
+    });
     const mobileTypographyVerification = verifyMobileTypographyLock({
       repoRoot: REPO_ROOT,
       templateName,

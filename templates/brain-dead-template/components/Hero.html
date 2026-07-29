@@ -21,27 +21,37 @@
             </if>
           </td>
         </tr>
-        <if condition="(hero && hero.image) || mainImage">
+        <if condition="hero && hero.image">
           <tr>
             <td style="padding:24px 0 0 0;">
-              <!-- POLICY: the hero image must NOT auto-inherit the action CTA (e.g. a Zoom join link) -
-                   clicking an image is not an intent to launch the event. It links only to an explicit
-                   hero.imageLink, or shopLink for shop emails. Set hero.imageLink: 'none' to force no link. -->
-              <if condition="hero && hero.imageLink && hero.imageLink !== 'none'">
+              <!-- POLICY: the hero image must not inherit the action CTA. It links only to an explicit
+                   hero.imageLink, or shopLink for legacy shop emails. Set hero.imageLink: 'none' to leave it unlinked. -->
+              <if condition="hero.imageLink && hero.imageLink !== 'none'">
                 <a href="{{ hero.imageLink }}" style="text-decoration:none;">
-                  <img src="{{ (hero && hero.image) || mainImage }}" alt="{{ (hero && hero.imageAlt) || collectionTitle || title }}" width="576" style="width:100%;max-width:576px;height:auto;">
+                  <img src="{{ hero.image }}" alt="{{ hero.imageAlt || collectionTitle || title }}" width="576" style="width:100%;max-width:576px;height:auto;">
                 </a>
               </if>
-              <if condition="!(hero && hero.imageLink) && shopLink">
+              <if condition="!hero.imageLink && shopLink">
                 <a href="{{ shopLink }}" style="text-decoration:none;">
-                  <img src="{{ (hero && hero.image) || mainImage }}" alt="{{ (hero && hero.imageAlt) || collectionTitle || title }}" width="576" style="width:100%;max-width:576px;height:auto;">
+                  <img src="{{ hero.image }}" alt="{{ hero.imageAlt || collectionTitle || title }}" width="576" style="width:100%;max-width:576px;height:auto;">
                 </a>
               </if>
-              <if condition="hero && hero.imageLink === 'none'">
-                <img src="{{ (hero && hero.image) || mainImage }}" alt="{{ (hero && hero.imageAlt) || collectionTitle || title }}" width="576" style="width:100%;max-width:576px;height:auto;">
+              <if condition="hero.imageLink === 'none'">
+                <img src="{{ hero.image }}" alt="{{ hero.imageAlt || collectionTitle || title }}" width="576" style="width:100%;max-width:576px;height:auto;">
               </if>
-              <if condition="!(hero && hero.imageLink) && !shopLink">
-                <img src="{{ (hero && hero.image) || mainImage }}" alt="{{ (hero && hero.imageAlt) || collectionTitle || title }}" width="576" style="width:100%;max-width:576px;height:auto;">
+            </td>
+          </tr>
+        </if>
+        <if condition="(!hero || !hero.image) && mainImage">
+          <tr>
+            <td style="padding:24px 0 0 0;">
+              <if condition="shopLink">
+                <a href="{{ shopLink }}" style="text-decoration:none;">
+                  <img src="{{ mainImage }}" alt="{{ collectionTitle || title }}" width="576" style="width:100%;max-width:576px;height:auto;">
+                </a>
+              </if>
+              <if condition="!shopLink">
+                <img src="{{ mainImage }}" alt="{{ collectionTitle || title }}" width="576" style="width:100%;max-width:576px;height:auto;">
               </if>
             </td>
           </tr>

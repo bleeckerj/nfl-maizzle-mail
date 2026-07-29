@@ -82,6 +82,23 @@ sections:
 
 The build normalizes these objects into template-safe URL strings and adds `data-link-label` / `data-link-category` to the rendered anchors.
 
+## Hero Image
+
+The optional `hero.image` field renders the full supplied image at its natural aspect ratio. Add `hero.imageAlt` for accessible alternative text. The image is unlinked by default, follows legacy `shopLink` behavior when present, or accepts an explicit `hero.imageLink`:
+
+```yaml
+hero:
+  headline: A field kit for near-future thinking.
+  image: https://example.com/hero.png
+  imageAlt: A field kit laid out on a desk
+  imageLink:
+    href: https://example.com/shop
+    label: issue | hero image | shop
+    category: commerce
+```
+
+Use `imageLink: none` to force an unlinked image. Tracked `imageLink` objects are normalized to their `href` during the build.
+
 `inline_cta` uses the same tracked action shape for `primaryAction` and optional `secondaryAction`. Use `renderFor: public` or `preview` for the public edition only, `renderFor: full` for the full edition only, or omit it / use `both` for both editions. Its `font_family` can be `mono` or `sans`; colors, borders, spacing, button colors, and `border_radius` are configurable. The section has a full border on all four edges; specify `border_radius` in pixels, such as `12`, for rounded corners.
 
 ```yaml

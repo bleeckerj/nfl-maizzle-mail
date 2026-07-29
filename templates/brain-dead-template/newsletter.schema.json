@@ -49,6 +49,13 @@
         "body": { "type": "string" },
         "image": { "type": "string", "format": "uri" },
         "imageAlt": { "type": "string" },
+        "imageLink": {
+          "oneOf": [
+            { "const": "none" },
+            { "$ref": "#/definitions/trackedLink" }
+          ],
+          "description": "Optional image destination. Use 'none' to keep the hero image unlinked; tracked link objects are normalized to their href during the build."
+        },
         "ctaText": { "type": "string" },
         "ctaLink": { "$ref": "#/definitions/trackedLink" }
       }
