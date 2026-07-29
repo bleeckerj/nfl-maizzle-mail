@@ -40,3 +40,29 @@ test('normalizeNewsletterTextBreaks updates section article ledes in normalized 
     'First paragraph.\n<br/>\nSecond paragraph with <em>inline</em> HTML.',
   );
 });
+
+test('normalizeNewsletterTextBreaks updates hero and section item rich-text fields', () => {
+  const newsletterData = {
+    hero: {
+      body: 'Hero paragraph.\n\nSecond hero paragraph.',
+    },
+    sections: [
+      {
+        type: 'single-column',
+        items: [
+          {
+            body: 'Item paragraph.\n\nSecond item paragraph.',
+            description: 'Description paragraph.\n\nSecond description paragraph.',
+            caption: 'Caption paragraph.\n\nSecond caption paragraph.',
+          },
+        ],
+      },
+    ],
+  };
+
+  assert.equal(normalizeNewsletterTextBreaks(newsletterData), 4);
+  assert.equal(newsletterData.hero.body, 'Hero paragraph.\n<br/>\nSecond hero paragraph.');
+  assert.equal(newsletterData.sections[0].items[0].body, 'Item paragraph.\n<br/>\nSecond item paragraph.');
+  assert.equal(newsletterData.sections[0].items[0].description, 'Description paragraph.\n<br/>\nSecond description paragraph.');
+  assert.equal(newsletterData.sections[0].items[0].caption, 'Caption paragraph.\n<br/>\nSecond caption paragraph.');
+});
