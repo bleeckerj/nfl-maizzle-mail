@@ -189,6 +189,11 @@ test('campaign brain-dead builds are source-preserving and omit public issue nav
       slots: readFileSync(contentSlotManifestPath, 'utf8'),
     };
     assert.match(first.html, /A campaign Short Take/);
+    assert.match(first.html, /https:\/\/imagedelivery\.net\/gaLGizR3kCgx5yRLtiRIOw\/e98285d8-5856-4005-6fbd-1c322688e700\/public/);
+    assert.match(first.html, /background:#171717/);
+    assert.match(first.html, /padding:0;line-height:0;font-size:0;text-align:center/);
+    assert.match(first.html, /max-width:100%;height:auto;margin:0;border:0/);
+    assert.doesNotMatch(first.html, /max-width:95%/);
     assert.match(first.html, /A campaign ad/);
     assert.match(first.html, /data-content-slot="ad-slot"/);
     assert.match(first.html, /data-content-slot="short-take"/);

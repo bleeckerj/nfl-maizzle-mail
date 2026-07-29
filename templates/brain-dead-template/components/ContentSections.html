@@ -224,6 +224,11 @@
           <td class="bd-pad" style="padding:18px 32px 18px 32px;">
             <each loop="item in section.items">
               <table data-short-take-id="{{ item.shortTakeId }}" role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border:2px solid #000000;background:#ffffff;">
+                <tr>
+                  <td style="padding:10px 12px;background:#171717;">
+                    <img src="https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e98285d8-5856-4005-6fbd-1c322688e700/public" alt="Near Future Laboratory" width="180" style="display:block;width:180px;max-width:100%;height:auto;border:0;">
+                  </td>
+                </tr>
                 <if condition="item.topLeft || item.topRight">
                   <tr>
                     <td style="padding:10px 12px;border-bottom:1px solid #000000;">
@@ -235,9 +240,9 @@
                   </tr>
                 </if>
                 <tr>
-                  <td style="padding:0 18px 18px;line-height:0;font-size:0;text-align:center;">
-                    <if condition="item.link"><a href="{{ item.link }}" style="display:block;text-decoration:none;"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" width="540" style="display:block;width:100%;max-width:{{ item.maxWidth || '540px' }};height:auto;margin:0 auto;border:0;"></a></if>
-                    <if condition="!item.link"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" width="540" style="display:block;width:100%;max-width:{{ item.maxWidth || '540px' }};height:auto;margin:0 auto;border:0;"></if>
+                  <td style="padding:0;line-height:0;font-size:0;text-align:center;">
+                    <if condition="item.link"><a href="{{ item.link }}" style="display:block;text-decoration:none;"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" width="600" style="display:block;width:100%;max-width:100%;height:auto;margin:0;border:0;"></a></if>
+                    <if condition="!item.link"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" width="600" style="display:block;width:100%;max-width:100%;height:auto;margin:0;border:0;"></if>
                   </td>
                 </tr>
                 <tr>
