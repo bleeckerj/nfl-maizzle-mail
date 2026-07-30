@@ -9,6 +9,7 @@
     "dev": "maizzle serve",
     "build:newsletter": "node scripts/build-newsletter.mjs",
     "build:correspondence": "node scripts/build-correspondence.mjs",
+    "serve:correspondence": "node scripts/correspondence-server.mjs",
     "export:normalized-newsletter": "node scripts/export-normalized-newsletter.mjs",
     "quick": "node scripts/quick-build.mjs",
     "factory": "node scripts/email-template-factory/index.mjs",
