@@ -206,6 +206,32 @@ test('validateLinks warns instead of failing on rate-limited links', async () =>
   assert.ok(messages.some((message) => message.includes('Link Validation Results')));
 });
 
+test('checkHttpUrl retries server errors with GET and warns when the origin remains unavailable', async () => {
+  await withLocalServer((req, res) => {
+    res.writeHead(req.method === 'HEAD' ? 500 : 200);
+    res.end();
+  }, async (origin, requests) => {
+    const result = await checkHttpUrl(`${origin}/server-error-head`);
+
+    assert.deepEqual(result, { valid: true, status: 200 });
+    assert.deepEqual(requests.map((request) => request.method), ['HEAD', 'GET']);
+  });
+
+  const messages = [];
+  const result = await validateLinks({
+    sections: [{ items: [{ link: 'https://example.com/upstream-error' }] }],
+  }, {
+    checkHttpUrl: async () => ({ valid: false, status: 500 }),
+    logger: { log(message = '') { messages.push(message); } },
+  });
+
+  assert.equal(result.errors.length, 0);
+  assert.equal(result.warnings.length, 1);
+  assert.match(result.warnings[0], /HTTP 500/);
+  assert.equal(result.validLinks, 1);
+  assert.ok(messages.some((message) => message.includes('Link Validation Results')));
+});
+
 test('validateLinks warns instead of failing on transient request timeouts', async () => {
   const newsletterData = {
     footer: {
