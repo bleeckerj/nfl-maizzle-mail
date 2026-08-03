@@ -102,6 +102,16 @@
       font-weight: 400 !important;
     }
 
+    /* Classified descriptions use a compact rhythm on every surface. The
+       explicit rule also overrides legacy inline description styles. */
+    .classified-copy,
+    .classified-copy p,
+    .classified-copy a,
+    .classified-copy li,
+    .classified-copy .mob-text {
+      line-height: 1.1 !important;
+    }
+
     @media screen and (max-width:599px) {
       .force-row, .container, .header, .body, .footer {
         width: 100% !important;
@@ -129,6 +139,34 @@
         max-width: 100% !important;
         height: auto !important;
         margin-bottom: 15px !important;
+      }
+
+      /* Classifieds use a left media rail on larger surfaces and stack the
+         image above the description on mobile. Keep the rail wide enough to
+         remain a visible identity mark instead of shrinking with the copy. */
+      .classified-media-row,
+      .classified-media-row tbody,
+      .classified-media-row tr,
+      .classified-media-image,
+      .classified-media-copy {
+        display: block !important;
+        width: 100% !important;
+      }
+
+      .classified-media-image {
+        padding: 0 0 14px 0 !important;
+      }
+
+      .classified-media-image img {
+        display: block !important;
+        width: 132px !important;
+        max-width: 132px !important;
+        height: auto !important;
+        margin: 0 !important;
+      }
+
+      .classified-media-copy {
+        padding: 0 !important;
       }
 
       /* MOBILE FONT SIZE LOCK:

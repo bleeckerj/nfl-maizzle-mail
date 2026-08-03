@@ -2250,32 +2250,61 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           <each loop="item in section.items">
                             <tr>
                               <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.classifieds || '#def1ef' }};padding: {{ section.containerStyles.padding || '20px' }};">
-                                <div class="share-tech-mono-regular" style="font-family: {{ section.contentStyles.fontFamily || '\'Share Tech Mono\', monospace' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '23px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#000000' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 15px;background: rgba(255,255,255,0.7);">
+                                <div class="share-tech-mono-regular" style="font-family: {{ section.contentStyles.fontFamily || '\'Share Tech Mono\', monospace' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '20px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#000000' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 15px;background: rgba(255,255,255,0.7);">
                                   <if condition="item.title">
                                     <p class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0 0 10px 0;padding: 0;text-transform: uppercase;letter-spacing: 0.5px;">{{ item.title }}</p>
                                   </if>
 
-                                  <!-- Optional image row (1–3 columns) -->
-                                  <if condition="(item.images && item.images.length) || item.image">
-                                    <table width="100%" cellpadding="0" cellspacing="0" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;margin: 0 0 10px 0;">
+                                  <!-- Single-image classified items use the desktop Option A media rail and stack at mobile widths. -->
+                                  <if condition="(item.images && item.images.length === 1) || item.image">
+                                    <table class="classified-media-row" width="100%" cellpadding="0" cellspacing="0" role="presentation" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;margin: 0 0 10px 0;">
                                       <tbody>
                                         <tr>
-                                          <if condition="item.images && item.images.length === 1">
-                                            <td style="padding: 0;">
+                                          <td class="classified-media-image" width="24%" valign="top" style="padding: 0 14px 0 0;vertical-align: top;">
+                                            <if condition="item.images && item.images.length === 1">
                                               <if condition="item.link">
                                                 <a href="{{ item.link }}" style="text-decoration: none;">
-                                                  <img src="{{ item.images[0].src || item.images[0] }}" alt="{{ item.images[0].alt || item.title || 'Classified' }}" width="520" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;height: auto;border-radius: 3%;">
+                                                  <img src="{{ item.images[0].src || item.images[0] }}" alt="{{ item.images[0].alt || item.title || 'Classified' }}" width="132" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 132px;height: auto;border-radius: 3%;">
                                                 </a>
                                               </if>
                                               <if condition="!item.link">
-                                                <img src="{{ item.images[0].src || item.images[0] }}" alt="{{ item.images[0].alt || item.title || 'Classified' }}" width="520" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;height: auto;border-radius: 3%;">
+                                                <img src="{{ item.images[0].src || item.images[0] }}" alt="{{ item.images[0].alt || item.title || 'Classified' }}" width="132" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 132px;height: auto;border-radius: 3%;">
                                               </if>
                                               <if condition="typeof item.images[0] === 'object' && item.images[0] !== null && item.images[0].caption">
                                                 <p class="image-caption mob-caption" style="margin: 8px 0 12px 0;padding: 0;font-family: 'IBM Plex Sans', sans-serif;font-size: 14px;line-height: 1.2;font-weight: 500;color: #495263;text-align: left;text-decoration: none !important;">{{{ item.images[0].caption }}}</p>
                                               </if>
-                                            </td>
-                                          </if>
+                                            </if>
 
+                                            <if condition="(!item.images || !item.images.length) && item.image">
+                                              <if condition="(typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('link')) || item.link">
+                                                <a href="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('link')) ? item.image.link : item.link }}" style="text-decoration: none;">
+                                                  <img src="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('src')) ? item.image.src : item.image }}" alt="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('alt')) ? item.image.alt : (item.title || 'Classified') }}" width="132" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 132px;height: auto;border-radius: 3%;">
+                                                </a>
+                                              </if>
+                                              <if condition="!((typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('link')) || item.link)">
+                                                <img src="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('src')) ? item.image.src : item.image }}" alt="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('alt')) ? item.image.alt : (item.title || 'Classified') }}" width="132" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 132px;height: auto;border-radius: 3%;">
+                                              </if>
+                                              <if condition="typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('caption') && item.image.caption">
+                                                <p class="image-caption mob-caption" style="margin: 8px 0 12px 0;padding: 0;font-family: 'IBM Plex Sans', sans-serif;font-size: 14px;line-height: 1.2;font-weight: 500;color: #495263;text-align: left;text-decoration: none !important;">{{{ item.image.caption }}}</p>
+                                              </if>
+                                            </if>
+                                          </td>
+                                          <td class="classified-media-copy classified-copy" width="76%" valign="top" style="padding: 0;vertical-align: top;font-family: {{ section.contentStyles.fontFamily || '\'Share Tech Mono\', monospace' }};font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '20px' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#000000' }};text-align: {{ section.contentStyles.textAlign || 'left' }};">
+                                            {{{ item.content }}}
+                                            <if condition="item.link">
+                                              <a href="{{ item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}margin-left: 0;">{{ item.linkText || 'Learn More →' }}</a>
+                                            </if>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </if>
+
+                                  <!-- Multi-image classified items retain their existing 1–3 column gallery. -->
+                                  <if condition="item.images && item.images.length >= 2">
+                                    <table width="100%" cellpadding="0" cellspacing="0" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;margin: 0 0 10px 0;">
+                                      <tbody>
+                                        <tr>
                                           <if condition="item.images && item.images.length === 2">
                                             <td width="50%" style="padding: 0 6px 0 0;">
                                               <if condition="item.link">
@@ -2347,29 +2376,18 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                             </td>
                                           </if>
 
-                                          <if condition="(!item.images || !item.images.length) && item.image">
-                                            <td style="padding: 0;">
-                                              <if condition="(typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('link')) || item.link">
-                                                <a href="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('link')) ? item.image.link : item.link }}" style="text-decoration: none;">
-                                                  <img src="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('src')) ? item.image.src : item.image }}" alt="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('alt')) ? item.image.alt : (item.title || 'Classified') }}" width="520" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;height: auto;border-radius: 3%;">
-                                                </a>
-                                              </if>
-                                              <if condition="!((typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('link')) || item.link)">
-                                                <img src="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('src')) ? item.image.src : item.image }}" alt="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('alt')) ? item.image.alt : (item.title || 'Classified') }}" width="520" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;height: auto;border-radius: 3%;">
-                                              </if>
-                                              <if condition="typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('caption') && item.image.caption">
-                                                <p class="image-caption mob-caption" style="margin: 8px 0 12px 0;padding: 0;font-family: 'IBM Plex Sans', sans-serif;font-size: 14px;line-height: 1.2;font-weight: 500;color: #495263;text-align: left;text-decoration: none !important;">{{{ item.image.caption }}}</p>
-                                              </if>
-                                            </td>
-                                          </if>
                                         </tr>
                                       </tbody>
                                     </table>
                                   </if>
 
-                                  {{{ item.content }}}
-                                  <if condition="item.link">
-                                    <a href="{{ item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}margin-left: 0;">{{ item.linkText || 'Learn More →' }}</a>
+                                  <if condition="!((item.images && item.images.length === 1) || item.image)">
+                                    <div class="classified-copy" style="line-height: {{ section.contentStyles.lineHeight || '20px' }};">
+                                      {{{ item.content }}}
+                                      <if condition="item.link">
+                                        <a href="{{ item.link }}" style="{{{ section.linkStylesInline || '' }}}{{{ section.linkStylesInline ? '; ' : '' }}}margin-left: 0;">{{ item.linkText || 'Learn More →' }}</a>
+                                      </if>
+                                    </div>
                                   </if>
                                 </div>
                               </td>
