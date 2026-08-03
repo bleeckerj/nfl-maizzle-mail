@@ -5,6 +5,7 @@ import {
   buildViewOnlineTrackedLink,
   buildViewOnlineUrl,
   injectViewOnlineLink,
+  warnIfMissingViewOnlineLink,
 } from '../../lib/newsletter-core/view-online-link.mjs';
 
 test('buildViewOnlineUrl derives deterministic public newsletter URL from issue id', () => {
@@ -69,4 +70,38 @@ test('injectViewOnlineLink fills daily-headlines masthead link from issue id', (
     'https://nearfuturelaboratory.com/newsletters/2026/nfl-dh-w23-y26',
   );
   assert.equal(newsletterData.sections[0].viewOnlineLink.label, 'nfl-dh-w23-y26 | view online');
+});
+
+test('warnIfMissingViewOnlineLink reports a missing public dense-discovery source link', () => {
+  const warnings = [];
+  const result = warnIfMissingViewOnlineLink(
+    { template: 'dense-discovery', intro: { title: 'Intro' } },
+    { logger: { warn(message) { warnings.push(message); } } },
+  );
+
+  assert.equal(result.field, 'intro.viewOnlineLink');
+  assert.match(warnings[0], /missing or placeholder/);
+  assert.match(warnings[0], /intro\.viewOnlineLink/);
+});
+
+test('warnIfMissingViewOnlineLink ignores campaign sources and usable links', () => {
+  const warnings = [];
+  assert.equal(
+    warnIfMissingViewOnlineLink(
+      { template: 'dense-discovery', publicationMode: 'campaign', intro: {} },
+      { logger: { warn(message) { warnings.push(message); } } },
+    ),
+    null,
+  );
+  assert.equal(
+    warnIfMissingViewOnlineLink(
+      {
+        template: 'dense-discovery',
+        intro: { viewOnlineLink: { href: 'https://example.com/newsletters/2026/w23-y26' } },
+      },
+      { logger: { warn(message) { warnings.push(message); } } },
+    ),
+    null,
+  );
+  assert.deepEqual(warnings, []);
 });

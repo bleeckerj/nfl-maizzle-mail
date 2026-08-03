@@ -448,6 +448,12 @@ def generate_skeleton(sections=None, minimal=False):
         'sectionStylesFile': 'templates/dense-discovery/section-styles.json',
         'intro': {
             'title': 'Welcome',
+            'viewOnlineLink': {
+                'href': 'https://nearfuturelaboratory.com/newsletters/2026/wXX-yYY',
+                'label': 'wXX-yYY | view online',
+                'category': 'issue-nav',
+                'intent': 'read-related'
+            },
             'images': [{
                 'src': f'{DEFAULT_NEWSLETTER_IMAGE_BASE_URL}/w=600?format=webp',
                 'alt': DEFAULT_INTRO_IMAGE_ALT

@@ -147,7 +147,7 @@ sections:
 - This template does not use a top-level `header` field. Its visible header is the `newsletter_masthead` section.
 - Backoffice publishing metadata such as `ogImage`, `ogImageAltText`, and `socialCard` may exist on outbox issues, but those fields are not part of this email template’s render path.
 - New editorial content should use the evolved tracked link object shape on fields named `link`, `logoLink`, or top-level CTA `url`: `{ href, label, category }`. The build emits those labels/categories as `data-link-label` and `data-link-category` for `nfl-newsletter-email-soup-to-nuts`.
-- Do not author `viewOnlineLink`. The build computes it from `issueId` as `https://nearfuturelaboratory.com/newsletters/<year>/<issueId>` and injects it into the masthead before rendering.
+- The build computes `viewOnlineLink` from `issueId` as `https://nearfuturelaboratory.com/newsletters/<year>/<issueId>` and injects it into the masthead before rendering. Public starters may carry a placeholder so the required field remains visible to authoring tools.
 - Short Take content is registry-owned. Newsletter drafts carry only `shortTakeId`; issue-level headline, caption, image, URL, edge metadata, width, and style overrides are rejected.
 - New ad content should use `ad-block` with `adId`; do not hand-author ad destination URLs or ad image URLs in the newsletter draft. Hydrated ad links default to tracking category `ad-block`. When a placement needs a more specific click-category analytics label, set the item `link` or `readMoreLink` to `{ href, label, category }`, for example:
 

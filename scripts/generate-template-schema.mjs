@@ -429,10 +429,21 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
 
   const viewOnlineLinkSchema = schema.properties.intro?.properties?.viewOnlineLink;
   if (viewOnlineLinkSchema) {
+    const trackedViewOnlineLinkSchema = viewOnlineLinkSchema.type === 'object'
+      ? {
+          ...viewOnlineLinkSchema,
+          properties: {
+            ...(viewOnlineLinkSchema.properties || {}),
+            label: {},
+            category: {},
+            intent: {},
+          },
+        }
+      : viewOnlineLinkSchema;
     schema.properties.intro.properties.viewOnlineLink = {
       oneOf: [
         { type: 'string' },
-        viewOnlineLinkSchema,
+        trackedViewOnlineLinkSchema,
       ],
     };
   }

@@ -29,6 +29,11 @@ socialCard:
 sectionStylesFile: templates/dense-discovery/section-styles.json
 intro:
   title: Welcome
+  viewOnlineLink:
+    href: https://nearfuturelaboratory.com/newsletters/2026/wXX-yYY
+    label: wXX-yYY | view online
+    category: issue-nav
+    intent: read-related
   images:
   - src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=600?format=webp
     alt: Newspaper page about AlgoAllo’s AI-driven sports-model training studio, with a photo of people working in a colorful office.

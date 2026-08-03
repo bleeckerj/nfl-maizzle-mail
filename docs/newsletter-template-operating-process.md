@@ -70,7 +70,7 @@ Where an existing field is named `url`, the object still carries `href`, `label`
 
 ## Build-Owned View Online Link
 
-View/share-online links are deterministic. Authors should not type them in Backoffice drafts for new templates.
+View/share-online links are deterministic. Public starters include the expected field as a placeholder, while the build replaces it with the canonical issue URL.
 
 The build computes:
 
@@ -86,6 +86,8 @@ Current injection targets:
 - `near-future-lab-daily-headlines`: `newsletter_masthead.viewOnlineLink`
 
 When adding a new template with a view-online link, add an explicit injection target in `view-online-link.mjs`, add tests, and document the target in the template README/schema.
+
+Public builds warn when a supported template is missing its expected view-online field or contains a placeholder. Campaign builds suppress both the warning and the public link.
 
 ## Link Tracking Contract
 

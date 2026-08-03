@@ -85,6 +85,17 @@ class GenerateNewsletterSkeletonTest(unittest.TestCase):
         self.assertNotIn("fontSize", content_styles)
         self.assertNotIn("lineHeight", content_styles)
 
+    def assert_view_online_placeholder(self, payload: dict) -> None:
+        self.assertEqual(
+            payload["intro"]["viewOnlineLink"],
+            {
+                "href": "https://nearfuturelaboratory.com/newsletters/2026/wXX-yYY",
+                "label": "wXX-yYY | view online",
+                "category": "issue-nav",
+                "intent": "read-related",
+            },
+        )
+
     def test_generator_includes_visual_defaults(self) -> None:
         full = GENERATOR.generate_skeleton()
         minimal = GENERATOR.generate_skeleton(minimal=True)
@@ -94,6 +105,8 @@ class GenerateNewsletterSkeletonTest(unittest.TestCase):
         self.assert_featured_project(minimal)
         self.assert_intro_typography_is_inherited(full)
         self.assert_intro_typography_is_inherited(minimal)
+        self.assert_view_online_placeholder(full)
+        self.assert_view_online_placeholder(minimal)
 
     def test_checked_in_skeletons_include_visual_defaults(self) -> None:
         full = load_skeleton(FULL_SKELETON_PATH)
@@ -104,6 +117,8 @@ class GenerateNewsletterSkeletonTest(unittest.TestCase):
         self.assert_featured_project(minimal)
         self.assert_intro_typography_is_inherited(full)
         self.assert_intro_typography_is_inherited(minimal)
+        self.assert_view_online_placeholder(full)
+        self.assert_view_online_placeholder(minimal)
 
     def test_full_skeleton_snippet_matches_checked_in_skeleton(self) -> None:
         snippet = json.loads(FULL_SKELETON_SNIPPET_PATH.read_text(encoding="utf-8"))
