@@ -17,6 +17,11 @@ When the attribute is omitted, `below-image-before-description` is used.
 The same attribute is accepted by the legacy `animated-image` section because
 both section types use the same rendering branch.
 
+`description` is an HTML fragment rather than plain text. Simple inline markup
+such as `<a href="...">links</a>`, `<strong>bold</strong>`, and
+`<em>italics</em>` is preserved and styled by the build; wrap paragraph copy in
+`<p>` when appropriate.
+
 ```yaml
 sections:
 - type: image
@@ -25,7 +30,7 @@ sections:
   items:
   - title: Ramen, Los Angeles
     image: https://example.com/ramen.jpg
-    description: <p>Ramen with Chris Woebken and Sascha Pohflepp.</p>
+    description: <p>Ramen with <strong>Chris Woebken</strong> and <em>Sascha Pohflepp</em>. <a href="https://example.com/ramen">View the note.</a></p>
 ```
 
 ## `feature` subtitle styling

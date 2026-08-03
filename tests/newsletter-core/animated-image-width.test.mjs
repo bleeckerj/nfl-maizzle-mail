@@ -145,10 +145,15 @@ test('image item title placement is represented in the template and schema', () 
   assert.ok(imageVariant, 'schema should define an image section variant');
 
   const placementSchema = imageVariant.properties.itemTitlePlacement;
+  const descriptionSchema = imageVariant.properties.items.items.properties.description;
   assert.deepEqual(placementSchema.enum, [
     'above-image',
     'below-image-centered',
     'below-image-before-description',
   ]);
   assert.equal(placementSchema.default, 'below-image-before-description');
+  assert.match(descriptionSchema.description, /HTML fragment/);
+  assert.match(descriptionSchema.description, /<a href>/);
+  assert.match(descriptionSchema.description, /<strong>/);
+  assert.match(descriptionSchema.description, /<em>/);
 });

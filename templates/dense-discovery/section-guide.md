@@ -551,7 +551,7 @@ sections:
       alt: Image alias alt text
       caption: Image alias caption
     title: Image alias item title
-    description: <p>This FPO image alias description confirms that the plain image section renders through the same branch as animated-image, with enough text to show the final spacing below the media.</p>
+    description: <p>This FPO image alias description confirms that the plain image section renders through the same branch as animated-image, with <strong>bold</strong>, <em>italic</em>, and <a href="mailto:guide@example.com">linked</a> text below the media.</p>
     link: mailto:guide@example.com
 footer:
   shareUrl: mailto:guide@example.com

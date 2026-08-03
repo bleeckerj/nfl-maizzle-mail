@@ -367,7 +367,7 @@ sections:
   items:
   - image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     title: Example title
-    description: <p>Example description for image item 1.</p>
+    description: <p>Example description with <strong>bold</strong>, <em>italic</em>, and <a href="https://example.com">linked</a> text.</p>
     link: https://example.com
 - type: inline_cta
   renderFor: public

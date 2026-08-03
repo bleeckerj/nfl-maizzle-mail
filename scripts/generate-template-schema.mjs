@@ -472,6 +472,10 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
 
   const variants = schema?.properties?.sections?.items?.allOf;
   const animatedImageEntry = findTypedSectionVariantEntry(schema, 'animated-image');
+  const imageItemDescriptionSchema = {
+    type: 'string',
+    description: 'HTML fragment for the image item description; simple tags such as <p>, <a href>, <strong>, and <em> are supported.',
+  };
   const itemTitlePlacementSchema = {
     type: 'string',
     enum: ['above-image', 'below-image-centered', 'below-image-before-description'],
@@ -480,10 +484,18 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
   };
   const animatedImageVariant = findTypedSectionVariant(schema, 'animated-image');
   if (animatedImageVariant?.properties) {
+    const animatedImageItemProperties = animatedImageVariant.properties.items?.items?.properties;
+    if (animatedImageItemProperties) {
+      animatedImageItemProperties.description = imageItemDescriptionSchema;
+    }
     animatedImageVariant.properties.itemTitlePlacement = itemTitlePlacementSchema;
   }
   const imageVariant = findTypedSectionVariant(schema, 'image');
   if (imageVariant?.properties) {
+    const imageItemProperties = imageVariant.properties.items?.items?.properties;
+    if (imageItemProperties) {
+      imageItemProperties.description = imageItemDescriptionSchema;
+    }
     imageVariant.properties.itemTitlePlacement = itemTitlePlacementSchema;
   }
   if (Array.isArray(variants) && animatedImageEntry && !findTypedSectionVariantEntry(schema, 'image')) {

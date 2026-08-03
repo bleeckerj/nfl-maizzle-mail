@@ -864,7 +864,10 @@
                       "title": {},
                       "link": {},
                       "image": {},
-                      "description": {}
+                      "description": {
+                        "type": "string",
+                        "description": "HTML fragment for the image item description; simple tags such as <p>, <a href>, <strong>, and <em> are supported."
+                      }
                     },
                     "additionalProperties": false
                   }
@@ -1679,7 +1682,10 @@
                       "title": {},
                       "link": {},
                       "image": {},
-                      "description": {}
+                      "description": {
+                        "type": "string",
+                        "description": "HTML fragment for the image item description; simple tags such as <p>, <a href>, <strong>, and <em> are supported."
+                      }
                     },
                     "additionalProperties": false
                   }
