@@ -2391,6 +2391,12 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           <each loop="item in section.items">
                             <tr>
                               <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ themeColors.animatedImage || '#fafafa' }};padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;text-align: center;">
+                                <if condition="section.itemTitlePlacement === 'above-image' && item.title">
+                                  <p class="mob-text mob-title" style="margin: 0 0 12px 0;padding: 0;font-family: 'Ubuntu', Arial, sans-serif;font-size: 19px;line-height: 1.4;font-weight: 700;color: #111111;text-align: left;">
+                                    <if condition="item.link"><a href="{{ item.link }}" style="color: inherit;text-decoration: none;">{{ item.title }}</a></if>
+                                    <if condition="!item.link">{{ item.title }}</if>
+                                  </p>
+                                </if>
                                 <if condition="item.image">
                                   <if condition="(typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('link')) || item.link">
                                     <a href="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('link')) ? item.image.link : item.link }}" style="text-decoration: none;">
@@ -2403,6 +2409,18 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   <if condition="typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('caption') && item.image.caption">
                                     <p class="image-caption mob-caption" style="margin: 8px 0 15px 0;padding: 0;font-family: 'IBM Plex Sans', sans-serif;font-size: 14px;line-height: 1.2;font-weight: 500;color: #495263;text-align: left;text-decoration: none !important;">{{{ item.image.caption }}}</p>
                                   </if>
+                                </if>
+                                <if condition="section.itemTitlePlacement === 'below-image-centered' && item.title">
+                                  <p class="mob-text mob-title" style="margin: 0 0 10px 0;padding: 0;font-family: 'Ubuntu', Arial, sans-serif;font-size: 19px;line-height: 1.4;font-weight: 700;color: #111111;text-align: center;">
+                                    <if condition="item.link"><a href="{{ item.link }}" style="color: inherit;text-decoration: none;">{{ item.title }}</a></if>
+                                    <if condition="!item.link">{{ item.title }}</if>
+                                  </p>
+                                </if>
+                                <if condition="section.itemTitlePlacement !== 'above-image' && section.itemTitlePlacement !== 'below-image-centered' && item.title">
+                                  <p class="mob-text mob-title" style="margin: 0 0 6px 0;padding: 0;font-family: 'Ubuntu', Arial, sans-serif;font-size: 19px;line-height: 1.4;font-weight: 700;color: #111111;text-align: left;">
+                                    <if condition="item.link"><a href="{{ item.link }}" style="color: inherit;text-decoration: none;">{{ item.title }}</a></if>
+                                    <if condition="!item.link">{{ item.title }}</if>
+                                  </p>
                                 </if>
                                 <if condition="item.description">
                                   <div style="font-size: 16px;line-height: 23px;font-weight: 400;color: #000000;padding: 0;margin: 0;margin-bottom: 10px;text-align: center;">{{{ item.description }}}</div>

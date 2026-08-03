@@ -163,7 +163,7 @@ SECTION_DEFINITIONS = {
     },
     'animated-image': {
         'description': 'Animated images/GIFs',
-        'section_fields': ['type', 'title'],
+        'section_fields': ['type', 'title', 'itemTitlePlacement'],
         'item_fields': {
             'required': ['image'],
             'optional': ['title', 'description', 'link']
@@ -172,7 +172,7 @@ SECTION_DEFINITIONS = {
     },
     'image': {
         'description': 'Standalone image section',
-        'section_fields': ['type', 'title'],
+        'section_fields': ['type', 'title', 'itemTitlePlacement'],
         'item_fields': {
             'required': ['image'],
             'optional': ['title', 'description', 'link']
@@ -340,6 +340,8 @@ def generate_section(section_type, minimal=False):
             section[field] = f'<p>Description for {section_type} section.</p>'
         elif field == 'show_bottom_rule':
             section[field] = True
+        elif field == 'itemTitlePlacement':
+            section[field] = 'below-image-before-description'
         elif field == 'authorLabel':
             if not minimal:
                 section[field] = 'Author'

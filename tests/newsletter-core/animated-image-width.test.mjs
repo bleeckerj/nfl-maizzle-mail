@@ -119,3 +119,36 @@ test('build-newsletter links standalone image section images when item link is s
     rmSync(tempRoot, { recursive: true, force: true });
   }
 });
+
+test('image item title placement is represented in the template and schema', () => {
+  const template = readFileSync(
+    path.join(REPO_ROOT, 'templates', 'dense-discovery', 'newsletter.html'),
+    'utf8',
+  );
+  const schema = JSON.parse(
+    readFileSync(
+      path.join(REPO_ROOT, 'templates', 'dense-discovery', 'newsletter.schema.json'),
+      'utf8',
+    ),
+  );
+  const sectionSchema = schema.properties.sections.items;
+  const imageVariant = sectionSchema.allOf.find(
+    (variant) => variant.if?.properties?.type?.const === 'image',
+  )?.then;
+
+  assert.match(template, /section\.itemTitlePlacement === 'above-image'/);
+  assert.match(template, /section\.itemTitlePlacement === 'below-image-centered'/);
+  assert.match(template, /section\.itemTitlePlacement !== 'above-image'/);
+  assert.match(template, /section\.itemTitlePlacement !== 'below-image-centered'/);
+  assert.match(template, /font-weight: 700/);
+  assert.match(template, /text-align: center/);
+  assert.ok(imageVariant, 'schema should define an image section variant');
+
+  const placementSchema = imageVariant.properties.itemTitlePlacement;
+  assert.deepEqual(placementSchema.enum, [
+    'above-image',
+    'below-image-centered',
+    'below-image-before-description',
+  ]);
+  assert.equal(placementSchema.default, 'below-image-before-description');
+});

@@ -216,6 +216,10 @@ The legacy `indie-mag-single-column` name remains supported as an alias for `sin
 
 `short-take` is supported by the production template and canonical builder, but is not yet included in the generated section-guide source above. Use the registry-backed authoring shape in `templates/dense-discovery/README.md` or the full Dense Discovery skeleton.
 
+For `image` and legacy `animated-image` sections, `itemTitlePlacement` selects
+the visible item-title treatment: `above-image`, `below-image-centered`, or
+`below-image-before-description`. The default is `below-image-before-description`.
+
 Generated files in `build_production/` are build artifacts. Regenerate them from the source Markdown and script when reviewing the guide.
 
 ## Dense Discovery Authoring Notes

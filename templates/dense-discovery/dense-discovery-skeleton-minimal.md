@@ -148,6 +148,12 @@ sections:
   - content: <p>Example classified content for item 1.</p>
 - type: animated-image
   title: Animated Image Section
+  itemTitlePlacement: below-image-before-description
+  items:
+  - image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+- type: image
+  title: Image Section
+  itemTitlePlacement: below-image-before-description
   items:
   - image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
 footer:

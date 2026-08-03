@@ -861,13 +861,23 @@
                   "items": {
                     "type": "object",
                     "properties": {
-                      "image": {},
-                      "link": {},
                       "title": {},
+                      "link": {},
+                      "image": {},
                       "description": {}
                     },
                     "additionalProperties": false
                   }
+                },
+                "itemTitlePlacement": {
+                  "type": "string",
+                  "enum": [
+                    "above-image",
+                    "below-image-centered",
+                    "below-image-before-description"
+                  ],
+                  "default": "below-image-before-description",
+                  "description": "Controls where an image-section item title appears relative to its image and description."
                 },
                 "headingStylesInline": {},
                 "linkStylesInline": {},
@@ -1666,13 +1676,23 @@
                   "items": {
                     "type": "object",
                     "properties": {
-                      "image": {},
-                      "link": {},
                       "title": {},
+                      "link": {},
+                      "image": {},
                       "description": {}
                     },
                     "additionalProperties": false
                   }
+                },
+                "itemTitlePlacement": {
+                  "type": "string",
+                  "enum": [
+                    "above-image",
+                    "below-image-centered",
+                    "below-image-before-description"
+                  ],
+                  "default": "below-image-before-description",
+                  "description": "Controls where an image-section item title appears relative to its image and description."
                 },
                 "headingStylesInline": {},
                 "linkStylesInline": {},

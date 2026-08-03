@@ -472,6 +472,20 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
 
   const variants = schema?.properties?.sections?.items?.allOf;
   const animatedImageEntry = findTypedSectionVariantEntry(schema, 'animated-image');
+  const itemTitlePlacementSchema = {
+    type: 'string',
+    enum: ['above-image', 'below-image-centered', 'below-image-before-description'],
+    default: 'below-image-before-description',
+    description: 'Controls where an image-section item title appears relative to its image and description.',
+  };
+  const animatedImageVariant = findTypedSectionVariant(schema, 'animated-image');
+  if (animatedImageVariant?.properties) {
+    animatedImageVariant.properties.itemTitlePlacement = itemTitlePlacementSchema;
+  }
+  const imageVariant = findTypedSectionVariant(schema, 'image');
+  if (imageVariant?.properties) {
+    imageVariant.properties.itemTitlePlacement = itemTitlePlacementSchema;
+  }
   if (Array.isArray(variants) && animatedImageEntry && !findTypedSectionVariantEntry(schema, 'image')) {
     const imageEntry = JSON.parse(JSON.stringify(animatedImageEntry));
     imageEntry.if.properties.type.const = 'image';

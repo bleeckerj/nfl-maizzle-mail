@@ -4,6 +4,30 @@
 
 This email template is a tuned up fork within this repo, a Markdown-JSON-Python-Maizzle based production workflow. It's a work-in-progress building on a refactor of the <a href="https://densediscovery.com">Dense Discovery</a> newsletter's look and vibe, created by <a href="https://www.brizk.com">Kai Brach</a>. I have been a paid ‘friend of Dense Discovery’ for, well… I'm not sure how many years now. It's a great newsletter and I would encourage you to subscribe and become a paid member.
 
+## `image` item titles
+
+Standalone `image` sections render each item's `title` as visible bold text. Set
+`itemTitlePlacement` on the section to choose the title's position:
+
+- `above-image` — bold, left-aligned title above the image.
+- `below-image-centered` — bold, centered title below the image.
+- `below-image-before-description` — bold, left-aligned title below the image and immediately before the description.
+
+When the attribute is omitted, `below-image-before-description` is used.
+The same attribute is accepted by the legacy `animated-image` section because
+both section types use the same rendering branch.
+
+```yaml
+sections:
+- type: image
+  title: Throwback
+  itemTitlePlacement: below-image-before-description
+  items:
+  - title: Ramen, Los Angeles
+    image: https://example.com/ramen.jpg
+    description: <p>Ramen with Chris Woebken and Sascha Pohflepp.</p>
+```
+
 ## `feature` subtitle styling
 
 Feature item subtitles inherit explicit section text color overrides by default. Use subtitle-specific keys inside `contentStyles` when the subtitle needs its own color or type treatment.

@@ -31,6 +31,7 @@ python scripts/generate-newsletter-skeleton.py [--minimal] [--output FILE] [--se
 - Each section includes the correct `type`, section-level fields, and sample items with required and optional fields populated (unless `--minimal` is used).
 - For `dispatch` sections, `signalsLabel` and `tags` are item-level fields (`sections[].items[]`) used to render the SIGNALS tag bar.
 - For `food-for-thought` sections, the legacy `readMoreText` + `readMoreLink` pair remains the primary CTA row, and optional `readMoreLinks` entries add extra CTA rows as `{ text, link }`.
+- For `image` and `animated-image` sections, `itemTitlePlacement` defaults to `below-image-before-description`; use `above-image` or `below-image-centered` for the other supported title treatments.
 - Section sample image URLs use placeholders; replace them with real assets before building. The default introduction image is an existing hosted Photarium asset.
 - The checked-in `templates/dense-discovery/dense-discovery-skeleton-full.md` also includes the registry-backed `short-take` type. The Python generator does not emit it yet; copy that block or author it manually with one `shortTakeId`.
 

@@ -533,6 +533,7 @@ sections:
       alt: Classified image three alt text
 - type: animated-image
   title: Animated Image Section Title
+  itemTitlePlacement: below-image-before-description
   items:
   - image:
       src: https://fpoimg.com/800x600?text=Animated%20Image&bg_color=fafafa&text_color=44506a
@@ -543,6 +544,7 @@ sections:
     link: mailto:guide@example.com
 - type: image
   title: Image Section Title
+  itemTitlePlacement: below-image-before-description
   items:
   - image:
       src: https://fpoimg.com/800x600?text=Image%20Alias&bg_color=fafafa&text_color=44506a

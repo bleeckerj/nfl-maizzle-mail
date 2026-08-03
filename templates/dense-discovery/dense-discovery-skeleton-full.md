@@ -355,10 +355,19 @@ sections:
       alt: Alternate text for classified 1 image 3
 - type: animated-image
   title: Animated Image Section
+  itemTitlePlacement: below-image-before-description
   items:
   - image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
     title: Example title
     description: <p>Example description for animated-image item 1.</p>
+    link: https://example.com
+- type: image
+  title: Image Section
+  itemTitlePlacement: below-image-before-description
+  items:
+  - image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
+    title: Example title
+    description: <p>Example description for image item 1.</p>
     link: https://example.com
 - type: inline_cta
   renderFor: public
