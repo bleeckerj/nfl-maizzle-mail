@@ -94,6 +94,19 @@ test('brain-dead hero wraps the image with hero.ctaLink and preserves full image
   }));
 });
 
+test('brain-dead hero body keeps nested author paragraphs inside a black text container', async () => {
+  const newsletter = baseNewsletter({
+    hero: {
+      headline: 'Body fixture',
+      body: '<p>First hero paragraph.</p><p>Second hero paragraph.</p>',
+    },
+  });
+  const html = await renderNewsletter(newsletter);
+
+  assert.match(html, /<div style="[^\"]*color:#000000[^\"]*"><p>First hero paragraph\.<\/p><p>Second hero paragraph\.<\/p><\/div>/);
+  assert.doesNotMatch(html, /<p[^>]*color:#000000[^>]*>\s*<p>First hero paragraph/);
+});
+
 test('brain-dead hero imageLink overrides hero.ctaLink', async () => {
   const newsletter = baseNewsletter({
     hero: {
