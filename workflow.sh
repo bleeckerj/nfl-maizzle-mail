@@ -10,7 +10,7 @@ cd "$SCRIPT_DIR"
 
 print_usage() {
     cat <<'EOF'
-Usage: ./workflow.sh [--content <path>] [--template <name>] [--output <path>] [--strict-schema] [--regen-schema] [--send-test|send-test]
+Usage: ./workflow.sh [--content <path>] [--template <name>] [--output <path>] [--strict-schema] [--regen-schema] [--preview] [--send-test|send-test]
   or:   ./workflow.sh <content-file.md> [template] [output-file] [send-test]
 
 Examples:
@@ -49,6 +49,7 @@ resolve_output_dest_path() {
 SEND_TEST_REQUESTED=false
 STRICT_SCHEMA_REQUESTED=false
 REGEN_SCHEMA_REQUESTED=false
+PREVIEW_REQUESTED=false
 POSITIONAL=()
 
 while [ $# -gt 0 ]; do
@@ -94,6 +95,10 @@ while [ $# -gt 0 ]; do
             ;;
         --regen-schema)
             REGEN_SCHEMA_REQUESTED=true
+            shift
+            ;;
+        --preview)
+            PREVIEW_REQUESTED=true
             shift
             ;;
         --*)
@@ -294,9 +299,17 @@ else
 fi
 if [ -n "$QUICK_BUILD_OUTPUT_ARG" ]; then
     echo "💾 Output: $QUICK_BUILD_OUTPUT_ARG"
-    "${NODE_ENV_PREFIX[@]}" node "$SCRIPT_DIR/scripts/quick-build.mjs" "$TEMPLATE" "$CONTENT_FILE" "$QUICK_BUILD_OUTPUT_ARG"
+    if [ "$PREVIEW_REQUESTED" = true ]; then
+        "${NODE_ENV_PREFIX[@]}" node "$SCRIPT_DIR/scripts/quick-build.mjs" "$TEMPLATE" "$CONTENT_FILE" "$QUICK_BUILD_OUTPUT_ARG" --preview
+    else
+        "${NODE_ENV_PREFIX[@]}" node "$SCRIPT_DIR/scripts/quick-build.mjs" "$TEMPLATE" "$CONTENT_FILE" "$QUICK_BUILD_OUTPUT_ARG"
+    fi
 else
-    "${NODE_ENV_PREFIX[@]}" node "$SCRIPT_DIR/scripts/quick-build.mjs" "$TEMPLATE" "$CONTENT_FILE"
+    if [ "$PREVIEW_REQUESTED" = true ]; then
+        "${NODE_ENV_PREFIX[@]}" node "$SCRIPT_DIR/scripts/quick-build.mjs" "$TEMPLATE" "$CONTENT_FILE" --preview
+    else
+        "${NODE_ENV_PREFIX[@]}" node "$SCRIPT_DIR/scripts/quick-build.mjs" "$TEMPLATE" "$CONTENT_FILE"
+    fi
 fi
 
 BUILD_EXIT_CODE=$?

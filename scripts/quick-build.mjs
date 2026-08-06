@@ -17,9 +17,11 @@ import { dirname, join } from 'path';
 
 // Get command line arguments
 const args = process.argv.slice(2);
-const command = args[0];
-const file = args[1];
-const outputFile = args[2]; // Third arg: optional output file path
+const positionalArgs = args.filter(arg => arg !== '--preview');
+const previewMode = args.includes('--preview');
+const command = positionalArgs[0];
+const file = positionalArgs[1];
+const outputFile = positionalArgs[2]; // Third arg: optional output file path
 
 // Debug: show parsed arguments when DEBUG_QUICK_BUILD environment variable is set
 if (process.env.DEBUG_QUICK_BUILD === '1') {
@@ -363,7 +365,8 @@ if (command === 'list') {
     const templateArg = isMd ? '' : `--template=${template}`;
     const calendarPublicRoot = resolveCalendarPublicRoot(outputFile);
     const calendarArg = calendarPublicRoot ? `--calendar-public-root=${calendarPublicRoot}` : '';
-    const execCmd = `node ${buildNewsletterPath} ${inputFile} ${outputName} ${templateArg} ${calendarArg}`.trim();
+    const previewArg = previewMode ? '--preview' : '';
+    const execCmd = `node ${buildNewsletterPath} ${inputFile} ${outputName} ${templateArg} ${calendarArg} ${previewArg}`.trim();
     console.log(`\nExecuting: ${execCmd}\n`);
     execSync(execCmd, {
       stdio: 'inherit',

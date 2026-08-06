@@ -277,7 +277,8 @@ function describeSchemaLocation(instancePath, newsletterData) {
 }
 
 function validateNewsletterDataAgainstSchema(newsletterData, templateName, args) {
-  const strict = args.includes('--strict-schema') || process.env.SCHEMA_STRICT === '1';
+  const previewMode = args.includes('--preview') || process.env.NEWSLETTER_PREVIEW === '1';
+  const strict = !previewMode && (args.includes('--strict-schema') || process.env.SCHEMA_STRICT === '1');
   const schemaCandidates = [
     templateName ? path.resolve(`templates/${templateName}/newsletter.schema.json`) : null,
     path.resolve('newsletter.schema.json'),
@@ -2501,14 +2502,24 @@ async function buildNewsletter() {
     console.log(`✅ Theme and section style data injected for Maizzle processing`);
     
     // Validate images in the newsletter data
+    const previewMode = args.includes('--preview') || process.env.NEWSLETTER_PREVIEW === '1';
     const imageValidation = await validateImages(newsletterData, {
       checkImageUrl: checkHttpUrl,
       logger: console,
     });
     if (imageValidation.errors.length > 0) {
-      throw new Error('Image validation failed; no sendable HTML was produced.');
+      if (previewMode) {
+        console.error(`⚠️  Image validation found ${imageValidation.errors.length} issue(s); continuing preview build.`);
+      } else {
+        throw new Error('Image validation failed; no sendable HTML was produced.');
+      }
     }
-    await validateLinks(newsletterData, { checkHttpUrl });
+    try {
+      await validateLinks(newsletterData, { checkHttpUrl });
+    } catch (error) {
+      if (!previewMode) throw error;
+      console.error(`⚠️  Link validation failed; continuing preview build: ${error.message}`);
+    }
 
     // Build the newsletter
     console.log('🔨 Building newsletter...');
