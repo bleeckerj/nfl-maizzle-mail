@@ -88,34 +88,35 @@
       "description": "Registry-backed editorial card with full-width image, headline, caption, and optional edge metadata.",
       "containerStyles": {
         "backgroundColor": "#ffffff",
-        "borderColor": "#dcdcdc",
-        "borderWidth": "1px",
+        "borderColor": "#b9b9b2",
+        "borderWidth": "2px",
         "borderStyle": "solid",
-        "copyPadding": "16px 18px 18px",
-        "metaPadding": "8px 10px"
+        "copyPadding": "8px 16px 22px",
+        "imagePadding": "0",
+        "metaPadding": "6px 13px"
       },
       "labelStyles": {
-        "fontFamily": "Arial, sans-serif",
-        "fontSize": "10px",
+        "fontFamily": "Courier New, Courier, monospace",
+        "fontSize": "11px",
         "lineHeight": "13px",
-        "fontWeight": "700",
-        "letterSpacing": ".65px",
+        "fontWeight": "400",
+        "letterSpacing": "0.08em",
         "textTransform": "uppercase",
-        "color": "#666666"
+        "color": "#363636"
       },
       "headingStyles": {
         "fontFamily": "Georgia, serif",
-        "fontSize": "23px",
-        "lineHeight": "27px",
+        "fontSize": "22px",
+        "lineHeight": "24px",
         "fontWeight": "700",
-        "color": "#111111"
+        "color": "#141414"
       },
       "contentStyles": {
         "fontFamily": "Arial, sans-serif",
-        "fontSize": "14px",
-        "lineHeight": "20px",
+        "fontSize": "13px",
+        "lineHeight": "16px",
         "fontWeight": "400",
-        "color": "#555555"
+        "color": "#525252"
       },
       "linkStyles": {
         "color": "inherit",

@@ -236,6 +236,9 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                         <td style="border-collapse:collapse;padding:{{ section.containerStyles.outerPadding || '20px 12px 25px' }}">
                           <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" data-short-take-id="{{ item.shortTakeId }}" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}" style="border-spacing:0;background:{{ section.containerStyles.backgroundColor || '#FFFFFF' }};border:{{ section.containerStyles.borderWidth || '1px' }} {{ section.containerStyles.borderStyle || 'solid' }} {{ section.containerStyles.borderColor || '#c9cfdb' }}">
                             <tbody>
+                              <tr><td class="short-take-logo-rail" style="border-collapse:collapse;padding:6px 14px;background:#141414;border-bottom:1px solid #b9b9b2;line-height:0;font-size:0">
+                                <img src="https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e98285d8-5856-4005-6fbd-1c322688e700/full" alt="Near Future Laboratory white wordmark" border="0" width="112" style="display:block;width:112px;max-width:46%;height:auto;border:0">
+                              </td></tr>
                               <if condition="item.topLeft || item.topRight">
                                 <tr><td style="border-collapse:collapse;padding:{{ section.containerStyles.metaPadding || '9px 12px' }};border-bottom:1px solid {{ section.containerStyles.borderColor || '#c9cfdb' }}">
                                   <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="border-spacing:0"><tbody><tr>
@@ -244,7 +247,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   </tr></tbody></table>
                                 </td></tr>
                               </if>
-                              <tr><td class="short-take-image" style="border-collapse:collapse;padding:{{ section.containerStyles.imagePadding || '0 0 15px' }};line-height:0;font-size:0">
+                              <tr><td class="short-take-image" style="border-collapse:collapse;padding:{{ section.containerStyles.imagePadding || '0' }};line-height:0;font-size:0">
                                 <if condition="item.link"><a href="{{ item.link }}" style="display:block;text-decoration:none;color:inherit"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" border="0" width="638" style="-ms-interpolation-mode:bicubic;display:block;width:100%;max-width:638px;height:auto;border:0"></a></if>
                                 <if condition="!item.link"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" border="0" width="638" style="-ms-interpolation-mode:bicubic;display:block;width:100%;max-width:638px;height:auto;border:0"></if>
                               </td></tr>

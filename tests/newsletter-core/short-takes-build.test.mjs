@@ -184,14 +184,20 @@ function assertRenderedShortTakes(html, templateName, middleSentinel, endSentine
   const unlinkedCard = cards[0];
   const outerCell = unlinkedCard.parentElement;
   assert.ok(outerCell);
-  const outerPadding = templateName === 'dense-discovery' ? /padding:20px 12px 25px/i : /padding:0/i;
+  const outerPadding = templateName === 'dense-discovery' ? /padding:8px 0 22px/i : /padding:0/i;
   assert.match(outerCell.getAttribute('style'), outerPadding);
   assert.equal(unlinkedCard.querySelectorAll('a').length, 0);
-  assert.equal(unlinkedCard.querySelector('img').getAttribute('alt'), 'A complete unlinked Short Take image');
-  assert.match(unlinkedCard.querySelector('img').getAttribute('style'), /width:\s*100%/i);
-  assert.match(unlinkedCard.querySelector('img').getAttribute('style'), /height:\s*auto/i);
-  const imagePadding = templateName === 'dense-discovery' ? /padding:0 0 15px/i : /padding:0 18px 15px/i;
-  assert.match(unlinkedCard.querySelector('img').closest('td').getAttribute('style'), imagePadding);
+  const shortTakeImages = [...unlinkedCard.querySelectorAll('img')];
+  const shortTakeImage = shortTakeImages.at(-1);
+  assert.ok(shortTakeImage);
+  assert.equal(shortTakeImage.getAttribute('alt'), 'A complete unlinked Short Take image');
+  assert.match(shortTakeImage.getAttribute('style'), /width:\s*100%/i);
+  assert.match(shortTakeImage.getAttribute('style'), /height:\s*auto/i);
+  const imagePadding = /padding:0/i;
+  assert.match(shortTakeImage.closest('td').getAttribute('style'), imagePadding);
+  const logo = unlinkedCard.querySelector('img[alt="Near Future Laboratory white wordmark"]');
+  assert.ok(logo);
+  assert.match(logo.closest('td').getAttribute('style'), /background:#141414/i);
   assert.equal(unlinkedCard.querySelectorAll('p').length, 2);
   assert.equal(unlinkedCard.querySelectorAll('p')[0].textContent.trim(), 'Unlinked Short Take caption.');
   assert.equal(unlinkedCard.querySelectorAll('p')[1].textContent.trim(), 'Second caption sentence.');
@@ -200,8 +206,8 @@ function assertRenderedShortTakes(html, templateName, middleSentinel, endSentine
   assert.ok(shortTakeHeadline);
   assert.ok(shortTakeCaption);
   const expectedType = templateName === 'dense-discovery'
-    ? { headlineSize: '24px', headlineLineHeight: '28px', captionSize: '15px', captionLineHeight: '21px' }
-    : { headlineSize: '23px', headlineLineHeight: '27px', captionSize: '14px', captionLineHeight: '20px' };
+    ? { headlineSize: '24px', headlineLineHeight: '26px', captionSize: '14px', captionLineHeight: '18px' }
+    : { headlineSize: '22px', headlineLineHeight: '24px', captionSize: '13px', captionLineHeight: '16px' };
   assert.match(shortTakeHeadline.getAttribute('style') || '', new RegExp(`font-size:\\s*${expectedType.headlineSize}`, 'i'));
   assert.match(shortTakeHeadline.getAttribute('style') || '', new RegExp(`line-height:\\s*${expectedType.headlineLineHeight}`, 'i'));
   assert.match(shortTakeHeadline.getAttribute('style') || '', /font-weight:\s*700/i);
