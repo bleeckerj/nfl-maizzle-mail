@@ -154,6 +154,39 @@ test('prepareNewsletterData accepts ad-block source items under strict schema va
   });
 });
 
+test('prepareNewsletterData accepts an unlinked daily-headlines article under strict schema validation', () => {
+  const prepared = prepareNewsletterData(
+    {
+      template: 'near-future-lab-daily-headlines',
+      title: 'Unlinked Daily Headlines Article',
+      sections: [
+        {
+          type: 'section_article_group',
+          section_label: 'Working Note',
+          articles: [
+            {
+              headline: 'An article without a destination',
+              image_src: 'https://imagedelivery.net/example/unlinked-article/full',
+              image_alt: 'An article that has no destination link',
+              lede: 'The full card remains visible without an anchor.',
+              cta_label: 'Read the note',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      repoRoot: REPO_ROOT,
+      templateName: 'near-future-lab-daily-headlines',
+      strictSchema: true,
+      logger: { log() {} },
+    },
+  );
+
+  assert.equal(prepared.sections[0].articles[0].link, undefined);
+  assert.equal(prepared.sections[0].articles[0].href, undefined);
+});
+
 test('prepareNewsletterData accepts sponsor platformLinks under strict schema validation', () => {
   const prepared = prepareNewsletterData(
     {

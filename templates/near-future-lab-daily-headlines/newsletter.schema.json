@@ -307,7 +307,7 @@
           {
             "type": "object",
             "title": "Section Article Group",
-            "description": "A named news section (e.g. Top News, World, U.S., Politics) with a bold section heading and 1–5 article cards, each with a thumbnail image, headline, and summary, all linked.",
+            "description": "A named news section (e.g. Top News, World, U.S., Politics) with a bold section heading and 1–5 article cards. Articles may include an optional destination link.",
             "properties": {
               "type": {
                 "const": "section_article_group"
@@ -324,11 +324,11 @@
                   "properties": {
                     "href": {
                       "type": "string",
-                      "description": "Legacy article URL. Prefer link for new content."
+                      "description": "Optional legacy article URL. Prefer link for new content. Omit both href and link for a non-interactive article card."
                     },
                     "link": {
                       "$ref": "#/definitions/trackedLink",
-                      "description": "Tracked article URL"
+                      "description": "Optional tracked article URL. Omit both link and href for a non-interactive article card."
                     },
                     "image_src": {
                       "type": "string",
@@ -357,23 +357,11 @@
                     },
                     "cta_label": {
                       "type": "string",
-                      "description": "Optional visual CTA pill text rendered inside the article link"
+                      "description": "Optional visual CTA pill text. It remains visible as non-interactive text when the article has no link or href."
                     }
                   },
                   "required": [
                     "headline"
-                  ],
-                  "anyOf": [
-                    {
-                      "required": [
-                        "link"
-                      ]
-                    },
-                    {
-                      "required": [
-                        "href"
-                      ]
-                    }
                   ],
                   "additionalProperties": true
                 }

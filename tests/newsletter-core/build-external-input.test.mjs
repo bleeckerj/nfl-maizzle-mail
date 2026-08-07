@@ -681,6 +681,12 @@ test('daily-headlines article CTA pill renders inside existing article link only
       '          category: editorial',
       '        headline: "No CTA story headline"',
       '        lede: "No CTA story lede."',
+      '      - image_src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/dc57ddc1-f8b9-4662-f63e-1c62c3d79900/full?format=webp',
+      '        image_alt: "Unlinked CTA story image"',
+      '        kicker: "Archive"',
+      '        headline: "Unlinked CTA story headline"',
+      '        lede: "Unlinked CTA story lede."',
+      '        cta_label: "Read the unlinked note"',
       '      - link:',
       '          href: mailto:feature-story@example.com',
       '          label: "daily test | headlines | feature story"',
@@ -740,10 +746,24 @@ test('daily-headlines article CTA pill renders inside existing article link only
     assert.match(ctaInlineStyle, new RegExp(`font-weight:\\s*${escapeRegExp(ctaStyles.fontWeight)}`));
     assert.match(html, /<a href="mailto:cta-story@example\.com"[^>]*>[\s\S]*<span class="article-cta-pill"[^>]*>Do you want to know more\?<\/span>[\s\S]*<\/a>/);
     assert.doesNotMatch(html, /<a[^>]*>\s*Do you want to know more\?\s*<\/a>/);
-    assert.doesNotMatch(html, /No CTA story lede\.[\s\S]*article-cta-pill/);
+    const noCtaCardMatch = html.match(/<a href="mailto:no-cta-story@example\.com"[^>]*>[\s\S]*?<\/a>/);
+    assert.ok(noCtaCardMatch);
+    assert.doesNotMatch(noCtaCardMatch[0], /article-cta-pill/);
     assert.match(html, /<div class="article-cta-mobile"[^>]*>[\s\S]*href="mailto:cta-story@example\.com"[\s\S]*<span class="article-cta-pill"[^>]*>Do you want to know more\?<\/span>/);
     assert.equal((html.match(/href="mailto:cta-story@example\.com"/g) || []).length, 3);
-    assert.match(html, /class="article-image article-feature-image css-1oqy46o" width="600"/);
+    const unlinkedHeadlineIndex = html.indexOf('Unlinked CTA story headline');
+    const unlinkedCardStart = html.lastIndexOf('<table class="article-row-table"', unlinkedHeadlineIndex);
+    const unlinkedCardEnd = html.indexOf('</table>', unlinkedHeadlineIndex) + '</table>'.length;
+    assert.ok(unlinkedHeadlineIndex >= 0);
+    assert.ok(unlinkedCardStart >= 0);
+    assert.ok(unlinkedCardEnd > unlinkedHeadlineIndex);
+    const unlinkedCardHtml = html.slice(unlinkedCardStart, unlinkedCardEnd);
+    assert.match(unlinkedCardHtml, /Unlinked CTA story image/);
+    assert.match(unlinkedCardHtml, /Unlinked CTA story lede\./);
+    assert.match(unlinkedCardHtml, /Read the unlinked note/);
+    assert.doesNotMatch(unlinkedCardHtml, /<a\b/);
+    assert.doesNotMatch(html, /href=""/);
+    assert.match(html, /alt="Feature story image" style="display:block;width:100%;max-width:600px;height:auto" class="article-image" width="600"/);
     assert.match(html, /<a href="mailto:feature-story@example\.com"[^>]*>[\s\S]*Feature story headline/);
   } finally {
     rmSync(tempRoot, { recursive: true, force: true });
