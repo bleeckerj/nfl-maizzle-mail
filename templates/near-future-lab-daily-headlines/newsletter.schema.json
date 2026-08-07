@@ -341,7 +341,7 @@
                     "article_layout": {
                       "type": "string",
                       "enum": ["row", "feature"],
-                      "description": "Optional presentation override. row (default) places the image right of copy on wide screens and above it on mobile; feature renders a full-width image above the copy at every width."
+                      "description": "Optional presentation override. row (default) places the image right of copy on wide screens and above it on mobile, with any CTA after the copy; feature renders a full-width image above the copy at every width."
                     },
                     "kicker": {
                       "type": "string",

@@ -750,6 +750,10 @@ test('daily-headlines article CTA pill renders inside existing article link only
     assert.ok(noCtaCardMatch);
     assert.doesNotMatch(noCtaCardMatch[0], /article-cta-pill/);
     assert.match(html, /<div class="article-cta-mobile"[^>]*>[\s\S]*href="mailto:cta-story@example\.com"[\s\S]*<span class="article-cta-pill"[^>]*>Do you want to know more\?<\/span>/);
+    const linkedCardStart = html.lastIndexOf('<table class="article-row-table"', html.indexOf('CTA story headline'));
+    const linkedCardEnd = html.indexOf('</table>', html.indexOf('CTA story headline')) + '</table>'.length;
+    const linkedCardHtml = html.slice(linkedCardStart, linkedCardEnd);
+    assert.ok(linkedCardHtml.indexOf('CTA story lede.') < linkedCardHtml.indexOf('article-cta-mobile'));
     assert.equal((html.match(/href="mailto:cta-story@example\.com"/g) || []).length, 3);
     const unlinkedHeadlineIndex = html.indexOf('Unlinked CTA story headline');
     const unlinkedCardStart = html.lastIndexOf('<table class="article-row-table"', unlinkedHeadlineIndex);

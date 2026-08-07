@@ -553,6 +553,7 @@ test('daily-headlines article rows source-order images first for mobile while re
     assert.notEqual(rowStart, -1);
     assert.ok(imageCell > rowStart, 'the image cell must be first in source order');
     assert.ok(copyCell > imageCell, 'the copy cell must follow the image cell');
+    assert.ok(source.indexOf('<div class="article-cta-mobile"', copyCell) > copyCell, 'the mobile CTA must follow the copy');
     assert.match(source, /article\.article_layout === 'feature'/);
     assert.match(source, /class="article-image article-feature-image/);
   }
