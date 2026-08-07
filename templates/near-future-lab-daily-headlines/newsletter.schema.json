@@ -735,7 +735,7 @@
     },
     "sectionContainerStyles": {
       "type": ["object", "null"],
-      "description": "Section appearance and layout values. backgroundColor is the email-safe fallback for an optional backgroundGradient.",
+      "description": "Section appearance and layout values. backgroundColor is the email-safe fallback for an optional backgroundGradient; contentPadding controls the horizontal inset for text inside a colored surface.",
       "properties": {
         "backgroundColor": {
           "type": "string",
@@ -746,6 +746,11 @@
           "type": "string",
           "pattern": "^linear-gradient\\([^;{}<>]+\\)$",
           "description": "Optional CSS linear-gradient(...) enhancement. Use with backgroundColor so clients without gradient support retain the intended color."
+        },
+        "contentPadding": {
+          "type": "string",
+          "pattern": "^[^;{}<>]+$",
+          "description": "CSS padding shorthand for the text inset inside a colored section surface. Defaults to 0 20px; the outer background remains full width."
         }
       },
       "allOf": [

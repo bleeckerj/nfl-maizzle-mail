@@ -52,6 +52,7 @@ test('Daily Headlines sections render a solid fallback and optional gradient wit
       'daily-headlines-section-background',
       `--repo-root=${buildRoot}`,
       `--output-dir=${outputDir}`,
+      '--preview',
       '--no-open',
     ], { encoding: 'utf8', cwd: tempRoot });
 
@@ -59,6 +60,7 @@ test('Daily Headlines sections render a solid fallback and optional gradient wit
     assert.match(html, /background-color:\s*#eff4ed/);
     assert.match(html, /background-image:\s*linear-gradient\(135deg,\s*#eff4ed 0%,\s*#d7e7f3 100%\)/);
     assert.match(html, /<table[^>]*style="[^"]*background-color:\s*#eff4ed[^"]*background-image:[^"]*"[^>]*>\s*<tbody>\s*<tr><td height="30"/);
+    assert.match(html, /padding:12px 0 13px 0;padding-left:20px;padding-right:20px;border-top:9px solid #000/);
   } finally {
     rmSync(tempRoot, { recursive: true, force: true });
   }

@@ -13,7 +13,7 @@ title: "Near Future Laboratory Daily Headlines"
       <table border="0" cellpadding="0" cellspacing="0" style="width:100%;{{{ section.backgroundStyleInline }}}" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}"><tbody><tr><td style="border-top:1px solid #000"></td></tr><if condition="section.viewOnlineLink"><tr><td style="padding:12px 0 0;text-align:right;font:normal 12px/18px arial,sans-serif"><a title="View online" href="{{ section.viewOnlineLink }}" style="color:#666;-webkit-text-decoration:none;text-decoration:none">View online</a><br><a title="Share this issue" href="{{ section.viewOnlineLink }}" style="color:#666;-webkit-text-decoration:underline;text-decoration:underline">Share this issue</a></td></tr></if><tr><td style="padding:18px 0 20px"><a href="{{ section.logoLink || section.logo_href }}" style="color:#333;-webkit-text-decoration:underline;text-decoration:underline"><img class="masthead-logo" src="{{ section.logo_src }}" alt="{{ section.logo_alt }}" width="{{ section.logo_width || 190 }}" style="display:block;width:{{ section.logo_width || 190 }}px;max-width:{{ section.logo_width || 190 }}px;height:auto;padding:0;margin:0"></a></td></tr><tr><td style="padding:18px 0 0;border-top:1px solid #000"><a href="{{ section.logoLink || section.logo_href }}" style="color:#333;-webkit-text-decoration:underline;text-decoration:underline"><img class="newsletter-title-logo" src="{{ section.title_src }}" alt="{{ section.title_alt }}" width="{{ section.title_width || 300 }}" style="display:block;width:{{ section.title_width || 300 }}px;max-width:{{ section.title_width || 300 }}px;height:auto;padding:0 0 1px 0;margin:0"></a></td></tr><tr><td class="masthead-dateline" style="display:block;padding:3px 0 36px 0;margin:0;font:normal 12px/12px georgia,serif">{{ section.dateline }}</td></tr><tr><td style="border-bottom:0 solid #000"></td></tr></tbody></table>
     </if>
     <if condition="section.type === 'intro_statement'">
-      <table border="0" cellpadding="0" cellspacing="0" style="width:100%;{{{ section.backgroundStyleInline }}}" role="presentation" class="mob-text intro-statement{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><tbody><tr><td class="intro-statement-container" style="padding:0 0 24px 0">
+      <table border="0" cellpadding="0" cellspacing="0" style="width:100%;{{{ section.backgroundStyleInline }}}" role="presentation" class="mob-text intro-statement{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><tbody><tr><td class="intro-statement-container" style="padding:0 0 24px 0;{{{ section.contentPaddingInline }}}">
         <if condition="section.label"><p class="intro-statement-label" style="color:#555;font:700 12px/18px arial,sans-serif;margin:0 0 8px;text-transform:uppercase;letter-spacing:.75px">{{ section.label }}</p></if>
         <if condition="section.statement_rendered_html"><div class="intro-statement-copy" style="color:#333;font:18px/26px georgia,serif;margin:0">{{{ section.statement_rendered_html }}}</div></if>
         <if condition="!section.statement_rendered_html && section.statement"><p class="intro-statement-copy" style="color:#333;font:18px/26px georgia,serif;margin:0">{{ section.statement }}</p></if>
@@ -22,14 +22,14 @@ title: "Near Future Laboratory Daily Headlines"
     <if condition="section.type === 'ad-block'">
       <table border="0" cellpadding="0" cellspacing="0" style="width:100%;{{{ section.backgroundStyleInline }}}" role="presentation" class="mob-text{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><tbody><tr><td height="10"></td></tr><tr><td style="border-top:1px solid #dcdcdc;padding-top:15px"></td></tr>
         <if condition="section.title">
-          <tr><td style="padding:0 0 10px"><h2 class="ad-section-title" style="font:700 17px/24px arial,sans-serif;color:#000;margin:0;padding:0">{{ section.title }}</h2></td></tr>
+          <tr><td style="padding:0 0 10px;{{{ section.contentPaddingInline }}}"><h2 class="ad-section-title" style="font:700 17px/24px arial,sans-serif;color:#000;margin:0;padding:0">{{ section.title }}</h2></td></tr>
         </if>
         <if condition="section.description">
-          <tr><td style="padding:0 0 12px"><div style="margin:0">{{{ section.description }}}</div></td></tr>
+          <tr><td style="padding:0 0 12px;{{{ section.contentPaddingInline }}}"><div style="margin:0">{{{ section.description }}}</div></td></tr>
         </if>
         <each loop="item in section.items">
           <if condition="item.label && item.renderMode !== 'snapshot'">
-            <tr><td><p class="mob-ad-meta" style="color:#555;font:700 11px/16px arial,sans-serif;margin:0 0 7px;text-transform:uppercase;letter-spacing:.75px">{{ item.label }}</p></td></tr>
+            <tr><td style="{{{ section.contentPaddingInline }}}"><p class="mob-ad-meta" style="color:#555;font:700 11px/16px arial,sans-serif;margin:0 0 7px;text-transform:uppercase;letter-spacing:.75px">{{ item.label }}</p></td></tr>
           </if>
           <if condition="item.image">
             <tr><td style="line-height:0;font-size:0;text-align:center">
@@ -42,13 +42,13 @@ title: "Near Future Laboratory Daily Headlines"
             </td></tr>
           </if>
           <if condition="item.title && item.renderMode !== 'snapshot'">
-            <tr><td style="padding:12px 0 0"><h3 class="ad-title" style="color:#000;margin:0;padding:0;font:700 18px/22.5px georgia,serif"><if condition="item.link"><a href="{{ item.link }}" style="color:#000;text-decoration:none">{{ item.title }}</a></if><if condition="!item.link">{{ item.title }}</if></h3></td></tr>
+            <tr><td style="padding:12px 0 0;{{{ section.contentPaddingInline }}}"><h3 class="ad-title" style="color:#000;margin:0;padding:0;font:700 18px/22.5px georgia,serif"><if condition="item.link"><a href="{{ item.link }}" style="color:#000;text-decoration:none">{{ item.title }}</a></if><if condition="!item.link">{{ item.title }}</if></h3></td></tr>
           </if>
           <if condition="item.description && item.renderMode !== 'snapshot'">
-            <tr><td style="padding:8px 0 0"><div style="margin:0">{{{ item.description }}}</div></td></tr>
+            <tr><td style="padding:8px 0 0;{{{ section.contentPaddingInline }}}"><div style="margin:0">{{{ item.description }}}</div></td></tr>
           </if>
           <if condition="item.renderMode !== 'snapshot' && (item.sponsor || ((item.readMoreLink || item.link) && item.readMoreText))">
-            <tr><td style="padding:12px 0 15px"><table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation"><tbody><tr><td style="vertical-align:middle"><if condition="item.sponsor"><p class="mob-ad-meta" style="color:#555;font:700 11px/16px arial,sans-serif;margin:0;text-transform:uppercase;letter-spacing:.75px">{{ item.sponsor }}</p></if></td><td align="right" style="vertical-align:middle"><if condition="(item.readMoreLink || item.link) && item.readMoreText"><a class="mob-ad-meta" href="{{ item.readMoreLink || item.link }}" style="color:#333;font:700 12px/16px arial,sans-serif;text-decoration:underline">{{ item.readMoreText }}</a></if></td></tr></tbody></table></td></tr>
+            <tr><td style="padding:12px 0 15px;{{{ section.contentPaddingInline }}}"><table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation"><tbody><tr><td style="vertical-align:middle"><if condition="item.sponsor"><p class="mob-ad-meta" style="color:#555;font:700 11px/16px arial,sans-serif;margin:0;text-transform:uppercase;letter-spacing:.75px">{{ item.sponsor }}</p></if></td><td align="right" style="vertical-align:middle"><if condition="(item.readMoreLink || item.link) && item.readMoreText"><a class="mob-ad-meta" href="{{ item.readMoreLink || item.link }}" style="color:#333;font:700 12px/16px arial,sans-serif;text-decoration:underline">{{ item.readMoreText }}</a></if></td></tr></tbody></table></td></tr>
           </if>
         </each>
         <if condition="section.show_bottom_rule !== false">
@@ -68,7 +68,7 @@ title: "Near Future Laboratory Daily Headlines"
               <tr><td class="short-take-logo-rail" style="padding:6px 13px;background:#141414;border-bottom:1px solid #b9b9b2;line-height:0;font-size:0">
                 <img src="https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e98285d8-5856-4005-6fbd-1c322688e700/full" alt="Near Future Laboratory white wordmark" border="0" width="106" style="display:block;width:106px;max-width:46%;height:auto">
               </td></tr>
-              <if condition="item.topLeft || item.topRight"><tr><td style="padding:{{ section.containerStyles.metaPadding || '8px 10px' }};border-bottom:1px solid {{ section.containerStyles.borderColor || '#dcdcdc' }}">
+              <if condition="item.topLeft || item.topRight"><tr><td style="padding:{{ section.containerStyles.metaPadding || '8px 10px' }};{{{ section.contentPaddingInline }}}border-bottom:1px solid {{ section.containerStyles.borderColor || '#dcdcdc' }}">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation"><tbody><tr>
                   <td align="left" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}"><if condition="item.link && item.topLeft"><a href="{{ item.link }}" style="color:inherit;text-decoration:none">{{ item.topLeft }}</a></if><if condition="!item.link || !item.topLeft">{{ item.topLeft || '' }}</if></td>
                   <td align="right" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}"><if condition="item.link && item.topRight"><a href="{{ item.link }}" style="color:inherit;text-decoration:none">{{ item.topRight }}</a></if><if condition="!item.link || !item.topRight">{{ item.topRight || '' }}</if></td>
@@ -78,11 +78,11 @@ title: "Near Future Laboratory Daily Headlines"
                 <if condition="item.link"><a href="{{ item.link }}" style="display:block;color:inherit;text-decoration:none"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" border="0" width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0"></a></if>
                 <if condition="!item.link"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" border="0" width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0"></if>
               </td></tr>
-              <tr><td class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}" style="padding:{{ section.containerStyles.copyPadding || '16px 18px 18px' }};{{{ section.backgroundStyleInline }}}">
+              <tr><td class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}" style="padding:{{ section.containerStyles.copyPadding || '16px 18px 18px' }};{{{ section.contentPaddingInline }}}{{{ section.backgroundStyleInline }}}">
                 <if condition="item.link"><a href="{{ item.link }}" style="display:block;color:inherit;text-decoration:none"><h2 class="short-take-headline" style="margin:0;padding:0;{{{ section.headingStylesInline || '' }}}">{{ item.headline }}</h2><div class="short-take-caption" style="margin:8px 0 0;padding:0;{{{ section.contentStylesInline || '' }}}">{{{ item.caption }}}</div></a></if>
                 <if condition="!item.link"><h2 class="short-take-headline" style="margin:0;padding:0;{{{ section.headingStylesInline || '' }}}">{{ item.headline }}</h2><div class="short-take-caption" style="margin:8px 0 0;padding:0;{{{ section.contentStylesInline || '' }}}">{{{ item.caption }}}</div></if>
               </td></tr>
-              <if condition="item.bottomLeft || item.bottomRight"><tr><td style="padding:{{ section.containerStyles.metaPadding || '8px 10px' }};border-top:1px solid {{ section.containerStyles.borderColor || '#dcdcdc' }}">
+              <if condition="item.bottomLeft || item.bottomRight"><tr><td style="padding:{{ section.containerStyles.metaPadding || '8px 10px' }};{{{ section.contentPaddingInline }}}border-top:1px solid {{ section.containerStyles.borderColor || '#dcdcdc' }}">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation"><tbody><tr>
                   <td align="left" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}"><if condition="item.link && item.bottomLeft"><a href="{{ item.link }}" style="color:inherit;text-decoration:none">{{ item.bottomLeft }}</a></if><if condition="!item.link || !item.bottomLeft">{{ item.bottomLeft || '' }}</if></td>
                   <td align="right" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}"><if condition="item.link && item.bottomRight"><a href="{{ item.link }}" style="color:inherit;text-decoration:none">{{ item.bottomRight }}</a></if><if condition="!item.link || !item.bottomRight">{{ item.bottomRight || '' }}</if></td>
@@ -100,12 +100,12 @@ title: "Near Future Laboratory Daily Headlines"
         <tr><td style="border-top:1px solid #000;padding-top:12px"></td></tr>
         <tr><td>
           <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;{{{ section.backgroundStyleInline }}}border:{{ section.containerStyles.borderWidth || '1px' }} {{ section.containerStyles.borderStyle || 'solid' }} {{ section.containerStyles.borderColor || '#111111' }}" role="presentation" data-section="calendar_event"><tbody>
-            <tr><td style="padding:{{ section.containerStyles.headerPadding || '18px 20px 10px 20px' }};border-bottom:{{ section.containerStyles.dividerWidth || section.containerStyles.borderWidth || '1px' }} solid {{ section.containerStyles.dividerColor || section.containerStyles.borderColor || '#dcdcdc' }}">
+            <tr><td style="padding:{{ section.containerStyles.headerPadding || '18px 20px 10px 20px' }};{{{ section.contentPaddingInline }}}border-bottom:{{ section.containerStyles.dividerWidth || section.containerStyles.borderWidth || '1px' }} solid {{ section.containerStyles.dividerColor || section.containerStyles.borderColor || '#dcdcdc' }}">
               <p style="margin:0 0 4px 0;padding:0;color:{{ section.containerStyles.eyebrowColor || section.containerStyles.textColor || '#555555' }};font:700 11px/16px arial,sans-serif;letter-spacing:.75px;text-transform:uppercase">{{ section.eyebrow || 'Calendar Event' }}</p>
               <h2 style="margin:0;padding:0;color:{{ section.containerStyles.headingColor || section.containerStyles.textColor || '#000000' }};font:700 24px/28px georgia,serif">{{ section.title }}</h2>
               <if condition="section.subtitle"><p style="margin:6px 0 0 0;padding:0;color:{{ section.containerStyles.textColor || section.contentStyles.color || '#333333' }};font:16px/22px georgia,serif">{{ section.subtitle }}</p></if>
             </td></tr>
-            <tr><td style="padding:{{ section.containerStyles.bodyPadding || '16px 20px 18px 20px' }}">
+            <tr><td style="padding:{{ section.containerStyles.bodyPadding || '16px 20px 18px 20px' }};{{{ section.contentPaddingInline }}}">
               <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0" role="presentation"><tbody><tr>
                 <td class="article-copy-cell" valign="top" width="150" style="width:150px;padding:0 20px 12px 0;vertical-align:top">
                   <p style="margin:0;padding:0;color:{{ section.containerStyles.dateColor || section.containerStyles.textColor || '#000000' }};font:700 24px/27px georgia,serif">{{ section.displayDate }}</p>
@@ -126,7 +126,7 @@ title: "Near Future Laboratory Daily Headlines"
     </if>
 
     <if condition="section.type === 'section_article_group'">
-      <table border="0" cellpadding="0" cellspacing="0" style="width:100%;{{{ section.backgroundStyleInline }}}" role="presentation" class="mob-text{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><tbody><tr><td height="30"></td></tr><tr><td style="padding:12px 0 13px 0;border-top:9px solid #000;border-bottom:1px solid #000"><h2 style="font:700 17px/24px arial,sans-serif;color:#000;margin:0;padding:0">{{ section.section_label }}</h2></td></tr><tr><td style="padding-top:15px"></td></tr>
+      <table border="0" cellpadding="0" cellspacing="0" style="width:100%;{{{ section.backgroundStyleInline }}}" role="presentation" class="mob-text{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><tbody><tr><td height="30"></td></tr><tr><td style="padding:12px 0 13px 0;{{{ section.contentPaddingInline }}}border-top:9px solid #000;border-bottom:1px solid #000"><h2 style="font:700 17px/24px arial,sans-serif;color:#000;margin:0;padding:0">{{ section.section_label }}</h2></td></tr><tr><td style="padding-top:15px"></td></tr>
       <if condition="section.articles && section.articles.length">
         <each loop="article in section.articles">
           <if condition="article.image_src && article.article_layout !== 'feature'">
@@ -166,7 +166,7 @@ title: "Near Future Laboratory Daily Headlines"
 	      </tbody></table>
 	    </if>
 	    <if condition="section.type === 'section_more_link'">
-      <p style="font:normal 17px/25px georgia,serif;color:#333;margin:0 0 15px;{{{ section.backgroundStyleInline }}}" class="mob-text{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><a href="{{ section.link || section.link_href }}" style="color:#333;-webkit-text-decoration:underline;text-decoration:underline">{{ section.link_label }}</a></p>
+      <p style="font:normal 17px/25px georgia,serif;color:#333;margin:0 0 15px;{{{ section.contentPaddingInline }}}{{{ section.backgroundStyleInline }}}" class="mob-text{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><a href="{{ section.link || section.link_href }}" style="color:#333;-webkit-text-decoration:underline;text-decoration:underline">{{ section.link_label }}</a></p>
     </if>
     <if condition="section.type === 'inline_ad_block'">
       <table border="0" cellpadding="0" cellspacing="0" style="width:100%;{{{ section.backgroundStyleInline }}}" class="mob-text{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><tbody><tr><td height="10"></td></tr><tr><td style="border-top:1px solid #dcdcdc;padding-top:15px"></td></tr><tr aria-hidden="true"><td><div style="width:100%;text-align:center;line-height:0"><img alt="Ad" src="{{ section.label_src }}" border="0" style="max-width:96px;margin-bottom:7px"></div><span style="text-align:center"><table style="margin:0 auto" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="line-height:0;font-size:0"><a rel="noopener noreferrer nofollow" tabindex="-1" target="_blank" href="{{ section.sponsorLink || section.ad_href }}"><img src="{{ section.ad_src_desktop }}" alt="Ad" border="0" width="600" style="display:block;width:100%;max-width:600px"></a></td></tr><tr style="display:none"><td style="line-height:0;font-size:0"><a rel="noopener noreferrer nofollow" tabindex="-1" target="_blank" href="{{ section.sponsorLink || section.ad_href }}"><img src="{{ section.ad_src_mobile }}" alt="Ad" border="0" width="480" style="display:block;width:100%;max-width:480px"></a></td></tr></tbody></table></span></td></tr><tr><td style="padding-bottom:15px;border-bottom:0 solid #dcdcdc"></td></tr></tbody></table>
@@ -177,11 +177,11 @@ title: "Near Future Laboratory Daily Headlines"
     <if condition="section.type === 'share_this'">
       <table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface' : '' }}"><tbody><tr><td height="{{ section.space_top || 28 }}" style="font-size:0;line-height:0">&#8203;</td></tr></tbody></table>
       <table border="0" cellpadding="0" cellspacing="0" style="width:100%;border-top:1px solid #000;border-bottom:1px solid #dcdcdc;background:{{ section.background || '#f5f4f0' }};{{{ section.backgroundStyleInline }}}" role="presentation" class="share-cta{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" data-content-slot="share_this"><tbody>
-        <tr><td style="padding:18px 20px 0 20px">
+        <tr><td style="padding:18px 20px 0 20px;{{{ section.contentPaddingInline }}}">
           <p class="share-cta-eyebrow" style="margin:0 0 4px 0;padding:0;color:{{ section.eyebrow_color || '#555' }};font:700 11px/16px arial,sans-serif;letter-spacing:.75px;text-transform:uppercase">{{ section.eyebrow || 'Share this issue' }}</p>
           <p class="share-cta-copy" style="margin:0;padding:0;color:{{ section.text_color || '#333' }};font:16px/22px georgia,serif">{{{ section.statement || 'Know someone who&rsquo;d want a peek at their near future? Pass it along.' }}}</p>
         </td></tr>
-        <tr><td style="padding:14px 20px 18px 20px">
+        <tr><td style="padding:14px 20px 18px 20px;{{{ section.contentPaddingInline }}}">
           <a class="share-cta-button" href="{{ section.email_href || ('mailto:?subject=Near%20Future%20Laboratory%20Daily%20Headlines&body=Thought%20you%27d%20like%20this%3A%20' + (section.online_url || '')) }}" style="display:inline-block;margin:0 8px 0 0;padding:6px 10px;border:1px solid #111;border-radius:4px;background:#111;font:700 12px/1.2 arial,sans-serif;color:#ffffff!important;-webkit-text-fill-color:#ffffff;text-decoration:none">{{ section.email_label || 'Forward by email' }}</a>
           <if condition="section.online_url"><a class="share-cta-button" href="{{ section.online_url }}" style="display:inline-block;margin:0;padding:6px 10px;border:1px solid #111;border-radius:4px;background:#ffffff;font:700 12px/1.2 arial,sans-serif;color:#111111!important;-webkit-text-fill-color:#111111;text-decoration:none">{{ section.online_label || 'Open online →' }}</a></if>
         </td></tr>
@@ -191,11 +191,11 @@ title: "Near Future Laboratory Daily Headlines"
     <if condition="section.type === 'inline_cta'">
       <table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface' : '' }}"><tbody><tr><td height="{{ section.space_top || 28 }}" style="font-size:0;line-height:0">&#8203;</td></tr></tbody></table>
       <table border="0" cellpadding="0" cellspacing="0" style="width:100%;border:{{ section.border_width || 1 }}px solid {{ section.border_color || '#000' }};border-radius:{{ typeof section.border_radius === 'number' ? section.border_radius + 'px' : (section.border_radius || '0px') }};overflow:hidden;background:{{ section.background || '#f5f4f0' }};{{{ section.backgroundStyleInline }}}" role="presentation" class="inline-cta{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" data-content-slot="inline_cta"><tbody>
-        <tr><td style="padding:18px 20px 0">
+        <tr><td style="padding:18px 20px 0;{{{ section.contentPaddingInline }}}">
           <if condition="section.eyebrow"><p class="inline-cta-eyebrow" style="margin:0 0 4px 0;padding:0;color:{{ section.eyebrow_color || '#555' }};font:700 11px/16px {{ section.font_family === 'sans' ? 'arial,sans-serif' : 'monospace' }};letter-spacing:.75px;text-transform:uppercase">{{ section.eyebrow }}</p></if>
           <if condition="section.statement"><div class="inline-cta-copy" style="margin:0;padding:0;color:{{ section.text_color || '#333' }};font:16px/22px {{ section.font_family === 'sans' ? 'arial,sans-serif' : 'monospace' }}">{{{ section.statement }}}</div></if>
         </td></tr>
-        <tr><td style="padding:14px 20px 18px">
+        <tr><td style="padding:14px 20px 18px;{{{ section.contentPaddingInline }}}">
           <if condition="section.primaryAction && section.primaryAction.url"><a class="inline-cta-button inline-cta-primary" href="{{ section.primaryAction.url }}" style="display:inline-block;margin:0 8px 0 0;padding:6px 10px;border:1px solid {{ section.button_border_color || section.button_background || '#111' }};border-radius:4px;background:{{ section.button_background || '#111' }};font:700 12px/1.2 {{ section.font_family === 'sans' ? 'arial,sans-serif' : 'monospace' }};color:{{ section.button_text_color || '#fff' }}!important;-webkit-text-fill-color:{{ section.button_text_color || '#fff' }};text-decoration:none">{{ section.primaryAction.label }}</a></if>
           <if condition="section.secondaryAction && section.secondaryAction.url"><a class="inline-cta-button inline-cta-secondary" href="{{ section.secondaryAction.url }}" style="display:inline-block;margin:0;padding:6px 10px;border:1px solid {{ section.secondary_button_border_color || section.border_color || '#111' }};border-radius:4px;background:{{ section.secondary_button_background || '#fff' }};font:700 12px/1.2 {{ section.font_family === 'sans' ? 'arial,sans-serif' : 'monospace' }};color:{{ section.secondary_button_text_color || '#111' }}!important;-webkit-text-fill-color:{{ section.secondary_button_text_color || '#111' }};text-decoration:none">{{ section.secondaryAction.label }}</a></if>
         </td></tr>

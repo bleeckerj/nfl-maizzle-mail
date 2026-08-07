@@ -12,7 +12,12 @@ sections:
       backgroundGradient: "linear-gradient(135deg, #eff4ed 0%, #d7e7f3 100%)"
 ```
 
-The renderer attaches these declarations to the section's existing outer element. It does not add wrapper tables or alter the section's content structure.
+The renderer attaches these declarations to the section's existing outer element. It does not add wrapper tables or alter the section's content structure. Text inside a colored surface receives a `0 20px` horizontal inset while image rows remain full width. Override that inset with `containerStyles.contentPadding` when needed:
+
+```yaml
+containerStyles:
+  contentPadding: "0 28px"
+```
 
 This template renders compact daily-headline emails from a `sections` array. The canonical machine-readable contract is `newsletter.schema.json`; the public-issue starter is registered in `template.manifest.json`; and the canonical example is `sample-data.json`.
 

@@ -43,7 +43,7 @@ import {
   DENSE_DISCOVERY_LOCKED_INTRO_TYPOGRAPHY_PROPERTIES,
   resolveIntroContentStyles,
 } from '../lib/newsletter-core/resolve-intro-content-styles.mjs';
-import { resolveSectionBackgroundStyle } from '../lib/newsletter-core/section-background.mjs';
+import { resolveSectionBackgroundStyle, resolveSectionContentPadding } from '../lib/newsletter-core/section-background.mjs';
 
 const DARK_MODE_FLATTEN_DISABLE_FLAG = '--no-dark-mode-flatten';
 const DARK_MODE_FLATTEN_COLORS = {
@@ -1811,6 +1811,13 @@ async function buildNewsletter() {
             ? null
             : String(section.containerStyles.backgroundGradient).trim();
           section.backgroundStyleInline = resolveSectionBackgroundStyle(section.containerStyles).inlineStyle;
+          const contentPadding = resolveSectionContentPadding(section.containerStyles);
+          section.containerStyles.contentPadding = contentPadding.contentPadding;
+          section.contentPaddingInline = (
+            section.backgroundStyleInline ||
+            section.background ||
+            section.containerStyles.background
+          ) ? contentPadding.inlineStyle : '';
 
           // Expose descriptionStyles with fallback to contentStyles for section.description rendering
           section.descriptionStyles = (safeUsedConfig.descriptionStyles && typeof safeUsedConfig.descriptionStyles === 'object')
