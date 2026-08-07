@@ -43,6 +43,7 @@ import {
   DENSE_DISCOVERY_LOCKED_INTRO_TYPOGRAPHY_PROPERTIES,
   resolveIntroContentStyles,
 } from '../lib/newsletter-core/resolve-intro-content-styles.mjs';
+import { resolveSectionBackgroundStyle } from '../lib/newsletter-core/section-background.mjs';
 
 const DARK_MODE_FLATTEN_DISABLE_FLAG = '--no-dark-mode-flatten';
 const DARK_MODE_FLATTEN_COLORS = {
@@ -1806,6 +1807,10 @@ async function buildNewsletter() {
           section.containerStyles.padding = section.containerStyles.padding ? String(section.containerStyles.padding).trim() : '15px 20px';
           // keep explicit null for backgroundColor when not set so templates can fallback to themeColors
           section.containerStyles.backgroundColor = section.containerStyles.backgroundColor == null ? null : String(section.containerStyles.backgroundColor).trim();
+          section.containerStyles.backgroundGradient = section.containerStyles.backgroundGradient == null
+            ? null
+            : String(section.containerStyles.backgroundGradient).trim();
+          section.backgroundStyleInline = resolveSectionBackgroundStyle(section.containerStyles).inlineStyle;
 
           // Expose descriptionStyles with fallback to contentStyles for section.description rendering
           section.descriptionStyles = (safeUsedConfig.descriptionStyles && typeof safeUsedConfig.descriptionStyles === 'object')

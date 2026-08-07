@@ -1,5 +1,19 @@
 # Near Future Laboratory Daily Headlines
 
+## Section backgrounds
+
+Every section accepts `containerStyles.backgroundColor`. It renders as the solid, email-safe section background. Add `containerStyles.backgroundGradient` when a supported client should receive a gradient; gradients must be paired with a solid color fallback.
+
+```yaml
+sections:
+  - type: ad-block
+    containerStyles:
+      backgroundColor: "#eff4ed"
+      backgroundGradient: "linear-gradient(135deg, #eff4ed 0%, #d7e7f3 100%)"
+```
+
+The renderer attaches these declarations to the section's existing outer element. It does not add wrapper tables or alter the section's content structure.
+
 This template renders compact daily-headline emails from a `sections` array. The canonical machine-readable contract is `newsletter.schema.json`; the public-issue starter is registered in `template.manifest.json`; and the canonical example is `sample-data.json`.
 
 Backoffice authoring tools discover the section vocabulary and field shapes directly from `newsletter.schema.json`. The manifest supplies the supported publication mode and starter path.

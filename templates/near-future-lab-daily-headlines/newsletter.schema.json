@@ -14,7 +14,12 @@
     "sections": {
       "type": "array",
       "items": {
-        "oneOf": [
+        "allOf": [
+          {
+            "$ref": "#/definitions/sectionPresentation"
+          },
+          {
+            "oneOf": [
           {
             "type": "object",
             "title": "Masthead Ad Bar",
@@ -222,6 +227,9 @@
               "type": {
                 "const": "short-take"
               },
+              "containerStyles": {
+                "$ref": "#/definitions/sectionContainerStyles"
+              },
               "items": {
                 "type": "array",
                 "minItems": 1,
@@ -280,8 +288,7 @@
               "calendarLabel": { "type": "string" },
               "eventLabel": { "type": "string" },
               "containerStyles": {
-                "type": ["object", "null"],
-                "additionalProperties": true
+                "$ref": "#/definitions/sectionContainerStyles"
               },
               "contentStyles": {
                 "type": ["object", "null"],
@@ -706,6 +713,8 @@
             ],
             "additionalProperties": true
           }
+            ]
+          }
         ]
       }
     }
@@ -715,6 +724,43 @@
     "sections"
   ],
   "definitions": {
+    "sectionPresentation": {
+      "type": "object",
+      "properties": {
+        "containerStyles": {
+          "$ref": "#/definitions/sectionContainerStyles"
+        }
+      },
+      "additionalProperties": true
+    },
+    "sectionContainerStyles": {
+      "type": ["object", "null"],
+      "description": "Section appearance and layout values. backgroundColor is the email-safe fallback for an optional backgroundGradient.",
+      "properties": {
+        "backgroundColor": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Solid CSS color rendered in all email clients and beneath backgroundGradient. Required when backgroundGradient is present."
+        },
+        "backgroundGradient": {
+          "type": "string",
+          "pattern": "^linear-gradient\\([^;{}<>]+\\)$",
+          "description": "Optional CSS linear-gradient(...) enhancement. Use with backgroundColor so clients without gradient support retain the intended color."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "type": "object",
+            "required": ["backgroundGradient"]
+          },
+          "then": {
+            "required": ["backgroundColor"]
+          }
+        }
+      ],
+      "additionalProperties": true
+    },
     "trackedLink": {
       "description": "Tracked link accepted by nfl-maizzle-mail. Object-valued links normalize to URL strings before Maizzle renders and then enrich matching anchors with data-link-label, data-link-category, data-link-interest, and data-link-intent.",
       "anyOf": [
