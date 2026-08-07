@@ -681,6 +681,15 @@ test('daily-headlines article CTA pill renders inside existing article link only
       '          category: editorial',
       '        headline: "No CTA story headline"',
       '        lede: "No CTA story lede."',
+      '      - link:',
+      '          href: mailto:feature-story@example.com',
+      '          label: "daily test | headlines | feature story"',
+      '          category: editorial',
+      '        image_src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/dc57ddc1-f8b9-4662-f63e-1c62c3d79900/full?format=webp',
+      '        image_alt: "Feature story image"',
+      '        article_layout: feature',
+      '        headline: "Feature story headline"',
+      '        lede: "Feature story lede."',
       'footer:',
       '  footerCta:',
       '    variant: default',
@@ -734,6 +743,8 @@ test('daily-headlines article CTA pill renders inside existing article link only
     assert.doesNotMatch(html, /No CTA story lede\.[\s\S]*article-cta-pill/);
     assert.match(html, /<div class="article-cta-mobile"[^>]*>[\s\S]*href="mailto:cta-story@example\.com"[\s\S]*<span class="article-cta-pill"[^>]*>Do you want to know more\?<\/span>/);
     assert.equal((html.match(/href="mailto:cta-story@example\.com"/g) || []).length, 3);
+    assert.match(html, /class="article-image article-feature-image css-1oqy46o" width="600"/);
+    assert.match(html, /<a href="mailto:feature-story@example\.com"[^>]*>[\s\S]*Feature story headline/);
   } finally {
     rmSync(tempRoot, { recursive: true, force: true });
   }

@@ -49,6 +49,8 @@ sections:
           category: editorial
         image_src: https://example.com/image.jpg
         image_alt: Short image description
+        # Optional: row is the default; feature makes the image full-width above the article.
+        article_layout: feature
         kicker: Optional kicker
         headline: Story headline
         lede: One or two sentence summary.
@@ -113,7 +115,7 @@ sections:
 : Optional author note below the masthead. Use `statement` for plain text or simple HTML with `<p>`, `<em>`, `<strong>`, and `<a href="">`. `statement_html` remains available as an explicit rich-text override. Unsupported tags and attributes are stripped during the build. `label` and `show_bottom_rule` are optional. Its mobile scale (`.intro-statement-label` / `.intro-statement-copy`) is tuned independently of the generic `.mob-text` body-copy lock.
 
 `section_article_group`
-: Main content section. Renders a section heading and one or more article rows. Each article should include `link` and `headline`; `image_src`, `image_alt`, `kicker`, and `lede` are optional but recommended. Prefer `more_link` on this section for a section-level follow-up link.
+: Main content section. Renders a section heading and one or more article rows. Each article should include `link` and `headline`; `image_src`, `image_alt`, `kicker`, and `lede` are optional but recommended. An image-bearing `row` article (the default) places the image on the right at wide widths and first in the mobile reading order. Set `article_layout: feature` for longer editorial copy; it renders the complete image full-width above the article at every width. Prefer `more_link` on this section for a section-level follow-up link.
 
 `ad-block`
 : Inventory-backed ad card. Author only `items[0].adId`; the build looks up the ad in `/Users/julian/Code/nfl-editorial/src/content/ads.json` and hydrates URL, media, copy, sponsor, and tracking metadata. Exactly one item is allowed. Set `show_bottom_rule: false` to suppress the light divider after the ad.

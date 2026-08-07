@@ -539,6 +539,25 @@ test('daily-headlines article group markup opts semantic text into article mobil
   assert.match(sources, /<p class="article-lede"[^>]*>\{\{\{ article\.lede \}\}\}<\/p>/);
 });
 
+test('daily-headlines article rows source-order images first for mobile while retaining the desktop image-right layout', () => {
+  const sources = [
+    readFileSync(DAILY_HEADLINES_TEMPLATE, 'utf8'),
+    readFileSync(DAILY_HEADLINES_ARTICLE_GROUP, 'utf8'),
+  ];
+
+  for (const source of sources) {
+    const rowStart = source.indexOf('<table class="article-row-table" dir="rtl"');
+    const imageCell = source.indexOf('<td class="article-image-cell" dir="ltr"', rowStart);
+    const copyCell = source.indexOf('<td class="article-copy-cell" dir="ltr"', rowStart);
+
+    assert.notEqual(rowStart, -1);
+    assert.ok(imageCell > rowStart, 'the image cell must be first in source order');
+    assert.ok(copyCell > imageCell, 'the copy cell must follow the image cell');
+    assert.match(source, /article\.article_layout === 'feature'/);
+    assert.match(source, /class="article-image article-feature-image/);
+  }
+});
+
 test('daily-headlines intro statement markup opts into proportional mobile locks', () => {
   const sources = [
     readFileSync(DAILY_HEADLINES_TEMPLATE, 'utf8'),
