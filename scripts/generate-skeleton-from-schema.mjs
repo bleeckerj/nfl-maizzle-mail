@@ -150,17 +150,54 @@ const PLACEHOLDER_IMAGE = (width = 800, height = 600, text = 'Image') =>
 
 const DEPRECATED_SECTION_TYPES = new Set(['sponsor']);
 
+function resolveSchemaRef(schema, propSchema) {
+  if (!propSchema || typeof propSchema !== 'object' || typeof propSchema.$ref !== 'string') {
+    return propSchema || {};
+  }
+
+  if (!schema || !propSchema.$ref.startsWith('#/')) return propSchema;
+
+  let resolved = schema;
+  for (const part of propSchema.$ref.slice(2).split('/')) {
+    if (!resolved || typeof resolved !== 'object') return propSchema;
+    resolved = resolved[part.replace(/~1/g, '/').replace(/~0/g, '~')];
+  }
+  return resolved && typeof resolved === 'object' ? resolved : propSchema;
+}
+
+function resolveGenerationSchema(propSchema = {}, context = {}) {
+  let resolved = resolveSchemaRef(context.schema, propSchema);
+
+  const alternatives = resolved.anyOf || resolved.oneOf;
+  if (Array.isArray(alternatives) && alternatives.length > 0) {
+    // Prefer structured objects for tracked links and action objects so the
+    // generated Markdown demonstrates the authoring shape accepted by the schema.
+    resolved = alternatives.find((candidate) => candidate?.type === 'object') || alternatives[0];
+    resolved = resolveSchemaRef(context.schema, resolved);
+  }
+
+  return resolved || {};
+}
+
 function generatePlaceholderValue(propName, propSchema = {}, context = {}) {
-  const type = propSchema.type || inferTypeFromName(propName);
-  const description = propSchema.description || '';
+  const resolvedSchema = resolveGenerationSchema(propSchema, context);
+  if (Object.prototype.hasOwnProperty.call(resolvedSchema, 'const')) {
+    return resolvedSchema.const;
+  }
+  if (Array.isArray(resolvedSchema.enum) && resolvedSchema.enum.length > 0) {
+    return resolvedSchema.enum[0];
+  }
+
+  const type = resolvedSchema.type || inferTypeFromName(propName);
+  const description = resolvedSchema.description || '';
 
   // Handle explicit types
   if (type === 'array') {
-    return generateArrayPlaceholder(propName, propSchema, context);
+    return generateArrayPlaceholder(propName, resolvedSchema, context);
   }
 
   if (type === 'object') {
-    return generateObjectPlaceholder(propName, propSchema, context);
+    return generateObjectPlaceholder(propName, resolvedSchema, context);
   }
 
   if (type === 'boolean') {
@@ -269,7 +306,7 @@ function generateStringPlaceholder(propName, description = '') {
 }
 
 function generateArrayPlaceholder(propName, propSchema, context) {
-  const itemSchema = propSchema.items || {};
+  const itemSchema = resolveSchemaRef(context.schema, propSchema.items || {});
   const count = context.itemsPerSection || 1;
 
   if (itemSchema.type === 'object') {
@@ -335,6 +372,21 @@ function extractSectionTypes(schema) {
     sectionTypes.push(...typeEnum);
   }
 
+  // Template-specific schemas commonly use oneOf with a const discriminator.
+  const variants = [...(itemsSchema.oneOf || []), ...(itemsSchema.anyOf || [])];
+  for (const variant of variants) {
+    const typeSchema = variant?.properties?.type;
+    if (typeof typeSchema?.const === 'string') sectionTypes.push(typeSchema.const);
+    if (Array.isArray(typeSchema?.enum)) sectionTypes.push(...typeSchema.enum);
+  }
+
+  // Generated schemas use if/then branches with a const discriminator.
+  for (const condition of itemsSchema.allOf || []) {
+    const typeSchema = condition?.if?.properties?.type;
+    if (typeof typeSchema?.const === 'string') sectionTypes.push(typeSchema.const);
+    if (Array.isArray(typeSchema?.enum)) sectionTypes.push(...typeSchema.enum);
+  }
+
   return [...new Set(sectionTypes)].sort();
 }
 
@@ -344,6 +396,14 @@ function extractSectionSchema(schema, sectionType) {
 
   const itemsSchema = sectionsSchema.items;
   if (!itemsSchema) return null;
+
+  // Look in oneOf/anyOf for explicit discriminator variants.
+  for (const variant of [...(itemsSchema.oneOf || []), ...(itemsSchema.anyOf || [])]) {
+    const typeSchema = variant?.properties?.type;
+    if (typeSchema?.const === sectionType || typeSchema?.enum?.includes(sectionType)) {
+      return variant;
+    }
+  }
 
   // Look in allOf for conditional schemas
   const allOf = itemsSchema.allOf || [];
@@ -379,7 +439,7 @@ function generateSkeleton(schema, options = {}) {
   const topLevelProps = ['title', 'preheader', 'ogImage', 'sectionStylesFile'];
   for (const prop of topLevelProps) {
     if (schema.properties?.[prop]) {
-      const value = generatePlaceholderValue(prop, schema.properties[prop], { minimal });
+      const value = generatePlaceholderValue(prop, schema.properties[prop], { minimal, schema });
       lines.push(`${prop}: ${formatYamlValue(value)}`);
     }
   }
@@ -387,13 +447,13 @@ function generateSkeleton(schema, options = {}) {
   // Header
   if (schema.properties?.header) {
     lines.push('');
-    lines.push(...generateYamlObject('header', schema.properties.header, { minimal, indent: 0 }));
+    lines.push(...generateYamlObject('header', schema.properties.header, { minimal, indent: 0, schema }));
   }
 
   // Intro (if exists)
   if (schema.properties?.intro) {
     lines.push('');
-    lines.push(...generateYamlObject('intro', schema.properties.intro, { minimal, indent: 0 }));
+    lines.push(...generateYamlObject('intro', schema.properties.intro, { minimal, indent: 0, schema }));
   }
 
   // Sections
@@ -408,14 +468,14 @@ function generateSkeleton(schema, options = {}) {
 
     for (const sectionType of sectionsToGenerate) {
       const sectionSchema = extractSectionSchema(schema, sectionType);
-      lines.push(...generateSectionYaml(sectionType, sectionSchema, { minimal, itemsPerSection }));
+      lines.push(...generateSectionYaml(sectionType, sectionSchema, { minimal, itemsPerSection, schema }));
     }
   }
 
   // Footer
   if (schema.properties?.footer) {
     lines.push('');
-    lines.push(...generateYamlObject('footer', schema.properties.footer, { minimal, indent: 0 }));
+    lines.push(...generateYamlObject('footer', schema.properties.footer, { minimal, indent: 0, schema }));
   }
 
   lines.push('---');
@@ -448,15 +508,24 @@ function generateSectionYaml(sectionType, sectionSchema, options = {}) {
     lines.push(`${indent}description: <p>Description for ${sectionType} section.</p>`);
   }
 
-  // Items array
-  if (props.items) {
-    lines.push(`${indent}items:`);
-    const itemSchema = props.items.items || {};
+  // Collection arrays such as items and section_article_group articles.
+  const collectionProp = props.items ? 'items' : props.articles ? 'articles' : null;
+  if (collectionProp) {
+    lines.push(`${indent}${collectionProp}:`);
+    const itemSchema = props[collectionProp].items || {};
     const itemCount = minimal ? 1 : itemsPerSection;
 
     for (let i = 0; i < itemCount; i++) {
-      lines.push(...generateItemYaml(sectionType, itemSchema, i + 1, { minimal }));
+      lines.push(...generateItemYaml(sectionType, itemSchema, i + 1, { minimal, schema: options.schema }));
     }
+  }
+
+  // Emit required scalar/object fields for sections without a collection.
+  const requiredFields = Array.isArray(sectionSchema.required) ? sectionSchema.required : [];
+  for (const propName of requiredFields) {
+    if (propName === 'type' || propName === collectionProp || !props[propName]) continue;
+    const value = generatePlaceholderValue(propName, props[propName], { minimal, schema: options.schema });
+    lines.push(`${indent}${propName}: ${formatYamlValue(value)}`);
   }
 
   return lines;
@@ -479,14 +548,18 @@ function generateItemYaml(sectionType, itemSchema, index, options = {}) {
   ];
 
   // In minimal mode, only show essential properties
+  const requiredProps = Array.isArray(itemSchema.required) ? itemSchema.required : [];
   const propsToShow = minimal
-    ? orderedProps.filter((p) => ['title', 'link', 'image', 'images', 'description', 'content', 'quote', 'calloutText'].includes(p))
+    ? orderedProps.filter((p) =>
+        ['title', 'link', 'image', 'images', 'description', 'content', 'quote', 'calloutText'].includes(p) ||
+        requiredProps.includes(p),
+      )
     : orderedProps;
 
   let isFirst = true;
   for (const propName of propsToShow) {
     const propSchema = props[propName];
-    const value = generatePlaceholderValue(propName, propSchema, { index, sectionType });
+    const value = generatePlaceholderValue(propName, propSchema, { index, sectionType, schema: options.schema });
 
     if (isFirst) {
       // First property uses array marker
@@ -546,11 +619,11 @@ function generateYamlObject(key, schema, options = {}) {
       continue;
     }
 
-    const value = generatePlaceholderValue(propName, propSchema, { minimal });
+    const value = generatePlaceholderValue(propName, propSchema, { minimal, schema: options.schema });
 
     if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
-      // Nested object
-      lines.push(...generateYamlObject(propName, { properties: propSchema.properties || {} }, { minimal, indent: indent + 1 }));
+      // Flow-style JSON is valid YAML and preserves referenced object shapes.
+      lines.push(`${propIndent}${propName}: ${formatYamlValue(value)}`);
     } else if (Array.isArray(value)) {
       // Array
       lines.push(`${propIndent}${propName}:`);
@@ -610,7 +683,7 @@ function formatYamlValue(value, indent = '') {
   }
 
   if (typeof value === 'object') {
-    return '{}';
+    return JSON.stringify(value);
   }
 
   return String(value);

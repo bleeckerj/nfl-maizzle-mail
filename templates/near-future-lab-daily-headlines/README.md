@@ -1,6 +1,8 @@
 # Near Future Laboratory Daily Headlines
 
-This template renders compact daily-headline emails from a `sections` array. The canonical machine-readable contract is `newsletter.schema.json`; the canonical example is `sample-data.json`.
+This template renders compact daily-headline emails from a `sections` array. The canonical machine-readable contract is `newsletter.schema.json`; the public-issue starter is registered in `template.manifest.json`; and the canonical example is `sample-data.json`.
+
+Backoffice authoring tools discover the section vocabulary and field shapes directly from `newsletter.schema.json`. The manifest supplies the supported publication mode and starter path.
 
 ## Normal Authoring Shape
 

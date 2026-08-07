@@ -1,0 +1,10 @@
+{
+  "template": "near-future-lab-daily-headlines",
+  "supportedPublicationModes": ["public-issue"],
+  "starterMarkdown": {
+    "public-issue": "public-issue-starter.md"
+  },
+  "footerBehavior": {
+    "public-issue": "template-defined footer"
+  }
+}
