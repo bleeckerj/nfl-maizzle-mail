@@ -1810,14 +1810,13 @@ async function buildNewsletter() {
           section.containerStyles.backgroundGradient = section.containerStyles.backgroundGradient == null
             ? null
             : String(section.containerStyles.backgroundGradient).trim();
-          section.backgroundStyleInline = resolveSectionBackgroundStyle(section.containerStyles).inlineStyle;
-          const contentPadding = resolveSectionContentPadding(section.containerStyles);
+          // Backgrounds are author-controlled presentation. Resolve them from
+          // the incoming section only; template and theme defaults may supply
+          // other container values without unexpectedly painting a surface.
+          section.backgroundStyleInline = resolveSectionBackgroundStyle(incomingContainerStyles).inlineStyle;
+          const contentPadding = resolveSectionContentPadding(incomingContainerStyles);
           section.containerStyles.contentPadding = contentPadding.contentPadding;
-          section.contentPaddingInline = (
-            section.backgroundStyleInline ||
-            section.background ||
-            section.containerStyles.background
-          ) ? contentPadding.inlineStyle : '';
+          section.contentPaddingInline = section.backgroundStyleInline ? contentPadding.inlineStyle : '';
 
           // Expose descriptionStyles with fallback to contentStyles for section.description rendering
           section.descriptionStyles = (safeUsedConfig.descriptionStyles && typeof safeUsedConfig.descriptionStyles === 'object')

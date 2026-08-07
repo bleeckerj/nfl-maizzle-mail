@@ -47,6 +47,10 @@ test('Daily Headlines sections render a solid fallback and optional gradient wit
     "      backgroundColor: '#eff4ed'",
     '    items:',
     '      - adId: walmart-futures-job-01',
+    '  - type: ad-block',
+    '    title: Default ad remains uncolored',
+    '    items:',
+    '      - adId: walmart-futures-job-01',
     '---',
     '',
   ].join('\n'), 'utf8');
@@ -68,6 +72,7 @@ test('Daily Headlines sections render a solid fallback and optional gradient wit
     assert.match(html, /<table[^>]*style="[^"]*background-color:\s*#eff4ed[^"]*background-image:[^"]*"[^>]*>\s*<tbody>\s*<tr><td height="30"/);
     assert.match(html, /padding:12px 0 13px 0;padding-left:20px;padding-right:20px;border-top:9px solid #000/);
     assert.match(html, /<table[^>]*style="width:100%"[^>]*>\s*<tbody>\s*<tr><td height="10"[^>]*>\s*<\/td><\/tr>\s*<tr><td style="border-top:1px solid #dcdcdc">\s*<\/td><\/tr><\/tbody><\/table>\s*<table[^>]*style="[^"]*background-color:#eff4ed[^"]*"[^>]*>\s*<tbody>\s*<tr><td style="padding-top:15px">\s*<\/td><\/tr>/);
+    assert.doesNotMatch(html, /background-color:#f5f4f0/);
   } finally {
     rmSync(tempRoot, { recursive: true, force: true });
   }
