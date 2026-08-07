@@ -20,8 +20,8 @@ title: "Near Future Laboratory Daily Headlines"
       </td></tr><if condition="section.show_bottom_rule"><tr><td style="border-bottom:1px solid #dcdcdc;height:1px;line-height:1px;font-size:1px"></td></tr><tr><td height="15"></td></tr></if></tbody></table>
     </if>
     <if condition="section.type === 'ad-block'">
-      <if condition="section.backgroundStyleInline"><table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation"><tbody><tr><td height="10"></td></tr><tr><td style="border-top:1px solid #dcdcdc"></td></tr></tbody></table></if>
-      <table border="0" cellpadding="0" cellspacing="0" style="width:100%;{{{ section.backgroundStyleInline }}}" role="presentation" class="mob-text{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><tbody><if condition="!section.backgroundStyleInline"><tr><td height="10"></td></tr><tr><td style="border-top:1px solid #dcdcdc;padding-top:15px"></td></tr></if><if condition="section.backgroundStyleInline"><tr><td style="padding-top:15px"></td></tr></if>
+      <if condition="section.backgroundStyleInline && section.show_top_rule !== false"><table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation"><tbody><tr><td height="10"></td></tr><tr><td style="border-top:1px solid #dcdcdc"></td></tr></tbody></table></if>
+      <table border="0" cellpadding="0" cellspacing="0" style="width:100%;{{{ section.backgroundStyleInline }}}" role="presentation" class="mob-text{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><tbody><if condition="!section.backgroundStyleInline && section.show_top_rule !== false"><tr><td height="10"></td></tr><tr><td style="border-top:1px solid #dcdcdc;padding-top:15px"></td></tr></if><if condition="section.show_top_rule === false"><tr><td style="padding-top:15px"></td></tr></if><if condition="section.backgroundStyleInline && section.show_top_rule !== false"><tr><td style="padding-top:15px"></td></tr></if>
         <if condition="section.title">
           <tr><td style="padding:0 0 10px;{{{ section.contentPaddingInline }}}"><h2 class="ad-section-title" style="font:700 17px/24px arial,sans-serif;color:#000;margin:0;padding:0">{{ section.title }}</h2></td></tr>
         </if>
@@ -53,12 +53,12 @@ title: "Near Future Laboratory Daily Headlines"
           </if>
         </each>
         <if condition="section.show_bottom_rule !== false">
-          <tr><td style="padding-bottom:15px;border-bottom:1px solid #dcdcdc"></td></tr><tr><td height="15"></td></tr>
+          <tr><td style="padding-bottom:15px;border-bottom:1px solid #dcdcdc"></td></tr><if condition="!section.backgroundStyleInline"><tr><td height="15"></td></tr></if>
         </if>
         <if condition="section.show_bottom_rule === false">
-          <tr><td style="padding-bottom:15px;border-bottom:0 solid #dcdcdc"></td></tr><tr><td height="15"></td></tr>
+          <tr><td style="padding-bottom:15px;border-bottom:0 solid #dcdcdc"></td></tr><if condition="!section.backgroundStyleInline"><tr><td height="15"></td></tr></if>
         </if>
-      </tbody></table>
+      </tbody></table><if condition="section.backgroundStyleInline"><table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation"><tbody><tr><td height="15"></td></tr></tbody></table></if>
     </if>
 
     <if condition="section.type === 'short-take'">

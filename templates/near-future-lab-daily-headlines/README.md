@@ -19,6 +19,8 @@ containerStyles:
   contentPadding: "0 28px"
 ```
 
+For adjacent ad blocks, set `show_top_rule: false` on the following block when the preceding section already renders the shared divider.
+
 This template renders compact daily-headline emails from a `sections` array. The canonical machine-readable contract is `newsletter.schema.json`; the public-issue starter is registered in `template.manifest.json`; and the canonical example is `sample-data.json`.
 
 Backoffice authoring tools discover the section vocabulary and field shapes directly from `newsletter.schema.json`. The manifest supplies the supported publication mode and starter path.
