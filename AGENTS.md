@@ -63,6 +63,16 @@ This file documents the canonical structure and workflow for `nfl-maizzle-mail` 
 
 ## Change Checklist (Before Shipping)
 
+## HARD RULE: Schema Parity
+
+Any change to a schema-backed value or behavior must update its canonical schema in the same change.
+
+- This covers new, renamed, removed, defaulted, normalized, validated, or rendered fields, plus changes to an existing field's allowed values or semantic behavior.
+- Update the owning schema first, then its types, normalization/data-access code, renderer, authoring documentation or sample data, and focused tests as applicable.
+- Do not rely on permissive `additionalProperties`, inferred renderer behavior, or undocumented fields to bypass the schema contract.
+- Before committing, inspect the staged diff to confirm the canonical schema file is included alongside the implementation. Validate the schema and run a representative build or focused runtime check.
+- A change to schema-backed behavior without a corresponding schema update is incomplete.
+
 - If template files changed: run at least one focused build for that template.
 - If schema/content model changed: rebuild a representative real newsletter.
 - Confirm no new `src/templates` directory or sync logic exists.
