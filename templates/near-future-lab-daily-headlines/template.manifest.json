@@ -1,6 +1,7 @@
 {
   "template": "near-future-lab-daily-headlines",
   "supportedPublicationModes": ["public-issue"],
+  "starterSource": "schema",
   "starterMarkdown": {
     "public-issue": "public-issue-starter.md"
   },

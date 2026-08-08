@@ -2,6 +2,8 @@
 template: near-future-lab-daily-headlines
 title: Near Future Laboratory Daily Headlines
 preheader: Short inbox preview text
+ogImage: 'https://fpoimg.com/800x600?text=Og%20image&bg_color=e6e6e6&text_color=4FAAAA'
+ogImageAltText: Open graph preview image for this newsletter
 sectionStylesFile: templates/near-future-lab-daily-headlines/section-styles.json
 sections:
   - type: newsletter_masthead

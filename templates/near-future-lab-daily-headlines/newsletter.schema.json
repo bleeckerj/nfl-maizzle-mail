@@ -11,6 +11,24 @@
     "title": {
       "type": "string"
     },
+    "preheader": {
+      "type": "string",
+      "description": "Short inbox preview text shown by email clients."
+    },
+    "ogImage": {
+      "type": "string",
+      "format": "uri",
+      "description": "Hosted image URL used for the public newsletter unfurl preview."
+    },
+    "ogImageAltText": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Accessible description of the public newsletter unfurl image."
+    },
+    "sectionStylesFile": {
+      "type": "string",
+      "description": "Template-owned section style configuration path."
+    },
     "sections": {
       "type": "array",
       "items": {

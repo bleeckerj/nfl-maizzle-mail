@@ -67,5 +67,21 @@ test('schema-derived Daily Headlines starter validates as Markdown frontmatter',
     { cwd: REPO_ROOT, encoding: 'utf8' },
   );
   validateNewsletter(matter(output).data);
+  assert.equal(matter(output).data.ogImage, 'https://fpoimg.com/800x600?text=Og%20image&bg_color=e6e6e6&text_color=4FAAAA');
+  assert.equal(matter(output).data.ogImageAltText, 'Open graph preview image for this newsletter');
   validateNewsletter(matter(readFileSync(path.join(TEMPLATE_ROOT, 'public-issue-starter.md'), 'utf8')).data);
+});
+
+test('schema-derived starters emit every non-structural root property declared by the schema', () => {
+  const output = execFileSync(process.execPath, [GENERATOR, '--template', TEMPLATE, '--minimal'], {
+    cwd: REPO_ROOT,
+    encoding: 'utf8',
+  });
+  const generated = matter(output).data;
+  const schema = JSON.parse(readFileSync(path.join(TEMPLATE_ROOT, 'newsletter.schema.json'), 'utf8'));
+  const structural = new Set(['template', 'sections', 'header', 'intro', 'footer']);
+
+  for (const property of Object.keys(schema.properties)) {
+    if (!structural.has(property)) assert.ok(Object.hasOwn(generated, property), property);
+  }
 });

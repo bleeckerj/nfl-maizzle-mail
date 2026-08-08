@@ -230,6 +230,14 @@ function inferTypeFromName(propName) {
 function generateStringPlaceholder(propName, description = '') {
   const name = propName.toLowerCase();
 
+  if (name === 'alt' || name.includes('alttext')) {
+    if (name === 'ogimagealttext') return 'Open graph preview image for this newsletter';
+    return 'Image description for accessibility';
+  }
+
+  if (name === 'adid') return 'example-ad-id';
+  if (name === 'shorttakeid') return 'example-short-take-id';
+
   // URLs and links
   if (name.includes('url') || name.includes('link') || name === 'href' || name === 'src') {
     if (name.includes('image') || name.includes('logo') || name.includes('featured')) {
@@ -238,7 +246,7 @@ function generateStringPlaceholder(propName, description = '') {
     if (name.includes('unsubscribe')) {
       return '[unsubscribe]';
     }
-    return 'https://example.com';
+    return 'https://nearfuturelaboratory.com';
   }
 
   // Images
@@ -283,10 +291,6 @@ function generateStringPlaceholder(propName, description = '') {
 
   if (name === 'address') {
     return '© 2025 Your Company<br>City, State<br>Country';
-  }
-
-  if (name === 'alt') {
-    return 'Image description for accessibility';
   }
 
   if (name === 'subtitle' || name === 'category' || name === 'channel') {
@@ -357,67 +361,58 @@ function humanize(str) {
 // ============================================================================
 
 function extractSectionTypes(schema) {
-  const sectionTypes = [];
+  return extractSectionVariants(schema).map(({ type }) => type).sort();
+}
 
-  // Look for sections.items.properties.type.enum
+function extractSectionVariants(schema) {
   const sectionsSchema = schema.properties?.sections;
-  if (!sectionsSchema) return sectionTypes;
+  if (!sectionsSchema?.items) return [];
 
-  const itemsSchema = sectionsSchema.items;
-  if (!itemsSchema) return sectionTypes;
+  const variants = [];
 
-  // Check for enum in type property
-  const typeEnum = itemsSchema.properties?.type?.enum;
-  if (typeEnum) {
-    sectionTypes.push(...typeEnum);
+  function visit(candidate) {
+    const resolved = resolveSchemaRef(schema, candidate);
+    if (!resolved || typeof resolved !== 'object') return;
+
+    const typeSchema = resolved.properties?.type;
+    if (typeof typeSchema?.const === 'string') {
+      variants.push({ type: typeSchema.const, schema: resolved });
+    }
+    if (Array.isArray(typeSchema?.enum)) {
+      for (const type of typeSchema.enum) {
+        if (typeof type === 'string') variants.push({ type, schema: resolved });
+      }
+    }
+
+    for (const branch of [...(resolved.oneOf || []), ...(resolved.anyOf || [])]) {
+      visit(branch);
+    }
+
+    for (const branch of resolved.allOf || []) {
+      const branchType = branch?.if?.properties?.type;
+      if (typeof branchType?.const === 'string') {
+        variants.push({ type: branchType.const, schema: resolveSchemaRef(schema, branch.then || {}) });
+      } else if (Array.isArray(branchType?.enum)) {
+        for (const type of branchType.enum) {
+          if (typeof type === 'string') {
+            variants.push({ type, schema: resolveSchemaRef(schema, branch.then || {}) });
+          }
+        }
+      } else {
+        visit(branch);
+      }
+    }
   }
 
-  // Template-specific schemas commonly use oneOf with a const discriminator.
-  const variants = [...(itemsSchema.oneOf || []), ...(itemsSchema.anyOf || [])];
-  for (const variant of variants) {
-    const typeSchema = variant?.properties?.type;
-    if (typeof typeSchema?.const === 'string') sectionTypes.push(typeSchema.const);
-    if (Array.isArray(typeSchema?.enum)) sectionTypes.push(...typeSchema.enum);
-  }
-
-  // Generated schemas use if/then branches with a const discriminator.
-  for (const condition of itemsSchema.allOf || []) {
-    const typeSchema = condition?.if?.properties?.type;
-    if (typeof typeSchema?.const === 'string') sectionTypes.push(typeSchema.const);
-    if (Array.isArray(typeSchema?.enum)) sectionTypes.push(...typeSchema.enum);
-  }
-
-  return [...new Set(sectionTypes)].sort();
+  visit(sectionsSchema.items);
+  return variants;
 }
 
 function extractSectionSchema(schema, sectionType) {
-  const sectionsSchema = schema.properties?.sections;
-  if (!sectionsSchema) return null;
+  const match = extractSectionVariants(schema).find(({ type }) => type === sectionType);
+  if (match) return match.schema;
 
-  const itemsSchema = sectionsSchema.items;
-  if (!itemsSchema) return null;
-
-  // Look in oneOf/anyOf for explicit discriminator variants.
-  for (const variant of [...(itemsSchema.oneOf || []), ...(itemsSchema.anyOf || [])]) {
-    const typeSchema = variant?.properties?.type;
-    if (typeSchema?.const === sectionType || typeSchema?.enum?.includes(sectionType)) {
-      return variant;
-    }
-  }
-
-  // Look in allOf for conditional schemas
-  const allOf = itemsSchema.allOf || [];
-  for (const condition of allOf) {
-    const conditionType = condition.if?.properties?.type;
-    const matchesConst = conditionType?.const === sectionType;
-    const matchesEnum = Array.isArray(conditionType?.enum) && conditionType.enum.includes(sectionType);
-    if (matchesConst || matchesEnum) {
-      return condition.then;
-    }
-  }
-
-  // Fallback: return generic items schema
-  return itemsSchema;
+  return schema.properties?.sections?.items || null;
 }
 
 // ============================================================================
@@ -435,8 +430,9 @@ function generateSkeleton(schema, options = {}) {
     lines.push(`template: ${templateName}`);
   }
 
-  // Top-level properties (excluding sections, header, footer which we handle specially)
-  const topLevelProps = ['title', 'preheader', 'ogImage', 'sectionStylesFile'];
+  // Emit every schema-declared root field except structural collections handled below.
+  const structuralProps = new Set(['template', 'sections', 'header', 'intro', 'footer']);
+  const topLevelProps = Object.keys(schema.properties || {}).filter((prop) => !structuralProps.has(prop));
   for (const prop of topLevelProps) {
     if (schema.properties?.[prop]) {
       const value = generatePlaceholderValue(prop, schema.properties[prop], { minimal, schema });
@@ -512,8 +508,12 @@ function generateSectionYaml(sectionType, sectionSchema, options = {}) {
   const collectionProp = props.items ? 'items' : props.articles ? 'articles' : null;
   if (collectionProp) {
     lines.push(`${indent}${collectionProp}:`);
-    const itemSchema = props[collectionProp].items || {};
-    const itemCount = minimal ? 1 : itemsPerSection;
+    const collectionSchema = props[collectionProp] || {};
+    const itemSchema = collectionSchema.items || {};
+    const requestedCount = minimal ? 1 : itemsPerSection;
+    const minimumCount = Number.isInteger(collectionSchema.minItems) ? collectionSchema.minItems : 0;
+    const maximumCount = Number.isInteger(collectionSchema.maxItems) ? collectionSchema.maxItems : Infinity;
+    const itemCount = Math.max(minimumCount, Math.min(requestedCount, maximumCount));
 
     for (let i = 0; i < itemCount; i++) {
       lines.push(...generateItemYaml(sectionType, itemSchema, i + 1, { minimal, schema: options.schema }));
