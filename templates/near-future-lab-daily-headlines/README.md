@@ -21,9 +21,9 @@ containerStyles:
 
 For adjacent ad blocks, set `show_top_rule: false` on the following block when the preceding section already renders the shared divider.
 
-This template renders compact daily-headline emails from a `sections` array. The canonical machine-readable contract is `newsletter.schema.json`; the public-issue starter is registered in `template.manifest.json`; and the canonical example is `sample-data.json`.
+This template renders compact daily-headline emails from a `sections` array. The canonical machine-readable contract is `newsletter.schema.json`; Backoffice generates public-issue starters from that schema on each request; and the canonical example is `sample-data.json`.
 
-Backoffice authoring tools discover the section vocabulary and field shapes directly from `newsletter.schema.json`. The manifest supplies the supported publication mode and starter path.
+Backoffice authoring tools discover the section vocabulary, field shapes, and starter fields directly from `newsletter.schema.json`. The manifest supplies operational metadata and declares that the starter source is the schema.
 
 ## Normal Authoring Shape
 
@@ -170,7 +170,7 @@ sections:
 ## Notes
 
 - This template does not use a top-level `header` field. Its visible header is the `newsletter_masthead` section.
-- Backoffice publishing metadata such as `ogImage`, `ogImageAltText`, and `socialCard` may exist on outbox issues, but those fields are not part of this email template’s render path.
+- When authored, `ogImage` and `ogImageAltText` render as Open Graph and Twitter card metadata in the email HTML head. `socialCard` remains part of Backoffice's social-card export path.
 - New editorial content should use the evolved tracked link object shape on fields named `link`, `logoLink`, or top-level CTA `url`: `{ href, label, category }`. The build emits those labels/categories as `data-link-label` and `data-link-category` for `nfl-newsletter-email-soup-to-nuts`.
 - The build computes `viewOnlineLink` from `issueId` as `https://nearfuturelaboratory.com/newsletters/<year>/<issueId>` and injects it into the masthead before rendering. Public starters may carry a placeholder so the required field remains visible to authoring tools.
 - Short Take content is registry-owned. Newsletter drafts carry only `shortTakeId`; issue-level headline, caption, image, URL, edge metadata, width, and style overrides are rejected.

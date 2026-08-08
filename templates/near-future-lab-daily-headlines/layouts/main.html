@@ -10,7 +10,30 @@
   <meta name="color-scheme" content="light dark">
   <meta name="supported-color-schemes" content="light dark">
   </if>
-  <title>{{ page.title || title || 'Near Future Laboratory Daily Headlines' }}</title>
+  <title>{{ title || page.title || 'Near Future Laboratory Daily Headlines' }}</title>
+  <if condition="preheader">
+  <meta name="description" content="{{ preheader }}">
+  </if>
+  <if condition="ogImage">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title || page.title || 'Near Future Laboratory Daily Headlines' }}">
+  <if condition="preheader">
+  <meta property="og:description" content="{{ preheader }}">
+  </if>
+  <meta property="og:image" content="{{ ogImage }}">
+  <if condition="ogImageAltText">
+  <meta property="og:image:alt" content="{{ ogImageAltText }}">
+  </if>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title || page.title || 'Near Future Laboratory Daily Headlines' }}">
+  <if condition="preheader">
+  <meta name="twitter:description" content="{{ preheader }}">
+  </if>
+  <meta name="twitter:image" content="{{ ogImage }}">
+  <if condition="ogImageAltText">
+  <meta name="twitter:image:alt" content="{{ ogImageAltText }}">
+  </if>
+  </if>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">

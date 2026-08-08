@@ -33,6 +33,9 @@ test('Daily Headlines sections render a solid fallback and optional gradient wit
     '---',
     'template: near-future-lab-daily-headlines',
     'title: Section Background Test',
+    'preheader: Rendered description for a Daily Headlines issue.',
+    'ogImage: https://images.example.test/daily-headlines-card.png',
+    'ogImageAltText: Daily Headlines test card.',
     'sections:',
     '  - type: section_article_group',
     '    section_label: Field Notes',
@@ -68,6 +71,12 @@ test('Daily Headlines sections render a solid fallback and optional gradient wit
     ], { encoding: 'utf8', cwd: tempRoot });
 
     const html = readFileSync(path.join(outputDir, 'daily-headlines-section-background.html'), 'utf8');
+    assert.match(html, /<title>Section Background Test<\/title>/);
+    assert.match(html, /<meta name="description" content="Rendered description for a Daily Headlines issue\."/);
+    assert.match(html, /<meta property="og:image" content="https:\/\/images\.example\.test\/daily-headlines-card\.png"/);
+    assert.match(html, /<meta property="og:image:alt" content="Daily Headlines test card\."/);
+    assert.match(html, /<meta name="twitter:card" content="summary_large_image"/);
+    assert.match(html, /<meta name="twitter:image" content="https:\/\/images\.example\.test\/daily-headlines-card\.png"/);
     assert.match(html, /background-color:\s*#eff4ed/);
     assert.match(html, /background-image:\s*linear-gradient\(135deg,\s*#eff4ed 0%,\s*#d7e7f3 100%\)/);
     assert.match(html, /<table[^>]*style="[^"]*background-color:\s*#eff4ed[^"]*background-image:[^"]*"[^>]*>\s*<tbody>\s*<tr><td height="30"/);
