@@ -1,6 +1,7 @@
 {
   "template": "dense-discovery",
   "supportedPublicationModes": ["public-issue", "campaign"],
+  "starterSource": "schema",
   "starterMarkdown": {
     "campaign": "campaign-starter.md"
   },

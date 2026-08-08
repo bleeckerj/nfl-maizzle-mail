@@ -68,6 +68,10 @@ Tracked link fields should accept the evolved object shape:
 
 Where an existing field is named `url`, the object still carries `href`, `label`, and `category`.
 
+## Schema-Derived Starters
+
+The Backoffice MCP starter tools generate from the selected template's current schema on every invocation. `newsletter_start`, `create_newsletter_from_skeleton`, and `campaign_email_start` share the resolver and `scripts/generate-skeleton-from-schema.mjs`; static starter Markdown and legacy skeleton paths are not starter sources. The generator must emit YAML that validates against the selected schema, including discriminator-driven sections, local `$ref` branches, nullable objects, and nested arrays.
+
 ## Build-Owned View Online Link
 
 View/share-online links are deterministic. Public starters include the expected field as a placeholder, while the build replaces it with the canonical issue URL.

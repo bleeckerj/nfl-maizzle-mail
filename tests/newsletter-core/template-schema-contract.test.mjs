@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import matter from 'gray-matter';
@@ -83,5 +83,33 @@ test('schema-derived starters emit every non-structural root property declared b
 
   for (const property of Object.keys(schema.properties)) {
     if (!structural.has(property)) assert.ok(Object.hasOwn(generated, property), property);
+  }
+});
+
+test('every schema-backed email template has a schema-valid generated starter', () => {
+  const templatesRoot = path.join(REPO_ROOT, 'templates');
+  const templateDirectories = readdirSync(templatesRoot, { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name);
+
+  for (const template of templateDirectories) {
+    const schemaPath = path.join(templatesRoot, template, 'newsletter.schema.json');
+    try {
+      readFileSync(schemaPath, 'utf8');
+    } catch {
+      continue;
+    }
+
+    const output = execFileSync(
+      process.execPath,
+      [GENERATOR, '--schema', schemaPath, '--minimal'],
+      { cwd: REPO_ROOT, encoding: 'utf8' },
+    );
+    const schema = JSON.parse(readFileSync(schemaPath, 'utf8'));
+    const ajv = new Ajv({ allErrors: true, strict: false, allowUnionTypes: true });
+    addFormats(ajv);
+    const validate = ajv.compile(schema);
+    const data = matter(output).data;
+    assert.equal(validate(data), true, `${template}: ${JSON.stringify(validate.errors)}`);
   }
 });

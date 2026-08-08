@@ -172,11 +172,84 @@ function resolveGenerationSchema(propSchema = {}, context = {}) {
   if (Array.isArray(alternatives) && alternatives.length > 0) {
     // Prefer structured objects for tracked links and action objects so the
     // generated Markdown demonstrates the authoring shape accepted by the schema.
-    resolved = alternatives.find((candidate) => candidate?.type === 'object') || alternatives[0];
+    const resolvedAlternatives = alternatives.map((candidate) => {
+      const resolvedCandidate = resolveSchemaRef(context.schema, candidate);
+      return resolvedCandidate.anyOf || resolvedCandidate.oneOf
+        ? resolveGenerationSchema(resolvedCandidate, context)
+        : resolvedCandidate;
+    });
+    resolved = resolvedAlternatives.find((candidate) => candidate?.type === 'object' || candidate?.type?.includes?.('object'))
+      || resolvedAlternatives.find((candidate) => Object.prototype.hasOwnProperty.call(candidate, 'const'))
+      || resolvedAlternatives[0];
     resolved = resolveSchemaRef(context.schema, resolved);
   }
 
+  // JSON Schema permits nullable values with a union type. Choose the
+  // structured branch when one exists so the placeholder has the right YAML
+  // shape; the generated value remains valid for the nullable union.
+  if (Array.isArray(resolved.type)) {
+    const preferredType = resolved.type.includes('object')
+      ? 'object'
+      : resolved.type.includes('array')
+        ? 'array'
+        : resolved.type.find((type) => type !== 'null') || resolved.type[0];
+    resolved = { ...resolved, type: preferredType };
+  }
+
   return resolved || {};
+}
+
+function mergeSchemaFragments(base = {}, extension = {}) {
+  const merged = { ...base, ...extension };
+  const baseProperties = base.properties || {};
+  const extensionProperties = extension.properties || {};
+  const properties = { ...baseProperties };
+
+  for (const [propertyName, propertySchema] of Object.entries(extensionProperties)) {
+    properties[propertyName] = baseProperties[propertyName]
+      ? mergeSchemaFragments(baseProperties[propertyName], propertySchema)
+      : propertySchema;
+  }
+
+  if (Object.keys(properties).length > 0) merged.properties = properties;
+
+  const required = [...new Set([
+    ...(Array.isArray(base.required) ? base.required : []),
+    ...(Array.isArray(extension.required) ? extension.required : []),
+  ])];
+  if (required.length > 0) merged.required = required;
+  return merged;
+}
+
+function conditionMatches(condition, sectionType) {
+  const typeSchema = condition?.properties?.type;
+  if (typeof typeSchema?.const === 'string') return typeSchema.const === sectionType;
+  return Array.isArray(typeSchema?.enum) && typeSchema.enum.includes(sectionType);
+}
+
+function materializeConditionalSchema(schema, candidate, sectionType) {
+  const resolved = resolveSchemaRef(schema, candidate);
+  let materialized = { ...resolved };
+
+  function applyRules(current, fragment) {
+    let result = current;
+    if (Array.isArray(fragment?.allOf)) {
+      for (const branch of fragment.allOf) result = applyRules(result, branch);
+      return result;
+    }
+
+    if (fragment?.if) {
+      const selected = conditionMatches(fragment.if, sectionType) ? fragment.then : fragment.else;
+      if (selected) {
+        result = mergeSchemaFragments(result, resolveSchemaRef(schema, selected));
+        result = applyRules(result, selected);
+      }
+    }
+    return result;
+  }
+
+  materialized = applyRules(materialized, resolved);
+  return materialized;
 }
 
 function generatePlaceholderValue(propName, propSchema = {}, context = {}) {
@@ -311,7 +384,10 @@ function generateStringPlaceholder(propName, description = '') {
 
 function generateArrayPlaceholder(propName, propSchema, context) {
   const itemSchema = resolveSchemaRef(context.schema, propSchema.items || {});
-  const count = context.itemsPerSection || 1;
+  const requestedCount = context.itemsPerSection || 1;
+  const minimumCount = Number.isInteger(propSchema.minItems) ? propSchema.minItems : 0;
+  const maximumCount = Number.isInteger(propSchema.maxItems) ? propSchema.maxItems : Infinity;
+  const count = Math.max(minimumCount, Math.min(requestedCount, maximumCount));
 
   if (itemSchema.type === 'object') {
     const items = [];
@@ -321,8 +397,16 @@ function generateArrayPlaceholder(propName, propSchema, context) {
     return items;
   }
 
+  if (itemSchema.type === 'array') {
+    return Array.from({ length: count }, () =>
+      generateArrayPlaceholder(`${propName} item`, itemSchema, context),
+    );
+  }
+
   // Simple array
-  return [`Example ${humanize(propName)} 1`];
+  return Array.from({ length: count }, (_, index) =>
+    generatePlaceholderValue(`${propName} ${index + 1}`, itemSchema, context),
+  );
 }
 
 function generateObjectPlaceholder(propName, propSchema, context = {}) {
@@ -375,13 +459,19 @@ function extractSectionVariants(schema) {
     if (!resolved || typeof resolved !== 'object') return;
 
     const typeSchema = resolved.properties?.type;
-    if (typeof typeSchema?.const === 'string') {
-      variants.push({ type: typeSchema.const, schema: resolved });
-    }
+    const candidateTypes = [];
+    if (typeof typeSchema?.const === 'string') candidateTypes.push(typeSchema.const);
     if (Array.isArray(typeSchema?.enum)) {
       for (const type of typeSchema.enum) {
-        if (typeof type === 'string') variants.push({ type, schema: resolved });
+        if (typeof type === 'string') candidateTypes.push(type);
       }
+    }
+
+    for (const type of candidateTypes) {
+      variants.push({
+        type,
+        schema: materializeConditionalSchema(schema, resolved, type),
+      });
     }
 
     for (const branch of [...(resolved.oneOf || []), ...(resolved.anyOf || [])]) {
@@ -390,22 +480,27 @@ function extractSectionVariants(schema) {
 
     for (const branch of resolved.allOf || []) {
       const branchType = branch?.if?.properties?.type;
-      if (typeof branchType?.const === 'string') {
-        variants.push({ type: branchType.const, schema: resolveSchemaRef(schema, branch.then || {}) });
-      } else if (Array.isArray(branchType?.enum)) {
-        for (const type of branchType.enum) {
-          if (typeof type === 'string') {
-            variants.push({ type, schema: resolveSchemaRef(schema, branch.then || {}) });
-          }
-        }
-      } else {
+      const conditionalTypes = [];
+      if (typeof branchType?.const === 'string') conditionalTypes.push(branchType.const);
+      if (Array.isArray(branchType?.enum)) {
+        conditionalTypes.push(...branchType.enum.filter((type) => typeof type === 'string'));
+      }
+      for (const type of conditionalTypes) {
+        variants.push({
+          type,
+          schema: materializeConditionalSchema(schema, resolved, type),
+        });
+      }
+      if (conditionalTypes.length === 0) {
         visit(branch);
       }
     }
   }
 
   visit(sectionsSchema.items);
-  return variants;
+  return variants.filter(
+    ({ type }, index) => variants.findIndex((candidate) => candidate.type === type) === index,
+  );
 }
 
 function extractSectionSchema(schema, sectionType) {
@@ -436,7 +531,20 @@ function generateSkeleton(schema, options = {}) {
   for (const prop of topLevelProps) {
     if (schema.properties?.[prop]) {
       const value = generatePlaceholderValue(prop, schema.properties[prop], { minimal, schema });
-      lines.push(`${prop}: ${formatYamlValue(value)}`);
+      if (Array.isArray(value) && value.length > 0) {
+        lines.push(`${prop}:`);
+        for (const item of value) {
+          if (Array.isArray(item)) {
+            lines.push(`  - ${formatYamlValue(item)}`);
+          } else if (typeof item === 'object' && item !== null) {
+            lines.push(...formatNestedArrayItem(item, '  '));
+          } else {
+            lines.push(`  - ${formatYamlValue(item)}`);
+          }
+        }
+      } else {
+        lines.push(`${prop}: ${formatYamlValue(value)}`);
+      }
     }
   }
 
@@ -466,6 +574,12 @@ function generateSkeleton(schema, options = {}) {
       const sectionSchema = extractSectionSchema(schema, sectionType);
       lines.push(...generateSectionYaml(sectionType, sectionSchema, { minimal, itemsPerSection, schema }));
     }
+  } else if (schema.properties?.sections) {
+    // A schema may require the collection while intentionally leaving its
+    // item vocabulary open to another authoring layer. Preserve the declared
+    // collection shape without inventing a section type.
+    lines.push('');
+    lines.push('sections: []');
   }
 
   // Footer
@@ -493,19 +607,26 @@ function generateSectionYaml(sectionType, sectionSchema, options = {}) {
   }
 
   const props = sectionSchema.properties;
+  const emittedFields = new Set();
 
   // Title first
   if (props.title) {
     lines.push(`${indent}title: ${humanize(sectionType)} Section`);
+    emittedFields.add('title');
   }
 
   // Description if present
   if (props.description) {
     lines.push(`${indent}description: <p>Description for ${sectionType} section.</p>`);
+    emittedFields.add('description');
   }
 
   // Collection arrays such as items and section_article_group articles.
-  const collectionProp = props.items ? 'items' : props.articles ? 'articles' : null;
+  const collectionProp = props.items?.items
+    ? 'items'
+    : props.articles?.items
+      ? 'articles'
+      : null;
   if (collectionProp) {
     lines.push(`${indent}${collectionProp}:`);
     const collectionSchema = props[collectionProp] || {};
@@ -516,14 +637,23 @@ function generateSectionYaml(sectionType, sectionSchema, options = {}) {
     const itemCount = Math.max(minimumCount, Math.min(requestedCount, maximumCount));
 
     for (let i = 0; i < itemCount; i++) {
-      lines.push(...generateItemYaml(sectionType, itemSchema, i + 1, { minimal, schema: options.schema }));
+      const itemLines = generateItemYaml(sectionType, itemSchema, i + 1, {
+        minimal,
+        schema: options.schema,
+      });
+      lines.push(...(itemLines.length > 0 ? itemLines : [`${indent}- {}`]));
     }
   }
 
   // Emit required scalar/object fields for sections without a collection.
   const requiredFields = Array.isArray(sectionSchema.required) ? sectionSchema.required : [];
   for (const propName of requiredFields) {
-    if (propName === 'type' || propName === collectionProp || !props[propName]) continue;
+    if (
+      propName === 'type'
+      || propName === collectionProp
+      || emittedFields.has(propName)
+      || !props[propName]
+    ) continue;
     const value = generatePlaceholderValue(propName, props[propName], { minimal, schema: options.schema });
     lines.push(`${indent}${propName}: ${formatYamlValue(value)}`);
   }
@@ -537,7 +667,8 @@ function generateItemYaml(sectionType, itemSchema, index, options = {}) {
   const baseIndent = '  ';
   const itemIndent = baseIndent + '  ';
 
-  const props = itemSchema.properties || {};
+  const resolvedItemSchema = resolveGenerationSchema(itemSchema, { schema: options.schema });
+  const props = resolvedItemSchema.properties || {};
   const propNames = Object.keys(props);
 
   // Determine key properties to show first
@@ -548,13 +679,28 @@ function generateItemYaml(sectionType, itemSchema, index, options = {}) {
   ];
 
   // In minimal mode, only show essential properties
-  const requiredProps = Array.isArray(itemSchema.required) ? itemSchema.required : [];
+  const requiredProps = Array.isArray(resolvedItemSchema.required) ? resolvedItemSchema.required : [];
+  const mutuallyExclusiveProps = Array.isArray(resolvedItemSchema.not?.required)
+    ? resolvedItemSchema.not.required
+    : [];
   const propsToShow = minimal
     ? orderedProps.filter((p) =>
         ['title', 'link', 'image', 'images', 'description', 'content', 'quote', 'calloutText'].includes(p) ||
         requiredProps.includes(p),
       )
     : orderedProps;
+  if (mutuallyExclusiveProps.length > 1) {
+    const firstExclusiveProp = propsToShow.find((propName) => mutuallyExclusiveProps.includes(propName));
+    if (firstExclusiveProp) {
+      propsToShow.splice(
+        0,
+        propsToShow.length,
+        ...propsToShow.filter(
+          (propName) => !mutuallyExclusiveProps.includes(propName) || propName === firstExclusiveProp,
+        ),
+      );
+    }
+  }
 
   let isFirst = true;
   for (const propName of propsToShow) {

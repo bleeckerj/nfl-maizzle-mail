@@ -1,6 +1,7 @@
 {
   "template": "brain-dead-template",
   "supportedPublicationModes": ["public-issue", "campaign"],
+  "starterSource": "schema",
   "starterMarkdown": {
     "campaign": "campaign-starter.md"
   },
