@@ -515,6 +515,11 @@ function extractSectionSchema(schema, sectionType) {
 // ============================================================================
 
 function generateSkeleton(schema, options = {}) {
+  const authoringStarter = schema['x-nfl-authoring-starter']?.markdown;
+  if (Array.isArray(authoringStarter) && authoringStarter.every((line) => typeof line === 'string')) {
+    return `${authoringStarter.join('\n')}\n`;
+  }
+
   const { templateName, minimal, sections: requestedSections, itemsPerSection } = options;
   const lines = [];
 

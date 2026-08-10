@@ -2972,5 +2972,30 @@
       "additionalProperties": true
     }
   },
+  "x-nfl-authoring-starter": {
+    "markdown": [
+      "---",
+      "template: dense-discovery",
+      "sectionStylesFile: templates/dense-discovery/section-styles.json",
+      "intro:",
+      "  containerStyles:",
+      "    backgroundColor: null",
+      "    padding: '0'",
+      "    borderRadius: 0px",
+      "  contentStyles:",
+      "    fontFamily: '''IBM Plex Sans'', sans-serif'",
+      "    fontSize: 19px",
+      "    lineHeight: 1.5",
+      "    fontWeight: '400'",
+      "    color: '#000000'",
+      "    textAlign: left",
+      "header:",
+      "  logoLink: https://nearfuturelaboratory.com/",
+      "  logoBottom: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp",
+      "  logoTop: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp",
+      "sections: []",
+      "---"
+    ]
+  },
   "additionalProperties": false
 }
