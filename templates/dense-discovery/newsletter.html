@@ -963,7 +963,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                           <if condition="item.posted">{{ item.posted }}</if>
                                         </p>
                                       </if>
-                                      <p style="margin:0;padding:0;color:rgba(23,23,23,0.72);font:14px/1.38 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;overflow-wrap:break-word;">{{ item.lede }}</p>
+                                      <div style="margin:0;padding:0;color:rgba(23,23,23,0.72);font:14px/1.38 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;overflow-wrap:break-word;">{{{ item.ledeHtml }}}</div>
                                     </a>
                                   </td>
                                 </tr>
