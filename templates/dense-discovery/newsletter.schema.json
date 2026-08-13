@@ -356,7 +356,9 @@
             "enum": [
               "ad-block",
               "adjacency-feature",
+              "adjacency-help-wanted",
               "adjacency-job-posting",
+              "adjacency-todays-mix",
               "aesthetically-pleasing",
               "animated-image",
               "apps-sites",
@@ -492,6 +494,79 @@
                     "null"
                   ],
                   "additionalProperties": true
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": ["type"],
+              "properties": {"type": {"const": "adjacency-help-wanted"}}
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {"const": "adjacency-help-wanted"},
+                "eyebrow": {},
+                "heading": {},
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "kind": {},
+                      "sourceRef": {},
+                      "title": {},
+                      "publicUrl": {},
+                      "lede": {},
+                      "company": {},
+                      "location": {},
+                      "department": {},
+                      "posted": {}
+                    },
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": ["type"],
+              "properties": {"type": {"const": "adjacency-todays-mix"}}
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {"const": "adjacency-todays-mix"},
+                "eyebrow": {},
+                "heading": {},
+                "subheading": {},
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "kind": {},
+                      "sourceRef": {},
+                      "title": {},
+                      "label": {},
+                      "publicUrl": {},
+                      "lede": {},
+                      "author": {},
+                      "contextTags": {"type": "array", "items": {}},
+                      "image": {
+                        "type": "object",
+                        "properties": {"src": {}, "alt": {}},
+                        "additionalProperties": false
+                      }
+                    },
+                    "additionalProperties": false
+                  }
                 }
               },
               "additionalProperties": false

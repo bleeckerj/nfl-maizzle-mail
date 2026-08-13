@@ -928,6 +928,114 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
               <!-- ADJACENCY JOB POSTING End -->
             </if>
 
+            <if condition="section.type === 'adjacency-help-wanted'">
+              <!-- ADJACENCY HELP WANTED Start -->
+              <tr>
+                <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+              </tr>
+              <tr>
+                <td style="border-collapse: collapse;padding: 0;">
+                  <table data-section="adjacency-help-wanted" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;background:#f2f0ea;border-top:1px solid rgba(24,24,24,0.16);color:#171717;">
+                    <tbody>
+                      <tr>
+                        <td style="border-collapse: collapse;padding: 24px 20px 14px 20px;background:#f2f0ea;">
+                          <p style="margin:0 0 5px 0;padding:0;color:rgba(23,23,23,0.58);font:700 11px/1.1 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono',monospace;text-transform:uppercase;">{{ section.eyebrow }}</p>
+                          <h2 class="mob-text mob-title" style="margin:0;padding:0;font:700 26px/1.05 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:0;color:#171717;">{{ section.heading }}</h2>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="border-collapse: collapse;padding:0 20px 20px 20px;background:#f2f0ea;">
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;border-top:2px solid rgba(23,23,23,0.82);">
+                            <tbody>
+                              <each loop="item in section.items">
+                                <tr>
+                                  <td style="border-collapse:collapse;padding:16px 0 17px 0;border-bottom:1px solid rgba(23,23,23,0.28);background:#f2f0ea;">
+                                    <a href="{{ item.publicUrl }}" style="display:block;color:inherit;text-decoration:none;">
+                                      <p class="mob-text mob-title" style="margin:0 0 7px 0;padding:0;font:800 18px/1.1 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#171717;overflow-wrap:break-word;">{{ item.title }}</p>
+                                      <if condition="item.company || item.location || item.department || item.posted">
+                                        <p style="margin:0 0 7px 0;padding:0;color:rgba(23,23,23,0.62);font:700 11px/1.25 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono',monospace;text-transform:uppercase;">
+                                          <if condition="item.company">{{ item.company }}</if>
+                                          <if condition="item.company && (item.location || item.department || item.posted)"> / </if>
+                                          <if condition="item.location">{{ item.location }}</if>
+                                          <if condition="item.location && (item.department || item.posted)"> / </if>
+                                          <if condition="item.department">{{ item.department }}</if>
+                                          <if condition="item.department && item.posted"> / </if>
+                                          <if condition="item.posted">{{ item.posted }}</if>
+                                        </p>
+                                      </if>
+                                      <p style="margin:0;padding:0;color:rgba(23,23,23,0.72);font:14px/1.38 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;overflow-wrap:break-word;">{{ item.lede }}</p>
+                                    </a>
+                                  </td>
+                                </tr>
+                              </each>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <!-- ADJACENCY HELP WANTED End -->
+            </if>
+
+            <if condition="section.type === 'adjacency-todays-mix'">
+              <!-- ADJACENCY TODAY'S MIX Start -->
+              <tr>
+                <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+              </tr>
+              <tr>
+                <td style="border-collapse: collapse;padding: 0;">
+                  <table data-section="adjacency-todays-mix" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;background:#fff;border-top:1px solid rgba(24,24,24,0.14);color:#171717;">
+                    <tbody>
+                      <tr>
+                        <td style="border-collapse:collapse;padding:32px 20px 20px 20px;background:#fff;">
+                          <p style="margin:0 0 6px 0;padding:0;color:rgba(23,23,23,0.58);font:700 11px/1.1 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono',monospace;text-transform:uppercase;">{{ section.eyebrow }}</p>
+                          <h2 class="mob-text mob-title" style="margin:0;padding:0;max-width:44rem;font:500 32px/0.98 Georgia,'Times New Roman',serif;color:#171717;">{{ section.heading }}</h2>
+                          <if condition="section.subheading"><p style="margin:7px 0 0 0;padding:0;max-width:38rem;color:rgba(23,23,23,0.66);font:500 18px/1.35 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">{{ section.subheading }}</p></if>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="border-collapse:collapse;padding:0 20px 32px 20px;background:#fff;">
+                          <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;">
+                            <tbody>
+                              <each loop="item in section.items">
+                                <tr>
+                                  <td style="border-collapse:collapse;padding:0 0 16px 0;background:#fff;">
+                                    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;background:#fffbf7;border:1px solid #cbc7c4;border-radius:4px;box-shadow:1px 1px 2px rgba(24,24,24,0.08);">
+                                      <tbody>
+                                        <tr>
+                                          <td style="border-collapse:collapse;padding:14px 14px 15px 14px;background:#fffbf7;">
+                                            <if condition="item.image && item.image.src"><img src="{{ item.image.src }}" alt="{{ item.image.alt || item.title }}" width="100%" style="display:block;width:100%;height:auto;aspect-ratio:16 / 9;object-fit:cover;border:0;margin:0 0 5px 0;"></if>
+                                            <p style="margin:0 0 10px 0;padding:0;color:#93250c;font:400 15px/0.98 'Irvin-Heading',Georgia,'Times New Roman',serif;text-transform:uppercase;">{{ item.label }}</p>
+                                            <if condition="item.contextTags && item.contextTags.length">
+                                              <p style="margin:-1px 0 9px 0;padding:0;">
+                                                <each loop="tag in item.contextTags"><span style="display:inline-block;margin:0 5px 5px 0;padding:4px 6px 3px 6px;color:#fff;background:#111;border-radius:5%;font:700 10px/1.05 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-transform:uppercase;white-space:nowrap;">{{ tag }}</span></each>
+                                              </p>
+                                            </if>
+                                            <a href="{{ item.publicUrl }}" style="display:block;color:inherit;text-decoration:none;">
+                                              <p class="mob-text mob-title" style="margin:0 0 9px 0;padding:0;font:600 23px/1.08 Georgia,'Times New Roman',serif;color:#171717;overflow-wrap:break-word;">{{ item.title }}</p>
+                                              <p style="margin:0 0 9px 0;padding:0;color:rgba(23,23,23,0.72);font:16px/1.42 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;overflow-wrap:break-word;">{{ item.lede }}</p>
+                                              <if condition="item.author"><p style="margin:0;padding:0;color:rgba(23,23,23,0.84);font:700 12px/1.25 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;overflow-wrap:anywhere;">By {{ item.author }}</p></if>
+                                            </a>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </each>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <!-- ADJACENCY TODAY'S MIX End -->
+            </if>
+
             <if condition="section.type === 'microdrop-product-launch'">
               <!-- MICRODROP PRODUCT LAUNCH Start -->
               <tr>

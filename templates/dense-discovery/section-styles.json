@@ -355,6 +355,38 @@
         "color": "#6e778a"
       }
     },
+    "adjacency-help-wanted": {
+      "name": "Adjacency Help Wanted",
+      "description": "Popup-matched Tomorrow’s Jobs Today / Help Wanted cards using the popup section’s colors and typography.",
+      "containerStyles": {
+        "backgroundColor": "#f2f0ea",
+        "borderColor": "rgba(24,24,24,0.16)",
+        "borderWidth": "1px",
+        "borderStyle": "solid"
+      },
+      "contentStyles": {
+        "fontFamily": "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "fontSize": "14px",
+        "lineHeight": "1.38",
+        "color": "rgba(23,23,23,0.72)"
+      }
+    },
+    "adjacency-todays-mix": {
+      "name": "Adjacency Today’s Mix",
+      "description": "Popup-matched Today’s Mix cards using the popup section’s colors and typography.",
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "borderColor": "rgba(24,24,24,0.14)",
+        "borderWidth": "1px",
+        "borderStyle": "solid"
+      },
+      "contentStyles": {
+        "fontFamily": "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "fontSize": "16px",
+        "lineHeight": "1.42",
+        "color": "rgba(23,23,23,0.72)"
+      }
+    },
     
     "single-column,indie-mag-single-column": {
       "name": "Single Column",
