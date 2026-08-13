@@ -1036,6 +1036,54 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
               <!-- ADJACENCY TODAY'S MIX End -->
             </if>
 
+            <if condition="section.type === 'adjacency-editorial-remarks'">
+              <!-- ADJACENCY EDITORIAL REMARKS Start -->
+              <tr>
+                <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
+              </tr>
+              <tr>
+                <td style="border-collapse: collapse;padding: 0;">
+                  <table data-section="adjacency-editorial-remarks" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;background: {{ section.containerStyles.backgroundColor || '#ffffff' }};border: {{ section.containerStyles.borderWidth || '0px' }} {{ section.containerStyles.borderStyle || 'solid' }} {{ section.containerStyles.borderColor || 'transparent' }};border-radius: {{ section.containerStyles.borderRadius || '0px' }};overflow: hidden;">
+                    <tbody>
+                      <if condition="section.bodyHtml">
+                        <tr>
+                          <td data-block="editorial-remarks" style="border-collapse: collapse;padding: {{ section.containerStyles.bodyPadding || '12px 18px 0 18px' }};background: {{ section.containerStyles.backgroundColor || '#ffffff' }};">
+                            <div style="font-family: {{ section.contentStyles.fontFamily || 'Georgia, serif' }};font-size: {{ section.contentStyles.fontSize || '18px' }};line-height: {{ section.contentStyles.lineHeight || '1.72' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#1d1d1d' }};text-align: {{ section.contentStyles.textAlign || 'left' }};">
+                              {{{ section.bodyHtml }}}
+                            </div>
+                          </td>
+                        </tr>
+                      </if>
+                      <if condition="section.footerCta">
+                        <tr>
+                          <td data-block="remarks-footer-cta" style="border-collapse: collapse;padding: 6px 18px 16px 18px;background: {{ section.containerStyles.backgroundColor || '#ffffff' }};">
+                            <div style="border: 1px solid #d7dbe4; background: #f8fafc; padding: 16px 16px 14px 16px;">
+                              <p style="margin: 0 0 10px 0;padding: 0;font-family: 'IBM Plex Sans', sans-serif;font-size: 11px;line-height: 1.4;font-weight: 700;letter-spacing: 0.16em;text-transform: uppercase;color: #6e778a;">{{ section.footerCta.eyebrow }}</p>
+                              <div style="font-family: 'IBM Plex Sans', sans-serif;font-size: 15px;line-height: 1.7;color: #364152;">
+                                {{{ section.footerCta.textHtml }}}
+                              </div>
+                              <p style="margin: 14px 0 0 0;padding: 0;">
+                                <a href="{{ section.footerCta.primaryAction.url }}" style="display: inline-block; margin: 0 12px 12px 0; padding: 12px 16px; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; background: #111111; color: #ffffff !important; border: 1px solid #111111; -webkit-text-fill-color: #ffffff;">{{ section.footerCta.primaryAction.label }}</a>
+                                <a href="{{ section.footerCta.secondaryAction.url }}" style="display: inline-block; margin: 0 12px 12px 0; padding: 12px 16px; text-decoration: none; font-family: 'IBM Plex Sans', sans-serif; font-size: 12px; line-height: 1.2; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; background: #ffffff; color: #111827 !important; border: 1px solid #d7d1c6; -webkit-text-fill-color: #111827;">{{ section.footerCta.secondaryAction.label }}</a>
+                              </p>
+                            </div>
+                          </td>
+                        </tr>
+                      </if>
+                      <if condition="section.ctaLink">
+                        <tr>
+                          <td data-block="remarks-cta" style="border-collapse: collapse;padding: {{ section.containerStyles.ctaPadding || '4px 18px 18px 18px' }};background: {{ section.containerStyles.backgroundColor || '#ffffff' }};">
+                            <p style="margin: 0;padding: 0;"><a href="{{ section.ctaLink }}" style="text-decoration: underline;color: #44506a;">{{ section.ctaText || 'Read on The Adjacency' }}</a></p>
+                          </td>
+                        </tr>
+                      </if>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <!-- ADJACENCY EDITORIAL REMARKS End -->
+            </if>
+
             <if condition="section.type === 'microdrop-product-launch'">
               <!-- MICRODROP PRODUCT LAUNCH Start -->
               <tr>

@@ -357,6 +357,7 @@
               "ad-block",
               "adjacency-feature",
               "adjacency-help-wanted",
+              "adjacency-editorial-remarks",
               "adjacency-job-posting",
               "adjacency-todays-mix",
               "aesthetically-pleasing",
@@ -495,6 +496,45 @@
                   ],
                   "additionalProperties": true
                 }
+              },
+              "additionalProperties": false
+            }
+          },
+          {
+            "if": {
+              "type": "object",
+              "required": ["type"],
+              "properties": {
+                "type": {"const": "adjacency-editorial-remarks"}
+              }
+            },
+            "then": {
+              "type": "object",
+              "properties": {
+                "type": {"const": "adjacency-editorial-remarks"},
+                "containerStyles": {"type": ["object", "null"], "additionalProperties": true},
+                "contentStyles": {"type": ["object", "null"], "additionalProperties": true},
+                "bodyHtml": {},
+                "footerCta": {
+                  "type": "object",
+                  "properties": {
+                    "eyebrow": {},
+                    "textHtml": {},
+                    "primaryAction": {
+                      "type": "object",
+                      "properties": {"url": {}, "label": {}},
+                      "additionalProperties": false
+                    },
+                    "secondaryAction": {
+                      "type": "object",
+                      "properties": {"url": {}, "label": {}},
+                      "additionalProperties": false
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "ctaText": {},
+                "ctaLink": {}
               },
               "additionalProperties": false
             }

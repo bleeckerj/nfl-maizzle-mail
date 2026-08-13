@@ -387,6 +387,27 @@
         "color": "rgba(23,23,23,0.72)"
       }
     },
+    "adjacency-editorial-remarks": {
+      "name": "Adjacency Editorial Remarks",
+      "description": "The explicit outside-the-world reflection boundary after the in-world article mail sections.",
+      "containerStyles": {
+        "backgroundColor": "#ffffff",
+        "borderColor": "transparent",
+        "borderWidth": "0px",
+        "borderStyle": "solid",
+        "borderRadius": "0px",
+        "bodyPadding": "12px 18px 0 18px",
+        "ctaPadding": "4px 18px 18px 18px"
+      },
+      "contentStyles": {
+        "fontFamily": "Georgia, 'Times New Roman', serif",
+        "fontSize": "18px",
+        "lineHeight": "1.72",
+        "fontWeight": "400",
+        "color": "#1d1d1d",
+        "textAlign": "left"
+      }
+    },
     
     "single-column,indie-mag-single-column": {
       "name": "Single Column",
