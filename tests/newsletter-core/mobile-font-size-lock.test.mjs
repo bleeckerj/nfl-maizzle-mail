@@ -212,8 +212,8 @@ test('dense-discovery mobile typography ledger is hash-chained and verifies sour
   const { entry } = getLatestMobileTypographyLock(REPO_ROOT, 'dense-discovery');
   const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
   const renderedHtml = `${layout}
-    <div class="intro-content" style="font-size: 19px; line-height: 1.5;">
-      <p style="font-size: 19px; line-height: 1.5;">Intro copy</p>
+    <div class="intro-content" style="font-size: 19px; line-height: 1.25;">
+      <p style="font-size: 19px; line-height: 1.25;">Intro copy</p>
     </div>`;
   const verification = verifyMobileTypographyLock({
     repoRoot: REPO_ROOT,
@@ -231,7 +231,7 @@ test('dense-discovery mobile typography ledger is hash-chained and verifies sour
     ],
   });
 
-  assert.equal(entry.sequence, 2);
+  assert.equal(entry.sequence, 3);
   assert.match(entry.hash, /^[a-f0-9]{64}$/);
   assert.match(entry.previousHash, /^[a-f0-9]{64}$/);
   assert.equal(verification.status, 'verified');
@@ -240,6 +240,34 @@ test('dense-discovery mobile typography ledger is hash-chained and verifies sour
   assert.equal(verification.roles.find((role) => role.id === 'body').declarations['font-size'], '23px !important');
   assert.equal(verification.baseRoles.find((role) => role.id === 'intro-content').declarations['font-size'], '19px');
   assert.equal(verification.ignoredAuthoredOverrides[0].authoredValue, '16px');
+});
+
+test('dense-discovery accepts both approved intro base line heights', () => {
+  const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
+  const entry = getLatestMobileTypographyLock(REPO_ROOT, 'dense-discovery').entry;
+
+  assert.deepEqual(
+    entry.sectionStyleTokens['sectionStyles.intro-content.contentStyles.lineHeight'],
+    ['1.25', '1.5'],
+  );
+
+  for (const lineHeight of ['1.25', '1.5']) {
+    const renderedHtml = `${layout}
+      <div class="intro-content" style="font-size: 19px; line-height: ${lineHeight};">
+        <p style="font-size: 19px; line-height: ${lineHeight};">Intro copy</p>
+      </div>`;
+
+    assert.doesNotThrow(() =>
+      verifyMobileTypographyLock({
+        repoRoot: REPO_ROOT,
+        templateName: 'dense-discovery',
+        renderedHtml,
+        sourcePath: 'fixture.md',
+        outputHtmlPath: 'fixture.html',
+        outputName: `fixture-${lineHeight}`,
+      }),
+    );
+  }
 });
 
 test('dense-discovery mobile typography verifier rejects rendered size drift', () => {
