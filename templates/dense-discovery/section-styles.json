@@ -35,8 +35,8 @@
       "contentStyles": {
         "fontFamily": "'Roboto', sans-serif",
         "fontSize": "19px",
-        "lineHeight": "1.5",
-        "fontWeight": "500",
+        "lineHeight": "1.25",
+        "fontWeight": "300",
         "color": "#000000",
         "textAlign": "left"
       }
