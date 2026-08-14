@@ -17,6 +17,14 @@ import matter from 'gray-matter';
  */
 function convertToParagraphs(text, template = 'default') {
   if (!text || typeof text !== 'string') return text;
+
+  // Some newsletter fields intentionally contain authored HTML. Wrapping an
+  // existing block fragment in another paragraph creates invalid nested <p>
+  // markup; Maizzle reparses that into empty paragraphs with default styles.
+  // Preserve block HTML and let the owning renderer apply its styles.
+  if (/<\/?(?:p|img|div|h[1-6]|ul|ol|blockquote)\b/i.test(text)) {
+    return text;
+  }
   
   // Split on double newlines (or more) to separate paragraphs
   const paragraphs = text

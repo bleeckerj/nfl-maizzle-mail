@@ -37,7 +37,7 @@ import {
 } from '../lib/newsletter-core/link-validation.mjs';
 import { validateNewsletterImages as validateImages } from '../lib/newsletter-core/image-validation.mjs';
 import { assertDeclaredTemplateImagesRendered } from '../lib/newsletter-core/rendered-image-validation.mjs';
-import { withBuildProductionLock } from '../lib/newsletter-core/build-directory-lock.mjs';
+import { withBuildProductionLockAsync } from '../lib/newsletter-core/build-directory-lock.mjs';
 import { verifyMobileTypographyLock } from '../lib/newsletter-core/mobile-typography-lock.mjs';
 import {
   DENSE_DISCOVERY_LOCKED_INTRO_TYPOGRAPHY_PROPERTIES,
@@ -2555,9 +2555,7 @@ async function buildNewsletter() {
         });
         builtNewsletterPath = resolveBuiltNewsletterPath(popupJobsBuildDir, templateName);
       } else {
-        withBuildProductionLock(REPO_ROOT, () => {
-          execSync('npx maizzle build production', { stdio: 'inherit' });
-        });
+        execSync('npx maizzle build production', { stdio: 'inherit' });
         builtNewsletterPath = resolveBuiltNewsletterPath(
           repoPath(REPO_ROOT, 'build_production'),
           templateName,
@@ -2715,9 +2713,11 @@ async function buildNewsletter() {
       }
     }
     console.error('❌ Build failed:', error.message);
-    process.exit(1);
+    throw error;
   }
 }
 
 // Run the build
-buildNewsletter();
+withBuildProductionLockAsync(REPO_ROOT, buildNewsletter).catch(() => {
+  process.exitCode = 1;
+});
