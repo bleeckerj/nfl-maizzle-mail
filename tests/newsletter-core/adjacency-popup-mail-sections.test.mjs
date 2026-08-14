@@ -43,6 +43,13 @@ function issue(sections) {
               ...(item.location ? [`        location: ${item.location}`] : []),
               ...(item.department ? [`        department: ${item.department}`] : []),
               ...(item.posted ? [`        posted: ${item.posted}`] : []),
+              ...(item.image
+                ? [
+                    '        image:',
+                    `          src: ${item.image.src}`,
+                    `          alt: ${item.image.alt}`,
+                  ]
+                : []),
             ]),
           ]
         : []),
@@ -123,6 +130,10 @@ const todaysMix = {
       lede: 'The feature lede.',
       author: 'Near Future Laboratory',
       contextTags: ['Autonomous Systems'],
+      image: {
+        src: 'https://imagedelivery.net/example/todays-mix-image/public',
+        alt: 'Example Today’s Mix image',
+      },
     },
   ],
 };
@@ -137,6 +148,10 @@ test('dense-discovery renders curated popup sections with popup-matched headings
   assert.match(html, /ANTHROPIC/);
   assert.match(html, /https:\/\/theadjacency\.com\/jobs\/anthropic\/role-one/);
   assert.match(html, /https:\/\/theadjacency\.com\/p\/example-feature--popup/);
+  assert.match(
+    html,
+    /<a href="https:\/\/theadjacency\.com\/p\/example-feature--popup"[^>]*>\s*<img[^>]+src="https:\/\/imagedelivery\.net\/example\/todays-mix-image\/public"[^>]+alt="Example Today’s Mix image"/,
+  );
   assert.match(html, /#dbffdd/);
   assert.match(html, /#fffbf7/);
   assert.ok(html.indexOf('data-section="adjacency-help-wanted"') < html.indexOf('data-section="adjacency-todays-mix"'));

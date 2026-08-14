@@ -1009,7 +1009,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                       <tbody>
                                         <tr>
                                           <td style="border-collapse:collapse;padding:14px 14px 15px 14px;background:#fffbf7;">
-                                            <if condition="item.image && item.image.src"><img src="{{ item.image.src }}" alt="{{ item.image.alt || item.title }}" width="100%" style="display:block;width:100%;height:auto;aspect-ratio:16 / 9;object-fit:cover;border:0;margin:0 0 5px 0;"></if>
+                                            <if condition="item.image && item.image.src"><a href="{{ item.publicUrl }}" style="display:block;color:inherit;text-decoration:none;"><img src="{{ item.image.src }}" alt="{{ item.image.alt || item.title }}" width="100%" style="display:block;width:100%;height:auto;aspect-ratio:16 / 9;object-fit:cover;border:0;margin:0 0 5px 0;"></a></if>
                                             <p style="margin:0 0 10px 0;padding:0;color:#93250c;font:400 15px/0.98 'Irvin-Heading',Georgia,'Times New Roman',serif;text-transform:uppercase;">{{ item.label }}</p>
                                             <if condition="item.contextTags && item.contextTags.length">
                                               <p style="margin:-1px 0 9px 0;padding:0;">
