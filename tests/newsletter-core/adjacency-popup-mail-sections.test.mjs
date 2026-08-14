@@ -137,7 +137,7 @@ test('dense-discovery renders curated popup sections with popup-matched headings
   assert.match(html, /ANTHROPIC/);
   assert.match(html, /https:\/\/theadjacency\.com\/jobs\/anthropic\/role-one/);
   assert.match(html, /https:\/\/theadjacency\.com\/p\/example-feature--popup/);
-  assert.match(html, /#f2f0ea/);
+  assert.match(html, /#dbffdd/);
   assert.match(html, /#fffbf7/);
   assert.ok(html.indexOf('data-section="adjacency-help-wanted"') < html.indexOf('data-section="adjacency-todays-mix"'));
 });

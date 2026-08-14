@@ -359,7 +359,7 @@
       "name": "Adjacency Help Wanted",
       "description": "Popup-matched Tomorrow’s Jobs Today / Help Wanted cards using the popup section’s colors and typography.",
       "containerStyles": {
-        "backgroundColor": "#f2f0ea",
+        "backgroundColor": "#dbffdd",
         "borderColor": "rgba(24,24,24,0.16)",
         "borderWidth": "1px",
         "borderStyle": "solid"

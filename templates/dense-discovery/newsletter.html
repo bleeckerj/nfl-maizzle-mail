@@ -935,21 +935,21 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
               </tr>
               <tr>
                 <td style="border-collapse: collapse;padding: 0;">
-                  <table data-section="adjacency-help-wanted" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;background:#f2f0ea;border-top:1px solid rgba(24,24,24,0.16);color:#171717;">
+                  <table data-section="adjacency-help-wanted" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;background:#dbffdd;border-top:1px solid rgba(24,24,24,0.16);color:#171717;">
                     <tbody>
                       <tr>
-                        <td style="border-collapse: collapse;padding: 24px 20px 14px 20px;background:#f2f0ea;">
+                        <td style="border-collapse: collapse;padding: 24px 20px 14px 20px;background:#dbffdd;">
                           <p style="margin:0 0 5px 0;padding:0;color:rgba(23,23,23,0.58);font:700 11px/1.1 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono',monospace;text-transform:uppercase;">{{ section.eyebrow }}</p>
                           <h2 class="mob-text mob-title" style="margin:0;padding:0;font:700 26px/1.05 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:0;color:#171717;">{{ section.heading }}</h2>
                         </td>
                       </tr>
                       <tr>
-                        <td style="border-collapse: collapse;padding:0 20px 20px 20px;background:#f2f0ea;">
+                        <td style="border-collapse: collapse;padding:0 20px 20px 20px;background:#dbffdd;">
                           <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;border-top:2px solid rgba(23,23,23,0.82);">
                             <tbody>
                               <each loop="item in section.items">
                                 <tr>
-                                  <td style="border-collapse:collapse;padding:16px 0 17px 0;border-bottom:1px solid rgba(23,23,23,0.28);background:#f2f0ea;">
+                                  <td style="border-collapse:collapse;padding:16px 0 17px 0;border-bottom:1px solid rgba(23,23,23,0.28);background:#dbffdd;">
                                     <a href="{{ item.publicUrl }}" style="display:block;color:inherit;text-decoration:none;">
                                       <p class="mob-text mob-title" style="margin:0 0 7px 0;padding:0;font:800 18px/1.1 ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#171717;overflow-wrap:break-word;">{{ item.title }}</p>
                                       <if condition="item.company || item.location || item.department || item.posted">
