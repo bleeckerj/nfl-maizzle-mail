@@ -1569,7 +1569,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             <p style="margin: 16px 0 0 0;padding: 0;font-family: 'Share Tech Mono', 'Courier New', monospace;font-size: 12px;line-height: 1.45;color: #6b7280;text-transform: uppercase;letter-spacing: 0.08em;">
                               <if condition="section.author">By {{ section.author }}</if>
                               <if condition="section.author && section.dateLabel"> · </if>
-                              <if condition="section.dateLabel">{{ section.dateLabel }}</if>
+                              <if condition="section.dateLabel">DATE: {{ section.dateLabel }}</if>
                             </p>
                           </if>
                           <if condition="section.tags && section.tags.length">

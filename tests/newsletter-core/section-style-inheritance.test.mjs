@@ -490,6 +490,8 @@ test('adjacency feature title renders larger than dek while preserving typograph
       '    rubric: Features',
       '    title: Example Feature Title',
       '    dek: Example feature dek.',
+      '    author: Near Future Laboratory',
+      '    dateLabel: Always Now',
       '    bodyHtml: <p>Body copy.</p>',
       '    ctaText: Read More',
       '    ctaLink: https://nearfuturelaboratory.com/newsletters/2026/adjacency-feature-read',
@@ -508,6 +510,7 @@ test('adjacency feature title renders larger than dek while preserving typograph
       html,
       /<p style="[^"]*font-family:\s*Georgia[^"]*font-size:\s*18px[^"]*font-style:\s*italic[^"]*"[^>]*>Example feature dek\.<\/p>/,
     );
+    assert.match(html, /<p[^>]*>\s*By Near Future Laboratory · DATE: Always Now<\/p>/);
   } finally {
     cleanup();
   }
