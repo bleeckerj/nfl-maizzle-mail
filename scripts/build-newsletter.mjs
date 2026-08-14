@@ -2608,6 +2608,12 @@ async function buildNewsletter() {
       outputName,
       ignoredAuthoredOverrides: ignoredAuthoredTypographyOverrides,
     });
+    if (mobileTypographyVerification?.warnings?.length) {
+      console.warn(
+        `⚠️ Mobile typography warnings (${mobileTypographyVerification.warnings.length}):`,
+      );
+      mobileTypographyVerification.warnings.forEach((warning) => console.warn(`   - ${warning}`));
+    }
     fs.writeFileSync(finalOutputPath, finalOutputRaw, 'utf8');
     writeCalendarEventFiles(calendarEvents.events, { fs, path, logger: console });
     const linkTrackingManifestPath = path.join(outputDir, `${outputName}.link-tracking-manifest.json`);

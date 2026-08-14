@@ -344,6 +344,28 @@ test('dense-discovery mobile typography verifier rejects rendered base intro dri
   );
 });
 
+test('dense-discovery verifier warns on base line-height drift while preserving the font-size lock', () => {
+  const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
+  const renderedHtml = `${layout}
+    <div class="intro-content" style="font-size: 19px; line-height: 27px;">
+      <p style="font-size: 19px; line-height: 27px;">Intro copy</p>
+    </div>`;
+
+  const verification = verifyMobileTypographyLock({
+    repoRoot: REPO_ROOT,
+    templateName: 'dense-discovery',
+    renderedHtml,
+    sourcePath: 'fixture.md',
+    outputHtmlPath: 'fixture.html',
+    outputName: 'fixture',
+  });
+
+  assert.equal(verification.status, 'verified-with-warnings');
+  assert.equal(verification.warnings.length, 2);
+  assert.match(verification.warnings[0], /base typography drift.*line-height/);
+  assert.match(verification.warnings[1], /base typography drift.*line-height/);
+});
+
 test('dense-discovery semantic section and item headings opt into the mobile title lock', () => {
   const template = readFileSync(DENSE_DISCOVERY_TEMPLATE, 'utf8');
 
