@@ -560,6 +560,15 @@
                       "sourceRef": {},
                       "title": {},
                       "publicUrl": {},
+                      "companyLogo": {
+                        "type": "object",
+                        "properties": {
+                          "url": {"type": "string"},
+                          "altText": {"type": "string"}
+                        },
+                        "required": ["url"],
+                        "additionalProperties": false
+                      },
                       "lede": {},
                       "ledeHtml": {},
                       "company": {},
