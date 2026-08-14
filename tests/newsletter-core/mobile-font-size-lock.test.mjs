@@ -87,8 +87,8 @@ test('dense-discovery mobile typography defaults remain locked to larger body co
   const sectionStyles = JSON.parse(readFileSync(DENSE_DISCOVERY_SECTION_STYLES, 'utf8'));
   const mobileAdjustments = sectionStyles.globalOverrides?.mobileAdjustments;
 
-  assert.equal(mobileAdjustments?.contentStyles?.fontSize, '20px');
-  assert.equal(mobileAdjustments?.contentStyles?.lineHeight, '1.5');
+  assert.equal(mobileAdjustments?.contentStyles?.fontSize, '22px');
+  assert.equal(mobileAdjustments?.contentStyles?.lineHeight, '1.45');
   assert.equal(mobileAdjustments?.captionStyles?.fontSize, '14px');
   assert.equal(mobileAdjustments?.captionStyles?.lineHeight, '1.2');
 });
@@ -172,7 +172,8 @@ test('dense-discovery layout keeps mobile body copy at the approved readable sca
   const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
   const mobileBlock = extractMobileMediaBlock(layout);
 
-  assert.match(mobileBlock, /\.mob-text,\s*\.mob-text a,\s*\.mob-text p,\s*\.mob-text li,\s*\.intro-content,\s*\.intro-content a,\s*\.intro-content p,\s*\.intro-content li,\s*\.intro-aside,\s*\.intro-aside a,\s*\.intro-aside p,\s*\.intro-aside li\s*\{\s*font-size:\s*20px\s*!important;\s*line-height:\s*1\.5\s*!important;/);
+  assert.match(mobileBlock, /h1\s*\{\s*font-size:\s*24px\s*!important;\s*line-height:\s*29px\s*!important;/);
+  assert.match(mobileBlock, /\.mob-text,\s*\.mob-text a,\s*\.mob-text p,\s*\.mob-text li,\s*\.intro-content,\s*\.intro-content a,\s*\.intro-content p,\s*\.intro-content li,\s*\.intro-aside,\s*\.intro-aside a,\s*\.intro-aside p,\s*\.intro-aside li\s*\{\s*font-size:\s*22px\s*!important;\s*line-height:\s*1\.45\s*!important;/);
   assert.match(mobileBlock, /\.mob-title\s*\{\s*font-size:\s*26px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
   assert.match(mobileBlock, /\.short-take-headline,\s*\.short-take-headline a\s*\{\s*font-size:\s*26px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
   assert.match(mobileBlock, /\.mob-subtitle\s*\{\s*font-size:\s*23px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
@@ -231,13 +232,14 @@ test('dense-discovery mobile typography ledger is hash-chained and verifies sour
     ],
   });
 
-  assert.equal(entry.sequence, 4);
+  assert.equal(entry.sequence, 5);
   assert.match(entry.hash, /^[a-f0-9]{64}$/);
   assert.match(entry.previousHash, /^[a-f0-9]{64}$/);
   assert.equal(verification.status, 'verified');
   assert.equal(verification.schemaVersion, 2);
   assert.equal(verification.lock.hash, entry.hash);
-  assert.equal(verification.roles.find((role) => role.id === 'body').declarations['font-size'], '20px !important');
+  assert.equal(verification.roles.find((role) => role.id === 'body').declarations['font-size'], '22px !important');
+  assert.equal(verification.roles.find((role) => role.id === 'intro-headline').declarations['font-size'], '24px !important');
   assert.equal(verification.baseRoles.find((role) => role.id === 'intro-content').declarations['font-size'], '19px');
   assert.equal(verification.ignoredAuthoredOverrides[0].authoredValue, '16px');
 });
@@ -273,8 +275,8 @@ test('dense-discovery accepts both approved intro base line heights', () => {
 test('dense-discovery mobile typography verifier rejects rendered size drift', () => {
   const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
   const driftedLayout = layout.replace(
-    'font-size: 20px !important;\n        line-height: 1.5 !important;',
-    'font-size: 19px !important;\n        line-height: 1.5 !important;',
+    'font-size: 22px !important;\n        line-height: 1.45 !important;',
+    'font-size: 19px !important;\n        line-height: 1.45 !important;',
   );
   const renderedHtml = `${driftedLayout}
     <div class="intro-content" style="font-size: 19px; line-height: 1.5;">

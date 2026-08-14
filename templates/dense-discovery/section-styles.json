@@ -753,8 +753,8 @@
     "mobileBreakpoint": "599px",
     "mobileAdjustments": {
       "contentStyles": {
-        "fontSize": "20px",
-        "lineHeight": "1.5"
+        "fontSize": "22px",
+        "lineHeight": "1.45"
       },
       "captionStyles": {
         "fontSize": "14px",
