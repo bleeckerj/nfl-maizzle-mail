@@ -187,6 +187,31 @@ test('prepareNewsletterData accepts an unlinked daily-headlines article under st
   assert.equal(prepared.sections[0].articles[0].href, undefined);
 });
 
+test('prepareNewsletterData derives an encoded Daily Headlines share email URL from online_url', () => {
+  const prepared = prepareNewsletterData(
+    {
+      template: 'near-future-lab-daily-headlines',
+      title: 'Daily Headlines Share Test',
+      sections: [
+        {
+          type: 'share_this',
+          online_url: 'https://nearfuturelaboratory.com/newsletters/2026/nfl-dh-w33-y26',
+        },
+      ],
+    },
+    {
+      repoRoot: REPO_ROOT,
+      templateName: 'near-future-lab-daily-headlines',
+      logger: { log() {}, warn() {} },
+    },
+  );
+
+  assert.equal(
+    prepared.sections[0].email_href,
+    'mailto:?subject=Near%20Future%20Laboratory%20Daily%20Headlines&body=Thought%20you%27d%20like%20this%3A%20https%3A%2F%2Fnearfuturelaboratory.com%2Fnewsletters%2F2026%2Fnfl-dh-w33-y26',
+  );
+});
+
 test('prepareNewsletterData accepts sponsor platformLinks under strict schema validation', () => {
   const prepared = prepareNewsletterData(
     {

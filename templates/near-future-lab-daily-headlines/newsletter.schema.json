@@ -543,7 +543,7 @@
               },
               "email_href": {
                 "type": "string",
-                "description": "Pre-formed mailto: URL for the email button (subject/body already percent-encoded). Defaults to a generic mailto: with the online_url in the body."
+                "description": "Optional override for the email button. When omitted, the canonical build derives a percent-encoded mailto: URL from online_url."
               },
               "online_label": {
                 "type": "string",

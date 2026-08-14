@@ -34,6 +34,7 @@ sections:
 
   - type: share_this
     online_url: https://nearfuturelaboratory.com/newsletters/2026/example
+    # The canonical build derives the percent-encoded email_href from online_url.
 
   - type: email_footer
     paragraphs:
