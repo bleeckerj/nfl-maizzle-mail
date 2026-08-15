@@ -8,7 +8,10 @@ gpt-prompts/
 emails-to-templatize/
 /correspondence/
 content/
-data/
+# Local and generated build data stays out of version control. The shared
+# palette registry is source of truth and must remain visible to workspace search.
+data/*
+!data/color-themes.json
 # Build outputs
 build_local/
 build_production/
@@ -16,7 +19,6 @@ build_production/
 /.tmp_correspondence_build_*/
 
 gpt-prompts/
-data/
 content/
 emails-to-templatize/
 

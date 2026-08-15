@@ -49,6 +49,10 @@ Template source of truth lives under `templates/<template-name>/`. Do not create
 
 Before scaffolding or revising a production newsletter template, read `docs/newsletter-template-operating-process.md`.
 
+## Color themes
+
+Shared newsletter color themes such as `winter` are defined only in [`data/color-themes.json`](data/color-themes.json). The registry is intentionally visible to project-wide search even though other local `data/` files remain ignored. See [the color-theme operator reference](docs/color-themes.md) for the available IDs, frontmatter usage, build behavior, and maintenance rules.
+
 ## Setup
 
 ```bash
