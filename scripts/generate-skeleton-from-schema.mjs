@@ -166,22 +166,33 @@ function resolveSchemaRef(schema, propSchema) {
 }
 
 function resolveGenerationSchema(propSchema = {}, context = {}) {
-  let resolved = resolveSchemaRef(context.schema, propSchema);
+  const resolvingRefs = context.resolvingRefs || new Set();
+  const currentRef = propSchema && typeof propSchema.$ref === 'string'
+    ? propSchema.$ref
+    : null;
+  if (currentRef && resolvingRefs.has(currentRef)) {
+    return { type: 'object', properties: {} };
+  }
+
+  const nextContext = currentRef
+    ? { ...context, resolvingRefs: new Set([...resolvingRefs, currentRef]) }
+    : { ...context, resolvingRefs };
+  let resolved = resolveSchemaRef(nextContext.schema, propSchema);
 
   const alternatives = resolved.anyOf || resolved.oneOf;
   if (Array.isArray(alternatives) && alternatives.length > 0) {
     // Prefer structured objects for tracked links and action objects so the
     // generated Markdown demonstrates the authoring shape accepted by the schema.
     const resolvedAlternatives = alternatives.map((candidate) => {
-      const resolvedCandidate = resolveSchemaRef(context.schema, candidate);
+      const resolvedCandidate = resolveSchemaRef(nextContext.schema, candidate);
       return resolvedCandidate.anyOf || resolvedCandidate.oneOf
-        ? resolveGenerationSchema(resolvedCandidate, context)
+        ? resolveGenerationSchema(resolvedCandidate, nextContext)
         : resolvedCandidate;
     });
     resolved = resolvedAlternatives.find((candidate) => candidate?.type === 'object' || candidate?.type?.includes?.('object'))
       || resolvedAlternatives.find((candidate) => Object.prototype.hasOwnProperty.call(candidate, 'const'))
       || resolvedAlternatives[0];
-    resolved = resolveSchemaRef(context.schema, resolved);
+    resolved = resolveSchemaRef(nextContext.schema, resolved);
   }
 
   // JSON Schema permits nullable values with a union type. Choose the
@@ -253,6 +264,14 @@ function materializeConditionalSchema(schema, candidate, sectionType) {
 }
 
 function generatePlaceholderValue(propName, propSchema = {}, context = {}) {
+  const generationDepth = Number.isInteger(context.generationDepth)
+    ? context.generationDepth
+    : 0;
+  if (generationDepth > 32) {
+    return {};
+  }
+
+  const nextContext = { ...context, generationDepth: generationDepth + 1 };
   const resolvedSchema = resolveGenerationSchema(propSchema, context);
   if (Object.prototype.hasOwnProperty.call(resolvedSchema, 'const')) {
     return resolvedSchema.const;
@@ -266,11 +285,11 @@ function generatePlaceholderValue(propName, propSchema = {}, context = {}) {
 
   // Handle explicit types
   if (type === 'array') {
-    return generateArrayPlaceholder(propName, resolvedSchema, context);
+    return generateArrayPlaceholder(propName, resolvedSchema, nextContext);
   }
 
   if (type === 'object') {
-    return generateObjectPlaceholder(propName, resolvedSchema, context);
+    return generateObjectPlaceholder(propName, resolvedSchema, nextContext);
   }
 
   if (type === 'boolean') {
@@ -515,11 +534,6 @@ function extractSectionSchema(schema, sectionType) {
 // ============================================================================
 
 function generateSkeleton(schema, options = {}) {
-  const authoringStarter = schema['x-nfl-authoring-starter']?.markdown;
-  if (Array.isArray(authoringStarter) && authoringStarter.every((line) => typeof line === 'string')) {
-    return authoringStarter.join('\n');
-  }
-
   const { templateName, minimal, sections: requestedSections, itemsPerSection } = options;
   const lines = [];
 
