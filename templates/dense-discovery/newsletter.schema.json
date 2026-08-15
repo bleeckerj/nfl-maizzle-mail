@@ -1446,10 +1446,13 @@
                   "const": "classifieds"
                 },
                 "containerStyles": {
-                  "type": [
-                    "object",
-                    "null"
-                  ],
+                  "type": "object",
+                  "properties": {
+                    "backgroundColor": {
+                      "type": "string",
+                      "default": "radial-gradient(circle at 14% 18%, rgba(255, 116, 216, 0.18) 0, rgba(255, 116, 216, 0) 28%), radial-gradient(circle at 78% 22%, rgba(95, 220, 255, 0.22) 0, rgba(95, 220, 255, 0) 30%), radial-gradient(circle at 50% 82%, rgba(255, 238, 150, 0.16) 0, rgba(255, 238, 150, 0) 34%), linear-gradient(135deg, #edf6ff 0%, #f8fbff 34%, #eef8f5 58%, #fff3fb 100%)"
+                    }
+                  },
                   "additionalProperties": true
                 },
                 "sectionHeaderHeadingStylesInline": {},

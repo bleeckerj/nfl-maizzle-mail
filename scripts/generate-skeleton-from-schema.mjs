@@ -33,6 +33,7 @@ Options:
   --schema <path>          Path to JSON schema file (alternative to --template)
   --output <path>          Output file path (default: stdout)
   --minimal                Generate minimal skeleton with fewer items per section
+  --all-section-fields     Emit every declared section field in the full starter
   --sections <types...>    Only include specific section types
   --list-sections          List available section types from the schema
   --items-per-section <n>  Number of items per section (default: 2, minimal: 1)
@@ -65,6 +66,7 @@ function parseArgs(argv) {
     schema: null,
     output: null,
     minimal: false,
+    allSectionFields: false,
     sections: null,
     listSections: false,
     itemsPerSection: 2,
@@ -90,6 +92,9 @@ function parseArgs(argv) {
       case '--minimal':
         args.minimal = true;
         args.itemsPerSection = 1;
+        break;
+      case '--all-section-fields':
+        args.allSectionFields = true;
         break;
       case '--sections':
         args.sections = [];
@@ -278,6 +283,9 @@ function generatePlaceholderValue(propName, propSchema = {}, context = {}) {
   }
   if (Array.isArray(resolvedSchema.enum) && resolvedSchema.enum.length > 0) {
     return resolvedSchema.enum[0];
+  }
+  if (Object.prototype.hasOwnProperty.call(resolvedSchema, 'default')) {
+    return resolvedSchema.default;
   }
 
   const type = resolvedSchema.type || inferTypeFromName(propName);
@@ -534,7 +542,13 @@ function extractSectionSchema(schema, sectionType) {
 // ============================================================================
 
 function generateSkeleton(schema, options = {}) {
-  const { templateName, minimal, sections: requestedSections, itemsPerSection } = options;
+  const {
+    templateName,
+    minimal,
+    allSectionFields,
+    sections: requestedSections,
+    itemsPerSection,
+  } = options;
   const lines = [];
 
   lines.push('---');
@@ -591,7 +605,12 @@ function generateSkeleton(schema, options = {}) {
 
     for (const sectionType of sectionsToGenerate) {
       const sectionSchema = extractSectionSchema(schema, sectionType);
-      lines.push(...generateSectionYaml(sectionType, sectionSchema, { minimal, itemsPerSection, schema }));
+      lines.push(...generateSectionYaml(sectionType, sectionSchema, {
+        minimal,
+        allSectionFields,
+        itemsPerSection,
+        schema,
+      }));
     }
   } else if (schema.properties?.sections) {
     // A schema may require the collection while intentionally leaving its
@@ -614,7 +633,7 @@ function generateSkeleton(schema, options = {}) {
 }
 
 function generateSectionYaml(sectionType, sectionSchema, options = {}) {
-  const { minimal, itemsPerSection = 2 } = options;
+  const { minimal, allSectionFields, itemsPerSection = 2 } = options;
   const lines = [];
   const indent = '  ';
 
@@ -675,6 +694,23 @@ function generateSectionYaml(sectionType, sectionSchema, options = {}) {
     ) continue;
     const value = generatePlaceholderValue(propName, props[propName], { minimal, schema: options.schema });
     lines.push(`${indent}${propName}: ${formatYamlValue(value)}`);
+    emittedFields.add(propName);
+  }
+
+  // Full starters represent every schema-declared section field. This keeps
+  // defaults and structured styling fields visible even when they are
+  // optional in the authoring contract.
+  if (allSectionFields && !minimal) {
+    for (const [propName, propSchema] of Object.entries(props)) {
+      if (
+        propName === 'type'
+        || propName === collectionProp
+        || emittedFields.has(propName)
+      ) continue;
+      const value = generatePlaceholderValue(propName, propSchema, { minimal, sectionType, schema: options.schema });
+      lines.push(`${indent}${propName}: ${formatYamlValue(value)}`);
+      emittedFields.add(propName);
+    }
   }
 
   return lines;
@@ -903,6 +939,7 @@ async function main() {
   const skeleton = generateSkeleton(schema, {
     templateName,
     minimal: args.minimal,
+    allSectionFields: args.allSectionFields,
     sections: args.sections,
     itemsPerSection: args.itemsPerSection,
   });
