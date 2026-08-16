@@ -394,7 +394,7 @@ test('prepareNewsletterData injects the default newsletter footer CTA when front
   assert.equal(prepared.footer.footerCta.eyebrow, 'Commissions, Collaborations, Integrated Roles');
   assert.equal(
     prepared.footer.footerCta.text,
-    "Organizations get really good at reproducing the world they already understand. Near Future Laboratory helps teams surface their unspoken inherited assumptions and explore alternative possibilities through artifacts from possible futures. If you're looking to get out of that loop, let's talk.",
+    'I help organizations use stories and artifacts to make sense of their futures and develop strategies for what comes next.',
   );
   assert.equal(prepared.footer.footerCta.primaryAction.label, 'Let’s Talk');
   assert.deepEqual(prepared.footer.footerCta.primaryAction.url, {
