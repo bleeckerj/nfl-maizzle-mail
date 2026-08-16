@@ -82,6 +82,24 @@ test('injectViewOnlineLink fills dense-discovery intro link from output name', (
   assert.equal(newsletterData.intro.viewOnlineLink.intent, 'read-related');
 });
 
+test('injectViewOnlineLink recognizes issue ids in canonical build temporary names', () => {
+  const newsletterData = {
+    template: 'dense-discovery',
+    intro: {},
+  };
+
+  injectViewOnlineLink(newsletterData, {
+    templateName: 'dense-discovery',
+    outputName: 'w34-y26__canonicalized__9696',
+    logger: { log() {} },
+  });
+
+  assert.equal(
+    newsletterData.intro.viewOnlineLink.href,
+    'https://nearfuturelaboratory.com/newsletters/2026/w34-y26',
+  );
+});
+
 test('injectViewOnlineLink fills daily-headlines masthead link from issue id', () => {
   const newsletterData = {
     template: 'near-future-lab-daily-headlines',
