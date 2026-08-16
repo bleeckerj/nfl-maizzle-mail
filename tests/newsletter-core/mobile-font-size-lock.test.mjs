@@ -155,6 +155,15 @@ test('dense-discovery intro component consumes resolved typography without local
   assert.doesNotMatch(component, /intro\.contentStyles\.lineHeight \|\|/);
 });
 
+test('dense-discovery view-online link remains visible on mobile', () => {
+  const component = readFileSync(DENSE_DISCOVERY_INTRO_COMPONENT, 'utf8');
+  const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
+
+  assert.match(component, /class="force-row view-online-link"/);
+  assert.doesNotMatch(component, /class="force-row browser"/);
+  assert.doesNotMatch(layout, /\.browser\s*\{\s*display:\s*none\s*!important;\s*\}/);
+});
+
 test('intro typography resolution preserves authored sizes when no lock applies', () => {
   const resolution = resolveIntroContentStyles({
     baseStyles: { fontSize: '19px', lineHeight: '1.5' },
