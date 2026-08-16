@@ -476,6 +476,36 @@ function mergeDailyHeadlinesSectionStyleOverrides(existingSectionStyleMap, adjac
   return merged;
 }
 
+function mergeDenseDiscoverySectionStyleOverrides(existingSectionStyleMap, adjacencyMailSectionOverrides) {
+  const merged = { ...adjacencyMailSectionOverrides };
+  const adBlockMobileKeys = [
+    'descriptionMobileClass',
+    'mobileDescriptionStyles',
+    'metaMobileClass',
+    'mobileMetaStyles',
+  ];
+
+  Object.entries(existingSectionStyleMap).forEach(([sectionType, localConfig]) => {
+    if (sectionType === 'ad-block' && adjacencyMailSectionOverrides[sectionType]) {
+      const mergedAdBlockConfig = { ...adjacencyMailSectionOverrides[sectionType] };
+      adBlockMobileKeys.forEach((key) => {
+        if (!Object.prototype.hasOwnProperty.call(localConfig, key)) return;
+        const value = localConfig[key];
+        mergedAdBlockConfig[key] =
+          value && typeof value === 'object' && !Array.isArray(value)
+            ? mergeStyleConfig(mergedAdBlockConfig[key] || {}, value)
+            : value;
+      });
+      merged[sectionType] = mergedAdBlockConfig;
+      return;
+    }
+
+    merged[sectionType] = localConfig;
+  });
+
+  return merged;
+}
+
 function pruneBuildInjectedFields(newsletterData) {
   if (!newsletterData || typeof newsletterData !== 'object') return;
 
@@ -1418,7 +1448,12 @@ async function buildNewsletter() {
         : {};
 
     const sectionStyleMapWithAdjacencyOverrides =
-      templateName === 'near-future-lab-daily-headlines'
+      templateName === 'dense-discovery'
+        ? {
+            ...mergeDenseDiscoverySectionStyleOverrides(existingSectionStyleMap, adjacencyMailSectionOverrides),
+            ...adjacencyJobsMailSectionOverrides,
+          }
+        : templateName === 'near-future-lab-daily-headlines'
         ? {
             ...mergeDailyHeadlinesSectionStyleOverrides(existingSectionStyleMap, adjacencyMailSectionOverrides),
             ...adjacencyJobsMailSectionOverrides,

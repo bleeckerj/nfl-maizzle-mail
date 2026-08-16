@@ -164,6 +164,18 @@ test('dense-discovery view-online link remains visible on mobile', () => {
   assert.doesNotMatch(layout, /\.browser\s*\{\s*display:\s*none\s*!important;\s*\}/);
 });
 
+test('dense-discovery ad body uses the compact mobile ad scale', () => {
+  const sectionStyles = JSON.parse(readFileSync(DENSE_DISCOVERY_SECTION_STYLES, 'utf8'));
+  const adBlock = sectionStyles.sectionStyles['ad-block'];
+  const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
+
+  assert.equal(adBlock.descriptionMobileClass, 'mob-ad-copy');
+  assert.equal(adBlock.mobileDescriptionStyles.fontSize, '12px');
+  assert.equal(adBlock.mobileDescriptionStyles.lineHeight, '1.3');
+  assert.match(layout, /p\.mob-ad-copy[\s\S]*font-size: \{\{ mobileAdCopyFontSize \|\| '12px' \}\} !important;/);
+  assert.match(layout, /p\.mob-ad-copy[\s\S]*line-height: \{\{ mobileAdCopyLineHeight \|\| '1\.3' \}\} !important;/);
+});
+
 test('intro typography resolution preserves authored sizes when no lock applies', () => {
   const resolution = resolveIntroContentStyles({
     baseStyles: { fontSize: '19px', lineHeight: '1.5' },

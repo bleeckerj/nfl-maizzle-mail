@@ -189,6 +189,17 @@
         line-height: 1.4 !important;
       }
 
+      p.mob-ad-copy,
+      p.mob-ad-copy a,
+      p.mob-ad-copy span,
+      p.mob-ad-copy em,
+      p.mob-ad-copy strong {
+        font-size: {{ mobileAdCopyFontSize || '12px' }} !important;
+        line-height: {{ mobileAdCopyLineHeight || '1.3' }} !important;
+        font-weight: {{ mobileAdCopyFontWeight || '400' }} !important;
+        font-family: {{ mobileAdCopyFontFamily || "'Share Tech Mono', 'Courier New', Courier, monospace" }} !important;
+      }
+
       .mob-title {
         font-size: 22px !important;
         line-height: 1.25 !important;
