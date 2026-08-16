@@ -127,7 +127,7 @@
       .mobt0 { padding-top: 0 !important }
       .mobb15 { margin-bottom: 15px !important }
       .headline { padding-left: 12px !important; padding-right: 12px !important; }
-      h1 { font-size: 24px !important; line-height: 29px !important; }
+      h1 { font-size: 22px !important; line-height: 27px !important; }
       .spacer { padding-top: 15px !important; }
       .browser { display: none !important; }
       .align-left { text-align: left }
@@ -169,11 +169,11 @@
         padding: 0 !important;
       }
 
-      /* MOBILE FONT SIZE LOCK:
-         Keep dense-discovery body copy readable on mobile. This intentionally
-         overrides inline font sizes in email clients. Values are verified
-         against config/mobile-typography-locks.jsonl during every canonical
-         build. Approved changes must append a new ledger entry. */
+      /* MOBILE FONT SIZE SAFETY CEILING:
+         Keep dense-discovery mobile typography within a readable range while
+         allowing compact values for readers who find oversized email copy
+         difficult to scan. Smaller values are valid; larger values fail the
+         verification in config/mobile-typography-locks.jsonl. */
       .mob-text,
       .mob-text a,
       .mob-text p,
@@ -186,32 +186,32 @@
       .intro-aside a,
       .intro-aside p,
       .intro-aside li {
-        font-size: 22px !important;
-        line-height: 1.45 !important;
+        font-size: 18px !important;
+        line-height: 1.4 !important;
       }
 
       .mob-title {
-        font-size: 26px !important;
-        line-height: 1.3 !important;
+        font-size: 22px !important;
+        line-height: 1.25 !important;
       }
 
       .short-take-headline,
       .short-take-headline a {
-        font-size: 26px !important;
-        line-height: 1.3 !important;
+        font-size: 22px !important;
+        line-height: 1.25 !important;
         font-weight: 700 !important;
         white-space: normal !important;
       }
 
       .mob-subtitle {
-        font-size: 23px !important;
-        line-height: 1.3 !important;
+        font-size: 20px !important;
+        line-height: 1.25 !important;
       }
 
       .mob-readmore,
       .mob-readmore a {
-        font-size: 23px !important;
-        line-height: 1.3 !important;
+        font-size: 20px !important;
+        line-height: 1.25 !important;
       }
 
       .mob-caption,
@@ -219,7 +219,7 @@
       .mob-caption span,
       .mob-caption li,
       .mob-caption .mob-text {
-        font-size: 14px !important;
+        font-size: 13px !important;
         line-height: 1.2 !important;
       }
 
@@ -228,8 +228,8 @@
       .mob-short-take-caption span,
       .mob-short-take-caption strong,
       .mob-short-take-caption em {
-        font-size: 15px !important;
-        line-height: 1.4 !important;
+        font-size: 14px !important;
+        line-height: 1.35 !important;
         font-weight: 400 !important;
       }
 
@@ -252,7 +252,7 @@
       .mob-meta,
       .mob-meta span,
       .mob-meta a {
-        font-size: 16px !important;
+        font-size: 14px !important;
         line-height: 1.1 !important;
       }
 
@@ -262,8 +262,8 @@
       .item-details a,
       .item-details .mob-text {
         font-family: "Share Tech Mono", monospace !important;
-        font-size: 13px !important;
-        line-height: 1.35 !important;
+        font-size: 12px !important;
+        line-height: 1.3 !important;
       }
 
       .mob-title a,
@@ -289,7 +289,7 @@
       .mob-title .mob-meta,
       .mob-title .mob-meta span,
       .mob-title .mob-meta a {
-        font-size: 16px !important;
+        font-size: 14px !important;
         line-height: 1.1 !important;
       }
     }

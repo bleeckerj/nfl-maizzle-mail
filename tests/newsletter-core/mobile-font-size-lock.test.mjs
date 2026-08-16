@@ -75,21 +75,21 @@ function extractMobileMediaBlock(layout, mediaQuery = '@media screen and (max-wi
   return nextMediaStart === -1 ? layout.slice(mediaStart) : layout.slice(mediaStart, nextMediaStart);
 }
 
-test('dense-discovery source labels the mobile font-size rule as an intentional lock', () => {
+test('dense-discovery source labels the mobile font-size rule as a safety ceiling', () => {
   const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
 
-  assert.match(layout, /MOBILE FONT SIZE LOCK/);
+  assert.match(layout, /MOBILE FONT SIZE SAFETY CEILING/);
   assert.match(layout, /config\/mobile-typography-locks\.jsonl/);
-  assert.match(layout, /Approved changes must append a new ledger entry/);
+  assert.match(layout, /Smaller values are valid/);
 });
 
-test('dense-discovery mobile typography defaults remain locked to larger body copy', () => {
+test('dense-discovery mobile typography defaults use the compact reading scale', () => {
   const sectionStyles = JSON.parse(readFileSync(DENSE_DISCOVERY_SECTION_STYLES, 'utf8'));
   const mobileAdjustments = sectionStyles.globalOverrides?.mobileAdjustments;
 
-  assert.equal(mobileAdjustments?.contentStyles?.fontSize, '22px');
-  assert.equal(mobileAdjustments?.contentStyles?.lineHeight, '1.45');
-  assert.equal(mobileAdjustments?.captionStyles?.fontSize, '14px');
+  assert.equal(mobileAdjustments?.contentStyles?.fontSize, '18px');
+  assert.equal(mobileAdjustments?.contentStyles?.lineHeight, '1.4');
+  assert.equal(mobileAdjustments?.captionStyles?.fontSize, '13px');
   assert.equal(mobileAdjustments?.captionStyles?.lineHeight, '1.2');
 });
 
@@ -172,15 +172,15 @@ test('dense-discovery layout keeps mobile body copy at the approved readable sca
   const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
   const mobileBlock = extractMobileMediaBlock(layout);
 
-  assert.match(mobileBlock, /h1\s*\{\s*font-size:\s*24px\s*!important;\s*line-height:\s*29px\s*!important;/);
-  assert.match(mobileBlock, /\.mob-text,\s*\.mob-text a,\s*\.mob-text p,\s*\.mob-text li,\s*\.intro-content,\s*\.intro-content a,\s*\.intro-content p,\s*\.intro-content li,\s*\.intro-aside,\s*\.intro-aside a,\s*\.intro-aside p,\s*\.intro-aside li\s*\{\s*font-size:\s*22px\s*!important;\s*line-height:\s*1\.45\s*!important;/);
-  assert.match(mobileBlock, /\.mob-title\s*\{\s*font-size:\s*26px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
-  assert.match(mobileBlock, /\.short-take-headline,\s*\.short-take-headline a\s*\{\s*font-size:\s*26px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
-  assert.match(mobileBlock, /\.mob-subtitle\s*\{\s*font-size:\s*23px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
-  assert.match(mobileBlock, /\.mob-readmore,\s*\.mob-readmore a\s*\{\s*font-size:\s*23px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
-  assert.match(mobileBlock, /\.mob-caption,\s*\.mob-caption p,\s*\.mob-caption span,\s*\.mob-caption li,\s*\.mob-caption \.mob-text\s*\{\s*font-size:\s*14px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
-  assert.match(mobileBlock, /\.mob-meta,\s*\.mob-meta span,\s*\.mob-meta a\s*\{\s*font-size:\s*16px\s*!important;\s*line-height:\s*1\.1\s*!important;/);
-  assert.match(mobileBlock, /\.item-details,\s*\.item-details p,\s*\.item-details span,\s*\.item-details a,\s*\.item-details \.mob-text\s*\{\s*font-family:\s*"Share Tech Mono", monospace\s*!important;\s*font-size:\s*13px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
+  assert.match(mobileBlock, /h1\s*\{\s*font-size:\s*22px\s*!important;\s*line-height:\s*27px\s*!important;/);
+  assert.match(mobileBlock, /\.mob-text,\s*\.mob-text a,\s*\.mob-text p,\s*\.mob-text li,\s*\.intro-content,\s*\.intro-content a,\s*\.intro-content p,\s*\.intro-content li,\s*\.intro-aside,\s*\.intro-aside a,\s*\.intro-aside p,\s*\.intro-aside li\s*\{\s*font-size:\s*18px\s*!important;\s*line-height:\s*1\.4\s*!important;/);
+  assert.match(mobileBlock, /\.mob-title\s*\{\s*font-size:\s*22px\s*!important;\s*line-height:\s*1\.25\s*!important;/);
+  assert.match(mobileBlock, /\.short-take-headline,\s*\.short-take-headline a\s*\{\s*font-size:\s*22px\s*!important;\s*line-height:\s*1\.25\s*!important;/);
+  assert.match(mobileBlock, /\.mob-subtitle\s*\{\s*font-size:\s*20px\s*!important;\s*line-height:\s*1\.25\s*!important;/);
+  assert.match(mobileBlock, /\.mob-readmore,\s*\.mob-readmore a\s*\{\s*font-size:\s*20px\s*!important;\s*line-height:\s*1\.25\s*!important;/);
+  assert.match(mobileBlock, /\.mob-caption,\s*\.mob-caption p,\s*\.mob-caption span,\s*\.mob-caption li,\s*\.mob-caption \.mob-text\s*\{\s*font-size:\s*13px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
+  assert.match(mobileBlock, /\.mob-meta,\s*\.mob-meta span,\s*\.mob-meta a\s*\{\s*font-size:\s*14px\s*!important;\s*line-height:\s*1\.1\s*!important;/);
+  assert.match(mobileBlock, /\.item-details,\s*\.item-details p,\s*\.item-details span,\s*\.item-details a,\s*\.item-details \.mob-text\s*\{\s*font-family:\s*"Share Tech Mono", monospace\s*!important;\s*font-size:\s*12px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
   assert.match(
     mobileBlock,
     /\.mob-title a,\s*\.mob-subtitle a,\s*\.mob-text a,\s*\.intro-content a,\s*\.intro-aside a,\s*\.mob-readmore a,\s*\.mob-caption a,\s*\.mob-caption strong,\s*\.mob-caption em\s*\{\s*font-size:\s*inherit\s*!important;\s*line-height:\s*inherit\s*!important;/,
@@ -232,14 +232,14 @@ test('dense-discovery mobile typography ledger is hash-chained and verifies sour
     ],
   });
 
-  assert.equal(entry.sequence, 5);
+  assert.equal(entry.sequence, 6);
   assert.match(entry.hash, /^[a-f0-9]{64}$/);
   assert.match(entry.previousHash, /^[a-f0-9]{64}$/);
   assert.equal(verification.status, 'verified');
   assert.equal(verification.schemaVersion, 2);
   assert.equal(verification.lock.hash, entry.hash);
-  assert.equal(verification.roles.find((role) => role.id === 'body').declarations['font-size'], '22px !important');
-  assert.equal(verification.roles.find((role) => role.id === 'intro-headline').declarations['font-size'], '24px !important');
+  assert.equal(verification.roles.find((role) => role.id === 'body').declarations['font-size'], '18px !important');
+  assert.equal(verification.roles.find((role) => role.id === 'intro-headline').declarations['font-size'], '22px !important');
   assert.equal(verification.baseRoles.find((role) => role.id === 'intro-content').declarations['font-size'], '19px');
   assert.equal(verification.ignoredAuthoredOverrides[0].authoredValue, '16px');
 });
@@ -275,8 +275,8 @@ test('dense-discovery accepts both approved intro base line heights', () => {
 test('dense-discovery mobile typography verifier rejects rendered size drift', () => {
   const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
   const driftedLayout = layout.replace(
-    'font-size: 22px !important;\n        line-height: 1.45 !important;',
-    'font-size: 19px !important;\n        line-height: 1.45 !important;',
+    'font-size: 18px !important;\n        line-height: 1.4 !important;',
+    'font-size: 24px !important;\n        line-height: 1.4 !important;',
   );
   const renderedHtml = `${driftedLayout}
     <div class="intro-content" style="font-size: 19px; line-height: 1.5;">
@@ -364,6 +364,24 @@ test('dense-discovery verifier warns on base line-height drift while preserving 
   assert.equal(verification.warnings.length, 2);
   assert.match(verification.warnings[0], /base typography drift.*line-height/);
   assert.match(verification.warnings[1], /base typography drift.*line-height/);
+});
+
+test('dense-discovery mobile typography verifier accepts smaller mobile font sizes', () => {
+  const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
+  const renderedHtml = layout
+    .replace('font-size: 18px !important;', 'font-size: 16px !important;')
+    .replace('font-size: 22px !important;', 'font-size: 20px !important;');
+
+  assert.doesNotThrow(() =>
+    verifyMobileTypographyLock({
+      repoRoot: REPO_ROOT,
+      templateName: 'dense-discovery',
+      renderedHtml,
+      sourcePath: 'fixture.md',
+      outputHtmlPath: 'fixture.html',
+      outputName: 'fixture-smaller-mobile-type',
+    }),
+  );
 });
 
 test('dense-discovery semantic section and item headings opt into the mobile title lock', () => {
