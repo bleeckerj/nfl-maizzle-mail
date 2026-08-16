@@ -17,6 +17,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import yaml from 'js-yaml';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -30,6 +31,7 @@ Usage:
 
 Options:
   --template <name>        Template name (looks for templates/<name>/newsletter.schema.json or schema.json)
+  --template-name <name>   Template name to write when using --schema
   --schema <path>          Path to JSON schema file (alternative to --template)
   --output <path>          Output file path (default: stdout)
   --minimal                Generate minimal skeleton with fewer items per section
@@ -63,6 +65,7 @@ Examples:
 function parseArgs(argv) {
   const args = {
     template: null,
+    templateName: null,
     schema: null,
     output: null,
     minimal: false,
@@ -82,6 +85,9 @@ function parseArgs(argv) {
         break;
       case '--template':
         args.template = argv[++i];
+        break;
+      case '--template-name':
+        args.templateName = argv[++i];
         break;
       case '--schema':
         args.schema = argv[++i];
@@ -338,6 +344,10 @@ function generateStringPlaceholder(propName, description = '') {
   if (name === 'adid') return 'example-ad-id';
   if (name === 'shorttakeid') return 'example-short-take-id';
 
+  if (name === 'src') {
+    return PLACEHOLDER_IMAGE(800, 600, humanize(propName));
+  }
+
   // URLs and links
   if (name.includes('url') || name.includes('link') || name === 'href' || name === 'src') {
     if (name.includes('image') || name.includes('logo') || name.includes('featured')) {
@@ -537,6 +547,76 @@ function extractSectionSchema(schema, sectionType) {
   return schema.properties?.sections?.items || null;
 }
 
+function assertStarterCompleteness(markdown, schema) {
+  const frontmatterMatch = markdown.match(/^---\n([\s\S]*?)\n---(?:\n|$)/);
+  if (!frontmatterMatch) {
+    throw new Error('Generated starter is missing YAML frontmatter');
+  }
+
+  const payload = yaml.load(frontmatterMatch[1]) || {};
+  const missing = [];
+
+  function walk(value, propSchema, location) {
+    if (value === null || value === undefined) return;
+
+    const resolvedSchema = resolveGenerationSchema(propSchema, { schema });
+    if (Array.isArray(value)) {
+      const itemSchema = resolvedSchema.items || {};
+      for (const [index, item] of value.entries()) {
+        walk(item, itemSchema, `${location}[${index}]`);
+      }
+      return;
+    }
+
+    if (typeof value !== 'object') return;
+
+    const mutuallyExclusiveProperties = new Set(
+      Array.isArray(resolvedSchema.not?.required) ? resolvedSchema.not.required : [],
+    );
+    for (const [propertyName, propertySchema] of Object.entries(resolvedSchema.properties || {})) {
+      const propertyPath = `${location}.${propertyName}`;
+      if (!Object.prototype.hasOwnProperty.call(value, propertyName)) {
+        if (
+          mutuallyExclusiveProperties.has(propertyName)
+          && Array.from(mutuallyExclusiveProperties).some((candidate) =>
+            candidate !== propertyName && Object.prototype.hasOwnProperty.call(value, candidate),
+          )
+        ) {
+          continue;
+        }
+        missing.push(propertyPath);
+        continue;
+      }
+      walk(value[propertyName], propertySchema, propertyPath);
+    }
+  }
+
+  for (const [propertyName, propertySchema] of Object.entries(schema.properties || {})) {
+    if (!Object.prototype.hasOwnProperty.call(payload, propertyName)) {
+      missing.push(propertyName);
+      continue;
+    }
+
+    if (propertyName === 'sections' && Array.isArray(payload.sections)) {
+      for (const [index, section] of payload.sections.entries()) {
+        const sectionPath = `sections[${index}]`;
+        if (!section || typeof section !== 'object') continue;
+        const sectionSchema = extractSectionSchema(schema, section.type);
+        walk(section, sectionSchema || propertySchema.items || {}, sectionPath);
+      }
+      continue;
+    }
+
+    walk(payload[propertyName], propertySchema, propertyName);
+  }
+
+  if (missing.length > 0) {
+    throw new Error(
+      `Schema starter is incomplete; missing ${missing.length} declared field(s): ${missing.join(', ')}`,
+    );
+  }
+}
+
 // ============================================================================
 // Skeleton Generation
 // ============================================================================
@@ -677,6 +757,7 @@ function generateSectionYaml(sectionType, sectionSchema, options = {}) {
     for (let i = 0; i < itemCount; i++) {
       const itemLines = generateItemYaml(sectionType, itemSchema, i + 1, {
         minimal,
+        allSectionFields,
         schema: options.schema,
       });
       lines.push(...(itemLines.length > 0 ? itemLines : [`${indent}- {}`]));
@@ -717,7 +798,7 @@ function generateSectionYaml(sectionType, sectionSchema, options = {}) {
 }
 
 function generateItemYaml(sectionType, itemSchema, index, options = {}) {
-  const { minimal } = options;
+  const { minimal, allSectionFields } = options;
   const lines = [];
   const baseIndent = '  ';
   const itemIndent = baseIndent + '  ';
@@ -730,7 +811,7 @@ function generateItemYaml(sectionType, itemSchema, index, options = {}) {
   const keyProps = ['title', 'link', 'image', 'images', 'description', 'content', 'quote', 'calloutText'];
   const orderedProps = [
     ...keyProps.filter((p) => propNames.includes(p)),
-    ...propNames.filter((p) => !keyProps.includes(p) && !isStyleProperty(p)),
+    ...propNames.filter((p) => !keyProps.includes(p) && (minimal || allSectionFields || !isStyleProperty(p))),
   ];
 
   // In minimal mode, only show essential properties
@@ -919,7 +1000,7 @@ async function main() {
     schemaPath = path.resolve(args.schema);
     // Try to infer template name from path
     const match = schemaPath.match(/templates\/([^/]+)\//);
-    templateName = match ? match[1] : null;
+    templateName = args.templateName || (match ? match[1] : null);
   }
 
   console.error(`Loading schema from: ${schemaPath}`);
@@ -943,6 +1024,10 @@ async function main() {
     sections: args.sections,
     itemsPerSection: args.itemsPerSection,
   });
+
+  if (!args.minimal && args.allSectionFields) {
+    assertStarterCompleteness(skeleton, schema);
+  }
 
   // Output
   if (args.output) {

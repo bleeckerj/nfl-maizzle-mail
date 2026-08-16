@@ -410,12 +410,57 @@ function findTypedSectionVariantEntry(schema, type) {
  * layer those allowances back onto the derived schema here.
  */
 function applyDerivedSchemaOverrides(schema, entryAbsPath) {
-  for (const rootKey of ['ogImageAltText', 'pubDate']) {
+  for (const rootKey of ['newsletterFormat', 'ogImageAltText', 'pubDate']) {
     if (!schema?.properties?.[rootKey]) {
       schema.properties[rootKey] = {};
     }
   }
-  schema.properties.socialCard = { type: ['object', 'null'], additionalProperties: true };
+  // socialCard is an authoring contract even though the Maizzle template
+  // receives it through the social-card export path. Keep the complete
+  // nested shape in the generated schema so starters cannot silently omit it.
+  schema.properties.socialCard = {
+    type: ['object', 'null'],
+    properties: {
+      title: {},
+      subtitle: {},
+      kicker: {},
+      backgroundImage: {},
+      logoUrl: {},
+      titleFont: {},
+      titleFontScale: { type: 'number' },
+      subtitleFont: {},
+      subtitleFontScale: { type: 'number' },
+      kickerFont: {},
+      kickerFontScale: { type: 'number' },
+      footerFontScale: { type: 'number' },
+      backgroundOpacity: { type: 'number' },
+      backgroundHueRotate: { type: 'number' },
+      backgroundSaturation: { type: 'number' },
+      overlayStrength: { type: 'number' },
+      imageBrightness: { type: 'number' },
+      textColor: {},
+      mutedTextColor: {},
+      kickerColor: {},
+      animation: {
+        type: 'object',
+        properties: {
+          mode: {},
+          animeModule: {},
+          durationMs: { type: 'integer' },
+          duration: { type: 'integer' },
+          fps: { type: 'integer' },
+          loop: { type: 'boolean' },
+          posterFrame: { type: 'number' },
+          disableForPresets: {
+            type: 'array',
+            items: { type: 'string' },
+          },
+        },
+        additionalProperties: false,
+      },
+    },
+    additionalProperties: false,
+  };
   const footerCtaSchema = schema.properties.footer?.properties?.footerCta;
   if (footerCtaSchema?.properties && !footerCtaSchema.properties.variant) {
     footerCtaSchema.properties.variant = {};
