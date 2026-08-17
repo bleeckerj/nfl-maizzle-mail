@@ -189,6 +189,17 @@
         line-height: 1.4 !important;
       }
 
+      /* Inline CTA statements can contain rich-text paragraphs that the
+         compiler expands to the general prose size. Keep these two compact
+         callout treatments quieter than the newsletter's main body copy. */
+      .inline-cta-copy,
+      .inline-cta-copy p,
+      .inline-cta-copy a,
+      .inline-cta-copy li {
+        font-size: 16px !important;
+        line-height: 1.35 !important;
+      }
+
       p.mob-ad-copy,
       p.mob-ad-copy a,
       p.mob-ad-copy span,
