@@ -1587,6 +1587,31 @@
                     "type": "object",
                     "properties": {
                       "title": {},
+                      "companyName": {
+                        "type": "string",
+                        "description": "Company name shown beside the company logo in a classifieds item."
+                      },
+                      "companyLabel": {
+                        "type": "string",
+                        "default": "A SPECULATIVE ROLE AT",
+                        "description": "Optional label shown above the company name when companyLogo is supplied."
+                      },
+                      "companyLogo": {
+                        "type": "object",
+                        "required": [
+                          "src"
+                        ],
+                        "properties": {
+                          "src": {
+                            "type": "string"
+                          },
+                          "alt": {
+                            "type": "string"
+                          },
+                          "link": {}
+                        },
+                        "additionalProperties": false
+                      },
                       "images": {
                         "type": "object",
                         "properties": {

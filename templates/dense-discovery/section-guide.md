@@ -519,7 +519,12 @@ sections:
   bookingLink: mailto:guide@example.com
   bookingText: Booking text element
   items:
-  - content: <p>This FPO classified has enough copy to resemble a real short listing; a project, offer, opening, or request with a clear next step. It should show how the boxed content, title, image grid, and link work together.</p>
+  - companyName: Example Company
+    companyLabel: A SPECULATIVE ROLE AT
+    companyLogo:
+      src: https://fpoimg.com/104x104?text=Logo&bg_color=ffffff&text_color=111111
+      alt: Example Company
+    content: <p>This FPO classified has enough copy to resemble a real short listing; a project, offer, opening, or request with a clear next step. It should show how the boxed content, title, image grid, and link work together.</p>
     title: Classified item title
     link: mailto:guide@example.com
     linkText: Classified link text

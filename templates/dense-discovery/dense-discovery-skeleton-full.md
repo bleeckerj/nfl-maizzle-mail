@@ -347,7 +347,12 @@ sections:
   bookingLink: Example bookingLink
   bookingText: Example bookingText
   items:
-  - content: <p>Example classified content for item 1.</p>
+  - companyName: Example Company
+    companyLabel: A SPECULATIVE ROLE AT
+    companyLogo:
+      src: https://fpoimg.com/104x104?text=Logo&bg_color=ffffff&text_color=111111
+      alt: Example Company
+    content: <p>Example classified content for item 1.</p>
     title: Example title
     link: https://example.com
     linkText: Example linkText for item 1
