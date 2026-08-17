@@ -102,16 +102,6 @@
       font-weight: 400 !important;
     }
 
-    /* Classified descriptions use a compact rhythm on every surface. The
-       explicit rule also overrides legacy inline description styles. */
-    .classified-copy,
-    .classified-copy p,
-    .classified-copy a,
-    .classified-copy li,
-    .classified-copy .mob-text {
-      line-height: 1.1 !important;
-    }
-
     @media screen and (max-width:599px) {
       .force-row, .container, .header, .body, .footer {
         width: 100% !important;
@@ -196,6 +186,17 @@
       .inline-cta-copy p,
       .inline-cta-copy a,
       .inline-cta-copy li {
+        font-size: 16px !important;
+        line-height: 1.35 !important;
+      }
+
+      /* Keep classified job descriptions at the same compact reading scale
+         as inline CTA statements when the source contains rich text. */
+      .classified-copy,
+      .classified-copy p,
+      .classified-copy a,
+      .classified-copy li,
+      .classified-copy .mob-text {
         font-size: 16px !important;
         line-height: 1.35 !important;
       }
