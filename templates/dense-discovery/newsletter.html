@@ -2399,7 +2399,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                           <if condition="section.description">
                             <tr>
                               <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors.classifieds || '#def1ef' }};padding-top: 20px;padding-right: 20px;padding-bottom: 10px;padding-left: 20px;">
-                                <div class='share-tech-mono-regular' style="font-family: 'Share Tech Mono', monospace; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '19px' }};font-weight: 400; color: {{ section.contentStyles.color || '#707070' }}; padding: 0;margin: 0;">
+                                <div class="share-tech-mono-regular classified-section-lede" style="font-family: 'Share Tech Mono', monospace; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '19px' }};font-weight: 400; color: {{ section.contentStyles.color || '#707070' }}; padding: 0;margin: 0;">
                                   {{{ section.description }}}
                                   <if condition="section.bookingLink">
                                     <a href="{{ section.bookingLink }}" style="text-decoration: underline;color: {{ themeColors.linkAccent || '#707070' }} !important;">{{ section.bookingText || 'Book yours →' }}</a>
