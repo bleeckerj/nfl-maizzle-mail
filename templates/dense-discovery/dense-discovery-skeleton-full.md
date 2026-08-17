@@ -348,7 +348,7 @@ sections:
   bookingText: Example bookingText
   items:
   - companyName: Example Company
-    companyLabel: A SPECULATIVE ROLE AT
+    companyLede: A SPECULATIVE ROLE AT
     companyLogo:
       src: https://fpoimg.com/104x104?text=Logo&bg_color=ffffff&text_color=111111
       alt: Example Company

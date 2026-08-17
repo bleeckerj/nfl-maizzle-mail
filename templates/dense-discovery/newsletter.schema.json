@@ -1591,10 +1591,10 @@
                         "type": "string",
                         "description": "Company name shown beside the company logo in a classifieds item."
                       },
-                      "companyLabel": {
+                      "companyLede": {
                         "type": "string",
                         "default": "A SPECULATIVE ROLE AT",
-                        "description": "Optional label shown above the company name when companyLogo is supplied."
+                        "description": "Optional lede shown above the company name when companyLogo is supplied."
                       },
                       "companyLogo": {
                         "type": "object",
