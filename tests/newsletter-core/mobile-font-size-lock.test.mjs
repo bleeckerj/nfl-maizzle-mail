@@ -197,6 +197,7 @@ test('dense-discovery layout keeps mobile body copy at the approved readable sca
   assert.match(mobileBlock, /\.mob-text,\s*\.mob-text a,\s*\.mob-text p,\s*\.mob-text li,\s*\.intro-content,\s*\.intro-content a,\s*\.intro-content p,\s*\.intro-content li,\s*\.intro-aside,\s*\.intro-aside a,\s*\.intro-aside p,\s*\.intro-aside li\s*\{\s*font-size:\s*18px\s*!important;\s*line-height:\s*1\.4\s*!important;/);
   assert.match(mobileBlock, /\.inline-cta-copy,\s*\.inline-cta-copy p,\s*\.inline-cta-copy a,\s*\.inline-cta-copy li\s*\{\s*font-size:\s*16px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
   assert.match(mobileBlock, /\.classified-copy,\s*\.classified-copy p,\s*\.classified-copy a,\s*\.classified-copy li,\s*\.classified-copy \.mob-text\s*\{\s*font-size:\s*16px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
+  assert.match(mobileBlock, /\.classified-company-meta,\s*\.classified-company-meta a\s*\{\s*font-size:\s*16px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
   assert.match(mobileBlock, /\.mob-title\s*\{\s*font-size:\s*22px\s*!important;\s*line-height:\s*1\.25\s*!important;/);
   assert.match(mobileBlock, /\.short-take-headline,\s*\.short-take-headline a\s*\{\s*font-size:\s*22px\s*!important;\s*line-height:\s*1\.25\s*!important;/);
   assert.match(mobileBlock, /\.mob-subtitle\s*\{\s*font-size:\s*20px\s*!important;\s*line-height:\s*1\.25\s*!important;/);
@@ -255,7 +256,7 @@ test('dense-discovery mobile typography ledger is hash-chained and verifies sour
     ],
   });
 
-  assert.equal(entry.sequence, 8);
+  assert.equal(entry.sequence, 9);
   assert.match(entry.hash, /^[a-f0-9]{64}$/);
   assert.match(entry.previousHash, /^[a-f0-9]{64}$/);
   assert.equal(verification.status, 'verified');
@@ -264,6 +265,7 @@ test('dense-discovery mobile typography ledger is hash-chained and verifies sour
   assert.equal(verification.roles.find((role) => role.id === 'body').declarations['font-size'], '18px !important');
   assert.equal(verification.roles.find((role) => role.id === 'inline-cta-copy').declarations['font-size'], '16px !important');
   assert.equal(verification.roles.find((role) => role.id === 'classified-copy').declarations['font-size'], '16px !important');
+  assert.equal(verification.roles.find((role) => role.id === 'classified-company-meta').declarations['font-size'], '16px !important');
   assert.equal(verification.roles.find((role) => role.id === 'intro-headline').declarations['font-size'], '22px !important');
   assert.equal(verification.baseRoles.find((role) => role.id === 'intro-content').declarations['font-size'], '19px');
   assert.equal(verification.ignoredAuthoredOverrides[0].authoredValue, '16px');

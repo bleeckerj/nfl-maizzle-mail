@@ -2428,9 +2428,9 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                             </if>
                                           </td>
                                           <td valign="middle" style="padding: 0;vertical-align: middle;">
-                                            <div style="margin: 0;padding: 0;text-transform: uppercase;">{{ item.companyLede || 'A SPECULATIVE ROLE AT' }}</div>
+                                            <div class="classified-company-meta" style="margin: 0;padding: 0;text-transform: uppercase;">{{ item.companyLede || 'A SPECULATIVE ROLE AT' }}</div>
                                             <if condition="item.companyName || item.companyLogo.alt">
-                                              <div style="margin: 0;padding: 0;text-transform: uppercase;">{{ item.companyName || item.companyLogo.alt }}</div>
+                                              <div class="classified-company-meta" style="margin: 0;padding: 0;text-transform: uppercase;">{{ item.companyName || item.companyLogo.alt }}</div>
                                             </if>
                                           </td>
                                         </tr>
