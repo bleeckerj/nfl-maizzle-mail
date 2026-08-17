@@ -78,6 +78,16 @@
       padding: 0;
     }
 
+    /* Inline CTA statements use the same compact scale at every viewport.
+       Rich-text paragraphs can otherwise retain a larger generated size. */
+    .inline-cta-copy,
+    .inline-cta-copy p,
+    .inline-cta-copy a,
+    .inline-cta-copy li {
+      font-size: 16px !important;
+      line-height: 1.35 !important;
+    }
+
     h1 {
       font-size: 21px;
       line-height: 29px;

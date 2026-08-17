@@ -192,7 +192,9 @@ test('intro typography resolution preserves authored sizes when no lock applies'
 test('dense-discovery layout keeps mobile body copy at the approved readable scale', () => {
   const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
   const mobileBlock = extractMobileMediaBlock(layout);
+  const desktopBlock = layout.slice(0, layout.indexOf('@media screen and (max-width:599px)'));
 
+  assert.match(desktopBlock, /\.inline-cta-copy,\s*\.inline-cta-copy p,\s*\.inline-cta-copy a,\s*\.inline-cta-copy li\s*\{\s*font-size:\s*16px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
   assert.match(mobileBlock, /h1\s*\{\s*font-size:\s*22px\s*!important;\s*line-height:\s*27px\s*!important;/);
   assert.match(mobileBlock, /\.mob-text,\s*\.mob-text a,\s*\.mob-text p,\s*\.mob-text li,\s*\.intro-content,\s*\.intro-content a,\s*\.intro-content p,\s*\.intro-content li,\s*\.intro-aside,\s*\.intro-aside a,\s*\.intro-aside p,\s*\.intro-aside li\s*\{\s*font-size:\s*18px\s*!important;\s*line-height:\s*1\.4\s*!important;/);
   assert.match(mobileBlock, /\.inline-cta-copy,\s*\.inline-cta-copy p,\s*\.inline-cta-copy a,\s*\.inline-cta-copy li\s*\{\s*font-size:\s*16px\s*!important;\s*line-height:\s*1\.35\s*!important;/);
@@ -257,7 +259,7 @@ test('dense-discovery mobile typography ledger is hash-chained and verifies sour
     ],
   });
 
-  assert.equal(entry.sequence, 10);
+  assert.equal(entry.sequence, 11);
   assert.match(entry.hash, /^[a-f0-9]{64}$/);
   assert.match(entry.previousHash, /^[a-f0-9]{64}$/);
   assert.equal(verification.status, 'verified');
