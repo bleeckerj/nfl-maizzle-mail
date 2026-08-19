@@ -494,6 +494,32 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
   }
 
   const templateId = path.basename(path.dirname(entryAbsPath));
+
+  const calendarEventVariant = findTypedSectionVariant(schema, 'calendar_event');
+  if (calendarEventVariant?.properties) {
+    Object.assign(calendarEventVariant.properties, {
+      id: { type: 'string' },
+      slug: { type: 'string' },
+      startsAt: { type: 'string' },
+      start: { type: 'string' },
+      date: { type: 'string' },
+      endsAt: { type: 'string' },
+      end: { type: 'string' },
+      durationMinutes: { type: ['integer', 'number', 'string'] },
+      duration: { type: ['integer', 'number', 'string'] },
+      timezone: { type: 'string' },
+      url: {},
+      link: {},
+      eventUrl: {},
+      displayWeekday: { type: 'string' },
+    });
+    calendarEventVariant.required = [...new Set([
+      ...(calendarEventVariant.required || []),
+      'title',
+      'startsAt',
+    ])];
+  }
+
   if (templateId !== 'dense-discovery') return;
 
   const adjacencyJobsVariant = findTypedSectionVariant(schema, 'adjacency-job-posting');
@@ -518,6 +544,39 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
     if (!adBlockItemSchema.properties.adId) {
       adBlockItemSchema.properties.adId = {};
     }
+  }
+
+  const classifiedsVariant = findTypedSectionVariant(schema, 'classifieds');
+  const classifiedsItemSchema = classifiedsVariant?.properties?.items?.items;
+  if (classifiedsItemSchema?.properties) {
+    const imagesSchema = classifiedsItemSchema.properties.images || {};
+    classifiedsItemSchema.properties = {
+      title: {},
+      companyName: {
+        type: 'string',
+        description: 'Company name shown beside the company logo in a classifieds item.',
+      },
+      companyLede: {
+        type: 'string',
+        default: 'A SPECULATIVE ROLE AT',
+        description: 'Optional lede shown above the company name when companyLogo is supplied.',
+      },
+      companyLogo: {
+        type: 'object',
+        required: ['src'],
+        properties: {
+          src: { type: 'string' },
+          alt: { type: 'string' },
+          link: {},
+        },
+        additionalProperties: false,
+      },
+      images: imagesSchema,
+      image: {},
+      link: {},
+      content: {},
+      linkText: {},
+    };
   }
 
   const sectionTypeEnum = schema?.properties?.sections?.items?.properties?.type?.enum;

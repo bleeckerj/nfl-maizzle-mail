@@ -1470,9 +1470,57 @@
                     "null"
                   ],
                   "additionalProperties": true
+                },
+                "id": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "string"
+                },
+                "startsAt": {
+                  "type": "string"
+                },
+                "start": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string"
+                },
+                "endsAt": {
+                  "type": "string"
+                },
+                "end": {
+                  "type": "string"
+                },
+                "durationMinutes": {
+                  "type": [
+                    "integer",
+                    "number",
+                    "string"
+                  ]
+                },
+                "duration": {
+                  "type": [
+                    "integer",
+                    "number",
+                    "string"
+                  ]
+                },
+                "timezone": {
+                  "type": "string"
+                },
+                "url": {},
+                "link": {},
+                "eventUrl": {},
+                "displayWeekday": {
+                  "type": "string"
                 }
               },
-              "additionalProperties": false
+              "additionalProperties": false,
+              "required": [
+                "title",
+                "startsAt"
+              ]
             }
           },
           {

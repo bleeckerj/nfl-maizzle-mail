@@ -142,7 +142,7 @@ function validateSections(sections) {
     return;
   }
 
-  const contentFields = ['description', 'content', 'quote', 'text', 'html', 'note', 'details'];
+  const contentFields = ['description', 'content', 'quote', 'text', 'html', 'note', 'details', 'ledeHtml'];
   const mediaFields = ['image', 'images', 'gif'];
 
   sections.forEach((section, sectionIndex) => {
@@ -238,7 +238,7 @@ function validateSections(sections) {
         report('warnings', `${itemPath}.image`, 'Image objects should include a src property');
       }
 
-      if ('images' in item && item.images && !Array.isArray(item.images)) {
+      if ('images' in item && item.images && section.type !== 'classifieds' && !Array.isArray(item.images)) {
         report('errors', `${itemPath}.images`, 'Images should be listed as an array');
       }
       if (Array.isArray(item.images)) {
