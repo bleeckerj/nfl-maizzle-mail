@@ -307,6 +307,53 @@ test('indie-mag-single-column subtitle preserves legacy gray and default radius'
   }
 });
 
+test('single-column captions inherit explicit content color and preserve the legacy fallback', () => {
+  const { html, cleanup } = buildNewsletter(
+    [
+      '---',
+      'template: dense-discovery',
+      'title: Single Column Caption Inheritance',
+      'preheader: Verify caption color inheritance',
+      'sectionStylesFile: templates/dense-discovery/section-styles.json',
+      'sections:',
+      '  - type: single-column',
+      '    title: Archive',
+      '    contentStyles:',
+      "      color: '#ffffff'",
+      '    items:',
+      '      - title: Explicit Caption Color',
+      '        image:',
+      '          src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/7400a885-a077-4edb-1364-5865d47e0800/public?format=webp',
+      '          alt: Caption inheritance fixture',
+      '          caption: White caption',
+      '  - type: single-column',
+      '    title: Legacy Archive',
+      '    items:',
+      '      - title: Default Caption Color',
+      '        image:',
+      '          src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/7400a885-a077-4edb-1364-5865d47e0800/public?format=webp',
+      '          alt: Caption fallback fixture',
+      '          caption: Legacy gray caption',
+      '---',
+      '',
+    ],
+    'single-column-caption-inheritance',
+  );
+
+  try {
+    assert.match(
+      html,
+      /<p class="[^"]*mob-caption[^"]*"[^>]*color:\s*#ffffff[^>]*>White caption<\/p>/,
+    );
+    assert.match(
+      html,
+      /<p class="[^"]*mob-caption[^"]*"[^>]*color:\s*#495263[^>]*>Legacy gray caption<\/p>/,
+    );
+  } finally {
+    cleanup();
+  }
+});
+
 test('explicit headingStyles and linkStyles override inherited contentStyles', () => {
   const { html, cleanup } = buildNewsletter(
     [

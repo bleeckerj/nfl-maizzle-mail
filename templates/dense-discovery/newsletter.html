@@ -2021,7 +2021,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
 	                                        <img src="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('src')) ? image.src : image }}" alt="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('alt')) ? image.alt : (item.title || 'Magazine Cover') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px; border-radius: 3%;">
 	                                      </if>
                                           <if condition="typeof image === 'object' && image !== null && image.hasOwnProperty('caption') && image.caption">
-                                            <p class="image-caption mob-caption" style="margin: 8px 0 12px 0;padding: 0;font-family: 'IBM Plex Sans', sans-serif;font-size: 14px;line-height: 1.2;font-weight: 500;color: #495263;text-align: left;text-decoration: none !important;">{{{ image.caption }}}</p>
+                                            <p class="image-caption mob-caption" style="margin: 8px 0 12px 0;padding: 0;font-family: 'IBM Plex Sans', sans-serif;font-size: 14px;line-height: 1.2;font-weight: 500;color: {{ (section._contentStyleOverrides && section._contentStyleOverrides.color) || '#495263' }};text-align: left;text-decoration: none !important;">{{{ image.caption }}}</p>
                                           </if>
 	                                    </div>
 	                                  </each>
@@ -2037,7 +2037,7 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                       <img src="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('src')) ? item.image.src : item.image }}" alt="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('alt')) ? item.image.alt : (item.title || 'Magazine Cover') }}" width="600" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 600px; border-radius: 3%;">
                                     </if>
                                     <if condition="typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('caption') && item.image.caption">
-                                      <p class="image-caption mob-caption" style="margin: 8px 0 12px 0;padding: 0;font-family: 'IBM Plex Sans', sans-serif;font-size: 14px;line-height: 1.2;font-weight: 500;color: #495263;text-align: left;text-decoration: none !important;">{{{ item.image.caption }}}</p>
+                                      <p class="image-caption mob-caption" style="margin: 8px 0 12px 0;padding: 0;font-family: 'IBM Plex Sans', sans-serif;font-size: 14px;line-height: 1.2;font-weight: 500;color: {{ (section._contentStyleOverrides && section._contentStyleOverrides.color) || '#495263' }};text-align: left;text-decoration: none !important;">{{{ item.image.caption }}}</p>
                                     </if>
                                   </div>
                                 </if>
