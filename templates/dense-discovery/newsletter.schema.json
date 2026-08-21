@@ -3279,6 +3279,10 @@
     "newsletterFormat": {},
     "ogImageAltText": {},
     "pubDate": {},
+    "publicationMode": {
+      "type": "string",
+      "default": "public-issue"
+    },
     "socialCard": {
       "type": [
         "object",

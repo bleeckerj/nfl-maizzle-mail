@@ -410,11 +410,15 @@ function findTypedSectionVariantEntry(schema, type) {
  * layer those allowances back onto the derived schema here.
  */
 function applyDerivedSchemaOverrides(schema, entryAbsPath) {
-  for (const rootKey of ['newsletterFormat', 'ogImageAltText', 'pubDate']) {
+  for (const rootKey of ['newsletterFormat', 'ogImageAltText', 'pubDate', 'publicationMode']) {
     if (!schema?.properties?.[rootKey]) {
       schema.properties[rootKey] = {};
     }
   }
+  schema.properties.publicationMode = {
+    type: 'string',
+    default: 'public-issue',
+  };
   // socialCard is an authoring contract even though the Maizzle template
   // receives it through the social-card export path. Keep the complete
   // nested shape in the generated schema so starters cannot silently omit it.
