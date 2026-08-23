@@ -414,6 +414,9 @@
                   "properties": {
                     "backgroundColor": {
                       "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    },
+                    "borderRadius": {
+                      "description": "Optional CSS radius applied to the section's outer corners, such as 10px."
                     }
                   },
                   "additionalProperties": true,

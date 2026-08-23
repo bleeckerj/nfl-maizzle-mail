@@ -2202,14 +2202,14 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                             <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>
                           </tr>
                           <tr>
-                            <td align="left" class="headline" style="font-family: 'Workbench', sans-serif;font-weight: 700; font-style: normal; background: {{ section.containerStyles.backgroundColor || themeColors['food-for-thought'] || '#f2f2f2' }}; border-collapse: collapse;border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;">
+                            <td align="left" class="headline" style="font-family: 'Workbench', sans-serif;font-weight: 700; font-style: normal; background: {{ section.containerStyles.backgroundColor || themeColors['food-for-thought'] || '#f2f2f2' }}; border-collapse: collapse;border-bottom: 2px solid #FFFFFF;padding-top: 15px;padding-right: 20px;padding-left: 20px;padding-bottom: 15px;border-radius: {{ section.containerStyles.borderRadius || '0px' }} {{ section.containerStyles.borderRadius || '0px' }} 0 0;">
                               <h1 class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}} margin: 0;padding: 0;">{{ section.title }}</h1>
                             </td>
                           </tr>
                           
                           <each loop="item in section.items">
                             <tr>
-                              <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['food-for-thought'] || '#f2f2f2' }};padding: {{ section.containerStyles.padding || '20px' }};">
+                              <td align="left" class="padt20 padr20 padl20" style="border-collapse: collapse;background: {{ section.containerStyles.backgroundColor || themeColors['food-for-thought'] || '#f2f2f2' }};padding: {{ section.containerStyles.padding || '20px' }};border-bottom-left-radius: {{ loop.index === section.items.length - 1 ? (section.containerStyles.borderRadius || '0px') : '0px' }};border-bottom-right-radius: {{ loop.index === section.items.length - 1 ? (section.containerStyles.borderRadius || '0px') : '0px' }};">
                                 
                                 <if condition="item.channel">
                                   <p class="share-tech-mono-regular mob-meta" style="font-family: 'Share Tech Mono', monospace; font-size: 12px;line-height: 16px;font-weight: 600;color: #000000; margin: 0;margin-bottom: 10px;text-transform: uppercase;letter-spacing: 1px;"><span style="color: #999">From the</span> {{ item.channel }} <span style="color: #999">Channel</span></p>

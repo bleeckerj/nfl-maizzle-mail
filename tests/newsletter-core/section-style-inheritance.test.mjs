@@ -45,6 +45,12 @@ function buildNewsletter(markdownLines, outputName) {
   }
 }
 
+function extractFoodForThoughtItemRadii(html) {
+  return [...html.matchAll(
+    /<td[^>]*class="padt20 padr20 padl20"[^>]*style="[^"]*border-bottom-left-radius:\s*([^;"]+);border-bottom-right-radius:\s*([^;"]+)/g,
+  )].map(([, leftRadius, rightRadius]) => `${leftRadius}/${rightRadius}`);
+}
+
 test('section headings and links inherit contentStyles when no explicit heading or link styles are set', () => {
   const { html, cleanup } = buildNewsletter(
     [
@@ -302,6 +308,111 @@ test('indie-mag-single-column subtitle preserves legacy gray and default radius'
       html,
       /<p class="mob-text mob-subtitle"[^>]*style="[^"]*color:\s*#707070[^"]*"[^>]*>Legacy Subtitle Gray<\/p>/,
     );
+  } finally {
+    cleanup();
+  }
+});
+
+test('food-for-thought preserves square corners when no radius is configured', () => {
+  const { html, cleanup } = buildNewsletter(
+    [
+      '---',
+      'template: dense-discovery',
+      'title: Food For Thought Default Radius',
+      'preheader: Verify food for thought default radius',
+      'sectionStylesFile: templates/dense-discovery/section-styles.json',
+      'sections:',
+      '  - type: food-for-thought',
+      '    title: Food For Thought',
+      '    items:',
+      '      - title: Default Radius Item',
+      '        description: "<p>Default radius content.</p>"',
+      '---',
+      '',
+    ],
+    'food-for-thought-default-radius',
+  );
+
+  try {
+    assert.match(
+      html,
+      /<td[^>]*class="headline"[^>]*style="[^"]*border-radius:\s*0px 0px 0 0[^\"]*"[^>]*>/,
+    );
+    assert.deepEqual(extractFoodForThoughtItemRadii(html), ['0px/0px']);
+  } finally {
+    cleanup();
+  }
+});
+
+test('food-for-thought applies configured radius to a single item', () => {
+  const { html, cleanup } = buildNewsletter(
+    [
+      '---',
+      'template: dense-discovery',
+      'title: Food For Thought Single Radius',
+      'preheader: Verify food for thought single item radius',
+      'sectionStylesFile: templates/dense-discovery/section-styles.json',
+      'sections:',
+      '  - type: food-for-thought',
+      '    title: Food For Thought',
+      '    containerStyles:',
+      '      borderRadius: 12px',
+      '    items:',
+      '      - title: Single Radius Item',
+      '        description: "<p>Single radius content.</p>"',
+      '---',
+      '',
+    ],
+    'food-for-thought-single-radius',
+  );
+
+  try {
+    assert.match(
+      html,
+      /<td[^>]*class="headline"[^>]*style="[^"]*border-radius:\s*12px 12px 0 0[^\"]*"[^>]*>/,
+    );
+    assert.deepEqual(extractFoodForThoughtItemRadii(html), ['12px/12px']);
+  } finally {
+    cleanup();
+  }
+});
+
+test('food-for-thought squares intermediate items and rounds the final item', () => {
+  const { html, cleanup } = buildNewsletter(
+    [
+      '---',
+      'template: dense-discovery',
+      'title: Food For Thought Stack Radius',
+      'preheader: Verify food for thought stacked item radius',
+      'sectionStylesFile: templates/dense-discovery/section-styles.json',
+      'sections:',
+      '  - type: food-for-thought',
+      '    title: Food For Thought',
+      '    containerStyles:',
+      '      borderRadius: 18px',
+      '    items:',
+      '      - title: First Stack Item',
+      '        description: "<p>First stack content.</p>"',
+      '      - title: Second Stack Item',
+      '        description: "<p>Second stack content.</p>"',
+      '      - title: Final Stack Item',
+      '        description: "<p>Final stack content.</p>"',
+      '---',
+      '',
+    ],
+    'food-for-thought-stack-radius',
+  );
+
+  try {
+    assert.match(
+      html,
+      /<td[^>]*class="headline"[^>]*style="[^"]*border-radius:\s*18px 18px 0 0[^\"]*"[^>]*>/,
+    );
+    assert.deepEqual(extractFoodForThoughtItemRadii(html), [
+      '0px/0px',
+      '0px/0px',
+      '18px/18px',
+    ]);
   } finally {
     cleanup();
   }
