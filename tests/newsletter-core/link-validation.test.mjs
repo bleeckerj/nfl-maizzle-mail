@@ -94,7 +94,7 @@ test('ignores empty optional raw link fields that render without a link', () => 
   assert.deepEqual(collectLinkCandidates(newsletterData), []);
 });
 
-test('validateLinks fails the build path on broken article hrefs', async () => {
+test('validateLinks warns instead of failing on 404 article hrefs', async () => {
   const newsletterData = {
     sections: [
       {
@@ -109,13 +109,15 @@ test('validateLinks fails the build path on broken article hrefs', async () => {
     ],
   };
 
-  await assert.rejects(
-    () => validateLinks(newsletterData, {
-      checkHttpUrl: async () => ({ valid: false, status: 404 }),
-      logger: { log() {} },
-    }),
-    /Link validation failed with 1 error/,
-  );
+  const result = await validateLinks(newsletterData, {
+    checkHttpUrl: async () => ({ valid: false, status: 404 }),
+    logger: { log() {} },
+  });
+
+  assert.equal(result.errors.length, 0);
+  assert.equal(result.warnings.length, 1);
+  assert.match(result.warnings[0], /HTTP 404/);
+  assert.equal(result.validLinks, 1);
 });
 
 test('checkHttpUrl accepts links when HEAD 404 falls back to GET 200', async () => {
@@ -279,7 +281,7 @@ test('validateLinks warns instead of failing on transient request timeouts', asy
   assert.ok(messages.some((message) => message.includes('Link Validation Results')));
 });
 
-test('validateLinks warns instead of failing on build-owned newsletter archive URLs before publication', async () => {
+test('validateLinks warns instead of failing on any 404 link before publication', async () => {
   const newsletterData = {
     footer: {
       shareUrl: 'https://nearfuturelaboratory.com/newsletters/2026/w27-y26/',
@@ -303,7 +305,7 @@ test('validateLinks warns instead of failing on build-owned newsletter archive U
   assert.match(result.warnings[1], /HTTP 404/);
 });
 
-test('validateRenderedHtmlLinks fails send preflight on broken rendered anchors', async () => {
+test('validateRenderedHtmlLinks warns on broken rendered anchors with 404 status', async () => {
   const html = [
     '<!doctype html>',
     '<html><body>',
@@ -317,15 +319,17 @@ test('validateRenderedHtmlLinks fails send preflight on broken rendered anchors'
     ['https://example.com/ok', 'https://example.com/missing'],
   );
 
-  await assert.rejects(
-    () => validateRenderedHtmlLinks(html, {
-      checkHttpUrl: async (url) => (
-        url.endsWith('/missing')
-          ? { valid: false, status: 404 }
-          : { valid: true, status: 200 }
-      ),
-      logger: { log() {} },
-    }),
-    /Link validation failed with 1 error/,
-  );
+  const result = await validateRenderedHtmlLinks(html, {
+    checkHttpUrl: async (url) => (
+      url.endsWith('/missing')
+        ? { valid: false, status: 404 }
+        : { valid: true, status: 200 }
+    ),
+    logger: { log() {} },
+  });
+
+  assert.equal(result.errors.length, 0);
+  assert.equal(result.warnings.length, 1);
+  assert.match(result.warnings[0], /HTTP 404/);
+  assert.equal(result.validLinks, 2);
 });
