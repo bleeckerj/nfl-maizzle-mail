@@ -73,6 +73,27 @@ test('collects href fields from section article groups and nested more links', (
   );
 });
 
+test('ignores empty optional raw link fields that render without a link', () => {
+  const newsletterData = {
+    intro: {
+      image: { src: 'https://example.com/image.jpg', link: '' },
+      imageLink: '  ',
+    },
+    header: {
+      featuredArtist: { name: 'Artist', link: '' },
+    },
+    sections: [
+      {
+        type: 'classifieds',
+        bookingLink: '',
+        items: [{ link: '' }],
+      },
+    ],
+  };
+
+  assert.deepEqual(collectLinkCandidates(newsletterData), []);
+});
+
 test('validateLinks fails the build path on broken article hrefs', async () => {
   const newsletterData = {
     sections: [
