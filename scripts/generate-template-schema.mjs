@@ -378,10 +378,27 @@ function makeTypedSectionVariant(type, baseSectionPaths, baseItemPaths, typePath
   sectionSchema.properties.items = { type: 'array', items: itemSchema };
 
   // The build pipeline may inject style objects onto sections even if the template
-  // mostly references their inline-string derivatives; treat these as freeform maps.
+  // mostly references their inline-string derivatives. Keep the maps extensible for
+  // template-specific style keys, while reserving the CSS background property name:
+  // newsletter authoring uses backgroundColor for both solid fills and gradients.
+  const containerStylesSchema = {
+    type: ['object', 'null'],
+    properties: {
+      backgroundColor: {
+        description: 'Use for solid colors and CSS gradients such as linear-gradient(...).',
+      },
+    },
+    additionalProperties: true,
+    not: {
+      required: ['background'],
+    },
+  };
+
   for (const styleKey of ['containerStyles', 'contentStyles', 'headingStyles', 'linkStyles']) {
     // Allow null because upstream preprocessors may explicitly set these to null.
-    sectionSchema.properties[styleKey] = { type: ['object', 'null'], additionalProperties: true };
+    sectionSchema.properties[styleKey] = styleKey === 'containerStyles'
+      ? containerStylesSchema
+      : { type: ['object', 'null'], additionalProperties: true };
   }
 
   return sectionSchema;

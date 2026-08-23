@@ -258,8 +258,8 @@
           "items": {
             "type": "object",
             "properties": {
-              "link": {},
               "src": {},
+              "link": {},
               "alt": {},
               "caption": {}
             },
@@ -271,8 +271,8 @@
         "image": {
           "type": "object",
           "properties": {
-            "link": {},
             "src": {},
+            "link": {},
             "alt": {},
             "caption": {}
           },
@@ -411,7 +411,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "sectionHeaderHeadingStylesInline": {},
                 "description": {},
@@ -523,7 +533,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "bodyHtml": {},
                 "contentStyles": {
@@ -610,7 +630,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "rubric": {},
                 "labelStylesInline": {},
@@ -744,7 +774,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "contentStyles": {
                   "type": [
@@ -910,7 +950,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "contentStyles": {
                   "type": [
@@ -984,7 +1034,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "contentStyles": {
                   "type": [
@@ -1034,7 +1094,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "headingStylesInline": {},
                 "title": {},
@@ -1133,7 +1203,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "contentStyles": {
                   "type": [
@@ -1183,7 +1263,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "headingStylesInline": {},
                 "title": {},
@@ -1255,7 +1345,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "headingStylesInline": {},
                 "title": {},
@@ -1339,7 +1439,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "headingStylesInline": {},
                 "title": {},
@@ -1427,7 +1537,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "contentStyles": {
                   "type": [
@@ -1546,7 +1666,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "headingStylesInline": {},
                 "title": {},
@@ -1614,7 +1744,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "sectionHeaderHeadingStylesInline": {},
                 "headingStylesInline": {},
@@ -1719,7 +1859,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "headingStylesInline": {},
                 "title": {},
@@ -1794,7 +1944,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "headingStylesInline": {},
                 "title": {},
@@ -1890,7 +2050,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "headingStylesInline": {},
                 "title": {},
@@ -2024,7 +2194,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "contentStyles": {
                   "type": [
@@ -2074,7 +2254,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "headingStylesInline": {},
                 "title": {},
@@ -2142,7 +2332,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "headingStylesInline": {},
                 "title": {},
@@ -2226,6 +2426,13 @@
                     }
                   }
                 },
+                "_contentStyleOverrides": {
+                  "type": "object",
+                  "properties": {
+                    "color": {}
+                  },
+                  "additionalProperties": false
+                },
                 "linkStylesInline": {},
                 "contentStyles": {
                   "type": [
@@ -2233,13 +2440,6 @@
                     "null"
                   ],
                   "additionalProperties": true
-                },
-                "_contentStyleOverrides": {
-                  "type": "object",
-                  "properties": {
-                    "color": {}
-                  },
-                  "additionalProperties": false
                 },
                 "contentStylesInline": {},
                 "headingStyles": {
@@ -2326,7 +2526,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "contentStyles": {
                   "type": [
@@ -2591,7 +2801,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "contentStyles": {
                   "type": [
@@ -2756,7 +2976,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "contentStyles": {
                   "type": [
@@ -2806,7 +3036,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "headingStylesInline": {},
                 "title": {},
@@ -2890,7 +3130,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "labelStylesInline": {},
                 "headingStylesInline": {},
@@ -2944,7 +3194,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "headingStylesInline": {},
                 "title": {},
@@ -3046,7 +3306,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "headingStylesInline": {},
                 "title": {},
@@ -3130,6 +3400,13 @@
                     }
                   }
                 },
+                "_contentStyleOverrides": {
+                  "type": "object",
+                  "properties": {
+                    "color": {}
+                  },
+                  "additionalProperties": false
+                },
                 "linkStylesInline": {},
                 "contentStyles": {
                   "type": [
@@ -3137,13 +3414,6 @@
                     "null"
                   ],
                   "additionalProperties": true
-                },
-                "_contentStyleOverrides": {
-                  "type": "object",
-                  "properties": {
-                    "color": {}
-                  },
-                  "additionalProperties": false
                 },
                 "contentStylesInline": {},
                 "headingStyles": {
@@ -3187,7 +3457,17 @@
                     "object",
                     "null"
                   ],
-                  "additionalProperties": true
+                  "properties": {
+                    "backgroundColor": {
+                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
+                    }
+                  },
+                  "additionalProperties": true,
+                  "not": {
+                    "required": [
+                      "background"
+                    ]
+                  }
                 },
                 "headingStylesInline": {},
                 "title": {},
