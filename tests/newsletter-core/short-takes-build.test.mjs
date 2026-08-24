@@ -217,9 +217,9 @@ function assertRenderedShortTakes(html, templateName, middleSentinel, endSentine
 
   if (templateName === 'dense-discovery') {
     assert.match(shortTakeCaption.getAttribute('class') || '', /\bmob-card-copy\b/);
-    const calloutCopy = [...document.querySelectorAll('.mob-card-copy')]
+    const calloutCopy = [...document.querySelectorAll('.mob-compact-copy')]
       .find((element) => element.textContent.includes('DENSE MIDDLE SENTINEL'));
-    assert.ok(calloutCopy, 'Dense Discovery callout copy must use the shared mobile card-copy role');
+    assert.ok(calloutCopy, 'Dense Discovery callout copy must use the shared compact-copy role');
     assert.match(calloutCopy.querySelector('p')?.getAttribute('class') || '', /\bmob-text\b/);
     assert.match(calloutCopy.getAttribute('style') || '', /font-size:\s*16px/i);
     assert.match(calloutCopy.getAttribute('style') || '', /line-height:\s*1\.1/i);
