@@ -1,47 +1,1067 @@
 {
   "$schema": "../newsletter.schema.json",
-  "template": "near-future-lab-daily-headlines",
-  "title": "Intro Statement HTML",
-  "preheader": "Verify intro statement rich text",
-  "sectionStylesFile": "templates/near-future-lab-daily-headlines/section-styles.json",
+  "template": "dense-discovery",
+  "title": "Platform Links",
+  "preheader": "Verify platform links render outside rich text link styling",
+  "sectionStylesFile": "templates/dense-discovery/section-styles.json",
   "sections": [
     {
-      "type": "newsletter_masthead",
-      "logo_src": "https://example.com/logo.png",
-      "logo_alt": "Near Future Laboratory",
-      "logo_width": 300,
-      "title_src": "https://example.com/title.png",
-      "title_alt": "Tomorrow News Today",
-      "title_width": 300,
-      "dateline": "June 10, 2026, 6:00 a.m. Pacific time"
-    },
-    {
-      "type": "intro_statement",
-      "label": "From the Editor",
-      "statement": "<p>This issue has <em>emphasis</em>, <strong>weight</strong>, and a <a href=\"https://example.com/intro\" onclick=\"bad()\">tracked link</a>.</p>\n<p><img src=\"https://example.com/nope.png\">Image tags disappear.</p>\n"
+      "type": "sponsor",
+      "title": "Podcast",
+      "linkStyles": {
+        "color": "#111111",
+        "textDecoration": "none",
+        "fontWeight": "normal",
+        "fontFamily": "Share Tech Mono, IBM Plex Mono, monospace, Courier New, Courier",
+        "fontSize": "19px",
+        "lineHeight": "1.2",
+        "textAlign": "left"
+      },
+      "items": [
+        {
+          "title": "Episode 104",
+          "link": "https://example.com/?episode",
+          "description": "<p class=\"mob-text\" style=\"font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important\">Episode description.</p>",
+          "platformLinks": [
+            {
+              "platform": "spotify",
+              "label": "Spotify",
+              "url": "https://example.com/?spotify",
+              "category": "podcast",
+              "intent": "listen",
+              "interests": [
+                "audio"
+              ]
+            },
+            {
+              "platform": "youtube",
+              "label": "YouTube",
+              "url": "https://example.com/?youtube",
+              "category": "podcast",
+              "intent": "watch",
+              "interests": [
+                "video"
+              ]
+            },
+            {
+              "platform": "apple-podcasts",
+              "label": "Apple Podcasts",
+              "url": "https://example.com/?apple",
+              "category": "podcast",
+              "intent": "listen",
+              "interests": [
+                "audio"
+              ]
+            }
+          ],
+          "readMoreText": "Listen and read",
+          "readMoreLink": "https://example.com/?read-more",
+          "platformLinksHtml": "<tr><td style=\"border-collapse:collapse;background:transparent;padding:0 20px 20px 20px;\"><table role=\"presentation\" cellpadding=\"0\" cellspacing=\"0\" style=\"border-collapse:separate;border-spacing:0;margin:0;\"><tr><td style=\"padding:0 6px 6px 0;\"><a href=\"https://example.com/?spotify\" style=\"display:inline-block;border:1px solid #c9c9c9;border-radius:3px;background:#f8f8f8;padding:6px 10px;line-height:14px;white-space:nowrap;font-family:'Share Tech Mono','IBM Plex Mono',monospace;font-size:14px;font-weight:normal;text-decoration:none;color:#111111 !important;-webkit-text-fill-color:#111111;\" data-link-label=\"Spotify\" data-link-category=\"podcast\" data-link-intent=\"listen\" data-link-interest=\"audio\"><img src=\"https://img.icons8.com/ios-glyphs/20/000000/spotify.png\" alt=\"\" width=\"20\" height=\"20\" style=\"display:inline-block;vertical-align:middle;border:0;margin-right:6px;width:20px;height:20px;\"><span style=\"vertical-align:middle;text-decoration:none;color:#111111 !important;-webkit-text-fill-color:#111111;font-size:14px;line-height:14px;\">Spotify</span></a></td><td style=\"padding:0 6px 6px 0;\"><a href=\"https://example.com/?youtube\" style=\"display:inline-block;border:1px solid #c9c9c9;border-radius:3px;background:#f8f8f8;padding:6px 10px;line-height:14px;white-space:nowrap;font-family:'Share Tech Mono','IBM Plex Mono',monospace;font-size:14px;font-weight:normal;text-decoration:none;color:#111111 !important;-webkit-text-fill-color:#111111;\" data-link-label=\"YouTube\" data-link-category=\"podcast\" data-link-intent=\"watch\" data-link-interest=\"video\"><img src=\"https://img.icons8.com/ios-glyphs/20/000000/youtube-play.png\" alt=\"\" width=\"20\" height=\"20\" style=\"display:inline-block;vertical-align:middle;border:0;margin-right:6px;width:20px;height:20px;\"><span style=\"vertical-align:middle;text-decoration:none;color:#111111 !important;-webkit-text-fill-color:#111111;font-size:14px;line-height:14px;\">YouTube</span></a></td><td style=\"padding:0 6px 6px 0;\"><a href=\"https://example.com/?apple\" style=\"display:inline-block;border:1px solid #c9c9c9;border-radius:3px;background:#f8f8f8;padding:6px 10px;line-height:14px;white-space:nowrap;font-family:'Share Tech Mono','IBM Plex Mono',monospace;font-size:14px;font-weight:normal;text-decoration:none;color:#111111 !important;-webkit-text-fill-color:#111111;\" data-link-label=\"Apple Podcasts\" data-link-category=\"podcast\" data-link-intent=\"listen\" data-link-interest=\"audio\"><img src=\"https://img.icons8.com/?size=20&amp;id=ZsAN3pzKcy09&amp;format=png\" alt=\"\" width=\"20\" height=\"20\" style=\"display:inline-block;vertical-align:middle;border:0;margin-right:6px;width:20px;height:20px;\"><span style=\"vertical-align:middle;text-decoration:none;color:#111111 !important;-webkit-text-fill-color:#111111;font-size:14px;line-height:14px;\">Apple Podcasts</span></a></td></tr></table></td></tr>"
+        }
+      ],
+      "contentStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "lineHeight": "1.2",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "_contentStyleOverrides": null,
+      "containerStyles": {
+        "backgroundColor": null,
+        "padding": "15px 20px",
+        "borderRadius": "10px",
+        "backgroundGradient": null,
+        "contentPadding": "0 20px"
+      },
+      "backgroundStyleInline": "",
+      "contentPaddingInline": "",
+      "descriptionStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "lineHeight": "1.2",
+        "color": "#111111",
+        "textAlign": "left"
+      },
+      "spacerBackgroundColor": "#f6e2b3",
+      "headingStyles": {
+        "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+        "fontSize": "19px",
+        "fontWeight": "600",
+        "color": "#111111",
+        "lineHeight": "1.2",
+        "textAlign": "left"
+      },
+      "labelStyles": {},
+      "sectionHeaderHeadingStyles": {},
+      "ctaStyles": {},
+      "contentStylesInline": "font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; color: #111111 !important; text-align: left !important",
+      "headingStylesInline": "font-family: IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial !important; font-size: 19px; line-height: 1.2; font-weight: 600 !important; color: #111111 !important; text-align: left !important",
+      "sectionHeaderHeadingStylesInline": "font-family: 'Ubuntu', sans-serif !important; font-size: 21px; line-height: 23px; font-weight: 600 !important; color: #000000 !important",
+      "linkStylesInline": "text-decoration: none !important; font-weight: normal !important; color: #111111 !important; font-family: Share Tech Mono, IBM Plex Mono, monospace, Courier New, Courier !important; font-size: 19px; line-height: 1.2; text-align: left !important",
+      "labelStylesInline": "font-family: Geist, ui-sans-serif, sans-serif !important; font-size: 12px; line-height: 14px; font-weight: 300 !important; letter-spacing: 0.12em !important; text-transform: uppercase !important; color: #778095 !important",
+      "articleCtaStylesInline": ""
     }
   ],
   "footer": {
     "footerCta": {
+      "enabled": true,
       "variant": "default",
-      "eyebrow": "Footer",
-      "text": "Footer copy.",
+      "eyebrow": "Commissions, Collaborations, Integrated Roles",
+      "text": "I help organizations use stories and artifacts to make sense of their futures and develop strategies for what comes next.",
       "primaryAction": {
-        "label": "Contact",
-        "url": {
-          "href": "/contact",
-          "label": "intro statement test | contact",
-          "category": "operations"
-        }
+        "label": "Let’s Talk",
+        "url": "https://nearfuturelaboratory.com/contact"
       },
       "secondaryAction": {
-        "label": "Services",
-        "url": {
-          "href": "/services",
-          "label": "intro statement test | services",
-          "category": "operations"
+        "label": "See How I Work",
+        "url": "https://nearfuturelaboratory.com/services"
+      }
+    }
+  },
+  "darkModePolicy": {
+    "flatten": true,
+    "mode": "flatten",
+    "colors": {
+      "pageBackground": "#111318",
+      "surface": "#1b1f27",
+      "text": "#f2f4f8",
+      "mutedText": "#b8c0cc",
+      "link": "#8ecbff",
+      "border": "#343b48"
+    }
+  },
+  "themeColors": {
+    "header": "#ffffff",
+    "sponsor": "#f8eccf",
+    "apps-sites": "#f0ffff",
+    "quote": "#d1eaf4",
+    "callout": "#d1eaf4",
+    "indie-mag": "#efe2f3",
+    "books-accessories": "#ffffff",
+    "food-for-thought": "#f2f2f2",
+    "introAside": "#f4f1ea",
+    "aesthetically-pleasing": "#ffffff",
+    "classifieds": "#def1ef",
+    "gif": "#ffffff",
+    "linkAccent": "#EE3BBB"
+  },
+  "theme": {
+    "name": "Current Dense Discovery",
+    "description": "The existing color scheme currently in use",
+    "colors": {
+      "header": "#ffffff",
+      "sponsor": "#f8eccf",
+      "apps-sites": "#f0ffff",
+      "quote": "#d1eaf4",
+      "callout": "#d1eaf4",
+      "indie-mag": "#efe2f3",
+      "books-accessories": "#ffffff",
+      "food-for-thought": "#f2f2f2",
+      "introAside": "#f4f1ea",
+      "aesthetically-pleasing": "#ffffff",
+      "classifieds": "#def1ef",
+      "gif": "#ffffff"
+    },
+    "accent": "#4a7c59",
+    "linkAccent": "#EE3BBB"
+  },
+  "sectionStyles": {
+    "$schema": "../section-styles.schema.json",
+    "description": "Configuration for section-specific styling in email templates. Adjacency mail sections are overridden at build time from lib/adjacency-mail/adjacency-mail-theme-tokens.mjs.",
+    "version": "1.0.0",
+    "sectionStyles": {
+      "ad-block": {
+        "name": "Ad Block",
+        "description": "Single email-safe ad card resolved from canonical Adjacency mail theme tokens",
+        "containerStyles": {
+          "backgroundColor": "#f5f4f0",
+          "padding": "16px",
+          "borderRadius": "0px",
+          "borderColor": "#c9cfdb",
+          "borderWidth": "1px",
+          "borderStyle": "solid",
+          "sectionHeaderBackgroundColor": "#f5f4f0",
+          "sectionHeaderPadding": "15px 20px",
+          "sectionHeaderBorderRadius": "8px",
+          "sectionHeaderGap": "4px",
+          "sectionDescriptionPadding": "16px 16px 12px 16px",
+          "firstAdItemGap": "4px",
+          "adDividerGap": "20px",
+          "adDividerBackgroundColor": "#FFFFFF",
+          "labelPadding": "12px 16px 8px 16px",
+          "imagePadding": "0 12px",
+          "titlePadding": "12px 16px 0 16px",
+          "copyPadding": "6px 16px 14px 16px",
+          "ctaPadding": "0 12px 14px 12px"
+        },
+        "labelStyles": {
+          "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+          "fontSize": "11px",
+          "lineHeight": "14px",
+          "fontWeight": "400",
+          "letterSpacing": "0.12em",
+          "textTransform": "uppercase",
+          "color": "#778095"
+        },
+        "contentStyles": {
+          "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+          "fontSize": "13px",
+          "lineHeight": "1.42",
+          "fontWeight": "400",
+          "color": "#344055",
+          "textAlign": "left"
+        },
+        "descriptionStyles": {
+          "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+          "fontSize": "17px",
+          "lineHeight": "1.55",
+          "fontWeight": "400",
+          "color": "#344055",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+          "fontSize": "11px",
+          "lineHeight": "14px",
+          "fontWeight": "400",
+          "textTransform": "uppercase",
+          "letterSpacing": "0.12em",
+          "color": "#44506a",
+          "textDecoration": "underline",
+          "textAlign": "right"
+        },
+        "headingStyles": {
+          "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+          "fontSize": "16px",
+          "lineHeight": "1.08",
+          "fontWeight": "500",
+          "color": "#1f2430"
+        },
+        "descriptionMobileClass": "mob-ad-copy",
+        "mobileDescriptionStyles": {
+          "fontSize": "12px",
+          "lineHeight": "1.3",
+          "fontWeight": "400",
+          "fontFamily": "Share Tech Mono, Courier New, Courier, monospace"
+        }
+      },
+      "adjacency-feature": {
+        "name": "Adjacency Feature",
+        "description": "Long-form editorial feature adapted for email-safe extended reading. Canonical typography is overridden from lib/adjacency-mail/adjacency-mail-theme-tokens.mjs at build time.",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "20px",
+          "borderRadius": "0px",
+          "borderColor": "#d7d1c6",
+          "borderWidth": "1px",
+          "borderStyle": "solid",
+          "headerPadding": "18px 18px 10px 18px",
+          "heroPadding": "0 18px 0 18px",
+          "heroMetaPadding": "8px 18px 0 18px",
+          "bodyPadding": "12px 18px 0 18px",
+          "ctaPadding": "4px 18px 18px 18px"
+        },
+        "contentStyles": {
+          "fontFamily": "Georgia, Times New Roman, serif",
+          "fontSize": "18px",
+          "lineHeight": "1.72",
+          "fontWeight": "400",
+          "color": "#1d1d1d",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "fontFamily": "IBM Plex Sans, Roboto, Segoe UI, Helvetica, Arial, sans-serif",
+          "fontSize": "14px",
+          "textDecoration": "underline",
+          "fontWeight": "600",
+          "color": "#44506a"
+        },
+        "headingStyles": {
+          "fontFamily": "Georgia, Times New Roman, serif",
+          "fontSize": "34px",
+          "lineHeight": "1.1",
+          "fontWeight": "700",
+          "color": "#111111"
+        },
+        "labelStyles": {
+          "fontFamily": "IBM Plex Sans, Roboto, Segoe UI, Helvetica, Arial, sans-serif",
+          "fontSize": "12px",
+          "lineHeight": "14px",
+          "fontWeight": "700",
+          "letterSpacing": "0.12em",
+          "textTransform": "uppercase",
+          "color": "#6e778a"
+        }
+      },
+      "header": {
+        "name": "Header Section",
+        "description": "Header quote, author, and featured artist text styles",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "20px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "18px",
+          "lineHeight": "23px",
+          "fontWeight": "400",
+          "color": "#000000",
+          "authorFontSize": "16px",
+          "authorFontWeight": "600",
+          "artistFontSize": "16px",
+          "quoteImageGap": "24px",
+          "anchorColor": "#000000"
+        }
+      },
+      "intro-content": {
+        "name": "Intro Content",
+        "description": "Intro paragraph block content styles",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "0",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Roboto, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.25",
+          "fontWeight": "300",
+          "color": "#000000",
+          "textAlign": "left"
+        }
+      },
+      "intro-aside": {
+        "name": "Intro Aside",
+        "description": "Teaser/lede block before the intro content",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "12px 14px",
+          "borderRadius": "6px",
+          "borderLeftColor": "#d7d1c6",
+          "borderLeftWidth": "3px",
+          "borderLeftStyle": "solid"
+        },
+        "contentStyles": {
+          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.2",
+          "fontStyle": "normal",
+          "color": "#3f3f3f",
+          "textAlign": "left"
+        }
+      },
+      "feature": {
+        "name": "Feature Section",
+        "description": "Featured content sections with distinctive monospace font. The legacy sponsor type remains accepted for backward compatibility.",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "10px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.2",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "19px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "sponsor": {
+        "name": "Feature Section",
+        "description": "Featured content sections with distinctive monospace font. The legacy sponsor type remains accepted for backward compatibility.",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "10px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.2",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "19px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "short-take": {
+        "name": "Short Take",
+        "description": "Registry-backed editorial card with an inset container, image, headline, caption, and optional edge metadata.",
+        "containerStyles": {
+          "backgroundColor": "#FFFFFF",
+          "borderColor": "#b9b9b2",
+          "borderWidth": "2px",
+          "borderStyle": "solid",
+          "outerPadding": "8px 0 22px",
+          "imagePadding": "0",
+          "copyPadding": "5px 16px 24px",
+          "metaPadding": "6px 14px"
+        },
+        "labelStyles": {
+          "fontFamily": "Courier New, Courier, monospace",
+          "fontSize": "11px",
+          "lineHeight": "14px",
+          "fontWeight": "400",
+          "letterSpacing": "0.08em",
+          "textTransform": "uppercase",
+          "color": "#363636"
+        },
+        "headingStyles": {
+          "fontFamily": "Georgia, Times New Roman, serif",
+          "fontSize": "24px",
+          "lineHeight": "26px",
+          "fontWeight": "700",
+          "color": "#141414"
+        },
+        "contentStyles": {
+          "fontFamily": "Arial, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "18px",
+          "fontWeight": "400",
+          "color": "#525252"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "none"
+        }
+      },
+      "calendar_event": {
+        "name": "Calendar Event",
+        "description": "Generated add-to-calendar card. The build writes an .ics file and injects calendarLink.",
+        "containerStyles": {
+          "backgroundColor": "#f7fbff",
+          "textColor": "#111111",
+          "borderColor": "#c9cfdb",
+          "borderWidth": "1px",
+          "borderStyle": "solid",
+          "dividerColor": "#d7dbe4",
+          "headerPadding": "18px 20px 12px 20px",
+          "bodyPadding": "18px 20px 20px 20px",
+          "buttonBackgroundColor": "#111111",
+          "buttonTextColor": "#ffffff",
+          "secondaryLinkColor": "#111111"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "16px",
+          "lineHeight": "1.5",
+          "fontWeight": "400",
+          "color": "#111111"
+        },
+        "labelStyles": {
+          "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+          "fontSize": "11px",
+          "lineHeight": "14px",
+          "fontWeight": "700",
+          "letterSpacing": "0.12em",
+          "textTransform": "uppercase",
+          "color": "#566074"
+        },
+        "headingStyles": {
+          "fontFamily": "Ubuntu, Arial, sans-serif, Segoe UI, Helvetica",
+          "fontSize": "28px",
+          "lineHeight": "1.1",
+          "fontWeight": "700",
+          "color": "#111111"
+        },
+        "linkStyles": {
+          "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+          "fontSize": "12px",
+          "lineHeight": "15px",
+          "fontWeight": "700",
+          "textDecoration": "underline",
+          "color": "#111111"
+        }
+      },
+      "dispatch": {
+        "name": "Dispatch Section",
+        "description": "Dispatch content sections with distinctive monospace font",
+        "containerStyles": {
+          "backgroundColor": "#e6e8e5",
+          "padding": "15px 20px",
+          "borderRadius": "8px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.4",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "19px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "signals-adjacent-now": {
+        "name": "Signals from an Adjacent Now",
+        "description": "Signal entries grounded in source summaries and strategy prompts",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "8px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.4",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "19px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "adjacency-help-wanted": {
+        "name": "Adjacency Help Wanted",
+        "description": "Popup-matched Tomorrow’s Jobs Today / Help Wanted cards using the popup section’s colors and typography.",
+        "containerStyles": {
+          "backgroundColor": "#dbffdd",
+          "borderColor": "rgba(24,24,24,0.16)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        "contentStyles": {
+          "fontFamily": "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+          "fontSize": "14px",
+          "lineHeight": "1.38",
+          "color": "rgba(23,23,23,0.72)"
+        }
+      },
+      "adjacency-todays-mix": {
+        "name": "Adjacency Today’s Mix",
+        "description": "Popup-matched Today’s Mix cards using the popup section’s colors and typography.",
+        "containerStyles": {
+          "backgroundColor": "#ffffff",
+          "borderColor": "rgba(24,24,24,0.14)",
+          "borderWidth": "1px",
+          "borderStyle": "solid"
+        },
+        "contentStyles": {
+          "fontFamily": "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
+          "fontSize": "16px",
+          "lineHeight": "1.42",
+          "color": "rgba(23,23,23,0.72)"
+        }
+      },
+      "adjacency-editorial-remarks": {
+        "name": "Adjacency Editorial Remarks",
+        "description": "The explicit outside-the-world reflection boundary after the in-world article mail sections.",
+        "containerStyles": {
+          "backgroundColor": "#ffffff",
+          "borderColor": "transparent",
+          "borderWidth": "0px",
+          "borderStyle": "solid",
+          "borderRadius": "0px",
+          "bodyPadding": "12px 18px 0 18px",
+          "ctaPadding": "4px 18px 18px 18px"
+        },
+        "contentStyles": {
+          "fontFamily": "Georgia, Times New Roman, serif",
+          "fontSize": "18px",
+          "lineHeight": "1.72",
+          "fontWeight": "400",
+          "color": "#1d1d1d",
+          "textAlign": "left"
+        }
+      },
+      "single-column": {
+        "name": "Single Column",
+        "description": "Single column publication content with monospace styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "10px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.4",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "19px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "indie-mag-single-column": {
+        "name": "Single Column",
+        "description": "Single column publication content with monospace styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "10px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.4",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "19px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "indie-mag": {
+        "name": "Indie Magazine Multi-Column",
+        "description": "Multi-column indie magazine content with clean serif font",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "sectionHeaderPadding": "15px 20px 6px 20px",
+          "sectionDescriptionPadding": "0 20px 0 20px",
+          "firstItemPadding": "0 20px 15px 20px",
+          "itemPadding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.4",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "19px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "apps-sites": {
+        "spacerBackgroundAdjust": {
+          "lightness": -8,
+          "saturation": 40
+        },
+        "name": "Apps & Sites",
+        "descriptionStyles": {
+          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "17px",
+          "lineHeight": "1.2",
+          "color": "#000000",
+          "textAlign": "left"
+        },
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.4",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "apps-sites-single-column": {
+        "spacerBackgroundAdjust": {
+          "lightness": -8,
+          "saturation": 40
+        },
+        "name": "Apps & Sites",
+        "descriptionStyles": {
+          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "17px",
+          "lineHeight": "1.2",
+          "color": "#000000",
+          "textAlign": "left"
+        },
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.4",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "books-accessories": {
+        "name": "Books & Accessories",
+        "description": "Product recommendations with clean sans-serif styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.4",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "food-for-thought": {
+        "name": "Food for Thought",
+        "description": "Basically Discord Stuff",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "23px",
+          "color": "#000000",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500",
+          "fontSize": "19px"
+        },
+        "headingStyles": {
+          "fontFamily": "Workbench, IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "callout": {
+        "name": "Callout",
+        "description": "Callout highlight block",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Share Tech Mono, sans-serif, Courier New, Courier, monospace",
+          "fontSize": "19px",
+          "lineHeight": "25px",
+          "color": "#444444",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "#006afa",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "quote": {
+        "name": "Quote",
+        "description": "Quote spotlight section",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.3",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "classifieds": {
+        "name": "Classifieds",
+        "description": "Classified ads with compact monospace styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "8px 8px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Share Tech Mono, monospace, Courier New, Courier",
+          "fontSize": "16px",
+          "lineHeight": "1.1",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "16px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "animated-image": {
+        "name": "Animated Image",
+        "description": "Animated image spotlight section",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 8px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.2",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "500"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "aesthetically-pleasing": {
+        "name": "Aesthetically Pleasing",
+        "description": "Cool stuff around the web with modern sans-serif styling",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "12px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, sans-serif, Roboto, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.3",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "inline_cta": {
+        "name": "Inline CTA",
+        "description": "Edition-aware inline CTA bar for subscription or editorial notes before the footer.",
+        "containerStyles": {
+          "backgroundColor": "#f5f4f0",
+          "padding": "18px 20px",
+          "border": "1px solid #000000",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+          "fontSize": "16px",
+          "lineHeight": "22px",
+          "color": "#333333"
+        },
+        "linkStyles": {},
+        "headingStyles": {}
+      },
+      "default": {
+        "name": "Default Content",
+        "description": "Default styling for unspecified section types",
+        "containerStyles": {
+          "backgroundColor": null,
+          "padding": "15px 20px",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "Ubuntu, sans-serif, Segoe UI, Helvetica, Arial",
+          "fontSize": "19px",
+          "lineHeight": "1.2",
+          "color": "#111111",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "color": "inherit",
+          "textDecoration": "underline",
+          "fontWeight": "normal"
+        },
+        "headingStyles": {
+          "fontFamily": "inherit",
+          "fontSize": "21px",
+          "fontWeight": "600",
+          "color": "#000000"
+        }
+      },
+      "adjacency-job-posting": {
+        "name": "Adjacency Job Posting",
+        "description": "Structured branded job-post email section resolved from Adjacency jobs mail theme tokens",
+        "containerStyles": {
+          "backgroundColor": "#ffffff",
+          "borderColor": "#d9d4c8",
+          "borderWidth": "1px",
+          "borderStyle": "solid",
+          "borderRadius": "0px"
+        },
+        "contentStyles": {
+          "fontFamily": "IBM Plex Sans, Roboto, Segoe UI, Helvetica, Arial, sans-serif",
+          "fontSize": "16px",
+          "lineHeight": "1.6",
+          "fontWeight": "400",
+          "color": "#14181f",
+          "textAlign": "left"
+        },
+        "linkStyles": {
+          "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+          "fontSize": "11px",
+          "lineHeight": "1.4",
+          "color": "#4d5a72",
+          "textDecoration": "underline",
+          "textTransform": "uppercase",
+          "letterSpacing": "0.06em"
+        },
+        "headingStyles": {
+          "fontFamily": "Georgia, Times New Roman, serif",
+          "fontSize": "34px",
+          "lineHeight": "1.08",
+          "fontWeight": "700",
+          "color": "#111111"
+        },
+        "labelStyles": {
+          "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+          "fontSize": "12px",
+          "lineHeight": "1.4",
+          "fontWeight": "400",
+          "letterSpacing": "0.12em",
+          "textTransform": "uppercase",
+          "color": "#5a6476"
+        }
+      }
+    },
+    "globalOverrides": {
+      "description": "Global style overrides that apply to all sections",
+      "mobileBreakpoint": "599px",
+      "mobileAdjustments": {
+        "contentStyles": {
+          "fontSize": "18px",
+          "lineHeight": "1.4"
+        },
+        "captionStyles": {
+          "fontSize": "13px",
+          "lineHeight": "1.2"
         }
       }
     }
-  }
+  },
+  "mobileTextFontSize": "18px",
+  "mobileTextLineHeight": "1.4",
+  "mobileCaptionFontSize": "13px",
+  "mobileCaptionLineHeight": "1.2",
+  "mobileAdCopyClass": "mob-ad-copy",
+  "mobileAdCopyFontSize": "12px",
+  "mobileAdCopyLineHeight": "1.3",
+  "mobileAdCopyFontWeight": "400",
+  "mobileAdCopyFontFamily": "Share Tech Mono, Courier New, Courier, monospace"
 }

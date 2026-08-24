@@ -201,11 +201,11 @@
         "color": "#141414"
       },
       "contentStyles": {
-        "fontFamily": "Arial, sans-serif",
-        "fontSize": "14px",
-        "lineHeight": "18px",
-        "fontWeight": "400",
-        "color": "#525252"
+        "fontFamily": "Share Tech Mono, monospace",
+        "fontSize": "16px",
+        "lineHeight": "1.1",
+        "color": "#111111",
+        "textAlign": "left"
       },
       "linkStyles": {
         "color": "inherit",
@@ -577,14 +577,14 @@
       "description": "Callout highlight block",
       "containerStyles": {
         "backgroundColor": null,
-        "padding": "15px 20px",
+        "padding": "15px 10px",
         "borderRadius": "0px"
       },
       "contentStyles": {
-        "fontFamily": "'Share Tech Mono', sans-serif",
-        "fontSize": "19px",
-        "lineHeight": "25px",
-        "color": "#444444",
+        "fontFamily": "Share Tech Mono, monospace",
+        "fontSize": "16px",
+        "lineHeight": "1.1",
+        "color": "#111111",
         "textAlign": "left"
       },
       "linkStyles": {
