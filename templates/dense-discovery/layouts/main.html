@@ -168,11 +168,9 @@
         padding: 0 !important;
       }
 
-      /* MOBILE FONT SIZE SAFETY CEILING:
-         Keep dense-discovery mobile typography within a readable range while
-         allowing compact values for readers who find oversized email copy
-         difficult to scan. Smaller values are valid; larger values fail the
-         verification in config/mobile-typography-locks.jsonl. */
+      /* MOBILE FONT SIZE CONTRACT:
+         Dense Discovery body and intro copy are exactly 19px on mobile.
+         The rendered CSS is verified against config/mobile-typography-locks.jsonl. */
       .mob-text,
       .mob-text a,
       .mob-text p,
@@ -185,7 +183,7 @@
       .intro-aside a,
       .intro-aside p,
       .intro-aside li {
-        font-size: 18px !important;
+        font-size: 19px !important;
         line-height: 1.4 !important;
       }
 
