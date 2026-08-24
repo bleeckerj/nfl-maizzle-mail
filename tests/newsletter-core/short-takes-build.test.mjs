@@ -53,7 +53,7 @@ function denseFixture() {
     intro: { title: 'Short Takes', content: '<p>Dense fixture intro.</p>' },
     sections: [
       shortTake('short-take-unlinked'),
-      { type: 'callout', items: [{ calloutText: 'DENSE MIDDLE SENTINEL' }] },
+      { type: 'callout', items: [{ calloutText: '<p>DENSE MIDDLE SENTINEL</p>' }] },
       shortTake('short-take-linked'),
       shortTake('short-take-unlinked'),
       { type: 'quote', items: [{ quote: 'DENSE END SENTINEL' }] },
@@ -214,6 +214,16 @@ function assertRenderedShortTakes(html, templateName, middleSentinel, endSentine
   assert.match(shortTakeCaption.getAttribute('style') || '', new RegExp(`font-size:\\s*${expectedType.captionSize}`, 'i'));
   assert.match(shortTakeCaption.getAttribute('style') || '', new RegExp(`line-height:\\s*${expectedType.captionLineHeight}`, 'i'));
   assert.match(shortTakeCaption.getAttribute('style') || '', /font-weight:\s*400/i);
+
+  if (templateName === 'dense-discovery') {
+    assert.match(shortTakeCaption.getAttribute('class') || '', /\bmob-card-copy\b/);
+    const calloutCopy = [...document.querySelectorAll('.mob-card-copy')]
+      .find((element) => element.textContent.includes('DENSE MIDDLE SENTINEL'));
+    assert.ok(calloutCopy, 'Dense Discovery callout copy must use the shared mobile card-copy role');
+    assert.match(calloutCopy.querySelector('p')?.getAttribute('class') || '', /\bmob-text\b/);
+    assert.match(calloutCopy.getAttribute('style') || '', /font-size:\s*16px/i);
+    assert.match(calloutCopy.getAttribute('style') || '', /line-height:\s*1\.1/i);
+  }
 
   const linkedCard = cards[1];
   const anchors = [...linkedCard.querySelectorAll('a[href="https://example.com/short-take"]')];

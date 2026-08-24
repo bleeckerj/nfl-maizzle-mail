@@ -283,7 +283,7 @@ test('dense-discovery mobile typography ledger is hash-chained and verifies sour
     ],
   });
 
-  assert.equal(entry.sequence, 12);
+  assert.equal(entry.sequence, 13);
   assert.match(entry.hash, /^[a-f0-9]{64}$/);
   assert.match(entry.previousHash, /^[a-f0-9]{64}$/);
   assert.equal(entry.fontSizePolicy, 'exact');
@@ -296,6 +296,7 @@ test('dense-discovery mobile typography ledger is hash-chained and verifies sour
   assert.equal(verification.roles.find((role) => role.id === 'classified-copy').declarations['font-size'], '16px !important');
   assert.equal(verification.roles.find((role) => role.id === 'classified-company-meta').declarations['font-size'], '16px !important');
   assert.equal(verification.roles.find((role) => role.id === 'classified-section-lede').declarations['font-size'], '16px !important');
+  assert.equal(verification.roles.find((role) => role.id === 'card-copy').declarations['font-size'], '14px !important');
   assert.equal(verification.roles.find((role) => role.id === 'intro-headline').declarations['font-size'], '22px !important');
   assert.equal(verification.baseRoles.find((role) => role.id === 'intro-content').declarations['font-size'], '19px');
   assert.equal(verification.ignoredAuthoredOverrides[0].authoredValue, '16px');
