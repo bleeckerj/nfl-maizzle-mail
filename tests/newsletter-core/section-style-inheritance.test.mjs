@@ -51,6 +51,12 @@ function extractFoodForThoughtItemRadii(html) {
   )].map(([, leftRadius, rightRadius]) => `${leftRadius}/${rightRadius}`);
 }
 
+function extractSingleColumnItemRadii(html) {
+  return [...html.matchAll(
+    /<td[^>]*class="padt20 padr20 padl20"[^>]*style="[^"]*border-radius:\s*0 0 ([^ ]+) ([^;"]+)[;"]/g,
+  )].map(([, leftRadius, rightRadius]) => `${leftRadius}/${rightRadius}`);
+}
+
 test('section headings and links inherit contentStyles when no explicit heading or link styles are set', () => {
   const { html, cleanup } = buildNewsletter(
     [
@@ -460,6 +466,47 @@ test('single-column captions inherit explicit content color and preserve the leg
       html,
       /<p class="[^"]*mob-caption[^"]*"[^>]*color:\s*#495263[^>]*>Legacy gray caption<\/p>/,
     );
+  } finally {
+    cleanup();
+  }
+});
+
+test('single-column squares intermediate items and rounds only the final item', () => {
+  const { html, cleanup } = buildNewsletter(
+    [
+      '---',
+      'template: dense-discovery',
+      'title: Single Column Stack Radius',
+      'preheader: Verify single-column stacked item radius',
+      'sectionStylesFile: templates/dense-discovery/section-styles.json',
+      'sections:',
+      '  - type: single-column',
+      '    title: From the Archives',
+      '    containerStyles:',
+      '      borderRadius: 18px',
+      '    items:',
+      '      - title: First Stack Item',
+      '        description: "<p>First stack content.</p>"',
+      '      - title: Second Stack Item',
+      '        description: "<p>Second stack content.</p>"',
+      '      - title: Final Stack Item',
+      '        description: "<p>Final stack content.</p>"',
+      '---',
+      '',
+    ],
+    'single-column-stack-radius',
+  );
+
+  try {
+    assert.match(
+      html,
+      /<td[^>]*class="headline"[^>]*style="[^"]*border-radius:\s*18px 18px 0 0[^"]*"[^>]*>/,
+    );
+    assert.deepEqual(extractSingleColumnItemRadii(html), [
+      '0px/0px',
+      '0px/0px',
+      '18px/18px',
+    ]);
   } finally {
     cleanup();
   }
