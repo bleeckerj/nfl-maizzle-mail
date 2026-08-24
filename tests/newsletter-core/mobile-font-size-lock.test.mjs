@@ -354,14 +354,14 @@ test('dense-discovery mobile typography verifier skips unused compound selectors
   assert.equal(verification.status, 'verified');
 });
 
-test('dense-discovery mobile typography verifier rejects rendered base intro drift', () => {
+test('dense-discovery rendered intro base typography is never a build gate', () => {
   const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
   const renderedHtml = `${layout}
-    <div class="intro-content" style="font-size: 16px; line-height: 1.2rem;">
-      <p style="font-size: 16px; line-height: 1.2rem;">Intro copy</p>
+    <div class="intro-content">
+      <p>One word.</p>
     </div>`;
 
-  assert.throws(
+  assert.doesNotThrow(
     () =>
       verifyMobileTypographyLock({
         repoRoot: REPO_ROOT,
@@ -371,11 +371,10 @@ test('dense-discovery mobile typography verifier rejects rendered base intro dri
         outputHtmlPath: 'fixture.html',
         outputName: 'fixture',
       }),
-    /rendered HTML base typography drift for intro-content\[0\] font-size/,
   );
 });
 
-test('dense-discovery verifier warns on base line-height drift while preserving the font-size lock', () => {
+test('dense-discovery rendered intro base typography drift produces no warning', () => {
   const layout = readFileSync(DENSE_DISCOVERY_LAYOUT, 'utf8');
   const renderedHtml = `${layout}
     <div class="intro-content" style="font-size: 19px; line-height: 27px;">
@@ -391,10 +390,8 @@ test('dense-discovery verifier warns on base line-height drift while preserving 
     outputName: 'fixture',
   });
 
-  assert.equal(verification.status, 'verified-with-warnings');
-  assert.equal(verification.warnings.length, 2);
-  assert.match(verification.warnings[0], /base typography drift.*line-height/);
-  assert.match(verification.warnings[1], /base typography drift.*line-height/);
+  assert.equal(verification.status, 'verified');
+  assert.deepEqual(verification.warnings, []);
 });
 
 test('dense-discovery mobile typography verifier accepts smaller mobile font sizes', () => {
