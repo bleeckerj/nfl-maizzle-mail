@@ -5,6 +5,10 @@
   Slots:
   - section_label (label) — Section heading text (e.g. 'Top News', 'World')
   - articles (array) — Article rows with tracked link, image, headline, optional kicker/byline, and lede
+  - articleContainerStyles (object) — Optional surface styles for every article card; an article may override it
+  - articleContentStyles (object) — Optional typography and color for article copy; an article may override it
+  - articleHeadingStyles (object) — Optional headline typography and color; an article may override it
+  - articleLinkStyles (object) — Optional article link typography, color, and decoration; an article may override it
   - show_bottom_rule (boolean) — Whether to render the bottom divider before a "See more" link
   - more_link (object) — Optional section-level follow-up link with tracked link and visible label
   - articles_html (rich_text) — Legacy fallback for decompiler output that has not been structured

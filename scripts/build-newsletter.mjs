@@ -542,6 +542,17 @@ function pruneBuildInjectedFields(newsletterData) {
       delete section.linkStylesInline;
       delete section.labelStylesInline;
       delete section.articleCtaStylesInline;
+      if (Array.isArray(section.articles)) {
+        section.articles.forEach((article) => {
+          if (!article || typeof article !== 'object') return;
+          delete article.articleContainerStylesInline;
+          delete article.articleContentStylesInline;
+          delete article.articleHeadingStylesInline;
+          delete article.articleLinkStylesInline;
+          delete article.articleKickerStylesInline;
+          delete article.articleLedeStylesInline;
+        });
+      }
     });
   }
 }
@@ -1950,6 +1961,87 @@ async function buildNewsletter() {
             undefined,
             { withoutImportant: mobileLockTypographyProperties },
           );
+          if (Array.isArray(section.articles)) {
+            const sectionArticleContainerStyles = section.articleContainerStyles && typeof section.articleContainerStyles === 'object'
+              ? section.articleContainerStyles
+              : {};
+            const templateArticleContainerStyles = safeUsedConfig.articleContainerStyles && typeof safeUsedConfig.articleContainerStyles === 'object'
+              ? safeUsedConfig.articleContainerStyles
+              : {};
+            const sectionArticleContentStyles = section.articleContentStyles && typeof section.articleContentStyles === 'object'
+              ? section.articleContentStyles
+              : {};
+            const templateArticleContentStyles = safeUsedConfig.articleContentStyles && typeof safeUsedConfig.articleContentStyles === 'object'
+              ? safeUsedConfig.articleContentStyles
+              : {};
+            const sectionArticleHeadingStyles = section.articleHeadingStyles && typeof section.articleHeadingStyles === 'object'
+              ? section.articleHeadingStyles
+              : {};
+            const templateArticleHeadingStyles = safeUsedConfig.articleHeadingStyles && typeof safeUsedConfig.articleHeadingStyles === 'object'
+              ? safeUsedConfig.articleHeadingStyles
+              : {};
+            const sectionArticleLinkStyles = section.articleLinkStyles && typeof section.articleLinkStyles === 'object'
+              ? section.articleLinkStyles
+              : {};
+            const templateArticleLinkStyles = safeUsedConfig.articleLinkStyles && typeof safeUsedConfig.articleLinkStyles === 'object'
+              ? safeUsedConfig.articleLinkStyles
+              : {};
+            section.articles.forEach((article) => {
+              if (!article || typeof article !== 'object') return;
+              const articleContainerStyles = article.articleContainerStyles && typeof article.articleContainerStyles === 'object'
+                ? article.articleContainerStyles
+                : {};
+              const articleContentStyles = article.articleContentStyles && typeof article.articleContentStyles === 'object'
+                ? article.articleContentStyles
+                : {};
+              const articleHeadingStyles = article.articleHeadingStyles && typeof article.articleHeadingStyles === 'object'
+                ? article.articleHeadingStyles
+                : {};
+              const articleLinkStyles = article.articleLinkStyles && typeof article.articleLinkStyles === 'object'
+                ? article.articleLinkStyles
+                : {};
+              const contentStyles = {
+                ...templateArticleContentStyles,
+                ...sectionArticleContentStyles,
+                ...articleContentStyles,
+              };
+              const headingStyles = {
+                ...templateArticleContentStyles,
+                ...sectionArticleContentStyles,
+                ...templateArticleHeadingStyles,
+                ...sectionArticleHeadingStyles,
+                ...articleHeadingStyles,
+              };
+              const kickerStyles = {
+                ...templateArticleContentStyles,
+                ...sectionArticleContentStyles,
+                ...articleContentStyles,
+              };
+              const linkStyles = {
+                ...templateArticleLinkStyles,
+                ...sectionArticleLinkStyles,
+                ...articleLinkStyles,
+              };
+              article.articleContainerStylesInline = toCssString(
+                { ...templateArticleContainerStyles, ...sectionArticleContainerStyles, ...articleContainerStyles },
+                undefined,
+                { withoutImportant: mobileLockTypographyProperties },
+              );
+              article.articleContentStylesInline = toCssString(contentStyles, undefined, {
+                withoutImportant: mobileLockTypographyProperties,
+              });
+              article.articleHeadingStylesInline = toCssString(headingStyles, undefined, {
+                withoutImportant: mobileLockTypographyProperties,
+              });
+              article.articleLinkStylesInline = toCssString(linkStyles, undefined, {
+                withoutImportant: mobileLockTypographyProperties,
+              });
+              article.articleKickerStylesInline = toCssString(kickerStyles, undefined, {
+                withoutImportant: mobileLockTypographyProperties,
+              });
+              article.articleLedeStylesInline = article.articleContentStylesInline;
+            });
+          }
         const usingFallback = !sectionConfig;
         
         let sectionProcessedItems = 0;

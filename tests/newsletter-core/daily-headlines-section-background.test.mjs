@@ -113,3 +113,72 @@ test('Daily Headlines schema requires a solid fallback for gradients', () => {
   assert.equal(valid, false);
   assert.ok(validate.errors?.some(error => error.keyword === 'required' && error.params.missingProperty === 'backgroundColor'));
 });
+
+test('Daily Headlines article groups support distinct card surfaces and typography', () => {
+  const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'daily-headlines-article-styles-'));
+  const buildRoot = path.join(tempRoot, 'mail');
+  const issuePath = path.join(tempRoot, 'issue.md');
+  const outputDir = path.join(tempRoot, 'output');
+
+  mkdirSync(buildRoot);
+  cpSync(path.join(REPO_ROOT, 'data'), path.join(buildRoot, 'data'), { recursive: true });
+  cpSync(path.join(REPO_ROOT, 'lib'), path.join(buildRoot, 'lib'), { recursive: true });
+  cpSync(path.join(REPO_ROOT, 'scripts'), path.join(buildRoot, 'scripts'), { recursive: true });
+  cpSync(path.join(REPO_ROOT, 'templates'), path.join(buildRoot, 'templates'), { recursive: true });
+  cpSync(path.join(REPO_ROOT, 'config.cjs'), path.join(buildRoot, 'config.cjs'));
+  cpSync(path.join(REPO_ROOT, 'config.production.cjs'), path.join(buildRoot, 'config.production.cjs'));
+  symlinkSync(path.join(REPO_ROOT, 'node_modules'), path.join(buildRoot, 'node_modules'));
+  symlinkSync(path.resolve(REPO_ROOT, '..', 'nfl-editorial'), path.join(tempRoot, 'nfl-editorial'));
+
+  writeFileSync(issuePath, [
+    '---',
+    'template: near-future-lab-daily-headlines',
+    'title: Article Styles Test',
+    'preheader: Distinct article card styles.',
+    'ogImage: https://images.example.test/article-styles.png',
+    'ogImageAltText: Article styles test card.',
+    'sections:',
+    '  - type: section_article_group',
+    '    section_label: Tomorrow\'s Jobs Today',
+    '    containerStyles:',
+    "      backgroundColor: '#7fe8d0'",
+    '      contentPadding: 0 16px',
+    '    articleContainerStyles:',
+    "      backgroundColor: '#dff7f3'",
+    '      padding: 24px 28px',
+    '    articleContentStyles:',
+    '      fontFamily: "\'Share Tech Mono\', \'Courier New\', Courier, monospace"',
+    "      color: '#111111'",
+    '      fontSize: 16px',
+    '      lineHeight: 1.35',
+    '    articles:',
+    '      - headline: Principal, Applied Speculation',
+    '        kicker: OpenAI',
+    '        lede: A founding individual contributor role.',
+    '        articleContainerStyles:',
+    "          backgroundColor: '#e8fff9'",
+    '---',
+    '',
+  ].join('\n'), 'utf8');
+
+  try {
+    execFileSync(process.execPath, [
+      BUILD_SCRIPT,
+      issuePath,
+      'daily-headlines-article-styles',
+      `--repo-root=${buildRoot}`,
+      `--output-dir=${outputDir}`,
+      '--preview',
+      '--no-open',
+    ], { encoding: 'utf8', cwd: tempRoot });
+
+    const html = readFileSync(path.join(outputDir, 'daily-headlines-article-styles.html'), 'utf8');
+    assert.match(html, /background-color:#7fe8d0/);
+    assert.match(html, /padding-left:16px;padding-right:16px/);
+    assert.match(html, /background-color:#e8fff9!important;padding:24px 28px!important/);
+    assert.match(html, /<h3 class="article-title"[^>]*font-family:Share Tech Mono,Courier New,Courier,monospace!important/);
+    assert.match(html, /<p class="article-lede"[^>]*color:#111111!important/);
+  } finally {
+    rmSync(tempRoot, { recursive: true, force: true });
+  }
+});

@@ -345,6 +345,22 @@
                 "type": "string",
                 "description": "Section heading text (e.g. 'Top News', 'World')"
               },
+              "articleContainerStyles": {
+                "$ref": "#/definitions/articleContainerStyles",
+                "description": "Optional surface styles applied to every article card in this group. An individual article may override them with the same field."
+              },
+              "articleContentStyles": {
+                "$ref": "#/definitions/articleContentStyles",
+                "description": "Optional inherited typography and text color for article kicker, headline, and lede. An individual article may override it with the same field."
+              },
+              "articleHeadingStyles": {
+                "$ref": "#/definitions/articleContentStyles",
+                "description": "Optional headline-specific typography and color for article cards. An individual article may override it with the same field."
+              },
+              "articleLinkStyles": {
+                "$ref": "#/definitions/articleContentStyles",
+                "description": "Optional link typography, color, and decoration for article cards. An individual article may override it with the same field."
+              },
               "articles": {
                 "type": "array",
                 "description": "Structured article rows rendered with the Near Future Laboratory Daily Headlines table layout and inline font styles.",
@@ -371,6 +387,22 @@
                       "type": "string",
                       "enum": ["row", "feature"],
                       "description": "Optional presentation override. row (default) places the image right of copy on wide screens and above it on mobile, with any CTA after the copy; feature renders a full-width image above the copy at every width."
+                    },
+                    "articleContainerStyles": {
+                      "$ref": "#/definitions/articleContainerStyles",
+                      "description": "Optional surface styles for this article only, overriding the section articleContainerStyles."
+                    },
+                    "articleContentStyles": {
+                      "$ref": "#/definitions/articleContentStyles",
+                      "description": "Optional typography and text color for this article only, overriding the section articleContentStyles."
+                    },
+                    "articleHeadingStyles": {
+                      "$ref": "#/definitions/articleContentStyles",
+                      "description": "Optional headline typography and color for this article only, overriding the section articleHeadingStyles."
+                    },
+                    "articleLinkStyles": {
+                      "$ref": "#/definitions/articleContentStyles",
+                      "description": "Optional link typography, color, and decoration for this article only, overriding the section articleLinkStyles."
                     },
                     "kicker": {
                       "type": "string",
@@ -786,6 +818,34 @@
           }
         }
       ],
+      "additionalProperties": true
+    },
+    "articleContainerStyles": {
+      "type": ["object", "null"],
+      "description": "Optional email-safe surface styles for an article card, including backgroundColor, padding, border, and borderRadius.",
+      "properties": {
+        "backgroundColor": { "type": "string", "minLength": 1 },
+        "background": { "type": "string", "minLength": 1 },
+        "padding": { "type": "string", "pattern": "^[^;{}<>]+$" },
+        "border": { "type": "string", "pattern": "^[^;{}<>]+$" },
+        "borderRadius": { "type": "string", "pattern": "^[^;{}<>]+$" }
+      },
+      "additionalProperties": true
+    },
+    "articleContentStyles": {
+      "type": ["object", "null"],
+      "description": "Optional email-safe typography and text styles for an article card.",
+      "properties": {
+        "fontFamily": { "type": "string", "minLength": 1 },
+        "fontSize": { "type": "string", "minLength": 1 },
+        "lineHeight": { "type": "string", "minLength": 1 },
+        "fontWeight": { "type": ["string", "number"] },
+        "fontStyle": { "type": "string" },
+        "letterSpacing": { "type": "string" },
+        "textTransform": { "type": "string" },
+        "textAlign": { "type": "string" },
+        "color": { "type": "string", "minLength": 1 }
+      },
       "additionalProperties": true
     },
     "trackedLink": {
