@@ -74,9 +74,11 @@ test('hydrateShortTakeSections resolves minimal and full records in source order
 
     assert.equal(newsletter.sections[0].items[0].link, undefined);
     assert.equal(newsletter.sections[0].items[0].image, PHOTARIUM_URL);
+    assert.equal(newsletter.sections[0].items[0].bottomLeft, 'DO YOU WANT TO KNOW MORE?');
     assert.equal(newsletter.sections[2].items[0].link.href, 'https://nearfuturelaboratory.com/editorial/linked-short-take');
     assert.equal(newsletter.sections[2].items[0].link.label, 'short-take-two');
     assert.equal(newsletter.sections[2].items[0].link.category, 'short-take');
+    assert.equal(newsletter.sections[2].items[0].bottomLeft, 'READ MORE');
     assert.deepEqual(newsletter.sections[2].items[0].maxWidth, { base: '95%', md: '42rem' });
     assert.match(newsletter.sections[2].items[0].caption, /<span>inline link<\/span>/);
     assert.doesNotMatch(newsletter.sections[2].items[0].caption, /<a\b/i);

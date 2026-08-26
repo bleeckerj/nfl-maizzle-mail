@@ -237,6 +237,7 @@ function assertRenderedShortTakes(html, templateName, middleSentinel, endSentine
   assert.match(linkedCard.textContent, /inline source/);
   assert.match(linkedCard.textContent, /Linked Short Take Headline/);
   assert.match(linkedCard.textContent, /SHORT TAKES FROM AN ADJACENT NOW/);
+  assert.match(linkedCard.textContent, /DO YOU WANT TO KNOW MORE\?/);
   assert.match(linkedCard.textContent, /NFL/);
 
   if (templateName === 'dense-discovery') {
@@ -263,6 +264,6 @@ test('near-future-lab-daily-headlines builds ordered linked and unlinked Short T
     'near-future-lab-daily-headlines',
     'DAILY MIDDLE SENTINEL',
     'DAILY END SENTINEL',
-    { linkedAnchorCount: 4 },
+    { linkedAnchorCount: 5 },
   );
 });
