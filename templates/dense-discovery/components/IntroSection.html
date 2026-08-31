@@ -53,7 +53,7 @@
   <each loop="image in intro.images">
     <if condition="(typeof image === 'object' && image !== null && image.src) || (typeof image === 'string' && image)">
     <tr>
-      <td align="center" class="padt20 padl20 padr20" style="border-collapse: collapse;padding-top: 20px;padding-left: 20px;padding-right: 20px;">
+      <td align="center" class="padt20 padl20 padr20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
         <if condition="(typeof image === 'object' && image !== null && image.src && image.link) || intro.imageLink">
           <a href="{{ (typeof image === 'object' && image !== null && image.src && image.link) ? image.link : intro.imageLink }}" target="_blank">
             <img src="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('src')) ? image.src : image }}" alt="{{ (typeof image === 'object' && image !== null && image.hasOwnProperty('alt')) ? image.alt : (intro.imageAlt || intro.title || 'Intro image') }}" width="600" style="-ms-interpolation-mode: bicubic;border-radius: 10px;display: block;width: 100%;max-width: 600px;height: auto;border: 0;">
@@ -73,7 +73,7 @@
 
 <if condition="(!intro.images || !intro.images.length) && intro.image && ((typeof intro.image === 'object' && intro.image !== null && intro.image.src) || (typeof intro.image === 'string' && intro.image))">
   <tr>
-    <td align="center" class="padt20 padl20 padr20" style="border-collapse: collapse;padding-top: 20px;padding-left: 20px;padding-right: 20px;">
+    <td align="center" class="padt20 padl20 padr20" style="border-collapse: collapse;padding-top: 20px;padding-right: 20px;padding-bottom: 20px;padding-left: 20px;">
       <if condition="(typeof intro.image === 'object' && intro.image !== null && intro.image.src && intro.image.link) || intro.imageLink">
         <a href="{{ (typeof intro.image === 'object' && intro.image !== null && intro.image.src && intro.image.link) ? intro.image.link : intro.imageLink }}" target="_blank">
           <img src="{{ (typeof intro.image === 'object' && intro.image !== null && intro.image.hasOwnProperty('src')) ? intro.image.src : intro.image }}" alt="{{ (typeof intro.image === 'object' && intro.image !== null && intro.image.hasOwnProperty('alt')) ? intro.image.alt : (intro.imageAlt || intro.title || 'Intro image') }}" width="600" style="-ms-interpolation-mode: bicubic;border-radius: 10px;display: block;width: 100%;max-width: 600px;height: auto;border: 0;">
