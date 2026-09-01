@@ -1961,6 +1961,69 @@ async function buildNewsletter() {
             undefined,
             { withoutImportant: mobileLockTypographyProperties },
           );
+          if (section.type === 'speculative-job') {
+            const sectionContentStyles = {
+              ...section.contentStyles,
+            };
+            section.speculativeJobContentStylesInline = toCssString(
+              sectionContentStyles,
+              undefined,
+              { withoutImportant: mobileLockTypographyProperties },
+            );
+            section.speculativeJobCtaStylesInline = toCssString(
+              section.ctaStyles,
+              undefined,
+              { withoutImportant: mobileLockTypographyProperties },
+            );
+            const sectionStyleKeys = new Set([
+              'padding',
+              'paddingTop',
+              'paddingRight',
+              'paddingBottom',
+              'paddingLeft',
+              'border',
+              'borderRadius',
+            ]);
+            const buildSurfaceStyles = (styles = {}) => {
+              const background = resolveSectionBackgroundStyle(styles).inlineStyle;
+              const boxStyles = Object.fromEntries(
+                Object.entries(styles).filter(([key]) => sectionStyleKeys.has(key) && !key.startsWith('padding')),
+              );
+              const box = toCssString(boxStyles, undefined, {
+                withoutImportant: mobileLockTypographyProperties,
+              });
+              const paddingStyles = Object.fromEntries(
+                Object.entries(styles).filter(([key]) => key === 'padding' || key.startsWith('padding')),
+              );
+              return {
+                background,
+                box: box ? `${box};` : '',
+                padding: toCssString(paddingStyles, undefined, {
+                  withoutImportant: mobileLockTypographyProperties,
+                }),
+              };
+            };
+            const sectionCardDefaults = buildSurfaceStyles(section.cardStyles || {});
+            section.speculativeJobCardDefaultsStyleInline = `${sectionCardDefaults.background}${sectionCardDefaults.box}`;
+            section.speculativeJobCardDefaultsPaddingStyleInline = sectionCardDefaults.padding;
+            if (Array.isArray(section.items)) {
+              section.items.forEach((item) => {
+                if (!item || typeof item !== 'object') return;
+                const cardStyles = buildSurfaceStyles({
+                  ...(section.cardStyles && typeof section.cardStyles === 'object' ? section.cardStyles : {}),
+                  ...(item.cardStyles && typeof item.cardStyles === 'object' ? item.cardStyles : {}),
+                });
+                item.speculativeJobCardStyleInline = `${cardStyles.background}${cardStyles.box}`;
+                item.speculativeJobCardPaddingStyleInline = cardStyles.padding;
+                item.speculativeJobContentStylesInline = toCssString(
+                  { ...sectionContentStyles, ...(item.contentStyles || {}) },
+                  undefined,
+                  { withoutImportant: mobileLockTypographyProperties },
+                );
+                item.speculativeJobCtaStylesInline = section.speculativeJobCtaStylesInline;
+              });
+            }
+          }
           if (Array.isArray(section.articles)) {
             const sectionArticleContainerStyles = section.articleContainerStyles && typeof section.articleContainerStyles === 'object'
               ? section.articleContainerStyles

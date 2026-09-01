@@ -335,6 +335,69 @@
           },
           {
             "type": "object",
+            "title": "Speculative Job",
+            "description": "Canonical-job-backed Tomorrow's Jobs Today section with a shared header and optional full-width media card.",
+            "properties": {
+              "type": {
+                "const": "speculative-job"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "section_label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "containerStyles": {
+                "$ref": "#/definitions/speculativeJobSurfaceStyles"
+              },
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "jobRef": {
+                      "type": "string",
+                      "pattern": "^[^/]+/[^/]+$"
+                    },
+                    "cardStyles": {
+                      "$ref": "#/definitions/speculativeJobSurfaceStyles"
+                    },
+                    "contentStyles": {
+                      "type": "object",
+                      "additionalProperties": true
+                    },
+                    "kicker": { "type": "string" },
+                    "headline": { "type": "string" },
+                    "lede": { "type": "string" },
+                    "cta_label": { "type": "string" },
+                    "sponsor": { "type": "string" },
+                    "link": { "$ref": "#/definitions/trackedLink" },
+                    "media": {
+                      "type": ["object", "null"],
+                      "properties": {
+                        "src": { "type": "string", "format": "uri" },
+                        "altText": { "type": "string", "minLength": 1 },
+                        "width": { "type": "number", "exclusiveMinimum": 0 },
+                        "height": { "type": "number", "exclusiveMinimum": 0 },
+                        "aspectRatio": { "type": "string", "minLength": 1 }
+                      },
+                      "required": ["src", "altText"],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": ["jobRef"],
+                  "additionalProperties": true
+                }
+              }
+            },
+            "required": ["type", "items"],
+            "additionalProperties": true
+          },
+          {
+            "type": "object",
             "title": "Section Article Group",
             "description": "A named news section (e.g. Top News, World, U.S., Politics) with a bold section heading and 1–5 article cards. Articles may include an optional destination link.",
             "properties": {
@@ -819,6 +882,32 @@
         }
       ],
       "additionalProperties": true
+    },
+    "speculativeJobSurfaceStyles": {
+      "type": ["object", "null"],
+      "description": "Email-safe solid or gradient surface styles for a speculative job section or card. backgroundColor is required as the fallback when backgroundGradient is present.",
+      "properties": {
+        "backgroundColor": { "type": "string", "minLength": 1 },
+        "backgroundGradient": {
+          "type": "string",
+          "pattern": "^linear-gradient\\([^;{}<>]+\\)$"
+        },
+        "contentPadding": { "type": "string", "pattern": "^[^;{}<>]+$" },
+        "padding": { "type": "string", "pattern": "^[^;{}<>]+$" },
+        "paddingTop": { "type": "string", "pattern": "^[^;{}<>]+$" },
+        "paddingRight": { "type": "string", "pattern": "^[^;{}<>]+$" },
+        "paddingBottom": { "type": "string", "pattern": "^[^;{}<>]+$" },
+        "paddingLeft": { "type": "string", "pattern": "^[^;{}<>]+$" },
+        "border": { "type": "string", "pattern": "^[^;{}<>]+$" },
+        "borderRadius": { "type": "string", "pattern": "^[^;{}<>]+$" }
+      },
+      "allOf": [
+        {
+          "if": { "required": ["backgroundGradient"] },
+          "then": { "required": ["backgroundColor"] }
+        }
+      ],
+      "additionalProperties": false
     },
     "articleContainerStyles": {
       "type": ["object", "null"],

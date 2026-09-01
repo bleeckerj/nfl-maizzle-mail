@@ -166,6 +166,37 @@ title: "Near Future Laboratory Daily Headlines"
 	      </if>
 	      </tbody></table>
 	    </if>
+
+    <if condition="section.type === 'speculative-job'">
+      <table border="0" cellpadding="0" cellspacing="0" style="width:100%;{{{ section.backgroundStyleInline }}};border-top:1px solid #000;border-bottom:1px solid #000" role="presentation" class="speculative-job-section{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" data-section="speculative-job"><tbody>
+        <tr><td height="30"></td></tr>
+        <tr><td style="padding:12px 0 13px;{{{ section.contentPaddingInline }}}"><h2 style="font:700 17px/24px arial,sans-serif;color:#000;margin:0;padding:0">{{ section.title || section.section_label || "Tomorrow's Jobs Today" }}</h2></td></tr>
+        <tr><td style="padding-top:15px"></td></tr>
+        <each loop="item in section.items">
+          <tr><td style="{{{ section.contentPaddingInline }}}">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" class="speculative-job-card{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" style="border-spacing:0;{{{ item.speculativeJobCardStyleInline || section.speculativeJobCardDefaultsStyleInline || '' }}}">
+              <tbody>
+                <if condition="item.media && item.media.src">
+                  <tr><td style="padding:0;line-height:0;font-size:0;text-align:center"><a href="{{ item.link }}" style="display:block;color:inherit;text-decoration:none"><img src="{{ item.media.src }}" alt="{{ item.media.altText }}" border="0" width="600" style="display:block;width:100%;max-width:600px;height:auto"></a></td></tr>
+                </if>
+                <tr><td style="{{{ item.speculativeJobCardPaddingStyleInline || section.speculativeJobCardDefaultsPaddingStyleInline || 'padding:24px 28px' }}};{{{ item.speculativeJobContentStylesInline || section.speculativeJobContentStylesInline || '' }}}">
+                  <a href="{{ item.link }}" style="color:#333;-webkit-text-decoration:underline;text-decoration:none;display:block">
+                    <if condition="item.kicker"><p class="speculative-job-kicker" style="color:#555;font:700 11px/16px arial,sans-serif;margin:0 0 5px;text-transform:uppercase;letter-spacing:.75px;{{{ item.speculativeJobContentStylesInline || section.speculativeJobContentStylesInline || '' }}}">{{ item.kicker }}</p></if>
+                    <h3 class="speculative-job-title" style="color:#000;margin:0;padding:0 0 7px;font:700 22px/26px georgia,serif;{{{ item.speculativeJobContentStylesInline || section.speculativeJobContentStylesInline || '' }}}">{{ item.headline }}</h3>
+                    <if condition="item.lede"><p class="speculative-job-lede" style="color:#333;font:17px/23px georgia,serif;margin:0;{{{ item.speculativeJobContentStylesInline || section.speculativeJobContentStylesInline || '' }}}">{{{ item.lede }}}</p></if>
+                    <if condition="item.cta_label"><span class="speculative-job-cta" style="{{{ item.speculativeJobCtaStylesInline || section.speculativeJobCtaStylesInline || '' }}}">{{ item.cta_label }}</span></if>
+                  </a>
+                  <if condition="item.sponsor"><p class="speculative-job-sponsor" style="color:#555;font:700 11px/16px arial,sans-serif;margin:14px 0 0;text-transform:uppercase;letter-spacing:.75px">{{ item.sponsor }}</p></if>
+                </td></tr>
+              </tbody>
+            </table>
+          </td></tr>
+          <if condition="loop.index < section.items.length - 1"><tr><td height="30"></td></tr></if>
+        </each>
+        <tr><td style="padding-bottom:15px"></td></tr>
+        <tr><td height="15"></td></tr>
+      </tbody></table>
+    </if>
 	    <if condition="section.type === 'section_more_link'">
       <p style="font:normal 17px/25px georgia,serif;color:#333;margin:0 0 15px;{{{ section.contentPaddingInline }}}{{{ section.backgroundStyleInline }}}" class="mob-text{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><a href="{{ section.link || section.link_href }}" style="color:#333;-webkit-text-decoration:underline;text-decoration:underline">{{ section.link_label }}</a></p>
     </if>

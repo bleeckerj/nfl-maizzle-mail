@@ -83,6 +83,41 @@
         "color": "#000"
       }
     },
+    "speculative-job": {
+      "name": "Speculative Job",
+      "description": "Canonical-job-backed Tomorrow's Jobs Today card with optional full-width media.",
+      "containerStyles": {
+        "padding": "0",
+        "borderTop": "0",
+        "borderBottom": "0"
+      },
+      "contentStyles": {
+        "fontFamily": "Share Tech Mono, Courier New, Courier, monospace",
+        "fontSize": "16px",
+        "lineHeight": "1.35",
+        "color": "#111111"
+      },
+      "linkStyles": {
+        "color": "#333333",
+        "textDecoration": "none"
+      },
+      "headingStyles": {
+        "color": "#000000"
+      },
+      "ctaStyles": {
+        "display": "inline-block",
+        "marginTop": "12px",
+        "padding": "6px 10px",
+        "border": "1px solid #111111",
+        "borderRadius": "4px",
+        "fontFamily": "Arial, sans-serif",
+        "fontSize": "12px",
+        "lineHeight": "1.2",
+        "fontWeight": "700",
+        "color": "#111111",
+        "textDecoration": "none"
+      }
+    },
     "short-take": {
       "name": "Short Take",
       "description": "Registry-backed editorial card with full-width image, headline, caption, and optional edge metadata.",
