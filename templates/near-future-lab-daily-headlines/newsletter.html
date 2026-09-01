@@ -168,9 +168,11 @@ title: "Near Future Laboratory Daily Headlines"
 	    </if>
 
     <if condition="section.type === 'speculative-job'">
-      <table border="0" cellpadding="0" cellspacing="0" style="width:100%;{{{ section.backgroundStyleInline }}};border-top:1px solid #000;border-bottom:1px solid #000" role="presentation" class="speculative-job-section{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" data-section="speculative-job"><tbody>
+      <table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="speculative-job-heading"><tbody>
         <tr><td height="30"></td></tr>
-        <tr><td style="padding:12px 0 13px;{{{ section.contentPaddingInline }}}"><h2 style="font:700 17px/24px arial,sans-serif;color:#000;margin:0;padding:0">{{ section.title || section.section_label || "Tomorrow's Jobs Today" }}</h2></td></tr>
+        <tr><td style="padding:12px 0 13px 0;{{{ section.contentPaddingInline }}}border-top:9px solid #000;border-bottom:1px solid #000"><h2 style="font:700 17px/24px arial,sans-serif;color:#000;margin:0;padding:0">{{ section.title || section.section_label || "Tomorrow's Jobs Today" }}</h2></td></tr>
+      </tbody></table>
+      <table border="0" cellpadding="0" cellspacing="0" style="width:100%;{{{ section.backgroundStyleInline }}}" role="presentation" class="speculative-job-section{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" data-section="speculative-job"><tbody>
         <tr><td style="padding-top:15px"></td></tr>
         <each loop="item in section.items">
           <tr><td style="{{{ section.contentPaddingInline }}}">
@@ -193,7 +195,6 @@ title: "Near Future Laboratory Daily Headlines"
           </td></tr>
           <if condition="loop.index < section.items.length - 1"><tr><td height="30"></td></tr></if>
         </each>
-        <tr><td style="padding-bottom:15px"></td></tr>
         <tr><td height="15"></td></tr>
       </tbody></table>
     </if>
