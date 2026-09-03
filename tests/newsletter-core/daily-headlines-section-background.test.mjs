@@ -7,11 +7,21 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { resolveSectionBackgroundStyle } from '../../lib/newsletter-core/section-background.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.resolve(__dirname, '..', '..');
 const BUILD_SCRIPT = path.join(REPO_ROOT, 'scripts', 'build-newsletter.mjs');
+
+test('Daily Headlines accepts W31-style gradient values in backgroundColor', () => {
+  const gradient = 'radial-gradient(circle at 14% 18%, rgba(255, 116, 216, 0.18) 0, rgba(255, 116, 216, 0) 28%), linear-gradient(135deg, #edf6ff 0%, #fff3fb 100%)';
+  const resolved = resolveSectionBackgroundStyle({ backgroundColor: gradient });
+
+  assert.equal(resolved.backgroundColor, null);
+  assert.equal(resolved.backgroundGradient, gradient);
+  assert.equal(resolved.inlineStyle, `background-image:${gradient};`);
+});
 
 test('Daily Headlines sections render a solid fallback and optional gradient without wrappers', () => {
   const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'daily-headlines-section-background-'));

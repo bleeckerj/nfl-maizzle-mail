@@ -2,7 +2,7 @@
 
 ## Section backgrounds
 
-Every section accepts `containerStyles.backgroundColor`. It renders as the solid, email-safe section background. Add `containerStyles.backgroundGradient` when a supported client should receive a gradient; gradients must be paired with a solid color fallback.
+Every section accepts `containerStyles.backgroundColor`. It renders as the section background and accepts either a solid color or a CSS gradient, including the multi-layer gradient values used by the `classifieds` sections in older issues. Add `containerStyles.backgroundGradient` when you want to keep a separate solid fallback alongside a gradient.
 
 ```yaml
 sections:

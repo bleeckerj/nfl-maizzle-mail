@@ -852,17 +852,17 @@
     },
     "sectionContainerStyles": {
       "type": ["object", "null"],
-      "description": "Section appearance and layout values. backgroundColor is the email-safe fallback for an optional backgroundGradient; contentPadding controls the horizontal inset for text inside a colored surface.",
+      "description": "Section appearance and layout values. backgroundColor accepts a solid CSS color or an existing CSS gradient; backgroundGradient is an optional separate gradient enhancement. contentPadding controls the horizontal inset for text inside a colored surface.",
       "properties": {
         "backgroundColor": {
           "type": "string",
           "minLength": 1,
-          "description": "Solid CSS color rendered in all email clients and beneath backgroundGradient. Required when backgroundGradient is present."
+          "description": "Solid CSS color or CSS gradient for the section. A gradient value is emitted as background-image; use a solid value here as the fallback when backgroundGradient is present."
         },
         "backgroundGradient": {
           "type": "string",
           "pattern": "^linear-gradient\\([^;{}<>]+\\)$",
-          "description": "Optional CSS linear-gradient(...) enhancement. Use with backgroundColor so clients without gradient support retain the intended color."
+          "description": "Optional CSS linear-gradient(...) enhancement. Use with a solid backgroundColor so clients without gradient support retain the intended color."
         },
         "contentPadding": {
           "type": "string",
@@ -885,7 +885,7 @@
     },
     "speculativeJobSurfaceStyles": {
       "type": ["object", "null"],
-      "description": "Email-safe solid or gradient surface styles for a speculative job section or card. backgroundColor is required as the fallback when backgroundGradient is present.",
+      "description": "Optional surface styles for a speculative job section or card. containerStyles controls the whole jobs area; cardStyles is an optional inner job surface. backgroundColor accepts a solid CSS color or gradient, and backgroundGradient can provide a separate gradient enhancement.",
       "properties": {
         "backgroundColor": { "type": "string", "minLength": 1 },
         "backgroundGradient": {
