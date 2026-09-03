@@ -482,6 +482,7 @@
                       },
                       "link": {},
                       "readMoreLink": {},
+                      "content": { "$ref": "#/definitions/contentAttribution" },
                       "title": {},
                       "description": {},
                       "sponsor": {},
@@ -1287,6 +1288,7 @@
                       "image": {},
                       "title": {},
                       "link": {},
+                      "content": { "$ref": "#/definitions/contentAttribution" },
                       "subtitle": {},
                       "description": {},
                       "readMoreText": {},
@@ -1814,6 +1816,7 @@
                       "image": {},
                       "link": {},
                       "content": {},
+                      "contentMetadata": { "$ref": "#/definitions/contentAttribution" },
                       "linkText": {}
                     },
                     "additionalProperties": false
@@ -1886,6 +1889,7 @@
                       "signalsLabel": {},
                       "title": {},
                       "link": {},
+                      "contentMetadata": { "$ref": "#/definitions/contentAttribution" },
                       "subtitle": {},
                       "image": {},
                       "description": {},
@@ -1988,6 +1992,7 @@
                       "image": {},
                       "description": {},
                       "platformLinksHtml": {},
+                      "content": { "$ref": "#/definitions/contentAttribution" },
                       "readMoreText": {},
                       "readMoreTxt": {},
                       "readMoreLink": {}
@@ -2088,6 +2093,7 @@
                         }
                       },
                       "link": {},
+                      "contentMetadata": { "$ref": "#/definitions/contentAttribution" },
                       "title": {},
                       "image": {},
                       "description": {},
@@ -2384,6 +2390,7 @@
                       },
                       "link": {},
                       "title": {},
+                      "content": { "$ref": "#/definitions/contentAttribution" },
                       "image": {
                         "oneOf": [
                           {
@@ -3358,6 +3365,7 @@
                       },
                       "link": {},
                       "title": {},
+                      "content": { "$ref": "#/definitions/contentAttribution" },
                       "image": {
                         "oneOf": [
                           {
@@ -3501,6 +3509,7 @@
                       "image": {},
                       "description": {},
                       "platformLinksHtml": {},
+                      "content": { "$ref": "#/definitions/contentAttribution" },
                       "readMoreText": {},
                       "readMoreTxt": {},
                       "readMoreLink": {}
@@ -3640,6 +3649,18 @@
         }
       },
       "additionalProperties": false
+    }
+  },
+  "definitions": {
+    "contentAttribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "category": { "type": "string", "minLength": 1 },
+        "tags": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      }
     }
   },
   "additionalProperties": false

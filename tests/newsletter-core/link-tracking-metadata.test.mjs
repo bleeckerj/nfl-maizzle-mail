@@ -51,7 +51,7 @@ test('normalizes string and object links while preserving template-compatible UR
   });
 
   assert.equal(newsletterData.sections[0].items[0].link, 'https://example.com/conscious-ai');
-  assert.equal(result.manifest.get('https://example.com/conscious-ai').label, 'Friendly AI story');
+  assert.equal(result.manifest.get('https://example.com/conscious-ai').label, 'Mythology Of Conscious AI');
   assert.equal(result.manifest.get('https://example.com/conscious-ai').category, 'ai-consciousness');
   assert.equal(result.manifest.get('https://example.com/conscious-ai').line, 7);
 
@@ -62,7 +62,7 @@ test('normalizes string and object links while preserving template-compatible UR
   assert.equal(result.defaultWarnings.length, 1);
 });
 
-test('infers fallback label from section type when section and item titles are unavailable', () => {
+test('does not use section type as semantic metadata fallback', () => {
   const newsletterData = {
     title: 'Tracking Test',
     sections: [
@@ -76,8 +76,9 @@ test('infers fallback label from section type when section and item titles are u
   const result = normalizeNewsletterLinkTracking(newsletterData);
   const record = result.manifest.get('https://example.com/dispatch');
 
-  assert.equal(record.label, 'dispatch section 1 link');
-  assert.equal(record.category, 'dispatch');
+  assert.equal(record.label, 'Link');
+  assert.equal(record.category, undefined);
+  assert.equal(record.contentCategory, undefined);
   assert.equal(result.defaultWarnings[0].pathLabel, 'sections[0].items[0].link');
 });
 
@@ -104,7 +105,8 @@ test('defaults only the missing tracking metadata field', () => {
   const record = result.manifest.get('https://example.com/partner');
 
   assert.equal(record.label, 'Partner landing page');
-  assert.equal(record.category, 'sponsor');
+  assert.equal(record.category, undefined);
+  assert.equal(record.contentCategory, undefined);
   assert.equal(record.defaultedLabel, false);
   assert.equal(record.defaultedCategory, true);
 });
@@ -177,7 +179,9 @@ test('enriches rendered anchors with manifest label and category', () => {
   );
 
   assert.match(html, /data-link-label="Story"/);
-  assert.match(html, /data-link-category="food-for-thought"/);
+  assert.doesNotMatch(html, /data-link-category=/);
+  assert.match(html, /data-content-label="Story"/);
+  assert.match(html, /data-content-id="https:\/\/example.com\/story"/);
 });
 
 test('normalizes boilerplate footer tracking metadata without default notices or conflicts', () => {
@@ -294,7 +298,7 @@ test('enriches rendered anchors with semantic interest and intent', () => {
     manifest,
   );
 
-  assert.match(html, /data-link-label="seminar \| Futuring 2\.0"/);
+  assert.match(html, /data-link-label="Futuring 2\.0"/);
   assert.match(html, /data-link-category="events"/);
   assert.match(html, /data-link-interest="speculative-practice"/);
   assert.match(html, /data-link-intent="attend-event"/);
@@ -337,8 +341,8 @@ test('collects inline anchors from item description prose', () => {
   const vision = result.manifest.get('https://example.com/vision');
   const time = result.manifest.get('https://example.com/time');
 
-  assert.equal(vision.label, 'Vision and Art');
-  assert.equal(vision.category, 'uncategorized');
+  assert.equal(vision.label, 'Office Hours N°312');
+  assert.equal(vision.category, undefined);
   assert.equal(vision.pathLabel, 'sections[0].items[0].description.a[0]');
   assert.equal(vision.line, 7);
   assert.match(vision.contextText, /section title: Office Hours N°312/);
@@ -347,7 +351,7 @@ test('collects inline anchors from item description prose', () => {
   assert.equal(vision.metadataSource, undefined);
   assert.equal(vision.defaultedLabel, false);
   assert.equal(vision.defaultedCategory, true);
-  assert.equal(time.label, 'Broken Time');
+  assert.equal(time.label, 'Office Hours N°312');
   assert.equal(time.pathLabel, 'sections[0].items[0].description.a[1]');
   assert.equal(result.defaultWarnings.length, 2);
 });
@@ -373,11 +377,11 @@ test('collects markdown links from converted item description prose', () => {
   const vision = result.manifest.get('https://example.com/vision');
   const time = result.manifest.get('https://example.com/time');
 
-  assert.equal(vision.label, 'Vision and Art');
-  assert.equal(vision.category, 'uncategorized');
+  assert.equal(vision.label, 'Office Hours N°312');
+  assert.equal(vision.category, undefined);
   assert.equal(vision.pathLabel, 'sections[0].items[0].description.a[0]');
   assert.equal(vision.defaultedCategory, true);
-  assert.equal(time.label, 'Broken Time');
+  assert.equal(time.label, 'Office Hours N°312');
   assert.equal(time.pathLabel, 'sections[0].items[0].description.a[1]');
   assert.equal(result.defaultWarnings.length, 2);
   assert.equal(
@@ -411,7 +415,7 @@ test('uses explicit data-link metadata from inline prose anchors', () => {
   const result = normalizeNewsletterLinkTracking(newsletterData);
   const record = result.manifest.get('https://example.com/signal');
 
-  assert.equal(record.label, 'Signal source');
+  assert.equal(record.label, 'Signals');
   assert.equal(record.category, 'external-reference');
   assert.deepEqual(record.interests, ['speculative-practice', 'design-research']);
   assert.equal(record.intent, 'read-related');
@@ -445,7 +449,7 @@ test('enriches rendered inline prose anchors with collected tracking metadata', 
     manifest,
   );
 
-  assert.match(html, /data-link-label="Source"/);
+  assert.match(html, /data-link-label="Signals"/);
   assert.match(html, /data-link-category="external-reference"/);
 });
 
@@ -502,8 +506,8 @@ test('builds a serializable link tracking metadata manifest', () => {
   assert.deepEqual(manifest.totals, {
     links: 2,
     explicit: 1,
-    partial: 0,
-    defaulted: 1,
+    partial: 1,
+    defaulted: 0,
     conflicts: 0,
   });
   assert.deepEqual(
@@ -516,7 +520,7 @@ test('builds a serializable link tracking metadata manifest', () => {
     [
       {
         url: 'https://example.com/story',
-        label: 'Explicit story label',
+        label: 'Story',
         category: 'explicit-research',
         metadataSource: 'explicit',
       },
@@ -524,7 +528,7 @@ test('builds a serializable link tracking metadata manifest', () => {
         url: 'https://example.com/story/more',
         label: 'Story',
         category: 'research',
-        metadataSource: 'defaulted',
+      metadataSource: 'partial',
       },
     ],
   );
@@ -532,7 +536,7 @@ test('builds a serializable link tracking metadata manifest', () => {
   assert.match(manifest.links[0].contextText, /subtitle: A useful research tool/);
   assert.match(manifest.links[0].contextText, /description: A compact studio/);
   assert.equal(manifest.warnings.defaulted.length, 1);
-  assert.match(manifest.warnings.defaulted[0], /readMoreLink missing label, category/);
+  assert.match(manifest.warnings.defaulted[0], /readMoreLink missing label/);
 });
 
 test('serializes semantic interest and intent into the link tracking manifest', () => {
@@ -564,6 +568,62 @@ test('serializes semantic interest and intent into the link tracking manifest', 
   assert.equal(link.intent, 'attend-event');
   assert.equal(link.explicit.interest, true);
   assert.equal(link.explicit.intent, true);
+});
+
+test('emits canonical content attribution without section type fallback', () => {
+  const newsletterData = {
+    title: 'Semantic Attribution',
+    sections: [{
+      type: 'single-column',
+      title: 'From the Archives',
+      items: [{
+        title: 'Social Speaker',
+        content: {
+          id: 'social-speaker',
+          category: 'archive',
+          tags: ['Social', 'History'],
+        },
+        link: 'https://example.com/social-speaker',
+      }],
+    }],
+  };
+
+  const tracking = normalizeNewsletterLinkTracking(newsletterData);
+  const record = tracking.records[0];
+  const html = enrichHtmlWithLinkTrackingMetadata(
+    '<a href="https://example.com/social-speaker">Social Speaker</a>',
+    tracking.manifest,
+    tracking.records,
+  );
+
+  assert.equal(record.contentId, 'social-speaker');
+  assert.equal(record.contentLabel, 'Social Speaker');
+  assert.equal(record.contentCategory, 'archive');
+  assert.deepEqual(record.contentTags, ['social', 'history']);
+  assert.equal(record.sectionLabel, 'From the Archives');
+  assert.match(html, /data-content-category="archive"/);
+  assert.doesNotMatch(html, /data-link-category="single-column"/);
+});
+
+test('enriches repeated URLs by occurrence rather than first URL metadata', () => {
+  const newsletterData = {
+    sections: [{
+      type: 'single-column',
+      items: [
+        { title: 'First story', content: { id: 'first' }, link: 'https://example.com/repeated' },
+        { title: 'Second story', content: { id: 'second' }, link: 'https://example.com/repeated' },
+      ],
+    }],
+  };
+  const tracking = normalizeNewsletterLinkTracking(newsletterData);
+  const html = enrichHtmlWithLinkTrackingMetadata(
+    '<a href="https://example.com/repeated">First story</a><a href="https://example.com/repeated">Second story</a>',
+    tracking.manifest,
+    tracking.records,
+  );
+
+  assert.match(html, /data-content-id="first"/);
+  assert.match(html, /data-content-id="second"/);
 });
 
 test('notice output uses requested color and respects NO_COLOR option', () => {
@@ -621,6 +681,12 @@ test('dense-discovery strict schema accepts object-valued tracked links', () => 
           items: [
             {
               title: 'Tracked Story',
+              contentMetadata: {
+                id: 'tracked-story',
+                label: 'Tracked Story',
+                category: 'research',
+                tags: ['analysis'],
+              },
               link: {
                 href: 'https://example.com/story',
                 label: 'Tracked Story',
@@ -643,6 +709,7 @@ test('dense-discovery strict schema accepts object-valued tracked links', () => 
   );
 
   assert.equal(prepared.sections[0].items[0].link.href, 'https://example.com/story');
+  assert.equal(prepared.sections[0].items[0].contentMetadata.id, 'tracked-story');
 });
 
 test('wirecutter-v2 strict schema accepts object-valued tracked links', () => {

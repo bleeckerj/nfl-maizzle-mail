@@ -97,8 +97,15 @@ Public builds warn when a supported template is missing its expected view-online
 
 `nfl-maizzle-mail` enriches final anchors with:
 
+- `data-content-id`
+- `data-content-label`
+- `data-content-category`
+- `data-content-tags`
+- `data-link-role`
+- `data-section-label`
+- `data-content-provenance`
 - `data-link-label`
-- `data-link-category`
+- `data-link-category` as a compatibility alias
 
 The source of truth is object-valued link metadata in the draft or build-injected tracked link objects. The rendered link manifest is written to:
 
@@ -134,20 +141,23 @@ Author-facing source:
 The draft should not include ad URLs or ad media URLs. `lib/newsletter-core/hydrate-ad-blocks.mjs` hydrates ad content from `/Users/julian/Code/nfl-editorial/src/content/ads.json`.
 Set `show_bottom_rule: false` when a specific ad placement should omit the light divider after the ad.
 
-By default, hydrated ad-block links use `ad-block` as their tracking category, which becomes `data-link-category="ad-block"` in the rendered HTML and appears as `ad-block` in downstream click-category analytics. To control the analytics category for a specific placement, author the item link as a tracked-link object with `href`, `label`, and `category`:
+Hydrated ad-block links carry `linkRole: advertisement`. They receive a content category only when the ad inventory or authored content supplies one; `ad-block` is a rendering type and is never emitted as a semantic category. To provide semantic metadata for a specific placement, author the item content and link as:
 
 ```yaml
 - type: ad-block
   title: "Tomorrow's Ads Today"
   items:
     - adId: the-manual-pb-interstitial-01
+      content:
+        id: the-manual-pb-interstitial-01
+        label: A field guide to speculative products
+        category: speculative-products
       link:
         href: https://example.com/speculative-product
-        label: the-manual-pb-interstitial-01
-        category: speculative-products
+        role: advertisement
 ```
 
-Use the same object shape for `readMoreLink` when the visible CTA should point somewhere different from the primary ad link. Keep the `href` aligned with the intended destination; category-only overrides are not supported.
+Use the same object shape for `readMoreLink` when the visible CTA should point somewhere different from the primary ad link. Keep the `href` aligned with the intended destination; use `content` for content identity and category.
 
 Templates should render the hydrated item fields:
 

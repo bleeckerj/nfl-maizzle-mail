@@ -80,7 +80,7 @@ sections:
       - shortTakeId: foucault-called-it
 ```
 
-The build normalizes these objects into template-safe URL strings and adds `data-link-label` / `data-link-category` to the rendered anchors.
+The build normalizes these objects into template-safe URL strings and adds canonical `data-content-*`, `data-link-role`, `data-section-label`, and provenance attributes to the rendered anchors. The legacy `data-link-label` / `data-link-category` attributes remain compatibility aliases.
 
 ## Hero Image
 

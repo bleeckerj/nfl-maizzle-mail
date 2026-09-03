@@ -269,6 +269,7 @@
         "kicker": { "type": "string" },
         "format": { "type": "string" },
         "title": { "type": "string" },
+        "content": { "$ref": "#/definitions/contentAttribution" },
         "subtitle": { "type": "string" },
         "body": { "type": "string" },
         "image": { "type": "string", "format": "uri" },
@@ -295,6 +296,16 @@
       },
       "additionalProperties": false
     },
+    "contentAttribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "category": { "type": "string", "minLength": 1 },
+        "tags": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+      }
+    },
     "trackedLink": {
       "oneOf": [
         { "type": "string", "format": "uri" },
@@ -306,6 +317,7 @@
             "url": { "type": "string", "format": "uri" },
             "label": { "type": "string" },
             "category": { "type": "string" },
+            "role": { "type": "string" },
             "interest": {
               "oneOf": [
                 { "type": "string" },

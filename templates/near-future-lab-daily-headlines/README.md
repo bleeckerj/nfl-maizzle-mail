@@ -182,20 +182,22 @@ sections:
 
 - This template does not use a top-level `header` field. Its visible header is the `newsletter_masthead` section.
 - When authored, `ogImage` and `ogImageAltText` render as Open Graph and Twitter card metadata in the email HTML head. `socialCard` remains part of Backoffice's social-card export path.
-- New editorial content should use the evolved tracked link object shape on fields named `link`, `logoLink`, or top-level CTA `url`: `{ href, label, category }`. The build emits those labels/categories as `data-link-label` and `data-link-category` for `nfl-newsletter-email-soup-to-nuts`.
+- New editorial content should use the evolved tracked link object shape on fields named `link`, `logoLink`, or top-level CTA `url`: `{ href, label, role }`, with item-level `content: { id, label, category, tags }` when semantic content metadata is available. The build emits canonical `data-content-*` attributes and keeps `data-link-label` / `data-link-category` as compatibility aliases for `nfl-newsletter-email-soup-to-nuts`.
 - The build computes `viewOnlineLink` from `issueId` as `https://nearfuturelaboratory.com/newsletters/<year>/<issueId>` and injects it into the masthead before rendering. Public starters may carry a placeholder so the required field remains visible to authoring tools.
 - Short Take content is registry-owned. Newsletter drafts carry only `shortTakeId`; issue-level headline, caption, image, URL, edge metadata, width, and style overrides are rejected.
-- New ad content should use `ad-block` with `adId`; do not hand-author ad destination URLs or ad image URLs in the newsletter draft. Hydrated ad links default to tracking category `ad-block`. When a placement needs a more specific click-category analytics label, set the item `link` or `readMoreLink` to `{ href, label, category }`, for example:
+- New ad content should use `ad-block` with `adId`; do not hand-author ad destination URLs or ad image URLs in the newsletter draft. Hydrated ad links carry role `advertisement`; the rendering type `ad-block` is never used as a semantic category. When a placement needs a content identity or category, set item `content` and use `{ href, label, role }` for the link, for example:
 
 ```yaml
 - type: ad-block
   title: "Tomorrow's Ads Today"
   items:
     - adId: fashion-8bit-pants-interstitial
+      content:
+        id: fashion-8bit-pants-interstitial
+        category: speculative-products
       link:
         href: https://example.com/speculative-product
-        label: fashion-8bit-pants-interstitial
-        category: speculative-products
+        role: advertisement
 ```
 
 - The footer CTA bar (`footer.footerCta`, rendered automatically with `email_footer`) accepts the same appearance overrides as `share_this`: `background`, `text_color`, and `eyebrow_color`. Set `heavy_top_border: true` to use the heavy 9px black top rule (like `section_article_group`) instead of the default 1px hairline. Set them under `footer.footerCta`. They are resolved in `lib/newsletter-core/footer-cta.mjs` (which rebuilds the object, so any new field must be added there to survive normalization) and honored in light mode only.

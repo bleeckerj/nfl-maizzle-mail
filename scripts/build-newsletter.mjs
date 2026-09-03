@@ -2769,6 +2769,7 @@ async function buildNewsletter() {
       enrichHtmlWithLinkTrackingMetadata(
         fs.readFileSync(builtNewsletterPath, 'utf8'),
         linkTracking.manifest,
+        linkTracking.records,
       ),
     );
     const hardenedBuiltHtml = hardenEmailHtmlForMobile(builtHtmlRaw, {

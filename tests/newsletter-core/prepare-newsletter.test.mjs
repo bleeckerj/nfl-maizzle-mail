@@ -85,7 +85,15 @@ test('prepareNewsletterData hydrates ad-block sections and preserves editorial c
             type: 'ad-block',
             title: 'This Week\'s Partner',
             description: '<p>Context for why this ad appears here.</p>',
-            items: [{ adId: 'comedy-ad-01' }],
+            items: [{
+              adId: 'comedy-ad-01',
+              content: {
+                id: 'comedy-ad-01',
+                label: 'A comedy ad',
+                category: 'sponsor',
+                tags: ['comedy'],
+              },
+            }],
           },
         ],
       },
@@ -99,16 +107,23 @@ test('prepareNewsletterData hydrates ad-block sections and preserves editorial c
     assert.equal(prepared.sections[1].items[0].label, 'SPONSORED');
     assert.equal(prepared.sections[1].items[0].title, 'A Better Fake Ad');
     assert.match(prepared.sections[1].items[0].description, /The future needs stranger ads\./);
+    assert.deepEqual(prepared.sections[1].items[0].content, {
+      id: 'comedy-ad-01',
+      label: 'A comedy ad',
+      category: 'sponsor',
+      tags: ['comedy'],
+    });
     assert.deepEqual(prepared.sections[1].items[0].readMoreLink, {
       href: 'https://example.com/fake-ad',
       label: 'comedy-ad-01',
-      category: 'ad-block',
+      role: 'advertisement',
     });
 
     const linkTracking = normalizeNewsletterLinkTracking(prepared);
     const adBlockLink = linkTracking.manifest.get('https://example.com/fake-ad');
-    assert.equal(adBlockLink.label, 'comedy-ad-01');
-    assert.equal(adBlockLink.category, 'ad-block');
+    assert.equal(adBlockLink.label, 'A comedy ad');
+    assert.equal(adBlockLink.category, 'sponsor');
+    assert.equal(adBlockLink.linkRole, 'advertisement');
   });
 });
 
@@ -150,6 +165,7 @@ test('prepareNewsletterData accepts ad-block source items under strict schema va
       href: 'https://example.com/issue-ad',
       label: 'issue | ad-block | primary',
       category: 'ad-block',
+      role: 'advertisement',
     });
   });
 });
