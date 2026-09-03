@@ -10,6 +10,11 @@ import Ajv from 'ajv';
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const SCHEMA_PATH = path.join(REPO_ROOT, 'templates', 'dense-discovery', 'newsletter.schema.json');
 const GENERATOR_PATH = path.join(REPO_ROOT, 'scripts', 'generate-skeleton-from-schema.mjs');
+const CANONICAL_HEADER_LOGOS = {
+  logoTop: 'https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp',
+  logoLink: 'https://nearfuturelaboratory.com',
+  logoBottom: 'https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp',
+};
 
 function generateStarter() {
   return execFileSync(
@@ -45,6 +50,15 @@ test('dense-discovery starters materialize the complete current schema', () => {
       `starter is missing socialCard.${propertyName}`,
     );
   }
+
+  assert.deepEqual(
+    {
+      logoTop: payload.header.logoTop,
+      logoLink: payload.header.logoLink,
+      logoBottom: payload.header.logoBottom,
+    },
+    CANONICAL_HEADER_LOGOS,
+  );
   for (const propertyName of Object.keys(socialCardSchema.properties.animation.properties)) {
     assert.ok(
       Object.prototype.hasOwnProperty.call(payload.socialCard.animation, propertyName),
