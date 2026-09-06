@@ -5,6 +5,7 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { JSDOM } from 'jsdom';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -51,6 +52,9 @@ test('build-correspondence renders local correspondence HTML with optional share
       'Hi Alex,',
       '',
       'Here is the [brief](https://example.com/brief).',
+      '',
+      '- First reading item.',
+      '- A longer second reading item with enough text to wrap across multiple lines on a narrow email viewport.',
     ].join('\n'),
     'utf8',
   );
@@ -79,7 +83,16 @@ test('build-correspondence renders local correspondence HTML with optional share
     assert.match(html, /Julian/);
     assert.doesNotMatch(html, /correspondence-brand/);
     assert.doesNotMatch(html, /<strong>Julian<\/strong>/);
-    assert.match(html, /JetBrainsMono Nerd Font/);
+    assert.doesNotMatch(html, /JetBrainsMono Nerd Font/);
+    const document = new JSDOM(html).window.document;
+    const markers = [...document.getElementsByClassName('correspondence-register-number')];
+    assert.deepEqual(markers.map(node => node.textContent.trim()), ['01', '02']);
+    assert.match(markers[0].getAttribute('style'), /font-family:Arial,\s*Helvetica,\s*sans-serif/);
+    assert.match(markers[0].getAttribute('style'), /color:#2549b8/);
+    assert.match(markers[0].getAttribute('style'), /width:50px/);
+    assert.match(html, /width:36px!important/);
+    assert.match(html, /font-size:12px!important/);
+    assert.match(document.querySelector('.correspondence-register-copy').getAttribute('style'), /padding:20px 0 19px 0/);
     assert.match(html, /href="https:\/\/nearfuturelaboratory\.com"/);
     assert.match(html, /href="mailto:hello@nearfuturelaboratory\.com"/);
     assert.match(html, /margin:24px 0 0 0/);

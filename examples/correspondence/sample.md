@@ -33,7 +33,7 @@ I made a pass through the workshop brief and tightened the language around the p
 The useful thing to examine now is whether the examples feel specific enough for the group we are bringing into the session.
 
 - The opening note is shorter.
-- The examples are grouped by participant role.
+- The examples are grouped by participant role, with enough context for each person to examine the assumptions and discuss the details with the rest of the group.
 - The final section names the assumptions we want people to question.
 
 I also left one reference link here: [Near Future Laboratory](https://nearfuturelaboratory.com).

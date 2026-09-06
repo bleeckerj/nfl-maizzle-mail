@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { JSDOM } from 'jsdom';
+import { readFileSync } from 'node:fs';
 
 import {
   normalizeCorrespondenceEmailData,
@@ -23,7 +25,7 @@ test('renderMarkdownToEmailHtml converts correspondence Markdown into email-safe
   assert.match(html, /<h3 class="correspondence-heading correspondence-heading-3">Hello<\/h3>/);
   assert.match(html, /<strong>important<\/strong>/);
   assert.match(html, /<a href="https:\/\/example\.com" class="correspondence-link">linked<\/a>/);
-  assert.match(html, /<ul class="correspondence-list">/);
+  assert.match(html, /<table role="list" class="correspondence-list"/);
   assert.match(html, /<blockquote class="correspondence-quote">/);
 });
 
@@ -103,10 +105,30 @@ test('normalizeCorrespondenceEmailData builds correspondence locals with shared 
     alt: 'Session outline preview',
   });
   assert.equal(data.correspondence.footerLinks.length, 1);
-  assert.match(data.correspondence.theme.fontFamily, /JetBrainsMono Nerd Font/);
+  const schema = JSON.parse(readFileSync(new URL('../../templates/standard-correspondence/newsletter.schema.json', import.meta.url)));
+  assert.equal(data.correspondence.theme.fontFamily, schema.properties.correspondence.properties.theme.properties.fontFamily.default);
+  assert.equal(data.correspondence.theme.fontFamily, 'Arial, Helvetica, sans-serif');
   assert.equal(data.correspondence.theme.backgroundColor, '#ffffff');
   assert.equal(data.correspondence.theme.surfaceColor, '#ffffff');
   assert.equal(data.correspondence.theme.borderColor, '#e5e5e5');
+});
+
+test('numbered registers preserve ordered starts, restart bullets, and retain inline links', () => {
+  const html = renderMarkdownToEmailHtml('8. Eight\n9. **Nine**\n10. [Ten](https://example.com/ten)\n\n- First again\n- Second');
+  const document = new JSDOM(html).window.document;
+  assert.deepEqual([...document.getElementsByClassName('correspondence-register-number')].map(node => node.textContent), ['08', '09', '10', '01', '02']);
+  assert.equal(document.querySelectorAll('[role="list"]').length, 2);
+  assert.equal(document.querySelectorAll('[role="listitem"]').length, 5);
+  assert.equal(document.querySelector('a').getAttribute('href'), 'https://example.com/ten');
+  assert.equal(document.querySelector('strong').textContent, 'Nine');
+  assert.doesNotMatch(html, /counter\(|::before/);
+});
+
+test('explicit font overrides and author-supplied body HTML remain intact', () => {
+  const bodyHtml = '<ol start="4"><li>A custom list</li></ol>';
+  const data = normalizeCorrespondenceEmailData({ subject: 'Custom', bodyHtml, theme: { fontFamily: 'Verdana, sans-serif' } });
+  assert.equal(data.correspondence.bodyHtml, bodyHtml);
+  assert.equal(data.correspondence.theme.fontFamily, 'Verdana, sans-serif');
 });
 
 test('normalizeCorrespondenceEmailData renders signature lines as links after the signature name', () => {

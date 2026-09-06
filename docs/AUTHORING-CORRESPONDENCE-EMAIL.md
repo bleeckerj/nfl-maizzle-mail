@@ -82,3 +82,10 @@ Here is the revised note.
 ```
 
 `sharedItems` is optional. When present, it must include either two or four valid items. Each item may include `image: { src, alt }`, `imageUrl`, or `imageSrc`; use hosted image URLs, `cid:` references, or small `data:image/...` placeholders, and keep image files out of the repository. Signature `lines` render Markdown links and appear after a visible pause below the signature name. Set `showSubject: true` only when the email body itself should include a heading. Set `showFromHeader: true` only when the HTML preview should show sender metadata above the message body.
+
+## Correspondence Typography
+
+Standard correspondence defaults to Arial / Helvetica / sans-serif. Markdown
+lists render as a numbered register with blue, zero-padded labels and an
+email-compatible table-cell gutter. See the [template notes](../templates/standard-correspondence/README.md#numbered-register-lists)
+for the Backoffice source, mobile treatment, and authoring limits.

@@ -30,6 +30,11 @@
       max-width: 640px;
     }
 
+    .correspondence-shell,
+    .correspondence-shell td {
+      font-family: {{ correspondence.theme.fontFamily }};
+    }
+
     .correspondence-card {
       border: 0;
       padding: 36px 0 32px 0;
@@ -78,13 +83,26 @@
     }
 
     .correspondence-list {
-      margin: 0 0 18px 22px;
+      width: 100%;
+      margin: 0 0 25px 0;
       padding: 0;
     }
 
-    .correspondence-li {
-      margin: 0 0 8px 0;
-      padding: 0;
+    .correspondence-register-number {
+      width: 50px;
+      padding: 23px 0 19px 0;
+      vertical-align: top;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 25.2px;
+      color: #2549b8;
+    }
+
+    .correspondence-register-copy {
+      padding: 20px 0 19px 0;
+      vertical-align: top;
+      font-size: 16px;
+      line-height: 23.68px;
     }
 
     .correspondence-link {
@@ -223,6 +241,14 @@
       padding: 18px 0 0 0;
     }
 
+    @media screen and (max-width: 600px) {
+      .correspondence-register-number {
+        width: 36px !important;
+        font-size: 12px !important;
+        line-height: 21.6px !important;
+      }
+    }
+
     @media screen and (max-width: 680px) {
       .correspondence-shell {
         width: 100% !important;
@@ -264,7 +290,7 @@
 </head>
 <body style="margin: 0; padding: 0; background-color: {{ correspondence.theme.backgroundColor }};">
   <div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;">{{ preheader }}</div>
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: {{ correspondence.theme.backgroundColor }};">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="{{ correspondence.theme.backgroundColor }}" style="background-color: {{ correspondence.theme.backgroundColor }};">
     <tr>
       <td align="center" class="correspondence-pad" style="padding: 28px 20px;">
         <block name="template"></block>

@@ -22,7 +22,7 @@
       "properties": {
         "subject": { "type": "string", "minLength": 1 },
         "preheader": { "type": "string" },
-        "bodyHtml": { "type": "string", "minLength": 1 },
+        "bodyHtml": { "type": "string", "minLength": 1, "description": "Email body HTML. Markdown bullet and numbered lists are normalized to a numbered register with literal zero-padded labels, table-cell gutters, and list/listitem accessibility roles. Ordered Markdown preserves its starting number. Explicit bodyHtml remains author-controlled." },
         "signatureHtml": { "type": "string" },
         "sharedItemsHeading": { "type": "string" },
         "sharedItems": {
@@ -134,8 +134,8 @@
             "linkColor": { "type": "string" },
             "borderColor": { "type": "string" },
             "accentColor": { "type": "string" },
-            "fontFamily": { "type": "string" },
-            "serifFontFamily": { "type": "string" }
+            "fontFamily": { "type": "string", "default": "Arial, Helvetica, sans-serif", "description": "Font stack applied to correspondence text and table cells, including register labels. Explicit theme overrides are preserved." },
+            "serifFontFamily": { "type": "string", "default": "Arial, Helvetica, sans-serif", "description": "Legacy theme field retained for compatibility; the standard correspondence template uses fontFamily throughout." }
           }
         }
       }
