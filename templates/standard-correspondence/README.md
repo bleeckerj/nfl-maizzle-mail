@@ -52,7 +52,7 @@ The Markdown converter supports paragraphs, `#` through `###` headings, unordere
 
 Markdown bullet and ordered lists use the reading-list treatment introduced in
 `nfl-backoffice` commit `7ae54141d` (`src/styles/numbered-register.css`): blue
-`01`, `02`, `03` labels, 20px top / 19px bottom row spacing, and a 50px number
+`01`, `02`, `03` labels, compact 8px top / 8px bottom row spacing, and a 50px number
 gutter that becomes 36px below 600px. Labels are 14px on desktop and 12px on
 mobile. Text stays at 16px; wrapping aligns with the text column.
 

@@ -108,7 +108,7 @@ test('build-correspondence renders local correspondence HTML with optional share
     assert.match(markers[0].getAttribute('style'), /width:50px/);
     assert.match(html, /width:36px!important/);
     assert.match(html, /font-size:12px!important/);
-    assert.match(document.querySelector('.correspondence-register-copy').getAttribute('style'), /padding:20px 0 19px 0/);
+    assert.match(document.querySelector('.correspondence-register-copy').getAttribute('style'), /padding:8px 0/);
     assert.match(html, /href="https:\/\/nearfuturelaboratory\.com"/);
     assert.match(html, /href="mailto:hello@nearfuturelaboratory\.com"/);
     assert.match(html, /margin:24px 0 0 0/);
