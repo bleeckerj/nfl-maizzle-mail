@@ -68,3 +68,22 @@ template uses `fontFamily` throughout. Inline code retains its monospace face.
 
 Review the saved gallery with `npm run gallery:build -- --template=standard-correspondence`
 and `npm run gallery`.
+
+## Julian's signature
+
+The signature is source-configurable through `signature.name` and
+`signature.lines`; it is not hard-coded in the template. Use this exact signature
+for Julian's correspondence (also saved in `examples/correspondence/sample.md`):
+
+```yaml
+signature:
+  name: "Julian Bleecker, BSEE, MSEng, Ph.D."
+  lines:
+    - "[https://nearfuturelaboratory.com](https://nearfuturelaboratory.com)"
+    - "[https://shop.nearfuturelaboratory.com](https://shop.nearfuturelaboratory.com)"
+    - "[https://julianbleecker.com](https://julianbleecker.com)"
+    - "[https://omata.com](https://omata.com)"
+```
+
+Keep the credential spelling, URL labels, and line order intact. Do not substitute
+a generic mailbox for this sign-off.

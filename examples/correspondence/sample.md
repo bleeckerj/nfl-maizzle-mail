@@ -2,10 +2,12 @@
 subject: "Follow-up on the workshop brief"
 preheader: "A short note with the revised framing."
 signature:
-  name: "Julian"
+  name: "Julian Bleecker, BSEE, MSEng, Ph.D."
   lines:
-    - "[Near Future Laboratory](https://nearfuturelaboratory.com)"
-    - "[hello@nearfuturelaboratory.com](mailto:hello@nearfuturelaboratory.com)"
+    - "[https://nearfuturelaboratory.com](https://nearfuturelaboratory.com)"
+    - "[https://shop.nearfuturelaboratory.com](https://shop.nearfuturelaboratory.com)"
+    - "[https://julianbleecker.com](https://julianbleecker.com)"
+    - "[https://omata.com](https://omata.com)"
 sharedItems:
   heading: "Shared items"
   items:
