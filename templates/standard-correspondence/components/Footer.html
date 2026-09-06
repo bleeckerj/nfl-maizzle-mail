@@ -1,0 +1,27 @@
+<!-- Personal correspondence footer: no subscription or campaign controls. -->
+<if condition="correspondence.footerNote || (correspondence.footerLinks && correspondence.footerLinks.length)">
+  <div class="correspondence-footer">
+    <if condition="correspondence.footerNote">
+      <p class="correspondence-p">{{{ correspondence.footerNote }}}</p>
+    </if>
+    <if condition="correspondence.footerLinks && correspondence.footerLinks.length">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" data-correspondence-footer="personal-links">
+        <tr>
+          <each loop="link in correspondence.footerLinks">
+            <td class="correspondence-footer-cell">
+              <a class="correspondence-footer-link" href="{{ link.href }}" title="{{ link.label }}">
+                <if condition="link.icon">
+                  <img class="correspondence-footer-icon" src="{{ link.icon.src }}" alt="{{ link.icon.alt }}" width="24" height="24">
+                </if>
+                <if condition="!link.icon">{{ link.label }}</if>
+              </a>
+            </td>
+          </each>
+        </tr>
+      </table>
+    </if>
+    <if condition="correspondence.footerIconAttribution">
+      <p class="correspondence-icon-credit">Icons by <a href="https://icons8.com" class="correspondence-footer-link">Icons8</a></p>
+    </if>
+  </div>
+</if>

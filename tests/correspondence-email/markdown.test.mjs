@@ -131,6 +131,18 @@ test('explicit font overrides and author-supplied body HTML remain intact', () =
   assert.equal(data.correspondence.theme.fontFamily, 'Verdana, sans-serif');
 });
 
+test('personal footer icons retain accessible labels and reject unsafe image sources', () => {
+  const data = normalizeCorrespondenceEmailData({ subject: 'Personal', bodyMarkdown: 'Hi.', footerLinks: [
+    { href: 'https://github.com/bleeckerj', label: 'GitHub', icon: { src: 'https://img.icons8.com/ios-glyphs/24/000000/github.png' } },
+    { href: 'https://example.com', label: 'Website', icon: { src: 'javascript:alert(1)' } },
+  ] });
+  assert.equal(data.correspondence.footerNote, '');
+  assert.equal(data.correspondence.footerIconAttribution, true);
+  assert.equal(data.correspondence.footerLinks[0].icon.alt, 'GitHub');
+  assert.equal(data.correspondence.footerLinks[1].icon, undefined);
+  assert.equal(normalizeCorrespondenceEmailData({subject:'Hi', bodyMarkdown:'Hi.'}).correspondence.footerIconAttribution, false);
+});
+
 test('normalizeCorrespondenceEmailData renders signature lines as links after the signature name', () => {
   const data = normalizeCorrespondenceEmailData({
     subject: 'Signature links',

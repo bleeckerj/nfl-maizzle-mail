@@ -36,7 +36,14 @@ The `--send-test` flag validates links and sends the rendered HTML through the s
 - `from` - optional preview header metadata, shown only when `showFromHeader: true`.
 - `signature` - optional signature name plus `lines` rendered after the Markdown body. The name is not bolded; `lines` may contain Markdown links and render after a visible pause.
 - `sharedItems` - optional `{ heading, items }` block rendered below the signature as a grid. The item count must be either two or four. Items may include `image: { src, alt }`, `imageUrl`, or `imageSrc`.
-- `footerNote` / `footerLinks` - optional short contact note, kept minimal.
+- `footerNote` - optional explicitly authored personal note; empty by default. Do not add generic reply instructions.
+- `footerLinks` - optional personal links, each `{ href, label, icon?: { src, alt } }`. Icons use a compact, left-aligned 24px row, adapted from Dense Discovery. Icons8 assets retain a small attribution line. No divider is added.
+
+This template is for **personal one-on-one correspondence, not mass newsletters**.
+Never add an unsubscribe link, subscription CTA, mailing-list boilerplate, or
+archive/view-online controls to its footer or authoring examples. Signature links
+stay clickable but use the text color without underlines; body links retain their
+underlines. Individual email clients may restyle detected contact links.
 - Markdown body - the correspondence content.
 
 The Markdown converter supports paragraphs, `#` through `###` headings, unordered and ordered lists, blockquotes, horizontal rules, links, bold, italic, and inline code.

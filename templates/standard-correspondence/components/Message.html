@@ -60,20 +60,8 @@
         </div>
       </if>
 
-      <if condition="correspondence.footerNote || (correspondence.footerLinks && correspondence.footerLinks.length)">
-        <div class="correspondence-footer">
-          <if condition="correspondence.footerNote">
-            <div>{{{ correspondence.footerNote }}}</div>
-          </if>
-          <if condition="correspondence.footerLinks && correspondence.footerLinks.length">
-            <div>
-              <each loop="link, index in correspondence.footerLinks">
-                <a href="{{ link.href }}">{{ link.label }}</a><if condition="index < correspondence.footerLinks.length - 1">&nbsp;&nbsp;|&nbsp;&nbsp;</if>
-              </each>
-            </div>
-          </if>
-        </div>
-      </if>
+      <component src="templates/standard-correspondence/components/Footer.html"></component>
+
     </td>
   </tr>
 </table>

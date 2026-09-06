@@ -73,7 +73,22 @@ sharedItems:
       href: "https://example.com/session-outline"
       label: "Brief"
       description: "A second item to share below the signature."
-footerNote: "Reply directly to this email with questions."
+footerLinks:
+  - label: "Julian on GitHub"
+    href: "https://github.com/bleeckerj"
+    icon:
+      src: "https://img.icons8.com/ios-glyphs/24/000000/github.png"
+      alt: "GitHub"
+  - label: "Julian on Instagram"
+    href: "https://instagram.com/darthjulian"
+    icon:
+      src: "https://img.icons8.com/ios-glyphs/24/000000/instagram-new.png"
+      alt: "Instagram"
+  - label: "Julian on LinkedIn"
+    href: "https://linkedin.com/in/julianbleecker"
+    icon:
+      src: "https://img.icons8.com/ios-glyphs/24/000000/linkedin.png"
+      alt: "LinkedIn"
 ---
 
 Hi Alex,

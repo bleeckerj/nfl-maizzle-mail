@@ -1,6 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Standard Correspondence Email",
+  "description": "Personal one-on-one correspondence, not a mass newsletter. No unsubscribe, subscription, archive, or view-online controls are generated.",
   "type": "object",
   "required": ["template", "subject", "correspondence"],
   "additionalProperties": false,
@@ -23,7 +24,7 @@
         "subject": { "type": "string", "minLength": 1 },
         "preheader": { "type": "string" },
         "bodyHtml": { "type": "string", "minLength": 1, "description": "Email body HTML. Markdown bullet and numbered lists are normalized to a numbered register with literal zero-padded labels, table-cell gutters, and list/listitem accessibility roles. Ordered Markdown preserves its starting number. Explicit bodyHtml remains author-controlled." },
-        "signatureHtml": { "type": "string" },
+        "signatureHtml": { "type": "string", "description": "Personal sign-off; links use the body text color without underlines." },
         "sharedItemsHeading": { "type": "string" },
         "sharedItems": {
           "type": "array",
@@ -86,7 +87,8 @@
             }
           }
         },
-        "footerNote": { "type": "string" },
+        "footerNote": { "type": "string", "default": "", "description": "Explicitly authored personal note only. No reply instruction or subscription boilerplate is injected." },
+        "footerIconAttribution": { "type": "boolean", "description": "Build-owned flag retaining Icons8 credit when footer icons use img.icons8.com." },
         "footerLinks": {
           "type": "array",
           "items": {
@@ -95,7 +97,16 @@
             "additionalProperties": false,
             "properties": {
               "href": { "type": "string", "minLength": 1 },
-              "label": { "type": "string", "minLength": 1 }
+              "label": { "type": "string", "minLength": 1 },
+              "icon": {
+                "type": ["object", "null"],
+                "required": ["src", "alt"],
+                "additionalProperties": false,
+                "properties": {
+                  "src": { "type": "string", "minLength": 1 },
+                  "alt": { "type": "string" }
+                }
+              }
             }
           }
         },

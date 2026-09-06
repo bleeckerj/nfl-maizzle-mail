@@ -31,6 +31,12 @@ test('build-correspondence renders local correspondence HTML with optional share
       '  lines:',
       '    - "[Near Future Laboratory](https://nearfuturelaboratory.com)"',
       '    - "[hello@nearfuturelaboratory.com](mailto:hello@nearfuturelaboratory.com)"',
+      'footerLinks:',
+      '  - href: "https://github.com/bleeckerj"',
+      '    label: "GitHub"',
+      '    icon:',
+      '      src: "https://img.icons8.com/ios-glyphs/24/000000/github.png"',
+      '      alt: "GitHub"',
       'sharedItems:',
       '  heading: "Shared items"',
       '  items:',
@@ -85,6 +91,15 @@ test('build-correspondence renders local correspondence HTML with optional share
     assert.doesNotMatch(html, /<strong>Julian<\/strong>/);
     assert.doesNotMatch(html, /JetBrainsMono Nerd Font/);
     const document = new JSDOM(html).window.document;
+    const signatureLink = document.querySelector('a[href="mailto:hello@nearfuturelaboratory.com"]');
+    assert.equal(signatureLink.style.textDecoration, 'none');
+    assert.equal(signatureLink.style.color, 'rgb(34, 34, 34)');
+    assert.equal(document.querySelector('a[href="https://example.com/brief"]').style.textDecoration, 'underline');
+    const footerIcon = document.querySelector('[data-correspondence-footer] img');
+    assert.equal(footerIcon.getAttribute('alt'), 'GitHub');
+    assert.equal(footerIcon.getAttribute('width'), '24');
+    assert.match(html, /Icons8/);
+    assert.doesNotMatch(html, /Reply directly to this email/);
     const markers = [...document.getElementsByClassName('correspondence-register-number')];
     assert.deepEqual(markers.map(node => node.textContent.trim()), ['01', '02']);
     assert.match(markers[0].getAttribute('style'), /font-family:Arial,\s*Helvetica,\s*sans-serif/);
