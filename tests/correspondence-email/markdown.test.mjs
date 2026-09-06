@@ -137,10 +137,9 @@ test('personal footer icons retain accessible labels and reject unsafe image sou
     { href: 'https://example.com', label: 'Website', icon: { src: 'javascript:alert(1)' } },
   ] });
   assert.equal(data.correspondence.footerNote, '');
-  assert.equal(data.correspondence.footerIconAttribution, true);
+  assert.equal(Object.hasOwn(data.correspondence, 'footerIconAttribution'), false);
   assert.equal(data.correspondence.footerLinks[0].icon.alt, 'GitHub');
   assert.equal(data.correspondence.footerLinks[1].icon, undefined);
-  assert.equal(normalizeCorrespondenceEmailData({subject:'Hi', bodyMarkdown:'Hi.'}).correspondence.footerIconAttribution, false);
 });
 
 test('normalizeCorrespondenceEmailData renders signature lines as links after the signature name', () => {

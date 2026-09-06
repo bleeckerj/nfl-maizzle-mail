@@ -88,7 +88,6 @@
           }
         },
         "footerNote": { "type": "string", "default": "", "description": "Explicitly authored personal note only. No reply instruction or subscription boilerplate is injected." },
-        "footerIconAttribution": { "type": "boolean", "description": "Build-owned flag retaining Icons8 credit when footer icons use img.icons8.com." },
         "footerLinks": {
           "type": "array",
           "items": {

@@ -98,7 +98,8 @@ test('build-correspondence renders local correspondence HTML with optional share
     const footerIcon = document.querySelector('[data-correspondence-footer] img');
     assert.equal(footerIcon.getAttribute('alt'), 'GitHub');
     assert.equal(footerIcon.getAttribute('width'), '24');
-    assert.match(html, /Icons8/);
+    assert.doesNotMatch(document.body.textContent, /Icons8|Icons by/i);
+    assert.equal(document.querySelector('a[href="https://icons8.com"]'), null);
     assert.doesNotMatch(html, /Reply directly to this email/);
     const markers = [...document.getElementsByClassName('correspondence-register-number')];
     assert.deepEqual(markers.map(node => node.textContent.trim()), ['01', '02']);
