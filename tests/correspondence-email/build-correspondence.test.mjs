@@ -102,7 +102,8 @@ test('build-correspondence renders local correspondence HTML with optional share
     assert.doesNotMatch(html, /Reply directly to this email/);
     const markers = [...document.getElementsByClassName('correspondence-register-number')];
     assert.deepEqual(markers.map(node => node.textContent.trim()), ['01', '02']);
-    assert.match(markers[0].getAttribute('style'), /font-family:Arial,\s*Helvetica,\s*sans-serif/);
+    assert.match(markers[0].style.fontFamily, /Courier New/);
+    assert.match(markers[0].style.fontFamily, /monospace/);
     assert.match(markers[0].getAttribute('style'), /color:#2549b8/);
     assert.match(markers[0].getAttribute('style'), /width:50px/);
     assert.match(html, /width:36px!important/);

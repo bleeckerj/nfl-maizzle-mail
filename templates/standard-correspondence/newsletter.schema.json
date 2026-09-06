@@ -145,8 +145,8 @@
             "linkColor": { "type": "string" },
             "borderColor": { "type": "string" },
             "accentColor": { "type": "string" },
-            "fontFamily": { "type": "string", "default": "Arial, Helvetica, sans-serif", "description": "Font stack applied to correspondence text and table cells, including register labels. Explicit theme overrides are preserved." },
-            "serifFontFamily": { "type": "string", "default": "Arial, Helvetica, sans-serif", "description": "Legacy theme field retained for compatibility; the standard correspondence template uses fontFamily throughout." }
+            "fontFamily": { "type": "string", "default": "Courier New, Courier, monospace", "description": "Font stack applied to correspondence text and table cells, including register labels. Explicit theme overrides are preserved." },
+            "serifFontFamily": { "type": "string", "default": "Courier New, Courier, monospace", "description": "Legacy theme field retained for compatibility; the standard correspondence template uses fontFamily throughout." }
           }
         }
       }

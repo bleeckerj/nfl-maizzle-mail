@@ -3,7 +3,7 @@
 `standard-correspondence` is for one-off HTML email correspondence generated with the Maizzle toolchain. It intentionally omits newsletter-only affordances: no unsubscribe link, no view-online link, no public archive URL, no ad hydration, and no link-tracking manifest.
 
 The body renders as general correspondence first. An optional shared-items block can appear below the signature with either two or four link items.
-The default type stack is `Arial, Helvetica, sans-serif`, applied to the email's
+The default type stack is `Courier New, Courier, monospace`, applied to the email's
 text and table cells. Explicit `theme.fontFamily` overrides remain supported.
 
 ## Build

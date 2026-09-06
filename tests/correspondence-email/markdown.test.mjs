@@ -107,7 +107,7 @@ test('normalizeCorrespondenceEmailData builds correspondence locals with shared 
   assert.equal(data.correspondence.footerLinks.length, 1);
   const schema = JSON.parse(readFileSync(new URL('../../templates/standard-correspondence/newsletter.schema.json', import.meta.url)));
   assert.equal(data.correspondence.theme.fontFamily, schema.properties.correspondence.properties.theme.properties.fontFamily.default);
-  assert.equal(data.correspondence.theme.fontFamily, 'Arial, Helvetica, sans-serif');
+  assert.equal(data.correspondence.theme.fontFamily, 'Courier New, Courier, monospace');
   assert.equal(data.correspondence.theme.backgroundColor, '#ffffff');
   assert.equal(data.correspondence.theme.surfaceColor, '#ffffff');
   assert.equal(data.correspondence.theme.borderColor, '#e5e5e5');

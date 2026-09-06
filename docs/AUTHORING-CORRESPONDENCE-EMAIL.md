@@ -100,7 +100,7 @@ Here is the revised note.
 
 ## Correspondence Typography
 
-Standard correspondence defaults to Arial / Helvetica / sans-serif. Markdown
+Standard correspondence defaults to Courier New / Courier / monospace. Markdown
 lists render as a numbered register with blue, zero-padded labels and an
 email-compatible table-cell gutter. See the [template notes](../templates/standard-correspondence/README.md#numbered-register-lists)
 for the Backoffice source, mobile treatment, and authoring limits.
