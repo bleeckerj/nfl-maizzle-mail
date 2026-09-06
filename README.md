@@ -290,6 +290,11 @@ npm run test:newsletter-core
 
 ## Template Development
 
+For visual review of the full collection, including unfinished templates, run
+`npm run gallery:build` followed by `npm run gallery`, then open
+`http://127.0.0.1:4319`. See [the template gallery guide](gallery/README.md) for
+single-template refreshes, original-email comparisons, and sample maintenance.
+
 Every production template should keep this shape:
 
 ```text

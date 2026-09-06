@@ -1,0 +1,108 @@
+---
+template: new-yorker-sample
+title: "new-yorker-sample (decompiled from source)"
+sectionStylesFile: templates/new-yorker-sample/section-styles.json
+sections:
+  - type: masthead
+    eyebrow_text: 'Read our “Literary Lives” collection.'
+    logo_href: 'http://links.newyorker.mkt4334.com/ctt?kn=10&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    logo_src: 'http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Layer_1@2x.png'
+    logo_alt: 'The New Yorker'
+    logo_width: '150'
+    logo_height: '35'
+  - type: section_header
+    section_title: 'From the Archive'
+    section_title_href: 'http://links.newyorker.mkt4334.com/ctt?kn=16&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    section_dek: 'Highs and lows in pursuit of the literary life.'
+    section_dek_href: 'http://links.newyorker.mkt4334.com/ctt?kn=16&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+  - type: editorial_intro
+    body_html: '<em>The New Yorker</em> archive presents thematic selections of articles from the magazine’s past, highlighting stories that feel as fresh as ever.<br>
+                  <br>
+                  In our “Literary Lives” collection, we bring you pieces about the dynamic authors behind literary masterworks. From F. Scott and Zelda Fitzgerald’s legendary zeal for dancing and drinking to Zora Neale Hurston’s role as a leader of the Harlem Renaissance, these pieces reveal the depths of literary life, in all its ardency and struggle.<br>
+                  <br>
+                  To enjoy more collections, or to browse through nine decades of <em>The New Yorker</em>, from complete issues to carefully selected favorites, <a href="http://links.newyorker.mkt4334.com/ctt?kn=7&amp;ms=MTU0MDQ5MTgS1&amp;r=NDQzMzg5NTk0NzI3S0&amp;b=0&amp;j=MTcyMDM2MjQyMwS2&amp;mt=2&amp;rj=MTcyMDM2MjQyMQS2&amp;rt=0" name="intro_text" style="text-decoration:none; color: #0773b5;" target="_blank">click here</a>.'
+  - type: article_card_pair
+    left_section_label: 'A CRITIC AT LARGE'
+    left_image_href: 'http://links.newyorker.mkt4334.com/ctt?kn=13&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    left_image_src: 'http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202b@2x.png'
+    left_image_alt: 'This Lonesome Place'
+    left_issue_date: 'January 29, 2001 Issue'
+    left_title: 'This Lonesome Place'
+    left_title_href: 'http://links.newyorker.mkt4334.com/ctt?kn=15&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    left_dek: 'Flannery O’Connor on race and religion in the unreconstructed South.'
+    left_byline: 'By Hilton Als'
+    left_cta_href: 'http://links.newyorker.mkt4334.com/ctt?kn=1&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    left_cta_label: 'Read now'
+    right_section_label: 'LIFE AND LETTERS'
+    right_image_href: 'http://links.newyorker.mkt4334.com/ctt?kn=20&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    right_image_src: 'http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%207b@2x.png'
+    right_image_alt: 'Ernest Hemingway'
+    right_issue_date: 'November 9, 1998 Issue'
+    right_title: 'Last Words'
+    right_title_href: 'http://links.newyorker.mkt4334.com/ctt?kn=23&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    right_dek: 'Those Hemingway wrote, and those he didn’t.'
+    right_byline: 'By Joan Didion'
+    right_cta_href: 'http://links.newyorker.mkt4334.com/ctt?kn=2&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    right_cta_label: 'Read now'
+  - type: article_card_pair
+    left_section_label: 'A CRITIC AT LARGE'
+    left_image_href: 'http://links.newyorker.mkt4334.com/ctt?kn=25&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    left_image_src: 'http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive1a2.png'
+    left_image_alt: 'Zora Neale Hurston'
+    left_issue_date: 'February 17, 1997 Issue'
+    left_title: 'A Society of One'
+    left_title_href: 'http://links.newyorker.mkt4334.com/ctt?kn=24&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    left_dek: 'Zora Neale Hurston, American contrarian.'
+    left_byline: 'By Claudia Roth Pierpont'
+    left_cta_href: 'http://links.newyorker.mkt4334.com/ctt?kn=5&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    left_cta_label: 'Read now'
+    right_section_label: 'PROFILES'
+    right_image_href: 'http://links.newyorker.mkt4334.com/ctt?kn=6&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    right_image_src: 'http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive4.png'
+    right_image_alt: 'Edith Wharton'
+    right_issue_date: 'March 2, 1929 Issue'
+    right_title: 'Dearest Edith'
+    right_title_href: 'http://links.newyorker.mkt4334.com/ctt?kn=3&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    right_dek: 'Edith Wharton was a society insider—until she started writing about her friends.'
+    right_byline: 'By Janet Flanner'
+    right_cta_href: 'http://links.newyorker.mkt4334.com/ctt?kn=21&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    right_cta_label: 'Read now'
+  - type: article_card_pair
+    left_section_label: 'THE ARTS'
+    left_image_href: 'http://links.newyorker.mkt4334.com/ctt?kn=11&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    left_image_src: 'http://contentz.mkt4334.com/ra/2019/14888/04/15404918/Group%202a@2x.png'
+    left_image_alt: 'Henry James'
+    left_issue_date: 'November 7, 1959 Issue'
+    left_title: 'The Wings of Henry James'
+    left_title_href: 'http://links.newyorker.mkt4334.com/ctt?kn=8&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    left_dek: 'How “The Wings of the Dove” shaped a whole generation of writers, critics, playwrights, producers, and publishers.'
+    left_byline: 'By James Thurber'
+    left_cta_href: 'http://links.newyorker.mkt4334.com/ctt?kn=18&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    left_cta_label: 'Read now'
+    right_section_label: 'PROFILES'
+    right_image_href: 'http://links.newyorker.mkt4334.com/ctt?kn=17&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    right_image_src: 'http://contentz.mkt4334.com/ra/2019/14888/04/15404918/archive6.png'
+    right_image_alt: 'F. Scott Fitzgerald'
+    right_issue_date: 'April 17, 1926 Issue'
+    right_title: 'That Sad Young Man'
+    right_title_href: 'http://links.newyorker.mkt4334.com/ctt?kn=12&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    right_dek: 'All was quiet on the Riviera, and then F. Scott Fitzgerald arrived.'
+    right_byline: 'By Anonymous'
+    right_cta_href: 'http://links.newyorker.mkt4334.com/ctt?kn=22&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    right_cta_label: 'Read now'
+  - type: archive_cta_banner
+    prompt_text: 'Our full archive awaits.'
+    cta_href: 'http://links.newyorker.mkt4334.com/ctt?kn=4&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    cta_label: 'Explore now'
+  - type: colophon
+    view_in_browser_href: '#'
+    view_in_browser_label: 'View this email in your browser.'
+    publication_name: 'The New Yorker'
+    customer_care_href: 'http://links.newyorker.mkt4334.com/ctt?kn=19&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    privacy_policy_href: 'http://links.newyorker.mkt4334.com/ctt?kn=14&ms=MTU0MDQ5MTgS1&r=NDQzMzg5NTk0NzI3S0&b=0&j=MTcyMDM2MjQyMwS2&mt=2&rj=MTcyMDM2MjQyMQS2&rt=0'
+    unsubscribe_href: '#'
+    sender_address: 'Sent from Condé Nast, 1 World Trade Center, New York, NY 10007, attn: Email Coordinator'
+    copyright_line: 'Copyright © 2018 Condé Nast. All rights reserved.'
+---
+
+<!-- new-yorker-sample: this skeleton reconstructs the source email using its discovered component palette. Edit, duplicate, or remove sections to author a new email. -->

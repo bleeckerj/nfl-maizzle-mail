@@ -45,3 +45,6 @@ npm-debug.log*
 
 # Generated data files (optional - remove if you want to track them)
 # data/newsletter.json.cache
+
+# Reproducible template gallery previews and build diagnostics
+/build_template_gallery/

@@ -1,0 +1,106 @@
+{
+  "templates": {
+    "dense-discovery": {
+      "stage": "developed",
+      "description": "Main editorial newsletter with features, links, books, images, and classifieds.",
+      "sample": "gallery/samples/dense-discovery.json",
+      "reference": "templates/dense-discovery/dense-discovery-sample.html"
+    },
+    "near-future-lab-daily-headlines": {
+      "stage": "developed",
+      "description": "Compact editorial dispatch with article groups, features, and footer actions.",
+      "reference": "generated/new-york-times-daily-headlines.sanitized.html"
+    },
+    "brain-dead-template": {
+      "stage": "developed",
+      "description": "Sales and campaign email with monospace typography and acid highlights.",
+      "reference": "emails-to-templatize/brain-dead-01.html"
+    },
+    "standard-correspondence": {
+      "stage": "developed",
+      "description": "Personal correspondence with a signature and optional shared links.",
+      "sample": "examples/correspondence/sample.md"
+    },
+    "adjacency-product-review": {
+      "stage": "specialized",
+      "description": "Product reviews with lead verdicts, picks, and editorial body copy."
+    },
+    "microdrop-faithful": {
+      "stage": "specialized",
+      "description": "Page-shaped microdrop email. The supplied sample shows a minimal copy section."
+    },
+    "popup-jobs-mail": {
+      "stage": "specialized",
+      "description": "Branded job announcement. This sample exercises the Apple-like renderer.",
+      "sample": "gallery/samples/popup-jobs-mail.json"
+    },
+    "new-yorker-sample": {
+      "stage": "prototype",
+      "description": "Decompiled New Yorker palette with repeated article pairs.",
+      "sample": "gallery/samples/new-yorker-sample.md",
+      "reference": "templates/new-yorker/new-yorker-sample.html"
+    },
+    "the-atlantic": {
+      "stage": "prototype",
+      "description": "Decompiled Atlantic palette with ordered editorial sections.",
+      "sample": "gallery/samples/the-atlantic.md",
+      "reference": "emails-to-templatize/the-atlantic.html"
+    },
+    "nfl-mid-week": {
+      "stage": "prototype",
+      "description": "Earlier Dense Discovery fork; no template-specific schema.",
+      "sample": "gallery/samples/dense-discovery.json"
+    },
+    "new-yorker": {
+      "stage": "prototype",
+      "description": "Earlier New Yorker factory adaptation.",
+      "reference": "templates/new-yorker/new-yorker-sample.html"
+    },
+    "atlantic-complete": {
+      "stage": "prototype",
+      "description": "Earlier Atlantic adaptation with editorial and poetry sections.",
+      "reference": "emails-to-templatize/the-atlantic.html"
+    },
+    "coda-email": {
+      "stage": "prototype",
+      "description": "Product onboarding and feature announcements.",
+      "reference": "emails-to-templatize/coda.html"
+    },
+    "palm-report-v2": {
+      "stage": "prototype",
+      "description": "Editorial dispatch with a hero, issue header, and recommendations.",
+      "reference": "templates/palm-report/palm-report-sample.html"
+    },
+    "sentiers-claude-test": {
+      "stage": "prototype",
+      "description": "Sentiers experiment with introduction, articles, and CTA.",
+      "reference": "emails-to-templatize/sentiers.html"
+    },
+    "sentiers-factory-test": {
+      "stage": "prototype",
+      "description": "Sentiers factory experiment with article and link-list components.",
+      "reference": "emails-to-templatize/sentiers.html"
+    },
+    "sentiers-v3": {
+      "stage": "prototype",
+      "description": "Sentiers iteration with articles and link lists.",
+      "reference": "emails-to-templatize/sentiers.html"
+    },
+    "wirecutter-v2": {
+      "stage": "legacy",
+      "description": "Deprecated product-review baseline; superseded by adjacency-product-review.",
+      "reference": "emails-to-templatize/wirecutter.html"
+    },
+    "wirecutter": {
+      "stage": "legacy",
+      "description": "Original template with old src/ include paths.",
+      "sample": "content/wirecutter-20251107-holiday.md",
+      "reference": "emails-to-templatize/wirecutter.html"
+    },
+    "palm-report": {
+      "stage": "reference",
+      "description": "Original email only; no reusable template entry point.",
+      "reference": "templates/palm-report/palm-report-sample.html"
+    }
+  }
+}

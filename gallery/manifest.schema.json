@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated template gallery manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["generatedAt", "templates"],
+  "properties": {
+    "generatedAt": { "type": "string" },
+    "templates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "stage", "description", "sample", "referenceSource", "status", "preview", "reference", "builtAt", "warnings", "error"],
+        "properties": {
+          "name": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+          "stage": { "enum": ["developed", "specialized", "prototype", "legacy", "reference"] },
+          "description": { "type": "string" },
+          "sample": { "type": ["string", "null"] },
+          "referenceSource": { "type": ["string", "null"] },
+          "status": { "enum": ["pending", "building", "ready", "warnings", "failed", "reference-only", "missing-sample"] },
+          "preview": { "type": ["string", "null"] },
+          "reference": { "type": ["string", "null"] },
+          "builtAt": { "type": ["string", "null"] },
+          "warnings": { "type": "array", "items": { "type": "string" } },
+          "error": { "type": ["string", "null"] }
+        }
+      }
+    }
+  }
+}

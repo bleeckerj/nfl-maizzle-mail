@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Template Gallery · Near Future Laboratory</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="masthead"><a href="/" class="brand">NEAR FUTURE LABORATORY <span>/ EMAIL SYSTEMS</span></a><span class="edition">TEMPLATE LIBRARY</span></header>
+  <div class="workspace">
+    <aside>
+      <div class="intro"><p class="eyebrow">The working collection</p><h1>Template<br>gallery<span>.</span></h1><p id="count">Loading the collection…</p></div>
+      <label for="search">Find a template</label><input id="search" type="search" placeholder="Name or description…">
+      <label for="filter">Development stage</label><select id="filter"><option value="all">All stages</option><option value="developed">Developed</option><option value="specialized">Specialized</option><option value="prototype">Prototypes</option><option value="legacy">Legacy</option><option value="reference">References</option></select>
+      <nav id="templates" aria-label="Templates"></nav>
+      <p class="aside-note">Original emails and fresh sample builds.<br>Remote images load from their existing hosts.</p>
+    </aside>
+    <main>
+      <section class="detail">
+        <div class="detail-top"><span id="stage" class="eyebrow"></span><span id="status" class="badge"></span></div>
+        <h2 id="name">Your email collection</h2><p id="description">Build the previews to begin reviewing.</p>
+        <div class="toolbar">
+          <div class="segmented" aria-label="Preview width"><button data-width="desktop" aria-pressed="true">Desktop · 800</button><button data-width="mobile" aria-pressed="false">Mobile · 390</button></div>
+          <div class="segmented" aria-label="Preview source"><button data-view="build" aria-pressed="true">Sample build</button><button data-view="reference" aria-pressed="false">Original email</button><button data-view="compare" aria-pressed="false">Compare</button></div>
+          <a id="open" target="_blank" rel="noopener">Open full preview ↗</a>
+        </div>
+        <details id="notes"><summary>Build notes &amp; sample source</summary><div id="provenance"></div><ul id="warnings"></ul></details>
+      </section>
+      <div id="message" role="status" hidden></div>
+      <section id="canvas" aria-label="Email previews"></section>
+      <footer><span id="updated"></span><span>Browser review · email-client rendering may differ</span></footer>
+    </main>
+  </div>
+</body>
+</html>

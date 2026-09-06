@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Template gallery configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["templates"],
+  "properties": {
+    "templates": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z0-9][a-z0-9-]*$" },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["stage", "description"],
+        "properties": {
+          "stage": { "enum": ["developed", "specialized", "prototype", "legacy", "reference"] },
+          "description": { "type": "string" },
+          "sample": { "type": "string", "description": "Repository-relative Markdown, YAML, or JSON sample. Overrides automatic sample discovery." },
+          "reference": { "type": "string", "description": "Repository-relative original HTML email, displayed separately from the build." }
+        }
+      }
+    }
+  }
+}

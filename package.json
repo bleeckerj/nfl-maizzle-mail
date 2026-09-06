@@ -23,7 +23,10 @@
     "test:microdrop-faithful": "node --test tests/microdrop-faithful/*.test.mjs",
     "test:correspondence": "node --test tests/correspondence-email/*.test.mjs",
     "send:test": "node scripts/send-ses-test.mjs",
-    "send:correspondence:test": "node scripts/send-correspondence-test.mjs"
+    "send:correspondence:test": "node scripts/send-correspondence-test.mjs",
+    "gallery": "node scripts/template-gallery.mjs serve",
+    "gallery:build": "node scripts/template-gallery.mjs build",
+    "test:gallery": "node --test tests/template-gallery/*.test.mjs"
   },
   "keywords": [
     "email",
