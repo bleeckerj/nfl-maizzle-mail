@@ -507,6 +507,7 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
         }
       : viewOnlineLinkSchema;
     schema.properties.intro.properties.viewOnlineLink = {
+      description: "Authored view-online URL or tracked link is preserved. Public builds fill missing or placeholder links from the issue id when available.",
       oneOf: [
         { type: 'string' },
         trackedViewOnlineLinkSchema,

@@ -173,6 +173,7 @@ test('build-newsletter accepts an absolute external issue path with adjacency-fe
         `--output-dir=${outputDir}`,
         `--adjacency-mail-theme-overrides=${overridesPath}`,
         '--no-open',
+        '--preview', // This rendering fixture intentionally uses synthetic cid: image URLs.
       ],
       {
         encoding: 'utf8',
@@ -189,6 +190,7 @@ test('build-newsletter accepts an absolute external issue path with adjacency-fe
     const html = readFileSync(builtHtmlPath, 'utf8');
     assert.match(html, /External Adjacency Issue/);
     assert.match(html, /Read on The Adjacency/);
+    assert.match(html, /<a\b[^>]*href="\/issue\/02\/features\/external-adjacency-issue"[^>]*>View\/share online<\/a>/);
     assert.match(html, /This body comes from an external issue path/);
     assert.match(html, /This Week(?:&#0*39;|')s Partner/);
     assert.match(html, /Context for why this ad appears in this issue\./);

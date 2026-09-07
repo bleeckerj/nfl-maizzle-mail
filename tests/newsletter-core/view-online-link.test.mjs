@@ -63,7 +63,7 @@ test('injectViewOnlineLink fills dense-discovery intro link from output name', (
     template: 'dense-discovery',
     intro: {
       title: 'Intro',
-      viewOnlineLink: 'https://example.com/typed-wrong',
+      viewOnlineLink: '#',
     },
     sections: [],
   };

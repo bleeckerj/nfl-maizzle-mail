@@ -94,7 +94,7 @@
               },
               "viewOnlineLink": {
                 "$ref": "#/definitions/trackedLink",
-                "description": "Build-injected tracked URL for the public issue page. Do not author this by hand."
+                "description": "Authored view-online URL or tracked link is preserved. Public builds fill missing or placeholder links from the issue id when available."
               },
               "logo_src": {
                 "type": "string",

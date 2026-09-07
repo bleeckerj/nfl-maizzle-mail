@@ -72,9 +72,9 @@ Where an existing field is named `url`, the object still carries `href`, `label`
 
 The Backoffice MCP starter tools generate from the selected template's current schema on every invocation. `newsletter_start`, `create_newsletter_from_skeleton`, and `campaign_email_start` share the resolver and `scripts/generate-skeleton-from-schema.mjs`; static starter Markdown and legacy skeleton paths are not starter sources. The generator must emit YAML that validates against the selected schema, including discriminator-driven sections, local `$ref` branches, nullable objects, and nested arrays.
 
-## Build-Owned View Online Link
+## View Online Link
 
-View/share-online links are deterministic. Public starters include the expected field as a placeholder, while the build replaces it with the canonical issue URL.
+Authored View/share-online URLs and tracked-link metadata are preserved through normalization and rendering. Public starters include the expected field as a placeholder; public builds fill missing or placeholder links with the canonical issue URL when an issue id is available. Article emails can supply their published article or popup URL without a weekly issue id.
 
 The build computes:
 
@@ -91,7 +91,7 @@ Current injection targets:
 
 When adding a new template with a view-online link, add an explicit injection target in `view-online-link.mjs`, add tests, and document the target in the template README/schema.
 
-Public builds warn when a supported template is missing its expected view-online field or contains a placeholder. Campaign builds suppress both the warning and the public link.
+Public builds warn when a supported template is missing its expected view-online field or contains a placeholder. Campaign builds suppress the warning and automatic public-link generation; an explicitly authored view-online link is preserved.
 
 ## Link Tracking Contract
 
@@ -208,7 +208,7 @@ For each new template or boilerplate issue:
 1. Run focused unit tests for new build helpers.
 2. Run the canonical build command for a Backoffice outbox issue.
 3. Confirm schema validation passes.
-4. Confirm the build injects the deterministic view-online link when the template renders one.
+4. Confirm the build preserves an authored view-online link, or injects the deterministic issue link when the field is missing or a placeholder.
 5. Confirm `ad-block` hydrates from `ads.json` using only `adId` in source.
 6. When supported, confirm `short-take` hydrates from `shortTakes.json` using only `shortTakeId` in source.
 7. Confirm rendered HTML includes `data-link-label` and `data-link-category` on expected anchors.
