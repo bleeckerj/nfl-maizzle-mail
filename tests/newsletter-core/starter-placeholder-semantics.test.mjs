@@ -139,3 +139,19 @@ test('full newsletter starters use semantically usable placeholder values', () =
     }
   }
 });
+
+test('registry-backed sections expose compact authoring fields in full starters', () => {
+  const output = execFileSync(
+    process.execPath,
+    [GENERATOR, '--template', 'dense-discovery', '--all-section-fields', '--items-per-section', '1'],
+    { cwd: REPO_ROOT, encoding: 'utf8' },
+  );
+  const payload = matter(output).data;
+  const adBlock = payload.sections.find(({ type }) => type === 'ad-block');
+  const shortTake = payload.sections.find(({ type }) => type === 'short-take');
+
+  assert.deepEqual(Object.keys(adBlock).sort(), ['description', 'items', 'title', 'type']);
+  assert.deepEqual(adBlock.items, [{ adId: 'example-ad-id' }]);
+  assert.deepEqual(Object.keys(shortTake).sort(), ['items', 'type']);
+  assert.deepEqual(shortTake.items, [{ shortTakeId: 'example-short-take-id' }]);
+});

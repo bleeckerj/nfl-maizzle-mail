@@ -1,0 +1,14 @@
+{
+  "ad-block": {
+    "sectionFields": ["type", "title", "description", "show_top_rule", "show_bottom_rule", "items"],
+    "itemFields": ["adId"],
+    "requiredSectionFields": ["type", "items"],
+    "requiredItemFields": ["adId"]
+  },
+  "short-take": {
+    "sectionFields": ["type", "title", "description", "items"],
+    "itemFields": ["shortTakeId"],
+    "requiredSectionFields": ["type", "items"],
+    "requiredItemFields": ["shortTakeId"]
+  }
+}

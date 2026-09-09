@@ -28,6 +28,9 @@ import {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.resolve(__dirname, '..');
+const AUTHORING_CONTRACTS = JSON.parse(
+  fs.readFileSync(path.join(REPO_ROOT, 'config', 'newsletter-authoring-contracts.json'), 'utf8'),
+);
 
 const USAGE = `
 Generate a newsletter skeleton from a JSON Schema.
@@ -452,6 +455,48 @@ function extractSectionSchema(schema, sectionType) {
   return schema.properties?.sections?.items || null;
 }
 
+function projectSchemaProperties(schemaFragment = {}, allowedFields = [], requiredFields = []) {
+  const properties = schemaFragment.properties || {};
+  return {
+    ...schemaFragment,
+    properties: Object.fromEntries(
+      allowedFields
+        .filter((field) => Object.prototype.hasOwnProperty.call(properties, field))
+        .map((field) => [field, properties[field]]),
+    ),
+    required: requiredFields.filter((field) => Object.prototype.hasOwnProperty.call(properties, field)),
+  };
+}
+
+function projectSectionSchemaForAuthoring(sectionType, sectionSchema = {}, schema = {}) {
+  const contract = AUTHORING_CONTRACTS[sectionType];
+  if (!contract) return sectionSchema;
+  const projected = projectSchemaProperties(
+    sectionSchema,
+    contract.sectionFields || [],
+    contract.requiredSectionFields || [],
+  );
+  if (projected.properties.items) {
+    const collectionSchema = resolveGenerationSchema(projected.properties.items, { schema });
+    projected.properties.items = {
+      ...collectionSchema,
+      items: projectItemSchemaForAuthoring(sectionType, collectionSchema.items || {}, schema),
+    };
+  }
+  return projected;
+}
+
+function projectItemSchemaForAuthoring(sectionType, itemSchema = {}, schema = {}) {
+  const resolvedItemSchema = resolveGenerationSchema(itemSchema, { schema });
+  const contract = AUTHORING_CONTRACTS[sectionType];
+  if (!contract) return resolvedItemSchema;
+  return projectSchemaProperties(
+    resolvedItemSchema,
+    contract.itemFields || [],
+    contract.requiredItemFields || [],
+  );
+}
+
 function assertStarterCompleteness(markdown, schema) {
   const frontmatterMatch = markdown.match(/^---\n([\s\S]*?)\n---(?:\n|$)/);
   if (!frontmatterMatch) {
@@ -506,7 +551,11 @@ function assertStarterCompleteness(markdown, schema) {
       for (const [index, section] of payload.sections.entries()) {
         const sectionPath = `sections[${index}]`;
         if (!section || typeof section !== 'object') continue;
-        const sectionSchema = extractSectionSchema(schema, section.type);
+        const sectionSchema = projectSectionSchemaForAuthoring(
+          section.type,
+          extractSectionSchema(schema, section.type),
+          schema,
+        );
         walk(section, sectionSchema || propertySchema.items || {}, sectionPath);
       }
       continue;
@@ -625,12 +674,18 @@ function generateSectionYaml(sectionType, sectionSchema, options = {}) {
 
   lines.push(`- type: ${sectionType}`);
 
-  if (!sectionSchema?.properties) {
+  const authoringSectionSchema = projectSectionSchemaForAuthoring(
+    sectionType,
+    sectionSchema,
+    options.schema,
+  );
+
+  if (!authoringSectionSchema?.properties) {
     lines.push(`${indent}title: ${humanize(sectionType)} Section`);
     return lines;
   }
 
-  const props = sectionSchema.properties;
+  const props = authoringSectionSchema.properties;
   const emittedFields = new Set();
 
   // Title first
@@ -662,7 +717,11 @@ function generateSectionYaml(sectionType, sectionSchema, options = {}) {
     const collectionSchema = collectionProp === 'items'
       ? resolvedItemsSchema
       : resolvedArticlesSchema;
-    const itemSchema = collectionSchema.items || {};
+    const itemSchema = projectItemSchemaForAuthoring(
+      sectionType,
+      collectionSchema.items || {},
+      options.schema,
+    );
     const requestedCount = minimal ? 1 : itemsPerSection;
     const minimumCount = Number.isInteger(collectionSchema.minItems) ? collectionSchema.minItems : 0;
     const maximumCount = Number.isInteger(collectionSchema.maxItems) ? collectionSchema.maxItems : Infinity;
@@ -680,7 +739,7 @@ function generateSectionYaml(sectionType, sectionSchema, options = {}) {
   }
 
   // Emit required scalar/object fields for sections without a collection.
-  const requiredFields = Array.isArray(sectionSchema.required) ? sectionSchema.required : [];
+  const requiredFields = Array.isArray(authoringSectionSchema.required) ? authoringSectionSchema.required : [];
   for (const propName of requiredFields) {
     if (
       propName === 'type'
