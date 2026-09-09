@@ -852,7 +852,6 @@ async function main() {
 
   // Ensure core locals exist
   [
-    '$schema',
     'title',
     'preheader',
     'ogImage',

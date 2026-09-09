@@ -542,6 +542,7 @@ function assertStarterCompleteness(markdown, schema) {
   }
 
   for (const [propertyName, propertySchema] of Object.entries(schema.properties || {})) {
+    if (propertyName === '$schema') continue;
     if (!Object.prototype.hasOwnProperty.call(payload, propertyName)) {
       missing.push(propertyName);
       continue;
@@ -593,7 +594,7 @@ function generateSkeleton(schema, options = {}) {
   }
 
   // Emit every schema-declared root field except structural collections handled below.
-  const structuralProps = new Set(['template', 'sections', 'header', 'intro', 'footer']);
+  const structuralProps = new Set(['$schema', 'template', 'sections', 'header', 'intro', 'footer']);
   const topLevelProps = Object.keys(schema.properties || {}).filter((prop) => !structuralProps.has(prop));
   for (const prop of topLevelProps) {
     if (schema.properties?.[prop]) {

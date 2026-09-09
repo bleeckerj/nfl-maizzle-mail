@@ -35,6 +35,8 @@ test('dense-discovery starters materialize the complete current schema', () => {
   const payload = parseFrontmatter(generateStarter());
   const validate = new Ajv({ allErrors: true, strict: false }).compile(schema);
   assert.equal(validate(payload), true, JSON.stringify(validate.errors, null, 2));
+  assert.equal(Object.prototype.hasOwnProperty.call(payload, '$schema'), false);
+  assert.equal(Object.prototype.hasOwnProperty.call(schema.properties, '$schema'), false);
 
   for (const propertyName of Object.keys(schema.properties)) {
     assert.ok(
