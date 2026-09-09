@@ -1490,7 +1490,13 @@
                       "description": {},
                       "linkText": {}
                     },
-                    "additionalProperties": false
+                    "additionalProperties": false,
+                    "not": {
+                      "required": [
+                        "image",
+                        "images"
+                      ]
+                    }
                   }
                 },
                 "authorLabel": {},
@@ -1806,13 +1812,26 @@
                         "additionalProperties": false
                       },
                       "images": {
-                        "type": "object",
-                        "properties": {
-                          "src": {},
-                          "alt": {},
-                          "caption": {}
-                        },
-                        "additionalProperties": false
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "required": [
+                            "src"
+                          ],
+                          "properties": {
+                            "src": {
+                              "type": "string"
+                            },
+                            "alt": {
+                              "type": "string"
+                            },
+                            "link": {},
+                            "caption": {
+                              "type": "string"
+                            }
+                          },
+                          "additionalProperties": false
+                        }
                       },
                       "image": {},
                       "link": {},
@@ -1820,7 +1839,13 @@
                       "contentMetadata": { "$ref": "#/definitions/contentAttribution" },
                       "linkText": {}
                     },
-                    "additionalProperties": false
+                    "additionalProperties": false,
+                    "not": {
+                      "required": [
+                        "image",
+                        "images"
+                      ]
+                    }
                   }
                 },
                 "linkStylesInline": {},
@@ -1998,7 +2023,13 @@
                       "readMoreTxt": {},
                       "readMoreLink": {}
                     },
-                    "additionalProperties": false
+                    "additionalProperties": false,
+                    "not": {
+                      "required": [
+                        "image",
+                        "images"
+                      ]
+                    }
                   }
                 },
                 "linkStylesInline": {},
@@ -2121,7 +2152,13 @@
                         }
                       }
                     },
-                    "additionalProperties": false
+                    "additionalProperties": false,
+                    "not": {
+                      "required": [
+                        "image",
+                        "images"
+                      ]
+                    }
                   }
                 },
                 "linkStylesInline": {},
@@ -3515,7 +3552,13 @@
                       "readMoreTxt": {},
                       "readMoreLink": {}
                     },
-                    "additionalProperties": false
+                    "additionalProperties": false,
+                    "not": {
+                      "required": [
+                        "image",
+                        "images"
+                      ]
+                    }
                   }
                 },
                 "linkStylesInline": {},

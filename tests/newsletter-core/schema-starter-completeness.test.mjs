@@ -81,3 +81,44 @@ test('dense-discovery starters materialize the complete current schema', () => {
   const classifieds = payload.sections.find(({ type }) => type === 'classifieds');
   assert.ok(Object.prototype.hasOwnProperty.call(classifieds, 'containerStyles'));
 });
+
+test('dense-discovery item image fields are mutually exclusive', () => {
+  const schema = JSON.parse(readFileSync(SCHEMA_PATH, 'utf8'));
+  const itemSectionTypes = [
+    'books-accessories',
+    'classifieds',
+    'feature',
+    'food-for-thought',
+    'indie-mag-single-column',
+    'single-column',
+    'sponsor',
+  ];
+
+  for (const sectionType of itemSectionTypes) {
+    const sectionRule = schema.properties.sections.items.allOf.find(
+      (rule) => rule.if?.properties?.type?.const === sectionType,
+    );
+    const itemSchema = sectionRule?.then?.properties?.items?.items;
+    assert.deepEqual(
+      itemSchema?.not?.required,
+      ['image', 'images'],
+      `${sectionType} should reject items containing both image and images`,
+    );
+  }
+
+  const classifiedsRule = schema.properties.sections.items.allOf.find(
+    (rule) => rule.if?.properties?.type?.const === 'classifieds',
+  );
+  assert.equal(
+    classifiedsRule.then.properties.items.items.properties.images.type,
+    'array',
+  );
+
+  const payload = parseFrontmatter(generateStarter());
+  for (const sectionType of itemSectionTypes.filter((type) => type !== 'sponsor')) {
+    const item = payload.sections.find(({ type }) => type === sectionType)?.items?.[0];
+    assert.ok(item, `${sectionType} starter should include an item`);
+    assert.equal(Object.prototype.hasOwnProperty.call(item, 'image'), true);
+    assert.equal(Object.prototype.hasOwnProperty.call(item, 'images'), false);
+  }
+});
