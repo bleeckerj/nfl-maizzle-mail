@@ -336,7 +336,7 @@ function inferTypeFromName(propName) {
 function generateStringPlaceholder(propName, description = '') {
   const name = propName.toLowerCase();
 
-  if (name === 'alt' || name.includes('alttext')) {
+  if (name === 'alt' || name.endsWith('alt') || name.includes('alttext')) {
     if (name === 'ogimagealttext') return 'Open graph preview image for this newsletter';
     return 'Image description for accessibility';
   }

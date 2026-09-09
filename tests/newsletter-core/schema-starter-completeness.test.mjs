@@ -69,6 +69,9 @@ test('dense-discovery starters materialize the complete current schema', () => {
   const singleColumn = payload.sections.find(({ type }) => type === 'single-column');
   assert.ok(singleColumn?.items?.[0]?.image?.src?.startsWith('https://fpoimg.com/'));
 
+  assert.equal(payload.intro.imageAlt, 'Image description for accessibility');
+  assert.equal(payload.intro.images[0].alt, 'Image description for accessibility');
+
   const foodForThought = payload.sections.find(({ type }) => type === 'food-for-thought');
   assert.equal(foodForThought.items.length, 1);
   assert.ok(Object.prototype.hasOwnProperty.call(foodForThought.items[0], 'description'));
