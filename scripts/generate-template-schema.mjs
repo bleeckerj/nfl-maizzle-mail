@@ -427,7 +427,7 @@ function findTypedSectionVariantEntry(schema, type) {
  * layer those allowances back onto the derived schema here.
  */
 function applyDerivedSchemaOverrides(schema, entryAbsPath) {
-  for (const rootKey of ['newsletterFormat', 'ogImageAltText', 'pubDate', 'publicationMode']) {
+  for (const rootKey of ['newsletterFormat', 'ogImageAltText', 'pubDate', 'publicationMode', 'webPublicationStatus']) {
     if (!schema?.properties?.[rootKey]) {
       schema.properties[rootKey] = {};
     }
@@ -435,6 +435,12 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
   schema.properties.publicationMode = {
     type: 'string',
     default: 'public-issue',
+  };
+  schema.properties.webPublicationStatus = {
+    type: 'string',
+    enum: ['draft', 'published'],
+    default: 'draft',
+    description: 'Controls whether the built issue may be exposed on the public newsletter site.',
   };
   // socialCard is an authoring contract even though the Maizzle template
   // receives it through the social-card export path. Keep the complete

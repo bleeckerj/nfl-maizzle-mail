@@ -832,11 +832,13 @@ test('prepareNewsletterData rejects indie-mag-single-column items that set both 
 test('prepareNewsletterData accepts source-model root metadata fields under strict schema validation', () => {
   const prepared = prepareNewsletterData(
     {
+      $schema: '../newsletter.schema.json',
       template: 'dense-discovery',
       title: 'Strict Schema Root Metadata Test',
       ogImage: 'https://imagedelivery.net/example/cover/public',
       ogImageAltText: 'Cover image alt text for downstream exports.',
       pubDate: '2025-12-21T09:00:00-08:00',
+      webPublicationStatus: 'draft',
       sections: [],
     },
     {
@@ -849,4 +851,28 @@ test('prepareNewsletterData accepts source-model root metadata fields under stri
 
   assert.equal(prepared.ogImageAltText, 'Cover image alt text for downstream exports.');
   assert.equal(prepared.pubDate, '2025-12-21T09:00:00-08:00');
+  assert.equal(prepared.webPublicationStatus, 'draft');
+});
+
+test('prepareNewsletterData rejects unsupported web publication states under strict schema validation', () => {
+  for (const templateName of ['dense-discovery', 'near-future-lab-daily-headlines']) {
+    assert.throws(
+      () =>
+        prepareNewsletterData(
+          {
+            template: templateName,
+            title: 'Strict Schema Publication State Test',
+            webPublicationStatus: 'ready',
+            sections: [],
+          },
+          {
+            repoRoot: REPO_ROOT,
+            templateName,
+            strictSchema: true,
+            logger: { log() {} },
+          },
+        ),
+      /strict mode/,
+    );
+  }
 });

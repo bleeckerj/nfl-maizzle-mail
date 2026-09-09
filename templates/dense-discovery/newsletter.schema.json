@@ -3574,6 +3574,15 @@
       "type": "string",
       "default": "public-issue"
     },
+    "webPublicationStatus": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "published"
+      ],
+      "default": "draft",
+      "description": "Controls whether the built issue may be exposed on the public newsletter site."
+    },
     "socialCard": {
       "type": [
         "object",

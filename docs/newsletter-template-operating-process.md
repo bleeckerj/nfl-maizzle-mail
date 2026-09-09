@@ -48,7 +48,7 @@ Every new production template should have `templates/<template-name>/newsletter.
 
 The schema should describe:
 
-- top-level metadata such as `template`, `issueId`, `title`, `preheader`, `pubDate`, `ogImage`, `ogImageAltText`, and `socialCard` when supported
+- top-level metadata such as `template`, `issueId`, `title`, `preheader`, `pubDate`, `ogImage`, `ogImageAltText`, `webPublicationStatus` (`draft` or `published`), and `socialCard` when supported
 - each supported section type
 - the editor-owned fields for each section
 - object-valued tracked links

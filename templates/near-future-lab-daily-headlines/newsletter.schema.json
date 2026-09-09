@@ -25,6 +25,12 @@
       "minLength": 1,
       "description": "Accessible description of the public newsletter unfurl image."
     },
+    "webPublicationStatus": {
+      "type": "string",
+      "enum": ["draft", "published"],
+      "default": "draft",
+      "description": "Controls whether the built issue may be exposed on the public newsletter site."
+    },
     "sectionStylesFile": {
       "type": "string",
       "description": "Template-owned section style configuration path."
