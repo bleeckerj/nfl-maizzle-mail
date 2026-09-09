@@ -19,6 +19,7 @@ const sectionTypes = [
   'intro_statement',
   'ad-block',
   'short-take',
+  'speculative-job',
   'calendar_event',
   'section_article_group',
   'section_more_link',
@@ -86,7 +87,7 @@ test('schema-derived starters emit every non-structural root property declared b
   }
 });
 
-test('every schema-backed email template has a schema-valid generated starter', () => {
+test('every schema-backed email template has a schema-valid full generated starter', () => {
   const templatesRoot = path.join(REPO_ROOT, 'templates');
   const templateDirectories = readdirSync(templatesRoot, { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
@@ -102,7 +103,7 @@ test('every schema-backed email template has a schema-valid generated starter', 
 
     const output = execFileSync(
       process.execPath,
-      [GENERATOR, '--schema', schemaPath, '--minimal'],
+      [GENERATOR, '--schema', schemaPath, '--template-name', template, '--all-section-fields', '--items-per-section', '1'],
       { cwd: REPO_ROOT, encoding: 'utf8' },
     );
     const schema = JSON.parse(readFileSync(schemaPath, 'utf8'));

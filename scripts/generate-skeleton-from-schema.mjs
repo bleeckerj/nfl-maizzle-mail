@@ -18,6 +18,12 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import yaml from 'js-yaml';
+import {
+  generateNumericPlaceholder,
+  generateStringPlaceholder,
+  humanize,
+  inferTypeFromName,
+} from './lib/newsletter-starter-placeholders.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -156,9 +162,6 @@ function loadSchema(schemaPath) {
 // Placeholder Value Generation
 // ============================================================================
 
-const PLACEHOLDER_IMAGE = (width = 800, height = 600, text = 'Image') =>
-  `https://fpoimg.com/${width}x${height}?text=${encodeURIComponent(text)}&bg_color=e6e6e6&text_color=4FAAAA`;
-
 const DEPRECATED_SECTION_TYPES = new Set(['sponsor']);
 
 function resolveSchemaRef(schema, propSchema) {
@@ -200,9 +203,12 @@ function resolveGenerationSchema(propSchema = {}, context = {}) {
         ? resolveGenerationSchema(resolvedCandidate, nextContext)
         : resolvedCandidate;
     });
-    resolved = resolvedAlternatives.find((candidate) => candidate?.type === 'object' || candidate?.type?.includes?.('object'))
+    const selectedAlternative = resolvedAlternatives.find((candidate) => candidate?.type === 'object' || candidate?.type?.includes?.('object'))
       || resolvedAlternatives.find((candidate) => Object.prototype.hasOwnProperty.call(candidate, 'const'))
       || resolvedAlternatives[0];
+    resolved = resolved.type === 'object' || resolved.properties
+      ? mergeSchemaFragments(resolved, selectedAlternative)
+      : selectedAlternative;
     resolved = resolveSchemaRef(nextContext.schema, resolved);
   }
 
@@ -293,6 +299,12 @@ function generatePlaceholderValue(propName, propSchema = {}, context = {}) {
   if (Object.prototype.hasOwnProperty.call(resolvedSchema, 'default')) {
     return resolvedSchema.default;
   }
+  if (Object.prototype.hasOwnProperty.call(resolvedSchema, 'example')) {
+    return resolvedSchema.example;
+  }
+  if (Array.isArray(resolvedSchema.examples) && resolvedSchema.examples.length > 0) {
+    return resolvedSchema.examples[0];
+  }
 
   const type = resolvedSchema.type || inferTypeFromName(propName);
   const description = resolvedSchema.description || '';
@@ -311,7 +323,7 @@ function generatePlaceholderValue(propName, propSchema = {}, context = {}) {
   }
 
   if (type === 'number' || type === 'integer') {
-    return 0;
+    return generateNumericPlaceholder(propName, resolvedSchema, type);
   }
 
   if (type === 'html') {
@@ -319,104 +331,7 @@ function generatePlaceholderValue(propName, propSchema = {}, context = {}) {
   }
 
   // String type - infer from property name
-  return generateStringPlaceholder(propName, description);
-}
-
-function inferTypeFromName(propName) {
-  const name = propName.toLowerCase();
-  if (name.includes('items') || name.includes('links') || name.includes('images')) {
-    return 'array';
-  }
-  if (name.includes('styles') || name.includes('config') || name.includes('settings')) {
-    return 'object';
-  }
-  return 'string';
-}
-
-function generateStringPlaceholder(propName, description = '') {
-  const name = propName.toLowerCase();
-
-  if (name === 'alt' || name.endsWith('alt') || name.includes('alttext')) {
-    if (name === 'ogimagealttext') return 'Open graph preview image for this newsletter';
-    return 'Image description for accessibility';
-  }
-
-  if (name === 'adid') return 'example-ad-id';
-  if (name === 'shorttakeid') return 'example-short-take-id';
-
-  if (name === 'src') {
-    return PLACEHOLDER_IMAGE(800, 600, humanize(propName));
-  }
-
-  // URLs and links
-  if (name.includes('url') || name.includes('link') || name === 'href' || name === 'src') {
-    if (name.includes('image') || name.includes('logo') || name.includes('featured')) {
-      return PLACEHOLDER_IMAGE(600, 400, humanize(propName));
-    }
-    if (name.includes('unsubscribe')) {
-      return '[unsubscribe]';
-    }
-    return 'https://nearfuturelaboratory.com';
-  }
-
-  // Images
-  if (name === 'image' || name.includes('image') || name === 'featuredimage' || name === 'ogimage') {
-    const width = name.includes('logo') ? 200 : 800;
-    const height = name.includes('logo') ? 50 : 600;
-    return PLACEHOLDER_IMAGE(width, height, humanize(propName));
-  }
-
-  if (name === 'logo' || name.includes('logo')) {
-    return PLACEHOLDER_IMAGE(200, 50, 'Logo');
-  }
-
-  // Email-specific fields
-  if (name === 'preheader') {
-    return 'Short preview text that appears in email clients';
-  }
-
-  if (name === 'title') {
-    return 'Newsletter Title';
-  }
-
-  if (name === 'description' || name === 'content' || name === 'body') {
-    return `<p>Example ${humanize(propName)} content.</p>`;
-  }
-
-  if (name === 'quote') {
-    return 'An inspiring quote or thought-provoking statement';
-  }
-
-  if (name === 'author' || name === 'authorname') {
-    return 'Author Name';
-  }
-
-  if (name === 'name') {
-    return 'Example Name';
-  }
-
-  if (name === 'email' || name === 'emailshare') {
-    return 'mailto:?subject=Newsletter&body=Check%20this%20out';
-  }
-
-  if (name === 'address') {
-    return '© 2025 Your Company<br>City, State<br>Country';
-  }
-
-  if (name === 'subtitle' || name === 'category' || name === 'channel') {
-    return `Example ${humanize(propName)}`;
-  }
-
-  if (name.includes('readmore') || name.includes('linktext')) {
-    return 'Read more →';
-  }
-
-  if (name.includes('callout')) {
-    return 'Important callout text that draws attention';
-  }
-
-  // Default
-  return description || `Example ${humanize(propName)}`;
+  return generateStringPlaceholder(propName, resolvedSchema, context);
 }
 
 function generateArrayPlaceholder(propName, propSchema, context) {
@@ -442,7 +357,7 @@ function generateArrayPlaceholder(propName, propSchema, context) {
 
   // Simple array
   return Array.from({ length: count }, (_, index) =>
-    generatePlaceholderValue(`${propName} ${index + 1}`, itemSchema, context),
+    generatePlaceholderValue(propName, itemSchema, { ...context, index: index + 1 }),
   );
 }
 
@@ -465,16 +380,6 @@ function generateObjectPlaceholder(propName, propSchema, context = {}) {
 function isStyleProperty(propName) {
   const name = propName.toLowerCase();
   return name.includes('styles') || name.includes('inline');
-}
-
-function humanize(str) {
-  return str
-    .replace(/([A-Z])/g, ' $1')
-    .replace(/[-_]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .toLowerCase()
-    .replace(/^\w/, (c) => c.toUpperCase());
 }
 
 // ============================================================================
@@ -643,7 +548,7 @@ function generateSkeleton(schema, options = {}) {
   const topLevelProps = Object.keys(schema.properties || {}).filter((prop) => !structuralProps.has(prop));
   for (const prop of topLevelProps) {
     if (schema.properties?.[prop]) {
-      const value = generatePlaceholderValue(prop, schema.properties[prop], { minimal, schema });
+      const value = generatePlaceholderValue(prop, schema.properties[prop], { minimal, schema, templateName });
       if (Array.isArray(value) && value.length > 0) {
         lines.push(`${prop}:`);
         for (const item of value) {
@@ -664,13 +569,13 @@ function generateSkeleton(schema, options = {}) {
   // Header
   if (schema.properties?.header) {
     lines.push('');
-    lines.push(...generateYamlObject('header', schema.properties.header, { minimal, indent: 0, schema }));
+    lines.push(...generateYamlObject('header', schema.properties.header, { minimal, indent: 0, schema, templateName }));
   }
 
   // Intro (if exists)
   if (schema.properties?.intro) {
     lines.push('');
-    lines.push(...generateYamlObject('intro', schema.properties.intro, { minimal, indent: 0, schema }));
+    lines.push(...generateYamlObject('intro', schema.properties.intro, { minimal, indent: 0, schema, templateName }));
   }
 
   // Sections
@@ -690,6 +595,7 @@ function generateSkeleton(schema, options = {}) {
         allSectionFields,
         itemsPerSection,
         schema,
+        templateName,
       }));
     }
   } else if (schema.properties?.sections) {
@@ -703,7 +609,7 @@ function generateSkeleton(schema, options = {}) {
   // Footer
   if (schema.properties?.footer) {
     lines.push('');
-    lines.push(...generateYamlObject('footer', schema.properties.footer, { minimal, indent: 0, schema }));
+    lines.push(...generateYamlObject('footer', schema.properties.footer, { minimal, indent: 0, schema, templateName }));
   }
 
   lines.push('---');
@@ -740,14 +646,22 @@ function generateSectionYaml(sectionType, sectionSchema, options = {}) {
   }
 
   // Collection arrays such as items and section_article_group articles.
-  const collectionProp = props.items?.items
+  const resolvedItemsSchema = props.items
+    ? resolveGenerationSchema(props.items, { schema: options.schema })
+    : null;
+  const resolvedArticlesSchema = props.articles
+    ? resolveGenerationSchema(props.articles, { schema: options.schema })
+    : null;
+  const collectionProp = resolvedItemsSchema?.type === 'array' || resolvedItemsSchema?.items
     ? 'items'
-    : props.articles?.items
+    : resolvedArticlesSchema?.type === 'array' || resolvedArticlesSchema?.items
       ? 'articles'
       : null;
   if (collectionProp) {
     lines.push(`${indent}${collectionProp}:`);
-    const collectionSchema = props[collectionProp] || {};
+    const collectionSchema = collectionProp === 'items'
+      ? resolvedItemsSchema
+      : resolvedArticlesSchema;
     const itemSchema = collectionSchema.items || {};
     const requestedCount = minimal ? 1 : itemsPerSection;
     const minimumCount = Number.isInteger(collectionSchema.minItems) ? collectionSchema.minItems : 0;
@@ -759,6 +673,7 @@ function generateSectionYaml(sectionType, sectionSchema, options = {}) {
         minimal,
         allSectionFields,
         schema: options.schema,
+        templateName: options.templateName,
       });
       lines.push(...(itemLines.length > 0 ? itemLines : [`${indent}- {}`]));
     }
@@ -773,7 +688,11 @@ function generateSectionYaml(sectionType, sectionSchema, options = {}) {
       || emittedFields.has(propName)
       || !props[propName]
     ) continue;
-    const value = generatePlaceholderValue(propName, props[propName], { minimal, schema: options.schema });
+    const value = generatePlaceholderValue(propName, props[propName], {
+      minimal,
+      schema: options.schema,
+      templateName: options.templateName,
+    });
     lines.push(`${indent}${propName}: ${formatYamlValue(value)}`);
     emittedFields.add(propName);
   }
@@ -788,7 +707,12 @@ function generateSectionYaml(sectionType, sectionSchema, options = {}) {
         || propName === collectionProp
         || emittedFields.has(propName)
       ) continue;
-      const value = generatePlaceholderValue(propName, propSchema, { minimal, sectionType, schema: options.schema });
+      const value = generatePlaceholderValue(propName, propSchema, {
+        minimal,
+        sectionType,
+        schema: options.schema,
+        templateName: options.templateName,
+      });
       lines.push(`${indent}${propName}: ${formatYamlValue(value)}`);
       emittedFields.add(propName);
     }
@@ -841,7 +765,12 @@ function generateItemYaml(sectionType, itemSchema, index, options = {}) {
   let isFirst = true;
   for (const propName of propsToShow) {
     const propSchema = props[propName];
-    const value = generatePlaceholderValue(propName, propSchema, { index, sectionType, schema: options.schema });
+    const value = generatePlaceholderValue(propName, propSchema, {
+      index,
+      sectionType,
+      schema: options.schema,
+      templateName: options.templateName,
+    });
 
     if (isFirst) {
       // First property uses array marker
@@ -901,7 +830,11 @@ function generateYamlObject(key, schema, options = {}) {
       continue;
     }
 
-    const value = generatePlaceholderValue(propName, propSchema, { minimal, schema: options.schema });
+    const value = generatePlaceholderValue(propName, propSchema, {
+      minimal,
+      schema: options.schema,
+      templateName: options.templateName,
+    });
 
     if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
       // Flow-style JSON is valid YAML and preserves referenced object shapes.
@@ -945,6 +878,8 @@ function formatYamlValue(value, indent = '') {
       value.includes("'") ||
       value.includes('"') ||
       value.includes('\n') ||
+      /^\d{4}-\d{2}-\d{2}(?:$|T)/.test(value) ||
+      /^[+-]?(?:\d+\.?\d*|\.\d+)$/.test(value) ||
       value.startsWith('[') ||
       value.startsWith('{') ||
       value === '' ||
