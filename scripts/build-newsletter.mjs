@@ -2412,7 +2412,7 @@ async function buildNewsletter() {
         fontSize: '16px',
         lineHeight: '21px',
         fontWeight: '400',
-        color: '#000000',
+        color: '#333333',
         authorFontSize: '16px',
         authorFontWeight: '600',
         artistFontSize: '16px',

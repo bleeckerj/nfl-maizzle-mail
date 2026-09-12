@@ -36,6 +36,7 @@ async function renderHeaderFixture() {
             fontFamily: 'IBM Plex Sans, sans-serif',
             fontSize: '16px',
             lineHeight: '21px',
+            color: '#333333',
             artistFontSize: '16px',
           },
         },
@@ -61,5 +62,5 @@ test('dense-discovery featured header renders image before caption and descripti
   assert.ok(captionIndex > imageIndex);
   assert.ok(quoteIndex > captionIndex);
   assert.match(html, /mob-caption[^>]*font-size:12px;line-height:15px/);
-  assert.match(html, /font-size:16px;line-height:21px[^>]*font-weight:400[^>]*color:#000000[^>]*padding:0[^>]*margin:0;margin-bottom:4px/);
+  assert.match(html, /font-size:14px;line-height:18px[^>]*font-weight:400[^>]*color:#333333[^>]*padding:0[^>]*margin:0;margin-bottom:3px/);
 });
