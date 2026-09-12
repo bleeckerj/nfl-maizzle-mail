@@ -2409,13 +2409,14 @@ async function buildNewsletter() {
       };
       const defaultHeaderContentStyles = {
         fontFamily: 'IBM Plex Sans, sans-serif',
-        fontSize: '18px',
-        lineHeight: '23px',
+        fontSize: '16px',
+        lineHeight: '21px',
         fontWeight: '400',
         color: '#000000',
         authorFontSize: '16px',
         authorFontWeight: '600',
         artistFontSize: '16px',
+        quoteImageGap: '8px',
         anchorColor: '#000000'
       };
       
