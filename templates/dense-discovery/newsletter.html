@@ -232,9 +232,15 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                   <if condition="section.type === 'speculative-job'">
                     <!-- SPECULATIVE JOB Start -->
                     <tr>
-                      <td style="border-collapse:collapse;padding:12px 0 13px 0;{{{ section.contentPaddingInline }}}border-top:9px solid #000;border-bottom:1px solid #000">
-                        <h2 style="font:700 17px/24px arial,sans-serif;color:#000;margin:0;padding:0">{{ section.title || section.section_label || "Tomorrow's Jobs Today" }}</h2>
+                      <td class="spacer" style="border-collapse:collapse;font-size:1px;line-height:1px;padding-top:25px"> </td>
+                    </tr>
+                    <tr>
+                      <td align="left" class="headline" data-section-header="speculative-job" style="border-collapse:collapse;background:{{ section.containerStyles.backgroundColor || '#e6e8e5' }};padding:15px 20px;border-radius:8px 8px 0 0">
+                        <h2 class="mob-text mob-title" style="mso-line-height-rule:exactly;font-family:'Ubuntu',sans-serif;font-size:21px;line-height:23px;font-weight:600;color:#000;margin:0;padding:0">{{ section.title || section.section_label || "Tomorrow's Jobs Today" }}</h2>
                       </td>
+                    </tr>
+                    <tr>
+                      <td style="border-collapse:collapse;font-size:1px;line-height:1px;padding-top:4px"> </td>
                     </tr>
                     <tr>
                       <td style="border-collapse:collapse;padding:0">

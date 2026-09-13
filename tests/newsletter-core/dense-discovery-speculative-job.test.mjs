@@ -5,6 +5,7 @@ import path from 'node:path';
 import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { JSDOM } from 'jsdom';
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const BUILD_SCRIPT = path.join(REPO_ROOT, 'scripts', 'build-newsletter.mjs');
@@ -65,6 +66,10 @@ test('dense-discovery renders hydrated speculative-job sections', () => {
     assert.equal(fixture.result.status, 0, `${fixture.result.stdout}\n${fixture.result.stderr}`);
     assert.doesNotMatch(`${fixture.result.stdout}\n${fixture.result.stderr}`, /Schema validation found/);
     const html = readFileSync(fixture.outputPath, 'utf8');
+    const document = new JSDOM(html).window.document;
+    const headingCell = document.querySelector('[data-section-header="speculative-job"]');
+    const heading = headingCell?.querySelector('h2');
+    const jobsSurface = document.querySelector('[data-section="speculative-job"]');
     assert.match(html, /data-section="speculative-job"/);
     assert.match(html, /Tomorrow(?:&#0*39;|')s Jobs Today/);
     assert.match(html, /Principal, Applied Speculation/);
@@ -74,6 +79,14 @@ test('dense-discovery renders hydrated speculative-job sections', () => {
     assert.match(html, /href="\/jobs\/openai\/principal-applied-speculation"/);
     assert.match(html, /<img[^>]+src="https:\/\/images\.example\.com\/openai-logo\.png"[^>]+alt="OpenAI logo"[^>]+height="40"/);
     assert.doesNotMatch(html, /src="https:\/\/images\.example\.com\/openai-logo\.png"[^>]+width="638"/);
+    assert.ok(headingCell, 'expected a speculative-job heading cell');
+    assert.match(headingCell.getAttribute('style') || '', /background(?:-color)?:#7fe8d0/);
+    assert.doesNotMatch(headingCell.getAttribute('style') || '', /border-(?:top|bottom):/);
+    assert.ok(heading, 'expected a speculative-job heading');
+    assert.match(heading.getAttribute('style') || '', /font-size:21px/);
+    assert.match(heading.getAttribute('style') || '', /font-family:'?Ubuntu'?,sans-serif/);
+    assert.ok(jobsSurface, 'expected a speculative-job jobs surface');
+    assert.match(jobsSurface.getAttribute('style') || '', /background-color:#7fe8d0/);
   } finally {
     rmSync(fixture.tempRoot, { recursive: true, force: true });
   }

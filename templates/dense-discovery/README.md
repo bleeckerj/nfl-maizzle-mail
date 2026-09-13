@@ -150,6 +150,24 @@ Linked records emit separate image and copy anchors with the registry id as the 
 
 Defaults are defined under `sectionStyles["short-take"]` and use Dense Discovery’s Ubuntu headline, IBM Plex Sans caption, and Share Tech Mono edge metadata treatment.
 
+## `speculative-job` section
+
+`speculative-job` uses the standard Dense Discovery section spacing and 21px Ubuntu heading. The authored `containerStyles.backgroundColor` is carried across both the heading block and the outer jobs area.
+
+```yaml
+sections:
+- type: speculative-job
+  title: Tomorrow's Jobs Today
+  containerStyles:
+    backgroundColor: '#7fe8d0'
+    contentPadding: '0 16px'
+  items:
+  - jobRef: fdaa/platform-deliberation-analyst-lvl-ii
+    cardStyles:
+      backgroundColor: '#dff7f3'
+      padding: '24px 28px'
+```
+
 ## `food-for-thought` multi-CTA rows
 
 `food-for-thought` items support one primary CTA row plus optional extra CTA rows.

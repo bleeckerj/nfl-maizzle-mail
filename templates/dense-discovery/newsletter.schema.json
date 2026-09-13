@@ -3880,11 +3880,12 @@
         "object",
         "null"
       ],
-      "description": "Optional surface styles for a speculative job section or card. containerStyles controls the whole jobs area; cardStyles is an optional inner job surface.",
+      "description": "Optional surface styles for a speculative job section or card. Section-level containerStyles controls the heading and whole jobs area; item-level cardStyles controls an optional inner job surface.",
       "properties": {
         "backgroundColor": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "description": "Surface background color. On section-level containerStyles, the same value is applied to the section heading and jobs area. On item-level cardStyles, it applies to the inner job card."
         },
         "backgroundGradient": {
           "type": "string",
