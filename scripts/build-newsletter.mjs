@@ -4,8 +4,6 @@ import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 import MaizzleFramework from '@maizzle/framework';
-import Ajv from 'ajv';
-import addFormats from 'ajv-formats';
 import { fileURLToPath } from 'url';
 import matter from 'gray-matter';
 
@@ -238,97 +236,6 @@ function reportMobileFitWarnings(warnings) {
   });
   if (warnings.length > 10) {
     console.log(`   … ${warnings.length - 10} more warning(s) omitted`);
-  }
-}
-
-function jsonPointerToDotPath(pointer) {
-  if (!pointer || pointer === '/') return '$';
-  const parts = pointer
-    .split('/')
-    .slice(1)
-    .map(p => p.replace(/~1/g, '/').replace(/~0/g, '~'))
-    .map(p => (/^\d+$/.test(p) ? `[${p}]` : `.${p}`));
-  return '$' + parts.join('');
-}
-
-function describeSchemaLocation(instancePath, newsletterData) {
-  const match = /^\/sections\/(\d+)(?:\/items\/(\d+))?/.exec(instancePath || '');
-  if (!match) return null;
-
-  const sectionIndex = Number(match[1]);
-  const itemIndex = match[2] !== undefined ? Number(match[2]) : null;
-
-  const section = Array.isArray(newsletterData?.sections) ? newsletterData.sections[sectionIndex] : null;
-  const sectionType = section?.type ? String(section.type) : 'unknown-type';
-  const sectionTitle = section?.title ? String(section.title) : null;
-
-  const sectionLabel = sectionTitle
-    ? `sections[${sectionIndex}] (${sectionType} / "${sectionTitle}")`
-    : `sections[${sectionIndex}] (${sectionType})`;
-
-  if (itemIndex === null) return sectionLabel;
-
-  const item = Array.isArray(section?.items) ? section.items[itemIndex] : null;
-  const itemTitle = item?.title ? String(item.title) : null;
-  const itemLabel = itemTitle
-    ? `${sectionLabel} → items[${itemIndex}] ("${itemTitle}")`
-    : `${sectionLabel} → items[${itemIndex}]`;
-
-  return itemLabel;
-}
-
-function validateNewsletterDataAgainstSchema(newsletterData, templateName, args) {
-  const previewMode = args.includes('--preview') || process.env.NEWSLETTER_PREVIEW === '1';
-  const strict = !previewMode && (args.includes('--strict-schema') || process.env.SCHEMA_STRICT === '1');
-  const schemaCandidates = [
-    templateName ? path.resolve(`templates/${templateName}/newsletter.schema.json`) : null,
-    path.resolve('newsletter.schema.json'),
-  ].filter(Boolean);
-
-  const schemaPath = schemaCandidates.find(p => fs.existsSync(p));
-  if (!schemaPath) return;
-
-  let schema;
-  try {
-    schema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'));
-  } catch (err) {
-    throw new Error(`Failed to read schema at ${schemaPath}: ${err.message}`);
-  }
-
-  const ajv = new Ajv({ allErrors: true, strict: false, allowUnionTypes: true });
-  addFormats(ajv);
-
-  const validate = ajv.compile(schema);
-  const valid = validate(newsletterData);
-  if (valid) {
-    console.log(`✅ Schema validation passed (${path.relative(process.cwd(), schemaPath)})`);
-    return;
-  }
-
-  const errors = validate.errors || [];
-  console.log(`\n⚠️  Schema validation found ${errors.length} issue(s) (${path.relative(process.cwd(), schemaPath)})`);
-
-  errors
-    .filter(err => err.keyword !== 'if') // if/then wrappers are noisy; show the underlying errors instead
-    .slice(0, 50)
-    .forEach(err => {
-    const context = describeSchemaLocation(err.instancePath, newsletterData);
-    const contextPrefix = context ? `${context}: ` : '';
-    if (err.keyword === 'additionalProperties') {
-      const base = jsonPointerToDotPath(err.instancePath);
-      const extra = err.params?.additionalProperty ? `.${err.params.additionalProperty}` : '';
-      console.log(`   • ${contextPrefix}Unknown key: ${base}${extra}`);
-      return;
-    }
-    console.log(`   • ${contextPrefix}${jsonPointerToDotPath(err.instancePath)}: ${err.message}`);
-    });
-
-  if (errors.length > 50) {
-    console.log(`   • …and ${errors.length - 50} more`);
-  }
-
-  if (strict) {
-    throw new Error('Schema validation failed (strict mode)');
   }
 }
 

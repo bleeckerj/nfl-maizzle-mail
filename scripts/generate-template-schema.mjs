@@ -548,6 +548,79 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
     ])];
   }
 
+  const speculativeJobVariant = findTypedSectionVariant(schema, 'speculative-job');
+  if (speculativeJobVariant?.properties) {
+    schema.definitions = schema.definitions || {};
+    schema.definitions.speculativeJobSurfaceStyles = {
+      type: ['object', 'null'],
+      description: "Optional surface styles for a speculative job section or card. containerStyles controls the whole jobs area; cardStyles is an optional inner job surface.",
+      properties: {
+        backgroundColor: { type: 'string', minLength: 1 },
+        backgroundGradient: {
+          type: 'string',
+          pattern: '^linear-gradient\\([^;{}<>]+\\)$',
+        },
+        contentPadding: { type: 'string', pattern: '^[^;{}<>]+$' },
+        padding: { type: 'string', pattern: '^[^;{}<>]+$' },
+        paddingTop: { type: 'string', pattern: '^[^;{}<>]+$' },
+        paddingRight: { type: 'string', pattern: '^[^;{}<>]+$' },
+        paddingBottom: { type: 'string', pattern: '^[^;{}<>]+$' },
+        paddingLeft: { type: 'string', pattern: '^[^;{}<>]+$' },
+        border: { type: 'string', pattern: '^[^;{}<>]+$' },
+        borderRadius: { type: 'string', pattern: '^[^;{}<>]+$' },
+      },
+      allOf: [{
+        if: { required: ['backgroundGradient'] },
+        then: { required: ['backgroundColor'] },
+      }],
+      additionalProperties: false,
+    };
+    Object.assign(speculativeJobVariant.properties, {
+      title: { type: 'string', minLength: 1 },
+      section_label: { type: 'string', minLength: 1 },
+      containerStyles: { $ref: '#/definitions/speculativeJobSurfaceStyles' },
+      items: {
+        type: 'array',
+        minItems: 1,
+        items: {
+          type: 'object',
+          required: ['jobRef'],
+          properties: {
+            jobRef: { type: 'string', pattern: '^[^/]+/[^/]+$' },
+            cardStyles: { $ref: '#/definitions/speculativeJobSurfaceStyles' },
+            contentStyles: { type: 'object', additionalProperties: true },
+            kicker: { type: 'string' },
+            headline: { type: 'string' },
+            lede: { type: 'string' },
+            cta_label: { type: 'string' },
+            sponsor: { type: 'string' },
+            link: {
+              anyOf: [
+                { type: 'string' },
+                { type: 'object', additionalProperties: true },
+              ],
+            },
+            media: {
+              type: ['object', 'null'],
+              required: ['src', 'altText'],
+              properties: {
+                src: { type: 'string', format: 'uri' },
+                altText: { type: 'string', minLength: 1 },
+                width: { type: 'number', exclusiveMinimum: 0 },
+                height: { type: 'number', exclusiveMinimum: 0 },
+                aspectRatio: { type: 'string', minLength: 1 },
+              },
+              additionalProperties: false,
+            },
+          },
+          additionalProperties: true,
+        },
+      },
+    });
+    speculativeJobVariant.required = ['type', 'items'];
+    speculativeJobVariant.additionalProperties = true;
+  }
+
   if (templateId !== 'dense-discovery') return;
 
   const adjacencyJobsVariant = findTypedSectionVariant(schema, 'adjacency-job-posting');
