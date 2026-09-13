@@ -594,6 +594,15 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
             lede: { type: 'string' },
             cta_label: { type: 'string' },
             sponsor: { type: 'string' },
+            companyLogo: {
+              type: ['object', 'null'],
+              required: ['url', 'altText'],
+              properties: {
+                url: { type: 'string', format: 'uri' },
+                altText: { type: 'string', minLength: 1 },
+              },
+              additionalProperties: false,
+            },
             link: {
               anyOf: [
                 { type: 'string' },

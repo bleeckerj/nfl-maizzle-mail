@@ -53,6 +53,9 @@ test('dense-discovery renders hydrated speculative-job sections', () => {
     '        lede: A founding individual contributor role.',
     '        cta_label: Would you like to know more?',
     '        link: /jobs/openai/principal-applied-speculation',
+    '        companyLogo:',
+    '          url: https://images.example.com/openai-logo.png',
+    '          altText: OpenAI logo',
     '        cardStyles:',
     "          backgroundColor: '#dff7f3'",
     "          padding: '24px 28px'",
@@ -69,6 +72,8 @@ test('dense-discovery renders hydrated speculative-job sections', () => {
     assert.match(html, /background-color:#dff7f3/);
     assert.match(html, /padding:24px 28px/);
     assert.match(html, /href="\/jobs\/openai\/principal-applied-speculation"/);
+    assert.match(html, /<img[^>]+src="https:\/\/images\.example\.com\/openai-logo\.png"[^>]+alt="OpenAI logo"[^>]+height="40"/);
+    assert.doesNotMatch(html, /src="https:\/\/images\.example\.com\/openai-logo\.png"[^>]+width="638"/);
   } finally {
     rmSync(fixture.tempRoot, { recursive: true, force: true });
   }
