@@ -7,7 +7,7 @@ node_modules/
 gpt-prompts/
 emails-to-templatize/
 /correspondence/
-content/
+content/*
 # Local and generated build data stays out of version control. The shared
 # palette registry is source of truth and must remain visible to workspace search.
 data/*
@@ -19,7 +19,7 @@ build_production/
 /.tmp_correspondence_build_*/
 
 gpt-prompts/
-content/
+content/*
 emails-to-templatize/
 
 # Environment files
@@ -48,3 +48,6 @@ npm-debug.log*
 
 # Reproducible template gallery previews and build diagnostics
 /build_template_gallery/
+
+# Maintained Adjacency recruiting draft
+!content/gdm-expeditionary-engineering-email.md
