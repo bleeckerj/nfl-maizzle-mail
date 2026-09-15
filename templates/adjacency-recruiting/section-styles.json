@@ -1,0 +1,13 @@
+{
+  "sectionStyles": {
+    "recruiting-list": {
+      "backgroundColor": "#ffffff",
+      "textColor": "#172338"
+    }
+  },
+  "globalOverrides": {
+    "mobileAdjustments": {
+      "enabled": true
+    }
+  }
+}

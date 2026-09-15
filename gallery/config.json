@@ -101,6 +101,11 @@
       "stage": "reference",
       "description": "Original email only; no reusable template entry point.",
       "reference": "templates/palm-report/palm-report-sample.html"
+    },
+    "adjacency-recruiting": {
+      "stage": "specialized",
+      "description": "Recruiter-led job email with a personal introduction, full-width employer image, role facts, qualifications, and follow-up.",
+      "sample": "templates/adjacency-recruiting/sample-content.md"
     }
   }
 }

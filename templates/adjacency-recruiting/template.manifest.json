@@ -1,0 +1,14 @@
+{
+  "template": "adjacency-recruiting",
+  "supportedPublicationModes": [
+    "campaign"
+  ],
+  "starterSource": "schema",
+  "supportedSections": [
+    "recruiting-list"
+  ],
+  "registryHydrations": [],
+  "footerBehavior": {
+    "campaign": "Recruiter identity; optional address and sender-resolved unsubscribe link. Operator context is opt-in."
+  }
+}

@@ -1,0 +1,23 @@
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+ <tr><td class="recruit-pad" style="padding:0 40px 28px;">
+  <p style="margin:0 0 18px;padding-top:22px;border-top:1px solid #cbd5e3;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:18px;letter-spacing:1px;color:#2459df;">REQUISITION / {{ job.reference }}</p>
+  <h1 class="recruit-title" style="margin:0 0 18px;font-size:46px;line-height:48px;font-weight:bold;letter-spacing:-1.6px;color:#101e35;">{{ job.title }}</h1>
+  <p style="margin:0 0 8px;font-size:19px;line-height:26px;font-weight:bold;">{{ job.company }}</p>
+  <p style="margin:0;font-size:14px;line-height:22px;color:#536078;">{{ job.team }}<br>{{ job.department }}</p>
+ </td></tr>
+ <if condition="job.image">
+ <tr><td><img src="{{ job.image.src }}" alt="{{ job.image.alt }}" width="640" style="display:block;width:100%;max-width:640px;height:auto;"></td></tr>
+ <tr><td class="recruit-pad" style="padding:12px 40px 24px;"><p style="margin:0;font-size:12px;line-height:18px;color:#536078;">{{ job.image.caption }}</p></td></tr>
+ </if>
+ <tr><td class="recruit-pad" style="padding:0 40px 30px;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="width:100%;border-top:2px solid #101e35;">
+   <each loop="fact in job.facts"><tr>
+    <th scope="row" class="recruit-fact-label" width="128" align="left" valign="top" style="width:128px;padding:12px 12px 12px 0;border-bottom:1px solid #dce3ed;font-size:12px;line-height:20px;font-weight:normal;color:#536078;">{{ fact.label }}</th>
+    <td style="padding:12px 0;border-bottom:1px solid #dce3ed;font-size:14px;line-height:20px;color:#172338;">{{ fact.value }}</td>
+   </tr></each>
+  </table>
+  <div style="padding-top:24px;"><table role="presentation" cellpadding="0" cellspacing="0"><tr><td bgcolor="#2459df" style="background-color:#2459df;">
+ <a href="{{ job.link }}" data-link-role="primary" style="display:inline-block;border:16px solid #2459df;background-color:#2459df;color:#ffffff;font-size:16px;line-height:20px;font-weight:bold;text-decoration:none;mso-padding-alt:0;text-align:center;">{{ job.ctaLabel }} <span aria-hidden="true">&#8594;</span></a>
+ </td></tr></table></div>
+ </td></tr>
+</table>
