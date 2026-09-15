@@ -15,7 +15,7 @@
         "properties": {
           "stage": { "enum": ["developed", "specialized", "prototype", "legacy", "reference"] },
           "description": { "type": "string" },
-          "sample": { "type": "string", "description": "Repository-relative Markdown, YAML, or JSON sample. Overrides automatic sample discovery." },
+          "sample": { "type": "string", "description": "Repository-relative sample, or editorial:<path> inside sibling nfl-editorial/emails. Overrides automatic sample discovery." },
           "reference": { "type": "string", "description": "Repository-relative original HTML email, displayed separately from the build." }
         }
       }

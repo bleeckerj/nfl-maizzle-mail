@@ -48,6 +48,3 @@ npm-debug.log*
 
 # Reproducible template gallery previews and build diagnostics
 /build_template_gallery/
-
-# Maintained Adjacency recruiting draft
-!content/gdm-expeditionary-engineering-email.md

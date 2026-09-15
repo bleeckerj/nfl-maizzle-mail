@@ -8,7 +8,7 @@ New employer emails require the hiring company’s hosted logo and a design alig
 
 ## Edit this email yourself
 
-The source for the FDAA gallery example is [sample-content.md](sample-content.md). Open that file in a text editor and type your changes. You do not need to edit HTML or run the skill to change the wording. The gallery preview is read-only; it has no text-editing form and does not save browser edits.
+The source for the FDAA gallery example is [email.md](/Users/julian/Code/nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst/email.md). Open that file in a text editor and type your changes. You do not need to edit HTML or run the skill to change the wording. The gallery preview is read-only; it has no text-editing form and does not save browser edits.
 
 This is a Markdown file whose email content lives in YAML frontmatter, between the opening and closing `---` lines. The template reads those named fields; free-form Markdown below the closing `---` is not used by this template. Keep indentation and field names intact. Use spaces instead of tabs. Text under `>-` can run across multiple indented lines and renders as one paragraph.
 
@@ -35,16 +35,15 @@ share:
   message: 'I thought you might find this requisition interesting:'
 ```
 
-Save, then run these commands from `/Users/julian/Code/nfl-maizzle-mail` to rebuild the FDAA email and refresh the gallery example:
+Save, then run these commands from `/Users/julian/Code/nfl-editorial` to rebuild the FDAA email:
 
 ```sh
-node scripts/build-newsletter.mjs templates/adjacency-recruiting/sample-content.md fdaa-recruiting --no-open --strict-schema
-npm run gallery:build -- --template=adjacency-recruiting
+npm run mail:build:job-email -- fdaa-platform-counter-inference-analyst
 ```
 
-Reload the browser preview after the commands finish. If the gallery is not running, start `npm run gallery -- --port=4319`, then open `http://127.0.0.1:4319/previews/adjacency-recruiting/preview.html`. The compiled email is `build_production/fdaa-recruiting.html`. These commands build and preview; they do not send email. A failed validation should be corrected in the source before using the output.
+From nfl-maizzle-mail, run `npm run gallery:build -- --template=adjacency-recruiting`, then reload the browser preview. If the gallery is not running, start `npm run gallery -- --port=4319`, then open `http://127.0.0.1:4319/previews/adjacency-recruiting/preview.html`. The compiled email is `nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst/email.html`, beside its Markdown. These commands build and preview; they do not send email. A failed validation should be corrected in the source before using the output.
 
-For a new job or a separate dispatch, copy the example to `content/<descriptive-name>.md` once, edit the copy, and build that path with a matching output name. Subsequent edits belong in that same source file. The template gallery continues to show its configured sample; building a separate content file does not replace the gallery sample automatically. Ask Codex to open that dispatch’s rendered HTML for review.
+For a new job or separate dispatch, create `nfl-editorial/emails/jobs/<slug>/email.md`, select its employer-specific template, and build with `npm run mail:build:job-email -- <slug>` from editorial. Subsequent edits belong in that same file. Generated HTML and manifests stay beside it and are ignored by Git. Maizzle stores rendering infrastructure and disposable gallery previews. Gallery sample entries use `editorial:jobs/<slug>/email.md` to read the authoritative source. See [the workflow](/Users/julian/Code/nfl-editorial/emails/README.md).
 
 You can also request edits conversationally: `$adjacency-job-email Revise the FDAA email: change the share heading to “Pass this along”, shorten the introduction, and rebuild the preview.` Codex edits the source and runs the build. For a separate dispatch, include its content file path. Review and edit the source as often as needed before dispatch is requested.
 
@@ -61,7 +60,7 @@ Sponsor messages are optional and independently positioned at the boundaries des
 
 ## Author-owned fields
 
-Copy sample-content.md into a new Markdown source, then replace the FDAA content. Keep template: adjacency-recruiting and publicationMode: campaign. Read newsletter.schema.json for the current contract.
+Copy the editorial FDAA email.md into a new editorial email folder, then replace its content. Keep template: adjacency-recruiting and publicationMode: campaign. Read newsletter.schema.json for the current contract.
 
 - recruiter: name, desk, and signature; visible copy, separate from delivery headers.
 - greeting and introduction: personal or list-appropriate outreach. Do not claim knowledge of a candidate that the operator has not supplied.
@@ -145,9 +144,9 @@ Prefer the Maizzle MCP validate_newsletter_markdown and build_campaign_email too
 
 ```sh
 node --test tests/newsletter-core/adjacency-recruiting.test.mjs tests/newsletter-core/template-schema-contract.test.mjs
-node scripts/build-newsletter.mjs /Users/julian/Code/nfl-maizzle-mail/templates/adjacency-recruiting/sample-content.md fdaa-recruiting --no-open --strict-schema
+node scripts/build-newsletter.mjs /Users/julian/Code/nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst/email.md email --output-dir=/Users/julian/Code/nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst --no-open --strict-schema
 npm run gallery:build -- --template=adjacency-recruiting
 npm run gallery
 ```
 
-Inspect final HTML, link/content-slot manifests, complete images, the explainer boundary, the decoded share URL, and desktop/mobile layouts. Generated outputs live under build_production/ and build_template_gallery/. Browser review does not establish inbox-client compatibility. A test send is a separate dispatch action.
+Inspect final HTML, link/content-slot manifests, complete images, the explainer boundary, the decoded share URL, and desktop/mobile layouts. Canonical outputs live beside the editorial email.md. Maizzle build_production/ and build_template_gallery/ are disposable build locations. Browser review does not establish inbox-client compatibility. A test send is a separate dispatch action.

@@ -74,3 +74,19 @@ test('server exposes only gallery assets and sandboxed HTML previews', async () 
     fs.rmSync(cache, { recursive: true, force: true });
   }
 });
+
+test('editorial sources are restricted to the sibling email corpus', () => {
+  const workspace = fs.mkdtempSync(path.join(os.tmpdir(), 'gallery-editorial-'));
+  const mail = path.join(workspace, 'nfl-maizzle-mail');
+  const editorial = path.join(workspace, 'nfl-editorial/emails');
+  fs.mkdirSync(mail); fs.mkdirSync(path.join(editorial, 'jobs/example'), {recursive:true});
+  const source = path.join(editorial, 'jobs/example/email.md');
+  fs.writeFileSync(source, '---\ntemplate: example\n---\n');
+  try {
+    assert.equal(sourcePath(mail, 'editorial:jobs/example/email.md'), source);
+    assert.throws(() => sourcePath(mail, 'editorial:../private.md'), /inside/);
+    fs.writeFileSync(path.join(workspace, 'private.md'), 'private');
+    fs.symlinkSync(path.join(workspace, 'private.md'), path.join(editorial, 'escape.md'));
+    assert.throws(() => sourcePath(mail, 'editorial:escape.md'), /symlinks/);
+  } finally { fs.rmSync(workspace, {recursive:true, force:true}); }
+});

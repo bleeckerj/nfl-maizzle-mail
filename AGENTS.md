@@ -6,7 +6,8 @@ This file documents the canonical structure and workflow for `nfl-maizzle-mail` 
 
 ## Canonical Layout (Source of Truth)
 
-- `content/` — Author-facing Markdown newsletters (frontmatter + sections).
+- `content/` — Legacy/local newsletter inputs. Adjacency job-email drafts belong in sibling `nfl-editorial/emails/jobs/<slug>/email.md`; generated HTML and manifests belong beside that source.
+- Job-email templates, schemas, preparation, and rendering remain here. The editorial `mail:build:job-email` command invokes this renderer with an explicit source and adjacent output directory.
 - `data/` — Build input JSON (`data/newsletter.json`) generated from content or copied from a JSON source.
 - `templates/<template-name>/` — **Only canonical template location**.
   - `newsletter.html`

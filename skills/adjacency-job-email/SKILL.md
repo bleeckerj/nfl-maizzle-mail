@@ -15,7 +15,7 @@ Discover the Maizzle and editorial MCP tools first. Discover the available compa
 
 - /Users/julian/Code/nfl-maizzle-mail/templates/adjacency-recruiting/AUTHORING.md
 - /Users/julian/Code/nfl-maizzle-mail/templates/adjacency-recruiting/newsletter.schema.json
-- /Users/julian/Code/nfl-maizzle-mail/templates/adjacency-recruiting/sample-content.md
+- /Users/julian/Code/nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst/email.md
 
 Read the guide and schema before authoring. Use the FDAA sample to understand field shapes, then replace its role-specific content. Do not make every hiring organization sound like FDAA or invent missing job facts to fill the template.
 
@@ -63,9 +63,9 @@ Include the share component by default. Write its subject and message for sharin
 
 ## Build, inspect, and hand off
 
-Save new dispatch sources under an appropriate authoring directory in nfl-maizzle-mail, normally content/, with a descriptive filename. Keep the reusable template sample separate from a new job dispatch. Use publicationMode: campaign and the selected company-specific template ID.
+Save authored email content in nfl-editorial/emails/jobs/<descriptive-slug>/email.md. nfl-editorial owns the email draft and its adjacent generated email.html; nfl-maizzle-mail owns templates, schemas, shared preparation, and rendering. Never keep the authoritative email copy in Maizzle content/ or template sample files. Preserve operator edits when relocating or revising a draft. Use publicationMode: campaign and the selected company-specific template ID.
 
-Prefer validate_newsletter_markdown, then build_campaign_email with explicit source, template, name, and output directory. If unavailable, use the canonical build command documented in AUTHORING.md with an absolute source path and --strict-schema. Do not substitute raw Maizzle compilation for final verification.
+Prefer validate_newsletter_markdown, then build_campaign_email with explicit source, template, campaign_name: email, and output_dir set to the source Markdown directory. The editorial command is npm run mail:build:job-email -- <slug>; it invokes the canonical Maizzle builder and writes HTML and manifests next to email.md. The renderer checkout is configured in nfl-editorial/emails/config.json. See nfl-editorial/emails/README.md. Do not substitute raw Maizzle compilation for final verification.
 
 Inspect final HTML and manifests: source facts, company logo and brand fidelity, required explainer, boundary order, optional ad hydration, complete images, live job/reference links, decoded share subject/body, and tracking conflicts. Check desktop and mobile through the supported browser and Maizzle gallery. When updating the template, run its focused tests and the schema-starter contract test, then rebuild after the final edit. Report inbox-client compatibility separately from browser review.
 
