@@ -2,7 +2,11 @@
 
 A Maizzle-based newsletter production system for authoring Markdown issues, validating template-specific data, and building production HTML email.
 
-The repository is organized around reusable newsletter templates in `templates/<template-name>/`, author-facing issues in `content/`, normalized build input in `data/`, and final HTML output in `build_production/`.
+The repository owns reusable newsletter templates in `templates/<template-name>/`, normalization, and HTML production. Existing local newsletter inputs use `content/`. Adjacency job-email drafts belong in sibling `nfl-editorial/emails/jobs/<slug>/email.md`, with canonical HTML and manifests beside them. `data/` and `build_production/` serve the rendering pipeline.
+
+## Adjacency recruiting emails
+
+Read [the production and maintenance guide](docs/adjacency-job-emails.md) for repository ownership, canonical build commands, MCP arguments, company-specific template development, required logos, gallery paths, verification, and troubleshooting. Copy authors should use [the editorial guide](../nfl-editorial/emails/README.md).
 
 ## Features
 

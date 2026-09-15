@@ -4,6 +4,10 @@ This is the Maizzle-side operating contract for creating and maintaining Near Fu
 
 Use this document before scaffolding a new template under `templates/<template-name>/`, and read it alongside `/Users/julian/Code/nfl-backoffice/docs/newsletter-template-operating-process.md` when creating a new Backoffice draft.
 
+## Adjacency job-email workflow
+
+For employer-specific recruiting emails, read [Adjacency job-email production](adjacency-job-emails.md). Their editable Markdown and adjacent canonical HTML belong in `nfl-editorial/emails/jobs/<slug>/`; Maizzle owns the templates and renderer. This is separate from the Backoffice newsletter-issue workflow below.
+
 ## Cross-Repo Contract
 
 - `nfl-backoffice` owns author-facing drafts at `/Users/julian/Code/nfl-backoffice/public/outbox/data/<year>/<issue-id>.md`.
