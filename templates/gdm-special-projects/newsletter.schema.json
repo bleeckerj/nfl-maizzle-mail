@@ -1,0 +1,496 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Google DeepMind Special Projects recruiting email",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "template": {
+      "const": "gdm-special-projects"
+    },
+    "publicationMode": {
+      "const": "campaign"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "preheader": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recruiter": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Hiring organization identity in the signature; the hosted company logo leads the masthead."
+        },
+        "desk": {
+          "type": "string",
+          "minLength": 1
+        },
+        "signature": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "name",
+        "desk",
+        "signature"
+      ]
+    },
+    "greeting": {
+      "type": "string",
+      "minLength": 1
+    },
+    "introduction": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "job": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "company": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "department": {
+          "type": "string",
+          "minLength": 1
+        },
+        "team": {
+          "type": "string",
+          "minLength": 1
+        },
+        "facts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "value": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "label",
+              "value"
+            ]
+          }
+        },
+        "mission": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assignment": {
+          "type": "string",
+          "minLength": 1
+        },
+        "compensation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "image": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "alt": {
+              "type": "string",
+              "minLength": 1
+            },
+            "width": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "height": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "caption": {
+              "type": "string",
+              "minLength": 1
+            },
+            "src": {
+              "type": "string",
+              "pattern": "^https://imagedelivery\\.net/",
+              "examples": [
+                "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/fd5a4313-345b-40d9-d9c6-b1a9227b7900/full"
+              ]
+            }
+          },
+          "required": [
+            "src",
+            "alt",
+            "width",
+            "height",
+            "caption"
+          ]
+        },
+        "link": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "href": {
+              "type": "string",
+              "pattern": "^https://theadjacency\\.com(?:/|$)",
+              "examples": [
+                "https://theadjacency.com/subscribe"
+              ]
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "category": {
+              "const": "jobs"
+            }
+          },
+          "required": [
+            "href",
+            "label",
+            "category"
+          ]
+        },
+        "ctaLabel": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "title",
+        "company",
+        "reference",
+        "department",
+        "team",
+        "facts",
+        "mission",
+        "assignment",
+        "compensation",
+        "link",
+        "ctaLabel"
+      ]
+    },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "const": "recruiting-list"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "text"
+                  ],
+                  "properties": {
+                    "text": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
+                }
+              }
+            },
+            "required": [
+              "type",
+              "title",
+              "items"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "const": "ad-block"
+              },
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "adId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "examples": [
+                        "fluke-turing-clamp-4x5-01"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "adId"
+                  ]
+                }
+              },
+              "placement": {
+                "type": "string",
+                "enum": [
+                  "top",
+                  "after-introduction",
+                  "after-role",
+                  "after-assignment",
+                  "inline",
+                  "after-lists",
+                  "after-compensation",
+                  "after-recruiting",
+                  "after-explainer",
+                  "after-share"
+                ],
+                "default": "after-recruiting",
+                "description": "Sponsor position. Inline follows sections array order among recruiting lists. Omission preserves the legacy position after the recruiter follow-up."
+              },
+              "sponsorLabel": {
+                "type": "string",
+                "minLength": 1,
+                "default": "SPONSOR",
+                "description": "Visible sponsorship heading, separate from the inventory ad label."
+              }
+            },
+            "required": [
+              "type",
+              "items"
+            ]
+          }
+        ]
+      }
+    },
+    "followUp": {
+      "type": "string",
+      "minLength": 1
+    },
+    "operatorContext": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "heading": {
+          "type": "string",
+          "minLength": 1
+        },
+        "paragraphs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "link": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "pattern": "^https://",
+                    "examples": [
+                      "https://nearfuturelaboratory.com/artifacts/food-drug-and-algorithm-administration/"
+                    ]
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "category": {
+                    "const": "grounding"
+                  }
+                },
+                "required": [
+                  "href",
+                  "label",
+                  "category"
+                ]
+              }
+            },
+            "required": [
+              "text",
+              "link"
+            ]
+          }
+        }
+      },
+      "required": [
+        "heading",
+        "paragraphs"
+      ],
+      "description": "Required operator explainer, visually separate after the recruiting message."
+    },
+    "footer": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "identity": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Publication footer identity linked to https://theadjacency.com/subscribe."
+        },
+        "address": {
+          "type": "string",
+          "minLength": 1
+        },
+        "unsubscribeLink": {
+          "type": "string",
+          "pattern": "^(\\[unsubscribe\\]|https://)",
+          "examples": [
+            "[unsubscribe]"
+          ]
+        },
+        "footerCta": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "enabled": {
+              "const": false
+            }
+          },
+          "required": [
+            "enabled"
+          ]
+        }
+      },
+      "required": [
+        "identity",
+        "footerCta"
+      ]
+    },
+    "share": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "default": "Share this"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "buttonLabel": {
+          "type": "string",
+          "minLength": 1,
+          "default": "Share by email"
+        },
+        "subject": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "emailHref": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Build-generated mailto URI from subject, message, and job.link. Pruned before schema validation and authoring export."
+        }
+      },
+      "required": [
+        "enabled",
+        "heading",
+        "text",
+        "buttonLabel",
+        "subject",
+        "message"
+      ]
+    },
+    "companyLogo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "src": {
+          "type": "string",
+          "pattern": "^https://imagedelivery\\.net/",
+          "examples": [
+            "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/1c9b8ab8-1efb-4c0b-9b91-8c92e122ea00/public?format=png"
+          ]
+        },
+        "alt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "src",
+        "alt",
+        "width",
+        "height"
+      ],
+      "description": "Required complete company wordmark. Hosted PNG rendition preferred for email; preserve natural aspect ratio."
+    }
+  },
+  "required": [
+    "template",
+    "publicationMode",
+    "title",
+    "preheader",
+    "recruiter",
+    "greeting",
+    "introduction",
+    "job",
+    "sections",
+    "followUp",
+    "footer",
+    "operatorContext",
+    "share",
+    "companyLogo"
+  ]
+}

@@ -1,0 +1,6 @@
+<table role="presentation" width="100%" bgcolor="#f8f9fa"><tr><td class="gdm-pad" style="padding:28px 48px;">
+<h2 style="font-size:22px;line-height:29px;font-weight:400;color:#202124;margin:0 0 16px;">The appointment</h2>
+<table width="100%"><each loop="fact in job.facts"><tr><th align="left" valign="top" scope="row" width="115" style="font-size:12px;line-height:20px;font-weight:400;color:#5f6368;padding:9px 16px 9px 0;border-bottom:1px solid #e8eaed;">{{ fact.label }}</th><td style="font-size:14px;line-height:22px;padding:9px 0;border-bottom:1px solid #e8eaed;">{{ fact.value }}</td></tr></each></table>
+<p style="font-size:15px;line-height:25px;margin:24px 0 14px;">{{ job.mission }}</p>
+<p style="font-size:15px;line-height:25px;margin:0;">{{ job.assignment }}</p>
+</td></tr></table>

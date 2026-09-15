@@ -1,0 +1,6 @@
+<table role="presentation" width="100%" bgcolor="#f8f9fa"><tr><td class="gdm-pad" style="padding:28px 48px;border-top:1px solid #dadce0;">
+<p style="margin:0 0 14px;font-size:11px;line-height:17px;letter-spacing:1px;color:#5f6368;">THE ADJACENCY / EDITOR’S NOTE</p>
+<h2 style="margin:0 0 16px;font-size:22px;line-height:29px;font-weight:400;color:#202124;">{{ operatorContext.heading }}</h2>
+<each loop="paragraph in operatorContext.paragraphs"><p style="margin:0 0 14px;font-size:14px;line-height:24px;">{{ paragraph }}</p></each>
+<if condition="operatorContext.references"><each loop="reference in operatorContext.references"><p style="font-size:14px;line-height:22px;"><a href="{{ reference.link }}" style="color:#3c4043;">{{ reference.text }}</a></p></each></if>
+</td></tr></table>

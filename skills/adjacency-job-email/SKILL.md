@@ -1,17 +1,17 @@
 ---
 name: adjacency-job-email
-description: Turn an existing job from The Adjacency corpus into a recruiter-led HTML email through nfl-maizzle-mail, with an editorial explainer, optional inventory ad, and sharing. Use for job-to-email preparation and revisions; this workflow does not send mail.
+description: Turn an existing job from The Adjacency corpus into a recruiter-led HTML email through nfl-maizzle-mail, tightly aligned with the hiring company’s brand and required logo, with an editorial explainer, optional inventory ad, and sharing. Use for job-to-email preparation and revisions; this workflow does not send mail.
 ---
 
 # Adjacency job email
 
-Produce an editable Markdown email source and a rendered preview using the canonical adjacency-recruiting template. Complete the email artifact, including the editorial explainer and sharing, rather than stopping at suggested copy.
+Produce an editable Markdown email source and a rendered preview using a company-specific Maizzle treatment. Complete the email artifact, including the editorial explainer and sharing, rather than stopping at suggested copy.
 
 ## Locate the current contract
 
 Default sibling repositories are /Users/julian/Code/nfl-editorial and /Users/julian/Code/nfl-maizzle-mail. Respect a user-specified checkout. Read their applicable AGENTS.md files and inspect dirty state before edits.
 
-Discover the Maizzle and editorial MCP tools first. Use get_template_authoring_guide and get_template_schema for adjacency-recruiting. The maintained local references are:
+Discover the Maizzle and editorial MCP tools first. Discover the available company-specific templates and read the selected template with get_template_authoring_guide and get_template_schema. adjacency-recruiting supplies a reference content contract; it is not the universal visual layout.
 
 - /Users/julian/Code/nfl-maizzle-mail/templates/adjacency-recruiting/AUTHORING.md
 - /Users/julian/Code/nfl-maizzle-mail/templates/adjacency-recruiting/newsletter.schema.json
@@ -25,7 +25,19 @@ Find the requested job under nfl-editorial/src/content/jobs/. Read its current f
 
 Resolve the published destination from the current publication registry or existing verified corpus references. Do not guess it from a filename: published job URLs may have stable suffixes. Verify the destination. Keep application and requisition actions on approved The Adjacency URLs. A failed destination is a preparation blocker for that CTA, not a reason to invent a hiring endpoint.
 
-Use source Photarium URLs and preserve complete images. Inspect dimensions when needed. No content images belong in these repositories. If no suitable image exists, use the template's image-free option or ask for a source pointer.
+Use source Photarium URLs and preserve complete images. Inspect dimensions when needed. No content images belong in these repositories. An optional role illustration may be omitted; the company logo is required. If the logo is missing, resolve it through the source companyLogo or approved hosted corpus and ask for a pointer if necessary. Do not silently omit it.
+
+## Company identity and differentiation are required
+
+Every recruiting email is a heavily branded announcement aligned tightly with the hiring company’s style, brand voice, and character. Integrate its actual company logo prominently in the recruiting masthead. Preserve its complete composition, proportions, and clear space. Prefer a verified hosted PNG rendition for email when the source logo is SVG. Never redraw the mark, substitute a text heading, or let The Adjacency masthead displace the hiring company’s identity.
+
+Inspect the source job’s company renderer and the employer’s official hiring or brand references. Match the typography, palette, spacing, information hierarchy, button treatment, and institutional language. Preserve the operator’s requested tonal variation within that company voice. Keep The Adjacency attribution and the authorized explainer visually separate from the recruiting identity.
+
+Different employers must have visibly different email designs. A logo-and-color swap on the FDAA layout is insufficient. Choose a company-specific composition, section order, and typographic hierarchy. Reuse a company’s own treatment for its subsequent jobs; create a new canonical template when an existing one cannot express the employer’s identity. Shared schema concepts, ad hydration, sharing preparation, and delivery infrastructure remain reusable. Do not fork those business rules to obtain a different design.
+
+For Google DeepMind, use templates/gdm-special-projects and its AUTHORING.md. Its white, logo-led treatment follows the source company renderer, with charcoal type and restrained Google color accents. Avoid large saturated blue panels. Other employers require their own source-backed treatment; this palette and layout are not defaults.
+
+Verify the rendered logo loads and is legible on desktop and mobile. Compare the result to the employer’s source treatment and to other recruiting emails: the employer should be recognizable from the whole design. A missing logo or generic recoloring is an incomplete draft unless the operator explicitly requests an exception.
 
 ## Adapt the recruiting message
 
@@ -51,11 +63,11 @@ Include the share component by default. Write its subject and message for sharin
 
 ## Build, inspect, and hand off
 
-Save new dispatch sources under an appropriate authoring directory in nfl-maizzle-mail, normally content/, with a descriptive filename. Keep the reusable template sample separate from a new job dispatch. Use publicationMode: campaign and template: adjacency-recruiting.
+Save new dispatch sources under an appropriate authoring directory in nfl-maizzle-mail, normally content/, with a descriptive filename. Keep the reusable template sample separate from a new job dispatch. Use publicationMode: campaign and the selected company-specific template ID.
 
 Prefer validate_newsletter_markdown, then build_campaign_email with explicit source, template, name, and output directory. If unavailable, use the canonical build command documented in AUTHORING.md with an absolute source path and --strict-schema. Do not substitute raw Maizzle compilation for final verification.
 
-Inspect final HTML and manifests: source facts, required explainer, boundary order, optional ad hydration, complete images, live job/reference links, decoded share subject/body, and tracking conflicts. Check desktop and mobile through the supported browser and Maizzle gallery. When updating the template, run its focused tests and the schema-starter contract test, then rebuild after the final edit. Report inbox-client compatibility separately from browser review.
+Inspect final HTML and manifests: source facts, company logo and brand fidelity, required explainer, boundary order, optional ad hydration, complete images, live job/reference links, decoded share subject/body, and tracking conflicts. Check desktop and mobile through the supported browser and Maizzle gallery. When updating the template, run its focused tests and the schema-starter contract test, then rebuild after the final edit. Report inbox-client compatibility separately from browser review.
 
 Run the configured prose checker on authored prose. Follow repository commit policy and preserve unrelated work. Return the HTML and preview locations, editable source, verification results and limits, any source omissions/adaptations, and selected ad ID. Configure sender identity, monitored Reply-To, recipients, and unsubscribe handling only when the delivery task calls for them.
 

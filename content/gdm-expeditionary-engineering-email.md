@@ -1,14 +1,14 @@
 ---
-template: adjacency-recruiting
+template: gdm-special-projects
 publicationMode: campaign
 title: GDM-260315-SPEE | An introduction to Special Projects
 preheader: >-
   Research Engineer, Expeditionary Engineering. A portfolio with a few difficult-to-classify
   projects would be useful.
 recruiter:
-  name: The Adjacency
-  desk: Special Appointments · GDM-260315-SPEE
-  signature: The Special Appointments desk
+  name: Google DeepMind
+  desk: SPECIAL PROJECTS / EXPEDITIONARY ENGINEERING
+  signature: Special Projects, Organizational Imagination
 greeting: Hello,
 introduction:
   - >-
@@ -165,10 +165,16 @@ share:
   text: Send this to the person whose most interesting work never quite fits the job description.
   buttonLabel: Share the requisition
   subject: Google DeepMind | Special Projects, Expeditionary Engineering
-  message: "This role from The Adjacency made me think of you:"
+  message: 'This role from The Adjacency made me think of you:'
 footer:
   identity: The Adjacency · Special Appointments
-  unsubscribeLink: "[unsubscribe]"
+  unsubscribeLink: '[unsubscribe]'
   footerCta:
     enabled: false
+companyLogo:
+  src: >-
+    https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/1c9b8ab8-1efb-4c0b-9b91-8c92e122ea00/public?format=png
+  alt: Google DeepMind
+  width: 512
+  height: 119
 ---

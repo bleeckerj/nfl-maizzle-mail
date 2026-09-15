@@ -1,0 +1,7 @@
+<each loop="section in sections"><if condition="section.type === 'recruiting-list'">
+<table role="presentation" width="100%"><tr><td class="gdm-pad" style="padding:28px 48px 4px;">
+<h2 style="margin:0 0 16px;font-size:22px;line-height:29px;font-weight:400;color:#202124;">{{ section.title }}</h2>
+<ul style="margin:0;padding-left:18px;"><each loop="item in section.items"><li style="padding:0 0 12px 4px;font-size:15px;line-height:25px;">{{ item.text }}</li></each></ul>
+</td></tr></table></if>
+<if condition="section.type === 'ad-block' && section.placement === 'inline'"><component src="templates/adjacency-recruiting/components/Sponsor.html" locals='{{ JSON.stringify({section}) }}'></component></if>
+</each>

@@ -2,6 +2,10 @@
 
 Turn a corpus job into a recruiter-led email, followed by an editorial explainer and a share action. The recruiting message and any advertisement maintain their institutional voices. The explainer explicitly steps outside that world to help the reader understand the premise and examine its implications.
 
+## Company branding requirement
+
+New employer emails require the hiring company’s hosted logo and a design aligned with its own style, voice, and character. This FDAA-era layout is a reference content contract, not a universal design. A logo-and-color swap is insufficient for a different employer. Use or create a company-specific canonical template and verify its logo, typography, section structure, and palette against the source employer. Google DeepMind uses [gdm-special-projects](../gdm-special-projects/AUTHORING.md). Optional illustrations may be omitted; the company logo may not be silently omitted. Older drafts without a company logo need a branding pass before reuse.
+
 ## Edit this email yourself
 
 The source for the FDAA gallery example is [sample-content.md](sample-content.md). Open that file in a text editor and type your changes. You do not need to edit HTML or run the skill to change the wording. The gallery preview is read-only; it has no text-editing form and does not save browser edits.

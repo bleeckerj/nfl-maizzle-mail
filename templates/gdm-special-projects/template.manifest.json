@@ -1,0 +1,17 @@
+{
+  "template": "gdm-special-projects",
+  "supportedPublicationModes": [
+    "campaign"
+  ],
+  "starterSource": "schema",
+  "supportedSections": [
+    "recruiting-list",
+    "ad-block"
+  ],
+  "registryHydrations": [
+    "ad-block"
+  ],
+  "footerBehavior": {
+    "campaign": "Required editorial explainer, configurable public-URL email sharing, recruiter identity and optional unsubscribe link; sponsors use independently chosen placements."
+  }
+}

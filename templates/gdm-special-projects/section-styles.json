@@ -1,0 +1,12 @@
+{
+  "sectionStyles": {
+    "recruiting-list": {
+      "backgroundColor": "#ffffff",
+      "textColor": "#3c4043"
+    },
+    "ad-block": {
+      "backgroundColor": "#ffffff",
+      "textColor": "#3c4043"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+---
+title: "{{ title }}"
+preheader: "{{ preheader }}"
+---
+<extends src="templates/gdm-special-projects/layouts/main.html"><block name="template">
+<component src="templates/gdm-special-projects/components/Masthead.html"></component>
+<component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"top"}'></component>
+<component src="templates/gdm-special-projects/components/Brief.html"></component>
+<component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"after-role"}'></component>
+<component src="templates/gdm-special-projects/components/Letter.html"></component>
+<component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"after-introduction"}'></component>
+<component src="templates/gdm-special-projects/components/Snapshot.html"></component>
+<component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"after-assignment"}'></component>
+<component src="templates/gdm-special-projects/components/Lists.html"></component>
+<component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"after-lists"}'></component>
+<component src="templates/gdm-special-projects/components/Compensation.html"></component>
+<component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"after-compensation"}'></component>
+<component src="templates/gdm-special-projects/components/Closing.html"></component>
+<component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"after-recruiting"}'></component>
+<component src="templates/gdm-special-projects/components/Editorial.html"></component>
+<component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"after-explainer"}'></component>
+<component src="templates/gdm-special-projects/components/Referral.html"></component>
+<component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"after-share"}'></component>
+<component src="templates/gdm-special-projects/components/Footer.html"></component>
+</block></extends>
