@@ -1,0 +1,4 @@
+interface:
+  display_name: "Adjacency Job Email"
+  short_description: "Create recruiting emails from Adjacency jobs"
+  default_prompt: "Use $adjacency-job-email to turn this Adjacency job into an HTML recruiting email with an explainer and sharing."

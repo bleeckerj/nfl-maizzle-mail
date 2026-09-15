@@ -1,38 +1,85 @@
 # Adjacency recruiting email
 
-A reusable talent-desk email: recruiter introduction, role identity, full-width photograph, appointment facts, assignment, selected duties and qualifications, compensation, and follow-up.
+Turn a corpus job into a recruiter-led email, followed by an editorial explainer and a share action. The recruiting message and any advertisement maintain their institutional voices. The explainer explicitly steps outside that world to help the reader understand the premise and examine its implications.
 
-## Authoring
+## Content order
 
-Copy sample-content.md to a new Markdown source. Keep template: adjacency-recruiting and publicationMode: campaign. The schema owns the content contract; the template is discovered from its canonical directory and registered in the gallery.
+1. Recruiter identity and introduction.
+2. Role, full-width image, facts, duties, qualifications, compensation, and follow-up.
+3. Optional inventory-backed advertisements.
+4. Required “What’s going on here?” editorial explainer and optional reference links.
+5. Share this, followed by the delivery footer.
 
-- recruiter: name, desk, and signature. These are visible copy, not delivery headers.
-- greeting and introduction: a named greeting for individual outreach, or a general greeting for a candidate list. Avoid claiming knowledge of an individual's experience unless supplied by the operator.
-- job: title, company, requisition reference, team, department, labeled facts, mission, assignment, compensation, and the primary tracked link. Preserve the source's appointment conditions.
-- job.image: optional hosted Photarium image with src, alt, source width/height, and caption. The renderer preserves its natural ratio at full email width. Use a broadly supported PNG or JPEG rendition; never add repository image binaries.
-- job.link: author an object with href, label, and category: jobs. The canonical build converts this to a URL and enriches the final anchors. Both buttons share one click intent. Destinations must be under https://theadjacency.com/.
-- sections: ordered recruiting-list sections, each with a heading and items containing a plain-text text field. The sample includes selected source duties and qualifications and links to the complete requisition.
-- followUp: an invitation appropriate to the sender's actual reply handling.
-- footer: identity, optional sender address and unsubscribeLink. Keep footerCta.enabled false. For list delivery use the platform's [unsubscribe] token; dispatch must resolve it. For individual correspondence, omit unsubscribeLink when appropriate.
-- operatorContext: optional heading and plain-text paragraphs after the recruiting message. Only populate when the operator supplies or requests that context. Source grounding and explainers are never imported automatically.
+This order is fixed by the template. Recruiting lists keep their relative order in sections; ad blocks keep their relative order and appear after the recruiting message. An ad is never inserted inside the explainer.
 
-Fields are plain text except URLs. Maizzle escapes text. This template does not accept raw HTML, ads, Short Takes, or automatic public-issue archive links. Its view-online action is the explicitly authored, verified requisition URL. It uses the shared schema, tracking, image/link validation, dark-mode policy, and content-slot pipeline.
+## Author-owned fields
 
-The HTML does not set a From address, Reply-To, recipient list, or tracking policy. Configure a monitored Reply-To and the approved sender identity in the dispatch system. Building and previewing do not send mail.
+Copy sample-content.md into a new Markdown source, then replace the FDAA content. Keep template: adjacency-recruiting and publicationMode: campaign. Read newsletter.schema.json for the current contract.
 
-## FDAA sample provenance
+- recruiter: name, desk, and signature; visible copy, separate from delivery headers.
+- greeting and introduction: personal or list-appropriate outreach. Do not claim knowledge of a candidate that the operator has not supplied.
+- job: source title, company, reference, team, department, labeled facts, mission, assignment, compensation, and CTA label. Preserve material appointment conditions. The FDAA example retains the 70-hour week and Tessier-Ashpool assignment.
+- job.image: optional Photarium src, alt, original width/height, and caption. The renderer displays the full image at its natural ratio. Never store content images in this repository.
+- job.link: tracked object with href, label, and category: jobs. Use the verified published requisition URL under https://theadjacency.com/. The build converts tracked objects into URL strings and enriches rendered anchors.
+- sections: recruiting-list sections with title and items containing text, plus optional ad-block sections described below.
+- followUp: outreach appropriate to the sender's actual reply handling.
+- operatorContext: required heading and paragraphs explaining what the artifact is, what premise it explores, and what the reader can examine through it. Adapt the source job's explainer where available. Keep factual references accurate; do not invent source claims. Optional references contain text and a tracked link with href, label, and category: grounding.
+- share: enabled, heading, text, buttonLabel, subject, and message. The build appends job.link to the message and generates a properly encoded mailto link. Set enabled: false to hide the component when explicitly requested.
+- footer: identity, optional address and unsubscribeLink; keep footerCta.enabled false. List delivery uses [unsubscribe], resolved by the sender. Individual correspondence may omit it where appropriate.
 
-Source: nfl-editorial/src/content/jobs/fdaa/platform-counter-inference-analyst.mdx. The sample retains selected duties and qualifications verbatim, the 70-hour week, Level II compensation, and Tessier-Ashpool assignment. Introductory and mission copy is adapted for recruitment. The Adjacency / Talent & Appointments is the template's proposed recruiting identity. The requisition URL was resolved from the editorial Short Take registry and returned HTTP 200 during creation. Image: Photarium fd5a4313-345b-40d9-d9c6-b1a9227b7900, 1536 × 1024. Source popup explainer and service footer are intentionally opt-in through operatorContext and are absent from this sample.
+The explainer is now standard for this email format. Its presence does not authorize changing the job, recruiter introduction, ad, captions, or linked destination into explanatory copy. Keep those artifacts intact. Source grounding IDs, when cited, must be canonical digest IDs; do not substitute signal IDs.
 
-## Build and verify
+## Optional ads from ads.json
 
-Run from nfl-maizzle-mail:
+Add one section per ad. The authored source needs only an inventory ID:
+
+```yaml
+sections:
+  - type: recruiting-list
+    title: What you would work on
+    items:
+      - text: A selected duty from the source requisition.
+  - type: ad-block
+    items:
+      - adId: fluke-turing-clamp-4x5-01
+```
+
+The shared hydrator loads image, alt text, copy, sponsor, label, and any links from nfl-editorial/src/content/ads.json. Each block accepts exactly one adId. Unknown IDs fail. Do not paste ad media URLs or rewrite inventory copy in the email source. Ads with no inventory destination remain unlinked; no destination is invented. Omit the block to omit the ad and its spacing. Images remain full-width with natural height.
+
+## Explainer and sharing example
+
+```yaml
+operatorContext:
+  heading: What’s going on here?
+  paragraphs:
+    - This is a design-fiction job requisition from The Adjacency.
+    - Explain the particular premise and the responsibilities it raises.
+share:
+  enabled: true
+  heading: Share this
+  text: Send this requisition to someone working on related questions.
+  buttonLabel: Share by email
+  subject: A job from The Adjacency
+  message: "I thought you might find this requisition interesting:"
+```
+
+Quote YAML values containing colons when authoring by hand. Share-by-email opens the reader's mail client with the public requisition URL. It does not send a message, forward the delivered email, or include subscriber identifiers or unsubscribe links. share.emailHref is build-owned and is removed before schema validation and authoring export; do not author it.
+
+## Source and delivery boundaries
+
+The FDAA sample adapts nfl-editorial/src/content/jobs/fdaa/platform-counter-inference-analyst.mdx. Its editorial note adapts popupExplainerText; its reference link points to the source's earlier FDAA artifact. The note does not repeat the source's news/legal claim without verifying it. The ad is fluke-turing-clamp-4x5-01. Remove its section for a version without advertising.
+
+Template fields are plain text except URLs and the HTML supplied by the trusted ad inventory. No public-issue archive URL is inferred. From, Reply-To, recipient selection, and tracking policy belong to the dispatch system. Building, previewing, and opening a mailto link do not authorize dispatch.
+
+## Verification
+
+Prefer the Maizzle MCP validate_newsletter_markdown and build_campaign_email tools with an explicit source path, template, and output directory. Shell fallback from nfl-maizzle-mail:
 
 ```sh
-node --test tests/newsletter-core/adjacency-recruiting.test.mjs
+node --test tests/newsletter-core/adjacency-recruiting.test.mjs tests/newsletter-core/template-schema-contract.test.mjs
 node scripts/build-newsletter.mjs /Users/julian/Code/nfl-maizzle-mail/templates/adjacency-recruiting/sample-content.md fdaa-recruiting --no-open --strict-schema
 npm run gallery:build -- --template=adjacency-recruiting
 npm run gallery
 ```
 
-The email and tracking/content-slot manifests are generated under build_production/. Gallery preview artifacts are ignored under build_template_gallery/. Check the final HTML at desktop and mobile sizes and inspect the tracked anchor destinations. Browser review does not establish rendering in Outlook, Gmail, or Apple Mail; an approved inbox test is a separate delivery action.
+Inspect final HTML, link/content-slot manifests, complete images, the explainer boundary, the decoded share URL, and desktop/mobile layouts. Generated outputs live under build_production/ and build_template_gallery/. Browser review does not establish inbox-client compatibility. A test send is a separate dispatch action.

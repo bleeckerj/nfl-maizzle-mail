@@ -1,9 +1,3 @@
-<if condition="typeof operatorContext !== 'undefined' && operatorContext">
- <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td class="recruit-pad" style="padding:26px 40px;border-top:1px solid #cbd5e3;">
- <h2 style="margin:0 0 12px;font-size:18px;line-height:25px;">{{ operatorContext.heading }}</h2>
- <each loop="paragraph in operatorContext.paragraphs"><p style="margin:0 0 12px;font-size:15px;line-height:24px;">{{ paragraph }}</p></each>
- </td></tr></table>
-</if>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#101e35"><tr><td class="recruit-pad" style="padding:24px 40px;">
  <p style="margin:0;font-size:12px;line-height:20px;color:#d0dcf0;">{{ footer.identity }}</p>
  <if condition="footer.address"><p style="margin:8px 0 0;font-size:12px;line-height:20px;color:#d0dcf0;">{{ footer.address }}</p></if>

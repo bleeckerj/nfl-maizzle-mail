@@ -90,6 +90,9 @@ sections:
           A bachelor's degree in public policy, computer science, human-computer interaction, social science,
           public health, law, design research, or a related discipline; equivalent professional experience
           will be considered.
+  - type: ad-block
+    items:
+      - adId: fluke-turing-clamp-4x5-01
 followUp: >-
   If this assignment fits your experience, review the full requisition for the remaining qualifications and
   conditions of employment. You can also reply with a brief introduction and the parts of your background you
@@ -99,4 +102,35 @@ footer:
   unsubscribeLink: '[unsubscribe]'
   footerCta:
     enabled: false
+operatorContext:
+  heading: What’s going on here?
+  paragraphs:
+    - >-
+      This is a design-fiction job requisition from The Adjacency, a publication that explores plausible near
+      futures through news stories, advertisements, and the jobs those worlds might require.
+    - >-
+      The FDAA begins with a question: what if algorithms were regulated as environmental influences on
+      health, alongside food, pharmaceuticals, air quality, and other everyday exposures? The analyst’s duties
+      make that question specific. Someone would have to investigate the systems, gather evidence from people
+      affected by them, and determine what warrants intervention.
+    - >-
+      The covert operations and the Wintermute assignment extend that premise into a world with its own
+      institutions and working routines. Reading the requisition gives us a way to examine which
+      responsibilities we already recognize, which powers we would challenge, and what experience this work
+      would require.
+  references:
+    - text: Food Drug and Algorithm Administration
+      link:
+        href: https://nearfuturelaboratory.com/artifacts/food-drug-and-algorithm-administration/
+        label: FDAA | original artifact
+        category: grounding
+share:
+  enabled: true
+  heading: Share this
+  text: >-
+    Know someone thinking about platform accountability, public health, or the changing work of regulation?
+    Send them the requisition.
+  buttonLabel: Share by email
+  subject: 'From The Adjacency: Platform Counter-Inference Analyst'
+  message: 'I thought you might find this job requisition from The Adjacency interesting:'
 ---

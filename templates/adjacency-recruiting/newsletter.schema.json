@@ -195,38 +195,76 @@
       "type": "array",
       "minItems": 1,
       "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "properties": {
-          "type": {
-            "const": "recruiting-list"
-          },
-          "title": {
-            "type": "string",
-            "minLength": 1
-          },
-          "items": {
-            "type": "array",
-            "minItems": 1,
-            "items": {
-              "type": "object",
-              "additionalProperties": false,
-              "required": [
-                "text"
-              ],
-              "properties": {
-                "text": {
-                  "type": "string",
-                  "minLength": 1
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "const": "recruiting-list"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "text"
+                  ],
+                  "properties": {
+                    "text": {
+                      "type": "string",
+                      "minLength": 1
+                    }
+                  }
                 }
               }
-            }
+            },
+            "required": [
+              "type",
+              "title",
+              "items"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "const": "ad-block"
+              },
+              "items": {
+                "type": "array",
+                "minItems": 1,
+                "maxItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "adId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "examples": [
+                        "fluke-turing-clamp-4x5-01"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "adId"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "type",
+              "items"
+            ]
           }
-        },
-        "required": [
-          "type",
-          "title",
-          "items"
         ]
       }
     },
@@ -235,10 +273,7 @@
       "minLength": 1
     },
     "operatorContext": {
-      "type": [
-        "object",
-        "null"
-      ],
+      "type": "object",
       "additionalProperties": false,
       "properties": {
         "heading": {
@@ -252,14 +287,55 @@
             "type": "string",
             "minLength": 1
           }
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "text": {
+                "type": "string",
+                "minLength": 1
+              },
+              "link": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "href": {
+                    "type": "string",
+                    "pattern": "^https://",
+                    "examples": [
+                      "https://nearfuturelaboratory.com/artifacts/food-drug-and-algorithm-administration/"
+                    ]
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "category": {
+                    "const": "grounding"
+                  }
+                },
+                "required": [
+                  "href",
+                  "label",
+                  "category"
+                ]
+              }
+            },
+            "required": [
+              "text",
+              "link"
+            ]
+          }
         }
       },
       "required": [
         "heading",
         "paragraphs"
       ],
-      "description": "Optional operator-authored context. Omit to preserve immersion. Never populated from job provenance automatically.",
-      "default": null
+      "description": "Required editorial explainer after the recruiting message and optional ads. This is the explicit outside-the-world context for the reader."
     },
     "footer": {
       "type": "object",
@@ -297,6 +373,51 @@
         "identity",
         "footerCta"
       ]
+    },
+    "share": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "default": true
+        },
+        "heading": {
+          "type": "string",
+          "minLength": 1,
+          "default": "Share this"
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "buttonLabel": {
+          "type": "string",
+          "minLength": 1,
+          "default": "Share by email"
+        },
+        "subject": {
+          "type": "string",
+          "minLength": 1
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "emailHref": {
+          "type": "string",
+          "readOnly": true,
+          "description": "Build-generated mailto URI from subject, message, and job.link. Pruned before schema validation and authoring export."
+        }
+      },
+      "required": [
+        "enabled",
+        "heading",
+        "text",
+        "buttonLabel",
+        "subject",
+        "message"
+      ]
     }
   },
   "required": [
@@ -310,6 +431,8 @@
     "job",
     "sections",
     "followUp",
-    "footer"
+    "footer",
+    "operatorContext",
+    "share"
   ]
 }

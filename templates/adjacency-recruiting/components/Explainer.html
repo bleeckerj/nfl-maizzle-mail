@@ -1,0 +1,10 @@
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" bgcolor="#eef3fd">
+ <tr><td class="recruit-pad" style="padding:30px 40px;border-top:4px solid #2459df;">
+ <p style="margin:0 0 12px;font-size:11px;line-height:17px;font-weight:bold;letter-spacing:2px;text-transform:uppercase;color:#2459df;">From the editor</p>
+ <h2 style="margin:0 0 18px;font-size:26px;line-height:32px;color:#101e35;">{{ operatorContext.heading }}</h2>
+ <each loop="paragraph in operatorContext.paragraphs"><p style="margin:0 0 16px;font-size:16px;line-height:26px;color:#172338;">{{ paragraph }}</p></each>
+ <if condition="operatorContext.references && operatorContext.references.length">
+ <each loop="reference in operatorContext.references"><p style="margin:12px 0 0;font-size:14px;line-height:22px;"><a href="{{ reference.link }}" style="color:#2459df;text-decoration:underline;">{{ reference.text }}</a></p></each>
+ </if>
+ </td></tr>
+</table>

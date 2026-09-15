@@ -5,10 +5,13 @@
   ],
   "starterSource": "schema",
   "supportedSections": [
-    "recruiting-list"
+    "recruiting-list",
+    "ad-block"
   ],
-  "registryHydrations": [],
+  "registryHydrations": [
+    "ad-block"
+  ],
   "footerBehavior": {
-    "campaign": "Recruiter identity; optional address and sender-resolved unsubscribe link. Operator context is opt-in."
+    "campaign": "Required editorial explainer, configurable public-URL email sharing, recruiter identity and optional unsubscribe link."
   }
 }
