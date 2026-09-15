@@ -71,3 +71,13 @@ test('sponsor placements are explicit and unsupported values fail validation',()
  ad.placement='inside-image';assert.equal(validate(data),false);
  delete ad.placement;assert.equal(validate(data),true);
 });
+
+test('publication identity links to subscribe while other recruiter names stay unlinked',()=>{
+ const data=prepare(sample);
+ for(const component of ['Header','Footer']){
+  const doc=new JSDOM(render(component,data)).window.document;
+  assert.equal(doc.querySelector('a').href,'https://theadjacency.com/subscribe');
+ }
+ data.recruiter.name='Another talent desk';
+ assert.equal(new JSDOM(render('Header',data)).window.document.querySelector('a'),null);
+});

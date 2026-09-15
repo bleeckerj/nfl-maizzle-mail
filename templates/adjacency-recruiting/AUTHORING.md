@@ -2,6 +2,50 @@
 
 Turn a corpus job into a recruiter-led email, followed by an editorial explainer and a share action. The recruiting message and any advertisement maintain their institutional voices. The explainer explicitly steps outside that world to help the reader understand the premise and examine its implications.
 
+## Edit this email yourself
+
+The source for the FDAA gallery example is [sample-content.md](sample-content.md). Open that file in a text editor and type your changes. You do not need to edit HTML or run the skill to change the wording. The gallery preview is read-only; it has no text-editing form and does not save browser edits.
+
+This is a Markdown file whose email content lives in YAML frontmatter, between the opening and closing `---` lines. The template reads those named fields; free-form Markdown below the closing `---` is not used by this template. Keep indentation and field names intact. Use spaces instead of tabs. Text under `>-` can run across multiple indented lines and renders as one paragraph.
+
+| What you want to change | Field to edit |
+| --- | --- |
+| Inbox preview | `preheader` |
+| Greeting and opening copy | `greeting`, `introduction` |
+| Role details and requisition button | `job`, including `job.ctaLabel` |
+| Duties and qualifications | `sections` entries with `type: recruiting-list` |
+| Explainer | `operatorContext.heading`, `operatorContext.paragraphs` |
+| Share panel wording | `share.heading`, `share.text`, `share.buttonLabel` |
+| Message opened in the reader’s mail app | `share.subject`, `share.message` |
+| Sponsor selection and position | Ad block `items[0].adId` and `placement` |
+
+For example, replace the existing share fields with your own text:
+
+```yaml
+share:
+  enabled: true
+  heading: Share this
+  text: Know someone who would be interested in this role?
+  buttonLabel: Share by email
+  subject: 'From The Adjacency: Platform Counter-Inference Analyst'
+  message: 'I thought you might find this requisition interesting:'
+```
+
+Save, then run these commands from `/Users/julian/Code/nfl-maizzle-mail` to rebuild the FDAA email and refresh the gallery example:
+
+```sh
+node scripts/build-newsletter.mjs templates/adjacency-recruiting/sample-content.md fdaa-recruiting --no-open --strict-schema
+npm run gallery:build -- --template=adjacency-recruiting
+```
+
+Reload the browser preview after the commands finish. If the gallery is not running, start `npm run gallery -- --port=4319`, then open `http://127.0.0.1:4319/previews/adjacency-recruiting/preview.html`. The compiled email is `build_production/fdaa-recruiting.html`. These commands build and preview; they do not send email. A failed validation should be corrected in the source before using the output.
+
+For a new job or a separate dispatch, copy the example to `content/<descriptive-name>.md` once, edit the copy, and build that path with a matching output name. Subsequent edits belong in that same source file. The template gallery continues to show its configured sample; building a separate content file does not replace the gallery sample automatically. Ask Codex to open that dispatch’s rendered HTML for review.
+
+You can also request edits conversationally: `$adjacency-job-email Revise the FDAA email: change the share heading to “Pass this along”, shorten the introduction, and rebuild the preview.` Codex edits the source and runs the build. For a separate dispatch, include its content file path. Review and edit the source as often as needed before dispatch is requested.
+
+Visual styling lives in `components/Share.html` and the other template components. The Adjacency masthead, recruiter signature, and publication footer link to `https://theadjacency.com/subscribe`. The share button opens a mail composer containing the public job link. Do not edit generated HTML, `data/newsletter.json`, or `share.emailHref` to make lasting copy changes; rebuilding replaces generated values. Changes to the original corpus job do not automatically rewrite an existing email adaptation.
+
 ## Content order
 
 1. Recruiter identity and introduction.

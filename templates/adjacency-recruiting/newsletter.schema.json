@@ -24,7 +24,8 @@
       "properties": {
         "name": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "description": "Visible recruiter identity. The Adjacency masthead and signature link to https://theadjacency.com/subscribe; other names render as plain text."
         },
         "desk": {
           "type": "string",
@@ -366,7 +367,8 @@
       "properties": {
         "identity": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "description": "Publication footer identity linked to https://theadjacency.com/subscribe."
         },
         "address": {
           "type": "string",
