@@ -6,11 +6,10 @@ Turn a corpus job into a recruiter-led email, followed by an editorial explainer
 
 1. Recruiter identity and introduction.
 2. Role, full-width image, facts, duties, qualifications, compensation, and follow-up.
-3. Optional inventory-backed advertisements.
-4. Required “What’s going on here?” editorial explainer and optional reference links.
-5. Share this, followed by the delivery footer.
+3. Required “What’s going on here?” editorial explainer and optional reference links.
+4. Share this, followed by the delivery footer.
 
-This order is fixed by the template. Recruiting lists keep their relative order in sections; ad blocks keep their relative order and appear after the recruiting message. An ad is never inserted inside the explainer.
+Sponsor messages are optional and independently positioned at the boundaries described below. They can appear before, within, or after the recruiting material, or beside the explainer and sharing sections. Keep each sponsor message separate from surrounding prose. Sponsor placement does not determine explainer placement; the current template places the explainer below the recruiting message.
 
 ## Author-owned fields
 
@@ -31,7 +30,7 @@ The explainer is now standard for this email format. Its presence does not autho
 
 ## Optional ads from ads.json
 
-Add one section per ad. The authored source needs only an inventory ID:
+Add one section per sponsor message. Choose its placement independently for each email; no single ad location is mandatory. A visible SPONSOR heading identifies the message without altering the inventory ad’s own copy.
 
 ```yaml
 sections:
@@ -40,11 +39,32 @@ sections:
     items:
       - text: A selected duty from the source requisition.
   - type: ad-block
+    placement: after-role
+    sponsorLabel: SPONSOR
     items:
       - adId: fluke-turing-clamp-4x5-01
 ```
 
 The shared hydrator loads image, alt text, copy, sponsor, label, and any links from nfl-editorial/src/content/ads.json. Each block accepts exactly one adId. Unknown IDs fail. Do not paste ad media URLs or rewrite inventory copy in the email source. Ads with no inventory destination remain unlinked; no destination is invented. Omit the block to omit the ad and its spacing. Images remain full-width with natural height.
+
+### Sponsor placement
+
+| placement | Position |
+| --- | --- |
+| top | Below the masthead, before the greeting |
+| after-introduction | After the recruiter’s introduction |
+| after-role | After the role image, facts, and first requisition button |
+| after-assignment | After the assignment summary |
+| inline | In sections array order, between individual recruiting lists |
+| after-lists | After all duty and qualification lists |
+| after-compensation | After salary and benefits |
+| after-recruiting | After the recruiter’s follow-up and signature |
+| after-explainer | After the editorial explainer |
+| after-share | After sharing, before the footer |
+
+Omitting placement preserves after-recruiting for older sources. New emails should specify it deliberately. Multiple ads at the same placement retain source order. Each ad renders once. To place a sponsor between duties and qualifications, set placement: inline and put that ad-block between the two recruiting-list entries in sections. Moving the ad in sections alone does not move a named-placement ad.
+
+The FDAA sample demonstrates after-role. This is an editable example, not a default for future jobs. Omit the ad-block for no sponsor message. Ad images are complete artifacts; do not split them or place a sponsor inside a paragraph or image.
 
 ## Explainer and sharing example
 

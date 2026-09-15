@@ -93,6 +93,7 @@ sections:
   - type: ad-block
     items:
       - adId: fluke-turing-clamp-4x5-01
+    placement: after-role
 followUp: >-
   If this assignment fits your experience, review the full requisition for the remaining qualifications and
   conditions of employment. You can also reply with a brief introduction and the parts of your background you

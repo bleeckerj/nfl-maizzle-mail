@@ -5,11 +5,23 @@ preheader: "{{ preheader }}"
 <extends src="templates/adjacency-recruiting/layouts/main.html">
  <block name="template">
   <component src="templates/adjacency-recruiting/components/Header.html"></component>
+  <component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"top"}'></component>
+  <component src="templates/adjacency-recruiting/components/Introduction.html"></component>
+  <component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"after-introduction"}'></component>
   <component src="templates/adjacency-recruiting/components/Role.html"></component>
-  <component src="templates/adjacency-recruiting/components/Details.html"></component>
-  <component src="templates/adjacency-recruiting/components/Ads.html"></component>
+  <component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"after-role"}'></component>
+  <component src="templates/adjacency-recruiting/components/Assignment.html"></component>
+  <component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"after-assignment"}'></component>
+  <component src="templates/adjacency-recruiting/components/Lists.html"></component>
+  <component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"after-lists"}'></component>
+  <component src="templates/adjacency-recruiting/components/Compensation.html"></component>
+  <component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"after-compensation"}'></component>
+  <component src="templates/adjacency-recruiting/components/FollowUp.html"></component>
+  <component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"after-recruiting"}'></component>
   <component src="templates/adjacency-recruiting/components/Explainer.html"></component>
+  <component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"after-explainer"}'></component>
   <component src="templates/adjacency-recruiting/components/Share.html"></component>
+  <component src="templates/adjacency-recruiting/components/Ads.html" locals='{"adPlacement":"after-share"}'></component>
   <component src="templates/adjacency-recruiting/components/Footer.html"></component>
  </block>
 </extends>

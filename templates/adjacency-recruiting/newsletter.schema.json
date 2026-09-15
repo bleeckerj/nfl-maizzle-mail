@@ -258,6 +258,29 @@
                     "adId"
                   ]
                 }
+              },
+              "placement": {
+                "type": "string",
+                "enum": [
+                  "top",
+                  "after-introduction",
+                  "after-role",
+                  "after-assignment",
+                  "inline",
+                  "after-lists",
+                  "after-compensation",
+                  "after-recruiting",
+                  "after-explainer",
+                  "after-share"
+                ],
+                "default": "after-recruiting",
+                "description": "Sponsor position. Inline follows sections array order among recruiting lists. Omission preserves the legacy position after the recruiter follow-up."
+              },
+              "sponsorLabel": {
+                "type": "string",
+                "minLength": 1,
+                "default": "SPONSOR",
+                "description": "Visible sponsorship heading, separate from the inventory ad label."
               }
             },
             "required": [
@@ -335,7 +358,7 @@
         "heading",
         "paragraphs"
       ],
-      "description": "Required editorial explainer after the recruiting message and optional ads. This is the explicit outside-the-world context for the reader."
+      "description": "Required editorial explainer. Placement follows the template, independently of sponsor placement."
     },
     "footer": {
       "type": "object",

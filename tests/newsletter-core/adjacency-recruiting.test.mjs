@@ -49,7 +49,7 @@ test('share mailto round-trips punctuation and includes only the public requisit
  const disabled=prepare(off);assert.equal(disabled.share.emailHref,undefined);assert.equal(render('Share',disabled).trim(),'');
 });
 test('rendered ad remains complete and explainer/share have separate components',()=>{
- const data=prepare(sample);const adDoc=new JSDOM(render('Ads',data)).window.document;
+ const data=prepare(sample);const adDoc=new JSDOM(render('Sponsor',{...data,section:data.sections.find(s=>s.type==='ad-block')})).window.document;
  const img=adDoc.querySelector('img');assert.ok(img);assert.equal(img.style.height,'auto');assert.equal(img.style.width,'100%');
  assert.equal(adDoc.querySelectorAll('a').length,0);
  const explainer=new JSDOM(render('Explainer',data)).window.document;
@@ -61,4 +61,13 @@ test('rendered ad remains complete and explainer/share have separate components'
 test('rejects external job destinations and incomplete tracking objects',()=>{
  const data=structuredClone(sample);data.job.link.href='https://example.com/apply';assert.equal(validate(data),false);
  data.job.link.href=sample.job.link.href;delete data.job.link.label;assert.equal(validate(data),false);
+});
+
+test('sponsor placements are explicit and unsupported values fail validation',()=>{
+ const data=structuredClone(sample);const ad=data.sections.find(s=>s.type==='ad-block');
+ for(const placement of ['top','after-introduction','after-role','after-assignment','inline','after-lists','after-compensation','after-recruiting','after-explainer','after-share']){
+  ad.placement=placement;assert.equal(validate(data),true,JSON.stringify(validate.errors));
+ }
+ ad.placement='inside-image';assert.equal(validate(data),false);
+ delete ad.placement;assert.equal(validate(data),true);
 });
