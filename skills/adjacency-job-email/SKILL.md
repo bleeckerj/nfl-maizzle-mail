@@ -76,3 +76,5 @@ Inspect final HTML and manifests: source facts, company logo and brand fidelity,
 Run the configured prose checker on authored prose. Follow repository commit policy and preserve unrelated work. Return the HTML and preview locations, editable source, verification results and limits, any source omissions/adaptations, and selected ad ID. Configure sender identity, monitored Reply-To, recipients, and unsubscribe handling only when the delivery task calls for them.
 
 Preparing, building, or previewing does not authorize sending. If asked to dispatch a newly authored bespoke message, present the exact version and delivery details for approval under the applicable communication policy. Never send merely to test this skill.
+
+Sponsor presentation uses a complete 1px charcoal border around the label, image, and copy, with 40px outer side gutters on desktop and 24px on mobile. Preserve the full image at its natural ratio inside this bounded box. This shared recruiting-email treatment applies at every sponsor placement, including inline ads. Banner images remain independent of this sponsor framing.

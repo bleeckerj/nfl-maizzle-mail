@@ -222,3 +222,5 @@ For final review, confirm:
 | Preview and final colors differ | Compare preview flags and canonical dark-mode policy before editing colors. |
 
 Keep [the installed skill source](../skills/adjacency-job-email/SKILL.md), template guides, gallery configuration, and this guide aligned with code changes. The installed skill at `~/.codex/skills/adjacency-job-email` links to the maintained repository skill. Commit only task changes; generated artifacts and unrelated author edits require separate handling. Rendering and documentation changes do not imply publication or dispatch.
+
+Sponsor presentation uses a complete 1px charcoal border around the label, image, and copy, with 40px outer side gutters on desktop and 24px on mobile. Preserve the full image at its natural ratio inside this bounded box. This shared recruiting-email treatment applies at every sponsor placement, including inline ads. Banner images remain independent of this sponsor framing.

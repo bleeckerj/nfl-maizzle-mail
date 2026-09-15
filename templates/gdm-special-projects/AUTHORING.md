@@ -53,3 +53,5 @@ Add an entry to the existing `sections` array:
 Use one inventory ID per block and separate blocks for multiple ads. `after-introduction` follows the signed letter. `after-role` follows the optional banner. `inline` inserts an ad among recruiting lists in array order; all named placements use template boundaries. Omit a block to remove its ad. Inventory hydration supplies the copy, image, and destination at build time. An ad's image keeps its full natural composition, including portrait formats. Banner fields do not configure sponsor ads.
 
 Rebuild the canonical email after edits, then rebuild the gallery sample and reload the preview. Neither operation sends mail. Changes to the shared inventory affect subsequent builds of every email using that ad ID.
+
+Sponsor presentation uses a complete 1px charcoal border around the label, image, and copy, with 40px outer side gutters on desktop and 24px on mobile. Preserve the full image at its natural ratio inside this bounded box. This shared recruiting-email treatment applies at every sponsor placement, including inline ads. Banner images remain independent of this sponsor framing.
