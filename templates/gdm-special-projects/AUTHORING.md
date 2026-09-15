@@ -20,7 +20,7 @@ Build from `/Users/julian/Code/nfl-editorial`:
 npm run mail:build:job-email -- gdm-expeditionary-engineering
 ```
 
-The canonical HTML is `nfl-editorial/emails/jobs/gdm-expeditionary-engineering/email.html`, beside its Markdown. From nfl-maizzle-mail, run `npm run gallery:build -- --template=gdm-special-projects` to refresh the gallery cache. With the existing gallery running on port 4319, open `http://127.0.0.1:4319/previews/gdm-special-projects/preview.html`. The gallery reads this same editable draft. Build output is disposable; edit the source and rebuild. Nothing in these commands sends email.
+The canonical HTML is `nfl-editorial/emails/jobs/gdm-expeditionary-engineering/gdm-expeditionary-engineering.html`, beside its Markdown. From nfl-maizzle-mail, run `npm run gallery:build -- --template=gdm-special-projects` to refresh the gallery cache. With the existing gallery running on port 4319, open `http://127.0.0.1:4319/previews/gdm-special-projects/preview.html`. The gallery reads this same editable draft. Build output is disposable; edit the source and rebuild. Nothing in these commands sends email.
 
 Check desktop and mobile logo visibility, complete role text, company-specific hierarchy, public job destination, share composer content, and tracking conflicts. Browser verification does not establish inbox compatibility. The source lists both Venice Beach and Mountain View; this draft preserves both pending author clarification.
 
@@ -55,3 +55,5 @@ Use one inventory ID per block and separate blocks for multiple ads. `after-intr
 Rebuild the canonical email after edits, then rebuild the gallery sample and reload the preview. Neither operation sends mail. Changes to the shared inventory affect subsequent builds of every email using that ad ID.
 
 Sponsor presentation uses a complete 1px charcoal border around the label, image, and copy, with 40px outer side gutters on desktop and 24px on mobile. Preserve the full image at its natural ratio inside this bounded box. This shared recruiting-email treatment applies at every sponsor placement, including inline ads. Banner images remain independent of this sponsor framing.
+
+The editorial wrapper names HTML and manifests after the email-folder identifier supplied to the command. Add `--open` to open the resulting HTML through the operating system after a successful build; the default is build-only. `--dry-run --open` performs neither action. Generic `email.html` files from earlier builds are legacy output. Gallery previews keep their separate `preview.html` name.

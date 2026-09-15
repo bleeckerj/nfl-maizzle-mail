@@ -36,7 +36,7 @@ Editorial email.md
   -> Maizzle scripts/build-newsletter.mjs (cwd = Maizzle)
   -> normalization, schema validation, hydration, shared preparation
   -> templates/<selected-template>/newsletter.html
-  -> email.html + manifests in the editorial source directory
+  -> <slug>.html + manifests in the editorial source directory
 ```
 
 The editorial wrapper resolves `emails/config.json` relative to the editorial root. Its `maizzleRepo` defaults to `../nfl-maizzle-mail`. It checks that the source and builder exist, invokes the canonical builder through the current Node executable, and propagates failure status. It does not parse or rewrite the copy itself.
@@ -91,9 +91,9 @@ Discover the Maizzle tools and read the selected template's authoring guide and 
 
 A successful build writes:
 
-- `email.html`: rendered handoff email.
-- `email.link-tracking-manifest.json`: final link metadata and conflict diagnostics.
-- `email.content-slots.json`: rendered content-slot metadata.
+- `<slug>.html`: rendered handoff email.
+- `<slug>.link-tracking-manifest.json`: final link metadata and conflict diagnostics.
+- `<slug>.content-slots.json`: rendered content-slot metadata.
 - A mobile-typography sidecar when the applicable verification path produces it.
 
 Keep these generated files outside Git using editorial's existing ignore rules. Keep source Markdown, renderer configuration, template files, and tests tracked. Rebuild after a fresh checkout. A failed build is not guaranteed to remove an older adjacent output; report the failure rather than presenting the old file as current.
@@ -224,3 +224,5 @@ For final review, confirm:
 Keep [the installed skill source](../skills/adjacency-job-email/SKILL.md), template guides, gallery configuration, and this guide aligned with code changes. The installed skill at `~/.codex/skills/adjacency-job-email` links to the maintained repository skill. Commit only task changes; generated artifacts and unrelated author edits require separate handling. Rendering and documentation changes do not imply publication or dispatch.
 
 Sponsor presentation uses a complete 1px charcoal border around the label, image, and copy, with 40px outer side gutters on desktop and 24px on mobile. Preserve the full image at its natural ratio inside this bounded box. This shared recruiting-email treatment applies at every sponsor placement, including inline ads. Banner images remain independent of this sponsor framing.
+
+The editorial wrapper names HTML and manifests after the email-folder identifier supplied to the command. Add `--open` to open the resulting HTML through the operating system after a successful build; the default is build-only. `--dry-run --open` performs neither action. Generic `email.html` files from earlier builds are legacy output. Gallery previews keep their separate `preview.html` name.
