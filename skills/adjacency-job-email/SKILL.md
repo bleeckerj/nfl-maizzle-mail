@@ -77,6 +77,6 @@ Run the configured prose checker on authored prose. Follow repository commit pol
 
 Preparing, building, or previewing does not authorize sending. If asked to dispatch a newly authored bespoke message, present the exact version and delivery details for approval under the applicable communication policy. Never send merely to test this skill.
 
-Sponsor presentation uses a complete 1px charcoal border around the label, image, and copy, with 40px outer side gutters on desktop and 24px on mobile. Preserve the full image at its natural ratio inside this bounded box. This shared recruiting-email treatment applies at every sponsor placement, including inline ads. Banner images remain independent of this sponsor framing.
+Recruiting sponsor placements reuse `templates/dense-discovery/components/AdBlock.html`, the same component included by dense-discovery. Its existing card markup controls the border, image padding, copy, sponsor/CTA footer, and snapshot handling. The recruiting wrapper adds the SPONSOR heading and 40px desktop / 24px mobile side gutters. Do not create a separate recruiting ad-card structure. Banner images remain independent.
 
 The editorial wrapper names HTML and manifests after the email-folder identifier supplied to the command. Add `--open` to open the resulting HTML through the operating system after a successful build; the default is build-only. `--dry-run --open` performs neither action. Generic `email.html` files from earlier builds are legacy output. Gallery previews keep their separate `preview.html` name.
