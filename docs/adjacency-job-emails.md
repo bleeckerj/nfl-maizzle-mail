@@ -159,6 +159,12 @@ The GDM palette follows its source company renderer: white, charcoal, neutral gr
 
 Preserve source job facts and employment conditions. Keep employer-facing copy in its established world. `operatorContext` is the authorized editorial explainer and is visually separated from recruiting. Current templates place it after recruiting; YAML property order does not change layout.
 
+### GDM banners
+
+`job.image` is an optional atmosphere banner in `gdm-special-projects`. Its schema requires only `src` (hosted Photarium URL) and `alt`. Dimensions and caption are optional; do not request them merely to satisfy the build. `components/Brief.html` renders the image at full email width with automatic height and renders a caption row only when caption text is present. No caption means no caption row or caption spacing. Company-logo requirements remain separate.
+
+The banner follows the opening role brief and precedes the letter; `after-role` sponsors follow the banner. Changing YAML property order does not reposition the banner. See the [GDM authoring guide](../templates/gdm-special-projects/AUTHORING.md) and [editorial operator guide](../../nfl-editorial/emails/README.md#gdm-atmosphere-banner) for examples and the placement table. Other employer schemas retain their own contracts.
+
 ### Ads
 
 `ad-block` sections contain one inventory `adId` each. Shared hydration reads editorial's `src/content/ads.json`. Keep inventory copy, full image geometry, and destinations intact.

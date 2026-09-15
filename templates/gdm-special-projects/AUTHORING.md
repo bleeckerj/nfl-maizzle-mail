@@ -35,3 +35,21 @@ Add `image` inside `job` using only a hosted image URL and alt text:
 ```
 
 `width`, `height`, and `caption` are optional. The banner displays at full email width with automatic height, preserving the complete image. Omit `caption` for atmosphere imagery; the renderer omits the caption row and its spacing. A supplied caption appears below the image. The banner follows the role brief and precedes the recruiting letter. The required company-logo dimensions are unchanged.
+
+## Sponsor ads and editing walkthrough
+
+The complete [editorial authoring guide](../../../nfl-editorial/emails/README.md#gdm-atmosphere-banner) documents banner insertion, every GDM sponsor position, inline and multiple sponsors, and canonical versus gallery rebuilds. From this template directory, the sibling editorial guide is also available at `/Users/julian/Code/nfl-editorial/emails/README.md`.
+
+Add an entry to the existing `sections` array:
+
+```yaml
+  - type: ad-block
+    placement: after-introduction
+    sponsorLabel: SPONSOR
+    items:
+      - adId: fluke-turing-clamp-4x5-01
+```
+
+Use one inventory ID per block and separate blocks for multiple ads. `after-introduction` follows the signed letter. `after-role` follows the optional banner. `inline` inserts an ad among recruiting lists in array order; all named placements use template boundaries. Omit a block to remove its ad. Inventory hydration supplies the copy, image, and destination at build time. An ad's image keeps its full natural composition, including portrait formats. Banner fields do not configure sponsor ads.
+
+Rebuild the canonical email after edits, then rebuild the gallery sample and reload the preview. Neither operation sends mail. Changes to the shared inventory affect subsequent builds of every email using that ad ID.
