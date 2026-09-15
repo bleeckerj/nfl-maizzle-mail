@@ -23,3 +23,15 @@ npm run mail:build:job-email -- gdm-expeditionary-engineering
 The canonical HTML is `nfl-editorial/emails/jobs/gdm-expeditionary-engineering/email.html`, beside its Markdown. From nfl-maizzle-mail, run `npm run gallery:build -- --template=gdm-special-projects` to refresh the gallery cache. With the existing gallery running on port 4319, open `http://127.0.0.1:4319/previews/gdm-special-projects/preview.html`. The gallery reads this same editable draft. Build output is disposable; edit the source and rebuild. Nothing in these commands sends email.
 
 Check desktop and mobile logo visibility, complete role text, company-specific hierarchy, public job destination, share composer content, and tracking conflicts. Browser verification does not establish inbox compatibility. The source lists both Venice Beach and Mountain View; this draft preserves both pending author clarification.
+
+## Optional atmosphere banner
+
+Add `image` inside `job` using only a hosted image URL and alt text:
+
+```yaml
+  image:
+    src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/YOUR-IMAGE-ID/full
+    alt: Describe the visible scene.
+```
+
+`width`, `height`, and `caption` are optional. The banner displays at full email width with automatic height, preserving the complete image. Omit `caption` for atmosphere imagery; the renderer omits the caption row and its spacing. A supplied caption appears below the image. The banner follows the role brief and precedes the recruiting letter. The required company-logo dimensions are unchanged.

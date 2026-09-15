@@ -21,3 +21,15 @@ test('GDM uses shared share preparation and removes the generated link on export
  pruneBuildInjectedFields(data);assert.equal(data.share.emailHref,undefined);
  assert.equal(source.share.emailHref,undefined);
 });
+
+test('GDM atmosphere banner needs only a hosted source and alt text',()=>{
+ const d=structuredClone(source);
+ d.job.image={src:source.companyLogo.src,alt:'Special Projects building'};
+ assert.equal(validate(d),true,JSON.stringify(validate.errors));
+ for(const key of ['src','alt']) {
+  const missing=structuredClone(d);delete missing.job.image[key];
+  assert.equal(validate(missing),false);
+ }
+ d.job.image.width=1600;d.job.image.height=900;d.job.image.caption='Optional caption';
+ assert.equal(validate(d),true,JSON.stringify(validate.errors));
+});

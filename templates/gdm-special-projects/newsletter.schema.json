@@ -142,10 +142,7 @@
           },
           "required": [
             "src",
-            "alt",
-            "width",
-            "height",
-            "caption"
+            "alt"
           ]
         },
         "link": {
