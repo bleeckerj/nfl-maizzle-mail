@@ -43,34 +43,9 @@
                     </tr>
                   </if>
 
-          <if condition="item.renderMode === 'commerce-overlay-lockup' && item.image && item.commerce">
+          <if condition="item.image">
             <tr>
-              <td style="border-collapse: collapse;padding: {{ section.containerStyles.imagePadding || '0 12px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
-                <div style="position: relative;width: 100%;max-width: 608px;margin: 0 auto;line-height: 0;overflow: hidden;background: #f5f5f5;">
-                  <if condition="item.link || item.readMoreLink">
-                    <a href="{{ item.link || item.readMoreLink }}" style="display: block;position: relative;text-decoration: none;">
-                      <img src="{{ item.image }}" alt="{{ item.imageAlt || item.title || 'Advertisement' }}" width="608" height="608" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 608px;height: auto;border: 0;">
-                      <span style="position: absolute;{{ item.commerce.lockup.pricePositionStyle || 'left: 5.4%;bottom: 5.4%;' }}display: inline-block;font-family: Arial, Helvetica, sans-serif;font-size: 72px;line-height: .9;font-weight: 700;letter-spacing: 0;color: {{ item.commerce.lockup.textColor || '#ff3048' }};">{{ item.commerce.priceText }}</span>
-                      <span style="position: absolute;{{ item.commerce.lockup.iconPositionStyle || 'right: 5.4%;bottom: 5.4%;' }}display: inline-block;">
-                        <img src="{{ item.commerce.icon.src }}" alt="{{ item.commerce.icon.altText || '' }}" width="187" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: auto;max-width: 187px;height: auto;border: 0;">
-                      </span>
-                    </a>
-                  </if>
-                  <if condition="!(item.link || item.readMoreLink)">
-                    <img src="{{ item.image }}" alt="{{ item.imageAlt || item.title || 'Advertisement' }}" width="608" height="608" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 608px;height: auto;border: 0;">
-                    <span style="position: absolute;{{ item.commerce.lockup.pricePositionStyle || 'left: 5.4%;bottom: 5.4%;' }}display: inline-block;font-family: Arial, Helvetica, sans-serif;font-size: 72px;line-height: .9;font-weight: 700;letter-spacing: 0;color: {{ item.commerce.lockup.textColor || '#ff3048' }};">{{ item.commerce.priceText }}</span>
-                    <span style="position: absolute;{{ item.commerce.lockup.iconPositionStyle || 'right: 5.4%;bottom: 5.4%;' }}display: inline-block;">
-                      <img src="{{ item.commerce.icon.src }}" alt="{{ item.commerce.icon.altText || '' }}" width="187" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: auto;max-width: 187px;height: auto;border: 0;">
-                    </span>
-                  </if>
-                </div>
-              </td>
-            </tr>
-          </if>
-
-          <if condition="item.image && item.renderMode !== 'commerce-overlay-lockup'">
-            <tr>
-              <td style="border-collapse: collapse;padding: {{ section.containerStyles.imagePadding || '0 12px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
+              <td style="border-collapse: collapse;padding: {{ item.commerce ? '0' : (section.containerStyles.imagePadding || '0 12px') }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
                 <if condition="(typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('link')) || item.link || item.readMoreLink">
                   <a href="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('link')) ? item.image.link : (item.link || item.readMoreLink) }}" style="text-decoration: none;">
                     <img src="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('src')) ? item.image.src : item.image }}" alt="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('alt')) ? item.image.alt : (item.imageAlt || item.title || 'Advertisement') }}" width="608" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 608px;height: auto;border: 0;">
@@ -86,47 +61,15 @@
             </tr>
           </if>
 
-          <if condition="item.renderMode !== 'snapshot' && item.renderMode !== 'commerce-overlay-lockup' && item.commerce">
+          <if condition="item.commerce && item.renderMode !== 'snapshot'">
             <tr>
-              <td style="border-collapse: collapse;padding: {{ section.containerStyles.commercePadding || '10px 16px 0 16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
-                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing: 0;">
-                  <tbody>
-                    <tr>
-                      <td align="left" valign="middle" style="border-collapse: collapse;padding: 0;">
-                        <table border="0" cellpadding="0" cellspacing="0" style="border-spacing: 0;">
-                          <tbody>
-                            <tr>
-                              <if condition="item.commerce.icon && item.commerce.icon.src">
-                                <td valign="middle" style="border-collapse: collapse;padding: 0 14px 0 0;">
-                                  <img src="{{ item.commerce.icon.src }}" alt="{{ item.commerce.icon.altText || 'Commerce' }}" width="72" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 72px;max-width: 72px;height: auto;border: 0;">
-                                </td>
-                              </if>
-                              <td valign="middle" style="border-collapse: collapse;padding: 0;">
-                                <p style="font-family: {{ section.headingStyles.fontFamily || 'Share Tech Mono, Courier New, Courier, monospace' }};font-size: {{ section.containerStyles.commercePriceFontSize || '24px' }};line-height: {{ section.containerStyles.commercePriceLineHeight || '1.05' }};font-weight: {{ section.containerStyles.commercePriceFontWeight || '700' }};letter-spacing: {{ section.containerStyles.commercePriceLetterSpacing || '0.08em' }};color: {{ section.headingStyles.color || '#1f2430' }};margin: 0;padding: 0;">
-                                  <if condition="item.commerce.priceText">{{ item.commerce.priceText }}</if>
-                                  <if condition="item.commerce.rating">
-                                    <span style="display: inline-block;padding-left: 8px;">Rating {{ item.commerce.rating }}</span>
-                                  </if>
-                                  <if condition="item.commerce.reviewCount">
-                                    <span style="display: inline-block;padding-left: 4px;">({{ item.commerce.reviewCount }})</span>
-                                  </if>
-                                  <if condition="item.commerce.availability">
-                                    <span style="display: inline-block;padding-left: 8px;">{{ item.commerce.availability }}</span>
-                                  </if>
-                                </p>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+              <td style="border-collapse:collapse;padding:0;">
+                <div data-commerce-band-id="{{ item.adId }}"></div>
               </td>
             </tr>
           </if>
 
-          <if condition="item.renderMode !== 'snapshot' && item.renderMode !== 'commerce-overlay-lockup' && item.title">
+          <if condition="item.renderMode !== 'snapshot' && item.title">
             <tr>
               <td style="border-collapse: collapse;padding: {{ section.containerStyles.titlePadding || '12px 16px 0 16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
                 <if condition="item.link">
@@ -141,7 +84,7 @@
             </tr>
           </if>
 
-          <if condition="item.renderMode !== 'snapshot' && item.renderMode !== 'commerce-overlay-lockup' && item.description">
+          <if condition="item.renderMode !== 'snapshot' && item.description">
             <tr>
               <td style="border-collapse: collapse;padding: {{ section.containerStyles.copyPadding || '6px 16px 14px 16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
                 <div style="font-family: {{ section.contentStyles.fontFamily || 'Geist, ui-sans-serif, sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '1.45' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#44506a' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 0;margin: 0;">
@@ -151,7 +94,7 @@
             </tr>
           </if>
 
-          <if condition="item.renderMode !== 'snapshot' && item.renderMode !== 'commerce-overlay-lockup' && (item.sponsor || ((item.readMoreLink || item.link) && item.readMoreText))">
+          <if condition="item.renderMode !== 'snapshot' && (item.sponsor || ((item.readMoreLink || item.link) && item.readMoreText))">
             <tr>
               <td style="border-collapse: collapse;padding: {{ section.containerStyles.ctaPadding || '10px 16px 14px 16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing: 0;table-layout: fixed;">

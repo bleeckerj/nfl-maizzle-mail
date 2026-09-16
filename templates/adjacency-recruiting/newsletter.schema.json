@@ -248,6 +248,7 @@
                   "additionalProperties": false,
                   "properties": {
                     "adId": {
+                      "description": "Editorial inventory ID. Commerce ads use the shared Compact Band with full image, live commerce fields, and sponsor.",
                       "type": "string",
                       "minLength": 1,
                       "examples": [

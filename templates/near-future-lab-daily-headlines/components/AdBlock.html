@@ -30,6 +30,9 @@
         </if>
       </td></tr>
     </if>
+    <if condition="item.commerce && item.renderMode !== 'snapshot'">
+      <tr><td style="padding:0"><div data-commerce-band-id="{{ item.adId }}"></div></td></tr>
+    </if>
     <if condition="item.title && item.renderMode !== 'snapshot'">
       <tr><td style="padding:12px 0 0"><h3 class="ad-title" style="color:#000;margin:0;padding:0;font:700 18px/22.5px georgia,serif"><if condition="item.link"><a href="{{ item.link }}" style="color:#000;text-decoration:none">{{ item.title }}</a></if><if condition="!item.link">{{ item.title }}</if></h3></td></tr>
     </if>

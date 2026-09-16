@@ -524,8 +524,8 @@ test('build-newsletter renders commerce ad-blocks as email HTML without uploadin
     assert.match(html, /Commerce Ad Title/);
     assert.match(html, /Commerce ad copy should render as HTML\./);
     assert.match(html, /\$189\.99/);
-    assert.match(html, /Rating 4\.7/);
-    assert.match(html, /\(128\)/);
+    assert.match(html, /4\.7/);
+    assert.match(html, /128 reviews/);
     assert.match(html, /Shop now/);
   } finally {
     rmSync(tempRoot, { recursive: true, force: true });
@@ -924,7 +924,7 @@ test('build-newsletter aligns dense-discovery ad-block footer CTA to the image r
   }
 });
 
-test('build-newsletter renders commerceLockup opt-in as the composited lockup image with live label and sponsor', () => {
+test('build-newsletter migrates legacy commerceLockup input to a live Compact Band', () => {
   const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'newsletter-commerce-lockup-optin-'));
   const issuePath = path.join(tempRoot, 'issue.md');
   const outputDir = path.join(tempRoot, 'output');
@@ -998,9 +998,9 @@ test('build-newsletter renders commerceLockup opt-in as the composited lockup im
     );
 
     const html = readFileSync(path.join(outputDir, `${outputName}.html`), 'utf8');
-    // Image is the composited lockup snapshot, not the plain product image.
-    assert.match(html, /https:\/\/imagedelivery\.net\/example\/composited-lockup\/public/);
-    assert.doesNotMatch(html, /https:\/\/imagedelivery\.net\/example\/plain-media\/public/);
+    // Legacy snapshot preferences retain the original product image in Compact Band.
+    assert.doesNotMatch(html, /https:\/\/imagedelivery\.net\/example\/composited-lockup\/public/);
+    assert.match(html, /https:\/\/imagedelivery\.net\/example\/plain-media\/public/);
     // Label and sponsor remain as live HTML text (not suppressed).
     assert.match(html, /SPONSORED/);
     assert.match(html, /NearFutureTestCo/);

@@ -10,6 +10,12 @@ if (fs.existsSync(dataPath)) {
 const templateName = newsletterData.template || 'wirecutter';
 
 module.exports = {
+  events: {
+    async afterRender(html, config) {
+      const { renderCommerceBands } = await import('./lib/newsletter-core/render-commerce-bands.mjs');
+      return renderCommerceBands(html, config.locals);
+    },
+  },
   build: {
     templates: {
       source: `templates/${templateName}`,

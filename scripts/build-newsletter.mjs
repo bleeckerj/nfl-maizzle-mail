@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { renderCommerceBands } from '../lib/newsletter-core/render-commerce-bands.mjs';
 
 import fs from 'fs';
 import path from 'path';
@@ -121,6 +122,7 @@ async function buildPopupJobsMailTemplate({ repoRoot, newsletterData, templateNa
   fs.rmSync(buildDir, { recursive: true, force: true });
 
   await maizzleBuild('production', {
+    events: { afterRender: (html, config) => renderCommerceBands(html, config.locals) },
     build: {
       command: 'build',
       templates: {

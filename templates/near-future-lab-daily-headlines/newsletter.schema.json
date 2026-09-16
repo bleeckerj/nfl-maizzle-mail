@@ -173,7 +173,7 @@
           {
             "type": "object",
             "title": "Ad Block",
-            "description": "Inventory-backed ad card hydrated from nfl-editorial/src/content/ads.json. New ads should use this section with items[0].adId instead of hand-authored ad URLs.",
+            "description": "Inventory-backed ad card hydrated from nfl-editorial/src/content/ads.json. Commerce uses Compact Band: original image, live logo and price, optional rating strip, then sponsor. Supply items[0].adId.",
             "properties": {
               "type": {
                 "const": "ad-block"
@@ -231,7 +231,7 @@
                     },
                     "commerceLockup": {
                       "type": "boolean",
-                      "description": "Set true to render a commerce ad as its composited lockup image (price + icon baked in) instead of the plain product image. Requires commerce.lockup.snapshotSrc on the ad (generate with `npm run ads:preview -- <adId> --save-snapshot` or the editorial_ads_preview_snapshot MCP tool, then upload to Photarium). Label and sponsor still render as live text."
+                      "description": "Legacy input retained for compatibility. Hydrated commerce ads use Compact Band and preserve the original image."
                     }
                   },
                   "required": [

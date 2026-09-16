@@ -89,7 +89,7 @@ test('normalized-export CLI matches loadNewsletterSource output', () => {
   }
 });
 
-test('normalized-export CLI leaves commerce ad-blocks as normal hydrated ads', () => {
+test('normalized-export CLI retains live Compact Band metadata', () => {
   const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'newsletter-export-cli-commerce-'));
   const repoRoot = path.join(tempRoot, 'nfl-maizzle-mail');
   const backofficeRoot = path.join(tempRoot, 'nfl-backoffice');
@@ -158,7 +158,7 @@ test('normalized-export CLI leaves commerce ad-blocks as normal hydrated ads', (
     const section = cliPayload.newsletter.sections[0];
     const item = section.items[0];
     assert.equal(item.label, 'SPONSORED');
-    assert.equal(item.renderMode, undefined);
+    assert.equal(item.renderMode, 'commerce-compact-band');
     // The ad's inventory title is promoted to the section heading when the
     // section has no title of its own, so the hydrated item carries no
     // duplicate item-level title.

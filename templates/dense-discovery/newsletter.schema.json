@@ -467,6 +467,8 @@
                             },
                             "additionalProperties": false
                           },
+                          "presentation": {"enum": ["compact-band", "body", "overlay-lockup"], "default": "compact-band"},
+                          "reviewCountText": {},
                           "priceText": {},
                           "icon": {
                             "type": "object",
@@ -489,7 +491,7 @@
                       "description": {},
                       "sponsor": {},
                       "readMoreText": {},
-                      "adId": {}
+                      "adId": {"description": "Editorial inventory ID. Commerce ads render as Compact Band: original image, live logo and price, optional ratings, then sponsor."}
                     },
                     "additionalProperties": false
                   }
