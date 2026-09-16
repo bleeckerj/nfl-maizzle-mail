@@ -105,12 +105,12 @@
     "adjacency-recruiting": {
       "stage": "specialized",
       "description": "Recruiter-led job email with a personal introduction, full-width employer image, role facts, qualifications, and follow-up.",
-      "sample": "editorial:jobs/fdaa-platform-counter-inference-analyst/email.md"
+      "sample": "editorial:jobs/fdaa-platform-counter-inference-analyst/fdaa-platform-counter-inference-analyst.email.md"
     },
     "gdm-special-projects": {
       "stage": "prototype",
       "description": "Google DeepMind Special Projects: company-led wordmark, white letter, appointment summary and restrained referral treatment.",
-      "sample": "editorial:jobs/gdm-expeditionary-engineering/email.md"
+      "sample": "editorial:jobs/gdm-expeditionary-engineering/gdm-expeditionary-engineering.email.md"
     }
   }
 }

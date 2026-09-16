@@ -6,7 +6,7 @@ This file documents the canonical structure and workflow for `nfl-maizzle-mail` 
 
 ## Canonical Layout (Source of Truth)
 
-- `content/` — Legacy/local newsletter inputs. Adjacency job-email drafts belong in sibling `nfl-editorial/emails/jobs/<slug>/email.md`; generated HTML and manifests belong beside that source.
+- `content/` — Legacy/local newsletter inputs. Adjacency job-email drafts belong in sibling `nfl-editorial/emails/jobs/<job-id>/<job-id>.email.md`; generated HTML and manifests belong beside that source.
 - Job-email templates, schemas, preparation, and rendering remain here. The editorial `mail:build:job-email` command invokes this renderer with an explicit source and adjacent output directory.
 - `data/` — Build input JSON (`data/newsletter.json`) generated from content or copied from a JSON source.
 - `templates/<template-name>/` — **Only canonical template location**.
@@ -78,3 +78,11 @@ Any change to a schema-backed value or behavior must update its canonical schema
 - If schema/content model changed: rebuild a representative real newsletter.
 - Confirm no new `src/templates` directory or sync logic exists.
 - Confirm output renders and lands in `build_production/`.
+
+## Operator-readable scripts
+
+Every script must include plain-language comments explaining its purpose, inputs, outputs, and important processing steps. No script should be pure uncommented code. Explain configuration choices, side effects, and non-obvious behavior so an operator can make small adjustments without reverse-engineering the implementation. Keep comments accurate when behavior changes; avoid comments that merely repeat individual statements.
+
+Use semantically relevant, lucid variable and function names. Separate logical phases with reasonable whitespace. Keep scripts focused and reasonably sized; extract distinct responsibilities into small named modules instead of growing monolithic files. Apply these rules to new scripts and scripts being modified.
+
+Job-email sources use `nfl-editorial/emails/jobs/<job-id>/<job-id>.email.md`. The directory and all output filename prefixes use that same job ID. Generic `email.md` is not an authoritative job-email source name.

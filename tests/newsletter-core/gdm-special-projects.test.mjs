@@ -5,7 +5,7 @@ import matter from 'gray-matter';
 import Ajv from 'ajv';
 import {prepareNewsletterData} from '../../lib/newsletter-core/prepare-newsletter.mjs';
 import {pruneBuildInjectedFields} from '../../lib/newsletter-core/normalize.mjs';
-const source=matter(fs.readFileSync(new URL('../../../nfl-editorial/emails/jobs/gdm-expeditionary-engineering/email.md',import.meta.url),'utf8')).data;
+const source=matter(fs.readFileSync(new URL('../../../nfl-editorial/emails/jobs/gdm-expeditionary-engineering/gdm-expeditionary-engineering.email.md',import.meta.url),'utf8')).data;
 const schema=JSON.parse(fs.readFileSync(new URL('../../templates/gdm-special-projects/newsletter.schema.json',import.meta.url),'utf8'));
 const validate=new Ajv({strict:false}).compile(schema);
 test('GDM source requires a complete hosted company logo',()=>{

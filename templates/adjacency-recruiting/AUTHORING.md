@@ -8,7 +8,7 @@ New employer emails require the hiring company’s hosted logo and a design alig
 
 ## Edit this email yourself
 
-The source for the FDAA gallery example is [email.md](/Users/julian/Code/nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst/email.md). Open that file in a text editor and type your changes. You do not need to edit HTML or run the skill to change the wording. The gallery preview is read-only; it has no text-editing form and does not save browser edits.
+The source for the FDAA gallery example is [email.md](/Users/julian/Code/nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst/fdaa-platform-counter-inference-analyst.email.md). Open that file in a text editor and type your changes. You do not need to edit HTML or run the skill to change the wording. The gallery preview is read-only; it has no text-editing form and does not save browser edits.
 
 This is a Markdown file whose email content lives in YAML frontmatter, between the opening and closing `---` lines. The template reads those named fields; free-form Markdown below the closing `---` is not used by this template. Keep indentation and field names intact. Use spaces instead of tabs. Text under `>-` can run across multiple indented lines and renders as one paragraph.
 
@@ -43,7 +43,7 @@ npm run mail:build:job-email -- fdaa-platform-counter-inference-analyst
 
 From nfl-maizzle-mail, run `npm run gallery:build -- --template=adjacency-recruiting`, then reload the browser preview. If the gallery is not running, start `npm run gallery -- --port=4319`, then open `http://127.0.0.1:4319/previews/adjacency-recruiting/preview.html`. The compiled email is `nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst/email.html`, beside its Markdown. These commands build and preview; they do not send email. A failed validation should be corrected in the source before using the output.
 
-For a new job or separate dispatch, create `nfl-editorial/emails/jobs/<slug>/email.md`, select its employer-specific template, and build with `npm run mail:build:job-email -- <slug>` from editorial. Subsequent edits belong in that same file. Generated HTML and manifests stay beside it and are ignored by Git. Maizzle stores rendering infrastructure and disposable gallery previews. Gallery sample entries use `editorial:jobs/<slug>/email.md` to read the authoritative source. See [the workflow](/Users/julian/Code/nfl-editorial/emails/README.md).
+For a new job or separate dispatch, create `nfl-editorial/emails/jobs/<job-id>/<job-id>.email.md`, select its employer-specific template, and build with `npm run mail:build:job-email -- <slug>` from editorial. Subsequent edits belong in that same file. Generated HTML and manifests stay beside it and are ignored by Git. Maizzle stores rendering infrastructure and disposable gallery previews. Gallery sample entries use `editorial:jobs/<job-id>/<job-id>.email.md` to read the authoritative source. See [the workflow](/Users/julian/Code/nfl-editorial/emails/README.md).
 
 You can also request edits conversationally: `$adjacency-job-email Revise the FDAA email: change the share heading to “Pass this along”, shorten the introduction, and rebuild the preview.` Codex edits the source and runs the build. For a separate dispatch, include its content file path. Review and edit the source as often as needed before dispatch is requested.
 
@@ -144,7 +144,7 @@ Prefer the Maizzle MCP validate_newsletter_markdown and build_campaign_email too
 
 ```sh
 node --test tests/newsletter-core/adjacency-recruiting.test.mjs tests/newsletter-core/template-schema-contract.test.mjs
-node scripts/build-newsletter.mjs /Users/julian/Code/nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst/email.md email --output-dir=/Users/julian/Code/nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst --no-open --strict-schema
+node scripts/build-newsletter.mjs /Users/julian/Code/nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst/fdaa-platform-counter-inference-analyst.email.md email --output-dir=/Users/julian/Code/nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst --no-open --strict-schema
 npm run gallery:build -- --template=adjacency-recruiting
 npm run gallery
 ```

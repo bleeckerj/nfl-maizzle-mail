@@ -4,7 +4,7 @@ This employer-specific template uses a white logo masthead, light sans-serif rol
 
 ## Editable source
 
-Edit `/Users/julian/Code/nfl-editorial/emails/jobs/gdm-expeditionary-engineering/email.md`. Keep `template: gdm-special-projects` and `publicationMode: campaign`. All copy remains in YAML frontmatter. The source job is `nfl-editorial/src/content/jobs/google-deepmind/research-engineer-special-projects-expeditionary-engineering.mdx`.
+Edit `/Users/julian/Code/nfl-editorial/emails/jobs/gdm-expeditionary-engineering/gdm-expeditionary-engineering.email.md`. Keep `template: gdm-special-projects` and `publicationMode: campaign`. All copy remains in YAML frontmatter. The source job is `nfl-editorial/src/content/jobs/google-deepmind/research-engineer-special-projects-expeditionary-engineering.mdx`.
 
 `companyLogo` is required: `src`, `alt`, original `width`, and original `height`. Use the complete hosted mark. The GDM source SVG is Photarium `fe30ce2f-0964-4781-b037-42e404cffa00`; its linked raster is `1c9b8ab8-1efb-4c0b-9b91-8c92e122ea00`, 512 × 119. The email requests the raster’s PNG rendition. The wordmark displays at 280px desktop and 240px mobile, preserving its natural ratio and clear space. This is intentional logo sizing, separate from content-image presentation.
 
