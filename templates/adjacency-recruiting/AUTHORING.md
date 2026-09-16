@@ -77,7 +77,7 @@ The explainer is now standard for this email format. Its presence does not autho
 
 ## Optional ads from ads.json
 
-Add one section per sponsor message. Choose its placement independently for each email; no single ad location is mandatory. A visible SPONSOR heading identifies the message without altering the inventory ad’s own copy.
+Add one section per sponsor message. Choose its placement independently for each email; no single ad location is mandatory. A heading appears only when the ad-block explicitly includes `label`; omit it for no heading. There is no default SPONSOR label.
 
 ```yaml
 sections:
@@ -87,7 +87,7 @@ sections:
       - text: A selected duty from the source requisition.
   - type: ad-block
     placement: after-role
-    sponsorLabel: SPONSOR
+    label: SPONSOR
     items:
       - adId: fluke-turing-clamp-4x5-01
 ```

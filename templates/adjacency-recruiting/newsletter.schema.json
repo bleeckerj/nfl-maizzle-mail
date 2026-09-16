@@ -280,8 +280,11 @@
               "sponsorLabel": {
                 "type": "string",
                 "minLength": 1,
-                "default": "SPONSOR",
-                "description": "Visible sponsorship heading, separate from the inventory ad label."
+                "description": "Deprecated; retained for source compatibility but does not render a heading. Use label."
+              },
+              "label": {
+                "type": "string",
+                "description": "Optional ad-block heading. Rendered only when explicitly supplied and non-empty; no default."
               }
             },
             "required": [
