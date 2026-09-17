@@ -92,6 +92,17 @@ test('dense-discovery renders hydrated speculative-job sections', () => {
   }
 });
 
+test('Daily Headlines aligns speculative-job copy with full-width media by default', () => {
+  const template = readFileSync(
+    path.join(REPO_ROOT, 'templates', 'near-future-lab-daily-headlines', 'newsletter.html'),
+    'utf8',
+  );
+
+  assert.match(template, /item\.media && item\.media\.src[\s\S]*?<tr><td style="padding:0;line-height:0;font-size:0;text-align:center">/);
+  assert.match(template, /speculativeJobCardPaddingStyleInline[\s\S]*?\|\| 'padding:24px 0'/);
+  assert.doesNotMatch(template, /speculativeJobCardPaddingStyleInline[\s\S]*?\|\| 'padding:24px 28px'/);
+});
+
 test('build reports section types that the selected template cannot render', () => {
   const fixture = buildFixture([
     '---',

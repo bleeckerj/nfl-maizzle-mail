@@ -157,6 +157,18 @@ sections:
 `short-take`
 : Inventory-backed editorial card. Author only `items[0].shortTakeId`; the build resolves headline, caption, Photarium image, alt text, optional destination, and optional edge metadata from `/Users/julian/Code/nfl-editorial/src/content/shortTakes.json`. Exactly one item is allowed, and multiple cards use multiple ordered sections. Linked records use tracking category `short-take`; records without a destination render without anchors. Images remain complete within the 600px column.
 
+`speculative-job`
+: Canonical-job-backed card. Author `items[0].jobRef`; the build hydrates the company identity, role copy, full-width media, and public job URL from `/Users/julian/Code/nfl-editorial/src/content/jobs/<jobRef>.mdx`. The default copy surface uses `24px 0` padding so its left and right edges align with the media. Set `containerStyles.backgroundColor` on the section to author its complete background from Markdown. Use `items[].cardStyles` only for an intentional inner card surface or padding override.
+
+```yaml
+- type: speculative-job
+  title: Tomorrow's Jobs Today
+  containerStyles:
+    backgroundColor: "#f0f0f0"
+  items:
+    - jobRef: fdaa/platform-counter-inference-analyst
+```
+
 `section_more_link`
 : Legacy standalone follow-up link. Prefer `section_article_group.more_link` for new content.
 

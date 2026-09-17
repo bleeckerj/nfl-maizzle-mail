@@ -908,7 +908,11 @@
           "pattern": "^linear-gradient\\([^;{}<>]+\\)$"
         },
         "contentPadding": { "type": "string", "pattern": "^[^;{}<>]+$" },
-        "padding": { "type": "string", "pattern": "^[^;{}<>]+$" },
+        "padding": {
+          "type": "string",
+          "pattern": "^[^;{}<>]+$",
+          "description": "CSS padding shorthand for the inner speculative-job copy surface. Daily Headlines defaults to 24px 0 so the logo and copy share the full-width media edges."
+        },
         "paddingTop": { "type": "string", "pattern": "^[^;{}<>]+$" },
         "paddingRight": { "type": "string", "pattern": "^[^;{}<>]+$" },
         "paddingBottom": { "type": "string", "pattern": "^[^;{}<>]+$" },
