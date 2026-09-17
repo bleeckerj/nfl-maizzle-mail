@@ -18,6 +18,38 @@
       "type": "string",
       "minLength": 1
     },
+    "companyLogo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "src": {
+          "type": "string",
+          "pattern": "^https://imagedelivery\\.net/",
+          "examples": [
+            "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/86f0d4f9-f63b-4b53-5787-e353497f8000/public?format=png"
+          ]
+        },
+        "alt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "src",
+        "alt",
+        "width",
+        "height"
+      ],
+      "description": "Hosted hiring-company logo shown above the recruiting identity. Preserve the complete logo and its source dimensions."
+    },
     "recruiter": {
       "type": "object",
       "additionalProperties": false,
@@ -230,6 +262,46 @@
               "type",
               "title",
               "items"
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "type": {
+                "const": "recruiting-image"
+              },
+              "src": {
+                "type": "string",
+                "pattern": "^https://imagedelivery\\.net/",
+                "examples": [
+                  "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/98bee7f7-8294-4d2e-c538-089dbba14800/full?format=webp"
+                ]
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 1
+              },
+              "width": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "height": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "caption": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "type",
+              "src",
+              "alt",
+              "width",
+              "height",
+              "caption"
             ]
           },
           {

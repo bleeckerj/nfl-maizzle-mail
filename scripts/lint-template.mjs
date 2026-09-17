@@ -163,11 +163,14 @@ function validateSections(sections) {
 
     const compactRegistrySection = type === 'ad-block' || type === 'short-take';
     const placeholderSlotSection = type === 'ad-slot' || type === 'short-take-slot';
-    if (!title && !compactRegistrySection && !placeholderSlotSection) {
+    // Full-width image sections carry their own src/alt/caption fields instead
+    // of the title/items shape used by article and list sections.
+    const standaloneMediaSection = type === 'recruiting-image';
+    if (!title && !compactRegistrySection && !placeholderSlotSection && !standaloneMediaSection) {
       report('warnings', `${sectionPath}.title`, 'Section title is empty');
     }
 
-    if (placeholderSlotSection) {
+    if (placeholderSlotSection || standaloneMediaSection) {
       return;
     }
 

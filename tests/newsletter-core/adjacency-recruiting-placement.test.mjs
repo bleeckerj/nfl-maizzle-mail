@@ -10,7 +10,7 @@ import { build } from '@maizzle/framework';
 import { prepareNewsletterData } from '../../lib/newsletter-core/prepare-newsletter.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
-const sample=matter(fs.readFileSync(path.resolve(root,'../nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst/fdaa-platform-counter-inference-analyst.email.md'),'utf8')).data;
+const sample=matter(fs.readFileSync(path.resolve(root,'../nfl-editorial/emails/jobs/platform-counter-inference-analyst/platform-counter-inference-analyst.email.md'),'utf8')).data;
 async function render(source){
  const temp=fs.mkdtempSync(path.join(os.tmpdir(),'recruiting-placements-'));
  try {

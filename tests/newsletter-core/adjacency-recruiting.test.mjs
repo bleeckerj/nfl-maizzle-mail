@@ -12,7 +12,7 @@ import { prepareNewsletterData } from '../../lib/newsletter-core/prepare-newslet
 import { pruneBuildInjectedFields } from '../../lib/newsletter-core/normalize.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
-const sample=matter(fs.readFileSync(path.resolve(root,'../nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst/fdaa-platform-counter-inference-analyst.email.md'),'utf8')).data;
+const sample=matter(fs.readFileSync(path.resolve(root,'../nfl-editorial/emails/jobs/platform-counter-inference-analyst/platform-counter-inference-analyst.email.md'),'utf8')).data;
 const schema=JSON.parse(fs.readFileSync(path.join(root,'templates/adjacency-recruiting/newsletter.schema.json'),'utf8'));
 const validate=new Ajv({strict:false}).compile(schema);
 const prepare=data=>prepareNewsletterData(data,{repoRoot:root,templateName:data.template,strictSchema:true,logger:{log(){}}});
@@ -64,6 +64,14 @@ test('rendered ad remains complete and explainer/share have separate components'
  const share=new JSDOM(render('Share',data)).window.document;
  assert.equal(new URL(share.querySelector('a').href).searchParams.get('body'),sample.share.message+'\n\n'+sample.job.link.href);
 });
+test('company logo and inline field images render complete at automatic height',()=>{
+ const data=prepare(sample);
+ const header=new JSDOM(render('Header',data)).window.document;
+ const logo=header.querySelector('img');assert.ok(logo);assert.equal(logo.src,sample.companyLogo.src);assert.equal(logo.style.height,'auto');
+ const section=sample.sections.find(s=>s.type==='recruiting-image');
+ const image=new JSDOM(render('RecruitingImage',{section})).window.document.querySelector('img');
+ assert.ok(image);assert.equal(image.src,section.src);assert.equal(image.alt,section.alt);assert.equal(image.style.width,'100%');assert.equal(image.style.height,'auto');
+});
 test('rejects external job destinations and incomplete tracking objects',()=>{
  const data=structuredClone(sample);data.job.link.href='https://example.com/apply';assert.equal(validate(data),false);
  data.job.link.href=sample.job.link.href;delete data.job.link.label;assert.equal(validate(data),false);
@@ -80,10 +88,10 @@ test('sponsor placements are explicit and unsupported values fail validation',()
 
 test('publication identity links to subscribe while other recruiter names stay unlinked',()=>{
  const data=prepare(sample);
- for(const component of ['Header','Footer']){
-  const doc=new JSDOM(render(component,data)).window.document;
-  assert.equal(doc.querySelector('a').href,'https://theadjacency.com/subscribe');
- }
+ const footer=new JSDOM(render('Footer',data)).window.document;
+ assert.equal(footer.querySelector('a').href,'https://theadjacency.com/subscribe');
+ data.recruiter.name='The Adjacency';
+ assert.equal(new JSDOM(render('Header',data)).window.document.querySelector('a').href,'https://theadjacency.com/subscribe');
  data.recruiter.name='Another talent desk';
  assert.equal(new JSDOM(render('Header',data)).window.document.querySelector('a'),null);
 });

@@ -6,6 +6,7 @@
   "starterSource": "schema",
   "supportedSections": [
     "recruiting-list",
+    "recruiting-image",
     "ad-block"
   ],
   "registryHydrations": [

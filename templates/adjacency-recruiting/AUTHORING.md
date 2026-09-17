@@ -8,7 +8,7 @@ New employer emails require the hiring company’s hosted logo and a design alig
 
 ## Edit this email yourself
 
-The source for the FDAA gallery example is [email.md](/Users/julian/Code/nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst/fdaa-platform-counter-inference-analyst.email.md). Open that file in a text editor and type your changes. You do not need to edit HTML or run the skill to change the wording. The gallery preview is read-only; it has no text-editing form and does not save browser edits.
+The source for the FDAA gallery example is [platform-counter-inference-analyst.email.md](/Users/julian/Code/nfl-editorial/emails/jobs/platform-counter-inference-analyst/platform-counter-inference-analyst.email.md). Open that file in a text editor and type your changes. You do not need to edit HTML or run the skill to change the wording. The gallery preview is read-only; it has no text-editing form and does not save browser edits.
 
 This is a Markdown file whose email content lives in YAML frontmatter, between the opening and closing `---` lines. The template reads those named fields; free-form Markdown below the closing `---` is not used by this template. Keep indentation and field names intact. Use spaces instead of tabs. Text under `>-` can run across multiple indented lines and renders as one paragraph.
 
@@ -17,7 +17,9 @@ This is a Markdown file whose email content lives in YAML frontmatter, between t
 | Inbox preview | `preheader` |
 | Greeting and opening copy | `greeting`, `introduction` |
 | Role details and requisition button | `job`, including `job.ctaLabel` |
+| Hiring-company logo | `companyLogo` |
 | Duties and qualifications | `sections` entries with `type: recruiting-list` |
+| Inline field imagery | `sections` entries with `type: recruiting-image` |
 | Explainer | `operatorContext.heading`, `operatorContext.paragraphs` |
 | Share panel wording | `share.heading`, `share.text`, `share.buttonLabel` |
 | Message opened in the reader’s mail app | `share.subject`, `share.message` |
@@ -38,10 +40,10 @@ share:
 Save, then run these commands from `/Users/julian/Code/nfl-editorial` to rebuild the FDAA email:
 
 ```sh
-npm run mail:build:job-email -- fdaa-platform-counter-inference-analyst
+npm run mail:build:job-email -- platform-counter-inference-analyst
 ```
 
-From nfl-maizzle-mail, run `npm run gallery:build -- --template=adjacency-recruiting`, then reload the browser preview. If the gallery is not running, start `npm run gallery -- --port=4319`, then open `http://127.0.0.1:4319/previews/adjacency-recruiting/preview.html`. The compiled email is `nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst/email.html`, beside its Markdown. These commands build and preview; they do not send email. A failed validation should be corrected in the source before using the output.
+From nfl-maizzle-mail, run `npm run gallery:build -- --template=adjacency-recruiting`, then reload the browser preview. If the gallery is not running, start `npm run gallery -- --port=4319`, then open `http://127.0.0.1:4319/previews/adjacency-recruiting/preview.html`. The compiled email is `nfl-editorial/emails/jobs/platform-counter-inference-analyst/platform-counter-inference-analyst.html`, beside its Markdown. These commands build and preview; they do not send email. A failed validation should be corrected in the source before using the output.
 
 For a new job or separate dispatch, create `nfl-editorial/emails/jobs/<job-id>/<job-id>.email.md`, select its employer-specific template, and build with `npm run mail:build:job-email -- <slug>` from editorial. Subsequent edits belong in that same file. Generated HTML and manifests stay beside it and are ignored by Git. Maizzle stores rendering infrastructure and disposable gallery previews. Gallery sample entries use `editorial:jobs/<job-id>/<job-id>.email.md` to read the authoritative source. See [the workflow](/Users/julian/Code/nfl-editorial/emails/README.md).
 
@@ -52,7 +54,7 @@ Visual styling lives in `components/Share.html` and the other template component
 ## Content order
 
 1. Recruiter identity and introduction.
-2. Role, full-width image, facts, duties, qualifications, compensation, and follow-up.
+2. Role, full-width hero, facts, inline field imagery, duties, qualifications, compensation, and follow-up.
 3. Required “What’s going on here?” editorial explainer and optional reference links.
 4. Share this, followed by the delivery footer.
 
@@ -62,18 +64,33 @@ Sponsor messages are optional and independently positioned at the boundaries des
 
 Copy the editorial FDAA email.md into a new editorial email folder, then replace its content. Keep template: adjacency-recruiting and publicationMode: campaign. Read newsletter.schema.json for the current contract.
 
+- companyLogo: hosted hiring-company logo, descriptive alt text, and original width/height. The masthead preserves the complete mark on a white field.
 - recruiter: name, desk, and signature; visible copy, separate from delivery headers.
 - greeting and introduction: personal or list-appropriate outreach. Do not claim knowledge of a candidate that the operator has not supplied.
 - job: source title, company, reference, team, department, labeled facts, mission, assignment, compensation, and CTA label. Preserve material appointment conditions. The FDAA example retains the 70-hour week and Tessier-Ashpool assignment.
 - job.image: optional Photarium src, alt, original width/height, and caption. The renderer displays the full image at its natural ratio. Never store content images in this repository.
 - job.link: tracked object with href, label, and category: jobs. Use the verified published requisition URL under https://theadjacency.com/. The build converts tracked objects into URL strings and enriches rendered anchors.
-- sections: recruiting-list sections with title and items containing text, plus optional ad-block sections described below.
+- sections: recruiting-list sections with title and items containing text, recruiting-image sections, plus optional ad-block sections described below.
 - followUp: outreach appropriate to the sender's actual reply handling.
 - operatorContext: required heading and paragraphs explaining what the artifact is, what premise it explores, and what the reader can examine through it. Adapt the source job's explainer where available. Keep factual references accurate; do not invent source claims. Optional references contain text and a tracked link with href, label, and category: grounding.
 - share: enabled, heading, text, buttonLabel, subject, and message. The build appends job.link to the message and generates a properly encoded mailto link. Set enabled: false to hide the component when explicitly requested.
 - footer: identity, optional address and unsubscribeLink; keep footerCta.enabled false. List delivery uses [unsubscribe], resolved by the sender. Individual correspondence may omit it where appropriate.
 
 The explainer is now standard for this email format. Its presence does not authorize changing the job, recruiter introduction, ad, captions, or linked destination into explanatory copy. Keep those artifacts intact. Source grounding IDs, when cited, must be canonical digest IDs; do not substitute signal IDs.
+
+## Inline field imagery
+
+Use `recruiting-image` entries in `sections` when the source job contains hosted images that belong between duty, qualification, or condition blocks. The renderer displays each image once at full email width with automatic height; it does not crop, mask, or pad the image. Supply the Photarium URL, accurate visible-scene alt text, original dimensions, and an in-world caption.
+
+```yaml
+sections:
+  - type: recruiting-image
+    src: https://imagedelivery.net/ACCOUNT/IMAGE/full?format=webp
+    alt: A field agent seats a diagnostic instrument against a server rack.
+    width: 1983
+    height: 793
+    caption: Controlled nighttime procedure at a regulated compute facility.
+```
 
 ## Optional ads from ads.json
 
@@ -144,7 +161,7 @@ Prefer the Maizzle MCP validate_newsletter_markdown and build_campaign_email too
 
 ```sh
 node --test tests/newsletter-core/adjacency-recruiting.test.mjs tests/newsletter-core/template-schema-contract.test.mjs
-node scripts/build-newsletter.mjs /Users/julian/Code/nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst/fdaa-platform-counter-inference-analyst.email.md email --output-dir=/Users/julian/Code/nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst --no-open --strict-schema
+node scripts/build-newsletter.mjs /Users/julian/Code/nfl-editorial/emails/jobs/platform-counter-inference-analyst/platform-counter-inference-analyst.email.md platform-counter-inference-analyst --output-dir=/Users/julian/Code/nfl-editorial/emails/jobs/platform-counter-inference-analyst --no-open --strict-schema
 npm run gallery:build -- --template=adjacency-recruiting
 npm run gallery
 ```

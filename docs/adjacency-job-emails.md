@@ -24,7 +24,7 @@ Do not move authored job-email drafts back into Maizzle `content/` or template s
 | Template | Editorial source | Presentation |
 | --- | --- | --- |
 | `gdm-special-projects` | `emails/jobs/gdm-expeditionary-engineering/gdm-expeditionary-engineering.email.md` | Hosted DeepMind logo, white background, light sans-serif hierarchy, role brief before letter, neutral appointment summary, understated referral link. |
-| `adjacency-recruiting` | `emails/jobs/fdaa-platform-counter-inference-analyst/fdaa-platform-counter-inference-analyst.email.md` | Earlier FDAA recruiting reference. Its field contract is reusable; the visual treatment is not a universal employer template. |
+| `adjacency-recruiting` | `emails/jobs/platform-counter-inference-analyst/platform-counter-inference-analyst.email.md` | FDAA recruiting treatment with hosted agency branding and inline field imagery. Its field contract is reusable; the visual treatment is not a universal employer template. |
 
 Read each template's [GDM authoring guide](../templates/gdm-special-projects/AUTHORING.md) or [FDAA/reference guide](../templates/adjacency-recruiting/AUTHORING.md). The earlier FDAA draft lacks the company mark required for new employer emails. Schema acceptance alone does not establish editorial readiness.
 

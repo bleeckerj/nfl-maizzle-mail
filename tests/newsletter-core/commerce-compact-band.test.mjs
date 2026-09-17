@@ -15,7 +15,7 @@ import {renderCommerceBands} from '../../lib/newsletter-core/render-commerce-ban
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 const sourcePaths={
  'dense-discovery':'templates/dense-discovery/campaign-starter.md',
- 'adjacency-recruiting':'../nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst/fdaa-platform-counter-inference-analyst.email.md',
+ 'adjacency-recruiting':'../nfl-editorial/emails/jobs/platform-counter-inference-analyst/platform-counter-inference-analyst.email.md',
  'gdm-special-projects':'../nfl-editorial/emails/jobs/gdm-expeditionary-engineering/gdm-expeditionary-engineering.email.md',
 };
 for(const [templateName,sourcePath] of Object.entries(sourcePaths)){
