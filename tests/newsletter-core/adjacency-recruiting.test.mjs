@@ -72,6 +72,19 @@ test('company logo and inline field images render complete at automatic height',
  const image=new JSDOM(render('RecruitingImage',{section})).window.document.querySelector('img');
  assert.ok(image);assert.equal(image.src,section.src);assert.equal(image.alt,section.alt);assert.equal(image.style.width,'100%');assert.equal(image.style.height,'auto');
 });
+test('image captions are optional and render only when supplied',()=>{
+ const validateJobImage=new Ajv({strict:false}).compile(schema.properties.job.properties.image);
+ const imageSectionSchema=schema.properties.sections.items.oneOf.find(candidate=>candidate.properties?.type?.const==='recruiting-image');
+ const validateImageSection=new Ajv({strict:false}).compile(imageSectionSchema);
+ const jobImage=structuredClone(sample.job.image);delete jobImage.caption;
+ const section=structuredClone(sample.sections.find(item=>item.type==='recruiting-image'));delete section.caption;
+ assert.equal(validateJobImage(jobImage),true,JSON.stringify(validateJobImage.errors));
+ assert.equal(validateImageSection(section),true,JSON.stringify(validateImageSection.errors));
+ assert.equal(new JSDOM(render('Role',{job:{...sample.job,image:jobImage}})).window.document.querySelector('[data-image-caption]'),null);
+ assert.equal(new JSDOM(render('RecruitingImage',{section})).window.document.querySelector('[data-image-caption]'),null);
+ section.caption='FDAA field headquarters, Kansas City, Missouri.';
+ assert.equal(new JSDOM(render('RecruitingImage',{section})).window.document.querySelector('[data-image-caption]').textContent,section.caption);
+});
 test('rejects external job destinations and incomplete tracking objects',()=>{
  const data=structuredClone(sample);data.job.link.href='https://example.com/apply';assert.equal(validate(data),false);
  data.job.link.href=sample.job.link.href;delete data.job.link.label;assert.equal(validate(data),false);

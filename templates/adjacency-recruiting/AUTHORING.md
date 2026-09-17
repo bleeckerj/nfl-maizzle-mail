@@ -68,7 +68,7 @@ Copy the editorial FDAA email.md into a new editorial email folder, then replace
 - recruiter: name, desk, and signature; visible copy, separate from delivery headers.
 - greeting and introduction: personal or list-appropriate outreach. Do not claim knowledge of a candidate that the operator has not supplied.
 - job: source title, company, reference, team, department, labeled facts, mission, assignment, compensation, and CTA label. Preserve material appointment conditions. The FDAA example retains the 70-hour week and Tessier-Ashpool assignment.
-- job.image: optional Photarium src, alt, original width/height, and caption. The renderer displays the full image at its natural ratio. Never store content images in this repository.
+- job.image: optional Photarium src, alt, original width/height, and optional caption. The renderer displays the full image at its natural ratio. Never store content images in this repository.
 - job.link: tracked object with href, label, and category: jobs. Use the verified published requisition URL under https://theadjacency.com/. The build converts tracked objects into URL strings and enriches rendered anchors.
 - sections: recruiting-list sections with title and items containing text, recruiting-image sections, plus optional ad-block sections described below.
 - followUp: outreach appropriate to the sender's actual reply handling.
@@ -80,7 +80,9 @@ The explainer is now standard for this email format. Its presence does not autho
 
 ## Inline field imagery
 
-Use `recruiting-image` entries in `sections` when the source job contains hosted images that belong between duty, qualification, or condition blocks. The renderer displays each image once at full email width with automatic height; it does not crop, mask, or pad the image. Supply the Photarium URL, accurate visible-scene alt text, original dimensions, and an in-world caption.
+Use `recruiting-image` entries in `sections` when the source job contains hosted images that belong between duty, qualification, or condition blocks. The renderer displays each image once at full email width with automatic height; it does not crop, mask, or pad the image. Supply the Photarium URL, accurate visible-scene alt text, and original dimensions.
+
+Alt text describes the visible image for accessibility. Captions are optional editorial copy. Use a caption for in-world atmosphere or useful context that cannot be inferred from the image, such as a location or time. Do not repeat the visible scene or explain the image. Omit the field when it adds nothing; the renderer removes the caption row and its spacing. A locator such as `FDAA field headquarters, Kansas City, Missouri` is appropriate because the location is not apparent from the photograph.
 
 ```yaml
 sections:
@@ -89,7 +91,6 @@ sections:
     alt: A field agent seats a diagnostic instrument against a server rack.
     width: 1983
     height: 793
-    caption: Controlled nighttime procedure at a regulated compute facility.
 ```
 
 ## Optional ads from ads.json

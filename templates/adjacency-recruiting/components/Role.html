@@ -7,7 +7,9 @@
  </td></tr>
  <if condition="job.image">
  <tr><td><img src="{{ job.image.src }}" alt="{{ job.image.alt }}" width="640" style="display:block;width:100%;max-width:640px;height:auto;"></td></tr>
- <tr><td class="recruit-pad" style="padding:12px 40px 24px;"><p style="margin:0;font-size:12px;line-height:18px;color:#536078;">{{ job.image.caption }}</p></td></tr>
+ <if condition="job.image.caption">
+ <tr><td class="recruit-pad" style="padding:12px 40px 24px;"><p data-image-caption="true" style="margin:0;font-size:12px;line-height:18px;color:#536078;">{{ job.image.caption }}</p></td></tr>
+ </if>
  </if>
  <tr><td class="recruit-pad" style="padding:0 40px 30px;">
   <table width="100%" cellpadding="0" cellspacing="0" style="width:100%;border-top:2px solid #101e35;">

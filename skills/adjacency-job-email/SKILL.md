@@ -15,7 +15,7 @@ Discover the Maizzle and editorial MCP tools first. Discover the available compa
 
 - /Users/julian/Code/nfl-maizzle-mail/templates/adjacency-recruiting/AUTHORING.md
 - /Users/julian/Code/nfl-maizzle-mail/templates/adjacency-recruiting/newsletter.schema.json
-- /Users/julian/Code/nfl-editorial/emails/jobs/fdaa-platform-counter-inference-analyst/fdaa-platform-counter-inference-analyst.email.md
+- /Users/julian/Code/nfl-editorial/emails/jobs/platform-counter-inference-analyst/platform-counter-inference-analyst.email.md
 
 Read the guide and schema before authoring. Use the FDAA sample to understand field shapes, then replace its role-specific content. Do not make every hiring organization sound like FDAA or invent missing job facts to fill the template.
 
@@ -26,6 +26,12 @@ Find the requested job under nfl-editorial/src/content/jobs/. Read its current f
 Resolve the published destination from the current publication registry or existing verified corpus references. Do not guess it from a filename: published job URLs may have stable suffixes. Verify the destination. Keep application and requisition actions on approved The Adjacency URLs. A failed destination is a preparation blocker for that CTA, not a reason to invent a hiring endpoint.
 
 Use source Photarium URLs and preserve complete images. Inspect dimensions when needed. No content images belong in these repositories. An optional role illustration may be omitted; the company logo is required. If the logo is missing, resolve it through the source companyLogo or approved hosted corpus and ask for a pointer if necessary. Do not silently omit it.
+
+## Treat captions as atmosphere
+
+Alt text describes the visible image for accessibility. A caption has a separate editorial role: it can add in-world atmosphere, situational detail, institutional context, or a location or time that is not evident from the image itself. Do not restate the visible scene, explain the image to the reader, or use a caption as a second alt-text field.
+
+Omit the caption when it adds no worthwhile context. A short locator such as “FDAA field headquarters, Kansas City, Missouri” is appropriate when that fact matters and cannot be inferred from the image. Preserve an operator-supplied caption exactly. When a live schema requires a caption, make the field optional and conditionally remove its rendered row instead of inventing filler copy.
 
 ## Company identity and differentiation are required
 

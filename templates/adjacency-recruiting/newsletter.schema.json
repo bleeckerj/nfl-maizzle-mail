@@ -176,8 +176,7 @@
             "src",
             "alt",
             "width",
-            "height",
-            "caption"
+            "height"
           ]
         },
         "link": {
@@ -300,8 +299,7 @@
               "src",
               "alt",
               "width",
-              "height",
-              "caption"
+              "height"
             ]
           },
           {

@@ -2,7 +2,9 @@
  <tr><td>
   <img src="{{ section.src }}" alt="{{ section.alt }}" width="640" style="display:block;width:100%;max-width:640px;height:auto;">
  </td></tr>
+ <if condition="section.caption">
  <tr><td class="recruit-pad" style="padding:12px 40px 24px;">
-  <p style="margin:0;font-size:12px;line-height:18px;color:#536078;">{{ section.caption }}</p>
+  <p data-image-caption="true" style="margin:0;font-size:12px;line-height:18px;color:#536078;">{{ section.caption }}</p>
  </td></tr>
+ </if>
 </table>
