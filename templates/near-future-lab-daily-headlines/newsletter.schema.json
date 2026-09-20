@@ -92,15 +92,15 @@
               },
               "logo_href": {
                 "type": "string",
-                "description": "Legacy URL for the logo and title links. Prefer logoLink for new content."
+                "description": "Legacy URL for the publisher logo link. Prefer logoLink for new content."
               },
               "logoLink": {
                 "$ref": "#/definitions/trackedLink",
-                "description": "Tracked URL for the logo and title links"
+                "description": "Tracked URL for the publisher logo image; the newsletter title image uses viewOnlineLink."
               },
               "viewOnlineLink": {
                 "$ref": "#/definitions/trackedLink",
-                "description": "Authored view-online URL or tracked link is preserved. Public builds fill missing or placeholder links from the issue id when available."
+                "description": "Destination for the newsletter title image and the View online and Share this issue links. Authored URLs and tracked-link metadata are preserved. Public builds fill missing or placeholder links from the issue id when available."
               },
               "logo_src": {
                 "type": "string",
@@ -116,7 +116,7 @@
               },
               "title_src": {
                 "type": "string",
-                "description": "Newsletter title image src"
+                "description": "Newsletter title image src; links to viewOnlineLink."
               },
               "title_alt": {
                 "type": "string",
