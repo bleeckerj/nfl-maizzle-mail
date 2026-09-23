@@ -38,7 +38,7 @@
                     <p class="bd-mono" style="margin:0 0 6px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:16px;letter-spacing:0.1em;text-transform:uppercase;color:#000000;">
                       {{ item.kicker || item.format || 'Item' }}
                     </p>
-                    <h2 class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:25px;line-height:29px;font-weight:700;letter-spacing:0;color:#000000;">
+                    <h2 class="bd-heading bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:22px;line-height:26px;font-weight:700;letter-spacing:0;color:#000000;">
                       <if condition="item.link">
                         <a href="{{ item.link }}" style="color:#000000;text-decoration:none;">{{ item.title }}</a>
                       </if>
@@ -109,7 +109,7 @@
                     <p class="bd-mono" style="margin:0 0 6px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:16px;letter-spacing:0.1em;text-transform:uppercase;color:#000000;">
                       {{ item.kicker || item.format || 'Item' }}
                     </p>
-                    <h2 class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:28px;line-height:32px;font-weight:700;letter-spacing:0;color:#000000;">
+                    <h2 class="bd-heading bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:22px;line-height:26px;font-weight:700;letter-spacing:0;color:#000000;">
                       <if condition="item.link">
                         <a href="{{ item.link }}" style="color:#000000;text-decoration:none;">{{ item.title }}</a>
                       </if>
@@ -193,7 +193,7 @@
                 <if condition="item.title">
                   <tr>
                     <td style="padding:14px 18px 0;">
-                      <h2 class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:24px;line-height:28px;font-weight:700;color:#000000;">{{ item.title }}</h2>
+                      <h2 class="bd-heading bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:22px;line-height:26px;font-weight:700;color:#000000;">{{ item.title }}</h2>
                     </td>
                   </tr>
                 </if>
@@ -247,8 +247,8 @@
                 </tr>
                 <tr>
                   <td style="padding:0 20px 20px;background:#ffffff;">
-                    <if condition="item.link"><a href="{{ item.link }}" style="display:block;color:#000000;text-decoration:none;"><h2 class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:25px;line-height:29px;font-weight:700;color:#000000;">{{ item.headline }}</h2><div class="bd-item-copy bd-mono" style="margin:9px 0 0;font-family:'Courier New',Courier,monospace;font-size:14px;line-height:21px;color:#000000;">{{{ item.caption }}}</div></a></if>
-                    <if condition="!item.link"><h2 class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:25px;line-height:29px;font-weight:700;color:#000000;">{{ item.headline }}</h2><div class="bd-item-copy bd-mono" style="margin:9px 0 0;font-family:'Courier New',Courier,monospace;font-size:14px;line-height:21px;color:#000000;">{{{ item.caption }}}</div></if>
+                    <if condition="item.link"><a href="{{ item.link }}" style="display:block;color:#000000;text-decoration:none;"><h2 class="bd-heading bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:22px;line-height:26px;font-weight:700;color:#000000;">{{ item.headline }}</h2><div class="bd-item-copy bd-mono" style="margin:9px 0 0;font-family:'Courier New',Courier,monospace;font-size:14px;line-height:21px;color:#000000;">{{{ item.caption }}}</div></a></if>
+                    <if condition="!item.link"><h2 class="bd-heading bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:22px;line-height:26px;font-weight:700;color:#000000;">{{ item.headline }}</h2><div class="bd-item-copy bd-mono" style="margin:9px 0 0;font-family:'Courier New',Courier,monospace;font-size:14px;line-height:21px;color:#000000;">{{{ item.caption }}}</div></if>
                   </td>
                 </tr>
                 <if condition="item.bottomLeft || item.bottomRight">
@@ -279,7 +279,7 @@
                   <p class="bd-mono" style="margin:0 0 6px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:16px;letter-spacing:0.12em;text-transform:uppercase;color:{{ section.containerStyles.eyebrowColor || section.containerStyles.textColor || section.contentStyles.color || '#000000' }};">
                     {{ section.eyebrow || 'Calendar Event' }}
                   </p>
-                  <h2 class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:28px;line-height:32px;font-weight:700;letter-spacing:0;color:{{ section.containerStyles.headingColor || section.containerStyles.textColor || section.contentStyles.color || '#000000' }};">
+                  <h2 class="bd-heading bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:22px;line-height:26px;font-weight:700;letter-spacing:0;color:{{ section.containerStyles.headingColor || section.containerStyles.textColor || section.contentStyles.color || '#000000' }};">
                     {{ section.title }}
                   </h2>
                   <if condition="section.subtitle">
@@ -389,7 +389,7 @@
                 <p class="bd-mono" style="margin:0 0 6px 0;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:16px;letter-spacing:0.1em;text-transform:uppercase;color:#000000;">
                   {{ item.kicker || item.format || 'Item' }}
                 </p>
-                <h2 class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:25px;line-height:29px;font-weight:700;letter-spacing:0;color:#000000;">
+                <h2 class="bd-heading bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:22px;line-height:26px;font-weight:700;letter-spacing:0;color:#000000;">
                   <if condition="item.link">
                     <a href="{{ item.link }}" style="color:#000000;text-decoration:none;">{{ item.title }}</a>
                   </if>

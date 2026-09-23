@@ -11,7 +11,7 @@
             <p class="bd-mono" style="margin:0 0 12px 0;font-family:'Courier New',Courier,monospace;font-size:13px;line-height:18px;letter-spacing:0.12em;text-transform:uppercase;color:#000000;">
               {{ (hero && hero.eyebrow) || eyebrow || 'Books from the Lab' }}
             </p>
-            <h1 class="bd-title {{ hero && hero.headlineSize === 'compact' ? 'bd-title-compact' : '' }} bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:{{ hero && hero.headlineSize === 'compact' ? '32px' : '46px' }};line-height:{{ hero && hero.headlineSize === 'compact' ? '36px' : '48px' }};font-weight:700;letter-spacing:0;color:#000000;">
+            <h1 class="bd-title bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:32px;line-height:36px;font-weight:700;letter-spacing:0;color:#000000;">
               {{ (hero && hero.headline) || collectionTitle || title }}
             </h1>
             <if condition="(hero && hero.subhead) || collectionDescription">

@@ -45,7 +45,7 @@
       "properties": {
         "eyebrow": { "type": "string" },
         "headline": { "type": "string" },
-        "headlineSize": { "type": "string", "enum": ["default", "compact"], "description": "Optional hero title scale: default uses 46px desktop / 34px mobile; compact uses 32px desktop / 22px mobile." },
+        "headlineSize": { "type": "string", "enum": ["default", "compact"], "deprecated": true, "description": "Legacy compatibility field; both values now use the template default of 32px desktop / 22px mobile. All section and offer headlines use 22px." },
         "subhead": { "type": "string" },
         "body": { "type": "string" },
         "image": { "type": "string", "format": "uri" },

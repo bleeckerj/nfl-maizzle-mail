@@ -40,6 +40,6 @@ node scripts/build-newsletter.mjs /path/to/email-campaigns/example.md example \
   --no-open
 ```
 
-## Compact hero headline
+## Headline sizing
 
-Set `hero.headlineSize: compact` for a longer headline: 32px with 36px line height on desktop, and 22px with 26px line height at widths up to 620px. Omit the field or use `default` to retain the original 46px desktop / 34px mobile title. Check the rendered line breaks with the final copy at the intended phone width.
+All headlines use 22px with 26px line height on phones up to 620px wide. Section, calendar-event, sponsor, short-take, and closing offer headlines also use 22px on desktop; the main hero headline uses 32px with 36px line height on desktop. This is the template default and requires no per-email setting. The legacy `hero.headlineSize` field remains accepted for existing sources, with both values using this scale. Check the rendered line breaks with the final copy at the intended phone width.
