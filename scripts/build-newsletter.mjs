@@ -1604,6 +1604,8 @@ async function buildNewsletter() {
               .filter(([, v]) => v !== null && v !== undefined && v !== '')
               .map(([prop, val]) => {
                 const cssProp = prop.replace(/([A-Z])/g, '-$1').toLowerCase();
+                // Defaults added after input normalization must also avoid escaped quotes in inline CSS.
+                if (cssProp === 'font-family') val = normalizeFontFamilyValue(val);
                 // Special handling: if color is "inherit", prefer theme link accent when available
                 if (cssProp === 'color' && val === 'inherit' && theme?.linkAccent) {
                   return `color: ${theme.linkAccent} !important`;

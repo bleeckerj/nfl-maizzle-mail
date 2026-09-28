@@ -427,7 +427,9 @@
                     ]
                   }
                 },
-                "sectionHeaderHeadingStylesInline": {},
+                "sectionHeaderHeadingStylesInline": {
+                  "description": "Build-generated heading CSS; font-family values, including fallback fonts, are normalized before serialization to avoid escaped quotes in CSS inlining."
+                },
                 "description": {},
                 "descriptionStyles": {
                   "type": "object",
@@ -1940,7 +1942,9 @@
                     ]
                   }
                 },
-                "sectionHeaderHeadingStylesInline": {},
+                "sectionHeaderHeadingStylesInline": {
+                  "description": "Build-generated heading CSS; font-family values, including fallback fonts, are normalized before serialization to avoid escaped quotes in CSS inlining."
+                },
                 "headingStylesInline": {},
                 "title": {},
                 "description": {},

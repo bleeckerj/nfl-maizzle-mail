@@ -11,12 +11,15 @@ const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.resolve(__dirname, '..', '..');
 const BUILD_SCRIPT = path.join(REPO_ROOT, 'scripts', 'build-newsletter.mjs');
 
-function buildNewsletter(markdownLines, outputName) {
+function buildNewsletter(markdownLines, outputName, ads) {
   const tempRoot = mkdtempSync(path.join(os.tmpdir(), `${outputName}-`));
   const issuePath = path.join(tempRoot, 'issue.md');
   const outputDir = path.join(tempRoot, 'output');
 
   writeFileSync(issuePath, markdownLines.join('\n'), 'utf8');
+  // A local registry keeps ad rendering regressions independent of editorial inventory.
+  const adsPath = path.join(tempRoot, 'ads.json');
+  if (ads) writeFileSync(adsPath, JSON.stringify(ads), 'utf8');
 
   try {
     execFileSync(
@@ -32,6 +35,7 @@ function buildNewsletter(markdownLines, outputName) {
       {
         encoding: 'utf8',
         cwd: tempRoot,
+        env: ads ? { ...process.env, NFL_EDITORIAL_ADS_PATH: adsPath } : process.env,
       },
     );
 
@@ -50,6 +54,36 @@ function extractFoodForThoughtItemRadii(html) {
     /<td[^>]*class="padt20 padr20 padl20"[^>]*style="[^"]*border-bottom-left-radius:\s*([^;"]+);border-bottom-right-radius:\s*([^;"]+)/g,
   )].map(([, leftRadius, rightRadius]) => `${leftRadius}/${rightRadius}`);
 }
+
+test('ad-block heading fallback font survives template rendering and CSS inlining', () => {
+  const { html, cleanup } = buildNewsletter(
+    [
+      '---',
+      'template: dense-discovery',
+      'title: Ad Heading Regression',
+      'footer:',
+      '  footerCta:',
+      '    enabled: false',
+      'sectionStylesFile: templates/dense-discovery/section-styles.json',
+      'sections:',
+      '  - type: ad-block',
+      '    title: Advertisement Heading',
+      '    items:',
+      '      - adId: font-regression-fixture',
+      '---',
+      '',
+    ],
+    'ad-heading-font-regression',
+    [{ id: 'font-regression-fixture', title: 'Test advertisement', copy: 'Renderer test content.' }],
+  );
+
+  try {
+    assert.match(html, /<h1[^>]*style="[^"]*font-family:\s*Ubuntu,\s*sans-serif[^"]*"[^>]*>\s*Advertisement Heading/);
+    assert.doesNotMatch(html, /&#0?39;Ubuntu/);
+  } finally {
+    cleanup();
+  }
+});
 
 function extractSingleColumnItemRadii(html) {
   return [...html.matchAll(
