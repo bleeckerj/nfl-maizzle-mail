@@ -3,9 +3,8 @@
   "title": "Derived Newsletter Schema",
   "x-nfl-public-starter-policy": {
     "sampleContent": false,
-    "requiredCanonicalEditions": ["public", "full"],
-    "writeOnlyAfterBuildSuccess": true,
-    "description": "MCP starters clear reference examples after defaults, seed sourced recurring sections, and verify both canonical builds before writing the draft."
+    "regressionTestEditions": ["public", "full"],
+    "description": "MCP starters clear reference examples after defaults and seed sourced recurring sections. The explicit starter regression suite verifies public and full builds; normal generation does not run builds or tests."
   },
   "type": "object",
   "properties": {
