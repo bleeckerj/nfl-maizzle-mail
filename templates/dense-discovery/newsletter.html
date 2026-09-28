@@ -40,7 +40,8 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                 <each loop="section in sections">
                   
                   <if condition="section.type === 'ad-block'">
-                    <component src="templates/dense-discovery/components/AdBlock.html" locals='{{ JSON.stringify({section}) }}'></component>
+                    <!-- Pass only an index so section text is not HTML-escaped inside JSON props. -->
+                    <component src="templates/dense-discovery/components/AdBlock.html" locals='{"adSectionIndex": {{ loop.index }}}'></component>
                   </if>
 
                   <if condition="section.type === 'speculative-job'">

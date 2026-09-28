@@ -412,7 +412,9 @@
                 "type": {
                   "const": "ad-block"
                 },
-                "title": {},
+                "title": {
+                  "description": "Plain-text section heading. Author punctuation directly; the renderer escapes HTML once, preserving literal entity text and treating markup as text."
+                },
                 "containerStyles": {
                   "type": [
                     "object",

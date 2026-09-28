@@ -1,3 +1,7 @@
+<script props>
+  // Resolve indexed section data before rendering; legacy callers may still supply section.
+  ({ section: Number.isInteger(props.adSectionIndex) ? props.sections[props.adSectionIndex] : props.section })
+</script>
 <!-- AD-BLOCK Start -->
 <tr>
   <td class="spacer" style="border-collapse: collapse;font-size: 1px;line-height: 1;padding-top: 25px;"> </td>

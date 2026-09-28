@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { JSDOM } from 'jsdom';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -55,7 +56,9 @@ function extractFoodForThoughtItemRadii(html) {
   )].map(([, leftRadius, rightRadius]) => `${leftRadius}/${rightRadius}`);
 }
 
-test('ad-block heading fallback font survives template rendering and CSS inlining', () => {
+test('ad-block heading fallback font and text survive template rendering and CSS inlining', () => {
+  // Exercise the component locals boundary with punctuation and literal markup.
+  const heading = `Tomorrow's Ads Today & "Next" <em>literal</em> &#039;`;
   const { html, cleanup } = buildNewsletter(
     [
       '---',
@@ -67,7 +70,12 @@ test('ad-block heading fallback font survives template rendering and CSS inlinin
       'sectionStylesFile: templates/dense-discovery/section-styles.json',
       'sections:',
       '  - type: ad-block',
-      '    title: Advertisement Heading',
+      `    title: ${JSON.stringify(heading)}`,
+      `    description: ${JSON.stringify('<p>Reader\'s <em>notes & details</em></p>')}`,
+      '    items:',
+      '      - adId: font-regression-fixture',
+      '  - type: ad-block',
+      '    title: Second placement',
       '    items:',
       '      - adId: font-regression-fixture',
       '---',
@@ -78,8 +86,14 @@ test('ad-block heading fallback font survives template rendering and CSS inlinin
   );
 
   try {
-    assert.match(html, /<h1[^>]*style="[^"]*font-family:\s*Ubuntu,\s*sans-serif[^"]*"[^>]*>\s*Advertisement Heading/);
+    assert.match(html, /<h1[^>]*style="[^"]*font-family:\s*Ubuntu,\s*sans-serif[^"]*"[^>]*>\s*Tomorrow/);
     assert.doesNotMatch(html, /&#0?39;Ubuntu/);
+    const document = new JSDOM(html).window.document;
+    const renderedHeading = [...document.querySelectorAll('h1')].find(node => node.textContent.includes('Tomorrow'));
+    assert.equal(renderedHeading?.textContent.replace(/\u200b/g, '').replace(/\s+/g, ' ').trim(), heading);
+    assert.equal(renderedHeading.querySelector('em'), null, 'heading markup must remain text');
+    assert.equal([...document.querySelectorAll('h1')].filter(node => node.textContent.trim() === 'Second placement').length, 1, 'each component must resolve its own section index');
+    assert.ok([...document.querySelectorAll('p')].some(node => node.textContent === "Reader's notes & details" && node.querySelector('em')), 'rich descriptions must retain their authored markup');
   } finally {
     cleanup();
   }
