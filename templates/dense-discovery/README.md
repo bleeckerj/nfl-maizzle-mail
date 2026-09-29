@@ -232,7 +232,13 @@ The legacy `indie-mag-single-column` section type remains supported as an alias 
 
 ## `inline_cta`
 
-An inline CTA can appear anywhere in `sections`; place it immediately before the footer when it should read as the final editorial block. Use `renderFor: public` or `renderFor: preview` for the public edition only, `renderFor: full` for the full edition only, or omit it / use `both` for both editions. The required `primaryAction` and optional `secondaryAction` use tracked-link objects. `font_family` accepts `mono` or `sans`, and the appearance fields mirror the Daily Headlines inline CTA contract. The block has a full border on all four edges; set `border_radius` in pixels for rounded corners (for example, `12`), or omit it for square corners.
+An inline CTA can appear anywhere in `sections`; place it immediately before the footer when it should read as the final editorial block. Use `renderFor: public` or `renderFor: preview` for the public edition only, `renderFor: full` for the full edition only, or omit it / use `both` for both editions. The required `primaryAction` and optional `secondaryAction` use tracked-link objects. `font_family` accepts `mono`, `sans`, or a CSS font stack such as `Arial, Helvetica, sans-serif`. The block has a full border on all four edges; set `border_radius` in pixels for rounded corners (for example, `12`), or omit it for square corners.
+
+`space_top` and `space_bottom` control additional space outside the card. Each accepts a nonnegative pixel number (`16`), a numeric string (`"16"`), or a pixel string (`16px`). Omit either field for its 28px default; use `0` to remove that spacer. Adjacent sections keep their own spacing, which adds to this gap. These controls do not change the card's internal padding.
+
+`border_width` uses the same pixel formats and defaults to 1px; `0` removes the border. `border_radius` also accepts these formats and defaults to zero. Blank lines in `statement: |` produce paragraph breaks; existing block HTML retains its authored structure.
+
+New CTA starters include only content, action, and appearance controls. Legacy `items: [{}]`, `headingStylesInline`, `linkStylesInline`, and generic `containerStyles` / `contentStyles` / `headingStyles` / `linkStyles` are unnecessary for this section. Existing drafts may retain them; the CTA uses `background`, `text_color`, `font_family`, and the named border and button fields.
 
 ```yaml
 sections:
@@ -240,7 +246,9 @@ sections:
   renderFor: public
   eyebrow: Public preview
   statement: "You’re reading the public preview. Subscribe for the full issue."
-  font_family: mono
+  font_family: sans
+  space_top: 16px
+  space_bottom: 0
   background: '#f5f4f0'
   text_color: '#333333'
   eyebrow_color: '#555555'

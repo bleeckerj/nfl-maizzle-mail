@@ -2705,19 +2705,60 @@
             },
             "then": {
               "type": "object",
+              "x-nfl-authoring-contract": "dense-discovery:inline_cta",
               "properties": {
                 "type": {
                   "const": "inline_cta"
                 },
-                "space_top": {},
+                "renderFor": {
+                  "type": "string",
+                  "enum": ["public", "preview", "full", "both"],
+                  "description": "Edition visibility. Omit or use both to render in both editions."
+                },
+                "space_top": {
+                  "type": [
+                    "number",
+                    "string"
+                  ],
+                  "minimum": 0,
+                  "pattern": "^(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:px)?$",
+                  "default": 28,
+                  "description": "Extra space above the card in pixels; added to any preceding section spacing. Zero removes this spacer. Accepts a nonnegative number, a numeric string, or a px string such as 32px."
+                },
                 "background": {},
-                "border_width": {},
+                "border_width": {
+                  "type": [
+                    "number",
+                    "string"
+                  ],
+                  "minimum": 0,
+                  "pattern": "^(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:px)?$",
+                  "default": 1,
+                  "description": "Border thickness in pixels. Zero removes the border. Accepts a nonnegative number, a numeric string, or a px string such as 32px."
+                },
                 "border_color": {},
-                "border_radius": {},
+                "border_radius": {
+                  "type": [
+                    "number",
+                    "string"
+                  ],
+                  "minimum": 0,
+                  "pattern": "^(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:px)?$",
+                  "default": 0,
+                  "description": "Corner radius in pixels. Zero gives square corners. Accepts a nonnegative number, a numeric string, or a px string such as 32px."
+                },
                 "eyebrow_color": {},
-                "font_family": {},
+                "font_family": {
+                  "type": "string",
+                  "minLength": 1,
+                  "default": "mono",
+                  "description": "Use mono, sans, or a CSS font-family stack such as Arial, Helvetica, sans-serif."
+                },
                 "eyebrow": {},
-                "statement": {},
+                "statement": {
+                  "type": "string",
+                  "description": "CTA copy with optional HTML. Blank lines separate paragraphs when the value contains no block HTML; authored block HTML is preserved."
+                },
                 "text_color": {},
                 "primaryAction": {
                   "type": "object",
@@ -2741,10 +2782,27 @@
                 "secondary_button_background": {},
                 "secondary_button_border_color": {},
                 "secondary_button_text_color": {},
-                "space_bottom": {},
-                "headingStylesInline": {},
-                "linkStylesInline": {},
+                "space_bottom": {
+                  "type": [
+                    "number",
+                    "string"
+                  ],
+                  "minimum": 0,
+                  "pattern": "^(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:px)?$",
+                  "default": 28,
+                  "description": "Extra space below the card in pixels; added to any following section spacing. Zero removes this spacer. Accepts a nonnegative number, a numeric string, or a px string such as 32px."
+                },
+                "headingStylesInline": {
+                  "readOnly": true,
+                  "description": "Legacy build-only field; not an inline CTA authoring control."
+                },
+                "linkStylesInline": {
+                  "readOnly": true,
+                  "description": "Legacy build-only field; not an inline CTA authoring control."
+                },
                 "items": {
+                  "description": "Legacy placeholder array, ignored by inline_cta; author statement and actions directly.",
+                  "deprecated": true,
                   "type": "array",
                   "items": {
                     "type": "object",
@@ -2753,6 +2811,8 @@
                   }
                 },
                 "containerStyles": {
+                  "description": "Legacy generic section styles; inline_cta uses its named appearance fields instead.",
+                  "deprecated": true,
                   "type": [
                     "object",
                     "null"
@@ -2770,6 +2830,8 @@
                   }
                 },
                 "contentStyles": {
+                  "description": "Legacy generic section styles; inline_cta uses its named appearance fields instead.",
+                  "deprecated": true,
                   "type": [
                     "object",
                     "null"
@@ -2777,6 +2839,8 @@
                   "additionalProperties": true
                 },
                 "headingStyles": {
+                  "description": "Legacy generic section styles; inline_cta uses its named appearance fields instead.",
+                  "deprecated": true,
                   "type": [
                     "object",
                     "null"
@@ -2784,6 +2848,8 @@
                   "additionalProperties": true
                 },
                 "linkStyles": {
+                  "description": "Legacy generic section styles; inline_cta uses its named appearance fields instead.",
+                  "deprecated": true,
                   "type": [
                     "object",
                     "null"

@@ -1,0 +1,46 @@
+<script props>
+  // Read the original section by index so HTML and CSS values are not serialized
+  // through a component attribute. Normalize lengths once, preserving explicit zero.
+  (() => {
+    const section = props.sections[props.ctaSectionIndex];
+    const pixels = (value, fallback) => `${parseFloat(value ?? fallback)}px`;
+    const fontFamily = !section.font_family || section.font_family === 'mono'
+      ? 'Share Tech Mono, Courier New, Courier, monospace'
+      : section.font_family === 'sans' ? 'Arial, Helvetica, sans-serif' : section.font_family;
+    // Preserve authored block HTML; turn blank lines in plain/inline HTML copy
+    // into paragraph breaks. Single newlines remain ordinary wrapping whitespace.
+    const statement = (section.statement || '').replace(/\r\n?/g, '\n').trim();
+    const hasBlockHtml = /<\/?(?:p|div|table|ul|ol|li|blockquote|h[1-6]|section|article)\b/i.test(statement);
+    return {
+      section,
+      cta: {
+        spaceTop: pixels(section.space_top, 28),
+        spaceBottom: pixels(section.space_bottom, 28),
+        borderWidth: pixels(section.border_width, 1),
+        borderRadius: pixels(section.border_radius, 0),
+        fontFamily,
+        statement: hasBlockHtml ? statement : statement.replace(/\n[ \t]*\n+/g, '<br><br>'),
+      },
+    };
+  })()
+</script>
+<if condition="cta.spaceTop !== '0px'">
+  <tr>
+    <td data-inline-cta-space="top" class="spacer" style="border-collapse: collapse;font-size: 0;line-height: 0;padding-top: {{ cta.spaceTop }};"></td>
+  </tr>
+</if>
+<tr>
+  <td data-content-slot="inline_cta" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}" style="border-collapse: collapse;padding: 18px 20px 0;background: {{ section.background || '#f5f4f0' }};border: {{ cta.borderWidth }} solid {{ section.border_color || '#000000' }};border-radius: {{ cta.borderRadius }};overflow: hidden;">
+    <p class="inline-cta-eyebrow" style="margin: 0 0 4px 0;padding: 0;color: {{ section.eyebrow_color || '#555555' }};font: 700 11px/16px {{ cta.fontFamily }};letter-spacing: 0.12em;text-transform: uppercase;">{{ section.eyebrow || 'Editorial Note' }}</p>
+    <if condition="section.statement"><div class="inline-cta-copy" style="margin: 0;padding: 0;color: {{ section.text_color || '#333333' }};font: 16px/22px {{ cta.fontFamily }};">{{{ cta.statement }}}</div></if>
+    <p style="margin: 14px 0 18px 0;padding: 0;">
+      <if condition="section.primaryAction && section.primaryAction.url"><a class="inline-cta-button" href="{{ section.primaryAction.url }}" style="display: inline-block;margin: 0 8px 12px 0;padding: 10px 14px;text-decoration: none;font: 700 12px/1.2 {{ cta.fontFamily }};letter-spacing: 0.08em;text-transform: uppercase;background: {{ section.button_background || '#111111' }};border: 1px solid {{ section.button_border_color || section.button_background || '#111111' }};color: {{ section.button_text_color || '#ffffff' }} !important;-webkit-text-fill-color: {{ section.button_text_color || '#ffffff' }};">{{ section.primaryAction.label }}</a></if>
+      <if condition="section.secondaryAction && section.secondaryAction.url"><a class="inline-cta-button" href="{{ section.secondaryAction.url }}" style="display: inline-block;margin: 0 8px 12px 0;padding: 10px 14px;text-decoration: none;font: 700 12px/1.2 {{ cta.fontFamily }};letter-spacing: 0.08em;text-transform: uppercase;background: {{ section.secondary_button_background || '#ffffff' }};border: 1px solid {{ section.secondary_button_border_color || section.border_color || '#111111' }};color: {{ section.secondary_button_text_color || '#111111' }} !important;-webkit-text-fill-color: {{ section.secondary_button_text_color || '#111111' }};">{{ section.secondaryAction.label }}</a></if>
+    </p>
+  </td>
+</tr>
+<if condition="cta.spaceBottom !== '0px'">
+  <tr>
+    <td data-inline-cta-space="bottom" class="spacer" style="border-collapse: collapse;font-size: 0;line-height: 0;padding-top: {{ cta.spaceBottom }};"></td>
+  </tr>
+</if>

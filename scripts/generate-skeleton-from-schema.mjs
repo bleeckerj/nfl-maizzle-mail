@@ -469,7 +469,9 @@ function projectSchemaProperties(schemaFragment = {}, allowedFields = [], requir
 }
 
 function projectSectionSchemaForAuthoring(sectionType, sectionSchema = {}, schema = {}) {
-  const contract = AUTHORING_CONTRACTS[sectionType];
+  // A schema may select a template-specific authoring surface without changing
+  // sections of the same name in other templates.
+  const contract = AUTHORING_CONTRACTS[sectionSchema['x-nfl-authoring-contract'] || sectionType];
   if (!contract) return sectionSchema;
   const projected = projectSchemaProperties(
     sectionSchema,

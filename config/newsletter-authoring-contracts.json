@@ -10,5 +10,9 @@
     "itemFields": ["shortTakeId"],
     "requiredSectionFields": ["type", "items"],
     "requiredItemFields": ["shortTakeId"]
+  },
+  "dense-discovery:inline_cta": {
+    "sectionFields": ["type", "renderFor", "eyebrow", "statement", "primaryAction", "secondaryAction", "space_top", "space_bottom", "font_family", "background", "text_color", "eyebrow_color", "border_width", "border_color", "border_radius", "button_background", "button_border_color", "button_text_color", "secondary_button_background", "secondary_button_border_color", "secondary_button_text_color"],
+    "requiredSectionFields": ["type", "statement", "primaryAction"]
   }
 }

@@ -7,6 +7,9 @@ import addFormats from 'ajv-formats';
 import { build } from '@maizzle/framework';
 import { existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
+import { JSDOM } from 'jsdom';
+import matter from 'gray-matter';
 
 import { normalizeNewsletterLinkTracking } from '../../lib/newsletter-core/link-tracking-metadata.mjs';
 
@@ -169,4 +172,97 @@ test('inline_cta tracked action URLs use the existing metadata contract', () => 
   assert.equal(newsletter.sections[0].primaryAction.url, 'https://example.com/subscribe');
   assert.equal(tracking.manifest.get('https://example.com/subscribe').category, 'subscribe');
   assert.equal(tracking.manifest.get('https://example.com/subscribe').intent, 'subscribe');
+});
+
+// Exercise authored values through Maizzle and a CSS parser, so malformed units
+// cannot pass merely because the expected number appears somewhere in the HTML.
+test('dense-discovery CTA honours arbitrary pixel lengths, zero, fonts, and paragraph breaks', async () => {
+  const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'dense-cta-spacing-'));
+  const cases = [
+    { value: undefined, expected: '28px', border: '1px', radius: '0px', font: 'mono' },
+    { value: 0, expected: '0px', border: '0px', radius: '0px', font: 'sans' },
+    { value: '0px', expected: '0px', border: '0px', radius: '0px', font: 'Arial, Helvetica, sans-serif' },
+    { value: 7.5, expected: '7.5px', border: '7.5px', radius: '7.5px', font: 'mono' },
+    { value: '13.25px', expected: '13.25px', border: '13.25px', radius: '13.25px', font: 'sans' },
+    { value: '47', expected: '47px', border: '47px', radius: '47px', font: 'Arial, Helvetica, sans-serif' },
+    { value: '32px', expected: '32px', border: '32px', radius: '32px', font: 'sans' },
+  ];
+  const sections = cases.map(({ value, font }, index) => ({
+    type: 'inline_cta',
+    eyebrow: `CTA ${index}`,
+    statement: `Paragraph ${index}.\n\nAnother <strong>paragraph</strong>.`,
+    font_family: font,
+    ...(value === undefined ? {} : {
+      space_top: value, space_bottom: value, border_width: value, border_radius: value,
+    }),
+    primaryAction: { label: 'Read more', url: `mailto:cta${index}@example.com` },
+    secondaryAction: { label: 'Contact', url: `mailto:contact${index}@example.com` },
+  }));
+  sections.push({
+    type: 'inline_cta',
+    statement: '<p>Authored paragraph.</p>\n\n<p>Another paragraph.</p>',
+    space_top: 3, space_bottom: '19px', border_width: '1px', border_radius: '8px',
+  });
+  // Preceding item loops must not change the section index passed to the CTA.
+  const newsletter = { template: 'dense-discovery', title: 'CTA spacing regression', sections: [
+    { type: 'single-column', title: 'Before CTA', items: [{ description: 'First item.' }, { description: 'Second item.' }] },
+    ...sections,
+  ] };
+  try {
+    assertSchemaValid('dense-discovery', newsletter);
+    const html = await renderTemplate('dense-discovery', newsletter, path.join(tempRoot, 'build'));
+    assert.doesNotMatch(html, /pxpx|NaNpx/);
+    const document = new JSDOM(html).window.document;
+    const cards = [...document.querySelectorAll('[data-content-slot="inline_cta"]')];
+    assert.equal(cards.length, sections.length);
+    cases.forEach(({ expected, border, radius, font }, index) => {
+      const card = cards[index];
+      const before = card.parentElement.previousElementSibling?.firstElementChild;
+      const after = card.parentElement.nextElementSibling?.firstElementChild;
+      if (expected === '0px') {
+        assert.notEqual(before?.dataset.inlineCtaSpace, 'top');
+        assert.notEqual(after?.dataset.inlineCtaSpace, 'bottom');
+      } else {
+        assert.equal(before.dataset.inlineCtaSpace, 'top');
+        assert.equal(after.dataset.inlineCtaSpace, 'bottom');
+        assert.equal(before.style.paddingTop, expected);
+        assert.equal(after.style.paddingTop, expected);
+      }
+      assert.equal(card.style.borderTopWidth, border);
+      assert.equal(card.style.borderRadius, radius);
+      assert.match(card.textContent, new RegExp(`CTA ${index}`));
+      assert.equal(card.querySelector('.inline-cta-copy').querySelectorAll('br').length, 2);
+      for (const element of card.querySelectorAll('.inline-cta-copy, .inline-cta-eyebrow, .inline-cta-button')) {
+        assert.match(element.style.fontFamily, font === 'mono' ? /Share Tech Mono/ : /Arial, Helvetica, sans-serif/);
+      }
+      assert.equal(card.querySelector('a').getAttribute('href'), `mailto:cta${index}@example.com`);
+    });
+    const authoredCard = cards.at(-1);
+    assert.equal(authoredCard.parentElement.previousElementSibling.firstElementChild.style.paddingTop, '3px');
+    assert.equal(authoredCard.parentElement.nextElementSibling.firstElementChild.style.paddingTop, '19px');
+    assert.equal(authoredCard.style.borderTopWidth, '1px');
+    assert.equal(authoredCard.style.borderRadius, '8px');
+    assert.equal(authoredCard.querySelectorAll('.inline-cta-copy p').length, 2);
+    assert.equal(authoredCard.querySelectorAll('.inline-cta-copy br').length, 0);
+  } finally {
+    rmSync(tempRoot, { recursive: true, force: true });
+  }
+});
+
+// Starters should expose controls the section actually renders, while legacy
+// build fields remain accepted by the schema for existing authored drafts.
+test('dense-discovery CTA starters omit inert fields and validate against the template schema', () => {
+  const template = 'dense-discovery';
+  const output = execFileSync(process.execPath, [
+    path.join(REPO_ROOT, 'scripts/generate-skeleton-from-schema.mjs'),
+    '--template', template, '--sections', 'inline_cta', '--all-section-fields',
+  ], { cwd: REPO_ROOT, encoding: 'utf8' });
+  const newsletter = matter(output).data;
+  assertSchemaValid(template, newsletter);
+  const cta = newsletter.sections.find(section => section.type === 'inline_cta');
+  assert.ok(cta.statement);
+  assert.ok(cta.primaryAction);
+  for (const field of ['items', 'headingStylesInline', 'linkStylesInline', 'containerStyles', 'contentStyles', 'headingStyles', 'linkStyles']) {
+    assert.equal(Object.hasOwn(cta, field), false, `${template}: ${field}`);
+  }
 });
