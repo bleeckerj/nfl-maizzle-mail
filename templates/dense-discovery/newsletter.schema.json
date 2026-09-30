@@ -3887,17 +3887,29 @@
         "kicker": {},
         "backgroundImage": {},
         "logoUrl": {},
-        "titleFont": {},
+        "titleFont": {
+          "type": "string",
+          "default": "nfl-title-untitled"
+        },
         "titleFontScale": {
-          "type": "number"
+          "type": "number",
+          "default": 0.7
         },
-        "subtitleFont": {},
+        "subtitleFont": {
+          "type": "string",
+          "default": "nfl-subtitle"
+        },
         "subtitleFontScale": {
-          "type": "number"
+          "type": "number",
+          "default": 0.9
         },
-        "kickerFont": {},
+        "kickerFont": {
+          "type": "string",
+          "default": "nfl-kicker"
+        },
         "kickerFontScale": {
-          "type": "number"
+          "type": "number",
+          "default": 1
         },
         "footerFontScale": {
           "type": "number"

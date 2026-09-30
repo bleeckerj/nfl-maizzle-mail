@@ -45,6 +45,13 @@ test('dense-discovery starters materialize the complete current schema', () => {
     );
   }
 
+  assert.equal(payload.socialCard.titleFont, 'nfl-title-untitled');
+  assert.equal(payload.socialCard.subtitleFont, 'nfl-subtitle');
+  assert.equal(payload.socialCard.kickerFont, 'nfl-kicker');
+  assert.equal(payload.socialCard.titleFontScale, 0.7);
+  assert.equal(payload.socialCard.subtitleFontScale, 0.9);
+  assert.equal(payload.socialCard.kickerFontScale, 1);
+
   const socialCardSchema = schema.properties.socialCard;
   for (const propertyName of Object.keys(socialCardSchema.properties)) {
     assert.ok(
