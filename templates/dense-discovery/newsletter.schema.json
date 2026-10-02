@@ -241,7 +241,7 @@
         "quote": {},
         "title": {},
         "viewOnlineLink": {
-          "description": "Authored view-online URL or tracked link is preserved. Public builds fill missing or placeholder links from the issue id when available.",
+          "description": "Authored view-online URL or tracked link is preserved. For a managed Adjacency artifact, use its exact active publishedUrl from the publication registry and validate the complete destination live before building. Never infer an artifact destination from a content file path, source ref, slug, or route pattern. Public newsletter issue links retain their issue-id publication contract.",
           "oneOf": [
             {
               "type": "string"
