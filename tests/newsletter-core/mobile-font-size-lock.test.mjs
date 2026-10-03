@@ -18,6 +18,7 @@ const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.resolve(__dirname, '..', '..');
 const DENSE_DISCOVERY_LAYOUT = path.join(REPO_ROOT, 'templates', 'dense-discovery', 'layouts', 'main.html');
 const DENSE_DISCOVERY_TEMPLATE = path.join(REPO_ROOT, 'templates', 'dense-discovery', 'newsletter.html');
+const DENSE_DISCOVERY_AD_COMPONENT = path.join(REPO_ROOT, 'templates', 'dense-discovery', 'components', 'AdBlock.html');
 const DENSE_DISCOVERY_INTRO_COMPONENT = path.join(
   REPO_ROOT,
   'templates',
@@ -241,8 +242,9 @@ test('dense-discovery layout keeps mobile body copy at the approved readable sca
 });
 
 test('dense-discovery ad footer CTA uses the same mobile metadata size as the other corner text', () => {
-  const template = readFileSync(DENSE_DISCOVERY_TEMPLATE, 'utf8');
-  const adBlockStart = template.indexOf("section.type === 'ad-block'");
+  // Ads are rendered by their component, which is referenced by the main template.
+  const template = readFileSync(DENSE_DISCOVERY_AD_COMPONENT, 'utf8');
+  const adBlockStart = template.indexOf('<!-- AD-BLOCK Start -->');
   const adBlockEnd = template.indexOf('<!-- AD-BLOCK End -->', adBlockStart);
   const adBlock = template.slice(adBlockStart, adBlockEnd);
 
@@ -455,9 +457,10 @@ test('dense-discovery semantic section and item headings opt into the mobile tit
 
 test('dense-discovery semantic metadata labels opt into the mobile metadata lock', () => {
   const template = readFileSync(DENSE_DISCOVERY_TEMPLATE, 'utf8');
+  const adComponent = readFileSync(DENSE_DISCOVERY_AD_COMPONENT, 'utf8');
 
-  assert.match(template, /<div class="mob-meta" style="\{\{\{ section\.labelStylesInline \|\| '' \}\}\}">\{\{ item\.label \}\}<\/div>/);
-  assert.match(template, /<p class="mob-meta" style="\{\{\{ section\.labelStylesInline \|\| '' \}\}\}/);
+  assert.match(adComponent, /<div class="mob-meta" style="\{\{\{ section\.labelStylesInline \|\| '' \}\}\}">\{\{ item\.label \}\}<\/div>/);
+  assert.match(adComponent, /<p class="mob-meta" style="\{\{\{ section\.labelStylesInline \|\| '' \}\}\}/);
   assert.match(template, /class="h1byline mob-meta"/);
   assert.match(template, /<p class="share-tech-mono-regular mob-meta"[^>]*>\s*<span style="color: #999">From the<\/span> \{\{ item\.channel \}\}/);
   assert.match(template, /<span class="mob-meta"[^>]*>DEPARTMENT OF \{\{ item\.category \}\}/);

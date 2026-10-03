@@ -191,6 +191,13 @@ Authors supply one registry id and no issue-level content overrides. `lib/newsle
 
 Each section contains exactly one item. Multiple cards use multiple `short-take` sections in the required issue order. Email rendering preserves the complete source image and uses the available template column width.
 
+Registry records may include `lockup.brandRail` (boolean), `lockup.mediaSizing`
+(`natural` or `copy-first`), and `lockup.imageAlignment` (`top`, `center`, or
+`bottom`). These settings control page and social lockups. Maizzle validates
+them while preserving the complete, natural-height image in email. Unknown
+lockup keys and invalid values remain build errors. The mail contract tests
+also load the current sibling Editorial inventory to catch cross-repository drift.
+
 The inventory is loaded only when an issue contains `short-take`. Path resolution follows this precedence:
 
 1. `NFL_EDITORIAL_SHORT_TAKES_PATH` — direct path to `shortTakes.json`.

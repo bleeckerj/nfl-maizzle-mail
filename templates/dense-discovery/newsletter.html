@@ -613,12 +613,15 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                                   <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;">
                                     <tbody>
                                       <tr>
-                                        <if condition="section.companyIcon && section.companyIcon.src">
+                                        <if condition="!(section.companyLogo && section.companyLogo.src) && section.companyIcon && section.companyIcon.src">
                                           <td valign="top" style="border-collapse: collapse;padding: 0 14px 0 0;width: 64px;">
                                             <img src="{{ section.companyIcon.src }}" alt="{{ section.companyIcon.alt || section.company }}" width="56" height="auto" style="-ms-interpolation-mode: bicubic; {{{ section.jobStyles.companyIcon || '' }}}">
                                           </td>
                                         </if>
                                         <td valign="top" style="border-collapse: collapse;">
+                                          <if condition="section.companyLogo && section.companyLogo.src">
+                                            <img class="adjacency-company-logo" src="{{ section.companyLogo.src }}" alt="{{ section.companyLogo.alt || section.company }}" width="240" height="auto" style="-ms-interpolation-mode: bicubic;display:block;width:240px;max-width:100%;height:auto;border:0;margin:0 0 16px 0;">
+                                          </if>
                                           <p style="margin: 0;padding: 0; {{{ section.jobStyles.company || '' }}}">{{ section.company }}</p>
                                           <if condition="section.companyTagline">
                                             <p style="margin: 8px 0 0 0;padding: 0; {{{ section.jobStyles.companyTagline || '' }}}">{{ section.companyTagline }}</p>

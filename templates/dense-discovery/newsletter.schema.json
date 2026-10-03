@@ -411,6 +411,11 @@
                 "type": {
                   "const": "ad-block"
                 },
+                "show_bottom_rule": {
+                  "type": "boolean",
+                  "default": true,
+                  "description": "Render the light divider after the ad unless explicitly false."
+                },
                 "title": {
                   "description": "Plain-text section heading. Author punctuation directly; the renderer escapes HTML once, preserving literal entity text and treating markup as text."
                 },
@@ -1049,6 +1054,15 @@
                     "alt": {}
                   },
                   "additionalProperties": false
+                },
+                "companyLogo": {
+                  "type": "object",
+                  "properties": {
+                    "src": { "type": "string" },
+                    "alt": { "type": "string" }
+                  },
+                  "additionalProperties": false,
+                  "description": "Hosted full company logo, rendered at its natural aspect ratio in the job header."
                 },
                 "company": {},
                 "companyTagline": {},
@@ -3402,70 +3416,32 @@
             },
             "then": {
               "type": "object",
+              "required": [
+                "type",
+                "items"
+              ],
               "properties": {
                 "type": {
                   "const": "short-take"
                 },
                 "items": {
                   "type": "array",
+                  "minItems": 1,
+                  "maxItems": 1,
                   "items": {
                     "type": "object",
+                    "required": [
+                      "shortTakeId"
+                    ],
                     "properties": {
-                      "shortTakeId": {},
-                      "topLeft": {},
-                      "topRight": {},
-                      "link": {},
-                      "image": {},
-                      "imageAlt": {},
-                      "headline": {},
-                      "caption": {},
-                      "bottomLeft": {},
-                      "bottomRight": {}
+                      "shortTakeId": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      }
                     },
                     "additionalProperties": false
                   }
-                },
-                "containerStyles": {
-                  "type": [
-                    "object",
-                    "null"
-                  ],
-                  "properties": {
-                    "backgroundColor": {
-                      "description": "Use for solid colors and CSS gradients such as linear-gradient(...)."
-                    }
-                  },
-                  "additionalProperties": true,
-                  "not": {
-                    "required": [
-                      "background"
-                    ]
-                  }
-                },
-                "labelStylesInline": {},
-                "headingStylesInline": {},
-                "contentStylesInline": {},
-                "linkStylesInline": {},
-                "contentStyles": {
-                  "type": [
-                    "object",
-                    "null"
-                  ],
-                  "additionalProperties": true
-                },
-                "headingStyles": {
-                  "type": [
-                    "object",
-                    "null"
-                  ],
-                  "additionalProperties": true
-                },
-                "linkStyles": {
-                  "type": [
-                    "object",
-                    "null"
-                  ],
-                  "additionalProperties": true
                 }
               },
               "additionalProperties": false

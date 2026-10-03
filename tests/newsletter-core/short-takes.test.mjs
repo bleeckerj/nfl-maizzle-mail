@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import os from 'node:os';
 import path from 'node:path';
-import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 import {
@@ -102,6 +102,37 @@ test('hydrateShortTakeSections preserves scalar maxWidth and HTTPS destinations'
   });
 });
 
+// Exercise the inventory produced by Editorial, including records unrelated to
+// the selected email item. Fixture-only tests missed the earlier lockup changes.
+test('Maizzle accepts every record in the current Editorial Short Take inventory', () => {
+  const inventoryPath = path.resolve(REPO_ROOT, '..', 'nfl-editorial', 'src', 'content', 'shortTakes.json');
+  const inventory = JSON.parse(readFileSync(inventoryPath, 'utf8'));
+  assert.ok(inventory.length > 0);
+  withInventory(inventory, ({ repoRoot }) => {
+    const newsletter = { sections: inventory.map(({ id }) => section(id)) };
+    hydrateShortTakeSections(newsletter, repoRoot, { logger: { log() {} } });
+    assert.deepEqual(newsletter.sections.map(({ items }) => items[0].shortTakeId), inventory.map(({ id }) => id));
+    newsletter.sections.forEach(({ items }, index) => {
+      assert.equal(items[0].image, inventory[index].image.url);
+    });
+  });
+});
+
+test('mail accepts all page/social lockup settings while retaining complete image URLs', () => {
+  for (const brandRail of [true, false]) {
+    for (const mediaSizing of ['natural', 'copy-first']) {
+      for (const imageAlignment of ['top', 'center', 'bottom']) {
+        withInventory([record({ lockup: { brandRail, mediaSizing, imageAlignment } })], ({ repoRoot }) => {
+          const newsletter = { sections: [section()] };
+          hydrateShortTakeSections(newsletter, repoRoot, { logger: { log() {} } });
+          assert.equal(newsletter.sections[0].items[0].image, PHOTARIUM_URL);
+          assert.equal(newsletter.sections[0].items[0].lockup, undefined);
+        });
+      }
+    }
+  }
+});
+
 test('hydrateShortTakeSections preserves caption paragraph breaks', () => {
   withInventory([record({ caption: '<p>First paragraph.</p><p>Second paragraph with <strong>inline emphasis</strong>.</p>' })], ({ repoRoot }) => {
     const newsletter = { sections: [section()] };
@@ -181,6 +212,11 @@ test('hydrateShortTakeSections reports unknown ids and invalid inventories', () 
     { inventory: {}, message: /must be a JSON array/ },
     { inventory: [record(), record()], message: /Duplicate Short Take ids/ },
     { inventory: [record({ extra: true })], message: /unsupported field: extra/ },
+    { inventory: [record({ lockup: null })], message: /lockup must be an object/ },
+    { inventory: [record({ lockup: { crop: true } })], message: /lockup contains unsupported field: crop/ },
+    { inventory: [record({ lockup: { brandRail: 'false' } })], message: /lockup\.brandRail must be a boolean/ },
+    { inventory: [record({ lockup: { mediaSizing: 'cover' } })], message: /lockup\.mediaSizing must be natural or copy-first/ },
+    { inventory: [record({ lockup: { imageAlignment: 'left' } })], message: /lockup\.imageAlignment must be top, center, or bottom/ },
     { inventory: [record({ image: { url: 'https://example.com/image.jpg', altText: 'Wrong host' } })], message: /Photarium Cloudflare Image Delivery URL/ },
     { inventory: [record({ url: 'http://example.com/insecure' })], message: /HTTPS URL or a site-relative path/ },
     { inventory: [record({ url: { href: 'https://example.com/take', tag: 'nope' } })], message: /url contains unsupported field: tag/ },

@@ -2,6 +2,7 @@
 
 import fs from 'fs';
 import path from 'path';
+import { shortTakeSourceSectionSchema } from './template-schema-contracts/short-take.mjs';
 
 const USAGE = `
 Generate a JSON Schema from a Maizzle template by scanning templates/components for data reads.
@@ -196,10 +197,11 @@ function chainToSegments(chainText) {
 }
 
 function parseEachLoop(loopExpr) {
-  // "item in section.items"
-  const m = /^\s*([A-Za-z_$][0-9A-Za-z_$]*)\s+in\s+(.+?)\s*$/.exec(loopExpr);
+  // PostHTML supports both "item in section.items" and indexed loops such as
+  // "section, sectionIndex in sections". The index is a rendering local.
+  const m = /^\s*([A-Za-z_$][0-9A-Za-z_$]*)(?:\s*,\s*([A-Za-z_$][0-9A-Za-z_$]*))?\s+in\s+(.+?)\s*$/.exec(loopExpr);
   if (!m) return null;
-  return { varName: m[1], collectionExpr: m[2].trim() };
+  return { varName: m[1], indexName: m[2], collectionExpr: m[3].trim() };
 }
 
 function parseSectionTypeConstants(expr) {
@@ -361,6 +363,7 @@ function addPathsWithPrefix(targetSchema, paths, prefix) {
 }
 
 function makeTypedSectionVariant(type, baseSectionPaths, baseItemPaths, typePaths) {
+  if (type === 'short-take') return shortTakeSourceSectionSchema();
   const sectionSchema = { type: 'object', properties: {}, additionalProperties: false };
   const itemSchema = { type: 'object', properties: {}, additionalProperties: false };
 
@@ -636,6 +639,13 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
   if (adjacencyJobsVariant?.properties) {
     adjacencyJobsVariant.properties.brandVariant = {};
     adjacencyJobsVariant.properties.canonicalUrl = {};
+    // Full logos are exported by Editorial separately from square company icons.
+    adjacencyJobsVariant.properties.companyLogo = {
+      type: 'object',
+      properties: { src: { type: 'string' }, alt: { type: 'string' } },
+      additionalProperties: false,
+      description: 'Hosted full company logo, rendered at its natural aspect ratio in the job header.',
+    };
 
     const listsSchema = adjacencyJobsVariant.properties.lists;
     const listProperties = listsSchema?.items?.properties;
@@ -655,6 +665,13 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
   }
 
   const adBlockVariant = findTypedSectionVariant(schema, 'ad-block');
+  if (adBlockVariant?.properties) {
+    adBlockVariant.properties.show_bottom_rule = {
+      type: 'boolean',
+      default: true,
+      description: 'Render the light divider after the ad unless explicitly false.',
+    };
+  }
   const adBlockItemSchema = adBlockVariant?.properties?.items?.items;
   if (adBlockItemSchema?.properties) {
     delete adBlockItemSchema.properties.image;
@@ -919,7 +936,9 @@ async function main() {
           const segs = chain ? chainToSegments(chain) : null;
 
           const prev = bindings.has(parsed.varName) ? bindings.get(parsed.varName) : null;
-          loopVarStack.push({ varName: parsed.varName, prev });
+          const indexWasIgnored = IGNORE_ROOT_IDENTIFIERS.has(parsed.indexName);
+          loopVarStack.push({ varName: parsed.varName, prev, indexName: parsed.indexName, indexWasIgnored });
+          if (parsed.indexName) IGNORE_ROOT_IDENTIFIERS.add(parsed.indexName);
 
           if (segs) {
             const withBindings = applyBindings(segs, bindings);
@@ -934,6 +953,7 @@ async function main() {
       if (kind === 'each_close') {
         const entry = loopVarStack.pop();
         if (entry) {
+          if (entry.indexName && !entry.indexWasIgnored) IGNORE_ROOT_IDENTIFIERS.delete(entry.indexName);
           if (entry.prev) bindings.set(entry.varName, entry.prev);
           else bindings.delete(entry.varName);
         }

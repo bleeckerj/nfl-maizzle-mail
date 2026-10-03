@@ -7,6 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 import Ajv from 'ajv';
+import addFormats from 'ajv-formats';
 
 const REPO_ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const SCHEMA_PATH = path.join(REPO_ROOT, 'templates', 'dense-discovery', 'newsletter.schema.json');
@@ -18,9 +19,12 @@ const CANONICAL_HEADER_LOGOS = {
 };
 
 function generateStarter() {
+  // Public starters intentionally omit optional sections. This completeness
+  // check requests every declared section instead of relying on those defaults.
+  const sectionTypes = JSON.parse(readFileSync(SCHEMA_PATH, 'utf8')).properties.sections.items.properties.type.enum;
   return execFileSync(
     process.execPath,
-    [GENERATOR_PATH, '--schema', SCHEMA_PATH, '--all-section-fields', '--items-per-section', '1'],
+    [GENERATOR_PATH, '--schema', SCHEMA_PATH, '--all-section-fields', '--items-per-section', '1', '--sections', ...sectionTypes],
     { cwd: REPO_ROOT, encoding: 'utf8' },
   );
 }
@@ -34,7 +38,9 @@ function parseFrontmatter(markdown) {
 test('dense-discovery starters materialize the complete current schema', () => {
   const schema = JSON.parse(readFileSync(SCHEMA_PATH, 'utf8'));
   const payload = parseFrontmatter(generateStarter());
-  const validate = new Ajv({ allErrors: true, strict: false }).compile(schema);
+  const ajv = new Ajv({ allErrors: true, strict: false });
+  addFormats(ajv);
+  const validate = ajv.compile(schema);
   assert.equal(validate(payload), true, JSON.stringify(validate.errors, null, 2));
   assert.equal(Object.prototype.hasOwnProperty.call(payload, '$schema'), false);
   assert.equal(Object.prototype.hasOwnProperty.call(schema.properties, '$schema'), false);

@@ -4,6 +4,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
+import { collectTemplateSectionContracts } from '../lib/newsletter-core/template-section-contracts.mjs';
 
 const PROJECT_ROOT = process.cwd();
 
@@ -127,6 +128,7 @@ function loadSectionStyles() {
 
 const sectionStyles = loadSectionStyles();
 const recognizedSectionTypes = sectionStyles ? sectionStyles.types : new Set(['default']);
+const sectionContracts = new Map();
 
 function validateSections(sections) {
   if (sections == null) {
@@ -158,7 +160,7 @@ function validateSections(sections) {
     } else if (typeof type !== 'string') {
       report('errors', `${sectionPath}.type`, 'Section type must be a string');
     } else if (!recognizedSectionTypes.has(type) && type !== 'default') {
-      report('warnings', `${sectionPath}.type`, `Unknown section type "${type}" (not defined in section-styles.json)`);
+      report('warnings', `${sectionPath}.type`, `Unknown section type "${type}" (not defined in the template schema or section styles)`);
     }
 
     const compactRegistrySection = type === 'ad-block' || type === 'short-take';
@@ -166,7 +168,10 @@ function validateSections(sections) {
     // Full-width image sections carry their own src/alt/caption fields instead
     // of the title/items shape used by article and list sections.
     const standaloneMediaSection = type === 'recruiting-image';
-    if (!title && !compactRegistrySection && !placeholderSlotSection && !standaloneMediaSection) {
+    const contract = sectionContracts.get(type);
+    const expectsTitle = contract ? contract.required?.includes('title')
+      : !compactRegistrySection && !placeholderSlotSection && !standaloneMediaSection;
+    if (!title && expectsTitle) {
       report('warnings', `${sectionPath}.title`, 'Section title is empty');
     }
 
@@ -175,6 +180,9 @@ function validateSections(sections) {
     }
 
     if (!Array.isArray(items)) {
+      // Scalar sections such as a complete job posting do not require an item
+      // list. Their actual required fields are checked by the template schema.
+      if (contract && !contract.required?.includes('items')) return;
       report('warnings', `${sectionPath}.items`, 'Section has no items array');
       return;
     }
@@ -277,7 +285,7 @@ function validateSchema() {
     path.join(templateDir, 'newsletter.schema.json'),
     path.join(templateDir, 'schema.json'),
   ].find((candidate) => fs.existsSync(candidate));
-  if (!fs.existsSync(schemaPath)) return;
+  if (!schemaPath) return;
 
   let schemaContent;
   try {
@@ -285,6 +293,11 @@ function validateSchema() {
   } catch (error) {
     report('warnings', 'schema', `Unable to parse schema for template "${normalizedTemplate}": ${error.message}`);
     return;
+  }
+
+  for (const [type, contract] of collectTemplateSectionContracts(schemaContent)) {
+    recognizedSectionTypes.add(type);
+    sectionContracts.set(type, contract);
   }
 
   const ajv = new Ajv({ allErrors: true, strict: false });
@@ -300,6 +313,7 @@ function validateSchema() {
   const valid = validate(lintData);
   if (!valid && validate.errors) {
     validate.errors.forEach((errorEntry) => {
+      if (errorEntry.keyword === 'if') return;
       const instancePath = errorEntry.instancePath.replace(/^\//, '').replace(/\//g, '.');
       const context = instancePath || 'root';
       report('errors', `schema:${context}`, `${errorEntry.message} (${errorEntry.schemaPath})`);
@@ -332,8 +346,8 @@ function summarize() {
 }
 
 // Execute validation pipeline
-validateSections(lintData.sections);
 validateSchema();
+validateSections(lintData.sections);
 summarize();
 
 if (issues.errors.length > 0) {

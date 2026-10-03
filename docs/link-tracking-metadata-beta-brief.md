@@ -52,7 +52,7 @@ After Maizzle renders HTML, the build enriches matching `<a href="...">` tags wi
 
 Legacy string links still work. Labels may be inferred from item titles, link labels, or rendered anchor text. Missing categories remain null and never become a section type or layout name. The manifest records field-level provenance and confidence for every dimension.
 
-Repeated URLs are matched by URL plus occurrence order, so separate placements retain their own metadata. When duplicate URLs provide conflicting explicit category metadata, the first manifest mapping wins and the build warns about the ignored later mapping.
+Repeated URLs are matched by URL plus occurrence order, so separate placements retain their own metadata. Link roles belong to each placement and may differ for the same content URL. When duplicate URLs provide conflicting explicit category metadata, the first manifest mapping wins and the build warns about the ignored later mapping.
 
 Each successful build also writes a generated sidecar manifest next to the final HTML:
 

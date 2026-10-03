@@ -21,6 +21,7 @@ const inventory = [
     },
     caption: '<p>Unlinked Short Take caption.</p><p>Second caption sentence.</p>',
     maxWidth: '95%',
+    lockup: { brandRail: false, mediaSizing: 'copy-first', imageAlignment: 'top' },
     topLeft: 'AUTONOMOUS NEWS',
     bottomLeft: 'WOULD YOU LIKE TO KNOW MORE?',
   },

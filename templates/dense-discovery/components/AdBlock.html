@@ -24,7 +24,7 @@
       <tbody>
         <if condition="section.description">
           <tr>
-            <td style="border-collapse: collapse;padding: {{ section.containerStyles.sectionDescriptionPadding || section.containerStyles.copyPadding || '16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
+            <td style="border-collapse: collapse;padding: {{ section.containerStyles.sectionDescriptionPadding || section.containerStyles.copyPadding || '16px' }};background: {{ section.containerStyles.backgroundColor || '#ffffff' }};">
               <div style="font-family: {{ section.descriptionStyles.fontFamily || section.contentStyles.fontFamily || 'Geist, ui-sans-serif, sans-serif' }};font-size: {{ section.descriptionStyles.fontSize || section.contentStyles.fontSize || '16px' }};line-height: {{ section.descriptionStyles.lineHeight || section.contentStyles.lineHeight || '1.45' }};font-weight: {{ section.descriptionStyles.fontWeight || section.contentStyles.fontWeight || '400' }};color: {{ section.descriptionStyles.color || section.contentStyles.color || '#44506a' }};text-align: {{ section.descriptionStyles.textAlign || section.contentStyles.textAlign || 'left' }};padding: 0;margin: 0;">
                 {{{ section.description }}}
               </div>
@@ -36,12 +36,12 @@
         </if>
         <tr>
           <td style="border-collapse: collapse;padding: 0;">
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};border: {{ section.containerStyles.borderWidth || '1px' }} {{ section.containerStyles.borderStyle || 'solid' }} {{ section.containerStyles.borderColor || '#c9cfdb' }};border-radius: {{ section.containerStyles.borderRadius || '0px' }};overflow: hidden;">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing:0;background: {{ section.containerStyles.backgroundColor || '#ffffff' }};border: {{ section.containerStyles.borderWidth || '1px' }} {{ section.containerStyles.borderStyle || 'solid' }} {{ section.containerStyles.borderColor || '#c9cfdb' }};border-radius: {{ section.containerStyles.borderRadius || '0px' }};overflow: hidden;">
               <tbody>
                 <each loop="item in section.items">
                   <if condition="item.label && item.renderMode !== 'snapshot'">
                     <tr>
-                      <td style="border-collapse: collapse;padding: {{ section.containerStyles.labelPadding || '12px 16px 8px 16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
+                      <td style="border-collapse: collapse;padding: {{ section.containerStyles.labelPadding || '12px 16px 8px 16px' }};background: {{ section.containerStyles.backgroundColor || '#ffffff' }};">
                         <div class="mob-meta" style="{{{ section.labelStylesInline || '' }}}">{{ item.label }}</div>
                       </td>
                     </tr>
@@ -49,7 +49,7 @@
 
           <if condition="item.image">
             <tr>
-              <td style="border-collapse: collapse;padding: {{ item.commerce ? '0' : (section.containerStyles.imagePadding || '0 12px') }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
+              <td style="border-collapse: collapse;padding: {{ item.commerce ? '0' : (section.containerStyles.imagePadding || '0 12px') }};background: {{ section.containerStyles.backgroundColor || '#ffffff' }};">
                 <if condition="(typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('link')) || item.link || item.readMoreLink">
                   <a href="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('link')) ? item.image.link : (item.link || item.readMoreLink) }}" style="text-decoration: none;">
                     <img src="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('src')) ? item.image.src : item.image }}" alt="{{ (typeof item.image === 'object' && item.image !== null && item.image.hasOwnProperty('alt')) ? item.image.alt : (item.imageAlt || item.title || 'Advertisement') }}" width="608" height="auto" style="-ms-interpolation-mode: bicubic;display: block;width: 100%;max-width: 608px;height: auto;border: 0;">
@@ -75,7 +75,7 @@
 
           <if condition="item.renderMode !== 'snapshot' && item.title">
             <tr>
-              <td style="border-collapse: collapse;padding: {{ section.containerStyles.titlePadding || '12px 16px 0 16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
+              <td style="border-collapse: collapse;padding: {{ section.containerStyles.titlePadding || '12px 16px 0 16px' }};background: {{ section.containerStyles.backgroundColor || '#ffffff' }};">
                 <if condition="item.link">
                   <p class="mob-text mob-title" style="{{{ section.headingStylesInline || '' }}}{{{ section.headingStylesInline ? '; ' : '' }}}margin: 0;padding: 0;">
                     <a href="{{ item.link }}" class="theme-link" style="text-decoration: none;color: inherit;">{{ item.title }}</a>
@@ -90,7 +90,7 @@
 
           <if condition="item.renderMode !== 'snapshot' && item.description">
             <tr>
-              <td style="border-collapse: collapse;padding: {{ section.containerStyles.copyPadding || '6px 16px 14px 16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
+              <td style="border-collapse: collapse;padding: {{ section.containerStyles.copyPadding || '6px 16px 14px 16px' }};background: {{ section.containerStyles.backgroundColor || '#ffffff' }};">
                 <div style="font-family: {{ section.contentStyles.fontFamily || 'Geist, ui-sans-serif, sans-serif' }}; font-size: {{ section.contentStyles.fontSize || '16px' }};line-height: {{ section.contentStyles.lineHeight || '1.45' }};font-weight: {{ section.contentStyles.fontWeight || '400' }};color: {{ section.contentStyles.color || '#44506a' }};text-align: {{ section.contentStyles.textAlign || 'left' }};padding: 0;margin: 0;">
                   {{{ item.description }}}
                 </div>
@@ -100,7 +100,7 @@
 
           <if condition="item.renderMode !== 'snapshot' && (item.sponsor || ((item.readMoreLink || item.link) && item.readMoreText))">
             <tr>
-              <td style="border-collapse: collapse;padding: {{ section.containerStyles.ctaPadding || '10px 16px 14px 16px' }};background: {{ section.containerStyles.backgroundColor || '#f5f4f0' }};">
+              <td style="border-collapse: collapse;padding: {{ section.containerStyles.ctaPadding || '10px 16px 14px 16px' }};background: {{ section.containerStyles.backgroundColor || '#ffffff' }};">
                 <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing: 0;table-layout: fixed;">
                   <tbody>
                     <tr>
@@ -131,4 +131,9 @@
     </table>
   </td>
 </tr>
+<if condition="section.show_bottom_rule !== false">
+  <tr>
+    <td class="ad-bottom-rule" style="border-collapse:collapse;padding-top:15px;border-bottom:1px solid #dcdcdc;font-size:1px;line-height:1;"> </td>
+  </tr>
+</if>
 <!-- AD-BLOCK End -->
