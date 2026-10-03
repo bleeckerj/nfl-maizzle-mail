@@ -501,7 +501,16 @@
                       "link": {},
                       "readMoreLink": {},
                       "content": { "$ref": "#/definitions/contentAttribution" },
-                      "title": {},
+                      "title": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Heading above this ad's image. Overrides the inventory label; an empty string hides the heading.",
+                        "examples": [
+                          "Sponsor message"
+                        ]
+                      },
                       "description": {},
                       "sponsor": {},
                       "readMoreText": {},

@@ -4,7 +4,7 @@ Use `campaign-starter.md` when an email should be rendered for a campaign
 handoff rather than published as a regular newsletter issue. Declare
 `publicationMode: campaign` and `template: dense-discovery` in the source.
 
-Registry-backed sections contain IDs only:
+Registry-backed sections reference inventory IDs:
 
 ```yaml
 sections:
@@ -19,6 +19,21 @@ sections:
 Maizzle hydrates those IDs from `nfl-editorial`. Campaign builds suppress the
 view-online, share, archive, subscribe, and public issue footer block while
 retaining the `[unsubscribe]` placeholder.
+
+For an ad placement, `items[].title` sets the small heading above its image:
+
+```yaml
+- type: ad-block
+  title: "Today's Sponsor"
+  items:
+    - adId: stable-ad-id
+      title: Hello
+```
+
+Here `Hello` replaces the inventory label, such as `Advertisement`. The section's
+`title` controls the larger heading outside the card. Omit the item title or set it
+to `null` to use `items[].label` or the inventory label. Set it to `""` to hide
+the heading above the image.
 
 ## Jobs dispatch lists
 

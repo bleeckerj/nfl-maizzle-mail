@@ -680,6 +680,11 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
   }
   const adBlockItemSchema = adBlockVariant?.properties?.items?.items;
   if (adBlockItemSchema?.properties) {
+    adBlockItemSchema.properties.title = {
+      type: ['string', 'null'],
+      description: 'Heading above this ad\'s image. Overrides the inventory label; an empty string hides the heading.',
+      examples: ['Sponsor message'],
+    };
     delete adBlockItemSchema.properties.image;
     delete adBlockItemSchema.properties.imageAlt;
     if (!adBlockItemSchema.properties.adId) {
