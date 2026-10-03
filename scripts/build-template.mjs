@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { execSync } from 'child_process';
+import { execFileSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 
@@ -42,10 +42,12 @@ console.log(`🔨 Building template: ${templateName}`);
 console.log(`📁 Template dir: ${templateDir}`);
 console.log(`📄 Data file: ${dataFile}`);
 
-// Run maizzle build with TEMPLATE in the env so config.production.js can read it
-const env = { ...process.env, TEMPLATE: templateName };
+// The canonical builder validates the selected data before rendering and restores
+// data/newsletter.json after the build. No template selection lives in a shell env.
 try {
-  execSync('maizzle build production', { stdio: 'inherit', env });
+  const source = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+  if (source.template !== templateName) throw new Error(`Data template ${source.template} does not match ${templateName}`);
+  execFileSync(process.execPath, [path.join(root, 'scripts/build-newsletter.mjs'), dataFile, templateName, '--no-open'], { cwd: root, stdio: 'inherit' });
 } catch (err) {
   console.error('Build failed:', err.message);
   process.exit(err.status || 1);

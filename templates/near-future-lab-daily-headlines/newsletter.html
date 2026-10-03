@@ -5,7 +5,7 @@ title: "Near Future Laboratory Daily Headlines"
 <extends src="templates/near-future-lab-daily-headlines/layouts/main.html">
   <block name="template">
 
-  <each loop="section in sections">
+  <each loop="section, sectionIndex in sections">
     <if condition="section.type === 'masthead_ad_bar'">
       <table border="0" cellpadding="0" cellspacing="0" style="width:100%;{{{ section.backgroundStyleInline }}}" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}"><tbody><tr><td height="15"></td></tr><tr><td style="padding:15px 0 5px;text-align:right;width:100%;font-family:arial,sans-serif;font-size:12px"><a title="View in browser" href="{{ section.viewOnlineLink || section.view_in_browser_href }}" style="color:#666;-webkit-text-decoration:none;text-decoration:none;line-height:18px">View in browser</a><table border="0" cellpadding="0" cellspacing="0" style="width:100%"><tbody><tr aria-hidden="true"><td><span style="text-align:center"><table style="margin:0 auto" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="line-height:0;font-size:0"><a rel="noopener noreferrer nofollow" tabindex="-1" target="_blank" href="{{ section.sponsorLink || section.ad_href }}"><img src="{{ section.ad_src_desktop }}" alt="Ad" border="0" width="600" style="display:block;width:100%;max-width:600px"></a></td></tr><tr style="display:none"><td style="line-height:0;font-size:0"><a rel="noopener noreferrer nofollow" tabindex="-1" target="_blank" href="{{ section.sponsorLink || section.ad_href }}"><img src="{{ section.ad_src_mobile }}" alt="Ad" border="0" width="480" style="display:block;width:100%;max-width:480px"></a></td></tr></tbody></table></span></td></tr><tr><td height="10"></td></tr></tbody></table></td></tr><tr><td height="5"></td></tr></tbody></table>
     </if>
@@ -209,32 +209,10 @@ title: "Near Future Laboratory Daily Headlines"
       <div style="overflow:hidden;height:0;width:100%;max-width:600px;margin:0 auto" aria-hidden="true" class="mob-text{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><table cellpadding="0" cellspacing="0" border="0" width="40"><tbody><tr>{{{ section.pixels_html }}}</tr></tbody></table></div>
     </if>
     <if condition="section.type === 'share_this'">
-      <table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface' : '' }}"><tbody><tr><td height="{{ section.space_top || 28 }}" style="font-size:0;line-height:0">&#8203;</td></tr></tbody></table>
-      <table border="0" cellpadding="0" cellspacing="0" style="width:100%;border-top:1px solid #000;border-bottom:1px solid #dcdcdc;background:{{ section.background || '#f5f4f0' }};{{{ section.backgroundStyleInline }}}" role="presentation" class="share-cta{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" data-content-slot="share_this"><tbody>
-        <tr><td style="padding:18px 20px 0 20px;{{{ section.contentPaddingInline }}}">
-          <p class="share-cta-eyebrow" style="margin:0 0 4px 0;padding:0;color:{{ section.eyebrow_color || '#555' }};font:700 11px/16px arial,sans-serif;letter-spacing:.75px;text-transform:uppercase">{{ section.eyebrow || 'Share this issue' }}</p>
-          <p class="share-cta-copy" style="margin:0;padding:0;color:{{ section.text_color || '#333' }};font:16px/22px georgia,serif">{{{ section.statement || 'Know someone who&rsquo;d want a peek at their near future? Pass it along.' }}}</p>
-        </td></tr>
-        <tr><td style="padding:14px 20px 18px 20px;{{{ section.contentPaddingInline }}}">
-          <a class="share-cta-button" href="{{ section.email_href || ('mailto:?subject=Near%20Future%20Laboratory%20Daily%20Headlines&body=Thought%20you%27d%20like%20this%3A%20' + (section.online_url || '')) }}" style="display:inline-block;margin:0 8px 0 0;padding:6px 10px;border:1px solid #111;border-radius:4px;background:#111;font:700 12px/1.2 arial,sans-serif;color:#ffffff!important;-webkit-text-fill-color:#ffffff;text-decoration:none">{{ section.email_label || 'Forward by email' }}</a>
-          <if condition="section.online_url"><a class="share-cta-button" href="{{ section.online_url }}" style="display:inline-block;margin:0;padding:6px 10px;border:1px solid #111;border-radius:4px;background:#ffffff;font:700 12px/1.2 arial,sans-serif;color:#111111!important;-webkit-text-fill-color:#111111;text-decoration:none">{{ section.online_label || 'Open online →' }}</a></if>
-        </td></tr>
-      </tbody></table>
-      <table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface' : '' }}"><tbody><tr><td height="{{ section.space_bottom || 28 }}" style="font-size:0;line-height:0">&#8203;</td></tr></tbody></table>
+      <component src="templates/near-future-lab-daily-headlines/components/ShareThis.html" locals='{"ctaSectionIndex": {{ sectionIndex }}}'></component>
     </if>
     <if condition="section.type === 'inline_cta'">
-      <table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface' : '' }}"><tbody><tr><td height="{{ section.space_top || 28 }}" style="font-size:0;line-height:0">&#8203;</td></tr></tbody></table>
-      <table border="0" cellpadding="0" cellspacing="0" style="width:100%;border:{{ section.border_width || 1 }}px solid {{ section.border_color || '#000' }};border-radius:{{ typeof section.border_radius === 'number' ? section.border_radius + 'px' : (section.border_radius || '0px') }};overflow:hidden;background:{{ section.background || '#f5f4f0' }};{{{ section.backgroundStyleInline }}}" role="presentation" class="inline-cta{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" data-content-slot="inline_cta"><tbody>
-        <tr><td style="padding:18px 20px 0;{{{ section.contentPaddingInline }}}">
-          <if condition="section.eyebrow"><p class="inline-cta-eyebrow" style="margin:0 0 4px 0;padding:0;color:{{ section.eyebrow_color || '#555' }};font:700 11px/16px {{ section.font_family === 'sans' ? 'arial,sans-serif' : 'monospace' }};letter-spacing:.75px;text-transform:uppercase">{{ section.eyebrow }}</p></if>
-          <if condition="section.statement"><div class="inline-cta-copy" style="margin:0;padding:0;color:{{ section.text_color || '#333' }};font:16px/22px {{ section.font_family === 'sans' ? 'arial,sans-serif' : 'monospace' }}">{{{ section.statement }}}</div></if>
-        </td></tr>
-        <tr><td style="padding:14px 20px 18px;{{{ section.contentPaddingInline }}}">
-          <if condition="section.primaryAction && section.primaryAction.url"><a class="inline-cta-button inline-cta-primary" href="{{ section.primaryAction.url }}" style="display:inline-block;margin:0 8px 0 0;padding:6px 10px;border:1px solid {{ section.button_border_color || section.button_background || '#111' }};border-radius:4px;background:{{ section.button_background || '#111' }};font:700 12px/1.2 {{ section.font_family === 'sans' ? 'arial,sans-serif' : 'monospace' }};color:{{ section.button_text_color || '#fff' }}!important;-webkit-text-fill-color:{{ section.button_text_color || '#fff' }};text-decoration:none">{{ section.primaryAction.label }}</a></if>
-          <if condition="section.secondaryAction && section.secondaryAction.url"><a class="inline-cta-button inline-cta-secondary" href="{{ section.secondaryAction.url }}" style="display:inline-block;margin:0;padding:6px 10px;border:1px solid {{ section.secondary_button_border_color || section.border_color || '#111' }};border-radius:4px;background:{{ section.secondary_button_background || '#fff' }};font:700 12px/1.2 {{ section.font_family === 'sans' ? 'arial,sans-serif' : 'monospace' }};color:{{ section.secondary_button_text_color || '#111' }}!important;-webkit-text-fill-color:{{ section.secondary_button_text_color || '#111' }};text-decoration:none">{{ section.secondaryAction.label }}</a></if>
-        </td></tr>
-      </tbody></table>
-      <table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface' : '' }}"><tbody><tr><td height="{{ section.space_bottom || 28 }}" style="font-size:0;line-height:0">&#8203;</td></tr></tbody></table>
+      <component src="templates/near-future-lab-daily-headlines/components/InlineCta.html" locals='{"ctaSectionIndex": {{ sectionIndex }}}'></component>
     </if>
     <if condition="section.type === 'email_footer'">
       <component src="templates/near-future-lab-daily-headlines/components/FooterCta.html"></component>

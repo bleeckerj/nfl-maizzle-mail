@@ -83,7 +83,7 @@ test('schema-derived starters emit every non-structural root property declared b
   const structural = new Set(['template', 'sections', 'header', 'intro', 'footer']);
 
   for (const property of Object.keys(schema.properties)) {
-    if (!structural.has(property)) assert.ok(Object.hasOwn(generated, property), property);
+    if (!structural.has(property) && !schema.properties[property].readOnly) assert.ok(Object.hasOwn(generated, property), property);
   }
 });
 

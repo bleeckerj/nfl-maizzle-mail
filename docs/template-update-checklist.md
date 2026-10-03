@@ -1,32 +1,10 @@
-# Template Update Checklist
+# Template update checklist
 
-Use this when you change a newsletter HTML template so the data model, skeletons, and snippets stay in sync.
+1. Update the owning `templates/<name>/newsletter.schema.json` first. Declare types, accepted values, actual defaults, and usable examples. Mark generated fields `readOnly` and retained legacy fields `deprecated`.
+2. Update the responsible template component or normalizer. Keep the template under `templates/<name>/`; do not create a second template tree.
+3. Generate a reference starter with `node scripts/generate-skeleton-from-schema.mjs --template <name> --output /tmp/<name>.md`. Review its fields against the renderer. The generator validates its output and performs no build.
+4. Regenerate maintained reference Markdown and editor snippets when the authoring surface changes. The Python compatibility command and snippet command use the same generator. Do not add another field list.
+5. Run `npm run test:newsletter-contracts` and focused tests that show changed values affecting output.
+6. Build a snapshot of a representative real source through the canonical builder. Verify content, spacing, links, full images, and mobile typography. Preserve active drafts and unrelated worktree changes.
 
-## 1) Update the template itself
-- Edit the component/layout in `templates/<template-name>/`.
-- Add/update any conditional blocks (ex: `intro.aside`) in the HTML.
-
-## 2) Update the schema
-- Add the new field(s) to the template schema:
-  - `templates/<template-name>/newsletter.schema.json`
-
-## 3) Update the skeleton generator
-- If the field should appear in generated skeletons, update:
-  - `scripts/generate-newsletter-skeleton.py`
-
-## 4) Regenerate skeleton markdown
-- Full skeleton:
-  - `python scripts/generate-newsletter-skeleton.py --output templates/<template-name>/<template-name>-skeleton-full.md`
-- Minimal skeleton:
-  - `python scripts/generate-newsletter-skeleton.py --minimal --output templates/<template-name>/<template-name>-skeleton-minimal.md`
-
-## 5) Update snippets (if used)
-- Convert a skeleton to a VS Code snippet:
-  - `python scripts/convert-skeleton-to-snippet.py templates/<template-name>/<template-name>-skeleton-full.md`
-- This writes `templates/<template-name>/<template-name>-skeleton-full.snippet`.
-
-## 6) Check sample data (optional)
-- If there are sample data files or tests that reference the template, add the new field as needed.
-
-## 7) Quick sanity check
-- Rebuild a test newsletter and verify the new field renders as expected.
+Template scanning is discovery only. Write scanner output to a separate file and review it; the scanner cannot overwrite a maintained schema. See [the schema contract](schema-validation/README.md) and [the template operating process](newsletter-template-operating-process.md).

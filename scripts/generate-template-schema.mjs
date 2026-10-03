@@ -8,7 +8,7 @@ const USAGE = `
 Generate a JSON Schema from a Maizzle template by scanning templates/components for data reads.
 
 Usage:
-  node scripts/generate-template-schema.mjs --entry templates/<template>/newsletter.html --output templates/<template>/newsletter.schema.json
+  node scripts/generate-template-schema.mjs --entry templates/<template>/newsletter.html --output templates/<template>/newsletter.schema.discovered.json
 
 Options:
   --entry <path>     Entry template HTML (required)
@@ -866,6 +866,11 @@ async function main() {
   const repoRoot = args.root ? path.resolve(args.root) : process.cwd();
   const entryAbs = resolveRepoPath(repoRoot, args.entry);
   const outAbs = resolveRepoPath(repoRoot, args.output);
+  // Template scanning discovers property usage, not a valid authoring contract.
+  // Never replace the maintained schema, even when the caller passes its path.
+  if (path.basename(outAbs) === 'newsletter.schema.json') {
+    throw new Error('Schema discovery cannot overwrite newsletter.schema.json. Write to newsletter.schema.discovered.json, compare it with the maintained schema, and review each field.');
+  }
 
   if (!entryAbs || !fileExists(entryAbs)) {
     throw new Error(`Entry not found: ${entryAbs}`);

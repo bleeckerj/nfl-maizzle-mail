@@ -74,28 +74,15 @@ Where an existing field is named `url`, the object still carries `href`, `label`
 
 ## Schema-Derived Starters
 
-The Backoffice MCP starter tools generate from the selected template's current schema on every invocation. `newsletter_start`, `create_newsletter_from_skeleton`, and `campaign_email_start` share the resolver and `scripts/generate-skeleton-from-schema.mjs`; static starter Markdown and legacy skeleton paths are not starter sources. The generator must emit YAML that validates against the selected schema, including discriminator-driven sections, local `$ref` branches, nullable objects, and nested arrays.
+The Backoffice MCP starter tools generate from the selected template's current schema on every invocation. `newsletter_start`, `create_newsletter_from_skeleton`, and `campaign_email_start` share the resolver and `scripts/generate-skeleton-from-schema.mjs`; static starter Markdown and legacy skeleton paths are not starter sources. The generator must emit YAML that validates against the selected schema, including discriminator-driven sections, local `$ref` branches, nullable objects, and nested arrays. Authoring roles and explicit examples live in that schema; Backoffice consumes the shared JSON contract. Ordinary saves preserve omitted optional controls. See [schema validation](schema-validation/README.md).
 
 ## View Online Link
 
-Authored View/share-online URLs and tracked-link metadata are preserved through normalization and rendering. Public starters include the expected field as a placeholder; public builds fill missing or placeholder links with the canonical issue URL when an issue id is available. Article emails can supply their published article or popup URL without a weekly issue id.
+Managed-artifact View Online and sharing destinations come from the active publication registry. Preserve its exact published URL, including publication suffixes, and validate it live. Missing or expired records, HTTP 404/410, and network failures block a public email build. Never infer a public destination from an issue ID, content path, slug, or route pattern.
 
-The build computes:
+Explicit local previews may use their provisioned server URL and must not be sent. Campaign builds suppress automatic public issue navigation. The shared `view-online-link.mjs` and publication-link validation modules own this behavior.
 
-```text
-https://nearfuturelaboratory.com/newsletters/<year>/<issue-id>
-```
-
-`lib/newsletter-core/view-online-link.mjs` owns this logic. Templates that render a view-online affordance should receive the generated tracked link through `prepareNewsletterData`.
-
-Current injection targets:
-
-- `dense-discovery`: `intro.viewOnlineLink`
-- `near-future-lab-daily-headlines`: `newsletter_masthead.viewOnlineLink`
-
-When adding a new template with a view-online link, add an explicit injection target in `view-online-link.mjs`, add tests, and document the target in the template README/schema.
-
-Public builds warn when a supported template is missing its expected view-online field or contains a placeholder. Campaign builds suppress the warning and automatic public-link generation; an explicitly authored view-online link is preserved.
+Current template targets are Dense Discovery's `intro.viewOnlineLink` and Daily Headlines' `newsletter_masthead.viewOnlineLink`. A new target requires a schema declaration, injection behavior, and focused tests.
 
 ## Link Tracking Contract
 
@@ -219,10 +206,10 @@ For each new template or boilerplate issue:
 1. Run focused unit tests for new build helpers.
 2. Run the canonical build command for a Backoffice outbox issue.
 3. Confirm schema validation passes.
-4. Confirm the build preserves an authored view-online link, or injects the deterministic issue link when the field is missing or a placeholder.
+4. Confirm managed-artifact links match the active publication registry and pass live validation.
 5. Confirm `ad-block` hydrates from `ads.json` using only `adId` in source.
 6. When supported, confirm `short-take` hydrates from `shortTakes.json` using only `shortTakeId` in source.
 7. Confirm rendered HTML includes `data-link-label` and `data-link-category` on expected anchors.
 8. Confirm the link manifest has no unexpected defaults or conflicts.
 9. Confirm generated build-only fields are pruned from normalized author-facing exports.
-10. Document any expected warnings, such as unpublished archive URL 404s or HEAD-blocked commerce URLs.
+10. Document verification limits. Managed public-link failures block completion.

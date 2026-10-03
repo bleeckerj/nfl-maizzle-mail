@@ -114,7 +114,7 @@ sections:
     renderFor: public       # public/preview, full, both, or omit for both
     eyebrow: Public preview
     statement: 'You’re reading the public preview. Subscribe for the full issue.'
-    font_family: mono       # mono or sans
+    font_family: mono       # mono, sans, or a CSS font stack
     background: '#f5f4f0'
     text_color: '#333'
     eyebrow_color: '#555'
@@ -179,7 +179,7 @@ sections:
 : The full footer below the footer CTA bar. Author it with structured slots — `paragraphs` (boilerplate/legal body paragraphs, each may contain inline `<a href>` links), `address` (the lighter legal line: organization, location, copyright, with an optional inline `<a>`), `unsubscribe_label` (+ optional `unsubscribe_href`, default `[unsubscribe]`), and optional `social_links` (`{ label, href, category }`). The component supplies all the table-row + paragraph chrome. `footer_html` (the complete inner table-row HTML) is kept as a legacy fallback and is used verbatim only when no structured slot is set, so existing issues keep rendering unchanged. Reference markup + full slot docs live in `components/FooterBody.html`.
 
 `inline_cta`
-: Edition-aware CTA bar rendered at the authored position. Place it immediately before `email_footer`. Use `renderFor: public` or `renderFor: preview` for the public preview only, `renderFor: full` for the full edition only, or omit `renderFor` / use `both` to render it in both. The required `primaryAction` and optional `secondaryAction` use the tracked-link shape. `statement` accepts simple inline HTML. `font_family` is `mono` by default and can be set to `sans`; appearance fields include `background`, `text_color`, `eyebrow_color`, `border_color`, `border_width`, `border_radius`, button colors, `space_top`, and `space_bottom`. The block has a full border on all four edges; `border_radius` is specified in pixels and defaults to square corners. It uses the same dark-mode flatten classes as `share_this`.
+: Edition-aware CTA bar rendered at the authored position. Place it immediately before `email_footer`. Use `renderFor: public` or `renderFor: preview` for the public preview only, `renderFor: full` for the full edition only, or omit `renderFor` / use `both` to render it in both. The required `primaryAction` and optional `secondaryAction` use the tracked-link shape. `statement` accepts simple inline HTML. `font_family` accepts `mono`, `sans`, or a CSS font-family stack; appearance fields include `background`, `text_color`, `eyebrow_color`, `border_color`, `border_width`, `border_radius`, button colors, `space_top`, and `space_bottom`. The block has a full border on all four edges; `border_radius` is specified in pixels and defaults to square corners. It uses the same dark-mode flatten classes as `share_this`.
 
 `masthead_ad_bar`
 : Legacy ad/view-in-browser bar above the masthead. New ad placements should use `ad-block` so ad URLs and media come from the editorial ads inventory.
@@ -218,3 +218,5 @@ sections:
 - Legacy fields such as `href`, `logo_href`, `view_in_browser_href`, `ad_href`, and `link_href` still render as fallbacks, but they do not carry explicit tracking metadata.
 - `email_footer` inline links (inside `paragraphs` and `address`) carry their own `data-link-category` / `data-link-label` attributes, exactly like the legacy `footer_html` did. The post-render link-tracking enricher only auto-stamps anchors whose `href` matches a tracked link used elsewhere in the issue, and it never overwrites attributes you set — so add the `data-link-*` attributes directly on footer anchors, and keep footer hrefs real or `mailto:` so the live-link check passes (`[unsubscribe]` is left unvalidated). `social_links` emit `data-link-*` from their `label` and `category` (default `social`) automatically.
 - Keep template-specific examples in `sample-data.json` aligned with `newsletter.schema.json`.
+
+Inline CTA `space_top`, `space_bottom`, `border_width`, and `border_radius` accept nonnegative pixel numbers or strings, including `0`, `7.5`, and `13.25px`. Blank lines in plain statements create paragraph breaks; authored block HTML is preserved. See [the schema contract](../../docs/schema-validation/README.md) for starter generation and validation.

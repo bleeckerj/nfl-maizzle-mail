@@ -23,6 +23,8 @@ function withTempRoots(fn) {
   const backofficeRoot = path.join(tempRoot, 'nfl-backoffice');
   const editorialRoot = path.join(tempRoot, 'nfl-editorial');
   mkdirSync(repoRoot, { recursive: true });
+  // Hydration fixtures use the same strict source contract as real builds.
+  fs.cpSync(path.join(REPO_ROOT, 'templates', 'dense-discovery'), path.join(repoRoot, 'templates', 'dense-discovery'), { recursive: true, filter: source => fs.statSync(source).isDirectory() || path.basename(source) === 'newsletter.schema.json' });
   mkdirSync(backofficeRoot, { recursive: true });
   mkdirSync(path.join(editorialRoot, 'src', 'content'), { recursive: true });
 
@@ -305,7 +307,7 @@ test('prepareNewsletterData rejects raw ad-block image fields under strict schem
         },
         { repoRoot: REPO_ROOT, templateName: 'dense-discovery', strictSchema: true, logger: { log() {} } },
       ),
-    /strict mode/,
+    /Schema validation failed/,
   );
 });
 
@@ -557,7 +559,7 @@ test('prepareNewsletterData rejects malformed food-for-thought readMoreLinks ite
         },
         { repoRoot: REPO_ROOT, templateName: 'dense-discovery', strictSchema: true, logger: { log() {} } },
       ),
-    /strict mode/,
+    /Schema validation failed/,
   );
 });
 
@@ -824,7 +826,7 @@ test('prepareNewsletterData rejects indie-mag-single-column items that set both 
         },
         { repoRoot: REPO_ROOT, templateName: 'dense-discovery', strictSchema: true, logger: { log() {} } },
       ),
-    /strict mode/,
+    /Schema validation failed/,
   );
 });
 
@@ -871,7 +873,7 @@ test('prepareNewsletterData rejects unsupported web publication states under str
             logger: { log() {} },
           },
         ),
-      /strict mode/,
+      /Schema validation failed/,
     );
   }
 });

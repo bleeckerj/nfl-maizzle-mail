@@ -5,6 +5,7 @@
   "additionalProperties": false,
   "properties": {
     "template": {
+      "type": "string",
       "const": "gdm-special-projects"
     },
     "publicationMode": {
@@ -12,11 +13,17 @@
     },
     "title": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "examples": [
+        "Newsletter Title"
+      ]
     },
     "preheader": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "examples": [
+        "Short preview text that appears in email clients"
+      ]
     },
     "recruiter": {
       "type": "object",
@@ -25,15 +32,24 @@
         "name": {
           "type": "string",
           "minLength": 1,
-          "description": "Hiring organization identity in the signature; the hosted company logo leads the masthead."
+          "description": "Hiring organization identity in the signature; the hosted company logo leads the masthead.",
+          "examples": [
+            "Example Name"
+          ]
         },
         "desk": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Example Desk"
+          ]
         },
         "signature": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Example Signature"
+          ]
         }
       },
       "required": [
@@ -44,14 +60,20 @@
     },
     "greeting": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "examples": [
+        "Example Greeting"
+      ]
     },
     "introduction": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "string",
-        "minLength": 1
+        "minLength": 1,
+        "examples": [
+          "Example Introduction"
+        ]
       }
     },
     "job": {
@@ -60,23 +82,38 @@
       "properties": {
         "title": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Newsletter Title"
+          ]
         },
         "company": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Example Company"
+          ]
         },
         "reference": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Example Reference"
+          ]
         },
         "department": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Example Department"
+          ]
         },
         "team": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Example Team"
+          ]
         },
         "facts": {
           "type": "array",
@@ -87,11 +124,17 @@
             "properties": {
               "label": {
                 "type": "string",
-                "minLength": 1
+                "minLength": 1,
+                "examples": [
+                  "Example Label"
+                ]
               },
               "value": {
                 "type": "string",
-                "minLength": 1
+                "minLength": 1,
+                "examples": [
+                  "Example Value"
+                ]
               }
             },
             "required": [
@@ -102,15 +145,24 @@
         },
         "mission": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Example Mission"
+          ]
         },
         "assignment": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Example Assignment"
+          ]
         },
         "compensation": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Example Compensation"
+          ]
         },
         "image": {
           "type": "object",
@@ -118,19 +170,31 @@
           "properties": {
             "alt": {
               "type": "string",
-              "minLength": 1
+              "minLength": 1,
+              "examples": [
+                "Image description for accessibility"
+              ]
             },
             "width": {
               "type": "integer",
-              "minimum": 1
+              "minimum": 1,
+              "examples": [
+                600
+              ]
             },
             "height": {
               "type": "integer",
-              "minimum": 1
+              "minimum": 1,
+              "examples": [
+                400
+              ]
             },
             "caption": {
               "type": "string",
-              "minLength": 1
+              "minLength": 1,
+              "examples": [
+                "Example Caption"
+              ]
             },
             "src": {
               "type": "string",
@@ -158,7 +222,10 @@
             },
             "label": {
               "type": "string",
-              "minLength": 1
+              "minLength": 1,
+              "examples": [
+                "Example Label"
+              ]
             },
             "category": {
               "const": "jobs"
@@ -172,7 +239,10 @@
         },
         "ctaLabel": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Read more"
+          ]
         }
       },
       "required": [
@@ -203,7 +273,10 @@
               },
               "title": {
                 "type": "string",
-                "minLength": 1
+                "minLength": 1,
+                "examples": [
+                  "Newsletter Title"
+                ]
               },
               "items": {
                 "type": "array",
@@ -217,7 +290,10 @@
                   "properties": {
                     "text": {
                       "type": "string",
-                      "minLength": 1
+                      "minLength": 1,
+                      "examples": [
+                        "Example Text"
+                      ]
                     }
                   }
                 }
@@ -278,24 +354,53 @@
               "sponsorLabel": {
                 "type": "string",
                 "minLength": 1,
-                "description": "Deprecated; retained for source compatibility but does not render a heading. Use label."
+                "description": "Deprecated; retained for source compatibility but does not render a heading. Use label.",
+                "examples": [
+                  "Deprecated; retained for source compatibility but does not render a heading. Use label."
+                ]
               },
               "label": {
                 "type": "string",
-                "description": "Optional ad-block heading. Rendered only when explicitly supplied and non-empty; no default."
+                "description": "Optional ad-block heading. Rendered only when explicitly supplied and non-empty; no default.",
+                "examples": [
+                  "Optional ad-block heading. Rendered only when explicitly supplied and non-empty; no default."
+                ]
               }
             },
             "required": [
               "type",
               "items"
-            ]
+            ],
+            "x-nfl-authoring": {
+              "sectionFields": [
+                "type",
+                "title",
+                "description",
+                "show_top_rule",
+                "show_bottom_rule",
+                "items"
+              ],
+              "itemFields": [
+                "adId"
+              ],
+              "requiredSectionFields": [
+                "type",
+                "items"
+              ],
+              "requiredItemFields": [
+                "adId"
+              ]
+            }
           }
         ]
       }
     },
     "followUp": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "examples": [
+        "Example Follow up"
+      ]
     },
     "operatorContext": {
       "type": "object",
@@ -303,14 +408,20 @@
       "properties": {
         "heading": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Example Heading"
+          ]
         },
         "paragraphs": {
           "type": "array",
           "minItems": 1,
           "items": {
             "type": "string",
-            "minLength": 1
+            "minLength": 1,
+            "examples": [
+              "Example Paragraphs"
+            ]
           }
         },
         "references": {
@@ -321,7 +432,10 @@
             "properties": {
               "text": {
                 "type": "string",
-                "minLength": 1
+                "minLength": 1,
+                "examples": [
+                  "Example Text"
+                ]
               },
               "link": {
                 "type": "object",
@@ -336,7 +450,10 @@
                   },
                   "label": {
                     "type": "string",
-                    "minLength": 1
+                    "minLength": 1,
+                    "examples": [
+                      "Example Label"
+                    ]
                   },
                   "category": {
                     "const": "grounding"
@@ -369,18 +486,25 @@
         "identity": {
           "type": "string",
           "minLength": 1,
-          "description": "Publication footer identity linked to https://theadjacency.com/subscribe."
+          "description": "Publication footer identity linked to https://theadjacency.com/subscribe.",
+          "examples": [
+            "Publication footer identity linked to https://theadjacency.com/subscribe."
+          ]
         },
         "address": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "© 2025 Your Company<br>City, State<br>Country"
+          ]
         },
         "unsubscribeLink": {
           "type": "string",
           "pattern": "^(\\[unsubscribe\\]|https://)",
           "examples": [
             "[unsubscribe]"
-          ]
+          ],
+          "default": "[unsubscribe]"
         },
         "footerCta": {
           "type": "object",
@@ -415,7 +539,10 @@
         },
         "text": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Example Text"
+          ]
         },
         "buttonLabel": {
           "type": "string",
@@ -424,11 +551,17 @@
         },
         "subject": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Example Subject"
+          ]
         },
         "message": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Example Message"
+          ]
         },
         "emailHref": {
           "type": "string",
@@ -458,15 +591,24 @@
         },
         "alt": {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "Image description for accessibility"
+          ]
         },
         "width": {
           "type": "integer",
-          "minimum": 1
+          "minimum": 1,
+          "examples": [
+            600
+          ]
         },
         "height": {
           "type": "integer",
-          "minimum": 1
+          "minimum": 1,
+          "examples": [
+            400
+          ]
         }
       },
       "required": [
@@ -493,5 +635,6 @@
     "operatorContext",
     "share",
     "companyLogo"
-  ]
+  ],
+  "x-nfl-contract-version": 1
 }

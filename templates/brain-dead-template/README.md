@@ -103,7 +103,7 @@ hero:
 
 Use `imageLink: none` to force an unlinked image. Tracked `imageLink` objects are normalized to their `href` during the build. If `imageLink` is omitted, the build uses `hero.ctaLink` and then legacy `shopLink`.
 
-`inline_cta` uses the same tracked action shape for `primaryAction` and optional `secondaryAction`. Use `renderFor: public` or `preview` for the public edition only, `renderFor: full` for the full edition only, or omit it / use `both` for both editions. Its `font_family` can be `mono` or `sans`; colors, borders, spacing, button colors, and `border_radius` are configurable. The section has a full border on all four edges; specify `border_radius` in pixels, such as `12`, for rounded corners.
+`inline_cta` uses the same tracked action shape for `primaryAction` and optional `secondaryAction`. Use `renderFor: public` or `preview` for the public edition only, `renderFor: full` for the full edition only, or omit it / use `both` for both editions. Its `font_family` accepts `mono`, `sans`, or a CSS font-family stack; colors, borders, spacing, button colors, and `border_radius` are configurable. The section has a full border on all four edges; specify `border_radius` in pixels, such as `12`, for rounded corners.
 
 ```yaml
 sections:
@@ -155,3 +155,5 @@ node scripts/build-newsletter.mjs data/brain-dead-20251007.json brain-dead-four-
 - Keep content images hosted outside this repository, for example Photarium or another approved image host.
 - The template preserves the full image aspect ratio. It does not crop item images or hero art.
 - `schema.json` is retained only as a legacy alias for tools that still look for that filename. The current build validates `newsletter.schema.json`.
+
+Inline CTA `space_top`, `space_bottom`, `border_width`, and `border_radius` accept nonnegative pixel numbers or strings, including `0`, `7.5`, and `13.25px`. Blank lines in plain statements create paragraph breaks; authored block HTML is preserved. See [the schema contract](../../docs/schema-validation/README.md) for starter generation and validation.

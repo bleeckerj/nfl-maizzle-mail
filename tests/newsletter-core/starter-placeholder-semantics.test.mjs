@@ -150,7 +150,7 @@ test('registry-backed sections expose compact authoring fields in full starters'
   const adBlock = payload.sections.find(({ type }) => type === 'ad-block');
   const shortTake = payload.sections.find(({ type }) => type === 'short-take');
 
-  assert.deepEqual(Object.keys(adBlock).sort(), ['description', 'items', 'title', 'type']);
+  assert.deepEqual(Object.keys(adBlock).sort(), ['description', 'items', 'show_bottom_rule', 'title', 'type']);
   assert.deepEqual(adBlock.items, [{ adId: 'example-ad-id' }]);
   assert.deepEqual(Object.keys(shortTake).sort(), ['items', 'type']);
   assert.deepEqual(shortTake.items, [{ shortTakeId: 'example-short-take-id' }]);

@@ -4,8 +4,8 @@
   "description": "Reusable HTML email template system built with Maizzle",
   "type": "module",
   "scripts": {
-    "build": "maizzle build production",
-    "build:data": "maizzle build production",
+    "build": "node scripts/build-newsletter.mjs data/newsletter.json --no-open",
+    "build:data": "node scripts/build-newsletter.mjs data/newsletter.json --no-open",
     "dev": "maizzle serve",
     "build:newsletter": "node scripts/build-newsletter.mjs",
     "build:correspondence": "node scripts/build-correspondence.mjs",
@@ -26,7 +26,8 @@
     "send:correspondence:test": "node scripts/send-correspondence-test.mjs",
     "gallery": "node scripts/template-gallery.mjs serve",
     "gallery:build": "node scripts/template-gallery.mjs build",
-    "test:gallery": "node --test tests/template-gallery/*.test.mjs"
+    "test:gallery": "node --test tests/template-gallery/*.test.mjs",
+    "test:newsletter-contracts": "node --test --test-concurrency=2 tests/newsletter-core/authoring-contract.test.mjs tests/newsletter-core/template-schema-contract.test.mjs tests/newsletter-core/schema-starter-completeness.test.mjs tests/newsletter-core/starter-placeholder-semantics.test.mjs tests/newsletter-core/inline-cta.test.mjs"
   },
   "keywords": [
     "email",

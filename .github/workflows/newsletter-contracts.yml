@@ -1,0 +1,27 @@
+name: Newsletter contracts
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # This repository has a local sibling package dependency. Check out that
+      # package's owning repository so npm can resolve the recorded file path.
+      - uses: actions/checkout@v4
+        with:
+          repository: bleeckerj/nfl-backoffice
+          token: ${{ secrets.BACKOFFICE_READ_TOKEN }}
+          persist-credentials: false
+          sparse-checkout: packages/nfl-native-lockups
+          path: sibling-backoffice
+      - run: mv sibling-backoffice ../nfl-backoffice
+      - run: npm ci
+      - run: npm run test:newsletter-contracts

@@ -9,7 +9,10 @@
       "const": "new-yorker-sample"
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "examples": [
+        "Newsletter Title"
+      ]
     },
     "sections": {
       "type": "array",
@@ -25,27 +28,45 @@
               },
               "eyebrow_text": {
                 "type": "string",
-                "description": "Small italic text displayed above the logo, often a promotional line"
+                "description": "Small italic text displayed above the logo, often a promotional line",
+                "examples": [
+                  "Small italic text displayed above the logo, often a promotional line"
+                ]
               },
               "logo_href": {
                 "type": "string",
-                "description": "URL the logo links to"
+                "description": "URL the logo links to",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
               },
               "logo_src": {
                 "type": "string",
-                "description": "Logo image source URL"
+                "description": "Logo image source URL",
+                "examples": [
+                  "https://fpoimg.com/200x50?text=Logo%20src&bg_color=e6e6e6&text_color=4FAAAA"
+                ]
               },
               "logo_alt": {
                 "type": "string",
-                "description": "Logo image alt text"
+                "description": "Logo image alt text",
+                "examples": [
+                  "Image description for accessibility"
+                ]
               },
               "logo_width": {
                 "type": "string",
-                "description": "Logo image width"
+                "description": "Logo image width",
+                "examples": [
+                  "200"
+                ]
               },
               "logo_height": {
                 "type": "string",
-                "description": "Logo image height"
+                "description": "Logo image height",
+                "examples": [
+                  "50"
+                ]
               }
             },
             "required": [
@@ -63,19 +84,31 @@
               },
               "section_title": {
                 "type": "string",
-                "description": "Large red linked title text"
+                "description": "Large red linked title text",
+                "examples": [
+                  "Large red linked title text"
+                ]
               },
               "section_title_href": {
                 "type": "string",
-                "description": "URL for the section title link"
+                "description": "URL for the section title link",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
               },
               "section_dek": {
                 "type": "string",
-                "description": "Subtitle/dek linked text below the title"
+                "description": "Subtitle/dek linked text below the title",
+                "examples": [
+                  "Subtitle/dek linked text below the title"
+                ]
               },
               "section_dek_href": {
                 "type": "string",
-                "description": "URL for the dek link"
+                "description": "URL for the dek link",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
               }
             },
             "required": [
@@ -93,7 +126,10 @@
               },
               "body_html": {
                 "type": "string",
-                "description": "Full body HTML including inline links and emphasis tags (HTML allowed)"
+                "description": "Full body HTML including inline links and emphasis tags (HTML allowed)",
+                "examples": [
+                  "<p>Example Body content.</p>"
+                ]
               }
             },
             "required": [
@@ -111,91 +147,157 @@
               },
               "left_section_label": {
                 "type": "string",
-                "description": "Red all-caps section/rubric label for left card"
+                "description": "Red all-caps section/rubric label for left card",
+                "examples": [
+                  "Red all-caps section/rubric label for left card"
+                ]
               },
               "left_image_href": {
                 "type": "string",
-                "description": "Link URL wrapping the left card image"
+                "description": "Link URL wrapping the left card image",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
               },
               "left_image_src": {
                 "type": "string",
-                "description": "Left card image source URL"
+                "description": "Left card image source URL",
+                "examples": [
+                  "https://fpoimg.com/800x600?text=Left%20image%20src&bg_color=e6e6e6&text_color=4FAAAA"
+                ]
               },
               "left_image_alt": {
                 "type": "string",
-                "description": "Left card image alt text"
+                "description": "Left card image alt text",
+                "examples": [
+                  "Image description for accessibility"
+                ]
               },
               "left_issue_date": {
                 "type": "string",
-                "description": "Issue date text for left card"
+                "description": "Issue date text for left card",
+                "examples": [
+                  "2026-01-01"
+                ]
               },
               "left_title": {
                 "type": "string",
-                "description": "Left card article title text"
+                "description": "Left card article title text",
+                "examples": [
+                  "Left card article title text"
+                ]
               },
               "left_title_href": {
                 "type": "string",
-                "description": "Left card article title link URL"
+                "description": "Left card article title link URL",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
               },
               "left_dek": {
                 "type": "string",
-                "description": "Left card article dek/description text"
+                "description": "Left card article dek/description text",
+                "examples": [
+                  "Left card article dek/description text"
+                ]
               },
               "left_byline": {
                 "type": "string",
-                "description": "Left card byline (e.g. 'By Author Name')"
+                "description": "Left card byline (e.g. 'By Author Name')",
+                "examples": [
+                  "Left card byline (e.g. 'By Author Name')"
+                ]
               },
               "left_cta_href": {
                 "type": "string",
-                "description": "Left card CTA button link URL"
+                "description": "Left card CTA button link URL",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
               },
               "left_cta_label": {
                 "type": "string",
-                "description": "Left card CTA button label text"
+                "description": "Left card CTA button label text",
+                "examples": [
+                  "Read more"
+                ]
               },
               "right_section_label": {
                 "type": "string",
-                "description": "Red all-caps section/rubric label for right card"
+                "description": "Red all-caps section/rubric label for right card",
+                "examples": [
+                  "Red all-caps section/rubric label for right card"
+                ]
               },
               "right_image_href": {
                 "type": "string",
-                "description": "Link URL wrapping the right card image"
+                "description": "Link URL wrapping the right card image",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
               },
               "right_image_src": {
                 "type": "string",
-                "description": "Right card image source URL"
+                "description": "Right card image source URL",
+                "examples": [
+                  "https://fpoimg.com/800x600?text=Right%20image%20src&bg_color=e6e6e6&text_color=4FAAAA"
+                ]
               },
               "right_image_alt": {
                 "type": "string",
-                "description": "Right card image alt text"
+                "description": "Right card image alt text",
+                "examples": [
+                  "Image description for accessibility"
+                ]
               },
               "right_issue_date": {
                 "type": "string",
-                "description": "Issue date text for right card"
+                "description": "Issue date text for right card",
+                "examples": [
+                  "2026-01-01"
+                ]
               },
               "right_title": {
                 "type": "string",
-                "description": "Right card article title text"
+                "description": "Right card article title text",
+                "examples": [
+                  "Right card article title text"
+                ]
               },
               "right_title_href": {
                 "type": "string",
-                "description": "Right card article title link URL"
+                "description": "Right card article title link URL",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
               },
               "right_dek": {
                 "type": "string",
-                "description": "Right card article dek/description text"
+                "description": "Right card article dek/description text",
+                "examples": [
+                  "Right card article dek/description text"
+                ]
               },
               "right_byline": {
                 "type": "string",
-                "description": "Right card byline (e.g. 'By Author Name')"
+                "description": "Right card byline (e.g. 'By Author Name')",
+                "examples": [
+                  "Right card byline (e.g. 'By Author Name')"
+                ]
               },
               "right_cta_href": {
                 "type": "string",
-                "description": "Right card CTA button link URL"
+                "description": "Right card CTA button link URL",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
               },
               "right_cta_label": {
                 "type": "string",
-                "description": "Right card CTA button label text"
+                "description": "Right card CTA button label text",
+                "examples": [
+                  "Read more"
+                ]
               }
             },
             "required": [
@@ -213,15 +315,24 @@
               },
               "prompt_text": {
                 "type": "string",
-                "description": "Centered prose prompt above the button"
+                "description": "Centered prose prompt above the button",
+                "examples": [
+                  "Centered prose prompt above the button"
+                ]
               },
               "cta_href": {
                 "type": "string",
-                "description": "CTA button link URL"
+                "description": "CTA button link URL",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
               },
               "cta_label": {
                 "type": "string",
-                "description": "CTA button label text"
+                "description": "CTA button label text",
+                "examples": [
+                  "Read more"
+                ]
               }
             },
             "required": [
@@ -238,28 +349,80 @@
                 "const": "classifieds"
               },
               "title": {
-                "type": "string"
+                "type": "string",
+                "examples": [
+                  "Newsletter Title"
+                ]
               },
               "description": {
-                "type": "string"
+                "type": "string",
+                "examples": [
+                  "<p>Example Description content.</p>"
+                ]
               },
               "containerStyles": {
                 "type": "object",
-                "additionalProperties": true
+                "additionalProperties": {
+                  "type": [
+                    "string",
+                    "number",
+                    "boolean",
+                    "null"
+                  ]
+                },
+                "examples": [
+                  {}
+                ]
               },
               "contentStyles": {
                 "type": "object",
-                "additionalProperties": true
+                "additionalProperties": {
+                  "type": [
+                    "string",
+                    "number",
+                    "boolean",
+                    "null"
+                  ]
+                },
+                "examples": [
+                  {}
+                ]
               },
               "items": {
                 "type": "array",
                 "items": {
                   "type": "object",
                   "properties": {
-                    "title": {},
-                    "content": {},
-                    "link": {},
-                    "linkText": {}
+                    "title": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "examples": [
+                        "Newsletter Title"
+                      ]
+                    },
+                    "content": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "examples": [
+                        "<p>Example Content content.</p>"
+                      ]
+                    },
+                    "link": {
+                      "$ref": "#/definitions/authoredTrackedLink"
+                    },
+                    "linkText": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "examples": [
+                        "Read more →"
+                      ]
+                    }
                   },
                   "additionalProperties": true
                 }
@@ -280,35 +443,59 @@
               },
               "view_in_browser_href": {
                 "type": "string",
-                "description": "View in browser link URL"
+                "description": "View in browser link URL",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
               },
               "view_in_browser_label": {
                 "type": "string",
-                "description": "View in browser link text"
+                "description": "View in browser link text",
+                "examples": [
+                  "View in browser link text"
+                ]
               },
               "publication_name": {
                 "type": "string",
-                "description": "Name of the publication (italicised in source)"
+                "description": "Name of the publication (italicised in source)",
+                "examples": [
+                  "Name of the publication (italicised in source)"
+                ]
               },
               "customer_care_href": {
                 "type": "string",
-                "description": "Customer Care link URL"
+                "description": "Customer Care link URL",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
               },
               "privacy_policy_href": {
                 "type": "string",
-                "description": "Privacy Policy link URL"
+                "description": "Privacy Policy link URL",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
               },
               "unsubscribe_href": {
                 "type": "string",
-                "description": "Unsubscribe link URL"
+                "description": "Unsubscribe link URL",
+                "examples": [
+                  "[unsubscribe]"
+                ]
               },
               "sender_address": {
                 "type": "string",
-                "description": "Physical mailing address of the sender"
+                "description": "Physical mailing address of the sender",
+                "examples": [
+                  "Physical mailing address of the sender"
+                ]
               },
               "copyright_line": {
                 "type": "string",
-                "description": "Copyright notice text"
+                "description": "Copyright notice text",
+                "examples": [
+                  "Copyright notice text"
+                ]
               }
             },
             "required": [
@@ -323,5 +510,75 @@
   "required": [
     "template",
     "sections"
-  ]
+  ],
+  "x-nfl-contract-version": 1,
+  "definitions": {
+    "authoredTrackedLink": {
+      "anyOf": [
+        {
+          "type": [
+            "string",
+            "null"
+          ],
+          "examples": [
+            "https://nearfuturelaboratory.com"
+          ]
+        },
+        {
+          "type": "object",
+          "properties": {
+            "href": {
+              "type": "string",
+              "examples": [
+                "https://nearfuturelaboratory.com"
+              ]
+            },
+            "label": {
+              "type": "string",
+              "examples": [
+                "Read more"
+              ]
+            },
+            "category": {
+              "type": "string",
+              "examples": [
+                "editorial"
+              ]
+            },
+            "intent": {
+              "type": "string",
+              "examples": [
+                "read"
+              ]
+            },
+            "role": {
+              "type": "string",
+              "examples": [
+                "primary"
+              ]
+            },
+            "interest": {
+              "type": "string",
+              "examples": [
+                "design"
+              ]
+            },
+            "interests": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "examples": [
+                  "design"
+                ]
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "href"
+          ]
+        }
+      ]
+    }
+  }
 }

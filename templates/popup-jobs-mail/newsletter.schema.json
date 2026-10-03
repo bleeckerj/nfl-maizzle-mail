@@ -1,45 +1,87 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "required": ["template", "title", "jobPopupMail"],
+  "required": [
+    "template",
+    "title",
+    "jobPopupMail"
+  ],
   "properties": {
     "template": {
+      "type": "string",
       "const": "popup-jobs-mail"
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "examples": [
+        "Newsletter Title"
+      ]
     },
     "preheader": {
-      "type": "string"
+      "type": "string",
+      "examples": [
+        "Short preview text that appears in email clients"
+      ]
     },
     "jobPopupMail": {
       "type": "object",
-      "required": ["rendererKey", "targetUrl", "company", "title", "brand", "sections"],
+      "required": [
+        "rendererKey",
+        "targetUrl",
+        "company",
+        "title",
+        "brand",
+        "sections"
+      ],
       "properties": {
         "rendererKey": {
-          "type": "string"
+          "type": "string",
+          "examples": [
+            "Example Renderer key"
+          ]
         },
         "targetUrl": {
-          "type": "string"
+          "type": "string",
+          "examples": [
+            "https://nearfuturelaboratory.com"
+          ]
         },
         "company": {
-          "type": "string"
+          "type": "string",
+          "examples": [
+            "Example Company"
+          ]
         },
         "title": {
-          "type": "string"
+          "type": "string",
+          "examples": [
+            "Newsletter Title"
+          ]
         },
         "metaLine": {
-          "type": "string"
+          "type": "string",
+          "examples": [
+            "Example Meta line"
+          ]
         },
         "brand": {
-          "type": "object"
+          "type": "object",
+          "examples": [
+            {}
+          ]
         },
         "sections": {
-          "type": "array"
+          "type": "array",
+          "examples": [
+            [
+              "Example Sections"
+            ]
+          ]
         }
       },
       "additionalProperties": true
     }
   },
-  "additionalProperties": true
+  "additionalProperties": true,
+  "x-nfl-contract-version": 1
 }

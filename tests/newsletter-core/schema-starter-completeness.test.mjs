@@ -45,7 +45,7 @@ test('dense-discovery starters materialize the complete current schema', () => {
   assert.equal(Object.prototype.hasOwnProperty.call(payload, '$schema'), false);
   assert.equal(Object.prototype.hasOwnProperty.call(schema.properties, '$schema'), false);
 
-  for (const propertyName of Object.keys(schema.properties)) {
+  for (const propertyName of Object.keys(schema.properties).filter(key => !schema.properties[key].readOnly)) {
     assert.ok(
       Object.prototype.hasOwnProperty.call(payload, propertyName),
       `starter is missing schema property ${propertyName}`,

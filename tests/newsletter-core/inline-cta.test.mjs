@@ -266,3 +266,65 @@ test('dense-discovery CTA starters omit inert fields and validate against the te
     assert.equal(Object.hasOwn(cta, field), false, `${template}: ${field}`);
   }
 });
+
+for (const template of ['brain-dead-template', 'near-future-lab-daily-headlines']) {
+  test(`${template} renders continuous CTA controls without losing copy across sections`, async () => {
+    const dir = mkdtempSync(path.join(os.tmpdir(), 'cta-contract-'));
+    const sections = [0, '7.5px', '43'].map((space, index) => ({
+      type: 'inline_cta', statement: `First ${index}.\n\nSecond ${index}.`,
+      space_top: space, space_bottom: space, border_width: space, border_radius: space,
+      font_family: 'Arial, Helvetica, sans-serif', background: '#ffffff',
+      primaryAction: { label: `Action ${index}`, url: `mailto:action${index}@example.com` },
+    }));
+    const source = { template, title: 'CTA contract', sections, footer: { footerCta: { enabled: false } } };
+    try {
+      assertSchemaValid(template, source);
+      const html = await renderTemplate(template, source, dir);
+      const doc = new JSDOM(html).window.document;
+      const cards = [...doc.querySelectorAll('[data-content-slot="inline_cta"]')];
+      assert.equal(cards.length, 3);
+      for (let index = 0; index < cards.length; index++) {
+        const card = cards[index];
+        const expected = `${parseFloat(sections[index].space_top)}px`;
+        assert.equal(card.style.borderTopWidth, expected);
+        assert.equal(card.style.borderRadius, expected);
+        assert.match(card.textContent, new RegExp(`First ${index}.*Second ${index}`, 's'));
+        assert.equal(card.querySelectorAll('br').length, 2);
+        assert.match(card.querySelector('a').style.fontFamily, /Arial, Helvetica, sans-serif/);
+        if (template === 'brain-dead-template') {
+          assert.equal(card.parentElement.style.paddingTop, expected);
+          assert.equal(card.parentElement.style.paddingBottom, expected);
+        } else {
+          const top = card.previousElementSibling.querySelector('[data-inline-cta-space="top"]');
+          const bottom = card.nextElementSibling.querySelector('[data-inline-cta-space="bottom"]');
+          assert.equal(top.style.paddingTop, expected);
+          assert.equal(bottom.style.paddingTop, expected);
+        }
+      }
+      assert.doesNotMatch(html, /pxpx|NaNpx/);
+    } finally { rmSync(dir, { recursive: true, force: true }); }
+  });
+}
+
+test('Daily Headlines keeps share, tracking, and CTA sections in authored order', async () => {
+  const dir = mkdtempSync(path.join(os.tmpdir(), 'daily-mixed-sections-'));
+  const template = 'near-future-lab-daily-headlines';
+  const source = { template, title: 'Mixed sections', sections: [
+    { type: 'tracking_pixel_row', pixels_html: '<td data-test-tracking="present"></td>' },
+    { type: 'share_this', statement: 'Share fixture', online_url: 'https://example.com/issue', space_top: 0, space_bottom: '9.25px' },
+    { type: 'inline_cta', statement: 'CTA fixture', primaryAction: { label: 'Read', url: 'mailto:cta@example.com' } },
+  ] };
+  try {
+    assertSchemaValid(template, source);
+    const html = await renderTemplate(template, source, dir);
+    const doc = new JSDOM(html).window.document;
+    const share = doc.querySelector('[data-content-slot="share_this"]');
+    assert.ok(share);
+    assert.ok(doc.querySelector('[data-test-tracking="present"]'));
+    assert.match(share.textContent, /Share fixture/);
+    assert.equal(share.previousElementSibling.querySelector('td').style.paddingTop, '0px');
+    assert.equal(share.nextElementSibling.querySelector('td').style.paddingTop, '9.25px');
+    assert.ok(html.indexOf('data-test-tracking') < html.indexOf('data-content-slot="share_this"'));
+    assert.ok(html.indexOf('data-content-slot="share_this"') < html.indexOf('data-content-slot="inline_cta"'));
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});

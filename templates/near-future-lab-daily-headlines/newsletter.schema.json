@@ -9,31 +9,49 @@
       "const": "near-future-lab-daily-headlines"
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "examples": [
+        "Newsletter Title"
+      ]
     },
     "preheader": {
       "type": "string",
-      "description": "Short inbox preview text shown by email clients."
+      "description": "Short inbox preview text shown by email clients.",
+      "examples": [
+        "Short preview text that appears in email clients"
+      ]
     },
     "ogImage": {
       "type": "string",
       "format": "uri",
-      "description": "Hosted image URL used for the public newsletter unfurl preview."
+      "description": "Hosted image URL used for the public newsletter unfurl preview.",
+      "examples": [
+        "https://fpoimg.com/800x600?text=Og%20image&bg_color=e6e6e6&text_color=4FAAAA"
+      ]
     },
     "ogImageAltText": {
       "type": "string",
       "minLength": 1,
-      "description": "Accessible description of the public newsletter unfurl image."
+      "description": "Accessible description of the public newsletter unfurl image.",
+      "examples": [
+        "Open graph preview image for this newsletter"
+      ]
     },
     "webPublicationStatus": {
       "type": "string",
-      "enum": ["draft", "published"],
+      "enum": [
+        "draft",
+        "published"
+      ],
       "default": "draft",
       "description": "Controls whether the built issue may be exposed on the public newsletter site."
     },
     "sectionStylesFile": {
       "type": "string",
-      "description": "Template-owned section style configuration path."
+      "description": "Template-owned section style configuration path.",
+      "examples": [
+        "templates/near-future-lab-daily-headlines/section-styles.json"
+      ]
     },
     "sections": {
       "type": "array",
@@ -44,807 +62,1361 @@
           },
           {
             "oneOf": [
-          {
-            "type": "object",
-            "title": "Masthead Ad Bar",
-            "description": "Top-of-email bar with a 'View in browser' link and an inline ad image (desktop + mobile variants).",
-            "properties": {
-              "type": {
-                "const": "masthead_ad_bar"
-              },
-              "view_in_browser_href": {
-                "type": "string",
-                "description": "Legacy URL for the 'View in browser' link. Prefer viewOnlineLink for new content."
-              },
-              "viewOnlineLink": {
-                "$ref": "#/definitions/trackedLink",
-                "description": "Tracked URL for the 'View in browser' link."
-              },
-              "ad_href": {
-                "type": "string",
-                "description": "Legacy URL the ad image links to. Prefer sponsorLink for new content."
-              },
-              "sponsorLink": {
-                "$ref": "#/definitions/trackedLink",
-                "description": "Tracked sponsor URL the ad image links to."
-              },
-              "ad_src_desktop": {
-                "type": "string",
-                "description": "Desktop ad image src (600px)"
-              },
-              "ad_src_mobile": {
-                "type": "string",
-                "description": "Mobile ad image src (480px)"
-              }
-            },
-            "required": [
-              "type"
-            ],
-            "additionalProperties": true
-          },
-          {
-            "type": "object",
-            "title": "Newsletter Masthead",
-            "description": "Publication logo, newsletter title image, and dateline. Top identity block for the email.",
-            "properties": {
-              "type": {
-                "const": "newsletter_masthead"
-              },
-              "logo_href": {
-                "type": "string",
-                "description": "Legacy URL for the publisher logo link. Prefer logoLink for new content."
-              },
-              "logoLink": {
-                "$ref": "#/definitions/trackedLink",
-                "description": "Tracked URL for the publisher logo image; the newsletter title image uses viewOnlineLink."
-              },
-              "viewOnlineLink": {
-                "$ref": "#/definitions/trackedLink",
-                "description": "Destination for the newsletter title image and the View online and Share this issue links. Authored URLs and tracked-link metadata are preserved. Public builds fill missing or placeholder links from the issue id when available."
-              },
-              "logo_src": {
-                "type": "string",
-                "description": "Near Future Laboratory wordmark image src"
-              },
-              "logo_alt": {
-                "type": "string",
-                "description": "Alt text for Near Future Laboratory wordmark"
-              },
-              "logo_width": {
-                "type": "number",
-                "description": "Rendered masthead logo width in pixels. Defaults to 190 for a reserved reference-style masthead."
-              },
-              "title_src": {
-                "type": "string",
-                "description": "Newsletter title image src; links to viewOnlineLink."
-              },
-              "title_alt": {
-                "type": "string",
-                "description": "Alt text for newsletter title image"
-              },
-              "title_width": {
-                "type": "number",
-                "description": "Rendered newsletter title image width in pixels. Defaults to 300."
-              },
-              "dateline": {
-                "type": "string",
-                "description": "Date and time string"
-              }
-            },
-            "required": [
-              "type"
-            ],
-            "additionalProperties": true
-          },
-          {
-            "type": "object",
-            "title": "Intro Statement",
-            "description": "A short introductory editor's note or framing statement rendered below the masthead and before article groups.",
-            "properties": {
-              "type": {
-                "const": "intro_statement"
-              },
-              "label": {
-                "type": "string",
-                "description": "Optional small uppercase label shown above the statement"
-              },
-              "statement": {
-                "type": "string",
-                "description": "Introductory statement. May include simple <p>, <em>, <strong>, and <a href=\"\"> HTML."
-              },
-              "statement_html": {
-                "type": "string",
-                "description": "Optional rich HTML statement. If present, this is rendered instead of statement. Only simple <p>, <em>, <strong>, and <a href=\"\"> HTML is preserved."
-              },
-              "statement_rendered_html": {
-                "type": "string",
-                "description": "Build-generated sanitized HTML derived from statement_html or an HTML-bearing statement."
-              },
-              "show_bottom_rule": {
-                "type": "boolean",
-                "description": "Render a light divider after the statement"
-              }
-            },
-            "required": [
-              "type"
-            ],
-            "additionalProperties": true
-          },
-          {
-            "type": "object",
-            "title": "Ad Block",
-            "description": "Inventory-backed ad card hydrated from nfl-editorial/src/content/ads.json. Commerce uses Compact Band: original image, live logo and price, optional rating strip, then sponsor. Supply items[0].adId.",
-            "properties": {
-              "type": {
-                "const": "ad-block"
-              },
-              "title": {
-                "type": "string",
-                "description": "Optional section title. If omitted, the inventory ad title may be promoted during hydration."
-              },
-              "description": {
-                "type": "string",
-                "description": "Optional issue-specific context rendered above the ad card."
-              },
-              "show_bottom_rule": {
-                "type": "boolean",
-                "description": "Render the light divider after the ad card. Defaults to true when omitted."
-              },
-              "show_top_rule": {
-                "type": "boolean",
-                "description": "Render the light divider before the ad card. Defaults to true when omitted; set false when the preceding section already owns the boundary."
-              },
-              "items": {
-                "type": "array",
-                "minItems": 1,
-                "maxItems": 1,
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "adId": {
-                      "type": "string",
-                      "description": "Ad inventory id from nfl-editorial/src/content/ads.json."
-                    },
-                    "label": {
-                      "type": "string",
-                      "description": "Optional issue-specific label override."
-                    },
-                    "readMoreText": {
-                      "type": "string",
-                      "description": "Optional CTA label override."
-                    },
-                    "adRenderMode": {
-                      "type": "string",
-                      "enum": [
-                        "snapshot",
-                        "legacy"
-                      ]
-                    },
-                    "adSnapshotPreset": {
-                      "type": "string",
-                      "enum": [
-                        "native",
-                        "1x1",
-                        "4x5",
-                        "9x16"
-                      ]
-                    },
-                    "commerceLockup": {
-                      "type": "boolean",
-                      "description": "Legacy input retained for compatibility. Hydrated commerce ads use Compact Band and preserve the original image."
-                    }
+              {
+                "type": "object",
+                "title": "Masthead Ad Bar",
+                "description": "Top-of-email bar with a 'View in browser' link and an inline ad image (desktop + mobile variants).",
+                "properties": {
+                  "type": {
+                    "const": "masthead_ad_bar"
                   },
-                  "required": [
+                  "view_in_browser_href": {
+                    "type": "string",
+                    "description": "Legacy URL for the 'View in browser' link. Prefer viewOnlineLink for new content.",
+                    "examples": [
+                      "https://nearfuturelaboratory.com"
+                    ]
+                  },
+                  "viewOnlineLink": {
+                    "$ref": "#/definitions/trackedLink",
+                    "description": "Tracked URL for the 'View in browser' link."
+                  },
+                  "ad_href": {
+                    "type": "string",
+                    "description": "Legacy URL the ad image links to. Prefer sponsorLink for new content.",
+                    "examples": [
+                      "https://nearfuturelaboratory.com"
+                    ]
+                  },
+                  "sponsorLink": {
+                    "$ref": "#/definitions/trackedLink",
+                    "description": "Tracked sponsor URL the ad image links to."
+                  },
+                  "ad_src_desktop": {
+                    "type": "string",
+                    "description": "Desktop ad image src (600px)",
+                    "examples": [
+                      "https://fpoimg.com/800x600?text=Ad%20src%20desktop&bg_color=e6e6e6&text_color=4FAAAA"
+                    ]
+                  },
+                  "ad_src_mobile": {
+                    "type": "string",
+                    "description": "Mobile ad image src (480px)",
+                    "examples": [
+                      "https://fpoimg.com/800x600?text=Ad%20src%20mobile&bg_color=e6e6e6&text_color=4FAAAA"
+                    ]
+                  }
+                },
+                "required": [
+                  "type"
+                ],
+                "additionalProperties": true
+              },
+              {
+                "type": "object",
+                "title": "Newsletter Masthead",
+                "description": "Publication logo, newsletter title image, and dateline. Top identity block for the email.",
+                "properties": {
+                  "type": {
+                    "const": "newsletter_masthead"
+                  },
+                  "logo_href": {
+                    "type": "string",
+                    "description": "Legacy URL for the publisher logo link. Prefer logoLink for new content.",
+                    "examples": [
+                      "https://nearfuturelaboratory.com"
+                    ]
+                  },
+                  "logoLink": {
+                    "$ref": "#/definitions/trackedLink",
+                    "description": "Tracked URL for the publisher logo image; the newsletter title image uses viewOnlineLink."
+                  },
+                  "viewOnlineLink": {
+                    "$ref": "#/definitions/trackedLink",
+                    "description": "Destination for the newsletter title image and the View online and Share this issue links. Authored URLs and tracked-link metadata are preserved. Public builds fill missing or placeholder links from the issue id when available."
+                  },
+                  "logo_src": {
+                    "type": "string",
+                    "description": "Near Future Laboratory wordmark image src",
+                    "examples": [
+                      "https://fpoimg.com/200x50?text=Logo%20src&bg_color=e6e6e6&text_color=4FAAAA"
+                    ]
+                  },
+                  "logo_alt": {
+                    "type": "string",
+                    "description": "Alt text for Near Future Laboratory wordmark",
+                    "examples": [
+                      "Image description for accessibility"
+                    ]
+                  },
+                  "logo_width": {
+                    "type": "number",
+                    "description": "Rendered masthead logo width in pixels. Defaults to 190 for a reserved reference-style masthead.",
+                    "examples": [
+                      200
+                    ]
+                  },
+                  "title_src": {
+                    "type": "string",
+                    "description": "Newsletter title image src; links to viewOnlineLink.",
+                    "examples": [
+                      "https://fpoimg.com/800x600?text=Title%20src&bg_color=e6e6e6&text_color=4FAAAA"
+                    ]
+                  },
+                  "title_alt": {
+                    "type": "string",
+                    "description": "Alt text for newsletter title image",
+                    "examples": [
+                      "Image description for accessibility"
+                    ]
+                  },
+                  "title_width": {
+                    "type": "number",
+                    "description": "Rendered newsletter title image width in pixels. Defaults to 300.",
+                    "examples": [
+                      600
+                    ]
+                  },
+                  "dateline": {
+                    "type": "string",
+                    "description": "Date and time string",
+                    "examples": [
+                      "January 1, 2026"
+                    ]
+                  }
+                },
+                "required": [
+                  "type"
+                ],
+                "additionalProperties": true
+              },
+              {
+                "type": "object",
+                "title": "Intro Statement",
+                "description": "A short introductory editor's note or framing statement rendered below the masthead and before article groups.",
+                "properties": {
+                  "type": {
+                    "const": "intro_statement"
+                  },
+                  "label": {
+                    "type": "string",
+                    "description": "Optional small uppercase label shown above the statement",
+                    "examples": [
+                      "Optional small uppercase label shown above the statement"
+                    ]
+                  },
+                  "statement": {
+                    "type": "string",
+                    "description": "Introductory statement. May include simple <p>, <em>, <strong>, and <a href=\"\"> HTML.",
+                    "examples": [
+                      "Introductory statement. May include simple <p>, <em>, <strong>, and <a href=\"\"> HTML."
+                    ]
+                  },
+                  "statement_html": {
+                    "type": "string",
+                    "description": "Optional rich HTML statement. If present, this is rendered instead of statement. Only simple <p>, <em>, <strong>, and <a href=\"\"> HTML is preserved.",
+                    "examples": [
+                      "<p>Example Statement content.</p>"
+                    ]
+                  },
+                  "statement_rendered_html": {
+                    "type": "string",
+                    "description": "Build-generated sanitized HTML derived from statement_html or an HTML-bearing statement.",
+                    "examples": [
+                      "<p>Example Statement rendered content.</p>"
+                    ]
+                  },
+                  "show_bottom_rule": {
+                    "type": "boolean",
+                    "description": "Render a light divider after the statement",
+                    "examples": [
+                      false
+                    ]
+                  }
+                },
+                "required": [
+                  "type"
+                ],
+                "additionalProperties": true
+              },
+              {
+                "type": "object",
+                "title": "Ad Block",
+                "description": "Inventory-backed ad card hydrated from nfl-editorial/src/content/ads.json. Commerce uses Compact Band: original image, live logo and price, optional rating strip, then sponsor. Supply items[0].adId.",
+                "properties": {
+                  "type": {
+                    "const": "ad-block"
+                  },
+                  "title": {
+                    "type": "string",
+                    "description": "Optional section title. If omitted, the inventory ad title may be promoted during hydration.",
+                    "examples": [
+                      "Newsletter Title"
+                    ]
+                  },
+                  "description": {
+                    "type": "string",
+                    "description": "Optional issue-specific context rendered above the ad card.",
+                    "examples": [
+                      "<p>Example Description content.</p>"
+                    ]
+                  },
+                  "show_bottom_rule": {
+                    "type": "boolean",
+                    "description": "Render the light divider after the ad card. Defaults to true when omitted.",
+                    "examples": [
+                      false
+                    ]
+                  },
+                  "show_top_rule": {
+                    "type": "boolean",
+                    "description": "Render the light divider before the ad card. Defaults to true when omitted; set false when the preceding section already owns the boundary.",
+                    "examples": [
+                      false
+                    ]
+                  },
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "adId": {
+                          "type": "string",
+                          "description": "Ad inventory id from nfl-editorial/src/content/ads.json.",
+                          "examples": [
+                            "example-ad-id"
+                          ]
+                        },
+                        "label": {
+                          "type": "string",
+                          "description": "Optional issue-specific label override.",
+                          "examples": [
+                            "Optional issue-specific label override."
+                          ]
+                        },
+                        "readMoreText": {
+                          "type": "string",
+                          "description": "Optional CTA label override.",
+                          "examples": [
+                            "Read more →"
+                          ]
+                        },
+                        "adRenderMode": {
+                          "type": "string",
+                          "enum": [
+                            "snapshot",
+                            "legacy"
+                          ]
+                        },
+                        "adSnapshotPreset": {
+                          "type": "string",
+                          "enum": [
+                            "native",
+                            "1x1",
+                            "4x5",
+                            "9x16"
+                          ]
+                        },
+                        "commerceLockup": {
+                          "type": "boolean",
+                          "description": "Legacy input retained for compatibility. Hydrated commerce ads use Compact Band and preserve the original image.",
+                          "examples": [
+                            false
+                          ]
+                        }
+                      },
+                      "required": [
+                        "adId"
+                      ],
+                      "additionalProperties": true
+                    }
+                  }
+                },
+                "required": [
+                  "type",
+                  "items"
+                ],
+                "additionalProperties": true,
+                "x-nfl-authoring": {
+                  "sectionFields": [
+                    "type",
+                    "title",
+                    "description",
+                    "show_top_rule",
+                    "show_bottom_rule",
+                    "items"
+                  ],
+                  "itemFields": [
                     "adId"
                   ],
-                  "additionalProperties": true
+                  "requiredSectionFields": [
+                    "type",
+                    "items"
+                  ],
+                  "requiredItemFields": [
+                    "adId"
+                  ]
                 }
-              }
-            },
-            "required": [
-              "type",
-              "items"
-            ],
-            "additionalProperties": true
-          },
-          {
-            "type": "object",
-            "title": "Short Take",
-            "description": "Registry-backed Short Take hydrated from nfl-editorial/src/content/shortTakes.json.",
-            "properties": {
-              "type": {
-                "const": "short-take"
               },
-              "containerStyles": {
-                "$ref": "#/definitions/sectionContainerStyles"
-              },
-              "items": {
-                "type": "array",
-                "minItems": 1,
-                "maxItems": 1,
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "shortTakeId": {
-                      "type": "string",
-                      "pattern": "\\S",
-                      "description": "Short Take id from nfl-editorial/src/content/shortTakes.json."
-                    }
+              {
+                "type": "object",
+                "title": "Short Take",
+                "description": "Registry-backed Short Take hydrated from nfl-editorial/src/content/shortTakes.json.",
+                "properties": {
+                  "type": {
+                    "const": "short-take"
                   },
-                  "required": [
+                  "containerStyles": {
+                    "$ref": "#/definitions/sectionContainerStyles"
+                  },
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 1,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "shortTakeId": {
+                          "type": "string",
+                          "pattern": "\\S",
+                          "description": "Short Take id from nfl-editorial/src/content/shortTakes.json.",
+                          "examples": [
+                            "example-short-take-id"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "shortTakeId"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "type",
+                  "items"
+                ],
+                "additionalProperties": false,
+                "x-nfl-authoring": {
+                  "sectionFields": [
+                    "type",
+                    "title",
+                    "description",
+                    "items"
+                  ],
+                  "itemFields": [
                     "shortTakeId"
                   ],
-                  "additionalProperties": false
+                  "requiredSectionFields": [
+                    "type",
+                    "items"
+                  ],
+                  "requiredItemFields": [
+                    "shortTakeId"
+                  ]
                 }
-              }
-            },
-            "required": [
-              "type",
-              "items"
-            ],
-            "additionalProperties": false
-          },
-          {
-            "type": "object",
-            "title": "Calendar Event",
-            "description": "Generated add-to-calendar card. The build writes an .ics file and injects calendarLink.",
-            "properties": {
-              "type": { "const": "calendar_event" },
-              "id": { "type": "string" },
-              "slug": { "type": "string" },
-              "eyebrow": { "type": "string" },
-              "title": { "type": "string" },
-              "subtitle": { "type": "string" },
-              "startsAt": { "type": "string" },
-              "start": { "type": "string" },
-              "date": { "type": "string" },
-              "endsAt": { "type": "string" },
-              "end": { "type": "string" },
-              "durationMinutes": { "type": "number" },
-              "duration": { "type": "number" },
-              "timezone": { "type": "string" },
-              "location": { "type": "string" },
-              "description": { "type": "string" },
-              "url": { "$ref": "#/definitions/trackedLink" },
-              "link": { "$ref": "#/definitions/trackedLink" },
-              "eventUrl": { "$ref": "#/definitions/trackedLink" },
-              "calendarLink": { "$ref": "#/definitions/trackedLink" },
-              "eventLink": { "$ref": "#/definitions/trackedLink" },
-              "displayDate": { "type": "string" },
-              "displayTime": { "type": "string" },
-              "displayWeekday": { "type": "string" },
-              "calendarLabel": { "type": "string" },
-              "eventLabel": { "type": "string" },
-              "containerStyles": {
-                "$ref": "#/definitions/sectionContainerStyles"
               },
-              "contentStyles": {
-                "type": ["object", "null"],
+              {
+                "type": "object",
+                "title": "Calendar Event",
+                "description": "Generated add-to-calendar card. The build writes an .ics file and injects calendarLink.",
+                "properties": {
+                  "type": {
+                    "const": "calendar_event"
+                  },
+                  "id": {
+                    "type": "string",
+                    "examples": [
+                      "example-id"
+                    ]
+                  },
+                  "slug": {
+                    "type": "string",
+                    "examples": [
+                      "example-item"
+                    ]
+                  },
+                  "eyebrow": {
+                    "type": "string",
+                    "examples": [
+                      "Example Eyebrow"
+                    ]
+                  },
+                  "title": {
+                    "type": "string",
+                    "examples": [
+                      "Newsletter Title"
+                    ]
+                  },
+                  "subtitle": {
+                    "type": "string",
+                    "examples": [
+                      "Example Subtitle"
+                    ]
+                  },
+                  "startsAt": {
+                    "type": "string",
+                    "examples": [
+                      "2026-01-01T10:00:00-08:00"
+                    ]
+                  },
+                  "start": {
+                    "type": "string",
+                    "examples": [
+                      "2026-01-01T10:00:00-08:00"
+                    ]
+                  },
+                  "date": {
+                    "type": "string",
+                    "examples": [
+                      "2026-01-01"
+                    ]
+                  },
+                  "endsAt": {
+                    "type": "string",
+                    "examples": [
+                      "2026-01-01T11:00:00-08:00"
+                    ]
+                  },
+                  "end": {
+                    "type": "string",
+                    "examples": [
+                      "2026-01-01T11:00:00-08:00"
+                    ]
+                  },
+                  "durationMinutes": {
+                    "type": "number",
+                    "examples": [
+                      60
+                    ]
+                  },
+                  "duration": {
+                    "type": "number",
+                    "examples": [
+                      60
+                    ]
+                  },
+                  "timezone": {
+                    "type": "string",
+                    "examples": [
+                      "America/Los_Angeles"
+                    ]
+                  },
+                  "location": {
+                    "type": "string",
+                    "examples": [
+                      "Example Location"
+                    ]
+                  },
+                  "description": {
+                    "type": "string",
+                    "examples": [
+                      "<p>Example Description content.</p>"
+                    ]
+                  },
+                  "url": {
+                    "$ref": "#/definitions/trackedLink"
+                  },
+                  "link": {
+                    "$ref": "#/definitions/trackedLink"
+                  },
+                  "eventUrl": {
+                    "$ref": "#/definitions/trackedLink"
+                  },
+                  "calendarLink": {
+                    "$ref": "#/definitions/trackedLink"
+                  },
+                  "eventLink": {
+                    "$ref": "#/definitions/trackedLink"
+                  },
+                  "displayDate": {
+                    "type": "string",
+                    "examples": [
+                      "January 1, 2026"
+                    ]
+                  },
+                  "displayTime": {
+                    "type": "string",
+                    "examples": [
+                      "10:00 AM"
+                    ]
+                  },
+                  "displayWeekday": {
+                    "type": "string",
+                    "examples": [
+                      "Thursday"
+                    ]
+                  },
+                  "calendarLabel": {
+                    "type": "string",
+                    "examples": [
+                      "Example Calendar label"
+                    ]
+                  },
+                  "eventLabel": {
+                    "type": "string",
+                    "examples": [
+                      "Example Event label"
+                    ]
+                  },
+                  "containerStyles": {
+                    "$ref": "#/definitions/sectionContainerStyles"
+                  },
+                  "contentStyles": {
+                    "type": [
+                      "object",
+                      "null"
+                    ],
+                    "additionalProperties": true,
+                    "examples": [
+                      {}
+                    ]
+                  },
+                  "linkStyles": {
+                    "type": [
+                      "object",
+                      "null"
+                    ],
+                    "additionalProperties": true,
+                    "examples": [
+                      {}
+                    ]
+                  },
+                  "headingStyles": {
+                    "type": [
+                      "object",
+                      "null"
+                    ],
+                    "additionalProperties": true,
+                    "examples": [
+                      {}
+                    ]
+                  },
+                  "labelStylesInline": {
+                    "type": "string",
+                    "readOnly": true,
+                    "description": "Generated during rendering; omit from authored source."
+                  },
+                  "headingStylesInline": {
+                    "type": "string",
+                    "readOnly": true,
+                    "description": "Generated during rendering; omit from authored source."
+                  },
+                  "linkStylesInline": {
+                    "type": "string",
+                    "readOnly": true,
+                    "description": "Generated during rendering; omit from authored source."
+                  }
+                },
+                "required": [
+                  "type"
+                ],
                 "additionalProperties": true
               },
-              "linkStyles": {
-                "type": ["object", "null"],
-                "additionalProperties": true
-              },
-              "headingStyles": {
-                "type": ["object", "null"],
-                "additionalProperties": true
-              },
-              "labelStylesInline": { "type": "string" },
-              "headingStylesInline": { "type": "string" },
-              "linkStylesInline": { "type": "string" }
-            },
-            "required": [
-              "type"
-            ],
-            "additionalProperties": true
-          },
-          {
-            "type": "object",
-            "title": "Speculative Job",
-            "description": "Canonical-job-backed Tomorrow's Jobs Today section with a shared header and optional full-width media card.",
-            "properties": {
-              "type": {
-                "const": "speculative-job"
-              },
-              "title": {
-                "type": "string",
-                "minLength": 1
-              },
-              "section_label": {
-                "type": "string",
-                "minLength": 1
-              },
-              "containerStyles": {
-                "$ref": "#/definitions/speculativeJobSurfaceStyles"
-              },
-              "items": {
-                "type": "array",
-                "minItems": 1,
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "jobRef": {
-                      "type": "string",
-                      "pattern": "^[^/]+/[^/]+$"
-                    },
-                    "cardStyles": {
-                      "$ref": "#/definitions/speculativeJobSurfaceStyles"
-                    },
-                    "contentStyles": {
+              {
+                "type": "object",
+                "title": "Speculative Job",
+                "description": "Canonical-job-backed Tomorrow's Jobs Today section with a shared header and optional full-width media card.",
+                "properties": {
+                  "type": {
+                    "const": "speculative-job"
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 1,
+                    "examples": [
+                      "Newsletter Title"
+                    ]
+                  },
+                  "section_label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "examples": [
+                      "Example Section label"
+                    ]
+                  },
+                  "containerStyles": {
+                    "$ref": "#/definitions/speculativeJobSurfaceStyles"
+                  },
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
                       "type": "object",
+                      "properties": {
+                        "jobRef": {
+                          "type": "string",
+                          "pattern": "^[^/]+/[^/]+$",
+                          "examples": [
+                            "jobs/example-role"
+                          ]
+                        },
+                        "cardStyles": {
+                          "$ref": "#/definitions/speculativeJobSurfaceStyles"
+                        },
+                        "contentStyles": {
+                          "type": "object",
+                          "additionalProperties": {
+                            "type": [
+                              "string",
+                              "number",
+                              "boolean",
+                              "null"
+                            ]
+                          },
+                          "examples": [
+                            {}
+                          ]
+                        },
+                        "kicker": {
+                          "type": "string",
+                          "examples": [
+                            "Example Kicker"
+                          ]
+                        },
+                        "headline": {
+                          "type": "string",
+                          "examples": [
+                            "Example Headline"
+                          ]
+                        },
+                        "lede": {
+                          "type": "string",
+                          "examples": [
+                            "Example Lede"
+                          ]
+                        },
+                        "cta_label": {
+                          "type": "string",
+                          "examples": [
+                            "Read more"
+                          ]
+                        },
+                        "sponsor": {
+                          "type": "string",
+                          "examples": [
+                            "Example Sponsor"
+                          ]
+                        },
+                        "companyLogo": {
+                          "type": [
+                            "object",
+                            "null"
+                          ],
+                          "required": [
+                            "url",
+                            "altText"
+                          ],
+                          "properties": {
+                            "url": {
+                              "type": "string",
+                              "format": "uri",
+                              "examples": [
+                                "https://nearfuturelaboratory.com"
+                              ]
+                            },
+                            "altText": {
+                              "type": "string",
+                              "minLength": 1,
+                              "examples": [
+                                "Image description for accessibility"
+                              ]
+                            }
+                          },
+                          "additionalProperties": false
+                        },
+                        "link": {
+                          "$ref": "#/definitions/trackedLink"
+                        },
+                        "media": {
+                          "type": [
+                            "object",
+                            "null"
+                          ],
+                          "properties": {
+                            "src": {
+                              "type": "string",
+                              "format": "uri",
+                              "examples": [
+                                "https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA"
+                              ]
+                            },
+                            "altText": {
+                              "type": "string",
+                              "minLength": 1,
+                              "examples": [
+                                "Image description for accessibility"
+                              ]
+                            },
+                            "width": {
+                              "type": "number",
+                              "exclusiveMinimum": 0,
+                              "examples": [
+                                600
+                              ]
+                            },
+                            "height": {
+                              "type": "number",
+                              "exclusiveMinimum": 0,
+                              "examples": [
+                                400
+                              ]
+                            },
+                            "aspectRatio": {
+                              "type": "string",
+                              "minLength": 1,
+                              "examples": [
+                                "4 / 3"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "src",
+                            "altText"
+                          ],
+                          "additionalProperties": false
+                        }
+                      },
+                      "required": [
+                        "jobRef"
+                      ],
                       "additionalProperties": true
-                    },
-                    "kicker": { "type": "string" },
-                    "headline": { "type": "string" },
-                    "lede": { "type": "string" },
-                    "cta_label": { "type": "string" },
-                    "sponsor": { "type": "string" },
-                    "companyLogo": {
-                      "type": ["object", "null"],
-                      "required": ["url", "altText"],
+                    }
+                  }
+                },
+                "required": [
+                  "type",
+                  "items"
+                ],
+                "additionalProperties": true
+              },
+              {
+                "type": "object",
+                "title": "Section Article Group",
+                "description": "A named news section (e.g. Top News, World, U.S., Politics) with a bold section heading and 1–5 article cards. Articles may include an optional destination link.",
+                "properties": {
+                  "type": {
+                    "const": "section_article_group"
+                  },
+                  "section_label": {
+                    "type": "string",
+                    "description": "Section heading text (e.g. 'Top News', 'World')",
+                    "examples": [
+                      "Section heading text (e.g. 'Top News', 'World')"
+                    ]
+                  },
+                  "articleContainerStyles": {
+                    "$ref": "#/definitions/articleContainerStyles",
+                    "description": "Optional surface styles applied to every article card in this group. An individual article may override them with the same field."
+                  },
+                  "articleContentStyles": {
+                    "$ref": "#/definitions/articleContentStyles",
+                    "description": "Optional inherited typography and text color for article kicker, headline, and lede. An individual article may override it with the same field."
+                  },
+                  "articleHeadingStyles": {
+                    "$ref": "#/definitions/articleContentStyles",
+                    "description": "Optional headline-specific typography and color for article cards. An individual article may override it with the same field."
+                  },
+                  "articleLinkStyles": {
+                    "$ref": "#/definitions/articleContentStyles",
+                    "description": "Optional link typography, color, and decoration for article cards. An individual article may override it with the same field."
+                  },
+                  "articles": {
+                    "type": "array",
+                    "description": "Structured article rows rendered with the Near Future Laboratory Daily Headlines table layout and inline font styles.",
+                    "items": {
+                      "type": "object",
                       "properties": {
-                        "url": { "type": "string", "format": "uri" },
-                        "altText": { "type": "string", "minLength": 1 }
+                        "href": {
+                          "type": "string",
+                          "description": "Optional legacy article URL. Prefer link for new content. Omit both href and link for a non-interactive article card.",
+                          "examples": [
+                            "https://nearfuturelaboratory.com"
+                          ]
+                        },
+                        "link": {
+                          "$ref": "#/definitions/trackedLink",
+                          "description": "Optional tracked article URL. Omit both link and href for a non-interactive article card."
+                        },
+                        "image_src": {
+                          "type": "string",
+                          "description": "Thumbnail image URL",
+                          "examples": [
+                            "https://fpoimg.com/800x600?text=Image%20src&bg_color=e6e6e6&text_color=4FAAAA"
+                          ]
+                        },
+                        "image_alt": {
+                          "type": "string",
+                          "description": "Thumbnail alt text",
+                          "examples": [
+                            "Image description for accessibility"
+                          ]
+                        },
+                        "article_layout": {
+                          "type": "string",
+                          "enum": [
+                            "row",
+                            "feature"
+                          ],
+                          "description": "Optional presentation override. row (default) places the image right of copy on wide screens and above it on mobile, with any CTA after the copy; feature renders a full-width image above the copy at every width."
+                        },
+                        "articleContainerStyles": {
+                          "$ref": "#/definitions/articleContainerStyles",
+                          "description": "Optional surface styles for this article only, overriding the section articleContainerStyles."
+                        },
+                        "articleContentStyles": {
+                          "$ref": "#/definitions/articleContentStyles",
+                          "description": "Optional typography and text color for this article only, overriding the section articleContentStyles."
+                        },
+                        "articleHeadingStyles": {
+                          "$ref": "#/definitions/articleContentStyles",
+                          "description": "Optional headline typography and color for this article only, overriding the section articleHeadingStyles."
+                        },
+                        "articleLinkStyles": {
+                          "$ref": "#/definitions/articleContentStyles",
+                          "description": "Optional link typography, color, and decoration for this article only, overriding the section articleLinkStyles."
+                        },
+                        "kicker": {
+                          "type": "string",
+                          "description": "Optional byline, columnist name, or article label shown above the headline",
+                          "examples": [
+                            "Optional byline, columnist name, or article label shown above the headline"
+                          ]
+                        },
+                        "headline": {
+                          "type": "string",
+                          "description": "Article headline",
+                          "examples": [
+                            "Article headline"
+                          ]
+                        },
+                        "lede": {
+                          "type": "string",
+                          "description": "Article summary/deck text",
+                          "examples": [
+                            "Article summary/deck text"
+                          ]
+                        },
+                        "cta_label": {
+                          "type": "string",
+                          "description": "Optional visual CTA pill text. It remains visible as non-interactive text when the article has no link or href.",
+                          "examples": [
+                            "Read more"
+                          ]
+                        }
                       },
-                      "additionalProperties": false
+                      "required": [
+                        "headline"
+                      ],
+                      "additionalProperties": true
+                    }
+                  },
+                  "show_bottom_rule": {
+                    "type": "boolean",
+                    "description": "Render the bottom divider used before a following 'See more' link",
+                    "examples": [
+                      false
+                    ]
+                  },
+                  "more_link": {
+                    "type": "object",
+                    "description": "Optional section-level 'See more...' link rendered after the article rows.",
+                    "properties": {
+                      "href": {
+                        "type": "string",
+                        "description": "Legacy URL for the section-level follow-up link. Prefer link for new content.",
+                        "examples": [
+                          "https://nearfuturelaboratory.com"
+                        ]
+                      },
+                      "link": {
+                        "$ref": "#/definitions/trackedLink",
+                        "description": "Tracked URL for the section-level follow-up link"
+                      },
+                      "label": {
+                        "type": "string",
+                        "description": "Visible text for the section-level follow-up link",
+                        "examples": [
+                          "Visible text for the section-level follow-up link"
+                        ]
+                      }
                     },
-                    "link": { "$ref": "#/definitions/trackedLink" },
-                    "media": {
-                      "type": ["object", "null"],
+                    "required": [
+                      "label"
+                    ],
+                    "anyOf": [
+                      {
+                        "required": [
+                          "link"
+                        ]
+                      },
+                      {
+                        "required": [
+                          "href"
+                        ]
+                      }
+                    ],
+                    "additionalProperties": true
+                  },
+                  "articles_html": {
+                    "type": "string",
+                    "description": "Legacy fallback: full rendered HTML for all article rows within the section (HTML allowed)",
+                    "examples": [
+                      "<p>Example Articles content.</p>"
+                    ]
+                  }
+                },
+                "required": [
+                  "type"
+                ],
+                "additionalProperties": true
+              },
+              {
+                "type": "object",
+                "title": "Section 'See More' Link",
+                "description": "Legacy standalone paragraph with a single 'See more [section] news' link. Prefer section_article_group.more_link for new content.",
+                "properties": {
+                  "type": {
+                    "const": "section_more_link"
+                  },
+                  "link_href": {
+                    "type": "string",
+                    "description": "Legacy URL for the 'see more' link. Prefer link for new content.",
+                    "examples": [
+                      "https://nearfuturelaboratory.com"
+                    ]
+                  },
+                  "link": {
+                    "$ref": "#/definitions/trackedLink",
+                    "description": "Tracked URL for the 'see more' link"
+                  },
+                  "link_label": {
+                    "type": "string",
+                    "description": "Visible text of the link (e.g. 'See more world news')",
+                    "examples": [
+                      "Visible text of the link (e.g. 'See more world news')"
+                    ]
+                  }
+                },
+                "required": [
+                  "type"
+                ],
+                "additionalProperties": true
+              },
+              {
+                "type": "object",
+                "title": "Inline Ad Block",
+                "description": "Mid- or end-of-email inline advertisement with a small label image, a desktop ad image and a hidden mobile ad image.",
+                "properties": {
+                  "type": {
+                    "const": "inline_ad_block"
+                  },
+                  "label_src": {
+                    "type": "string",
+                    "description": "Small 'Ad' label image src",
+                    "examples": [
+                      "https://fpoimg.com/800x600?text=Label%20src&bg_color=e6e6e6&text_color=4FAAAA"
+                    ]
+                  },
+                  "ad_href": {
+                    "type": "string",
+                    "description": "Legacy URL the ad images link to. Prefer sponsorLink for new content.",
+                    "examples": [
+                      "https://nearfuturelaboratory.com"
+                    ]
+                  },
+                  "sponsorLink": {
+                    "$ref": "#/definitions/trackedLink",
+                    "description": "Tracked sponsor URL the ad images link to."
+                  },
+                  "ad_src_desktop": {
+                    "type": "string",
+                    "description": "Desktop ad image src (600px)",
+                    "examples": [
+                      "https://fpoimg.com/800x600?text=Ad%20src%20desktop&bg_color=e6e6e6&text_color=4FAAAA"
+                    ]
+                  },
+                  "ad_src_mobile": {
+                    "type": "string",
+                    "description": "Mobile ad image src (480px)",
+                    "examples": [
+                      "https://fpoimg.com/800x600?text=Ad%20src%20mobile&bg_color=e6e6e6&text_color=4FAAAA"
+                    ]
+                  }
+                },
+                "required": [
+                  "type"
+                ],
+                "additionalProperties": true
+              },
+              {
+                "type": "object",
+                "title": "Tracking Pixel Row",
+                "description": "Hidden div containing a row of tiny 2×6 tracking/preheader pixel images, aria-hidden.",
+                "properties": {
+                  "type": {
+                    "const": "tracking_pixel_row"
+                  },
+                  "pixels_html": {
+                    "type": "string",
+                    "description": "Full HTML of all pixel <img> elements (HTML allowed)",
+                    "examples": [
+                      "<p>Example Pixels content.</p>"
+                    ]
+                  }
+                },
+                "required": [
+                  "type"
+                ],
+                "additionalProperties": true
+              },
+              {
+                "type": "object",
+                "title": "Share This",
+                "description": "Slim 'share this issue' CTA bar (tinted, like the footer CTA). A short statement plus a 'Forward by email' button and an optional 'Open online' button. All copy is configurable; sensible defaults render when omitted.",
+                "properties": {
+                  "type": {
+                    "const": "share_this"
+                  },
+                  "eyebrow": {
+                    "type": "string",
+                    "description": "Small uppercase label above the statement. Defaults to 'Share this issue'.",
+                    "examples": [
+                      "Small uppercase label above the statement. Defaults to 'Share this issue'."
+                    ]
+                  },
+                  "statement": {
+                    "type": "string",
+                    "description": "One-line CTA statement. May include simple <em>/<strong>/<a> HTML. Defaults to a 'pass it along' line.",
+                    "examples": [
+                      "One-line CTA statement. May include simple <em>/<strong>/<a> HTML. Defaults to a 'pass it along' line."
+                    ]
+                  },
+                  "email_label": {
+                    "type": "string",
+                    "description": "Label for the primary (solid) email button. Defaults to 'Forward by email'.",
+                    "examples": [
+                      "Label for the primary (solid) email button. Defaults to 'Forward by email'."
+                    ]
+                  },
+                  "email_href": {
+                    "type": "string",
+                    "description": "Optional override for the email button. When omitted, the canonical build derives a percent-encoded mailto: URL from online_url.",
+                    "examples": [
+                      "mailto:?subject=Newsletter&body=Check%20this%20out"
+                    ]
+                  },
+                  "online_label": {
+                    "type": "string",
+                    "description": "Label for the secondary (outline) button. Defaults to 'Open online →'. Button is omitted entirely if online_url is absent.",
+                    "examples": [
+                      "Label for the secondary (outline) button. Defaults to 'Open online →'. Button is omitted entirely if online_url is absent."
+                    ]
+                  },
+                  "online_url": {
+                    "type": "string",
+                    "description": "Canonical public issue URL (plain string, not a tracked-link object) for the 'Open online' button and the default email body. Use the issue's archive URL, e.g. https://nearfuturelaboratory.com/newsletters/<year>/<issueId>. The build auto-stamps data-link tracking when it matches that archive pattern.",
+                    "examples": [
+                      "https://nearfuturelaboratory.com"
+                    ]
+                  },
+                  "background": {
+                    "type": "string",
+                    "description": "CSS background for the share bar; defaults to white.",
+                    "examples": [
+                      "#ffffff"
+                    ]
+                  },
+                  "text_color": {
+                    "type": "string",
+                    "description": "CSS color for the statement copy. Defaults to '#333'. Honored in light mode; dark-mode flatten overrides it.",
+                    "examples": [
+                      "#111111"
+                    ]
+                  },
+                  "eyebrow_color": {
+                    "type": "string",
+                    "description": "CSS color for the small uppercase eyebrow label. Defaults to '#555'.",
+                    "examples": [
+                      "#111111"
+                    ]
+                  },
+                  "space_top": {
+                    "type": [
+                      "number",
+                      "string"
+                    ],
+                    "minimum": 0,
+                    "pattern": "^(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:px)?$",
+                    "default": 28,
+                    "description": "Additional spacing in pixels; accepts zero, decimals, numeric strings, and px strings."
+                  },
+                  "space_bottom": {
+                    "type": [
+                      "number",
+                      "string"
+                    ],
+                    "minimum": 0,
+                    "pattern": "^(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:px)?$",
+                    "default": 28,
+                    "description": "Additional spacing in pixels; accepts zero, decimals, numeric strings, and px strings."
+                  }
+                },
+                "required": [
+                  "type"
+                ],
+                "additionalProperties": true
+              },
+              {
+                "type": "object",
+                "title": "Inline CTA",
+                "description": "Inline CTA bar rendered at the authored position, typically immediately before email_footer. It can be limited to the public preview or full edition with renderFor.",
+                "properties": {
+                  "type": {
+                    "const": "inline_cta"
+                  },
+                  "renderFor": {
+                    "type": "string",
+                    "enum": [
+                      "public",
+                      "preview",
+                      "full",
+                      "both"
+                    ],
+                    "description": "Edition visibility. Omit or use both to render in both editions; public and preview mean the public preview only."
+                  },
+                  "eyebrow": {
+                    "type": "string",
+                    "description": "Small uppercase label above the CTA statement.",
+                    "examples": [
+                      "Small uppercase label above the CTA statement."
+                    ]
+                  },
+                  "statement": {
+                    "type": "string",
+                    "description": "CTA statement. Simple inline HTML such as <em>, <strong>, and <a> is allowed.",
+                    "examples": [
+                      "CTA statement. Simple inline HTML such as <em>, <strong>, and <a> is allowed."
+                    ]
+                  },
+                  "primaryAction": {
+                    "$ref": "#/definitions/inlineCtaAction"
+                  },
+                  "secondaryAction": {
+                    "$ref": "#/definitions/inlineCtaAction"
+                  },
+                  "font_family": {
+                    "type": "string",
+                    "minLength": 1,
+                    "default": "mono",
+                    "description": "Use mono, sans, or a CSS font-family stack such as Arial, Helvetica, sans-serif."
+                  },
+                  "background": {
+                    "type": "string",
+                    "description": "CSS background color.",
+                    "examples": [
+                      "#ffffff"
+                    ]
+                  },
+                  "text_color": {
+                    "type": "string",
+                    "description": "CSS color for the statement.",
+                    "examples": [
+                      "#111111"
+                    ]
+                  },
+                  "eyebrow_color": {
+                    "type": "string",
+                    "description": "CSS color for the eyebrow.",
+                    "examples": [
+                      "#111111"
+                    ]
+                  },
+                  "border_color": {
+                    "type": "string",
+                    "description": "CSS color for the full border on all four edges.",
+                    "examples": [
+                      "#d1d5db"
+                    ]
+                  },
+                  "border_width": {
+                    "type": [
+                      "number",
+                      "string"
+                    ],
+                    "minimum": 0,
+                    "pattern": "^(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:px)?$",
+                    "default": 1,
+                    "description": "Border thickness in pixels. Zero removes the border. Accepts a nonnegative number, a numeric string, or a px string such as 32px."
+                  },
+                  "border_radius": {
+                    "type": [
+                      "number",
+                      "string"
+                    ],
+                    "minimum": 0,
+                    "pattern": "^(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:px)?$",
+                    "default": 0,
+                    "description": "Corner radius in pixels. Zero gives square corners. Accepts a nonnegative number, a numeric string, or a px string such as 32px."
+                  },
+                  "button_background": {
+                    "type": "string",
+                    "description": "Primary button background color.",
+                    "examples": [
+                      "#111111"
+                    ]
+                  },
+                  "button_text_color": {
+                    "type": "string",
+                    "description": "Primary button text color.",
+                    "examples": [
+                      "#111111"
+                    ]
+                  },
+                  "button_border_color": {
+                    "type": "string",
+                    "description": "Primary button border color.",
+                    "examples": [
+                      "#d1d5db"
+                    ]
+                  },
+                  "secondary_button_background": {
+                    "type": "string",
+                    "description": "Secondary button background color.",
+                    "examples": [
+                      "#111111"
+                    ]
+                  },
+                  "secondary_button_text_color": {
+                    "type": "string",
+                    "description": "Secondary button text color.",
+                    "examples": [
+                      "#111111"
+                    ]
+                  },
+                  "secondary_button_border_color": {
+                    "type": "string",
+                    "description": "Secondary button border color.",
+                    "examples": [
+                      "#d1d5db"
+                    ]
+                  },
+                  "space_top": {
+                    "type": [
+                      "number",
+                      "string"
+                    ],
+                    "minimum": 0,
+                    "pattern": "^(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:px)?$",
+                    "default": 28,
+                    "description": "Extra space above the card in pixels; added to any preceding section spacing. Zero removes this spacer. Accepts a nonnegative number, a numeric string, or a px string such as 32px."
+                  },
+                  "space_bottom": {
+                    "type": [
+                      "number",
+                      "string"
+                    ],
+                    "minimum": 0,
+                    "pattern": "^(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:px)?$",
+                    "default": 28,
+                    "description": "Extra space below the card in pixels; added to any following section spacing. Zero removes this spacer. Accepts a nonnegative number, a numeric string, or a px string such as 32px."
+                  }
+                },
+                "required": [
+                  "type",
+                  "primaryAction"
+                ],
+                "additionalProperties": true
+              },
+              {
+                "type": "object",
+                "title": "Email Footer",
+                "description": "Full footer with subscription management text, links, social icons, legal logos, and mailing address. Prefer the structured slots (paragraphs / address / unsubscribe_label / social_links); footer_html is kept as a legacy fallback used only when no structured slot is set.",
+                "properties": {
+                  "type": {
+                    "const": "email_footer"
+                  },
+                  "paragraphs": {
+                    "type": "array",
+                    "description": "Boilerplate/legal body paragraphs (the #666 block under the heavy black rule). Each entry is one paragraph's inner HTML and may contain simple inline markup including <a href> links. Add data-link-category/data-link-label to footer anchors for tracking (same convention as footer_html).",
+                    "items": {
+                      "type": "string",
+                      "examples": [
+                        "Example Paragraphs"
+                      ]
+                    }
+                  },
+                  "address": {
+                    "type": "string",
+                    "description": "The lighter #999 legal line (organization, location, copyright). May contain an inline <a> (e.g. the publication link). Rendered in the same paragraph as the unsubscribe link, separated by a non-breaking space.",
+                    "examples": [
+                      "© 2025 Your Company<br>City, State<br>Country"
+                    ]
+                  },
+                  "unsubscribe_label": {
+                    "type": "string",
+                    "description": "Visible text for the unsubscribe link (e.g. 'Unsubscribe'). The link is omitted entirely when this is absent.",
+                    "examples": [
+                      "Visible text for the unsubscribe link (e.g. 'Unsubscribe'). The link is omitted entirely when this is absent."
+                    ]
+                  },
+                  "unsubscribe_href": {
+                    "type": "string",
+                    "description": "Href for the unsubscribe link. Defaults to '[unsubscribe]' (the ESP merge-tag placeholder), which the live-link check leaves unvalidated.",
+                    "examples": [
+                      "[unsubscribe]"
+                    ]
+                  },
+                  "social_links": {
+                    "type": "array",
+                    "description": "Optional row of social/profile links rendered above the address line.",
+                    "items": {
+                      "type": "object",
                       "properties": {
-                        "src": { "type": "string", "format": "uri" },
-                        "altText": { "type": "string", "minLength": 1 },
-                        "width": { "type": "number", "exclusiveMinimum": 0 },
-                        "height": { "type": "number", "exclusiveMinimum": 0 },
-                        "aspectRatio": { "type": "string", "minLength": 1 }
+                        "label": {
+                          "type": "string",
+                          "description": "Visible link text (e.g. 'Mastodon').",
+                          "examples": [
+                            "Visible link text (e.g. 'Mastodon')."
+                          ]
+                        },
+                        "href": {
+                          "type": "string",
+                          "description": "Destination URL. Keep it real or mailto so the live-link check passes.",
+                          "examples": [
+                            "https://nearfuturelaboratory.com"
+                          ]
+                        },
+                        "category": {
+                          "type": "string",
+                          "description": "data-link-category for tracking. Defaults to 'social'.",
+                          "examples": [
+                            "Example Category"
+                          ]
+                        }
                       },
-                      "required": ["src", "altText"],
-                      "additionalProperties": false
+                      "required": [
+                        "label",
+                        "href"
+                      ],
+                      "additionalProperties": true
                     }
                   },
-                  "required": ["jobRef"],
-                  "additionalProperties": true
-                }
+                  "footer_html": {
+                    "type": "string",
+                    "description": "Legacy fallback: complete inner HTML of the footer table (the <tr><td>… rows). Used verbatim only when no structured slot (paragraphs/address/unsubscribe_label/social_links) is set.",
+                    "examples": [
+                      "<p>Example Footer content.</p>"
+                    ]
+                  }
+                },
+                "required": [
+                  "type"
+                ],
+                "additionalProperties": true
               }
-            },
-            "required": ["type", "items"],
-            "additionalProperties": true
-          },
-          {
-            "type": "object",
-            "title": "Section Article Group",
-            "description": "A named news section (e.g. Top News, World, U.S., Politics) with a bold section heading and 1–5 article cards. Articles may include an optional destination link.",
-            "properties": {
-              "type": {
-                "const": "section_article_group"
-              },
-              "section_label": {
-                "type": "string",
-                "description": "Section heading text (e.g. 'Top News', 'World')"
-              },
-              "articleContainerStyles": {
-                "$ref": "#/definitions/articleContainerStyles",
-                "description": "Optional surface styles applied to every article card in this group. An individual article may override them with the same field."
-              },
-              "articleContentStyles": {
-                "$ref": "#/definitions/articleContentStyles",
-                "description": "Optional inherited typography and text color for article kicker, headline, and lede. An individual article may override it with the same field."
-              },
-              "articleHeadingStyles": {
-                "$ref": "#/definitions/articleContentStyles",
-                "description": "Optional headline-specific typography and color for article cards. An individual article may override it with the same field."
-              },
-              "articleLinkStyles": {
-                "$ref": "#/definitions/articleContentStyles",
-                "description": "Optional link typography, color, and decoration for article cards. An individual article may override it with the same field."
-              },
-              "articles": {
-                "type": "array",
-                "description": "Structured article rows rendered with the Near Future Laboratory Daily Headlines table layout and inline font styles.",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "href": {
-                      "type": "string",
-                      "description": "Optional legacy article URL. Prefer link for new content. Omit both href and link for a non-interactive article card."
-                    },
-                    "link": {
-                      "$ref": "#/definitions/trackedLink",
-                      "description": "Optional tracked article URL. Omit both link and href for a non-interactive article card."
-                    },
-                    "image_src": {
-                      "type": "string",
-                      "description": "Thumbnail image URL"
-                    },
-                    "image_alt": {
-                      "type": "string",
-                      "description": "Thumbnail alt text"
-                    },
-                    "article_layout": {
-                      "type": "string",
-                      "enum": ["row", "feature"],
-                      "description": "Optional presentation override. row (default) places the image right of copy on wide screens and above it on mobile, with any CTA after the copy; feature renders a full-width image above the copy at every width."
-                    },
-                    "articleContainerStyles": {
-                      "$ref": "#/definitions/articleContainerStyles",
-                      "description": "Optional surface styles for this article only, overriding the section articleContainerStyles."
-                    },
-                    "articleContentStyles": {
-                      "$ref": "#/definitions/articleContentStyles",
-                      "description": "Optional typography and text color for this article only, overriding the section articleContentStyles."
-                    },
-                    "articleHeadingStyles": {
-                      "$ref": "#/definitions/articleContentStyles",
-                      "description": "Optional headline typography and color for this article only, overriding the section articleHeadingStyles."
-                    },
-                    "articleLinkStyles": {
-                      "$ref": "#/definitions/articleContentStyles",
-                      "description": "Optional link typography, color, and decoration for this article only, overriding the section articleLinkStyles."
-                    },
-                    "kicker": {
-                      "type": "string",
-                      "description": "Optional byline, columnist name, or article label shown above the headline"
-                    },
-                    "headline": {
-                      "type": "string",
-                      "description": "Article headline"
-                    },
-                    "lede": {
-                      "type": "string",
-                      "description": "Article summary/deck text"
-                    },
-                    "cta_label": {
-                      "type": "string",
-                      "description": "Optional visual CTA pill text. It remains visible as non-interactive text when the article has no link or href."
-                    }
-                  },
-                  "required": [
-                    "headline"
-                  ],
-                  "additionalProperties": true
-                }
-              },
-	              "show_bottom_rule": {
-	                "type": "boolean",
-	                "description": "Render the bottom divider used before a following 'See more' link"
-	              },
-	              "more_link": {
-	                "type": "object",
-	                "description": "Optional section-level 'See more...' link rendered after the article rows.",
-	                "properties": {
-	                  "href": {
-	                    "type": "string",
-	                    "description": "Legacy URL for the section-level follow-up link. Prefer link for new content."
-	                  },
-	                  "link": {
-	                    "$ref": "#/definitions/trackedLink",
-	                    "description": "Tracked URL for the section-level follow-up link"
-	                  },
-	                  "label": {
-	                    "type": "string",
-	                    "description": "Visible text for the section-level follow-up link"
-	                  }
-	                },
-	                "required": [
-	                  "label"
-	                ],
-	                "anyOf": [
-	                  {
-	                    "required": [
-	                      "link"
-	                    ]
-	                  },
-	                  {
-	                    "required": [
-	                      "href"
-	                    ]
-	                  }
-	                ],
-	                "additionalProperties": true
-	              },
-	              "articles_html": {
-	                "type": "string",
-	                "description": "Legacy fallback: full rendered HTML for all article rows within the section (HTML allowed)"
-	              }
-            },
-            "required": [
-              "type"
-            ],
-            "additionalProperties": true
-          },
-	          {
-	            "type": "object",
-	            "title": "Section 'See More' Link",
-	            "description": "Legacy standalone paragraph with a single 'See more [section] news' link. Prefer section_article_group.more_link for new content.",
-            "properties": {
-              "type": {
-                "const": "section_more_link"
-              },
-              "link_href": {
-                "type": "string",
-                "description": "Legacy URL for the 'see more' link. Prefer link for new content."
-              },
-              "link": {
-                "$ref": "#/definitions/trackedLink",
-                "description": "Tracked URL for the 'see more' link"
-              },
-              "link_label": {
-                "type": "string",
-                "description": "Visible text of the link (e.g. 'See more world news')"
-              }
-            },
-            "required": [
-              "type"
-            ],
-            "additionalProperties": true
-          },
-          {
-            "type": "object",
-            "title": "Inline Ad Block",
-            "description": "Mid- or end-of-email inline advertisement with a small label image, a desktop ad image and a hidden mobile ad image.",
-            "properties": {
-              "type": {
-                "const": "inline_ad_block"
-              },
-              "label_src": {
-                "type": "string",
-                "description": "Small 'Ad' label image src"
-              },
-              "ad_href": {
-                "type": "string",
-                "description": "Legacy URL the ad images link to. Prefer sponsorLink for new content."
-              },
-              "sponsorLink": {
-                "$ref": "#/definitions/trackedLink",
-                "description": "Tracked sponsor URL the ad images link to."
-              },
-              "ad_src_desktop": {
-                "type": "string",
-                "description": "Desktop ad image src (600px)"
-              },
-              "ad_src_mobile": {
-                "type": "string",
-                "description": "Mobile ad image src (480px)"
-              }
-            },
-            "required": [
-              "type"
-            ],
-            "additionalProperties": true
-          },
-          {
-            "type": "object",
-            "title": "Tracking Pixel Row",
-            "description": "Hidden div containing a row of tiny 2×6 tracking/preheader pixel images, aria-hidden.",
-            "properties": {
-              "type": {
-                "const": "tracking_pixel_row"
-              },
-              "pixels_html": {
-                "type": "string",
-                "description": "Full HTML of all pixel <img> elements (HTML allowed)"
-              }
-            },
-            "required": [
-              "type"
-            ],
-            "additionalProperties": true
-          },
-          {
-            "type": "object",
-            "title": "Share This",
-            "description": "Slim 'share this issue' CTA bar (tinted, like the footer CTA). A short statement plus a 'Forward by email' button and an optional 'Open online' button. All copy is configurable; sensible defaults render when omitted.",
-            "properties": {
-              "type": {
-                "const": "share_this"
-              },
-              "eyebrow": {
-                "type": "string",
-                "description": "Small uppercase label above the statement. Defaults to 'Share this issue'."
-              },
-              "statement": {
-                "type": "string",
-                "description": "One-line CTA statement. May include simple <em>/<strong>/<a> HTML. Defaults to a 'pass it along' line."
-              },
-              "email_label": {
-                "type": "string",
-                "description": "Label for the primary (solid) email button. Defaults to 'Forward by email'."
-              },
-              "email_href": {
-                "type": "string",
-                "description": "Optional override for the email button. When omitted, the canonical build derives a percent-encoded mailto: URL from online_url."
-              },
-              "online_label": {
-                "type": "string",
-                "description": "Label for the secondary (outline) button. Defaults to 'Open online →'. Button is omitted entirely if online_url is absent."
-              },
-              "online_url": {
-                "type": "string",
-                "description": "Canonical public issue URL (plain string, not a tracked-link object) for the 'Open online' button and the default email body. Use the issue's archive URL, e.g. https://nearfuturelaboratory.com/newsletters/<year>/<issueId>. The build auto-stamps data-link tracking when it matches that archive pattern."
-              },
-              "background": {
-                "type": "string",
-                "description": "CSS color for the bar background. Defaults to '#f5f4f0' (the footer-CTA tint). Honored in light mode; dark-mode flatten overrides it (see README)."
-              },
-              "text_color": {
-                "type": "string",
-                "description": "CSS color for the statement copy. Defaults to '#333'. Honored in light mode; dark-mode flatten overrides it."
-              },
-              "eyebrow_color": {
-                "type": "string",
-                "description": "CSS color for the small uppercase eyebrow label. Defaults to '#555'."
-              },
-              "space_top": {
-                "type": ["integer", "string"],
-                "description": "Vertical gap (px) above the bar so it reads as its own section rather than glued to the section above. Defaults to 28."
-              },
-              "space_bottom": {
-                "type": ["integer", "string"],
-                "description": "Vertical gap (px) below the bar. Defaults to 28."
-              }
-            },
-            "required": [
-              "type"
-            ],
-            "additionalProperties": true
-          },
-          {
-            "type": "object",
-            "title": "Inline CTA",
-            "description": "Inline CTA bar rendered at the authored position, typically immediately before email_footer. It can be limited to the public preview or full edition with renderFor.",
-            "properties": {
-              "type": {
-                "const": "inline_cta"
-              },
-              "renderFor": {
-                "type": "string",
-                "enum": ["public", "preview", "full", "both"],
-                "description": "Edition visibility. Omit or use both to render in both editions; public and preview mean the public preview only."
-              },
-              "eyebrow": {
-                "type": "string",
-                "description": "Small uppercase label above the CTA statement."
-              },
-              "statement": {
-                "type": "string",
-                "description": "CTA statement. Simple inline HTML such as <em>, <strong>, and <a> is allowed."
-              },
-              "primaryAction": {
-                "$ref": "#/definitions/inlineCtaAction"
-              },
-              "secondaryAction": {
-                "$ref": "#/definitions/inlineCtaAction"
-              },
-              "font_family": {
-                "type": "string",
-                "enum": ["mono", "sans"],
-                "default": "mono",
-                "description": "Typography for the eyebrow, statement, and buttons. Defaults to mono."
-              },
-              "background": {
-                "type": "string",
-                "description": "CSS background color."
-              },
-              "text_color": {
-                "type": "string",
-                "description": "CSS color for the statement."
-              },
-              "eyebrow_color": {
-                "type": "string",
-                "description": "CSS color for the eyebrow."
-              },
-              "border_color": {
-                "type": "string",
-                "description": "CSS color for the full border on all four edges."
-              },
-              "border_width": {
-                "type": ["integer", "string"],
-                "description": "Full border width in pixels. Defaults to 1."
-              },
-              "border_radius": {
-                "type": ["integer", "string"],
-                "description": "Corner radius in pixels. Defaults to 0 (square corners)."
-              },
-              "button_background": {
-                "type": "string",
-                "description": "Primary button background color."
-              },
-              "button_text_color": {
-                "type": "string",
-                "description": "Primary button text color."
-              },
-              "button_border_color": {
-                "type": "string",
-                "description": "Primary button border color."
-              },
-              "secondary_button_background": {
-                "type": "string",
-                "description": "Secondary button background color."
-              },
-              "secondary_button_text_color": {
-                "type": "string",
-                "description": "Secondary button text color."
-              },
-              "secondary_button_border_color": {
-                "type": "string",
-                "description": "Secondary button border color."
-              },
-              "space_top": {
-                "type": ["integer", "string"],
-                "description": "Vertical gap above the CTA. Defaults to 28."
-              },
-              "space_bottom": {
-                "type": ["integer", "string"],
-                "description": "Vertical gap below the CTA. Defaults to 28."
-              }
-            },
-            "required": ["type", "primaryAction"],
-            "additionalProperties": true
-          },
-          {
-            "type": "object",
-            "title": "Email Footer",
-            "description": "Full footer with subscription management text, links, social icons, legal logos, and mailing address. Prefer the structured slots (paragraphs / address / unsubscribe_label / social_links); footer_html is kept as a legacy fallback used only when no structured slot is set.",
-            "properties": {
-              "type": {
-                "const": "email_footer"
-              },
-              "paragraphs": {
-                "type": "array",
-                "description": "Boilerplate/legal body paragraphs (the #666 block under the heavy black rule). Each entry is one paragraph's inner HTML and may contain simple inline markup including <a href> links. Add data-link-category/data-link-label to footer anchors for tracking (same convention as footer_html).",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "address": {
-                "type": "string",
-                "description": "The lighter #999 legal line (organization, location, copyright). May contain an inline <a> (e.g. the publication link). Rendered in the same paragraph as the unsubscribe link, separated by a non-breaking space."
-              },
-              "unsubscribe_label": {
-                "type": "string",
-                "description": "Visible text for the unsubscribe link (e.g. 'Unsubscribe'). The link is omitted entirely when this is absent."
-              },
-              "unsubscribe_href": {
-                "type": "string",
-                "description": "Href for the unsubscribe link. Defaults to '[unsubscribe]' (the ESP merge-tag placeholder), which the live-link check leaves unvalidated."
-              },
-              "social_links": {
-                "type": "array",
-                "description": "Optional row of social/profile links rendered above the address line.",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "label": {
-                      "type": "string",
-                      "description": "Visible link text (e.g. 'Mastodon')."
-                    },
-                    "href": {
-                      "type": "string",
-                      "description": "Destination URL. Keep it real or mailto so the live-link check passes."
-                    },
-                    "category": {
-                      "type": "string",
-                      "description": "data-link-category for tracking. Defaults to 'social'."
-                    }
-                  },
-                  "required": [
-                    "label",
-                    "href"
-                  ],
-                  "additionalProperties": true
-                }
-              },
-              "footer_html": {
-                "type": "string",
-                "description": "Legacy fallback: complete inner HTML of the footer table (the <tr><td>… rows). Used verbatim only when no structured slot (paragraphs/address/unsubscribe_label/social_links) is set."
-              }
-            },
-            "required": [
-              "type"
-            ],
-            "additionalProperties": true
-          }
             ]
           }
         ]
@@ -866,93 +1438,262 @@
       "additionalProperties": true
     },
     "sectionContainerStyles": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "description": "Section appearance and layout values. backgroundColor accepts a solid CSS color or an existing CSS gradient; backgroundGradient is an optional separate gradient enhancement. contentPadding controls the horizontal inset for text inside a colored surface.",
       "properties": {
         "backgroundColor": {
           "type": "string",
           "minLength": 1,
-          "description": "Solid CSS color or CSS gradient for the section. A gradient value is emitted as background-image; use a solid value here as the fallback when backgroundGradient is present."
+          "description": "Solid CSS color or CSS gradient for the section. A gradient value is emitted as background-image; use a solid value here as the fallback when backgroundGradient is present.",
+          "examples": [
+            "#ffffff"
+          ]
         },
         "backgroundGradient": {
           "type": "string",
           "pattern": "^linear-gradient\\([^;{}<>]+\\)$",
-          "description": "Optional CSS linear-gradient(...) enhancement. Use with a solid backgroundColor so clients without gradient support retain the intended color."
+          "description": "Optional CSS linear-gradient(...) enhancement. Use with a solid backgroundColor so clients without gradient support retain the intended color.",
+          "examples": [
+            "linear-gradient(135deg, #ffffff 0%, #e6e6e6 100%)"
+          ]
         },
         "contentPadding": {
           "type": "string",
           "pattern": "^[^;{}<>]+$",
-          "description": "CSS padding shorthand for the text inset inside a colored section surface. Defaults to 0 20px; the outer background remains full width."
+          "description": "CSS padding shorthand for the text inset inside a colored section surface. Defaults to 0 20px; the outer background remains full width.",
+          "examples": [
+            "16px"
+          ]
         }
       },
       "allOf": [
         {
           "if": {
             "type": "object",
-            "required": ["backgroundGradient"]
+            "required": [
+              "backgroundGradient"
+            ]
           },
           "then": {
-            "required": ["backgroundColor"]
+            "required": [
+              "backgroundColor"
+            ]
           }
         }
       ],
       "additionalProperties": true
     },
     "speculativeJobSurfaceStyles": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "description": "Optional surface styles for a speculative job section or card. containerStyles controls the whole jobs area; cardStyles is an optional inner job surface. backgroundColor accepts a solid CSS color or gradient, and backgroundGradient can provide a separate gradient enhancement.",
       "properties": {
-        "backgroundColor": { "type": "string", "minLength": 1 },
+        "backgroundColor": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "#ffffff"
+          ]
+        },
         "backgroundGradient": {
           "type": "string",
-          "pattern": "^linear-gradient\\([^;{}<>]+\\)$"
+          "pattern": "^linear-gradient\\([^;{}<>]+\\)$",
+          "examples": [
+            "linear-gradient(135deg, #ffffff 0%, #e6e6e6 100%)"
+          ]
         },
-        "contentPadding": { "type": "string", "pattern": "^[^;{}<>]+$" },
+        "contentPadding": {
+          "type": "string",
+          "pattern": "^[^;{}<>]+$",
+          "examples": [
+            "16px"
+          ]
+        },
         "padding": {
           "type": "string",
           "pattern": "^[^;{}<>]+$",
-          "description": "CSS padding shorthand for the inner speculative-job copy surface. Daily Headlines defaults to 24px 0 so the logo and copy share the full-width media edges."
+          "description": "CSS padding shorthand for the inner speculative-job copy surface. Daily Headlines defaults to 24px 0 so the logo and copy share the full-width media edges.",
+          "examples": [
+            "16px"
+          ]
         },
-        "paddingTop": { "type": "string", "pattern": "^[^;{}<>]+$" },
-        "paddingRight": { "type": "string", "pattern": "^[^;{}<>]+$" },
-        "paddingBottom": { "type": "string", "pattern": "^[^;{}<>]+$" },
-        "paddingLeft": { "type": "string", "pattern": "^[^;{}<>]+$" },
-        "border": { "type": "string", "pattern": "^[^;{}<>]+$" },
-        "borderRadius": { "type": "string", "pattern": "^[^;{}<>]+$" }
+        "paddingTop": {
+          "type": "string",
+          "pattern": "^[^;{}<>]+$",
+          "examples": [
+            "16px"
+          ]
+        },
+        "paddingRight": {
+          "type": "string",
+          "pattern": "^[^;{}<>]+$",
+          "examples": [
+            "16px"
+          ]
+        },
+        "paddingBottom": {
+          "type": "string",
+          "pattern": "^[^;{}<>]+$",
+          "examples": [
+            "16px"
+          ]
+        },
+        "paddingLeft": {
+          "type": "string",
+          "pattern": "^[^;{}<>]+$",
+          "examples": [
+            "16px"
+          ]
+        },
+        "border": {
+          "type": "string",
+          "pattern": "^[^;{}<>]+$",
+          "examples": [
+            "1px solid #d1d5db"
+          ]
+        },
+        "borderRadius": {
+          "type": "string",
+          "pattern": "^[^;{}<>]+$",
+          "examples": [
+            "8px"
+          ]
+        }
       },
       "allOf": [
         {
-          "if": { "required": ["backgroundGradient"] },
-          "then": { "required": ["backgroundColor"] }
+          "if": {
+            "required": [
+              "backgroundGradient"
+            ]
+          },
+          "then": {
+            "required": [
+              "backgroundColor"
+            ]
+          }
         }
       ],
       "additionalProperties": false
     },
     "articleContainerStyles": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "description": "Optional email-safe surface styles for an article card, including backgroundColor, padding, border, and borderRadius.",
       "properties": {
-        "backgroundColor": { "type": "string", "minLength": 1 },
-        "background": { "type": "string", "minLength": 1 },
-        "padding": { "type": "string", "pattern": "^[^;{}<>]+$" },
-        "border": { "type": "string", "pattern": "^[^;{}<>]+$" },
-        "borderRadius": { "type": "string", "pattern": "^[^;{}<>]+$" }
+        "backgroundColor": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "#ffffff"
+          ]
+        },
+        "background": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "#ffffff"
+          ]
+        },
+        "padding": {
+          "type": "string",
+          "pattern": "^[^;{}<>]+$",
+          "examples": [
+            "16px"
+          ]
+        },
+        "border": {
+          "type": "string",
+          "pattern": "^[^;{}<>]+$",
+          "examples": [
+            "1px solid #d1d5db"
+          ]
+        },
+        "borderRadius": {
+          "type": "string",
+          "pattern": "^[^;{}<>]+$",
+          "examples": [
+            "8px"
+          ]
+        }
       },
       "additionalProperties": true
     },
     "articleContentStyles": {
-      "type": ["object", "null"],
+      "type": [
+        "object",
+        "null"
+      ],
       "description": "Optional email-safe typography and text styles for an article card.",
       "properties": {
-        "fontFamily": { "type": "string", "minLength": 1 },
-        "fontSize": { "type": "string", "minLength": 1 },
-        "lineHeight": { "type": "string", "minLength": 1 },
-        "fontWeight": { "type": ["string", "number"] },
-        "fontStyle": { "type": "string" },
-        "letterSpacing": { "type": "string" },
-        "textTransform": { "type": "string" },
-        "textAlign": { "type": "string" },
-        "color": { "type": "string", "minLength": 1 }
+        "fontFamily": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Arial, Helvetica, sans-serif"
+          ]
+        },
+        "fontSize": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "16px"
+          ]
+        },
+        "lineHeight": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "1.5"
+          ]
+        },
+        "fontWeight": {
+          "type": [
+            "string",
+            "number"
+          ],
+          "examples": [
+            "400"
+          ]
+        },
+        "fontStyle": {
+          "type": "string",
+          "examples": [
+            "normal"
+          ]
+        },
+        "letterSpacing": {
+          "type": "string",
+          "examples": [
+            "0"
+          ]
+        },
+        "textTransform": {
+          "type": "string",
+          "examples": [
+            "none"
+          ]
+        },
+        "textAlign": {
+          "type": "string",
+          "examples": [
+            "left"
+          ]
+        },
+        "color": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "#111111"
+          ]
+        }
       },
       "additionalProperties": true
     },
@@ -960,58 +1701,91 @@
       "description": "Tracked link accepted by nfl-maizzle-mail. Object-valued links normalize to URL strings before Maizzle renders and then enrich matching anchors with data-link-label, data-link-category, data-link-interest, and data-link-intent.",
       "anyOf": [
         {
-          "type": "string"
+          "type": "string",
+          "examples": [
+            "https://nearfuturelaboratory.com"
+          ]
         },
         {
           "type": "object",
           "properties": {
             "href": {
               "type": "string",
-              "format": "uri"
+              "format": "uri",
+              "examples": [
+                "https://nearfuturelaboratory.com"
+              ]
             },
             "url": {
               "type": "string",
-              "format": "uri"
+              "format": "uri",
+              "examples": [
+                "https://nearfuturelaboratory.com"
+              ]
             },
             "label": {
               "type": "string",
-              "minLength": 1
+              "minLength": 1,
+              "examples": [
+                "Example Label"
+              ]
             },
             "category": {
               "type": "string",
-              "minLength": 1
+              "minLength": 1,
+              "examples": [
+                "Example Category"
+              ]
             },
             "role": {
               "type": "string",
-              "minLength": 1
+              "minLength": 1,
+              "examples": [
+                "Example Role"
+              ]
             },
             "interest": {
               "type": "string",
-              "minLength": 1
+              "minLength": 1,
+              "examples": [
+                "Example Interest"
+              ]
             },
             "interests": {
               "anyOf": [
                 {
                   "type": "string",
-                  "minLength": 1
+                  "minLength": 1,
+                  "examples": [
+                    "Example Interests"
+                  ]
                 },
                 {
                   "type": "array",
                   "items": {
                     "type": "string",
-                    "minLength": 1
+                    "minLength": 1,
+                    "examples": [
+                      "Example Interests"
+                    ]
                   }
                 }
               ]
             },
             "intent": {
               "type": "string",
-              "minLength": 1
+              "minLength": 1,
+              "examples": [
+                "Example Intent"
+              ]
             },
             "sourceRef": {
               "type": "string",
               "minLength": 1,
-              "description": "Adjacency artifact slug or content entry id. Resolved to an edition-specific popup href by the newsletter build before Maizzle renders; mutually exclusive with href/url."
+              "description": "Adjacency artifact slug or content entry id. Resolved to an edition-specific popup href by the newsletter build before Maizzle renders; mutually exclusive with href/url.",
+              "examples": [
+                "Adjacency artifact slug or content entry id. Resolved to an edition-specific popup href by the newsletter build before Maizzle renders; mutually exclusive with href/url."
+              ]
             }
           },
           "required": [
@@ -1044,14 +1818,21 @@
       "type": "object",
       "properties": {
         "label": {
-          "type": "string"
+          "type": "string",
+          "examples": [
+            "Example Label"
+          ]
         },
         "url": {
           "$ref": "#/definitions/trackedLink"
         }
       },
-      "required": ["label", "url"],
+      "required": [
+        "label",
+        "url"
+      ],
       "additionalProperties": true
     }
-  }
+  },
+  "x-nfl-contract-version": 1
 }

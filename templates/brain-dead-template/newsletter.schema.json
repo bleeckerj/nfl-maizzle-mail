@@ -2,89 +2,268 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Brain Dead Content Email",
   "type": "object",
-  "required": ["template", "title"],
+  "required": [
+    "template",
+    "title"
+  ],
   "anyOf": [
-    { "required": ["sections"] },
-    { "required": ["books"] },
-    { "required": ["productImages"] }
+    {
+      "required": [
+        "sections"
+      ]
+    },
+    {
+      "required": [
+        "books"
+      ]
+    },
+    {
+      "required": [
+        "productImages"
+      ]
+    }
   ],
   "properties": {
-    "$schema": { "type": "string" },
-    "publicationMode": { "enum": ["public-issue", "campaign"] },
-    "template": { "const": "brain-dead-template" },
-    "title": { "type": "string" },
-    "preheader": { "type": "string" },
-    "issueId": { "type": "string" },
-    "markdownContent": { "type": "string" },
+    "$schema": {
+      "type": "string",
+      "examples": [
+        "https://json-schema.org/draft-07/schema#"
+      ]
+    },
+    "publicationMode": {
+      "enum": [
+        "public-issue",
+        "campaign"
+      ]
+    },
+    "template": {
+      "type": "string",
+      "const": "brain-dead-template"
+    },
+    "title": {
+      "type": "string",
+      "examples": [
+        "Newsletter Title"
+      ]
+    },
+    "preheader": {
+      "type": "string",
+      "examples": [
+        "Short preview text that appears in email clients"
+      ]
+    },
+    "issueId": {
+      "type": "string",
+      "examples": [
+        "w01-y26"
+      ]
+    },
+    "markdownContent": {
+      "type": "string",
+      "examples": [
+        "Example Markdown content"
+      ]
+    },
     "sections": {
       "type": "array",
       "minItems": 1,
-      "items": { "$ref": "#/definitions/contentSection" }
+      "items": {
+        "$ref": "#/definitions/contentSection"
+      }
     },
     "booksLabel": {
       "type": "string",
-      "description": "Deprecated legacy label for the former books array. Use sections[].label instead."
+      "description": "Deprecated legacy label for the former books array. Use sections[].label instead.",
+      "examples": [
+        "Deprecated legacy label for the former books array. Use sections[].label instead."
+      ]
     },
     "brand": {
       "type": "object",
       "properties": {
-        "name": { "type": "string" },
-        "logoUrl": { "type": "string", "format": "uri" },
-        "logoAlt": { "type": "string" },
-        "logoWidth": { "type": ["string", "number"] },
-        "logoLink": { "$ref": "#/definitions/trackedLink" },
+        "name": {
+          "type": "string",
+          "examples": [
+            "Example Name"
+          ]
+        },
+        "logoUrl": {
+          "type": "string",
+          "format": "uri",
+          "examples": [
+            "https://fpoimg.com/200x50?text=Logo%20url&bg_color=e6e6e6&text_color=4FAAAA"
+          ]
+        },
+        "logoAlt": {
+          "type": "string",
+          "examples": [
+            "Image description for accessibility"
+          ]
+        },
+        "logoWidth": {
+          "type": [
+            "string",
+            "number"
+          ],
+          "examples": [
+            "200"
+          ]
+        },
+        "logoLink": {
+          "$ref": "#/definitions/trackedLink"
+        },
         "navLinks": {
           "type": "array",
-          "items": { "$ref": "#/definitions/navLink" }
+          "items": {
+            "$ref": "#/definitions/navLink"
+          }
         }
       }
     },
     "hero": {
       "type": "object",
-      "required": ["headline"],
+      "required": [
+        "headline"
+      ],
       "properties": {
-        "eyebrow": { "type": "string" },
-        "headline": { "type": "string" },
-        "headlineSize": { "type": "string", "enum": ["default", "compact"], "deprecated": true, "description": "Legacy compatibility field; both values now use the template default of 32px desktop / 22px mobile. All section and offer headlines use 22px." },
-        "subhead": { "type": "string" },
-        "body": { "type": "string" },
-        "image": { "type": "string", "format": "uri" },
-        "imageAlt": { "type": "string" },
+        "eyebrow": {
+          "type": "string",
+          "examples": [
+            "Example Eyebrow"
+          ]
+        },
+        "headline": {
+          "type": "string",
+          "examples": [
+            "Example Headline"
+          ]
+        },
+        "headlineSize": {
+          "type": "string",
+          "enum": [
+            "default",
+            "compact"
+          ],
+          "deprecated": true,
+          "description": "Legacy compatibility field; both values now use the template default of 32px desktop / 22px mobile. All section and offer headlines use 22px."
+        },
+        "subhead": {
+          "type": "string",
+          "examples": [
+            "Example Subhead"
+          ]
+        },
+        "body": {
+          "type": "string",
+          "examples": [
+            "<p>Example Body content.</p>"
+          ]
+        },
+        "image": {
+          "type": "string",
+          "format": "uri",
+          "examples": [
+            "https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA"
+          ]
+        },
+        "imageAlt": {
+          "type": "string",
+          "examples": [
+            "Image description for accessibility"
+          ]
+        },
         "imageLink": {
           "oneOf": [
-            { "const": "none" },
-            { "$ref": "#/definitions/trackedLink" }
+            {
+              "const": "none"
+            },
+            {
+              "$ref": "#/definitions/trackedLink"
+            }
           ],
           "description": "Optional image destination override. When omitted, the hero image uses hero.ctaLink, then legacy shopLink. Use 'none' to keep the hero image unlinked; tracked link objects are normalized to their href during the build."
         },
-        "ctaText": { "type": "string" },
-        "ctaLink": { "$ref": "#/definitions/trackedLink" }
+        "ctaText": {
+          "type": "string",
+          "examples": [
+            "Read more"
+          ]
+        },
+        "ctaLink": {
+          "$ref": "#/definitions/trackedLink"
+        }
       }
     },
     "books": {
       "type": "array",
       "description": "Deprecated legacy dual-column items. Use sections[] with type dual-column instead.",
       "minItems": 1,
-      "items": { "$ref": "#/definitions/contentItem" }
+      "items": {
+        "$ref": "#/definitions/contentItem"
+      }
     },
     "offer": {
       "type": "object",
       "properties": {
-        "eyebrow": { "type": "string" },
-        "headline": { "type": "string" },
-        "body": { "type": "string" },
-        "ctaText": { "type": "string" },
-        "ctaLink": { "$ref": "#/definitions/trackedLink" }
+        "eyebrow": {
+          "type": "string",
+          "examples": [
+            "Example Eyebrow"
+          ]
+        },
+        "headline": {
+          "type": "string",
+          "examples": [
+            "Example Headline"
+          ]
+        },
+        "body": {
+          "type": "string",
+          "examples": [
+            "<p>Example Body content.</p>"
+          ]
+        },
+        "ctaText": {
+          "type": "string",
+          "examples": [
+            "Read more"
+          ]
+        },
+        "ctaLink": {
+          "$ref": "#/definitions/trackedLink"
+        }
       }
     },
     "bottomCta": {
       "type": "object",
       "properties": {
-        "eyebrow": { "type": "string" },
-        "headline": { "type": "string" },
-        "body": { "type": "string" },
-        "ctaText": { "type": "string" },
-        "ctaLink": { "$ref": "#/definitions/trackedLink" }
+        "eyebrow": {
+          "type": "string",
+          "examples": [
+            "Example Eyebrow"
+          ]
+        },
+        "headline": {
+          "type": "string",
+          "examples": [
+            "Example Headline"
+          ]
+        },
+        "body": {
+          "type": "string",
+          "examples": [
+            "<p>Example Body content.</p>"
+          ]
+        },
+        "ctaText": {
+          "type": "string",
+          "examples": [
+            "Read more"
+          ]
+        },
+        "ctaLink": {
+          "$ref": "#/definitions/trackedLink"
+        }
       }
     },
     "footer": {
@@ -92,172 +271,809 @@
       "properties": {
         "paragraphs": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string",
+            "examples": [
+              "Example Paragraphs"
+            ]
+          }
         },
-        "address": { "type": "string" },
+        "address": {
+          "type": "string",
+          "examples": [
+            "© 2025 Your Company<br>City, State<br>Country"
+          ]
+        },
         "socialLinks": {
           "type": "array",
-          "items": { "$ref": "#/definitions/socialLink" }
+          "items": {
+            "$ref": "#/definitions/socialLink"
+          }
         },
         "footerCta": {
           "type": "object",
           "properties": {
-            "enabled": { "type": "boolean" },
-            "variant": { "type": "string" }
+            "enabled": {
+              "type": "boolean",
+              "examples": [
+                false
+              ]
+            },
+            "variant": {
+              "type": "string",
+              "examples": [
+                "Example Variant"
+              ]
+            }
           }
         },
-        "unsubscribeLabel": { "type": "string" },
-        "unsubscribeLink": { "type": "string" }
+        "unsubscribeLabel": {
+          "type": "string",
+          "examples": [
+            "Example Unsubscribe label"
+          ]
+        },
+        "unsubscribeLink": {
+          "type": "string",
+          "examples": [
+            "[unsubscribe]"
+          ],
+          "default": "[unsubscribe]"
+        }
       }
     },
-    "logoUrl": { "type": "string", "format": "uri" },
-    "logoAlt": { "type": "string" },
-    "logoWidth": { "type": ["string", "number"] },
-    "logoLink": { "$ref": "#/definitions/trackedLink" },
-    "collectionTitle": { "type": "string" },
-    "collectionDescription": { "type": "string" },
-    "collectionDetails": { "type": "string" },
-    "mainImage": { "type": "string", "format": "uri" },
+    "logoUrl": {
+      "type": "string",
+      "format": "uri",
+      "examples": [
+        "https://fpoimg.com/200x50?text=Logo%20url&bg_color=e6e6e6&text_color=4FAAAA"
+      ]
+    },
+    "logoAlt": {
+      "type": "string",
+      "examples": [
+        "Image description for accessibility"
+      ]
+    },
+    "logoWidth": {
+      "type": [
+        "string",
+        "number"
+      ],
+      "examples": [
+        "200"
+      ]
+    },
+    "logoLink": {
+      "$ref": "#/definitions/trackedLink"
+    },
+    "collectionTitle": {
+      "type": "string",
+      "examples": [
+        "Example Collection title"
+      ]
+    },
+    "collectionDescription": {
+      "type": "string",
+      "examples": [
+        "Example Collection description"
+      ]
+    },
+    "collectionDetails": {
+      "type": "string",
+      "examples": [
+        "Example Collection details"
+      ]
+    },
+    "mainImage": {
+      "type": "string",
+      "format": "uri",
+      "examples": [
+        "https://fpoimg.com/800x600?text=Main%20image&bg_color=e6e6e6&text_color=4FAAAA"
+      ]
+    },
     "productImages": {
       "type": "array",
-      "items": { "type": "string", "format": "uri" }
+      "items": {
+        "type": "string",
+        "format": "uri",
+        "examples": [
+          "https://fpoimg.com/800x600?text=Product%20images&bg_color=e6e6e6&text_color=4FAAAA"
+        ]
+      }
     },
-    "shopLink": { "$ref": "#/definitions/trackedLink" },
+    "shopLink": {
+      "$ref": "#/definitions/trackedLink"
+    },
     "socialLinks": {
       "type": "array",
-      "items": { "$ref": "#/definitions/socialLink" }
+      "items": {
+        "$ref": "#/definitions/socialLink"
+      }
     }
   },
   "definitions": {
     "contentSection": {
       "type": "object",
-      "required": ["type"],
+      "required": [
+        "type"
+      ],
       "properties": {
-        "type": { "enum": ["dual-column", "single-column", "calendar_event", "inline_cta", "ad-slot", "short-take-slot", "ad-block", "short-take"] },
+        "type": {
+          "enum": [
+            "dual-column",
+            "single-column",
+            "calendar_event",
+            "inline_cta",
+            "ad-slot",
+            "short-take-slot",
+            "ad-block",
+            "short-take"
+          ]
+        },
         "renderFor": {
           "type": "string",
-          "enum": ["public", "preview", "full", "both"],
+          "enum": [
+            "public",
+            "preview",
+            "full",
+            "both"
+          ],
           "description": "Edition visibility. Omit or use both to render in both editions; public and preview mean the public preview only."
         },
-        "label": { "type": "string" },
-        "title": { "type": "string" },
+        "label": {
+          "type": "string",
+          "examples": [
+            "Example Label"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "examples": [
+            "Newsletter Title"
+          ]
+        },
         "items": {
           "type": "array",
-          "minItems": 1
+          "minItems": 1,
+          "examples": [
+            [
+              [
+                [
+                  [
+                    [
+                      [
+                        [
+                          [
+                            [
+                              [
+                                [
+                                  [
+                                    [
+                                      [
+                                        [
+                                          [
+                                            [
+                                              [
+                                                [
+                                                  [
+                                                    [
+                                                      [
+                                                        [
+                                                          [
+                                                            [
+                                                              [
+                                                                [
+                                                                  [
+                                                                    [
+                                                                      [
+                                                                        [
+                                                                          [
+                                                                            [
+                                                                              {}
+                                                                            ]
+                                                                          ]
+                                                                        ]
+                                                                      ]
+                                                                    ]
+                                                                  ]
+                                                                ]
+                                                              ]
+                                                            ]
+                                                          ]
+                                                        ]
+                                                      ]
+                                                    ]
+                                                  ]
+                                                ]
+                                              ]
+                                            ]
+                                          ]
+                                        ]
+                                      ]
+                                    ]
+                                  ]
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
         },
-        "id": { "type": "string" },
-        "eyebrow": { "type": "string" },
-        "subtitle": { "type": "string" },
-        "startsAt": { "type": "string" },
-        "endsAt": { "type": "string" },
-        "durationMinutes": { "type": ["integer", "number", "string"] },
-        "timezone": { "type": "string" },
-        "description": { "type": "string" },
-        "location": { "type": "string" },
-        "url": { "$ref": "#/definitions/trackedLink" },
-        "calendarLabel": { "type": "string" },
-        "calendarLink": { "$ref": "#/definitions/trackedLink" },
-        "eventLabel": { "type": "string" },
-        "eventLink": { "$ref": "#/definitions/trackedLink" },
-        "displayDate": { "type": "string" },
-        "displayTime": { "type": "string" },
-        "displayWeekday": { "type": "string" },
+        "id": {
+          "type": "string",
+          "examples": [
+            "example-id"
+          ]
+        },
+        "eyebrow": {
+          "type": "string",
+          "examples": [
+            "Example Eyebrow"
+          ]
+        },
+        "subtitle": {
+          "type": "string",
+          "examples": [
+            "Example Subtitle"
+          ]
+        },
+        "startsAt": {
+          "type": "string",
+          "examples": [
+            "2026-01-01T10:00:00-08:00"
+          ]
+        },
+        "endsAt": {
+          "type": "string",
+          "examples": [
+            "2026-01-01T11:00:00-08:00"
+          ]
+        },
+        "durationMinutes": {
+          "type": [
+            "integer",
+            "number",
+            "string"
+          ],
+          "examples": [
+            60
+          ]
+        },
+        "timezone": {
+          "type": "string",
+          "examples": [
+            "America/Los_Angeles"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "examples": [
+            "<p>Example Description content.</p>"
+          ]
+        },
+        "location": {
+          "type": "string",
+          "examples": [
+            "Example Location"
+          ]
+        },
+        "url": {
+          "$ref": "#/definitions/trackedLink"
+        },
+        "calendarLabel": {
+          "type": "string",
+          "examples": [
+            "Example Calendar label"
+          ]
+        },
+        "calendarLink": {
+          "$ref": "#/definitions/trackedLink"
+        },
+        "eventLabel": {
+          "type": "string",
+          "examples": [
+            "Example Event label"
+          ]
+        },
+        "eventLink": {
+          "$ref": "#/definitions/trackedLink"
+        },
+        "displayDate": {
+          "type": "string",
+          "examples": [
+            "January 1, 2026"
+          ]
+        },
+        "displayTime": {
+          "type": "string",
+          "examples": [
+            "10:00 AM"
+          ]
+        },
+        "displayWeekday": {
+          "type": "string",
+          "examples": [
+            "Thursday"
+          ]
+        },
         "containerStyles": {
           "type": "object",
           "additionalProperties": true,
           "properties": {
-            "backgroundColor": { "type": "string" },
-            "textColor": { "type": "string" },
-            "headingColor": { "type": "string" },
-            "eyebrowColor": { "type": "string" },
-            "dateColor": { "type": "string" },
-            "timeColor": { "type": "string" },
-            "locationColor": { "type": "string" },
-            "borderColor": { "type": "string" },
-            "borderWidth": { "type": "string" },
-            "dividerColor": { "type": "string" },
-            "dividerWidth": { "type": "string" },
-            "headerPadding": { "type": "string" },
-            "bodyPadding": { "type": "string" },
-            "buttonBackgroundColor": { "type": "string" },
-            "buttonTextColor": { "type": "string" },
-            "buttonBorderColor": { "type": "string" },
-            "buttonBorderWidth": { "type": "string" },
-            "buttonPadding": { "type": "string" },
-            "secondaryLinkColor": { "type": "string" }
+            "backgroundColor": {
+              "type": "string",
+              "examples": [
+                "#ffffff"
+              ]
+            },
+            "textColor": {
+              "type": "string",
+              "examples": [
+                "#111111"
+              ]
+            },
+            "headingColor": {
+              "type": "string",
+              "examples": [
+                "#111111"
+              ]
+            },
+            "eyebrowColor": {
+              "type": "string",
+              "examples": [
+                "#111111"
+              ]
+            },
+            "dateColor": {
+              "type": "string",
+              "examples": [
+                "#111111"
+              ]
+            },
+            "timeColor": {
+              "type": "string",
+              "examples": [
+                "#111111"
+              ]
+            },
+            "locationColor": {
+              "type": "string",
+              "examples": [
+                "#111111"
+              ]
+            },
+            "borderColor": {
+              "type": "string",
+              "examples": [
+                "#d1d5db"
+              ]
+            },
+            "borderWidth": {
+              "type": "string",
+              "examples": [
+                "1px"
+              ]
+            },
+            "dividerColor": {
+              "type": "string",
+              "examples": [
+                "#d1d5db"
+              ]
+            },
+            "dividerWidth": {
+              "type": "string",
+              "examples": [
+                "1px"
+              ]
+            },
+            "headerPadding": {
+              "type": "string",
+              "examples": [
+                "16px"
+              ]
+            },
+            "bodyPadding": {
+              "type": "string",
+              "examples": [
+                "16px"
+              ]
+            },
+            "buttonBackgroundColor": {
+              "type": "string",
+              "examples": [
+                "#ffffff"
+              ]
+            },
+            "buttonTextColor": {
+              "type": "string",
+              "examples": [
+                "#111111"
+              ]
+            },
+            "buttonBorderColor": {
+              "type": "string",
+              "examples": [
+                "#d1d5db"
+              ]
+            },
+            "buttonBorderWidth": {
+              "type": "string",
+              "examples": [
+                "1px"
+              ]
+            },
+            "buttonPadding": {
+              "type": "string",
+              "examples": [
+                "16px"
+              ]
+            },
+            "secondaryLinkColor": {
+              "type": "string",
+              "examples": [
+                "#111111"
+              ]
+            }
           }
         },
         "contentStyles": {
           "type": "object",
           "additionalProperties": true,
           "properties": {
-            "fontFamily": { "type": "string" },
-            "fontSize": { "type": "string" },
-            "lineHeight": { "type": "string" },
-            "color": { "type": "string" }
+            "fontFamily": {
+              "type": "string",
+              "examples": [
+                "Arial, Helvetica, sans-serif"
+              ]
+            },
+            "fontSize": {
+              "type": "string",
+              "examples": [
+                "16px"
+              ]
+            },
+            "lineHeight": {
+              "type": "string",
+              "examples": [
+                "1.5"
+              ]
+            },
+            "color": {
+              "type": "string",
+              "examples": [
+                "#111111"
+              ]
+            }
           }
         },
-        "eyebrow_color": { "type": "string" },
-        "text_color": { "type": "string" },
-        "background": { "type": "string" },
-        "border_color": { "type": "string" },
-        "border_width": { "type": ["integer", "string"] },
-        "border_radius": { "type": ["integer", "string"] },
-        "font_family": { "enum": ["mono", "sans"] },
-        "space_top": { "type": ["integer", "string"] },
-        "space_bottom": { "type": ["integer", "string"] },
-        "button_background": { "type": "string" },
-        "button_text_color": { "type": "string" },
-        "button_border_color": { "type": "string" },
-        "secondary_button_background": { "type": "string" },
-        "secondary_button_text_color": { "type": "string" },
-        "secondary_button_border_color": { "type": "string" },
-        "primaryAction": { "$ref": "#/definitions/inlineCtaAction" },
-        "secondaryAction": { "$ref": "#/definitions/inlineCtaAction" }
+        "eyebrow_color": {
+          "type": "string",
+          "examples": [
+            "#111111"
+          ]
+        },
+        "text_color": {
+          "type": "string",
+          "examples": [
+            "#111111"
+          ]
+        },
+        "background": {
+          "type": "string",
+          "examples": [
+            "#ffffff"
+          ]
+        },
+        "border_color": {
+          "type": "string",
+          "examples": [
+            "#d1d5db"
+          ]
+        },
+        "border_width": {
+          "type": [
+            "integer",
+            "string"
+          ],
+          "examples": [
+            600
+          ]
+        },
+        "border_radius": {
+          "type": [
+            "integer",
+            "string"
+          ],
+          "examples": [
+            8
+          ]
+        },
+        "font_family": {
+          "type": "string",
+          "minLength": 1,
+          "default": "mono",
+          "description": "Use mono, sans, or a CSS font-family stack."
+        },
+        "space_top": {
+          "type": [
+            "integer",
+            "string"
+          ],
+          "examples": [
+            16
+          ]
+        },
+        "space_bottom": {
+          "type": [
+            "integer",
+            "string"
+          ],
+          "examples": [
+            16
+          ]
+        },
+        "button_background": {
+          "type": "string",
+          "examples": [
+            "#111111"
+          ]
+        },
+        "button_text_color": {
+          "type": "string",
+          "examples": [
+            "#111111"
+          ]
+        },
+        "button_border_color": {
+          "type": "string",
+          "examples": [
+            "#d1d5db"
+          ]
+        },
+        "secondary_button_background": {
+          "type": "string",
+          "examples": [
+            "#111111"
+          ]
+        },
+        "secondary_button_text_color": {
+          "type": "string",
+          "examples": [
+            "#111111"
+          ]
+        },
+        "secondary_button_border_color": {
+          "type": "string",
+          "examples": [
+            "#d1d5db"
+          ]
+        },
+        "primaryAction": {
+          "$ref": "#/definitions/inlineCtaAction"
+        },
+        "secondaryAction": {
+          "$ref": "#/definitions/inlineCtaAction"
+        }
       },
       "allOf": [
         {
-          "if": { "properties": { "type": { "enum": ["dual-column", "single-column"] } } },
+          "if": {
+            "properties": {
+              "type": {
+                "enum": [
+                  "dual-column",
+                  "single-column"
+                ]
+              }
+            },
+            "type": "object"
+          },
           "then": {
             "properties": {
               "items": {
-                "items": { "$ref": "#/definitions/contentItem" }
+                "items": {
+                  "$ref": "#/definitions/contentItem"
+                },
+                "type": "array"
               }
-            }
+            },
+            "type": "object"
           }
         },
         {
-          "if": { "properties": { "type": { "const": "ad-block" } } },
+          "if": {
+            "properties": {
+              "type": {
+                "const": "ad-block"
+              }
+            },
+            "x-nfl-authoring": {
+              "sectionFields": [
+                "type",
+                "title",
+                "description",
+                "show_top_rule",
+                "show_bottom_rule",
+                "items"
+              ],
+              "itemFields": [
+                "adId"
+              ],
+              "requiredSectionFields": [
+                "type",
+                "items"
+              ],
+              "requiredItemFields": [
+                "adId"
+              ]
+            },
+            "type": "object"
+          },
           "then": {
             "properties": {
               "items": {
                 "maxItems": 1,
-                "items": { "$ref": "#/definitions/adBlockSourceItem" }
+                "items": {
+                  "$ref": "#/definitions/adBlockSourceItem"
+                },
+                "type": "array"
               }
-            }
+            },
+            "x-nfl-authoring": {
+              "sectionFields": [
+                "type",
+                "title",
+                "description",
+                "show_top_rule",
+                "show_bottom_rule",
+                "items"
+              ],
+              "itemFields": [
+                "adId"
+              ],
+              "requiredSectionFields": [
+                "type",
+                "items"
+              ],
+              "requiredItemFields": [
+                "adId"
+              ]
+            },
+            "type": "object"
           }
         },
         {
-          "if": { "properties": { "type": { "const": "short-take" } } },
+          "if": {
+            "properties": {
+              "type": {
+                "const": "short-take"
+              }
+            },
+            "x-nfl-authoring": {
+              "sectionFields": [
+                "type",
+                "title",
+                "description",
+                "items"
+              ],
+              "itemFields": [
+                "shortTakeId"
+              ],
+              "requiredSectionFields": [
+                "type",
+                "items"
+              ],
+              "requiredItemFields": [
+                "shortTakeId"
+              ]
+            },
+            "type": "object"
+          },
           "then": {
             "properties": {
               "items": {
                 "maxItems": 1,
-                "items": { "$ref": "#/definitions/shortTakeSourceItem" }
+                "items": {
+                  "$ref": "#/definitions/shortTakeSourceItem"
+                },
+                "type": "array"
               }
-            }
+            },
+            "x-nfl-authoring": {
+              "sectionFields": [
+                "type",
+                "title",
+                "description",
+                "items"
+              ],
+              "itemFields": [
+                "shortTakeId"
+              ],
+              "requiredSectionFields": [
+                "type",
+                "items"
+              ],
+              "requiredItemFields": [
+                "shortTakeId"
+              ]
+            },
+            "type": "object"
           }
         },
         {
-          "if": { "properties": { "type": { "const": "calendar_event" } } },
-          "then": { "required": ["title", "startsAt"] },
+          "if": {
+            "properties": {
+              "type": {
+                "const": "calendar_event"
+              }
+            },
+            "type": "object"
+          },
+          "then": {
+            "required": [
+              "title",
+              "startsAt"
+            ]
+          },
           "else": {
-            "if": { "properties": { "type": { "const": "inline_cta" } } },
-            "then": { "required": ["primaryAction"] },
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "inline_cta"
+                },
+                "button_border_width": {
+                  "type": [
+                    "number",
+                    "string"
+                  ],
+                  "minimum": 0,
+                  "pattern": "^(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:px)?$",
+                  "default": 2,
+                  "description": "Button border width. Accepts a nonnegative pixel number or px string, including zero and decimals."
+                },
+                "secondary_button_border_width": {
+                  "type": [
+                    "number",
+                    "string"
+                  ],
+                  "minimum": 0,
+                  "pattern": "^(?:\\d+(?:\\.\\d+)?|\\.\\d+)(?:px)?$",
+                  "default": 2,
+                  "description": "Button border width. Accepts a nonnegative pixel number or px string, including zero and decimals."
+                }
+              },
+              "type": "object"
+            },
+            "then": {
+              "required": [
+                "primaryAction"
+              ]
+            },
             "else": {
-              "if": { "properties": { "type": { "enum": ["ad-slot", "short-take-slot"] } } },
+              "if": {
+                "properties": {
+                  "type": {
+                    "enum": [
+                      "ad-slot",
+                      "short-take-slot"
+                    ]
+                  }
+                },
+                "type": "object"
+              },
               "then": {},
-              "else": { "required": ["items"] }
+              "else": {
+                "required": [
+                  "items"
+                ]
+              }
             }
           }
         }
@@ -265,35 +1081,103 @@
     },
     "contentItem": {
       "type": "object",
-      "required": ["title"],
+      "required": [
+        "title"
+      ],
       "properties": {
-        "kicker": { "type": "string" },
-        "format": { "type": "string" },
-        "title": { "type": "string" },
-        "content": { "$ref": "#/definitions/contentAttribution" },
-        "subtitle": { "type": "string" },
-        "body": { "type": "string" },
-        "image": { "type": "string", "format": "uri" },
-        "imageAlt": { "type": "string" },
-        "price": { "type": "string" },
-        "link": { "$ref": "#/definitions/trackedLink" },
-        "ctaText": { "type": "string" }
+        "kicker": {
+          "type": "string",
+          "examples": [
+            "Example Kicker"
+          ]
+        },
+        "format": {
+          "type": "string",
+          "examples": [
+            "Example Format"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "examples": [
+            "Newsletter Title"
+          ]
+        },
+        "content": {
+          "$ref": "#/definitions/contentAttribution"
+        },
+        "subtitle": {
+          "type": "string",
+          "examples": [
+            "Example Subtitle"
+          ]
+        },
+        "body": {
+          "type": "string",
+          "examples": [
+            "<p>Example Body content.</p>"
+          ]
+        },
+        "image": {
+          "type": "string",
+          "format": "uri",
+          "examples": [
+            "https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA"
+          ]
+        },
+        "imageAlt": {
+          "type": "string",
+          "examples": [
+            "Image description for accessibility"
+          ]
+        },
+        "price": {
+          "type": "string",
+          "examples": [
+            "Example Price"
+          ]
+        },
+        "link": {
+          "$ref": "#/definitions/trackedLink"
+        },
+        "ctaText": {
+          "type": "string",
+          "examples": [
+            "Read more"
+          ]
+        }
       },
       "additionalProperties": false
     },
     "adBlockSourceItem": {
       "type": "object",
-      "required": ["adId"],
+      "required": [
+        "adId"
+      ],
       "properties": {
-        "adId": { "type": "string", "pattern": "\\S" }
+        "adId": {
+          "type": "string",
+          "pattern": "\\S",
+          "examples": [
+            "example-ad-id"
+          ]
+        }
       },
       "additionalProperties": false
     },
     "shortTakeSourceItem": {
       "type": "object",
-      "required": ["shortTakeId"],
+      "required": [
+        "shortTakeId"
+      ],
       "properties": {
-        "shortTakeId": { "type": "string", "pattern": "\\S" }
+        "shortTakeId": {
+          "type": "string",
+          "pattern": "\\S",
+          "examples": [
+            "example-short-take-id"
+          ]
+        }
       },
       "additionalProperties": false
     },
@@ -301,70 +1185,212 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "label": { "type": "string", "minLength": 1 },
-        "category": { "type": "string", "minLength": 1 },
-        "tags": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "example-id"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Example Label"
+          ]
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Example Category"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+              "Example Tags"
+            ]
+          }
+        }
       }
     },
     "trackedLink": {
       "oneOf": [
-        { "type": "string", "format": "uri" },
+        {
+          "type": "string",
+          "format": "uri",
+          "examples": [
+            "https://nearfuturelaboratory.com"
+          ]
+        },
         {
           "type": "object",
-          "required": ["href"],
+          "required": [
+            "href"
+          ],
           "properties": {
-            "href": { "type": "string", "format": "uri" },
-            "url": { "type": "string", "format": "uri" },
-            "label": { "type": "string" },
-            "category": { "type": "string" },
-            "role": { "type": "string" },
+            "href": {
+              "type": "string",
+              "format": "uri",
+              "examples": [
+                "https://nearfuturelaboratory.com"
+              ]
+            },
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "examples": [
+                "https://nearfuturelaboratory.com"
+              ]
+            },
+            "label": {
+              "type": "string",
+              "examples": [
+                "Example Label"
+              ]
+            },
+            "category": {
+              "type": "string",
+              "examples": [
+                "Example Category"
+              ]
+            },
+            "role": {
+              "type": "string",
+              "examples": [
+                "Example Role"
+              ]
+            },
             "interest": {
               "oneOf": [
-                { "type": "string" },
-                { "type": "array", "items": { "type": "string" } }
+                {
+                  "type": "string",
+                  "examples": [
+                    "Example Interest"
+                  ]
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "examples": [
+                      "Example Interest"
+                    ]
+                  }
+                }
               ]
             },
             "interests": {
               "oneOf": [
-                { "type": "string" },
-                { "type": "array", "items": { "type": "string" } }
+                {
+                  "type": "string",
+                  "examples": [
+                    "Example Interests"
+                  ]
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "examples": [
+                      "Example Interests"
+                    ]
+                  }
+                }
               ]
             },
-            "intent": { "type": "string" }
+            "intent": {
+              "type": "string",
+              "examples": [
+                "Example Intent"
+              ]
+            }
           }
         }
       ]
     },
     "inlineCtaAction": {
       "type": "object",
-      "required": ["label", "url"],
+      "required": [
+        "label",
+        "url"
+      ],
       "properties": {
-        "label": { "type": "string" },
-        "url": { "$ref": "#/definitions/trackedLink" }
+        "label": {
+          "type": "string",
+          "examples": [
+            "Example Label"
+          ]
+        },
+        "url": {
+          "$ref": "#/definitions/trackedLink"
+        }
       },
       "additionalProperties": true
     },
     "navLink": {
       "type": "object",
-      "required": ["label"],
+      "required": [
+        "label"
+      ],
       "properties": {
-        "label": { "type": "string" },
-        "text": { "type": "string" },
-        "href": { "$ref": "#/definitions/trackedLink" },
-        "url": { "$ref": "#/definitions/trackedLink" }
+        "label": {
+          "type": "string",
+          "examples": [
+            "Example Label"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "examples": [
+            "Example Text"
+          ]
+        },
+        "href": {
+          "$ref": "#/definitions/trackedLink"
+        },
+        "url": {
+          "$ref": "#/definitions/trackedLink"
+        }
       }
     },
     "socialLink": {
       "type": "object",
-      "required": ["label", "url"],
+      "required": [
+        "label",
+        "url"
+      ],
       "properties": {
-        "label": { "type": "string" },
-        "text": { "type": "string" },
-        "title": { "type": "string" },
-        "href": { "$ref": "#/definitions/trackedLink" },
-        "url": { "$ref": "#/definitions/trackedLink" }
+        "label": {
+          "type": "string",
+          "examples": [
+            "Example Label"
+          ]
+        },
+        "text": {
+          "type": "string",
+          "examples": [
+            "Example Text"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "examples": [
+            "Newsletter Title"
+          ]
+        },
+        "href": {
+          "$ref": "#/definitions/trackedLink"
+        },
+        "url": {
+          "$ref": "#/definitions/trackedLink"
+        }
       }
     }
-  }
+  },
+  "x-nfl-contract-version": 1
 }

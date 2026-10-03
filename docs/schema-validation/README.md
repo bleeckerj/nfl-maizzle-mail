@@ -1,102 +1,52 @@
-# Schema Validation
+# Newsletter schema and authoring contract
 
-This repo currently has a generic `newsletter.schema.json`, but it is not yet specific enough to reliably validate the data shape for the `dense-discovery` template.
+Every maintained template owns `templates/<template>/newsletter.schema.json`. The schema defines accepted source values, authoring controls, defaults, and examples. The CLI generator and Backoffice read the same resolved contract through `scripts/newsletter-contract.mjs`.
 
-We want a robust way to flag typos/unexpected keys in source content (Markdown → JSON) like `intro.foobarcontent`, without hardcoding “known misspellings”.
+Builds validate before rendering. Invalid values stop the build with the source path, section, field, supplied value, and accepted type or pattern. `--strict-schema` remains accepted for existing commands; validation is always required. A missing template schema is an error. Optional fields may be absent from an authored draft.
 
-## Proposed approach
+## Field roles
 
-- Maintain **template-specific JSON Schemas** (e.g. `templates/dense-discovery/newsletter.schema.json`) that describe the exact `locals` shape used by that template (`intro`, `header`, `sections[*]`, per-`section.type` item shapes, etc.).
-- Use JSON Schema validation (Ajv) after `scripts/md_to_json.mjs` writes `data/newsletter.json` and before `maizzle build`.
-- Add `additionalProperties: false` (and/or `unevaluatedProperties: false`) to the objects we want to protect against typos so any unknown key is reported with a path.
-- Default behavior: **warn and continue**; optional `--strict-schema` (or `SCHEMA_STRICT=1`) to fail the build on schema errors.
+- Author fields declare a type and an explicit `default`, `examples`, `const`, or `enum` for starter generation. Structured objects and arrays declare their children. Use defaults only for actual rendering defaults.
+- `readOnly: true` marks generated fields. They are omitted from new boilerplate. Existing source fields receive a compatibility notice before build normalization.
+- `deprecated: true` marks legacy fields that remain accepted for existing drafts and are omitted from new boilerplate.
+- `x-nfl-authoring` provides a narrower section or registry-item authoring view where rendering also consumes hydrated fields.
 
-## Status: implemented (best-effort)
+Reference-site annotations override referenced defaults. Section discovery combines common fields with the matching discriminator branch. Mutually exclusive alternatives remain alternatives. The generator rejects unknown section names and validates its result before writing it.
 
-- Schema generation script: `scripts/generate-template-schema.mjs`
-  - `npm run schema:generate -- --entry templates/dense-discovery/newsletter.html --output templates/dense-discovery/newsletter.schema.json`
-- Build-time validation: `scripts/build-newsletter.mjs`
-  - Automatically validates `data/newsletter.json` against `templates/<template>/newsletter.schema.json` when present (falls back to `newsletter.schema.json`).
-  - Default: warns and continues.
-  - Strict mode: pass `--strict-schema` or set `SCHEMA_STRICT=1`.
-  - If you use `workflow.sh`, you can pass `--strict-schema` and/or `--regen-schema`.
+## Spacing and CTA controls
 
-## Creating `templates/dense-discovery/newsletter.schema.json` from templates
+For Dense Discovery, Daily Headlines, and Brain Dead inline CTAs, `space_top`, `space_bottom`, `border_width`, and `border_radius` accept any nonnegative pixel number, numeric string, or `px` string, including zero and decimals. Examples include `0`, `7.5`, and `13.25px`. There is no size enum. Top and bottom spacing are additional space around the card; neighboring sections can contribute their own spacing.
 
-The goal is a schema that is:
+`font_family` accepts `mono`, `sans`, or a CSS font stack. Blank lines in plain CTA statements create paragraph breaks. Authored block HTML retains its structure. The shared presentation helper preserves zero and prevents duplicate `px` suffixes.
 
-- **Definitive** for `dense-discovery` (matches what the templates actually read at render time).
-- **Defensive** (unknown keys get flagged via `additionalProperties: false`).
-- **Maintainable** (stays in sync as templates change).
+## Source-only authoring
 
-### Practical way to “derive from templates”
+```sh
+node scripts/generate-skeleton-from-schema.mjs --template dense-discovery --output /tmp/reference.md
+node scripts/newsletter-contract.mjs --template dense-discovery
+```
 
-Maizzle templates use `posthtml-expressions`, where `{{ ... }}` and `<if condition="...">` contain JavaScript-like expressions, and `<each loop="x in y">` introduces loop variables.
+Full reference starters include working author controls. Backoffice's new issue workflow continues to omit unsourced example sections and seed its required recurring content. Section lookup exposes the schema constraints and the same examples used by the CLI. Section insertion uses those examples while clearing content collections so it never inserts invented registry IDs.
 
-A workable derivation pipeline is:
+Generating, inserting, or saving source does not run tests or builds. Saving a draft preserves omitted optional controls. The old Python skeleton command delegates to the shared generator. Maintained templates also use it through the snippet command.
 
-1. **Collect the template surface area**
-   - Start from `templates/dense-discovery/newsletter.html`.
-   - Resolve `<component src="...">` includes (e.g. `templates/dense-discovery/components/IntroSection.html`, `templates/dense-discovery/components/Header.html`, `templates/dense-discovery/components/Footer.html`).
-   - Also include the layout file(s) used via `<extends ...>`.
+## Maintaining a schema
 
-2. **Extract data “reads”**
-   - Find all moustache expressions: `{{ ... }}` and `{{{ ... }}}`.
-   - Find all condition expressions: `<if condition="...">`.
-   - Find all loops: `<each loop="item in section.items">` (creates variable bindings: `item`, `section`, etc.).
+Update the schema, responsible renderer or normalizer, examples, and focused tests together. Never generate a production schema by scanning template expressions. That scan cannot distinguish source values from hydrated content or build helpers.
 
-3. **Parse expressions to property paths**
-   - For each expression, parse the JavaScript snippet and collect “member access” chains:
-     - Example: `header.logoTop` → path `header.logoTop`
-     - Example: `section.containerStyles.backgroundColor` → path `sections[*].containerStyles.backgroundColor` (once you know `section` is `sections[*]`)
-     - Example: `item.authorLabel || section.authorLabel || 'Author'` → paths `sections[*].items[*].authorLabel`, `sections[*].authorLabel`
-   - Current implementation is regex-driven and best-effort (it understands dotted access and `['computed']` access); upgrading to a real JS parser (e.g. `acorn`) is a likely next step.
+```sh
+npm run schema:generate -- --entry templates/dense-discovery/newsletter.html --output /tmp/dense-discovery.schema.discovered.json
+```
 
-4. **Infer shape from loops**
-   - When you see `<each loop="section in sections">`, bind `section` → `sections[*]`.
-   - When you see `<each loop="item in section.items">`, bind `item` → `sections[*].items[*]`.
-   - When you see `<each loop="image in item.images">`, bind `image` → `sections[*].items[*].images[*]`.
+The scanner refuses to overwrite `newsletter.schema.json`. `workflow.sh --regen-schema` writes a separate discovery file for review. Review the differences against the maintained schema.
 
-5. **Infer required vs optional (heuristic)**
-   - If a path is only ever used inside `<if condition="path">`, treat it as **optional**.
-   - If a path is used outside guards, treat it as **required** (or at least “expected”).
-   - Be conservative: schemas can start by marking most fields optional, but still use `additionalProperties: false` to catch typos.
+## Explicit verification
 
-6. **Emit JSON Schema**
-   - Generate a base object with explicit `properties` for the collected paths.
-   - Set `additionalProperties: false` for objects you want to protect (root, `intro`, `header`, each `section`, each `item`).
-   - Model polymorphic section items using `oneOf` keyed by `section.type`, e.g.:
-     - `"type": { "const": "books-accessories" }` then an `"items"` array of book items.
+```sh
+npm run test:newsletter-contracts
+node scripts/build-newsletter.mjs /path/to/source-snapshot.md verification-output --no-open
+```
 
-7. **Keep a small manual override layer**
-   - Some things are hard to infer precisely (e.g. rich HTML strings, URLs, arrays of objects vs strings).
-   - Let the generator merge in a hand-maintained “patch” file with:
-     - formats (`uri`, `email`)
-     - `oneOf` refinements (`images` array supports string or `{src, alt, link}`)
-     - enums for `section.type`
+The contract suite covers all twelve maintained schemas, generated source validity, reference annotations, conditional fields, excluded runtime controls, invalid values, schema protection, and rendered CTA behavior. A generated-source check does not prove every field's visual effect. Verify renderer changes with focused output assertions and a representative canonical build. Public artifact links still require the active publication registry and successful live validation.
 
-### Output expectations
-
-You should be able to validate `data/newsletter.json` and get errors like:
-
-- unknown key: `intro.foobarcontent`
-- unknown item key: `sections[3].items[0].autherName`
-- wrong type: `sections[2].items[0].images` is not an array
-
-### Limitations to accept up-front
-
-- Template expressions can access arbitrary JS, so this is “best effort” derivation.
-- Components can be conditionally included; derivation should include all possible component files for the template.
-- Some variables are injected at build time (e.g. `themeColors`, `section.containerStyles`, `section.contentStyles`); the schema should include these if the template reads them from `locals`.
-
-## Implementation sketch
-
-- Add a step in `scripts/build-newsletter.mjs`:
-  - Load the schema for the current `template` (fallback to generic schema when missing).
-  - Validate `data/newsletter.json` using Ajv.
-  - Print a concise list of “unknown key” violations with JSON pointers/paths.
-- (Optional) allow an escape hatch (like `meta` or `extra`) where freeform keys are allowed without warnings.
-
-## Why this is deferred
-
-- `newsletter.schema.json` needs to be brought into alignment with the actual template usage, and likely split into per-template schemas to avoid false positives/negatives.
+The GitHub Actions job requires a `BACKOFFICE_READ_TOKEN` repository secret with read-only contents access to the private `bleeckerj/nfl-backoffice` repository. It checks out only `packages/nfl-native-lockups` for the existing local package dependency. Tests themselves run without network access. This change does not create or store that credential.

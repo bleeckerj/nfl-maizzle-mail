@@ -1,808 +1,790 @@
 ---
 template: dense-discovery
-newsletterFormat: discovery
 title: Newsletter Title
+darkModePolicy: {"flatten":false}
+page: {}
+theme: {}
 preheader: Short preview text that appears in email clients
-ogImage: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=900?format=webp
-ogImageAltText: Open graph preview image for this newsletter
-socialCard:
-  # Export metadata for newsletter social/platform cards. This does not render in the email itself.
-  title: Newsletter Title
-  subtitle: Short preview text that appears in email clients
-  kicker: Welcome
-  backgroundImage: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=900?format=webp
-  logoUrl: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=200?format=webp
-  titleFont: nfl-title-untitled
-  titleFontScale: 0.7
-  subtitleFont: nfl-subtitle
-  subtitleFontScale: 0.9
-  kickerFont: nfl-kicker
-  kickerFontScale: 1.0
-  footerFontScale: 1.0
-  backgroundOpacity: 1
-  backgroundHueRotate: 0
-  backgroundSaturation: 1.08
-  overlayStrength: 0.46
-  imageBrightness: 0.7
-  textColor: '#f5f2eb'
-  mutedTextColor: 'rgba(255,255,255,0.82)'
-  kickerColor: '#ffb000'
-  animation:
-    mode: none
-    animeModule: deterministic-orbit
-    duration: 2400
-    loop: true
-    posterFrame: 0.5
-    disableForPresets:
-    - 15x9
+ogImage: 'https://fpoimg.com/800x600?text=Og%20image&bg_color=e6e6e6&text_color=4FAAAA'
+colorTheme: professional
 sectionStylesFile: templates/dense-discovery/section-styles.json
-colorTheme: 'winter'
-intro:
-  title: Welcome
-  viewOnlineLink:
-    href: https://nearfuturelaboratory.com/newsletters/2026/wXX-yYY
-    label: wXX-yYY | view online
-    category: issue-nav
-    intent: read-related
-  images:
-  - src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/b1ae3684-fdc5-4665-95ae-0a66893ff200/w=600?format=webp
-    alt: Newspaper page about AlgoAllo’s AI-driven sports-model training studio, with a photo of people working in a colorful office.
-  aside:
-    content: <p>Teaser/lede text that sets up the intro content.</p>
-    containerStyles:
-      backgroundColor: '#f4f1ea'
-      borderLeftWidth: 3px
-      borderLeftStyle: solid
-      borderLeftColor: '#d7d1c6'
-      padding: 12px 14px
-      borderRadius: 6px
-    contentStyles:
-      fontFamily: '''Ubuntu'', sans-serif'
-      fontSize: 18px
-      lineHeight: 23px
-      fontStyle: italic
-      color: '#3f3f3f'
-      textAlign: left
-  containerStyles:
-    backgroundColor: null
-    padding: '0'
-    borderRadius: 0px
-  contentStyles:
-    fontFamily: '''IBM Plex Sans'', sans-serif'
-    fontWeight: '400'
-    color: '#000000'
-    textAlign: left
-  content: <p>Introduction paragraph for the newsletter.</p>
+sectionStyles: {}
+meta: {}
+newsletterFormat: discovery
+ogImageAltText: Open graph preview image for this newsletter
+pubDate: '2026-01-01'
+publicationMode: public-issue
+webPublicationStatus: draft
+socialCard: {"title":"Newsletter Title","subtitle":"Example Subtitle","kicker":"Example Kicker","backgroundImage":"https://fpoimg.com/800x600?text=Background%20image&bg_color=e6e6e6&text_color=4FAAAA","logoUrl":"https://fpoimg.com/200x50?text=Logo%20url&bg_color=e6e6e6&text_color=4FAAAA","titleFont":"nfl-title-untitled","titleFontScale":0.7,"subtitleFont":"nfl-subtitle","subtitleFontScale":0.9,"kickerFont":"nfl-kicker","kickerFontScale":1,"footerFontScale":1,"backgroundOpacity":0.5,"backgroundHueRotate":0,"backgroundSaturation":1,"overlayStrength":0.5,"imageBrightness":1,"textColor":"#111111","mutedTextColor":"#666666","kickerColor":"#111111","animation":{"mode":"Example Mode","animeModule":"Example Anime module","durationMs":1000,"duration":60,"fps":30,"loop":false,"posterFrame":0,"disableForPresets":["Example Disable for presets"]}}
+
 header:
-  logoLink: https://nearfuturelaboratory.com
-  quote: Inspiring header quote
-  author: Quote Author
-  featuredArtist:
-    name: Artist Name
-    link: '#'
-  featuredImage: https://fpoimg.com/600x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Featured
-  logoBottom: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp
-  logoTop: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp
+  containerStyles: {"backgroundColor":"#ffffff"}
+  featuredImage: 'https://fpoimg.com/800x600?text=Featured%20image&bg_color=e6e6e6&text_color=4FAAAA'
+  quote: An inspiring quote or thought-provoking statement
+  author: Author Name
+  featuredArtist: {"link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"label":"Example Label","category":"Example Category","interest":"Example Interest","intent":"Example Intent","name":"Example Name"}
+  caption: Example Caption
+  logoTop: 'https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/80a173f3-1366-4052-5889-5dbcf8f25200/w=200?format=webp'
+  logoLink: 'https://nearfuturelaboratory.com'
+  logoBottom: 'https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5240f451-4c17-47c9-6c5a-50e50d22c500/w=200?format=webp'
+
+intro:
+  quote: An inspiring quote or thought-provoking statement
+  title: Newsletter Title
+  viewOnlineLink: {"href":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"label":"Example Label","category":"Example Category","intent":"Example Intent"}
+  images:
+  - src: 'https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA'
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    alt: Image description for accessibility
+    caption: Example Caption
+  imageLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  imageAlt: Image description for accessibility
+  image: {"src":"https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"alt":"Image description for accessibility","caption":"Example Caption"}
+  aside: {"contentStyles":{"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"16px","lineHeight":"1.5","fontWeight":"400","fontStyle":"normal","color":"#111111","textAlign":"left"},"containerStyles":{"backgroundColor":"#ffffff","borderLeftWidth":"1px","borderLeftStyle":"solid","borderLeftColor":"#d1d5db","padding":"16px","borderRadius":"8px"},"content":"<p>Example Content content.</p>"}
+  content: <p>Example Content content.</p>
+  contentStyles: {"fontFamily":"Arial, Helvetica, sans-serif","fontSize":"16px","lineHeight":"1.5","fontWeight":"400","color":"#111111","textAlign":"left"}
+  containerStyles: {"backgroundColor":"#ffffff","padding":"16px","borderRadius":"8px"}
+
 sections:
-- type: single-column
-  title: From the Projects Collection
-  items:
-  - title: Car and Driverless
-    link:
-      href: https://nearfuturelaboratory.com/projects/en/car-and-driverless/
-      label: wXX-yYY | project | Car and Driverless
-      category: speculative-practice
-      intent: read-related
-    subtitle: Imagine a world where self-driving cars are normal, ordinary, and everyday.
-    description: <p>A 72 page full-color Design Fiction magazine from an autonomous vehicle future, based on internal strategic vision and roadmaps, industry focus, market analysis, and STEEP foresight research.</p>
-    image:
-      src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2375047f-1603-4221-98fc-ee9cf6a90c00/public
-      alt: Car and Driverless, a magazine from a possible autonomous vehicle future.
-    readMoreText: View project →
-- type: feature
-  title: Feature Section
-  featureLink: Example featureLink
-  featureLabel: Example featureLabel
-  contentStyles:
-    subtitleColor: "#707070"
-    subtitleFontSize: 16px
-    subtitleLineHeight: 18px
-    subtitleFontWeight: "400"
-  items:
-  - title: Feature Item 1
-    link: https://example.com
-    subtitle: Example subtitle for item 1
-    description: <p>Example description for feature item 1.</p>
-    images:
-    - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-      alt: Alternate text for item 1 image 1
-      link: https://example.com/image-destination
-    - src: https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second
-      alt: Alternate text for item 1 image 2
-    readMoreText: Read more →
-    readMoreLink: https://example.com
-- type: dispatch
-  title: Dispatch Section
-  dispatchLink: Example dispatchLink
-  dispatchLabel: Example dispatchLabel
-  items:
-  - title: Dispatch Item 1
-    signalsLabel: SIGNALS
-    tags:
-    - TAG1
-    - TAG2
-    link: https://example.com
-    subtitle: Example subtitle for item 1
-    description: <p>Example description for dispatch item 1.</p>
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-    readMoreText: Read more →
-    readMoreLink: https://example.com
-- type: signals-adjacent-now
-  title: Signals from an Adjacent Now
-  signalsLabel: SIGNALS FROM AN ADJACENT NOW
-  description: <p>Section introduction for signals-adjacent-now.</p>
-  items:
-  - title: Signal Item 1
-    tags:
-    - TAG1
-    - TAG2
-    link: https://example.com
-    subtitle: Signal from the observation post
-    image: https://fpoimg.com/800x600?text=Adjacent+Now&bg_color=e6e6e6&text_color=4FAAAA
-    description: <p>Example description for signals-adjacent-now item 1.</p>
-    sourceDigestSummary: <p>Example source digest summary for item 1.</p>
-    additionalReferences:
-    - title: Related reference
-      href: https://example.com/reference
-      description: A source that gives the signal more context.
-    storySeeds:
-    - Story seed 1
-    - Story seed 2
-    strategyQuestions:
-    - What changes if this signal spreads?
-    - What quiet assumptions does this expose?
-    readMoreText: Read source →
-    readMoreLink: https://example.com
 - type: ad-block
-  title: This Week's Partner
-  description: <p>Optional framing copy for the ad slot.</p>
+  title: Newsletter Title
+  description: <p>Example Description content.</p>
   items:
-  - adId: fashion-8bit-pants-interstitial
-- type: short-take
+  - adId: example-ad-id
+  - adId: example-ad-id
+  show_bottom_rule: true
+- type: adjacency-editorial-remarks
+  containerStyles: {"backgroundColor":"#ffffff"}
+  bodyHtml: <p>Example Body content.</p>
+  contentStyles: {}
+  footerCta: {"eyebrow":"Example Eyebrow","textHtml":"<p>Example Text content.</p>","primaryAction":{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"label":"Example Label","enabled":true},"secondaryAction":{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"label":"Example Label","enabled":true}}
+  ctaLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  ctaText: Read more
+  headingStyles: {}
+  linkStyles: {}
+- type: adjacency-feature
+  title: Newsletter Title
+  containerStyles: {"backgroundColor":"#ffffff"}
+  rubric: Example Rubric
+  dek: Example Dek
+  author: Author Name
+  dateLabel: Example Date label
+  tags: []
+  explainerHtml: <p>Example Explainer content.</p>
+  heroImage: {"src":"https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Example Caption","credit":"Example Credit"}
+  bodyHtml: <p>Example Body content.</p>
+  contentStyles: {}
+  footerCta: {"eyebrow":"Example Eyebrow","textHtml":"<p>Example Text content.</p>","primaryAction":{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"label":"Example Label","enabled":true},"secondaryAction":{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"label":"Example Label","enabled":true}}
+  ctaLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  ctaText: Read more
+  headingStyles: {}
+  linkStyles: {}
+- type: adjacency-help-wanted
   items:
-  - shortTakeId: dhl-autonomous-catapult-delivery-trials
-- type: apps-sites
-  title: Apps Sites Section
+  - title: Newsletter Title
+    sourceRef: Example Source ref
+    publicUrl: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    companyLogo: {"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"altText":"Image description for accessibility"}
+    company: Example Company
+    location: Example Location
+    department: Example Department
+    posted: Example Posted
+    ledeHtml: <p>Example Lede content.</p>
+  - title: Newsletter Title
+    sourceRef: Example Source ref
+    publicUrl: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    companyLogo: {"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"altText":"Image description for accessibility"}
+    company: Example Company
+    location: Example Location
+    department: Example Department
+    posted: Example Posted
+    ledeHtml: <p>Example Lede content.</p>
+  eyebrow: Example Eyebrow
+  heading: Example Heading
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
+- type: adjacency-job-posting
+  title: Newsletter Title
+  companyIcon: {"src":"https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility"}
+  companyLogo: {"src":"https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility"}
+  company: Example Company
+  companyTagline: Example Company tagline
+  tags: []
+  location: Example Location
+  team: Example Team
+  department: Example Department
+  employmentType: Example Employment type
+  posted: Example Posted
+  roleNumber: Example Role number
+  weeklyHours: Example Weekly hours
+  applyUrl: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  applyLabel: Example Apply label
+  locationPickerUrl: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  locationPickerLabel: Example Location picker label
+  summaryHtml: <p>Example Summary content.</p>
+  descriptionHtml: <p>Example Description content.</p>
+  lists: []
+  payRangeHtml: <p>Example Pay range content.</p>
+  bodyHtml: <p>Example Body content.</p>
+  originalSourceUrl: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  footerNotesHtml: []
+  footerCta: {"eyebrow":"Example Eyebrow","textHtml":"<p>Example Text content.</p>","primaryAction":{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"label":"Example Label","enabled":true},"secondaryAction":{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"label":"Example Label","enabled":true}}
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
+  brandVariant: Example Brand variant
+  canonicalUrl: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+- type: adjacency-todays-mix
   items:
-  - title: Apps Sites Item 1
-    link: https://example.com
-    subtitle: Example subtitle for item 1
-    description: <p>Example description for apps-sites item 1.</p>
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-    readMoreText: Read more →
-    readMoreLink: https://example.com
-    paywall: true
-  - title: Apps Sites Item 2
-    link: https://example.com
-    subtitle: Example subtitle for item 2
-    description: <p>Example description for apps-sites item 2.</p>
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-    readMoreText: Read more →
-    readMoreLink: https://example.com
-    paywall: true
-- type: apps-sites-single-column
-  title: Apps Sites Single Column Section
-  description: <p>Description for apps-sites-single-column section.</p>
+  - title: Newsletter Title
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    sourceRef: Example Source ref
+    publicUrl: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    label: Example Label
+    contextTags: []
+    lede: Example Lede
+    author: Author Name
+  - title: Newsletter Title
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    sourceRef: Example Source ref
+    publicUrl: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    label: Example Label
+    contextTags: []
+    lede: Example Lede
+    author: Author Name
+  eyebrow: Example Eyebrow
+  heading: Example Heading
+  subheading: Example Subheading
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
+- type: aesthetically-pleasing
+  title: Newsletter Title
+  description: <p>Example Description content.</p>
   items:
-  - title: Apps Sites Single Column Item 1
-    link: https://example.com
-    subtitle: Example subtitle for item 1
-    description: <p>Example description for apps-sites-single-column item 1.</p>
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-    readMoreText: Read more →
-    readMoreLink: https://example.com
-- type: callout
-  title: Callout Section
-  items:
-  - calloutText: Callout Item 1
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-    imageAlt: Alternate text for callout item 1 image
-    imageLink: https://example.com
-    readMoreText: Read more →
-    readMoreLink: https://example.com
-- type: quote
-  title: Quote Section
-  items:
-  - quote: Example quote text for item 1
-    author: Example author
-    authorLink: https://example.com
-- type: indie-mag
-  title: Indie Mag Section
-  items:
-  - title: Indie Mag Item 1
-    link: https://example.com
-    description: <p>Example description for indie-mag item 1.</p>
-    details: <p>Example details for indie-mag item 1.</p>
-    note: <p>Example note for indie-mag item 1.</p>
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-  - title: Indie Mag Item 2
-    link: https://example.com
-    description: <p>Example description for indie-mag item 2.</p>
-    details: <p>Example details for indie-mag item 2.</p>
-    note: <p>Example note for indie-mag item 2.</p>
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-- type: indie-mag-single-column
-  title: Indie Mag Single Column Section
-  items:
-  - title: Indie Mag Single Column Item 1
-    link: https://example.com
-    subtitle: Example subtitle for indie-mag-single-column item 1
-    description: <p>Example description for indie-mag-single-column item 1.</p>
-    details: <p>Example details for indie-mag-single-column item 1.</p>
-    note: <p>Example note for indie-mag-single-column item 1.</p>
-    image:
-      src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-      alt: Alternate text for indie-mag-single-column item 1 image
-      link: https://example.com/image-destination
-      caption: Example image caption for indie-mag-single-column item 1
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    imageLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
     readMoreText: Read more →
     readMoreTxt: Read more →
-    readMoreLink: https://example.com
-    paywall: true
-- type: single-column
-  title: Single Column Section
-  items:
-  - title: Single Column Item 1
-    link: https://example.com
-    subtitle: Example subtitle for single-column item 1
-    description: <p>Example description for single-column item 1.</p>
-    details: <p>Example details for single-column item 1.</p>
-    note: <p>Example note for single-column item 1.</p>
-    images:
-    - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-      alt: Alternate text for item 1 image 1
-      link: https://example.com/image-destination
-    - src: https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second
-      alt: Alternate text for item 1 image 2
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    imageLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
     readMoreText: Read more →
-    readMoreLink: https://example.com
-    paywall: true
-  - title: Single Column Item 2
-    link: https://example.com
-    subtitle: Example subtitle for single-column item 2
-    description: <p>Example description for single-column item 2.</p>
-    details: <p>Example details for single-column item 2.</p>
-    note: <p>Example note for single-column item 2.</p>
-    images:
-    - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-      alt: Alternate text for item 2 image 1
-      link: https://example.com/image-destination
-    - src: https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second
-      alt: Alternate text for item 2 image 2
-    readMoreText: Read more →
-    readMoreLink: https://example.com
-    paywall: true
-- type: books-accessories
-  title: Books Accessories Section
-  byline: Example byline
-  bylineLink: Example bylineLink
-  authorLabel: Author
-  items:
-  - title: Books Accessories Item 1
-    link: https://example.com
-    subtitle: Example subtitle for item 1
-    description: <p>Example description for books-accessories item 1.</p>
-    images:
-    - src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-      alt: Alternate text for item 1 image 1
-      link: https://example.com/image-destination
-    - src: https://fpoimg.com/800x600?text=Preview%20Two&bg_color=f5f5f5&text_color=4FAAAA?text=Second
-      alt: Alternate text for item 1 image 2
-    authorName: Example authorName for item 1
-    authorLabel: Author
-    authorLink: https://example.com
-    isbn: 978-1-23456-789-7
-    linkText: Example linkText for item 1
-- type: food-for-thought
-  title: Food For Thought Section
-  items:
-  - title: Food For Thought Item 1
-    link: https://example.com
-    description: <p>Example description for food-for-thought item 1.</p>
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-    channel: Example channel
-    category: Example category
-    sharedBy: Example sharedBy for item 1
-    readMoreText: Read more →
-    readMoreLink: https://example.com
-    readMoreLinks:
-    - text: Listen to podcast →
-      link: https://example.com/podcast
-    - text: View references →
-      link: https://example.com/references
-      paywall: true
-    paywall: true
-  - title: Food For Thought Item 2
-    link: https://example.com
-    description: <p>Example description for food-for-thought item 2.</p>
-    image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-    channel: Example channel
-    category: Example category
-    sharedBy: Example sharedBy for item 2
-    readMoreText: Read more →
-    readMoreLink: https://example.com
-    readMoreLinks:
-    - text: Listen to podcast →
-      link: https://example.com/podcast
-    - text: View references →
-      link: https://example.com/references
-      paywall: true
-    paywall: true
-- type: aesthetically-pleasing
-  title: Aesthetically Pleasing Section
-  description: <p>Description for aesthetically-pleasing section.</p>
-  items:
-  - image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-    title: Example title
-    imageLink: https://example.com
-    link: https://example.com
-    description: <p>Example description for aesthetically-pleasing item 1.</p>
-    readMoreText: Read more →
-- type: classifieds
-  title: Classifieds Section
-  description: <p>Description for classifieds section.</p>
-  bookingLink: Example bookingLink
-  bookingText: Example bookingText
-  items:
-  - companyName: Example Company
-    companyLede: A SPECULATIVE ROLE AT
-    companyLogo:
-      src: https://fpoimg.com/104x104?text=Logo&bg_color=ffffff&text_color=111111
-      alt: Example Company
-    content: <p>Example classified content for item 1.</p>
-    title: Example title
-    link: https://example.com
-    linkText: Example linkText for item 1
-    images:
-      src: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-      alt: Alternate text for classified item 1 image
-      caption: Example caption for classified item 1 image
+    readMoreTxt: Read more →
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
 - type: animated-image
-  title: Animated Image Section
-  itemTitlePlacement: below-image-before-description
+  title: Newsletter Title
   items:
-  - image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-    title: Example title
-    description: <p>Example description for animated-image item 1.</p>
-    link: https://example.com
-- type: image
-  title: Image Section
-  itemTitlePlacement: below-image-before-description
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+  itemTitlePlacement: above-image
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
+- type: apps-sites
+  title: Newsletter Title
   items:
-  - image: https://fpoimg.com/800x600?text=Preview&bg_color=e6e6e6&text_color=4FAAAA?text=Image
-    title: Example title
-    description: <p>Example description with <strong>bold</strong>, <em>italic</em>, and <a href="https://example.com">linked</a> text.</p>
-    link: https://example.com
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    content: {"id":"example-id","label":"Example Label","category":"Example Category","tags":["Example Tags"]}
+    subtitle: Example Subtitle
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    paywall: false
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    content: {"id":"example-id","label":"Example Label","category":"Example Category","tags":["Example Tags"]}
+    subtitle: Example Subtitle
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    paywall: false
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  itemSpacing: 1
+  headingStyles: {}
+  linkStyles: {}
+- type: apps-sites-single-column
+  title: Newsletter Title
+  description: <p>Example Description content.</p>
+  items:
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    subtitle: Example Subtitle
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    subtitle: Example Subtitle
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
+- type: books-accessories
+  title: Newsletter Title
+  items:
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    subtitle: Example Subtitle
+    authorName: Author Name
+    authorLabel: Example Author label
+    authorLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    isbn: Example Isbn
+    linkText: Read more →
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    subtitle: Example Subtitle
+    authorName: Author Name
+    authorLabel: Example Author label
+    authorLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    isbn: Example Isbn
+    linkText: Read more →
+  containerStyles: {"backgroundColor":"#ffffff"}
+  byline: Example Byline
+  bylineLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  authorLabel: Example Author label
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
 - type: calendar_event
-  id: example-calendar-event
-  eyebrow: Calendar
-  title: Calendar Event Section
-  subtitle: Example event subtitle
-  startsAt: '2026-07-15T17:00:00-07:00'
+  title: Newsletter Title
+  description: <p>Example Description content.</p>
+  startsAt: '2026-01-01T10:00:00-08:00'
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  eyebrow: Example Eyebrow
+  subtitle: Example Subtitle
+  displayDate: January 1, 2026
+  displayTime: '10:00 AM'
+  location: Example Location
+  calendarLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  calendarLabel: Example Calendar label
+  eventLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  eventLabel: Example Event label
+  headingStyles: {}
+  linkStyles: {}
+  id: example-id
+  slug: example-item
+  start: '2026-01-01T10:00:00-08:00'
+  date: '2026-01-01'
+  endsAt: '2026-01-01T11:00:00-08:00'
+  end: '2026-01-01T11:00:00-08:00'
   durationMinutes: 60
+  duration: 60
   timezone: America/Los_Angeles
-  displayDate: Wednesday, July 15, 2026
-  displayTime: 5:00 PM PDT
-  location: Online
-  description: <p>Example calendar-event description.</p>
-  calendarLabel: Add to calendar →
-  calendarLink: https://example.com/calendar
-  eventLabel: Event details →
-  eventLink: https://example.com/event
-- type: adjacency-feature
-  rubric: Features
-  title: Adjacency Feature Title
-  dek: A short example dek for an extended editorial feature.
-  author: Example author
-  dateLabel: July 2026
-  tags:
-  - Example tag
-  - Second tag
-  explainerHtml: <p>Example explainer copy for the feature.</p>
-  heroImage:
-    src: https://fpoimg.com/800x600?text=Adjacency+Feature&bg_color=e6e6e6&text_color=4FAAAA
-    alt: Example hero image for the Adjacency feature.
-    caption: Example hero caption
-    credit: Example image credit
-  bodyHtml: <p>Example feature body copy.</p><p>A second paragraph shows the article-like reading surface.</p>
-  footerCta:
-    eyebrow: Continue reading
-    textHtml: <p>Example supporting prompt for the feature footer.</p>
-    primaryAction:
-      url: https://example.com/feature
-      label: Read the feature
-    secondaryAction:
-      url: https://example.com/archive
-      label: Browse the archive
-  ctaText: Read on The Adjacency →
-  ctaLink: https://example.com/feature
-- type: adjacency-help-wanted
-  eyebrow: Tomorrow’s Jobs Today
-  heading: Help Wanted
+  url: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  eventUrl: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  displayWeekday: Thursday
+- type: callout
+  title: Newsletter Title
   items:
-  - sourceRef: jobs/example/role-one
-    publicUrl: https://example.com/jobs/role-one
-    companyLogo:
-      url: https://fpoimg.com/112x112?text=JOB&bg_color=111111&text_color=ffffff
-      altText: Example company logo
-    company: Example Company
-    title: Founding Lead, Speculative Prototyping
-    location: San Francisco, CA
-    department: Research
-    posted: Immediate post
-    ledeHtml: <p>Example role summary.</p>
-- type: adjacency-job-posting
-  brandVariant: example
-  canonicalUrl: https://example.com/jobs/speculative-prototyping
-  companyIcon:
-    src: https://fpoimg.com/112x112?text=JOB&bg_color=111111&text_color=ffffff
-    alt: Example company icon
-  company: Example Company
-  companyTagline: Example company tagline
-  title: Applied Speculative Design
-  tags:
-  - Design
-  - Research
-  jobPresentation:
-    metaPresentation: chips
-  location: San Francisco, CA
-  team: Design Research
-  department: Product
-  employmentType: Full-time
-  posted: Immediate post
-  roleNumber: EX-001
-  weeklyHours: '40'
-  applyUrl: https://example.com/jobs/speculative-prototyping/apply
-  applyLabel: Apply now
-  locationPickerUrl: https://example.com/jobs/speculative-prototyping/locations
-  locationPickerLabel: View locations
-  summaryHtml: <p>Example job summary.</p>
-  descriptionHtml: <p>Example job description.</p>
-  lists:
-  - title: What you will do
-    items:
-    - Lead an example speculative-prototyping workstream.
-  payRangeHtml: <p>Example pay-range statement.</p>
-  bodyHtml: <p>Example supporting job information.</p>
-  originalSourceUrl: https://example.com/jobs/speculative-prototyping/source
-  footerNotesHtml:
-  - <p>Example job footer note.</p>
-  footerCta:
-    eyebrow: Learn more
-    textHtml: <p>Example job footer CTA.</p>
-    primaryAction:
-      url: https://example.com/jobs/speculative-prototyping/apply
-      label: Apply now
-    secondaryAction:
-      url: https://example.com/jobs/speculative-prototyping
-      label: View job
-- type: adjacency-todays-mix
-  eyebrow: Today’s Mix
-  heading: Example reading mix
-  subheading: A compact selection from the current edition.
+  - image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    calloutText: Important callout text that draws attention
+    imageLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    imageAlt: Image description for accessibility
+    readMoreText: Read more →
+  - image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    calloutText: Important callout text that draws attention
+    imageLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    imageAlt: Image description for accessibility
+    readMoreText: Read more →
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  linkStyles: {}
+  headingStyles: {}
+- type: classifieds
+  title: Newsletter Title
+  description: <p>Example Description content.</p>
   items:
-  - sourceRef: features/example-feature
-    publicUrl: https://example.com/features/example-feature
-    title: Example Feature
-    label: Report
-    contextTags:
-    - Autonomous systems
-    lede: Example feature lede.
-    author: Near Future Laboratory
-    image:
-      src: https://fpoimg.com/800x600?text=Today%27s+Mix&bg_color=e6e6e6&text_color=4FAAAA
-      alt: Example image for Today’s Mix.
-- type: adjacency-editorial-remarks
-  containerStyles:
-    backgroundColor: '#ffffff'
-    bodyPadding: 12px 18px 0 18px
-    ctaPadding: 4px 18px 18px 18px
-  contentStyles:
-    fontFamily: Georgia, serif
-    fontSize: 18px
-    lineHeight: 1.72
-    color: '#1d1d1d'
-  bodyHtml: <p>Example editorial remarks body.</p>
-  footerCta:
-    eyebrow: Editorial note
-    textHtml: <p>Example editorial-remarks footer CTA.</p>
-    primaryAction:
-      url: https://example.com/editorial
-      label: Read more
-    secondaryAction:
-      url: https://example.com/archive
-      label: Browse archive
-  ctaText: Read on The Adjacency →
-  ctaLink: https://example.com/editorial
-- type: microdrop-product-launch
-  brand: Example Brand
-  title: Microdrop Product Launch
-  canonicalUrl: https://example.com/microdrops/product-launch
-  theme:
-    backgroundColor: '#ffffff'
-    surfaceColor: '#f5f5f5'
-    textColor: '#111111'
-    accentColor: '#cc0066'
-  hero:
-    headline: Example product launch headline
-    dek: A short example dek for the product launch.
-    image:
-      src: https://fpoimg.com/800x600?text=Microdrop+Product&bg_color=ffffff&text_color=cc0066
-      alt: Example Microdrop product-launch hero image.
-  products:
-  - badge: New release
-    catalog: EX-001
-    name: Example product
-    price: $00
-    ritual: Example use ritual
-    descriptionText: Example product description.
-    color: '#cc0066'
-    image:
-      src: https://fpoimg.com/400x400?text=Product&bg_color=f5f5f5&text_color=cc0066
-      alt: Example product image.
-  protocol:
-    eyebrow: Protocol
-    heading: Example protocol heading
-    body: Example protocol body.
-    items:
-    - label: Step 01
-      value: Example value
-      body: Example protocol detail.
-  finalCta:
-    eyebrow: Continue
-    heading: Example final CTA heading
-    body: Example final CTA body.
-    href: https://example.com/microdrops/product-launch
-    label: View Microdrop
-  editorialNote:
-    eyebrow: Editorial note
-    heading: Example editorial note heading
-    body:
-    - Example product-launch editorial note.
-    notes:
-    - label: Note
-      body: Example product-launch note.
-- type: microdrop-institution-service
-  brand: Example Institution
-  title: Microdrop Institution Service
-  canonicalUrl: https://example.com/microdrops/institution-service
-  theme:
-    backgroundColor: '#ffffff'
-    surfaceColor: '#f5f5f5'
-    textColor: '#111111'
-    accentColor: '#006699'
-  hero:
-    eyebrow: Example public service
-    headline: Example institution-service headline
-    dek: A short example dek for the institution-service Microdrop.
-    image:
-      src: https://fpoimg.com/800x520?text=Institution+Service&bg_color=ffffff&text_color=006699
-      alt: Example Microdrop institution-service hero image.
-  serviceStrip:
-    eyebrow: Service strip
-    heading: Example service-strip heading
-    body: Example service-strip body.
-    items:
-    - label: Service
-      value: Example value
-      body: Example service detail.
-  gallery:
-  - src: https://fpoimg.com/800x520?text=Service+Gallery&bg_color=f5f5f5&text_color=006699
-    alt: Example institution-service gallery image.
-    label: Example gallery label
-    caption: Example gallery caption.
-  eligibility:
-    eyebrow: Eligibility
-    heading: Example eligibility heading
-    body: Example eligibility body.
-    items:
-    - label: Eligibility
-      value: Example value
-      body: Example eligibility detail.
-  process:
-    eyebrow: Process
-    heading: Example process heading
-    body: Example process body.
-    items:
-    - label: Step 01
-      value: Example value
-      body: Example process detail.
-  offerings:
-  - badge: Service line
-    catalog: EX-001
-    name: Example offering
-    slogan: Example offering slogan
-    descriptionText: Example offering description.
-    color: '#006699'
-    ksp:
-    - Example offering detail
-  statusBoard:
-    eyebrow: Status board
-    heading: Example status-board heading
-    body: Example status-board body.
-    items:
-    - label: Status
-      value: Example value
-      body: Example status detail.
-  caseFile:
-    eyebrow: Case file
-    heading: Example case-file heading
-    body: Example case-file body.
-    items:
-    - label: Record
-      value: Example value
-      body: Example case-file detail.
-  intakePreview:
-    eyebrow: Intake preview
-    heading: Example intake-preview heading
-    body: Example intake-preview body.
-    items:
-    - label: Intake
-      value: Example value
-      body: Example intake detail.
-  finalCta:
-    eyebrow: Continue
-    heading: Example final CTA heading
-    body: Example final CTA body.
-    href: https://example.com/microdrops/institution-service
-    label: View Microdrop
-  editorialNote:
-    eyebrow: Editorial note
-    heading: Example editorial note heading
-    body:
-    - Example institution-service editorial note.
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    content: <p>Example Content content.</p>
+    companyName: Company name shown beside the company logo in a classifieds item.
+    companyLede: A SPECULATIVE ROLE AT
+    companyLogo: {"src":"https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    contentMetadata: {"id":"example-id","label":"Example Label","category":"Example Category","tags":["Example Tags"]}
+    linkText: Read more →
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    content: <p>Example Content content.</p>
+    companyName: Company name shown beside the company logo in a classifieds item.
+    companyLede: A SPECULATIVE ROLE AT
+    companyLogo: {"src":"https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    contentMetadata: {"id":"example-id","label":"Example Label","category":"Example Category","tags":["Example Tags"]}
+    linkText: Read more →
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  bookingLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  bookingText: Example Booking text
+  headingStyles: {}
+  linkStyles: {}
+- type: dispatch
+  title: Newsletter Title
+  items:
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    tags: []
+    signalsLabel: Example Signals label
+    contentMetadata: {"id":"example-id","label":"Example Label","category":"Example Category","tags":["Example Tags"]}
+    subtitle: Example Subtitle
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    tags: []
+    signalsLabel: Example Signals label
+    contentMetadata: {"id":"example-id","label":"Example Label","category":"Example Category","tags":["Example Tags"]}
+    subtitle: Example Subtitle
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  containerStyles: {"backgroundColor":"#ffffff"}
+  dispatchLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  dispatchLabel: Example Dispatch label
+  signalsLabel: Example Signals label
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
+- type: feature
+  title: Newsletter Title
+  items:
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    content: {"id":"example-id","label":"Example Label","category":"Example Category","tags":["Example Tags"]}
+    subtitle: Example Subtitle
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    platformLinks:
+      - platform: spotify
+        label: Spotify
+        url: 'https://example.com/podcast'
+        category: podcast
+        intent: listen
+        interests: []
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    content: {"id":"example-id","label":"Example Label","category":"Example Category","tags":["Example Tags"]}
+    subtitle: Example Subtitle
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    platformLinks:
+      - platform: spotify
+        label: Spotify
+        url: 'https://example.com/podcast'
+        category: podcast
+        intent: listen
+        interests: []
+  containerStyles: {"backgroundColor":"#ffffff"}
+  featureLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  sponsorLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  featureLabel: Example Feature label
+  sponsorLabel: Example Sponsor label
+  contentStyles: {}
+  itemSpacing: 1
+  headingStyles: {}
+  linkStyles: {}
+- type: food-for-thought
+  title: Newsletter Title
+  items:
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    channel: Example Channel
+    category: Example Category
+    sharedBy: Example Shared by
+    contentMetadata: {"id":"example-id","label":"Example Label","category":"Example Category","tags":["Example Tags"]}
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    paywall: false
+    podcast: Example Podcast
+    readMoreLinks:
+      - text: Example Text
+        link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+        paywall: false
+        podcast: Example Podcast
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    channel: Example Channel
+    category: Example Category
+    sharedBy: Example Shared by
+    contentMetadata: {"id":"example-id","label":"Example Label","category":"Example Category","tags":["Example Tags"]}
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    paywall: false
+    podcast: Example Podcast
+    readMoreLinks:
+      - text: Example Text
+        link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+        paywall: false
+        podcast: Example Podcast
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  itemSpacing: 1
+  headingStyles: {}
+  linkStyles: {}
+- type: image
+  title: Newsletter Title
+  items:
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+  itemTitlePlacement: above-image
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
+- type: indie-mag
+  title: Newsletter Title
+  items:
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    details: Example Details
+    note: Example Note
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    details: Example Details
+    note: Example Note
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
+- type: indie-mag-single-column
+  title: Newsletter Title
+  items:
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"caption":"Example Caption"}
+    description: <p>Example Description content.</p>
+    content: {"id":"example-id","label":"Example Label","category":"Example Category","tags":["Example Tags"]}
+    subtitle: Example Subtitle
+    details: Example Details
+    note: Example Note
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    paywall: false
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"caption":"Example Caption"}
+    description: <p>Example Description content.</p>
+    content: {"id":"example-id","label":"Example Label","category":"Example Category","tags":["Example Tags"]}
+    subtitle: Example Subtitle
+    details: Example Details
+    note: Example Note
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    paywall: false
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
 - type: inline_cta
-  space_top: 24px
-  space_bottom: 24px
-  eyebrow: Public preview
-  statement: "You’re reading the public preview. Subscribe for the full issue."
+  statement: CTA copy with optional HTML. Blank lines separate paragraphs when the value contains no block HTML; authored block HTML is preserved.
+  primaryAction: {"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"label":"Example Label"}
+  renderFor: public
+  space_top: 28
+  background: '#ffffff'
+  border_width: 1
+  border_color: '#d1d5db'
+  border_radius: 0
+  eyebrow_color: '#111111'
   font_family: mono
-  background: '#f5f4f0'
-  text_color: '#333333'
-  eyebrow_color: '#555555'
-  border_width: 1px
-  border_color: '#222222'
-  border_radius: 12
-  button_background: '#222222'
-  button_border_color: '#222222'
-  button_text_color: '#ffffff'
-  primaryAction:
-    label: Subscribe
-    url:
-      href: https://theadjacency.com/subscribe
-      label: wXX-yYY | inline CTA | subscribe
-      category: newsletter
-      intent: subscribe
-  secondary_button_background: '#ffffff'
-  secondary_button_border_color: '#222222'
-  secondary_button_text_color: '#222222'
-  secondaryAction:
-    label: View online
-    url:
-      href: https://nearfuturelaboratory.com/newsletters/2026/wXX-yYY
-      label: wXX-yYY | inline CTA | view online
-      category: issue-nav
-      intent: read-related
+  eyebrow: Example Eyebrow
+  text_color: '#111111'
+  button_background: '#111111'
+  button_border_color: '#d1d5db'
+  button_text_color: '#111111'
+  secondaryAction: {"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"label":"Example Label"}
+  secondary_button_background: '#111111'
+  secondary_button_border_color: '#d1d5db'
+  secondary_button_text_color: '#111111'
+  space_bottom: 28
+- type: microdrop-institution-service
+  title: Newsletter Title
+  theme: {"backgroundColor":"#ffffff","textColor":"#111111","accentColor":"#4faaaa","surfaceColor":"#ffffff"}
+  brand: Example Brand
+  hero: {"eyebrow":"Example Eyebrow","headline":"Example Headline","dek":"Example Dek","image":{"src":"https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility"}}
+  canonicalUrl: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  serviceStrip: {"heading":"Example Heading","eyebrow":"Example Eyebrow","body":"<p>Example Body content.</p>","items":[{"label":"Example Label","value":"Example Value","body":"<p>Example Body content.</p>"}]}
+  gallery: []
+  eligibility: {"heading":"Example Heading","eyebrow":"Example Eyebrow","body":"<p>Example Body content.</p>","items":[{"label":"Example Label","value":"Example Value","body":"<p>Example Body content.</p>"}]}
+  process: {"heading":"Example Heading","eyebrow":"Example Eyebrow","body":"<p>Example Body content.</p>","items":[{"label":"Example Label","value":"Example Value","body":"<p>Example Body content.</p>"}]}
+  offerings: []
+  statusBoard: {"heading":"Example Heading","eyebrow":"Example Eyebrow","body":"<p>Example Body content.</p>","items":[{"label":"Example Label","value":"Example Value","body":"<p>Example Body content.</p>"}]}
+  caseFile: {"heading":"Example Heading","eyebrow":"Example Eyebrow","body":"<p>Example Body content.</p>","items":[{"label":"Example Label","value":"Example Value","body":"<p>Example Body content.</p>"}]}
+  intakePreview: {"heading":"Example Heading","eyebrow":"Example Eyebrow","body":"<p>Example Body content.</p>","items":[{"label":"Example Label","value":"Example Value","body":"<p>Example Body content.</p>"}]}
+  finalCta: {"heading":"Example Heading","eyebrow":"Example Eyebrow","body":"<p>Example Body content.</p>","href":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"label":"Example Label"}
+  editorialNote: {"heading":"Example Heading","eyebrow":"Example Eyebrow","body":"<p>Example Body content.</p>"}
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
+- type: microdrop-product-launch
+  title: Newsletter Title
+  theme: {"backgroundColor":"#ffffff","accentColor":"#4faaaa","textColor":"#111111","surfaceColor":"#ffffff"}
+  brand: Example Brand
+  hero: {"headline":"Example Headline","dek":"Example Dek","image":{"src":"https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility"}}
+  canonicalUrl: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  products: []
+  protocol: {"heading":"Example Heading","eyebrow":"Example Eyebrow","body":"<p>Example Body content.</p>","items":[{"label":"Example Label","value":"Example Value","body":"<p>Example Body content.</p>"}]}
+  finalCta: {"heading":"Example Heading","eyebrow":"Example Eyebrow","body":"<p>Example Body content.</p>","href":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"label":"Example Label"}
+  editorialNote: {"heading":"Example Heading","eyebrow":"Example Eyebrow","body":"<p>Example Body content.</p>","notes":[{"label":"Example Label","body":"<p>Example Body content.</p>"}]}
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
+- type: quote
+  title: Newsletter Title
+  items:
+  - quote: An inspiring quote or thought-provoking statement
+    author: Author Name
+    authorLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  - quote: An inspiring quote or thought-provoking statement
+    author: Author Name
+    authorLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
+- type: short-take
+  items:
+  - shortTakeId: example-short-take-id
+- type: signals-adjacent-now
+  title: Newsletter Title
+  description: <p>Example Description content.</p>
+  items:
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    tags: []
+    signalsLabel: Example Signals label
+    subtitle: Example Subtitle
+    sourceDigestSummary: Example Source digest summary
+    additionalReferences:
+      - title: Newsletter Title
+        href: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+        description: <p>Example Description content.</p>
+    storySeeds: []
+    strategyQuestions: []
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    tags: []
+    signalsLabel: Example Signals label
+    subtitle: Example Subtitle
+    sourceDigestSummary: Example Source digest summary
+    additionalReferences:
+      - title: Newsletter Title
+        href: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+        description: <p>Example Description content.</p>
+    storySeeds: []
+    strategyQuestions: []
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  containerStyles: {"backgroundColor":"#ffffff"}
+  dispatchLabel: Example Dispatch label
+  signalsLabel: Example Signals label
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
+- type: single-column
+  title: Newsletter Title
+  items:
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"caption":"Example Caption"}
+    description: <p>Example Description content.</p>
+    content: {"id":"example-id","label":"Example Label","category":"Example Category","tags":["Example Tags"]}
+    subtitle: Example Subtitle
+    details: Example Details
+    note: Example Note
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    paywall: false
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"caption":"Example Caption"}
+    description: <p>Example Description content.</p>
+    content: {"id":"example-id","label":"Example Label","category":"Example Category","tags":["Example Tags"]}
+    subtitle: Example Subtitle
+    details: Example Details
+    note: Example Note
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    paywall: false
+  containerStyles: {"backgroundColor":"#ffffff"}
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
+- type: speculative-job
+  title: Newsletter Title
+  items:
+  - link: {}
+    jobRef: jobs/example-role
+    cardStyles: {"backgroundColor":"#ffffff","backgroundGradient":"linear-gradient(135deg, #ffffff 0%, #e6e6e6 100%)","contentPadding":"16px","padding":"16px","paddingTop":"16px","paddingRight":"16px","paddingBottom":"16px","paddingLeft":"16px","border":"1px solid #d1d5db","borderRadius":"8px"}
+    contentStyles: {}
+    kicker: Example Kicker
+    headline: Example Headline
+    lede: Example Lede
+    cta_label: Read more
+    sponsor: Example Sponsor
+    companyLogo: {"url":"https://nearfuturelaboratory.com","altText":"Image description for accessibility"}
+    media: {"src":"https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA","altText":"Image description for accessibility","width":600,"height":400,"aspectRatio":"4 / 3"}
+  - link: {}
+    jobRef: jobs/example-role
+    cardStyles: {"backgroundColor":"#ffffff","backgroundGradient":"linear-gradient(135deg, #ffffff 0%, #e6e6e6 100%)","contentPadding":"16px","padding":"16px","paddingTop":"16px","paddingRight":"16px","paddingBottom":"16px","paddingLeft":"16px","border":"1px solid #d1d5db","borderRadius":"8px"}
+    contentStyles: {}
+    kicker: Example Kicker
+    headline: Example Headline
+    lede: Example Lede
+    cta_label: Read more
+    sponsor: Example Sponsor
+    companyLogo: {"url":"https://nearfuturelaboratory.com","altText":"Image description for accessibility"}
+    media: {"src":"https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA","altText":"Image description for accessibility","width":600,"height":400,"aspectRatio":"4 / 3"}
+  section_label: Example Section label
+  containerStyles: {"backgroundColor":"#ffffff","backgroundGradient":"linear-gradient(135deg, #ffffff 0%, #e6e6e6 100%)","contentPadding":"16px","padding":"16px","paddingTop":"16px","paddingRight":"16px","paddingBottom":"16px","paddingLeft":"16px","border":"1px solid #d1d5db","borderRadius":"8px"}
+  contentStyles: {}
+  headingStyles: {}
+  linkStyles: {}
+- type: sponsor
+  title: Newsletter Title
+  items:
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    content: {"id":"example-id","label":"Example Label","category":"Example Category","tags":["Example Tags"]}
+    subtitle: Example Subtitle
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    platformLinks:
+      - platform: spotify
+        label: Spotify
+        url: 'https://example.com/podcast'
+        category: podcast
+        intent: listen
+        interests: []
+  - title: Newsletter Title
+    link: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    image: {"src":"https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA","alt":"Image description for accessibility","caption":"Image caption","link":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}}
+    description: <p>Example Description content.</p>
+    content: {"id":"example-id","label":"Example Label","category":"Example Category","tags":["Example Tags"]}
+    subtitle: Example Subtitle
+    readMoreText: Read more →
+    readMoreTxt: Read more →
+    readMoreLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+    platformLinks:
+      - platform: spotify
+        label: Spotify
+        url: 'https://example.com/podcast'
+        category: podcast
+        intent: listen
+        interests: []
+  containerStyles: {"backgroundColor":"#ffffff"}
+  featureLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  sponsorLink: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  featureLabel: Example Feature label
+  sponsorLabel: Example Sponsor label
+  contentStyles: {}
+  itemSpacing: 1
+  headingStyles: {}
+  linkStyles: {}
+
 footer:
-  emailShare: mailto:?subject=Newsletter%20Issue&body=Check%20out%20this%20issue%20of%20the%20Near%20Future%20Laboratory%20newsletter:%20https://nearfuturelaboratory.com/newsletters/2026/w50-y25/
-  newsletterSubscribeLink:
-    href: https://nearfuturelaboratory.com/newsletter/
-    label: wXX-yYY | newsletter subscribe | Near Future Laboratory
-    category: subscribe
-    intent: subscribe
-  footerCta:
-    variant: default
-  aboutLabel: About Julian Bleecker
-  aboutUrl:
-    href: https://julianbleecker.com/
-    label: wXX-yYY | about | Julian Bleecker
-    category: site-nav
-  logo: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/2d52e99e-69ae-467c-1e42-8c80b647df00/w=200?format=webp
-  logoLink:
-    href: https://nearfuturelaboratory.com
-    label: wXX-yYY | home | Near Future Laboratory
-    category: site-nav
-  socialLinks:
-    applepodcasts:
-    - url:
-        href: https://podcasts.apple.com/us/podcast/near-future-laboratory-podcast/id1546452193
-        label: wXX-yYY | podcast | Apple Podcasts | Near Future Laboratory
-        category: podcast
-        intent: subscribe
-      title: Near Future Laboratory on Apple Podcasts
-    spotify:
-    - url:
-        href: https://open.spotify.com/show/1vHzwGE5J19LvXSo8M93MM
-        label: wXX-yYY | podcast | Spotify | Near Future Laboratory
-        category: podcast
-        intent: subscribe
-      title: Near Future Laboratory on Spotify
-    github:
-    - url:
-        href: https://github.com/bleeckerj
-        label: wXX-yYY | social | Personal GitHub
-        category: social
-      title: Personal GitHub
-    - url:
-        href: https://github.com/nearfuturelaboratory
-        label: wXX-yYY | social | Near Future Laboratory GitHub
-        category: social
-      title: Near Future Laboratory GitHub
-    - url:
-        href: https://github.com/nearfuturelaboratory
-        label: wXX-yYY | social | Near Future Laboratory GitHub
-        category: social
-      title: Near Future Laboratory GitHub
-    instagram:
-    - url:
-        href: https://instagram.com/darthjulian
-        label: wXX-yYY | social | Personal Instagram
-        category: social
-      title: Personal Instagram
-    - url:
-        href: https://instagram.com/nearfuturelaboratory
-        label: wXX-yYY | social | Company Instagram
-        category: social
-      title: Company Instagram
-    linkedin:
-    - url:
-        href: https://linkedin.com/in/julianbleecker
-        label: wXX-yYY | social | Personal LinkedIn
-        category: social
-      title: Personal LinkedIn
-    - url:
-        href: https://www.linkedin.com/company/near-future-laboratory/
-        label: wXX-yYY | social | Near Future Laboratory LinkedIn
-        category: social
-      title: Near Future Laboratory LinkedIn
-    youtube:
-    - url:
-        href: https://youtube.com/@nearfuturelaboratory
-        label: wXX-yYY | social | YouTube Channel
-        category: social
-      title: YouTube Channel
-    discord:
-    - url:
-        href: https://patreon.com/nearfuturelaboratory
-        label: wXX-yYY | community | Patreon | Near Future Laboratory
-        category: community
-        intent: support-work
-      title: Join Patreon to join the Discord Community
-    patreon:
-    - url:
-        href: https://patreon.com/nearfuturelaboratory
-        label: wXX-yYY | community | Patreon | Near Future Laboratory
-        category: community
-        intent: support-work
-      title: Support me on Patreon
-    substack:
-    - url:
-        href: https://newsletter.substack.com
-        label: wXX-yYY | newsletter subscribe | Substack
-        category: subscribe
-        intent: subscribe
-      title: Newsletter on Substack
+  containerStyles: {"backgroundColor":"#ffffff"}
+  colophon: Example Colophon
+  footerCta: {"enabled":false,"eyebrow":"Example Eyebrow","text":"Example Text","primaryAction":{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"label":"Example Label","enabled":true},"secondaryAction":{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"label":"Example Label","enabled":true},"variant":"Example Variant"}
+  shareUrl: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  linkedInFollow: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  emailShare: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
+  newsletterSubscribeLink: 'https://nearfuturelaboratory.com/newsletter/'
+  aboutUrl: 'https://julianbleecker.com/'
+  aboutLabel: Example About label
+  logo: 'https://fpoimg.com/200x50?text=Logo&bg_color=e6e6e6&text_color=4FAAAA'
+  logoLink: 'https://nearfuturelaboratory.com'
+  socialLinks: {"github":[{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"title":"Newsletter Title"}],"applepodcasts":[{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"title":"Newsletter Title"}],"spotify":[{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"title":"Newsletter Title"}],"instagram":[{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"title":"Newsletter Title"}],"linkedin":[{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"title":"Newsletter Title"}],"youtube":[{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"title":"Newsletter Title"}],"discord":[{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"title":"Newsletter Title"}],"patreon":[{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"title":"Newsletter Title"}],"substack":[{"url":{"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]},"title":"Newsletter Title"}]}
+  gratitude: Example Gratitude
+  gratitudeHtml: <p>Example Gratitude content.</p>
   unsubscribeLink: '[unsubscribe]'
-  shareUrl:
-    href: https://nearfuturelaboratory.com/newsletters/2026/wXX-yYY
-    label: wXX-yYY | view online
-    category: issue-nav
-    intent: read-related
-  archiveUrl:
-    href: https://nearfuturelaboratory.com/newsletters
-    label: wXX-yYY | newsletter archive
-    category: issue-nav
-    intent: read-related
-  address: © 2026 Near Future Laboratory<br>Venice Beach, California<br>United States
-  colophon: Imagination is not a luxury. It’s an early-warning system for possibility.
+  archiveUrl: 'https://nearfuturelaboratory.com/newsletters'
+  archiveLabel: Example Archive label
+  address: © 2025 Your Company<br>City, State<br>Country
+  workCtaLabel: Read more
+  workCtaUrl: {"href":"https://nearfuturelaboratory.com","label":"Read more","category":"editorial","intent":"read","role":"primary","interest":"design","interests":["design"]}
 ---

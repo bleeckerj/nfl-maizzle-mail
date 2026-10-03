@@ -270,17 +270,13 @@ PY
 echo "🔄 Building email with quick-build..."
 echo "📄 Content: $CONTENT_FILE"
 echo "🎨 Template: $TEMPLATE"
-if [ "$STRICT_SCHEMA_REQUESTED" = true ]; then
-    echo "🧾 Schema validation: strict (SCHEMA_STRICT=1)"
-else
-    echo "🧾 Schema validation: warn (default)"
-fi
+echo "🧾 Schema validation: required"
 
 if [ "$REGEN_SCHEMA_REQUESTED" = true ]; then
     SCHEMA_ENTRY="$SCRIPT_DIR/templates/$TEMPLATE/newsletter.html"
-    SCHEMA_OUT="$SCRIPT_DIR/templates/$TEMPLATE/newsletter.schema.json"
+    SCHEMA_OUT="$SCRIPT_DIR/templates/$TEMPLATE/newsletter.schema.discovered.json"
     if [ -f "$SCHEMA_ENTRY" ]; then
-        echo "🧬 Regenerating schema: $SCHEMA_OUT"
+        echo "🧬 Writing schema discovery for review: $SCHEMA_OUT"
         if ! npm run -s schema:generate -- --entry "$SCHEMA_ENTRY" --output "$SCHEMA_OUT"; then
             echo "❌ Schema generation failed"
             exit 1

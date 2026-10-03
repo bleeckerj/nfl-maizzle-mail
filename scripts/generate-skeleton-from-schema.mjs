@@ -18,19 +18,15 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import yaml from 'js-yaml';
-import {
-  generateNumericPlaceholder,
-  generateStringPlaceholder,
-  humanize,
-  inferTypeFromName,
-} from './lib/newsletter-starter-placeholders.mjs';
+import Ajv from 'ajv';
+import addFormats from 'ajv-formats';
+import { resolveSchemaRef, resolveGenerationSchema, extractSectionVariants, extractSectionSchema } from '../lib/newsletter-core/schema-resolution.mjs';
+import { projectAuthoringSchema } from '../lib/newsletter-core/authoring-contract.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.resolve(__dirname, '..');
-const AUTHORING_CONTRACTS = JSON.parse(
-  fs.readFileSync(path.join(REPO_ROOT, 'config', 'newsletter-authoring-contracts.json'), 'utf8'),
-);
+
 
 const USAGE = `
 Generate a newsletter skeleton from a JSON Schema.
@@ -78,7 +74,7 @@ function parseArgs(argv) {
     schema: null,
     output: null,
     minimal: false,
-    allSectionFields: false,
+    allSectionFields: true,
     sections: null,
     listSections: false,
     itemsPerSection: 2,
@@ -165,123 +161,7 @@ function loadSchema(schemaPath) {
 // Placeholder Value Generation
 // ============================================================================
 
-const DEPRECATED_SECTION_TYPES = new Set(['sponsor']);
 
-function resolveSchemaRef(schema, propSchema) {
-  if (!propSchema || typeof propSchema !== 'object' || typeof propSchema.$ref !== 'string') {
-    return propSchema || {};
-  }
-
-  if (!schema || !propSchema.$ref.startsWith('#/')) return propSchema;
-
-  let resolved = schema;
-  for (const part of propSchema.$ref.slice(2).split('/')) {
-    if (!resolved || typeof resolved !== 'object') return propSchema;
-    resolved = resolved[part.replace(/~1/g, '/').replace(/~0/g, '~')];
-  }
-  return resolved && typeof resolved === 'object' ? resolved : propSchema;
-}
-
-function resolveGenerationSchema(propSchema = {}, context = {}) {
-  const resolvingRefs = context.resolvingRefs || new Set();
-  const currentRef = propSchema && typeof propSchema.$ref === 'string'
-    ? propSchema.$ref
-    : null;
-  if (currentRef && resolvingRefs.has(currentRef)) {
-    return { type: 'object', properties: {} };
-  }
-
-  const nextContext = currentRef
-    ? { ...context, resolvingRefs: new Set([...resolvingRefs, currentRef]) }
-    : { ...context, resolvingRefs };
-  let resolved = resolveSchemaRef(nextContext.schema, propSchema);
-
-  const alternatives = resolved.anyOf || resolved.oneOf;
-  if (Array.isArray(alternatives) && alternatives.length > 0) {
-    // Prefer structured objects for tracked links and action objects so the
-    // generated Markdown demonstrates the authoring shape accepted by the schema.
-    const resolvedAlternatives = alternatives.map((candidate) => {
-      const resolvedCandidate = resolveSchemaRef(nextContext.schema, candidate);
-      return resolvedCandidate.anyOf || resolvedCandidate.oneOf
-        ? resolveGenerationSchema(resolvedCandidate, nextContext)
-        : resolvedCandidate;
-    });
-    const selectedAlternative = resolvedAlternatives.find((candidate) => candidate?.type === 'object' || candidate?.type?.includes?.('object'))
-      || resolvedAlternatives.find((candidate) => Object.prototype.hasOwnProperty.call(candidate, 'const'))
-      || resolvedAlternatives[0];
-    resolved = resolved.type === 'object' || resolved.properties
-      ? mergeSchemaFragments(resolved, selectedAlternative)
-      : selectedAlternative;
-    resolved = resolveSchemaRef(nextContext.schema, resolved);
-  }
-
-  // JSON Schema permits nullable values with a union type. Choose the
-  // structured branch when one exists so the placeholder has the right YAML
-  // shape; the generated value remains valid for the nullable union.
-  if (Array.isArray(resolved.type)) {
-    const preferredType = resolved.type.includes('object')
-      ? 'object'
-      : resolved.type.includes('array')
-        ? 'array'
-        : resolved.type.find((type) => type !== 'null') || resolved.type[0];
-    resolved = { ...resolved, type: preferredType };
-  }
-
-  return resolved || {};
-}
-
-function mergeSchemaFragments(base = {}, extension = {}) {
-  const merged = { ...base, ...extension };
-  const baseProperties = base.properties || {};
-  const extensionProperties = extension.properties || {};
-  const properties = { ...baseProperties };
-
-  for (const [propertyName, propertySchema] of Object.entries(extensionProperties)) {
-    properties[propertyName] = baseProperties[propertyName]
-      ? mergeSchemaFragments(baseProperties[propertyName], propertySchema)
-      : propertySchema;
-  }
-
-  if (Object.keys(properties).length > 0) merged.properties = properties;
-
-  const required = [...new Set([
-    ...(Array.isArray(base.required) ? base.required : []),
-    ...(Array.isArray(extension.required) ? extension.required : []),
-  ])];
-  if (required.length > 0) merged.required = required;
-  return merged;
-}
-
-function conditionMatches(condition, sectionType) {
-  const typeSchema = condition?.properties?.type;
-  if (typeof typeSchema?.const === 'string') return typeSchema.const === sectionType;
-  return Array.isArray(typeSchema?.enum) && typeSchema.enum.includes(sectionType);
-}
-
-function materializeConditionalSchema(schema, candidate, sectionType) {
-  const resolved = resolveSchemaRef(schema, candidate);
-  let materialized = { ...resolved };
-
-  function applyRules(current, fragment) {
-    let result = current;
-    if (Array.isArray(fragment?.allOf)) {
-      for (const branch of fragment.allOf) result = applyRules(result, branch);
-      return result;
-    }
-
-    if (fragment?.if) {
-      const selected = conditionMatches(fragment.if, sectionType) ? fragment.then : fragment.else;
-      if (selected) {
-        result = mergeSchemaFragments(result, resolveSchemaRef(schema, selected));
-        result = applyRules(result, selected);
-      }
-    }
-    return result;
-  }
-
-  materialized = applyRules(materialized, resolved);
-  return materialized;
-}
 
 function generatePlaceholderValue(propName, propSchema = {}, context = {}) {
   const generationDepth = Number.isInteger(context.generationDepth)
@@ -309,8 +189,7 @@ function generatePlaceholderValue(propName, propSchema = {}, context = {}) {
     return resolvedSchema.examples[0];
   }
 
-  const type = resolvedSchema.type || inferTypeFromName(propName);
-  const description = resolvedSchema.description || '';
+  const type = resolvedSchema.type;
 
   // Handle explicit types
   if (type === 'array') {
@@ -321,20 +200,7 @@ function generatePlaceholderValue(propName, propSchema = {}, context = {}) {
     return generateObjectPlaceholder(propName, resolvedSchema, nextContext);
   }
 
-  if (type === 'boolean') {
-    return false;
-  }
-
-  if (type === 'number' || type === 'integer') {
-    return generateNumericPlaceholder(propName, resolvedSchema, type);
-  }
-
-  if (type === 'html') {
-    return `<p>Example ${humanize(propName)} content.</p>`;
-  }
-
-  // String type - infer from property name
-  return generateStringPlaceholder(propName, resolvedSchema, context);
+  throw new Error(`No explicit starter example or default for ${context.templateName || 'schema'}.${propName}. Add examples, default, const, or enum to the owning schema.`);
 }
 
 function generateArrayPlaceholder(propName, propSchema, context) {
@@ -395,110 +261,12 @@ function extractSectionTypes(schema) {
   return extractSectionVariants(schema).map(({ type }) => type).sort();
 }
 
-function extractSectionVariants(schema) {
-  const sectionsSchema = schema.properties?.sections;
-  if (!sectionsSchema?.items) return [];
-
-  const variants = [];
-
-  function visit(candidate) {
-    const resolved = resolveSchemaRef(schema, candidate);
-    if (!resolved || typeof resolved !== 'object') return;
-
-    const typeSchema = resolved.properties?.type;
-    const candidateTypes = [];
-    if (typeof typeSchema?.const === 'string') candidateTypes.push(typeSchema.const);
-    if (Array.isArray(typeSchema?.enum)) {
-      for (const type of typeSchema.enum) {
-        if (typeof type === 'string') candidateTypes.push(type);
-      }
-    }
-
-    for (const type of candidateTypes) {
-      variants.push({
-        type,
-        schema: materializeConditionalSchema(schema, resolved, type),
-      });
-    }
-
-    for (const branch of [...(resolved.oneOf || []), ...(resolved.anyOf || [])]) {
-      visit(branch);
-    }
-
-    for (const branch of resolved.allOf || []) {
-      const branchType = branch?.if?.properties?.type;
-      const conditionalTypes = [];
-      if (typeof branchType?.const === 'string') conditionalTypes.push(branchType.const);
-      if (Array.isArray(branchType?.enum)) {
-        conditionalTypes.push(...branchType.enum.filter((type) => typeof type === 'string'));
-      }
-      for (const type of conditionalTypes) {
-        variants.push({
-          type,
-          schema: materializeConditionalSchema(schema, resolved, type),
-        });
-      }
-      if (conditionalTypes.length === 0) {
-        visit(branch);
-      }
-    }
-  }
-
-  visit(sectionsSchema.items);
-  return variants.filter(
-    ({ type }, index) => variants.findIndex((candidate) => candidate.type === type) === index,
-  );
-}
-
-function extractSectionSchema(schema, sectionType) {
-  const match = extractSectionVariants(schema).find(({ type }) => type === sectionType);
-  if (match) return match.schema;
-
-  return schema.properties?.sections?.items || null;
-}
-
-function projectSchemaProperties(schemaFragment = {}, allowedFields = [], requiredFields = []) {
-  const properties = schemaFragment.properties || {};
-  return {
-    ...schemaFragment,
-    properties: Object.fromEntries(
-      allowedFields
-        .filter((field) => Object.prototype.hasOwnProperty.call(properties, field))
-        .map((field) => [field, properties[field]]),
-    ),
-    required: requiredFields.filter((field) => Object.prototype.hasOwnProperty.call(properties, field)),
-  };
-}
-
 function projectSectionSchemaForAuthoring(sectionType, sectionSchema = {}, schema = {}) {
-  // A schema may select a template-specific authoring surface without changing
-  // sections of the same name in other templates.
-  const contract = AUTHORING_CONTRACTS[sectionSchema['x-nfl-authoring-contract'] || sectionType];
-  if (!contract) return sectionSchema;
-  const projected = projectSchemaProperties(
-    sectionSchema,
-    contract.sectionFields || [],
-    contract.requiredSectionFields || [],
-  );
-  if (projected.properties.items) {
-    const collectionSchema = resolveGenerationSchema(projected.properties.items, { schema });
-    projected.properties.items = {
-      ...collectionSchema,
-      items: projectItemSchemaForAuthoring(sectionType, collectionSchema.items || {}, schema),
-    };
-  }
-  return projected;
+  return projectAuthoringSchema(sectionSchema, schema);
 }
 
 function projectItemSchemaForAuthoring(sectionType, itemSchema = {}, schema = {}) {
-  const resolvedItemSchema = resolveGenerationSchema(itemSchema, { schema });
-  const contract = AUTHORING_CONTRACTS[sectionType];
-  if (!contract) return resolvedItemSchema;
-  return projectSchemaProperties(
-    resolvedItemSchema,
-    contract.itemFields || [],
-    contract.requiredItemFields || [],
-  );
+  return projectAuthoringSchema(resolveSchemaRef(schema, itemSchema), schema);
 }
 
 function assertStarterCompleteness(markdown, schema) {
@@ -635,9 +403,11 @@ function generateSkeleton(schema, options = {}) {
 
   // Sections
   const availableSections = extractSectionTypes(schema);
+  const unsupported = (requestedSections || []).filter(s => !availableSections.includes(s));
+  if (unsupported.length) throw new Error(`Unsupported section(s): ${unsupported.join(', ')}. Available: ${availableSections.join(', ')}`);
   const sectionsToGenerate = requestedSections
-    ? requestedSections.filter((s) => availableSections.includes(s))
-    : availableSections.filter((sectionType) => !DEPRECATED_SECTION_TYPES.has(sectionType));
+    ? requestedSections
+    : availableSections.filter(sectionType => !extractSectionSchema(schema, sectionType)?.deprecated);
 
   if (sectionsToGenerate.length > 0) {
     lines.push('');
@@ -687,8 +457,7 @@ function generateSectionYaml(sectionType, sectionSchema, options = {}) {
   );
 
   if (!authoringSectionSchema?.properties) {
-    lines.push(`${indent}title: ${humanize(sectionType)} Section`);
-    return lines;
+    throw new Error(`Section ${sectionType} has no declared authoring properties.`);
   }
 
   const props = authoringSectionSchema.properties;
@@ -696,13 +465,13 @@ function generateSectionYaml(sectionType, sectionSchema, options = {}) {
 
   // Title first
   if (props.title) {
-    lines.push(`${indent}title: ${humanize(sectionType)} Section`);
+    lines.push(`${indent}title: ${formatYamlValue(generatePlaceholderValue('title', props.title, { schema: options.schema, templateName: options.templateName }))}`);
     emittedFields.add('title');
   }
 
   // Description if present
   if (props.description) {
-    lines.push(`${indent}description: <p>Description for ${sectionType} section.</p>`);
+    lines.push(`${indent}description: ${formatYamlValue(generatePlaceholderValue('description', props.description, { schema: options.schema, templateName: options.templateName }))}`);
     emittedFields.add('description');
   }
 
@@ -1004,7 +773,8 @@ async function main() {
   }
 
   console.error(`Loading schema from: ${schemaPath}`);
-  const schema = loadSchema(schemaPath);
+  const sourceSchema = loadSchema(schemaPath);
+  const schema = projectAuthoringSchema(sourceSchema, sourceSchema);
 
   // List sections mode
   if (args.listSections) {
@@ -1028,6 +798,7 @@ async function main() {
   if (!args.minimal && args.allSectionFields) {
     assertStarterCompleteness(skeleton, schema);
   }
+  validateStarter(skeleton, sourceSchema);
 
   // Output
   if (args.output) {
@@ -1045,7 +816,19 @@ async function main() {
   }
 }
 
-main().catch((err) => {
+/** Check generated source locally; generating a starter never triggers a build. */
+export function validateStarter(markdown, schema) {
+  const payload = yaml.load(markdown.match(/^---\n([\s\S]*?)\n---/)[1]);
+  const ajv = new Ajv({ allErrors: true, strict: false, allowUnionTypes: true });
+  addFormats(ajv);
+  const validate = ajv.compile(schema);
+  if (!validate(payload)) throw new Error(`Generated starter violates its schema: ${ajv.errorsText(validate.errors, { separator: '; ' })}`);
+  return payload;
+}
+
+export { generateSkeleton, generatePlaceholderValue, assertStarterCompleteness };
+
+if (process.argv[1] && path.resolve(process.argv[1]) === __filename) main().catch((err) => {
   console.error('Error:', err.message);
   process.exit(1);
 });

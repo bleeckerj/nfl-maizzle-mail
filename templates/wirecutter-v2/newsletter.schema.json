@@ -4,48 +4,148 @@
   "description": "Data contract for the Wirecutter V2 static newsletter template.",
   "type": "object",
   "additionalProperties": true,
-  "required": ["template", "title", "header", "featuredArticle", "article", "productShowcase", "footer"],
+  "required": [
+    "template",
+    "title",
+    "header",
+    "featuredArticle",
+    "article",
+    "productShowcase",
+    "footer"
+  ],
   "definitions": {
     "contentAttribution": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "label": { "type": "string", "minLength": 1 },
-        "category": { "type": "string", "minLength": 1 },
-        "tags": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "example-id"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Example Label"
+          ]
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Example Category"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+              "Example Tags"
+            ]
+          }
+        }
       }
     },
     "trackedLink": {
       "oneOf": [
         {
           "type": "string",
-          "minLength": 1
+          "minLength": 1,
+          "examples": [
+            "https://nearfuturelaboratory.com"
+          ]
         },
         {
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "href": { "type": "string", "minLength": 1 },
-            "url": { "type": "string", "minLength": 1 },
-            "label": { "type": "string", "minLength": 1 },
-            "category": { "type": "string", "minLength": 1 },
-            "role": { "type": "string", "minLength": 1 },
-            "interest": { "type": "string", "minLength": 1 },
+            "href": {
+              "type": "string",
+              "minLength": 1,
+              "examples": [
+                "https://nearfuturelaboratory.com"
+              ]
+            },
+            "url": {
+              "type": "string",
+              "minLength": 1,
+              "examples": [
+                "https://nearfuturelaboratory.com"
+              ]
+            },
+            "label": {
+              "type": "string",
+              "minLength": 1,
+              "examples": [
+                "Example Label"
+              ]
+            },
+            "category": {
+              "type": "string",
+              "minLength": 1,
+              "examples": [
+                "Example Category"
+              ]
+            },
+            "role": {
+              "type": "string",
+              "minLength": 1,
+              "examples": [
+                "Example Role"
+              ]
+            },
+            "interest": {
+              "type": "string",
+              "minLength": 1,
+              "examples": [
+                "Example Interest"
+              ]
+            },
             "interests": {
               "oneOf": [
-                { "type": "string", "minLength": 1 },
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "examples": [
+                    "Example Interests"
+                  ]
+                },
                 {
                   "type": "array",
-                  "items": { "type": "string", "minLength": 1 }
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "examples": [
+                      "Example Interests"
+                    ]
+                  }
                 }
               ]
             },
-            "intent": { "type": "string", "minLength": 1 }
+            "intent": {
+              "type": "string",
+              "minLength": 1,
+              "examples": [
+                "Example Intent"
+              ]
+            }
           },
           "anyOf": [
-            { "required": ["href"] },
-            { "required": ["url"] }
+            {
+              "required": [
+                "href"
+              ]
+            },
+            {
+              "required": [
+                "url"
+              ]
+            }
           ]
         }
       ]
@@ -53,76 +153,233 @@
   },
   "properties": {
     "template": {
+      "type": "string",
       "const": "wirecutter-v2"
     },
     "title": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "examples": [
+        "Newsletter Title"
+      ]
     },
     "preheader": {
-      "type": "string"
+      "type": "string",
+      "examples": [
+        "Short preview text that appears in email clients"
+      ]
     },
     "date": {
-      "type": "string"
+      "type": "string",
+      "examples": [
+        "2026-01-01"
+      ]
     },
     "markdownContent": {
-      "type": "string"
+      "type": "string",
+      "examples": [
+        "Example Markdown content"
+      ]
     },
     "header": {
       "type": "object",
-      "required": ["logoImage", "logoImageMobile", "homepageLink"],
+      "required": [
+        "logoImage",
+        "logoImageMobile",
+        "homepageLink"
+      ],
       "properties": {
-        "logoImage": { "type": "string", "minLength": 1 },
-        "logoImageMobile": { "type": "string", "minLength": 1 },
-        "homepageLink": { "$ref": "#/definitions/trackedLink" }
+        "logoImage": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "https://fpoimg.com/200x50?text=Logo%20image&bg_color=e6e6e6&text_color=4FAAAA"
+          ]
+        },
+        "logoImageMobile": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "https://fpoimg.com/200x50?text=Logo%20image%20mobile&bg_color=e6e6e6&text_color=4FAAAA"
+          ]
+        },
+        "homepageLink": {
+          "$ref": "#/definitions/trackedLink"
+        }
       }
     },
     "featuredArticle": {
       "type": "object",
-      "required": ["headline", "heroImage", "heroImageAlt", "description", "ctaLink"],
+      "required": [
+        "headline",
+        "heroImage",
+        "heroImageAlt",
+        "description",
+        "ctaLink"
+      ],
       "properties": {
-        "headline": { "type": "string", "minLength": 1 },
-        "heroImage": { "type": "string", "minLength": 1 },
-        "heroImageAlt": { "type": "string" },
-        "photoCredit": { "type": "string" },
-        "description": { "type": "string", "minLength": 1 },
-        "ctaLink": { "$ref": "#/definitions/trackedLink" },
-        "content": { "$ref": "#/definitions/contentAttribution" },
-        "disclaimer": { "type": "string" }
+        "headline": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Example Headline"
+          ]
+        },
+        "heroImage": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "https://fpoimg.com/800x600?text=Hero%20image&bg_color=e6e6e6&text_color=4FAAAA"
+          ]
+        },
+        "heroImageAlt": {
+          "type": "string",
+          "examples": [
+            "Image description for accessibility"
+          ]
+        },
+        "photoCredit": {
+          "type": "string",
+          "examples": [
+            "Example Photo credit"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "<p>Example Description content.</p>"
+          ]
+        },
+        "ctaLink": {
+          "$ref": "#/definitions/trackedLink"
+        },
+        "content": {
+          "$ref": "#/definitions/contentAttribution"
+        },
+        "disclaimer": {
+          "type": "string",
+          "examples": [
+            "Example Disclaimer"
+          ]
+        }
       }
     },
     "article": {
       "type": "object",
-      "required": ["title", "image", "imageAlt", "content", "link"],
+      "required": [
+        "title",
+        "image",
+        "imageAlt",
+        "content",
+        "link"
+      ],
       "properties": {
-        "title": { "type": "string", "minLength": 1 },
-        "image": { "type": "string", "minLength": 1 },
-        "imageAlt": { "type": "string" },
-        "photoCredit": { "type": "string" },
-        "content": { "type": "string", "minLength": 1 },
-        "link": { "$ref": "#/definitions/trackedLink" },
-        "contentMetadata": { "$ref": "#/definitions/contentAttribution" }
+        "title": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Newsletter Title"
+          ]
+        },
+        "image": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA"
+          ]
+        },
+        "imageAlt": {
+          "type": "string",
+          "examples": [
+            "Image description for accessibility"
+          ]
+        },
+        "photoCredit": {
+          "type": "string",
+          "examples": [
+            "Example Photo credit"
+          ]
+        },
+        "content": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "<p>Example Content content.</p>"
+          ]
+        },
+        "link": {
+          "$ref": "#/definitions/trackedLink"
+        },
+        "contentMetadata": {
+          "$ref": "#/definitions/contentAttribution"
+        }
       }
     },
     "productShowcase": {
       "type": "object",
-      "required": ["sectionTitle", "sectionLink", "items"],
+      "required": [
+        "sectionTitle",
+        "sectionLink",
+        "items"
+      ],
       "properties": {
-        "sectionTitle": { "type": "string", "minLength": 1 },
-        "sectionLink": { "$ref": "#/definitions/trackedLink" },
+        "sectionTitle": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Example Section title"
+          ]
+        },
+        "sectionLink": {
+          "$ref": "#/definitions/trackedLink"
+        },
         "items": {
           "type": "array",
           "minItems": 1,
           "items": {
             "type": "object",
-            "required": ["title", "image", "imageAlt", "description", "link"],
+            "required": [
+              "title",
+              "image",
+              "imageAlt",
+              "description",
+              "link"
+            ],
             "properties": {
-              "title": { "type": "string", "minLength": 1 },
-              "image": { "type": "string", "minLength": 1 },
-              "imageAlt": { "type": "string" },
-              "description": { "type": "string", "minLength": 1 },
-              "link": { "$ref": "#/definitions/trackedLink" },
-              "content": { "$ref": "#/definitions/contentAttribution" }
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                  "Newsletter Title"
+                ]
+              },
+              "image": {
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                  "https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA"
+                ]
+              },
+              "imageAlt": {
+                "type": "string",
+                "examples": [
+                  "Image description for accessibility"
+                ]
+              },
+              "description": {
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                  "<p>Example Description content.</p>"
+                ]
+              },
+              "link": {
+                "$ref": "#/definitions/trackedLink"
+              },
+              "content": {
+                "$ref": "#/definitions/contentAttribution"
+              }
             }
           }
         }
@@ -130,23 +387,58 @@
     },
     "footer": {
       "type": "object",
-      "required": ["companyLogo", "unsubscribeText", "companyAddress", "legalLinks"],
+      "required": [
+        "companyLogo",
+        "unsubscribeText",
+        "companyAddress",
+        "legalLinks"
+      ],
       "properties": {
-        "companyLogo": { "type": "string", "minLength": 1 },
-        "unsubscribeText": { "type": "string", "minLength": 1 },
-        "companyAddress": { "type": "string", "minLength": 1 },
+        "companyLogo": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "https://fpoimg.com/200x50?text=Company%20logo&bg_color=e6e6e6&text_color=4FAAAA"
+          ]
+        },
+        "unsubscribeText": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Example Unsubscribe text"
+          ]
+        },
+        "companyAddress": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Example Company address"
+          ]
+        },
         "legalLinks": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["text", "url"],
+            "required": [
+              "text",
+              "url"
+            ],
             "properties": {
-              "text": { "type": "string", "minLength": 1 },
-              "url": { "$ref": "#/definitions/trackedLink" }
+              "text": {
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                  "Example Text"
+                ]
+              },
+              "url": {
+                "$ref": "#/definitions/trackedLink"
+              }
             }
           }
         }
       }
     }
-  }
+  },
+  "x-nfl-contract-version": 1
 }

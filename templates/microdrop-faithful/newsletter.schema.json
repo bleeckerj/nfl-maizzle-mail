@@ -2,26 +2,205 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Faithful Microdrop Email",
   "type": "object",
-  "required": ["template", "title", "preheader", "canonicalUrl", "theme", "header", "sections", "footer"],
+  "required": [
+    "template",
+    "title",
+    "preheader",
+    "canonicalUrl",
+    "theme",
+    "header",
+    "sections",
+    "footer"
+  ],
   "properties": {
-    "template": { "const": "microdrop-faithful" },
-    "title": { "type": "string", "minLength": 1 },
-    "preheader": { "type": "string" },
-    "canonicalUrl": { "type": "string", "format": "uri" },
-    "theme": { "type": "object" },
-    "header": { "type": "object", "required": ["brandName", "sectionName", "homepageLink"], "properties": { "brandName": { "type": "string" }, "sectionName": { "type": "string" }, "logoUrl": { "type": "string", "format": "uri" }, "logoAlt": { "type": "string" }, "sourceBrand": { "type": "string" }, "sourceDescription": { "type": "string" }, "homepageLink": { "type": "string", "format": "uri" }, "navigation": { "type": "object" } } },
+    "template": {
+      "type": "string",
+      "const": "microdrop-faithful"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "examples": [
+        "Newsletter Title"
+      ]
+    },
+    "preheader": {
+      "type": "string",
+      "examples": [
+        "Short preview text that appears in email clients"
+      ]
+    },
+    "canonicalUrl": {
+      "type": "string",
+      "format": "uri",
+      "examples": [
+        "https://nearfuturelaboratory.com"
+      ]
+    },
+    "theme": {
+      "type": "object",
+      "examples": [
+        {}
+      ]
+    },
+    "header": {
+      "type": "object",
+      "required": [
+        "brandName",
+        "sectionName",
+        "homepageLink"
+      ],
+      "properties": {
+        "brandName": {
+          "type": "string",
+          "examples": [
+            "Example Brand name"
+          ]
+        },
+        "sectionName": {
+          "type": "string",
+          "examples": [
+            "Example Section name"
+          ]
+        },
+        "logoUrl": {
+          "type": "string",
+          "format": "uri",
+          "examples": [
+            "https://fpoimg.com/200x50?text=Logo%20url&bg_color=e6e6e6&text_color=4FAAAA"
+          ]
+        },
+        "logoAlt": {
+          "type": "string",
+          "examples": [
+            "Image description for accessibility"
+          ]
+        },
+        "sourceBrand": {
+          "type": "string",
+          "examples": [
+            "Example Source brand"
+          ]
+        },
+        "sourceDescription": {
+          "type": "string",
+          "examples": [
+            "Example Source description"
+          ]
+        },
+        "homepageLink": {
+          "type": "string",
+          "format": "uri",
+          "examples": [
+            "https://nearfuturelaboratory.com"
+          ]
+        },
+        "navigation": {
+          "type": "object",
+          "examples": [
+            {}
+          ]
+        }
+      }
+    },
     "sections": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["type"],
+        "required": [
+          "type"
+        ],
         "properties": {
-          "type": { "type": "string", "enum": ["infra-product", "infra-image-heading", "infra-copy", "infra-subscribe", "infra-exposure", "infra-definition", "infra-pairing", "infra-compatibility", "infra-legal", "infra-about", "culture-hero", "culture-menu", "culture-methods", "culture-copy", "culture-feature", "culture-gallery", "culture-shop", "culture-find"] }
+          "type": {
+            "type": "string",
+            "enum": [
+              "infra-product",
+              "infra-image-heading",
+              "infra-copy",
+              "infra-subscribe",
+              "infra-exposure",
+              "infra-definition",
+              "infra-pairing",
+              "infra-compatibility",
+              "infra-legal",
+              "infra-about",
+              "culture-hero",
+              "culture-menu",
+              "culture-methods",
+              "culture-copy",
+              "culture-feature",
+              "culture-gallery",
+              "culture-shop",
+              "culture-find"
+            ]
+          }
         },
         "additionalProperties": true
       }
     },
-    "footer": { "type": "object", "required": ["brandName", "unsubscribeText", "unsubscribeLink", "companyAddress", "legalLinks"], "properties": { "brandName": { "type": "string" }, "unsubscribeText": { "type": "string" }, "unsubscribeLink": { "type": "string" }, "companyAddress": { "type": "string" }, "legalLinks": { "type": "array", "items": { "type": "object", "required": ["text", "url"], "properties": { "text": { "type": "string" }, "url": { "type": "string", "format": "uri" } } } } } }
-  }
+    "footer": {
+      "type": "object",
+      "required": [
+        "brandName",
+        "unsubscribeText",
+        "unsubscribeLink",
+        "companyAddress",
+        "legalLinks"
+      ],
+      "properties": {
+        "brandName": {
+          "type": "string",
+          "examples": [
+            "Example Brand name"
+          ]
+        },
+        "unsubscribeText": {
+          "type": "string",
+          "examples": [
+            "Example Unsubscribe text"
+          ]
+        },
+        "unsubscribeLink": {
+          "type": "string",
+          "examples": [
+            "[unsubscribe]"
+          ],
+          "default": "[unsubscribe]"
+        },
+        "companyAddress": {
+          "type": "string",
+          "examples": [
+            "Example Company address"
+          ]
+        },
+        "legalLinks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "text",
+              "url"
+            ],
+            "properties": {
+              "text": {
+                "type": "string",
+                "examples": [
+                  "Example Text"
+                ]
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "x-nfl-contract-version": 1
 }

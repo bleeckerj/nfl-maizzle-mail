@@ -2,100 +2,384 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Adjacency Product Review Email",
   "type": "object",
-  "required": ["template", "title", "header", "featuredReview", "reviewPicks", "footer"],
+  "required": [
+    "template",
+    "title",
+    "header",
+    "featuredReview",
+    "reviewPicks",
+    "footer"
+  ],
   "properties": {
-    "template": { "const": "adjacency-product-review" },
-    "title": { "type": "string" },
-    "preheader": { "type": "string" },
+    "template": {
+      "type": "string",
+      "const": "adjacency-product-review"
+    },
+    "title": {
+      "type": "string",
+      "examples": [
+        "Newsletter Title"
+      ]
+    },
+    "preheader": {
+      "type": "string",
+      "examples": [
+        "Short preview text that appears in email clients"
+      ]
+    },
     "header": {
       "type": "object",
-      "required": ["brandName", "homepageLink"],
+      "required": [
+        "brandName",
+        "homepageLink"
+      ],
       "properties": {
-        "brandName": { "type": "string" },
-        "sectionName": { "type": "string" },
-        "logoUrl": { "type": "string", "format": "uri" },
-        "logoAlt": { "type": "string" },
-        "sourceBrand": { "type": "string" },
-        "sourceDescription": { "type": "string" },
-        "homepageLink": { "type": "string", "format": "uri" }
+        "brandName": {
+          "type": "string",
+          "examples": [
+            "Example Brand name"
+          ]
+        },
+        "sectionName": {
+          "type": "string",
+          "examples": [
+            "Example Section name"
+          ]
+        },
+        "logoUrl": {
+          "type": "string",
+          "format": "uri",
+          "examples": [
+            "https://fpoimg.com/200x50?text=Logo%20url&bg_color=e6e6e6&text_color=4FAAAA"
+          ]
+        },
+        "logoAlt": {
+          "type": "string",
+          "examples": [
+            "Image description for accessibility"
+          ]
+        },
+        "sourceBrand": {
+          "type": "string",
+          "examples": [
+            "Example Source brand"
+          ]
+        },
+        "sourceDescription": {
+          "type": "string",
+          "examples": [
+            "Example Source description"
+          ]
+        },
+        "homepageLink": {
+          "type": "string",
+          "format": "uri",
+          "examples": [
+            "https://nearfuturelaboratory.com"
+          ]
+        }
       }
     },
     "featuredReview": {
       "type": "object",
-      "required": ["headline", "ctaLink"],
+      "required": [
+        "headline",
+        "ctaLink"
+      ],
       "properties": {
-        "categoryLabel": { "type": "string" },
-        "headline": { "type": "string" },
-        "dek": { "type": "string" },
-        "author": { "type": "string" },
-        "dateLabel": { "type": "string" },
-        "publishedLabel": { "type": "string" },
-        "updatedLabel": { "type": "string" },
-        "heroImage": { "type": "string" },
-        "heroImageAlt": { "type": "string" },
-        "photoCredit": { "type": "string" },
-        "heroCaption": { "type": "string" },
-        "ctaLink": { "type": "string", "format": "uri" },
-        "disclosure": { "type": "string" },
-        "testingSummary": { "type": "string" },
-        "verdict": { "type": "string" }
+        "categoryLabel": {
+          "type": "string",
+          "examples": [
+            "Example Category label"
+          ]
+        },
+        "headline": {
+          "type": "string",
+          "examples": [
+            "Example Headline"
+          ]
+        },
+        "dek": {
+          "type": "string",
+          "examples": [
+            "Example Dek"
+          ]
+        },
+        "author": {
+          "type": "string",
+          "examples": [
+            "Author Name"
+          ]
+        },
+        "dateLabel": {
+          "type": "string",
+          "examples": [
+            "Example Date label"
+          ]
+        },
+        "publishedLabel": {
+          "type": "string",
+          "examples": [
+            "Example Published label"
+          ]
+        },
+        "updatedLabel": {
+          "type": "string",
+          "examples": [
+            "Example Updated label"
+          ]
+        },
+        "heroImage": {
+          "type": "string",
+          "examples": [
+            "https://fpoimg.com/800x600?text=Hero%20image&bg_color=e6e6e6&text_color=4FAAAA"
+          ]
+        },
+        "heroImageAlt": {
+          "type": "string",
+          "examples": [
+            "Image description for accessibility"
+          ]
+        },
+        "photoCredit": {
+          "type": "string",
+          "examples": [
+            "Example Photo credit"
+          ]
+        },
+        "heroCaption": {
+          "type": "string",
+          "examples": [
+            "Example Hero caption"
+          ]
+        },
+        "ctaLink": {
+          "type": "string",
+          "format": "uri",
+          "examples": [
+            "https://nearfuturelaboratory.com"
+          ]
+        },
+        "disclosure": {
+          "type": "string",
+          "examples": [
+            "Example Disclosure"
+          ]
+        },
+        "testingSummary": {
+          "type": "string",
+          "examples": [
+            "Example Testing summary"
+          ]
+        },
+        "verdict": {
+          "type": "string",
+          "examples": [
+            "Example Verdict"
+          ]
+        }
       }
     },
     "reviewPicks": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "label", "title", "subtitle", "priceText", "merchantLinks", "pros", "cons"],
+        "required": [
+          "id",
+          "label",
+          "title",
+          "subtitle",
+          "priceText",
+          "merchantLinks",
+          "pros",
+          "cons"
+        ],
         "properties": {
-          "id": { "type": "string" },
-          "label": { "type": "string" },
-          "badge": { "type": "string" },
-          "title": { "type": "string" },
-          "subtitle": { "type": "string" },
-          "priceText": { "type": "string" },
-          "image": { "type": "string" },
-          "imageAlt": { "type": "string" },
-          "imageCredit": { "type": "string" },
+          "id": {
+            "type": "string",
+            "examples": [
+              "example-id"
+            ]
+          },
+          "label": {
+            "type": "string",
+            "examples": [
+              "Example Label"
+            ]
+          },
+          "badge": {
+            "type": "string",
+            "examples": [
+              "Example Badge"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "examples": [
+              "Newsletter Title"
+            ]
+          },
+          "subtitle": {
+            "type": "string",
+            "examples": [
+              "Example Subtitle"
+            ]
+          },
+          "priceText": {
+            "type": "string",
+            "examples": [
+              "Example Price text"
+            ]
+          },
+          "image": {
+            "type": "string",
+            "examples": [
+              "https://fpoimg.com/800x600?text=Image&bg_color=e6e6e6&text_color=4FAAAA"
+            ]
+          },
+          "imageAlt": {
+            "type": "string",
+            "examples": [
+              "Image description for accessibility"
+            ]
+          },
+          "imageCredit": {
+            "type": "string",
+            "examples": [
+              "Example Image credit"
+            ]
+          },
           "merchantLinks": {
             "type": "array",
             "items": {
               "type": "object",
-              "required": ["label", "url"],
+              "required": [
+                "label",
+                "url"
+              ],
               "properties": {
-                "label": { "type": "string" },
-                "url": { "type": "string", "format": "uri" },
-                "priceText": { "type": "string" }
+                "label": {
+                  "type": "string",
+                  "examples": [
+                    "Example Label"
+                  ]
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "examples": [
+                    "https://nearfuturelaboratory.com"
+                  ]
+                },
+                "priceText": {
+                  "type": "string",
+                  "examples": [
+                    "Example Price text"
+                  ]
+                }
               }
             }
           },
-          "pros": { "type": "array", "items": { "type": "string" } },
-          "cons": { "type": "array", "items": { "type": "string" } }
+          "pros": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "examples": [
+                "Example Pros"
+              ]
+            }
+          },
+          "cons": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "examples": [
+                "Example Cons"
+              ]
+            }
+          }
         }
       }
     },
-    "bodyHtml": { "type": "string" },
-    "footerCta": { "type": "object" },
+    "bodyHtml": {
+      "type": "string",
+      "examples": [
+        "<p>Example Body content.</p>"
+      ]
+    },
+    "footerCta": {
+      "type": "object",
+      "examples": [
+        {}
+      ]
+    },
     "footer": {
       "type": "object",
-      "required": ["brandName", "unsubscribeText", "companyAddress", "legalLinks"],
+      "required": [
+        "brandName",
+        "unsubscribeText",
+        "companyAddress",
+        "legalLinks"
+      ],
       "properties": {
-        "companyLogo": { "type": "string" },
-        "brandName": { "type": "string" },
-        "unsubscribeText": { "type": "string" },
-        "unsubscribeLink": { "type": "string" },
-        "companyAddress": { "type": "string" },
+        "companyLogo": {
+          "type": "string",
+          "examples": [
+            "https://fpoimg.com/200x50?text=Company%20logo&bg_color=e6e6e6&text_color=4FAAAA"
+          ]
+        },
+        "brandName": {
+          "type": "string",
+          "examples": [
+            "Example Brand name"
+          ]
+        },
+        "unsubscribeText": {
+          "type": "string",
+          "examples": [
+            "Example Unsubscribe text"
+          ]
+        },
+        "unsubscribeLink": {
+          "type": "string",
+          "examples": [
+            "[unsubscribe]"
+          ],
+          "default": "[unsubscribe]"
+        },
+        "companyAddress": {
+          "type": "string",
+          "examples": [
+            "Example Company address"
+          ]
+        },
         "legalLinks": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["text", "url"],
+            "required": [
+              "text",
+              "url"
+            ],
             "properties": {
-              "text": { "type": "string" },
-              "url": { "type": "string", "format": "uri" }
+              "text": {
+                "type": "string",
+                "examples": [
+                  "Example Text"
+                ]
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
+              }
             }
           }
         }
       }
     }
-  }
+  },
+  "x-nfl-contract-version": 1
 }

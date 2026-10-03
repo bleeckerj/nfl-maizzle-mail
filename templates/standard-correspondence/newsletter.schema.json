@@ -3,55 +3,147 @@
   "title": "Standard Correspondence Email",
   "description": "Personal one-on-one correspondence, not a mass newsletter. No unsubscribe, subscription, archive, or view-online controls are generated.",
   "type": "object",
-  "required": ["template", "subject", "correspondence"],
+  "required": [
+    "template",
+    "subject",
+    "correspondence"
+  ],
   "additionalProperties": false,
   "properties": {
     "template": {
+      "type": "string",
       "const": "standard-correspondence"
     },
     "subject": {
       "type": "string",
-      "minLength": 1
+      "minLength": 1,
+      "examples": [
+        "Example Subject"
+      ]
     },
     "preheader": {
-      "type": "string"
+      "type": "string",
+      "examples": [
+        "Short preview text that appears in email clients"
+      ]
     },
     "correspondence": {
       "type": "object",
-      "required": ["subject", "bodyHtml", "theme"],
+      "required": [
+        "subject",
+        "bodyHtml",
+        "theme"
+      ],
       "additionalProperties": false,
       "properties": {
-        "subject": { "type": "string", "minLength": 1 },
-        "preheader": { "type": "string" },
-        "bodyHtml": { "type": "string", "minLength": 1, "description": "Email body HTML. Markdown bullet and numbered lists are normalized to a numbered register with literal zero-padded labels, table-cell gutters, and list/listitem accessibility roles. Ordered Markdown preserves its starting number. Explicit bodyHtml remains author-controlled." },
-        "signatureHtml": { "type": "string", "description": "Personal sign-off; links use the body text color without underlines." },
-        "sharedItemsHeading": { "type": "string" },
+        "subject": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Example Subject"
+          ]
+        },
+        "preheader": {
+          "type": "string",
+          "examples": [
+            "Short preview text that appears in email clients"
+          ]
+        },
+        "bodyHtml": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Email body HTML. Markdown bullet and numbered lists are normalized to a numbered register with literal zero-padded labels, table-cell gutters, and list/listitem accessibility roles. Ordered Markdown preserves its starting number. Explicit bodyHtml remains author-controlled.",
+          "examples": [
+            "<p>Example Body content.</p>"
+          ]
+        },
+        "signatureHtml": {
+          "type": "string",
+          "description": "Personal sign-off; links use the body text color without underlines.",
+          "examples": [
+            "<p>Example Signature content.</p>"
+          ]
+        },
+        "sharedItemsHeading": {
+          "type": "string",
+          "examples": [
+            "Example Shared items heading"
+          ]
+        },
         "sharedItems": {
           "type": "array",
           "minItems": 0,
           "maxItems": 4,
           "items": {
             "type": "object",
-            "required": ["title", "href"],
+            "required": [
+              "title",
+              "href"
+            ],
             "additionalProperties": false,
             "properties": {
-              "title": { "type": "string", "minLength": 1 },
-              "href": { "type": "string", "minLength": 1 },
-              "label": { "type": "string" },
-              "role": { "type": "string", "minLength": 1 },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                  "Newsletter Title"
+                ]
+              },
+              "href": {
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
+              },
+              "label": {
+                "type": "string",
+                "examples": [
+                  "Example Label"
+                ]
+              },
+              "role": {
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                  "Example Role"
+                ]
+              },
               "content": {
                 "$ref": "#/definitions/contentAttribution"
               },
               "image": {
-                "type": ["object", "null"],
-                "required": ["src", "alt"],
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "required": [
+                  "src",
+                  "alt"
+                ],
                 "additionalProperties": false,
                 "properties": {
-                  "src": { "type": "string", "minLength": 1 },
-                  "alt": { "type": "string" }
+                  "src": {
+                    "type": "string",
+                    "minLength": 1,
+                    "examples": [
+                      "https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA"
+                    ]
+                  },
+                  "alt": {
+                    "type": "string",
+                    "examples": [
+                      "Image description for accessibility"
+                    ]
+                  }
                 }
               },
-              "descriptionHtml": { "type": "string" }
+              "descriptionHtml": {
+                "type": "string",
+                "examples": [
+                  "<p>Example Description content.</p>"
+                ]
+              }
             }
           }
         },
@@ -63,47 +155,131 @@
             "maxItems": 2,
             "items": {
               "type": "object",
-              "required": ["title", "href"],
+              "required": [
+                "title",
+                "href"
+              ],
               "additionalProperties": false,
               "properties": {
-                "title": { "type": "string", "minLength": 1 },
-                "href": { "type": "string", "minLength": 1 },
-                "label": { "type": "string" },
-                "role": { "type": "string", "minLength": 1 },
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "examples": [
+                    "Newsletter Title"
+                  ]
+                },
+                "href": {
+                  "type": "string",
+                  "minLength": 1,
+                  "examples": [
+                    "https://nearfuturelaboratory.com"
+                  ]
+                },
+                "label": {
+                  "type": "string",
+                  "examples": [
+                    "Example Label"
+                  ]
+                },
+                "role": {
+                  "type": "string",
+                  "minLength": 1,
+                  "examples": [
+                    "Example Role"
+                  ]
+                },
                 "content": {
                   "$ref": "#/definitions/contentAttribution"
                 },
                 "image": {
-                  "type": ["object", "null"],
-                  "required": ["src", "alt"],
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "required": [
+                    "src",
+                    "alt"
+                  ],
                   "additionalProperties": false,
                   "properties": {
-                    "src": { "type": "string", "minLength": 1 },
-                    "alt": { "type": "string" }
+                    "src": {
+                      "type": "string",
+                      "minLength": 1,
+                      "examples": [
+                        "https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA"
+                      ]
+                    },
+                    "alt": {
+                      "type": "string",
+                      "examples": [
+                        "Image description for accessibility"
+                      ]
+                    }
                   }
                 },
-                "descriptionHtml": { "type": "string" }
+                "descriptionHtml": {
+                  "type": "string",
+                  "examples": [
+                    "<p>Example Description content.</p>"
+                  ]
+                }
               }
             }
           }
         },
-        "footerNote": { "type": "string", "default": "", "description": "Explicitly authored personal note only. No reply instruction or subscription boilerplate is injected." },
+        "footerNote": {
+          "type": "string",
+          "default": "",
+          "description": "Explicitly authored personal note only. No reply instruction or subscription boilerplate is injected."
+        },
         "footerLinks": {
           "type": "array",
           "items": {
             "type": "object",
-            "required": ["href", "label"],
+            "required": [
+              "href",
+              "label"
+            ],
             "additionalProperties": false,
             "properties": {
-              "href": { "type": "string", "minLength": 1 },
-              "label": { "type": "string", "minLength": 1 },
+              "href": {
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "examples": [
+                  "Example Label"
+                ]
+              },
               "icon": {
-                "type": ["object", "null"],
-                "required": ["src", "alt"],
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "required": [
+                  "src",
+                  "alt"
+                ],
                 "additionalProperties": false,
                 "properties": {
-                  "src": { "type": "string", "minLength": 1 },
-                  "alt": { "type": "string" }
+                  "src": {
+                    "type": "string",
+                    "minLength": 1,
+                    "examples": [
+                      "https://fpoimg.com/800x600?text=Src&bg_color=e6e6e6&text_color=4FAAAA"
+                    ]
+                  },
+                  "alt": {
+                    "type": "string",
+                    "examples": [
+                      "Image description for accessibility"
+                    ]
+                  }
                 }
               }
             }
@@ -113,15 +289,50 @@
           "type": "object",
           "additionalProperties": false,
           "properties": {
-            "name": { "type": "string" },
-            "role": { "type": "string" },
-            "organization": { "type": "string" },
-            "email": { "type": "string" }
+            "name": {
+              "type": "string",
+              "examples": [
+                "Example Name"
+              ]
+            },
+            "role": {
+              "type": "string",
+              "examples": [
+                "Example Role"
+              ]
+            },
+            "organization": {
+              "type": "string",
+              "examples": [
+                "Example Organization"
+              ]
+            },
+            "email": {
+              "type": "string",
+              "examples": [
+                "mailto:?subject=Newsletter&body=Check%20this%20out"
+              ]
+            }
           }
         },
-        "showSubject": { "type": "boolean" },
-        "showFromHeader": { "type": "boolean" },
-        "sourcePath": { "type": "string" },
+        "showSubject": {
+          "type": "boolean",
+          "examples": [
+            false
+          ]
+        },
+        "showFromHeader": {
+          "type": "boolean",
+          "examples": [
+            false
+          ]
+        },
+        "sourcePath": {
+          "type": "string",
+          "examples": [
+            "Example Source path"
+          ]
+        },
         "theme": {
           "type": "object",
           "required": [
@@ -137,15 +348,58 @@
           ],
           "additionalProperties": true,
           "properties": {
-            "backgroundColor": { "type": "string" },
-            "surfaceColor": { "type": "string" },
-            "textColor": { "type": "string" },
-            "mutedTextColor": { "type": "string" },
-            "linkColor": { "type": "string" },
-            "borderColor": { "type": "string" },
-            "accentColor": { "type": "string" },
-            "fontFamily": { "type": "string", "default": "Courier New, Courier, monospace", "description": "Font stack applied to correspondence text and table cells, including register labels. Explicit theme overrides are preserved." },
-            "serifFontFamily": { "type": "string", "default": "Courier New, Courier, monospace", "description": "Legacy theme field retained for compatibility; the standard correspondence template uses fontFamily throughout." }
+            "backgroundColor": {
+              "type": "string",
+              "examples": [
+                "#ffffff"
+              ]
+            },
+            "surfaceColor": {
+              "type": "string",
+              "examples": [
+                "#ffffff"
+              ]
+            },
+            "textColor": {
+              "type": "string",
+              "examples": [
+                "#111111"
+              ]
+            },
+            "mutedTextColor": {
+              "type": "string",
+              "examples": [
+                "#666666"
+              ]
+            },
+            "linkColor": {
+              "type": "string",
+              "examples": [
+                "#111111"
+              ]
+            },
+            "borderColor": {
+              "type": "string",
+              "examples": [
+                "#d1d5db"
+              ]
+            },
+            "accentColor": {
+              "type": "string",
+              "examples": [
+                "#4faaaa"
+              ]
+            },
+            "fontFamily": {
+              "type": "string",
+              "default": "Courier New, Courier, monospace",
+              "description": "Font stack applied to correspondence text and table cells, including register labels. Explicit theme overrides are preserved."
+            },
+            "serifFontFamily": {
+              "type": "string",
+              "default": "Courier New, Courier, monospace",
+              "description": "Legacy theme field retained for compatibility; the standard correspondence template uses fontFamily throughout."
+            }
           }
         }
       }
@@ -156,11 +410,39 @@
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "id": { "type": "string", "minLength": 1 },
-        "label": { "type": "string", "minLength": 1 },
-        "category": { "type": "string", "minLength": 1 },
-        "tags": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "example-id"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Example Label"
+          ]
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1,
+          "examples": [
+            "Example Category"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "examples": [
+              "Example Tags"
+            ]
+          }
+        }
       }
     }
-  }
+  },
+  "x-nfl-contract-version": 1
 }

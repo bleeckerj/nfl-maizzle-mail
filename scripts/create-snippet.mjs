@@ -2,6 +2,8 @@
 
 import fs from 'fs';
 import path from 'path';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 
 /**
  * Content Snippet Generator
@@ -192,13 +194,18 @@ function showUsage() {
 }
 
 function createSnippet(templateName, fileName) {
-  if (!snippets[templateName]) {
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const schemaPath = path.join(root, 'templates', templateName, 'newsletter.schema.json');
+  const maintained = fs.existsSync(schemaPath);
+  if (!maintained && !snippets[templateName]) {
     console.error(`❌ Unknown template: ${templateName}`);
     console.log('Available templates:', Object.keys(snippets).join(', '));
     process.exit(1);
   }
 
-  const snippet = snippets[templateName];
+  // Maintained templates always use their current schema; older unregistered
+  // templates retain their legacy snippets until they acquire a contract.
+  const snippet = maintained ? { extension: 'md', content: execFileSync(process.execPath, [path.join(root, 'scripts/generate-skeleton-from-schema.mjs'), '--template', templateName], { cwd: root, encoding: 'utf8' }) } : snippets[templateName];
   const contentDir = 'content';
   
   // Ensure content directory exists

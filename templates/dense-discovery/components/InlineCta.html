@@ -1,27 +1,10 @@
 <script props>
-  // Read the original section by index so HTML and CSS values are not serialized
-  // through a component attribute. Normalize lengths once, preserving explicit zero.
+  // Stable indices preserve section identity after nested loops. The canonical
+  // builder runs from the renderer root; all templates share this presentation helper.
   (() => {
     const section = props.sections[props.ctaSectionIndex];
-    const pixels = (value, fallback) => `${parseFloat(value ?? fallback)}px`;
-    const fontFamily = !section.font_family || section.font_family === 'mono'
-      ? 'Share Tech Mono, Courier New, Courier, monospace'
-      : section.font_family === 'sans' ? 'Arial, Helvetica, sans-serif' : section.font_family;
-    // Preserve authored block HTML; turn blank lines in plain/inline HTML copy
-    // into paragraph breaks. Single newlines remain ordinary wrapping whitespace.
-    const statement = (section.statement || '').replace(/\r\n?/g, '\n').trim();
-    const hasBlockHtml = /<\/?(?:p|div|table|ul|ol|li|blockquote|h[1-6]|section|article)\b/i.test(statement);
-    return {
-      section,
-      cta: {
-        spaceTop: pixels(section.space_top, 28),
-        spaceBottom: pixels(section.space_bottom, 28),
-        borderWidth: pixels(section.border_width, 1),
-        borderRadius: pixels(section.border_radius, 0),
-        fontFamily,
-        statement: hasBlockHtml ? statement : statement.replace(/\n[ \t]*\n+/g, '<br><br>'),
-      },
-    };
+    const present = require(require('path').resolve('lib/newsletter-core/inline-cta.cjs'));
+    return { section, cta: present(section, 'dense-discovery') };
   })()
 </script>
 <if condition="cta.spaceTop !== '0px'">
@@ -30,7 +13,7 @@
   </tr>
 </if>
 <tr>
-  <td data-content-slot="inline_cta" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}" style="border-collapse: collapse;padding: 18px 20px 0;background: {{ section.background || '#f5f4f0' }};border: {{ cta.borderWidth }} solid {{ section.border_color || '#000000' }};border-radius: {{ cta.borderRadius }};overflow: hidden;">
+  <td data-content-slot="inline_cta" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}" style="border-collapse: collapse;padding: 18px 20px 0;background: {{ section.background || '#ffffff' }};border: {{ cta.borderWidth }} solid {{ section.border_color || '#000000' }};border-radius: {{ cta.borderRadius }};overflow: hidden;">
     <p class="inline-cta-eyebrow" style="margin: 0 0 4px 0;padding: 0;color: {{ section.eyebrow_color || '#555555' }};font: 700 11px/16px {{ cta.fontFamily }};letter-spacing: 0.12em;text-transform: uppercase;">{{ section.eyebrow || 'Editorial Note' }}</p>
     <if condition="section.statement"><div class="inline-cta-copy" style="margin: 0;padding: 0;color: {{ section.text_color || '#333333' }};font: 16px/22px {{ cta.fontFamily }};">{{{ cta.statement }}}</div></if>
     <p style="margin: 14px 0 18px 0;padding: 0;">

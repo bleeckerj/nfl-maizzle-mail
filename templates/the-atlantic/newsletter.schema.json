@@ -9,7 +9,10 @@
       "const": "the-atlantic"
     },
     "title": {
-      "type": "string"
+      "type": "string",
+      "examples": [
+        "Newsletter Title"
+      ]
     },
     "sections": {
       "type": "array",
@@ -25,11 +28,17 @@
               },
               "logo_src": {
                 "type": "string",
-                "description": "Masthead image URL"
+                "description": "Masthead image URL",
+                "examples": [
+                  "https://fpoimg.com/200x50?text=Logo%20src&bg_color=e6e6e6&text_color=4FAAAA"
+                ]
               },
               "logo_alt": {
                 "type": "string",
-                "description": "Masthead image alt text"
+                "description": "Masthead image alt text",
+                "examples": [
+                  "Image description for accessibility"
+                ]
               }
             },
             "required": [
@@ -47,7 +56,10 @@
               },
               "date": {
                 "type": "string",
-                "description": "Issue date text"
+                "description": "Issue date text",
+                "examples": [
+                  "2026-01-01"
+                ]
               }
             },
             "required": [
@@ -65,23 +77,38 @@
               },
               "author_url": {
                 "type": "string",
-                "description": "Author profile URL"
+                "description": "Author profile URL",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
               },
               "author_name": {
                 "type": "string",
-                "description": "Author display name"
+                "description": "Author display name",
+                "examples": [
+                  "Author display name"
+                ]
               },
               "headshot_src": {
                 "type": "string",
-                "description": "Author headshot URL"
+                "description": "Author headshot URL",
+                "examples": [
+                  "https://fpoimg.com/800x600?text=Headshot%20src&bg_color=e6e6e6&text_color=4FAAAA"
+                ]
               },
               "headshot_alt": {
                 "type": "string",
-                "description": "Author headshot alt text"
+                "description": "Author headshot alt text",
+                "examples": [
+                  "Image description for accessibility"
+                ]
               },
               "author_bio": {
                 "type": "string",
-                "description": "Author role/bio"
+                "description": "Author role/bio",
+                "examples": [
+                  "Author role/bio"
+                ]
               }
             },
             "required": [
@@ -99,7 +126,10 @@
               },
               "body_html": {
                 "type": "string",
-                "description": "Intro paragraph HTML content (HTML allowed)"
+                "description": "Intro paragraph HTML content (HTML allowed)",
+                "examples": [
+                  "<p>Example Body content.</p>"
+                ]
               }
             },
             "required": [
@@ -117,15 +147,24 @@
               },
               "heading_html": {
                 "type": "string",
-                "description": "Section heading (may include <em>) (HTML allowed)"
+                "description": "Section heading (may include <em>) (HTML allowed)",
+                "examples": [
+                  "<p>Example Heading content.</p>"
+                ]
               },
               "image_block_html": {
                 "type": "string",
-                "description": "Optional hero image block with attribution; empty string if no image (HTML allowed)"
+                "description": "Optional hero image block with attribution; empty string if no image (HTML allowed)",
+                "examples": [
+                  "<p>Example Image block content.</p>"
+                ]
               },
               "body_html": {
                 "type": "string",
-                "description": "Body HTML: paragraphs, blockquotes, links (HTML allowed)"
+                "description": "Body HTML: paragraphs, blockquotes, links (HTML allowed)",
+                "examples": [
+                  "<p>Example Body content.</p>"
+                ]
               }
             },
             "required": [
@@ -143,19 +182,31 @@
               },
               "image_src": {
                 "type": "string",
-                "description": "Hero image URL"
+                "description": "Hero image URL",
+                "examples": [
+                  "https://fpoimg.com/800x600?text=Image%20src&bg_color=e6e6e6&text_color=4FAAAA"
+                ]
               },
               "image_alt": {
                 "type": "string",
-                "description": "Hero image alt text"
+                "description": "Hero image alt text",
+                "examples": [
+                  "Image description for accessibility"
+                ]
               },
               "image_attribution": {
                 "type": "string",
-                "description": "Image attribution caption"
+                "description": "Image attribution caption",
+                "examples": [
+                  "Image attribution caption"
+                ]
               },
               "body_html": {
                 "type": "string",
-                "description": "Body paragraphs HTML (HTML allowed)"
+                "description": "Body paragraphs HTML (HTML allowed)",
+                "examples": [
+                  "<p>Example Body content.</p>"
+                ]
               }
             },
             "required": [
@@ -173,11 +224,17 @@
               },
               "heading_html": {
                 "type": "string",
-                "description": "Section heading HTML (HTML allowed)"
+                "description": "Section heading HTML (HTML allowed)",
+                "examples": [
+                  "<p>Example Heading content.</p>"
+                ]
               },
               "items_html": {
                 "type": "string",
-                "description": "Concatenated <li> entries with anchors (HTML allowed)"
+                "description": "Concatenated <li> entries with anchors (HTML allowed)",
+                "examples": [
+                  "<p>Example Items content.</p>"
+                ]
               }
             },
             "required": [
@@ -195,27 +252,45 @@
               },
               "title": {
                 "type": "string",
-                "description": "Promo headline"
+                "description": "Promo headline",
+                "examples": [
+                  "Newsletter Title"
+                ]
               },
               "image_src": {
                 "type": "string",
-                "description": "Promo hero image URL"
+                "description": "Promo hero image URL",
+                "examples": [
+                  "https://fpoimg.com/800x600?text=Image%20src&bg_color=e6e6e6&text_color=4FAAAA"
+                ]
               },
               "image_alt": {
                 "type": "string",
-                "description": "Promo hero image alt"
+                "description": "Promo hero image alt",
+                "examples": [
+                  "Image description for accessibility"
+                ]
               },
               "cta_href": {
                 "type": "string",
-                "description": "CTA link URL"
+                "description": "CTA link URL",
+                "examples": [
+                  "https://nearfuturelaboratory.com"
+                ]
               },
               "cta_label": {
                 "type": "string",
-                "description": "CTA button label"
+                "description": "CTA button label",
+                "examples": [
+                  "Read more"
+                ]
               },
               "dek": {
                 "type": "string",
-                "description": "Supporting paragraph"
+                "description": "Supporting paragraph",
+                "examples": [
+                  "Supporting paragraph"
+                ]
               }
             },
             "required": [
@@ -233,23 +308,38 @@
               },
               "wordmark_src": {
                 "type": "string",
-                "description": "Atlantic wordmark image URL"
+                "description": "Atlantic wordmark image URL",
+                "examples": [
+                  "https://fpoimg.com/800x600?text=Wordmark%20src&bg_color=e6e6e6&text_color=4FAAAA"
+                ]
               },
               "newsletter_name": {
                 "type": "string",
-                "description": "Newsletter name title"
+                "description": "Newsletter name title",
+                "examples": [
+                  "Newsletter name title"
+                ]
               },
               "info_html": {
                 "type": "string",
-                "description": "Info paragraph with see-all newsletters link (HTML allowed)"
+                "description": "Info paragraph with see-all newsletters link (HTML allowed)",
+                "examples": [
+                  "<p>Example Info content.</p>"
+                ]
               },
               "subscribe_html": {
                 "type": "string",
-                "description": "Subscribe + app links paragraph (HTML allowed)"
+                "description": "Subscribe + app links paragraph (HTML allowed)",
+                "examples": [
+                  "<p>Example Subscribe content.</p>"
+                ]
               },
               "social_html": {
                 "type": "string",
-                "description": "Social icons block HTML (HTML allowed)"
+                "description": "Social icons block HTML (HTML allowed)",
+                "examples": [
+                  "<p>Example Social content.</p>"
+                ]
               }
             },
             "required": [
@@ -264,5 +354,6 @@
   "required": [
     "template",
     "sections"
-  ]
+  ],
+  "x-nfl-contract-version": 1
 }

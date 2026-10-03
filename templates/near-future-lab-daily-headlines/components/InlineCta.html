@@ -1,0 +1,21 @@
+<script props>
+  // Stable indices preserve section identity after nested loops. The canonical
+  // builder runs from the renderer root; all templates share this presentation helper.
+  (() => {
+    const section = props.sections[props.ctaSectionIndex];
+    const present = require(require('path').resolve('lib/newsletter-core/inline-cta.cjs'));
+    return { section, cta: present(section, 'near-future-lab-daily-headlines') };
+  })()
+</script>
+      <table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface' : '' }}"><tbody><tr><td data-inline-cta-space="top" style="font-size:0;line-height:0;padding-top:{{ cta.spaceTop }}"></td></tr></tbody></table>
+      <table border="0" cellpadding="0" cellspacing="0" style="width:100%;border:{{ cta.borderWidth }} solid {{ section.border_color || '#000' }};border-radius:{{ cta.borderRadius }};overflow:hidden;background:{{ section.background || '#ffffff' }};{{{ section.backgroundStyleInline }}}" role="presentation" class="inline-cta{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" data-content-slot="inline_cta"><tbody>
+        <tr><td style="padding:18px 20px 0;{{{ section.contentPaddingInline }}}">
+          <if condition="section.eyebrow"><p class="inline-cta-eyebrow" style="margin:0 0 4px 0;padding:0;color:{{ section.eyebrow_color || '#555' }};font:700 11px/16px {{ cta.fontFamily }};letter-spacing:.75px;text-transform:uppercase">{{ section.eyebrow }}</p></if>
+          <if condition="section.statement"><div class="inline-cta-copy" style="margin:0;padding:0;color:{{ section.text_color || '#333' }};font:16px/22px {{ cta.fontFamily }}">{{{ cta.statement }}}</div></if>
+        </td></tr>
+        <tr><td style="padding:14px 20px 18px;{{{ section.contentPaddingInline }}}">
+          <if condition="section.primaryAction && section.primaryAction.url"><a class="inline-cta-button inline-cta-primary" href="{{ section.primaryAction.url }}" style="display:inline-block;margin:0 8px 0 0;padding:6px 10px;border:1px solid {{ section.button_border_color || section.button_background || '#111' }};border-radius:4px;background:{{ section.button_background || '#111' }};font:700 12px/1.2 {{ cta.fontFamily }};color:{{ section.button_text_color || '#fff' }}!important;-webkit-text-fill-color:{{ section.button_text_color || '#fff' }};text-decoration:none">{{ section.primaryAction.label }}</a></if>
+          <if condition="section.secondaryAction && section.secondaryAction.url"><a class="inline-cta-button inline-cta-secondary" href="{{ section.secondaryAction.url }}" style="display:inline-block;margin:0;padding:6px 10px;border:1px solid {{ section.secondary_button_border_color || section.border_color || '#111' }};border-radius:4px;background:{{ section.secondary_button_background || '#fff' }};font:700 12px/1.2 {{ cta.fontFamily }};color:{{ section.secondary_button_text_color || '#111' }}!important;-webkit-text-fill-color:{{ section.secondary_button_text_color || '#111' }};text-decoration:none">{{ section.secondaryAction.label }}</a></if>
+        </td></tr>
+      </tbody></table>
+      <table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface' : '' }}"><tbody><tr><td data-inline-cta-space="bottom" style="font-size:0;line-height:0;padding-top:{{ cta.spaceBottom }}"></td></tr></tbody></table>
