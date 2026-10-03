@@ -1067,7 +1067,23 @@
                 "company": {},
                 "companyTagline": {},
                 "title": {},
-                "tags": {},
+                "tags": {
+                  "type": [
+                    "array",
+                    "null"
+                  ],
+                  "items": {
+                    "type": "string"
+                  },
+                  "examples": [
+                    [
+                      "design-technology",
+                      "organizational-imagination",
+                      "brand",
+                      "prototyping"
+                    ]
+                  ]
+                },
                 "jobPresentation": {
                   "type": "object",
                   "properties": {

@@ -639,6 +639,12 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
   if (adjacencyJobsVariant?.properties) {
     adjacencyJobsVariant.properties.brandVariant = {};
     adjacencyJobsVariant.properties.canonicalUrl = {};
+    // Editorial exports job tags as a list; the renderer iterates that list.
+    adjacencyJobsVariant.properties.tags = {
+      type: ['array', 'null'],
+      items: { type: 'string' },
+      examples: [['design-technology', 'organizational-imagination', 'brand', 'prototyping']],
+    };
     // Full logos are exported by Editorial separately from square company icons.
     adjacencyJobsVariant.properties.companyLogo = {
       type: 'object',

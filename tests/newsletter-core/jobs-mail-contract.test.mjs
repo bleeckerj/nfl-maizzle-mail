@@ -43,6 +43,17 @@ test('the authored Atlassian jobs email passes strict Dense Discovery validation
   assert.ok(messages.some((message) => message.includes('Schema validation passed')));
 });
 
+test('job tags accept exported string lists and reject scalar or malformed tags', () => {
+  const job = { type: 'adjacency-job-posting' };
+  validate([job]);
+  validate([{ ...job, tags: null }]);
+  validate([{ ...job, tags: [] }]);
+  validate([{ ...job, tags: ['design-technology', 'organizational-imagination', 'brand', 'prototyping'] }]);
+  for (const tags of ['design-technology', [42], [{ label: 'brand' }]]) {
+    assert.throws(() => validate([{ ...job, tags }]), /Schema validation failed/);
+  }
+});
+
 test('the authored jobs email hydrates without tracking defaults or conflicts', () => {
   const source = matter(readFileSync(SOURCE_PATH, 'utf8')).data;
   const prepared = prepareNewsletterData(source, {
@@ -92,19 +103,24 @@ test('job logos and ad rules have strict field contracts', () => {
   assert.throws(() => validate([{ ...ad, show_bottom_rule: 'false' }]), /Schema validation failed/);
 });
 
-test('schema regeneration retains the full logo and bottom-rule contracts', () => {
+test('schema discovery retains the full logo, tag list, and bottom-rule contracts', () => {
   const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'jobs-mail-schema-'));
-  const outputPath = path.join(tempRoot, 'newsletter.schema.json');
+  const outputPath = path.join(tempRoot, 'newsletter.schema.discovered.json');
   try {
     execFileSync(process.execPath, [path.join(REPO_ROOT, 'scripts', 'generate-template-schema.mjs'),
       '--entry', path.join(TEMPLATE_ROOT, 'newsletter.html'), '--output', outputPath, '--root', REPO_ROOT],
     { cwd: REPO_ROOT, encoding: 'utf8' });
     const generated = JSON.parse(readFileSync(outputPath, 'utf8'));
     const canonical = JSON.parse(readFileSync(path.join(TEMPLATE_ROOT, 'newsletter.schema.json'), 'utf8'));
-    for (const [type, field] of [['adjacency-job-posting', 'companyLogo'], ['ad-block', 'show_bottom_rule']]) {
+    // Examples are authoring annotations. Compare validation rules and defaults
+    // even when maintained schemas have acquired additional example values.
+    const withoutExamples = (value) => Array.isArray(value) ? value.map(withoutExamples)
+      : value && typeof value === 'object' ? Object.fromEntries(Object.entries(value)
+        .filter(([key]) => key !== 'examples').map(([key, child]) => [key, withoutExamples(child)])) : value;
+    for (const [type, field] of [['adjacency-job-posting', 'companyLogo'], ['adjacency-job-posting', 'tags'], ['ad-block', 'show_bottom_rule']]) {
       const fieldSchema = (schema) => schema.properties.sections.items.allOf
         .find((branch) => branch.if.properties.type.const === type).then.properties[field];
-      assert.deepEqual(fieldSchema(generated), fieldSchema(canonical));
+      assert.deepEqual(withoutExamples(fieldSchema(generated)), withoutExamples(fieldSchema(canonical)));
     }
   } finally {
     rmSync(tempRoot, { recursive: true, force: true });
