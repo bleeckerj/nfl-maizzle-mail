@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
-import { readFileSync } from 'node:fs';
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
@@ -87,6 +88,39 @@ test('dense-discovery starters materialize the complete current schema', () => {
 
   const classifieds = payload.sections.find(({ type }) => type === 'classifieds');
   assert.ok(Object.prototype.hasOwnProperty.call(classifieds, 'containerStyles'));
+});
+
+test('schema starters omit generated HTML from editable job-list objects', () => {
+  // Exercise the canonical nested list contract with an actual list entry.
+  // The full template starter currently emits an empty optional lists array.
+  const schema = JSON.parse(readFileSync(SCHEMA_PATH, 'utf8'));
+  const jobRule = schema.properties.sections.items.allOf.find(
+    rule => rule.if?.properties?.type?.const === 'adjacency-job-posting',
+  );
+  const fixture = {
+    type: 'object',
+    properties: {
+      template: { const: 'dense-discovery' },
+      jobLists: jobRule.then.properties.lists,
+    },
+    required: ['template', 'jobLists'],
+  };
+  const temporaryRoot = mkdtempSync(path.join(os.tmpdir(), 'jobs-list-starter-'));
+  try {
+    const fixturePath = path.join(temporaryRoot, 'schema.json');
+    writeFileSync(fixturePath, JSON.stringify(fixture));
+    const markdown = execFileSync(process.execPath, [
+      GENERATOR_PATH, '--schema', fixturePath, '--template-name', 'dense-discovery',
+      '--all-section-fields', '--items-per-section', '1',
+    ], { cwd: REPO_ROOT, encoding: 'utf8' });
+    const payload = parseFrontmatter(markdown);
+    const validate = new Ajv({ strict: false }).compile(fixture);
+    assert.equal(validate(payload), true, JSON.stringify(validate.errors));
+    assert.ok(Array.isArray(payload.jobLists[0].items));
+    assert.equal(Object.hasOwn(payload.jobLists[0], 'itemsHtml'), false);
+  } finally {
+    rmSync(temporaryRoot, { recursive: true, force: true });
+  }
 });
 
 test('dense-discovery item image fields are mutually exclusive', () => {

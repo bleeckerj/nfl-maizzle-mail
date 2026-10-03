@@ -369,6 +369,8 @@ function generateObjectPlaceholder(propName, propSchema, context = {}) {
   const properties = propSchema.properties || {};
 
   for (const [key, keySchema] of Object.entries(properties)) {
+    // Build-generated fields must not become duplicate editable content.
+    if (keySchema.readOnly) continue;
     // Skip style objects in minimal mode unless they're essential
     if (context.minimal && isStyleProperty(key)) {
       continue;
@@ -526,6 +528,7 @@ function assertStarterCompleteness(markdown, schema) {
       Array.isArray(resolvedSchema.not?.required) ? resolvedSchema.not.required : [],
     );
     for (const [propertyName, propertySchema] of Object.entries(resolvedSchema.properties || {})) {
+      if (propertySchema.readOnly) continue;
       const propertyPath = `${location}.${propertyName}`;
       if (!Object.prototype.hasOwnProperty.call(value, propertyName)) {
         if (

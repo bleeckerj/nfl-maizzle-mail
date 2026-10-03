@@ -1082,12 +1082,15 @@
                       "title": {},
                       "itemsHtml": {
                         "type": "array",
-                        "items": {}
+                        "items": {},
+                        "readOnly": true,
+                        "description": "Build-generated HTML derived from items. Legacy HTML-only lists are accepted when items is absent; items takes precedence when both fields exist. Do not maintain a second copy in editable sources."
                       },
                       "id": {},
                       "items": {
                         "type": "array",
-                        "items": {}
+                        "items": {},
+                        "description": "Authoritative editable job-list entries. Inline Markdown is converted to HTML during the build, replacing any stale itemsHtml copy."
                       }
                     },
                     "additionalProperties": false

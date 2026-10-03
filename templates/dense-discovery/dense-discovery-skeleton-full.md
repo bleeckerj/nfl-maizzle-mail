@@ -470,7 +470,7 @@ sections:
   descriptionHtml: <p>Example job description.</p>
   lists:
   - title: What you will do
-    itemsHtml:
+    items:
     - Lead an example speculative-prototyping workstream.
   payRangeHtml: <p>Example pay-range statement.</p>
   bodyHtml: <p>Example supporting job information.</p>

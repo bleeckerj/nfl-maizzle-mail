@@ -255,9 +255,7 @@ test('build-newsletter accepts an absolute external issue path with adjacency-jo
       '      - id: what-youll-do',
       "        title: What You'll Do",
       '        items:',
-      '          - Define the speculative prototyping function.',
-      '        itemsHtml:',
-      "          - 'Define the <a href=\"https://example.com/function\">speculative prototyping function</a>.'",
+      "          - 'Define the [speculative prototyping function](https://example.com/function).'",
       '    footerNotesHtml:',
       "      - '<p>Applicants should review the <a href=\"https://example.com/policy\">policy guidance</a>.</p>'",
       '---',
@@ -291,6 +289,7 @@ test('build-newsletter accepts an absolute external issue path with adjacency-jo
     assert.match(html, /Team Founder, Speculative Prototyping/);
     assert.match(html, /What You(?:&#0*39;|')ll Do/);
     assert.match(html, /speculative prototyping function/);
+    assert.match(html, /href="https:\/\/example.com\/function"/);
     assert.match(
       html,
       new RegExp(

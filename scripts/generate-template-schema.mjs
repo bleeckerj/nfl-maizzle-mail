@@ -641,8 +641,16 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
     const listProperties = listsSchema?.items?.properties;
     if (listProperties) {
       listProperties.id = {};
-      listProperties.items = { type: 'array', items: {} };
-      listProperties.itemsHtml = { type: 'array', items: {} };
+      // Editable job lists have one source. HTML is build output, with support
+      // retained for older HTML-only inputs rather than a second authored copy.
+      listProperties.items = {
+        type: 'array', items: {},
+        description: 'Authoritative editable job-list entries. Inline Markdown is converted to HTML during the build, replacing any stale itemsHtml copy.',
+      };
+      listProperties.itemsHtml = {
+        type: 'array', items: {}, readOnly: true,
+        description: 'Build-generated HTML derived from items. Legacy HTML-only lists are accepted when items is absent; items takes precedence when both fields exist. Do not maintain a second copy in editable sources.',
+      };
     }
   }
 

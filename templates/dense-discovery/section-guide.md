@@ -166,8 +166,8 @@ sections:
   descriptionHtml: <p>The description area can carry a more substantial explanation of the work. This placeholder copy is long enough to test prose styling, divider spacing, and how the job card handles multiple content modules without overwhelming the header.</p>
   lists:
   - title: List title element
-    itemsHtml:
-    - Lead a focused workstream, coordinate with a small cross-functional group, and maintain a clear record of decisions, tradeoffs, and open questions with an <a href="mailto:guide@example.com">inline link</a>.
+    items:
+    - Lead a focused workstream with an [inline link](mailto:guide@example.com).
   payRangeHtml: <p>This FPO compensation note stands in for a salary band, equity note, benefits summary, or regional pay statement. The length tests the boxed compensation treatment.</p>
   bodyHtml: <p>Additional FPO information can include hiring process notes, equal opportunity language, work authorization details, or context that does not fit cleanly into the summary or description modules.</p>
   originalSourceUrl: mailto:guide@example.com

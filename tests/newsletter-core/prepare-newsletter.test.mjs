@@ -714,8 +714,7 @@ test('prepareNewsletterData styles adjacency-job-posting sections through the jo
               {
                 id: 'key-responsibilities',
                 title: 'In this role you will',
-                items: ['Prototype product futures.'],
-                itemsHtml: ['Prototype <a href="https://example.com/futures">product futures</a>.'],
+                items: ['Prototype [product futures](https://example.com/futures).'],
               },
             ],
             footerNotesHtml: ['<p>Legal notice with a <a href="https://example.com/privacy">privacy link</a>.</p>'],
