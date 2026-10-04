@@ -89,6 +89,6 @@ search, filtering, desktop/mobile widths, comparison, and missing/failed builds.
 
 ## Editorial-owned job emails
 
-Job-email copy lives in the sibling `nfl-editorial/emails/jobs/<job-id>/<job-id>.email.md`. Set a gallery sample to `editorial:jobs/<job-id>/<job-id>.email.md` to read it there. This prefix is restricted to that email corpus; traversal and symlink escapes are rejected. Gallery builds create disposable previews in Maizzle. Use editorial’s `npm run mail:build:job-email -- <slug>` to produce canonical HTML and manifests beside the Markdown.
+Job-email copy lives in the sibling `nfl-editorial/emails/jobs/<company>/<job-id>/<job-id>.email.md`. Set a gallery sample to `editorial:jobs/<company>/<job-id>/<job-id>.email.md` to read it there. This prefix is restricted to that email corpus; traversal and symlink escapes are rejected. Gallery builds create disposable previews in Maizzle. Use editorial’s `npm run mail:build:job-email -- <company>/<job-id>` to produce canonical HTML and manifests beside the Markdown.
 
 For the full cross-repository build contract and template maintenance workflow, see [Adjacency job-email production](../docs/adjacency-job-emails.md).

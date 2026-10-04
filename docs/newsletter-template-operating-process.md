@@ -6,7 +6,7 @@ Use this document before scaffolding a new template under `templates/<template-n
 
 ## Adjacency job-email workflow
 
-For employer-specific recruiting emails, read [Adjacency job-email production](adjacency-job-emails.md). Their editable Markdown and adjacent canonical HTML belong in `nfl-editorial/emails/jobs/<slug>/`; Maizzle owns the templates and renderer. This is separate from the Backoffice newsletter-issue workflow below.
+For employer-specific recruiting emails, read [Adjacency job-email production](adjacency-job-emails.md). Their editable Markdown and adjacent canonical HTML belong in `nfl-editorial/emails/jobs/<company>/<job-id>/`; Maizzle owns the templates and renderer. This is separate from the Backoffice newsletter-issue workflow below.
 
 ## Cross-Repo Contract
 

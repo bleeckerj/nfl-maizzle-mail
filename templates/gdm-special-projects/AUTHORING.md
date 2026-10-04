@@ -4,7 +4,7 @@ This employer-specific template uses a white logo masthead, light sans-serif rol
 
 ## Editable source
 
-Edit `/Users/julian/Code/nfl-editorial/emails/jobs/gdm-expeditionary-engineering/gdm-expeditionary-engineering.email.md`. Keep `template: gdm-special-projects` and `publicationMode: campaign`. All copy remains in YAML frontmatter. The source job is `nfl-editorial/src/content/jobs/google-deepmind/research-engineer-special-projects-expeditionary-engineering.mdx`.
+Edit `/Users/julian/Code/nfl-editorial/emails/jobs/google-deepmind/gdm-expeditionary-engineering/gdm-expeditionary-engineering.email.md`. Keep `template: gdm-special-projects` and `publicationMode: campaign`. All copy remains in YAML frontmatter. The source job is `nfl-editorial/src/content/jobs/google-deepmind/research-engineer-special-projects-expeditionary-engineering.mdx`.
 
 `companyLogo` is required: `src`, `alt`, original `width`, and original `height`. Use the complete hosted mark. The GDM source SVG is Photarium `fe30ce2f-0964-4781-b037-42e404cffa00`; its linked raster is `1c9b8ab8-1efb-4c0b-9b91-8c92e122ea00`, 512 × 119. The email requests the raster’s PNG rendition. The wordmark displays at 280px desktop and 240px mobile, preserving its natural ratio and clear space. This is intentional logo sizing, separate from content-image presentation.
 
@@ -17,10 +17,10 @@ Use the shared [field and editing guide](../adjacency-recruiting/AUTHORING.md) f
 Build from `/Users/julian/Code/nfl-editorial`:
 
 ```sh
-npm run mail:build:job-email -- gdm-expeditionary-engineering
+npm run mail:build:job-email -- google-deepmind/gdm-expeditionary-engineering
 ```
 
-The canonical HTML is `nfl-editorial/emails/jobs/gdm-expeditionary-engineering/gdm-expeditionary-engineering.html`, beside its Markdown. From nfl-maizzle-mail, run `npm run gallery:build -- --template=gdm-special-projects` to refresh the gallery cache. With the existing gallery running on port 4319, open `http://127.0.0.1:4319/previews/gdm-special-projects/preview.html`. The gallery reads this same editable draft. Build output is disposable; edit the source and rebuild. Nothing in these commands sends email.
+The canonical HTML is `nfl-editorial/emails/jobs/google-deepmind/gdm-expeditionary-engineering/gdm-expeditionary-engineering.html`, beside its Markdown. From nfl-maizzle-mail, run `npm run gallery:build -- --template=gdm-special-projects` to refresh the gallery cache. With the existing gallery running on port 4319, open `http://127.0.0.1:4319/previews/gdm-special-projects/preview.html`. The gallery reads this same editable draft. Build output is disposable; edit the source and rebuild. Nothing in these commands sends email.
 
 Check desktop and mobile logo visibility, complete role text, company-specific hierarchy, public job destination, share composer content, and tracking conflicts. Browser verification does not establish inbox compatibility. The source lists both Venice Beach and Mountain View; this draft preserves both pending author clarification.
 

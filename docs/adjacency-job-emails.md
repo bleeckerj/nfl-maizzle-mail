@@ -7,7 +7,7 @@ This guide covers the Maizzle implementation of company-specific recruiting emai
 | Concern | Owner |
 | --- | --- |
 | Original web job | Editorial `src/content/jobs/` |
-| Adapted email copy | Editorial `emails/jobs/<job-id>/<job-id>.email.md` |
+| Adapted email copy | Editorial `emails/jobs/<company>/<job-id>/<job-id>.email.md` |
 | Canonical HTML and manifests | Beside that Markdown in editorial; generated and Git-ignored |
 | Employer-specific presentation | Maizzle `templates/<template>/` |
 | Schema and source validation | Maizzle template schema and canonical build pipeline |
@@ -23,8 +23,8 @@ Do not move authored job-email drafts back into Maizzle `content/` or template s
 
 | Template | Editorial source | Presentation |
 | --- | --- | --- |
-| `gdm-special-projects` | `emails/jobs/gdm-expeditionary-engineering/gdm-expeditionary-engineering.email.md` | Hosted DeepMind logo, white background, light sans-serif hierarchy, role brief before letter, neutral appointment summary, understated referral link. |
-| `adjacency-recruiting` | `emails/jobs/platform-counter-inference-analyst/platform-counter-inference-analyst.email.md` | FDAA recruiting treatment with hosted agency branding and inline field imagery. Its field contract is reusable; the visual treatment is not a universal employer template. |
+| `gdm-special-projects` | `emails/jobs/google-deepmind/gdm-expeditionary-engineering/gdm-expeditionary-engineering.email.md` | Hosted DeepMind logo, white background, light sans-serif hierarchy, role brief before letter, neutral appointment summary, understated referral link. |
+| `adjacency-recruiting` | `emails/jobs/fdaa/platform-counter-inference-analyst/platform-counter-inference-analyst.email.md` | FDAA recruiting treatment with hosted agency branding and inline field imagery. Its field contract is reusable; the visual treatment is not a universal employer template. |
 
 Read each template's [GDM authoring guide](../templates/gdm-special-projects/AUTHORING.md) or [FDAA/reference guide](../templates/adjacency-recruiting/AUTHORING.md). The earlier FDAA draft lacks the company mark required for new employer emails. Schema acceptance alone does not establish editorial readiness.
 
@@ -52,10 +52,10 @@ Run builds sequentially. The builder has a shared build lock, and gallery genera
 From `nfl-editorial`:
 
 ```sh
-npm run mail:build:job-email -- gdm-expeditionary-engineering
+npm run mail:build:job-email -- google-deepmind/gdm-expeditionary-engineering
 ```
 
-The slug selects `emails/jobs/<job-id>/<job-id>.email.md`. Output name is always `email`. The wrapper supports `--dry-run` for path inspection; that mode does not validate or render.
+The slug selects `emails/jobs/<company>/<job-id>/<job-id>.email.md`. The job ID is the output filename prefix; HTML and manifests stay in the same company/job directory. The wrapper supports `--dry-run` for path inspection; that mode does not validate or render.
 
 ### Direct Maizzle invocation
 
@@ -63,9 +63,9 @@ From this repository, the equivalent explicit build is:
 
 ```sh
 node scripts/build-newsletter.mjs \
-  /Users/julian/Code/nfl-editorial/emails/jobs/gdm-expeditionary-engineering/gdm-expeditionary-engineering.email.md \
-  email \
-  --output-dir=/Users/julian/Code/nfl-editorial/emails/jobs/gdm-expeditionary-engineering \
+  /Users/julian/Code/nfl-editorial/emails/jobs/google-deepmind/gdm-expeditionary-engineering/gdm-expeditionary-engineering.email.md \
+  gdm-expeditionary-engineering \
+  --output-dir=/Users/julian/Code/nfl-editorial/emails/jobs/google-deepmind/gdm-expeditionary-engineering \
   --no-open \
   --strict-schema
 ```
@@ -78,10 +78,10 @@ Discover the Maizzle tools and read the selected template's authoring guide and 
 
 ```json
 {
-  "content_md_path": "/Users/julian/Code/nfl-editorial/emails/jobs/gdm-expeditionary-engineering/gdm-expeditionary-engineering.email.md",
+  "content_md_path": "/Users/julian/Code/nfl-editorial/emails/jobs/google-deepmind/gdm-expeditionary-engineering/gdm-expeditionary-engineering.email.md",
   "template": "gdm-special-projects",
-  "campaign_name": "email",
-  "output_dir": "/Users/julian/Code/nfl-editorial/emails/jobs/gdm-expeditionary-engineering"
+  "campaign_name": "gdm-expeditionary-engineering",
+  "output_dir": "/Users/julian/Code/nfl-editorial/emails/jobs/google-deepmind/gdm-expeditionary-engineering"
 }
 ```
 
@@ -106,7 +106,7 @@ The gallery reads external editorial content through an explicit prefix:
 {
   "stage": "prototype",
   "description": "Google DeepMind Special Projects recruiting email.",
-  "sample": "editorial:jobs/gdm-expeditionary-engineering/gdm-expeditionary-engineering.email.md"
+  "sample": "editorial:jobs/google-deepmind/gdm-expeditionary-engineering/gdm-expeditionary-engineering.email.md"
 }
 ```
 

@@ -14,7 +14,7 @@ records, HTTP 404/410, and network failures block the public email build; do not
 treat them as warnings or substitute a guessed URL. Explicit local previews may
 use their provisioned server URL and must not be sent.
 
-- `content/` — Legacy/local newsletter inputs. Adjacency job-email drafts belong in sibling `nfl-editorial/emails/jobs/<job-id>/<job-id>.email.md`; generated HTML and manifests belong beside that source.
+- `content/` — Legacy/local newsletter inputs. Adjacency job-email drafts belong in sibling `nfl-editorial/emails/jobs/<company>/<job-id>/<job-id>.email.md`; generated HTML and manifests belong beside that source.
 - Job-email templates, schemas, preparation, and rendering remain here. The editorial `mail:build:job-email` command invokes this renderer with an explicit source and adjacent output directory.
 - `data/` — Build input JSON (`data/newsletter.json`) generated from content or copied from a JSON source.
 - `templates/<template-name>/` — **Only canonical template location**.
@@ -93,4 +93,4 @@ Every script must include plain-language comments explaining its purpose, inputs
 
 Use semantically relevant, lucid variable and function names. Separate logical phases with reasonable whitespace. Keep scripts focused and reasonably sized; extract distinct responsibilities into small named modules instead of growing monolithic files. Apply these rules to new scripts and scripts being modified.
 
-Job-email sources use `nfl-editorial/emails/jobs/<job-id>/<job-id>.email.md`. The directory and all output filename prefixes use that same job ID. Generic `email.md` is not an authoritative job-email source name.
+Job-email sources use `nfl-editorial/emails/jobs/<company>/<job-id>/<job-id>.email.md`. The directory and all output filename prefixes use that same job ID. Generic `email.md` is not an authoritative job-email source name.

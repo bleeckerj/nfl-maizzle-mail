@@ -1,3 +1,5 @@
+// Render sponsor placements from the saved FDAA company draft into temporary files.
+// Check ordering and ad-free output without modifying or sending the source email.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -10,7 +12,7 @@ import { build } from '@maizzle/framework';
 import { prepareNewsletterData } from '../../lib/newsletter-core/prepare-newsletter.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
-const sample=matter(fs.readFileSync(path.resolve(root,'../nfl-editorial/emails/jobs/platform-counter-inference-analyst/platform-counter-inference-analyst.email.md'),'utf8')).data;
+const sample=matter(fs.readFileSync(path.resolve(root,'../nfl-editorial/emails/jobs/fdaa/platform-counter-inference-analyst/platform-counter-inference-analyst.email.md'),'utf8')).data;
 async function render(source){
  const temp=fs.mkdtempSync(path.join(os.tmpdir(),'recruiting-placements-'));
  try {

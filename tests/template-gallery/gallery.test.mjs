@@ -79,11 +79,11 @@ test('editorial sources are restricted to the sibling email corpus', () => {
   const workspace = fs.mkdtempSync(path.join(os.tmpdir(), 'gallery-editorial-'));
   const mail = path.join(workspace, 'nfl-maizzle-mail');
   const editorial = path.join(workspace, 'nfl-editorial/emails');
-  fs.mkdirSync(mail); fs.mkdirSync(path.join(editorial, 'jobs/example'), {recursive:true});
-  const source = path.join(editorial, 'jobs/example/example.email.md');
+  fs.mkdirSync(mail); fs.mkdirSync(path.join(editorial, 'jobs/company/example'), {recursive:true});
+  const source = path.join(editorial, 'jobs/company/example/example.email.md');
   fs.writeFileSync(source, '---\ntemplate: example\n---\n');
   try {
-    assert.equal(sourcePath(mail, 'editorial:jobs/example/example.email.md'), source);
+    assert.equal(sourcePath(mail, 'editorial:jobs/company/example/example.email.md'), source);
     assert.throws(() => sourcePath(mail, 'editorial:../private.md'), /inside/);
     fs.writeFileSync(path.join(workspace, 'private.md'), 'private');
     fs.symlinkSync(path.join(workspace, 'private.md'), path.join(editorial, 'escape.md'));

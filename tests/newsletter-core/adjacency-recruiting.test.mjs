@@ -1,3 +1,5 @@
+// Check FDAA schema, sharing, and component behavior using its saved company draft.
+// Preparation and rendering leave the authored Markdown unchanged.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -12,7 +14,7 @@ import { prepareNewsletterData } from '../../lib/newsletter-core/prepare-newslet
 import { pruneBuildInjectedFields } from '../../lib/newsletter-core/normalize.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
-const sample=matter(fs.readFileSync(path.resolve(root,'../nfl-editorial/emails/jobs/platform-counter-inference-analyst/platform-counter-inference-analyst.email.md'),'utf8')).data;
+const sample=matter(fs.readFileSync(path.resolve(root,'../nfl-editorial/emails/jobs/fdaa/platform-counter-inference-analyst/platform-counter-inference-analyst.email.md'),'utf8')).data;
 const schema=JSON.parse(fs.readFileSync(path.join(root,'templates/adjacency-recruiting/newsletter.schema.json'),'utf8'));
 const validate=new Ajv({strict:false}).compile(schema);
 const prepare=data=>prepareNewsletterData(data,{repoRoot:root,templateName:data.template,strictSchema:true,logger:{log(){}}});
