@@ -78,7 +78,7 @@ The Backoffice MCP starter tools generate from the selected template's current s
 
 ## View Online Link
 
-Managed-artifact View Online and sharing destinations come from the active publication registry. Preserve its exact published URL, including publication suffixes, and validate it live. Missing or expired records, HTTP 404/410, and network failures block a public email build. Never infer a public destination from an issue ID, content path, slug, or route pattern.
+Managed-artifact View Online and sharing destinations come from the active publication registry. Preserve its exact published URL, including publication suffixes, and validate it live. Missing or inactive records, HTTP 404/410, and network failures block a public email build. Never infer a public destination from an issue ID, content path, slug, or route pattern.
 
 Explicit local previews may use their provisioned server URL and must not be sent. Campaign builds suppress automatic public issue navigation. The shared `view-online-link.mjs` and publication-link validation modules own this behavior.
 

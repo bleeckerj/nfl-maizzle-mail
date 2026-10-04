@@ -9,7 +9,7 @@ This file documents the canonical structure and workflow for `nfl-maizzle-mail` 
 Managed-artifact View Online and sharing URLs must be resolved from the active
 publication registry and validated live. Never infer those destinations from
 content file paths, source refs, slugs, titles, or route patterns. Preserve the
-registry's exact published URL, including publication suffixes. Missing or expired
+registry's exact published URL, including publication suffixes. Missing or inactive
 records, HTTP 404/410, and network failures block the public email build; do not
 treat them as warnings or substitute a guessed URL. Explicit local previews may
 use their provisioned server URL and must not be sent.
