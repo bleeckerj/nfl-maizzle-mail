@@ -983,7 +983,8 @@
                 "items": {
                   "$ref": "#/definitions/shortTakeSourceItem"
                 },
-                "type": "array"
+                "type": "array",
+                "description": "Hydrates the canonical Geist Bold SHORT TAKES brand rail from the registry; lockup.brandRail: false omits the complete rail. Footer CTAs link to the record destination when one is present."
               }
             },
             "x-nfl-authoring": {

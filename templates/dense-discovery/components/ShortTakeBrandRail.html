@@ -1,0 +1,22 @@
+<script props>
+  // Mirror Editorial's compact 4:5 brand rail at the caller's email width.
+  // The registry's branding opt-out controls the complete logo-and-label row.
+  ({
+    shortTakeBrandRail: props.shortTakeBrandRail,
+    shortTakeRailPadding: `${10 * props.shortTakeCardWidth / 1080}px ${24 * props.shortTakeCardWidth / 1080}px`,
+    shortTakeLogoWidth: 190 * props.shortTakeCardWidth / 1080,
+    shortTakeLabelSize: 36 * props.shortTakeCardWidth / 1080,
+  })
+</script>
+<if condition="shortTakeBrandRail">
+  <tr><td class="short-take-logo-rail" data-short-take-brand-rail style="border-collapse:collapse;padding:{{ shortTakeRailPadding }};background:#141414;border-bottom:1px solid #b9b9b2">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="border-spacing:0"><tbody><tr>
+      <td align="left" valign="middle" style="padding:0;line-height:0;font-size:0">
+        <img src="https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e98285d8-5856-4005-6fbd-1c322688e700/full" alt="Near Future Laboratory white wordmark" border="0" width="{{ shortTakeLogoWidth }}" style="display:block;width:{{ shortTakeLogoWidth }}px;max-width:100%;height:auto;border:0">
+      </td>
+      <td align="right" valign="middle" style="padding:0 0 0 14px">
+        <span data-short-take-label style="display:block;color:#ffffff;font-family:'Geist',Arial,sans-serif;font-weight:700;font-style:normal;font-size:{{ shortTakeLabelSize }}px;line-height:1;letter-spacing:0.035em;text-align:right;white-space:nowrap">SHORT TAKES</span>
+      </td>
+    </tr></tbody></table>
+  </td></tr>
+</if>

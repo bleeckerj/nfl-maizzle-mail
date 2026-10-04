@@ -126,6 +126,7 @@ test('mail accepts all page/social lockup settings while retaining complete imag
           const newsletter = { sections: [section()] };
           hydrateShortTakeSections(newsletter, repoRoot, { logger: { log() {} } });
           assert.equal(newsletter.sections[0].items[0].image, PHOTARIUM_URL);
+          assert.equal(newsletter.sections[0].items[0].brandRail, brandRail);
           assert.equal(newsletter.sections[0].items[0].lockup, undefined);
         });
       }

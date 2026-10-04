@@ -8426,6 +8426,7 @@
                   "type": "array",
                   "minItems": 1,
                   "maxItems": 1,
+                  "description": "Hydrates the canonical Geist Bold SHORT TAKES brand rail from the registry; lockup.brandRail: false omits the complete rail. Footer CTAs link to the record destination when one is present.",
                   "items": {
                     "type": "object",
                     "required": [

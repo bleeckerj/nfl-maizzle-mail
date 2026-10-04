@@ -363,7 +363,7 @@
               {
                 "type": "object",
                 "title": "Short Take",
-                "description": "Registry-backed Short Take hydrated from nfl-editorial/src/content/shortTakes.json.",
+                "description": "Registry-backed Short Take with the canonical Geist Bold SHORT TAKES brand rail; lockup.brandRail: false omits the complete rail. Footer CTAs link to the record destination when one is present.",
                 "properties": {
                   "type": {
                     "const": "short-take"

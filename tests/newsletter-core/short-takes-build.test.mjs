@@ -109,6 +109,15 @@ function buildFixture(templateName, source) {
     path.join(isolatedRepo, 'templates', templateName),
     { recursive: true },
   );
+  // The other native email templates share Dense Discovery's rail in production.
+  if (templateName !== 'dense-discovery') {
+    const sharedComponents = path.join(isolatedRepo, 'templates', 'dense-discovery', 'components');
+    mkdirSync(sharedComponents, { recursive: true });
+    cpSync(
+      path.join(REPO_ROOT, 'templates', 'dense-discovery', 'components', 'ShortTakeBrandRail.html'),
+      path.join(sharedComponents, 'ShortTakeBrandRail.html'),
+    );
+  }
   symlinkSync(path.join(REPO_ROOT, 'node_modules'), path.join(isolatedRepo, 'node_modules'), 'dir');
   writeFileSync(sourcePath, JSON.stringify(source), 'utf8');
   writeFileSync(inventoryPath, JSON.stringify(inventory), 'utf8');
@@ -161,7 +170,7 @@ function buildFixture(templateName, source) {
   }
 }
 
-function assertRenderedShortTakes(html, templateName, middleSentinel, endSentinel, { linkedAnchorCount = 2 } = {}) {
+function assertRenderedShortTakes(html, templateName, middleSentinel, endSentinel, { linkedAnchorCount = 4 } = {}) {
   const dom = new JSDOM(html);
   const { document } = dom.window;
   const cards = [...document.querySelectorAll('[data-short-take-id]')];
@@ -196,9 +205,9 @@ function assertRenderedShortTakes(html, templateName, middleSentinel, endSentine
   assert.match(shortTakeImage.getAttribute('style'), /height:\s*auto/i);
   const imagePadding = /padding:0/i;
   assert.match(shortTakeImage.closest('td').getAttribute('style'), imagePadding);
-  const logo = unlinkedCard.querySelector('img[alt="Near Future Laboratory white wordmark"]');
-  assert.ok(logo);
-  assert.match(logo.closest('td').getAttribute('style'), /background:#141414/i);
+  assert.equal(unlinkedCard.querySelector('[data-short-take-brand-rail]'), null);
+  assert.equal(unlinkedCard.querySelector('[data-short-take-label]'), null);
+  assert.equal(unlinkedCard.querySelector('img[alt="Near Future Laboratory white wordmark"]'), null);
   assert.equal(unlinkedCard.querySelectorAll('p').length, 2);
   assert.equal(unlinkedCard.querySelectorAll('p')[0].textContent.trim(), 'Unlinked Short Take caption.');
   assert.equal(unlinkedCard.querySelectorAll('p')[1].textContent.trim(), 'Second caption sentence.');
@@ -227,6 +236,21 @@ function assertRenderedShortTakes(html, templateName, middleSentinel, endSentine
   }
 
   const linkedCard = cards[1];
+  const brandRail = linkedCard.querySelector('[data-short-take-brand-rail]');
+  const label = brandRail?.querySelector('[data-short-take-label]');
+  assert.ok(brandRail, 'Default branding must render the complete rail');
+  assert.ok(brandRail.querySelector('img[alt="Near Future Laboratory white wordmark"]'));
+  assert.match(brandRail.getAttribute('style'), /background:#141414/i);
+  assert.equal(linkedCard.querySelectorAll('[data-short-take-label]').length, 1);
+  assert.equal(label?.textContent.trim(), 'SHORT TAKES');
+  const labelStyle = label.getAttribute('style');
+  assert.match(labelStyle, /font-family:[^;]*Geist[^;]*Arial/i);
+  assert.match(labelStyle, /font-weight:700/i);
+  assert.match(labelStyle, /letter-spacing:0\.035em/i);
+  assert.match(labelStyle, /text-align:right/i);
+  assert.match(labelStyle, /white-space:nowrap/i);
+  assert.match(labelStyle, new RegExp(`font-size:${templateName === 'dense-discovery' ? '21\\.333' : '20'}`));
+  assert.match(html, /fonts\.googleapis\.com\/css2\?[^"<>]*Geist/);
   const anchors = [...linkedCard.querySelectorAll('a[href="https://example.com/short-take"]')];
   assert.equal(anchors.length, linkedAnchorCount);
   anchors.forEach((anchor) => {
@@ -234,6 +258,10 @@ function assertRenderedShortTakes(html, templateName, middleSentinel, endSentine
     assert.equal(anchor.getAttribute('data-link-category'), 'short-take');
   });
   assert.equal(linkedCard.querySelectorAll('a a').length, 0);
+  const footerCta = anchors.find((anchor) => anchor.textContent.trim() === 'DO YOU WANT TO KNOW MORE?');
+  assert.ok(footerCta, 'The footer CTA itself must be a hyperlink to the record destination');
+  assert.equal(footerCta.getAttribute('href'), 'https://example.com/short-take');
+  assert.equal(footerCta.getAttribute('data-link-category'), 'short-take');
   assert.equal(linkedCard.querySelector('a[href="https://example.com/inside"]'), null);
   assert.match(linkedCard.textContent, /inline source/);
   assert.match(linkedCard.textContent, /Linked Short Take Headline/);
@@ -267,4 +295,29 @@ test('near-future-lab-daily-headlines builds ordered linked and unlinked Short T
     'DAILY END SENTINEL',
     { linkedAnchorCount: 5 },
   );
+});
+
+// The invite template is the third native Short Take consumer. Keep its rail
+// and footer action connected to the same hydrated registry settings.
+test('brain-dead-template shares the selected rail and links the footer CTA', () => {
+  const html = buildFixture('brain-dead-template', {
+    template: 'brain-dead-template',
+    title: 'Short Take component checks',
+    sections: [shortTake('short-take-unlinked'), shortTake('short-take-linked')],
+  });
+  const document = new JSDOM(html).window.document;
+  const unlinked = document.querySelector('[data-short-take-id="short-take-unlinked"]');
+  const linked = document.querySelector('[data-short-take-id="short-take-linked"]');
+  assert.ok(unlinked);
+  assert.ok(linked);
+  assert.equal(unlinked.querySelector('[data-short-take-brand-rail]'), null);
+  assert.equal(unlinked.querySelectorAll('a').length, 0);
+  const label = linked.querySelector('[data-short-take-label]');
+  assert.equal(label?.textContent.trim(), 'SHORT TAKES');
+  assert.match(label.getAttribute('style'), /font-family:[^;]*Geist/i);
+  assert.match(label.getAttribute('style'), /font-weight:700/i);
+  const cta = [...linked.querySelectorAll('a')].find(anchor => anchor.textContent.trim() === 'DO YOU WANT TO KNOW MORE?');
+  assert.equal(cta?.getAttribute('href'), 'https://example.com/short-take');
+  assert.equal(cta?.getAttribute('data-link-category'), 'short-take');
+  assert.match(html, /fonts\.googleapis\.com\/css2\?[^"<>]*Geist/);
 });

@@ -4,6 +4,7 @@
 export function shortTakeSourceSectionSchema() {
   return {
     type: 'object',
+    description: 'Registry-backed Short Take with the canonical Geist Bold SHORT TAKES brand rail; lockup.brandRail: false omits the complete rail. Footer CTAs link to the record destination when one is present.',
     required: ['type', 'items'],
     properties: {
       type: { const: 'short-take' },
