@@ -52,3 +52,21 @@ The builder converts inline Markdown to HTML and applies the email styles.
 `itemsHtml` is generated during preparation and does not belong in new editable
 sources. When `items` is present, it controls the rendered list, including an empty
 array; older HTML-only sources remain supported when `items` is absent.
+
+## Email color overrides
+
+The base palette is selected with `colorTheme`, which defaults to `current`.
+Override colors for one email with `themeColors` in its frontmatter:
+
+```yaml
+themeColors:
+  linkAccent: "#0a0a0a"
+  header: "#ffffff"
+  footer: "#ffffff"
+  introAside: "#ffffff"
+```
+
+These values override the selected palette for template links and generated CSS.
+Omitted keys keep their palette defaults. A section with an explicit
+`linkStyles.color` retains its own link color. See [color themes](../../docs/color-themes.md)
+for the palette registry and selection rules.

@@ -425,24 +425,18 @@
       "additionalProperties": false
     },
     "themeColors": {
-      "type": [
-        "object",
-        "string",
-        "null"
-      ],
+      "type": "object",
       "additionalProperties": {
-        "type": [
-          "string",
-          "number",
-          "boolean",
-          "null"
-        ]
+        "type": "string",
+        "minLength": 1
       },
       "examples": [
-        {}
+        {},
+        {
+          "linkAccent": "#0a0a0a"
+        }
       ],
-      "readOnly": true,
-      "description": "Generated from colorTheme and section style configuration during builds; this legacy source field is ignored."
+      "description": "Authored color overrides merged over the selected colorTheme (current by default). linkAccent overrides link colors; other keys override section background colors."
     },
     "title": {
       "type": [

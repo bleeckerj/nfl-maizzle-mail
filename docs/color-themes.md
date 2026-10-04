@@ -34,7 +34,20 @@ The current theme IDs are listed here for quick operator reference; the JSON reg
 - `themeColors`: the selected `colors` map plus `linkAccent`.
 - `theme`: the complete selected entry, including its name, description, colors, accent, and link accent.
 
-These build-time objects are derived values. Do not save them into author-facing issue Markdown or `data/newsletter.json`.
+Set `themeColors` in YAML frontmatter to override selected palette values for one email:
+
+```yaml
+colorTheme: current
+themeColors:
+  header: "#ffffff"
+  footer: "#ffffff"
+  introAside: "#ffffff"
+  linkAccent: "#0a0a0a"
+```
+
+`colorTheme` is optional and defaults to `current`. Authored `themeColors` values take precedence over the registry. Omitted keys retain their palette defaults. The resolved link accent is used by both template links and generated link CSS. Explicit section `linkStyles.color` values still take precedence for that section.
+
+The complete resolved `theme` object is generated during rendering; do not persist it into author-facing Markdown or source JSON.
 
 Template `section-styles.json` files define layout and per-section style rules. They may override a palette value for a particular issue or section; they do not define the shared theme IDs.
 

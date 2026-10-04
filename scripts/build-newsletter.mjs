@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { resolveNewsletterTheme } from '../lib/newsletter-core/resolve-newsletter-theme.mjs';
 import { renderCommerceBands } from '../lib/newsletter-core/render-commerce-bands.mjs';
 
 import fs from 'fs';
@@ -816,7 +817,7 @@ function displayColorTheme(newsletterData) {
     return;
   }
 
-  const theme = colorThemes.themes[colorThemeName];
+  const theme = resolveNewsletterTheme(colorThemes.themes[colorThemeName], newsletterData.themeColors)?.theme;
   if (!theme) {
     console.log(`⚠️  Theme "${colorThemeName}" not found, using defaults`);
     return;
@@ -1276,15 +1277,14 @@ async function buildNewsletter() {
       console.log('⚠️  No color themes found, using defaults');
     }
     
-    const theme = colorThemes.themes && colorThemes.themes[colorThemeName];
-    if (theme) {
-      // Add theme colors to newsletter data for template access
-      newsletterData.themeColors = {
-        ...theme.colors,  // All section background colors
-        linkAccent: theme.linkAccent  // Link accent color for all links
-      };
-      
-      // Add the theme object itself for CSS class generation
+    // Authored overrides win over the palette in both template locals and generated CSS.
+    const resolvedTheme = resolveNewsletterTheme(
+      colorThemes.themes?.[colorThemeName],
+      newsletterData.themeColors,
+    );
+    const theme = resolvedTheme?.theme;
+    if (resolvedTheme) {
+      newsletterData.themeColors = resolvedTheme.themeColors;
       newsletterData.theme = theme;
     }
 
