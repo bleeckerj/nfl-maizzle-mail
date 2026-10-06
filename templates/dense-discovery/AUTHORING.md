@@ -70,3 +70,9 @@ These values override the selected palette for template links and generated CSS.
 Omitted keys keep their palette defaults. A section with an explicit
 `linkStyles.color` retains its own link color. See [color themes](../../docs/color-themes.md)
 for the palette registry and selection rules.
+
+## Dark mode
+
+`darkModePolicy.flatten` defaults to `true`. Set it to `false` to preserve the authored palette and omit the renderer's dark-mode CSS. The direct Maizzle `--no-dark-mode-flatten` flag takes precedence over the frontmatter. Email clients may still apply their own color conversion.
+
+With flattening enabled, the renderer releases inline text-color `!important` priorities on its managed surfaces after CSS inlining. Light-mode colors and typography priorities stay intact; the dark palette reaches description wrappers, ordered and unordered lists, and table-cell text.

@@ -449,9 +449,12 @@
     },
     "darkModePolicy": {
       "type": "object",
+      "description": "Controls the shared dark palette. Omitted or true enables flattening; false preserves authored colors. The CLI --no-dark-mode-flatten flag always disables it. Enabled flattening releases inline text-color priorities so dark CSS can override wrappers and lists.",
       "properties": {
         "flatten": {
           "type": "boolean",
+          "default": true,
+          "description": "Enable the renderer dark palette. False omits its dark CSS; email clients may still apply their own color conversion.",
           "examples": [
             false
           ]

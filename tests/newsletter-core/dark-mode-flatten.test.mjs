@@ -7,6 +7,7 @@ import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 import { emit } from '../../lib/decompiler/emitter.mjs';
+import { JSDOM } from 'jsdom';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,7 +15,7 @@ const REPO_ROOT = path.resolve(__dirname, '..', '..');
 const BUILD_SCRIPT = path.join(REPO_ROOT, 'scripts', 'build-newsletter.mjs');
 const NEWSLETTER_JSON = path.join(REPO_ROOT, 'data', 'newsletter.json');
 
-function buildDenseDiscoveryIssue(outputName, extraArgs = []) {
+function buildDenseDiscoveryIssue(outputName, extraArgs = [], flatten) {
   const tempRoot = mkdtempSync(path.join(os.tmpdir(), `${outputName}-`));
   const issuePath = path.join(tempRoot, 'issue.md');
   const outputDir = path.join(tempRoot, 'output');
@@ -24,15 +25,16 @@ function buildDenseDiscoveryIssue(outputName, extraArgs = []) {
     [
       '---',
       'template: dense-discovery',
+      ...(flatten === undefined ? [] : [`darkModePolicy: { flatten: ${flatten} }`]),
       'title: Dark Mode Flatten Smoke',
       'preheader: Verify dark mode flatten policy',
       'sectionStylesFile: templates/dense-discovery/section-styles.json',
       'sections:',
-      '  - type: sponsor',
+      '  - type: single-column',
       '    title: UPCOMING',
       '    items:',
       '      - title: Dark Mode Test',
-      '        description: "<p>Readable fallback copy.</p>"',
+      '        description: "<p>Readable fallback copy.</p><ol><li>Ordered recap text<ul><li>Nested recap text</li></ul></li></ol>"',
       '---',
       '',
     ].join('\n'),
@@ -78,7 +80,12 @@ test('dense-discovery build enables dark-mode flatten by default without persist
     assert.match(html, /@media \(prefers-color-scheme:\s*dark\)/);
     assert.match(html, /dm-bg/);
     assert.match(html, /#111318/);
-    assert.doesNotMatch(readFileSync(NEWSLETTER_JSON, 'utf8'), /darkModePolicy/);
+    assert.match(html, /\.dm-bg li/);
+    const document = new JSDOM(html).window.document;
+    const list = document.querySelector('ol');
+    assert.ok(list, 'the fixture must exercise the Office Hours ordered-list path');
+    assert.equal(list.closest('div').style.getPropertyPriority('color'), '', 'the list wrapper must allow the dark palette to override black');
+    assert.equal(list.closest('div').style.getPropertyValue('color'), 'rgb(17, 17, 17)', 'the light palette remains unchanged');
     assert.equal(readFileSync(NEWSLETTER_JSON, 'utf8'), beforeNewsletterJson);
   } finally {
     cleanup();
@@ -98,6 +105,26 @@ test('dense-discovery build omits flatten CSS and classes when disabled', () => 
     assert.doesNotMatch(html, /#111318/);
   } finally {
     cleanup();
+  }
+});
+
+test('frontmatter false disables flattening without a CLI flag', () => {
+  const beforeNewsletterJson = readFileSync(NEWSLETTER_JSON, 'utf8');
+  const { stdout, html, cleanup } = buildDenseDiscoveryIssue('dark-mode-authored-false', [], false);
+  try {
+    assert.doesNotMatch(stdout, /dark-mode flatten enabled/);
+    assert.doesNotMatch(html, /\bdm-bg\b/);
+    assert.doesNotMatch(html, /@media \(prefers-color-scheme:\s*dark\)/);
+    assert.equal(readFileSync(NEWSLETTER_JSON, 'utf8'), beforeNewsletterJson);
+  } finally { cleanup(); }
+});
+
+test('frontmatter true enables flattening and the CLI opt-out takes precedence', () => {
+  for (const extraArgs of [[], ['--no-dark-mode-flatten']]) {
+    const { html, cleanup } = buildDenseDiscoveryIssue('dark-mode-authored-true', extraArgs, true);
+    try {
+      assert.equal(/\bdm-bg\b/.test(html), extraArgs.length === 0);
+    } finally { cleanup(); }
   }
 });
 

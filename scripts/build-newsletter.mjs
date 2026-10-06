@@ -25,6 +25,7 @@ import {
   writeCalendarEventFiles,
 } from '../lib/newsletter-core/index.mjs';
 import { hardenEmailHtmlForMobile } from '../lib/newsletter-core/email-html-hardening.mjs';
+import { releaseDarkModeTextColors } from '../lib/newsletter-core/dark-mode-text-colors.mjs';
 import {
   buildLinkTrackingMetadataManifest,
   enrichHtmlWithLinkTrackingMetadata,
@@ -60,8 +61,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const { build: maizzleBuild } = MaizzleFramework;
 
-function isDarkModeFlattenEnabled(args = []) {
-  return !args.includes(DARK_MODE_FLATTEN_DISABLE_FLAG);
+function isDarkModeFlattenEnabled(args = [], sourcePolicy) {
+  return !args.includes(DARK_MODE_FLATTEN_DISABLE_FLAG) && sourcePolicy?.flatten !== false;
 }
 
 function darkModeFlattenPolicy() {
@@ -419,7 +420,12 @@ function mergeDenseDiscoverySectionStyleOverrides(existingSectionStyleMap, adjac
 function pruneBuildInjectedFields(newsletterData) {
   if (!newsletterData || typeof newsletterData !== 'object') return;
 
-  delete newsletterData.darkModePolicy;
+  // Preserve the authored toggle while dropping the runtime palette fields.
+  if (typeof newsletterData.darkModePolicy?.flatten === 'boolean') {
+    newsletterData.darkModePolicy = { flatten: newsletterData.darkModePolicy.flatten };
+  } else {
+    delete newsletterData.darkModePolicy;
+  }
   delete newsletterData.mobileTextFontSize;
   delete newsletterData.mobileTextLineHeight;
   delete newsletterData.mobileCaptionFontSize;
@@ -1204,10 +1210,10 @@ async function buildNewsletter() {
       sourcePath: sourcePathForWarnings,
       publicationMode: effectivePublicationMode,
     });
-    if (isDarkModeFlattenEnabled(args)) {
+    if (isDarkModeFlattenEnabled(args, newsletterData.darkModePolicy)) {
       newsletterData.darkModePolicy = darkModeFlattenPolicy();
       magentaInfo(
-        'dark-mode flatten enabled: controlled dark fallback will override section colors in clients that honor prefers-color-scheme. Use --no-dark-mode-flatten to disable.',
+        'dark-mode flatten enabled: controlled dark fallback will override section colors in clients that honor prefers-color-scheme. Set darkModePolicy.flatten: false or use --no-dark-mode-flatten to disable.',
       );
     } else {
       delete newsletterData.darkModePolicy;
@@ -2695,7 +2701,9 @@ async function buildNewsletter() {
     reportMobileFitWarnings(hardenedBuiltHtml.warnings);
     const { content: finalOutputRaw, preservedFrontmatter } = mergeFrontmatterWithHtml(
       existingOutputRawBeforeBuild,
-      hardenedBuiltHtml.html,
+      templateName === 'dense-discovery'
+        ? releaseDarkModeTextColors(hardenedBuiltHtml.html, newsletterData.darkModePolicy)
+        : hardenedBuiltHtml.html,
     );
     assertDeclaredTemplateImagesRendered({
       newsletterData,
