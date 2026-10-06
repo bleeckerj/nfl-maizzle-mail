@@ -49,22 +49,14 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                     <tr>
                       <td class="spacer" style="border-collapse:collapse;font-size:1px;line-height:1px;padding-top:25px"> </td>
                     </tr>
-                    <!-- One outer surface keeps the section border at the edge of its background. -->
                     <tr>
-                      <td style="padding:0">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" data-section="speculative-job" style="border-spacing:0;border-collapse:separate;overflow:hidden;{{{ section.backgroundStyleInline }}}border:{{ section.containerStyles.border || '0' }};border-radius:{{ section.containerStyles.borderRadius || '0px' }}">
-                          <tbody>
-                    <tr>
-                      <td align="left" class="headline" data-section-header="speculative-job" style="border-collapse:collapse;background:{{ section.containerStyles.backgroundColor || '#e6e8e5' }};padding:15px 20px;border-radius:{{ section.containerStyles.borderRadius || '8px' }} {{ section.containerStyles.borderRadius || '8px' }} 0 0">
+                      <td align="left" class="headline" data-section-header="speculative-job" style="border-collapse:collapse;background:{{ section.containerStyles.backgroundColor || '#e6e8e5' }};padding:15px 20px;border-bottom:2px solid #FFFFFF;border-radius:{{ section.containerStyles.borderRadius || '8px' }} {{ section.containerStyles.borderRadius || '8px' }} 0 0">
                         <h2 class="mob-text mob-title" style="mso-line-height-rule:exactly;font-family:'Ubuntu',sans-serif;font-size:21px;line-height:23px;font-weight:600;color:#000;margin:0;padding:0">{{ section.title || section.section_label || "Tomorrow's Jobs Today" }}</h2>
                       </td>
                     </tr>
                     <tr>
-                      <td style="border-collapse:collapse;font-size:1px;line-height:1px;padding-top:4px"> </td>
-                    </tr>
-                    <tr>
                       <td style="border-collapse:collapse;padding:0">
-                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" class="speculative-job-section{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" style="border-spacing:0">
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" class="speculative-job-section{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" data-section="speculative-job" style="border-spacing:0;border-collapse:separate;overflow:hidden;{{{ section.backgroundStyleInline }}}border:{{ section.containerStyles.border || '0' }};border-radius:0 0 {{ section.containerStyles.borderRadius || '8px' }} {{ section.containerStyles.borderRadius || '8px' }}">
                           <tbody>
                             <tr><td style="padding-top:15px"></td></tr>
                             <each loop="item in section.items">
@@ -100,10 +92,6 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                               <if condition="loop.index < section.items.length - 1"><tr><td height="30"></td></tr></if>
                             </each>
                             <tr><td height="15"></td></tr>
-                          </tbody>
-                        </table>
-                      </td>
-                    </tr>
                           </tbody>
                         </table>
                       </td>

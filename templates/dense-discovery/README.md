@@ -152,7 +152,7 @@ Defaults are defined under `sectionStyles["short-take"]` and use Dense Discovery
 
 ## `speculative-job` section
 
-`speculative-job` uses the standard Dense Discovery section spacing and 21px Ubuntu heading. The authored `containerStyles.backgroundColor`, `border`, and `borderRadius` apply to one outer table enclosing the heading and jobs area. Use `contentPadding` for spacing inside that border. Item `cardStyles` remain available for separate inner cards.
+`speculative-job` uses the standard Dense Discovery section spacing and 21px Ubuntu heading. The authored `containerStyles.backgroundColor` applies to the separate heading and jobs area, preserving the standard 2px white separator between them. The heading has rounded top corners, and the jobs area has rounded bottom corners. The section `border` and `borderRadius` enclose the jobs area only, at the edge of its background. Use `contentPadding` for spacing inside that border. Item `cardStyles` remain available for separate inner cards.
 
 ```yaml
 sections:

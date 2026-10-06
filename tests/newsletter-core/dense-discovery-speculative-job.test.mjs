@@ -83,14 +83,15 @@ test('dense-discovery renders hydrated speculative-job sections', () => {
     assert.doesNotMatch(html, /src="https:\/\/images\.example\.com\/openai-logo\.png"[^>]+width="638"/);
     assert.ok(headingCell, 'expected a speculative-job heading cell');
     assert.match(headingCell.getAttribute('style') || '', /background(?:-color)?:#7fe8d0/);
-    assert.doesNotMatch(headingCell.getAttribute('style') || '', /border-(?:top|bottom):/);
+    assert.match(headingCell.getAttribute('style') || '', /border-bottom:2px solid #(?:FFFFFF|ffffff)/);
     assert.ok(heading, 'expected a speculative-job heading');
     assert.match(heading.getAttribute('style') || '', /font-size:21px/);
     assert.match(heading.getAttribute('style') || '', /font-family:'?Ubuntu'?,sans-serif/);
     assert.ok(jobsSurface, 'expected a speculative-job jobs surface');
-    assert.ok(jobsSurface.contains(headingCell), 'the bordered surface must enclose the heading');
+    assert.ok(!jobsSurface.contains(headingCell), 'the heading must remain separate from the bordered jobs area');
+    assert.match(headingCell.getAttribute('style') || '', /border-radius:8px 8px 0 0/);
     assert.match(jobsSurface.getAttribute('style') || '', /border:1px solid #111111/);
-    assert.match(jobsSurface.getAttribute('style') || '', /border-radius:8px/);
+    assert.match(jobsSurface.getAttribute('style') || '', /border-radius:0 0 8px 8px/);
     assert.match(jobsSurface.getAttribute('style') || '', /border-collapse:separate/);
     assert.match(jobsSurface.getAttribute('style') || '', /background-color:#7fe8d0/);
   } finally {
