@@ -46,6 +46,8 @@ test('dense-discovery renders hydrated speculative-job sections', () => {
     "    title: Tomorrow's Jobs Today",
     '    containerStyles:',
     "      backgroundColor: '#7fe8d0'",
+    "      border: '1px solid #111111'",
+    "      borderRadius: '8px'",
     "      contentPadding: '0 16px'",
     '    items:',
     '      - jobRef: openai/principal-applied-speculation',
@@ -86,6 +88,10 @@ test('dense-discovery renders hydrated speculative-job sections', () => {
     assert.match(heading.getAttribute('style') || '', /font-size:21px/);
     assert.match(heading.getAttribute('style') || '', /font-family:'?Ubuntu'?,sans-serif/);
     assert.ok(jobsSurface, 'expected a speculative-job jobs surface');
+    assert.ok(jobsSurface.contains(headingCell), 'the bordered surface must enclose the heading');
+    assert.match(jobsSurface.getAttribute('style') || '', /border:1px solid #111111/);
+    assert.match(jobsSurface.getAttribute('style') || '', /border-radius:8px/);
+    assert.match(jobsSurface.getAttribute('style') || '', /border-collapse:separate/);
     assert.match(jobsSurface.getAttribute('style') || '', /background-color:#7fe8d0/);
   } finally {
     rmSync(fixture.tempRoot, { recursive: true, force: true });
