@@ -3,6 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import { shortTakeSourceSectionSchema } from './template-schema-contracts/short-take.mjs';
+import { socialCardFooterProperties } from './template-schema-contracts/social-card-footer.mjs';
 
 const USAGE = `
 Generate a JSON Schema from a Maizzle template by scanning templates/components for data reads.
@@ -462,7 +463,7 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
       subtitleFontScale: { type: 'number', default: 0.9 },
       kickerFont: { type: 'string', default: 'nfl-kicker' },
       kickerFontScale: { type: 'number', default: 1 },
-      footerFontScale: { type: 'number' },
+      ...socialCardFooterProperties(),
       backgroundOpacity: { type: 'number' },
       backgroundHueRotate: { type: 'number' },
       backgroundSaturation: { type: 'number' },
