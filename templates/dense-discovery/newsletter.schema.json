@@ -9717,9 +9717,19 @@
               ]
             },
             "duration": {
-              "type": "integer",
+              "description": "Timeline duration in milliseconds, or source to preserve native timing for source/asset animation.",
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                {
+                  "const": "source"
+                }
+              ],
               "examples": [
-                60
+                2400,
+                "source"
               ]
             },
             "fps": {
@@ -9738,6 +9748,24 @@
               "type": "number",
               "examples": [
                 0
+              ]
+            },
+            "formats": {
+              "type": "array",
+              "description": "Animated social-card export formats supported by the shared exporter.",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "webp",
+                  "gif",
+                  "mp4"
+                ]
+              },
+              "examples": [
+                [
+                  "webp",
+                  "mp4"
+                ]
               ]
             },
             "disableForPresets": {
