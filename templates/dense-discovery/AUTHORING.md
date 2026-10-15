@@ -75,4 +75,12 @@ for the palette registry and selection rules.
 
 `darkModePolicy.flatten` defaults to `true`. Set it to `false` to preserve the authored palette and omit the renderer's dark-mode CSS. The direct Maizzle `--no-dark-mode-flatten` flag takes precedence over the frontmatter. Email clients may still apply their own color conversion.
 
-With flattening enabled, the renderer releases inline text-color `!important` priorities on its managed surfaces after CSS inlining. Light-mode colors and typography priorities stay intact; the dark palette reaches description wrappers, ordered and unordered lists, and table-cell text.
+With flattening enabled, the renderer releases inline text, WebKit text-fill and background-color `!important` priorities on its managed surfaces after CSS inlining. Light-mode colors and typography priorities stay intact; the dark palette reaches description wrappers, ordered and unordered lists, and table-cell text.
+
+The intro content and aside panels are managed dark surfaces. When dark mode is active, their authored backgrounds switch to `#1b1f27` with `#f2f4f8` text. Their light-mode backgrounds, padding, and typography stay as authored. Regression tests build white intro and aside panels and require at least 4.5:1 text contrast in both modes.
+
+Dark-mode coverage follows the rendered HTML: all text descendants receive the shared foreground, with separate link and muted-text rules that also cover nested markup. Elements with inline backgrounds or `bgcolor` attributes receive the shared surface; this includes footer share panels, callouts, quotations, classifieds panels, and paywall badges. Authored gradients switch to solid dark surfaces. Editorial image pixels and photographic background-image assets are preserved. Footer brand artwork and social icons receive a white CSS filter in dark mode, scoped to `dm-footer-artwork`; their URLs, dimensions and light-mode appearance remain unchanged. Text-fill overrides follow the active foreground, including button labels.
+
+Canonical Dense Discovery builds check each visible text run against its effective dark background after inlining. A ratio below 4.5:1 blocks saving the output. The check includes inherited backgrounds, translucent paint and WebKit text fill; gradients, image-backed text and element opacity are reported for visual review. This CSS check does not replace email-client rendering or responsive layout inspection.
+
+Production CSS cleanup preserves dark-mode classes and the nested caption/link hooks. The build also rejects footer logos/icons missing their dark treatment. The contrast gate rejects invalid dark selector lists so cleanup cannot silently discard a palette rule.

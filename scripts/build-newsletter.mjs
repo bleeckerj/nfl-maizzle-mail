@@ -25,6 +25,7 @@ import {
   writeCalendarEventFiles,
 } from '../lib/newsletter-core/index.mjs';
 import { hardenEmailHtmlForMobile } from '../lib/newsletter-core/email-html-hardening.mjs';
+import { assertDarkModeContrast } from '../lib/newsletter-core/dark-mode-contrast.mjs';
 import { releaseDarkModeTextColors } from '../lib/newsletter-core/dark-mode-text-colors.mjs';
 import {
   buildLinkTrackingMetadataManifest,
@@ -2725,6 +2726,11 @@ async function buildNewsletter() {
       );
       mobileTypographyVerification.warnings.forEach((warning) => console.warn(`   - ${warning}`));
     }
+    assertDarkModeContrast({
+      html: finalOutputRaw,
+      templateName,
+      policy: newsletterData.darkModePolicy,
+    });
     fs.writeFileSync(finalOutputPath, finalOutputRaw, 'utf8');
     writeCalendarEventFiles(calendarEvents.events, { fs, path, logger: console });
     const linkTrackingManifestPath = path.join(outputDir, `${outputName}.link-tracking-manifest.json`);

@@ -33,6 +33,12 @@ module.exports = {
       '.mob-caption',
       '.mob-ad-copy',
       '.article-cta-pill',
+      // Keep dark media-query hooks and their nested caption/link variants.
+      '.dm-*',
+      '.mob-meta',
+      '.image-caption',
+      '.image-credit',
+      '.theme-link',
       '.intro-content',
       '.intro-aside',
       '.wirecutter-mobile-copy',

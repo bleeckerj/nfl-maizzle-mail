@@ -154,6 +154,7 @@
           ]
         },
         "logo": {
+          "description": "Footer brand artwork. Shared dark-mode flattening displays it in white; its source and light-mode appearance are preserved.",
           "type": [
             "string",
             "null"
@@ -449,7 +450,7 @@
     },
     "darkModePolicy": {
       "type": "object",
-      "description": "Controls the shared dark palette. Omitted or true enables flattening; false preserves authored colors. The CLI --no-dark-mode-flatten flag always disables it. Enabled flattening releases inline text-color priorities so dark CSS can override wrappers and lists.",
+      "description": "Controls the shared dark palette. Omitted or true enables flattening; false preserves authored colors. The CLI --no-dark-mode-flatten flag always disables it. Enabled flattening switches painted HTML surfaces with their text, including intro panels, quotations, badges and authored wrappers. Authored gradients become solid dark surfaces; photographic background images remain unchanged. Inline text, WebKit text fill and background-color priorities are released. Canonical builds reject resolved dark text contrast below 4.5:1 and report image-backed text requiring visual review. Footer brand artwork and social icons display in white; editorial image assets and light-mode values remain intact.",
       "properties": {
         "flatten": {
           "type": "boolean",

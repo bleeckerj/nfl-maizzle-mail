@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 
 import { emit } from '../../lib/decompiler/emitter.mjs';
 import { JSDOM } from 'jsdom';
+import { panelContrast, auditTextContrast } from '../../lib/newsletter-core/dark-mode-contrast.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -29,12 +30,38 @@ function buildDenseDiscoveryIssue(outputName, extraArgs = [], flatten) {
       'title: Dark Mode Flatten Smoke',
       'preheader: Verify dark mode flatten policy',
       'sectionStylesFile: templates/dense-discovery/section-styles.json',
+      'intro:',
+      '  content: |-',
+      '    <p>White intro panel with <strong style="color:#111111!important">bold text</strong>, <em style="color:#111111!important">emphasis</em>, and <code style="color:#111111!important;background:white!important">code</code>.</p><blockquote style="color:#111111!important;background:rgba(255,255,255,0.5)!important"><p>A quotation.</p></blockquote><p><a href="mailto:example@example.com"><strong>A nested link</strong></a></p><p class="image-caption"><em>A muted caption</em></p><span title="Paywalled" style="color:#111111!important;background:white!important">A badge</span><div style="background-image:linear-gradient(white,white)!important;color:black!important">Gradient panel</div>',
+      '  containerStyles: { backgroundColor: "#ffffff", padding: "16px" }',
+      '  contentStyles: { color: "#111111" }',
+      '  aside:',
+      '    content: "<p>White aside panel with dark authored text.</p>"',
+      '    containerStyles: { backgroundColor: "#ffffff" }',
+      '    contentStyles: { color: "#111111" }',
+      'footer:',
+      '  shareUrl: mailto:share@example.com',
+      '  logo: https://example.com/footer-logo.png',
+      '  socialLinks:',
+      ...['github', 'applepodcasts', 'spotify', 'instagram', 'linkedin', 'youtube', 'discord', 'patreon', 'substack'].flatMap((name) => [
+        `    ${name}: [{ url: "mailto:${name}@example.com" }]`,
+      ]),
+      '  footerCta:',
+      '    enabled: true',
+      '    text: Footer invitation text.',
+      '    primaryAction: { label: Subscribe, url: "mailto:subscribe@example.com" }',
+      '    secondaryAction: { label: Read online, url: "mailto:read@example.com" }',
       'sections:',
+      '  - type: inline_cta',
+      '    statement: Inline invitation text.',
+      '    primaryAction: { label: Primary button, url: "mailto:primary@example.com" }',
+      '    secondaryAction: { label: Secondary button, url: "mailto:secondary@example.com" }',
       '  - type: single-column',
       '    title: UPCOMING',
       '    items:',
       '      - title: Dark Mode Test',
-      '        description: "<p>Readable fallback copy.</p><ol><li>Ordered recap text<ul><li>Nested recap text</li></ul></li></ol>"',
+      '        description: |-',
+      '          <p>Readable fallback copy.</p><ol><li>Ordered recap text<ul><li>Nested recap text</li></ul></li></ol><table><tr><th bgcolor="#ffffff" style="color:#111111!important">Table heading</th></tr><tr><td>Table data</td></tr></table>',
       '---',
       '',
     ].join('\n'),
@@ -76,16 +103,37 @@ test('dense-discovery build enables dark-mode flatten by default without persist
 
   try {
     assert.match(stdout, /INFO.*dark-mode flatten enabled/);
+    assert.match(stdout, /Dark-mode contrast: \d+ text runs checked/);
     assert.match(html, /<meta name="color-scheme" content="light dark">/);
     assert.match(html, /@media \(prefers-color-scheme:\s*dark\)/);
     assert.match(html, /dm-bg/);
     assert.match(html, /#111318/);
-    assert.match(html, /\.dm-bg li/);
+    assert.match(html, /\.dm-bg \*/);
     const document = new JSDOM(html).window.document;
     const list = document.querySelector('ol');
     assert.ok(list, 'the fixture must exercise the Office Hours ordered-list path');
     assert.equal(list.closest('div').style.getPropertyPriority('color'), '', 'the list wrapper must allow the dark palette to override black');
     assert.equal(list.closest('div').style.getPropertyValue('color'), 'rgb(17, 17, 17)', 'the light palette remains unchanged');
+    // Exercise the screenshot failure: pale dark-mode text on an authored white div.
+    for (const selector of ['.intro-content', '.intro-aside']) {
+      const light = panelContrast(html, selector, 'light');
+      const dark = panelContrast(html, selector, 'dark');
+      assert.equal(light.background, 'rgb(255, 255, 255)', `${selector} keeps its authored light background`);
+      assert.ok(light.ratio >= 4.5, `${selector} light contrast is ${light.ratio.toFixed(2)}:1`);
+      assert.ok(dark.ratio >= 4.5, `${selector} dark contrast is ${dark.ratio.toFixed(2)}:1: ${dark.color} on ${dark.background}`);
+      assert.equal(dark.background, 'rgb(27, 31, 39)', `${selector} receives the shared dark surface`);
+    }
+    // Audit every rendered text run, not a hand-picked class allowlist.
+    const darkAudit = auditTextContrast(html, 'dark');
+    assert.ok(darkAudit.checked >= 25, 'intro, aside, inline markup, lists, tables, buttons and footer must all render');
+    assert.deepEqual(darkAudit.failures, [], JSON.stringify(darkAudit.failures, null, 2));
+    assert.deepEqual(darkAudit.artworkFailures, [], 'all footer artwork must retain its dark treatment');
+    assert.deepEqual(darkAudit.unassessed, [], 'the fixture must not hide unaudited surfaces');
+    const lightAudit = auditTextContrast(html, 'light');
+    assert.equal(darkAudit.artwork.length, 10, 'cover the footer logo and every social icon family');
+    assert.ok(darkAudit.artwork.every((asset) => asset.filter === 'brightness(0) invert(1)'));
+    assert.ok(lightAudit.artwork.every((asset) => !asset.filter || asset.filter === 'none'));
+    assert.deepEqual(darkAudit.artwork.map(({filter, ...asset}) => asset), lightAudit.artwork.map(({filter, ...asset}) => asset));
     assert.equal(readFileSync(NEWSLETTER_JSON, 'utf8'), beforeNewsletterJson);
   } finally {
     cleanup();
