@@ -2,10 +2,16 @@
 // template scan. Keep blank starter copy and subtitle-font inheritance explicit.
 export function socialCardFooterProperties() {
   return {
+    footer: {
+      type: ['string', 'null'],
+      default: '',
+      description: 'Optional social-card footer text, separate from the email footer. HTML is converted to plain text. Omitted, empty, or null values hide the footer. An explicitly supplied footer takes precedence over footerCopy.',
+    },
     footerCopy: {
       type: ['string', 'null'],
       default: '',
-      description: 'Optional social-card footer text, separate from the email footer. HTML is converted to plain text. Omitted, empty, or null values hide the footer.',
+      deprecated: true,
+      description: 'Compatibility name for socialCard.footer. Existing sources remain supported; an explicitly supplied footer takes precedence, including empty or null values.',
     },
     footerFont: {
       type: ['string', 'null'],
@@ -15,7 +21,7 @@ export function socialCardFooterProperties() {
     footerFontScale: {
       type: 'number',
       default: 1,
-      description: 'Multiplier for the preset footer font size. Applies only when footerCopy is present.',
+      description: 'Multiplier for the preset footer font size. Applies when footer text is present, authored through footer or footerCopy.',
     },
   };
 }

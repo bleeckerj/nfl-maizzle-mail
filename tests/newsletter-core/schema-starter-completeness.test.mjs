@@ -60,12 +60,15 @@ test('dense-discovery starters materialize the complete current schema', () => {
   assert.equal(payload.socialCard.kickerFontScale, 1);
 
   const socialCardSchema = schema.properties.socialCard;
-  for (const propertyName of Object.keys(socialCardSchema.properties)) {
+  for (const propertyName of Object.keys(socialCardSchema.properties).filter(key => !socialCardSchema.properties[key].readOnly && !socialCardSchema.properties[key].deprecated)) {
     assert.ok(
       Object.prototype.hasOwnProperty.call(payload.socialCard, propertyName),
       `starter is missing socialCard.${propertyName}`,
     );
   }
+
+  assert.equal(payload.socialCard.footer, '');
+  assert.equal(Object.hasOwn(payload.socialCard, 'footerCopy'), false, 'the compatibility name must not create a second starter field');
 
   assert.deepEqual(
     {

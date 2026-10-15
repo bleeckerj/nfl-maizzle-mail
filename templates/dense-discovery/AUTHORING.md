@@ -84,3 +84,14 @@ Dark-mode coverage follows the rendered HTML: all text descendants receive the s
 Canonical Dense Discovery builds check each visible text run against its effective dark background after inlining. A ratio below 4.5:1 blocks saving the output. The check includes inherited backgrounds, translucent paint and WebKit text fill; gradients, image-backed text and element opacity are reported for visual review. This CSS check does not replace email-client rendering or responsive layout inspection.
 
 Production CSS cleanup preserves dark-mode classes and the nested caption/link hooks. The build also rejects footer logos/icons missing their dark treatment. The contrast gate rejects invalid dark selector lists so cleanup cannot silently discard a palette rule.
+
+## Social-card footer
+
+New starters offer `socialCard.footer` as their single card-footer text field. Use `socialCard.footer` for optional card text, `socialCard.footerFont` for its font and `socialCard.footerFontScale` for its size multiplier. The text is separate from the email's top-level `footer`. Empty or null text hides the card footer. Existing `socialCard.footerCopy` sources remain supported. If both text fields are present, `footer` takes precedence, including empty or null values. Preparation resolves this once to the exporter's internal `footerCopy` value without rewriting the source.
+
+```yaml
+socialCard:
+  footer: Near Future Laboratory
+  footerFont: untitled-sans-light
+  footerFontScale: 1
+```
