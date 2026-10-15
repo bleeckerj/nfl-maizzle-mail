@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Standard Correspondence Email",
-  "description": "Personal one-on-one correspondence, not a mass newsletter. No unsubscribe, subscription, archive, or view-online controls are generated.",
+  "description": "Personal correspondence with optional author-supplied unsubscribe links. Subscription, archive, and view-online controls are not injected.",
   "type": "object",
   "required": [
     "template",
@@ -93,8 +93,10 @@
                 "type": "string",
                 "minLength": 1,
                 "examples": [
-                  "https://nearfuturelaboratory.com"
-                ]
+                  "https://nearfuturelaboratory.com",
+                  "[unsubscribe]"
+                ],
+                "description": "An http(s), mailto, or tel link, or the exact [unsubscribe] send-time placeholder."
               },
               "label": {
                 "type": "string",
@@ -172,8 +174,10 @@
                   "type": "string",
                   "minLength": 1,
                   "examples": [
-                    "https://nearfuturelaboratory.com"
-                  ]
+                    "https://nearfuturelaboratory.com",
+                    "[unsubscribe]"
+                  ],
+                  "description": "An http(s), mailto, or tel link, or the exact [unsubscribe] send-time placeholder."
                 },
                 "label": {
                   "type": "string",
@@ -230,7 +234,10 @@
         "footerNote": {
           "type": "string",
           "default": "",
-          "description": "Explicitly authored personal note only. No reply instruction or subscription boilerplate is injected."
+          "description": "Explicitly authored footer HTML rendered from inline Markdown. An exact [unsubscribe] link destination is preserved for send-time replacement.",
+          "examples": [
+            "<a href=\"[unsubscribe]\" class=\"correspondence-link\">Unsubscribe</a>"
+          ]
         },
         "footerLinks": {
           "type": "array",
@@ -246,8 +253,10 @@
                 "type": "string",
                 "minLength": 1,
                 "examples": [
-                  "https://nearfuturelaboratory.com"
-                ]
+                  "https://nearfuturelaboratory.com",
+                  "[unsubscribe]"
+                ],
+                "description": "An http(s), mailto, or tel link, or the exact [unsubscribe] send-time placeholder."
               },
               "label": {
                 "type": "string",

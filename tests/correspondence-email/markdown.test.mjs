@@ -29,6 +29,26 @@ test('renderMarkdownToEmailHtml converts correspondence Markdown into email-safe
   assert.match(html, /<blockquote class="correspondence-quote">/);
 });
 
+test('unsubscribe links retain the exact send-time token in Markdown and explicit HTML', () => {
+  for (const source of ['[Unsubscribe]([unsubscribe])', '<a href="[unsubscribe]">Unsubscribe</a>']) {
+    const html = renderInlineMarkdown(source);
+    const link = new JSDOM(html).window.document.querySelector('a');
+    assert.equal(link?.getAttribute('href'), '[unsubscribe]');
+    assert.equal(link?.textContent, 'Unsubscribe');
+    assert.doesNotMatch(html, /%5B|%5D/i);
+  }
+  const data = normalizeCorrespondenceEmailData({ subject: 'Notice', bodyMarkdown: 'Hello.',
+    footerNote: '[Unsubscribe]([unsubscribe])', footerLinks: [{ href: '[unsubscribe]', label: 'Unsubscribe' }] });
+  assert.match(data.correspondence.footerNote, /href="\[unsubscribe\]"/);
+  assert.equal(data.correspondence.footerLinks[0].href, '[unsubscribe]');
+});
+
+test('unsubscribe support does not admit other placeholders, relative links, or scripts', () => {
+  for (const href of ['[other]', '[unsubscribe]/extra', '/relative', 'javascript:alert(1)', 'data:text/html,hello']) {
+    assert.doesNotMatch(renderInlineMarkdown(`<a href="${href}">Link</a>`), /<a\b/i);
+  }
+});
+
 test('renderInlineMarkdown strips unsafe hrefs and escapes raw HTML', () => {
   const html = renderInlineMarkdown('[bad](javascript:alert(1)) <script>alert(1)</script>');
 
