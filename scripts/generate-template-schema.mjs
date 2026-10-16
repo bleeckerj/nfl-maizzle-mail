@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import { shortTakeSourceSectionSchema } from './template-schema-contracts/short-take.mjs';
 import { socialCardFooterProperties } from './template-schema-contracts/social-card-footer.mjs';
+import { socialCardLogoPositionSchema } from './template-schema-contracts/social-card-logo-position.mjs';
 
 const USAGE = `
 Generate a JSON Schema from a Maizzle template by scanning templates/components for data reads.
@@ -457,6 +458,7 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
       kicker: {},
       backgroundImage: {},
       logoUrl: {},
+      logoPosition: socialCardLogoPositionSchema(),
       titleFont: { type: 'string', default: 'nfl-title-untitled' },
       titleFontScale: { type: 'number', default: 0.7 },
       subtitleFont: { type: 'string', default: 'nfl-subtitle' },
