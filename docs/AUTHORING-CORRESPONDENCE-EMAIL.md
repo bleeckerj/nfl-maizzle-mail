@@ -30,6 +30,18 @@ The generated HTML is local only:
 build_correspondence/client-note.html
 ```
 
+## Build HTML and text together
+
+Use the outputs runner to generate both formats from the same Markdown or JSON source:
+
+```bash
+npm run build:correspondence:outputs -- correspondence/client-note.md client-note --strict-schema --no-open
+```
+
+It writes `build_correspondence/client-note.html` and `build_correspondence/client-note.txt`. The text alternative preserves paragraphs, numbered lists, link destinations, signature lines, shared items, and personal footer links. It excludes the hidden preheader. Subject and sender metadata appear only when their corresponding display options are enabled.
+
+The runner accepts the existing `--output-dir=/absolute/path` option to keep both outputs in a recipient’s project folder. Omit `--no-open` to open the HTML preview after both files are saved. This runner writes files only; Gmail draft updates remain a separate operation. Use the original `build:correspondence` runner for SES test sends.
+
 The correspondence builder does not automatically add a newsletter archive page, view-online URL, unsubscribe link, link-tracking manifest, or content-slot manifest.
 
 To include an unsubscribe link, add `footerNote: "[Unsubscribe]([unsubscribe])"` to the YAML frontmatter. It renders below the signature and preserves the exact `[unsubscribe]` destination for the sending platform to replace with a recipient-specific URL. The same Markdown link works in body text or signature lines. Other placeholders and relative link targets remain unsupported. After rebuilding, load the HTML into the campaign and re-prepare its existing tranche to include the footer.

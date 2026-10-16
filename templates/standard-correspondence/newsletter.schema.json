@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Standard Correspondence Email",
-  "description": "Personal correspondence with optional author-supplied unsubscribe links. Subscription, archive, and view-online controls are not injected.",
+  "description": "Personal correspondence with optional author-supplied unsubscribe links. Subscription, archive, and view-online controls are not injected. The outputs runner also writes a plain-text alternative from the visible correspondence fields, preserving link destinations and excluding hidden preheader metadata.",
   "type": "object",
   "required": [
     "template",
@@ -52,14 +52,14 @@
         "bodyHtml": {
           "type": "string",
           "minLength": 1,
-          "description": "Email body HTML. Markdown bullet and numbered lists are normalized to a numbered register with literal zero-padded labels, table-cell gutters, and list/listitem accessibility roles. Ordered Markdown preserves its starting number. Explicit bodyHtml remains author-controlled.",
+          "description": "Email body HTML. Markdown bullet and numbered lists are normalized to a numbered register with literal zero-padded labels, table-cell gutters, and list/listitem accessibility roles. Ordered Markdown preserves its starting number. Explicit bodyHtml remains author-controlled. Plain-text export preserves paragraph breaks, list labels, decoded text, and link destinations.",
           "examples": [
             "<p>Example Body content.</p>"
           ]
         },
         "signatureHtml": {
           "type": "string",
-          "description": "Personal sign-off; links use the body text color without underlines.",
+          "description": "Personal sign-off; links use the body text color without underlines. Plain-text export preserves each signature line and includes full link destinations.",
           "examples": [
             "<p>Example Signature content.</p>"
           ]
