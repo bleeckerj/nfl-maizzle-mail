@@ -5803,6 +5803,7 @@
                         ]
                       },
                       "images": {
+                        "description": "Every image renders at its natural aspect ratio with square corners, preserving the full source image.",
                         "type": "array",
                         "items": {
                           "type": "object",
@@ -5857,7 +5858,8 @@
                         ]
                       },
                       "image": {
-                        "$ref": "#/definitions/sourceImage"
+                        "$ref": "#/definitions/sourceImage",
+                        "description": "Food For Thought images render at their natural aspect ratio with square corners, preserving the full source image."
                       },
                       "description": {
                         "type": [
