@@ -327,19 +327,15 @@
                         },
                         "adRenderMode": {
                           "type": "string",
-                          "enum": [
-                            "snapshot",
-                            "legacy"
-                          ]
+                          "description": "Use snapshot to embed the canonical hosted ad snapshot for media-only interstitials. Other ads retain the normal hydrated layout when omitted; live Compact Band commerce ads keep their existing presentation.",
+                          "enum": ["snapshot", "legacy"],
+                          "examples": ["snapshot"]
                         },
                         "adSnapshotPreset": {
                           "type": "string",
-                          "enum": [
-                            "native",
-                            "1x1",
-                            "4x5",
-                            "9x16"
-                          ]
+                          "description": "Snapshot composition to request when adRenderMode is snapshot. Defaults to the inventory article preset, then native.",
+                          "enum": ["native", "1x1", "4x5", "9x16"],
+                          "examples": ["native"]
                         },
                         "commerceLockup": {
                           "type": "boolean",
@@ -371,7 +367,9 @@
                     "items"
                   ],
                   "itemFields": [
-                    "adId"
+                    "adId",
+                    "adRenderMode",
+                    "adSnapshotPreset"
                   ],
                   "requiredSectionFields": [
                     "type",

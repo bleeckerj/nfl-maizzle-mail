@@ -88,6 +88,12 @@ async function withTempRoots(fn) {
     adsPath,
     JSON.stringify([
       {
+        id: 'media-interstitial',
+        media: { src: 'https://example.com/source.png', altText: 'Irrigation monitoring machine' },
+        snapshotPresentation: 'media-only',
+        exportLockup: { article: 'native' },
+      },
+      {
         id: 'commerce-ad',
         title: 'Commerce Ad',
         media: { src: 'https://example.com/source.png', altText: 'Commerce source' },
@@ -240,5 +246,25 @@ test('resolveCommerceAdBlockSnapshots falls back to the hydrated email card on r
     assert.equal(item.renderMode, undefined);
     assert.equal(item.image, 'https://example.com/fallback.png');
     assert.ok(logs.some((message) => message.includes('Commerce ad-block snapshot fallback')));
+  });
+});
+
+// Media-only sponsor interstitials use snapshots only when the author requests one.
+test('media-only ad snapshots work without commerce metadata and remain opt-in', async () => {
+  await withTempRoots(async ({ repoRoot }) => {
+    const data = { sections: [{ type: 'ad-block', items: [
+      { adId: 'media-interstitial', adRenderMode: 'snapshot', adSnapshotPreset: 'native', image: 'https://example.com/source.png' },
+      { adId: 'media-interstitial', image: 'https://example.com/source.png' },
+      { adId: 'media-interstitial', adRenderMode: 'legacy', image: 'https://example.com/source.png' },
+    ] }] };
+    await resolveCommerceAdBlockSnapshots(data, { repoRoot, logger: { log() {} } });
+    const [snapshot, ordinary, legacy] = data.sections[0].items;
+    assert.equal(snapshot.renderMode, 'snapshot');
+    assert.equal(snapshot.image, 'https://imagedelivery.net/example/media-interstitial-still/public');
+    assert.equal(snapshot.snapshotPreset, 'native');
+    for (const item of [ordinary, legacy]) {
+      assert.equal(item.renderMode, undefined);
+      assert.equal(item.image, 'https://example.com/source.png');
+    }
   });
 });

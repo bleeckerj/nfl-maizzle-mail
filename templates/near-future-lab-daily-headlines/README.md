@@ -191,6 +191,22 @@ Keep the cover in `image_src`. Put opening paragraphs in `lede`, then add `body_
 `ad-block`
 : Inventory-backed ad card. Author only `items[0].adId`; the build looks up the ad in `/Users/julian/Code/nfl-editorial/src/content/ads.json` and hydrates URL, media, copy, sponsor, and tracking metadata. Exactly one item is allowed. Set `show_bottom_rule: false` to suppress the light divider after the ad.
 
+### A sponsor interstitial within an intro
+
+Split the intro at the desired paragraph boundary into two `intro_statement` sections, with an `ad-block` between them. Keep the lead image and label on the first intro; put the remaining paragraphs in the second. Set `show_top_rule: false` and `show_bottom_rule: false` on the ad block when no divider is wanted. The paragraphs remain in their statement fields.
+
+```yaml
+- type: ad-block
+  show_top_rule: false
+  show_bottom_rule: false
+  items:
+  - adId: interstitial-john-deere-rtx8080
+    adRenderMode: snapshot
+    adSnapshotPreset: native
+```
+
+`adRenderMode: snapshot` uses the canonical hosted snapshot for a media-only interstitial, including its existing sponsor label. Keep the inventory ID and render settings here; do not copy the ad image URL or embed images in statement HTML. Omit this setting for the ordinary hydrated ad layout. Live Compact Band commerce ads retain their existing presentation.
+
 `short-take`
 : Inventory-backed editorial card. Author only `items[0].shortTakeId`; the build resolves headline, caption, Photarium image, alt text, optional destination, and optional edge metadata from `/Users/julian/Code/nfl-editorial/src/content/shortTakes.json`. Exactly one item is allowed, and multiple cards use multiple ordered sections. Linked records use tracking category `short-take`; records without a destination render without anchors. Images remain complete within the 600px column.
 
