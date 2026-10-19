@@ -68,6 +68,30 @@
           "image_alt": "Museum installation",
           "headline": "Design as a Script for Daily Life",
           "lede": "A second item demonstrates the section's repeated structured article model."
+        },
+        {
+          "article_layout": "feature",
+          "image_src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/36481ada-8759-45ad-a7cd-8766d3059000/full?format=webp",
+          "image_alt": "Cover of The Agricultural Machine by Nicholas Negroponte.",
+          "kicker": "Book Review",
+          "headline": "The Agricultural Machine",
+          "lede": "<p>A review of farm equipment research.</p>",
+          "body_blocks": [
+            {
+              "type": "text",
+              "html": "<p>Farm equipment is being readied for prototyping.</p>"
+            },
+            {
+              "type": "image",
+              "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/eb19c79c-cd36-4d0b-35eb-42ffec7e0400/full?format=webp",
+              "alt": "A man uses a light pen beside a CRT showing a combine harvester design.",
+              "caption": "A combine harvester design on a CRT."
+            },
+            {
+              "type": "text",
+              "html": "<p>The investigation continues at the farm operating base.</p>"
+            }
+          ]
         }
 	      ],
 	      "show_bottom_rule": true,
@@ -93,7 +117,7 @@
       "eyebrow": "Public preview",
       "statement": "You’re reading the public preview. Subscribe for the full issue.",
       "font_family": "mono",
-      "background": "#f5f4f0",
+      "background": "#ffffff",
       "text_color": "#333333",
       "eyebrow_color": "#555555",
       "border_color": "#222222",

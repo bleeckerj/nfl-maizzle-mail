@@ -88,6 +88,17 @@ sections:
         kicker: Optional kicker
         headline: Story headline
         lede: One or two sentence summary.
+        body_blocks:
+        - type: text
+          html: |-
+            <p>Farm equipment is being readied for prototyping.</p>
+        - type: image
+          src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/eb19c79c-cd36-4d0b-35eb-42ffec7e0400/full?format=webp
+          alt: A man uses a light pen beside a CRT showing a combine harvester design.
+          caption: A combine harvester design on a CRT.
+        - type: text
+          html: |-
+            <p>The investigation continues at the farm operating base.</p>
     show_bottom_rule: true
     more_link:
       link:
@@ -104,7 +115,7 @@ sections:
     # email_label: Forward by email
     # online_label: Open online →
     # email_href: "mailto:?subject=…&body=…"   # auto-built from online_url if omitted
-    # background: "#f5f4f0"
+    # background: "#ffffff"
     # text_color: "#333"
     # eyebrow_color: "#555"
     # space_top: 28      # gap (px) above the bar
@@ -153,18 +164,25 @@ sections:
 
 ### Images between article paragraphs
 
-Keep the cover in `image_src`. Put opening paragraphs in `lede`, then add `body_blocks` in reading order. A `text` block contains paragraph HTML in `html`; an `image` block requires its hosted `src` and accessibility `alt`, with an optional plain-text `caption`. Use image blocks for photographs; do not embed images in text blocks. Blocks render after the lede and before any article CTA, at full available width with natural image height. Existing articles without blocks retain their current layout.
+Keep the cover in `image_src`. Put opening paragraphs in `lede`, then add `body_blocks` in reading order. Repeat the text and image blocks wherever the article needs another photograph. A `text` block contains paragraph HTML in `html`; an `image` block requires its hosted `src` and accessibility `alt`, with an optional plain-text `caption`. Use image blocks for photographs; do not embed images in text blocks. Blocks render after the lede and before any article CTA, at full available width with natural image height. Existing articles without blocks retain their current layout.
 
 ```yaml
+    image_src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/36481ada-8759-45ad-a7cd-8766d3059000/full?format=webp
+    image_alt: Cover of The Agricultural Machine by Nicholas Negroponte.
+    article_layout: feature
     lede: |-
       <p>Opening paragraph.</p>
     body_blocks:
+    - type: text
+      html: |-
+        <p>Farm equipment is being readied for prototyping.</p>
     - type: image
       src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/eb19c79c-cd36-4d0b-35eb-42ffec7e0400/full?format=webp
       alt: A man uses a light pen beside a CRT showing a combine harvester design.
+      caption: A combine harvester design on a CRT.
     - type: text
       html: |-
-        <p>The article continues here.</p>
+        <p>The investigation continues at the farm operating base.</p>
 ```
 
 `ad-block`

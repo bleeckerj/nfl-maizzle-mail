@@ -4,6 +4,9 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
+import matter from 'gray-matter';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import { collectNewsletterImageDeclarations, validateNewsletterImages } from '../../lib/newsletter-core/image-validation.mjs';
 
 const schema = JSON.parse(readFileSync(new URL('../../templates/near-future-lab-daily-headlines/newsletter.schema.json', import.meta.url), 'utf8'));
@@ -37,4 +40,37 @@ test('article body images are validated even without a legacy section items arra
   const result = await validateNewsletterImages(data, { logger: { log() {} }, checkImageUrl: async (url) => { checked.push(url); return { valid: false, status: 404 }; } });
   assert.deepEqual(checked, [image.src]);
   assert.equal(result.errors.length, 1);
+});
+
+// Keep schema-derived examples and checked-in authoring samples in agreement.
+test('schema, sample JSON, public starter, and generated starter show text/image/text blocks', () => {
+  const findBody = (node) => {
+    if (!node || typeof node !== 'object') return null;
+    if (node.properties?.body_blocks) return node.properties.body_blocks;
+    for (const value of Object.values(node)) {
+      const found = findBody(value);
+      if (found) return found;
+    }
+    return null;
+  };
+  const example = findBody(schema).examples[0];
+  const assertSequence = (article) => {
+    assert.deepEqual(article.body_blocks.map((block) => block.type), ['text', 'image', 'text']);
+    assert.equal(validate(issue(article)), true, JSON.stringify(validate.errors));
+  };
+  assertSequence({ body_blocks: example });
+  const templateRoot = new URL('../../templates/near-future-lab-daily-headlines/', import.meta.url);
+  const jsonSample = JSON.parse(readFileSync(new URL('sample-data.json', templateRoot), 'utf8'));
+  const markdownSample = matter(readFileSync(new URL('public-issue-starter.md', templateRoot), 'utf8')).data;
+  const generated = execFileSync(process.execPath, [
+    fileURLToPath(new URL('../../scripts/generate-skeleton-from-schema.mjs', import.meta.url)),
+    '--schema', fileURLToPath(new URL('newsletter.schema.json', templateRoot)),
+    '--template-name', 'near-future-lab-daily-headlines', '--all-section-fields', '--items-per-section', '1',
+  ], { encoding: 'utf8' });
+  for (const sample of [jsonSample, markdownSample, matter(generated).data]) {
+    const article = sample.sections.flatMap((section) => section.articles || []).find((entry) => entry.body_blocks?.length);
+    assert.ok(article, 'Authoring sample must demonstrate body blocks');
+    assert.ok(article.image_src, 'Authoring sample must retain a cover image');
+    assertSequence(article);
+  }
 });

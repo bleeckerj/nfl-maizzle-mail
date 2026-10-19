@@ -969,7 +969,17 @@
                             [
                               {
                                 "type": "text",
-                                "html": "<p>The article continues here.</p>"
+                                "html": "<p>Farm equipment is being readied for prototyping.</p>"
+                              },
+                              {
+                                "type": "image",
+                                "src": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/eb19c79c-cd36-4d0b-35eb-42ffec7e0400/full?format=webp",
+                                "alt": "A man uses a light pen beside a CRT showing a combine harvester design.",
+                                "caption": "A combine harvester design on a CRT."
+                              },
+                              {
+                                "type": "text",
+                                "html": "<p>The investigation continues at the farm operating base.</p>"
                               }
                             ]
                           ]

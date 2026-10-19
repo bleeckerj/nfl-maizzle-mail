@@ -281,7 +281,7 @@ function assertStarterCompleteness(markdown, schema) {
   function walk(value, propSchema, location) {
     if (value === null || value === undefined) return;
 
-    const resolvedSchema = resolveGenerationSchema(propSchema, { schema });
+    const resolvedSchema = resolveGenerationSchema(propSchema, { schema, value });
     if (Array.isArray(value)) {
       const itemSchema = resolvedSchema.items || {};
       for (const [index, item] of value.entries()) {

@@ -31,6 +31,20 @@ sections:
           category: editorial
         headline: Example headline
         lede: One or two sentences summarizing the story.
+        article_layout: feature
+        image_src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/36481ada-8759-45ad-a7cd-8766d3059000/full?format=webp
+        image_alt: Cover of The Agricultural Machine by Nicholas Negroponte.
+        body_blocks:
+        - type: text
+          html: |-
+            <p>Farm equipment is being readied for prototyping.</p>
+        - type: image
+          src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/eb19c79c-cd36-4d0b-35eb-42ffec7e0400/full?format=webp
+          alt: A man uses a light pen beside a CRT showing a combine harvester design.
+          caption: A combine harvester design on a CRT.
+        - type: text
+          html: |-
+            <p>The investigation continues at the farm operating base.</p>
 
   - type: share_this
     online_url: https://nearfuturelaboratory.com/newsletters/2026/example
