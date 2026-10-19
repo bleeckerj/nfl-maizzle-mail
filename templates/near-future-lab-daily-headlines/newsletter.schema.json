@@ -205,6 +205,19 @@
                       "Optional small uppercase label shown above the statement"
                     ]
                   },
+                  "image_src": {
+                    "type": "string",
+                    "format": "uri",
+                    "description": "Optional hosted lead image above the intro label and statement, displayed in full at natural aspect ratio.",
+                    "examples": ["https://example.com/intro.jpg"]
+                  },
+                  "image_alt": {
+                    "type": "string",
+                    "minLength": 1,
+                    "pattern": "\\S",
+                    "description": "Accessibility description required when image_src is supplied.",
+                    "examples": ["Delegates gathered for a group photograph."]
+                  },
                   "statement": {
                     "type": "string",
                     "description": "Introductory statement. May include simple <p>, <em>, <strong>, and <a href=\"\"> HTML.",
@@ -237,6 +250,10 @@
                 "required": [
                   "type"
                 ],
+                "allOf": [{
+                  "if": {"required": ["image_src"]},
+                  "then": {"required": ["image_alt"]}
+                }],
                 "additionalProperties": true
               },
               {

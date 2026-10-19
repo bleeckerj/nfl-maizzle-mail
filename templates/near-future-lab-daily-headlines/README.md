@@ -50,6 +50,8 @@ sections:
 
   - type: intro_statement
     label: From the Editor
+    image_src: https://example.com/intro.jpg
+    image_alt: Delegates gathered for a group photograph.
     statement: '<p>A short <em>introductory</em> statement before the headline groups.</p>'
     show_bottom_rule: true
 
@@ -157,7 +159,7 @@ sections:
 : Required for normal issues. Renders the publication/logo image, newsletter title image, dateline, and the build-injected `View/share online` link at the top of the email.
 
 `intro_statement`
-: Optional author note below the masthead. Use `statement` for plain text or simple HTML with `<p>`, `<em>`, `<strong>`, and `<a href="">`. `statement_html` remains available as an explicit rich-text override. Unsupported tags and attributes are stripped during the build. `label` and `show_bottom_rule` are optional. Its mobile scale (`.intro-statement-label` / `.intro-statement-copy`) is tuned independently of the generic `.mob-text` body-copy lock.
+: Optional author note below the masthead. Set `image_src` and `image_alt` for a lead image above the label and statement. The image stays fully visible at natural height, without cropping; omit both fields for a text-only intro. Alt text is required with an image. Use `statement` for plain text or simple HTML with `<p>`, `<em>`, `<strong>`, and `<a href="">`. `statement_html` remains available as an explicit rich-text override. Unsupported tags and attributes are stripped during the build. `label` and `show_bottom_rule` are optional. Its mobile scale (`.intro-statement-label` / `.intro-statement-copy`) is tuned independently of the generic `.mob-text` body-copy lock.
 
 `section_article_group`
 : Main content section. Renders a section heading and one or more article rows. Each article requires `headline`; `link` (preferred) or legacy `href` is optional. When both are omitted, the card keeps its image, copy, and any `cta_label` but has no anchors or link-tracking metadata. `image_src`, `image_alt`, `kicker`, and `lede` are optional but recommended. An image-bearing `row` article (the default) places the image on the right at wide widths and first in the mobile reading order; its CTA remains after the copy at every width. Set `article_layout: feature` for longer editorial copy; it renders the complete image full-width above the article at every width. Use `containerStyles` for the outer section surface. Use `articleContainerStyles` for the surface and padding of each article card, and `articleContentStyles`, `articleHeadingStyles`, and `articleLinkStyles` for card typography and links. An article may carry those same four objects to override the group defaults. Prefer `more_link` on this section for a section-level follow-up link.

@@ -20,6 +20,8 @@
     },
     {
       "type": "intro_statement",
+      "image_src": "https://example.com/intro.jpg",
+      "image_alt": "Delegates gathered for a group photograph.",
       "label": "From the Editor",
       "statement": "A short introductory statement can frame the daily headlines before the first article group.",
       "show_bottom_rule": true

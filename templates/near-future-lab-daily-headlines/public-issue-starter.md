@@ -18,6 +18,8 @@ sections:
     dateline: "June 6, 2026, 6:00 a.m. Pacific time"
 
   - type: intro_statement
+    image_src: https://example.com/intro.jpg
+    image_alt: Delegates gathered for a group photograph.
     label: From the Editor
     statement: '<p>A short editorial statement before the headline groups.</p>'
     show_bottom_rule: true
