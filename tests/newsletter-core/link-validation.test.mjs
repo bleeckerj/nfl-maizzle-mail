@@ -151,6 +151,34 @@ test('checkHttpUrl accepts links when HEAD 405 falls back to GET 200', async () 
   });
 });
 
+// A publisher may reject HEAD while serving the same article through GET.
+for (const getStatus of [200, 206]) {
+  test(`checkHttpUrl accepts HEAD 406 only after GET succeeds with ${getStatus}`, async () => {
+    await withLocalServer((req, res) => {
+      res.writeHead(req.method === 'HEAD' ? 406 : getStatus);
+      res.end();
+    }, async (origin, requests) => {
+      const result = await checkHttpUrl(`${origin}/head-406-get-${getStatus}`);
+
+      assert.deepEqual(result, { valid: true, status: getStatus });
+      assert.deepEqual(requests.map((request) => request.method), ['HEAD', 'GET']);
+      assert.equal(requests[1].headers.range, 'bytes=0-0');
+    });
+  });
+}
+
+test('checkHttpUrl rejects HEAD 406 when the GET fallback also fails', async () => {
+  await withLocalServer((_req, res) => {
+    res.writeHead(406);
+    res.end();
+  }, async (origin, requests) => {
+    const result = await checkHttpUrl(`${origin}/not-acceptable`);
+
+    assert.deepEqual(result, { valid: false, status: 406 });
+    assert.deepEqual(requests.map((request) => request.method), ['HEAD', 'GET']);
+  });
+});
+
 test('checkHttpUrl accepts links when HEAD 403 falls back to GET 200', async () => {
   await withLocalServer((req, res) => {
     res.writeHead(req.method === 'HEAD' ? 403 : 200);
