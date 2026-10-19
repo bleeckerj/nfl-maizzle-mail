@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
+import { JSDOM } from 'jsdom';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
@@ -160,7 +161,7 @@ test('Daily Headlines article groups support distinct card surfaces and typograp
     '      fontFamily: "\'Share Tech Mono\', \'Courier New\', Courier, monospace"',
     "      color: '#111111'",
     '      fontSize: 16px',
-    '      lineHeight: 1.35',
+    '      lineHeight: "1.35"',
     '    articles:',
     '      - headline: Principal, Applied Speculation',
     '        kicker: OpenAI',
@@ -187,7 +188,11 @@ test('Daily Headlines article groups support distinct card surfaces and typograp
     assert.match(html, /padding-left:16px;padding-right:16px/);
     assert.match(html, /background-color:#e8fff9!important;padding:24px 28px!important/);
     assert.match(html, /<h3 class="article-title"[^>]*font-family:Share Tech Mono,Courier New,Courier,monospace!important/);
-    assert.match(html, /<p class="article-lede"[^>]*color:#111111!important/);
+    const { document } = new JSDOM(html).window;
+    const lede = document.querySelector('h3.article-title').nextElementSibling;
+    assert.equal(lede.tagName, 'DIV');
+    assert.equal(lede.style.color, 'rgb(17, 17, 17)');
+    assert.equal(lede.style.fontFamily, 'Share Tech Mono, Courier New, Courier, monospace');
   } finally {
     rmSync(tempRoot, { recursive: true, force: true });
   }

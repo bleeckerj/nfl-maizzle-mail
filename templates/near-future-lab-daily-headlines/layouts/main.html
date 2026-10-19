@@ -38,6 +38,28 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
+    /* Primary editorial prose shares one desktop baseline. Maizzle inlines this
+       rule for email; valid block containers keep authored paragraphs inside it. */
+    .intro-statement-copy,
+    .article-lede,
+    .article-body-copy {
+      font-family: georgia, serif;
+      font-size: 18px;
+      line-height: 26px;
+      font-weight: normal;
+    }
+
+    .article-lede p,
+    .article-body-copy p {
+      margin: 0 0 16px;
+      padding: 0;
+    }
+
+    .article-lede p:last-child,
+    .article-body-copy p:last-child {
+      margin-bottom: 0;
+    }
+
     .short-take-caption p {
       margin: 0 0 12px 0;
       padding: 0;
@@ -203,11 +225,20 @@
         font-size: 20px !important;
         line-height: 1.2 !important;
       }
-      p.article-lede,
-      p.article-lede a,
-      p.article-lede span,
-      p.article-lede em,
-      p.article-lede strong {
+      .article-lede,
+      .article-lede p,
+      .article-lede li,
+      .article-lede a,
+      .article-lede span,
+      .article-lede em,
+      .article-lede strong,
+      .article-body-copy,
+      .article-body-copy p,
+      .article-body-copy li,
+      .article-body-copy a,
+      .article-body-copy span,
+      .article-body-copy em,
+      .article-body-copy strong {
         font-size: 17px !important;
         line-height: 1.3 !important;
       }
