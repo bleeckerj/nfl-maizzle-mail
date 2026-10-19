@@ -711,7 +711,7 @@ test('daily-headlines ad and footer markup opts into proportional mobile locks',
     readFileSync(DAILY_HEADLINES_EMAIL_FOOTER, 'utf8'),
   ].join('\n');
 
-  assert.match(sources, /<h2 class="ad-section-title"[^>]*>\{\{ section\.title \}\}<\/h2>/);
+  assert.match(sources, /<h2 class="ad-section-title"[^>]*>\{\{ adSection\.title \}\}<\/h2>/);
   assert.match(sources, /<h3 class="ad-title"[^>]*>/);
   assert.match(sources, /class="mob-text mob-footer/);
   assert.match(sources, /class="mob-text footer-cta/);

@@ -412,7 +412,7 @@ test('prepareNewsletterData injects the default newsletter footer CTA when front
   assert.equal(prepared.footer.footerCta.eyebrow, 'Commissions, Collaborations, Integrated Roles');
   assert.equal(
     prepared.footer.footerCta.text,
-    'I help organizations use stories and artifacts to make sense of their futures and develop strategies for what comes next.',
+    "Interesting things tend to happen when I'm in the room with you and your team. I work across engineering, design, brand, storytelling, strategy, and product to notice emerging connections in the gaps between silos that often go overlooked, unseen or unknown. When the language your teams are using is not big or expansive enough for the terrain you are entering, that's when a broad view, new metaphors, and an adjacent perspective becomes vital.",
   );
   assert.equal(prepared.footer.footerCta.primaryAction.label, 'Let’s Talk');
   assert.deepEqual(prepared.footer.footerCta.primaryAction.url, {

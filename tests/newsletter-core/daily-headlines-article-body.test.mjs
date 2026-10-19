@@ -46,7 +46,8 @@ test('article body images are validated even without a legacy section items arra
 test('schema, sample JSON, public starter, and generated starter show text/image/text blocks', () => {
   const findBody = (node) => {
     if (!node || typeof node !== 'object') return null;
-    if (node.properties?.body_blocks) return node.properties.body_blocks;
+    // Intro and article blocks have separate contracts; select the article here.
+    if (node.properties?.headline && node.properties?.body_blocks) return node.properties.body_blocks;
     for (const value of Object.values(node)) {
       const found = findBody(value);
       if (found) return found;
