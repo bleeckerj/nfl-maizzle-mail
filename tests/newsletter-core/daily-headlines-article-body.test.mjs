@@ -27,6 +27,21 @@ test('article images require alt text and reject undeclared block fields', () =>
   assert.equal(validate(issue({ body_blocks: [{ type: 'unknown', html: 'Text' }] })), false);
 });
 
+test('article and section follow-up links share an explicit destination contract', () => {
+  const more_link = { label: 'Read the article →', link: { href: 'https://example.com/more', label: 'Article follow-up', category: 'books-writing' } };
+  const data = issue({ link: 'https://example.com/primary', more_link });
+  data.sections[0].more_link = { label: 'Read the section →', href: 'https://example.com/section' };
+  assert.equal(validate(data), true, JSON.stringify(validate.errors));
+  assert.equal(validate(issue({ more_link: { label: 'Legacy destination →', href: 'https://example.com/more' } })), true);
+  assert.equal(validate(issue({ lede: 'An existing article without a follow-up.' })), true);
+});
+
+test('article follow-up links reject missing labels, destinations, and malformed nesting', () => {
+  for (const more_link of [null, 'Read more', {}, { label: 'Read more' }, { href: 'https://example.com' }, { label: ' ', href: 'https://example.com' }]) {
+    assert.equal(validate(issue({ more_link })), false, JSON.stringify(more_link));
+  }
+});
+
 test('text blocks cannot bypass image fields with embedded image markup', () => {
   assert.equal(validate(issue({ body_blocks: [{ type: 'text', html: '<p>Text<img src="https://example.com/a.jpg"></p>' }] })), false);
 });

@@ -42,12 +42,20 @@ test('primary prose retains shared typography and its paragraphs across article 
       articleContentStyles: { fontFamily: 'Arial, sans-serif', fontSize: '20px', lineHeight: '30px' },
     },
   ];
+  // Follow-up destinations are separate from primary card links, with tracking.
+  articles.forEach((article, index) => {
+    article.more_link = {
+      label: `Read article ${index + 1} →`,
+      link: { href: `https://news.example.test/more/${index + 1}`, label: `Article ${index + 1} follow-up`, category: 'books-writing' },
+    };
+  });
   const issuePath = path.join(tempRoot, 'typography.md');
   writeFileSync(issuePath, matter.stringify('', {
     template: 'near-future-lab-daily-headlines', title: 'Editorial typography check',
     sections: [
       { type: 'intro_statement', statement_html: paragraphs },
-      { type: 'section_article_group', section_label: 'Articles', articles },
+      { type: 'section_article_group', section_label: 'Articles', articles,
+        more_link: { label: 'Read the whole section →', href: 'mailto:section@example.com' } },
     ],
   }));
 
@@ -76,6 +84,27 @@ test('primary prose retains shared typography and its paragraphs across article 
     assert.equal(ledes.at(-1).style.fontSize, '20px');
     assert.equal(ledes.at(-1).style.lineHeight, '30px');
     for (const prose of bodyCopies) assert.equal(prose.querySelectorAll('p').length, 1);
+    for (let index = 0; index < articles.length; index++) {
+      const link = [...document.querySelectorAll('a')].find((a) => a.textContent === articles[index].more_link.label);
+      assert.ok(link, 'Each article must render its own follow-up link');
+      assert.equal(link.getAttribute('href'), articles[index].more_link.link.href);
+      assert.equal(link.getAttribute('data-link-label'), articles[index].more_link.link.label);
+      assert.equal(link.getAttribute('data-link-category'), 'books-writing');
+      assert.equal(link.style.textDecoration, 'underline');
+      assert.equal(link.closest('.article-cta-pill'), null);
+      assert.equal(link.style.border, '');
+      assert.equal(link.style.backgroundColor, '');
+      assert.equal(link.style.padding, '');
+      assert.ok(ledes[index].compareDocumentPosition(link) & 4, 'Follow-up must come after the article copy');
+      if (articles[index].body_blocks) {
+        assert.ok(bodyCopies[index - 3].compareDocumentPosition(link) & 4, 'Follow-up must come after continuation paragraphs');
+      }
+      if (index + 1 < articles.length) {
+        const nextHeading = [...document.querySelectorAll('h3.article-title')][index + 1];
+        assert.ok(link.compareDocumentPosition(nextHeading) & 4, 'Follow-up must come before the next article');
+      }
+    }
+    assert.equal(document.querySelector('a[href="mailto:section@example.com"]').textContent, 'Read the whole section →');
   } finally {
     rmSync(tempRoot, { recursive: true, force: true });
   }

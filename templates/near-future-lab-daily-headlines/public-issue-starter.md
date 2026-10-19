@@ -66,6 +66,13 @@ sections:
           html: |-
             <p>The investigation continues at the farm operating base.</p>
 
+        more_link:
+          label: Read the story →
+          link:
+            href: https://nearfuturelaboratory.com
+            label: Daily Headlines example story
+            category: editorial
+
   - type: share_this
     online_url: https://nearfuturelaboratory.com/newsletters/2026/example
     # The canonical build derives the percent-encoded email_href from online_url.

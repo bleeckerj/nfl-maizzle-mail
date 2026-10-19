@@ -203,6 +203,21 @@ Primary prose in introductions, article `lede`, and text `body_blocks` shares on
 
 Inline links in article `lede` and text `body_blocks` inherit the surrounding body font, size, and line height, with normal weight, dark gray (`#333`), and underline. Existing section or article `articleLinkStyles` can override that treatment. Author ordinary anchors with their tracking metadata; keep styling in the template.
 
+### Normal text links after individual articles
+
+Put `more_link` inside an article to show an underlined text link after its lede and all `body_blocks`. Indent it alongside that article's `headline`, `link`, and `lede`. Indent its `label` and `link` beneath `more_link`. Its destination can differ from the article's primary `link`. It uses the shared editorial body font and has no button border or background. The section's `more_link` remains available after the complete article group.
+
+```yaml
+    more_link:
+      label: The Agricultural Machine →
+      link:
+        href: https://nearfuturelaboratory.com/library/2010/11/the-architecture-machine/
+        label: "nfl-dh-w43-y26 | The Agricultural Machine | library | Nicholas Negroponte"
+        category: books-writing
+        intent: read
+        role: primary
+```
+
 ### Images between article paragraphs
 
 Keep the cover in `image_src`. Put opening paragraphs in `lede`, then add `body_blocks` in reading order. Repeat the text and image blocks wherever the article needs another photograph. A `text` block contains paragraph HTML in `html`; an `image` block requires its hosted `src` and accessibility `alt`, with an optional plain-text `caption`. Use image blocks for photographs; do not embed images in text blocks. Blocks render after the lede and before any article CTA, at full available width with natural image height. Existing articles without blocks retain their current layout.

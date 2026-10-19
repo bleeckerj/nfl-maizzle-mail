@@ -22,3 +22,9 @@
     </td></tr>
   </if>
 </if>
+<!-- Each article's follow-up stays after its complete body, outside card anchors. -->
+<if condition="bodyArticle.more_link && bodyArticle.more_link.label && (bodyArticle.more_link.link || bodyArticle.more_link.href)">
+  <tr><td style="padding-top:16px;{{{ bodyArticle.articleContainerStylesInline || '' }}}">
+    <p class="article-more-link" style="color:#333;margin:0;{{{ bodyArticle.articleLedeStylesInline || '' }}}"><a href="{{ bodyArticle.more_link.link || bodyArticle.more_link.href }}" style="color:inherit;font:inherit;text-decoration:underline">{{ bodyArticle.more_link.label }}</a></p>
+  </td></tr>
+</if>

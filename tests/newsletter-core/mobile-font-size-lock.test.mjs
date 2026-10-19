@@ -650,7 +650,7 @@ test('daily-headlines article groups lock mobile article title and lede sizes se
   assert.match(mobileBlock, /h3\.ad-title,[\s\S]*h3\.ad-title a\s*\{\s*font-size:\s*18px\s*!important;\s*line-height:\s*1\.24\s*!important;/);
   assert.match(mobileBlock, /p\.article-kicker,[\s\S]*p\.article-kicker span\s*\{\s*font-size:\s*13px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
   assert.match(mobileBlock, /h3\.article-title,[\s\S]*h3\.article-title a\s*\{\s*font-size:\s*20px\s*!important;\s*line-height:\s*1\.2\s*!important;/);
-  assert.match(mobileBlock, /\.article-lede,[\s\S]*\.article-body-copy strong\s*\{\s*font-size:\s*17px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
+  assert.match(mobileBlock, /\.article-lede,[\s\S]*\.article-more-link a\s*\{\s*font-size:\s*17px\s*!important;\s*line-height:\s*1\.3\s*!important;/);
   assert.match(mobileBlock, /span\.article-cta-pill,[\s\S]*\.article-cta-pill\s*\{\s*font-size:\s*14px\s*!important;\s*line-height:\s*1\.25\s*!important;/);
   assert.match(mobileBlock, /p\.mob-ad-copy,[\s\S]*p\.mob-ad-copy strong\s*\{\s*font-size:\s*\{\{ mobileAdCopyFontSize \|\| '16px' \}\}\s*!important;\s*line-height:\s*\{\{ mobileAdCopyLineHeight \|\| '1\.25' \}\}\s*!important;/);
   assert.match(mobileBlock, /p\.mob-ad-meta,[\s\S]*a\.mob-ad-meta span\s*\{\s*font-size:\s*\{\{ mobileAdMetaFontSize \|\| '10px' \}\}\s*!important;\s*line-height:\s*\{\{ mobileAdMetaLineHeight \|\| '1\.2' \}\}\s*!important;/);

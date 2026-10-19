@@ -1180,6 +1180,10 @@
                             ]
                           ]
                         },
+                        "more_link": {
+                          "$ref": "#/definitions/moreLink",
+                          "description": "Optional normal underlined text link rendered after this article and all its body_blocks, before the next article. Its destination is independent of the article primary link."
+                        },
                         "cta_label": {
                           "type": "string",
                           "description": "Optional visual CTA pill text. It remains visible as non-interactive text when the article has no link or href.",
@@ -1202,44 +1206,8 @@
                     ]
                   },
                   "more_link": {
-                    "type": "object",
-                    "description": "Optional section-level 'See more...' link rendered after the article rows.",
-                    "properties": {
-                      "href": {
-                        "type": "string",
-                        "description": "Legacy URL for the section-level follow-up link. Prefer link for new content.",
-                        "examples": [
-                          "https://nearfuturelaboratory.com"
-                        ]
-                      },
-                      "link": {
-                        "$ref": "#/definitions/trackedLink",
-                        "description": "Tracked URL for the section-level follow-up link"
-                      },
-                      "label": {
-                        "type": "string",
-                        "description": "Visible text for the section-level follow-up link",
-                        "examples": [
-                          "Visible text for the section-level follow-up link"
-                        ]
-                      }
-                    },
-                    "required": [
-                      "label"
-                    ],
-                    "anyOf": [
-                      {
-                        "required": [
-                          "link"
-                        ]
-                      },
-                      {
-                        "required": [
-                          "href"
-                        ]
-                      }
-                    ],
-                    "additionalProperties": true
+                    "$ref": "#/definitions/moreLink",
+                    "description": "Optional section-level follow-up text link rendered after all article rows. Articles can also carry their own more_link."
                   },
                   "articles_html": {
                     "type": "string",
@@ -1709,6 +1677,48 @@
     "sections"
   ],
   "definitions": {
+    "moreLink": {
+      "type": "object",
+      "description": "Normal underlined follow-up text link with visible label and an explicit destination.",
+      "properties": {
+        "href": {
+          "type": "string",
+          "description": "Legacy follow-up URL. Prefer link for new content.",
+          "examples": [
+            "https://nearfuturelaboratory.com"
+          ]
+        },
+        "link": {
+          "$ref": "#/definitions/trackedLink",
+          "description": "Tracked destination for the follow-up text link."
+        },
+        "label": {
+          "type": "string",
+          "description": "Visible text for the follow-up link.",
+          "examples": [
+            "Visible text for the section-level follow-up link"
+          ],
+          "minLength": 1,
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "label"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "link"
+          ]
+        },
+        {
+          "required": [
+            "href"
+          ]
+        }
+      ],
+      "additionalProperties": true
+    },
     "footerSocialLink": {
       "type": "object",
       "properties": {
