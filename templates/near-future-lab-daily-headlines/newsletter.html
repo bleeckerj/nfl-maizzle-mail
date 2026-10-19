@@ -179,13 +179,19 @@ title: "Near Future Laboratory Daily Headlines"
     <if condition="section.type === 'email_footer'">
       <component src="templates/near-future-lab-daily-headlines/components/FooterCta.html"></component>
       <table class="mob-text mob-footer{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" style="{{{ section.backgroundStyleInline }}}"><tbody>
-        <if condition="section.paragraphs || section.address || section.social_links || section.unsubscribe_label">
+        <if condition="section.paragraphs || section.address || section.social_links || section.unsubscribe_label || (footer.socialLinks && Object.values(footer.socialLinks).some(links => Array.isArray(links) && links.length))">
           <tr><td style="height:15px"></td></tr>
           <if condition="section.paragraphs && section.paragraphs.length">
             <tr><td style="padding:12px 0;border-top:1px solid #000"><each loop="paragraph in section.paragraphs"><p style="font:12px/15px arial,sans-serif;color:#666;margin:0 0 7px">{{{ paragraph }}}</p></each></td></tr>
           </if>
+          <if condition="footer.socialLinks && Object.values(footer.socialLinks).some(links => Array.isArray(links) && links.length)">
+            <tr><td style="padding:10px 0 16px;text-align:center">
+              <component src="templates/dense-discovery/components/FooterSocialLinks.html"></component>
+              <p style="font:12px/15px arial,sans-serif;color:#999;margin:8px 0 0">Icons by <a href="https://icons8.com" data-link-category="operations" data-link-label="Icons8 attribution" style="color:#999;text-decoration:underline">Icons8</a></p>
+            </td></tr>
+          </if>
           <if condition="section.address || (section.social_links && section.social_links.length) || section.unsubscribe_label">
-            <tr><td style="border-top:1px solid #dcdcdc;padding:10px 0 30px"><if condition="section.social_links && section.social_links.length"><p style="font:12px/15px arial,sans-serif;color:#999;margin:0 0 7px"><each loop="social in section.social_links"><a href="{{ social.href }}" data-link-category="{{ social.category || 'social' }}" data-link-label="{{ social.label }}" style="color:#999;text-decoration:underline;margin-right:12px">{{ social.label }}</a></each></p></if><p style="color:#999;font:12px/15px arial,sans-serif;margin:0"><if condition="section.address">{{{ section.address }}}</if><if condition="section.unsubscribe_label"><br/><a href="{{ section.unsubscribe_href || '[unsubscribe]' }}" style="color:#aaa;text-decoration:underline">{{ section.unsubscribe_label }}</a></if></p></td></tr>
+            <tr><td style="border-top:1px solid #dcdcdc;padding:10px 0 30px"><if condition="!(footer.socialLinks && Object.values(footer.socialLinks).some(links => Array.isArray(links) && links.length)) && section.social_links && section.social_links.length"><p style="font:12px/15px arial,sans-serif;color:#999;margin:0 0 7px"><each loop="social in section.social_links"><a href="{{ social.href }}" data-link-category="{{ social.category || 'social' }}" data-link-label="{{ social.label }}" style="color:#999;text-decoration:underline;margin-right:12px">{{ social.label }}</a></each></p></if><p style="color:#999;font:12px/15px arial,sans-serif;margin:0"><if condition="section.address">{{{ section.address }}}</if><if condition="section.unsubscribe_label"><br/><a href="{{ section.unsubscribe_href || '[unsubscribe]' }}" style="color:#aaa;text-decoration:underline">{{ section.unsubscribe_label }}</a></if></p></td></tr>
           </if>
         </if>
         <if condition="!(section.paragraphs || section.address || section.social_links || section.unsubscribe_label)">{{{ section.footer_html }}}</if>

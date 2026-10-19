@@ -25,6 +25,23 @@ This template renders compact daily-headline emails from a `sections` array. The
 
 Backoffice authoring tools discover the section vocabulary, field shapes, and starter fields directly from `newsletter.schema.json`. The manifest supplies operational metadata and declares that the starter source is the schema.
 
+## Footer service icons
+
+Set `footer.socialLinks` to platform arrays using `{ url, title }` entries. Each `url` accepts the tracked-link object with `href`, `label`, and `category`. Supported platforms are `github`, `applepodcasts`, `spotify`, `instagram`, `linkedin`, `youtube`, `discord`, `patreon`, and `substack`; multiple accounts on one platform receive separate icons.
+
+Backoffice public-issue starters supply the established 12 accounts from its canonical footer list. Saves fill missing platforms and preserve authored nonempty lists. The shared Dense Discovery component renders 24-pixel Icons8 artwork above the address and unsubscribe text, wraps on phones, and displays white icons in dark mode. Icons8 attribution appears once. Existing `email_footer.social_links` text links render when no nonempty icon list is supplied.
+
+```yaml
+footer:
+  socialLinks:
+    github:
+    - url:
+        href: https://github.com/bleeckerj
+        label: Daily Headlines | social | Personal GitHub
+        category: social
+      title: Personal GitHub
+```
+
 ## Normal Authoring Shape
 
 Use this order for ordinary issues:

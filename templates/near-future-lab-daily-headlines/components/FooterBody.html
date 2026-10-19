@@ -22,6 +22,7 @@
                                 link is omitted entirely when this is absent.
   - unsubscribe_href (string) — Href for the unsubscribe link. Default: "[unsubscribe]" (the ESP
                                 merge-tag placeholder, left unvalidated by the live-link check).
+  - footer.socialLinks       — Shared Icons8 platform lists; takes precedence over social_links.
   - social_links (object[])   — Optional row of social/profile links above the address line. Each
                                 is { label, href, category? }; data-link-* attributes are emitted
                                 from label + category (default category "social").
@@ -40,13 +41,19 @@
   Reference only — render-time dispatch is inlined in templates/<name>/newsletter.html
   (the email_footer branch), because the body reads the loop-local `section`.
 -->
-<if condition="section.paragraphs || section.address || section.social_links || section.unsubscribe_label">
+<if condition="section.paragraphs || section.address || section.social_links || section.unsubscribe_label || (footer.socialLinks && Object.values(footer.socialLinks).some(links => Array.isArray(links) && links.length))">
   <tr><td style="height:15px"></td></tr>
   <if condition="section.paragraphs && section.paragraphs.length">
     <tr><td style="padding:12px 0;border-top:1px solid #000"><each loop="paragraph in section.paragraphs"><p style="font:12px/15px arial,sans-serif;color:#666;margin:0 0 7px">{{{ paragraph }}}</p></each></td></tr>
   </if>
+  <if condition="footer.socialLinks && Object.values(footer.socialLinks).some(links => Array.isArray(links) && links.length)">
+    <tr><td style="padding:10px 0 16px;text-align:center">
+      <component src="templates/dense-discovery/components/FooterSocialLinks.html"></component>
+      <p style="font:12px/15px arial,sans-serif;color:#999;margin:8px 0 0">Icons by <a href="https://icons8.com" data-link-category="operations" data-link-label="Icons8 attribution" style="color:#999;text-decoration:underline">Icons8</a></p>
+    </td></tr>
+  </if>
   <if condition="section.address || (section.social_links && section.social_links.length) || section.unsubscribe_label">
-    <tr><td style="border-top:1px solid #dcdcdc;padding:10px 0 30px"><if condition="section.social_links && section.social_links.length"><p style="font:12px/15px arial,sans-serif;color:#999;margin:0 0 7px"><each loop="social in section.social_links"><a href="{{ social.href }}" data-link-category="{{ social.category || 'social' }}" data-link-label="{{ social.label }}" style="color:#999;text-decoration:underline;margin-right:12px">{{ social.label }}</a></each></p></if><p style="color:#999;font:12px/15px arial,sans-serif;margin:0"><if condition="section.address">{{{ section.address }}}</if><if condition="section.unsubscribe_label">&nbsp;<a href="{{ section.unsubscribe_href || '[unsubscribe]' }}" style="color:#999;text-decoration:underline">{{ section.unsubscribe_label }}</a></if></p></td></tr>
+    <tr><td style="border-top:1px solid #dcdcdc;padding:10px 0 30px"><if condition="!(footer.socialLinks && Object.values(footer.socialLinks).some(links => Array.isArray(links) && links.length)) && section.social_links && section.social_links.length"><p style="font:12px/15px arial,sans-serif;color:#999;margin:0 0 7px"><each loop="social in section.social_links"><a href="{{ social.href }}" data-link-category="{{ social.category || 'social' }}" data-link-label="{{ social.label }}" style="color:#999;text-decoration:underline;margin-right:12px">{{ social.label }}</a></each></p></if><p style="color:#999;font:12px/15px arial,sans-serif;margin:0"><if condition="section.address">{{{ section.address }}}</if><if condition="section.unsubscribe_label">&nbsp;<a href="{{ section.unsubscribe_href || '[unsubscribe]' }}" style="color:#999;text-decoration:underline">{{ section.unsubscribe_label }}</a></if></p></td></tr>
   </if>
 </if>
 <if condition="!(section.paragraphs || section.address || section.social_links || section.unsubscribe_label)">{{{ section.footer_html }}}</if>

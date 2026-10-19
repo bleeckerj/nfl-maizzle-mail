@@ -2,6 +2,14 @@
   "template": "near-future-lab-daily-headlines",
   "title": "Near Future Laboratory Daily Headlines Sample",
   "preheader": "A compact sample for the Near Future Laboratory Daily Headlines style template.",
+  "footer": {
+    "socialLinks": {
+      "github": [{
+        "url": { "href": "https://github.com/bleeckerj", "label": "sample footer | Personal GitHub", "category": "social" },
+        "title": "Personal GitHub"
+      }]
+    }
+  },
   "sections": [
     {
       "type": "newsletter_masthead",

@@ -302,6 +302,17 @@
         font-size: 12px !important;
         line-height: 1.35 !important;
       }
+      /* Wrap account icons at their natural size within phone viewports. */
+      .footer-social-links,
+      .footer-social-links tbody,
+      .footer-social-links tr {
+        display: block !important;
+        width: 100% !important;
+      }
+      .footer-social-links td {
+        display: inline-block !important;
+        padding: 0 6px 12px !important;
+      }
       .masthead-dateline {
         padding-bottom: 20px !important;
       }
@@ -374,6 +385,11 @@
       .dm-bg a,
       .dm-bg .theme-link {
         color: #8ecbff !important;
+      }
+
+      /* Match Dense Discovery's monochrome footer artwork treatment. */
+      .dm-bg .dm-footer-artwork {
+        filter: brightness(0) invert(1);
       }
 
       .dm-border,
