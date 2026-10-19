@@ -53,7 +53,24 @@ sections:
     image_src: https://example.com/intro.jpg
     image_alt: Delegates gathered for a group photograph.
     image_caption: Delegates and a computer cart at the summit.
-    statement: '<p>A short <em>introductory</em> statement before the headline groups.</p>'
+    body_blocks:
+    - type: text
+      html: |-
+        <p>Opening paragraphs of the introduction.</p>
+    - type: image
+      src: https://example.com/intro-detail.jpg
+      alt: A field monitoring station beside an irrigation channel.
+      caption: Field trials beside an irrigation channel.
+    - type: ad-block
+      show_top_rule: false
+      show_bottom_rule: false
+      items:
+      - adId: interstitial-john-deere-rtx8080
+        adRenderMode: snapshot
+        adSnapshotPreset: native
+    - type: text
+      html: |-
+        <p>The introduction continues after the photograph and sponsor.</p>
     show_bottom_rule: true
 
   - type: ad-block
@@ -160,7 +177,7 @@ sections:
 : Required for normal issues. Renders the publication/logo image, newsletter title image, dateline, and the build-injected `View/share online` link at the top of the email.
 
 `intro_statement`
-: Optional author note below the masthead. Set `image_src` and `image_alt` for a lead image above the label and statement. The image stays fully visible at natural height, without cropping; omit both fields for a text-only intro. Alt text is required with an image. Use `image_caption` for an optional plain-text caption beneath it; the caption renders only when `image_src` is present. Use `statement` for plain text or simple HTML with `<p>`, `<em>`, `<strong>`, and `<a href="">`. `statement_html` remains available as an explicit rich-text override. Unsupported tags and attributes are stripped during the build. `label` and `show_bottom_rule` are optional. Its mobile scale (`.intro-statement-label` / `.intro-statement-copy`) is tuned independently of the generic `.mob-text` body-copy lock.
+: Optional author note below the masthead. Use `body_blocks` for an essay with text, photographs, and ads in reading order. Set `image_src` and `image_alt` for a lead image above the label and statement. The image stays fully visible at natural height, without cropping; omit both fields for a text-only intro. Alt text is required with an image. Use `image_caption` for an optional plain-text caption beneath it; the caption renders only when `image_src` is present. Use `statement` for plain text or simple HTML with `<p>`, `<em>`, `<strong>`, and `<a href="">`. `statement_html` remains available as an explicit rich-text override. Unsupported tags and attributes are stripped during the build. `label` and `show_bottom_rule` are optional. Its mobile scale (`.intro-statement-label` / `.intro-statement-copy`) is tuned independently of the generic `.mob-text` body-copy lock.
 
 `section_article_group`
 : Main content section. Renders a section heading and one or more article rows. Each article requires `headline`; `link` (preferred) or legacy `href` is optional. When both are omitted, the card keeps its image, copy, and any `cta_label` but has no anchors or link-tracking metadata. `image_src`, `image_alt`, `kicker`, and `lede` are optional but recommended. An image-bearing `row` article (the default) places the image on the right at wide widths and first in the mobile reading order; its CTA remains after the copy at every width. Set `article_layout: feature` for longer editorial copy; it renders the complete image full-width above the article at every width. Use `containerStyles` for the outer section surface. Use `articleContainerStyles` for the surface and padding of each article card, and `articleContentStyles`, `articleHeadingStyles`, and `articleLinkStyles` for card typography and links. An article may carry those same four objects to override the group defaults. Prefer `more_link` on this section for a section-level follow-up link.
@@ -191,21 +208,37 @@ Keep the cover in `image_src`. Put opening paragraphs in `lede`, then add `body_
 `ad-block`
 : Inventory-backed ad card. Author only `items[0].adId`; the build looks up the ad in `/Users/julian/Code/nfl-editorial/src/content/ads.json` and hydrates URL, media, copy, sponsor, and tracking metadata. Exactly one item is allowed. Set `show_bottom_rule: false` to suppress the light divider after the ad.
 
-### A sponsor interstitial within an intro
+### Text, photographs, and ads in one intro
 
-Split the intro at the desired paragraph boundary into two `intro_statement` sections, with an `ad-block` between them. Keep the lead image and label on the first intro; put the remaining paragraphs in the second. Set `show_top_rule: false` and `show_bottom_rule: false` on the ad block when no divider is wanted. The paragraphs remain in their statement fields.
+Use `body_blocks` for a continuous essay with photographs and sponsor placements between paragraphs. Blocks render in array order inside a single `intro_statement` container. A `text` block contains authored paragraph HTML in `html`; an `image` block requires its hosted `src` and accessibility `alt`, with an optional plain-text `caption`. Images keep their full composition at natural height. Keep the lead photograph in `image_src`, `image_alt`, and optional `image_caption`.
+
+An `ad-block` entry uses the same schema, inventory IDs, renderer, hydration, snapshot settings, and validation as a standalone ad section. Author its `items: [{adId: ...}]`; the builder resolves the image, copy, and destination. Set `adRenderMode: snapshot` on the item for a media-only sponsor snapshot, and `adSnapshotPreset: native` for its native composition. Set the ad's `show_top_rule` and `show_bottom_rule` to false when the essay needs no section dividers around it. Never copy the ad image URL into prose or a separate image block.
 
 ```yaml
-- type: ad-block
-  show_top_rule: false
-  show_bottom_rule: false
-  items:
-  - adId: interstitial-john-deere-rtx8080
-    adRenderMode: snapshot
-    adSnapshotPreset: native
+  - type: intro_statement
+    label: From the Editor
+    body_blocks:
+    - type: text
+      html: |-
+        <p>Opening paragraphs of the introduction.</p>
+    - type: image
+      src: https://example.com/intro-detail.jpg
+      alt: A field monitoring station beside an irrigation channel.
+      caption: Field trials beside an irrigation channel.
+    - type: ad-block
+      show_top_rule: false
+      show_bottom_rule: false
+      items:
+      - adId: interstitial-john-deere-rtx8080
+        adRenderMode: snapshot
+        adSnapshotPreset: native
+    - type: text
+      html: |-
+        <p>The introduction continues after the photograph and sponsor.</p>
+    show_bottom_rule: false
 ```
 
-`adRenderMode: snapshot` uses the canonical hosted snapshot for a media-only interstitial, including its existing sponsor label. Keep the inventory ID and render settings here; do not copy the ad image URL or embed images in statement HTML. Omit this setting for the ordinary hydrated ad layout. Live Compact Band commerce ads retain their existing presentation.
+The lead image and label render first. An optional legacy `statement` or `statement_html` renders next, followed by `body_blocks`. For a new continuous essay, put all its paragraphs in text blocks and omit the legacy statement fields. Existing intros that use those fields retain their current behavior. The builder creates each text block's `rendered_html`; keep authored copy in `html`.
 
 `short-take`
 : Inventory-backed editorial card. Author only `items[0].shortTakeId`; the build resolves headline, caption, Photarium image, alt text, optional destination, and optional edge metadata from `/Users/julian/Code/nfl-editorial/src/content/shortTakes.json`. Exactly one item is allowed, and multiple cards use multiple ordered sections. Linked records use tracking category `short-take`; records without a destination render without anchors. Images remain complete within the 600px column.

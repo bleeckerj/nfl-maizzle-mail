@@ -1,5 +1,6 @@
 # Node modules
 node_modules/
+.venv/
 .cache/
 .codex/
 .claude/
@@ -18,15 +19,10 @@ build_production/
 /build_correspondence/
 /.tmp_correspondence_build_*/
 
-gpt-prompts/
-content/*
-emails-to-templatize/
-
 # Environment files
-.env
-.env.local
+.env*
 
-*__pycache__*/
+__pycache__/
 # Editor files
 .vscode/
 .idea/

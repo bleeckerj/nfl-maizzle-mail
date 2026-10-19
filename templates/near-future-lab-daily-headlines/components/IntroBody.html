@@ -1,0 +1,19 @@
+<script props>
+  // Text, photographs, and inventory ads retain their authored order in one intro.
+  (() => {
+    const introSectionIndex = Number(props.introSectionIndex);
+    return { introSectionIndex, introSection: props.sections[introSectionIndex] };
+  })()
+</script>
+<each loop="introBlock, introBlockIndex in introSection.body_blocks">
+  <if condition="introBlock.type === 'text' && introBlock.rendered_html"><div class="intro-statement-copy" style="color:#333;font:18px/26px georgia,serif;margin:0">{{{ introBlock.rendered_html }}}</div></if>
+  <if condition="introBlock.type === 'image'">
+    <div style="margin:16px 0">
+      <img src="{{ introBlock.src }}" alt="{{ introBlock.alt }}" width="600" border="0" style="display:block;width:100%;max-width:600px;height:auto">
+      <if condition="introBlock.caption"><p class="intro-statement-caption" style="color:#555;font:14px/20px georgia,serif;margin:8px 0 0">{{ introBlock.caption }}</p></if>
+    </div>
+  </if>
+  <if condition="introBlock.type === 'ad-block'">
+    <div style="margin:16px 0"><component src="templates/near-future-lab-daily-headlines/components/AdBlock.html" locals='{"adSectionIndex": "{{introSectionIndex}}", "adBodyBlockIndex": "{{introBlockIndex}}"}'></component></div>
+  </if>
+</each>

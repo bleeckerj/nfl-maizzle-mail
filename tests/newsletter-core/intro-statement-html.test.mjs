@@ -56,7 +56,7 @@ test('daily-headlines intro statement accepts simple HTML in statement', () => {
       '  - type: intro_statement',
       '    label: From the Editor',
       '    statement: |',
-      '      <p>This issue has <em>emphasis</em>, <strong>weight</strong>, and a <a href="https://example.com/intro" onclick="bad()">tracked link</a>.</p>',
+      '      <p>This issue has <em>emphasis</em>, <strong>weight</strong>, and a <a href="https://example.com/intro" data-link-category="civic-futures" onclick="bad()">tracked link</a>.</p>',
       '      <p><img src="https://example.com/nope.png">Image tags disappear.</p>',
       'footer:',
       '  footerCta:',
@@ -107,7 +107,7 @@ test('daily-headlines intro statement accepts simple HTML in statement', () => {
     assert.match(html, /<strong>weight<\/strong>/);
     assert.match(html, /<a href="https:\/\/example\.com\/intro"[^>]*>tracked link<\/a>/);
     assert.match(html, /data-link-label="tracked link"/);
-    assert.match(html, /data-link-category="intro-statement"/);
+    assert.match(html, /data-link-category="civic-futures"/);
     assert.doesNotMatch(html, /onclick=/);
     assert.doesNotMatch(html, /nope\.png/);
     assert.doesNotMatch(html, /&lt;em&gt;emphasis&lt;\/em&gt;/);

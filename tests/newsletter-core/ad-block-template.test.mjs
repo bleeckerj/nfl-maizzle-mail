@@ -18,8 +18,8 @@ const AD_BLOCK_TEMPLATE = path.join(
 );
 
 function renderAdBlock(section) {
-  const template = readFileSync(AD_BLOCK_TEMPLATE, 'utf8');
-  return posthtml([expressions({ locals: { section }, strictMode: false })])
+  const template = readFileSync(AD_BLOCK_TEMPLATE, 'utf8').replace(/<script props>[\s\S]*?<\/script>/, '');
+  return posthtml([expressions({ locals: { adSection: section, darkModePolicy: null }, strictMode: false })])
     .process(template, { sync: true })
     .html;
 }

@@ -53,6 +53,8 @@ Template source of truth lives under `templates/<template-name>/`. Do not create
 
 Before scaffolding or revising a production newsletter template, read `docs/newsletter-template-operating-process.md`.
 
+`data/newsletter.json` is local build input generated from an authored Markdown or JSON source. It stays ignored and is preserved locally when removed from Git tracking. The `npm run build` and `npm run build:data` commands reuse this local input; create it by building an authored source on a fresh checkout. Existing tracked samples in `content/` and `data/` remain available; new template examples belong beside their template under `templates/<template-name>/`.
+
 ## Color themes
 
 Shared newsletter color themes such as `winter` are defined only in [`data/color-themes.json`](data/color-themes.json). The registry is intentionally visible to project-wide search even though other local `data/` files remain ignored. See [the color-theme operator reference](docs/color-themes.md) for the available IDs, frontmatter usage, build behavior, and maintenance rules.
@@ -120,8 +122,8 @@ build_production/<output-name>.content-slots.json
 
 | Script | Command | Purpose |
 | --- | --- | --- |
-| `npm run build` | `maizzle build production` | Raw Maizzle production build. Use the canonical build script for issue work. |
-| `npm run build:data` | `maizzle build production` | Alias for raw Maizzle production build. |
+| `npm run build` | `node scripts/build-newsletter.mjs data/newsletter.json --no-open` | Canonical build using existing local build input. |
+| `npm run build:data` | `node scripts/build-newsletter.mjs data/newsletter.json --no-open` | Alias for the canonical local-input build. |
 | `npm run dev` | `maizzle serve` | Maizzle development server. |
 | `npm run build:newsletter` | `node scripts/build-newsletter.mjs` | Canonical newsletter build entry. |
 | `npm run build:correspondence` | `node scripts/build-correspondence.mjs` | Build local one-off correspondence email HTML. |

@@ -223,6 +223,114 @@
                     "description": "Optional plain-text caption below the intro lead image. Rendered only when image_src is present.",
                     "examples": ["Delegates and a computer cart at the summit."]
                   },
+                  "body_blocks": {
+                    "type": "array",
+                    "description": "Ordered text, image, and inventory-backed ad blocks within one intro. Rendered after an optional legacy statement. Keep the lead image in image_src; use image blocks for photographs between paragraphs.",
+                    "items": {
+                      "anyOf": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "const": "text"
+                            },
+                            "html": {
+                              "type": "string",
+                              "minLength": 1,
+                              "not": {
+                                "pattern": "<[iI][mM][gG]\\b"
+                              },
+                              "examples": [
+                                "<p>Opening paragraphs of the introduction.</p>"
+                              ]
+                            },
+                            "rendered_html": {
+                              "type": "string",
+                              "readOnly": true,
+                              "description": "Build-generated sanitized HTML; never author this field.",
+                              "examples": [
+                                "<p>Opening paragraphs of the introduction.</p>"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "html"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "const": "image"
+                            },
+                            "src": {
+                              "type": "string",
+                              "format": "uri",
+                              "pattern": "^https?://",
+                              "examples": [
+                                "https://example.com/intro-detail.jpg"
+                              ]
+                            },
+                            "alt": {
+                              "type": "string",
+                              "minLength": 1,
+                              "examples": [
+                                "A field monitoring station beside an irrigation channel."
+                              ],
+                              "pattern": "\\S"
+                            },
+                            "caption": {
+                              "type": "string",
+                              "examples": [
+                                "Field trials beside an irrigation channel."
+                              ]
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "src",
+                            "alt"
+                          ],
+                          "additionalProperties": false
+                        },
+                        {
+                          "$ref": "#/properties/sections/items/allOf/1/oneOf/3"
+                        }
+                      ]
+                    },
+                    "examples": [
+                      [
+                        {
+                          "type": "text",
+                          "html": "<p>Opening paragraphs of the introduction.</p>"
+                        },
+                        {
+                          "type": "image",
+                          "src": "https://example.com/intro-detail.jpg",
+                          "alt": "A field monitoring station beside an irrigation channel.",
+                          "caption": "Field trials beside an irrigation channel."
+                        },
+                        {
+                          "type": "ad-block",
+                          "show_top_rule": false,
+                          "show_bottom_rule": false,
+                          "items": [
+                            {
+                              "adId": "interstitial-john-deere-rtx8080",
+                              "adRenderMode": "snapshot",
+                              "adSnapshotPreset": "native"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "html": "<p>The introduction continues after the photograph and sponsor.</p>"
+                        }
+                      ]
+                    ]
+                  },
                   "statement": {
                     "type": "string",
                     "description": "Introductory statement. May include simple <p>, <em>, <strong>, and <a href=\"\"> HTML.",

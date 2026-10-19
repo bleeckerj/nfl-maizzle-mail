@@ -3,6 +3,7 @@
   A short introductory editor's note or framing statement rendered below the masthead and before article groups.
 
   Slots:
+  - body_blocks (array) — Ordered text, image, and ordinary ad-block entries within this intro
   - image_src (image) — Optional hosted lead image displayed in full above the label
   - image_caption (text) — Optional plain-text caption below the lead image
   - image_alt (text) — Accessibility description required with image_src
@@ -14,8 +15,9 @@
 
   Reference only — render-time dispatch is in templates/<name>/newsletter.html.
 -->
-<table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="mob-text intro-statement{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><tbody><if condition="section.image_src"><tr><td style="padding:0 0 16px;line-height:0;font-size:0"><img class="intro-statement-image" src="{{ section.image_src }}" alt="{{ section.image_alt }}" width="600" border="0" style="display:block;width:100%;max-width:600px;height:auto"><if condition="section.image_caption"><p class="intro-statement-caption" style="color:#555;font:14px/20px georgia,serif;margin:8px 0 0">{{ section.image_caption }}</p></if></td></tr></if><tr><td style="padding:0 0 24px 0">
+<table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" data-intro-statement="true" class="mob-text intro-statement{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><tbody><if condition="section.image_src"><tr><td style="padding:0 0 16px;line-height:0;font-size:0"><img class="intro-statement-image" src="{{ section.image_src }}" alt="{{ section.image_alt }}" width="600" border="0" style="display:block;width:100%;max-width:600px;height:auto"><if condition="section.image_caption"><p class="intro-statement-caption" style="color:#555;font:14px/20px georgia,serif;margin:8px 0 0">{{ section.image_caption }}</p></if></td></tr></if><tr><td style="padding:0 0 24px 0">
   <if condition="section.label"><p class="intro-statement-label" style="color:#555;font:700 12px/18px arial,sans-serif;margin:0 0 8px;text-transform:uppercase;letter-spacing:.75px">{{ section.label }}</p></if>
   <if condition="section.statement_rendered_html"><div class="intro-statement-copy" style="color:#333;font:18px/26px georgia,serif;margin:0">{{{ section.statement_rendered_html }}}</div></if>
   <if condition="!section.statement_rendered_html && section.statement"><p class="intro-statement-copy" style="color:#333;font:18px/26px georgia,serif;margin:0">{{ section.statement }}</p></if>
+<if condition="section.body_blocks && section.body_blocks.length"><component src="templates/near-future-lab-daily-headlines/components/IntroBody.html" locals='{"introSectionIndex": "{{sectionIndex}}"}'></component></if>
 </td></tr><if condition="section.show_bottom_rule"><tr><td style="border-bottom:1px solid #dcdcdc;height:1px;line-height:1px;font-size:1px"></td></tr><tr><td height="15"></td></tr></if></tbody></table>

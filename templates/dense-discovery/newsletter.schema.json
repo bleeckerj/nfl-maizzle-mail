@@ -61,6 +61,7 @@
                 "string",
                 "null"
               ],
+              "description": "Optional call-to-action copy. Omitted text uses the selected preset from lib/newsletter-core/footer-cta.mjs; the default preset introduces Julian's work across engineering, design, brand, storytelling, strategy, and product.",
               "examples": [
                 "Example Text"
               ]

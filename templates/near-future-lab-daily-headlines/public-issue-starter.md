@@ -22,7 +22,24 @@ sections:
     image_alt: Delegates gathered for a group photograph.
     image_caption: Delegates and a computer cart at the summit.
     label: From the Editor
-    statement: '<p>A short editorial statement before the headline groups.</p>'
+    body_blocks:
+    - type: text
+      html: |-
+        <p>Opening paragraphs of the introduction.</p>
+    - type: image
+      src: https://example.com/intro-detail.jpg
+      alt: A field monitoring station beside an irrigation channel.
+      caption: Field trials beside an irrigation channel.
+    - type: ad-block
+      show_top_rule: false
+      show_bottom_rule: false
+      items:
+      - adId: interstitial-john-deere-rtx8080
+        adRenderMode: snapshot
+        adSnapshotPreset: native
+    - type: text
+      html: |-
+        <p>The introduction continues after the photograph and sponsor.</p>
     show_bottom_rule: true
 
   - type: section_article_group

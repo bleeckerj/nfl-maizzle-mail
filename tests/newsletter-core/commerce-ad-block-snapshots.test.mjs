@@ -268,3 +268,20 @@ test('media-only ad snapshots work without commerce metadata and remain opt-in',
     }
   });
 });
+
+// An ad inside an intro must go through the same snapshot resolution path.
+test('intro body ad blocks resolve snapshots without flattening the intro', async () => {
+  await withTempRoots(async ({ repoRoot }) => {
+    const data = { sections: [{ type: 'intro_statement', body_blocks: [
+      { type: 'text', html: '<p>Before.</p>' },
+      { type: 'ad-block', items: [{ adId: 'media-interstitial', adRenderMode: 'snapshot', adSnapshotPreset: 'native' }] },
+      { type: 'text', html: '<p>After.</p>' },
+    ] }] };
+    await resolveCommerceAdBlockSnapshots(data, { repoRoot, logger: { log() {} } });
+    assert.equal(data.sections.length, 1);
+    const item = data.sections[0].body_blocks[1].items[0];
+    assert.equal(item.renderMode, 'snapshot');
+    assert.equal(item.image, 'https://imagedelivery.net/example/media-interstitial-still/public');
+    assert.equal(item.snapshotPreset, 'native');
+  });
+});

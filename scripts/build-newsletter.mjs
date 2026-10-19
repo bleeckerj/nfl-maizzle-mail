@@ -16,6 +16,8 @@ import {
 import { buildAdjacencyJobsMailSectionStyleOverrides } from '../lib/adjacency-mail/adjacency-jobs-mail-theme-tokens.mjs';
 import {
   buildContentSlotManifest,
+  getNewsletterSectionEntries,
+  mapIntroStatementRenderedHtml,
   normalizeIntroStatementSection,
   normalizeIntroStatementSections,
   prepareNewsletterData as prepareNormalizedNewsletterData,
@@ -1591,7 +1593,7 @@ async function buildNewsletter() {
       let sectionsUsingDefaultConfig = 0;
       let sectionsWithInjectedContentStyles = 0;
       
-      newsletterData.sections.forEach((section, sIndex) => {
+      getNewsletterSectionEntries(newsletterData).forEach(({ section, sectionIndex: sIndex }) => {
           if (section && section.type !== undefined && section.type !== null) {
             section.type = String(section.type).trim();
           }
@@ -1676,14 +1678,12 @@ async function buildNewsletter() {
                 ...incomingLinkStyles,
               };
           if (section.type === 'intro_statement' && normalizeIntroStatementSection(section)) {
-            section.statement_rendered_html = sanitizeHtmlFragment(section.statement_rendered_html);
-            if ((mergedLinkStyles && Object.keys(mergedLinkStyles).length > 0) || theme?.linkAccent) {
-              section.statement_rendered_html = applyInlineLinkStyles(
-                section.statement_rendered_html,
-                mergedLinkStyles,
-                theme,
-              );
-            }
+            mapIntroStatementRenderedHtml(section, (html) => {
+              const sanitized = sanitizeHtmlFragment(html);
+              return ((mergedLinkStyles && Object.keys(mergedLinkStyles).length > 0) || theme?.linkAccent)
+                ? applyInlineLinkStyles(sanitized, mergedLinkStyles, theme)
+                : sanitized;
+            });
           }
           // --- PATCH: Apply descriptionStyles/contentStyles/linkStyles to section.description ---
           if (section.description && typeof section.description === 'string') {
@@ -2283,7 +2283,7 @@ async function buildNewsletter() {
       });
 
       console.log('🧩 Section styles injection summary:');
-      console.log(`   - Sections: ${newsletterData.sections.length}`);
+      console.log(`   - Styled sections: ${getNewsletterSectionEntries(newsletterData).length}`);
       console.log(`   - Matched config: ${sectionsWithMatchedConfig}`);
       console.log(`   - Default config: ${sectionsUsingDefaultConfig}`);
       console.log(`   - Injected contentStyles: ${sectionsWithInjectedContentStyles}`);

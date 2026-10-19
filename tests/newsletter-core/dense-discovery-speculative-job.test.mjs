@@ -110,7 +110,22 @@ test('Daily Headlines aligns speculative-job copy with full-width media by defau
   assert.doesNotMatch(template, /speculativeJobCardPaddingStyleInline[\s\S]*?\|\| 'padding:24px 28px'/);
 });
 
-test('build reports section types that the selected template cannot render', () => {
+test('Daily Headlines preserves speculative-job company logo sizing on mobile', () => {
+  const template = readFileSync(
+    path.join(REPO_ROOT, 'templates', 'near-future-lab-daily-headlines', 'newsletter.html'),
+    'utf8',
+  );
+  const layout = readFileSync(
+    path.join(REPO_ROOT, 'templates', 'near-future-lab-daily-headlines', 'layouts', 'main.html'),
+    'utf8',
+  );
+
+  assert.match(template, /class="speculative-job-company-logo"[^>]+height="40"/);
+  assert.match(layout, /\.speculative-job-company-logo\s*\{\s*width:\s*auto !important;[\s\S]*?max-width:\s*280px !important;[\s\S]*?height:\s*40px !important;/);
+  assert.match(layout, /img:not\(\.masthead-logo\):not\(\.newsletter-title-logo\):not\(\.article-image\):not\(\.speculative-job-company-logo\)/);
+});
+
+test('build rejects section types that the selected template cannot render', () => {
   const fixture = buildFixture([
     '---',
     'template: dense-discovery',
@@ -124,10 +139,9 @@ test('build reports section types that the selected template cannot render', () 
   ], 'dense-discovery-unsupported-section');
 
   try {
-    assert.equal(fixture.result.status, 0, `${fixture.result.stdout}\n${fixture.result.stderr}`);
+    assert.equal(fixture.result.status, 1, `${fixture.result.stdout}\n${fixture.result.stderr}`);
     const output = `${fixture.result.stdout}\n${fixture.result.stderr}`;
-    assert.equal(output.match(/Schema validation found \d+ issue/g)?.length, 1);
-    assert.match(output, /Schema validation found \d+ issue/);
+    assert.match(output, /Schema validation failed/);
     assert.match(output, /sections\[0\] \(definitely-unsupported \/ "Unsupported Section"\)/);
     assert.match(output, /must be equal to one of the allowed values/);
   } finally {
