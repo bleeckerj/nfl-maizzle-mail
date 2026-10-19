@@ -1,0 +1,24 @@
+<script props>
+  // Resolve stable article indices before the component loops through body blocks.
+  (() => {
+    const bodySection = props.sections[props.bodySectionIndex];
+    return { bodySection, bodyArticle: bodySection.articles[props.bodyArticleIndex] };
+  })()
+</script>
+<if condition="bodyArticle.body_blocks && bodyArticle.body_blocks.length">
+  <each loop="bodyBlock in bodyArticle.body_blocks">
+    <tr><td style="padding-top:16px;{{{ bodyArticle.articleContainerStylesInline || '' }}};{{{ bodyArticle.articleContentStylesInline || '' }}}">
+      <if condition="bodyBlock.type === 'text'"><div class="article-body-copy" style="color:#333;font:17px/22.5px georgia,serif;margin:0;{{{ bodyArticle.articleLedeStylesInline || '' }}}">{{{ bodyBlock.html }}}</div></if>
+      <if condition="bodyBlock.type === 'image'">
+        <img src="{{ bodyBlock.src }}" alt="{{ bodyBlock.alt }}" width="600" class="article-image article-body-image" style="display:block;width:100%;max-width:600px;height:auto">
+        <if condition="bodyBlock.caption"><p class="article-body-caption" style="color:#555;font:14px/20px georgia,serif;margin:8px 0 0">{{ bodyBlock.caption }}</p></if>
+      </if>
+    </td></tr>
+  </each>
+  <if condition="bodyArticle.cta_label">
+    <tr><td style="padding-top:16px;{{{ bodyArticle.articleContainerStylesInline || '' }}}">
+      <if condition="bodyArticle.link || bodyArticle.href"><a href="{{ bodyArticle.link || bodyArticle.href }}" style="color:#111;text-decoration:none"><span class="article-cta-pill" style="{{ bodySection.articleCtaStylesInline }}">{{ bodyArticle.cta_label }}</span></a></if>
+      <if condition="!(bodyArticle.link || bodyArticle.href)"><span class="article-cta-pill" style="{{ bodySection.articleCtaStylesInline }}">{{ bodyArticle.cta_label }}</span></if>
+    </td></tr>
+  </if>
+</if>

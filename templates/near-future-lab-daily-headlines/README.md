@@ -151,6 +151,22 @@ sections:
 `section_article_group`
 : Main content section. Renders a section heading and one or more article rows. Each article requires `headline`; `link` (preferred) or legacy `href` is optional. When both are omitted, the card keeps its image, copy, and any `cta_label` but has no anchors or link-tracking metadata. `image_src`, `image_alt`, `kicker`, and `lede` are optional but recommended. An image-bearing `row` article (the default) places the image on the right at wide widths and first in the mobile reading order; its CTA remains after the copy at every width. Set `article_layout: feature` for longer editorial copy; it renders the complete image full-width above the article at every width. Use `containerStyles` for the outer section surface. Use `articleContainerStyles` for the surface and padding of each article card, and `articleContentStyles`, `articleHeadingStyles`, and `articleLinkStyles` for card typography and links. An article may carry those same four objects to override the group defaults. Prefer `more_link` on this section for a section-level follow-up link.
 
+### Images between article paragraphs
+
+Keep the cover in `image_src`. Put opening paragraphs in `lede`, then add `body_blocks` in reading order. A `text` block contains paragraph HTML in `html`; an `image` block requires its hosted `src` and accessibility `alt`, with an optional plain-text `caption`. Use image blocks for photographs; do not embed images in text blocks. Blocks render after the lede and before any article CTA, at full available width with natural image height. Existing articles without blocks retain their current layout.
+
+```yaml
+    lede: |-
+      <p>Opening paragraph.</p>
+    body_blocks:
+    - type: image
+      src: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/eb19c79c-cd36-4d0b-35eb-42ffec7e0400/full?format=webp
+      alt: A man uses a light pen beside a CRT showing a combine harvester design.
+    - type: text
+      html: |-
+        <p>The article continues here.</p>
+```
+
 `ad-block`
 : Inventory-backed ad card. Author only `items[0].adId`; the build looks up the ad in `/Users/julian/Code/nfl-editorial/src/content/ads.json` and hydrates URL, media, copy, sponsor, and tracking metadata. Exactly one item is allowed. Set `show_bottom_rule: false` to suppress the light divider after the ad.
 

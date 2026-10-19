@@ -899,6 +899,81 @@
                             "Article summary/deck text"
                           ]
                         },
+                        "body_blocks": {
+                          "type": "array",
+                          "minItems": 1,
+                          "description": "Ordered text and image blocks rendered after the optional lede. Keep the cover in image_src.",
+                          "items": {
+                            "oneOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "const": "text"
+                                  },
+                                  "html": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "not": {
+                                      "pattern": "<[iI][mM][gG]\\b"
+                                    },
+                                    "examples": [
+                                      "<p>The article continues here.</p>"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "type",
+                                  "html"
+                                ],
+                                "additionalProperties": false
+                              },
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "const": "image"
+                                  },
+                                  "src": {
+                                    "type": "string",
+                                    "format": "uri",
+                                    "pattern": "^https?://",
+                                    "examples": [
+                                      "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/eb19c79c-cd36-4d0b-35eb-42ffec7e0400/full?format=webp"
+                                    ]
+                                  },
+                                  "alt": {
+                                    "type": "string",
+                                    "minLength": 1,
+                                    "examples": [
+                                      "A man uses a light pen beside a CRT showing a combine harvester design."
+                                    ]
+                                  },
+                                  "caption": {
+                                    "type": "string",
+                                    "examples": [
+                                      "A combine harvester design on a CRT."
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "type",
+                                  "src",
+                                  "alt"
+                                ],
+                                "additionalProperties": false
+                              }
+                            ]
+                          },
+                          "examples": [
+                            [
+                              {
+                                "type": "text",
+                                "html": "<p>The article continues here.</p>"
+                              }
+                            ]
+                          ]
+                        },
                         "cta_label": {
                           "type": "string",
                           "description": "Optional visual CTA pill text. It remains visible as non-interactive text when the article has no link or href.",
