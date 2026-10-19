@@ -949,7 +949,7 @@
                   },
                   "articleLinkStyles": {
                     "$ref": "#/definitions/articleContentStyles",
-                    "description": "Optional link typography, color, and decoration for article cards. An individual article may override it with the same field."
+                    "description": "Optional link typography, color, and decoration for article cards and inline links in lede/body_blocks text. Inline prose links default to normal 17px Georgia, 25px line height, #333, and underline, matching the section follow-up link. An individual article may override these styles with the same field."
                   },
                   "articles": {
                     "type": "array",
@@ -1004,7 +1004,7 @@
                         },
                         "articleLinkStyles": {
                           "$ref": "#/definitions/articleContentStyles",
-                          "description": "Optional link typography, color, and decoration for this article only, overriding the section articleLinkStyles."
+                          "description": "Optional link typography, color, and decoration for this article, including inline links in lede/body_blocks text, overriding the section articleLinkStyles."
                         },
                         "kicker": {
                           "type": "string",

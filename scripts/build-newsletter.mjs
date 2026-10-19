@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { styleDailyHeadlinesArticleLinks } from '../lib/newsletter-core/daily-headlines-article-links.mjs';
 import { resolveNewsletterTheme } from '../lib/newsletter-core/resolve-newsletter-theme.mjs';
 import { renderCommerceBands } from '../lib/newsletter-core/render-commerce-bands.mjs';
 
@@ -2021,6 +2022,9 @@ async function buildNewsletter() {
                 withoutImportant: mobileLockTypographyProperties,
               });
               article.articleLedeStylesInline = article.articleContentStylesInline;
+              if (templateName === 'near-future-lab-daily-headlines') {
+                styleDailyHeadlinesArticleLinks(article, linkStyles);
+              }
             });
           }
         const usingFallback = !sectionConfig;
