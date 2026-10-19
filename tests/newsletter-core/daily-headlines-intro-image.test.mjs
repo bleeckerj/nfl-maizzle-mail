@@ -31,3 +31,15 @@ test('intro image is checked without a section items array', async () => {
   assert.deepEqual(checked, [image.image_src]);
   assert.equal(result.errors.length, 1);
 });
+
+// Captions use the dedicated field and remain optional for existing intros.
+test('intro captions accept plain text alongside the image', () => {
+  assert.equal(validate(issue({ ...image, image_caption: 'Delegates at the summit.' })), true, JSON.stringify(validate.errors));
+  assert.equal(validate(issue({ ...image, image_caption: { text: 'Invalid object' } })), false);
+  const template = readFileSync(new URL('newsletter.html', root), 'utf8');
+  const imageStart = template.indexOf('<if condition="section.image_src">');
+  const captionStart = template.indexOf('<if condition="section.image_caption">', imageStart);
+  const imageEnd = template.indexOf('</td></tr></if>', imageStart);
+  assert.ok(captionStart > imageStart && captionStart < imageEnd, 'Caption must be conditional within the image block');
+  assert.ok(template.slice(captionStart, imageEnd).includes('{{ section.image_caption }}'), 'Caption must use escaped interpolation');
+});

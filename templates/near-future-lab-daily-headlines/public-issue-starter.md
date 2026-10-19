@@ -20,6 +20,7 @@ sections:
   - type: intro_statement
     image_src: https://example.com/intro.jpg
     image_alt: Delegates gathered for a group photograph.
+    image_caption: Delegates and a computer cart at the summit.
     label: From the Editor
     statement: '<p>A short editorial statement before the headline groups.</p>'
     show_bottom_rule: true

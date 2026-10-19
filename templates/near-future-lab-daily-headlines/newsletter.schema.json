@@ -218,6 +218,11 @@
                     "description": "Accessibility description required when image_src is supplied.",
                     "examples": ["Delegates gathered for a group photograph."]
                   },
+                  "image_caption": {
+                    "type": "string",
+                    "description": "Optional plain-text caption below the intro lead image. Rendered only when image_src is present.",
+                    "examples": ["Delegates and a computer cart at the summit."]
+                  },
                   "statement": {
                     "type": "string",
                     "description": "Introductory statement. May include simple <p>, <em>, <strong>, and <a href=\"\"> HTML.",
