@@ -199,6 +199,8 @@ Each new template should define an editor-friendly introductory field or section
 
 Do not infer section shapes from unrelated templates. Dense-discovery provides the process contract; each template still owns its section vocabulary and HTML structure.
 
+Daily Headlines' [authoring guide](../templates/near-future-lab-daily-headlines/AUTHORING.md) documents its `articles` array, paragraph HTML, ordered body blocks, shared editorial typography, and normal `more_link` at article or section level. The Maizzle authoring-guide tool and resource read that file directly. Keep it aligned with the schema and renderer whenever those behaviors change. See the [MCP coverage audit](mcp-coverage-audit-2026-10-19.md) for gaps between section inspection, article mutations, validation, and the Backoffice build workflow.
+
 ## Verification Checklist
 
 For each new template or boilerplate issue:

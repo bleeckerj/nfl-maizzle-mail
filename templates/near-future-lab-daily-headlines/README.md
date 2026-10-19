@@ -1,5 +1,7 @@
 # Near Future Laboratory Daily Headlines
 
+Use [AUTHORING.md](AUTHORING.md) for everyday newsletter editing and the [MCP coverage audit](../../docs/mcp-coverage-audit-2026-10-19.md) for current tool limitations. This README documents component behavior and maintenance details.
+
 ## Section backgrounds
 
 Every section accepts `containerStyles.backgroundColor`. It renders as the section background and accepts either a solid color or a CSS gradient, including the multi-layer gradient values used by the `classifieds` sections in older issues. Add `containerStyles.backgroundGradient` when you want to keep a separate solid fallback alongside a gradient.
@@ -23,7 +25,7 @@ For adjacent ad blocks, set `show_top_rule: false` on the following block when t
 
 This template renders compact daily-headline emails from a `sections` array. The canonical machine-readable contract is `newsletter.schema.json`; Backoffice generates public-issue starters from that schema on each request; and the canonical example is `sample-data.json`.
 
-Backoffice authoring tools discover the section vocabulary, field shapes, and starter fields directly from `newsletter.schema.json`. The manifest supplies operational metadata and declares that the starter source is the schema.
+Backoffice authoring tools discover the section vocabulary, field shapes, and starter fields directly from `newsletter.schema.json`.
 
 ## Footer service icons
 

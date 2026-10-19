@@ -2,13 +2,15 @@
 
 A Maizzle-based newsletter production system for authoring Markdown issues, validating template-specific data, and building production HTML email.
 
-The repository owns reusable newsletter templates in `templates/<template-name>/`, normalization, and HTML production. Existing local newsletter inputs use `content/`. Adjacency job-email drafts belong in sibling `nfl-editorial/emails/jobs/<job-id>/<job-id>.email.md`, with canonical HTML and manifests beside them. `data/` and `build_production/` serve the rendering pipeline.
+The repository owns reusable newsletter templates in `templates/<template-name>/`, normalization, and HTML production. Existing local newsletter inputs use `content/`. Adjacency job-email drafts belong in sibling `nfl-editorial/emails/jobs/<company>/<job-id>/<job-id>.email.md`, with canonical HTML and manifests beside them. `data/` and `build_production/` serve the rendering pipeline.
 
 ## Adjacency recruiting emails
 
 Read [the production and maintenance guide](docs/adjacency-job-emails.md) for repository ownership, canonical build commands, MCP arguments, company-specific template development, required logos, gallery paths, verification, and troubleshooting. Copy authors should use [the editorial guide](../nfl-editorial/emails/README.md).
 
 ## Features
+
+For Tomorrow's News Today, use the [Daily Headlines authoring guide](templates/near-future-lab-daily-headlines/AUTHORING.md) for article text, photographs, normal follow-up links, typography, and Backoffice preview commands. The [MCP coverage audit](docs/mcp-coverage-audit-2026-10-19.md) identifies current tool limitations and their implementation owners.
 
 - Markdown issue authoring with YAML frontmatter and template-specific `sections`.
 - Canonical Markdown/JSON to Maizzle build pipeline through `scripts/build-newsletter.mjs`.
