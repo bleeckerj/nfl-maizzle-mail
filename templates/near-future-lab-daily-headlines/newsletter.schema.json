@@ -845,7 +845,7 @@
                       "properties": {
                         "adId": {
                           "type": "string",
-                          "description": "Ad inventory id from nfl-editorial/src/content/ads.json.",
+                          "description": "Ad inventory id from nfl-editorial/src/content/ads.json. Hydrated destinations use the sponsor tracking category unless the placement supplies an explicit category.",
                           "examples": [
                             "example-ad-id"
                           ]
@@ -1272,6 +1272,7 @@
                           "properties": {
                             "url": {
                               "type": "string",
+                              "description": "Hosted logo image source. Click tracking uses the separate job link field.",
                               "format": "uri",
                               "examples": [
                                 "https://nearfuturelaboratory.com"

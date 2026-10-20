@@ -6,6 +6,7 @@ import { resolveNewsletterTheme } from '../lib/newsletter-core/resolve-newslette
 import { renderCommerceBands } from '../lib/newsletter-core/render-commerce-bands.mjs';
 
 import fs from 'fs';
+import { compactTrackingProvenanceAttributes } from '../lib/newsletter-core/tracking-html.mjs';
 import path from 'path';
 import { execSync } from 'child_process';
 import MaizzleFramework from '@maizzle/framework';
@@ -2709,11 +2710,14 @@ async function buildNewsletter() {
       );
     }
     reportMobileFitWarnings(hardenedBuiltHtml.warnings);
-    const { content: finalOutputRaw, preservedFrontmatter } = mergeFrontmatterWithHtml(
-      existingOutputRawBeforeBuild,
+    const deliveryHtml = compactTrackingProvenanceAttributes(
       templateName === 'dense-discovery'
         ? releaseDarkModeTextColors(hardenedBuiltHtml.html, newsletterData.darkModePolicy)
         : hardenedBuiltHtml.html,
+    );
+    const { content: finalOutputRaw, preservedFrontmatter } = mergeFrontmatterWithHtml(
+      existingOutputRawBeforeBuild,
+      deliveryHtml,
     );
     assertDeclaredTemplateImagesRendered({
       newsletterData,

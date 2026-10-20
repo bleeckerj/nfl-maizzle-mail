@@ -62,6 +62,9 @@ test('article ads retain their position through hydration, image checks, trackin
     assert.equal(collectNewsletterImageDeclarations(data)[0].path, 'sections[0].articles[0].body_blocks[0].items[0].image');
     const tracking = normalizeNewsletterLinkTracking(data);
     assert.ok(tracking.records.some(entry => entry.url === inventory[0].link.url));
+    assert.equal(tracking.records.filter(entry => entry.url === inventory[0].link.url).length, 2);
+    assert.ok(tracking.records.every(entry => entry.category === 'sponsor'));
+    assert.equal(tracking.defaultWarnings.length, 0);
     ad.items[0].renderMode = 'snapshot';
     pruneBuildInjectedFields(data);
     assert.equal(ad.items[0].renderMode, undefined);
