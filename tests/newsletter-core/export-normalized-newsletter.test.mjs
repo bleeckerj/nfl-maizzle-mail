@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import os from 'node:os';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
-import { mkdtempSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
+import { copyFileSync, mkdtempSync, mkdirSync, rmSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 import { loadNewsletterSource } from '../../lib/newsletter-core/index.mjs';
@@ -13,6 +13,14 @@ const __dirname = path.dirname(__filename);
 const REPO_ROOT = path.resolve(__dirname, '..', '..');
 const CLI_PATH = path.join(REPO_ROOT, 'scripts', 'export-normalized-newsletter.mjs');
 
+// Export fixtures need the canonical schema, just as the production loader does.
+function installFixtureSchema(repoRoot) {
+  const templateDirectory = path.join(repoRoot, 'templates', 'dense-discovery');
+  mkdirSync(templateDirectory, { recursive: true });
+  copyFileSync(path.join(REPO_ROOT, 'templates', 'dense-discovery', 'newsletter.schema.json'), path.join(templateDirectory, 'newsletter.schema.json'));
+}
+
+
 test('normalized-export CLI matches loadNewsletterSource output', () => {
   const tempRoot = mkdtempSync(path.join(os.tmpdir(), 'newsletter-export-cli-'));
   const repoRoot = path.join(tempRoot, 'nfl-maizzle-mail');
@@ -20,6 +28,7 @@ test('normalized-export CLI matches loadNewsletterSource output', () => {
   const editorialRoot = path.join(tempRoot, 'nfl-editorial');
 
   mkdirSync(repoRoot, { recursive: true });
+  installFixtureSchema(repoRoot);
   mkdirSync(path.join(backofficeRoot, 'public', 'outbox', 'data', '2026'), { recursive: true });
   mkdirSync(path.join(editorialRoot, 'src', 'content'), { recursive: true });
 
@@ -96,6 +105,7 @@ test('normalized-export CLI retains live Compact Band metadata', () => {
   const editorialRoot = path.join(tempRoot, 'nfl-editorial');
 
   mkdirSync(repoRoot, { recursive: true });
+  installFixtureSchema(repoRoot);
   mkdirSync(path.join(backofficeRoot, 'public', 'outbox', 'data', '2026'), { recursive: true });
   mkdirSync(path.join(editorialRoot, 'src', 'content'), { recursive: true });
 

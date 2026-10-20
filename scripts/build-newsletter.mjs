@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { hydrateSpeculativeJobReferences } from '../lib/newsletter-core/hydrate-speculative-jobs.mjs';
+import { assertRenderedSpeculativeJobs } from '../lib/newsletter-core/speculative-job-validation.mjs';
 import { styleDailyHeadlinesArticleLinks } from '../lib/newsletter-core/daily-headlines-article-links.mjs';
 import { resolveNewsletterTheme } from '../lib/newsletter-core/resolve-newsletter-theme.mjs';
 import { renderCommerceBands } from '../lib/newsletter-core/render-commerce-bands.mjs';
@@ -1206,7 +1208,10 @@ async function buildNewsletter() {
       sourceNewsletterData.publicationMode = effectivePublicationMode;
     }
 
-    const newsletterData = prepareNormalizedNewsletterData(sourceNewsletterData, {
+    const jobPreparedData = await hydrateSpeculativeJobReferences(sourceNewsletterData, {
+      repoRoot: REPO_ROOT, outputName, sourcePath: sourcePathForWarnings,
+    });
+    const newsletterData = prepareNormalizedNewsletterData(jobPreparedData, {
       repoRoot: REPO_ROOT,
       templateName,
       args,
@@ -2735,6 +2740,7 @@ async function buildNewsletter() {
       templateName,
       policy: newsletterData.darkModePolicy,
     });
+    assertRenderedSpeculativeJobs(finalOutputRaw, newsletterData);
     fs.writeFileSync(finalOutputPath, finalOutputRaw, 'utf8');
     writeCalendarEventFiles(calendarEvents.events, { fs, path, logger: console });
     const linkTrackingManifestPath = path.join(outputDir, `${outputName}.link-tracking-manifest.json`);

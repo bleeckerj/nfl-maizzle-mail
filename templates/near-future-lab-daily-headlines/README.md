@@ -284,6 +284,8 @@ The lead image and label render first. An optional legacy `statement` or `statem
 `speculative-job`
 : Canonical-job-backed card. Author `items[0].jobRef`; the build hydrates the company identity, role copy, full-width media, and public job URL from `/Users/julian/Code/nfl-editorial/src/content/jobs/<jobRef>.mdx`. The default copy surface uses `24px 0` padding so its left and right edges align with the media. Set `containerStyles.backgroundColor` on the section to author its complete background from Markdown. Use `items[].cardStyles` only for an intentional inner card surface or padding override.
 
+Markdown builds, JSON builds, and normalized exports resolve a bare `jobRef` through the canonical Editorial job and active publication registry. Missing or draft jobs and unavailable published destinations block output. Resolved cards must contain a title and destination; the final HTML and SES test sender reject incomplete job cards. The authoring source remains reference-only.
+
 ```yaml
 - type: speculative-job
   title: Tomorrow's Jobs Today

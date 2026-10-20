@@ -843,6 +843,7 @@
                       "type": "object",
                       "properties": {
                         "jobRef": {
+                          "description": "Canonical Editorial job reference. Markdown and JSON builds resolve role copy and the active registered public destination before rendering. Missing, draft, unpublished, or incomplete jobs block output.",
                           "type": "string",
                           "pattern": "^[^/]+/[^/]+$",
                           "examples": [

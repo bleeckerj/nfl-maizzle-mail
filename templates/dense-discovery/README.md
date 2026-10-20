@@ -154,6 +154,8 @@ Defaults are defined under `sectionStyles["short-take"]` and use Dense Discovery
 
 `speculative-job` uses the standard Dense Discovery section spacing and 21px Ubuntu heading. The authored `containerStyles.backgroundColor` applies to the separate heading and jobs area, preserving the standard 2px white separator between them. The heading has rounded top corners, and the jobs area has rounded bottom corners. The section `border` and `borderRadius` enclose the jobs area only, at the edge of its background. Use `contentPadding` for spacing inside that border. Item `cardStyles` remain available for separate inner cards.
 
+Markdown builds, JSON builds, and normalized exports resolve a bare `jobRef` through the canonical Editorial job and active publication registry. Missing or draft jobs and unavailable published destinations block output. Resolved cards must contain a title and destination; the final HTML and SES test sender reject incomplete job cards. The authoring source remains reference-only.
+
 ```yaml
 sections:
 - type: speculative-job

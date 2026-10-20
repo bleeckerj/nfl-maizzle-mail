@@ -4,7 +4,7 @@ import path from 'node:path';
 import { parseArgs } from 'node:util';
 
 import {
-  loadNewsletterSource,
+  loadNewsletterSourceAsync,
 } from '../lib/newsletter-core/index.mjs';
 
 function printHelp() {
@@ -54,7 +54,7 @@ if (!values['issue-id'] && !values.input) {
 const repoRoot = values['repo-root'] ? path.resolve(values['repo-root']) : process.cwd();
 
 try {
-  const result = loadNewsletterSource({
+  const result = await loadNewsletterSourceAsync({
     repoRoot,
     inputPath: values.input,
     issueId: values['issue-id'],
