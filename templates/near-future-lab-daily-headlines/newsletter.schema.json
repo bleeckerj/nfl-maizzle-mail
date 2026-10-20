@@ -10,6 +10,7 @@
     },
     "title": {
       "type": "string",
+      "default": "Tomorrow's News Today",
       "examples": [
         "Newsletter Title"
       ]
@@ -120,6 +121,368 @@
         }
       },
       "additionalProperties": true
+    },
+    "socialCard": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "examples": [
+            "Newsletter Title"
+          ],
+          "default": "Tomorrow's News Today"
+        },
+        "subtitle": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "examples": [
+            "Example Subtitle"
+          ],
+          "default": ""
+        },
+        "kicker": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "examples": [
+            "Example Kicker"
+          ],
+          "default": ""
+        },
+        "backgroundImage": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "examples": [
+            "https://fpoimg.com/800x600?text=Background%20image&bg_color=e6e6e6&text_color=4FAAAA"
+          ],
+          "default": null
+        },
+        "logoUrl": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "examples": [
+            "https://fpoimg.com/200x50?text=Logo%20url&bg_color=e6e6e6&text_color=4FAAAA"
+          ],
+          "default": "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e98285d8-5856-4005-6fbd-1c322688e700/full?format=webp"
+        },
+        "logoPosition": {
+          "type": "object",
+          "default": {
+            "side": "left",
+            "nudge": {
+              "x": 0,
+              "y": 0,
+              "east": 0,
+              "west": 0,
+              "north": 0,
+              "south": 0
+            }
+          },
+          "description": "Logo anchor and proportional movement within the padded social-card area. Omitted controls keep the upper-left anchor.",
+          "properties": {
+            "side": {
+              "type": "string",
+              "enum": [
+                "left",
+                "right",
+                "top-left"
+              ],
+              "default": "left",
+              "description": "Upper-edge horizontal anchor before nudges are applied."
+            },
+            "nudge": {
+              "type": "object",
+              "default": {
+                "x": 0,
+                "y": 0,
+                "east": 0,
+                "west": 0,
+                "north": 0,
+                "south": 0
+              },
+              "description": "Movement relative to the available padded travel area. Combine x/east/west and y/north/south, then clamp each resulting axis to -1..1.",
+              "properties": {
+                "x": {
+                  "type": "number",
+                  "default": 0,
+                  "description": "Positive moves right; negative moves left."
+                },
+                "y": {
+                  "type": "number",
+                  "default": 0,
+                  "description": "Positive moves up; negative moves down."
+                },
+                "east": {
+                  "type": "number",
+                  "default": 0,
+                  "description": "Adds rightward movement."
+                },
+                "west": {
+                  "type": "number",
+                  "default": 0,
+                  "description": "Adds leftward movement."
+                },
+                "north": {
+                  "type": "number",
+                  "default": 0,
+                  "description": "Adds upward movement."
+                },
+                "south": {
+                  "type": "number",
+                  "default": 0,
+                  "description": "Adds downward movement; 1 reaches the lower padded edge."
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "titleFont": {
+          "type": "string",
+          "default": "nfl-title-untitled"
+        },
+        "titleFontScale": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "default": 0.7,
+          "pattern": "^(normal|[0-9]+(?:\\.[0-9]+)?%?)$"
+        },
+        "subtitleFont": {
+          "type": "string",
+          "default": "nfl-subtitle"
+        },
+        "subtitleFontScale": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "default": 0.9,
+          "pattern": "^(normal|[0-9]+(?:\\.[0-9]+)?%?)$"
+        },
+        "kickerFont": {
+          "type": "string",
+          "default": "nfl-kicker"
+        },
+        "kickerFontScale": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "default": 1,
+          "pattern": "^(normal|[0-9]+(?:\\.[0-9]+)?%?)$"
+        },
+        "footer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": "",
+          "description": "Optional social-card footer text, separate from the email footer. HTML is converted to plain text. Omitted, empty, or null values hide the footer. An explicitly supplied footer takes precedence over footerCopy."
+        },
+        "footerCopy": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": "",
+          "deprecated": true,
+          "description": "Compatibility name for socialCard.footer. Existing sources remain supported; an explicitly supplied footer takes precedence, including empty or null values."
+        },
+        "footerFont": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null,
+          "description": "Font registry key for social-card footer copy. Omitted, empty, or null values inherit the resolved subtitle font."
+        },
+        "footerFontScale": {
+          "type": [
+            "number",
+            "string"
+          ],
+          "default": 1,
+          "description": "Multiplier for the preset footer font size. Applies when footer text is present, authored through footer or footerCopy.",
+          "pattern": "^(normal|[0-9]+(?:\\.[0-9]+)?%?)$"
+        },
+        "backgroundOpacity": {
+          "type": "number",
+          "examples": [
+            0.5
+          ]
+        },
+        "backgroundHueRotate": {
+          "type": "number",
+          "examples": [
+            0
+          ]
+        },
+        "backgroundSaturation": {
+          "type": "number",
+          "examples": [
+            1
+          ]
+        },
+        "overlayStrength": {
+          "type": "number",
+          "examples": [
+            0.5
+          ]
+        },
+        "imageBrightness": {
+          "type": "number",
+          "examples": [
+            1
+          ]
+        },
+        "textColor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "examples": [
+            "#111111"
+          ]
+        },
+        "mutedTextColor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "examples": [
+            "#666666"
+          ]
+        },
+        "kickerColor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "examples": [
+            "#111111"
+          ]
+        },
+        "animation": {
+          "type": "object",
+          "properties": {
+            "mode": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "examples": [
+                "Example Mode"
+              ],
+              "default": ""
+            },
+            "animeModule": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "examples": [
+                "Example Anime module"
+              ],
+              "default": ""
+            },
+            "durationMs": {
+              "type": "integer",
+              "examples": [
+                1000
+              ]
+            },
+            "duration": {
+              "description": "Timeline duration in milliseconds, or source to preserve native timing for source/asset animation.",
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                {
+                  "const": "source"
+                }
+              ],
+              "examples": [
+                2400,
+                "source"
+              ],
+              "default": "source"
+            },
+            "fps": {
+              "type": "integer",
+              "examples": [
+                30
+              ]
+            },
+            "loop": {
+              "type": "boolean",
+              "examples": [
+                false
+              ]
+            },
+            "posterFrame": {
+              "type": "number",
+              "examples": [
+                0
+              ]
+            },
+            "formats": {
+              "type": "array",
+              "description": "Animated social-card export formats supported by the shared exporter.",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "webp",
+                  "gif",
+                  "mp4"
+                ]
+              },
+              "examples": [
+                [
+                  "webp",
+                  "mp4"
+                ]
+              ]
+            },
+            "disableForPresets": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "examples": [
+                  "Example Disable for presets"
+                ]
+              },
+              "default": []
+            }
+          },
+          "additionalProperties": false
+        },
+        "titlePosition": {
+          "type": "string",
+          "enum": [
+            "bottom-left",
+            "top-right"
+          ],
+          "default": "bottom-left"
+        }
+      },
+      "additionalProperties": false
     },
     "sections": {
       "type": "array",

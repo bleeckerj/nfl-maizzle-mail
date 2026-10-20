@@ -28,7 +28,7 @@
     "gallery": "node scripts/template-gallery.mjs serve",
     "gallery:build": "node scripts/template-gallery.mjs build",
     "test:gallery": "node --test tests/template-gallery/*.test.mjs",
-    "test:newsletter-contracts": "node --test --test-concurrency=2 tests/newsletter-core/authoring-contract.test.mjs tests/newsletter-core/template-schema-contract.test.mjs tests/newsletter-core/schema-starter-completeness.test.mjs tests/newsletter-core/starter-placeholder-semantics.test.mjs tests/newsletter-core/inline-cta.test.mjs"
+    "test:newsletter-contracts": "node --test --test-concurrency=2 tests/newsletter-core/authoring-contract.test.mjs tests/newsletter-core/template-schema-contract.test.mjs tests/newsletter-core/schema-starter-completeness.test.mjs tests/newsletter-core/daily-headlines-social-card-starter.test.mjs tests/newsletter-core/starter-placeholder-semantics.test.mjs tests/newsletter-core/inline-cta.test.mjs"
   },
   "keywords": [
     "email",

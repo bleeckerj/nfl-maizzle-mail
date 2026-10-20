@@ -110,6 +110,7 @@ test('schema starters omit generated HTML from editable job-list objects', () =>
     type: 'object',
     properties: {
       template: { const: 'dense-discovery' },
+      socialCard: schema.properties.socialCard,
       jobLists: jobRule.then.properties.lists,
     },
     required: ['template', 'jobLists'],

@@ -15,6 +15,7 @@
  */
 
 import fs from 'fs';
+import { assertSocialCardStarterSchema, requiresCompleteSocialCard } from '../lib/newsletter-core/social-card-starter.mjs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import yaml from 'js-yaml';
@@ -269,7 +270,7 @@ function projectItemSchemaForAuthoring(sectionType, itemSchema = {}, schema = {}
   return projectAuthoringSchema(resolveSchemaRef(schema, itemSchema), schema);
 }
 
-function assertStarterCompleteness(markdown, schema) {
+function assertStarterCompleteness(markdown, schema, nonNullablePaths = new Set()) {
   const frontmatterMatch = markdown.match(/^---\n([\s\S]*?)\n---(?:\n|$)/);
   if (!frontmatterMatch) {
     throw new Error('Generated starter is missing YAML frontmatter');
@@ -279,7 +280,10 @@ function assertStarterCompleteness(markdown, schema) {
   const missing = [];
 
   function walk(value, propSchema, location) {
-    if (value === null || value === undefined) return;
+    if (value === null || value === undefined) {
+      if (nonNullablePaths.has(location)) missing.push(location);
+      return;
+    }
 
     const resolvedSchema = resolveGenerationSchema(propSchema, { schema, value });
     if (Array.isArray(value)) {
@@ -350,6 +354,7 @@ function assertStarterCompleteness(markdown, schema) {
 // ============================================================================
 
 function generateSkeleton(schema, options = {}) {
+  assertSocialCardStarterSchema(schema, options.templateName);
   const {
     templateName,
     minimal,
@@ -819,6 +824,11 @@ async function main() {
 /** Check generated source locally; generating a starter never triggers a build. */
 export function validateStarter(markdown, schema) {
   const payload = yaml.load(markdown.match(/^---\n([\s\S]*?)\n---/)[1]);
+  // Starter completeness is stricter than optional controls on an authored issue.
+  if (requiresCompleteSocialCard(payload.template)) {
+    const authoring = projectAuthoringSchema(schema, schema);
+    assertStarterCompleteness(markdown, { properties: { socialCard: authoring.properties.socialCard } }, new Set(['socialCard']));
+  }
   const ajv = new Ajv({ allErrors: true, strict: false, allowUnionTypes: true });
   addFormats(ajv);
   const validate = ajv.compile(schema);

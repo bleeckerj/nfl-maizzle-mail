@@ -56,7 +56,50 @@ webPublicationStatus: draft
 ogImage: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/1acdd0f3-0d4c-4620-9a9d-256a99c38400/full?format=webp
 ogImageAltText: Delegates gathered around a computer cart beneath a chandelier.
 socialCard:
+  title: Tomorrow's News Today
+  subtitle: ''
+  kicker: ''
   backgroundImage: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/1acdd0f3-0d4c-4620-9a9d-256a99c38400/full?format=webp
+  logoUrl: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/e98285d8-5856-4005-6fbd-1c322688e700/full?format=webp
+  logoPosition:
+    side: left
+    nudge:
+      x: 0
+      'y': 0
+      east: 0
+      west: 0
+      north: 0
+      south: 0
+  titleFont: nfl-title-untitled
+  titleFontScale: 0.7
+  subtitleFont: nfl-subtitle
+  subtitleFontScale: 0.9
+  kickerFont: nfl-kicker
+  kickerFontScale: 1
+  footer: ''
+  footerFont: null
+  footerFontScale: 1
+  backgroundOpacity: 0.5
+  backgroundHueRotate: 0
+  backgroundSaturation: 1
+  overlayStrength: 0.5
+  imageBrightness: 1
+  textColor: '#111111'
+  mutedTextColor: '#666666'
+  kickerColor: '#111111'
+  animation:
+    mode: ''
+    animeModule: ''
+    durationMs: 1000
+    duration: source
+    fps: 30
+    loop: false
+    posterFrame: 0
+    formats:
+      - webp
+      - mp4
+    disableForPresets: []
+  titlePosition: bottom-left
 sections:
 - type: newsletter_masthead
   logoLink:
@@ -440,3 +483,9 @@ Maizzle's `get_template_authoring_guide(name="near-future-lab-daily-headlines")`
 Generic Backoffice item/image tools target `items`; Daily Headlines article groups use `articles`. Do not use an item mutation to place an article photograph or an article-level follow-up. `newsletter_update_section` can replace an entire `articles` array, but performs a shallow section update and rewrites YAML. It has no expected-source-hash guard. Use a narrow source patch to preserve a hand-edited issue, reading the latest file first.
 
 Maizzle's `build_newsletter` renders through its canonical renderer. It does not run Backoffice's edition selection or issue receipt gate. Maizzle's lint tool has a documented mismatch for reference-only job sections. See the [MCP coverage audit](../../docs/mcp-coverage-audit-2026-10-19.md). The Backoffice final build plus matching receipt check remains the release verification workflow.
+
+## Starter requirements
+
+Daily Headlines and Dense Discovery share the complete social-card controls. The canonical schema generator reads the current shared contract on every invocation and rejects a missing card schema or missing nested controls before returning Markdown. This check also runs for an already-connected Backoffice MCP client. Daily Headlines starters include the publication title, canonical logo, font defaults, logo nudges, image adjustments, footer controls, and animation settings; no background image is selected automatically.
+
+Backoffice checks the resulting card again after starter cleanup and before writing. A null or incomplete card returns `saved: false` and preserves an existing draft when overwrite was requested. Authored optional settings on ordinary saves retain their existing behavior. Run `npm run test:newsletter-contracts` here and `npm run test:newsletter-starters` in Backoffice after changing the schema or generator.
