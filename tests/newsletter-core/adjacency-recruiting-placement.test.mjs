@@ -3,23 +3,21 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import matter from 'gray-matter';
 import { JSDOM } from 'jsdom';
-import { build } from '@maizzle/framework';
+import { render as renderMail } from '@maizzle/framework';
 import { prepareNewsletterData } from '../../lib/newsletter-core/prepare-newsletter.mjs';
+import { loadRecruitingFixture } from './helpers/load-recruiting-fixture.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
-const sample=matter(fs.readFileSync(path.resolve(root,'../nfl-editorial/emails/jobs/fdaa/platform-counter-inference-analyst/platform-counter-inference-analyst.email.md'),'utf8')).data;
+const sample=loadRecruitingFixture(root);
 async function render(source){
- const temp=fs.mkdtempSync(path.join(os.tmpdir(),'recruiting-placements-'));
- try {
-  const locals=prepareNewsletterData(source,{repoRoot:root,templateName:source.template,strictSchema:true,logger:{log(){}}});
-  await build('production',{build:{templates:{source:path.join(root,'templates/adjacency-recruiting'),destination:{path:temp}},components:{source:path.join(root,'templates/adjacency-recruiting/components')}},inlineCSS:false,locals});
-  return new JSDOM(fs.readFileSync(path.join(temp,'newsletter.html'),'utf8')).window.document;
- } finally {fs.rmSync(temp,{recursive:true,force:true});}
+ // Rendering without file config prevents unrelated data/newsletter.json from
+ // being merged into this fixture's sections by the full build command.
+ const locals=prepareNewsletterData(source,{repoRoot:root,templateName:source.template,strictSchema:true,logger:{log(){}}});
+ const {html}=await renderMail(fs.readFileSync(path.join(root,'templates/adjacency-recruiting/newsletter.html'),'utf8'),{maizzle:{inlineCSS:false,locals},tailwind:{compiled:''}});
+ return new JSDOM(html).window.document;
 }
 test('every sponsor position renders once at its requested email boundary',async()=>{
  const data=structuredClone(sample);const ad=data.sections.find(s=>s.type==='ad-block');

@@ -310,7 +310,8 @@
             "additionalProperties": false,
             "properties": {
               "type": {
-                "const": "ad-block"
+                "const": "ad-block",
+                "description": "All newsletter templates use the shared preview-matched ad card: 0.5px gray border, 12px inner padding, subtle shadow, and monospaced label. Composed snapshots retain their own chrome."
               },
               "items": {
                 "type": "array",

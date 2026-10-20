@@ -1,9 +1,13 @@
+<script props>
+  // Resolve the original placement without serializing its copy into attributes.
+  ({ section: Number.isInteger(props.adSectionIndex) ? props.sections[props.adSectionIndex] : props.section })
+</script>
 <!-- Placement and gutters belong to recruiting; ad content uses dense-discovery's canonical markup. -->
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" data-section-type="ad-block" data-sponsor-placement="{{ section.placement || 'after-recruiting' }}">
  <tr><td class="recruit-pad" style="padding:24px 40px;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
    <if condition="section.label && section.label.trim()"><tr><td><p style="margin:0;font-size:11px;line-height:17px;letter-spacing:2px;font-weight:bold;color:#536078;">{{ section.label }}</p></td></tr></if>
-   <component src="templates/dense-discovery/components/AdBlock.html" locals='{{ JSON.stringify({section}) }}'></component>
+   <component src="templates/dense-discovery/components/AdBlock.html" locals='{"adSectionIndex":{{ typeof adSectionIndex !== "undefined" ? adSectionIndex : "null" }}}'></component>
   </table>
  </td></tr>
 </table>

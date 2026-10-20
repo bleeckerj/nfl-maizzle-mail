@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import path from 'node:path';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { JSDOM } from 'jsdom';
+import { renderNewsletterComponent } from './helpers/render-newsletter-component.mjs';
 import { decorateAdjacencyProductReviewBodyHtml } from '../../lib/newsletter-core/prepare-adjacency-product-review.mjs';
 import {
   getLatestMobileTypographyLock,
@@ -241,25 +243,20 @@ test('dense-discovery layout keeps mobile body copy at the approved readable sca
   assert.doesNotMatch(mobileBlock, /undefined\s*!important/);
 });
 
-test('dense-discovery ad footer CTA uses the same mobile metadata size as the other corner text', () => {
-  // Ads are rendered by their component, which is referenced by the main template.
-  const template = readFileSync(DENSE_DISCOVERY_AD_COMPONENT, 'utf8');
-  const adBlockStart = template.indexOf('<!-- AD-BLOCK Start -->');
-  const adBlockEnd = template.indexOf('<!-- AD-BLOCK End -->', adBlockStart);
-  const adBlock = template.slice(adBlockStart, adBlockEnd);
-
-  assert.notEqual(adBlockStart, -1);
-  assert.notEqual(adBlockEnd, -1);
-  assert.match(adBlock, /<div class="mob-meta"[^>]*>\{\{ item\.label \}\}<\/div>/);
-  assert.match(adBlock, /<p class="mob-meta"[^>]*>\{\{ item\.sponsor \}\}<\/p>/);
-  assert.match(
-    adBlock,
-    /<p class="mob-meta"[^>]*>[\s\S]*?<a href="\{\{ item\.readMoreLink \|\| item\.link \}\}"[^>]*>\{\{ item\.readMoreText \}\}<\/a>\s*<\/p>/,
-  );
-  assert.doesNotMatch(
-    adBlock,
-    /<p class="mob-readmore"[^>]*>[\s\S]*?\{\{ item\.readMoreText \}\}[\s\S]*?<\/p>/,
-  );
+test('shared ad footer and label retain the preview metadata scale across templates', async () => {
+  const section = { containerStyles: {}, items: [{ label: 'Ad label', sponsor: 'Sponsor',
+    readMoreLink: 'https://example.com', readMoreText: 'Details' }] };
+  const html = await renderNewsletterComponent(DENSE_DISCOVERY_AD_COMPONENT, { section });
+  const document = new JSDOM(html).window.document;
+  const label = document.querySelector('[data-ad-card-label]');
+  const sponsor = document.querySelector('[data-ad-card-sponsor]');
+  const footer = sponsor.closest('table');
+  assert.equal(label.style.fontSize, '11.2px');
+  assert.equal(footer.style.fontSize, '10.4px');
+  assert.equal(footer.querySelector('a').textContent, 'Details');
+  assert.equal(footer.querySelector('a').style.fontSize, '10.4px');
+  assert.equal(label.style.getPropertyPriority('font-size'), 'important');
+  assert.equal(document.querySelectorAll('.mob-meta, .mob-readmore').length, 0);
 });
 
 test('dense-discovery mobile typography ledger is hash-chained and verifies source CSS', () => {
@@ -455,12 +452,11 @@ test('dense-discovery semantic section and item headings opt into the mobile tit
   assert.doesNotMatch(template, /<h1(?![^>]*class=)[^>]*>\{\{ section\.title \}\}<\/h1>/);
 });
 
-test('dense-discovery semantic metadata labels opt into the mobile metadata lock', () => {
+test('dense-discovery editorial metadata labels retain the mobile metadata lock', () => {
   const template = readFileSync(DENSE_DISCOVERY_TEMPLATE, 'utf8');
   const adComponent = readFileSync(DENSE_DISCOVERY_AD_COMPONENT, 'utf8');
 
-  assert.match(adComponent, /<div class="mob-meta" style="\{\{\{ section\.labelStylesInline \|\| '' \}\}\}">\{\{ item\.label \}\}<\/div>/);
-  assert.match(adComponent, /<p class="mob-meta" style="\{\{\{ section\.labelStylesInline \|\| '' \}\}\}/);
+  assert.match(adComponent, /components\/AdCard\.html/);
   assert.match(template, /class="h1byline mob-meta"/);
   assert.match(template, /<p class="share-tech-mono-regular mob-meta"[^>]*>\s*<span style="color: #999">From the<\/span> \{\{ item\.channel \}\}/);
   assert.match(template, /<span class="mob-meta"[^>]*>DEPARTMENT OF \{\{ item\.category \}\}/);
@@ -703,7 +699,7 @@ test('daily-headlines intro statement markup opts into proportional mobile locks
   assert.match(sources, /<p class="intro-statement-copy"[^>]*>\{\{ section\.statement \}\}<\/p>/);
 });
 
-test('daily-headlines ad and footer markup opts into proportional mobile locks', () => {
+test('daily-headlines ad sections and footers retain their locks around the shared card', () => {
   const sources = [
     readFileSync(DAILY_HEADLINES_TEMPLATE, 'utf8'),
     readFileSync(DAILY_HEADLINES_AD_BLOCK, 'utf8'),
@@ -712,7 +708,7 @@ test('daily-headlines ad and footer markup opts into proportional mobile locks',
   ].join('\n');
 
   assert.match(sources, /<h2 class="ad-section-title"[^>]*>\{\{ adSection\.title \}\}<\/h2>/);
-  assert.match(sources, /<h3 class="ad-title"[^>]*>/);
+  assert.match(sources, /components\/AdCard\.html/);
   assert.match(sources, /class="mob-text mob-footer/);
   assert.match(sources, /class="mob-text footer-cta/);
   assert.match(sources, /<p class="footer-cta-eyebrow"[^>]*>\{\{ footer\.footerCta\.eyebrow \}\}<\/p>/);

@@ -440,7 +440,7 @@
               {
                 "type": "object",
                 "title": "Ad Block",
-                "description": "Inventory-backed ad card hydrated from nfl-editorial/src/content/ads.json. Commerce uses Compact Band: original image, live logo and price, optional rating strip, then sponsor. Supply items[0].adId.",
+                "description": "Inventory-backed ad card hydrated from nfl-editorial/src/content/ads.json. All newsletter templates use the shared preview-matched card: 0.5px gray border, 12px inner padding, subtle shadow, and monospaced label. Composed snapshots retain their own chrome. Commerce uses Compact Band: original image, live logo and price, optional rating strip, then sponsor. Supply items[0].adId.",
                 "properties": {
                   "type": {
                     "const": "ad-block"

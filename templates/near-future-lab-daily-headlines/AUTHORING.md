@@ -82,6 +82,12 @@ The article's `more_link` renders after these blocks and before the next article
 
 Intro prose, article ledes, continuation text, and article follow-up links share Georgia at 18px with 26px line height on desktop. At widths up to 599px, they share 17px with 1.3 line height. Normal article follow-up links have an underline and no button border, background, or padding. Headings, kickers, captions, ads, and footer text retain their own styles.
 
+Inventory ads use the shared newsletter ad card, matching `npm run ads:preview`
+in `nfl-editorial`: a thin gray border, 12px inner padding, a subtle shadow,
+and a monospaced label. The complete image remains visible. Standalone ads and
+ads inside `intro_statement.body_blocks` use the same card. Section headings
+and optional top/bottom dividers sit outside the frame.
+
 Keep rendering styles in the template or its supported style fields. Preserve the shared body typography across parallel editorial sections.
 
 ## Preview and release checks

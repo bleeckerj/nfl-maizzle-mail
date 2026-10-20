@@ -162,6 +162,19 @@ Templates should render the hydrated item fields:
 - `item.readMoreLink`
 - `item.readMoreText`
 
+Every ad-capable newsletter uses `templates/dense-discovery/components/AdCard.html`
+for the ad itself. It matches Editorial's `ads:preview` frame: a 0.5px solid
+`#a0a0a0` border, 12px inner padding, a subtle bottom/right shadow, and a
+monospaced label above the complete image. Template section headings, dividers,
+and outer gutters remain outside this card. Section style overrides apply to
+that surrounding section; they do not replace the shared ad frame. Composed
+snapshots render without an extra frame or repeated label and sponsor.
+
+Pass section, optional intro-body-block, and item indexes to the shared card.
+Resolve the original item in its props script; serializing ad copy into JSON
+attributes double-escapes apostrophes and HTML entities. Recruiting templates
+pass section indexes through placement wrappers for the same reason.
+
 If the same ad URL is used by image, title, and CTA anchors, the metadata should remain consistent so the manifest has no conflicts.
 
 ## Short Take Contract

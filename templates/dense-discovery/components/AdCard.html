@@ -1,0 +1,64 @@
+<script props>
+  // Resolve original data by index so JSON attributes never double-escape ad text.
+  (() => {
+    const parent = props.sections && props.sections[Number(props.cardSectionIndex)];
+    const section = parent
+      ? (props.cardBodyBlockIndex == null ? parent : parent.body_blocks[Number(props.cardBodyBlockIndex)])
+      : (props.adSection || props.section);
+    return { item: section.items[Number(props.cardItemIndex || 0)] };
+  })()
+</script>
+<!-- Shared ad presentation matches Editorial's ads:preview card. Keep section headings and dividers in the calling template. -->
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" data-ad-card="{{ item.adId || '' }}" style="width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed;border:{{ item.renderMode === 'snapshot' ? '0' : '0.5px solid #a0a0a0' }};background:{{ item.renderMode === 'snapshot' ? 'transparent' : '#fafafb' }};{{ item.renderMode !== 'snapshot' ? 'box-shadow:1px 1px 0 #2c2c2c;' : '' }}">
+  <tr>
+    <td style="padding:{{ item.renderMode === 'snapshot' ? '0' : '12px' }};">
+      <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width:100%;border-spacing:0;table-layout:fixed;">
+        <if condition="item.label && item.renderMode !== 'snapshot'">
+          <tr><td style="padding:0 0 6.4px;">
+            <div data-ad-card-label style="font-family:InputMono,ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.2px !important;line-height:18.144px !important;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:#333333;margin:0;">{{ item.label }}</div>
+          </td></tr>
+        </if>
+        <if condition="item.image">
+          <tr><td style="padding:0;line-height:0;font-size:0;">
+            <if condition="(typeof item.image === 'object' && item.image.link) || item.link || item.readMoreLink">
+              <a href="{{ (typeof item.image === 'object' && item.image.link) || item.link || item.readMoreLink }}" rel="noopener noreferrer nofollow" target="_blank" style="display:block;text-decoration:none;">
+                <img src="{{ (typeof item.image === 'object' && item.image.src) || item.image }}" alt="{{ (typeof item.image === 'object' && item.image.alt) || item.imageAlt || item.title || 'Advertisement' }}" border="0" width="100%" style="display:block;width:100%;max-width:100%;height:auto;border:0;">
+              </a>
+            </if>
+            <if condition="!((typeof item.image === 'object' && item.image.link) || item.link || item.readMoreLink)">
+              <img src="{{ (typeof item.image === 'object' && item.image.src) || item.image }}" alt="{{ (typeof item.image === 'object' && item.image.alt) || item.imageAlt || item.title || 'Advertisement' }}" border="0" width="100%" style="display:block;width:100%;max-width:100%;height:auto;border:0;">
+            </if>
+            <if condition="typeof item.image === 'object' && item.image.caption">
+              <p style="margin:8px 0 0;font:12px/16px Arial,sans-serif;color:#495263;">{{{ item.image.caption }}}</p>
+            </if>
+          </td></tr>
+        </if>
+        <if condition="item.commerce && item.renderMode !== 'snapshot'">
+          <tr><td style="padding:0;"><div data-commerce-band-id="{{ item.adId }}"></div></td></tr>
+        </if>
+        <if condition="item.title && item.renderMode !== 'snapshot'">
+          <tr><td style="padding:3.2px 0 5.6px;">
+            <h3 data-ad-card-title style="font-family:InputMono,ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.8px !important;line-height:14.08px !important;font-weight:600;color:#202638;margin:0;">
+              <if condition="item.link"><a href="{{ item.link }}" style="font-size:12.8px !important;line-height:14.08px !important;color:inherit;text-decoration:none;">{{ item.title }}</a></if><if condition="!item.link">{{ item.title }}</if>
+            </h3>
+          </td></tr>
+        </if>
+        <if condition="item.description && item.renderMode !== 'snapshot'">
+          <tr><td style="padding:8px 0 0;">
+            <div data-ad-card-copy style="font-family:Geist,ui-sans-serif,Arial,sans-serif;font-size:14px !important;line-height:21px !important;color:#374151;margin:0;">{{{ item.description }}}</div>
+          </td></tr>
+        </if>
+        <if condition="item.renderMode !== 'snapshot' && (item.sponsor || ((item.readMoreLink || item.link) && item.readMoreText))">
+          <tr><td style="padding:9.6px 0 0;">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width:100%;border-spacing:0;font-family:InputMono,ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10.4px !important;line-height:11.44px !important;color:#202638;">
+              <tr>
+                <td valign="bottom" style="padding:0;"><if condition="item.sponsor"><span data-ad-card-sponsor style="font-size:10.4px !important;line-height:11.44px !important;">{{ item.sponsor }}</span></if></td>
+                <td align="right" valign="bottom" style="padding:0;text-align:right;"><if condition="(item.readMoreLink || item.link) && item.readMoreText"><a href="{{ item.readMoreLink || item.link }}" style="font-size:10.4px !important;line-height:11.44px !important;color:inherit;text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;border-bottom:1px dashed #1c1c1c;">{{ item.readMoreText }}</a></if></td>
+              </tr>
+            </table>
+          </td></tr>
+        </if>
+      </table>
+    </td>
+  </tr>
+</table>

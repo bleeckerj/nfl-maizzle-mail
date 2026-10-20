@@ -5,16 +5,17 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import matter from 'gray-matter';
 import Ajv from 'ajv';
 import posthtml from 'posthtml';
 import expressions from 'posthtml-expressions';
 import { JSDOM } from 'jsdom';
 import { prepareNewsletterData } from '../../lib/newsletter-core/prepare-newsletter.mjs';
 import { pruneBuildInjectedFields } from '../../lib/newsletter-core/normalize.mjs';
+import { renderNewsletterComponent } from './helpers/render-newsletter-component.mjs';
+import { loadRecruitingFixture } from './helpers/load-recruiting-fixture.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
-const sample=matter(fs.readFileSync(path.resolve(root,'../nfl-editorial/emails/jobs/fdaa/platform-counter-inference-analyst/platform-counter-inference-analyst.email.md'),'utf8')).data;
+const sample=loadRecruitingFixture(root);
 const schema=JSON.parse(fs.readFileSync(path.join(root,'templates/adjacency-recruiting/newsletter.schema.json'),'utf8'));
 const validate=new Ajv({strict:false}).compile(schema);
 const prepare=data=>prepareNewsletterData(data,{repoRoot:root,templateName:data.template,strictSchema:true,logger:{log(){}}});
@@ -50,13 +51,12 @@ test('share mailto round-trips punctuation and includes only the public requisit
  const off=structuredClone(sample);off.share.enabled=false;off.share.emailHref='mailto:stale@example.com';
  const disabled=prepare(off);assert.equal(disabled.share.emailHref,undefined);assert.equal(render('Share',disabled).trim(),'');
 });
-test('rendered ad remains complete and explainer/share have separate components',()=>{
+test('rendered ad remains complete and explainer/share have separate components',async()=>{
  const data=prepare(sample);
  // The sponsor wrapper delegates its card to dense-discovery; render that shared card for image assertions.
  const sponsorWrapper=fs.readFileSync(path.join(root,'templates/adjacency-recruiting/components/Sponsor.html'),'utf8');
  assert.ok(sponsorWrapper.includes('templates/dense-discovery/components/AdBlock.html'));
- const adTemplate=fs.readFileSync(path.join(root,'templates/dense-discovery/components/AdBlock.html'),'utf8');
- const adHtml=posthtml([expressions({locals:{...data,section:data.sections.find(section=>section.type==='ad-block')},strictMode:false})]).process(adTemplate,{sync:true}).html;
+ const adHtml=await renderNewsletterComponent(path.join(root,'templates/dense-discovery/components/AdBlock.html'),{...data,section:data.sections.find(section=>section.type==='ad-block'),adSectionIndex:data.sections.findIndex(section=>section.type==='ad-block')});
  const adDoc=new JSDOM(adHtml).window.document;
  const img=adDoc.querySelector('img');assert.ok(img);assert.equal(img.style.height,'auto');assert.equal(img.style.width,'100%');
  assert.equal(adDoc.querySelectorAll('a').length,0);

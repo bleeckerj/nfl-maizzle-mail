@@ -5,9 +5,8 @@ import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'nod
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import posthtml from 'posthtml';
-import expressions from 'posthtml-expressions';
 import { JSDOM } from 'jsdom';
+import { renderNewsletterComponent } from './helpers/render-newsletter-component.mjs';
 import { hydrateAdBlockSections } from '../../lib/newsletter-core/hydrate-ad-blocks.mjs';
 import { validateNewsletterDataAgainstSchema } from '../../lib/newsletter-core/schema.mjs';
 
@@ -27,23 +26,20 @@ const ad = {
 writeFileSync(path.join(inventoryDir, 'ads.json'), JSON.stringify([ad]));
 after(() => rmSync(tempRoot, { recursive: true, force: true }));
 
-function hydrateAndRender(item = {}) {
+async function hydrateAndRender(item = {}) {
   const data = { template: 'dense-discovery', sections: [{
     type: 'ad-block', title: "Today's Sponsor", items: [{ adId: ad.id, ...item }],
   }] };
   validateNewsletterDataAgainstSchema(data, 'dense-discovery', { repoRoot: REPO_ROOT, logger: { log() {} } });
   hydrateAdBlockSections(data, fixtureRepo, { logger: { log() {} } });
   const section = { ...data.sections[0], containerStyles: {}, contentStyles: {}, descriptionStyles: {} };
-  const template = readFileSync(path.join(TEMPLATE_ROOT, 'components', 'AdBlock.html'), 'utf8')
-    .replace(/<script props>[\s\S]*?<\/script>/, '');
-  const html = posthtml([expressions({ locals: { section }, strictMode: false })])
-    .process(`<table><tbody>${template}</tbody></table>`, { sync: true }).html;
+  const html = await renderNewsletterComponent(path.join(TEMPLATE_ROOT, 'components', 'AdBlock.html'), { section });
   return { section, document: new JSDOM(html).window.document };
 }
 
-test('authored ad title replaces the label above the image and preserves inventory content', () => {
-  const { section, document } = hydrateAndRender({ title: 'Hello', label: 'Other label' });
-  const heading = document.querySelector('div.mob-meta');
+test('authored ad title replaces the label above the image and preserves inventory content', async () => {
+  const { section, document } = await hydrateAndRender({ title: 'Hello', label: 'Other label' });
+  const heading = document.querySelector('[data-ad-card-label]');
   const image = document.querySelector('img');
   assert.equal(heading?.textContent, 'Hello');
   assert.ok(heading.compareDocumentPosition(image) & 4);
@@ -56,25 +52,25 @@ test('authored ad title replaces the label above the image and preserves invento
   assert.doesNotMatch(document.body.textContent, /Advertisement/);
 });
 
-test('missing or null ad titles retain authored labels and registry defaults', () => {
+test('missing or null ad titles retain authored labels and registry defaults', async () => {
   for (const [item, expected] of [[{}, 'Advertisement'], [{ title: null }, 'Advertisement'],
     [{ label: 'Placement label' }, 'Placement label'], [{ title: null, label: 'Placement label' }, 'Placement label']]) {
-    assert.equal(hydrateAndRender(item).document.querySelector('div.mob-meta')?.textContent, expected);
+    assert.equal((await hydrateAndRender(item)).document.querySelector('[data-ad-card-label]')?.textContent, expected);
   }
 });
 
-test('blank ad titles omit the heading above the image', () => {
+test('blank ad titles omit the heading above the image', async () => {
   for (const title of ['', '   ']) {
-    const { document } = hydrateAndRender({ title });
-    assert.equal(document.querySelector('div.mob-meta'), null);
+    const { document } = await hydrateAndRender({ title });
+    assert.equal(document.querySelector('[data-ad-card-label]'), null);
     assert.ok(document.querySelector('img'));
   }
 });
 
-test('ad titles render as escaped plain text', () => {
+test('ad titles render as escaped plain text', async () => {
   const title = '<strong>Hello & partners</strong>';
-  const { document } = hydrateAndRender({ title });
-  const heading = document.querySelector('div.mob-meta');
+  const { document } = await hydrateAndRender({ title });
+  const heading = document.querySelector('[data-ad-card-label]');
   assert.equal(heading?.textContent, title);
   assert.equal(heading.querySelector('strong'), null);
 });

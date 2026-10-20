@@ -166,53 +166,13 @@
       <table data-content-slot="ad-slot" role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;">
         <tr>
           <td class="bd-pad" style="padding:18px 32px 18px 32px;">
-            <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border:2px solid #000000;background:#ffffff;">
-              <if condition="section.title">
-                <tr>
-                  <td style="padding:16px 18px 12px;border-bottom:2px solid #000000;">
-                    <p class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:13px;line-height:18px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#000000;">{{ section.title }}</p>
-                  </td>
-                </tr>
-              </if>
-              <each loop="item in section.items">
-                <if condition="item.label || item.sponsor">
-                  <tr>
-                    <td style="padding:14px 18px 8px;">
-                      <p class="bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:11px;line-height:15px;letter-spacing:0.1em;text-transform:uppercase;color:#000000;">{{ item.label }}<if condition="item.label && item.sponsor"> / </if>{{ item.sponsor }}</p>
-                    </td>
-                  </tr>
-                </if>
-                <if condition="item.image">
-                  <tr>
-                    <td style="padding:0 18px 18px;line-height:0;font-size:0;">
-                      <if condition="item.link"><a href="{{ item.link }}" style="display:block;text-decoration:none;"><img src="{{ item.image }}" alt="{{ item.imageAlt || item.title || 'Advertisement' }}" width="540" style="display:block;width:100%;max-width:540px;height:auto;border:0;"></a></if>
-                      <if condition="!item.link"><img src="{{ item.image }}" alt="{{ item.imageAlt || item.title || 'Advertisement' }}" width="540" style="display:block;width:100%;max-width:540px;height:auto;border:0;"></if>
-                    </td>
-                  </tr>
-                </if>
-                <if condition="item.title">
-                  <tr>
-                    <td style="padding:14px 18px 0;">
-                      <h2 class="bd-heading bd-mono" style="margin:0;font-family:'Courier New',Courier,monospace;font-size:22px;line-height:26px;font-weight:700;color:#000000;">{{ item.title }}</h2>
-                    </td>
-                  </tr>
-                </if>
-                <if condition="item.description">
-                  <tr>
-                    <td style="padding:10px 18px 14px;">
-                      <div class="bd-item-copy bd-mono" style="font-family:'Courier New',Courier,monospace;font-size:14px;line-height:21px;color:#000000;">{{{ item.description }}}</div>
-                    </td>
-                  </tr>
-                </if>
-                <if condition="item.readMoreLink">
-                  <tr>
-                    <td style="padding:0 18px 16px;">
-                      <a class="bd-button bd-mono" href="{{ item.readMoreLink }}" style="display:inline-block;background:#f2ff3d;color:#000000!important;-webkit-text-fill-color:#000000;font-family:'Courier New',Courier,monospace;font-size:12px;line-height:15px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;text-decoration:none;padding:11px 14px;border:2px solid #000000;">{{ item.readMoreText || 'Learn more' }}</a>
-                    </td>
-                  </tr>
-                </if>
-              </each>
-            </table>
+            <if condition="section.title">
+              <p class="bd-mono" style="margin:0 0 12px;font-family:'Courier New',Courier,monospace;font-size:13px;line-height:18px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#000000;">{{ section.title }}</p>
+            </if>
+            <if condition="section.description"><div style="margin:0 0 12px;">{{{ section.description }}}</div></if>
+            <each loop="item in section.items">
+              <component src="templates/dense-discovery/components/AdCard.html" locals='{"cardSectionIndex":{{ sectionIndex }},"cardItemIndex":{{ loop.index }}}'></component>
+            </each>
           </td>
         </tr>
       </table>
