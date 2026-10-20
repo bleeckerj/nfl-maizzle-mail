@@ -6,9 +6,10 @@
   })()
 </script>
 <if condition="bodyArticle.body_blocks && bodyArticle.body_blocks.length">
-  <each loop="bodyBlock in bodyArticle.body_blocks">
+  <each loop="bodyBlock, bodyBlockIndex in bodyArticle.body_blocks">
     <tr><td style="padding-top:16px;{{{ bodyArticle.articleContainerStylesInline || '' }}};{{{ bodyArticle.articleContentStylesInline || '' }}}">
       <if condition="bodyBlock.type === 'text'"><div class="article-body-copy" style="color:#333;margin:0;{{{ bodyArticle.articleLedeStylesInline || '' }}}">{{{ bodyBlock.html }}}</div></if>
+      <if condition="bodyBlock.type === 'ad-block'"><component src="templates/near-future-lab-daily-headlines/components/AdBlock.html" locals='{"adSectionIndex": "{{bodySectionIndex}}", "adArticleIndex": "{{bodyArticleIndex}}", "adBodyBlockIndex": "{{bodyBlockIndex}}"}'></component></if>
       <if condition="bodyBlock.type === 'image'">
         <img src="{{ bodyBlock.src }}" alt="{{ bodyBlock.alt }}" width="600" class="article-image article-body-image" style="display:block;width:100%;max-width:600px;height:auto">
         <if condition="bodyBlock.caption"><p class="article-body-caption" style="color:#555;font:14px/20px georgia,serif;margin:8px 0 0">{{ bodyBlock.caption }}</p></if>

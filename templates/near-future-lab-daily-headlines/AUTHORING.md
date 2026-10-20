@@ -76,7 +76,23 @@ For photographs between paragraphs, keep the lead image in `image_src` and add o
         <p>Paragraph after the photograph.</p>
 ```
 
-The article's `more_link` renders after these blocks and before the next article. Introductory essays use `intro_statement.body_blocks`, which also supports inventory-backed ad blocks. See the component reference for that separate contract.
+Article and intro `body_blocks` both accept ordinary inventory-backed ads between text or images. Keep the ad in its own block and resume the article with a text block:
+
+```yaml
+    body_blocks:
+    - type: ad-block
+      show_top_rule: false
+      show_bottom_rule: false
+      items:
+      - adId: interstitial-qwentin-kimmel-watch-tonight
+        adRenderMode: snapshot
+        adSnapshotPreset: native
+    - type: text
+      html: |-
+        <p>The article continues after the advertisement.</p>
+```
+
+Indent `body_blocks` alongside the article's `lede`, `kicker`, and `headline`. Its text blocks belong inside the article; `text` is not a top-level section type. The article's `more_link` renders after its complete body and before the next article. Ads use the same hydration, snapshot, image validation, and tracking path as standalone ad blocks.
 
 ## Typography
 

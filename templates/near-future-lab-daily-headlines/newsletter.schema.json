@@ -1099,7 +1099,7 @@
                         "body_blocks": {
                           "type": "array",
                           "minItems": 1,
-                          "description": "Ordered text and image blocks rendered after the optional lede. Text blocks share the intro and lede body typography, including the mobile font lock. Keep the cover in image_src.",
+                          "description": "Ordered text, image, and inventory-backed ad blocks rendered after the optional lede. Text blocks share the intro and lede body typography, including the mobile font lock. Keep the cover in image_src.",
                           "items": {
                             "oneOf": [
                               {
@@ -1159,6 +1159,9 @@
                                   "alt"
                                 ],
                                 "additionalProperties": false
+                              },
+                              {
+                                "$ref": "#/properties/sections/items/allOf/1/oneOf/3"
                               }
                             ]
                           },

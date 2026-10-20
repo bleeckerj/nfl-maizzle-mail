@@ -1,7 +1,9 @@
 <script props>
   // Resolve original data by index so JSON attributes never double-escape ad text.
   (() => {
-    const parent = props.sections && props.sections[Number(props.cardSectionIndex)];
+    const outerSection = props.sections && props.sections[Number(props.cardSectionIndex)];
+    const parent = outerSection && props.cardArticleIndex != null
+      ? outerSection.articles[Number(props.cardArticleIndex)] : outerSection;
     const section = parent
       ? (props.cardBodyBlockIndex == null ? parent : parent.body_blocks[Number(props.cardBodyBlockIndex)])
       : (props.adSection || props.section);
