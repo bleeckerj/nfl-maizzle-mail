@@ -1,5 +1,9 @@
 # Brain Dead Content Template
 
+**Start with the [Brain Dead template author reference](../../docs/brain-dead-template-author-reference.md).** It covers every section type, all content-item fields, complete examples, images, links, styling limits, builds, and troubleshooting.
+
+For the common image/link case, see [Add an image and link to a single-column item](../../docs/brain-dead-template-author-reference.md#add-an-image-and-link-to-a-single-column-item), or copy the complete [single-column image and link source](examples/single-column-image-and-link.md). A single-column item already supports `image`, `imageAlt`, and `link`; the image, title, and button share that link.
+
 This template is prepared for a direct sales email with a Brain Dead-style black, white, mono, and acid-highlight layout. It builds from the canonical `templates/brain-dead-template` directory and validates with `newsletter.schema.json`.
 
 ## Author-Owned Fields

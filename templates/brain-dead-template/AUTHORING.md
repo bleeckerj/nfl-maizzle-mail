@@ -1,4 +1,31 @@
-# brain-dead-template campaign authoring
+# Brain Dead template authoring
+
+The complete operator guide is [Brain Dead template author reference](../../docs/brain-dead-template-author-reference.md). It includes every supported section, field tables, copyable recipes, styling limits, builds, and troubleshooting.
+
+## Single-column image and link
+
+Put this section in the source's existing `sections:` list. Replace the example URLs with a hosted image and the intended destination. The image, title, and CTA button all use the item's `link`.
+
+```yaml
+- type: single-column
+  label: Featured
+  items:
+    - kicker: From the library
+      title: Item title
+      image: https://example.com/hosted/full-image.jpg
+      imageAlt: Describe the complete image
+      body: |
+        <p>Your item description.</p>
+      ctaText: Read more
+      link:
+        href: https://example.com/item
+        label: campaign | featured item
+        category: editorial
+```
+
+`image` is a URL string, not an `{src, alt}` object. Omit `link` for an unlinked image and title with no button. `link.label` is tracking metadata; `ctaText` supplies the visible button words. Generic items do not support a separate `imageLink` or a hide-button field. See the guide's [single-column recipes](../../docs/brain-dead-template-author-reference.md#single-column-recipes) for variations, and the [complete editable example](examples/single-column-image-and-link.md) for a source file you can copy.
+
+## Campaign authoring
 
 Use `campaign-starter.md` for a source-only campaign email. The required
 frontmatter is `publicationMode: campaign`, an explicit `template`, `title`,
