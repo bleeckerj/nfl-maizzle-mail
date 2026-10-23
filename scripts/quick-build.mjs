@@ -366,7 +366,8 @@ if (command === 'list') {
     const calendarPublicRoot = resolveCalendarPublicRoot(outputFile);
     const calendarArg = calendarPublicRoot ? `--calendar-public-root=${calendarPublicRoot}` : '';
     const previewArg = previewMode ? '--preview' : '';
-    const execCmd = `node ${buildNewsletterPath} ${inputFile} ${outputName} ${templateArg} ${calendarArg} ${previewArg}`.trim();
+    // Automated workflow builds leave browser review to the calling application.
+    const execCmd = `node ${buildNewsletterPath} ${inputFile} ${outputName} ${templateArg} ${calendarArg} ${previewArg} --no-open`.trim();
     console.log(`\nExecuting: ${execCmd}\n`);
     execSync(execCmd, {
       stdio: 'inherit',
