@@ -6412,7 +6412,8 @@
                               "additionalProperties": false
                             }
                           ]
-                        }
+                        },
+                        "description": "Images render at their natural aspect ratio with square corners, preserving the full source image."
                       },
                       "link": {
                         "$ref": "#/definitions/authoredTrackedLink"
@@ -6467,7 +6468,8 @@
                             },
                             "additionalProperties": false
                           }
-                        ]
+                        ],
+                        "description": "Images render at their natural aspect ratio with square corners, preserving the full source image."
                       },
                       "subtitle": {
                         "type": [
@@ -8919,7 +8921,8 @@
                               "additionalProperties": false
                             }
                           ]
-                        }
+                        },
+                        "description": "Images render at their natural aspect ratio with square corners, preserving the full source image."
                       },
                       "link": {
                         "$ref": "#/definitions/authoredTrackedLink"
@@ -8974,7 +8977,8 @@
                             },
                             "additionalProperties": false
                           }
-                        ]
+                        ],
+                        "description": "Images render at their natural aspect ratio with square corners, preserving the full source image."
                       },
                       "subtitle": {
                         "type": [
