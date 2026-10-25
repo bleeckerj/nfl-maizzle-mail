@@ -81,3 +81,25 @@ test('the JSON bridge exposes the same CTA fields and examples as the maintained
   assert.ok(!Object.hasOwn(example, 'headingStylesInline'));
   assert.equal(example.space_top, section.authoringSchema.properties.space_top.default);
 });
+
+// Starter visibility is an authoring role, separate from backwards-compatible validation.
+test('Dense Discovery omits runtime and legacy root containers without rejecting existing sources', () => {
+  const schema = JSON.parse(fs.readFileSync('templates/dense-discovery/newsletter.schema.json'));
+  const contract = resolveTemplateContract(schema);
+  const result = JSON.parse(execFileSync(process.execPath, ['scripts/newsletter-contract.mjs', '--template', 'dense-discovery'], { encoding: 'utf8' }));
+  for (const name of ['page', 'theme', 'sectionStyles', 'meta']) {
+    assert.ok(Object.hasOwn(contract.validationSchema.properties, name), `${name} remains accepted`);
+    assert.equal(Object.hasOwn(contract.authoringSchema.properties, name), false, `${name} is not an author control`);
+    assert.equal(Object.hasOwn(result.examples, name), false, `${name} is absent from bridge examples`);
+  }
+  const existing = { template: 'dense-discovery', title: 'Existing issue', sections: [],
+    page: {}, theme: {}, sectionStyles: {}, meta: { legacy: 'retained' } };
+  const before = structuredClone(existing);
+  validateNewsletterDataAgainstSchema(existing, 'dense-discovery', { repoRoot: process.cwd(), logger: { log() {} } });
+  assert.deepEqual(existing, before, 'validation does not rewrite legacy source');
+  assert.deepEqual(result.examples.themeColors, {}, 'overrides do not duplicate the selected palette');
+  assert.equal(result.examples.colorTheme, 'professional');
+  assert.equal(result.examples.sectionStylesFile, 'templates/dense-discovery/section-styles.json');
+  assert.equal(result.examples.darkModePolicy.flatten, true);
+  assert.equal(result.examples.socialCard.animation.mode, 'none');
+});

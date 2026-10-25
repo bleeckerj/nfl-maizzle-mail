@@ -2,20 +2,16 @@
 template: dense-discovery
 title: Newsletter Title
 darkModePolicy: {"flatten":false}
-page: {}
-theme: {}
 preheader: Short preview text that appears in email clients
 ogImage: 'https://fpoimg.com/800x600?text=Og%20image&bg_color=e6e6e6&text_color=4FAAAA'
 colorTheme: professional
 sectionStylesFile: templates/dense-discovery/section-styles.json
-sectionStyles: {}
-meta: {}
 newsletterFormat: discovery
 ogImageAltText: Open graph preview image for this newsletter
 pubDate: '2026-01-01'
 publicationMode: public-issue
 webPublicationStatus: draft
-socialCard: {"title":"Newsletter Title","subtitle":"Example Subtitle","kicker":"Example Kicker","backgroundImage":"https://fpoimg.com/800x600?text=Background%20image&bg_color=e6e6e6&text_color=4FAAAA","logoUrl":"https://fpoimg.com/200x50?text=Logo%20url&bg_color=e6e6e6&text_color=4FAAAA","titleFont":"nfl-title-untitled","titleFontScale":0.7,"subtitleFont":"nfl-subtitle","subtitleFontScale":0.9,"kickerFont":"nfl-kicker","kickerFontScale":1,"footerFontScale":1,"backgroundOpacity":0.5,"backgroundHueRotate":0,"backgroundSaturation":1,"overlayStrength":0.5,"imageBrightness":1,"textColor":"#111111","mutedTextColor":"#666666","kickerColor":"#111111","animation":{"mode":"Example Mode","animeModule":"Example Anime module","durationMs":1000,"duration":60,"fps":30,"loop":false,"posterFrame":0,"disableForPresets":["Example Disable for presets"]}}
+socialCard: {"title":"Newsletter Title","subtitle":"Example Subtitle","kicker":"Example Kicker","backgroundImage":"https://fpoimg.com/800x600?text=Background%20image&bg_color=e6e6e6&text_color=4FAAAA","logoUrl":"https://fpoimg.com/200x50?text=Logo%20url&bg_color=e6e6e6&text_color=4FAAAA","titleFont":"nfl-title-untitled","titleFontScale":0.7,"subtitleFont":"nfl-subtitle","subtitleFontScale":0.9,"kickerFont":"nfl-kicker","kickerFontScale":1,"footerFontScale":1,"backgroundOpacity":0.5,"backgroundHueRotate":0,"backgroundSaturation":1,"overlayStrength":0.5,"imageBrightness":1,"textColor":"#111111","mutedTextColor":"#666666","kickerColor":"#111111","animation":{"mode":"none","animeModule":"Example Anime module","durationMs":1000,"duration":60,"fps":30,"loop":false,"posterFrame":0,"disableForPresets":["Example Disable for presets"]}}
 
 header:
   featuredImage: 'https://fpoimg.com/800x600?text=Featured%20image&bg_color=e6e6e6&text_color=4FAAAA'

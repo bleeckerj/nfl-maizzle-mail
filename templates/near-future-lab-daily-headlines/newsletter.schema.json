@@ -387,9 +387,10 @@
                 "null"
               ],
               "examples": [
-                "Example Mode"
+                "none"
               ],
-              "default": ""
+              "default": "none",
+              "description": "Static cards by default. Select a supported animation mode explicitly to animate exports."
             },
             "animeModule": {
               "type": [

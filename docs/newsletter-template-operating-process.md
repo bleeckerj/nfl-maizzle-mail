@@ -76,6 +76,10 @@ Where an existing field is named `url`, the object still carries `href`, `label`
 
 The Backoffice MCP starter tools generate from the selected template's current schema on every invocation. `newsletter_start`, `create_newsletter_from_skeleton`, and `campaign_email_start` share the resolver and `scripts/generate-skeleton-from-schema.mjs`; static starter Markdown and legacy skeleton paths are not starter sources. The generator must emit YAML that validates against the selected schema, including discriminator-driven sections, local `$ref` branches, nullable objects, and nested arrays. Authoring roles and explicit examples live in that schema; Backoffice consumes the shared JSON contract. Ordinary saves preserve omitted optional controls. See [schema validation](schema-validation/README.md).
 
+Dense Discovery starters omit `page`, computed `theme`, computed `sectionStyles`, and legacy `meta` through their schema authoring roles. The validation schema still accepts these fields in existing issues. `sectionStylesFile` remains the editable style-file choice, and `themeColors` remains an optional override map rather than a copy of the selected palette.
+
+New cards show `animation.mode: none` explicitly; starter cleanup retains this schema default.
+
 ## View Online Link
 
 Managed-artifact View Online and sharing destinations come from the active publication registry. Preserve its exact published URL, including publication suffixes, and validate it live. Missing or inactive records, HTTP 404/410, and network failures block a public email build. Never infer a public destination from an issue ID, content path, slug, or route pattern.

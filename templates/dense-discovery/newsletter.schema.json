@@ -1101,6 +1101,8 @@
       "additionalProperties": false
     },
     "page": {
+      "readOnly": true,
+      "description": "Maizzle rendering context. Accepted for existing sources; omitted from new authoring starters.",
       "type": "object",
       "additionalProperties": {
         "type": [
@@ -1115,6 +1117,8 @@
       ]
     },
     "theme": {
+      "readOnly": true,
+      "description": "Computed from colorTheme and themeColors by the builder. Use those author controls instead.",
       "type": "object",
       "additionalProperties": {
         "type": [
@@ -9545,6 +9549,8 @@
       ]
     },
     "sectionStyles": {
+      "readOnly": true,
+      "description": "Loaded from sectionStylesFile and replaced by the builder. Use section-local style controls for issue adjustments.",
       "type": "object",
       "additionalProperties": {
         "type": [
@@ -9559,6 +9565,8 @@
       ]
     },
     "meta": {
+      "deprecated": true,
+      "description": "Legacy freeform metadata with no Dense Discovery email rendering behavior. Accepted for existing sources; omitted from new starters.",
       "type": "object",
       "additionalProperties": {
         "type": [
@@ -9855,8 +9863,10 @@
                 "null"
               ],
               "examples": [
-                "Example Mode"
-              ]
+                "none"
+              ],
+              "default": "none",
+              "description": "Static cards by default. Select a supported animation mode explicitly to animate exports."
             },
             "animeModule": {
               "type": [
