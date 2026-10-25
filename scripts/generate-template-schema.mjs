@@ -3,6 +3,7 @@
 import fs from 'fs';
 import { itemContainerStyles } from './template-schema-contracts/item-container-styles.mjs';
 import path from 'path';
+import { singleColumnBorderRadius } from './template-schema-contracts/single-column-border-radius.mjs';
 import { shortTakeSourceSectionSchema } from './template-schema-contracts/short-take.mjs';
 import { socialCardFooterProperties } from './template-schema-contracts/social-card-footer.mjs';
 import { socialCardLogoPositionSchema } from './template-schema-contracts/social-card-logo-position.mjs';
@@ -783,6 +784,9 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
 
   for (const type of ['single-column', 'indie-mag-single-column']) {
     const singleColumnVariant = findTypedSectionVariant(schema, type);
+    if (singleColumnVariant?.properties?.containerStyles?.properties) {
+      singleColumnVariant.properties.containerStyles.properties.borderRadius = structuredClone(singleColumnBorderRadius);
+    }
     const singleColumnItemSchema = singleColumnVariant?.properties?.items?.items;
     if (singleColumnItemSchema?.properties) {
       singleColumnItemSchema.properties.containerStyles = structuredClone(itemContainerStyles);

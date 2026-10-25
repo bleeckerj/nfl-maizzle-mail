@@ -287,3 +287,5 @@ sections:
       category: newsletter
       intent: subscribe
 ```
+
+For `single-column`, `containerStyles.backgroundColor` sets the section heading background and the default item background. An item's background override affects that item only. `containerStyles.borderRadius` controls the heading corners and the item group's outer corners: top corners on the first item and bottom corners on the last item. Its default is `10px`; use `0px` for square corners. Images retain their complete source proportions.

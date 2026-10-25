@@ -6430,6 +6430,16 @@
                     "null"
                   ],
                   "properties": {
+                    "borderRadius": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Corner radius for the section heading and the outer corners of the item group: first-item top corners and last-item bottom corners. Defaults to 10px.",
+                      "examples": [
+                        "10px"
+                      ]
+                    },
                     "backgroundColor": {
                       "description": "Use for solid colors and CSS gradients such as linear-gradient(...).",
                       "type": [
@@ -8969,6 +8979,16 @@
                     "null"
                   ],
                   "properties": {
+                    "borderRadius": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "description": "Corner radius for the section heading and the outer corners of the item group: first-item top corners and last-item bottom corners. Defaults to 10px.",
+                      "examples": [
+                        "10px"
+                      ]
+                    },
                     "backgroundColor": {
                       "description": "Use for solid colors and CSS gradients such as linear-gradient(...).",
                       "type": [
