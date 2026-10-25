@@ -1947,7 +1947,10 @@ async function buildNewsletter() {
                   { withoutImportant: mobileLockTypographyProperties },
                 );
                 item.speculativeJobCtaStylesInline = section.speculativeJobCtaStylesInline;
-                if (templateName === 'dense-discovery') prepareSpeculativeJobBackground(item);
+                if (templateName === 'dense-discovery') {
+                  const backgroundDetails = prepareSpeculativeJobBackground(item);
+                  if (backgroundDetails) console.log(backgroundDetails);
+                }
               });
             }
           }

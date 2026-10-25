@@ -1845,7 +1845,7 @@
                           "object",
                           "null"
                         ],
-                        "description": "Optional image behind the logo and HTML job text in Dense Discovery. Hydrated from newsletterCard.backgroundImage on the canonical job; newsletter sources author jobRef. Preserves proportions and repeats vertically without a text backing panel.",
+                        "description": "Optional image behind the logo and HTML job text in Dense Discovery. Hydrated from newsletterCard.backgroundImage on the canonical job; newsletter sources author jobRef. Preserves proportions, displays once by default, and honors the repeat control without a text backing panel.",
                         "required": [
                           "src",
                           "altText",
@@ -1878,6 +1878,13 @@
                             "exclusiveMinimum": 0,
                             "description": "Positive original image height in pixels, used with width to preserve proportions.",
                             "examples": [882]
+                          },
+                          "repeat": {
+                            "type": "string",
+                            "enum": ["no-repeat", "repeat", "repeat-x", "repeat-y"],
+                            "default": "no-repeat",
+                            "examples": ["no-repeat"],
+                            "description": "CSS background-repeat. no-repeat displays once; repeat tiles both axes; repeat-x tiles horizontally; repeat-y tiles vertically."
                           }
                         },
                         "additionalProperties": false

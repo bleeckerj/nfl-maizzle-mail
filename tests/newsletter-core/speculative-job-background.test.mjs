@@ -10,8 +10,20 @@ test('texture keeps its proportions with text directly over the image', () => {
   prepareSpeculativeJobBackground(item);
   assert.match(item.speculativeJobBackgroundStyleInline, /height:640px/);
   assert.match(item.speculativeJobBackgroundStyleInline, /background-size:100% auto/);
-  assert.match(item.speculativeJobBackgroundStyleInline, /background-repeat:repeat-y/);
+  assert.match(item.speculativeJobBackgroundStyleInline, /background-repeat:no-repeat/);
   assert.equal(item.speculativeJobBackgroundTextStyleInline, 'padding:16px;');
+});
+
+test('landscape dimensions and explicit repetition are visible in generated styles and diagnostics', () => {
+  for (const repeat of ['no-repeat', 'repeat', 'repeat-x', 'repeat-y']) {
+    const item = { jobRef:'muse/example', backgroundImage: { src:'https://images.example.com/ocean.png', width:1094, height:656, repeat } };
+    const diagnostic = prepareSpeculativeJobBackground(item);
+    assert.match(item.speculativeJobBackgroundStyleInline, /height:383px/);
+    assert.ok(item.speculativeJobBackgroundStyleInline.includes(`background-repeat:${repeat};`));
+    assert.ok(diagnostic.includes(`repeat=${repeat}`));
+    assert.ok(diagnostic.includes('original=1094x656'));
+  }
+  assert.throws(() => prepareSpeculativeJobBackground({ backgroundImage: { src:'https://images.example.com/ocean.png', width:1094, height:656, repeat:'repeat; color:red' } }), /repeat must be/);
 });
 
 test('backgrounds reject executable URLs and unusable dimensions', () => {

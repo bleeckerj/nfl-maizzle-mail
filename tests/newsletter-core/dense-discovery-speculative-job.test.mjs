@@ -67,6 +67,7 @@ test('dense-discovery renders hydrated speculative-job sections', () => {
     '          altText: Pale blue texture',
     '          width: 880',
     '          height: 882',
+    '          repeat: repeat-x',
     '        cardStyles:',
     "          backgroundColor: '#dff7f3'",
     "          padding: '24px 28px'",
@@ -99,7 +100,7 @@ test('dense-discovery renders hydrated speculative-job sections', () => {
     const card = jobsSurface.querySelector('table[style*="background-image"]');
     assert.ok(card, 'expected the job texture in the final rendered card');
     assert.match(card.getAttribute('style') || '', /background-image:url\(['"]?https:\/\/images.example.com\/texture.jpg/);
-    assert.match(card.getAttribute('style') || '', /background-repeat:repeat-y/);
+    assert.match(card.getAttribute('style') || '', /background-repeat:repeat-x/);
     const copyLink = card.querySelector('a');
     assert.ok(copyLink, 'expected job copy over the image');
     assert.doesNotMatch(copyLink.getAttribute('style') || '', /background(?:-color)?:/);

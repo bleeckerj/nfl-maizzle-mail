@@ -13,6 +13,7 @@ newsletterCard:
     altText: Pale blue grain with a faint rainbow.
     width: 880
     height: 882
+    repeat: no-repeat
 ```
 
 | Field | Requirement |
@@ -20,6 +21,7 @@ newsletterCard:
 | `src` | Hosted HTTP(S) image URL. Use Photarium; do not store the image in a content repository. |
 | `altText` | Nonempty image description. Retained as metadata; CSS backgrounds have no HTML `alt` attribute. Keep essential information in the job's HTML text. |
 | `width`, `height` | Positive original image dimensions in pixels, even when the delivery URL requests a smaller variant. |
+| `repeat` | Optional CSS `background-repeat`: `no-repeat` (default), `repeat` (both axes), `repeat-x` (horizontal), or `repeat-y` (vertical). Set it explicitly to make the intended behavior visible in the source. |
 
 Reference that job in the newsletter:
 
@@ -34,7 +36,9 @@ The background is the job's default in every Dense Discovery newsletter that ref
 
 ## Rendering and schema
 
-The renderer preserves image proportions and tiles the texture vertically. The company logo and job text sit directly over the image, with no white panel covering it. Choose an image that keeps the text readable. The card reserves enough height for a complete texture tile at desktop width. Email clients without CSS background-image support retain their solid card background. No image files are downloaded into a content repository.
+The renderer uses `background-size: 100% auto` and `background-position: center top`, preserving the complete image's proportions. It displays the image once unless `repeat` explicitly enables tiling. The company logo and job text sit directly over the image, with no white panel covering it. Choose an image that keeps the text readable. The card's desktop minimum height is `ceil(638 × height / width)` pixels. Copy can make the card taller, especially on phones; with `no-repeat`, space beyond the single image uses the card's solid fallback. Email clients without CSS background-image support retain that fallback. No image files are downloaded into a content repository.
+
+Each rendered job background prints a `Job-card background` diagnostic line with the resolved URL, original dimensions, repeat mode, sizing, position, and desktop minimum height. After changing the job metadata, rebuild the newsletter and refresh any separately exported review copy; a static HTML review does not automatically follow source edits.
 
 The inline background styles are build-only values. They are pruned before source validation and are never saved back into authored newsletter JSON.
 
