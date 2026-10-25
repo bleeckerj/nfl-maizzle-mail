@@ -221,6 +221,29 @@ sections:
 - `label`, `category`, and `intent` preserve link metadata for analytics.
 - `description` renders after the link as short context.
 
+## `single-column` item backgrounds
+
+Each item may set `containerStyles.backgroundColor` and `containerStyles.padding`. Each omitted, null, or empty value inherits the corresponding section setting; the existing theme background and 20px padding remain the final fallbacks. The section heading retains its section background. The legacy `indie-mag-single-column` alias supports the same controls. Other item style keys are rejected.
+
+```yaml
+- type: single-column
+  title: Upcoming events
+  containerStyles:
+    backgroundColor: "#ffffff"
+  items:
+    - title: First event
+      containerStyles:
+        backgroundColor: "#e8f4ff"
+    - title: Second event
+      containerStyles:
+        backgroundColor: "#ede8ff"
+        padding: "24px"
+    - title: Third event
+      description: This item inherits the section background and padding.
+```
+
+Dark-mode flattening may replace authored backgrounds with the shared dark surface, following the email's existing dark-mode policy.
+
 ## `single-column` image precedence
 
 `single-column` supports either:

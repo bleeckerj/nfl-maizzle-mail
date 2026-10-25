@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 import fs from 'fs';
+import { singleColumnContainerStyles } from './template-schema-contracts/single-column-container-styles.mjs';
 import path from 'path';
 import { shortTakeSourceSectionSchema } from './template-schema-contracts/short-take.mjs';
 import { socialCardFooterProperties } from './template-schema-contracts/social-card-footer.mjs';
@@ -780,6 +781,9 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
   for (const type of ['single-column', 'indie-mag-single-column']) {
     const singleColumnVariant = findTypedSectionVariant(schema, type);
     const singleColumnItemSchema = singleColumnVariant?.properties?.items?.items;
+    if (singleColumnItemSchema?.properties) {
+      singleColumnItemSchema.properties.containerStyles = structuredClone(singleColumnContainerStyles);
+    }
     if (singleColumnItemSchema?.properties?.image && singleColumnItemSchema?.properties?.images) {
       const singleColumnImageSchema = {
         oneOf: [
