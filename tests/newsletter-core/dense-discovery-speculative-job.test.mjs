@@ -59,6 +59,11 @@ test('dense-discovery renders hydrated speculative-job sections', () => {
     '        companyLogo:',
     '          url: https://images.example.com/openai-logo.png',
     '          altText: OpenAI logo',
+    '        backgroundImage:',
+    '          src: https://images.example.com/texture.jpg',
+    '          altText: Pale blue texture',
+    '          width: 880',
+    '          height: 882',
     '        cardStyles:',
     "          backgroundColor: '#dff7f3'",
     "          padding: '24px 28px'",
@@ -88,6 +93,10 @@ test('dense-discovery renders hydrated speculative-job sections', () => {
     assert.match(heading.getAttribute('style') || '', /font-size:21px/);
     assert.match(heading.getAttribute('style') || '', /font-family:'?Ubuntu'?,sans-serif/);
     assert.ok(jobsSurface, 'expected a speculative-job jobs surface');
+    const card = jobsSurface.querySelector('table[style*="background-image"]');
+    assert.ok(card, 'expected the job texture in the final rendered card');
+    assert.match(card.getAttribute('style') || '', /background-image:url\(['"]?https:\/\/images.example.com\/texture.jpg/);
+    assert.match(card.getAttribute('style') || '', /background-repeat:repeat-y/);
     assert.ok(!jobsSurface.contains(headingCell), 'the heading must remain separate from the bordered jobs area');
     assert.match(headingCell.getAttribute('style') || '', /border-radius:8px 8px 0 0/);
     assert.match(jobsSurface.getAttribute('style') || '', /border:1px solid #111111/);

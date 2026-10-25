@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { hydrateSpeculativeJobReferences } from '../lib/newsletter-core/hydrate-speculative-jobs.mjs';
 import { assertRenderedSpeculativeJobs } from '../lib/newsletter-core/speculative-job-validation.mjs';
+import { prepareSpeculativeJobBackground } from '../lib/newsletter-core/speculative-job-background.mjs';
 import { styleDailyHeadlinesArticleLinks } from '../lib/newsletter-core/daily-headlines-article-links.mjs';
 import { resolveNewsletterTheme } from '../lib/newsletter-core/resolve-newsletter-theme.mjs';
 import { renderCommerceBands } from '../lib/newsletter-core/render-commerce-bands.mjs';
@@ -1946,6 +1947,7 @@ async function buildNewsletter() {
                   { withoutImportant: mobileLockTypographyProperties },
                 );
                 item.speculativeJobCtaStylesInline = section.speculativeJobCtaStylesInline;
+                if (templateName === 'dense-discovery') prepareSpeculativeJobBackground(item);
               });
             }
           }
