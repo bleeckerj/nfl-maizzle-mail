@@ -4,7 +4,7 @@ export const singleColumnBorderRadius = {
     "string",
     "null"
   ],
-  "description": "Corner radius for the section heading and the outer corners of the item group: first-item top corners and last-item bottom corners. Defaults to 10px.",
+  "description": "Corner radius for the section heading top corners and last-item bottom corners. Item top corners stay square. Defaults to 10px.",
   "examples": [
     "10px"
   ]

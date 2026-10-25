@@ -45,9 +45,10 @@ for (const type of types) {
     ]);
     assert.deepEqual(cells.map(cell => cell.style.padding), ['24px', '22px', '22px', '22px', '22px']);
     if (type !== 'food-for-thought') {
-      assert.equal(cells[0].style.borderRadius, '10px 10px 0px 0px');
-      assert.equal(cells[1].style.borderRadius, '0px 0px 0px 0px');
-      assert.equal(cells.at(-1).style.borderRadius, '0px 0px 10px 10px');
+      assert.equal(document.querySelector('h1').closest('td').style.borderRadius, '10px 10px 0 0');
+      assert.equal(cells[0].style.borderRadius, '0 0 0px 0px');
+      assert.equal(cells[1].style.borderRadius, '0 0 0px 0px');
+      assert.equal(cells.at(-1).style.borderRadius, '0 0 10px 10px');
     }
   });
 }
@@ -79,11 +80,12 @@ test('schema discovery preserves canonical list item styles', () => {
   }
 });
 
-// Render a one-item group to verify all four outer corners use the authored radius.
-test('single-column uses the authored radius on all corners of a one-item group', async () => {
+// A one-item section still rounds the heading top and item bottom, with square item top corners.
+test('single-column rounds the heading top and item bottom in a one-item section', async () => {
   const section = { type: 'single-column', title: 'Events', containerStyles: { borderRadius: '14px', backgroundColor: '#e8f4ff' }, items: [{ title: 'One item' }] };
   validateNewsletterDataAgainstSchema({ template: 'dense-discovery', sections: [section] }, 'dense-discovery', { repoRoot: root, logger: { log() {} } });
   const { html } = await render(`<table><tbody>${blockFor(section.type)}</tbody></table>`, { maizzle: { locals: { section, themeColors: {} }, applyTransformers: false }, tailwind: { compiled: '' } });
-  const cell = new JSDOM(html).window.document.querySelector('h2').closest('td');
-  assert.equal(cell.style.borderRadius, '14px 14px 14px 14px');
+  const document = new JSDOM(html).window.document;
+  assert.equal(document.querySelector('h1').closest('td').style.borderRadius, '14px 14px 0 0');
+  assert.equal(document.querySelector('h2').closest('td').style.borderRadius, '0 0 14px 14px');
 });

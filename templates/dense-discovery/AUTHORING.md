@@ -118,4 +118,4 @@ In `single-column` and `food-for-thought`, each item can set `containerStyles.ba
 
 The email's existing dark-mode policy still applies to these backgrounds.
 
-For `single-column`, `containerStyles.backgroundColor` sets the section heading background and the default item background. An item's background override affects that item only. `containerStyles.borderRadius` controls the heading corners and the item group's outer corners: top corners on the first item and bottom corners on the last item. Its default is `10px`; use `0px` for square corners. Images retain their complete source proportions.
+For `single-column`, `containerStyles.backgroundColor` sets the section heading background and the default item background. An item's background override affects that item only. `containerStyles.borderRadius` rounds only the heading's top corners and the last item's bottom corners. Every item's top corners stay square, including a section with one item. Its default is `10px`; use `0px` for square corners. Images retain their complete source proportions.
