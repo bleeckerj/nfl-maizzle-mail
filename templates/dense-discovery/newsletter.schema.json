@@ -1882,7 +1882,7 @@
                       },
                       "speculativeJobBackgroundTextStyleInline": {
                         "readOnly": true,
-                        "description": "Generated during rendering; omit from authored source.",
+                        "description": "Generated transparent copy inset for text directly over the background image; omit from authored source.",
                         "type": [
                           "string",
                           "null"

@@ -1,3 +1,6 @@
+/** Build real template fixtures to check job layout and rendering contracts.
+ * Inputs are temporary newsletter drafts; outputs are inspected and removed.
+ */
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import os from 'node:os';
@@ -97,6 +100,9 @@ test('dense-discovery renders hydrated speculative-job sections', () => {
     assert.ok(card, 'expected the job texture in the final rendered card');
     assert.match(card.getAttribute('style') || '', /background-image:url\(['"]?https:\/\/images.example.com\/texture.jpg/);
     assert.match(card.getAttribute('style') || '', /background-repeat:repeat-y/);
+    const copyLink = card.querySelector('a');
+    assert.ok(copyLink, 'expected job copy over the image');
+    assert.doesNotMatch(copyLink.getAttribute('style') || '', /background(?:-color)?:/);
     assert.ok(!jobsSurface.contains(headingCell), 'the heading must remain separate from the bordered jobs area');
     assert.match(headingCell.getAttribute('style') || '', /border-radius:8px 8px 0 0/);
     assert.match(jobsSurface.getAttribute('style') || '', /border:1px solid #111111/);
