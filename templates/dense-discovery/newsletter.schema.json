@@ -1845,7 +1845,7 @@
                           "object",
                           "null"
                         ],
-                        "description": "Texture image hydrated from the canonical job newsletterCard; author jobRef in newsletter sources.",
+                        "description": "Optional image behind the logo and HTML job text in Dense Discovery. Hydrated from newsletterCard.backgroundImage on the canonical job; newsletter sources author jobRef. Preserves proportions and repeats vertically without a text backing panel.",
                         "required": [
                           "src",
                           "altText",
@@ -1855,19 +1855,29 @@
                         "properties": {
                           "src": {
                             "type": "string",
-                            "format": "uri"
+                            "format": "uri",
+                            "description": "Hosted HTTP(S) image URL, normally a Photarium delivery URL.",
+                            "examples": [
+                              "https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/5e98c3c8-e2ce-4ebb-7b63-3d0e7a476b00/w=600?format=webp"
+                            ]
                           },
                           "altText": {
                             "type": "string",
-                            "minLength": 1
+                            "minLength": 1,
+                            "description": "Required image description in canonical metadata; CSS backgrounds do not expose an HTML image alt attribute.",
+                            "examples": ["Pale blue grain with a faint rainbow."]
                           },
                           "width": {
                             "type": "number",
-                            "exclusiveMinimum": 0
+                            "exclusiveMinimum": 0,
+                            "description": "Positive original image width in pixels, used with height to preserve proportions.",
+                            "examples": [880]
                           },
                           "height": {
                             "type": "number",
-                            "exclusiveMinimum": 0
+                            "exclusiveMinimum": 0,
+                            "description": "Positive original image height in pixels, used with width to preserve proportions.",
+                            "examples": [882]
                           }
                         },
                         "additionalProperties": false
