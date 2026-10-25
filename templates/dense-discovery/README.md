@@ -221,9 +221,9 @@ sections:
 - `label`, `category`, and `intent` preserve link metadata for analytics.
 - `description` renders after the link as short context.
 
-## `single-column` item backgrounds
+## List item backgrounds
 
-Each item may set `containerStyles.backgroundColor` and `containerStyles.padding`. Each omitted, null, or empty value inherits the corresponding section setting; the existing theme background and 20px padding remain the final fallbacks. The section heading retains its section background. The legacy `indie-mag-single-column` alias supports the same controls. Other item style keys are rejected.
+`single-column`, `food-for-thought`, and the legacy `indie-mag-single-column` alias support per-item `containerStyles.backgroundColor` and `containerStyles.padding`. Each omitted, null, or empty value inherits the corresponding section setting; the existing theme background and 20px padding remain the final fallbacks. The section heading retains its section background. Other item style keys are rejected.
 
 ```yaml
 - type: single-column

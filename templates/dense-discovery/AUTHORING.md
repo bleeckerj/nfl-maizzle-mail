@@ -95,3 +95,25 @@ socialCard:
   footerFont: untitled-sans-light
   footerFontScale: 1
 ```
+
+## List item backgrounds
+
+In `single-column` and `food-for-thought`, each item can set `containerStyles.backgroundColor` and `containerStyles.padding`. Omitted, null, and empty values inherit the corresponding section setting. The section heading keeps its section background. The legacy `indie-mag-single-column` alias supports the same fields.
+
+```yaml
+- type: food-for-thought
+  title: Food for Thought
+  containerStyles:
+    backgroundColor: "#ffffff"
+  items:
+    - title: First item
+      containerStyles:
+        backgroundColor: "#e8f4ff"
+    - title: Second item
+      containerStyles:
+        backgroundColor: "#ede8ff"
+    - title: Third item
+      description: This item inherits the section background.
+```
+
+The email's existing dark-mode policy still applies to these backgrounds.

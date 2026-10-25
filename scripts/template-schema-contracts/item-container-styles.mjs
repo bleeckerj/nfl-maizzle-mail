@@ -1,6 +1,6 @@
-// Item surface controls for single-column and its legacy alias.
+// Shared item surface controls for Dense Discovery list sections.
 // Schema discovery uses this contract; the renderer falls back per field.
-export const singleColumnContainerStyles = {
+export const itemContainerStyles = {
   "type": [
     "object",
     "null"

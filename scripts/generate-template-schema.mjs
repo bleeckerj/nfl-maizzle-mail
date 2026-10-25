@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import fs from 'fs';
-import { singleColumnContainerStyles } from './template-schema-contracts/single-column-container-styles.mjs';
+import { itemContainerStyles } from './template-schema-contracts/item-container-styles.mjs';
 import path from 'path';
 import { shortTakeSourceSectionSchema } from './template-schema-contracts/short-take.mjs';
 import { socialCardFooterProperties } from './template-schema-contracts/social-card-footer.mjs';
@@ -772,6 +772,9 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
   }
 
   const foodForThoughtVariant = findTypedSectionVariant(schema, 'food-for-thought');
+  if (foodForThoughtVariant?.properties?.items?.items?.properties) {
+    foodForThoughtVariant.properties.items.items.properties.containerStyles = structuredClone(itemContainerStyles);
+  }
   const readMoreLinksItemSchema =
     foodForThoughtVariant?.properties?.items?.items?.properties?.readMoreLinks?.items;
   if (readMoreLinksItemSchema?.properties) {
@@ -782,7 +785,7 @@ function applyDerivedSchemaOverrides(schema, entryAbsPath) {
     const singleColumnVariant = findTypedSectionVariant(schema, type);
     const singleColumnItemSchema = singleColumnVariant?.properties?.items?.items;
     if (singleColumnItemSchema?.properties) {
-      singleColumnItemSchema.properties.containerStyles = structuredClone(singleColumnContainerStyles);
+      singleColumnItemSchema.properties.containerStyles = structuredClone(itemContainerStyles);
     }
     if (singleColumnItemSchema?.properties?.image && singleColumnItemSchema?.properties?.images) {
       const singleColumnImageSchema = {
