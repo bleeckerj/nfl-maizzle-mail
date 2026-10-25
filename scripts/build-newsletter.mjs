@@ -7,7 +7,7 @@ import { resolveNewsletterTheme } from '../lib/newsletter-core/resolve-newslette
 import { renderCommerceBands } from '../lib/newsletter-core/render-commerce-bands.mjs';
 
 import fs from 'fs';
-import { compactTrackingProvenanceAttributes } from '../lib/newsletter-core/tracking-html.mjs';
+import { compactTrackingProvenanceAttributes, omitRedundantCanonicalContentIds } from '../lib/newsletter-core/tracking-html.mjs';
 import path from 'path';
 import { execSync } from 'child_process';
 import MaizzleFramework from '@maizzle/framework';
@@ -2717,7 +2717,7 @@ async function buildNewsletter() {
     reportMobileFitWarnings(hardenedBuiltHtml.warnings);
     const deliveryHtml = compactTrackingProvenanceAttributes(
       templateName === 'dense-discovery'
-        ? releaseDarkModeTextColors(hardenedBuiltHtml.html, newsletterData.darkModePolicy)
+        ? releaseDarkModeTextColors(omitRedundantCanonicalContentIds(hardenedBuiltHtml.html), newsletterData.darkModePolicy)
         : hardenedBuiltHtml.html,
     );
     const { content: finalOutputRaw, preservedFrontmatter } = mergeFrontmatterWithHtml(

@@ -54,6 +54,8 @@ Legacy string links still work. Labels may be inferred from item titles, link la
 
 Repeated URLs are matched by URL plus occurrence order, so separate placements retain their own metadata. Link roles belong to each placement and may differ for the same content URL. When duplicate URLs provide conflicting explicit category metadata, the first manifest mapping wins and the build warns about the ignored later mapping.
 
+Dense Discovery omits a redundant `data-content-id` only when its provenance is `canonical_url` and the sending platform can reconstruct the same ID from `href` by removing the fragment and trailing slash. Authored IDs, including digest IDs and explicitly authored URL IDs, remain in HTML. Other tracking attributes and full provenance remain unchanged, and the sidecar manifest retains every content ID. The existing Soup-to-Nuts reader supports this fallback.
+
 Each successful build also writes a generated sidecar manifest next to the final HTML:
 
 ```text
@@ -68,7 +70,7 @@ Before sending the 1,000-recipient beta:
 
 1. Run `npm run test:newsletter-core` in `/Users/julian/Code/nfl-maizzle-mail`.
 2. Build a representative newsletter that includes at least one explicit object-valued editorial link and one object-valued CTA link.
-3. Inspect the generated HTML and confirm rendered anchors include the expected `data-content-*`, `data-link-role`, `data-section-label`, and `data-content-provenance` attributes.
+3. Inspect the generated HTML and confirm rendered anchors retain attribution attributes, including `data-link-role`, `data-section-label`, and `data-content-provenance`; a URL-derived `data-content-id` may be omitted under the Dense Discovery fallback described above.
 4. Inspect `<output-name>.link-tracking-manifest.json` and resolve unexpected `defaulted` or `conflicts` entries.
 5. Prepare or test-send that generated HTML through `nfl-newsletter-email-soup-to-nuts`.
 6. Confirm the prepared tracked links persist canonical content fields. `urlLabel` and `urlCategory` remain compatibility aliases; a missing canonical category stays null.

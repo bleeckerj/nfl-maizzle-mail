@@ -10163,6 +10163,7 @@
       "properties": {
         "id": {
           "type": "string",
+          "description": "Authored content IDs are retained in HTML. When no ID is authored, Dense Discovery may omit a URL-derived data-content-id that the sending platform can reconstruct exactly from href; the full ID remains in the tracking manifest.",
           "minLength": 1,
           "examples": [
             "example-id"
