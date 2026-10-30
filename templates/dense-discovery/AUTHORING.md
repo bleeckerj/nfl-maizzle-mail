@@ -123,3 +123,7 @@ For `single-column`, `containerStyles.backgroundColor` sets the section heading 
 ## Redundant tracking URLs
 
 The renderer omits a copied URL in `data-content-id` when the sending platform can derive the identical content ID from the link destination. Authored IDs remain explicit. Labels, categories, roles, section labels, provenance, and the full tracking manifest are preserved. Visible text and clickable links stay unchanged.
+
+## Footer background
+
+Set `footer.containerStyles.backgroundColor` to a solid fallback and optionally set `backgroundGradient` to one or more comma-separated linear or radial CSS gradients. Clients that do not support gradients display the solid color.

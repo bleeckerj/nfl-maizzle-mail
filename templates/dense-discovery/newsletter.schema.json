@@ -25,6 +25,12 @@
               "examples": [
                 "#ffffff"
               ]
+            },
+            "backgroundGradient": {
+              "type": "string",
+              "pattern": "^(linear|radial)-gradient\\([^;{}<>\"']+\\)(,\\s*(linear|radial)-gradient\\([^;{}<>\"']+\\))*$",
+              "description": "Optional layered gradient for the footer. Set backgroundColor to a solid fallback for email clients without gradient support.",
+              "examples": ["linear-gradient(135deg, #edf6ff 0%, #fff3fb 100%)"]
             }
           },
           "additionalProperties": false
