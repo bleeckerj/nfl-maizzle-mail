@@ -473,6 +473,24 @@
     "header": {
       "type": "object",
       "properties": {
+        "adId": {
+          "type": ["string", "null"],
+          "default": null,
+          "minLength": 1,
+          "description": "Editorial ad catalog ID for a full-width header advertisement. Overrides the ordinary featured image, quote, and artist layout."
+        },
+        "ad": {
+          "type": "object",
+          "readOnly": true,
+          "description": "Generated header ad data; pruned from source before validation and hydrated from adId.",
+          "properties": {
+            "adId": { "type": "string" },
+            "image": { "type": "string" },
+            "imageAlt": { "type": "string" },
+            "link": { "$ref": "#/definitions/authoredTrackedLink" }
+          },
+          "additionalProperties": false
+        },
         "containerStyles": {
           "type": "object",
           "properties": {

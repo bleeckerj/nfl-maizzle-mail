@@ -4,10 +4,14 @@
     <tr>
       <td class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-bg dm-text' : '' }}" align="center" bgcolor="{{ header.containerStyles.backgroundColor || themeColors.header || '#ffffff' }}" style="background-color: {{ header.containerStyles.backgroundColor || themeColors.header || '#ffffff' }};border-collapse: collapse;" valign="top">
         <!-- Fluid container constrained to 640px -->
-        <table border="0" cellpadding="0" cellspacing="0" class="header mobt0{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;max-width: 640px;padding-top: {{ header.featuredImage ? '0' : '20px' }};" width="640">
+        <table border="0" cellpadding="0" cellspacing="0" class="header mobt0{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;width: 100%;max-width: 640px;padding-top: {{ header.ad || header.featuredImage ? '0' : '20px' }};" width="640">
           <tbody>
             <tr>
               <td align="left" style="border-collapse: collapse;">
+                <if condition="header.ad">
+                  <component src="templates/dense-discovery/components/HeaderAd.html"></component>
+                </if>
+                <if condition="!header.ad">
                 <!-- If we have a quote but no featured image, render quote full-width -->
                 <if condition="header.quote && !header.featuredImage">
                   <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
@@ -131,6 +135,7 @@
                   </table>
 
                   <!--[if mso]></td></tr></table><![endif]-->
+                </if>
                 </if>
               </td>
             </tr>

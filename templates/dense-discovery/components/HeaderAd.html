@@ -1,0 +1,9 @@
+<!-- Catalog-backed header ad: the complete image fills the newsletter column. -->
+<if condition="header.ad.link">
+  <a href="{{ header.ad.link }}" data-link-label="{{ header.ad.adId }}" data-link-role="advertisement" data-link-category="sponsor" style="display: block;text-decoration: none;">
+    <img src="{{ header.ad.image }}" alt="{{ header.ad.imageAlt }}" width="640" style="-ms-interpolation-mode: bicubic;border: 0;border-radius: 0;display: block;width: 100%;max-width: 640px;height: auto;">
+  </a>
+</if>
+<if condition="!header.ad.link">
+  <img src="{{ header.ad.image }}" alt="{{ header.ad.imageAlt }}" width="640" style="-ms-interpolation-mode: bicubic;border: 0;border-radius: 0;display: block;width: 100%;max-width: 640px;height: auto;">
+</if>

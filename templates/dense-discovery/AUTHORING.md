@@ -1,5 +1,19 @@
 # dense-discovery campaign authoring
 
+## Header advertisement
+
+For a full-width advertisement above the newsletter logo, supply a catalog ID:
+
+```yaml
+header:
+  adId: home-depot-data-shed-banner-01
+```
+
+The builder loads its image, alt text, and destination from Editorial's ad catalog.
+The complete image retains its natural aspect ratio and square corners. A header
+ad takes precedence over the ordinary featured image, quote, and artist layout.
+`header.ad` contains generated rendering data and does not belong in the draft.
+
 Use `campaign-starter.md` when an email should be rendered for a campaign
 handoff rather than published as a regular newsletter issue. Declare
 `publicationMode: campaign` and `template: dense-discovery` in the source.
