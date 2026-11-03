@@ -99,46 +99,19 @@ preheader: "{{ preheader || 'Near Future Laboratory Newsletter' }}"
                     <!-- SPECULATIVE JOB End -->
                   </if>
 
-                  <if condition="section.type === 'short-take'">
-                    <!-- SHORT TAKE Start -->
-                    <each loop="item in section.items">
-                      <tr>
-                        <td style="border-collapse:collapse;padding:{{ section.containerStyles.outerPadding || '20px 12px 25px' }}">
-                          <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" data-short-take-id="{{ item.shortTakeId }}" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}" style="border-spacing:0;background:{{ section.containerStyles.backgroundColor || '#FFFFFF' }};border:{{ section.containerStyles.borderWidth || '1px' }} {{ section.containerStyles.borderStyle || 'solid' }} {{ section.containerStyles.borderColor || '#c9cfdb' }}">
-                            <tbody>
-                              <component src="templates/dense-discovery/components/ShortTakeBrandRail.html" locals='{"shortTakeBrandRail": {{ item.brandRail }}, "shortTakeCardWidth": 640}'></component>
-                              <if condition="item.topLeft || item.topRight">
-                                <tr><td style="border-collapse:collapse;padding:{{ section.containerStyles.metaPadding || '9px 12px' }};border-bottom:1px solid {{ section.containerStyles.borderColor || '#c9cfdb' }}">
-                                  <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="border-spacing:0"><tbody><tr>
-                                    <td align="left" valign="top" class="mob-short-take-meta" style="{{{ section.labelStylesInline || '' }}}">{{ item.topLeft || '' }}</td>
-                                    <td align="right" valign="top" class="mob-short-take-meta" style="{{{ section.labelStylesInline || '' }}}">{{ item.topRight || '' }}</td>
-                                  </tr></tbody></table>
-                                </td></tr>
-                              </if>
-                              <tr><td class="short-take-image" style="border-collapse:collapse;padding:{{ section.containerStyles.imagePadding || '0' }};line-height:0;font-size:0">
-                                <if condition="item.link"><a href="{{ item.link }}" style="display:block;text-decoration:none;color:inherit"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" border="0" width="638" style="-ms-interpolation-mode:bicubic;display:block;width:100%;max-width:638px;height:auto;border:0"></a></if>
-                                <if condition="!item.link"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" border="0" width="638" style="-ms-interpolation-mode:bicubic;display:block;width:100%;max-width:638px;height:auto;border:0"></if>
-                              </td></tr>
-                              <tr><td class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}" style="border-collapse:collapse;padding:{{ section.containerStyles.copyPadding || '18px 12px 20px' }};background:{{ section.containerStyles.backgroundColor || '#FFFFFF' }}">
-                                <if condition="item.link"><a href="{{ item.link }}" style="display:block;color:inherit;text-decoration:none"><h2 class="mob-title short-take-headline" style="margin:0;padding:0;{{{ section.headingStylesInline || '' }}}">{{ item.headline }}</h2><div class="mob-card-copy mob-short-take-caption" style="margin:9px 0 0;padding:0;{{{ section.contentStylesInline || '' }}}">{{{ item.caption }}}</div></a></if>
-                                <if condition="!item.link"><h2 class="mob-title short-take-headline" style="margin:0;padding:0;{{{ section.headingStylesInline || '' }}}">{{ item.headline }}</h2><div class="mob-card-copy mob-short-take-caption" style="margin:9px 0 0;padding:0;{{{ section.contentStylesInline || '' }}}">{{{ item.caption }}}</div></if>
-                              </td></tr>
-                              <if condition="item.bottomLeft || item.bottomRight">
-                                <tr><td style="border-collapse:collapse;padding:{{ section.containerStyles.metaPadding || '9px 12px' }};border-top:1px solid {{ section.containerStyles.borderColor || '#c9cfdb' }}">
-                                  <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" style="border-spacing:0"><tbody><tr>
-                                    <td align="left" valign="top" class="mob-short-take-meta" style="{{{ section.labelStylesInline || '' }}}"><if condition="item.link && item.bottomLeft"><a href="{{ item.link }}" style="display:block;color:inherit;text-decoration:none">{{ item.bottomLeft }}</a></if><if condition="!item.link || !item.bottomLeft">{{ item.bottomLeft || '' }}</if></td>
-                                    <td align="right" valign="top" class="mob-short-take-meta" style="{{{ section.labelStylesInline || '' }}}"><if condition="item.link && item.bottomRight"><a href="{{ item.link }}" style="display:block;color:inherit;text-decoration:none">{{ item.bottomRight }}</a></if><if condition="!item.link || !item.bottomRight">{{ item.bottomRight || '' }}</if></td>
-                                  </tr></tbody></table>
-                                </td></tr>
-                              </if>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
-                    </each>
-                    <!-- SHORT TAKE End -->
-                  </if>
-                  
+<if condition="section.type === 'short-take'">
+  <each loop="item in section.items"><tr><td style="padding:8px 0 22px">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" data-short-take-id="{{ item.shortTakeId }}" style="width:100%;border:2px solid #b9b9b2;background:#ffffff;border-spacing:0"><tbody>
+      <component src="templates/dense-discovery/components/ShortTakeBrandRail.html" locals='{"shortTakeBrandRail": true, "shortTakeCardWidth": 640}'></component>
+      <tr><td style="padding:0;line-height:0;font-size:0"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" width="638" border="0" style="display:block;width:100%;max-width:638px;height:auto;border:0"></td></tr>
+      <tr><td style="padding:20px 18px 24px;background:#ffffff;color:#141414">
+        <h2 style="margin:0 0 12px;font:700 24px/30px Georgia,serif;color:#141414">{{ item.headline }}</h2>
+        <div class="email-short-take-body" style="margin:0;font-family:Arial,sans-serif;font-size:18px;line-height:26px;font-weight:400;color:#141414">{{{ item.caption }}}</div>
+        <if condition="item.link"><p style="margin:16px 0 0;font:400 18px/26px Arial,sans-serif"><a href="{{ item.link }}" style="color:#141414;text-decoration:underline">{{ item.bottomLeft || 'Read more' }}</a></p></if>
+      </td></tr>
+    </tbody></table>
+  </td></tr></each>
+</if>
                   <if condition="section.type === 'feature' || section.type === 'sponsor'">
                     <!-- FEATURE Start -->
                     <tr>

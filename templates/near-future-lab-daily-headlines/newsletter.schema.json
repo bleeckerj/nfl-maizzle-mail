@@ -923,7 +923,7 @@
               {
                 "type": "object",
                 "title": "Short Take",
-                "description": "Registry-backed Short Take with the canonical Geist Bold SHORT TAKES brand rail; lockup.brandRail: false omits the complete rail. Footer CTAs link to the record destination when one is present.",
+                "description": "Registry-backed Short Take with the brand bar, complete image, headline, caption, and optional destination link in a single column.",
                 "properties": {
                   "type": {
                     "const": "short-take"
@@ -948,7 +948,7 @@
                         },
                         "snapshotImage": {
                           "type": "object",
-                          "description": "Optional hosted precomposed card that replaces the live Short Take layout for this placement.",
+                          "description": "Legacy snapshot accepted for compatibility; email renders the registry image and text instead.",
                           "properties": {
                             "url": {
                               "type": "string",

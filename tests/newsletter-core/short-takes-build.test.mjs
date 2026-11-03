@@ -191,92 +191,31 @@ function assertRenderedShortTakes(html, templateName, middleSentinel, endSentine
   assert.ok(html.indexOf(middleSentinel) < html.indexOf('short-take-linked'));
   assert.ok(html.indexOf(endSentinel) < html.lastIndexOf('short-take-linked'));
 
-  const unlinkedCard = cards[0];
-  const outerCell = unlinkedCard.parentElement;
-  assert.ok(outerCell);
-  const outerPadding = templateName === 'dense-discovery' ? /padding:8px 0 22px/i : /padding:0/i;
-  assert.match(outerCell.getAttribute('style'), outerPadding);
-  assert.equal(unlinkedCard.querySelectorAll('a').length, 0);
-  const shortTakeImages = [...unlinkedCard.querySelectorAll('img')];
-  const shortTakeImage = shortTakeImages.at(-1);
-  assert.ok(shortTakeImage);
-  assert.equal(shortTakeImage.getAttribute('alt'), 'A complete unlinked Short Take image');
-  assert.match(shortTakeImage.getAttribute('style'), /width:\s*100%/i);
-  assert.match(shortTakeImage.getAttribute('style'), /height:\s*auto/i);
-  const imagePadding = /padding:0/i;
-  assert.match(shortTakeImage.closest('td').getAttribute('style'), imagePadding);
-  assert.equal(unlinkedCard.querySelector('[data-short-take-brand-rail]'), null);
-  assert.equal(unlinkedCard.querySelector('[data-short-take-label]'), null);
-  assert.equal(unlinkedCard.querySelector('img[alt="Near Future Laboratory white wordmark"]'), null);
-  assert.equal(unlinkedCard.querySelectorAll('p').length, 2);
-  assert.equal(unlinkedCard.querySelectorAll('p')[0].textContent.trim(), 'Unlinked Short Take caption.');
-  assert.equal(unlinkedCard.querySelectorAll('p')[1].textContent.trim(), 'Second caption sentence.');
-  const shortTakeHeadline = unlinkedCard.querySelector('h2');
-  const shortTakeCaption = shortTakeHeadline?.nextElementSibling;
-  assert.ok(shortTakeHeadline);
-  assert.ok(shortTakeCaption);
-  const expectedType = templateName === 'dense-discovery'
-    ? { headlineSize: '24px', headlineLineHeight: '26px', captionSize: '14px', captionLineHeight: '18px' }
-    : { headlineSize: '22px', headlineLineHeight: '24px', captionSize: '13px', captionLineHeight: '16px' };
-  assert.match(shortTakeHeadline.getAttribute('style') || '', new RegExp(`font-size:\\s*${expectedType.headlineSize}`, 'i'));
-  assert.match(shortTakeHeadline.getAttribute('style') || '', new RegExp(`line-height:\\s*${expectedType.headlineLineHeight}`, 'i'));
-  assert.match(shortTakeHeadline.getAttribute('style') || '', /font-weight:\s*700/i);
-  assert.match(shortTakeCaption.getAttribute('style') || '', new RegExp(`font-size:\\s*${expectedType.captionSize}`, 'i'));
-  assert.match(shortTakeCaption.getAttribute('style') || '', new RegExp(`line-height:\\s*${expectedType.captionLineHeight}`, 'i'));
-  assert.match(shortTakeCaption.getAttribute('style') || '', /font-weight:\s*400/i);
-
-  if (templateName === 'dense-discovery') {
-    assert.match(shortTakeCaption.getAttribute('class') || '', /\bmob-card-copy\b/);
-    const calloutCopy = [...document.querySelectorAll('.mob-compact-copy')]
-      .find((element) => element.textContent.includes('DENSE MIDDLE SENTINEL'));
-    assert.ok(calloutCopy, 'Dense Discovery callout copy must use the shared compact-copy role');
-    assert.match(calloutCopy.querySelector('p')?.getAttribute('class') || '', /\bmob-text\b/);
-    assert.match(calloutCopy.getAttribute('style') || '', /font-size:\s*16px/i);
-    assert.match(calloutCopy.getAttribute('style') || '', /line-height:\s*1\.1/i);
+  for (const card of cards) {
+    const rail = card.querySelector('[data-short-take-brand-rail]');
+    const image = card.querySelector('img[alt^="A complete"]');
+    const headline = card.querySelector('h2');
+    const caption = card.querySelector('.email-short-take-body');
+    assert.ok(rail && image && headline && caption, 'bar, image, headline, and caption are present');
+    assert.equal(rail.querySelector('[data-short-take-label]')?.textContent.trim(), 'SHORT TAKES');
+    assert.ok(rail.compareDocumentPosition(image) & 4);
+    assert.ok(image.compareDocumentPosition(headline) & 4);
+    assert.ok(headline.compareDocumentPosition(caption) & 4);
+    assert.match(image.getAttribute('style'), /width:\s*100%/i);
+    assert.match(image.getAttribute('style'), /height:\s*auto/i);
+    assert.match(caption.getAttribute('style'), /font-size:\s*18px/i);
+    assert.match(caption.getAttribute('style'), /line-height:\s*26px/i);
   }
-
+  assert.equal(cards[0].querySelectorAll('a').length, 0);
+  assert.equal(cards[0].querySelectorAll('.email-short-take-body p').length, 2);
   const linkedCard = cards[1];
-  const brandRail = linkedCard.querySelector('[data-short-take-brand-rail]');
-  const label = brandRail?.querySelector('[data-short-take-label]');
-  assert.ok(brandRail, 'Default branding must render the complete rail');
-  assert.ok(brandRail.querySelector('img[alt="Near Future Laboratory white wordmark"]'));
-  assert.match(brandRail.getAttribute('style'), /background:#141414/i);
-  assert.equal(linkedCard.querySelectorAll('[data-short-take-label]').length, 1);
-  assert.equal(label?.textContent.trim(), 'SHORT TAKES');
-  const labelStyle = label.getAttribute('style');
-  assert.match(labelStyle, /font-family:[^;]*Geist[^;]*Arial/i);
-  assert.match(labelStyle, /font-weight:700/i);
-  assert.match(labelStyle, /letter-spacing:0\.035em/i);
-  assert.match(labelStyle, /text-align:right/i);
-  assert.match(labelStyle, /white-space:nowrap/i);
-  assert.match(labelStyle, new RegExp(`font-size:${templateName === 'dense-discovery' ? '21\\.333' : '20'}`));
-  assert.match(html, /fonts\.googleapis\.com\/css2\?[^"<>]*Geist/);
-  const anchors = [...linkedCard.querySelectorAll('a[href="https://example.com/short-take"]')];
-  assert.equal(anchors.length, linkedAnchorCount);
-  anchors.forEach((anchor) => {
-    assert.equal(anchor.getAttribute('data-link-label'), 'short-take-linked');
-    assert.equal(anchor.getAttribute('data-link-category'), 'short-take');
-  });
+  const destination = linkedCard.querySelector('a[href="https://example.com/short-take"]');
+  assert.ok(destination);
+  assert.equal(destination.getAttribute('data-link-category'), 'short-take');
+  assert.ok(linkedCard.querySelector('a[href="https://example.com/inside"]'));
   assert.equal(linkedCard.querySelectorAll('a a').length, 0);
-  const footerCta = anchors.find((anchor) => anchor.textContent.trim() === 'DO YOU WANT TO KNOW MORE?');
-  assert.ok(footerCta, 'The footer CTA itself must be a hyperlink to the record destination');
-  assert.equal(footerCta.getAttribute('href'), 'https://example.com/short-take');
-  assert.equal(footerCta.getAttribute('data-link-category'), 'short-take');
-  assert.equal(linkedCard.querySelector('a[href="https://example.com/inside"]'), null);
-  assert.match(linkedCard.textContent, /inline source/);
   assert.match(linkedCard.textContent, /Linked Short Take Headline/);
-  assert.match(linkedCard.textContent, /SHORT TAKES FROM AN ADJACENT NOW/);
-  assert.match(linkedCard.textContent, /DO YOU WANT TO KNOW MORE\?/);
-  assert.match(linkedCard.textContent, /NFL/);
 
-  if (templateName === 'dense-discovery') {
-    assert.equal(cardRow(unlinkedCard).previousElementSibling?.querySelector('.spacer'), null);
-  } else {
-    const wrapper = unlinkedCard.parentElement?.parentElement?.parentElement?.parentElement;
-    assert.ok(wrapper);
-    assert.equal(wrapper.tBodies[0].rows.length, 1);
-    assert.equal(wrapper.tBodies[0].rows[0].querySelector('table[data-short-take-id]'), unlinkedCard);
-  }
 }
 
 function cardRow(card) {

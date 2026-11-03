@@ -135,6 +135,9 @@ Use `content/test-ads.md` as the working sample file for `ad-block` validation a
 
 ## `short-take` section
 
+Dense Discovery and Daily Headlines render a black Short Takes brand bar, the complete registry image, the registry headline and caption as text, and a destination link when available. The same stacked layout and text sizes apply at all widths. Legacy Daily Headlines `snapshotImage` values are accepted for existing sources but are not used in email output.
+
+
 `short-take` renders one editorial registry card at its exact position in `sections[]`:
 
 ```yaml
@@ -146,9 +149,7 @@ sections:
 
 The build resolves `shortTakeId` from `../nfl-editorial/src/content/shortTakes.json`. Exactly one item is required. Headline, caption, Photarium image, alt text, destination, edge metadata, and width metadata remain registry-owned; issue-level overrides fail validation. Multiple cards use multiple ordered sections.
 
-Linked records emit separate image and copy anchors with the registry id as the tracking label and `short-take` as the category. Records without a destination render without anchors. The complete image remains visible within the 640px Dense Discovery column; responsive web `maxWidth` variants are retained in normalized data and are not applied to email layout.
-
-Defaults are defined under `sectionStyles["short-take"]` and use Dense Discovery’s Ubuntu headline, IBM Plex Sans caption, and Share Tech Mono edge metadata treatment.
+A registry destination appears as a separate tracked link after the caption. Links authored inside the caption remain available. The complete image remains visible within the 640px Dense Discovery column; responsive web `maxWidth` variants do not affect the email layout.
 
 ## `speculative-job` section
 

@@ -24,38 +24,19 @@ title: "Near Future Laboratory Daily Headlines"
       <component src="templates/near-future-lab-daily-headlines/components/AdBlock.html" locals='{"adSectionIndex": "{{sectionIndex}}", "adBodyBlockIndex": null}'></component>
     </if>
 
-    <if condition="section.type === 'short-take'">
-      <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" class="short-take{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" style="border-spacing:0;width:100%"><tbody>
-        <each loop="item in section.items">
-          <tr><td style="padding:0">
-            <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation" data-short-take-id="{{ item.shortTakeId }}" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}" style="border-spacing:0;{{{ section.backgroundStyleInline }}}border:{{ section.containerStyles.borderWidth || '1px' }} {{ section.containerStyles.borderStyle || 'solid' }} {{ section.containerStyles.borderColor || '#dcdcdc' }}"><tbody>
-              <component src="templates/dense-discovery/components/ShortTakeBrandRail.html" locals='{"shortTakeBrandRail": {{ item.brandRail }}, "shortTakeCardWidth": 600}'></component>
-              <if condition="!item.precomposed && (item.topLeft || item.topRight)"><tr><td style="padding:{{ section.containerStyles.metaPadding || '8px 10px' }};{{{ section.contentPaddingInline }}}border-bottom:1px solid {{ section.containerStyles.borderColor || '#dcdcdc' }}">
-                <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation"><tbody><tr>
-                  <td align="left" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}"><if condition="item.link && item.topLeft"><a href="{{ item.link }}" style="color:inherit;text-decoration:none">{{ item.topLeft }}</a></if><if condition="!item.link || !item.topLeft">{{ item.topLeft || '' }}</if></td>
-                  <td align="right" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}"><if condition="item.link && item.topRight"><a href="{{ item.link }}" style="color:inherit;text-decoration:none">{{ item.topRight }}</a></if><if condition="!item.link || !item.topRight">{{ item.topRight || '' }}</if></td>
-                </tr></tbody></table>
-              </td></tr></if>
-              <tr><td class="short-take-image" style="padding:{{ item.precomposed ? '0' : section.containerStyles.imagePadding || '0' }};line-height:0;font-size:0">
-                <if condition="item.link"><a href="{{ item.link }}" style="display:block;color:inherit;text-decoration:none"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" border="0" width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0"></a></if>
-                <if condition="!item.link"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" border="0" width="600" style="display:block;width:100%;max-width:600px;height:auto;border:0"></if>
-              </td></tr>
-              <if condition="!item.precomposed"><tr><td class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface dm-text' : '' }}" style="padding:{{ section.containerStyles.copyPadding || '16px 18px 18px' }};{{{ section.contentPaddingInline }}}{{{ section.backgroundStyleInline }}}">
-                <if condition="item.link"><a href="{{ item.link }}" style="display:block;color:inherit;text-decoration:none"><h2 class="short-take-headline" style="margin:0;padding:0;{{{ section.headingStylesInline || '' }}}">{{ item.headline }}</h2><div class="short-take-caption" style="margin:8px 0 0;padding:0;{{{ section.contentStylesInline || '' }}}">{{{ item.caption }}}</div></a></if>
-                <if condition="!item.link"><h2 class="short-take-headline" style="margin:0;padding:0;{{{ section.headingStylesInline || '' }}}">{{ item.headline }}</h2><div class="short-take-caption" style="margin:8px 0 0;padding:0;{{{ section.contentStylesInline || '' }}}">{{{ item.caption }}}</div></if>
-              </td></tr></if>
-              <if condition="!item.precomposed && (item.bottomLeft || item.bottomRight)"><tr><td style="padding:{{ section.containerStyles.metaPadding || '8px 10px' }};{{{ section.contentPaddingInline }}}border-top:1px solid {{ section.containerStyles.borderColor || '#dcdcdc' }}">
-                <table border="0" cellpadding="0" cellspacing="0" width="100%" role="presentation"><tbody><tr>
-                  <td align="left" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}"><if condition="item.link && item.bottomLeft"><a href="{{ item.link }}" style="color:inherit;text-decoration:none">{{ item.bottomLeft }}</a></if><if condition="!item.link || !item.bottomLeft">{{ item.bottomLeft || '' }}</if></td>
-                  <td align="right" valign="top" class="short-take-meta" style="{{{ section.labelStylesInline || '' }}}"><if condition="item.link && item.bottomRight"><a href="{{ item.link }}" style="color:inherit;text-decoration:none">{{ item.bottomRight }}</a></if><if condition="!item.link || !item.bottomRight">{{ item.bottomRight || '' }}</if></td>
-                </tr></tbody></table>
-              </td></tr></if>
-            </tbody></table>
-          </td></tr>
-        </each>
-      </tbody></table>
-    </if>
-
+<if condition="section.type === 'short-take'">
+  <each loop="item in section.items">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" data-short-take-id="{{ item.shortTakeId }}" style="width:100%;border:2px solid #b9b9b2;background:#ffffff;border-spacing:0"><tbody>
+      <component src="templates/dense-discovery/components/ShortTakeBrandRail.html" locals='{"shortTakeBrandRail": true, "shortTakeCardWidth": 600}'></component>
+      <tr><td style="padding:0;line-height:0;font-size:0"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" width="600" border="0" style="display:block;width:100%;max-width:600px;height:auto;border:0"></td></tr>
+      <tr><td style="padding:20px 18px 24px;background:#ffffff;color:#141414">
+        <h2 style="margin:0 0 12px;font:700 24px/30px Georgia,serif;color:#141414">{{ item.headline }}</h2>
+        <div class="email-short-take-body" style="margin:0;font-family:Arial,sans-serif;font-size:18px;line-height:26px;font-weight:400;color:#141414">{{{ item.caption }}}</div>
+        <if condition="item.link"><p style="margin:16px 0 0;font:400 18px/26px Arial,sans-serif"><a href="{{ item.link }}" style="color:#141414;text-decoration:underline">{{ item.bottomLeft || 'Read more' }}</a></p></if>
+      </td></tr>
+    </tbody></table>
+  </each>
+</if>
     <if condition="section.type === 'calendar_event'">
       <table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="mob-text{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}"><tbody>
         <tr><td height="24" style="font-size:0;line-height:0">&#8203;</td></tr>

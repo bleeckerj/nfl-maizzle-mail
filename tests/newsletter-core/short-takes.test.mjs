@@ -259,3 +259,15 @@ test('both production schemas accept only the compact Short Take authoring shape
     }
   }
 });
+
+// Older Daily Headlines issues can retain snapshots while email uses the source image and text.
+test('Daily Headlines ignores legacy snapshots when rendering stacked email', () => {
+  withInventory([record()], ({ repoRoot }) => {
+    const newsletter = { template: 'near-future-lab-daily-headlines', sections: [{ type: 'short-take', items: [{ shortTakeId: 'short-take-one', snapshotImage: { url: 'https://imagedelivery.net/example/snapshot/public', altText: 'Legacy card' } }] }] };
+    hydrateShortTakeSections(newsletter, repoRoot, { logger: { log() {} } });
+    assert.equal(newsletter.sections[0].items[0].image, PHOTARIUM_URL);
+    assert.equal(newsletter.sections[0].items[0].headline, 'A Short Take');
+    assert.match(newsletter.sections[0].items[0].caption, /Registered caption/);
+    assert.equal(newsletter.sections[0].items[0].precomposed, undefined);
+  });
+});

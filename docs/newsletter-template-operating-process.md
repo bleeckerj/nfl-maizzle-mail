@@ -183,6 +183,9 @@ If the same ad URL is used by image, title, and CTA anchors, the metadata should
 
 ## Short Take Contract
 
+Dense Discovery and Daily Headlines render a black Short Takes brand bar, the complete registry image, the registry headline and caption as text, and a destination link when available. The same stacked layout and text sizes apply at all widths. Legacy Daily Headlines `snapshotImage` values are accepted for existing sources but are not used in email output.
+
+
 Supported templates use this compact source shape anywhere in `sections[]`:
 
 ```yaml

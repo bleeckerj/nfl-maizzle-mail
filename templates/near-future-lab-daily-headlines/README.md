@@ -279,7 +279,10 @@ An `ad-block` entry uses the same schema, inventory IDs, renderer, hydration, sn
 The lead image and label render first. An optional legacy `statement` or `statement_html` renders next, followed by `body_blocks`. For a new continuous essay, put all its paragraphs in text blocks and omit the legacy statement fields. Existing intros that use those fields retain their current behavior. The builder creates each text block's `rendered_html`; keep authored copy in `html`.
 
 `short-take`
-: Inventory-backed editorial card. Author only `items[0].shortTakeId`; the build resolves headline, caption, Photarium image, alt text, optional destination, and optional edge metadata from `/Users/julian/Code/nfl-editorial/src/content/shortTakes.json`. Exactly one item is allowed, and multiple cards use multiple ordered sections. Linked records use tracking category `short-take`; records without a destination render without anchors. Images remain complete within the 600px column.
+: Inventory-backed editorial card. Author only `items[0].shortTakeId`; the build resolves headline, caption, Photarium image, alt text, optional destination, and optional edge metadata from `/Users/julian/Code/nfl-editorial/src/content/shortTakes.json`. Exactly one item is allowed, and multiple cards use multiple ordered sections. Linked records use tracking category `short-take`; a destination is rendered as a separate link after the caption. Images remain complete within the 600px column.
+
+Dense Discovery and Daily Headlines render a black Short Takes brand bar, the complete registry image, the registry headline and caption as text, and a destination link when available. The same stacked layout and text sizes apply at all widths. Legacy Daily Headlines `snapshotImage` values are accepted for existing sources but are not used in email output.
+
 
 `speculative-job`
 : Canonical-job-backed card. Author `items[0].jobRef`; the build hydrates the company identity, role copy, full-width media, and public job URL from `/Users/julian/Code/nfl-editorial/src/content/jobs/<jobRef>.mdx`. The default copy surface uses `24px 0` padding so its left and right edges align with the media. Set `containerStyles.backgroundColor` on the section to author its complete background from Markdown. Use `items[].cardStyles` only for an intentional inner card surface or padding override.
