@@ -945,6 +945,24 @@
                           "examples": [
                             "example-short-take-id"
                           ]
+                        },
+                        "snapshotImage": {
+                          "type": "object",
+                          "description": "Optional hosted precomposed card that replaces the live Short Take layout for this placement.",
+                          "properties": {
+                            "url": {
+                              "type": "string",
+                              "pattern": "^https://imagedelivery[.]net/",
+                              "examples": ["https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/145aba0a-5354-481a-b111-6cf6b1ca1100/public"]
+                            },
+                            "altText": {
+                              "type": "string",
+                              "minLength": 1,
+                              "examples": ["Handbook of Homemade Compute Short Take with the paperback and review."]
+                            }
+                          },
+                          "required": ["url", "altText"],
+                          "additionalProperties": false
                         }
                       },
                       "required": [
@@ -967,7 +985,8 @@
                     "items"
                   ],
                   "itemFields": [
-                    "shortTakeId"
+                    "shortTakeId",
+                    "snapshotImage"
                   ],
                   "requiredSectionFields": [
                     "type",

@@ -489,3 +489,16 @@ Maizzle's `build_newsletter` renders through its canonical renderer. It does not
 Daily Headlines and Dense Discovery share the complete social-card controls. The canonical schema generator reads the current shared contract on every invocation and rejects a missing card schema or missing nested controls before returning Markdown. This check also runs for an already-connected Backoffice MCP client. Daily Headlines starters include the publication title, canonical logo, font defaults, logo nudges, image adjustments, footer controls, and animation settings; no background image is selected automatically.
 
 Backoffice checks the resulting card again after starter cleanup and before writing. A null or incomplete card returns `saved: false` and preserves an existing draft when overwrite was requested. Authored optional settings on ordinary saves retain their existing behavior. Run `npm run test:newsletter-contracts` here and `npm run test:newsletter-starters` in Backoffice after changing the schema or generator.
+
+## Precomposed Short Takes
+
+Use a standalone Short Take section. The registry ID supplies the identity and any destination. An optional `snapshotImage` supplies a complete hosted card for that placement. The renderer displays it at its natural proportions and omits the separate brand rail, headline, review, and metadata rows.
+
+```yaml
+- type: short-take
+  items:
+  - shortTakeId: handbook-of-homemade-compute
+    snapshotImage:
+      url: https://imagedelivery.net/gaLGizR3kCgx5yRLtiRIOw/145aba0a-5354-481a-b111-6cf6b1ca1100/public
+      altText: Handbook of Homemade Compute Short Take with the paperback and review.
+```
