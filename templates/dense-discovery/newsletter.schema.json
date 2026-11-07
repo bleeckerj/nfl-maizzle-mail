@@ -1873,7 +1873,7 @@
                           "object",
                           "null"
                         ],
-                        "description": "Optional image behind the logo and HTML job text in Dense Discovery. Hydrated from newsletterCard.backgroundImage on the canonical job; newsletter sources author jobRef. Preserves proportions, displays once by default, and honors the repeat control without a text backing panel.",
+                        "description": "Optional image behind the logo and HTML job text in Dense Discovery. Hydrated from newsletterCard.backgroundImage on the canonical job; newsletter sources author jobRef. Scales proportionally to cover the entire card on desktop and mobile, cropping edges as needed with center-top positioning. Displays once by default and honors the repeat control without a text backing panel.",
                         "required": [
                           "src",
                           "altText",

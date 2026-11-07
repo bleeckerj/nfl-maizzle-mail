@@ -5,11 +5,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { prepareSpeculativeJobBackground } from '../../lib/newsletter-core/speculative-job-background.mjs';
 
-test('texture keeps its proportions with text directly over the image', () => {
+test('texture covers the full card with text directly over the image', () => {
   const item = { backgroundImage: { src:'https://images.example.com/texture.jpg', width:880, height:882 } };
   prepareSpeculativeJobBackground(item);
   assert.match(item.speculativeJobBackgroundStyleInline, /height:640px/);
-  assert.match(item.speculativeJobBackgroundStyleInline, /background-size:100% auto/);
+  assert.match(item.speculativeJobBackgroundStyleInline, /background-size:cover;/);
+  assert.match(item.speculativeJobBackgroundStyleInline, /background-position:center top;/);
   assert.match(item.speculativeJobBackgroundStyleInline, /background-repeat:no-repeat/);
   assert.equal(item.speculativeJobBackgroundTextStyleInline, 'padding:16px;');
 });
@@ -19,9 +20,11 @@ test('landscape dimensions and explicit repetition are visible in generated styl
     const item = { jobRef:'muse/example', backgroundImage: { src:'https://images.example.com/ocean.png', width:1094, height:656, repeat } };
     const diagnostic = prepareSpeculativeJobBackground(item);
     assert.match(item.speculativeJobBackgroundStyleInline, /height:383px/);
+    assert.match(item.speculativeJobBackgroundStyleInline, /background-size:cover;/);
     assert.ok(item.speculativeJobBackgroundStyleInline.includes(`background-repeat:${repeat};`));
     assert.ok(diagnostic.includes(`repeat=${repeat}`));
     assert.ok(diagnostic.includes('original=1094x656'));
+    assert.ok(diagnostic.includes('size=cover'));
   }
   assert.throws(() => prepareSpeculativeJobBackground({ backgroundImage: { src:'https://images.example.com/ocean.png', width:1094, height:656, repeat:'repeat; color:red' } }), /repeat must be/);
 });

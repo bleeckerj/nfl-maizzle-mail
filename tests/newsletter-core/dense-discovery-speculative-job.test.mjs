@@ -101,6 +101,7 @@ test('dense-discovery renders hydrated speculative-job sections', () => {
     assert.ok(card, 'expected the job texture in the final rendered card');
     assert.match(card.getAttribute('style') || '', /background-image:url\(['"]?https:\/\/images.example.com\/texture.jpg/);
     assert.match(card.getAttribute('style') || '', /background-repeat:repeat-x/);
+    assert.match(card.getAttribute('style') || '', /background-size:cover/);
     const copyLink = card.querySelector('a');
     assert.ok(copyLink, 'expected job copy over the image');
     assert.doesNotMatch(copyLink.getAttribute('style') || '', /background(?:-color)?:/);
