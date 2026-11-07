@@ -2163,7 +2163,7 @@
         "contentPadding": {
           "type": "string",
           "pattern": "^[^;{}<>]+$",
-          "description": "CSS padding shorthand for the text inset inside a colored section surface. Defaults to 0 20px; the outer background remains full width.",
+          "description": "CSS padding shorthand for the text inset inside a colored section surface. Defaults to 0; the outer background remains full width.",
           "examples": [
             "16px"
           ]

@@ -14,7 +14,7 @@ sections:
       backgroundGradient: "linear-gradient(135deg, #eff4ed 0%, #d7e7f3 100%)"
 ```
 
-The renderer attaches these declarations to the section's existing outer element. It does not add wrapper tables or alter the section's content structure. Text inside a colored surface receives a `0 20px` horizontal inset while image rows remain full width. Override that inset with `containerStyles.contentPadding` when needed:
+The renderer attaches these declarations to the section's existing outer element. It does not add wrapper tables or alter the section's content structure. Text and images share the outer gutter by default, including inside colored surfaces. Override the text inset with `containerStyles.contentPadding` when needed:
 
 ```yaml
 containerStyles:

@@ -19,7 +19,7 @@
         </if>
         <each loop="item in adSection.items">
           <tr><td style="{{{ adSection.contentPaddingInline }}}">
-            <component src="templates/dense-discovery/components/AdCard.html" locals='{"cardSectionIndex":{{ typeof adSectionIndex !== "undefined" ? adSectionIndex : "null" }},"cardArticleIndex":{{ typeof adArticleIndex !== "undefined" ? adArticleIndex : "null" }},"cardBodyBlockIndex":{{ typeof adBodyBlockIndex !== "undefined" ? adBodyBlockIndex : "null" }},"cardItemIndex":{{ loop.index }}}'></component>
+            <component src="templates/dense-discovery/components/AdCard.html" locals='{"cardPadding":"8px","cardSectionIndex":{{ typeof adSectionIndex !== "undefined" ? adSectionIndex : "null" }},"cardArticleIndex":{{ typeof adArticleIndex !== "undefined" ? adArticleIndex : "null" }},"cardBodyBlockIndex":{{ typeof adBodyBlockIndex !== "undefined" ? adBodyBlockIndex : "null" }},"cardItemIndex":{{ loop.index }}}'></component>
           </td></tr>
         </each>
         <if condition="adSection.show_bottom_rule !== false">

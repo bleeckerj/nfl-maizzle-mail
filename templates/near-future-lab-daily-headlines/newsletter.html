@@ -29,7 +29,7 @@ title: "Near Future Laboratory Daily Headlines"
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" data-short-take-id="{{ item.shortTakeId }}" style="width:100%;border:2px solid #b9b9b2;background:#ffffff;border-spacing:0"><tbody>
       <component src="templates/dense-discovery/components/ShortTakeBrandRail.html" locals='{"shortTakeBrandRail": true, "shortTakeCardWidth": 600}'></component>
       <tr><td style="padding:0;line-height:0;font-size:0"><img src="{{ item.image }}" alt="{{ item.imageAlt }}" width="600" border="0" style="display:block;width:100%;max-width:600px;height:auto;border:0"></td></tr>
-      <tr><td style="padding:20px 18px 24px;background:#ffffff;color:#141414">
+      <tr><td style="padding:20px 8px 24px;background:#ffffff;color:#141414">
         <h2 style="margin:0 0 12px;font:700 24px/30px Georgia,serif;color:#141414">{{ item.headline }}</h2>
         <div class="email-short-take-body" style="margin:0;font-family:Arial,sans-serif;font-size:18px;line-height:26px;font-weight:400;color:#141414">{{{ item.caption }}}</div>
         <if condition="item.link"><p style="margin:16px 0 0;font:400 18px/26px Arial,sans-serif"><a href="{{ item.link }}" style="color:#141414;text-decoration:underline">{{ item.bottomLeft || 'Read more' }}</a></p></if>

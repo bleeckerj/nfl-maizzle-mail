@@ -1786,7 +1786,13 @@ async function buildNewsletter() {
           // the incoming section only; template and theme defaults may supply
           // other container values without unexpectedly painting a surface.
           section.backgroundStyleInline = resolveSectionBackgroundStyle(incomingContainerStyles).inlineStyle;
-          const contentPadding = resolveSectionContentPadding(incomingContainerStyles);
+          // Daily Headlines uses the same narrow gutter for background sections;
+          // explicitly authored insets still take precedence.
+          const contentPadding = resolveSectionContentPadding(
+            templateName === 'near-future-lab-daily-headlines'
+              ? { contentPadding: '0', ...incomingContainerStyles }
+              : incomingContainerStyles,
+          );
           section.containerStyles.contentPadding = contentPadding.contentPadding;
           section.contentPaddingInline = section.backgroundStyleInline ? contentPadding.inlineStyle : '';
 

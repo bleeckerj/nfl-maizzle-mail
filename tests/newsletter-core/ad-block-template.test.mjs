@@ -91,7 +91,7 @@ test('every ad renderer encloses the Kessler label and full image in the preview
     const card = cards[0];
     assert.equal(card.style.border, '0.5px solid rgb(160, 160, 160)', template);
     assert.equal(card.style.boxShadow, '1px 1px 0 #2c2c2c', template);
-    assert.equal(card.querySelector('td').style.padding, '12px', template);
+    assert.equal(card.querySelector('td').style.padding, template === 'near-future-lab-daily-headlines' ? '8px' : '12px', template);
     const label = card.querySelector('[data-ad-card-label]');
     assert.equal(label.textContent, item.label, template);
     assert.match(label.style.fontFamily, /monospace/, template);

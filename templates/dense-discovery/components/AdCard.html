@@ -13,7 +13,7 @@
 <!-- Shared ad presentation matches Editorial's ads:preview card. Keep section headings and dividers in the calling template. -->
 <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" data-ad-card="{{ item.adId || '' }}" style="width:100%;border-collapse:separate;border-spacing:0;table-layout:fixed;border:{{ item.renderMode === 'snapshot' ? '0' : '0.5px solid #a0a0a0' }};background:{{ item.renderMode === 'snapshot' ? 'transparent' : '#fafafb' }};{{ item.renderMode !== 'snapshot' ? 'box-shadow:1px 1px 0 #2c2c2c;' : '' }}">
   <tr>
-    <td style="padding:{{ item.renderMode === 'snapshot' ? '0' : '12px' }};">
+    <td style="padding:{{ item.renderMode === 'snapshot' ? '0' : (typeof cardPadding !== 'undefined' ? cardPadding : '12px') }};">
       <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="width:100%;border-spacing:0;table-layout:fixed;">
         <if condition="item.label && item.renderMode !== 'snapshot'">
           <tr><td style="padding:0 0 6.4px;">

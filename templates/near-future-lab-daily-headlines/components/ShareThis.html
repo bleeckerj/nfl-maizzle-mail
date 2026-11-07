@@ -9,11 +9,11 @@
 </script>
       <table border="0" cellpadding="0" cellspacing="0" style="width:100%" role="presentation" class="{{ darkModePolicy && darkModePolicy.flatten ? 'dm-surface' : '' }}"><tbody><tr><td data-share-space="space_top" style="font-size:0;line-height:0;padding-top:{{ cta.spaceTop }}"></td></tr></tbody></table>
       <table border="0" cellpadding="0" cellspacing="0" style="width:100%;border-top:1px solid #000;border-bottom:1px solid #dcdcdc;background:{{ section.background || '#ffffff' }};{{{ section.backgroundStyleInline }}}" role="presentation" class="share-cta{{ darkModePolicy && darkModePolicy.flatten ? ' dm-surface dm-text' : '' }}" data-content-slot="share_this"><tbody>
-        <tr><td style="padding:18px 20px 0 20px;{{{ section.contentPaddingInline }}}">
+        <tr><td style="padding:18px 0 0;{{{ section.contentPaddingInline }}}">
           <p class="share-cta-eyebrow" style="margin:0 0 4px 0;padding:0;color:{{ section.eyebrow_color || '#555' }};font:700 11px/16px arial,sans-serif;letter-spacing:.75px;text-transform:uppercase">{{ section.eyebrow || 'Share this issue' }}</p>
           <p class="share-cta-copy" style="margin:0;padding:0;color:{{ section.text_color || '#333' }};font:16px/22px georgia,serif">{{{ section.statement || 'Know someone who&rsquo;d want a peek at their near future? Pass it along.' }}}</p>
         </td></tr>
-        <tr><td style="padding:14px 20px 18px 20px;{{{ section.contentPaddingInline }}}">
+        <tr><td style="padding:14px 0 18px;{{{ section.contentPaddingInline }}}">
           <a class="share-cta-button" href="{{ section.email_href || ('mailto:?subject=Near%20Future%20Laboratory%20Daily%20Headlines&body=Thought%20you%27d%20like%20this%3A%20' + (section.online_url || '')) }}" style="display:inline-block;margin:0 8px 0 0;padding:6px 10px;border:1px solid #111;border-radius:4px;background:#111;font:700 12px/1.2 arial,sans-serif;color:#ffffff!important;-webkit-text-fill-color:#ffffff;text-decoration:none">{{ section.email_label || 'Forward by email' }}</a>
           <if condition="section.online_url"><a class="share-cta-button" href="{{ section.online_url }}" style="display:inline-block;margin:0;padding:6px 10px;border:1px solid #111;border-radius:4px;background:#ffffff;font:700 12px/1.2 arial,sans-serif;color:#111111!important;-webkit-text-fill-color:#111111;text-decoration:none">{{ section.online_label || 'Open online →' }}</a></if>
         </td></tr>

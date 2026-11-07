@@ -91,7 +91,7 @@ test('Daily Headlines sections render a solid fallback and optional gradient wit
     assert.match(html, /background-color:\s*#eff4ed/);
     assert.match(html, /background-image:\s*linear-gradient\(135deg,\s*#eff4ed 0%,\s*#d7e7f3 100%\)/);
     assert.match(html, /<table[^>]*style="[^"]*background-color:\s*#eff4ed[^"]*background-image:[^"]*"[^>]*>\s*<tbody>\s*<tr><td height="30"/);
-    assert.match(html, /padding:12px 0 13px 0;padding-left:20px;padding-right:20px;border-top:9px solid #000/);
+    assert.match(html, /padding:12px 0 13px 0;padding-left:0;padding-right:0;border-top:9px solid #000/);
     assert.match(html, /<table[^>]*style="width:100%"[^>]*>\s*<tbody>\s*<tr><td height="10"[^>]*>\s*<\/td><\/tr>\s*<tr><td style="border-top:1px solid #dcdcdc">\s*<\/td><\/tr><\/tbody><\/table>\s*<table[^>]*style="[^"]*background-color:#eff4ed[^"]*"[^>]*>\s*<tbody>\s*<tr><td style="padding-top:15px">\s*<\/td><\/tr>/);
     assert.match(html, /border-bottom:1px solid #dcdcdc">\s*<\/td><\/tr><\/tbody><\/table>\s*<table[^>]*style="width:100%"[^>]*>\s*<tbody>\s*<tr><td height="15">\s*<\/td><\/tr>/);
     assert.match(html, /<table[^>]*style="width:100%"[^>]*>\s*<tbody>\s*<tr><td style="padding-top:15px">\s*<\/td><\/tr>\s*<tr><td style="padding:0 0 10px;">[^<]*<h2[^>]*>Default ad remains uncolored<\/h2>/);

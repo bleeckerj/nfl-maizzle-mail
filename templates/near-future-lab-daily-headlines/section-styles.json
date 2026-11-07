@@ -168,8 +168,8 @@
         "borderWidth": "1px",
         "borderStyle": "solid",
         "dividerColor": "#dcdcdc",
-        "headerPadding": "18px 20px 10px 20px",
-        "bodyPadding": "16px 20px 18px 20px",
+        "headerPadding": "18px 8px 10px 8px",
+        "bodyPadding": "16px 8px 18px 8px",
         "buttonBackgroundColor": "#111111",
         "buttonTextColor": "#ffffff",
         "secondaryLinkColor": "#111111"
